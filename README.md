@@ -43,6 +43,7 @@
 | [MCP 深度解析](articles/concepts/mcp-model-context-protocol.md) | Model Context Protocol 架构、生态、2026 路线图 |
 | [Agent 记忆机制](articles/concepts/agent-memory-architecture.md) | 四种记忆架构对比：Vector Store / Graph / Hybrid / Mem0 |
 | [Context Engineering：Agent 开发核心技能](articles/concepts/context-engineering-for-agents.md) | Anthropic 官方：从 Prompt Engineering 到 Context Engineering、Just-in-Time 策略 |
+| [RAG + Agent 融合实践](articles/concepts/rag-agent-fusion-practices.md) | 从 Naive RAG 到 Agentic RAG、Hybrid / Adaptive / Corrective RAG、Semantic Caching |
 
 #### 🔧 engineering/ — 工程实践
 
@@ -59,6 +60,7 @@
 |------|------|
 | [Anthropic 教你构建有效的 AI Agent](articles/research/anthropic-building-effective-agents.md) | Anthropic 官方 Agent 设计原则、六大模式、三大核心原则 |
 | [Claude Code 架构深度解析](articles/research/claude-code-architecture-deep-dive.md) | Agent Teams、Memory Checkpoint、Subagent 设计 |
+| [ReAct 论文深度解读](articles/research/react-paper-deep-dive.md) | ICLR 2023 经典论文：推理+动作交替、Thought/Action/Observation 循环、核心局限性 |
 
 ---
 

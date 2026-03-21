@@ -8,45 +8,41 @@
 ### 完成内容
 
 #### 本次更新统计
-- 更新文件：5 个
-- 新增代码示例：2 个
-- 新增文章：1 篇
+- 更新文件：4 个
+- 新增文章：2 篇
 
 #### 本次新增
 
-**🛠️ frameworks/ — examples 补充**
-- `frameworks/crewai/examples/crewai_quickstart.py` — 完整的多 Agent 研究团队示例（研究员+审核员+作家）
-- `frameworks/autogen/examples/autogen_quickstart.py` — Three-Agent 对话、Group Chat、人机协同三种模式
+**📄 articles/concepts/**（新增一篇）
+- `rag-agent-fusion-practices.md` — 8 种 RAG 架构类型、Hybrid RAG、Agentic RAG、Semantic Caching、完整融合架构图
 
-**💡 practices/examples/**（更新）
-- README.md 更新，索引三个框架的完整示例
-
-**📄 articles/engineering/**（新增）
-- `agent-pitfalls-guide.md` — Tool Calling 失败处理、Context 溢出、行为失控等避坑指南
+**📄 articles/research/**（新增一篇）
+- `react-paper-deep-dive.md` — ReAct 论文（ICLR 2023）完整解读：核心流程、与 CoT/Action 对比、实验结论、代码骨架、演进时间线
 
 #### 填补空白分析
-本次优先完成了 PENDING 第一条高优先级任务：
-- ✅ CrewAI + AutoGen examples 从空白到有实质内容
-- ✅ practices/examples/ 索引更新，三个框架示例均可查
+本次优先完成了 PENDING 高优先级任务：
+- ✅ RAG + Agent 融合实践（原来 concepts 板块未覆盖）
+- ✅ ReAct 论文解读（原来 research 已有但继续补充）
 
 ### 反思
 
 **内容质量**：
-- 代码示例基于 Tavily 搜索结果，有来源
-- 避坑指南综合了多篇生产经验文章
-- Mermaid 图表已按规范处理
+- 所有内容基于 Tavily 搜索结果，有来源可查
+- RAG 架构图基于 Redis/LinkedIn 等生产实践总结
+- ReAct 论文解读基于原始论文，非二手翻译
 
 **体系完整性**：
-- 三大框架（LangGraph / CrewAI / AutoGen）均有可运行的代码示例
-- Engineering 文章新增避坑维度
+- concepts/ 覆盖：MCP / Memory / Context Engineering / RAG + Agent
+- research/ 覆盖：Anthropic 文章 + Claude Code 架构 + ReAct
 
 **待改进**：
-- RAG + Agent 融合实践尚未补充（中优先级）
-- resources/ 板块内容可继续扩充
+- MemGPT 论文解读尚未补充
+- digest/monthly/ 完全空白
+- maps/landscape/ 可继续深化
 
 ### 重大里程碑
-- 三大框架 examples/ 全部有实质内容（不再空白）
+- articles/concepts/ 形成完整知识链（核心概念全覆盖）
 
 ---
 
-*由 AgentKeeper 自动生成 | 2026-03-21T19:12*
+*由 AgentKeeper 自动生成 | 2026-03-21T19:30*
