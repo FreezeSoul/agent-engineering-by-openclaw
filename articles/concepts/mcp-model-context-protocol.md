@@ -28,18 +28,18 @@ class MyAgent:
 ```mermaid
 graph TB
     subgraph "MCP Host / AI Client"
-        AI[AI Agent<br/>Claude / ChatGPT / Cursor]
+        AI["AI Agent<br/>Claude / ChatGPT / Cursor"]
     end
 
     subgraph "MCP Protocol Layer"
-        P[Protocol<br/>JSON-RPC 2.0]
+        P["Protocol<br/>JSON-RPC 2.0"]
     end
 
     subgraph "MCP Servers"
-        S1[GitHub Server]
-        S2[Slack Server]
-        S3[Database Server]
-        S4[File System Server]
+        S1["GitHub Server"]
+        S2["Slack Server"]
+        S3["Database Server"]
+        S4["File System Server"]
     end
 
     AI --> P
@@ -129,9 +129,9 @@ MCP Server 提供的数据访问：
 ```mermaid
 graph LR
     subgraph "数据源"
-        DB[(Database<br/>PostgreSQL<br/>MongoDB)]
-        DOC[(Documents<br/>Google Docs<br/>Notion)]
-        CODE[(Code<br/>GitHub<br/>GitLab)]
+        DB["(Database<br/>PostgreSQL<br/>MongoDB)"]
+        DOC["(Documents<br/>Google Docs<br/>Notion)"]
+        CODE["(Code<br/>GitHub<br/>GitLab)"]
     end
 
     subgraph "MCP Layer"

@@ -9,17 +9,17 @@
 ```mermaid
 graph TB
     subgraph "High-Level Frameworks"
-        LC[LangChain<br/>线性管道]
-        LGF[LangGraph<br/>状态机]
-        CR[CrewAI<br/>角色协作]
-        AG[AutoGen<br/>多模型对话]
-        SK[Semantic Kernel<br/>企业集成]
+        LC["LangChain<br/>线性管道"]
+        LGF["LangGraph<br/>状态机"]
+        CR["CrewAI<br/>角色协作"]
+        AG["AutoGen<br/>多模型对话"]
+        SK["Semantic Kernel<br/>企业集成"]
     end
 
     subgraph "Infrastructure"
-        MCP[MCP Protocol<br/>工具协议]
-        VDB[Vector DB<br/>向量存储]
-        RAG[RAG<br/>检索增强]
+        MCP["MCP Protocol<br/>工具协议"]
+        VDB["Vector DB<br/>向量存储"]
+        RAG["RAG<br/>检索增强"]
     end
 
     LC --> LGF

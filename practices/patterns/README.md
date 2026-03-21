@@ -22,11 +22,11 @@
 
 ```mermaid
 graph LR
-    Q[问题] --> T[Thought<br/>思考下一步]
-    T --> A[Action<br/>执行行动]
-    A --> O[Observation<br/>观察结果]
+    Q[问题] --> T["Thought<br/>思考下一步"]
+    T --> A["Action<br/>执行行动"]
+    A --> O["Observation<br/>观察结果"]
     O --> T
-    O -->|完成| R[Response<br/>最终回答]
+    O -->|完成| R["Response<br/>最终回答"]
 ```
 
 ### 代码示例
@@ -77,7 +77,7 @@ def react_agent(query, tools, max_iterations=5):
 ```mermaid
 graph TB
     INPUT[用户输入] --> PLANNER[Planner Agent]
-    PLANNER --> PLAN[执行计划<br/>Step 1, Step 2, ...]
+    PLANNER --> PLAN["执行计划<br/>Step 1, Step 2, ..."]
     PLAN --> E1[执行 Step 1]
     PLAN --> E2[执行 Step 2]
     PLAN --> E3[执行 Step 3]
@@ -127,7 +127,7 @@ class PlanExecuteAgent:
 ```mermaid
 graph LR
     Q[问题] --> FIRST[初步回答]
-    FIRST --> REFLECT[Self-Reflection<br/>自我反思]
+    FIRST --> REFLECT["Self-Reflection<br/>自我反思"]
     REFLECT -->|有问题| REVISE[修订回答]
     REVISE --> REFLECT
     REFLECT -->|OK| OUTPUT[最终回答]

@@ -30,17 +30,17 @@ graph TB
     end
 
     subgraph "短时记忆"
-        CH[Conversation History<br/>当前会话]
+        CH["Conversation History<br/>当前会话"]
     end
 
     subgraph "工作记忆"
-        WM[Working Memory<br/>当前任务上下文]
+        WM["Working Memory<br/>当前任务上下文"]
     end
 
     subgraph "长期记忆"
-        VDB[(Vector DB<br/>向量记忆)]
-        GRAPH[(Graph DB<br/>关系记忆)]
-        SQL[(SQLite/PG<br/>结构化记忆]
+        VDB["(Vector DB<br/>向量记忆)"]
+        GRAPH["(Graph DB<br/>关系记忆)"]
+        SQL["(SQLite/PG<br/>结构化记忆)"]
     end
 
     INPUT --> CH
@@ -83,7 +83,7 @@ response = llm.chat(messages=history)
 graph LR
     Q[用户问题] --> EMB[Embedding]
     EMB --> SEARCH[向量检索]
-    DB[(Vector DB<br/>对话历史)] --> SEARCH
+    DB["(Vector DB<br/>对话历史)"] --> SEARCH
     SEARCH --> CONTEXT[相关上下文]
     CONTEXT --> LLM[LLM]
     LLM --> RESP[回答]

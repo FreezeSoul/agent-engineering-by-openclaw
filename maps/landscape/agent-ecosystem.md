@@ -9,15 +9,15 @@
 ```mermaid
 graph TB
     subgraph "基础设施层"
-        LLM1[OpenAI<br/>GPT-4o]
-        LLM2[Anthropic<br/>Claude 3.5]
-        LLM3[Google<br/>Gemini]
-        LLM4[Meta<br/>Llama]
+        LLM1["OpenAI<br/>GPT-4o"]
+        LLM2["Anthropic<br/>Claude 3.5"]
+        LLM3["Google<br/>Gemini"]
+        LLM4["Meta<br/>Llama"]
     end
 
     subgraph "协议层"
-        MCP[Model Context<br/>Protocol]
-        TOOL[Function Calling<br/>Tool Call]
+        MCP["Model Context<br/>Protocol"]
+        TOOL["Function Calling<br/>Tool Call"]
     end
 
     subgraph "框架层"
@@ -29,15 +29,15 @@ graph TB
     end
 
     subgraph "工具层"
-        VDB[向量数据库<br/>Pinecone<br/>Qdrant<br/>Chroma]
-        RAG[RAG<br/>检索增强]
-        EVAL[评测工具<br/>DeepEval<br/>LangSmith]
+        VDB["向量数据库<br/>Pinecone<br/>Qdrant<br/>Chroma"]
+        RAG["RAG<br/>检索增强"]
+        EVAL["评测工具<br/>DeepEval<br/>LangSmith"]
     end
 
     subgraph "应用层"
-        COD[Coding Agent<br/>Cursor<br/>Claude Code]
-        CHAT[Chat Agent<br/>Coze<br/>Dify]
-        RES[Research Agent<br/>Perplexity]
+        COD["Coding Agent<br/>Cursor<br/>Claude Code"]
+        CHAT["Chat Agent<br/>Coze<br/>Dify"]
+        RES["Research Agent<br/>Perplexity"]
     end
 
     LLM1 --> LC
