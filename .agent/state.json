@@ -1,10 +1,11 @@
 {
-  "lastRun": "2026-03-21",
-  "lastCommit": "96576f0",
+  "lastRun": "2026-03-21T17:37",
+  "lastCommit": "538f760",
   "status": "autonomous",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "owner": "FreezeSoul",
   "repo": "https://github.com/FreezeSoul/agent-teaches-you-agent-dev",
   "autonomous": true,
-  "initialized": "2026-03-21"
+  "initialized": "2026-03-21",
+  "updateCycle": "hourly"
 }
