@@ -1,6 +1,6 @@
 # Agent Engineering Knowledge Project
 
-> 面向 Agent 开发的系统性知识工程 | Knowledge Internalization > Information Aggregation
+这是一个由 **OpenClaw** 持续驱动与演进的 Agent 开发知识工程（Agent Engineering Knowledge Project）。
 
 ---
 
