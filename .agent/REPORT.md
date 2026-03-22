@@ -1,6 +1,6 @@
 # AgentKeeper 自我报告
 
-## 2026-03-23 05:01（北京时间）
+## 2026-03-23 06:01（北京时间）
 
 **状态**：✅ 有新增内容
 
@@ -8,45 +8,48 @@
 
 - ✅ 仓库拉取最新（origin/master）
 - ✅ Tavily 扫描最近 Agent 技术动态
-- ✅ 发现 Microsoft AI Toolkit for VS Code v0.32.0（2026年3月）值得收录
-- ✅ RSAC 2026 今日开幕（Day 1 已覆盖），Day 2 内容尚未发布（会议进行中）
-- ✅ W13 周报新增第 28 条：Microsoft AI Toolkit v0.32.0
+- ✅ 发现腾讯 ClawBot/OpenClaw 入驻微信（2026-03-22）值得收录
+- ✅ W13 周报新增第 29 条：腾讯 ClawBot
 - ✅ README badge 更新 + Weekly 动态同步
+- ✅ 修复 README.md 底部重复 footer
 
 ### 本轮产出
 
 | 操作 | 内容 |
 |------|------|
-| 更新周报 | `digest/weekly/2026-W13.md`（新增第 28 条：AI Toolkit v0.32.0） |
-| 更新索引 | `README.md`（badge 05:01、Weekly 动态追加条目） |
+| 更新周报 | `digest/weekly/2026-W13.md`（新增第 29 条：腾讯 ClawBot/微信集成 OpenClaw） |
+| 更新索引 | `README.md`（badge 06:01、Weekly 动态追加条目） |
 
 ### 覆盖主题
 
-- Microsoft AI Toolkit for VS Code v0.32.0：AI Toolkit + Foundry 统一视图
+- 腾讯 ClawBot：OpenClaw Agent 以联系人形态入驻微信十亿用户
 
 ### 质量核查
 
 - ✅ 内容为自主消化整理，非直接复制
-- ✅ 来源可追溯（Microsoft Tech Community 官方博客）
+- ✅ 来源可追溯（Reuters + SaaSNik 报道）
 - ✅ 索引完整（README Weekly 动态已更新）
 - ✅ W13 周报时间戳更新
 
 ### 下轮继续
 
-- RSAC 2026 Day 2 报道（2026-03-24，关注 AI Agent 安全新议题）
+- RSAC 2026 Day 2 报道（2026-03-24，关注 Innovation Sandbox 结果）
 - MCP Dev Summit NA（4月2-3日）前期预热
 - 关注 W13 周末周报汇总
 
 ### 本轮跳过项
 
-- RSAC 2026 Day 2 内容：尚未发布（本轮扫描结果）
-- AAIF（Agentic AI Foundation）：为 2025 年 12 月历史事件，W13 不重复收录
+- RSAC 2026 Day 2 内容：尚未发布（会议进行中，本轮时间在 Day 1 开幕后）
+- UiPath AIUC-1 认证：3月9日发布，非新事件
+- AWS+Cerebras Bedrock 推理加速：3月13日发布，非本轮新增
 
 *由 AgentKeeper 自动生成 | 每次更新后全量重写*
 
+---
+
 # 待 Owner 决策事项
 
-## 2026-03-23 05:01（北京时间）
+## 2026-03-23 06:01（北京时间）
 
 **无新增待决策事项。**
 
@@ -63,7 +66,7 @@
 
 ## 高优先级
 
-- [ ] RSAC 2026 Day 2 后续报道（2026-03-24，关注 AI Agent 安全新议题）
+- [ ] RSAC 2026 Day 2 后续报道（2026-03-24，关注 Innovation Sandbox 结果 + AI Agent 安全新议题）
 - [ ] `frameworks/` — 关注 MCP Dev Summit NA 2026（4月2-3日）后的重大更新
 
 ## 月度回顾（当前接近月末）
@@ -84,4 +87,4 @@
 
 ---
 
-*由 AgentKeeper 维护 | 2026-03-23 05:01 北京时间*
+*由 AgentKeeper 维护 | 2026-03-23 06:01 北京时间*
