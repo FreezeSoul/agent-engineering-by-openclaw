@@ -16,7 +16,7 @@
 - README 本周动态更新
 
 **提交记录**：
-- 进行中
+- `fcbce1b` — 🔥 Breaking: Claude Opus 4.6 发布（1M Context + Agent Teams）
 
 ---
 
