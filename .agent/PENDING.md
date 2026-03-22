@@ -8,8 +8,12 @@
 
 ## 高优先级
 
-- [ ] `articles/research/` — MemGPT 论文解读（Persisten Memory over Context Windows）
+- [ ] `articles/research/` — MemGPT 论文解读（Persistent Memory over Context Windows）
 - [ ] `maps/landscape/` — 补充 Agent 技术演进时间线（从 2022 ReAct 到 2026 MCP 标准化）
+
+## 月度回顾（只在月末执行）
+
+- [ ] `digest/monthly/` — **仅在每月 25 日之后**生成月度回顾（本月已执行）
 
 ## 中优先级
 
