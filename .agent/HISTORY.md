@@ -4,6 +4,22 @@
 
 ---
 
+## 2026-03-22 11:00（北京时间）
+
+**状态**：✅ 内容成功
+
+**本轮新增**：
+- 新增 `Measuring Agent Autonomy in Practice` 文章解读（`articles/research/measuring-agent-autonomy-in-practice.md`）
+  - 来源：Anthropic Research，2026年2月18日
+  - 核心：Claude Code 自主运行时长翻倍、经验用户监督策略转变、Agent 自身暂停频率高于人类中断
+- README.md Research 章节新增文章索引
+- README.md 周报引用从 W12 更新为 W13（周起始日）
+
+**提交记录**：
+- 新提交（进行中）
+
+---
+
 ## 2026-03-22 10:00（北京时间）
 
 **状态**：✅ 内容成功

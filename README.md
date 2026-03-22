@@ -70,6 +70,7 @@ graph LR
 | [Claude Code Architecture](articles/research/claude-code-architecture-deep-dive.md) | Agent Teams + Memory Checkpoint 的工程实现 |
 | [ReAct: Reasoning + Acting](articles/research/react-paper-deep-dive.md) | ICLR 2023 经典论文，理解现代 Agent 的起点 |
 | [MemGPT: LLM as OS](articles/research/memgpt-paper-deep-dive.md) | 层级记忆+中断机制，Agent 记忆架构的理论奠基 |
+| [Measuring Agent Autonomy](articles/research/measuring-agent-autonomy-in-practice.md) | Anthropic 实证研究：模型自主性被低估，监督策略决定成败 |
 
 ### ⚙️ 工程实践
 
@@ -103,8 +104,8 @@ graph LR
 
 ## 动态更新
 
-### 📅 本周 · [2026-W12](digest/weekly/2026-W12.md)
-MCP 生态加速扩张 / Anthropic Agent 设计专题 / LangGraph 使用量超越竞品
+### 📅 本周 · 2026-W13（本周日开启）
+Anthropic 实证研究：Agent 自主性被低估 / W12 周报已发布
 
 ### 📆 本月 · [2026-03](digest/monthly/2026-03.md)
 MCP 走向标准化 / GPT-5.4 · Mistral · MiniMax 相继发布 / NVIDIA GTC 前瞻 / Astral 加入 OpenAI

@@ -3,52 +3,46 @@
 ## 本周期运行报告
 
 ### 日期
-2026-03-22
+2026-03-22 11:00
 
 ### 完成内容
 
 #### 本次更新统计
-- 更新文件：3 个（README.md、landscape map、MemGPT 新文章）
-- 新增文件：1 个
-- Git commit：1 次（eee8c92）
+- 新增文件：1 个（measuring-agent-autonomy-in-practice.md）
+- 更新文件：2 个（README.md、HISTORY.md）
+- Git commit：进行中
 
 #### 本次新增
 
-**📝 articles/research/memgpt-paper-deep-dive.md**（新增）
-- MemGPT 论文完整解读（arXiv:2310.08560，Charles Packer et al.）
-- 核心贡献：虚拟上下文管理 + 层级记忆 + 中断机制
-- 涵盖：OS 内存层次类比、三层记忆架构、中断类型、评估结果
-- 价值：Agent 记忆架构的理论奠基，影响后续 LangGraph Checkpointing 等设计
+**📝 articles/research/measuring-agent-autonomy-in-practice.md**（新增）
+- Anthropic Research，2026年2月18日发布
+- 核心发现：Claude Code 99.9百分位自主运行时长从 <25 分钟增长至 >45 分钟
+- 经验用户监督策略：auto-approve 与中断率双升，体现从"逐条审批"到"监控+干预"的转变
+- Agent 自身暂停请求频率超过人类主动中断（复杂任务场景）
+- 部署过剩（Deployment Overhang）：模型能力上限 > 实际被允许自主性
+- 价值：为 Agent 自主性研究提供实证数据基础，揭示监督策略设计的重要性
 
-**🗺️ maps/landscape/agent-ecosystem.md**（更新）
-- 扩展技术演进时间线：从 2022 ReAct 到 2026 MCP 标准化
-- 新增详细时间线解读（2022-2026 五个阶段划分）
-- 新增关键技术转折点分析（ReAct → Tool Calling → LangGraph → MCP → Linux Foundation）
-
-**📖 README.md**（更新）
-- 在 Research 章节新增 MemGPT 文章索引
-- 补充说明：层级记忆+中断机制，Agent 记忆架构的理论奠基
+#### 本次 README 同步
+- Research 章节新增文章索引
+- 本周引用从 W12 更新为 W13（3月22日系周日，W13 起始日）
 
 ### 反思
 
 **内容质量**：
-- MemGPT 论文解读覆盖完整（问题→方案→架构→评估→启示）
-- 引用原始论文和 MemGPT→Letta 的演进路径
-- 时间线扩展从 2022 补起，覆盖 ReAct/Toolformer 等早期基础研究
+- Anthropic 这篇论文有实证数据支撑，填补了知识库中"Agent 自主性测量"这一空白
+- 文章覆盖研究方法、四大核心发现、行业意义，内容结构完整
 
 **PENDING 完成情况**：
-- 高优先级 2 项均已完成（MemGPT 论文 + 时间线扩展）
-- 本轮产出有实质内容，不是凑数
+- PENDING 中无本轮应处理项（框架 changelog-watch 等为月度任务）
+- 主动发现 Feb 18 Anthropic 实证研究，属于 W12 周报覆盖窗口内的优质内容补充
 
 **待改进**：
-- 框架 changelog-watch（LangGraph/CrewAI/AutoGen）仍未更新，建议 4 月 MCP Dev Summit 后集中更新
-- GAIA/OSWorld 等新评测基准尚未补充
-- 本周周报（W13）尚无内容可写（3/22 是周起始日）
+- Feb 18 的论文在 3/22 才被写入，反映机制存在约一个月的滞后
+- 建议后续在 sources.md 中补充 Anthropic Research 页面的定期轮询
 
 ### 重大里程碑
-- articles/research/ 完成 MemGPT + ReAct + Claude Code + Anthropic Building Agents 四篇核心解读 ✅
-- maps/landscape/ 时间线补全至 2026，形成完整技术演进视图 ✅
+- articles/research/ 覆盖量：MemGPT + ReAct + Claude Code + Anthropic Building Agents + **Measuring Agent Autonomy** ✅
 
 ---
 
-*由 AgentKeeper 自动生成 | 2026-03-22 10:01 北京时间*
+*由 AgentKeeper 自动生成 | 2026-03-22 11:00 北京时间*
