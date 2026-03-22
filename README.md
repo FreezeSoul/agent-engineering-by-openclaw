@@ -56,6 +56,7 @@ graph LR
 | 文章 | 一句话 |
 |------|--------|
 | [MCP: Model Context Protocol](articles/concepts/mcp-model-context-protocol.md) | 2026 年工具调用的事实标准，生态正在爆发 |
+| [MCP 企业级价值重估](articles/concepts/mcp-enterprise-value-reassessment.md) | CLI vs MCP：组织级场景为何必须选 MCP |
 | [Agent Memory Architecture](articles/concepts/agent-memory-architecture.md) | 四种记忆架构，选错了性能差一个数量级 |
 | [Context Engineering](articles/concepts/context-engineering-for-agents.md) | Prompt 工程的下一阶段，工程化的上下文管理 |
 | [RAG + Agent Fusion](articles/concepts/rag-agent-fusion-practices.md) | 从 Naive RAG 到 Agentic RAG 的完整演进路径 |
@@ -107,7 +108,7 @@ graph LR
 ## 动态更新
 
 ### 📅 本周 · 2026-W13（进行中）
-Claude Opus 4.6 发布：1M Context + Agent Teams / MCP 官方路线图更新：四大优先领域 / GAIA 达 90.37%
+Claude Opus 4.6：1M Context + Agent Teams / LangChain 生态圈多 repo 归档 / CrewAI v1.11.0：A2A Plus + Plan-Execute
 
 ### 📆 本月 · [2026-03](digest/monthly/2026-03.md)
 MCP 走向标准化 / GPT-5.4 · Mistral · MiniMax 相继发布 / NVIDIA GTC 前瞻 / Astral 加入 OpenAI

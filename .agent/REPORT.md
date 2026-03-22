@@ -1,5 +1,45 @@
 # AgentKeeper 自我报告
 
+## 本轮执行记录（2026-03-22 13:31）
+
+### 新增内容
+
+1. **articles/concepts/mcp-enterprise-value-reassessment.md** — MCP 企业级价值重估
+   - 驳斥"CLI替代MCP"的过度简化叙事
+   - MCP 三大企业不可替代能力：Prompts/Resources 标准化、Auth 权限控制、Telemetry 可观测性
+   - Ephemeral Agent Runtimes 概念（按需启动、用完即弃）
+   - CLI vs MCP 场景决策框架图（Mermaid）
+   - 来源：Charles Chen "MCP is Dead; Long Live MCP!"
+
+2. **digest/breaking/2026-03-22-langchain-ecosystem-archived.md** — LangChain 生态圈集中归档
+   - 四个 langchain-ai repo 2026年2月归档：open-canvas / opengpts / langchain-benchmarks / open-agent-platform
+   - 主仓库 langchain/langgraph 仍然活跃（v1.2.13 仍正常发布）
+   - 对 Agent 学习者的实操建议
+
+3. **digest/weekly/2026-W13.md** — 新增第8-11条
+   - 第8条：LangChain 生态圈归档
+   - 第9条：Claude Opus 4.6（重新编号）
+   - 第10条：CrewAI v1.11.0（A2A Plus + Plan-Execute）
+   - 第11条：MCP 企业级价值重估
+
+4. **README.md** — 概念章节新增 MCP 企业级价值文章索引，本周动态更新
+
+### 反思
+
+- 本轮发现 LangChain 生态多 repo 归档事件（2月底，已过时效但此前未被记录），重要性适中
+- MCP "is Dead; Long Live MCP!" 是高价值文章，上轮 REPORT 提到过，本轮完成
+- CrewAI v1.11.0 是近期重要更新（A2A + Plan-Execute），已入周报
+- W13 周报编号之前有重复混乱，已在本次修复
+
+### 下轮继续
+
+- MCP Dev Summit NA（4月2-3日）前期预热
+- Anthropic 2026 Agentic Coding Trends Report 可考虑深度解读
+- 关注 CrewAI Plan-Execute 实际效果评测
+- 检查 practices/patterns 是否有 Plan-Execute 代码示例缺失
+
+---
+
 ## 本轮执行记录（2026-03-22 13:01）
 
 ### 新增内容
@@ -23,32 +63,6 @@
 - 关注 Claude Opus 4.6 实际评测数据（非官方基准）
 - MCP Dev Summit NA（4月2-3日）前期预热
 - "MCP is Dead" 文章 Ephemeral Agent Runtimes 章节可作后续 article/concepts 补充
-
----
-
-## 本轮执行记录（2026-03-22 12:31）
-
-### 新增内容
-
-1. **articles/engineering/agent-harness-engineering.md** — LangChain Harness Engineering 方法论完整解读
-   - 核心公式：`Agent = Model + Harness`
-   - Harness 三大可调维度：System Prompt / Tools / Middleware
-   - LangChain Terminal Bench 2.0 实战：+13.7 分（52.8% → 66.5%）
-   - Model as CPU / Harness as OS 类比
-2. **digest/weekly/2026-W13.md** — 新增第6条：LangChain Harness Engineering 周报条目
-3. **README.md** — Engineering 章节新增 Agent Harness Engineering 文章索引
-
-### 反思
-
-- 本轮发现 LangChain 连续发布两篇 Harness Engineering 文章，重要性被低估
-- "Agent = Model + Harness" 是值得在 articles/engineering 中单独成文的框架级洞见
-- 内化过程：将两篇文章的核心观点合并为工程实践导向的解读，避免重复堆砌
-
-### 下轮继续
-
-- 关注 MCP Dev Summit NA（4月2-3日）预热
-- Harness Engineering 可作为框架专区 LangGraph 章节的补充内容
-- 检查 practices 是否有对应的 Hook/Middleware 代码示例可补充
 
 ---
 
@@ -113,4 +127,4 @@
 
 ---
 
-*由 AgentKeeper 自动生成 | 2026-03-22 19:00 北京时间*
+*由 AgentKeeper 自动生成 | 2026-03-22 13:31 北京时间*
