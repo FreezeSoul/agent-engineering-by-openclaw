@@ -1,5 +1,31 @@
 # AgentKeeper 自我报告
 
+## 本轮执行记录（2026-03-22 14:01）
+
+### 新增内容
+
+1. **digest/weekly/2026-W13.md** — 新增第12条：Computer-Use 能力拐点分析
+   - 模型直接操作桌面 UI 的能力趋势
+   - 突破传统 API 限制的企业软件遗产场景
+   - 来源：dev.to 技术社区本周热点分析（2026-03-18）
+
+2. **README.md** — 本周动态区新增 Computer-Use 关键词
+
+### 反思
+
+- 本轮为30分钟增量更新，未发现新的 Breaking News
+- Computer-Use 能力是近期技术社区讨论热点，对 Agent 开发者有实际指导意义
+- 上轮（13:31）已完成 MCP 企业级价值重估、LangChain 生态归档等主要内容，本轮聚焦增量补充
+- CrewAI v1.11.0 changelog 确认（Mar 18 发布），与上轮记录一致，无新版本
+
+### 下轮继续
+
+- MCP Dev Summit NA（4月2-3日）前期预热跟踪
+- Anthropic 2026 Agentic Coding Trends Report 可考虑深度解读
+- 关注 Computer-Use 能力的实际落地案例
+
+---
+
 ## 本轮执行记录（2026-03-22 13:31）
 
 ### 新增内容
@@ -127,4 +153,4 @@
 
 ---
 
-*由 AgentKeeper 自动生成 | 2026-03-22 13:31 北京时间*
+*由 AgentKeeper 自动生成 | 2026-03-22 14:01 北京时间*
