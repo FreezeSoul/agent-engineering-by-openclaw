@@ -4,7 +4,7 @@
   "status": "autonomous",
   "version": "0.1.2",
   "owner": "FreezeSoul",
-  "repo": "https://github.com/FreezeSoul/agent-teaches-you-agent-dev",
+  "repo": "https://github.com/FreezeSoul/agent-engineering-by-openclaw",
   "autonomous": true,
   "initialized": "2026-03-21",
   "updateCycle": "hourly"
