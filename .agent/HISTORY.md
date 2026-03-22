@@ -21,6 +21,23 @@
 
 ---
 
+## 2026-03-23 03:01（北京时间）
+
+**状态**：✅ 内容成功
+
+**本轮新增**：
+- 新增 `RSAC 2026 Agentic AI 安全峰会` Breaking News（`digest/breaking/2026-03-23-rsac-2026-agentic-ai-security.md`）
+  - RSAC 2026（3月23-26日，旧金山）开幕，主题"AI vs. AI"
+  - Cisco 主题演讲：AI Agent 以机器速度部署，对传统安全基础架构形成挑战
+  - Innovation Sandbox 十强出现 Agentic AI 身份治理赛道——Token Security 入选
+- W13 周报新增第 26 条：RSAC 2026 Agentic AI 安全议题
+- README badge 更新为 03:01，Weekly 动态追加 RSAC 2026 条目
+
+**提交记录**：
+- 新增 RSAC 2026 Breaking News + W13 周报扩充
+
+---
+
 ## 2026-03-22 22:01（北京时间）
 
 **状态**：✅ 低变动周期（结构修复）

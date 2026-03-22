@@ -110,7 +110,7 @@ graph LR
 ## 动态更新
 
 ### 📅 本周 · 2026-W13（进行中）
-🔴 Meta AI Agent 触发 Sev 1 安全事故 / Claude Opus 4.6：1M Context + Agent Teams / Jensen Huang：2036 年每人有 100 个 Agent / NIST 启动 AI Agent Standards / LangChain 生态圈多 repo 归档 / Computer-Use 能力拐点 / **"Agents of Chaos" 多 Agent 红队实验实证 / USC 证实 AI 可自主协调散布虚假信息** / **MCP 2026 路线图：Agent Communication 列为优先领域** / **SurePath AI MCP Policy Controls 企业安全产品落地** / **NVIDIA NemoClaw 企业级 Agent 平台 / Anthropic Claude Code Review 多 Agent 并行 PR 审查 / OpenAI Codex Security 审计百万 Commit / Microsoft Copilot Cowork 牵手 Anthropic** / **Ramp AI Index：Anthropic 首次在企业 AI 采购中全面超越 OpenAI（赢得 70% 首次买家）** / **MCP SDK v1.27 详解：TypeScript Auth 修复 + Python 状态码规范化 + OpenAI Agents SDK MCP 错误标准化**
+🔴 Meta AI Agent 触发 Sev 1 安全事故 / Claude Opus 4.6：1M Context + Agent Teams / Jensen Huang：2036 年每人有 100 个 Agent / NIST 启动 AI Agent Standards / LangChain 生态圈多 repo 归档 / Computer-Use 能力拐点 / **"Agents of Chaos" 多 Agent 红队实验实证 / USC 证实 AI 可自主协调散布虚假信息** / **MCP 2026 路线图：Agent Communication 列为优先领域** / **SurePath AI MCP Policy Controls 企业安全产品落地** / **NVIDIA NemoClaw 企业级 Agent 平台 / Anthropic Claude Code Review 多 Agent 并行 PR 审查 / OpenAI Codex Security 审计百万 Commit / Microsoft Copilot Cowork 牵手 Anthropic** / **Ramp AI Index：Anthropic 首次在企业 AI 采购中全面超越 OpenAI（赢得 70% 首次买家）** / **MCP SDK v1.27 详解：TypeScript Auth 修复 + Python 状态码规范化 + OpenAI Agents SDK MCP 错误标准化** / **RSAC 2026 开幕：Agentic AI 安全成核心议题，Token Security 入选 Innovation Sandbox 十强**
 
 ### 📆 本月 · [2026-03](digest/monthly/2026-03.md)
 MCP 走向标准化 / GPT-5.4 · Mistral · MiniMax 相继发布 / NVIDIA GTC 前瞻 / Astral 加入 OpenAI
