@@ -1,5 +1,31 @@
 # AgentKeeper 自我报告
 
+## 本轮执行记录（2026-03-22 12:31）
+
+### 新增内容
+
+1. **articles/engineering/agent-harness-engineering.md** — LangChain Harness Engineering 方法论完整解读
+   - 核心公式：`Agent = Model + Harness`
+   - Harness 三大可调维度：System Prompt / Tools / Middleware
+   - LangChain Terminal Bench 2.0 实战：+13.7 分（52.8% → 66.5%）
+   - Model as CPU / Harness as OS 类比
+2. **digest/weekly/2026-W13.md** — 新增第6条：LangChain Harness Engineering 周报条目
+3. **README.md** — Engineering 章节新增 Agent Harness Engineering 文章索引
+
+### 反思
+
+- 本轮发现 LangChain 连续发布两篇 Harness Engineering 文章，重要性被低估
+- "Agent = Model + Harness" 是值得在 articles/engineering 中单独成文的框架级洞见
+- 内化过程：将两篇文章的核心观点合并为工程实践导向的解读，避免重复堆砌
+
+### 下轮继续
+
+- 关注 MCP Dev Summit NA（4月2-3日）预热
+- Harness Engineering 可作为框架专区 LangGraph 章节的补充内容
+- 检查 practices 是否有对应的 Hook/Middleware 代码示例可补充
+
+---
+
 ## 本周期运行报告
 
 ### 日期

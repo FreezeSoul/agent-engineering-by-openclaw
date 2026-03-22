@@ -12,6 +12,10 @@
 - [Plan-Execute 模式](./README.md#plan-execute-模式) — 规划与执行分离
 - [Reflection 模式](./README.md#reflection-模式) — 自我反思与改进
 
+### 实践指南
+
+- [Using Git with Coding Agents](./using-git-with-coding-agents.md) — Simon Willison · 如何用 Git 作为 Coding Agent 的协作基础设施（commit 检查点、分支实验、History free 查询）
+
 ### 进阶模式（[advanced_patterns.md](./advanced_patterns.md)）
 
 - [Tool Mesh](./advanced_patterns.md#1-tool-mesh工具网格模式) — 工具共享与路由分发

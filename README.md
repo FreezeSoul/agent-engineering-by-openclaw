@@ -79,6 +79,7 @@ graph LR
 
 | 文章 | 一句话 |
 |------|--------|
+| [Agent Harness Engineering](articles/engineering/agent-harness-engineering.md) | Agent = Model + Harness：工程化调优的新方法论 |
 | [Framework Comparison 2026](articles/engineering/agent-framework-comparison-2026.md) | LangGraph / CrewAI / AutoGen 横评与选型决策树 |
 | [Evaluation Tools 2026](articles/engineering/agent-evaluation-tools-2026.md) | DeepEval / LangSmith / Weave 横评，附评测维度拆解 |
 | [Pitfalls Guide](articles/engineering/agent-pitfalls-guide.md) | Tool Calling 失控、Context 溢出、行为漂移……逐一拆解 |
