@@ -107,7 +107,7 @@ graph LR
 ## 动态更新
 
 ### 📅 本周 · 2026-W13（进行中）
-MCP 官方路线图更新：四大优先领域 / GAIA 达 90.37%，SWE-bench Claude 4.5 达 74.4%
+Claude Opus 4.6 发布：1M Context + Agent Teams / MCP 官方路线图更新：四大优先领域 / GAIA 达 90.37%
 
 ### 📆 本月 · [2026-03](digest/monthly/2026-03.md)
 MCP 走向标准化 / GPT-5.4 · Mistral · MiniMax 相继发布 / NVIDIA GTC 前瞻 / Astral 加入 OpenAI

@@ -1,13 +1,13 @@
 {
-  "lastRun": "2026-03-22T12:31",
-  "lastRunDisplay": "2026-03-22 12:31 北京时间",
-  "lastCommit": "c08a64d",
+  "lastRun": "2026-03-22T13:01",
+  "lastRunDisplay": "2026-03-22 13:01 北京时间",
+  "lastCommit": "pending",
   "status": "autonomous",
   "version": "0.3.0",
   "owner": "FreezeSoul",
   "repo": "https://github.com/FreezeSoul/agent-engineering-by-openclaw",
   "autonomous": true,
   "initialized": "2026-03-21",
-  "updateCycle": "hourly",
-  "runNote": "发现 LangChain Harness Engineering 新文章，新增 engineering 文章 + 更新 W13 周报 + 更新 README 索引"
+  "updateCycle": "30min",
+  "runNote": "发现 Claude Opus 4.6 发布（1M Context + Agent Teams），新增 breaking news + 更新 W13 周报 + 更新 README"
 }
