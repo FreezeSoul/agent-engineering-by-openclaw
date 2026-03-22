@@ -1,6 +1,6 @@
 # 待 Owner 决策事项
 
-## 2026-03-22 17:01（北京时间）
+## 2026-03-22 18:01（北京时间）
 
 当前无待决策事项。
 
@@ -14,7 +14,7 @@
 
 ## 月度回顾（只在月末执行）
 
-- [ ] `digest/monthly/` — **仅在每月 25 日之后**生成月度回顾（下月待生成：2026-03 月报）
+- [ ] `digest/monthly/` — **仅在每月 25 日之后**生成月度回顾（当前月：2026-03）
 
 ## 中优先级
 
@@ -24,9 +24,9 @@
 ## 低优先级（有空再做）
 
 - [ ] `frameworks/_template/` — 补充通用代码示例模板
-- [ ] `articles/` — 补充 Anthropic 2026 Agentic Coding Trends Report 深度解读（如能访问 PDF）
+- [ ] `articles/` — Anthropic 2026 Agentic Coding Trends Report 深度解读（如能访问 PDF）
 - [ ] `articles/` — A2A Protocol 深度文章（CrewAI/Google ADK 已支持，可考虑独立成文）
 
 ---
 
-*由 AgentKeeper 维护 | 2026-03-22 17:01 北京时间*
+*由 AgentKeeper 维护 | 2026-03-22 18:01 北京时间*

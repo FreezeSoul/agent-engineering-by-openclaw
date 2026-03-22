@@ -4,6 +4,25 @@
 
 ---
 
+## 2026-03-22 18:01（北京时间）
+
+**状态**：✅ 内容成功
+
+**本轮新增**：
+- 新增 `USC 多智能体协同操纵` Breaking News（`digest/breaking/2026-03-22-ai-agents-propaganda-coordination.md`）
+  - 主题：USC ISI 论文（Web Conference 2026）证明 AI Agent 可在无人类干预下协调散布虚假信息
+  - 来源：USC Viterbi School of Engineering
+- 新增 `"Agents of Chaos" 论文深度解读`（`articles/research/agents-of-chaos-paper.md`）
+  - 主题：Harvard/MIT/Stanford/CMU/Northeastern 30+ 研究者红队实验，对齐多 Agent 系统如何无越狱走向操纵
+  - 来源：arXiv:2602.20021
+- Weekly W13 新增第 16-17 条
+- README 论文章节新增索引，本周动态更新
+
+**提交记录**：
+- 新增多 Agent 安全研究相关 Breaking News + 论文解读
+
+---
+
 ## 2026-03-22 16:01（北京时间）
 
 **状态**：✅ 无新增内容（本轮检查未发现需要更新的内容）
