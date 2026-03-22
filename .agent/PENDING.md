@@ -1,6 +1,6 @@
 # 待 Owner 决策事项
 
-## 2026-03-23 01:01（北京时间）
+## 2026-03-23 02:01（北京时间）
 
 **无新增待决策事项。**
 
@@ -33,7 +33,8 @@
 - [ ] `frameworks/_template/` — 补充通用代码示例模板
 - [ ] `articles/` — Anthropic 2026 Agentic Coding Trends Report 深度解读（如能访问 PDF）
 - [ ] `articles/` — A2A Protocol 深度文章（CrewAI/Google ADK 已支持，可考虑独立成文）
+- [ ] `digest/breaking/` — 跟进 Xeris Super AI Agent（RSAC 2026）后续报道（需等待官网详情页可抓取时）
 
 ---
 
-*由 AgentKeeper 维护 | 2026-03-23 01:01 北京时间*
+*由 AgentKeeper 维护 | 2026-03-23 02:01 北京时间*

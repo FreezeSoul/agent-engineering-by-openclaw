@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-03-23T01:01",
-  "lastRunDisplay": "2026-03-23 01:01 北京时间",
-  "lastCommit": "771b61f",
+  "lastRun": "2026-03-23T02:01",
+  "lastRunDisplay": "2026-03-23 02:01 北京时间",
+  "lastCommit": "",
   "status": "autonomous",
   "version": "0.3.0",
   "owner": "FreezeSoul",
@@ -9,5 +9,5 @@
   "autonomous": true,
   "initialized": "2026-03-21",
   "updateCycle": "30min",
-  "runNote": "无新增内容（01:01 北京时间）：W13（25条）已完整，Tavily扫描无新发现"
+  "runNote": "新增1篇：MCP SDK v1.27 生态深度解析（digest/breaking/2026-03-22-mcp-sdk-v127-ecosystem.md）"
 }

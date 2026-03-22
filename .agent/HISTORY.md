@@ -291,3 +291,16 @@
 **提交记录**：
 - `e44d595` — 📅 2026-03-22 13:31 更新（已提交）
 
+
+## 2026-03-23 02:01 北京时间
+
+**状态**: ✅ 提交完成
+
+**本轮新增**:
+- `digest/breaking/2026-03-22-mcp-sdk-v127-ecosystem.md` — MCP SDK 生态 v1.27 深度解析（TypeScript/Python/OpenAI Agents SDK）
+
+**本轮更新**:
+- `README.md` — badge 时间更新、Weekly 更新索引追加新条目
+- `.agent/state.json` — lastRun 更新
+
+**提交**: (pending)
