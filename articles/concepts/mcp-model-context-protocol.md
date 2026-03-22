@@ -166,42 +166,60 @@ graph LR
 
 ---
 
-## 六、MCP 2026 路线图
+## 六、MCP 2026 官方路线图（2026-03-05 更新）
 
-### Agent-to-Agent 通信
+> MCP 官方路线图由 Linux 基金会 Agentic AI Foundation 管理，2026 年聚焦四大战略方向。
 
-当前 MCP 是 **Host → Tool** 的星形架构。未来将演进为：
+### 四大优先领域
 
 ```mermaid
-graph TB
-    A1[Agent A] <-->|"MCP Protocol"| M1[MCP Server]
-    A2[Agent B] <-->|"MCP Protocol"| M1
-    A3[Agent C] <-->|"MCP Protocol"| M1
-    M1 <-->|"协商/委托"| M2[MCP Server B]
-
-    style M1 fill:#f96,color:#000
-    style M2 fill:#f96,color:#000
+graph LR
+    subgraph "MCP 2026 四大优先领域"
+        T["1. Transport Evolution<br/>传输层演进"]
+        A["2. Agent Communication<br/>Agent 通信"]
+        G["3. Governance Maturation<br/>治理成熟化"]
+        E["4. Enterprise Readiness<br/>企业就绪"]
+    end
 ```
 
-**核心变化**：
-- MCP Server 之间可以协商任务
-- 不再需要中央编排者
-- 分布式 Agent 协作成为可能
+#### 1. Transport Evolution and Scalability（传输层演进）
 
-### WebMCP
+**现状**：Streamable HTTP 提供了生产级传输能力，但在水平扩展、无状态运行、中间件模式上存在差距。
 
-W3C 正在推进 **WebMCP** 标准，让网站直接暴露工具给 AI 浏览器：
+**目标**：
+- 下一代传输协议：在多个服务器实例间无状态运行，正确处理负载均衡和代理
+- 可扩展会话处理：定义会话的创建、恢复和迁移机制，使服务器重启和扩展事件对连接客户端透明
+- **MCP Server Cards**：通过 `.well-known` URL 暴露结构化服务器元数据的标准，使浏览器、爬虫和注册中心无需连接即可发现服务器能力
 
-```javascript
-// WebMCP 示例
-window.mcp.expose({
-  name: "search_products",
-  description: "搜索商品",
-  execute: async (params) => {
-    return await productDB.search(params.query);
-  }
-});
-```
+> 重点：不引入额外官方传输协议，保持生态系统兼容性
+
+#### 2. Agent Communication（Agent 间通信）
+
+**现状**：Tasks 原语（SEP-1686）提供了可靠的"立即调用/延迟获取"模式，但生产运行暴露了生命周期语义的差距。
+
+**目标**：
+- **重试语义**：任务临时失败时如何处理，由谁决定是否重试
+- **过期策略**：结果完成后保留多长时间，客户端如何获知结果已过期
+
+Tasks 在生产中运行规模越大，这个列表会越长。
+
+#### 3. Governance Maturation（治理成熟化）
+
+**现状**：MCP 已在 Linux 基金会下成为多公司开源标准，但社区需要清晰的领导力路径。
+
+**目标**：
+- **贡献者阶梯（Contributor Ladder）**：从社区参与者 → WG 贡献者 → WG 促进者 → 主导维护者 → 核心维护者的清晰晋升路径
+- **委托模型**：允许有成熟记录的 WGs 在其领域内接受 SEP 并发布扩展更新，无需完整核心维护者评审
+- **宪章模板**：每个 WG/IG 维护公开宪章：范围、交付成果、成功标准、退出条件，每季度审查
+
+#### 4. Enterprise Readiness（企业就绪）
+
+**现状**：企业正在大规模部署 MCP，但协议本身存在未解决的空白。
+
+**目标**：
+- **审计追踪和可观测性**：端到端可见客户端请求和服务器响应的形式，可接入企业现有日志和合规管道
+- **企业托管认证**：从静态客户端密钥走向 SSO 集成流程的明确路径（Cross-App Access）
+- **网关和代理模式**：明确定义客户端通过网关/代理连接时的行为
 
 ---
 
@@ -214,7 +232,15 @@ window.mcp.expose({
 
 ---
 
-## 八、快速上手
+## 八、MCP Dev Summit 2026
+
+**MCP Dev Summit North America** 将于 **2026 年 4 月 2-3 日** 在纽约举办，由 Linux 基金会 Agentic AI Foundation 主办。
+
+这是 MCP 生态系统最重要的年度聚会，预计会有重大规范更新和生产实践分享。注册已于前期关闭。
+
+---
+
+## 九、快速上手
 
 ### 1. 安装 Claude Desktop MCP
 
@@ -242,13 +268,14 @@ agent = ChatOpenAI(model="gpt-4") | tools
 
 ---
 
-## 九、参考资料
+## 十、参考资料
 
+- [MCP 官方路线图](https://modelcontextprotocol.io/development/roadmap)（2026-03-05 更新）
+- [MCP Dev Summit North America 2026](https://events.linuxfoundation.org/mcp-dev-summit-north-america/)
 - [MCP 2026 Complete Guide](https://sainam.tech/blog/mcp-complete-guide-2026/)
-- [MCP is to AI what LSP is to code editors](https://tolearn.blog/blog/mcp-model-context-protocol-guide)
+- [SitePoint MCP Complete Guide](https://www.sitepoint.com/model-context-protocol-mcp/)
 - [How MCP will supercharge AI automation in 2026](https://hallam.agency/blog/how-mcp-will-supercharge-ai-automation-in-2026/)
-- [MCP (Model Context Protocol): connecting AI to all your tools](https://fenxi.fr/en/blog/mcp-model-context-protocol-connecting-ai-business-tools-2026/)
 
 ---
 
-*最后更新：2026-03-21 | 由 OpenClaw 整理*
+*最后更新：2026-03-22 | 由 OpenClaw 整理*

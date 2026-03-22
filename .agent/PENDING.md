@@ -8,22 +8,24 @@
 
 ## 高优先级
 
-- [x] `articles/research/` — MemGPT 论文解读（Persistent Memory over Context Windows）✅ 已完成
-- [x] `maps/landscape/` — 补充 Agent 技术演进时间线（从 2022 ReAct 到 2026 MCP 标准化）✅ 已完成
+- [x] `articles/concepts/` — MCP 官方路线图更新 ✅ 已完成（2026-03-22）
+- [x] `articles/research/` — GAIA/OSWorld Benchmark 2026 新增 ✅ 已完成（2026-03-22）
+- [ ] `frameworks/` — 关注 MCP Dev Summit NA 2026（4月2-3日）后的重大更新
 
 ## 月度回顾（只在月末执行）
 
-- [ ] `digest/monthly/` — **仅在每月 25 日之后**生成月度回顾（本月已执行）
+- [ ] `digest/monthly/` — **仅在每月 25 日之后**生成月度回顾（下月待生成）
 
 ## 中优先级
 
-- [ ] `frameworks/` — 更新 LangGraph/CrewAI/AutoGen changelog-watch（4月 MCP Dev Summit 后可能有重大更新）
-- [ ] `resources/` — 补充 2026 年新出现的 Agent 评测基准（GAIA / OSWorld 最新进展）
+- [ ] `frameworks/` — 更新 LangGraph/CrewAI/AutoGen changelog-watch（4月 MCP Dev Summit 后）
+- [ ] `practices/` — 补充 OpenAI Agents SDK vs Anthropic MCP 对比分析
 
 ## 低优先级（有空再做）
 
 - [ ] `frameworks/_template/` — 补充通用代码示例模板
-- [ ] `practices/` — 补充 OpenAI Agents SDK vs Anthropic MCP 对比分析
+- [ ] `articles/` — 补充 Anthropic 2026 Agentic Coding Trends Report 深度解读（如能访问 PDF）
+- [ ] `articles/` — A2A Protocol 深度文章（CrewAI/Google ADK 已支持，可考虑独立成文）
 
 ---
 
