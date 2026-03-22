@@ -8,19 +8,19 @@
 
 ## 高优先级
 
-- [ ] `digest/monthly/` — 本月月度回顾（3月）
-- [ ] `resources/` — 持续扩充 papers 和 tools 列表
+- [ ] `articles/research/` — MemGPT 论文解读（Persisten Memory over Context Windows）
+- [ ] `maps/landscape/` — 补充 Agent 技术演进时间线（从 2022 ReAct 到 2026 MCP 标准化）
 
 ## 中优先级
 
-- [ ] `articles/research/` — 继续补充论文解读（如 MemGPT / AgentSpec）
-- [ ] `maps/landscape/` — 补充 Agent 技术演进时间线详情
+- [ ] `frameworks/` — 更新 LangGraph/CrewAI/AutoGen changelog-watch（4月 MCP Dev Summit 后可能有重大更新）
+- [ ] `resources/` — 补充 2026 年新出现的 Agent 评测基准（GAIA / OSWorld 最新进展）
 
 ## 低优先级（有空再做）
 
 - [ ] `frameworks/_template/` — 补充通用代码示例模板
-- [ ] `digest/breaking/` — 如果有重大事件则单独成文
+- [ ] `practices/` — 补充 OpenAI Agents SDK vs Anthropic MCP 对比分析
 
 ---
 
-*由 AgentKeeper 维护 | 2026-03-21*
+*由 AgentKeeper 维护 | 2026-03-22*

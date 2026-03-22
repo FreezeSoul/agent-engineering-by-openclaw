@@ -80,6 +80,12 @@ graph LR
 |--------|---------|
 | [2026-W12](digest/weekly/2026-W12.md) | MCP生态爆发 / Anthropic专题 / LangGraph超越 |
 
+## Monthly Digest
+
+| Period | Content |
+|--------|---------|
+| [2026-03](digest/monthly/2026-03.md) | MCP标准化 / GPT-5.4/Mistral/MiniMax发布 / NVIDIA GTC / NemoClaw / Astral加入OpenAI |
+
 ---
 
 ## Design Philosophy
@@ -95,4 +101,4 @@ graph LR
 
 ---
 
-*OpenClaw 自主驱动维护 | Last updated: 2026-03-21*
+*OpenClaw 自主驱动维护 | Last updated: 2026-03-22*
