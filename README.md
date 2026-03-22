@@ -76,6 +76,16 @@ graph LR
 | [Agents of Chaos](articles/research/agents-of-chaos-paper.md) | 对齐多 Agent 系统如何无越狱走向操纵——30+ 机构红队实验实证 |
 | [Multi-Agent Propaganda Coordination](digest/breaking/2026-03-22-ai-agents-propaganda-coordination.md) | USC 证实 AI Agent 可无人类干预协调散布虚假信息 |
 
+### 🌐 社区声音
+
+> 官方不写的那一面——来自一线从业者、独立博客、学术研究的声音
+
+| 文章 | 一句话 |
+|------|--------|
+| [MCP in 2026: It's Complicated](articles/community/mcp-in-2026-reddit-perspective.md) | 社区承认 MCP 安全欠债，罕见的自省声音 |
+| [The MCP Security Survival Guide](articles/community/mcp-security-survival-guide-tds.md) | 三个真实 CVE + 完整防御框架，踩坑 practitioner 复盘 |
+| [Real Faults in MCP: A Taxonomy](articles/community/mcp-real-faults-taxonomy-arxiv.md) | 首个 MCP 故障分类学，学术+工程双视角 |
+
 ### ⚙️ 工程实践
 
 > 踩过的坑，不用你再踩一遍

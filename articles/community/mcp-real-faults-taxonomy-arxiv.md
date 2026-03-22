@@ -1,0 +1,42 @@
+# Real Faults in Model Context Protocol (MCP) Software: A Comprehensive Taxonomy
+
+> 来源：arXiv（同行评审论文）
+> 评分：4/5（实践 4 / 独特 4 / 质量 5）
+
+## 研究概述
+
+首个大规模 MCP Server 故障分类学研究，通过实证分析 + practitioner 调研构建。
+
+## 五类故障分类（高层级）
+
+| 类别 | 说明 |
+|------|------|
+| 可靠性故障 | MCP Server 响应不稳定、超时、连接失败 |
+| 安全故障 | 未授权访问、prompt injection、数据泄露 |
+| 协议故障 | 协议实现偏离规范、服务间通信失败 |
+| 状态管理故障 | 上下文丢失、session 混乱、记忆溢出 |
+| 集成故障 | 与外部工具/API 的不兼容问题 |
+
+## 核心发现
+
+1. **MCP 特异性**：MCP 相关故障与非 MCP 故障有显著差异——传统测试方法不够用
+2. **最脆弱组件**：MCP Server 是最高故障率组件
+3. **实证基础**：含 practitioner 调研验证，分类学有实际支撑
+
+## 对工程实践的意义
+
+- **选型参考**：了解 MCP 的已知故障模式，有助于架构决策
+- **测试策略**：需要针对 MCP 特异性设计测试用例
+- **监控重点**：MCP Server 的可靠性和安全是核心关注点
+
+## 一句话总结
+
+> 首个 MCP 故障分类学——把「MCP 什么地方会坏」系统化了，学术与工程都有价值。
+
+## 原文
+
+https://arxiv.org/html/2603.05637v1
+
+## 标签
+
+#community #MCP #research #fault-analysis #taxonomy
