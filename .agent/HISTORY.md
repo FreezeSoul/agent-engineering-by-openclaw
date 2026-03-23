@@ -444,3 +444,24 @@
 
 **提交记录**：
 - `feat(articles/community): 新增3篇社区文章`
+
+## 2026-03-23 09:49 北京时间
+
+**状态**：✅ 成功
+
+**触发**：FSIO diginfo.me 博客文章作为关键字搜索社区内容
+
+**本轮新增**：
+- `articles/community/` 新增 3 篇（基于 FSIO 博客关键字）
+  - harness-engineering-martin-fowler.md - MF 评注 OpenAI Harness
+  - 7-agentic-design-patterns-mlmastery.md - 七大 Agent 设计模式
+  - top-claude-code-skills-composio.md - Top 10 Claude Code Skills
+
+**关键字来源**（FSIO 博客）：
+- Harness Engineering（03-12）
+- 智能体设计思考系列（03-03 到 03-09）
+- Claude Code 关键技术（11-12）
+- 智能体经典范式（04-15）
+
+**提交记录**：
+- `feat(articles/community): 新增3篇社区文章（FSIO博客关键字触发）`
