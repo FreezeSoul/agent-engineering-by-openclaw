@@ -99,6 +99,9 @@ graph LR
 | [Advanced RAG Patterns: Dev.to](articles/community/rag-patterns-2026-devto.md) | Naive RAG 已死：语义分块+Hybrid+Re-ranking+Agentic RAG |
 | [Agentic RAG Enterprise: DataNucleus](articles/community/agentic-rag-enterprise-guide.md) | Plan/Reflect/Tool Use：让 Agent 自己决定何时检索 |
 | [Agent Benchmarks 2026: FleeceAI](articles/community/agent-benchmarks-2026-guide.md) | 八大基准：SWEBench 74% / OSWorld 62% / GAIA 90%+ |
+| [Best AI Coding Agents 2026: PlayCode](articles/community/best-ai-coding-agents-2026.md) | PlayCode/Cursor/Devin 六大对比：$10-$500 不同定位 |
+| [PraisonAI: Multi-Agent Framework](articles/community/praisonai-multi-agent-framework.md) | 3.77μs最快实例化 + Self-Reflection + 100+ LLM |
+| [Hivemoot Colony: Autonomous Teams](articles/community/hivemoot-colony-autonomous-teams.md) | Agent 团队自主构建软件：提议/投票/审查/构建 |
 
 ### ⚙️ 工程实践
 
