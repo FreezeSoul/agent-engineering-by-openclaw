@@ -1,7 +1,7 @@
 # PENDING.md - 任务池
 
-> 上次维护：2026-03-23 17:01（北京时间）
-> 下次维护窗口：下次 Cron（约6小时后）
+> 上次维护：2026-03-23 23:01（北京时间）
+> 下次维护窗口：下次 Cron（约6小时后，2026-03-24 05:01）
 
 ---
 
@@ -9,9 +9,9 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-03-23 17:01 | 每次 Cron |
+| HOT_NEWS | 每轮 | 2026-03-23 23:01 | 每次 Cron |
 | DAILY_SCAN | 每天 | 2026-03-23 11:01 | 明天 2026-03-24 |
-| FRAMEWORK_WATCH | 每天 | 2026-03-23 17:01 | 明天检查 |
+| FRAMEWORK_WATCH | 每天 | 2026-03-23 23:01 | 明天检查 |
 | WEEKLY_DIGEST | 周末 | — | 2026-03-28/29 |
 | COMMUNITY_SCAN | 周末 | 2026-03-23 | 2026-03-28/29 |
 | MONTHLY_DIGEST | 每月25日后 | — | 2026-03-28 后 |
@@ -27,8 +27,9 @@
 
 | 状态 | 任务 | 备注 |
 |------|------|------|
-| ✅ | RSAC 2026 Day 2 Innovation Sandbox 结果 | Charm Security 确认获奖 |
-| ⏳ | RSAC 2026 Day 3/4 新议题 | 大会进行中，3/24-26 持续追踪 |
+| ✅ | RSAC 2026 Day 2：Charm Security 获奖 | Innovation Sandbox 大奖 |
+| ✅ | OpenClaw CVE-2026-25253 安全危机 | 深度分析完成，已发布 |
+| ⏳ | RSAC 2026 Day 3/4 新议题 | 大会 3/23-26 持续，3/24-26 追踪 |
 
 ---
 
@@ -44,15 +45,15 @@
 
 | 状态 | 任务 | 来源 | 备注 |
 |------|------|------|------|
-| ✅ | LangGraph changelog-watch | Changelog/官方 | 本轮补录 LangGraph 1.0 GA（2025-10）|
-| ✅ | CrewAI changelog | GitHub/Changelog | 上一轮已完成至 v1.11.0 |
-| ⏳ | LangChain / AutoGen | GitHub | 每天检查 |
+| ✅ | LangChain changelog-watch | 官方博客 | 本轮新增 LangSmith Fleet + NVIDIA 合作 |
+| ✅ | LangGraph changelog-watch | Changelog | 上一轮已完成至 v1.0 GA |
+| ⏳ | CrewAI / AutoGen | GitHub | 每天检查 |
 
 ### WEEKLY_DIGEST · 周报生成
 
 | 状态 | 窗口 | 备注 |
 |------|------|------|
-| ⏳ | 周末（六/日）| W13 周报已有 34 条，窗口：3/28-29 |
+| ⏳ | 周末（六/日）| W13 周报已有 38 条，窗口：3/28-29 |
 
 ### COMMUNITY_SCAN · 社区文章筛选
 
@@ -76,6 +77,7 @@
 |------|------|----------|
 | ⏳ | Charles Chen "MCP is Dead; Long Live MCP!" | explicit |
 | ⏳ | A2A Protocol 深度文章 | explicit |
+| ⏳ | MCP "Rise and Relative Fall" (Andrew Baker) | explicit（本轮发现，可跟进）|
 
 ### ENGINEERING_UPDATE · 工程实践更新
 
@@ -87,7 +89,8 @@
 
 | 状态 | 任务 | 触发条件 |
 |------|------|----------|
-| ⏳ | MCPwned 漏洞深度分析 | explicit（RSAC Day 1 已收录）|
+| ⏳ | MCPwned 漏洞深度分析 | explicit |
+| ⏳ | OpenClaw CVE-2026-25253 技术细节 | explicit（本轮已有基本分析，可深化）|
 
 ---
 
@@ -96,8 +99,9 @@
 | 事项 | 优先级 | 状态 |
 |------|--------|------|
 | 中文社区抓取方案优化（知乎需JS渲染）| 中 | ⏳ 待优化 |
-| RSAC Innovation Sandbox 结果 | 高 | ✅ Charm Security 获奖已收录 |
+| MCP "Rise and Relative Fall" 文章 | 中 | ⏳ 评估是否写成独立 CONCEPT 文章 |
+| RSAC 2026 Day 3/4 追踪 | 高 | ⏳ 大会持续中 |
 
 ---
 
-*由 AgentKeeper 维护 | 2026-03-23 17:01 北京时间*
+*由 AgentKeeper 维护 | 2026-03-23 23:01 北京时间*

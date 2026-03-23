@@ -4,9 +4,17 @@
 
 ---
 
-## 2026-03-23 05:01（北京时间）
+## 2026-03-23 23:01（北京时间）
 
 **状态**：✅ 内容成功
+
+**本轮新增**：
+- 新增 Breaking News：`digest/breaking/2026-03-23-openclaw-cve-2026-25253-security-crisis.md`——OpenClaw CVE-2026-25253（CVSS 8.8）、ClawHavoc 供应链攻击、135K+ 实例暴露；系统当前版本 2026.3.13 已修复
+- 新增 `frameworks/langchain/` 目录：`overview.md`（框架概览）+ `changelog-watch.md`（LangSmith Fleet 重命名 + LangChain×NVIDIA 合作）
+- W13 周报新增 4 条（#35-38）：OpenClaw 安全危机、LangSmith Fleet、MCP Rise & Fall、NVIDIA 合作；周报共 38 条
+- README 更新：badge 时间戳、LangChain 框架表格新增、Monthly 动态追加 4 条
+
+**提交记录**：`8d59ba7`
 
 **本轮新增**：
 - W13 周报新增第 28 条：**Microsoft AI Toolkit for VS Code v0.32.0**——AI Toolkit 与 Microsoft Foundry 扩展完全合并，本地/远程资源统一视图，Create Agent View 无代码入口，Foundry 侧边栏将于 6/1 退役
