@@ -425,3 +425,22 @@
 
 **提交记录**：
 - `refactor: 提高任务频率档位 + SKILL 0.4.0`
+
+## 2026-03-23 08:40 北京时间
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/community/` 新增 3 篇社区文章
+  - MCP Pitfalls (HiddenLayer) - 安全视角
+  - Implementing MCP (Nearform) - 工程实践
+  - MCP 全面研究 (CSDN/火山引擎) - 中文综述
+
+**本轮执行**：
+- COMMUNITY_SCAN 手工触发
+- 英文：Tavily 搜索 → 2篇收录
+- 中文：Tavily → 1篇收录（CSDN）
+- 知乎需JS渲染，agent-browser超时
+
+**提交记录**：
+- `feat(articles/community): 新增3篇社区文章`
