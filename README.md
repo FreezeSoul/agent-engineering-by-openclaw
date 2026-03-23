@@ -91,6 +91,10 @@ graph LR
 | [Harness Engineering: Martin Fowler](articles/community/harness-engineering-martin-fowler.md) | MF 评注 OpenAI：工具+规则+定期清理的三层约束 |
 | [7 Agentic Patterns: ML Mastery](articles/community/7-agentic-design-patterns-mlmastery.md) | ReAct 保透明、Reflection 提质量、Planning 破复杂 |
 | [Top 10 Claude Code Skills: Composio](articles/community/top-claude-code-skills-composio.md) | 沙箱安全、Composio 集成、Superpower 结构化开发 |
+| [A2A Protocol: HTTP for AI Agents](articles/community/a2a-protocol-http-for-ai-agents.md) | Linux Foundation 背书，50+ 伙伴的多 Agent 互操作协议 |
+| [NVIDIA Sandbox Security Guide](articles/community/nvidia-sandbox-security-guide.md) | Red Team 实录：OS 层沙箱 + 三大强制控制 |
+| [Context Window Overflow: Redis](articles/community/context-window-overflow-redis.md) | 五大生产策略：智能分块、语义缓存、历史管理 |
+| [Multi-Agent Orchestration: Deloitte](articles/community/multi-agent-orchestration-deloitte.md) | 2028 33% 企业 Agent 化：协议收敛 + Guardian Agent |
 
 ### ⚙️ 工程实践
 
