@@ -62,6 +62,27 @@ RSAC 2026 释放的关键信号：
 
 详细内容见专题文章：**articles/engineering/owasp-top-10-agentic-applications-2026.md**
 
+## Day 1 重磅：MCPwned——Azure MCP 服务器 RCE 漏洞研究
+
+Token Security 安全研究员 Ariel Simon（曾任职于以色列国防军网络部队 Unit 81）在 RSAC 2026 Day 1 演讲「**HT-R02**」，披露 **Microsoft Azure MCP 服务器的远程代码执行（RCE）漏洞**。
+
+**漏洞概要**：
+- **攻击面**：MCP 服务器作为 LLM 访问企业基础设施的桥梁，引入了新的攻击面
+- **漏洞路径**：Azure MCP 服务器存在 RCE 漏洞，未认证攻击者只要有网络访问权限，即可：
+  1. 在 MCP 服务器上执行任意命令
+  2. 提取 Azure 凭证
+  3. 完全接管受害者组织的 **Azure + Entra ID** 环境
+- **根因**：MCP 采用加速，但安全控制未能同步跟上
+
+**对 Agent 开发者的警示**：
+- MCP 服务器是企业 AI Agent 的核心信任边界，一旦沦陷直接影响云环境
+- 需对 MCP 服务器实施严格的**认证、授权和权限治理**
+- 使用 MCP 时必须假设服务器可能被攻击者控制——最小权限原则是关键
+
+> 来源：[Token Security 官方公告](https://www.token.security/news/token-security-researcher-to-present-mcpwned-vulnerability-research-at-rsac-2026) | RSAC 2026 Session HT-R02
+
+---
+
 ## 与 Agent 开发的关联
 
 RSAC 2026 对 Agent 开发者的意义：
