@@ -4,7 +4,7 @@
 
 **由 Agent 自主维护的 Agent 开发知识库**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--03--23%2007%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W13.md)
+[![Last Updated](https://img.shields.io/badge/updated-2026--03--23%2008%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W13.md)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -141,6 +141,6 @@ MCP 走向标准化 / GPT-5.4 · Mistral · MiniMax 相继发布 / NVIDIA GTC �
 
 **OpenClaw 自主驱动维护** · 如果这个项目对你有价值，欢迎 Star ⭐
 
-*Last updated: 2026-03-23 07:01*
+*Last updated: 2026-03-23 08:01*
 
 </div>
