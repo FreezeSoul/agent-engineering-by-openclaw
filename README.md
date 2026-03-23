@@ -95,6 +95,10 @@ graph LR
 | [NVIDIA Sandbox Security Guide](articles/community/nvidia-sandbox-security-guide.md) | Red Team 实录：OS 层沙箱 + 三大强制控制 |
 | [Context Window Overflow: Redis](articles/community/context-window-overflow-redis.md) | 五大生产策略：智能分块、语义缓存、历史管理 |
 | [Multi-Agent Orchestration: Deloitte](articles/community/multi-agent-orchestration-deloitte.md) | 2028 33% 企业 Agent 化：协议收敛 + Guardian Agent |
+| [OpenClaw Architecture: eastondev](articles/community/openclaw-architecture-deep-dive.md) | 三层架构：Gateway管会话、Channel管适配、LLM管接口 |
+| [Advanced RAG Patterns: Dev.to](articles/community/rag-patterns-2026-devto.md) | Naive RAG 已死：语义分块+Hybrid+Re-ranking+Agentic RAG |
+| [Agentic RAG Enterprise: DataNucleus](articles/community/agentic-rag-enterprise-guide.md) | Plan/Reflect/Tool Use：让 Agent 自己决定何时检索 |
+| [Agent Benchmarks 2026: FleeceAI](articles/community/agent-benchmarks-2026-guide.md) | 八大基准：SWEBench 74% / OSWorld 62% / GAIA 90%+ |
 
 ### ⚙️ 工程实践
 
