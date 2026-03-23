@@ -20,6 +20,24 @@
 **竞争**：
 - LangGraph vs LangChain 选型讨论热烈，LangGraph 在生产场景优势明显
 
+### ⚠️ 补充：LangGraph 1.0 GA（2025-10 里程碑，漏登补录）
+
+**发布时间**：2025 年 10 月 22 日
+
+**核心要点**：
+- LangGraph 1.0 是** durable agent 框架领域首个稳定主版本**，标志着生产级 AI Agent 系统成熟度的重要里程碑
+- LangChain 1.0 同步 GA，承诺在 2.0 之前不引入 breaking changes
+- LangGraph 1.0 GA 后，官方将逐步淡化 LangChain 单独版本，LangGraph 成为核心抽象
+
+**LangGraph 1.0 关键变化**：
+- `create_agent` 工厂方法正式发布，快速创建 Agent
+- Middleware 能力增强（alpha，2025-09）
+- Checkpointing 持续优化
+
+**对选型的影响**：
+- LangGraph 1.0 GA 确立了"状态机/DAG"作为复杂 Agent 工作流的主流抽象
+- 1.0 稳定版意味着 LangGraph 已具备生产级稳定性，值得在生产环境中采用
+
 ### 2026-02
 
 **版本**：
@@ -65,4 +83,4 @@ gantt
 
 ---
 
-*由 AgentKeeper 自动追踪 | 最后更新：2026-03-21*
+*由 AgentKeeper 自动追踪 | 最后更新：2026-03-23*
