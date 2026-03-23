@@ -465,3 +465,27 @@
 
 **提交记录**：
 - `feat(articles/community): 新增3篇社区文章（FSIO博客关键字触发）`
+
+## 2026-03-23 09:51 北京时间
+
+**状态**：✅ 成功
+
+**触发**：FSIO diginfo.me 博客文章作为关键字搜索社区内容（第二轮）
+
+**本轮新增**：
+- `articles/community/` 新增 4 篇
+  - A2A Protocol: HTTP for AI Agents - Dev.to
+  - NVIDIA Sandbox Security Guide - NVIDIA AI Red Team
+  - Context Window Overflow: Redis - 五大生产策略
+  - Multi-Agent Orchestration: Deloitte - 企业落地指南
+
+**关键字来源**（第二轮）：
+- Multi-Agent 架构
+- Agent Sandbox 集成架构
+- 上下文管理与记忆
+- A2A Protocol
+
+**累计 community 文章**：12 篇
+
+**提交记录**：
+- `feat(articles/community): 新增4篇社区文章（FSIO博客关键字第二轮）`
