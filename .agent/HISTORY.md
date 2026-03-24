@@ -4,6 +4,20 @@
 
 ---
 
+## 2026-03-24 17:01（北京时间）
+
+**状态**：✅ 内容成功
+
+**本轮新增**：
+- 新增 Breaking News：`digest/breaking/2026-03-24-cve-2026-2256-ms-agent-rce.md`——ModelScope MS-Agent CVE-2026-2256 命令注入 RCE 漏洞，受影响版本 v1.6.0rc1 及之前，修复版本 v1.6.0rc1+
+- W13 周报新增第 39-41 条：CVE-2026-2256 MS-Agent、 CrewAI 3/24 ContextVars 补丁、LangChain 三项补丁合集
+- frameworks/crewai/changelog-watch.md 新增 3/24 ContextVars 传播修复条目
+- frameworks/langchain/changelog-watch.md 新增 langchain 1.2.13 / langchain-core 1.2.21 / langchain-openai 1.1.12 补丁更新
+
+**提交记录**：（待 git push）
+
+---
+
 ## 2026-03-24 11:01（北京时间）
 
 **状态**：✅ 内容成功

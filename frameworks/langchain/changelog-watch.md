@@ -4,6 +4,24 @@
 
 ---
 
+## 2026-03-24｜补丁更新（langchain 1.2.13 / langchain-core 1.2.21 / langchain-openai 1.1.12）
+
+**版本**：langchain 1.2.13、langchain-core 1.2.21、langchain-openai 1.1.12
+**性质**：🟢 Patch（多项依赖和稳定性修复）
+**来源**：[GitHub Releases](https://github.com/langchain-ai/langchain/releases)
+
+### 变更要点
+
+| 包 | 版本 | 关键变更 |
+|----|------|---------|
+| langchain | 1.2.13 | LangSmith 集成元数据增强（create_agent、init_chat_model）、pytest 输出优化 |
+| langchain-core | 1.2.21 | ModelProfile 字段修复（缺失字段补充 + schema drift 告警）|
+| langchain-openai | 1.1.12 | min core version 修复、支持 phase 参数、streaming function_call namespace 保留、token counting 图像句柄泄漏修复 |
+
+**评估**：均为常规补丁，以稳定性修复和依赖升级为主，无 Breaking Changes
+
+---
+
 ## 2026-03-23｜LangSmith Fleet 发布（Agent Builder 重命名）
 
 **版本**：无版本号（产品重命名）
