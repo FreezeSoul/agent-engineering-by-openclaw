@@ -38,25 +38,57 @@
 
 ```mermaid
 flowchart TB
-    subgraph EVOLUTION["AI Agent 技术演进路径"]
-        direction TB
-        P1["💬 Prompt Engineering<br/>提示工程"]
-        P2["📚 RAG<br/>检索增强生成"]
-        P3["🔌 MCP<br/>协议标准"]
-        P4["🧩 Paradigms<br/>设计模式"]
-        P5["🧠 Memory & Context<br/>记忆与上下文"]
-        P6["🔧 Tool Use<br/>工具调用"]
-        P7["🎬 Orchestration<br/>编排框架"]
-        P8["🔍 Deep Research<br/>深度研究"]
-        P9["🤖 Multi-Agent<br/>多智能体"]
-        P10["🎯 Skill<br/>技能抽象"]
-        P11["🚀 Deep Agent<br/>深度自主 Agent"]
-        P12["⚡ Harness Engineering<br/>工程约束"]
-    end
+    %% ========== 阶段节点 ==========
+    P1["💬 Prompt Engineering"]
+    P2["📚 RAG"]
+    P3["🔌 MCP"]
+    P4["🧩 Paradigms"]
+    P5["🧠 Memory & Context"]
+    P6["🔧 Tool Use"]
+    P7["🎬 Orchestration"]
+    P8["🔍 Deep Research"]
+    P9["🤖 Multi-Agent"]
+    P10["🎯 Skill"]
+    P11["🚀 Deep Agent"]
+    P12["⚡ Harness Engineering"]
+    E["📊 Evaluation<br/>评测基准"]
 
-    P1 --> P2 --> P3 --> P4 --> P5 --> P6 --> P7 --> P8 --> P9 --> P10 --> P11 --> P12
-    P12 -.->|"反馈回路"| P1
+    %% ========== 主演进链（实线）==========
+    P1 --> P2
+    P2 --> P3
+    P3 --> P4
+    P4 --> P5
+    P5 --> P6
+    P6 --> P7
+    P7 --> P8
+    P8 --> P9
+    P9 --> P10
+    P10 --> P11
+    P11 --> P12
 
+    %% ========== 跨阶段依赖（蓝色虚线）==========
+    P6 -.->|"Tool Use → Orchestration"| P7
+    P3 -.->|"MCP → Skill"| P10
+    P4 -.->|"Paradigms → Deep Research"| P8
+    P10 -.->|"Skill → Multi-Agent"| P9
+    P9 -.->|"Multi-Agent → Deep Agent"| P11
+
+    %% ========== 反向压力（红色虚线）==========
+    P11 -. "Deep Agent 实践 → Paradigms 演进" .-> P4
+    P12 -. "Harness 问题 → Tool Use 安全设计" .-> P6
+    P12 -. "Harness 问题 → Skill 接口设计" .-> P10
+
+    %% ========== 评测横切（虚线贯穿）==========
+    E -.->|"评测贯穿所有阶段"| P1
+    E -.-> P4
+    E -.-> P6
+    E -.-> P8
+    E -.-> P11
+
+    %% ========== 反馈回路（点线）==========
+    P12 -. "约束收紧 → Prompt 设计约束" .-> P1
+
+    %% ========== 样式 ==========
     style P1 fill:#fef3c7,color:#92400e
     style P2 fill:#d1fae5,color:#065f46
     style P3 fill:#dbeafe,color:#1e3a5f
@@ -69,8 +101,25 @@ flowchart TB
     style P10 fill:#fed7aa,color:#9a3412
     style P11 fill:#f9a8d4,color:#831843
     style P12 fill:#fef3c7,color:#92400e
-    style EVOLUTION fill:#f8fafc,stroke:#e2e8f0,stroke-width:2px
+    style E fill:#f0f9ff,color:#1e40af,stroke:#60a5fa,stroke-width:2px
+
+    classDef edge_main stroke:#6b7280,stroke-width:2px
+    classDef edge_dep stroke:#3b82f6,stroke-width:1.5px,stroke-dasharray:5 3
+    classDef edge_feedback stroke:#ef4444,stroke-width:1.5px,stroke-dasharray:3 3
+    classDef edge_eval stroke:#8b5cf6,stroke-width:1.5px,stroke-dasharray:4 4
 ```
+
+**图例**：
+
+| 线条类型 | 含义 |
+|---------|------|
+| **实线 →** | 主要演进方向（单向有序） |
+| **蓝色虚线 →** | 跨阶段正向依赖 |
+| **红色虚线 .→** | 反向压力（下游问题倒推上游设计） |
+| **紫色虚线 .→** | 评测基准横切所有阶段 |
+| **点线 .→** | 约束反馈回路 |
+
+**演进并非线性**：下游阶段的问题会反向推动上游的设计演进（红色虚线），这是真实工程中最重要的反馈机制。
 
 ---
 
