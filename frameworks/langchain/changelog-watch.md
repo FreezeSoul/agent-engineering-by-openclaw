@@ -4,6 +4,25 @@
 
 ---
 
+## 2026-03-25｜langchain-core 1.2.22：安全补丁 + flow_structure 序列化器
+
+**版本**：langchain-core 1.2.22
+**性质**：🟢 Patch（安全 + 稳定性）
+**来源**：[GitHub Release](https://github.com/langchain-ai/langchain/releases/tags/langchain-core==1.2.22)
+
+### 变更要点
+
+| 类别 | 变更 |
+|------|------|
+| **安全性** | 通过升级 pypdf、tinytag 修复安全漏洞；防止 FileWriterTool 中的路径遍历 |
+| **Bug 修复** | redis lock_store 崩溃修复（redis 包未安装时）；非 OpenAI 提供商的 HITL resume 保留完整 LLM 配置 |
+| **新功能** | `flow_structure()` 序列化器：Flow 类的内省支持 |
+| **重构** | urllib → requests（pdf loader）；Any 类型 callback/model 字段改为可序列化类型 |
+
+**评估**：安全补丁为主，pypdf/tinytag 升级表明依赖漏洞修复进入常规节奏；flow_structure() 序列化器对调试工具链有积极意义
+
+---
+
 ## 2026-03-24｜补丁更新（langchain 1.2.13 / langchain-core 1.2.21 / langchain-openai 1.1.12）
 
 **版本**：langchain 1.2.13、langchain-core 1.2.21、langchain-openai 1.1.12

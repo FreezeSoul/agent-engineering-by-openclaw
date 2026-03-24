@@ -4,6 +4,22 @@
 
 ---
 
+## 2026-03-25 05:01（北京时间）
+
+**状态**：✅ 内容成功
+
+**本轮新增**：
+- 新增周报 `digest/weekly/2026-W14.md`（5条初始条目）：Geordie AI 夺冠 RSAC 2026 Innovation Sandbox、Cisco DefenseClaw 发布（3/27 GitHub）、SAFE-MCP 获 Linux Foundation + OpenID Foundation 采纳（80+ 攻击技术、MITRE ATT&CK 映射）、RSAC 2026 Agentic AI 安全峰会总结（MCPwned + OWASP ASI Top 10）、Agent Wall 开源 MCP 防火墙
+- 月报 `digest/monthly/2026-03.md` 扩展至 3/25：新增 RSAC 2026（Geordie AI + DefenseClaw）、MCP CVE-per-week 趋势（连续第四周）、SAFE-MCP 采纳、Claude Opus 4.6 + LangChain 生态整理、企业 Agent 密集发布（腾讯 ClawBot、AWS+SailPoint、Microsoft Copilot Cowork、Agentforce 8亿美元 ARR）
+- `frameworks/langchain/changelog-watch.md` 新增 langchain-core 1.2.22 条目：安全补丁（pypdf/tinytag 升级）+ flow_structure() 序列化器
+- `frameworks/crewai/changelog-watch.md` 新增 v1.11.1 条目：补丁更新
+- `resources/tools/README.md` 新增「MC P安全工具」章节：SAFE-MCP / Agent Wall / SurePath / DefenseClaw
+- README.md badge 更新至 W14，weekly 入口从 W13 切换至 W14
+
+**提交记录**：（待 git push）
+
+---
+
 ## 2026-03-24 23:01（北京时间）
 
 **状态**：✅ 内容成功

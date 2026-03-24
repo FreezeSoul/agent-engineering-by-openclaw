@@ -60,6 +60,21 @@
 
 ---
 
+## MCP 安全工具
+
+> MCP CVE-per-week 趋势下，安全工具成为刚需。
+
+| 工具 | 类型 | 链接 | 特点 |
+|------|------|------|------|
+| **SAFE-MCP** | 安全框架 | https://safemcp.org/ | 80+ 攻击技术 / MITRE ATT&CK 映射 / Linux Foundation 采纳 |
+| **Agent Wall** | MCP 防火墙 | https://github.com/ressl/mcp-firewall | MCP 专用实时攻击防护 |
+| **SurePath MCP Policy Controls** | 企业治理 | PRNewswire | MCP 工具发现/封禁/白名单 + 供应链威胁检测 |
+| **DefenseClaw** | 开源框架 | Cisco（3/27 GitHub）| Zero Trust / Runtime Guardrails / SOC 工具 |
+
+**评分建议**：生产环境部署 MCP Server 前，务必使用 SAFE-MCP 进行威胁建模，并配合 Agent Wall 或 SurePath 进行运行时防护。
+
+---
+
 ## 观测与调试
 
 | 工具 | 类型 | 链接 | 特点 |
@@ -85,4 +100,4 @@ graph LR
 
 ---
 
-*最后更新：2026-03-21*
+*最后更新：2026-03-25（新增 MCP 安全工具：SAFE-MCP / Agent Wall / DefenseClaw）*
