@@ -1,7 +1,7 @@
 # PENDING.md - 任务池
 
-> 上次维护：2026-03-24 11:01（北京时间）
-> 下次维护窗口：下次 Cron（约6小时后，2026-03-24 23:01）
+> 上次维护：2026-03-24 17:01（北京时间）
+> 下次维护窗口：下次 Cron（约6小时后，2026-03-25 05:01）
 
 ---
 
@@ -9,9 +9,9 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-03-24 17:01 | 每次 Cron |
-| DAILY_SCAN | 每天 | 2026-03-24 17:01 | 明天 2026-03-25 |
-| FRAMEWORK_WATCH | 每天 | 2026-03-24 17:01 | 明天检查 |
+| HOT_NEWS | 每轮 | 2026-03-24 23:01 | 每次 Cron |
+| DAILY_SCAN | 每天 | 2026-03-24 23:01 | 明天 2026-03-25 |
+| FRAMEWORK_WATCH | 每天 | 2026-03-24 23:01 | 明天检查 |
 | WEEKLY_DIGEST | 周末 | — | 2026-03-28/29（W14） |
 | COMMUNITY_SCAN | 周末 | 2026-03-23 | 2026-03-28/29 |
 | MONTHLY_DIGEST | 每月25日后 | — | 2026-03-28+ |
@@ -29,8 +29,9 @@
 |------|------|------|
 | ✅ | RSAC 2026 Day 1：Geordie AI 夺魁、Cisco DefenseClaw 发布 | 本轮完成 |
 | ✅ | CVE-2026-2256 MS-Agent 命令注入 RCE | 本轮完成 |
-| ⏳ | RSAC 2026 Day 2/3/4 | 大会 3/26 结束，持续追踪 |
-| ⏳ | DefenseClaw 3/27 GitHub 开源 | 高优先级，跟进深度分析 |
+| ✅ | CVE-2026-4198 mcp-server-auto-commit RCE | 本轮新增 |
+| ⏳ | RSAC 2026 Day 2/3/4（大会3/26结束）| 持续追踪 |
+| ⏳ | DefenseClaw 3/27 GitHub 开源 | 高优先级，3/27触发 |
 
 ---
 
@@ -40,19 +41,20 @@
 
 | 状态 | 任务 | 来源 | 备注 |
 |------|------|------|------|
-| ⏳ | 每日 Agent 技术动态 | Tavily 最近24h | 明天执行 |
+| ✅ | 每日 Agent 技术动态 | Tavily 最近24h | 本轮完成（W13 #42-43）|
+| ⏳ | 明天继续 | Tavily | 明天执行 |
 
 ### FRAMEWORK_WATCH · 框架动态追踪
 
 | 状态 | 任务 | 来源 | 备注 |
 |------|------|------|------|
-| ⏳ | LangChain / CrewAI / AutoGen | GitHub releases | 明天检查 |
+| ⏳ | LangChain / CrewAI / AutoGen | GitHub releases | 今天无新版本，明天检查 |
 
 ### WEEKLY_DIGEST · 周报生成
 
 | 状态 | 窗口 | 备注 |
 |------|------|------|
-| ⏳ | 周末（六/日）| W14 周报生成，W13 已有 41 条 |
+| ⏳ | 周末（六/日）| W14 周报生成，W13 共43条 |
 
 ### COMMUNITY_SCAN · 社区文章筛选
 
@@ -74,9 +76,10 @@
 
 | 状态 | 任务 | 触发条件 |
 |------|------|----------|
-| ⏳ | A2A Protocol 深度文章 | explicit（本轮发现多篇相关社区文章）|
+| ⏳ | A2A Protocol 深度文章 | explicit（社区文章积累中）|
 | ⏳ | Charles Chen "MCP is Dead; Long Live MCP!" | explicit |
-| ⏳ | MCP "Rise and Relative Fall" (Andrew Baker) | explicit |
+| ⏳ | Andrew Baker "MCP Rise and Relative Fall" | explicit（已有 W13 #37）|
+| ⏳ | MCP Security 深度文章（CVE-2026-4198 相关）| explicit（可基于 breaking news 扩展）|
 
 ### ENGINEERING_UPDATE · 工程实践更新
 
@@ -87,10 +90,11 @@
 ### BREAKING_INVESTIGATE · breaking 深度调查
 
 | 状态 | 任务 | 触发条件 |
-|------|------|----------|
+|------|------|------|
 | ⏳ | DefenseClaw 技术细节（3/27 开源后）| 3/27 explicit |
 | ⏳ | OpenClaw CVE-2026-25253 技术细节 | explicit |
-| ⏳ | CVE-2026-2256 MS-Agent 深度分析 | explicit（已有 breaking news，可升级为深度文章）|
+| ⏳ | CVE-2026-2256 MS-Agent 深度分析 | explicit（已有 breaking news）|
+| ⏳ | CVE-2026-4198 深度分析（已有 breaking news）| explicit（已有 breaking news）|
 
 ---
 
@@ -98,11 +102,11 @@
 
 | 事项 | 优先级 | 状态 |
 |------|--------|------|
-| RSAC 2026 Day 2+ 追踪方案（securityboulevard 被 block）| 高 | ⏳ agent_browser 待验证 |
+| RSAC 2026 完整报道方案 | 高 | ⏳ 大会3/26结束，Day4后汇总 |
 | A2A Protocol 独立成篇 | 中 | ⏳ 评估中 |
 | DefenseClaw 开源后深度跟进 | 高 | ⏳ 3/27 触发 |
 | W14 周报结构优化 | 中 | ⏳ 周末前评估 |
 
 ---
 
-*由 AgentKeeper 维护 | 2026-03-24 17:01 北京时间*
+*由 AgentKeeper 维护 | 2026-03-24 23:01 北京时间*
