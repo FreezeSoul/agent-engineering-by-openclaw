@@ -37,30 +37,37 @@
 每个阶段代表 Agent 能力的一次升级，环环相扣。
 
 ```mermaid
-flowchart LR
-    P["💬 Prompt<br/>提示工程"] --> R["📚 RAG<br/>检索增强"]
-    R --> M["🔌 MCP<br/>协议标准"]
-    M --> PG["🧩 Paradigms<br/>设计模式"]
-    PG --> MC["🧠 Memory/Context<br/>记忆与上下文"]
-    MC --> TU["🔧 Tool Use<br/>工具调用"]
-    TU --> O["🎬 Orchestration<br/>编排框架"]
-    O --> DR["🔍 Deep Research<br/>深度研究"]
-    DR --> MA["🤖 Multi-Agent<br/>多智能体"]
-    MA --> DA["🚀 Deep Agent<br/>深度自主Agent"]
-    DA --> HE["⚡ Harness Engineering<br/>工程约束"]
-    HE --> P
+flowchart TB
+    subgraph EVOLUTION["AI Agent 技术演进路径"]
+        direction TB
+        P1["💬 Prompt Engineering<br/>提示工程"]
+        P2["📚 RAG<br/>检索增强生成"]
+        P3["🔌 MCP<br/>协议标准"]
+        P4["🧩 Paradigms<br/>设计模式"]
+        P5["🧠 Memory & Context<br/>记忆与上下文"]
+        P6["🔧 Tool Use<br/>工具调用"]
+        P7["🎬 Orchestration<br/>编排框架"]
+        P8["🔍 Deep Research<br/>深度研究"]
+        P9["🤖 Multi-Agent<br/>多智能体"]
+        P10["🚀 Deep Agent<br/>深度自主 Agent"]
+        P11["⚡ Harness Engineering<br/>工程约束"]
+    end
 
-    style P fill:#fef3c7,color:#92400e
-    style R fill:#d1fae5,color:#065f46
-    style M fill:#dbeafe,color:#1e3a5f
-    style PG fill:#ede9fe,color:#5b21b6
-    style MC fill:#fce7f3,color:#831843
-    style TU fill:#fee2e2,color:#991b1b
-    style O fill:#fed7aa,color:#9a3412
-    style DR fill:#bfdbfe,color:#1e40af
-    style MA fill:#d1fae5,color:#064e3b
-    style DA fill:#f9a8d4,color:#831843
-    style HE fill:#fef3c7,color:#92400e
+    P1 --> P2 --> P3 --> P4 --> P5 --> P6 --> P7 --> P8 --> P9 --> P10 --> P11
+    P11 -.->|"反馈回路"| P1
+
+    style P1 fill:#fef3c7,color:#92400e
+    style P2 fill:#d1fae5,color:#065f46
+    style P3 fill:#dbeafe,color:#1e3a5f
+    style P4 fill:#ede9fe,color:#5b21b6
+    style P5 fill:#fce7f3,color:#831843
+    style P6 fill:#fee2e2,color:#991b1b
+    style P7 fill:#fed7aa,color:#9a3412
+    style P8 fill:#bfdbfe,color:#1e40af
+    style P9 fill:#d1fae5,color:#064e3b
+    style P10 fill:#f9a8d4,color:#831843
+    style P11 fill:#fef3c7,color:#92400e
+    style EVOLUTION fill:#f8fafc,stroke:#e2e8f0,stroke-width:2px
 ```
 
 ---
@@ -150,6 +157,7 @@ flowchart LR
 
 | 文章 | 一句话 |
 |------|--------|
+| [Tool Use 演进](articles/concepts/tool-use-evolution.md) | 从硬编码到 MCP 生态的完整演进路径 |
 | [MCP: Model Context Protocol](articles/concepts/mcp-model-context-protocol.md) | 2026 年工具调用的事实标准 |
 | [Top 10 Claude Code Skills](articles/community/top-claude-code-skills-composio.md) | 沙箱安全、Composio 集成、Superpower 结构化开发 |
 | [Context Window Overflow](articles/community/context-window-overflow-redis.md) | 工具调用引发的上下文管理问题 |
@@ -230,9 +238,11 @@ flowchart LR
 
 | 文章 | 一句话 |
 |------|--------|
+| [Harness Engineering 深度](articles/concepts/harness-engineering-deep-dive.md) | 三层架构：工具约束 + 行为规则 + 定期清理，长程 Agent 特殊挑战 |
 | [Agent Harness Engineering](articles/engineering/agent-harness-engineering.md) | Agent = Model + Harness：工程化调优的新方法论 |
 | [Harness Engineering: Martin Fowler](articles/community/harness-engineering-martin-fowler.md) | MF 评注 OpenAI：工具+规则+定期清理的三层约束 |
 | [NVIDIA Sandbox Security Guide](articles/community/nvidia-sandbox-security-guide.md) | Red Team 实录：OS 层沙箱 + 三大强制控制 |
+| [OWASP Top 10 for Agentic 2026](articles/engineering/owasp-top-10-agentic-applications-2026.md) | ASI01-ASI10 安全风险框架，每个 Agent 开发者必读 |
 
 **核心演进链**：Prompt 约束 → Rule Engine → Harness Pattern → Safety Guardrails → Constitutional AI → MCP Security
 
