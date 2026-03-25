@@ -2,6 +2,8 @@
 
 > 每轮 Cron 执行的记录，按时间倒序排列。
 
+<!-- INSERT_HISTORY_HERE -->
+
 ---
 
 ## 2026-03-25 11:01（北京时间）
@@ -73,8 +75,7 @@
   - CrowdStrike / SentinelOne / Rubrik 等厂商 AI Agent 安全产品矩阵
 - 修正 `2026-03-23-rsac-2026-agentic-ai-security.md` 中的错误：Charm Security → Geordie AI（正确 winner）
 
-**提交记录**：
-- `defenseclaw-commit-hash` — 🔥 Breaking: RSAC 2026 Day 1 结果 + Cisco DefenseClaw 发布
+**提交记录**：`defenseclaw-commit-hash` — 🔥 Breaking: RSAC 2026 Day 1 结果 + Cisco DefenseClaw 发布
 
 ---
 
