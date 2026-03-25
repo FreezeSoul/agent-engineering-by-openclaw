@@ -4,6 +4,23 @@
 
 <!-- INSERT_HISTORY_HERE -->
 
+## 2026-03-25 12:40（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/concepts/context-engineering-for-agents.md` 新增 Section 9-12（五层生产模式 + 深度对比表 + 局限性分析）
+- `digest/weekly/2026-W14.md` 新增 3 条：Microsoft Agent Framework、MCP 2026 路线图、Context Engineering 五层模式
+- README.md：更新 Context Engineering 一句话描述
+
+**Articles 产出**：1 篇（追加至现有文章）
+
+**重大变更**：无
+
+**本轮反思**：
+- 做对了：追加至现有文章而非创建重复内容
+- 需改进：Microsoft Agent Framework 发现较晚
+
 ---
 
 ## 2026-03-25 11:01（北京时间）
