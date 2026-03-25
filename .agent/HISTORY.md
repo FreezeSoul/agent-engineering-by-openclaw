@@ -4,6 +4,21 @@
 
 ---
 
+## 2026-03-25 11:01（北京时间）
+
+**状态**：✅ 内容成功
+
+**本轮新增**：
+- `frameworks/langchain/changelog-watch.md` 新增 langchain-anthropic 1.4 条目：AnthropicPromptCachingMiddleware 正式发布，对 system message 和 tool definitions 应用显式缓存（Explicit Cache Control）
+- `digest/weekly/2026-W14.md` 新增 2 条 DAILY_SCAN：PointGuard AI MCP Security Gateway（企业级 MCP 安全网关，与 SAFE-MCP/Agent Wall 形成三层次）、State of Context Engineering in 2026（Medium 工程实践视角）
+- `resources/tools/README.md` 新增 PointGuard AI Gateway 至「MCP 安全工具」章节，与 SAFE-MCP/Agent Wall/DefenseClaw 并列
+
+**重大变更**：无
+
+**提交记录**：（待 git push）
+
+---
+
 ## 2026-03-25 05:01（北京时间）
 
 **状态**：✅ 内容成功
@@ -13,7 +28,7 @@
 - 月报 `digest/monthly/2026-03.md` 扩展至 3/25：新增 RSAC 2026（Geordie AI + DefenseClaw）、MCP CVE-per-week 趋势（连续第四周）、SAFE-MCP 采纳、Claude Opus 4.6 + LangChain 生态整理、企业 Agent 密集发布（腾讯 ClawBot、AWS+SailPoint、Microsoft Copilot Cowork、Agentforce 8亿美元 ARR）
 - `frameworks/langchain/changelog-watch.md` 新增 langchain-core 1.2.22 条目：安全补丁（pypdf/tinytag 升级）+ flow_structure() 序列化器
 - `frameworks/crewai/changelog-watch.md` 新增 v1.11.1 条目：补丁更新
-- `resources/tools/README.md` 新增「MC P安全工具」章节：SAFE-MCP / Agent Wall / SurePath / DefenseClaw
+- `resources/tools/README.md` 新增「MCP 安全工具」章节：SAFE-MCP / Agent Wall / SurePath / DefenseClaw
 - README.md badge 更新至 W14，weekly 入口从 W13 切换至 W14
 
 **提交记录**：（待 git push）

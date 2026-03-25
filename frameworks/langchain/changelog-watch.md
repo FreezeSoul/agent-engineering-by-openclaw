@@ -4,6 +4,26 @@
 
 ---
 
+## 2026-03-25｜langchain-anthropic 1.4：AnthropicPromptCachingMiddleware 正式发布
+
+**版本**：langchain-anthropic 1.4
+**性质**：🟡 Minor（SDK 能力增强）
+**来源**：[GitHub Release](https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%401.4.0)
+
+### 变更要点
+
+| 变更 | 说明 |
+|------|------|
+| **AnthropicPromptCachingMiddleware** | 对 system message 和 tool definitions 应用显式缓存（Explicit Cache Control） |
+| **cache_control kwarg 委托** | 新增 `cache_control` 参数直接委托至 Anthropic 顶层参数 |
+| **ModelProfile 刷新** | 同步更新 model profile 数据 |
+
+**为什么重要**：Anthropic 的 Prompt Caching 功能允许将 system prompt 和工具定义缓存于上下文，相比每次重新传输可显著降低 token 成本。langchain-anthropic 1.4 将此能力以 Middleware 形式开放，使缓存策略对开发者透明可控。
+
+**版本判断**：Minor（SDK 功能增强，非 Breaking Changes）
+
+---
+
 ## 2026-03-25｜langchain-core 1.2.22：安全补丁 + flow_structure 序列化器
 
 **版本**：langchain-core 1.2.22

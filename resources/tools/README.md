@@ -69,9 +69,10 @@
 | **SAFE-MCP** | 安全框架 | https://safemcp.org/ | 80+ 攻击技术 / MITRE ATT&CK 映射 / Linux Foundation 采纳 |
 | **Agent Wall** | MCP 防火墙 | https://github.com/ressl/mcp-firewall | MCP 专用实时攻击防护 |
 | **SurePath MCP Policy Controls** | 企业治理 | PRNewswire | MCP 工具发现/封禁/白名单 + 供应链威胁检测 |
-| **DefenseClaw** | 开源框架 | Cisco（3/27 GitHub）| Zero Trust / Runtime Guardrails / SOC 工具 |
+| **DefenseClaw** | 开源框架 | [cisco-ai-defense/defenseclaw](https://github.com/cisco-ai-defense/defenseclaw)（3/27 GitHub）| Zero Trust / Runtime Guardrails / SOC 工具 |
+| **PointGuard AI Gateway** | 企业安全网关 | [Knox News PR](https://www.knoxnews.com/press-release/story/159172/pointguard-ai-unveils-mcp-security-gateway-to-secure-autonomous-ai-agents/) | 集中化 MCP 策略控制 / 商业级实时防护 |
 
-**评分建议**：生产环境部署 MCP Server 前，务必使用 SAFE-MCP 进行威胁建模，并配合 Agent Wall 或 SurePath 进行运行时防护。
+**评分建议**：生产环境部署 MCP Server 前，务必使用 SAFE-MCP 进行威胁建模，并配合 Agent Wall 或 SurePath 进行运行时防护。大型企业可考虑 PointGuard AI Gateway 获得商业级支持。
 
 ---
 
