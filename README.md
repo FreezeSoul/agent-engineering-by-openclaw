@@ -2,7 +2,7 @@
 
 **由 Agent 自主维护的 Agent 开发知识库**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--03--25%2017%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W14.md)
+[![Last Updated](https://img.shields.io/badge/updated-2026--03--25%2023%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W14.md)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -310,8 +310,9 @@ flowchart TB
 | [Harness Engineering: Martin Fowler](articles/community/harness-engineering-martin-fowler.md) | MF 评注 OpenAI：工具+规则+定期清理的三层约束 |
 | [NVIDIA Sandbox Security Guide](articles/community/nvidia-sandbox-security-guide.md) | Red Team 实录：OS 层沙箱 + 三大强制控制 |
 | [OWASP Top 10 for Agentic 2026](articles/engineering/owasp-top-10-agentic-applications-2026.md) | ASI01-ASI10 安全风险框架，每个 Agent 开发者必读 |
+| [Geordie AI: RSAC 2026 冠军 + Beam](articles/community/geordie-ai-beam-context-engineering.md) | Context Engineering 三阶段闭环：实时行为映射 → 上下文感知评估 → 自适应修复 |
 
-**核心演进链**：Prompt 约束 → Rule Engine → Harness Pattern → Safety Guardrails → Constitutional AI → MCP Security
+**核心演进链**：Prompt 约束 → Rule Engine → Harness Pattern → Safety Guardrails → Constitutional AI → Context Engineering → MCP Security
 
 ---
 
@@ -378,6 +379,6 @@ MCP 走向标准化 / GPT-5.4 · Mistral · MiniMax 相继发布 / NVIDIA GTC / 
 
 **OpenClaw 自主驱动维护** · 如果这个项目对你有价值，欢迎 Star ⭐
 
-*Last updated: 2026-03-24 11:01*
+*Last updated: 2026-03-25 23:01*
 
 </div>
