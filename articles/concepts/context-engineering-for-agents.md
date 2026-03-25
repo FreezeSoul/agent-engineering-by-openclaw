@@ -235,4 +235,131 @@ graph TB
 
 ---
 
-*最后更新：2026-03-21 | 由 OpenClaw 整理*
+---
+
+## 九、2026 生产模式框架：五层上下文管理
+
+> *2026 年，随着 Agent 进入生产环境，Context Engineering 已演化为一套完整工程学科。以下是当前生产 Agent 普遍采用的五层模式。*
+
+### 五层模式总览
+
+| 模式 | 核心问题 | 手段 |
+|------|---------|------|
+| **1. Progressive Disclosure** | 怎么避免一次性塞入过多上下文？ | 按相关性分层加载，非 upfront |
+| **2. Context Compression** | token 成本高怎么办？ | 滑动窗口 + LLM 摘要压缩 |
+| **3. Context Ranking** | 最重要的上下文是什么？ | 相关性评分 + 动态排序 |
+| **4. Context Optimization** | 怎么让 token 效率最高？ | KV-Cache、Context Masking |
+| **5. Context Orchestration** | 多来源上下文怎么协调？ | 层级设计、多步记忆分层 |
+
+### 1. Progressive Disclosure（渐进式发现）
+
+> 在 Agent 需要时加载对应层级的上下文，而非 upfront 全部注入。
+
+```
+层级 1：任务分类（系统指令，< 1KB）
+层级 2：领域知识（RAG 检索，按需）
+层级 3：实时上下文（工具结果 + 对话历史）
+层级 4：Agent 自我监控（行动历史 + 状态）
+```
+
+与 Claude Code 的 Just-in-Time 策略本质相同，只是更系统化。
+
+### 2. Context Compression（上下文压缩）
+
+**两种主流方法**：
+
+| 方法 | 原理 | 适用场景 |
+|------|------|---------|
+| **LLM 摘要压缩** | 用小模型或同模型对长段落做摘要 | 对话历史、长文档 |
+| **滑动窗口** | 保留最近 N 个 turn + 关键里程碑 | 多轮对话、代码修改历史 |
+
+> "Think step by step" 在 2026 年对推理模型的帮助已经有限——因为模型本身已在 RL 阶段学会了推理，内部上下文管理比外部提示更有效。
+
+### 3. Context Ranking（上下文排序）
+
+核心思想：**不是所有上下文都同等重要**。
+
+```
+问题：context window 装不下全部信息
+解决：为每个 context chunk 打相关性分，优先放入高分 chunk
+
+常见策略：
+- 语义相似度（embedding cosine）
+- 最近性（recentcy bias）
+- 依赖关系（工具输出 → 下游消费者）
+```
+
+### 4. Context Optimization（上下文优化）
+
+**KV-Cache（前缀缓存）**：
+```
+首次推理：full forward pass，缓存 K/V tensor
+后续推理：直接复用缓存的 K/V，只计算新 token
+效果：token 生成速度提升 2-4x，成本下降 40-60%
+```
+
+**Context Masking（上下文掩码）**：
+```
+显式标记「本段已被之前推理使用过，无需重复关注」
+减少 attention 计算中的冗余
+```
+
+### 5. Context Orchestration（上下文编排）
+
+> 将多种来源的上下文（工具结果、RAG 检索、对话历史、Agent 记忆）按任务需求动态组合。
+
+```
+Agent 输入 = f(系统指令, 工具Schema, RAG结果, 对话历史, 行动历史)
+
+Context Orchestration 层负责：
+1. 确定每个来源的权重
+2. 处理冲突（不同来源给出矛盾信息）
+3. 管理上下文生命周期（何时失效、何时刷新）
+```
+
+---
+
+## 十、Prompt Engineering vs Context Engineering 深度对比（2026版）
+
+| 维度 | Prompt Engineering | Context Engineering |
+|------|-------------------|-------------------|
+| **核心问题** | 怎么问 | 怎么组织答案能读到的所有内容 |
+| **操作粒度** | 句子/段落级 | 系统/管道级 |
+| **输入性质** | 静态或半动态模板 | 动态多来源结构化输入 |
+| **适用场景** | 单轮查询、格式化输出 | 复杂推理、多轮交互、工具调用 |
+| **迭代周期** | 快速 A/B 测试 | 需要系统重构 |
+| **2026年主流判断** | 基础技能 | **差异化竞争力** |
+
+---
+
+## 十一、局限性与未来方向
+
+### Context Engineering 无法解决什么
+
+- **模型固有偏见**：context 只能使用已有信息，无法纠正模型权重中的偏见
+- **幻觉**：即使 context 正确，模型仍可能生成错误内容
+- **长程依赖**：即使有压缩策略，超过 200K token 的依赖链仍有信息丢失
+
+### 未来方向
+
+| 方向 | 当前状态 | 潜力 |
+|------|---------|------|
+| **Agentic Memory** | 早期探索 | 高：让 Agent 自主管理记忆 |
+| **Semantic Cache** | 概念验证阶段 | 中：减少重复计算 |
+| **Hierarchical Memory** | LangGraph 等框架已有 | 高：跨任务长期记忆 |
+
+---
+
+## 十二、原文来源
+
+| 文章 | 链接 |
+|------|------|
+| Effective Context Engineering | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents |
+| Advanced Tool Use | https://www.anthropic.com/engineering/advanced-tool-use |
+| Claude Code Context Management | https://code.claude.com/docs/en/memory |
+| State of Context Engineering in 2026 | https://app.daily.dev/posts/state-of-context-engineering-in-2026-xna0t95xe |
+| Context Engineering Complete Guide 2026 | https://codeconductor.ai/blog/context-engineering/ |
+
+---
+
+*最后更新：2026-03-25 | 由 OpenClaw 整理*

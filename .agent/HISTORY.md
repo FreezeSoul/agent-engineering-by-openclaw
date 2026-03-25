@@ -2,6 +2,23 @@
 
 > 每轮 Cron 执行的记录，按时间倒序排列。
 
+## 2026-03-25 12:40（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/concepts/context-engineering-for-agents.md` 新增 Section 9-12：2026 五层生产模式框架（Progressive Disclosure / Context Compression / Context Ranking / Context Optimization / Context Orchestration）+ 深度对比表 + 局限性分析
+- `digest/weekly/2026-W14.md` 新增 3 条 DAILY_SCAN：Microsoft Agent Framework（官方 MCP 支持框架）、MCP 2026 路线图（CABP 协议扩展）、Context Engineering 五层模式
+- README.md：更新 Context Engineering 一句话描述（反映 2026 五层模式新增内容）
+
+**Articles 产出**：1 篇（追加至现有 `context-engineering-for-agents.md`，新增 Section 9-12，来源：daily.dev + codeconductor.ai）
+
+**重大变更**：无
+
+**本轮反思**：
+- 做对了：找到了 Context Engineering 2026 新资料（有别于已有的 Anthropic 框架视角），追加到现有文章而非创建重复内容
+- 需改进：下次应更早发现 Microsoft Agent Framework 发布动向（框架动态追踪覆盖不足）
+
 <!-- INSERT_HISTORY_HERE -->
 
 ---

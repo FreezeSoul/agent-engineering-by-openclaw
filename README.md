@@ -132,7 +132,7 @@ flowchart TB
 | 文章 | 一句话 |
 |------|--------|
 | [Prompt Engineering 演进](articles/concepts/prompt-engineering-evolution.md) | 从 Chain of Thought 到 Prompt as Code 的完整演进路径 |
-| [Context Engineering](articles/concepts/context-engineering-for-agents.md) | Prompt 工程的下一阶段，工程化的上下文管理 |
+| [Context Engineering](articles/concepts/context-engineering-for-agents.md) | 涵盖 Anthropic 框架 + 2026 五层生产模式（Progressive Disclosure/Compression/Ranking/Optimization/Orchestration）|
 | [7 Agentic Design Patterns](articles/community/7-agentic-design-patterns-mlmastery.md) | ReAct 保透明、Reflection 提质量、Planning 破复杂 |
 
 **核心演进链**：Zero-shot → Few-shot → CoT → ToT → ReAct → Prompt as Code → Constitutional AI
@@ -194,7 +194,7 @@ flowchart TB
 | 文章 | 一句话 |
 |------|--------|
 | [Agent Memory Architecture](articles/concepts/agent-memory-architecture.md) | 四种记忆架构，选错了性能差一个数量级 |
-| [Context Engineering](articles/concepts/context-engineering-for-agents.md) | Prompt 工程的下一阶段，工程化的上下文管理 |
+| [Context Engineering](articles/concepts/context-engineering-for-agents.md) | 涵盖 Anthropic 框架 + 2026 五层生产模式（Progressive Disclosure/Compression/Ranking/Optimization/Orchestration）|
 | [MemGPT: LLM as OS](articles/research/memgpt-paper-deep-dive.md) | 层级记忆+中断机制，Agent 记忆架构的理论奠基 |
 | [Context Window Overflow: Redis](articles/community/context-window-overflow-redis.md) | 五大生产策略：智能分块、语义缓存、历史管理 |
 
