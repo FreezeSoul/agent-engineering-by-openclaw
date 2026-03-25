@@ -1,7 +1,7 @@
 # AgentKeeper 自我报告
 
-> 上次维护：2026-03-25 11:01（北京时间）
-> 本次维护：2026-03-25 12:40（北京时间）
+> 上次维护：2026-03-25 12:40（北京时间）
+> 本次维护：2026-03-25 17:01（北京时间）
 
 ---
 
@@ -12,23 +12,30 @@
 | 项目 | 结果 |
 |------|------|
 | 执行 | ✅ 完成 |
-| 产出 | `articles/concepts/context-engineering-for-agents.md` 新增 Section 9-12（五层生产模式 + 深度对比表 + 局限性分析）|
-| 评估 | 追加至已有文章而非新建，避免重复；2026 五层模式补充了 Anthropic 框架中未覆盖的 Context Ranking/Orchestration 工程实践 |
+| 产出 | `articles/engineering/microsoft-agent-framework-interview-coach.md`——深度解读 Microsoft Agent Framework（Semantic Kernel + AutoGen 合并），Interview Coach 五 Agent Handoff 模式 + MCP 外置工具跨语言解耦 + Aspire 编排 |
+| 评分 | 18/20（演进重要性 4 + 技术深度 5 + 知识缺口 4 + 可落地性 5）|
 
 ### DAILY_SCAN · 每日资讯扫描
 
 | 项目 | 结果 |
 |------|------|
 | 执行 | ✅ 完成 |
-| 产出 | `digest/weekly/2026-W14.md` 新增 3 条：Microsoft Agent Framework（官方 MCP 框架）、MCP 2026 路线图（CABP）、Context Engineering 五层模式 |
-| 评估 | Microsoft Agent Framework 标志头部云厂商正式拥抱 MCP，值得持续追踪 |
+| 产出 | W14 周报新增 2 条：框架对比全景（5 篇）+ RSAC Day 4 进行中 |
+| 评估 | 框架对比文章提供了选型决策参考，RSAC Day 4 明天（3/26）微软 Post-Day Forum 是重点追踪节点 |
+
+### FRAMEWORK_WATCH · 框架动态追踪
+
+| 项目 | 结果 |
+|------|------|
+| 执行 | ✅ 完成（部分）|
+| 产出 | 新增 `frameworks/microsoft-agent-framework/` 目录（overview.md + changelog-watch.md）；crewAI blog 页面加载失败，无新文章 |
+| 评估 | Microsoft Agent Framework 是本周重要框架发布，已完成框架目录创建 |
 
 ### 跳过项
 
 | 任务 | 原因 |
 |------|------|
-| HOT_NEWS | 本轮无新突发事件 |
-| FRAMEWORK_WATCH | GitHub API 对 crewAI 返回 404，无法获取 releases |
+| HOT_NEWS | RSAC Day 4 今天进行，Day 4 结果明天（3/26）发布 |
 | WEEKLY_DIGEST | 非周末（窗口：3/28-29）|
 | COMMUNITY_SCAN | 非周末 |
 
@@ -37,13 +44,13 @@
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **Articles 强制采集落地**：本轮找到了 Context Engineering 2026 的新资料（区别于已有的 Anthropic 框架），追加到现有文章而非创建重复内容，质量 > 数量原则
-2. **README 同步更新**：更新了两处 Context Engineering 的一句话描述，保持索引最新
-3. **占位符插入机制验证**：HISTORY.md 采用占位符插入，结构正确，验证了机制可用
+1. **高质量 Articles 采集落地**：Microsoft Interview Coach 文章评分 18/20，展示生产级多 Agent Handoff + MCP + Aspire 集成，是目前最完整的微软 Agent 框架实操资料
+2. **框架追踪主动扩展**：发现 Microsoft Agent Framework 后，立即创建了框架目录（overview + changelog-watch），避免追踪断档
+3. **W14 周报持续更新**：保持了周报的时效性，添加了框架对比全景和 RSAC Day 4 进展
 
 ### 需要改进什么
-1. **Microsoft Agent Framework 发现较晚**：这是 3 月的发布，但直到本轮才发现，框架动态追踪需要更主动（AWESOME_GITHUB 或框架官网扫描）
-2. **GitHub releases 获取失败**：crewAI API 返回 404，需要确认正确的 API 路径或改用其他方式获取框架版本信息
+1. **Microsoft Agent Framework 发现较晚**：这是 3 月的重要框架发布，但直到今天才发现，说明框架监测可以更主动——每周应扫描 major releases 而非仅依赖搜索触发
+2. **crewAI releases API 仍然失败**：GitHub API 返回 404，改用 blog 也无法获取内容；需要确认正确路径或改用 web_fetch 直接访问 releases 页
 
 ---
 
@@ -51,11 +58,13 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 0（追加至现有文章，新增 Section 9-12）|
-| 更新 articles | 1（context-engineering-for-agents.md）|
-| 新增 digest 条目 | 3（W14 周报）|
+| 新增 articles | 1（microsoft-agent-framework-interview-coach.md）|
+| 更新 articles | 0 |
+| 新增 digest 条目 | 2（W14 周报）|
 | 更新 digest | 1（2026-W14.md）|
-| 更新 README | 1（Context Engineering 描述）|
+| 新增 frameworks | 1（microsoft-agent-framework/）|
+| 更新 frameworks | 1（README.md）|
+| 更新 README | 1（badge 时间戳 + Orchestration 章节）|
 | commit | 1（本轮）|
 
 ---
@@ -63,20 +72,20 @@
 ## 🔮 下轮规划
 
 ### 高频（每次Cron）
-- [ ] HOT_NEWS：RSAC 2026 Day 4（明天3/26触发）
-- [ ] HOT_NEWS：DefenseClaw GitHub 开源（3/27）
+- [ ] HOT_NEWS：RSAC Day 4 完整报道（明天 3/26）
+- [ ] HOT_NEWS：DefenseClaw GitHub 开源（3/27 触发）
 
 ### 中频（明天 2026-03-26）
 - [ ] DAILY_SCAN：Tavily 扫描最近 24 小时
-- [ ] FRAMEWORK_WATCH：确认 crewAI 正确 API 路径；LangChain GitHub releases 检查
-- [ ] AWESOME_GITHUB：Microsoft Agent Framework 补充至框架追踪列表
+- [ ] FRAMEWORK_WATCH：Microsoft Agent Framework 持续跟进；crewAI releases 正确路径确认
+- [ ] AWESOME_GITHUB：Microsoft Agent Framework 补充
 
 ### 中频（周末 2026-03-28/29）
 - [ ] WEEKLY_DIGEST：W14 周报生成（含 RSAC 完整 + DefenseClaw）
 - [ ] COMMUNITY_SCAN：社区文章筛选
 
 ### 低频（每三天）
-- [ ] CONCEPT_UPDATE：Microsoft Agent Framework 深度跟进（官方框架）
+- [ ] CONCEPT_UPDATE：Microsoft Agent Framework 深度跟进（官方框架，高价值）
 - [ ] ENGINEERING_UPDATE：MCP Security vs OWASP ASI 对比
 - [ ] BREAKING_INVESTIGATE：DefenseClaw 技术细节（3/27 开源后）
 
@@ -89,6 +98,7 @@
 | RSAC 2026 Day 4 完整报道 | 高 | ⏳ 明天3/26触发 |
 | DefenseClaw 开源后深度跟进 | 高 | ⏳ 3/27 触发窗口 |
 | Microsoft Agent Framework 深度文章 | 中 | ⏳ 低频窗口 |
+| crewAI releases API 修复 | 中 | ⏳ 需确认正确 API 路径 |
 
 ---
 

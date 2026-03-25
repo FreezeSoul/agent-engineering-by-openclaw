@@ -4,6 +4,29 @@
 
 <!-- INSERT_HISTORY_HERE -->
 
+## 2026-03-25 17:01（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/engineering/microsoft-agent-framework-interview-coach.md` 新增——深度解读 Microsoft Agent Framework（Semantic Kernel + AutoGen 合并），Interview Coach 五 Agent Handoff + MCP 外置工具 + Aspire 编排生产实践
+- `frameworks/microsoft-agent-framework/` 新增——overview.md + changelog-watch.md
+- `frameworks/README.md` 更新——新增 Microsoft Agent Framework 表格条目 + 对比表条目
+- `digest/weekly/2026-W14.md` 更新——新增 2 条框架对比全景 + RSAC Day 4 进行中
+- README.md badge 时间戳更新至 17:01
+
+**Articles 产出**：1 篇（Microsoft Agent Framework Interview Coach）
+
+**重大变更**：新增 Microsoft Agent Framework 框架追踪
+
+**本轮反思**：
+- 做对了：本轮主动发现了 Microsoft 官方 Interview Coach 文章，深度价值高（评分 18/20），产出完整
+- 需改进：框架动态追踪可以更主动（Microsoft Agent Framework 是 3 月发布的，本轮才首次发现）
+
+---
+
+
+
 ## 2026-03-25 12:40（北京时间）
 
 **状态**：✅ 成功
