@@ -2,23 +2,6 @@
 
 > 每轮 Cron 执行的记录，按时间倒序排列。
 
-## 2026-03-25 12:40（北京时间）
-
-**状态**：✅ 成功
-
-**本轮新增**：
-- `articles/concepts/context-engineering-for-agents.md` 新增 Section 9-12：2026 五层生产模式框架（Progressive Disclosure / Context Compression / Context Ranking / Context Optimization / Context Orchestration）+ 深度对比表 + 局限性分析
-- `digest/weekly/2026-W14.md` 新增 3 条 DAILY_SCAN：Microsoft Agent Framework（官方 MCP 支持框架）、MCP 2026 路线图（CABP 协议扩展）、Context Engineering 五层模式
-- README.md：更新 Context Engineering 一句话描述（反映 2026 五层模式新增内容）
-
-**Articles 产出**：1 篇（追加至现有 `context-engineering-for-agents.md`，新增 Section 9-12，来源：daily.dev + codeconductor.ai）
-
-**重大变更**：无
-
-**本轮反思**：
-- 做对了：找到了 Context Engineering 2026 新资料（有别于已有的 Anthropic 框架视角），追加到现有文章而非创建重复内容
-- 需改进：下次应更早发现 Microsoft Agent Framework 发布动向（框架动态追踪覆盖不足）
-
 <!-- INSERT_HISTORY_HERE -->
 
 ---
@@ -51,6 +34,15 @@
 - README.md badge 更新至 W14，weekly 入口从 W13 切换至 W14
 
 **提交记录**：（待 git push）
+
+---
+
+## 2026-03-25 00:01（北京时间）
+
+**状态**：✅ 内容成功
+
+**本轮新增**：
+- W13 周报新增第 25 条：Ramp AI Index 2026年3月——Anthropic 在企业 AI 采购中首次全面超越 OpenAI
 
 ---
 
@@ -101,7 +93,7 @@
 **状态**：✅ 内容成功
 
 **本轮新增**：
-- 新增 Breaking News：`digest/breaking/2026-03-23-openclaw-cve-2026-25253-security-crisis.md`——OpenClaw CVE-2026-25253（CVSS 8.8）、ClawHavoc 供应链攻击、135K+ 实例暴露；系统当前版本 2026.3.13 已修复
+- 新增 Breaking News：`digest/breaking/2026-03-23-openclaw-cve-2026-25253-security-crisis.md`——OpenClaw CVE-2026-25253（CVSS 8.8）、ClawHavoc 供应链攻击，135K+ 实例暴露；系统当前版本 2026.3.13 已修复
 - 新增 `frameworks/langchain/` 目录：`overview.md`（框架概览）+ `changelog-watch.md`（LangSmith Fleet 重命名 + LangChain×NVIDIA 合作）
 - W13 周报新增 4 条（#35-38）：OpenClaw 安全危机、LangSmith Fleet、MCP Rise & Fall、NVIDIA 合作；周报共 38 条
 - README 更新：badge 时间戳、LangChain 框架表格新增、Monthly 动态追加 4 条
@@ -185,48 +177,6 @@
 
 ---
 
-## 2026-03-23 08:21（北京时间）
-
-**状态**：✅ 成功
-
-**触发**：SKILL 0.4.0 频率档位提高
-
----
-
-## 2026-03-23 08:14（北京时间）
-
-**状态**：✅ 成功
-
-**触发**：SKILL 任务体系简化
-
----
-
-## 2026-03-23 08:11（北京时间）
-
-**状态**：✅ 成功
-
-**触发**：SKILL 首次引入三频分类
-
----
-
-## 2026-03-23 07:01（北京时间）
-
-**状态**：✅ 成功
-
-**本轮新增**：
-- W13 周报新增第 30-31 条（AWS+SailPoint 企业Agent身份治理、McKinsey 62%企业试验Agent + Agentforce ARR 8亿美元）
-
----
-
-## 2026-03-23 06:01（北京时间）
-
-**状态**：✅ 内容成功
-
-**本轮新增**：
-- W13 周报新增第 29 条：腾讯 ClawBot 将 OpenClaw Agent 引入微信十亿用户
-
----
-
 ## 2026-03-23 04:01（北京时间）
 
 **状态**：✅ 内容成功
@@ -252,15 +202,6 @@
 
 **本轮新增**：
 - `digest/breaking/2026-03-22-mcp-sdk-v127-ecosystem.md`——MCP SDK 生态 v1.27 深度解析
-
----
-
-## 2026-03-23 00:01（北京时间）
-
-**状态**：✅ 内容成功
-
-**本轮新增**：
-- W13 周报新增第 25 条：Ramp AI Index 2026年3月——Anthropic 在企业 AI 采购中首次全面超越 OpenAI
 
 ---
 
