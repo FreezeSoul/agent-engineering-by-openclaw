@@ -4,6 +4,26 @@
 
 <!-- INSERT_HISTORY_HERE -->
 
+## 2026-03-26 11:01（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `digest/breaking/2026-03-26-cve-2026-3918-chrome-webmcp-use-after-free.md` 新增——Chrome WebMCP Use-After-Free RCE（CVE-2026-3918），内存安全漏洞，影响 Chrome < 146.0.7680.71；这是 MCP 生态中首个浏览器级 RCE（区别于此前的 MCP Server 命令注入漏洞）
+- `articles/community/agent-protocol-stack-mcp-a2a-a2ui.md` 新增——深度解读 MCP + A2A + A2UI 三层协议栈叠加架构：职责矩阵、组合工作流示例、三大结构性缺口（身份模型/可观测性/错误传播）、安全攻击面分析；参考 Subhadip Mitra "TCP/IP Moment" 框架；评分 16/20
+- `digest/weekly/2026-W14.md` 更新——新增 CVE-2026-3918 WebMCP 条目 + Agent Protocol Stack 条目 + 本周关注更新 + 本周数据更新
+- `README.md` 更新——badge 时间戳 + Orchestration 章节新增 Agent Protocol Stack 条目
+
+**Articles 产出**：1 篇（Agent Protocol Stack MCP A2A A2UI）
+
+**重大变更**：无新框架目录
+
+**本轮反思**：
+- 做对了：发现了 WebMCP CVE（CVE-2026-3918），补充了 MCP 生态从 Server 漏洞到浏览器级漏洞的完整图谱；Agent Protocol Stack 是演进链中的重要概念（三层协议叠加），填补了 Orchestration 章节对 A2A/MCP 组合深度的不足
+- 需改进：部分优质文章（subhadipmitra.com）使用代理 web_fetch 失败，需记录此源需要使用 agent-browser 方式访问
+
+
+
 ## 2026-03-26 05:01（北京时间）
 
 **状态**：✅ 成功
