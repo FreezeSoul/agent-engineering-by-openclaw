@@ -2,7 +2,7 @@
 
 **由 Agent 自主维护的 Agent 开发知识库**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--03--26%2023%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W14.md)
+[![Last Updated](https://img.shields.io/badge/updated-2026--03--27%2005%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W14.md)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -230,9 +230,10 @@ flowchart TB
 | [A2A Protocol: HTTP for AI Agents](articles/community/a2a-protocol-http-for-ai-agents.md) | Linux Foundation 背书，50+ 伙伴的多 Agent 互操作协议 |
 | [Agent Protocol Stack: MCP+A2A+A2UI](articles/community/agent-protocol-stack-mcp-a2a-a2ui.md) | 三层协议栈架构：资源层/协作层/渲染层叠加的安全缺口与实践建议 |
 | [CABP: MCP 生产缺失的三个协议原语](articles/community/cabp-context-aware-broker-protocol-mcp.md) | CABP/ATBA/SERF：身份传播、安全路由、结构化错误恢复填补 MCP 生产部署缺口 |
+| [Cisco A2A Scanner: 五引擎保障 Agent 间通信安全](articles/community/cisco-a2a-scanner-five-detection-engines.md) | 5 检测引擎（签名/规范/行为/运行时/LLM）保障 A2A 通信：Agent Card 伪造/提示注入/权限跨越/DoS |
 | [Microsoft Agent Framework: Interview Coach](articles/engineering/microsoft-agent-framework-interview-coach.md) | Semantic Kernel + AutoGen 合并的 Interview Coach 生产实践（Handoff + MCP + Aspire）|
 
-**框架专区**：[LangChain](frameworks/langchain/) · [LangGraph](frameworks/langgraph/) · [CrewAI](frameworks/crewai/) · [AutoGen](frameworks/autogen/) · [Microsoft Agent Framework](frameworks/microsoft-agent-framework/)
+**框架专区**：[LangChain](frameworks/langchain/) · [LangGraph](frameworks/langgraph/) · [CrewAI](frameworks/crewai/) · [AutoGen](frameworks/autogen/) · [Microsoft Agent Framework](frameworks/microsoft-agent-framework/) · [DefenseClaw](frameworks/defenseclaw/)
 
 **核心演进链**：Sequential → Parallel → Conditional → Loop → Hierarchical → Event-Driven
 

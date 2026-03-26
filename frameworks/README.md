@@ -12,6 +12,7 @@
 | [CrewAI](crewai/) | 角色扮演式多Agent协作 | ✅ | ✅ | ✅ |
 | [AutoGen](autogen/) | Microsoft多模型协作 | ✅ | ✅ | ✅ |
 | [Microsoft Agent Framework](microsoft-agent-framework/) | Semantic Kernel + AutoGen 合并，.NET 企业级 | ✅ | ✅ | ✅ |
+| [DefenseClaw](defenseclaw/) | Cisco 开源 Agent 安全治理，五工具扫描引擎 | ✅ | — | ✅ |
 | [_template/](_template/) | 新增框架时复制的模板 | ✅ | — | ✅ |
 
 ---
@@ -33,6 +34,7 @@
 | AutoGen | 任意 | ✅ 内置 | ❌ | ❌ | 中等 |
 | Semantic Kernel | OpenAI系为主 | 有限 | 有限 | ❌ | 低 |
 | Microsoft Agent Framework | 任意（IChatClient）| ✅ 内置（handoff模式）| ✅ 内置 | ❌ | 中等 |
+| DefenseClaw | 模型无关 | ✅（A2A Scanner）| ❌ | ❌ | 低（安全扫描） |
 
 ---
 

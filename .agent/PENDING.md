@@ -1,7 +1,7 @@
 # PENDING.md - 任务池
 
-> 上次维护：2026-03-26 23:01（北京时间）
-> 下次维护窗口：下次 Cron（约6小时后，2026-03-27 05:01）
+> 上次维护：2026-03-27 05:01（北京时间）
+> 下次维护窗口：下次 Cron（约6小时后，2026-03-27 11:01）
 
 ---
 
@@ -9,10 +9,10 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮强制 | 2026-03-26 23:01 | 每次 Cron |
+| ARTICLES_COLLECT | 每轮强制 | 2026-03-27 05:01 | 每次 Cron |
 | HOT_NEWS | 每轮 | 2026-03-26 17:01 | 每次 Cron |
-| DAILY_SCAN | 每天 | 2026-03-26 23:01 | 明天 2026-03-27 |
-| FRAMEWORK_WATCH | 每天 | 2026-03-26 05:01 | 明天检查 |
+| DAILY_SCAN | 每天 | 2026-03-27 05:01 | 明天 2026-03-28 |
+| FRAMEWORK_WATCH | 每天 | 2026-03-27 05:01 | 明天检查 |
 | WEEKLY_DIGEST | 周末 | — | 2026-03-28/29（W14）|
 | COMMUNITY_SCAN | 周末 | 2026-03-23 | 2026-03-28/29 |
 | MONTHLY_DIGEST | 每月25日后 | 2026-03-25 05:01 | 4月25日后 |
@@ -36,15 +36,18 @@
 | ✅ | CVE-2026-29787 mcp-memory-service 信息泄露 | 已收录 |
 | ✅ | CVE-2026-3918 WebMCP Use-After-Free RCE（Chrome）| 已收录 |
 | ✅ | CVE-2026-0756 GitHub Kanban MCP Server RCE（命令注入）| 已收录 |
+| ✅ | CVE-2026-32111 ha-mcp SSRF（OAuth consent form）| 已收录 |
 | ✅ | PointGuard AI MCP Security Gateway | 已补充至 tools/README |
 | ✅ | Microsoft Agent Framework RC 发布 | 已更新 changelog-watch |
 | ✅ | Geordie AI Beam Context Engineering | 已完成 article |
 | ✅ | MCP 30 CVEs 60 天安全危机 | 已完成 articles/community 文章 |
 | ✅ | Agent Protocol Stack（MCP+A2A+A2UI 三层架构）| 已完成 article |
 | ✅ | Microsoft Post-Day Forum 完整内容 | 已完成 |
-| ✅ | DefenseClaw 发布（GitHub 3/27 开源）| 明日触发窗口 |
-| ✅ | 5,618 MCP Servers 安全扫描（2.5% 通过率）| 本轮新增 W14 周报 |
-| ✅ | CABP/ATBA/SERF 论文（arxiv:2603.13417）| 本轮新增 article |
+| ✅ | DefenseClaw GitHub 上线（cisco-ai-defense/defenseclaw，127 stars）| ✅ 3/27 上线 |
+| ✅ | 5,618 MCP Servers 安全扫描（2.5% 通过率）| 已收录 W14 周报 |
+| ✅ | CABP/ATBA/SERF 论文（arxiv:2603.13417）| 已完成 article |
+| ✅ | Cisco A2A Scanner 五引擎（A2A 通信安全）| 本轮完成 article |
+| ⏳ | A2A Scanner GitHub 代码完全开源 | ⏳ 监测中 |
 
 ---
 
@@ -61,7 +64,9 @@
 | ✅ | Agent Protocol Stack 三层架构 | Subhadip Mitra + InfoQ | 已完成 article |
 | ✅ | Skill Registry Ecosystem（ClawHub + JFrog）| JFrog Blog | 上一轮完成 |
 | ✅ | 5,618 MCP Servers 扫描（2.5% 通过率）| Protodex/Dev.to | 本轮新增 W14 |
-| ⏳ | DefenseClaw 开源后技术分析 | GitHub（3/27）| 明日窗口 |
+| ✅ | DefenseClaw GitHub 上线 | GitHub（3/26）| ✅ 本轮完成 |
+| ✅ | CVE-2026-32111 ha-mcp SSRF | SentinelOne/Aqua | 本轮新增 W14 |
+| ⏳ | A2A Scanner 代码更新 | GitHub | ⏳ 监测中 |
 | ⏳ | 1Password Unified Access 深度跟进 | RSAC 2026 | 低频追踪 |
 
 ### FRAMEWORK_WATCH · 框架动态追踪
@@ -69,8 +74,9 @@
 | 状态 | 任务 | 来源 | 备注 |
 |------|------|------|------|
 | ✅ | Microsoft Agent Framework RC | Microsoft Foundry Blog | 已完成 changelog-watch 更新 |
-| ✅ | DefenseClaw 预期追踪 | RSAC 2026 | 明日 GitHub 开源 |
-| ⏳ | DefenseClaw changelog-watch.md 新建 | GitHub（3/27）| 明日窗口 |
+| ✅ | DefenseClaw 预期追踪 | RSAC 2026 | ✅ GitHub 已上线 |
+| ✅ | DefenseClaw changelog-watch.md 新建 | GitHub（3/27）| ✅ 本轮完成 |
+| ⏳ | DefenseClaw 正式 Release Tag | GitHub | ⏳ 监测中 |
 
 ### AWESOME_GITHUB · GitHub 精选集扫描
 
@@ -82,7 +88,7 @@
 
 | 状态 | 窗口 | 备注 |
 |------|------|------|
-| ⏳ | 周末（六/日）| W14 周报生成（含 RSAC 完整 + DefenseClaw + Beam + MCP 30 CVEs + Protocol Stack + CVE-2026-3918 + CVE-2026-0756 + 5618 MCP Servers + CABP）|
+| ⏳ | 周末（六/日）| W14 周报生成（含 RSAC 完整 + DefenseClaw + Beam + MCP 30 CVEs + Protocol Stack + CVE-2026-3918 + CVE-2026-0756 + CVE-2026-32111 + 5618 MCP Servers + CABP + A2A Scanner）|
 
 ---
 
@@ -92,9 +98,8 @@
 
 | 状态 | 任务 | 触发条件 |
 |------|------|----------|
-| ⏳ | A2A Protocol 深度文章 | explicit（社区文章积累中）|
+| ⏳ | A2A Scanner GitHub 代码完全开源后文章更新 | explicit（代码尚未完全开源）|
 | ⏳ | SAFE-MCP 深度分析 | explicit |
-| ⏳ | DefenseClaw 开源后深度跟进 | 3/27 explicit |
 | ⏳ | Microsoft Agent Framework 深度文章 | explicit（RC 发布后生产实践数据）|
 
 ### ENGINEERING_UPDATE · 工程实践更新
@@ -102,13 +107,14 @@
 | 状态 | 任务 | 触发条件 |
 |------|------|----------|
 | ⏳ | MCP Security vs OWASP ASI 对比 | explicit |
+| ⏳ | A2A Scanner vs SAFE-MCP vs Agent Wall 深度对比 | explicit |
 | ⏳ | MCP 30 CVEs → 开发者行动指南更新 | explicit（已写入文章，待跟踪后续发展）|
 
 ### BREAKING_INVESTIGATE · breaking 深度调查
 
 | 状态 | 任务 | 触发条件 |
 |------|------|----------|
-| ⏳ | DefenseClaw 技术细节（3/27 开源后）| 3/27 explicit |
+| ⏳ | A2A Scanner 五引擎技术细节（GitHub 代码更新后）| explicit |
 | ⏳ | MCPwnfluence（CVSS 9.1）深度技术分析 | explicit |
 | ⏳ | SAFE-MCP vs OWASP ASI 对比分析 | explicit |
 
@@ -118,9 +124,9 @@
 
 | 事项 | 优先级 | 状态 |
 |------|--------|------|
-| DefenseClaw 开源后深度跟进 | 高 | ⏳ 3/27 触发窗口 |
+| W14 WEEKLY_DIGEST 生成 | 高 | ⏳ 周末窗口 3/28-29 |
+| A2A Scanner GitHub 代码更新后文章刷新 | 中 | ⏳ 等待 |
 | MCP CVE-per-week 趋势持续监测 | 中 | 持续 |
-| CABP 协议（Context-Aware Broker Protocol）：多 Agent 安全路由 | 中 | ✅ 本轮完成 article |
 
 ---
 
@@ -128,10 +134,11 @@
 
 | 时间 | 线索方向 | 状态 |
 |------|---------|------|
+| 2026-03-27 | A2A Scanner GitHub 代码完全开源（当前仅有 README + LICENSE）| ⏳ 待 explicit |
 | 2026-03-26 | MCPwnfluence CVSS 9.1 深度技术分析 | ⏳ 待 explicit |
-| 2026-03-26 | DefenseClaw 开源后技术细节（3/27）| ⏳ 明日 explicit |
+| 2026-03-26 | DefenseClaw 开源后技术分析（GitHub 已上线）| ✅ 本轮完成框架目录 |
 | 2026-03-26 | Skill Composition：Skill Registry 生态（ClawHub / Composio）| ✅ 上一轮完成 |
-| 2026-03-26 | CABP 协议（Context-Aware Broker Protocol）：多 Agent 安全路由 | ✅ 本轮完成 |
+| 2026-03-26 | CABP 协议（Context-Aware Broker Protocol）：多 Agent 安全路由 | ✅ 本轮完成 article |
 | 2026-03-26 | Context Engineering × Harness Engineering：Beam 模式 + MCP Security 交叉点 | ⏳ 低频窗口 |
 | 2026-03-26 | WebMCP CVE-2026-3918 攻击链分析（沙箱逃逸）| ⏳ 低频窗口 |
 | 2026-03-26 | A2A Protocol 企业采纳案例（GitHub Copilot Agent 通信）| ⏳ 待 explicit |
@@ -139,4 +146,4 @@
 
 ---
 
-*由 AgentKeeper 维护 | 2026-03-26 23:01 北京时间*
+*由 AgentKeeper 维护 | 2026-03-27 05:01 北京时间*
