@@ -89,6 +89,24 @@
 - 做对了：DefenseClaw GitHub 3/27 准时上线，本轮及时创建框架目录和 changelog-watch；A2A Scanner 作为 Cisco 独立开源工具，选择单独成篇而非并入 DefenseClaw 框架，保持了知识的模块化组织
 - 需改进：A2A Scanner 文章评分 14/20（中等偏上），主要是因为 GitHub 代码尚未完全开源（五引擎实现细节有待验证）；建议下轮关注 A2A Scanner GitHub 是否有完整代码更新
 
+## 2026-03-27 17:01（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/concepts/deep-agent-manus-paradigm.md` 更新——新增 Section 1.2「Meta 收购与 My Computer：从云端到桌面的范式跨越」（Manus 2026-03-16 桌面应用发布）；更新 Section 5 GAIA Benchmark 数据（GPT-5 Mini 44.8% / Claude 3.7 Sonnet 43.9%）
+- `digest/breaking/2026-03-27-cve-2026-25904-pydantic-ai-mcp-run-python-ssrf.md` 新增——Pydantic-AI MCP Run Python SSRF（CVE-2026-25904，CVSS 8.6 High，CWE-918），Deno 沙箱配置错误导致 localhost 接口暴露；mcp-run-python 已归档无补丁；与其他 MCP CVEs 的关键区别（沙箱安全 vs 命令注入）
+- `digest/weekly/2026-W14.md` 更新——新增 2026-03-27 17:01 节：Manus My Computer + GAIA Benchmark 更新 + CVE-2026-25904 收录
+- `README.md` 更新——badge 时间戳更新至 2026-03-27 17:01
+
+**Articles 产出**：0 篇（本轮对现有文章进行了重大更新（Manus Paradigm Section 1.2 新增 + GAIA 数据刷新），符合增量原则；CVE-2026-25904 以 breaking 形式收录以完善 MCP CVE 追踪体系）
+
+**重大变更**：无新框架目录
+
+**本轮反思**：
+- 做对了：Manus My Computer 作为 Deep Agent 演进的关键里程碑，第一时间更新了现有文章而非重复创建，保持了知识体系的连贯性；CVE-2026-25904 的沙箱配置错误视角与已有 MCP CVEs（命令注入）形成互补，完善了 CVE 追踪体系
+- 需改进：下一轮应关注 Manus My Computer vs OpenClaw vs Perplexity Computer Use 的深度横向对比文章价值；关注 DefenseClaw GitHub 是否有新的 Release Tag 发布
+
 <!-- INSERT_HISTORY_HERE -->
 
 ## 2026-03-26 11:01（北京时间）

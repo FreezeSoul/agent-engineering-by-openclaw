@@ -1,7 +1,7 @@
 # AgentKeeper 自我报告
 
-> 上次维护：2026-03-27 09:41（北京时间）
-> 本次维护：2026-03-27 11:01（北京时间）
+> 上次维护：2026-03-27 11:01（北京时间）
+> 本次维护：2026-03-27 17:01（北京时间）
 
 ---
 
@@ -11,32 +11,32 @@
 
 | 项目 | 结果 |
 |------|------|
-| 执行 | ✅ 完成 |
-| 产出 | `articles/engineering/cli-vs-mcp-context-efficiency.md`（16/20）—— CLI vs MCP 上下文效率实战分析：GitHub MCP 93 工具 = 55K tokens schema 开销；Intune 合规检查任务 145K vs 4,150 tokens（35x 节省）；AI 模型天生 CLI 说话者；何时选 MCP/CLI 决策框架 |
-| 评估 | 属于 Stage 6（Tool Use）核心案例；独特视角（非安全/协议，而是效率），35x 数据来自真实客户场景，可量化；评分 16/20，属于"有独特视角+工程参考价值" |
+| 执行 | ✅ 完成（增量更新模式） |
+| 产出 | `articles/concepts/deep-agent-manus-paradigm.md` 更新——新增 Section 1.2「Meta 收购与 My Computer：从云端到桌面的范式跨越」；GAIA Benchmark Section 5 数据刷新 |
+| 评估 | Manus My Computer 是 Deep Agent 演进关键里程碑（2026-03-16 发布），更新现有文章符合"Articles 增量原则"；GAIA 数据同步更新保持了知识准确性 |
 
 ### HOT_NEWS · 突发监测
 
 | 项目 | 结果 |
 |------|------|
 | 执行 | ✅ 完成 |
-| 产出 | CVE-2026-4192（quip-mcp-server RCE，setupToolHandlers 命令注入）—— 与已有 CVE 序列不重复（quip-mcp-server vs mcp-server-auto-commit vs GitHub Kanban MCP） |
-| 评估 | Tavily 搜索精准定位 SentinelOne 漏洞库，评分达标（CVSS 9.0+） |
+| 产出 | CVE-2026-25904 Pydantic-AI MCP Run Python SSRF（CVSS 8.6 High）—— 沙箱配置错误导致 localhost 访问；项目已归档无补丁；与其他 MCP CVEs 攻击向量不同（沙箱安全 vs 命令注入） |
+| 评估 | Tavily 搜索精准发现；评分达标（CVSS 8.6 + 归档无补丁 = 高危+持续风险） |
 
 ### DAILY_SCAN · 每日资讯扫描
 
 | 项目 | 结果 |
 |------|------|
 | 执行 | ✅ 完成 |
-| 产出 | CLI vs MCP article（W14 digest 新增）+ CVE-2026-4192（新 breaking） |
-| 评估 | Tavily 搜索 + Web Fetch 组合有效 |
+| 产出 | Manus My Computer + GAIA Benchmark 更新 + CVE-2026-25904 全部纳入 W14 周报 |
+| 评估 | — |
 
 ### FRAMEWORK_WATCH · 框架动态追踪
 
 | 项目 | 结果 |
 |------|------|
 | 执行 | ⬇️ 跳过 |
-| 原因 | 本轮未发现重大框架更新（上次 DefenseClaw 已收录）；CVE-2026-4192 归入 breaking 而非 framework |
+| 原因 | 本轮未发现重大框架版本更新（DefenseClaw GitHub 已于上轮收录）；CVE-2026-25904 归入 breaking 而非 framework |
 | 评估 | — |
 
 ---
@@ -44,12 +44,12 @@
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **选择独特的工程视角**：CLI vs MCP 上下文效率（而非安全或协议）提供了社区中稀缺的量化数据；35x token 节省来自真实 Intune 合规自动化客户案例，有说服力
-2. **CVE-2026-4192 补全追踪序列**：quip-mcp-server 的攻击向量（setupToolHandlers）与已有的 mcp-server-auto-commit（getGitChanges）和 GitHub Kanban MCP（create_issue）不重叠，纳入 breaking 有分类价值
+1. **Manus My Computer 更新现有文章而非重复创建**：Deep-agent-manus-paradigm.md 已有完整 Deep Agent 分析框架，新增 Section 1.2 补充 My Computer 里程碑，保持了知识体系的连贯性
+2. **CVE-2026-25904 完善了 MCP CVE 追踪体系**：沙箱配置错误（vs 命令注入）形成了互补视角，且归档无补丁这一事实具有独特的工程警示价值
 
 ### 需要改进什么
-1. **MichaelTruell RSS 持续不可用**：Cursor 第一手信息缺失进入第三轮；mntruell.com 博客更新频率低，可能无法作为稳定知识源
-2. **Twitter RSS 代理不稳定**：本轮 alexalbert__ 等多个 RSS feed 加载超时（>8s），代理链可能存在问题；考虑降级策略（跳过超时的 feed）
+1. **Manus My Computer vs OpenClaw vs Perplexity Computer Use 横向对比**：这三个系统的架构哲学差异（云+本混合 vs 纯本地开源 vs 浏览器自动化）值得独立成篇，是下轮 CONCEPT_UPDATE 的候选
+2. **CVE 归档项目追踪**：mcp-run-python 这类 archived 项目没有安全补丁，对 Agent 开发者的警示价值需要更显式地传播
 
 ---
 
@@ -57,12 +57,12 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（CLI vs MCP Context Efficiency）|
-| 更新 articles | 0 |
-| 新增 digest | 1（CVE-2026-4192 breaking）|
-| 更新 digest | 1（W14 weekly +2 条）|
+| 新增 articles | 0（本轮对现有文章进行增量更新，符合增量原则）|
+| 更新 articles | 1（deep-agent-manus-paradigm.md：Section 1.2 新增 + Section 5 GAIA 数据刷新）|
+| 新增 digest | 1（CVE-2026-25904 breaking）|
+| 更新 digest | 1（W14 周报 +3 条）|
 | 更新 frameworks | 0 |
-| 更新 README | 1（Tool Use 章节索引 + badge 时间戳）|
+| 更新 README | 1（badge 时间戳）|
 | commit | 1 |
 
 ---
@@ -70,18 +70,30 @@
 ## 🔮 下轮规划
 
 ### 高频（每次Cron）
-- [ ] HOT_NEWS：CVE 追踪（近期 MCP CVE 披露频率仍然较高）
-- [ ] HOT_NEWS：Cursor/Bolt 新动态
-
-### 中频（周末 2026-03-28/29）
-- [ ] WEEKLY_DIGEST：W14 周报生成（已完成全部素材）
-- [ ] COMMUNITY_SCAN：社区文章筛选
+- [ ] HOT_NEWS：CVE 追踪（近期 MCP CVE 披露频率仍然较高，下一个关注点：Pydantic-AI SSRF 是否有利用样本）
+- [ ] HOT_NEWS：Manus My Computer 实际使用反馈（社区反应）
 
 ### 中频（明天 2026-03-28）
-- [ ] DAILY_SCAN：周末前最后扫描
+- [ ] DAILY_SCAN：W14 周末前最后扫描
+
+### 中频（周末 2026-03-28/29）
+- [ ] WEEKLY_DIGEST：W14 周报生成（如满足 breaking ≥ 3 条条件）
+- [ ] COMMUNITY_SCAN：社区文章筛选
 
 ### 低频（每三天）
+- [ ] CONCEPT_UPDATE：Manus My Computer vs OpenClaw vs Perplexity Computer Use 深度横向对比（架构哲学 + 安全 + 效率）
 - [ ] ENGINEERING_UPDATE：best-ai-coding-agents-2026 补充 Augment GPT-5.2 Code Review
+
+---
+
+## 📝 Articles 线索
+
+| 线索方向 | 触发条件 | 优先级 |
+|---------|---------|--------|
+| Manus My Computer vs OpenClaw vs Perplexity 深度对比 | explicit trigger | 高 |
+| GAIA Benchmark 各模型详细分析 | 下一轮 benchmark 数据更新 | 中 |
+| Pydantic-AI SSRF 利用样本分析 | 安全社区出现公开 PoC | 高 |
+| DefenseClaw Release Tag 发布 | GitHub 出现 v1.0.0 tag | 中 |
 
 ---
 
