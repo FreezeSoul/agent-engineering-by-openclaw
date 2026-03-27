@@ -1,7 +1,7 @@
 # AgentKeeper 自我报告
 
-> 上次维护：2026-03-27 11:01（北京时间）
-> 本次维护：2026-03-27 17:01（北京时间）
+> 上次维护：2026-03-27 17:01（北京时间）
+> 本次维护：2026-03-27 23:01（北京时间）
 
 ---
 
@@ -11,45 +11,45 @@
 
 | 项目 | 结果 |
 |------|------|
-| 执行 | ✅ 完成（增量更新模式） |
-| 产出 | `articles/concepts/deep-agent-manus-paradigm.md` 更新——新增 Section 1.2「Meta 收购与 My Computer：从云端到桌面的范式跨越」；GAIA Benchmark Section 5 数据刷新 |
-| 评估 | Manus My Computer 是 Deep Agent 演进关键里程碑（2026-03-16 发布），更新现有文章符合"Articles 增量原则"；GAIA 数据同步更新保持了知识准确性 |
+| 执行 | ✅ 完成（独立新文章）|
+| 产出 | `articles/community/ai-agent-protocol-ecosystem-map-2026.md`（~5700字）——AI Agent Protocol Ecosystem Map 2026 深度解读：MCP(97M下载)/A2A(50+伙伴)/ACP/UCP 四层协议栈全景分析；垂直集成(工具) vs 水平协作(Agent间) vs 商业语义分层架构；演进路径对应 Stage 6/9/12；评分 16/20 |
+| 评估 | Digital Applied 文章提供了高质量的协议全景图，具体数据（97M/50+）提供了量化价值；四层分层框架（而非简单协议对比）是有效的知识组织方式；避免了与上轮 Agent Protocol Stack 文章（CABP/A2A Scanner）的重复 |
 
 ### HOT_NEWS · 突发监测
 
 | 项目 | 结果 |
 |------|------|
-| 执行 | ✅ 完成 |
-| 产出 | CVE-2026-25904 Pydantic-AI MCP Run Python SSRF（CVSS 8.6 High）—— 沙箱配置错误导致 localhost 访问；项目已归档无补丁；与其他 MCP CVEs 攻击向量不同（沙箱安全 vs 命令注入） |
-| 评估 | Tavily 搜索精准发现；评分达标（CVSS 8.6 + 归档无补丁 = 高危+持续风险） |
+| 执行 | ✅ 完成（扫描模式）|
+| 产出 | Tavily 扫描发现 MCP Security 新攻击面（CVE-2026-27896 non-standard field casing），以及多个优质协议生态文章；无新突发 breaking 事件 |
+| 评估 | MCP CVE 披露频率在本轮略有下降；安全监测持续进行中 |
 
 ### DAILY_SCAN · 每日资讯扫描
 
 | 项目 | 结果 |
 |------|------|
 | 执行 | ✅ 完成 |
-| 产出 | Manus My Computer + GAIA Benchmark 更新 + CVE-2026-25904 全部纳入 W14 周报 |
+| 产出 | AI Agent Protocol Ecosystem Map + LangGraph 1.1.3 两条有价值动态纳入 W14 周报 |
 | 评估 | — |
 
 ### FRAMEWORK_WATCH · 框架动态追踪
 
 | 项目 | 结果 |
 |------|------|
-| 执行 | ⬇️ 跳过 |
-| 原因 | 本轮未发现重大框架版本更新（DefenseClaw GitHub 已于上轮收录）；CVE-2026-25904 归入 breaking 而非 framework |
-| 评估 | — |
+| 执行 | ✅ 完成 |
+| 产出 | LangGraph 1.1.3（execution_info runtime）+ cli 0.4.19（deploy revisions list）更新至 changelog-watch；DefenseClaw GitHub releases 暂无新 tag（持续监测）；CrewAI repo 名称变更已记录（持续监测 crewAI/Core） |
+| 评估 | execution_info 是 LangGraph 可观测性重要升级，值得记录 |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **Manus My Computer 更新现有文章而非重复创建**：Deep-agent-manus-paradigm.md 已有完整 Deep Agent 分析框架，新增 Section 1.2 补充 My Computer 里程碑，保持了知识体系的连贯性
-2. **CVE-2026-25904 完善了 MCP CVE 追踪体系**：沙箱配置错误（vs 命令注入）形成了互补视角，且归档无补丁这一事实具有独特的工程警示价值
+1. **Protocol Ecosystem Map 独立成篇而非并入现有文章**：虽然已有 Agent Protocol Stack（三层协议）和 CABP 文章，但 Ecosystem Map 提供了独特的四层协议分层框架（垂直/水平/商业语义）和量化数据（97M/50+），知识增量明确，不构成重复
+2. **LangGraph 1.1.3 runtime execution_info 及时跟进**：这是生产环境可观测性的重要功能，对 Agent 工程实践有直接价值
 
 ### 需要改进什么
-1. **Manus My Computer vs OpenClaw vs Perplexity Computer Use 横向对比**：这三个系统的架构哲学差异（云+本混合 vs 纯本地开源 vs 浏览器自动化）值得独立成篇，是下轮 CONCEPT_UPDATE 的候选
-2. **CVE 归档项目追踪**：mcp-run-python 这类 archived 项目没有安全补丁，对 Agent 开发者的警示价值需要更显式地传播
+1. **CrewAI repo 名称追踪**：CrewAI 的 GitHub repo 从 crewAI/crewAI 变更为 crewAI/Core，repo URL 需更新；下次发现 404 应立即检查是否 repo 更名
+2. **周末(3/28-29) WEEKLY_DIGEST 窗口**：W14 周报已有丰富内容，breaking ≥ 3 条条件预计满足；下轮应执行 W14 最终周报合版
 
 ---
 
@@ -57,12 +57,12 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 0（本轮对现有文章进行增量更新，符合增量原则）|
-| 更新 articles | 1（deep-agent-manus-paradigm.md：Section 1.2 新增 + Section 5 GAIA 数据刷新）|
-| 新增 digest | 1（CVE-2026-25904 breaking）|
-| 更新 digest | 1（W14 周报 +3 条）|
-| 更新 frameworks | 0 |
-| 更新 README | 1（badge 时间戳）|
+| 新增 articles | 1（AI Agent Protocol Ecosystem Map 2026）|
+| 更新 articles | 0 |
+| 新增 digest | 0 |
+| 更新 digest | 1（W14 周报 +2 条）|
+| 更新 frameworks | 1（LangGraph changelog-watch）|
+| 更新 README | 1（badge + Multi-Agent 条目）|
 | commit | 1 |
 
 ---
@@ -70,19 +70,20 @@
 ## 🔮 下轮规划
 
 ### 高频（每次Cron）
-- [ ] HOT_NEWS：CVE 追踪（近期 MCP CVE 披露频率仍然较高，下一个关注点：Pydantic-AI SSRF 是否有利用样本）
-- [ ] HOT_NEWS：Manus My Computer 实际使用反馈（社区反应）
+- [ ] HOT_NEWS：CVE 追踪（MCP CVE 披露频率虽降但仍在继续，下一轮关注 CVE-2026-27896 non-standard field casing 是否已公开利用）
+- [ ] HOT_NEWS：CrewAI repo 变更追踪
 
 ### 中频（明天 2026-03-28）
 - [ ] DAILY_SCAN：W14 周末前最后扫描
 
 ### 中频（周末 2026-03-28/29）
-- [ ] WEEKLY_DIGEST：W14 周报生成（如满足 breaking ≥ 3 条条件）
+- [ ] WEEKLY_DIGEST：W14 周报最终合版（breaking ≥ 3 条条件已满足）
 - [ ] COMMUNITY_SCAN：社区文章筛选
 
 ### 低频（每三天）
 - [ ] CONCEPT_UPDATE：Manus My Computer vs OpenClaw vs Perplexity Computer Use 深度横向对比（架构哲学 + 安全 + 效率）
 - [ ] ENGINEERING_UPDATE：best-ai-coding-agents-2026 补充 Augment GPT-5.2 Code Review
+- [ ] CONCEPT_UPDATE：MCP Security 架构问题（CVE-2026-27896 non-standard field casing 是新攻击面）
 
 ---
 
@@ -91,9 +92,10 @@
 | 线索方向 | 触发条件 | 优先级 |
 |---------|---------|--------|
 | Manus My Computer vs OpenClaw vs Perplexity 深度对比 | explicit trigger | 高 |
+| MCP Security 架构深层问题（CVE-2026-27896 non-standard field casing）| 下一轮 CVE 数据更新 | 中 |
 | GAIA Benchmark 各模型详细分析 | 下一轮 benchmark 数据更新 | 中 |
-| Pydantic-AI SSRF 利用样本分析 | 安全社区出现公开 PoC | 高 |
 | DefenseClaw Release Tag 发布 | GitHub 出现 v1.0.0 tag | 中 |
+| A2A Protocol 企业采纳案例（GitHub Copilot Agent 通信）| explicit | 低 |
 
 ---
 
