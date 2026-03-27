@@ -317,6 +317,7 @@ flowchart TB
 | [OWASP Top 10 for Agentic 2026](articles/engineering/owasp-top-10-agentic-applications-2026.md) | ASI01-ASI10 安全风险框架，每个 Agent 开发者必读 |
 | [MCP 安全危机：30 CVEs · 60 天](articles/community/mcp-security-crisis-30-cves-60-days.md) | MCP 最快增长攻击面：38% 服务器零认证、43% 命令注入，AI 行为安全第一公里 |
 | [Geordie AI: RSAC 2026 冠军 + Beam](articles/community/geordie-ai-beam-context-engineering.md) | Context Engineering 三阶段闭环：实时行为映射 → 上下文感知评估 → 自适应修复 |
+| [Claude Code Auto Mode](articles/engineering/claude-code-auto-mode-harness-engineering.md) | YOLO→Auto Mode 范式转变：Safeguards 保护层的权限设计，三层 Harness 架构解析 |
 
 **核心演进链**：Prompt 约束 → Rule Engine → Harness Pattern → Safety Guardrails → Constitutional AI → Context Engineering → MCP Security
 

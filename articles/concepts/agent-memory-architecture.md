@@ -157,7 +157,56 @@ graph TD
 
 ---
 
-## 五、生产环境检查清单
+## 四·五、Claude Code Auto-Memory：AI 自主记忆的工程实践
+
+> **新增（2026-03）**：Claude Code 的 Auto-Memory 是 Contextual Memory + Selective Memory 模式的典型实现。
+
+### 工作机制
+
+Claude Code 在 session 中**自动判断**什么值得记忆，自动写入 `MEMORY.md`（存储在 `~/.claude/projects/` 目录下）：
+
+```
+session 开始 → 自动加载 MEMORY.md（200 行上限）→ AI 参考历史上下文工作
+                              ↓
+session 中 → AI 自动识别值得记住的信息 → 自动追加到 MEMORY.md
+                              ↓
+session 结束 → MEMORY.md 已更新 → 下个 session 自动继承
+```
+
+### 与传统 CLAUDE.md 的区别
+
+| 维度 | 传统 CLAUDE.md | Claude Code Auto-Memory |
+|------|---------------|------------------------|
+| 维护者 | 人类 | AI 自主 |
+| 记忆来源 | 人类猜测 | 真实工作上下文 |
+| 更新频率 | 手动，难维护 | 实时自动 |
+| 遗忘机制 | 无 | 200 行上限自动截断 |
+| 精准度 | 低（猜测式）| 高（基于实际交互）|
+
+### 为什么这是正确的方向
+
+传统做法的问题在于"人类不知道 AI 需要记住什么"：
+- 人类倾向于写"我知道的所有背景"，而非"AI 在这个项目中真正需要的信息"
+- CLAUDE.md 很快过时，人类忘记更新
+
+Auto-Memory 的核心洞察：**让 AI 自己判断什么重要**，因为 AI 在工作中产生的上下文，才是真正有价值的记忆来源。
+
+### 与 Agent Memory Architecture 的对应关系
+
+Claude Code Auto-Memory 属于哪种记忆类型？
+
+| 记忆类型 | Claude Code Auto-Memory 对应 |
+|---------|---------------------------|
+| Semantic Memory（长期知识）| ✅ 跨 session 的项目上下文 |
+| Episodic Memory（经历记录）| ✅ 调试模式、错误模式 |
+| Preference Memory（用户偏好）| ❌ 不涉及 |
+| Working Memory（当前上下文）| ✅ Session 内的即时上下文 |
+
+Claude Code 的创新在于：**不需要人类维护**，AI 自己生成、自己加载、自己遗忘（200 行上限）。
+
+---
+
+## 九、生产环境检查清单
 
 当你设计 Agent Memory 时，需要考虑：
 
@@ -187,7 +236,7 @@ graph LR
 
 ---
 
-## 六、避坑指南
+## 九、避坑指南
 
 ### 常见错误 1：把 RAG 当 Memory
 
@@ -215,7 +264,7 @@ RAG 做记忆的问题：
 
 ---
 
-## 七、工具推荐
+## 九、工具推荐
 
 | 类型 | 工具 | 适用场景 |
 |------|------|---------|
@@ -227,7 +276,7 @@ RAG 做记忆的问题：
 
 ---
 
-## 八、参考资料
+## 九、参考资料
 
 - [AI Agent Memory Comparative Guide: RAG vs Vector Stores vs Graph-based](https://sparkco.ai/blog/ai-agent-memory-in-2026-comparing-rag-vector-stores-and-graph-based-approaches)
 - [Mem0: What is AI Agent Memory](https://mem0.ai/blog/what-is-ai-agent-memory)
