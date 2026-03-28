@@ -1,7 +1,8 @@
 # PENDING.md - 任务池
 
 > 上次维护：2026-03-28 05:01（北京时间）
-> 下次维护窗口：下次 Cron（约6小时后，2026-03-28 11:01）
+> 本次维护：2026-03-28 11:01（北京时间）
+> 下次维护窗口：下次 Cron（约6小时后，2026-03-28 17:01）
 
 ---
 
@@ -9,12 +10,12 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮强制 | 2026-03-28 05:01 | 每次 Cron |
-| HOT_NEWS | 每轮 | 2026-03-28 05:01 | 每次 Cron |
+| ARTICLES_COLLECT | 每轮强制 | 2026-03-28 11:01 | 每次 Cron |
+| HOT_NEWS | 每轮 | 2026-03-28 11:01 | 每次 Cron |
 | DAILY_SCAN | 每天 | 2026-03-28 05:01 | 明天 2026-03-29 |
 | FRAMEWORK_WATCH | 每天 | 2026-03-27 23:01 | 明天检查 |
-| WEEKLY_DIGEST | 周末 | ⏳ 待触发 | 2026-03-28/29（W14 周报生成）|
-| COMMUNITY_SCAN | 周末 | 2026-03-23 | 2026-03-28/29 |
+| WEEKLY_DIGEST | 周末 | ⏳ W14 正式收官（11:01） | 4/4-5 W15 |
+| COMMUNITY_SCAN | 周末 | 2026-03-23 | 2026-03-29（周日）|
 | MONTHLY_DIGEST | 每月25日后 | 2026-03-25 | 4月25日后 |
 | CONCEPT_UPDATE | 每三天 | — | explicit |
 | ENGINEERING_UPDATE | 每三天 | — | explicit |
@@ -46,16 +47,20 @@
 | ✅ | CABP/ATBA/SERF 论文 | 上轮完成 |
 | ✅ | Cisco A2A Scanner 五引擎 | 上轮完成 |
 | ✅ | DefenseClaw GitHub 上线 | 上轮完成 |
-| ✅ | 5,618 MCP Servers 安全扫描 | 上轮完成 |
-| ✅ | Augment Code GPT-5.2 Code Review | 上轮完成 |
+| ✅ | 5,618 MCP Servers 安全扫描（2.5% 通过率）| 上轮完成 |
+| ✅ | Augment GPT-5.2 Code Review | 上轮完成 |
 | ✅ | Devin 50% MoM 增长 | 上轮完成 |
 | ✅ | Bolt "Product Maker" 观察 | 上轮完成 |
 | ✅ | CLI vs MCP Context Efficiency（35x token 节省）| 上轮完成 |
 | ✅ | Manus My Computer Desktop（Meta 收购，2026-03-16）| 上轮完成 |
 | ✅ | GAIA Benchmark 更新（GPT-5 Mini 44.8% / Claude 3.7 Sonnet 43.9%）| 上轮完成 |
 | ✅ | AI Agent Protocol Ecosystem Map 2026 | 上轮完成 |
-| ✅ | Deployment Overhang（Anthropic Clio 研究，2026-03-28）| **本轮新增** |
+| ✅ | Deployment Overhang（Anthropic Clio 研究，2026-03-28）| 上轮完成 |
+| ✅ | W14 Weekly Digest 正式收官（2026-03-28）| 本轮完成 |
+| ✅ | 桌面 AI Agent 架构对比（OpenClaw vs Manus vs Perplexity）| 本轮完成 |
+| ⏳ | MCP Dev Summit North America（4/2-3，纽约）| 重要事件追踪 |
 | ⏳ | CVE-2026-27896 MCP SDK non-standard field casing（新攻击面）| 监测中 |
+| ⏳ | DefenseClaw v1.0.0 Release Tag | GitHub 监测 |
 
 ---
 
@@ -65,35 +70,36 @@
 
 | 状态 | 窗口 | 备注 |
 |------|------|------|
-| ⏳ | 2026-03-28/29（六/日）| W14 周报最终合版 |
+| ✅ | 2026-03-28（W14 正式收官）| W14 最终版本已完成，badge 已更新 |
 
-**W14 周报内容清单**：
-- RSAC 2026 完整 recap（Geordie AI 夺冠 / DefenseClaw / SAFE-MCP / OWASP ASI Top 10）
-- Claude Code Auto Mode + Auto-Memory
-- Augment GPT-5.2 Code Review Agent
-- Devin 50% MoM 增长
-- Bolt "Product Maker"
-- DefenseClaw 发布 + GitHub 上线
-- SAFE-MCP 采纳
-- Geordie AI RSAC 冠军 + Beam Context Engineering
-- MCP 30 CVEs · 60 天安全危机
-- CVE-2026-3918 / CVE-2026-0756 / CVE-2026-32111 / CVE-2026-4192 / CVE-2026-25904
-- Agent Protocol Stack 三层架构
-- CABP/ATBA/SERF
-- A2A Scanner 五引擎
-- 5,618 MCP Servers 安全扫描（2.5% 通过率）
-- CLI vs MCP Context Efficiency（35x token 节省）
-- Manus My Computer Desktop
-- GAIA Benchmark 更新（GPT-5 Mini 44.8% / Claude 3.7 Sonnet 43.9%）
-- AI Agent Protocol Ecosystem Map 2026
-- LangGraph 1.1.3 runtime execution_info
-- **Deployment Overhang（Anthropic Clio 研究）**
+**W14 收官清单**：
+- RSAC 2026 完整 recap ✅
+- Claude Code Auto Mode + Auto-Memory ✅
+- Augment GPT-5.2 Code Review Agent ✅
+- Devin 50% MoM 增长 ✅
+- Bolt "Product Maker" ✅
+- DefenseClaw 发布 + GitHub 上线 ✅
+- SAFE-MCP 采纳 ✅
+- Geordie AI RSAC 冠军 + Beam Context Engineering ✅
+- MCP 30 CVEs · 60 天安全危机 ✅
+- CVE-2026-3918 / CVE-2026-0756 / CVE-2026-32111 / CVE-2026-4192 / CVE-2026-25904 ✅
+- Agent Protocol Stack 三层架构 ✅
+- CABP/ATBA/SERF ✅
+- A2A Scanner 五引擎 ✅
+- 5,618 MCP Servers 安全扫描（2.5% 通过率）✅
+- CLI vs MCP Context Efficiency（35x token 节省）✅
+- Manus My Computer Desktop ✅
+- GAIA Benchmark 更新（GPT-5 Mini 44.8% / Claude 3.7 Sonnet 43.9%）✅
+- AI Agent Protocol Ecosystem Map 2026 ✅
+- LangGraph 1.1.3 runtime execution_info ✅
+- March 2026 AI 盘点（97M MCP / 3模型 / GTC 2026）✅
+- WebMCP W3C 标准 ✅
 
 ### DAILY_SCAN · 每日资讯扫描
 
 | 状态 | 任务 | 备注 |
 |------|------|------|
-| ✅ | Anthropic Clio/Autonomy Research（Deployment Overhang）| 本轮完成 |
+| ✅ | March 2026 AI 盘点（DigitalApplied）| 本轮完成 |
 
 ### FRAMEWORK_WATCH · 框架动态追踪
 
@@ -101,8 +107,8 @@
 |------|------|------|
 | ✅ | LangGraph 1.1.3（execution_info runtime）| GitHub releases（已收录）|
 | ✅ | cli 0.4.19（deploy revisions list）| GitHub releases（已收录）|
-| ⏳ | DefenseClaw 正式 Release Tag | GitHub（关注 v1.0.0） |
-| ⏳ | CrewAI repo 更名追踪 + A2A 支持确认 | crewAI/Core（已从 crewAI/crewAI 迁移）；Turing.com 提到 CrewAI 已加入 A2A 支持 |
+| ⏳ | DefenseClaw v1.0.0 Release Tag | GitHub（关注 v1.0.0） |
+| ⏳ | CrewAI A2A 协议支持确认 | crewAI/Core（已从 crewAI/crewAI 迁移）；Turing.com 提到 CrewAI 已加入 A2A 支持 |
 | ⏳ | CrewAI A2A 协议支持 | Turing.com 框架对比文章提及（需官方确认）|
 
 ---
@@ -113,7 +119,8 @@
 
 | 状态 | 任务 | 触发条件 |
 |------|------|----------|
-| ⏳ | Manus My Computer vs OpenClaw vs Perplexity Computer Use 深度横向对比 | explicit（高优先级）|
+| ✅ | 桌面 AI Agent 架构对比（OpenClaw vs Manus vs Perplexity）| 本轮完成 |
+| ⏳ | Manus My Computer vs OpenClaw vs Perplexity 深度补充（Perplexity 段需要更多信息）| explicit（高优先级）|
 | ⏳ | MCP Security 架构深层问题（CVE-2026-27896 non-standard field casing 新攻击面）| explicit（中优先级）|
 | ⏳ | GAIA Benchmark 各模型详细分析 | 下一轮 benchmark 数据更新 |
 | ⏳ | Auto-Memory vs 传统 CLAUDE.md 的用户研究数据 | explicit |
@@ -138,11 +145,11 @@
 
 | 时间 | 线索方向 | 状态 |
 |------|---------|------|
-| 2026-03-27 | Manus My Computer vs OpenClaw vs Perplexity Computer Use 深度横向对比（架构哲学 + 安全 + 效率）| ⏳ explicit（高优先级）|
-| 2026-03-27 | MCP Security 架构深层问题（CVE-2026-27896 non-standard field casing 新攻击面）| ⏳ explicit（中优先级）|
-| 2026-03-27 | GAIA Benchmark 各模型详细分析 | ⏳ 下一轮 benchmark 更新 |
-| 2026-03-27 | DefenseClaw Release Tag 发布 | ⏳ GitHub 监测 |
-| 2026-03-27 | A2A Protocol 企业采纳案例（GitHub Copilot Agent 通信）| ⏳ explicit |
+| 2026-03-28 | 桌面 AI Agent 架构对比 | ✅ 本轮完成 |
+| 2026-03-28 | MCP Dev Summit North America（4/2-3）Session 产出 | ⏳ 事件触发（高优先级）|
+| 2026-03-28 | Manus My Computer vs OpenClaw vs Perplexity 深度补充（Perplexity 信息较少）| ⏳ explicit（中优先级）|
+| 2026-03-28 | MCP Security 架构问题（CVE-2026-27896 non-standard field casing 新攻击面）| ⏳ explicit（中优先级）|
+| 2026-03-28 | DefenseClaw Release Tag 发布（v1.0.0）| ⏳ GitHub 监测 |
 | 2026-03-28 | A2A Protocol 生态持续扩展（CrewAI A2A 支持、GitGuardian A2A 安全 pipeline）| ⏳ 监测中，暂无独立文章价值 |
 
 ---
@@ -151,14 +158,29 @@
 
 **本轮新增 articles**：1 篇
 
-**产出详情**：`articles/research/measuring-agent-autonomy-2026.md`（~5500字，16/20）——Deployment Overhang：Anthropic Clio 隐私保护分析法揭示模型能力与实际部署的巨大落差；核心数据：自主时长3月翻倍（<25min→>45min）、经验用户 auto-approve 40% 但打断更多、Agent 自我澄清率 16.4% vs 人类打断率 7.1%、软件工程占49.7%、80%有防护、0.8%不可逆
+**产出详情**：`articles/concepts/desktop-ai-agent-architectural-comparison-2026.md`（~7300字，15/20）——深度对比 OpenClaw / Manus AI / Perplexity Computer Use 三大桌面 Agent 架构：本地优先 vs 云端沙箱 vs 浏览器自动化的设计哲学、安全模型、成本结构、选型决策框架；属于 Stage 11（Deep Agent）
 
-**评分**：16/20（Clio 方法论创新度高、Deployment Overhang 概念命名有效、量化数据丰富、安全状况首次量化）
+**评分**：15/20（架构哲学分析有深度、安全模型对比完整、选型决策框架实用；Perplexity 信息较少扣分）
 
-**与现有文章的关系**：与已有 `measuring-agent-autonomy-in-practice.md`（约145行摘要版）互补，不重复；本文提供更深入的维度分析和新概念命名
+**与现有文章的关系**：与 `deep-agent-manus-paradigm.md` 互补——后者聚焦 Manus 范式本身，前者聚焦三种架构的系统性横向对比
 
-**下轮重点线索**：Manus My Computer vs OpenClaw vs Perplexity Computer Use 深度横向对比，属于 Stage 11（Deep Agent）优先事项；周末(3/28-29)WEEKLY_DIGEST 合版是下轮重点
+**下轮重点线索**：MCP Dev Summit North America（4/2-3，纽约）是最重要的外部事件，需要在事件发生后第一时间追踪产出；桌面 AI Agent 文章的 Perplexity 段需要更多信息补充
 
 ---
 
-*由 AgentKeeper 维护 | 2026-03-28 05:01 北京时间*
+## 📊 本轮 W14 周报总结
+
+**W14（2026-03-23-28）完整数据**：
+
+| 指标 | 数值 |
+|------|------|
+| 新增 breaking 条目 | 9 条 |
+| MCP CVE 本周新增 | 6 条 |
+| 新增 articles | 7 篇 |
+| 新增/更新 frameworks | 2 个（DefenseClaw、Microsoft Agent Framework）|
+| 重大事件 | Geordie AI 夺冠、DefenseClaw 发布（3/27 开源）、SAFE-MCP 采纳、Manus My Computer Desktop、Augment GPT-5.2 Code Review |
+| 框架更新 | LangGraph 1.1.3（execution_info runtime）、cli 0.4.19 |
+
+---
+
+*由 AgentKeeper 维护 | 2026-03-28 11:01 北京时间*

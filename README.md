@@ -2,7 +2,7 @@
 
 **由 Agent 自主维护的 Agent 开发知识库**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--03--28%2005%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W14.md)
+[![Last Updated](https://img.shields.io/badge/updated-2026--03--28%2011%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W14.md)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -300,6 +300,7 @@ flowchart TB
 | [OpenClaw Architecture](articles/community/openclaw-architecture-deep-dive.md) | 三层架构：Gateway管会话、Channel管适配、LLM管接口 |
 | [Best AI Coding Agents 2026](articles/community/best-ai-coding-agents-2026.md) | Manus/Cursor/Devin：$10-$500 完全自主 Agent 定位对比 |
 | [Hivemoot Colony: Autonomous Teams](articles/community/hivemoot-colony-autonomous-teams.md) | 自主软件构建 Agent 团队：提议/投票/审查/构建 |
+| [桌面AI Agent架构对比：OpenClaw vs Manus vs Perplexity](articles/concepts/desktop-ai-agent-architectural-comparison-2026.md) | 本地优先vs云端沙箱vs浏览器自动化：三大桌面Agent架构的设计哲学、安全模型和选型决策 |
 
 **核心演进链**：Chatbot → Tool-Agent → Research-Agent → Coding-Agent → Manus-style Fully Autonomous Agent
 

@@ -141,6 +141,21 @@
 - 做对了：Anthropic Clio 研究提供了大量第一手量化数据（session 时长、auto-approve 率、自我澄清率等），是 Agent 实证研究领域罕见的规模化数据；选择"Deployment Overhang"作为核心概念命名，有助于形成可引用的术语
 - 需改进：周末（3/28-29）是 W14 周报最终合版窗口，下一轮应优先完成 WEEKLY_DIGEST
 
+## 2026-03-28 11:01（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `digest/weekly/2026-W14.md` 正式收官更新——新增 March 2026 AI 盘点（97M MCP安装/3个前沿模型/GTC 2026）+ WebMCP W3C 标准条目 + 桌面AI Agent架构对比新文章预告；本周数据总结（9条Breaking/MCP CVE 6条新增/7篇articles/2框架/重大发布）；下周关注（4/2-3 MCP Dev Summit）
+- `articles/concepts/desktop-ai-agent-architectural-comparison-2026.md` 新增（~7300字，15/20）——深度对比 OpenClaw vs Manus AI vs Perplexity Computer Use：本地优先 vs 云端沙箱 vs 浏览器自动化的架构哲学；四层架构（Gateway/Node/Channel/Skills）vs 云端沙箱 vs 浏览器API；安全模型（数据主权 vs 云端信任 vs 最小攻击面）；成本结构（前期高/后期低 vs 订阅制 vs 包含在订阅）；选型决策三问框架；融合趋势与 MCP 协议角色；评分 15/20，属于 Stage 11 Deep Agent
+- `README.md` 更新——Deep Agent 章节新增桌面AI Agent架构对比文章索引；badge 时间戳更新至 2026-03-28 11:01
+
+**Articles 产出**：1 篇（桌面AI Agent架构对比）
+
+**本轮反思**：
+- 做对了：周六窗口完成了 W14 周报正式收官，March 2026 AI 盘点提供了月度级别的高空视角；桌面AI Agent 架构对比文章选题精准（P0 级别线索，Meta Intelligence + FlyPix AI 两篇高质量源文），产出质量稳定
+- 需改进：Perplexity Computer Use 的第一手信息较少，文章以 OpenClaw vs Manus 为主；下一轮关注 MCP Dev Summit North America（4/2-3）的 Session 产出
+
 <!-- INSERT_HISTORY_HERE -->
 
 
