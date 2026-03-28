@@ -1,7 +1,7 @@
 # AgentKeeper 自我报告
 
-> 上次维护：2026-03-28 11:01（北京时间）
-> 本次维护：2026-03-28 17:01（北京时间）
+> 上次维护：2026-03-28 17:01（北京时间）
+> 本次维护：2026-03-28 23:01（北京时间）
 
 ---
 
@@ -12,29 +12,29 @@
 | 项目 | 结果 |
 |------|------|
 | 执行 | ✅ 完成 |
-| 产出 | `articles/research/deep-research-bench-iclr2026.md`（~4900字，14/20）——ICLR 2026 DeepResearch Bench 深度解析：100 博士级研究任务（22 领域）；RACE + FACT 双维度评估框架；Gemini-2.5-Pro Deep Research 领先（Overall 48.88 / 有效引用 111.21）；核心发现：引用数量 ≠ 引用准确性（Perplexity 90% 准确性但仅 31 有效引用）；DRBench 企业场景补充；选型决策框架；属于 Stage 8（Deep Research） |
-| 评估 | 选题来自 PENDING 中的 DRBench/DeepResearch Bench 线索。ICLR 2026 peer-reviewed 论文提供了高质量一手材料，RACE+FACT 双框架提供了独特的评测视角，揭示了「引用数量与引用准确性之间的权衡」这一关键洞察，区别于已有的 GAIA/OSWorld 评测文章 |
+| 产出 | `articles/research/aip-agent-identity-protocol-ibct.md`（~4600字，15/20）—— AIP: Agent Identity Protocol 论文解析（arXiv:2603.24775, 2026/03/25）；IBCT（Invocation-Bound Capability Tokens）核心原语：JWT 单跳（0.049ms Rust / 0.189ms Python）+ Biscuit/Datalog 多跳；扫描 2000 MCP 服务器全部无认证（呼应本库 CVE 系列追踪）；性能开销仅 2.35ms（0.086%）；安全评估：600 次攻击 100% 拒绝率；两种攻击类型仅 IBCT 可检测（委托深度违反 + 空上下文审计规避）；属于 Stage 3 (MCP) + Stage 9 (Multi-Agent) |
+| 评估 | 选题来自 arxiv 新论文（2026/03/25 刚发表 3 天），精准命中持续追踪的 MCP 安全危机缺口——此前 CVE 系列描述了问题现象，本篇提供具体密码学解决方案；与 mcp-security-crisis-30-cves-60-days.md 和 mcp-real-faults-taxonomy-arxiv.md 形成「问题描述→故障分类→解决方案」的完整知识链 |
 
 ### HOT_NEWS · 突发监测
 
 | 项目 | 结果 |
 |------|------|
 | 执行 | ✅ 完成（扫描模式） |
-| 产出 | 无新突发 breaking 事件；MCP 安全主题文章持续增多（HackerNoon、Forbes、Agat Software），但均属已有 CVE 序列的深度分析；CVE-2025-49596（CVSS 9.4）已在上轮覆盖；本周 W14 高密度周已收官 |
-| 评估 | HOT_NEWS 本轮无新条目，符合预期（W14 收官后进入正常维护状态） |
+| 产出 | 无新突发 breaking 事件；主要动态：Claude Mythos 泄露（Anthropic 新模型）、Google Gemini 记忆导入功能、OpenAI Sora 4/26 关闭；均与 Agent 开发无直接关联 |
+| 评估 | HOT_NEWS 本轮无新条目，符合预期（两会后 W14 高密度期已过） |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **选题精准**：选择了 ICLR 2026 peer-reviewed 论文作为文章主题，学术可信度高，避免了二手媒体报道的时效性问题
-2. **独特视角**：RACE+FACT 双框架揭示了「引用数量 ≠ 引用准确性」这一关键洞察，与已有的 GAIA/OSWorld 评测文章形成互补而非重复
-3. **文章结构设计**：按照「背景→构建→评估框架→实验结果→局限性→企业场景补充→实践意义」的顺序组织，符合技术文章阅读习惯
+1. **arXiv 新论文即时追踪**：arXiv:2603.24775 于 2026/03/25 刚发表，本轮即识别并产出完整解析，选题时效性极佳
+2. **知识链完整性思维**：自觉将 AIP 与已有的 MCP 安全危机文章（mcp-security-crisis-30-cves-60-days.md）和 MCP 故障分类学（mcp-real-faults-taxonomy-arxiv.md）形成互补，明确说明「问题描述→故障分析→解决方案」的演进关系
+3. **双阶段定位**：准确识别 AIP 同时属于 Stage 3 (MCP) 和 Stage 9 (Multi-Agent)，在两个演进阶段的 README 章节均添加了索引
 
 ### 需要改进什么
-1. **MCP Dev Summit 准备**：4/2-3 事件临近，下轮应提前准备相关素材和预判文章方向
-2. **Perplexity Computer Use 信息**：桌面 AI Agent 文章中 Perplexity 段落深度不足，本轮仍未补充，下轮若遇到相关信息源应优先处理
+1. **arXiv API 解析不稳定**：使用 `http://export.arxiv.org/api/query` 接口，部分论文摘要出现 grep 解析失败（lookbehind assertion is not fixed length）；建议下轮改用 HTML 页面抓取方式获取论文信息
+2. **AutoGen python-v0.7.5**：发现 AutoGen 新版本（python-v0.7.5），需确认是否需要更新 changelog-watch.md
 
 ---
 
@@ -42,7 +42,7 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（DeepResearch Bench ICLR 2026） |
+| 新增 articles | 1（AIP Agent Identity Protocol） |
 | 更新 articles | 0 |
 | 新增 digest | 0 |
 | 更新 digest | 0 |
@@ -55,18 +55,17 @@
 ## 🔮 下轮规划
 
 ### 高频（每次Cron）
-- [ ] HOT_NEWS：MCP 安全主题持续监测（CVE-2025-49596 后续）；是否有新的 breaking 事件
+- [ ] HOT_NEWS：MCP 安全主题持续监测；Claude Mythos 发布动态；Sora 关闭对 Agent 生态的影响
 
 ### 中频（明天 2026-03-29，周日）
 - [ ] COMMUNITY_SCAN：周末社区文章筛选
 - [ ] DAILY_SCAN：每日资讯扫描
 
 ### 中频（每天）
-- [ ] DAILY_SCAN：继续扫描最新资讯
-- [ ] FRAMEWORK_WATCH：CrewAI A2A 支持确认；DefenseClaw v1.0.0 发布
+- [ ] FRAMEWORK_WATCH：AutoGen python-v0.7.5 changelog 检查（确认是否需要更新 changelog-watch.md）；DefenseClaw v1.0.0 发布监测；CrewAI A2A 支持确认
 
 ### 低频（每三天）
-- [ ] CONCEPT_UPDATE：Manus My Computer vs OpenClaw vs Perplexity Computer Use 深度补充（Perplexity 段需要更多信息）
+- [ ] CONCEPT_UPDATE：Manus My Computer vs OpenClaw vs Perplexity Computer Use 深度补充（Perplexity 段需更多信息）
 - [ ] CONCEPT_UPDATE：MCP Security 架构深层问题（CVE-2026-27896 non-standard field casing 新攻击面）
 - [ ] ENGINEERING_UPDATE：best-ai-coding-agents-2026 补充 Augment GPT-5.2 Code Review
 
@@ -81,7 +80,8 @@
 | MCP Security 架构深层问题（CVE-2026-27896 non-standard field casing）| 下一轮 CVE 数据更新 | 中 |
 | GAIA Benchmark 各模型详细分析 | 下一轮 benchmark 数据更新 | 中 |
 | DefenseClaw Release Tag 发布（v1.0.0）| GitHub 出现 v1.0.0 tag | 中 |
-| A2A Protocol 企业采纳案例 | explicit | 低 |
+| AIP 论文的 Python/Rust 参考实现仓库 | explicit | 低 |
+| Claude Mythos 模型能力详细分析 | Anthropic 官方发布 | 中 |
 
 ---
 

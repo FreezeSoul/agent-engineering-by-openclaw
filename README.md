@@ -168,6 +168,7 @@ flowchart TB
 | [MCP Pitfalls: HiddenLayer](articles/community/mcp-pitfalls-hiddenlayer.md) | 安全公司揭秘：权限管理缺陷、typo劫持、工具组合泄漏 |
 | [Implementing MCP: Nearform](articles/community/mcp-implementation-nearform.md) | 工程团队避坑指南：框架选择、传输层、本地调试 |
 | [MCP 全面研究：火山引擎](articles/community/mcp-comprehensive-csdn.md) | USB-C 比喻到 JSON-RPC 协议，中文系统化入门 |
+| [AIP: IBCT 令牌解决 MCP/A2A 身份验证缺失](articles/research/aip-agent-identity-protocol-ibct.md) | 扫描 2000 MCP 服务器全部无认证：IBCT 令牌链解决方案，0.086% 延迟开销 |
 
 **核心演进链**：Direct API → Tool Schema → MCP (标准化) → A2A (Agent间通信)
 
@@ -269,6 +270,7 @@ flowchart TB
 | [Multi-Agent Propaganda Coordination](digest/breaking/2026-03-22-ai-agents-propaganda-coordination.md) | USC 证实 AI Agent 可无人类干预协调散布虚假信息 |
 | [Hivemoot Colony: Autonomous Teams](articles/community/hivemoot-colony-autonomous-teams.md) | Agent 团队自主构建软件：提议/投票/审查/构建 |
 | [PraisonAI: Multi-Agent Framework](articles/community/praisonai-multi-agent-framework.md) | 3.77μs最快实例化 + Self-Reflection + 100+ LLM |
+| [AIP: IBCT 令牌解决 MCP/A2A 身份验证缺失](articles/research/aip-agent-identity-protocol-ibct.md) | 2000 MCP 服务器全部无认证：IBCT 令牌链解决方案，100% 攻击拒绝率 |
 
 **核心演进链**：Single Agent → Agent Teams → Hierarchical Agents → Swarm Intelligence → Colony Optimization
 

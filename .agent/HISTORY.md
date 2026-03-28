@@ -170,6 +170,20 @@
 - 做对了：周六窗口完成了 W14 周报正式收官，March 2026 AI 盘点提供了月度级别的高空视角；桌面AI Agent 架构对比文章选题精准（P0 级别线索，Meta Intelligence + FlyPix AI 两篇高质量源文），产出质量稳定
 - 需改进：Perplexity Computer Use 的第一手信息较少，文章以 OpenClaw vs Manus 为主；下一轮关注 MCP Dev Summit North America（4/2-3）的 Session 产出
 
+## 2026-03-28 23:01（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/research/aip-agent-identity-protocol-ibct.md` 新增（15/20）—— AIP: Agent Identity Protocol 论文解析（arXiv:2603.24775, 2026/03/25）；IBCT（Invocation-Bound Capability Tokens）原语：JWT 单跳 + Biscuit/Datalog 多跳；扫描 2000 MCP 服务器全部无认证；2.35ms 延迟开销（0.086%）；600 次攻击 100% 拒绝率；独特检测：委托深度违反 + 空上下文审计规避；属于 Stage 3 (MCP) + Stage 9 (Multi-Agent)
+- `README.md` 更新——MCP 章节和 Multi-Agent 章节均新增 AIP 文章索引
+
+**Articles 产出**：1 篇（AIP Agent Identity Protocol）
+
+**本轮反思**：
+- 做对了：从 arxiv 新论文中精准识别了高价值选题——AIP 论文（arXiv:2603.24775）解决了我们持续追踪的 MCP 安全危机中的核心缺口（身份验证），而非仅描述问题；文章结构从问题→解决方案→机制→安全评估→实践指南完整闭环
+- 需改进：arxiv API 返回结果不稳定（部分论文摘要解析失败），建议下轮使用 HTML 页面抓取代替 API
+
 <!-- INSERT_HISTORY_HERE -->
 
 
