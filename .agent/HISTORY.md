@@ -214,6 +214,21 @@
 - 做对了：精准选择 arxiv:2602.12430 综述论文（26.1% 漏洞率 + Skill Trust 四层框架 + 渐进式披露机制）填补 Stage 10 学术深度空白；与已有的 Skill Registry Ecosystem 文章形成"概念 + 生态系统 + 学术综述"三层结构；W15 周报及时初始化
 - 需改进：langgraph-supervisor 0.0.31 属于边缘包，暂不纳入 changelog-watch；arxiv:2603.01203（Agent Benchmark vs Real-World Work）评分也较高但本轮仅能产出 1 篇，已记录为下轮 PENDING
 
+## 2026-03-29 17:01（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/research/ai4work-benchmark-real-world-mismatch.md` 新增（~6900字，17/20）—— CMU+Stanford 论文（arXiv:2603.01203，2026/03/06 v2）深度解读：43基准/72,342任务/1,016职业的 O*NET 映射分析；编程中心化的基准仅覆盖7.6%就业，管理和法律领域被双重忽视，95%真实工作技能未被覆盖；评测体系的「程序员偏见」与马太效应；三个可衡量原则：Coverage / Realism / Granular Evaluation；与 SkillsBench（arxiv:2602.12670）自我生成技能无收益结论互相印证；与 GAIA/OSWorld/MCPMark 等具体基准互补而非替代；属于 Stage 8（Deep Research）
+- `README.md` 更新——Deep Research 章节新增 AI4Work 文章索引；badge 时间戳更新至 2026-03-29 17:01
+- `digest/weekly/2026-W15.md` 更新——新增 AI4Work 条目；本周 articles 累计 2 篇
+
+**Articles 产出**：1 篇（AI4Work Benchmark Mismatch）
+
+**本轮反思**：
+- 做对了：精准识别 arxiv:2603.01203（CMU+Stanford，Zhiruo Wang et al.）作为高价值选题——首个系统性地将 Agent 基准评测映射至完整美国劳动力市场结构的研究，与已有 GAIA/OSWorld/MCPMark 等具体基准文章形成「具体基准 → 基准方法论」的知识纵深；O*NET 映射框架提供了可量化、可复用的分析工具；三个可衡量原则（Coverage/Realism/Granular Evaluation）对实践有直接指导意义
+- 需改进：本轮无新突发 breaking 事件，HOT_NEWS 扫描模式跳过；SkillsBench（arxiv:2602.12670）本轮未深入展开，核心数据（+16.2pp / 自我生成无收益）已在 AI4Work 中作为对比引用；MCP Dev Summit（4/2-3）是下轮 P0 事件，需提前关注 Session 产出
+
 <!-- INSERT_HISTORY_HERE -->
 
 
