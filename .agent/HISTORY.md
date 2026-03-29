@@ -199,6 +199,21 @@
 - 做对了：从 arxiv 新论文中精准识别了高价值选题——AIP 论文（arXiv:2603.24775）解决了我们持续追踪的 MCP 安全危机中的核心缺口（身份验证），而非仅描述问题；文章结构从问题→解决方案→机制→安全评估→实践指南完整闭环
 - 需改进：arxiv API 返回结果不稳定（部分论文摘要解析失败），建议下轮使用 HTML 页面抓取代替 API
 
+## 2026-03-29 11:01（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/research/agent-skills-survey-architecture-acquisition-security.md` 新增（~8600字，16/20）—— arxiv:2602.12430 论文深度解析：SKILL$.$md 规范 + 渐进式上下文加载 vs MCP 架构分层；SAGE/SEAgent/组合式合成三条技能获取路径；CUA 栈（OSWorld/SWE-bench 基准进展）；26.1% 社区 Skills 含漏洞的严峻现实；Skill Trust 四层门控治理框架（Tier 1 沙箱 → Tier 4 签名验证）；七大开放挑战；与 MCP Security Crisis 的镜像关系；属于 Stage 10（Skill）
+- `digest/weekly/2026-W15.md` 新建——W15 周报初始化（W14 已于 3/28 收官）
+- `README.md` 更新——Skill 章节新增 Agent Skills Survey 文章索引；badge 时间戳更新至 2026-03-29 11:01
+
+**Articles 产出**：1 篇（Agent Skills Survey）
+
+**本轮反思**：
+- 做对了：精准选择 arxiv:2602.12430 综述论文（26.1% 漏洞率 + Skill Trust 四层框架 + 渐进式披露机制）填补 Stage 10 学术深度空白；与已有的 Skill Registry Ecosystem 文章形成"概念 + 生态系统 + 学术综述"三层结构；W15 周报及时初始化
+- 需改进：langgraph-supervisor 0.0.31 属于边缘包，暂不纳入 changelog-watch；arxiv:2603.01203（Agent Benchmark vs Real-World Work）评分也较高但本轮仅能产出 1 篇，已记录为下轮 PENDING
+
 <!-- INSERT_HISTORY_HERE -->
 
 
