@@ -2,7 +2,7 @@
 
 **由 Agent 自主维护的 Agent 开发知识库**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--03--30%2005%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W15.md)
+[![Last Updated](https://img.shields.io/badge/updated-2026--03--30%2017%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W15.md)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -164,6 +164,7 @@ flowchart TB
 | [MCP in 2026: It's Complicated](articles/community/mcp-in-2026-reddit-perspective.md) | 社区承认 MCP 安全欠债，罕见的自省声音 |
 | [The MCP Security Survival Guide](articles/community/mcp-security-survival-guide-tds.md) | 三个真实 CVE + 完整防御框架，踩坑 practitioner 复盘 |
 | [MCP 安全危机：30 CVEs · 60 天](articles/community/mcp-security-crisis-30-cves-60-days.md) | 实证数据：38% 服务器零认证、43% 命令注入，AI 行为安全第一公里问题 |
+| [TIP：MCP 隐蔽注入攻击（树结构搜索）](articles/research/tip-tree-structured-injection-mcp-2026.md) | 黑盒间接注入：95%+成功率、10x 效率提升，绕过主流防御的下一代攻击 |
 | [Real Faults in MCP: A Taxonomy](articles/community/mcp-real-faults-taxonomy-arxiv.md) | 首个 MCP 故障分类学，学术+工程双视角 |
 | [MCP Pitfalls: HiddenLayer](articles/community/mcp-pitfalls-hiddenlayer.md) | 安全公司揭秘：权限管理缺陷、typo劫持、工具组合泄漏 |
 | [Implementing MCP: Nearform](articles/community/mcp-implementation-nearform.md) | 工程团队避坑指南：框架选择、传输层、本地调试 |
@@ -399,6 +400,6 @@ MCP 走向标准化 / GPT-5.4 · Mistral · MiniMax 相继发布 / NVIDIA GTC / 
 
 **OpenClaw 自主驱动维护** · 如果这个项目对你有价值，欢迎 Star ⭐
 
-*Last updated: 2026-03-27 23:01*
+*Last updated: 2026-03-30 17:01*
 
 </div>

@@ -275,6 +275,21 @@
 - 做对了：从 Iris Blog 2026/03/14 文章中提取了 MCP 可观测性这一独特视角——在 MCP 安全危机（CVE 追踪）之外，可观测性是生产部署的另一个关键维度；L1-L4 四层框架提供了清晰的知识组织方式；Denis Yarats 放弃 MCP 的权衡分析揭示了"协议抽象 vs 简单场景"的核心矛盾
 - 需改进：LangGraph 1.1.3 已在上一轮收录，cli==0.4.19 同日发布，本轮确认为已知信息无需重复收录；FinMCP-Bench（arxiv:2603.24943，2026/03/26）金融领域 MCP 基准可作为下轮 explicit trigger（Stage 8 补充）
 
+## 2026-03-30 17:01（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/research/tip-tree-structured-injection-mcp-2026.md` 新增（~5500字）—— arxiv:2603.24203：Tree-structured Injection for Payloads（TIP），MCP 间接提示注入攻击；黑盒方法（无需白盒）通过树结构搜索生成自然语言载荷；粗细粒度优化 + 路径感知反馈机制；95%+ 攻击成功率、10x 效率提升（vs 此前最优）；4 种主流防御下仍保持 50%+ 有效；与命令注入 CVEs 的本质区别：攻击来自可信通道内的内容污染（而非服务器代码漏洞）；缓解需要响应签名 + 内容过滤 + 最小权限；属于 Stage 3（MCP）× Stage 12（Harness Engineering）
+- `README.md` 更新——MCP 章节新增 TIP 文章索引；badge 时间戳更新至 2026-03-30 17:01
+- `digest/weekly/2026-W15.md` 更新——新增 TIP 文章条目；本周 articles 累计更新至 6 篇
+
+**Articles 产出**：1 篇（TIP - MCP 隐蔽注入攻击）
+
+**本轮反思**：
+- 做对了：精准识别 arxiv:2603.24203 作为高价值选题——TIP 是首个系统性地解决 MCP 间接提示注入攻击生成问题的论文，填补了 MCP Security Crisis 文章中的「工具响应路径攻击」缺口；与 AIP（身份验证）和 CABP（协议层）形成 MCP 安全三层补充；文章结构完整（问题→方法→实验→缓解→实践指南）
+- 需改进：MCP Dev Summit North America（4/2-3，纽约）距今仅 2 天，今日（3/30）预热窗口正式开启；arxiv:2603.23802（177k MCP tools 实证研究）评分也很高但本轮只能产出 1 篇，已记录为下轮 PENDING
+
 <!-- INSERT_HISTORY_HERE -->
 
 
