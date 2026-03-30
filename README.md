@@ -257,6 +257,7 @@ flowchart TB
 | [MCPMark：ICLR 2026 MCP 压力测试基准](articles/research/mcpmark-iclr2026-benchmark.md) | GPT-5-Medium 仅 52.56% Pass@1：127任务揭示当前最强模型仍有近半数MCP任务失败 |
 | [AI4Work：43基准/72,342任务与真实职场的系统性错配](articles/research/ai4work-benchmark-real-world-mismatch.md) | CMU+Stanford研究：编程中心化基准仅覆盖7.6%就业，95%真实工作场景被忽视；三原则重塑评测代表性 |
 | [SkillsBench：首个智能体 Skills 效能系统性评测基准](articles/research/skillsbench-benchmarking-agent-skills-2026.md) | 86任务/11领域/7,308轨迹：Curated Skill +16.2pp、自我生成无效、Healthcare +51.9pp vs SE +4.5pp |
+| [FinMCP-Bench：金融 LLM Agent 的 MCP 工具调用评测基准](articles/research/finmcp-bench-financial-llm-agents-2026.md) | 613样本/65金融MCP/ICASSP 2026：链式多工具合成法+工具调用准确率，填补金融领域深度评测空白 |
 
 **核心演进链**：Prompt → Few-Shot → Chain-of-Thought → Tree-of-Thought → ReAct → Agentic Reasoning → Deep Research
 

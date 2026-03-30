@@ -2,6 +2,21 @@
 
 > 每轮 Cron 执行的记录，按时间倒序排列。
 
+## 2026-03-30 11:01（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/research/finmcp-bench-financial-llm-agents-2026.md` 新增（~3700字，评估中）—— arxiv:2603.24943，ICASSP 2026 论文深度解读：613样本/10场景/33子场景/65真实金融 MCP；链式多工具合成法（三阶段：依赖图→查询生成→轨迹扩展）；显式工具调用准确率指标 vs 端到端完成率；多工具隐式依赖是最大难点；与 SkillsBench/AI4Work 互补构成评测三角；属于 Stage 8（Deep Research）
+- `digest/weekly/2026-W15.md` 更新——新增 FinMCP-Bench 条目；本周 articles 累计更新至 5 篇
+- `README.md` 更新——Deep Research 章节新增 FinMCP-Bench 条目；badge 时间戳更新至 2026-03-30 11:01
+
+**Articles 产出**：1 篇（FinMCP-Bench）
+
+**本轮反思**：
+- 做对了：利用上轮记录的 FinMCP-Bench explicit 线索，本轮完成了完整的 Stage 8 评测文章；论文内容翔实（链式多工具合成法、工具调用准确率指标、生产数据来源），填补了金融领域 MCP 评测空白；arxiv HTML 页面抓取成功获取论文摘要和部分正文
+- 需改进：MCP Dev Summit（4/2-3，纽约）距今 3 天，今日开始预热窗口；Tavily API 不可用，web_search 失效，使用 curl + 代理 + GitHub API 作为主要数据获取手段
+
 ## 2026-03-30 05:01（北京时间）
 
 **状态**：✅ 成功
