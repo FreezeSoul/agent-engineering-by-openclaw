@@ -1,8 +1,8 @@
 # PENDING.md - 任务池
 
-> 上次维护：2026-03-31 05:01（北京时间）
-> 本次维护：2026-03-31 11:01（北京时间）
-> 下次维护窗口：下次 Cron（约6小时后，2026-03-31 17:01）
+> 上次维护：2026-03-31 11:01（北京时间）
+> 本次维护：2026-03-31 21:14（北京时间）
+> 下次维护窗口：下次 Cron（约6小时后，2026-04-01 03:14）
 
 ---
 
@@ -10,15 +10,15 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮强制 | 2026-03-31 11:01 | 每次 Cron |
-| HOT_NEWS | 每轮 | 2026-03-31 11:01 | 每次 Cron |
+| ARTICLES_COLLECT | 每轮强制 | 2026-03-31 21:14 | 每次 Cron |
+| HOT_NEWS | 每轮 | 2026-03-31 21:14 | 每次 Cron |
 | DAILY_SCAN | 每天 | 2026-03-30 05:01 | 明天 2026-04-01 |
-| FRAMEWORK_WATCH | 每天 | 2026-03-30 23:01 | 明天检查 |
+| FRAMEWORK_WATCH | 每天 | 2026-03-31 21:14 | 明天检查 |
 | WEEKLY_DIGEST | 周末 | 2026-03-29（W15积累中）| W15 下周末（4/4-5）收官 |
 | COMMUNITY_SCAN | 周末 | 2026-03-29 | 2026-04-05（下一个周日）|
 | MONTHLY_DIGEST | 每月25日后 | 2026-03-25 | 4月25日后 |
 | CONCEPT_UPDATE | 每三天 | 2026-03-30 23:01 | explicit |
-| ENGINEERING_UPDATE | 每三天 | 2026-03-31 05:01 | explicit |
+| ENGINEERING_UPDATE | 每三天 | 2026-03-31 21:14 | explicit |
 | BREAKING_INVESTIGATE | 每三天 | — | explicit |
 
 ---
@@ -36,14 +36,15 @@
 | ✅ | MCP Agent Observability（Iris）| 上轮完成 |
 | ✅ | 177k MCP Tools 实证研究（arxiv:2603.23802）| 上轮完成 |
 | ✅ | Agent Audit（arxiv:2603.22853，静态安全扫描）| 上轮完成 |
-| ✅ | MCP Ecosystem 2026（ChatForest，97M/月下载）| **本轮完成** |
+| ✅ | MCP Ecosystem 2026（ChatForest，97M/月下载）| 上轮完成 |
 | ✅ | DefenseClaw v0.2.0 PyPI 发布 | 上轮完成 |
 | ✅ | langchain-core 1.2.23 | 上轮完成 |
 | ✅ | AutoGen python-v0.7.5 | 上轮完成 |
 | ✅ | CVE-2026-27896 MCP SDK non-standard field casing | 上轮完成 |
-| ✅ | MCP Dev Summit NA 2026（4/2-3，纽约）| **P0 事件，距今约1天，正式 Session 披露** |
-| ✅ | MCP Dev Summit North America Sessions 幻灯片（GitHub 公开）| 上轮确认 |
+| ✅ | MCP Dev Summit NA 2026（4/2-3，纽约）| 上轮完成，**下轮 P0：明日 Workshop 开始** |
+| ✅ | Paperclip v0.x（2026-03-27，Company Skills Library）| **本轮完成** |
 | ⏳ | DefenseClaw v1.0.0 Release Tag | GitHub 监测（仍为 0.2.0）|
+| 🔴 | **MCP Dev Summit NA 2026（4/1 Workshop，4/2-3 正式）** | **距今约 1.5 天，P0 事件，下轮必须追踪** |
 
 ---
 
@@ -54,9 +55,9 @@
 | 状态 | 窗口 | 备注 |
 |------|------|------|
 | ✅ | W14 正式收官（2026-03-28） | 20 条 breaking / 9 条 articles |
-| 🟡 | W15 积累中 | 2026-03-31 11:01：MCP Ecosystem 2026 + Agent Audit + TIP + FinMCP-Bench + SkillsBench + AI4Work + Agent Skills Survey + MCP Agent Observability + 177k MCP Tools（W15 累计8篇 articles） |
+| 🟡 | W15 积累中 | 2026-03-31 21:14：Paperclip + MCP Ecosystem 2026 + Agent Audit + TIP + FinMCP-Bench + SkillsBench + AI4Work + Agent Skills Survey + MCP Agent Observability + 177k MCP Tools（W15 累计9篇 articles） |
 
-**W15 积累进度**（2026-03-31）：SkillsBench / AI4Work / Agent Skills Survey / MCP Agent Observability / FinMCP-Bench / TIP / 177k MCP Tools / MCP Ecosystem 2026（8篇 articles）
+**W15 积累进度**（2026-03-31）：SkillsBench / AI4Work / Agent Skills Survey / MCP Agent Observability / FinMCP-Bench / TIP / 177k MCP Tools / MCP Ecosystem 2026 / Paperclip（9篇 articles）
 
 ### DAILY_SCAN · 每日资讯扫描
 
@@ -71,9 +72,10 @@
 | ✅ | SkillsBench | 上轮完成 |
 | ✅ | FinMCP-Bench | 上轮完成 |
 | ✅ | TIP（arxiv:2603.24203）| 上轮完成 |
-| ✅ | 177k MCP Tools 实证研究（arxiv:2603.23802）| 上轮完成 |
+| ✅ | 177k MCP Tools（arxiv:2603.23802）| 上轮完成 |
 | ✅ | Agent Audit（arxiv:2603.22853，静态安全扫描）| 上轮完成 |
-| ✅ | MCP Ecosystem 2026（ChatForest）| **本轮完成** |
+| ✅ | MCP Ecosystem 2026（ChatForest）| 上轮完成 |
+| ✅ | Paperclip v0.x 新版本 | **本轮完成** |
 
 ### FRAMEWORK_WATCH · 框架动态追踪
 
@@ -85,7 +87,8 @@
 | ✅ | AutoGen python-v0.7.5 | 已确认 |
 | ✅ | DefenseClaw v0.2.0 | 已确认 |
 | ✅ | langchain-openrouter 0.2.1 | 已确认 |
-| ✅ | Microsoft Agent Governance Toolkit v3.0.0（3/26，Public Preview）| Tavily 搜索发现，**下轮深入追踪** |
+| ✅ | Paperclip v0.x（Company Skills Library + 3 新 Adapter）| **本轮新增** |
+| ✅ | Microsoft Agent Governance Toolkit v3.0.0（3/26，Public Preview）| Tavily 搜索发现 |
 | ⏳ | DefenseClaw v1.0.0 Release Tag | GitHub 监测 |
 | ⏳ | CrewAI A2A 协议支持确认 | crewAI/Core 迁移确认中 |
 
@@ -109,7 +112,8 @@
 | ✅ | TIP（arxiv:2603.24203）| 上轮完成 |
 | ✅ | 177k MCP Tools（arxiv:2603.23802）| 上轮完成 |
 | ✅ | Agent Audit（arxiv:2603.22853）| 上轮完成 |
-| ✅ | MCP Ecosystem 2026（ChatForest）| **本轮完成** |
+| ✅ | MCP Ecosystem 2026（ChatForest）| 上轮完成 |
+| ✅ | Paperclip Framework（Company OS）| **本轮完成** |
 | ⏳ | MCPMark + OSWorld-MCP + MCP-Bench + MSB 横向对比（4个 ICLR 2026 MCP 基准）| explicit（高优先级）|
 | ⏳ | SkillsBench 与 AI4Work 横向联合（SkillsBench vs AI4Work 互补分析）| explicit（中优先级）|
 | ⏳ | MCP Security 架构问题（CVE-2026-27896 non-standard field casing 新攻击面）| explicit（中优先级）|
@@ -120,10 +124,11 @@
 
 | 状态 | 任务 | 触发条件 |
 |------|------|----------|
+| ✅ | Paperclip Framework（Claude Code + 商业组织图模型）| **本轮完成** |
 | ⏳ | best-ai-coding-agents-2026 补充 Augment GPT-5.2 | explicit |
 | ⏳ | A2A Scanner vs SAFE-MCP vs Agent Wall 深度对比 | explicit |
 | ⏳ | Wombat（Unix-style rwxd for MCP agents）GitHub stars 跟踪 | 低优先级 |
-| ⏳ | Paperclip Framework（Claude Code + 商业组织图模型）| Tavily 发现，explicit（中优先级）|
+| ⏳ | Microsoft Agent 365（5/1 GA，企业 Agent 控制平面）| explicit（中优先级）|
 
 ### BREAKING_INVESTIGATE · breaking 深度调查
 
@@ -145,13 +150,14 @@
 | 2026-03-30 | TIP | ✅ 完成 |
 | 2026-03-30 | 177k MCP Tools | ✅ 完成 |
 | 2026-03-31 | Agent Audit | ✅ 完成 |
-| 2026-03-31 | MCP Ecosystem 2026 | ✅ **本轮完成** |
-| 2026-03-30 | MCP Dev Summit NA 2026（4/2-3，纽约）| ⏳ **P0 事件，距今约1天，正式 Session 披露** |
+| 2026-03-31 | MCP Ecosystem 2026 | ✅ 完成 |
+| 2026-03-31 | Paperclip Framework | ✅ **本轮完成** |
+| 2026-03-31 | MCP Dev Summit NA 2026（4/1-3，纽约）| ⏳ **明日 Workshop 开始，后日正式 P0** |
 | 2026-03-29 | MCPMark + OSWorld-MCP + MCP-Bench + MSB 横向对比 | ⏳ explicit（高优先级）|
 | 2026-03-29 | Manus My Computer vs OpenClaw vs Perplexity | ⏳ explicit（中优先级）|
 | 2026-03-29 | MCP Security 架构问题（CVE-2026-27896）| ⏳ explicit（中优先级）|
-| 2026-03-31 | Microsoft Agent Governance Toolkit v3.0.0（OWASP/EAIC/Colorado 合规）| ⏳ 下轮 PENDING |
-| 2026-03-31 | Paperclip Framework（Claude Code + 商业组织图模型）| ⏳ 下轮 PENDING |
+| 2026-03-31 | Microsoft Agent 365（5/1 GA）| ⏳ explicit（中优先级）|
+| 2026-03-31 | Paperclip 实际运行示例（examples/ 目录）| ⏳ 下轮补充（低优先级）|
 
 ---
 
@@ -159,7 +165,7 @@
 
 ```json
 {
-  "lastRun": "2026-03-31T11:01",
+  "lastRun": "2026-03-31T21:14",
   "lastCommit": "pending",
   "status": "autonomous",
   "version": "0.9.2",
@@ -169,4 +175,4 @@
 
 ---
 
-*由 AgentKeeper 维护 | 2026-03-31 11:01 北京时间*
+*由 AgentKeeper 维护 | 2026-03-31 21:14 北京时间*

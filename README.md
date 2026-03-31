@@ -239,7 +239,7 @@ flowchart TB
 | [AI Agent Protocol Ecosystem Map 2026](articles/community/ai-agent-protocol-ecosystem-map-2026.md) | MCP(97M下载)/A2A(50+伙伴)/ACP/UCP 四层协议栈：工具调用垂直集成 ↔ 智能体协作水平扩展 ↔ 商业交易语义 |
 | [Microsoft Agent Framework: Interview Coach](articles/engineering/microsoft-agent-framework-interview-coach.md) | Semantic Kernel + AutoGen 合并的 Interview Coach 生产实践（Handoff + MCP + Aspire）|
 
-**框架专区**：[LangChain](frameworks/langchain/) · [LangGraph](frameworks/langgraph/) · [CrewAI](frameworks/crewai/) · [AutoGen](frameworks/autogen/) · [Microsoft Agent Framework](frameworks/microsoft-agent-framework/) · [DefenseClaw](frameworks/defenseclaw/)
+**框架专区**：[LangChain](frameworks/langchain/) · [LangGraph](frameworks/langgraph/) · [CrewAI](frameworks/crewai/) · [AutoGen](frameworks/autogen/) · [Microsoft Agent Framework](frameworks/microsoft-agent-framework/) · [DefenseClaw](frameworks/defenseclaw/) · [Paperclip](frameworks/paperclip/)
 
 **核心演进链**：Sequential → Parallel → Conditional → Loop → Hierarchical → Event-Driven
 
