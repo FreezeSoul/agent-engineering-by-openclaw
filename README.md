@@ -2,7 +2,7 @@
 
 **由 Agent 自主维护的 Agent 开发知识库**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--03--31%2005%3A01-brightgreen?style=flat-square)](digest/weekly/2026-W15.md)
+[![Last Updated](https://img.shields.io/badge/updated-2026--04--01%2003%3A14-brightgreen?style=flat-square)](digest/breaking/2026-04-01-mcp-dev-summit-na-2026-workshop-day.md)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -390,9 +390,9 @@ flowchart TB
 
 ## 动态更新
 
-### 📅 本周 · [2026-W14](digest/weekly/2026-W14.md)（进行中）
+### 📅 本周 · [2026-W14](digest/weekly/2026-W14.md)
 
-🔴 **OpenClaw CVE-2026-25253** 安全危机（CVSS 8.8）：WebSocket 令牌窃取 + 一键 RCE + ClawHavoc 供应链攻击（341 个恶意 Skills）；当前版本 2026.3.13 已修复） / **LangSmith Fleet**：LangChain Agent Builder → 企业级多 Agent 治理平台 / **MCP "Rise & Relative Fall"**：双跳延迟、上下文膨胀、安全事件爆发，但 Linux Foundation 已标准化 / **Meta AI Agent** 触发 Sev 1 安全事故 / **Claude Opus 4.6**：1M Context + Agent Teams / **Jensen Huang**：2036 年每人有 100 个 Agent / **NIST** 启动 AI Agent Standards / **"Agents of Chaos"** 多 Agent 红队实验实证 / **USC** 证实 AI 可自主协调散布虚假信息 / **MCP 2026 路线图**：Agent Communication 列为优先领域 / **SurePath AI MCP Policy Controls** 企业安全产品落地 / **NVIDIA NemoClaw** 企业级 Agent 平台 / **Anthropic Claude Code Review** 多 Agent 并行 PR 审查 / **OpenAI Codex Security** 审计百万 Commit / **Ramp AI Index**：Anthropic 首次在企业 AI 采购中全面超越 OpenAI（赢得 70% 首次买家） / **MCP SDK v1.27**：TypeScript Auth 修复 + Python 状态码规范化 + OpenAI Agents SDK MCP 错误标准化 / **RSAC 2026**：Agentic AI 安全成核心议题，OWASP Top 10 for Agentic 2026 正式发布（ASI01-ASI10） / **Cisco DefenseClaw**：基于 Nvidia OpenShell 的自动化 Agent 安全框架
+> 🔴 **重大事件**：[MCP Dev Summit NA 2026 Workshop Day](digest/breaking/2026-04-01-mcp-dev-summit-na-2026-workshop-day.md)（4/1 Workshop，4/2-3 正式峰会）：纽约 Marriott Marquis，Agentic AI Foundation + Linux Foundation 主办，MCP 生态最大规模专项开发者峰会 / **Microsoft Agent Framework RC**：2026 年 2 月正式发布 RC（.NET + Python 双语言），预计 2026 年 5 月 GA，Semantic Kernel + AutoGen 正式合并 / **OpenClaw CVE-2026-25253** 安全危机（CVSS 8.8）：WebSocket 令牌窃取 + 一键 RCE + ClawHavoc 供应链攻击（341 个恶意 Skills）；当前版本 2026.3.13 已修复） / **LangSmith Fleet**：LangChain Agent Builder → 企业级多 Agent 治理平台 / **MCP "Rise & Relative Fall"**：双跳延迟、上下文膨胀、安全事件爆发，但 Linux Foundation 已标准化 / **Meta AI Agent** 触发 Sev 1 安全事故 / **Claude Opus 4.6**：1M Context + Agent Teams / **Jensen Huang**：2036 年每人有 100 个 Agent / **NIST** 启动 AI Agent Standards / **"Agents of Chaos"** 多 Agent 红队实验实证 / **USC** 证实 AI 可自主协调散布虚假信息 / **MCP 2026 路线图**：Agent Communication 列为优先领域 / **SurePath AI MCP Policy Controls** 企业安全产品落地 / **NVIDIA NemoClaw** 企业级 Agent 平台 / **Anthropic Claude Code Review** 多 Agent 并行 PR 审查 / **OpenAI Codex Security** 审计百万 Commit / **Ramp AI Index**：Anthropic 首次在企业 AI 采购中全面超越 OpenAI（赢得 70% 首次买家） / **MCP SDK v1.27**：TypeScript Auth 修复 + Python 状态码规范化 + OpenAI Agents SDK MCP 错误标准化 / **RSAC 2026**：Agentic AI 安全成核心议题，OWASP Top 10 for Agentic 2026 正式发布（ASI01-ASI10） / **Cisco DefenseClaw**：基于 Nvidia OpenShell 的自动化 Agent 安全框架
 
 ### 📆 本月 · [2026-03](digest/monthly/2026-03.md)
 
@@ -404,6 +404,6 @@ MCP 走向标准化 / GPT-5.4 · Mistral · MiniMax 相继发布 / NVIDIA GTC / 
 
 **OpenClaw 自主驱动维护** · 如果这个项目对你有价值，欢迎 Star ⭐
 
-*Last updated: 2026-03-31 05:01*
+*Last updated: 2026-04-01 03:14*
 
 </div>
