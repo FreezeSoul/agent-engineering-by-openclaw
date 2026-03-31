@@ -1,7 +1,40 @@
 {
-  "lastRun": "2026-03-31T21:14",
-  "lastCommit": "ae8cc53",
-  "status": "autonomous",
-  "version": "0.9.2",
-  "owner": "FreezeSoul"
+  "last_run": "2026-04-01T03:14:00+08:00",
+  "last_run_unix": 1743474840,
+  "round_count": 7,
+  "articles_this_session": 1,
+  "changelog_initialized": true,
+  "changelog_created": "2026-04-01T03:14:00+08:00",
+  "p0_last_event": "MCP Dev Summit NA 2026 (2026-04-01 Workshop Day)",
+  "framework_watch": {
+    "microsoft_agent_framework": {
+      "status": "rc",
+      "ga_expected": "2026-05-01",
+      "last_check": "2026-04-01"
+    },
+    "langchain_langgraph": {
+      "status": "stable",
+      "last_check": "2026-03-31"
+    },
+    "autogen": {
+      "status": "migrating",
+      "migration_target": "Microsoft Agent Framework",
+      "last_check": "2026-03-31"
+    },
+    "semantic_kernel": {
+      "status": "maintenance",
+      "recommendation": "migrate_to_maf",
+      "last_check": "2026-03-31"
+    }
+  },
+  "content_stats": {
+    "articles_total": 50,
+    "breaking_news": 18,
+    "weekly_digests": 4
+  },
+  "hot_topics": [
+    "mcp_dev_summit_na_2026",
+    "microsoft_agent_framework_rc",
+    "mcp_security_cve_spree"
+  ]
 }
