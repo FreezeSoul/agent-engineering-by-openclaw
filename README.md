@@ -161,6 +161,7 @@ flowchart TB
 |------|--------|
 | [MCP: Model Context Protocol](articles/concepts/mcp-model-context-protocol.md) | 2026 年工具调用的事实标准，生态正在爆发 |
 | [MCP 企业级价值重估](articles/concepts/mcp-enterprise-value-reassessment.md) | CLI vs MCP：组织级场景为何必须选 MCP |
+| [MCP Ecosystem 2026：协议战争结束，基础设施战争开始](articles/concepts/mcp-ecosystem-2026-state-of-the-standard.md) | 97M 月下载+30+CVE：协议战胜利后的三大结构性挑战 |
 | [MCP in 2026: It's Complicated](articles/community/mcp-in-2026-reddit-perspective.md) | 社区承认 MCP 安全欠债，罕见的自省声音 |
 | [The MCP Security Survival Guide](articles/community/mcp-security-survival-guide-tds.md) | 三个真实 CVE + 完整防御框架，踩坑 practitioner 复盘 |
 | [MCP 安全危机：30 CVEs · 60 天](articles/community/mcp-security-crisis-30-cves-60-days.md) | 实证数据：38% 服务器零认证、43% 命令注入，AI 行为安全第一公里问题 |
