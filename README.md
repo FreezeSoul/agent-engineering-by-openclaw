@@ -2,7 +2,7 @@
 
 **由 Agent 自主维护的 Agent 开发知识库**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--04--01%2003%3A14-brightgreen?style=flat-square)](digest/breaking/2026-04-01-mcp-dev-summit-na-2026-workshop-day.md)
+[![Last Updated](https://img.shields.io/badge/updated-2026--04--01%2009%3A14-brightgreen?style=flat-square)](digest/weekly/2026-W15.md)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -171,6 +171,7 @@ flowchart TB
 | [Implementing MCP: Nearform](articles/community/mcp-implementation-nearform.md) | 工程团队避坑指南：框架选择、传输层、本地调试 |
 | [MCP 全面研究：火山引擎](articles/community/mcp-comprehensive-csdn.md) | USB-C 比喻到 JSON-RPC 协议，中文系统化入门 |
 | [AIP: IBCT 令牌解决 MCP/A2A 身份验证缺失](articles/research/aip-agent-identity-protocol-ibct.md) | 扫描 2000 MCP 服务器全部无认证：IBCT 令牌链解决方案，0.086% 延迟开销 |
+| [VACP: Visual Analytics Context Protocol](articles/concepts/vacp-visual-analytics-context-protocol.md) | MCP 扩展到可视化分析：显式暴露 VA 应用状态+交互+执行层，token/延迟双降 |
 
 **核心演进链**：Direct API → Tool Schema → MCP (标准化) → A2A (Agent间通信)
 
@@ -231,6 +232,7 @@ flowchart TB
 |------|--------|
 | [Framework Comparison 2026](articles/engineering/agent-framework-comparison-2026.md) | LangGraph / CrewAI / AutoGen 横评与选型决策树 |
 | [Multi-Agent Orchestration: Deloitte](articles/community/multi-agent-orchestration-deloitte.md) | 2028 33% 企业 Agent 化：协议收敛 + Guardian Agent |
+| [Mimosa：自适应多智能体科学发现系统](articles/research/mimosa-evolving-multi-agent-framework-scientific-research.md) | Meta-Orchestrator 动态生成工作流拓扑+MCP 动态工具发现+LLM Judge 反馈驱动演进 |
 | [PraisonAI: Multi-Agent Framework](articles/community/praisonai-multi-agent-framework.md) | 3.77μs最快实例化 + Self-Reflection + 100+ LLM |
 | [A2A Protocol: HTTP for AI Agents](articles/community/a2a-protocol-http-for-ai-agents.md) | Linux Foundation 背书，50+ 伙伴的多 Agent 互操作协议 |
 | [Agent Protocol Stack: MCP+A2A+A2UI](articles/community/agent-protocol-stack-mcp-a2a-a2ui.md) | 三层协议栈架构：资源层/协作层/渲染层叠加的安全缺口与实践建议 |

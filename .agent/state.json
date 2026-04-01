@@ -1,40 +1,51 @@
 {
-  "last_run": "2026-04-01T03:14:00+08:00",
-  "last_run_unix": 1743474840,
-  "round_count": 7,
-  "articles_this_session": 1,
-  "changelog_initialized": true,
-  "changelog_created": "2026-04-01T03:14:00+08:00",
-  "p0_last_event": "MCP Dev Summit NA 2026 (2026-04-01 Workshop Day)",
-  "framework_watch": {
-    "microsoft_agent_framework": {
+  "lastRun": "2026-04-01T09:14:00+08:00",
+  "lastRunUnix": 1743494040,
+  "roundCount": 8,
+  "articlesThisSession": 2,
+  "frameworkWatch": {
+    "microsoftAgentFramework": {
       "status": "rc",
-      "ga_expected": "2026-05-01",
-      "last_check": "2026-04-01"
+      "gaExpected": "2026-05-01",
+      "lastCheck": "2026-04-01"
     },
-    "langchain_langgraph": {
+    "microsoftSemanticKernel": {
       "status": "stable",
-      "last_check": "2026-03-31"
+      "version": "python-1.41.1",
+      "lastCheck": "2026-04-01"
+    },
+    "langchainLanggraph": {
+      "status": "stable",
+      "lastCheck": "2026-04-01"
     },
     "autogen": {
       "status": "migrating",
-      "migration_target": "Microsoft Agent Framework",
-      "last_check": "2026-03-31"
+      "migrationTarget": "Microsoft Agent Framework",
+      "version": "python-v0.7.5",
+      "lastCheck": "2026-04-01"
     },
-    "semantic_kernel": {
+    "semanticKernel": {
       "status": "maintenance",
       "recommendation": "migrate_to_maf",
-      "last_check": "2026-03-31"
+      "lastCheck": "2026-04-01"
+    },
+    "defenseClaw": {
+      "status": "v0.2.0",
+      "gaExpected": "v1.0.0 pending",
+      "lastCheck": "2026-04-01"
     }
   },
-  "content_stats": {
-    "articles_total": 50,
-    "breaking_news": 18,
-    "weekly_digests": 4
+  "contentStats": {
+    "articlesTotal": 52,
+    "breakingNews": 19,
+    "weeklyDigests": 4
   },
-  "hot_topics": [
-    "mcp_dev_summit_na_2026",
-    "microsoft_agent_framework_rc",
+  "hotTopics": [
+    "mcp_dev_summit_na_2026_workshop_day",
+    "vacp_visual_analytics_context_protocol",
+    "mimosa_evolving_multi_agent_framework",
+    "cve_2026_33010_mcp_memory_csrf",
     "mcp_security_cve_spree"
-  ]
+  ],
+  "p0Current": "MCP Dev Summit NA 2026 (Workshop Day 4/1, Day 1 4/2, Day 2 4/3)"
 }

@@ -336,6 +336,22 @@
 - 需改进：MCP Dev Summit NA 2026（4/2-3，纽约）明日开始预热窗口，今日 Tavily 搜索显示 Session 议程已上线但尚无实际内容产出；下轮将重点追踪 Summit 现场 Session 产出；Microsoft Agent 365（5/1 GA）值得关注
 
 <!-- INSERT_HISTORY_HERE -->
+## 2026-04-01 09:14（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/concepts/vacp-visual-analytics-context-protocol.md` 新增（~4400字，19/20）—— arXiv:2603.29322（2026/03/31，ETH Zürich/Microsoft Research）：Visual Analytics Context Protocol；显式暴露 VA 应用状态/可用交互/直接执行机制；三层信息暴露模型；token 消耗和延迟双降；库兼容 Vega-Lite/Matplotlib 等主流可视化框架；属于 Stage 3（MCP）× Stage 6（Tool Use）
+- `articles/research/mimosa-evolving-multi-agent-framework-scientific-research.md` 新增（~5900字，16/20）—— arXiv:2603.28986（2026/03/30，Inria）；Meta-Orchestrator 动态生成工作流拓扑 + LLM Judge 反馈驱动迭代优化 + MCP 动态工具发现；ScienceAgentBench 43.1% 成功率（DeepSeek-V3.2）；模型异质性发现（不同模型对多智能体分解反应差异巨大）；属于 Stage 7（Orchestration）→ Stage 9（Multi-Agent）
+- `digest/breaking/2026-04-01-cve-2026-33010-mcp-memory-service-csrf.md` 新增——CVE-2026-33010 mcp-memory-service CSRF 漏洞（新披露，SentinelOne）；CORS 配置错误导致恶意网站可读取/修改/删除记忆数据；与 CVE-2026-29787（同一软件包）为不同漏洞类型；mcp-memory-service 30 天内第二个 CVE
+- `digest/weekly/2026-W15.md` 更新——新增本轮 2 articles + 1 breaking + framework 更新
+- `README.md` 更新——MCP 章节新增 VACP 条目、Orchestration 章节新增 Mimosa 条目、badge 时间戳更新至 09:14
+
+**Articles 产出**：2 篇（VACP + Mimosa）
+
+**本轮反思**：
+- 做对了：精准识别两篇极新鲜 arxiv 论文（VACP 03/31 + Mimosa 03/30），均为高评分（19/20 + 16/20）；CVE-2026-33010 新披露后第一时间收录；双线并行采集效率高
+- 需改进：arxiv HTML 页面抓取部分数据不够完整；Tavily 部分查询结果较浅
 ---
 
 ## 2026-03-31 05:01（北京时间）
