@@ -52,6 +52,7 @@
 
 | 文件 | 标签 | 来源 |
 |------|------|------|
+| [agent-q-mix-rl-topology-2604-00344.md](articles/orchestration/agent-q-mix-rl-topology-2604-00344.md) | `multi-agent` `RL` `topology` `QMIX` | 研究 |
 | [multi-agent-swarm-intelligence.md](articles/orchestration/multi-agent-swarm-intelligence.md) | `multi-agent` `swarm` | 概念 |
 | [agent-protocol-stack-mcp-a2a-a2ui.md](articles/orchestration/agent-protocol-stack-mcp-a2a-a2ui.md) | `protocol` `stack` `mcp` `a2a` | 社区 |
 | [a2a-protocol-http-for-ai-agents.md](articles/orchestration/a2a-protocol-http-for-ai-agents.md) | `a2a` `protocol` | 社区 |
@@ -114,7 +115,7 @@
 | harness/ | 7 |
 | evaluation/ | 12 |
 | deep-dives/ | 5 |
-| **合计** | **59** |
+| **合计** | **60** |
 
 ---
 
