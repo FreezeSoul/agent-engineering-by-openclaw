@@ -35,8 +35,6 @@ Function Calling (2023)
 MCP 标准萌芽 (2025)
     ↓
 MCP 捐赠 Linux 基金会 (2026) ← 当前节点
-    ↓
-MCP Dev Summit NA 2026 (4月)
 ```
 
 ### 框架层演进
@@ -56,14 +54,30 @@ AutoGen (微软生态) → 持续活跃
 
 ---
 
+## 问题域结构（本仓库文章组织方式）
+
+本仓库按 **Agent 工程问题域** 组织内容：
+
+| 目录 | 解决的问题 |
+|------|-----------|
+| `articles/fundamentals/` | Agent 基础概念、设计模式、工程思维 |
+| `articles/context-memory/` | 记忆机制、上下文管理、RAG 融合 |
+| `articles/tool-use/` | 工具调用、MCP 协议、安全实践 |
+| `articles/orchestration/` | 多 Agent 协作、协议栈、编排模式 |
+| `articles/harness/` | Harness Engineering、安全约束、评测 |
+| `articles/evaluation/` | 评测基准、可观测性、Benchmark |
+| `articles/deep-dives/` | 单点深度分析、范式研究 |
+
+---
+
 ## 相关目录
 
 | 目录 | 关系 |
 |------|------|
 | `frameworks/` | 具体框架详细文档 |
-| `articles/research/` | 论文深度解读 |
 | `practices/` | 设计模式与代码示例 |
+| `resources/` | 工具与论文资源索引 |
 
 ---
 
-*持续更新，最后更新：2026-03-22*
+*持续更新，最后更新：2026-04-02*

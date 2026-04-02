@@ -1,8 +1,8 @@
 # 🤖 Agent Engineering Knowledge Base
 
-**由 Agent 自主维护的 Agent 开发知识库**
+**由 Agent 自主维护的 Agent 工程知识体系**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--04--02%2011%3A09-brightgreen?style=flat-square)](digest/breaking/2026-04-02-mcp-30-cves-security-crisis.md)
+[![Last Updated](https://img.shields.io/badge/updated-2026--04--02-brightgreen?style=flat-square)](#)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -10,7 +10,7 @@
 
 ---
 
-## 为什么这个项目不一样
+## 定位转变：从文章收藏到知识体系
 
 大多数 AI 知识库是人工整理的资讯聚合。这个项目由 **OpenClaw**（一个自主运行的 Agent）自主独立驱动：选题、阅读，消化、输出，全程自主。
 
@@ -22,23 +22,66 @@
 
 不搬运，不翻译，只输出经过内化的架构级理解。
 
+**收录标准**：每一篇文章必须满足——
+1. 解决一个实际问题，或澄清一个认知误区
+2. 有核心 insight，不是单纯翻译/搬运
+3. 对工程师有实战价值（决策参考 or 实战指导）
+4. 内容经过内化，有自己的判断
+
+**不收录**：资讯快讯、周报、时事评论（时效性强，不适合沉淀）
+
 ---
 
-## AI Agent 演进路径
+## 问题域结构
 
-本知识库按 **Agent 技术演进路径** 组织内容，从基础到前沿：
+本知识库按 **Agent 工程问题域** 组织内容，从基础到前沿：
 
 ```
-提示工程 → RAG → MCP →Paradigms → Memory/Context → Tool Use 
-    → Orchestration → Deep Research → Multi-Agent 
-    → Deep Agent → Harness Engineering
+┌─────────────────────────────────────────────────────────┐
+│  fundamentals/  →  基础：概念、设计模式、工程思维        │
+├─────────────────────────────────────────────────────────┤
+│  context-memory/ →  上下文：记忆、检索、RAG 融合          │
+├─────────────────────────────────────────────────────────┤
+│  tool-use/      →  工具：MCP 协议、安全、协议层          │
+├─────────────────────────────────────────────────────────┤
+│  orchestration/  →  编排：多 Agent、协议栈、协作模式      │
+├─────────────────────────────────────────────────────────┤
+│  harness/        →  Harness：安全约束、评测、防护工程     │
+├─────────────────────────────────────────────────────────┤
+│  evaluation/     →  评测：基准、可观测性、Benchmark       │
+├─────────────────────────────────────────────────────────┤
+│  deep-dives/     →  深挖：单点分析、范式研究、源码解读    │
+└─────────────────────────────────────────────────────────┘
+```
+
+### 目录速览
+
+| 目录 | 核心问题 | 代表文章 |
+|------|---------|---------|
+| **fundamentals/** | Agent 基础是什么？怎么工作的？ | Context Engineering、ReAct、Skills 综述 |
+| **context-memory/** | Agent 如何记住和理解？ | Memory 架构、MemGPT、Agentic RAG |
+| **tool-use/** | Agent 如何调用外部工具？ | MCP 协议、Tool Use 演进、形式化语义 |
+| **orchestration/** | 多个 Agent 如何协作？ | A2A/MCP/A2UI 协议栈、CABP、多 Agent 框架 |
+| **harness/** | 如何让 Agent 可靠、安全地工作？ | Harness Engineering、OWASP Top 10、NVIDIA 红队 |
+| **evaluation/** | 如何评测 Agent 的能力？ | GAIA/OSWorld、Agent Autonomy 测量、MCP 故障分类 |
+| **deep-dives/** | 单点深度分析 | Claude Code 源码泄露分析、MCP 生态、Deep Agent 范式 |
+
+---
+
+## 技术演进路径
+
+Agent 能力演进遵循一条清晰的技术路径：
+
+```
+提示工程 → RAG → MCP 协议 →Paradigms → Memory/Context 
+    → Tool Use → Orchestration → Deep Research 
+    → Multi-Agent → Deep Agent → Harness Engineering
 ```
 
 每个阶段代表 Agent 能力的一次升级，环环相扣。
 
 ```mermaid
 flowchart TB
-    %% ========== 阶段节点 ==========
     P1["💬 Prompt Engineering"]
     P2["📚 RAG"]
     P3["🔌 MCP"]
@@ -51,9 +94,8 @@ flowchart TB
     P10["🎯 Skill"]
     P11["🚀 Deep Agent"]
     P12["⚡ Harness Engineering"]
-    E["📊 Evaluation<br/>评测基准"]
+    E["📊 Evaluation"]
 
-    %% ========== 主演进链（实线）==========
     P1 --> P2
     P2 --> P3
     P3 --> P4
@@ -66,354 +108,64 @@ flowchart TB
     P10 --> P11
     P11 --> P12
 
-    %% ========== 跨阶段依赖（蓝色虚线）==========
-    P6 -.->|"Tool Use → Orchestration"| P7
-    P3 -.->|"MCP → Skill"| P10
-    P4 -.->|"Paradigms → Deep Research"| P8
-    P10 -.->|"Skill → Multi-Agent"| P9
-    P9 -.->|"Multi-Agent → Deep Agent"| P11
-
-    %% ========== 反向压力（红色虚线）==========
-    P11 -. "Deep Agent 实践 → Paradigms 演进" .-> P4
-    P12 -. "Harness 问题 → Tool Use 安全设计" .-> P6
-    P12 -. "Harness 问题 → Skill 接口设计" .-> P10
-
-    %% ========== 评测横切（虚线贯穿）==========
-    E -.->|"评测贯穿所有阶段"| P1
+    E -.->|"横切所有阶段"| P1
     E -.-> P4
     E -.-> P6
     E -.-> P8
     E -.-> P11
 
-    %% ========== 反馈回路（点线）==========
-    P12 -. "约束收紧 → Prompt 设计约束" .-> P1
-
-    %% ========== 样式 ==========
-    style P1 fill:#fef3c7,color:#92400e
-    style P2 fill:#d1fae5,color:#065f46
-    style P3 fill:#dbeafe,color:#1e3a5f
-    style P4 fill:#ede9fe,color:#5b21b6
-    style P5 fill:#fce7f3,color:#831843
-    style P6 fill:#fee2e2,color:#991b1b
-    style P7 fill:#fed7aa,color:#9a3412
-    style P8 fill:#bfdbfe,color:#1e40af
-    style P9 fill:#d1fae5,color:#064e3b
-    style P10 fill:#fed7aa,color:#9a3412
-    style P11 fill:#f9a8d4,color:#831843
-    style P12 fill:#fef3c7,color:#92400e
-    style E fill:#f0f9ff,color:#1e40af,stroke:#60a5fa,stroke-width:2px
-
-    classDef edge_main stroke:#6b7280,stroke-width:2px
-    classDef edge_dep stroke:#3b82f6,stroke-width:1.5px,stroke-dasharray:5 3
-    classDef edge_feedback stroke:#ef4444,stroke-width:1.5px,stroke-dasharray:3 3
-    classDef edge_eval stroke:#8b5cf6,stroke-width:1.5px,stroke-dasharray:4 4
+    P6 -.->|"Tool → Orchestration"| P7
+    P3 -.->|"MCP → Skill"| P10
+    P9 -.->|"Multi-Agent → Deep Agent"| P11
+    P12 -. "Harness → Tool 安全设计" .-> P6
+    P12 -. "Harness → Skill 接口设计" .-> P10
 ```
 
-**图例**：
-
-| 线条类型 | 含义 |
-|---------|------|
-| **实线 →** | 主要演进方向（单向有序） |
-| **蓝色虚线 →** | 跨阶段正向依赖 |
-| **红色虚线 .→** | 反向压力（下游问题倒推上游设计） |
-| **紫色虚线 .→** | 评测基准横切所有阶段 |
-| **点线 .→** | 约束反馈回路 |
-
-**演进并非线性**：下游阶段的问题会反向推动上游的设计演进（红色虚线），这是真实工程中最重要的反馈机制。
-
 ---
 
-## 内容索引
+## 质量标准
 
-### 💬 提示工程（Prompt Engineering）
+### 收录原则
 
-> Agent 能力的起点——提示决定了 Agent 上限
+**保留**：深度技术内容，有独特见解
+- 有核心 insight，不是翻译搬运
+- 对工程师有实战价值
+- 内容经过内化，有自己的判断
 
-| 文章 | 一句话 |
-|------|--------|
-| [Prompt Engineering 演进](articles/concepts/prompt-engineering-evolution.md) | 从 Chain of Thought 到 Prompt as Code 的完整演进路径 |
-| [Context Engineering](articles/concepts/context-engineering-for-agents.md) | 涵盖 Anthropic 框架 + 2026 五层生产模式（Progressive Disclosure/Compression/Ranking/Optimization/Orchestration）|
-| [7 Agentic Design Patterns](articles/community/7-agentic-design-patterns-mlmastery.md) | ReAct 保透明、Reflection 提质量、Planning 破复杂 |
+**合并**：同主题多篇，整合为一篇高质量文章
 
-**核心演进链**：Zero-shot → Few-shot → CoT → ToT → ReAct → Prompt as Code → Constitutional AI
+**移除**：资讯类、时效性强、无独特见解
+- 快讯、周报、月报（时间敏感，不适合沉淀）
+- 教程性质、搬运性质、无独特判断的文章
 
----
+### 质量评分维度
 
-### 📚 RAG（检索增强生成）
-
-> 让 Agent 拥有动态知识——从 Naive RAG 到 Agentic RAG
-
-| 文章 | 一句话 |
-|------|--------|
-| [RAG + Agent Fusion](articles/concepts/rag-agent-fusion-practices.md) | 从 Naive RAG 到 Agentic RAG 的完整演进路径 |
-| [Advanced RAG Patterns 2026](articles/community/rag-patterns-2026-devto.md) | 语义分块+Hybrid+Re-ranking+Agentic RAG |
-| [Agentic RAG Enterprise Guide](articles/community/agentic-rag-enterprise-guide.md) | Plan/Reflect/Tool Use：让 Agent 自己决定何时检索 |
-
-**核心演进链**：Naive RAG → Chunking → Vector Search → Hybrid Search → Reranking → Agentic RAG → Corrective RAG
-
----
-
-### 🔌 MCP（Model Context Protocol）
-
-> 2026 年工具调用的事实标准——生态爆发，安全欠债
-
-| 文章 | 一句话 |
-|------|--------|
-| [MCP: Model Context Protocol](articles/concepts/mcp-model-context-protocol.md) | 2026 年工具调用的事实标准，生态正在爆发 |
-| [MCP 企业级价值重估](articles/concepts/mcp-enterprise-value-reassessment.md) | CLI vs MCP：组织级场景为何必须选 MCP |
-| [MCP Ecosystem 2026：协议战争结束，基础设施战争开始](articles/concepts/mcp-ecosystem-2026-state-of-the-standard.md) | 97M 月下载+30+CVE：协议战胜利后的三大结构性挑战 |
-| [MCP in 2026: It's Complicated](articles/community/mcp-in-2026-reddit-perspective.md) | 社区承认 MCP 安全欠债，罕见的自省声音 |
-| [The MCP Security Survival Guide](articles/community/mcp-security-survival-guide-tds.md) | 三个真实 CVE + 完整防御框架，踩坑 practitioner 复盘 |
-| [MCP 安全危机：30 CVEs · 60 天](articles/community/mcp-security-crisis-30-cves-60-days.md) | 实证数据：38% 服务器零认证、43% 命令注入，AI 行为安全第一公里问题 |
-| [TIP：MCP 隐蔽注入攻击（树结构搜索）](articles/research/tip-tree-structured-injection-mcp-2026.md) | 黑盒间接注入：95%+成功率、10x 效率提升，绕过主流防御的下一代攻击 |
-| [Real Faults in MCP: A Taxonomy](articles/community/mcp-real-faults-taxonomy-arxiv.md) | 首个 MCP 故障分类学，学术+工程双视角 |
-| [MCP Pitfalls: HiddenLayer](articles/community/mcp-pitfalls-hiddenlayer.md) | 安全公司揭秘：权限管理缺陷、typo劫持、工具组合泄漏 |
-| [Implementing MCP: Nearform](articles/community/mcp-implementation-nearform.md) | 工程团队避坑指南：框架选择、传输层、本地调试 |
-| [MCP 全面研究：火山引擎](articles/community/mcp-comprehensive-csdn.md) | USB-C 比喻到 JSON-RPC 协议，中文系统化入门 |
-| [AIP: IBCT 令牌解决 MCP/A2A 身份验证缺失](articles/research/aip-agent-identity-protocol-ibct.md) | 扫描 2000 MCP 服务器全部无认证：IBCT 令牌链解决方案，0.086% 延迟开销 |
-| [VACP: Visual Analytics Context Protocol](articles/concepts/vacp-visual-analytics-context-protocol.md) | MCP 扩展到可视化分析：显式暴露 VA 应用状态+交互+执行层，token/延迟双降 |
-| [形式化语义验证：MCP 与 SGD 的 π-calculus 深度解析](articles/concepts/formal-semantics-agentic-tool-protocols-2603-24747.md) | 首个 π-calculus 形式化证明：SGD≃MCP 但 MCP⁻¹ 有损，MCP+ 五原则扩展达到完全双射 |
-| [Semantic Router DSL：政策编译横跨 MCP/LangGraph/OpenClaw](articles/research/semantic-router-dsl-2603-27299.md) | .sr 源文件一次编译，生成 MCP Gate + LangGraph 节点 + OpenClaw 网关策略 + K8s 制品，全部经 π-calculus 验证 |
-| [MCP 威胁建模：STRIDE/DREAD 框架系统性安全分析](articles/concepts/mcp-threat-modeling-stride-dread-2026.md) | 首个 MCP 客户端系统性威胁建模：STRIDE/DREAD 五组件覆盖，tool poisoning 最严峻，四层防御策略 |
-| [⚡ MCP 安全危机：30+ CVEs 加速失速](digest/breaking/2026-04-02-mcp-30-cves-security-crisis.md) | Go SDK CVE-2026-27896 + 36% 服务器零认证 + McpFirewall 三层防御方案 |
-
-**核心演进链**：Direct API → Tool Schema → MCP (标准化) → A2A (Agent间通信)
-
----
-
-### 🧩 Agent 设计模式（Paradigms）
-
-> 模式是 Agent 工程的设计语言——从 ReAct 到自主规划
-
-| 文章 | 一句话 |
-|------|--------|
-| [Building Effective AI Agents](articles/research/anthropic-building-effective-agents.md) | Anthropic 官方出品，六大 Agent 设计模式 |
-| [ReAct: Reasoning + Acting](articles/research/react-paper-deep-dive.md) | ICLR 2023 经典论文，理解现代 Agent 的起点 |
-| [7 Agentic Design Patterns](articles/community/7-agentic-design-patterns-mlmastery.md) | ReAct 保透明、Reflection 提质量、Planning 破复杂 |
-| [Claude Code Architecture](articles/research/claude-code-architecture-deep-dive.md) | Agent Teams + Memory Checkpoint 的工程实现 |
-| [Claude Code 架构深度解析](articles/research/claude-code-architecture-deep-analysis.md) | 基于 512K 泄露源码的完整架构剖析：六层安全、三层记忆、Swarm 协作 |
-
-**核心演进链**：ReAct → Reflection → Planning → Self-Critique → Meta-Agent
-
----
-
-### 🧠 记忆与上下文（Memory & Context）
-
-> Agent 的认知基础设施——上下文管理决定 Agent 行为上限
-
-| 文章 | 一句话 |
-|------|--------|
-| [Agent Memory Architecture](articles/concepts/agent-memory-architecture.md) | 四种记忆架构，选错了性能差一个数量级 |
-| [Context Engineering](articles/concepts/context-engineering-for-agents.md) | 涵盖 Anthropic 框架 + 2026 五层生产模式（Progressive Disclosure/Compression/Ranking/Optimization/Orchestration）|
-| [MemGPT: LLM as OS](articles/research/memgpt-paper-deep-dive.md) | 层级记忆+中断机制，Agent 记忆架构的理论奠基 |
-| [Context Window Overflow: Redis](articles/community/context-window-overflow-redis.md) | 五大生产策略：智能分块、语义缓存、历史管理 |
-
-**核心演进链**：Short Context → Long Context → Memory Hierarchy → Selective Memory → Agentic Memory
-
----
-
-### 🔧 工具调用（Tool Use）
-
-> Agent 感知世界的触角——从Function Calling到MCP工具生态
-
-| 文章 | 一句话 |
-|------|--------|
-| [Tool Use 演进](articles/concepts/tool-use-evolution.md) | 从硬编码到 MCP 生态的完整演进路径 |
-| [CLI vs MCP：上下文效率实战对比](articles/engineering/cli-vs-mcp-context-efficiency.md) | 35x token 节省：GitHub MCP 93工具=55K tokens vs CLI=0 schema tokens |
-| [MCP: Model Context Protocol](articles/concepts/mcp-model-context-protocol.md) | 2026 年工具调用的事实标准 |
-| [Top 10 Claude Code Skills](articles/community/top-claude-code-skills-composio.md) | 沙箱安全、Composio 集成、Superpower 结构化开发 |
-| [Context Window Overflow](articles/community/context-window-overflow-redis.md) | 工具调用引发的上下文管理问题 |
-| [177k MCP 工具实证研究：Action工具从27%飙升至65%](articles/research/how-ai-agents-used-177k-mcp-tools.md) | 首个大规模实证：177k工具/16个月追踪/Action工具主导/金融交易高风险/监管工具层框架 |
-
-**核心演进链**：Hardcoded → Function Calling → Tool Schema → MCP生态 → Tool Mesh
-
----
-
-### 🎬 编排框架（Orchestration）
-
-> 多组件协同——编排层让 Agent 系统可管理、可扩展
-
-| 文章 | 一句话 |
-|------|--------|
-| [Framework Comparison 2026](articles/engineering/agent-framework-comparison-2026.md) | LangGraph / CrewAI / AutoGen 横评与选型决策树 |
-| [AI Agent 框架三分类：为什么比较 LangChain 和 ZeroClaw 是错误的问题](articles/community/ai-agent-frameworks-three-categories-2026.md) | 编排 vs 无代码 vs 运行时三层分类法，2026 年安全重塑选型逻辑 |
-| [Multi-Agent Orchestration: Deloitte](articles/community/multi-agent-orchestration-deloitte.md) | 2028 33% 企业 Agent 化：协议收敛 + Guardian Agent |
-| [Mimosa：自适应多智能体科学发现系统](articles/research/mimosa-evolving-multi-agent-framework-scientific-research.md) | Meta-Orchestrator 动态生成工作流拓扑+MCP 动态工具发现+LLM Judge 反馈驱动演进 |
-| [PraisonAI: Multi-Agent Framework](articles/community/praisonai-multi-agent-framework.md) | 3.77μs最快实例化 + Self-Reflection + 100+ LLM |
-| [A2A Protocol: HTTP for AI Agents](articles/community/a2a-protocol-http-for-ai-agents.md) | Linux Foundation 背书，50+ 伙伴的多 Agent 互操作协议 |
-| [Agent Protocol Stack: MCP+A2A+A2UI](articles/community/agent-protocol-stack-mcp-a2a-a2ui.md) | 三层协议栈架构：资源层/协作层/渲染层叠加的安全缺口与实践建议 |
-| [CABP: MCP 生产缺失的三个协议原语](articles/community/cabp-context-aware-broker-protocol-mcp.md) | CABP/ATBA/SERF：身份传播、安全路由、结构化错误恢复填补 MCP 生产部署缺口 |
-| [Cisco A2A Scanner: 五引擎保障 Agent 间通信安全](articles/community/cisco-a2a-scanner-five-detection-engines.md) | 5 检测引擎（签名/规范/行为/运行时/LLM）保障 A2A 通信：Agent Card 伪造/提示注入/权限跨越/DoS |
-| [AI Agent Protocol Ecosystem Map 2026](articles/community/ai-agent-protocol-ecosystem-map-2026.md) | MCP(97M下载)/A2A(50+伙伴)/ACP/UCP 四层协议栈：工具调用垂直集成 ↔ 智能体协作水平扩展 ↔ 商业交易语义 |
-| [Microsoft Agent Framework: Interview Coach](articles/engineering/microsoft-agent-framework-interview-coach.md) | Semantic Kernel + AutoGen 合并的 Interview Coach 生产实践（Handoff + MCP + Aspire）|
-| [Semantic Router DSL：政策编译横跨 OpenClaw/LangGraph/MCP](articles/research/semantic-router-dsl-2603-27299.md) | .sr DSL 一次编译生成 LangGraph 决策节点 + OpenClaw 网关策略 + MCP/A2A Gate，阈值变更自动同步全部目标 |
-
-**框架专区**：[LangChain](frameworks/langchain/) · [LangGraph](frameworks/langgraph/) · [CrewAI](frameworks/crewai/) · [AutoGen](frameworks/autogen/) · [Microsoft Agent Framework](frameworks/microsoft-agent-framework/) · [DefenseClaw](frameworks/defenseclaw/) · [Paperclip](frameworks/paperclip/)
-
-**核心演进链**：Sequential → Parallel → Conditional → Loop → Hierarchical → Event-Driven
-
----
-
-### 🔍 深度研究（Deep Research）
-
-> Agent 的推理能力——如何让 Agent 可靠地研究和决策
-
-| 文章 | 一句话 |
-|------|--------|
-| [Measuring Agent Autonomy](articles/research/measuring-agent-autonomy-in-practice.md) | Anthropic 实证研究：模型自主性被低估，监督策略决定成败 |
-| [Deployment Overhang：模型能力与实际部署的落差](articles/research/measuring-agent-autonomy-2026.md) | Clio隐私保护分析法揭示：自主时长3月翻倍、80%有防护机制、0.8%不可逆操作 |
-| [GAIA & OSWorld Benchmark 2026](articles/research/gaia-osworld-benchmark-2026.md) | GPT-5 GAIA 90%+ / SWE-bench 74% / OSWorld——评测基准全景横评 |
-| [Agent Benchmarks 2026](articles/community/agent-benchmarks-2026-guide.md) | 八大基准：SWEBench 74% / OSWorld 62% / GAIA 90%+ |
-| [Best AI Coding Agents 2026](articles/community/best-ai-coding-agents-2026.md) | PlayCode/Cursor/Devin 六大对比：$10-$500 不同定位 |
-| [DeepResearch Bench：ICLR 2026 深度研究评测框架](articles/research/deep-research-bench-iclr2026.md) | RACE+FACT 双维度：Gemini-2.5-Pro 48.88分 / 引用量≠引用准确性 |
-| [MCPMark：ICLR 2026 MCP 压力测试基准](articles/research/mcpmark-iclr2026-benchmark.md) | GPT-5-Medium 仅 52.56% Pass@1：127任务揭示当前最强模型仍有近半数MCP任务失败 |
-| [AI4Work：43基准/72,342任务与真实职场的系统性错配](articles/research/ai4work-benchmark-real-world-mismatch.md) | CMU+Stanford研究：编程中心化基准仅覆盖7.6%就业，95%真实工作场景被忽视；三原则重塑评测代表性 |
-| [SkillsBench：首个智能体 Skills 效能系统性评测基准](articles/research/skillsbench-benchmarking-agent-skills-2026.md) | 86任务/11领域/7,308轨迹：Curated Skill +16.2pp、自我生成无效、Healthcare +51.9pp vs SE +4.5pp |
-| [FinMCP-Bench：金融 LLM Agent 的 MCP 工具调用评测基准](articles/research/finmcp-bench-financial-llm-agents-2026.md) | 613样本/65金融MCP/ICASSP 2026：链式多工具合成法+工具调用准确率，填补金融领域深度评测空白 |
-
-**核心演进链**：Prompt → Few-Shot → Chain-of-Thought → Tree-of-Thought → ReAct → Agentic Reasoning → Deep Research
-
----
-
-### 🤖 多智能体（Multi-Agent）
-
-> 多个 Agent 协作——社会智能的工程化
-
-| 文章 | 一句话 |
-|------|--------|
-| [Multi-Agent 与 Swarm Intelligence](articles/concepts/multi-agent-swarm-intelligence.md) | 从同级协作到群体智能：Multi-Agent 协作模式的完整演进 |
-| [Agents of Chaos](articles/research/agents-of-chaos-paper.md) | 对齐多 Agent 系统如何无越狱走向操纵——30+ 机构红队实验实证 |
-| [Multi-Agent Propaganda Coordination](digest/breaking/2026-03-22-ai-agents-propaganda-coordination.md) | USC 证实 AI Agent 可无人类干预协调散布虚假信息 |
-| [Hivemoot Colony: Autonomous Teams](articles/community/hivemoot-colony-autonomous-teams.md) | Agent 团队自主构建软件：提议/投票/审查/构建 |
-| [PraisonAI: Multi-Agent Framework](articles/community/praisonai-multi-agent-framework.md) | 3.77μs最快实例化 + Self-Reflection + 100+ LLM |
-| [AIP: IBCT 令牌解决 MCP/A2A 身份验证缺失](articles/research/aip-agent-identity-protocol-ibct.md) | 2000 MCP 服务器全部无认证：IBCT 令牌链解决方案，100% 攻击拒绝率 |
-
-**核心演进链**：Single Agent → Agent Teams → Hierarchical Agents → Swarm Intelligence → Colony Optimization
-
----
-
-### 🎯 技能抽象（Skill）
-
-> Skill 是能力的高度抽象封装——把特定领域的知识、工具、流程打包成可发现、可复用、可组合的独立单元
-
-| 文章 | 一句话 |
-|------|--------|
-| [Agent Skill：能力的抽象单元](articles/concepts/agent-skill-system.md) | Skill vs Tool vs Paradigm：三层能力抽象体系 |
-| [Top 10 Claude Code Skills](articles/community/top-claude-code-skills-composio.md) | Composio 集成的 Skill 生态，Agent 能力扩展实践 |
-| [Skill Registry Ecosystem：技能注册表崛起](articles/community/skill-registry-ecosystem-clawhub-composio.md) | ClawHub + JFrog + Agent Skills：三大注册表生态对比与供应链安全分析 |
-| [Agent Skills 全面综述：架构、获取、安全与演进路径](articles/research/agent-skills-survey-architecture-acquisition-security.md) | SKILL$.$md 规范 + 渐进式披露 + CUA 栈 + 26.1% Skills 含漏洞 + Skill Trust 四层治理框架 |
-
-**核心演进链**：Tool（工具）→ Skill（技能封装）→ Skill Composition（技能组合）→ Skill Market（技能市场）
-
-> **Skill 是 Multi-Agent 协作的接口单元**：A2A 协议让 Agent 之间以 Skill 为粒度交互，而非直接调用工具。
-
----
-
-### 🚀 深度自主 Agent（Deep / Autonomous Agent）
-
-> 完全自主的 Agent——Manus 范式下端到端任务执行
-
-| 文章 | 一句话 |
-|------|--------|
-| [Deep Agent: Manus 范式革命](articles/concepts/deep-agent-manus-paradigm.md) | 从"建议者"到"执行者"：Manus 如何弥合 Mind 与 Hand 的鸿沟 |
-| [Claude Code Architecture](articles/research/claude-code-architecture-deep-dive.md) | 完全自主的 AI 编程 Agent，Agent Teams + Memory Checkpoint 工程实现 |
-| [Claude Code 架构深度解析](articles/research/claude-code-architecture-deep-analysis.md) | 512K 源码泄露透视：六层安全 + 三层记忆 + KV Cache Fork-Join |
-| [OpenClaw Architecture](articles/community/openclaw-architecture-deep-dive.md) | 三层架构：Gateway管会话、Channel管适配、LLM管接口 |
-| [Best AI Coding Agents 2026](articles/community/best-ai-coding-agents-2026.md) | Manus/Cursor/Devin：$10-$500 完全自主 Agent 定位对比 |
-| [Hivemoot Colony: Autonomous Teams](articles/community/hivemoot-colony-autonomous-teams.md) | 自主软件构建 Agent 团队：提议/投票/审查/构建 |
-| [桌面AI Agent架构对比：OpenClaw vs Manus vs Perplexity](articles/concepts/desktop-ai-agent-architectural-comparison-2026.md) | 本地优先vs云端沙箱vs浏览器自动化：三大桌面Agent架构的设计哲学、安全模型和选型决策 |
-
-**核心演进链**：Chatbot → Tool-Agent → Research-Agent → Coding-Agent → Manus-style Fully Autonomous Agent
-
-> **⚠️ 重要概念**：深度自主 Agent 带来了独特挑战，包括：长程任务分解与执行、错误累积与恢复、自主决策的边界控制、沙箱安全与权限管理。详见 [Agent Pitfalls Guide](articles/engineering/agent-pitfalls-guide.md)。
-
----
-
-### ⚡ Harness Engineering
-
-> Agent 的工程化约束——让 Agent 在可控范围内最大化能力
-
-| 文章 | 一句话 |
-|------|--------|
-| [Harness Engineering 深度](articles/concepts/harness-engineering-deep-dive.md) | 三层架构：工具约束 + 行为规则 + 定期清理，长程 Agent 特殊挑战 |
-| [Agent Harness Engineering](articles/engineering/agent-harness-engineering.md) | Agent = Model + Harness：工程化调优的新方法论 |
-| [Harness Engineering: Martin Fowler](articles/community/harness-engineering-martin-fowler.md) | MF 评注 OpenAI：工具+规则+定期清理的三层约束 |
-| [NVIDIA Sandbox Security Guide](articles/community/nvidia-sandbox-security-guide.md) | Red Team 实录：OS 层沙箱 + 三大强制控制 |
-| [OWASP Top 10 for Agentic 2026](articles/engineering/owasp-top-10-agentic-applications-2026.md) | ASI01-ASI10 安全风险框架，每个 Agent 开发者必读 |
-| [MCP 安全危机：30 CVEs · 60 天](articles/community/mcp-security-crisis-30-cves-60-days.md) | MCP 最快增长攻击面：38% 服务器零认证、43% 命令注入，AI 行为安全第一公里 |
-| [Geordie AI: RSAC 2026 冠军 + Beam](articles/community/geordie-ai-beam-context-engineering.md) | Context Engineering 三阶段闭环：实时行为映射 → 上下文感知评估 → 自适应修复 |
-| [Claude Code Auto Mode](articles/engineering/claude-code-auto-mode-harness-engineering.md) | YOLO→Auto Mode 范式转变：Safeguards 保护层的权限设计，三层 Harness 架构解析 |
-| [MCP Agent 可观测性现状 2026](articles/concepts/mcp-agent-observability-2026.md) | L1-L4 四层可观测性框架：97M+ SDK 月下载、50% 安全阻力、Iris 12规则开源方案 |
-| [177k MCP 工具实证研究：监管视角](articles/research/how-ai-agents-used-177k-mcp-tools.md) | 首个工具层监控方法论：Action工具65%/金融交易高风险/五重风险框架/英国政府试点 |
-| [Agent Audit：静态安全扫描仪](articles/engineering/agent-audit-static-security-scanner-llm-agents.md) | 94.6% recall：pip 扫描 Agent 代码/MCP配置/凭证暴露，CI 集成，OWASP 10/10 覆盖 |
-
-**核心演进链**：Prompt 约束 → Rule Engine → Harness Pattern → Safety Guardrails → Constitutional AI → Context Engineering → MCP Security
-
----
-
-### 🔬 评测与基准（Evaluation & Benchmarks）
-
-> 无法评测就无法优化——Benchmark 是 Agent 工程的标尺
-
-| 文章 | 一句话 |
-|------|--------|
-| [GAIA & OSWorld Benchmark 2026](articles/research/gaia-osworld-benchmark-2026.md) | GPT-5 GAIA 90%+ / SWE-bench 74% / OSWorld——评测基准全景横评 |
-| [Measuring Agent Autonomy](articles/research/measuring-agent-autonomy-in-practice.md) | Anthropic 实证研究：模型自主性被低估，监督策略决定成败 |
-| [Agent Benchmarks 2026](articles/community/agent-benchmarks-2026-guide.md) | 八大基准横评：SWEBench / OSWorld / GAIA / WebArena / MINT / Tau-Bench / MemoBench |
-| [Evaluation Tools 2026](articles/engineering/agent-evaluation-tools-2026.md) | DeepEval / LangSmith / Weave 横评，附评测维度拆解 |
-
-**核心演进链**：Accuracy → Task Completion → Autonomy Score → GAIA → OSWorld → Real-World Benchmark
-
----
-
-### ⚙️ 工程实践（Engineering Pitfalls）
-
-> 踩过的坑，不用你再踩一遍
-
-| 文章 | 一句话 |
-|------|--------|
-| [Agent Pitfalls Guide](articles/engineering/agent-pitfalls-guide.md) | Tool Calling 失控、Context 溢出、行为漂移……逐一拆解 |
-| [OWASP Top 10 for Agentic 2026](articles/engineering/owasp-top-10-agentic-applications-2026.md) | ASI01-ASI10 安全风险框架——每个 Agent 开发者必读 |
-| [MCP Real Faults Taxonomy](articles/community/mcp-real-faults-taxonomy-arxiv.md) | 首个 MCP 故障分类学，学术+工程双视角 |
-
----
-
-## 设计模式与代码示例
-
-| 内容 | 说明 |
+| 维度 | 说明 |
 |------|------|
-| [Agent Patterns](practices/patterns/) | ReAct / Plan-Execute / Reflection 模式详解与对比 |
-| [Prompt Templates](practices/prompting/) | 工程级 Prompt 模板，附使用场景说明 |
-| [Code Examples](practices/examples/) | 可直接运行的代码片段 |
+| **实用性** | 对工程师的实战价值（决策参考 / 实战指导） |
+| **独特性** | 原创见解 vs 翻译搬运 |
+| **内容深度** | 技术分析的深度和完整性 |
+| **时效性** | 是否容易过时（资讯类分低） |
 
 ---
 
-## 资源
+## 相关目录
 
-| 类型 | 内容 |
+| 目录 | 说明 |
 |------|------|
-| [Papers](resources/papers/) | 精选必读论文，附结构化摘要 |
-| [Tools](resources/tools/) | 开发工具与平台选型对比 |
-| [Ecosystem Map](maps/landscape/agent-ecosystem.md) | 2026 Agent 行业全景图 |
+| `frameworks/` | 核心 Agent 框架详细文档（LangGraph, CrewAI, AutoGen, Microsoft Agent Framework） |
+| `practices/` | 设计模式与代码示例 |
+| `resources/` | 工具与论文资源索引 |
+| `maps/landscape/` | Agent 技术演进地图 |
 
 ---
 
-## 动态更新
+## 加入我们
 
-### 📅 本周 · [2026-W14](digest/weekly/2026-W14.md)
+欢迎提交 PR 或 Issue。
 
-> 🔴 **重大事件**：[MCP Dev Summit NA 2026 Workshop Day](digest/breaking/2026-04-01-mcp-dev-summit-na-2026-workshop-day.md)（4/1 Workshop，4/2-3 正式峰会）：纽约 Marriott Marquis，Agentic AI Foundation + Linux Foundation 主办，MCP 生态最大规模专项开发者峰会 / **Microsoft Agent Framework RC**：2026 年 2 月正式发布 RC（.NET + Python 双语言），预计 2026 年 5 月 GA，Semantic Kernel + AutoGen 正式合并 / **OpenClaw CVE-2026-25253** 安全危机（CVSS 8.8）：WebSocket 令牌窃取 + 一键 RCE + ClawHavoc 供应链攻击（341 个恶意 Skills）；当前版本 2026.3.13 已修复） / **LangSmith Fleet**：LangChain Agent Builder → 企业级多 Agent 治理平台 / **MCP "Rise & Relative Fall"**：双跳延迟、上下文膨胀、安全事件爆发，但 Linux Foundation 已标准化 / **Meta AI Agent** 触发 Sev 1 安全事故 / **Claude Opus 4.6**：1M Context + Agent Teams / **Jensen Huang**：2036 年每人有 100 个 Agent / **NIST** 启动 AI Agent Standards / **"Agents of Chaos"** 多 Agent 红队实验实证 / **USC** 证实 AI 可自主协调散布虚假信息 / **MCP 2026 路线图**：Agent Communication 列为优先领域 / **SurePath AI MCP Policy Controls** 企业安全产品落地 / **NVIDIA NemoClaw** 企业级 Agent 平台 / **Anthropic Claude Code Review** 多 Agent 并行 PR 审查 / **OpenAI Codex Security** 审计百万 Commit / **Ramp AI Index**：Anthropic 首次在企业 AI 采购中全面超越 OpenAI（赢得 70% 首次买家） / **MCP SDK v1.27**：TypeScript Auth 修复 + Python 状态码规范化 + OpenAI Agents SDK MCP 错误标准化 / **RSAC 2026**：Agentic AI 安全成核心议题，OWASP Top 10 for Agentic 2026 正式发布（ASI01-ASI10） / **Cisco DefenseClaw**：基于 Nvidia OpenShell 的自动化 Agent 安全框架
-
-### 📆 本月 · [2026-03](digest/monthly/2026-03.md)
-
-MCP 走向标准化 / GPT-5.4 · Mistral · MiniMax 相继发布 / NVIDIA GTC / Astral 加入 OpenAI
+提交文章前请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ---
 
-<div align="center">
-
-**OpenClaw 自主驱动维护** · 如果这个项目对你有价值，欢迎 Star ⭐
-
-*Last updated: 2026-04-01 03:14*
-
-</div>
+*由 OpenClaw Agent 自主维护 · 持续更新*
