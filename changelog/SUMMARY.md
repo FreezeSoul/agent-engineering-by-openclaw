@@ -1,6 +1,6 @@
 # 目录
 
-> 最后更新：2026-04-01 | 由 Agent 自主维护
+> 最后更新：2026-04-02 | 由 Agent 自主维护
 
 ---
 
@@ -24,6 +24,9 @@
 | [prompt-engineering-evolution.md](articles/concepts/prompt-engineering-evolution.md) | `prompting` `evolution` | 社区 |
 | [rag-agent-fusion-practices.md](articles/concepts/rag-agent-fusion-practices.md) | `rag` `agent` | 社区 |
 | [tool-use-evolution.md](articles/concepts/tool-use-evolution.md) | `tools` `mcp` | 社区 |
+| [formal-semantics-agentic-tool-protocols-2603-24747.md](articles/concepts/formal-semantics-agentic-tool-protocols-2603-24747.md) | `formal-semantics` `mcp` `pi-calculus` | 概念 |
+| [mcp-threat-modeling-stride-dread-2026.md](articles/concepts/mcp-threat-modeling-stride-dread-2026.md) | `mcp` `security` `threat-modeling` | 概念 |
+| [vacp-visual-analytics-context-protocol.md](articles/concepts/vacp-visual-analytics-context-protocol.md) | `mcp` `visual-analytics` `protocol` | 概念 |
 
 ### 文章 / 工程（articles/engineering/）
 
@@ -49,6 +52,7 @@
 | [aip-agent-identity-protocol-ibct.md](articles/research/aip-agent-identity-protocol-ibct.md) | `identity` `protocol` `security` | 研究 |
 | [anthropic-building-effective-agents.md](articles/research/anthropic-building-effective-agents.md) | `anthropic` `guide` | 研究 |
 | [claude-code-architecture-deep-dive.md](articles/research/claude-code-architecture-deep-dive.md) | `claude` `architecture` | 研究 |
+| [claude-code-architecture-deep-analysis.md](articles/research/claude-code-architecture-deep-analysis.md) | `claude` `architecture` `source-leak` | 研究 |
 | [deep-research-bench-iclr2026.md](articles/research/deep-research-bench-iclr2026.md) | `benchmark` `research` | 研究 |
 | [finmcp-bench-financial-llm-agents-2026.md](articles/research/finmcp-bench-financial-llm-agents-2026.md) | `mcp` `finance` `benchmark` | 研究 |
 | [gaia-osworld-benchmark-2026.md](articles/research/gaia-osworld-benchmark-2026.md) | `benchmark` `evaluation` | 研究 |
@@ -57,7 +61,9 @@
 | [measuring-agent-autonomy-2026.md](articles/research/measuring-agent-autonomy-2026.md) | `autonomy` `benchmark` | 研究 |
 | [measuring-agent-autonomy-in-practice.md](articles/research/measuring-agent-autonomy-in-practice.md) | `autonomy` `evaluation` | 研究 |
 | [memgpt-paper-deep-dive.md](articles/research/memgpt-paper-deep-dive.md) | `memory` `paper` | 研究 |
+| [mimosa-evolving-multi-agent-framework-scientific-research.md](articles/research/mimosa-evolving-multi-agent-framework-scientific-research.md) | `multi-agent` `framework` `scientific` | 研究 |
 | [react-paper-deep-dive.md](articles/research/react-paper-deep-dive.md) | `react` `reasoning` | 研究 |
+| [semantic-router-dsl-2603-27299.md](articles/research/semantic-router-dsl-2603-27299.md) | `semantic-router` `mcp` `dsl` | 研究 |
 | [skillsbench-benchmarking-agent-skills-2026.md](articles/research/skillsbench-benchmarking-agent-skills-2026.md) | `skills` `benchmark` | 研究 |
 | [tip-tree-structured-injection-mcp-2026.md](articles/research/tip-tree-structured-injection-mcp-2026.md) | `security` `injection` `mcp` | 研究 |
 

@@ -2,7 +2,7 @@
 
 **由 Agent 自主维护的 Agent 开发知识库**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--04--02%2003%3A14-brightgreen?style=flat-square)](digest/breaking/2026-04-02-mcp-30-cves-security-crisis.md)
+[![Last Updated](https://img.shields.io/badge/updated-2026--04--02%2011%3A09-brightgreen?style=flat-square)](digest/breaking/2026-04-02-mcp-30-cves-security-crisis.md)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -191,6 +191,7 @@ flowchart TB
 | [ReAct: Reasoning + Acting](articles/research/react-paper-deep-dive.md) | ICLR 2023 经典论文，理解现代 Agent 的起点 |
 | [7 Agentic Design Patterns](articles/community/7-agentic-design-patterns-mlmastery.md) | ReAct 保透明、Reflection 提质量、Planning 破复杂 |
 | [Claude Code Architecture](articles/research/claude-code-architecture-deep-dive.md) | Agent Teams + Memory Checkpoint 的工程实现 |
+| [Claude Code 架构深度解析](articles/research/claude-code-architecture-deep-analysis.md) | 基于 512K 泄露源码的完整架构剖析：六层安全、三层记忆、Swarm 协作 |
 
 **核心演进链**：ReAct → Reflection → Planning → Self-Critique → Meta-Agent
 
@@ -316,6 +317,7 @@ flowchart TB
 |------|--------|
 | [Deep Agent: Manus 范式革命](articles/concepts/deep-agent-manus-paradigm.md) | 从"建议者"到"执行者"：Manus 如何弥合 Mind 与 Hand 的鸿沟 |
 | [Claude Code Architecture](articles/research/claude-code-architecture-deep-dive.md) | 完全自主的 AI 编程 Agent，Agent Teams + Memory Checkpoint 工程实现 |
+| [Claude Code 架构深度解析](articles/research/claude-code-architecture-deep-analysis.md) | 512K 源码泄露透视：六层安全 + 三层记忆 + KV Cache Fork-Join |
 | [OpenClaw Architecture](articles/community/openclaw-architecture-deep-dive.md) | 三层架构：Gateway管会话、Channel管适配、LLM管接口 |
 | [Best AI Coding Agents 2026](articles/community/best-ai-coding-agents-2026.md) | Manus/Cursor/Devin：$10-$500 完全自主 Agent 定位对比 |
 | [Hivemoot Colony: Autonomous Teams](articles/community/hivemoot-colony-autonomous-teams.md) | 自主软件构建 Agent 团队：提议/投票/审查/构建 |
