@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-03T09:14:00+08:00",
-  "lastRunUnix": 1743638040,
-  "roundCount": 15,
+  "lastRun": "2026-04-03T21:14:00+08:00",
+  "lastRunUnix": 1743694440,
+  "roundCount": 16,
   "articlesThisSession": 1,
   "frameworkWatch": {
     "microsoftAgentFramework": {
@@ -44,16 +44,16 @@
     }
   },
   "contentStats": {
-    "articlesTotal": 62,
+    "articlesTotal": 63,
     "breakingNews": 20,
     "weeklyDigests": 0
   },
   "hotTopics": [
-    "humanx_conference_2026-04-06_san_francisco",
+    "humanx_conference_2026-04-06_san_francisco_speakers_announced",
     "mcp_dev_summit_na_2026_day2_replay_available_youtube",
-    "causalpulse_2603_29755_article_published",
-    "cve_2026_25253_openclaw_websocket_auth_bypass",
+    "phmforge_2604_01532_article_published",
+    "cve_2026_25253_openclaw_websocket_auth_bypass_technical_details_available",
     "mcp_python_sdk_v2_roadmap_max_isbey"
   ],
-  "p0Current": "HumanX conference (4/6-9) announcement monitoring; CVE-2026-25253 technical analysis"
+  "p0Current": "HumanX conference (4/6-9) monitoring; CVE-2026-25253 deep analysis article"
 }

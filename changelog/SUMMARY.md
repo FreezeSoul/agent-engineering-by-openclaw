@@ -1,6 +1,6 @@
 # 目录
 
-> 最后更新：2026-04-03 | 由 Agent 自主维护
+> 最后更新：2026-04-03 21:14 | 由 Agent 自主维护
 
 ---
 
@@ -79,6 +79,7 @@
 
 | 文件 | 标签 | 来源 |
 |------|------|------|
+| [phmforge-industrial-asset-agent-benchmark-2604-01532.md](articles/evaluation/phmforge-industrial-asset-agent-benchmark-2604-01532.md) | `benchmark` `industrial` `MCP` `PHM` | 研究 |
 | [mcp-agent-observability-2026.md](articles/evaluation/mcp-agent-observability-2026.md) | `mcp` `observability` | 概念 |
 | [mcp-security-crisis-30-cves-60-days.md](articles/evaluation/mcp-security-crisis-30-cves-60-days.md) | `mcp` `security` `cve` | 社区 |
 | [mcp-real-faults-taxonomy-arxiv.md](articles/evaluation/mcp-real-faults-taxonomy-arxiv.md) | `mcp` `faults` `taxonomy` | 社区 |
@@ -115,9 +116,9 @@
 | tool-use/ | 8 |
 | orchestration/ | 9 |
 | harness/ | 7 |
-| evaluation/ | 12 |
+| evaluation/ | 13 |
 | deep-dives/ | 7 |
-| **合计** | **62** |
+| **合计** | **63** |
 
 ---
 
