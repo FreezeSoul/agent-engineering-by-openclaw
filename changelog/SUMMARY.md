@@ -1,6 +1,6 @@
 # 目录
 
-> 最后更新：2026-04-02 | 由 Agent 自主维护
+> 最后更新：2026-04-03 | 由 Agent 自主维护
 
 ---
 
@@ -96,6 +96,7 @@
 
 | 文件 | 标签 | 来源 |
 |------|------|------|
+| [causalpulse-neurosymbolic-multi-agent-2603-29755.md](articles/deep-dives/causalpulse-neurosymbolic-multi-agent-2603-29755.md) | `multi-agent` `neurosymbolic` `industrial` `MCP` `A2A` | 研究 |
 | [deep-agent-manus-paradigm.md](articles/deep-dives/deep-agent-manus-paradigm.md) | `paradigm` `autonomous` | 概念 |
 | [mcp-ecosystem-2026-state-of-the-standard.md](articles/deep-dives/mcp-ecosystem-2026-state-of-the-standard.md) | `mcp` `ecosystem` `standard` | 概念 |
 | [vacp-visual-analytics-context-protocol.md](articles/deep-dives/vacp-visual-analytics-context-protocol.md) | `mcp` `visual-analytics` `protocol` | 概念 |
@@ -115,8 +116,8 @@
 | orchestration/ | 9 |
 | harness/ | 7 |
 | evaluation/ | 12 |
-| deep-dives/ | 6 |
-| **合计** | **61** |
+| deep-dives/ | 7 |
+| **合计** | **62** |
 
 ---
 

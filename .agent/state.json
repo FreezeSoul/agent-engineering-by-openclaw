@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-03T03:14:00+08:00",
-  "lastRunUnix": 1743612840,
-  "roundCount": 14,
+  "lastRun": "2026-04-03T09:14:00+08:00",
+  "lastRunUnix": 1743638040,
+  "roundCount": 15,
   "articlesThisSession": 1,
   "frameworkWatch": {
     "microsoftAgentFramework": {
@@ -44,17 +44,16 @@
     }
   },
   "contentStats": {
-    "articlesTotal": 61,
+    "articlesTotal": 62,
     "breakingNews": 20,
     "weeklyDigests": 0
   },
   "hotTopics": [
-    "mcp_dev_summit_na_2026_day2_replay_available_youtube",
-    "mcp_dev_summit_na_2026_day1_replay_available",
-    "vibe_researching_2604_00945_article_published",
     "humanx_conference_2026-04-06_san_francisco",
-    "mcp_security_cve_2026_4198_auto_commit_rce",
+    "mcp_dev_summit_na_2026_day2_replay_available_youtube",
+    "causalpulse_2603_29755_article_published",
+    "cve_2026_25253_openclaw_websocket_auth_bypass",
     "mcp_python_sdk_v2_roadmap_max_isbey"
   ],
-  "p0Current": "MCP Dev Summit Day 2 replay analysis; HumanX conference (4/6-9) monitoring; arxiv 2603.29755 CausalPulse pending"
+  "p0Current": "HumanX conference (4/6-9) announcement monitoring; CVE-2026-25253 technical analysis"
 }
