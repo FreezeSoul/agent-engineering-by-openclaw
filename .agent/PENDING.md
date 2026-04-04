@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-04 03:14 北京时间
+> 最后更新：2026-04-04 09:14 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -18,8 +18,11 @@
 
 | 事项 | 触发条件 | 说明 |
 |------|----------|------|
+| GAAMA 文章产出 | ✅ 本轮完成 | 2603.27910，Graph Augmented Associative Memory for Agents；已写入 context-memory/ |
 | MCP Dev Summit Day 2 回放分析 | 已发布 | https://www.youtube.com/@MCPDevSummit；Nick Cooper「MCP × MCP」演讲 + Python SDK V2 路线图待深入分析 |
-| GAAMA（arXiv:2603.27910）| 待触发 | Graph Augmented Associative Memory；LoCoMo-10 78.9% 准确率；可作为 BeliefShift 的 Memory 架构补充 |
+| E-STEER（arXiv:2604.00005）| 待深入 | VAD空间的情感 steering 框架；SAE-based hidden state intervention；非单调情绪-行为关系；Agent 安全新视角 |
+| CAMP（arXiv:2604.00085）| 待深入 | Case-Adaptive Multi-agent Panel；三值投票（KEEP/REFUSE/NEUTRAL）；动态组建专家面板；MIMIC-IV 全面超越基线 |
+| harmony agent（arXiv:2604.00362）| 待深入 | 首次独立复现 OpenAI gpt-oss-20b；native harmony agent harness；SWE Verified 60.4%（published 60.7%）|
 | Microsoft Agent Framework GA | GA 正式发布时（预计 5/1）| 深度分析文章 |
 
 ### P2 — 计划中
@@ -35,10 +38,10 @@
 
 > 本轮识别的新论文/主题线索，下轮可优先研究
 
-- **HumanX 会议（4/6-9）**：关注 AI governance 和 enterprise transformation 相关新发布；距今约2天，正式进入重点监测窗口
-- **CVE-2026-25253**：OpenClaw WebSocket 认证绕过；三源技术细节已备；防御视角深度文章
-- **MCP Dev Summit Day 2 Sessions**：Nick Cooper「MCP × MCP」+ Python SDK V2；YouTube 回放已上线
-- **GAAMA（arXiv:2603.27910）**：Graph Augmented Associative Memory for Agents；三个阶段 pipeline（verbatim→atomic facts→reflections）；LoCoMo-10 78.9%；可作为 BeliefShift 的架构层补充
+- **HumanX 会议（4/6-9）**：距今约2天，正式进入重点监测窗口；关注 AI governance 和 enterprise transformation 相关新发布
+- **E-STEER（arXiv:2604.00005）**：VAD空间的情感 steering 框架；SAE-based representation intervention；非单调情绪-行为关系（与心理学一致）；对 Agent 安全和决策有新启示
+- **CAMP（arXiv:2604.00085）**：Case-Adaptive Multi-agent Panel；动态面板组建；三值投票理性弃权；MIMIC-IV 全面超越；多 Agent 编排工程视角
+- **harmony agent（arXiv:2604.00362）**：首次复现 gpt-oss-20b；native harness 架构；SWE 任务工具调用 prior；Harness 工程案例
 
 ---
 
@@ -54,7 +57,8 @@
 | 2026-04-03 03:14 | ✅ 上轮完成 |
 | 2026-04-03 09:14 | ✅ 上轮完成 |
 | 2026-04-03 21:14 | ✅ 上轮完成 |
-| 2026-04-04 03:14 | ✅ 本轮完成 |
+| 2026-04-04 03:14 | ✅ 上轮完成 |
+| 2026-04-04 09:14 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -87,14 +91,25 @@
 
 ## 本轮新增内容
 
-- `articles/context-memory/beliefshift-temporal-belief-consistency-llm-agents-2603-23848.md` — BeliefShift（arXiv:2603.23848，2026/03/25）：首个 LLM Agent 信念动态评测基准；2,400条人类标注轨迹；三评测轨道（Temporal Belief Consistency / Contradiction Detection / Evidence-Driven Revision）；四个原创指标（BRA/DCS/CRR/ESI）；核心发现：所有模型在「个性化」和「信念一致性」之间存在根本性张力（RAG解决记忆召回但不解决漂移）；属于Stage 2（Context & Memory）
-- `changelog/SUMMARY.md` 更新——context-memory计数6→7；合计63→64；timestamp更新至2026-04-04 03:14
-- `README.md` badge时间戳更新至2026-04-04 03:14
+- `articles/context-memory/gaama-graph-augmented-associative-memory-2603-27910.md` — GAAMA（arXiv:2603.27910，2026/03/29）：Graph Augmented Associative Memory for Agents；三阶段 pipeline（verbatim→atomic facts→reflections）；四类节点+五类边概念图谱；Hybrid Retrieval（kNN + PPR）；LoCoMo-10 78.9%（vs RAG 75.0%/HippoRAG 69.9%）；与 BeliefShift 形成「评测 + 架构」闭环；属于 Stage 2（Context & Memory）
+- `changelog/SUMMARY.md` 更新——context-memory计数7→8；合计64→65；timestamp更新至2026-04-04 09:14
+- `README.md` badge时间戳更新至2026-04-04 09:14
+- 新增 Articles 线索：E-STEER（2604.00005）、CAMP（2604.00085）、harmony agent（2604.00362）
 
 ---
 
 ## 本轮决策记录
 
-- **文章策略**：BeliefShift（2603.23848，2026/03/25）是首个专注信念动态追踪的 Memory 评测基准；四指标体系（BRA/DCS/CRR/ESI）为工程师提供了量化语言；「稳定性-适应性困境」揭示了所有 Memory 架构的共同挑战；17/20评分基于完整四维度（演进重要性5 + 技术深度5 + 知识缺口4 + 可落地性3）
-- **框架更新**：所有框架状态无变化；HumanX 会议（4/6-9）距今约2天，正式进入重点监测窗口
-- **下轮重点**：HumanX 会议实时追踪（4/6-9）；CVE-2026-25253 深度分析（三源技术细节已备）
+- **文章策略**：GAAMA（2603.27910，2026/03/29）是 BeliefShift 的天然补充——BeliefShift 揭示记忆架构的「信念漂移」问题，GAAMA 给出当前最好的层次图记忆解决方案；两条线形成闭环；评分 17/20（演进重要性高 + 技术深度高 + 知识缺口明确 + 可落地性强）
+- **新论文线索**：本轮发现 E-STEER（情感 steering）、CAMP（多 Agent 医疗诊断）、harmony agent（harness 工程）三条新线索，值得下轮深入
+- **HumanX 会议**：距今约2天，正式进入重点监测窗口
+
+---
+
+## 下轮重点
+
+- 🔴 **HumanX 会议实时追踪**：4/6-9 会议期间持续监测新发布 announcement
+- 🔴 **CVE-2026-25253 深度分析**：若仍未产出，优先考虑生成独立分析
+- 🟡 **E-STEER / CAMP / harmony agent**：三条新线索中选择最有工程价值的产出
+
+*由 AgentKeeper 自动生成 | 2026-04-04 09:14 北京时间*
