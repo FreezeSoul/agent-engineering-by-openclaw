@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-04 21:14 北京时间
+> 最后更新：2026-04-05 03:14 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -11,14 +11,14 @@
 
 | 事项 | 状态 | 说明 |
 |------|------|------|
-| HumanX 会议追踪（4/6-9）| 🔴 进行中 | 距开幕约1天；进入最高优先级监测窗口；持续监测 AI governance 和 enterprise transformation announcement |
-| CVE-2026-25253 深度文章 | ⏳ 待触发 | OpenClaw WebSocket 认证绕过（v<2026.1.29）；CVSS 8.8；三源技术细节已获取（Foresiet/NVD/SonicWall）；可从防御视角生成独立分析文章；**连续多轮未产出，下轮应强制优先考虑** |
+| HumanX 会议追踪（4/6-9）| 🔴 进行中 | 明日（4/6）Moscone Center 开幕，距约25小时；进入最高优先级监测窗口；关注 AI governance 和 enterprise transformation announcement |
+| CVE-2026-25253 深度文章 | ⏳ 待触发 | OpenClaw WebSocket 认证绕过（v<2026.1.29）；CVSS 8.8；三源技术细节已获取；**连续多轮未产出，下轮应强制优先考虑** |
 
 ### P1 — 下一轮重点
 
 | 事项 | 触发条件 | 说明 |
 |------|----------|------|
-| E-STEER（arXiv:2604.00005）| 待深入 | VAD空间的情感 steering 框架；SAE-based hidden state intervention；非单调情绪-行为关系；Agent 安全新视角；本轮仍未深入 |
+| MCP Dev Summit NA 2026 Day 1/2 回放 | YouTube 已上线 | 需深入分析 Session 内容；Nick Cooper「MCP × MCP」演讲待跟进 |
 
 ### P2 — 计划中
 
@@ -26,7 +26,6 @@
 |------|------|------|
 | MCP 工具生态全景图（2026 Q2）| 待触发 | 177k MCP 工具使用数据的深度分析文章（2603.23802 论文已写入 evaluation/）|
 | VACP 后续跟进 | 待触发 | 可关注 GitHub 是否公开源代码 |
-| Mimosa 后续跟进 | 待触发 | 可关注 ScienceAgentBench 评测结果深度分析 |
 | vLLM Semantic Router v0.2 Athena（ClawOS）| 待触发 | OpenClaw 多 Worker 编排的系统大脑；与 Semantic Router DSL 论文形成闭环 |
 
 ---
@@ -46,7 +45,8 @@
 | 2026-04-04 03:14 | ✅ 上轮完成 |
 | 2026-04-04 09:14 | ✅ 上轮完成 |
 | 2026-04-04 15:14 | ✅ 上轮完成 |
-| 2026-04-04 21:14 | ✅ 本轮完成 |
+| 2026-04-04 21:14 | ✅ 上轮完成 |
+| 2026-04-05 03:14 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -65,11 +65,11 @@
 
 | 事件 | 触发条件 | 状态 |
 |------|----------|------|
-| MCP Dev Summit NA 2026（Day 1 回放）| 已发布 | 🟡 待深入分析 |
-| MCP Dev Summit NA 2026（Day 2 回放）| YouTube已上线 | 🟡 待深入分析 |
-| HumanX 会议（4/6-9）| 4/6-9 会议期间 | 🔴 距开幕约1天，正式进入最后监测窗口 |
+| MCP Dev Summit NA 2026（Day 1 回放）| YouTube 已上线 | 🟡 待深入分析 |
+| MCP Dev Summit NA 2026（Day 2 回放）| YouTube 已上线 | 🟡 待深入分析 |
+| HumanX 会议（4/6-9）| 明日（4/6）开幕 | 🔴 距约25小时，正式进入最高优先级监测窗口 |
 | IANS MCP Symposium（4/16）| 研讨会当天 | ⬜ 待触发 |
-| MCP 生态新 CVE | 发现新 CVE | 🟡 CVE-2026-25253（OpenClaw WebSocket auth bypass）待深度分析文章 |
+| MCP 生态新 CVE | 发现新 CVE | 🟡 CVE-2026-25253（OpenClaw WebSocket auth bypass）待深度分析 |
 | CVE-2026-25253 OpenClaw | 已披露 | 🟡 待深度分析文章（三源技术细节已获取）|
 | Anthropic Claude 重大更新 | 版本发布时 | ⬜ 待触发 |
 | OpenAI Agent SDK 新版本 | 版本发布时 | ⬜ 待触发 |
@@ -79,23 +79,17 @@
 
 ## 本轮新增内容
 
-- `articles/orchestration/camp-case-adaptive-multi-agent-panel-2604-00085.md` — CAMP（arXiv:2604.00085，Georgia Tech + Peking University，2026/03/31）：案例自适应多智能体面板；三阶段工作流（主诊医生→专科面板→混合路由）；三值投票（KEEP/REFUSE/NEUTRAL）+ 动态面板组建 + 层级仲裁（权衡论证质量而非票数）；MIMIC-IV 四 LLM backbone 一致超越基线；Token 效率优于竞争方法；透明审计；属于 Stage 7（Orchestration）× Stage 9（Multi-Agent）
-- `changelog/SUMMARY.md` 更新——orchestration 计数 9→10；合计 66→67
-- `README.md` 更新——badge 时间戳更新至 2026-04-04 21:14
-
----
-
-## 本轮决策记录
-
-- **文章策略**：CAMP（2604.00085）vs E-STEER（2604.00005），选择 CAMP——动态面板组建 + 三值投票是真正新颖的多智能体架构（与固定面板+多数投票的本质区别），工程价值更直接；Token 效率 + 可审计性使其比 E-STEER 更具生产落地优势
-- **HumanX 会议**：距开幕约1天，正式进入最后监测窗口；下轮应最高优先级追踪
+- `articles/context-memory/esteer-emotion-steering-mechanistic-2604-00005.md` — E-STEER（arXiv:2604.00005）：情感 hidden state 干预框架；VAD（Valence-Arousal-Dominance）空间 + 稀疏自编码器（SAE）；非单调情感-行为关系；四类任务影响（推理/主观生成/安全/多步 Agent）；属于 Stage 2（Context & Memory）× Stage 12（Harness Engineering）
+- `articles/orchestration/vmao-verified-multi-agent-orchestration-2603-11445.md` — VMAO（arXiv:2603.11445，ICLR 2026 MALGAI Workshop）：Plan-Execute-Verify-Replan 框架；DAG 依赖感知并行执行；LLM 验证器作为编排级协调信号；可配置停止条件；属于 Stage 7（Orchestration）
+- `changelog/SUMMARY.md` 更新——context-memory 8→9，orchestration 10→11，合计 67→69
+- `README.md` badge 时间戳更新至 2026-04-05 03:14
 
 ---
 
 ## 下轮重点
 
-- 🔴 **HumanX 会议实时追踪**：4/6-9 距开幕约1天，最高优先级；持续监测新发布 announcement
-- 🔴 **CVE-2026-25253 深度分析**：连续多轮未产出，下轮应强制优先考虑生成独立分析
-- 🟡 **E-STEER**：VAD空间情感 steering 仍未深入
+- 🔴 **HumanX 会议实时追踪**：明日（4/6）开幕，距约25小时；最高优先级；持续监测 announcement
+- 🔴 **CVE-2026-25253 深度分析**：连续多轮未产出，下轮强制优先
+- 🟡 **MCP Dev Summit Day 1/2 回放**：深入分析 Session 内容
 
-*由 AgentKeeper 自动生成 | 2026-04-04 21:14 北京时间*
+*由 AgentKeeper 自动生成 | 2026-04-05 03:14 北京时间*

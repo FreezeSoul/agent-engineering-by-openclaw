@@ -1,6 +1,6 @@
 # 目录
 
-> 最后更新：2026-04-04 09:14 | 由 Agent 自主维护
+> 最后更新：2026-04-05 03:14 | 由 Agent 自主维护
 
 ---
 
@@ -36,6 +36,7 @@
 | [memgpt-paper-deep-dive.md](articles/context-memory/memgpt-paper-deep-dive.md) | `memory` `paper` | 研究 |
 | [beliefshift-temporal-belief-consistency-llm-agents-2603-23848.md](articles/context-memory/beliefshift-temporal-belief-consistency-llm-agents-2603-23848.md) | `belief` `memory` `evaluation` `consistency` | 研究 |
 | [gaama-graph-augmented-associative-memory-2603-27910.md](articles/context-memory/gaama-graph-augmented-associative-memory-2603-27910.md) | `memory` `graph` `rag` `associative` | 研究 |
+| [esteer-emotion-steering-mechanistic-2604-00005.md](articles/context-memory/esteer-emotion-steering-mechanistic-2604-00005.md) | `emotion` `steering` `VAD` `mechanistic` | 研究 |
 
 ### articles/tool-use/ — 工具调用
 
@@ -65,6 +66,7 @@
 | [mimosa-evolving-multi-agent-framework-scientific-research.md](articles/orchestration/mimosa-evolving-multi-agent-framework-scientific-research.md) | `multi-agent` `framework` `scientific` | 研究 |
 | [microsoft-agent-framework-interview-coach.md](articles/orchestration/microsoft-agent-framework-interview-coach.md) | `microsoft` `framework` | 工程 |
 | [camp-case-adaptive-multi-agent-panel-2604-00085.md](articles/orchestration/camp-case-adaptive-multi-agent-panel-2604-00085.md) | `multi-agent` `voting` `adaptive-panel` `clinical` | 研究 |
+| [vmao-verified-multi-agent-orchestration-2603-11445.md](articles/orchestration/vmao-verified-multi-agent-orchestration-2603-11445.md) | `multi-agent` `DAG` `verification` `replan` | 研究 |
 
 ### articles/harness/ — Harness工程
 
@@ -116,13 +118,13 @@
 | 问题域 | 数量 |
 |--------|------|
 | fundamentals/ | 12 |
-| context-memory/ | 8 |
+| context-memory/ | 9 |
 | tool-use/ | 8 |
-| orchestration/ | 10 |
+| orchestration/ | 11 |
 | harness/ | 8 |
 | evaluation/ | 13 |
 | deep-dives/ | 7 |
-| **合计** | **67** |
+| **合计** | **69** |
 
 ---
 
