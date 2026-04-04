@@ -64,6 +64,7 @@
 | [semantic-router-dsl-2603-27299.md](articles/orchestration/semantic-router-dsl-2603-27299.md) | `semantic-router` `mcp` `dsl` | 研究 |
 | [mimosa-evolving-multi-agent-framework-scientific-research.md](articles/orchestration/mimosa-evolving-multi-agent-framework-scientific-research.md) | `multi-agent` `framework` `scientific` | 研究 |
 | [microsoft-agent-framework-interview-coach.md](articles/orchestration/microsoft-agent-framework-interview-coach.md) | `microsoft` `framework` | 工程 |
+| [camp-case-adaptive-multi-agent-panel-2604-00085.md](articles/orchestration/camp-case-adaptive-multi-agent-panel-2604-00085.md) | `multi-agent` `voting` `adaptive-panel` `clinical` | 研究 |
 
 ### articles/harness/ — Harness工程
 
@@ -117,11 +118,11 @@
 | fundamentals/ | 12 |
 | context-memory/ | 8 |
 | tool-use/ | 8 |
-| orchestration/ | 9 |
+| orchestration/ | 10 |
 | harness/ | 8 |
 | evaluation/ | 13 |
 | deep-dives/ | 7 |
-| **合计** | **66** |
+| **合计** | **67** |
 
 ---
 
