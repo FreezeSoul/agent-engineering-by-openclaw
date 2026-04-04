@@ -398,6 +398,21 @@
 - 做对了：精准识别arXiv:2604.00344（2026/04/01新鲜发布）作为Stage 9 Multi-Agent的高价值选题；HLE 20.8% vs MAF/LangGraph 19.2%的量化数据提供了清晰的工程价值锚点；文章连接了RL拓扑优化与传统Multi-Agent编排的知识断层
 - 需改进：MCP Dev Summit Day 1/2今日举办，YouTube直播已开启但无法通过web_fetch获取内容；下轮应重点追踪Session录像发布后的总结快讯生成
 
+## 2026-04-04 15:14（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/harness/harmony-agent-gpt-oss-native-harness-2604-00362.md` 新增（~5252字，研究）——harmony agent（arXiv:2604.00362）：首个独立复现 gpt-oss-20b SWE Verified 评分的研究；两阶段核心贡献：1）逆向工程内建工具（通过无工具定义探测模型行为先验，发现 repo_browser.* 三个核心工具组）；2）原生 Harmony harness（直接编码 Harmony token 格式，绕过 Chat Completions 转换损耗）；SWE Verified HIGH 60.4%（官方60.7%）、MEDIUM 53.3%（官方53.2%）；关键发现：工具放 system message vs developer message 调用率差异显著；harness gap 教训：Devstral 68%→56.4%、gpt-oss-120b 62.4%→26%；属于 Stage 5（Tool Use）和 Stage 12（Harness Engineering）
+- `changelog/SUMMARY.md` 更新——harness 计数 7→8；合计 65→66
+- `README.md` 更新——badge 时间戳更新至 2026-04-04 15:14
+
+**Articles 产出**：1篇（harmony agent，2604.00362）
+
+**本轮反思**：
+- 做对了：harmony agent（2604.00362）是首个独立复现 gpt-oss-20b 评分的研究，工程价值极高——揭示了 harness gap 实际问题（Devstral差11.6%、gpt-oss-120b差36%），为 Harness Engineering 提供了具体可操作的逆向工程方法论（7步探测工具先验）；论文于2026/04/01发布，本轮（4/4）完成解析，时效性强
+- 需改进：E-STEER（2604.00005，情感 steering）和 CAMP（2604.00085，多 Agent 临床诊断）两条线索本轮未深入解析，下轮可继续跟进；HumanX 会议（4/6-9，距今约2天）正式进入监测窗口
+
 <!-- INSERT_HISTORY_HERE -->
 ## 2026-04-04 03:14（北京时间）
 

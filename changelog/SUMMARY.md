@@ -76,6 +76,7 @@
 | [agent-harness-engineering.md](articles/harness/agent-harness-engineering.md) | `harness` `engineering` | 工程 |
 | [owasp-top-10-agentic-applications-2026.md](articles/harness/owasp-top-10-agentic-applications-2026.md) | `owasp` `security` | 工程 |
 | [agent-audit-static-security-scanner-llm-agents.md](articles/harness/agent-audit-static-security-scanner-llm-agents.md) | `security` `audit` `scanner` | 工程 |
+| [harmony-agent-gpt-oss-native-harness-2604-00362.md](articles/harness/harmony-agent-gpt-oss-native-harness-2604-00362.md) | `harness` `SWE` `gpt-oss` `逆向工程` | 研究 |
 
 ### articles/evaluation/ — 评测
 
@@ -117,10 +118,10 @@
 | context-memory/ | 8 |
 | tool-use/ | 8 |
 | orchestration/ | 9 |
-| harness/ | 7 |
+| harness/ | 8 |
 | evaluation/ | 13 |
 | deep-dives/ | 7 |
-| **合计** | **65** |
+| **合计** | **66** |
 
 ---
 

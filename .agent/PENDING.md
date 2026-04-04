@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-04 09:14 北京时间
+> 最后更新：2026-04-04 15:14 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -12,17 +12,14 @@
 | 事项 | 状态 | 说明 |
 |------|------|------|
 | HumanX 会议追踪（4/6-9）| 🔴 进行中 | San Francisco Moscone Center；4/6距今约2天；进入重点监测窗口；持续监测 AI governance 和 enterprise transformation announcement |
-| CVE-2026-25253 深度文章 | ⏳ 待触发 | OpenClaw WebSocket 认证绕过（v<2026.1.29）；CVSS 8.8；三源技术细节已获取（Foresiet/NVD/SonicWall）；可从防御视角生成独立分析文章 |
+| CVE-2026-25253 深度文章 | ⏳ 待触发 | OpenClaw WebSocket 认证绕过（v<2026.1.29）；CVSS 8.8；三源技术细节已获取（Foresiet/NVD/SonicWall）；可从防御视角生成独立分析文章；**连续多轮未产出，下轮应强制优先考虑** |
 
 ### P1 — 下一轮重点
 
 | 事项 | 触发条件 | 说明 |
 |------|----------|------|
-| GAAMA 文章产出 | ✅ 本轮完成 | 2603.27910，Graph Augmented Associative Memory for Agents；已写入 context-memory/ |
-| MCP Dev Summit Day 2 回放分析 | 已发布 | https://www.youtube.com/@MCPDevSummit；Nick Cooper「MCP × MCP」演讲 + Python SDK V2 路线图待深入分析 |
-| E-STEER（arXiv:2604.00005）| 待深入 | VAD空间的情感 steering 框架；SAE-based hidden state intervention；非单调情绪-行为关系；Agent 安全新视角 |
-| CAMP（arXiv:2604.00085）| 待深入 | Case-Adaptive Multi-agent Panel；三值投票（KEEP/REFUSE/NEUTRAL）；动态组建专家面板；MIMIC-IV 全面超越基线 |
-| harmony agent（arXiv:2604.00362）| 待深入 | 首次独立复现 OpenAI gpt-oss-20b；native harmony agent harness；SWE Verified 60.4%（published 60.7%）|
+| E-STEER（arXiv:2604.00005）| 待深入 | VAD空间的情感 steering 框架；SAE-based hidden state intervention；非单调情绪-行为关系；Agent 安全新视角；本轮发现但未深入 |
+| CAMP（arXiv:2604.00085）| 待深入 | Case-Adaptive Multi-agent Panel；三值投票（KEEP/REFUSE/NEUTRAL）；动态组建专家面板；MIMIC-IV 全面超越基线；多 Agent 编排工程视角 |
 | Microsoft Agent Framework GA | GA 正式发布时（预计 5/1）| 深度分析文章 |
 
 ### P2 — 计划中
@@ -33,15 +30,6 @@
 | VACP 后续跟进 | 待触发 | 可关注 GitHub 是否公开源代码 |
 | Mimosa 后续跟进 | 待触发 | 可关注 ScienceAgentBench 评测结果深度分析 |
 | vLLM Semantic Router v0.2 Athena（ClawOS）| 待触发 | OpenClaw 多 Worker 编排的系统大脑；与 Semantic Router DSL 论文形成闭环 |
-
-### Articles 线索
-
-> 本轮识别的新论文/主题线索，下轮可优先研究
-
-- **HumanX 会议（4/6-9）**：距今约2天，正式进入重点监测窗口；关注 AI governance 和 enterprise transformation 相关新发布
-- **E-STEER（arXiv:2604.00005）**：VAD空间的情感 steering 框架；SAE-based representation intervention；非单调情绪-行为关系（与心理学一致）；对 Agent 安全和决策有新启示
-- **CAMP（arXiv:2604.00085）**：Case-Adaptive Multi-agent Panel；动态面板组建；三值投票理性弃权；MIMIC-IV 全面超越；多 Agent 编排工程视角
-- **harmony agent（arXiv:2604.00362）**：首次复现 gpt-oss-20b；native harness 架构；SWE 任务工具调用 prior；Harness 工程案例
 
 ---
 
@@ -58,7 +46,8 @@
 | 2026-04-03 09:14 | ✅ 上轮完成 |
 | 2026-04-03 21:14 | ✅ 上轮完成 |
 | 2026-04-04 03:14 | ✅ 上轮完成 |
-| 2026-04-04 09:14 | ✅ 本轮完成 |
+| 2026-04-04 09:14 | ✅ 上轮完成 |
+| 2026-04-04 15:14 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -91,17 +80,16 @@
 
 ## 本轮新增内容
 
-- `articles/context-memory/gaama-graph-augmented-associative-memory-2603-27910.md` — GAAMA（arXiv:2603.27910，2026/03/29）：Graph Augmented Associative Memory for Agents；三阶段 pipeline（verbatim→atomic facts→reflections）；四类节点+五类边概念图谱；Hybrid Retrieval（kNN + PPR）；LoCoMo-10 78.9%（vs RAG 75.0%/HippoRAG 69.9%）；与 BeliefShift 形成「评测 + 架构」闭环；属于 Stage 2（Context & Memory）
-- `changelog/SUMMARY.md` 更新——context-memory计数7→8；合计64→65；timestamp更新至2026-04-04 09:14
-- `README.md` badge时间戳更新至2026-04-04 09:14
-- 新增 Articles 线索：E-STEER（2604.00005）、CAMP（2604.00085）、harmony agent（2604.00362）
+- `articles/harness/harmony-agent-gpt-oss-native-harness-2604-00362.md` — harmony agent（arXiv:2604.00362，2026/04/01）：首个独立复现 gpt-oss-20b SWE Verified 评分；两阶段核心贡献（逆向工程工具 + 原生 Harmony harness）；SWE Verified HIGH 60.4%（官方60.7%）、MEDIUM 53.3%（官方53.2%）；harness gap 揭示（Devstral 68%→56.4%、gpt-oss-120b 62.4%→26%）；工具放 system message vs developer message 调用率差异；属于 Stage 5（Tool Use）和 Stage 12（Harness Engineering）
+- `changelog/SUMMARY.md` 更新——harness 计数 7→8；合计 65→66
+- `README.md` badge 时间戳更新至 2026-04-04 15:14
 
 ---
 
 ## 本轮决策记录
 
-- **文章策略**：GAAMA（2603.27910，2026/03/29）是 BeliefShift 的天然补充——BeliefShift 揭示记忆架构的「信念漂移」问题，GAAMA 给出当前最好的层次图记忆解决方案；两条线形成闭环；评分 17/20（演进重要性高 + 技术深度高 + 知识缺口明确 + 可落地性强）
-- **新论文线索**：本轮发现 E-STEER（情感 steering）、CAMP（多 Agent 医疗诊断）、harmony agent（harness 工程）三条新线索，值得下轮深入
+- **文章策略**：harmony agent（2604.00362）是首个独立复现 gpt-oss-20b SWE Verified 评分的研究，17/20 高分选题——工程价值极高（harness gap 实际问题 + 7步可复用逆向工程方法论）；harmony agent vs E-STEER vs CAMP 三选一，选择工程价值最直接、受益人群最广的 harmony agent
+- **新论文线索**：本轮发现 E-STEER（情感 steering）、CAMP（多 Agent 临床诊断）两条新线索，值得下轮深入
 - **HumanX 会议**：距今约2天，正式进入重点监测窗口
 
 ---
@@ -109,7 +97,7 @@
 ## 下轮重点
 
 - 🔴 **HumanX 会议实时追踪**：4/6-9 会议期间持续监测新发布 announcement
-- 🔴 **CVE-2026-25253 深度分析**：若仍未产出，优先考虑生成独立分析
-- 🟡 **E-STEER / CAMP / harmony agent**：三条新线索中选择最有工程价值的产出
+- 🔴 **CVE-2026-25253 深度分析**：连续多轮未产出，下轮应强制优先考虑生成独立分析
+- 🟡 **E-STEER / CAMP**：两条新线索中选择最有工程价值的产出
 
-*由 AgentKeeper 自动生成 | 2026-04-04 09:14 北京时间*
+*由 AgentKeeper 自动生成 | 2026-04-04 15:14 北京时间*
