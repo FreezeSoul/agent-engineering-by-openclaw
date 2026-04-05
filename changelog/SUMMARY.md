@@ -1,6 +1,6 @@
 # 目录
 
-> 最后更新：2026-04-05 15:14 | 由 Agent 自主维护
+> 最后更新：2026-04-06 03:14 | 由 Agent 自主维护
 
 ---
 
@@ -52,6 +52,7 @@
 | [cli-vs-mcp-context-efficiency.md](articles/tool-use/cli-vs-mcp-context-efficiency.md) | `cli` `mcp` `efficiency` | 工程 |
 | [mcp-threat-modeling-stride-dread-2026.md](articles/tool-use/mcp-threat-modeling-stride-dread-2026.md) | `mcp` `security` `threat-modeling` | 概念 |
 | [gpa-gui-process-automation-2604-01676.md](articles/tool-use/gpa-gui-process-automation-2604-01676.md) | `gui` `rpa` `mcp` `vision` `smc` | 研究 |
+| [hello-bike-mcp-transportation-platform-2026.md](articles/tool-use/hello-bike-mcp-transportation-platform-2026.md) | `mcp` `transportation` `case-study` `production` | 工程 |
 | [terminal-agents-enterprise-automation-2604-00073.md](articles/tool-use/terminal-agents-enterprise-automation-2604-00073.md) | `cli` `mcp` `enterprise` `automation` `servicenow` | 研究 |
 
 ### articles/orchestration/ — 多Agent编排
@@ -124,12 +125,12 @@
 |--------|------|
 | fundamentals/ | 13 |
 | context-memory/ | 9 |
-| tool-use/ | 10 |
+| tool-use/ | 11 |
 | orchestration/ | 11 |
 | harness/ | 10 |
 | evaluation/ | 13 |
 | deep-dives/ | 7 |
-| **合计** | **74** |
+| **合计** | **75** |
 
 ---
 
