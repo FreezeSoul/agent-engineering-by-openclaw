@@ -1,6 +1,6 @@
 # 目录
 
-> 最后更新：2026-04-05 03:14 | 由 Agent 自主维护
+> 最后更新：2026-04-05 15:14 | 由 Agent 自主维护
 
 ---
 
@@ -82,6 +82,7 @@
 | [owasp-top-10-agentic-applications-2026.md](articles/harness/owasp-top-10-agentic-applications-2026.md) | `owasp` `security` | 工程 |
 | [agent-audit-static-security-scanner-llm-agents.md](articles/harness/agent-audit-static-security-scanner-llm-agents.md) | `security` `audit` `scanner` | 工程 |
 | [harmony-agent-gpt-oss-native-harness-2604-00362.md](articles/harness/harmony-agent-gpt-oss-native-harness-2604-00362.md) | `harness` `SWE` `gpt-oss` `逆向工程` | 研究 |
+| [openclaw-auth-bypass-cve-2026-25253-32302.md](articles/harness/openclaw-auth-bypass-cve-2026-25253-32302.md) | `security` `CVE` `OpenClaw` `WebSocket` `authentication-bypass` | 工程 |
 
 ### articles/evaluation/ — 评测
 
@@ -123,10 +124,10 @@
 | context-memory/ | 9 |
 | tool-use/ | 10 |
 | orchestration/ | 11 |
-| harness/ | 8 |
+| harness/ | 9 |
 | evaluation/ | 13 |
 | deep-dives/ | 7 |
-| **合计** | **71** |
+| **合计** | **72** |
 
 ---
 

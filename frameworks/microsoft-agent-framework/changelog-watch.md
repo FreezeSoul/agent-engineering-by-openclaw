@@ -6,6 +6,55 @@
 
 ## 更新记录
 
+### 2026-04（v1.0 GA · 正式版）
+
+**2026-04-03 · 生产就绪正式发布**
+
+Microsoft Agent Framework v1.0 正式版GA发布，同时上线 .NET（NuGet: `Microsoft.Agents.AI`）和 Python（PyPI: `agent-framework`）。**承诺长期支持与向后兼容**。
+
+**GA 关键变化**（相对于 RC）：
+- **声明式 Agent（YAML）**：以版本控制的 YAML 文件定义 Agent 指令、工具、记忆配置和编排拓扑，一行 API 调用即可加载运行
+- **A2A 协议支持**：Agent-to-Agent 协议实现跨运行时协作，Agent 可与运行在其他框架中的 Agent 通过结构化协议消息协调
+- **MCP 深化集成**：Agent 可动态发现和调用 MCP 兼容服务器暴露的外部工具
+- **Checkpoint/Hydration**：图工作流支持检查点保存与恢复，长时运行进程可从中断处继续
+
+**核心功能集（GA 锁定）**：
+| 能力 | 说明 |
+|------|------|
+| 单 Agent + Service Connectors | 统一 Agent 抽象，稳定跨 .NET/Python；原生连接 Foundry / Azure OpenAI / OpenAI / Claude / Bedrock / Gemini / Ollama |
+| 中间件管道 | 内容安全过滤器、日志、合规策略——无需修改 Agent 提示词即可插入 |
+| 记忆与上下文 | 可插拔架构：Foundry Agent Service Memory / Mem0 / Redis / Neo4j / 自定义存储 |
+| Graph Workflows | 确定性、可持续复的工作流引擎：分支条件、并行展开、结果收敛 |
+| 多 Agent 编排 | Sequential / Concurrent / Handoff / Group Chat / Magentic-One，全模式支持流式、检查点、人机审批、暂停/恢复 |
+| Declarative Agents | YAML 驱动的声明式 Agent 定义 |
+
+**上手示例**（Python）：
+```python
+from agent_framework import Agent
+from agent_framework.foundry import FoundryChatClient
+from azure.identity import AzureCliCredential
+
+agent = Agent(
+    client=FoundryChatClient(
+        project_endpoint="https://your-project.services.ai.azure.com",
+        model="gpt-5.3",
+        credential=AzureCliCredential(),
+    ),
+    name="HelloAgent",
+    instructions="You are a friendly assistant."
+)
+print(asyncio.run(agent.run("Write a haiku about shipping 1.0.")))
+```
+
+**生态定位确认**：
+- Semantic Kernel（企业特性：状态管理、类型安全、中间件、遥测）→ 继承
+- AutoGen（Agent 抽象：handoff、group chat）→ 继承
+- Graph-based workflows → 新增（融合两者优势）
+
+> 来源：[Microsoft DevBlogs - v1.0 GA Announcement](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/) | 2026-04-03
+
+---
+
 ### 2026-03（Release Candidate · v1.0 RC）
 
 **2026-03-25 · RC 状态确认**
