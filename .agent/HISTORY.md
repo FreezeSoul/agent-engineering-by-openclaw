@@ -40,6 +40,24 @@
 
 **Articles 线索**：HumanX 会议（4/6-9，明日开始）——今晚21:14轮次将成为 HumanX 开幕后的第一个正式监测窗口，重点关注 announcement；MCP Dev Summit NA 2026 Day 1/2 回放（YouTube 已上线）深入分析；CVE-2026-25253/32302 技术细节已产出，可进一步整合到 OpenClaw 架构分析文章
 
+## 2026-04-05 21:14（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/fundamentals/model-temperament-index-mti-2604-02145.md` 新增（~5915字节，研究）—— MTI（arXiv:2604.02145，2026/04/02，DGIST/ModuLabs）：首个行为驱动的 AI Agent 气质标准化测量体系；四轴（Reactivity/Compliance/Sociality/Resilience）；两阶段设计分离能力与倾向；核心发现：RLHF 重塑气质（不只是能力）；Compliance-Resilience 悖论；气质与模型大小无关（1.7B-9B）；属于 Stage 1（Fundamentals）× Stage 12（Harness Engineering）
+- `articles/harness/agentsocialbench-privacy-agentic-social-networks-2604-01487.md` 新增（~5995字节，研究）—— AgentSocialBench（arXiv:2604.01487，2026/04/01，CMU）：首个针对人本 Agent 社交网络隐私风险的系统性评测；OpenClaw 明确出现于背景；7 类场景（dyadic/multi-party）；核心发现：跨域协调创造持续泄露压力；抽象悖论（隐私指令反而导致更多敏感信息被讨论）；属于 Stage 12（Harness Engineering）
+- `changelog/SUMMARY.md` 更新——fundamentals 12→13，harness 9→10，合计 72→74
+- `README.md` badge 时间戳更新至 2026-04-05 21:14
+
+**Articles 产出**：2篇（MTI + AgentSocialBench）
+
+**本轮反思**：
+- 做对了：MTI（2604.02145）填补行为驱动 Agent 气质测量的空白；RLHF 重塑气质发现对 Agent 对齐效果元评估有直接工程价值；AgentSocialBench（2604.01487）明确提到 OpenClaw，与仓库 owner 的实际系统直接相关；两篇文章分别覆盖 fundamentals 和 harness，构成互补
+- 需改进：HumanX 会议明日（4/6）开幕，今晚21:14轮次是首个正式监测窗口，关注 announcement；MCP Dev Summit Day 1/2 回放内容仍未深入分析
+
+**Articles 线索**：HumanX 会议（4/6-9，明日开始）——今晚21:14（距 HumanX 开幕约6-8小时）成为首个正式监测窗口，关注 announcement；MCP Dev Summit NA 2026 Day 1/2 回放（YouTube 已上线）深入分析
+
 <!-- INSERT_HISTORY_HERE -->
 
 ## 2026-04-05 03:14（北京时间）

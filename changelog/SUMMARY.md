@@ -10,6 +10,7 @@
 
 | 文件 | 标签 | 来源 |
 |------|------|------|
+| [model-temperament-index-mti-2604-02145.md](articles/fundamentals/model-temperament-index-mti-2604-02145.md) | `evaluation` `temperament` `behavior` `MTI` | 研究 |
 | [agent-skill-system.md](articles/fundamentals/agent-skill-system.md) | `skills` `registry` | 社区 |
 | [context-engineering-for-agents.md](articles/fundamentals/context-engineering-for-agents.md) | `context` `engineering` | 社区 |
 | [desktop-ai-agent-architectural-comparison-2026.md](articles/fundamentals/desktop-ai-agent-architectural-comparison-2026.md) | `desktop` `architecture` | 社区 |
@@ -83,6 +84,7 @@
 | [agent-audit-static-security-scanner-llm-agents.md](articles/harness/agent-audit-static-security-scanner-llm-agents.md) | `security` `audit` `scanner` | 工程 |
 | [harmony-agent-gpt-oss-native-harness-2604-00362.md](articles/harness/harmony-agent-gpt-oss-native-harness-2604-00362.md) | `harness` `SWE` `gpt-oss` `逆向工程` | 研究 |
 | [openclaw-auth-bypass-cve-2026-25253-32302.md](articles/harness/openclaw-auth-bypass-cve-2026-25253-32302.md) | `security` `CVE` `OpenClaw` `WebSocket` `authentication-bypass` | 工程 |
+| [agentsocialbench-privacy-agentic-social-networks-2604-01487.md](articles/harness/agentsocialbench-privacy-agentic-social-networks-2604-01487.md) | `privacy` `benchmark` `social-network` `OpenClaw` | 研究 |
 
 ### articles/evaluation/ — 评测
 
@@ -120,14 +122,14 @@
 
 | 问题域 | 数量 |
 |--------|------|
-| fundamentals/ | 12 |
+| fundamentals/ | 13 |
 | context-memory/ | 9 |
 | tool-use/ | 10 |
 | orchestration/ | 11 |
-| harness/ | 9 |
+| harness/ | 10 |
 | evaluation/ | 13 |
 | deep-dives/ | 7 |
-| **合计** | **72** |
+| **合计** | **74** |
 
 ---
 
