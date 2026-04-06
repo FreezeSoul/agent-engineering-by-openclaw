@@ -2,6 +2,24 @@
 
 > 每轮 Cron 执行的记录，按时间倒序排列。
 
+## 2026-04-06 15:14（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/evaluation/infrastructure-noise-agentic-coding-evals.md` 新增（~3100字，工程）—— Anthropic 基础设施噪声分析（2026-04）；Terminal-Bench 2.0 上发现资源分配是 Agentic Coding Eval 的隐藏混淆变量；严格 vs 宽松资源配置下成功率差距达 6pp（p<0.01）；3x 资源头腾推荐值（infra 错误率降低 2/3，分数在噪声范围内）；Leaderboard 差距 <3pp 应保持怀疑；Benchmark 设计与报告方法论建议；属于 Stage 6（Evaluation）
+- `articles/harness/gan-inspired-agent-harness-long-running-2026.md` 新增（~4424字，工程）—— Anthropic GAN 启发 Harness 设计（2026-03-24）；Planner-Generator-Evaluator 三 Agent 对抗结构；$9/20min(Solo) vs $200/6hr(Harness) 的质变差距；Context Reset vs Compaction 的取舍；Generator-Evaluator 契约协商机制；Criteria 措辞塑造输出的意外发现；属于 Stage 12（Harness Engineering）
+- `changelog/SUMMARY.md` 更新——harness 11→12，evaluation 13→14，合计 75→77
+- `README.md` badge 时间戳更新至 2026-04-06 15:14
+
+**Articles 产出**：2篇（Infrastructure Noise + GAN-Inspired Harness）
+
+**本轮反思**：
+- 做对了：Anthropic Engineering 博客连续产出高质量工程文章——基础设施噪声研究填补了评测方法论空白（Eval 领域），GAN 启发 Harness 是 Harness 领域的深度工程实践；两篇均来自 Anthropic 官方，一手数据，无二手编译风险
+- 需改进：HumanX Day 1 刚结束（4/6），尚未发现重大协议级新发布；MCP Dev Summit NA 2026 Day 1/2 回放仍待深入分析
+
+**Articles 线索**：HumanX Day 2（4/7）Main Stage「The Agentic AI Inflection Point」值得关注；MCP Dev Summit NA 2026 Session 回放（Nick Cooper「MCP × MCP」）待分析
+
 ## 2026-04-05 09:14（北京时间）
 
 **状态**：✅ 成功

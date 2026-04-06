@@ -88,6 +88,7 @@
 | [openclaw-auth-bypass-cve-2026-25253-32302.md](articles/harness/openclaw-auth-bypass-cve-2026-25253-32302.md) | `security` `CVE` `OpenClaw` `WebSocket` `authentication-bypass` | 工程 |
 | [agentsocialbench-privacy-agentic-social-networks-2604-01487.md](articles/harness/agentsocialbench-privacy-agentic-social-networks-2604-01487.md) | `privacy` `benchmark` `social-network` `OpenClaw` | 研究 |
 | [mcpwnfluence-atlassian-rce-cve-2026-27825-27826.md](articles/harness/mcpwnfluence-atlassian-rce-cve-2026-27825-27826.md) | `security` `CVE` `mcp-atlassian` `RCE` `SSRF` `CVSS-9.1` | 工程 |
+| [gan-inspired-agent-harness-long-running-2026.md](articles/harness/gan-inspired-agent-harness-long-running-2026.md) | `harness` `GAN` `long-running` `Anthropic` | 工程 |
 
 ### articles/evaluation/ — 评测
 
@@ -106,6 +107,7 @@
 | [skillsbench-benchmarking-agent-skills-2026.md](articles/evaluation/skillsbench-benchmarking-agent-skills-2026.md) | `skills` `benchmark` | 研究 |
 | [finmcp-bench-financial-llm-agents-2026.md](articles/evaluation/finmcp-bench-financial-llm-agents-2026.md) | `mcp` `finance` `benchmark` | 研究 |
 | [agent-evaluation-tools-2026.md](articles/evaluation/agent-evaluation-tools-2026.md) | `evaluation` `benchmark` | 工程 |
+| [infrastructure-noise-agentic-coding-evals.md](articles/evaluation/infrastructure-noise-agentic-coding-evals.md) | `benchmark` `infrastructure` `eval` `Anthropic` | 工程 |
 
 ### articles/deep-dives/ — 单点深挖
 
@@ -129,8 +131,8 @@
 | context-memory/ | 9 |
 | tool-use/ | 12 |
 | orchestration/ | 11 |
-| harness/ | 11 |
-| evaluation/ | 13 |
+| harness/ | 12 |
+| evaluation/ | 14 |
 | deep-dives/ | 7 |
 | **合计** | **77** |
 
