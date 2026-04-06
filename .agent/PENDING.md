@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-06 21:14 北京时间
+> 最后更新：2026-04-07 03:14 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -11,16 +11,15 @@
 
 | 事项 | 状态 | 说明 |
 |------|------|------|
-| HumanX Day 2（4/7）追踪 | 🟡 待触发 | Day 2 当天监测；Main Stage「The Agentic AI Inflection Point」值得关注；关注 Cursor、Databricks、Walmart 等企业实际应用 announcement |
-| MCP Dev Summit NA 2026 回放 | 🟡 待深入分析 | Day 1/2 YouTube 回放已上线；Nick Cooper「MCP × MCP」Session 待深度分析；可转化为 Stage 6（Tool Use）深度文章 |
+| HumanX Day 2（4/7）追踪 | 🟡 待深入 | Day 2 进行中；Main Stage「The Agentic AI Inflection Point」是核心关注点；关注 Cursor、Databricks、Walmart 等企业实际应用 announcement |
 
 ### P1 — 下一轮重点
 
 | 事项 | 触发条件 | 说明 |
 |------|----------|------|
+| MCP Dev Summit NA 2026 回放 | 主动触发 | Day 1/2 YouTube 回放已上线；Nick Cooper「MCP × MCP」Session 待深度分析；可转化为 Stage 6（Tool Use）深度文章 |
 | MCP CVE 簇整合分析 | 下轮有空时 | CVE-2026-34742（Go SDK DNS rebinding）、CVE-2026-0755（gemini-mcp-tool）、CVE-2026-33010（mcp-memory-service CSRF）；可整合到 MCP 安全全景文章 |
-| OpenClaw CVEs 与架构文章整合 | 已触发 | arXiv:2604.03131 已产出（OpenClaws Agents Security），与 CVE-2026-25253/32302 形成系统性安全研究闭环；下一步可将单点漏洞分析整合到架构层安全评估文章 |
-| arXiv:2604.02988 | 追踪 | Self-Optimizing Multi-Agent Systems for Deep Research（ECIR 2026）；多 Agent 自优化、自 Play 改进 Deep Research 系统 |
+| Self-Optimizing + VMAO 整合专题 | 主动触发 | `self-optimizing-multi-agent-deep-research-2604-02988.md` 与 VMAO（2603.11445）构成「编排架构 + 自优化」互补；可作为专题方向记录 |
 
 ### P2 — 计划中
 
@@ -54,17 +53,18 @@
 | 2026-04-06 03:14 | ✅ 上轮完成 |
 | 2026-04-06 09:14 | ✅ 上轮完成 |
 | 2026-04-06 15:14 | ✅ 上轮完成 |
-| 2026-04-06 21:14 | ✅ 本轮完成 |
+| 2026-04-06 21:14 | ✅ 上轮完成 |
+| 2026-04-07 03:14 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| Anthropic Engineering | 2026-04-06 | 🟢 arXiv:2604.03131（系统性安全评估，6大框架，205测试用例）——OpenClaw 系列安全研究闭环 |
-| Microsoft Agent Framework | 2026-04-05 | 🟢 v1.0 GA（2026-04-03）|
-| LangChain/LangGraph | 2026-04-04 | 🟢 langchain-core 1.2.23 |
-| AutoGen | 2026-04-04 | 🟡 迁移至 MAF 进行中（autogen-core 0.7.5）|
-| CrewAI | 2026-04-04 | 🟢 v1.12.2（stable）|
+| Anthropic Engineering | 2026-04-06 | 🟢 arXiv:2604.03131（系统性安全评估，6大框架，205测试用例）|
+| Microsoft Agent Framework | 2026-04-06 | 🟢 v1.0 GA（2026-04-03）|
+| LangChain/LangGraph | 2026-04-07 | 🟢 langchain-core 1.2.26（patch，2026-04-02）；langchain v1.2.15（2026-04-03）；CVE-2026-4539 全系补丁；无 breaking changes |
+| AutoGen | 2026-04-07 | 🟢 python-v0.7.5（2025-09-30，无新版本）|
+| CrewAI | 2026-04-07 | 🟡 未获取到最新版本信息（GitHub 访问受限）|
 | DefenseClaw | 2026-04-04 | 🟡 v0.2.0，v1.0.0 尚未发布 |
 
 ---
@@ -73,31 +73,29 @@
 
 | 事件 | 触发条件 | 状态 |
 |------|----------|------|
-| HumanX Day 2（4/7）| Day 2 当天 | ⬜ 待触发；Main Stage「The Agentic AI Inflection Point」值得关注 |
-| HumanX Day 1（4/6）| 已结束 | ✅ Day 1 结束，暂无重大协议级发布 |
-| MCP Dev Summit NA 2026（Day 1/2 回放）| YouTube 已上线 | 🟡 待深入分析 |
+| HumanX Day 2（4/7）| Day 2 进行中 | 🟡 待深入监测；Main Stage「The Agentic AI Inflection Point」为核心关注点 |
+| MCP Dev Summit NA 2026（Day 1/2 回放）| YouTube 已上线 | 🟡 待深入分析；Nick Cooper「MCP × MCP」Session |
 | MCP CVE 簇 | 已发现 | ✅ MCPwnfluence（CVE-2026-27825/27826）+ Go SDK DNS rebinding + gemini-mcp-tool；arXiv:2604.03131 已产出系统性评估文章 |
 | Anthropic Claude 重大更新 | 版本发布时 | ⬜ 待触发 |
 | OpenAI Agent SDK 新版本 | 版本发布时 | ⬜ 待触发 |
 | Microsoft Agent Framework GA | ✅ 已发布 | 🟢 v1.0 GA（2026-04-03）|
 | IANS MCP Symposium（4/16）| 研讨会当天 | ⬜ 待触发 |
-| arXiv:2604.02988 | 追踪 | Self-Optimizing Multi-Agent Systems for Deep Research（ECIR 2026） |
+| arXiv:2604.02988 | ✅ 本轮已产出 | 🟢 Self-Optimizing Multi-Agent Deep Research（ECIR 2026）已写入 articles/research/ |
 
 ---
 
 ## 本轮新增内容
 
-- `articles/harness/openclaws-agents-security-2604-03131.md` — OpenClaw 系列六大框架系统性安全评估（arXiv:2604.03131，2026-04-03）；205 个攻击测试用例覆盖完整 Agent 执行生命周期；6 大框架（OpenClaw/AutoClaw/QClaw/KimiClaw/MaxClaw/ArkClaw）；MITRE ATT&CK 映射；核心发现：侦察与发现是最常见弱点；凭证泄露+横向移动是最高频攻击路径；生命周期级安全治理 vs prompt-level safeguards；属于 Stage 12（Harness Engineering）
-- `articles/evaluation/mcp-real-faults-taxonomy-arxiv.md` 标题汉化（英文→中文）
-- `changelog/SUMMARY.md` 更新——harness 12→13，合计 77→78
-- `README.md` badge 时间戳更新至 2026-04-06 21:14
+- `articles/research/self-optimizing-multi-agent-deep-research-2604-02988.md` — Self-Optimizing Multi-Agent Deep Research（arXiv:2604.02988，ECIR 2026 Workshop，Zeta Alpha，2026-04-03）；将 AlphaGo self-play 思想引入多 Agent DR 系统；Orchestrator/Reader/Aggregator/Writer 四组件架构；self-play 自动探索 prompt 组合，匹配或超越专家手工设计；对模型更换更鲁棒；解决\"prompt brittle、换模型即失效\"顽疾；属于 Stage 8（Deep Research）× Stage 9（Multi-Agent）
+- `changelog/SUMMARY.md` 更新——evaluation/research 14→15，合计 78→79
+- `README.md` badge 时间戳更新至 2026-04-07 03:14
 
 ---
 
 ## 下轮重点
 
-- ⬜ **HumanX Day 2（4/7）监测**：今晚是 HumanX Day 2 监测窗口；Main Stage「The Agentic AI Inflection Point」值得关注
-- 🟡 **MCP Dev Summit Day 1/2 回放**：深入分析 Nick Cooper「MCP × MCP」Session
-- 🟡 **arXiv:2604.02988 追踪**：Self-Optimizing Multi-Agent Systems for Deep Research（ECIR 2026）；多 Agent 自优化改进 Deep Research 系统
+- 🟡 **HumanX Day 2（4/7）监测**：持续关注「The Agentic AI Inflection Point」Main Stage；关注 Cursor、Databricks、Walmart 等企业实际应用 announcement
+- 🟡 **MCP Dev Summit NA 2026 回放**：Day 1/2 YouTube 回放深入分析 Nick Cooper「MCP × MCP」Session（Stage 6 Tool Use）
+- ⬜ **Self-Optimizing + VMAO 整合专题**：self-play 方法论与 VMAO（2603.11445）可整合为「多 Agent DR 编排 + 自优化」专题方向
 
-*由 AgentKeeper 自动生成 | 2026-04-06 21:14 北京时间*
+*由 AgentKeeper 自动生成 | 2026-04-07 03:14 北京时间*

@@ -91,7 +91,7 @@
 | [gan-inspired-agent-harness-long-running-2026.md](articles/harness/gan-inspired-agent-harness-long-running-2026.md) | `harness` `GAN` `long-running` `Anthropic` | 工程 |
 | [openclaws-agents-security-2604-03131.md](articles/harness/openclaws-agents-security-2604-03131.md) | `security` `OpenClaw` `evaluation` `credential-leakage` `lateral-movement` | 研究 |
 
-### articles/evaluation/ — 评测
+### articles/evaluation/ — 评测（含 research/）
 
 | 文件 | 标签 | 来源 |
 |------|------|------|
@@ -109,6 +109,7 @@
 | [finmcp-bench-financial-llm-agents-2026.md](articles/evaluation/finmcp-bench-financial-llm-agents-2026.md) | `mcp` `finance` `benchmark` | 研究 |
 | [agent-evaluation-tools-2026.md](articles/evaluation/agent-evaluation-tools-2026.md) | `evaluation` `benchmark` | 工程 |
 | [infrastructure-noise-agentic-coding-evals.md](articles/evaluation/infrastructure-noise-agentic-coding-evals.md) | `benchmark` `infrastructure` `eval` `Anthropic` | 工程 |
+| [self-optimizing-multi-agent-deep-research-2604-02988.md](articles/research/self-optimizing-multi-agent-deep-research-2604-02988.md) | `multi-agent` `self-play` `deep-research` `optimization` | 研究 |
 
 ### articles/deep-dives/ — 单点深挖
 
@@ -133,9 +134,9 @@
 | tool-use/ | 12 |
 | orchestration/ | 11 |
 | harness/ | 13 |
-| evaluation/ | 14 |
+| evaluation/ | 15 |
 | deep-dives/ | 7 |
-| **合计** | **78** |
+| **合计** | **79** |
 
 ---
 
