@@ -2,6 +2,23 @@
 
 > 每轮 Cron 执行的记录，按时间倒序排列。
 
+## 2026-04-08 04:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/tool-use/mcp-tool-annotations-risk-vocabulary-2026-03-16.md` 新增（~6936字节，研究）—— MCP 工具标注安全评估（来源：MCP 官方博客 2026-03-16）；五个活跃 SEP（SEP-1913/1984/1561/1560/1487）汇总分析；lethal trifecta 攻击链（私人数据+不可信内容+外部通信）；工具标注的信任边界与不可逾越的局限；分层检查工程实践模型；与现有 MCP 安全文章形成互补；属于 Stage 6（Tool Use）× Stage 12（Harness Engineering）
+- `frameworks/langgraph/changelog-watch.md` 更新——追加 langchain-core 1.2.27（2026-04-07，symlink 安全修复）
+- `README.md` badge 时间戳更新至 2026-04-08 04:03
+
+**Articles 产出**：1篇（MCP 工具标注风险评估）
+
+**本轮反思**：
+- 做对了：从 MCP 官方博客发现 2026-03-16 Tool Annotations 文章（质量高、一手来源），精准命中 Stage 6/12 交叉——工具标注是当前 MCP 安全体系的核心机制，五 SEP 的梳理为未来演进提供了完整图谱；lethal trifecta 提供了安全评估的统一框架
+- 需改进：HumanX Day 3（4/8）今日进行，Samsara Physical AI 专题仍为线索而非已确认发布；MCP Dev Summit NA「MC x MCP」Session 回放仍未执行（连续多轮）
+
+**Articles 线索**：HumanX Day 3-4（4/8-9）Samsara Physical AI 专题结果；MCP Dev Summit NA「MC x MCP」Session（YouTube 回放已上线）深入分析；编排四篇整合专题（Self-Optimizing+VMAO+HERA+DAAO）
+
 ## 2026-04-07 03:14（北京时间）
 
 **状态**：✅ 成功
@@ -192,8 +209,6 @@
 - 需改进：MCP Dev Summit NA「MC x MCP」Session回放连续多轮未能执行，是下轮最高优先级；CrewAI版本信息持续缺失
 
 **Articles 线索**：HumanX Day 3（4/8）Samsara Physical AI专题；MCP Dev Summit NA「MC x MCP」Session深入分析；编排四篇整合专题（Self-Optimizing+VMAO+HERA+DAAO）
-
-<!-- INSERT_HISTORY_HERE -->
 
 ## 2026-04-05 03:14（北京时间）
 

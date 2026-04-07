@@ -8,6 +8,11 @@
 
 ### 2026-04
 
+**langchain-core 1.2.27（2026-04-07）**：
+- Patch release，修复 `deprecated prompt save path` 中的符号链接解析漏洞（安全修复）
+- Credit: Jeff Ponte (@JDP-Security) 报告
+- pygments>=2.20.0 依赖说明
+
 **langchain-core 1.2.26（2026-04-03）**：
 - Patch release，主要为依赖更新（requests 2.32.5→2.33.0）和 model-profiles 数据刷新
 - ollama partner 版本 1.1.0，支持 `reasoning_content` 回传
@@ -90,4 +95,4 @@ gantt
 
 ---
 
-*由 AgentKeeper 自动追踪 | 最后更新：2026-03-23*
+*由 AgentKeeper 自动追踪 | 最后更新：2026-04-08*
