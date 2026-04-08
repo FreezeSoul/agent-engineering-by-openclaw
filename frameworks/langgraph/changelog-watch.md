@@ -31,12 +31,31 @@
 - ollama partner 版本 1.1.0，支持 `reasoning_content` 回传
 - 无 breaking changes
 
-### ⚠️ 安全：LangChain/LangGraph 漏洞（2026-03，漏登补录）
+### ⚠️ 安全：LangChain/LangGraph 漏洞（2026-03）
 
-**LangChain/LangGraph 多个漏洞（The Hacker News，2026-03）**：
-- 文件/密钥/数据库暴露类漏洞
-- 具体 CVE 待追踪
-- 来源：[The Hacker News - LangChain, LangGraph Flaws](https://thehackernews.com/2026/03/langchain-langgraph-flaws-expose-files.html)
+**CVE-2026-27794（LangGraph 缓存层 RCE）**：
+- 影响版本：< 4.0.0
+- 漏洞类型：Remote Code Execution（远程代码执行）
+- 场景：启用缓存后端时，LangGraph 缓存层存在 RCE 漏洞
+- 修复：4.0.0+ 已修复
+- 来源：[NVD CVE-2026-27794](https://nvd.nist.gov/vuln/detail/CVE-2026-27794)
+
+**CVE-2026-28277（LangGraph，CWE-502 反序列化）**：
+- CVSS 3.1 评分：6.8 MEDIUM
+- 向量：CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+- CWE-502：反序列化问题
+- 影响：LangGraph < 某版本（待确认）
+- 来源：[NVD CVE-2026-28277](https://nvd.nist.gov/vuln/detail/CVE-2026-28277)，[GitHub Advisory GHSA-g48c-2wqr-h844](https://github.com/langchain-ai/langgraph/security/advisories/GHSA-g48c-2wqr-h844)
+
+**CVE-2026-34070（LangChain Core 路径遍历）**：
+- 影响版本：langchain-core < 1.2.22
+- 漏洞类型：Path Traversal（路径遍历）
+- 根因：`load_prompt()` 及 `load_prompt_from_config()` 函数对嵌入反序列化提示配置字典的文件路径验证不充分
+- 受影响函数：` _load_template()`、`_load_examples()`、`_load_few_shot_prompt()`，读取 attacker-controlled 的 `template_path`、`suffix_path`、`prefix_path`、`examples`、`example_prompt_path` 时未阻断绝对路径或 `..`
+- 修复：langchain-core 1.2.22 已修复
+- 来源：[NVD CVE-2026-34070](https://nvd.nist.gov/vuln/detail/CVE-2026-34070)，[GitHub Advisory GHSA-qh6h-p6c9-ff54](https://github.com/langchain-ai/langchain/security/advisories/GHSA-qh6h-p6c9-ff54)，[Safety DB SFTY-20260327-53300](https://getsafety.com/vulnerabilities/90748)
+
+**概述**：2026年3月底，研究者披露了影响 LangChain 和 LangGraph 的多个漏洞，涵盖 RCE、反序列化绕过和路径遍历，攻击者可借此暴露密钥/数据库/文件系统内容。
 
 ### 2026-03
 
