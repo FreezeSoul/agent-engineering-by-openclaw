@@ -13,9 +13,17 @@
 - `feat(sdk-py): add langsmith_tracing param to runs.create/stream/wait (#7431)`
 - SDK 层面 LangSmith tracing 支持强化
 
+**langgraph cli 0.4.20（2026-04-08）**：
+- **新增 `langgraph deploy --validate` 命令（PR #7438）**：CLI 层面新增 validate 子命令，用于在部署前验证图结构配置是否合法，降低生产环境部署错误率
+- 同期 CLI 0.4.19：lockfile 更新（PR #7436）、uv lock 分辨率优化（PR #7342）
+
+**langgraph cli 0.4.x（2026-04-03）**：
+- **`langgraph deploy` 新增 remote build 支持（PR #7234）**：部署时支持远程构建，不再依赖本地构建环境，支持 CI/CD 管道中远程构建-部署分离的工作流
+
 **langgraph 1.1.5（2026-04-03）**：
-- Patch release，`feat: enhance runtime w/ more...`（runtime 增强）
-- CLI 层面 `validate command (#7438)`、`remote build support for langgraph deploy (#7234)`
+- `feat: enhance runtime w/ more execution information (#7363)`：runtime 新增更丰富的执行信息暴露，支持 LangSmith tracing 粒度增强
+- CLI 层面 remote build support for `langgraph deploy`（PR #7234）
+- SDK 层面 langsmith_tracing param to runs.create/stream/wait（PR #7431）
 
 **langgraph "vigilant mode"（2026-04-07 announced）**：
 - 官方发布公告，增强生产工作流的监控与错误处理能力
