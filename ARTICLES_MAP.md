@@ -1,6 +1,6 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-04-09 10:10:41
+> Auto-generated at 2026-04-09 10:21:38
 
 > Total articles: 91
 
@@ -9,7 +9,7 @@
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | MCP × MCP：当 Agent 开始暴露 MCP Resources | tool-use | unknown | [articles/tool-use/mcp-x-mcp-agent-as-mcp-server-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/mcp-x-mcp-agent-as-mcp-server-2026.md) |
+| 1 | MCP × MCP：当 Agent 开始暴露 MCP Resources | tool-use | 2026-04-09 | [articles/tool-use/mcp-x-mcp-agent-as-mcp-server-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/mcp-x-mcp-agent-as-mcp-server-2026.md) |
 | 2 | 自适应多Agent系统的四维架构：从反应式重规划到前瞻式路由 | orchestration | 2026-04-09 | [articles/orchestration/adaptive-multi-agent-four-dimensions-orchestration.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/adaptive-multi-agent-four-dimensions-orchestration.md) |
 | 3 | MCP 工具标注：风险词汇的安全边界评估 | tool-use | 2026-04-08 | [articles/tool-use/mcp-tool-annotations-risk-vocabulary-2026-03-16.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/mcp-tool-annotations-risk-vocabulary-2026-03-16.md) |
 | 4 | 物理 AI Agent 万物网：安全关键多 Agent 系统的架构蓝图 | deep-dives | 2026-04-08 | [articles/deep-dives/internet-of-physical-ai-agents-2603-15900.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/internet-of-physical-ai-agents-2603-15900.md) |
