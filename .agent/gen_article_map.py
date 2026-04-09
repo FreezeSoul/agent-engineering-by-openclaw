@@ -93,7 +93,8 @@ def generate_map():
         category = art["category"]
         date = art["date"]
         path = art["path"]
-        lines.append(f"| {i} | {title} | {category} | {date} | `{path}` |")
+        link = f"https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/{path}"
+        lines.append(f"| {i} | {title} | {category} | {date} | [{path}]({link}) |")
 
     return "\n".join(lines)
 
