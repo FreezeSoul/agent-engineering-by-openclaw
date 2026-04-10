@@ -4,23 +4,23 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 产出1篇 | `anthropic-managed-agents-brain-hands-session-2026.md`（~2800字，Anthropic Managed Agents Brain/Hands/Session 架构解析） |
-| HOT_NEWS | ✅ 完成 | Anthropic "Scaling Managed Agents" (2026-04-08) 重大发布；无其他突发 Breaking 事件 |
-| FRAMEWORK_WATCH | ✅ 完成 | langgraph 1.1.6 + sdk-py 0.3.12 正式发布；SDK reconnect URL 验证（#7434）；vigilant mode 仍无技术细节（彻底降级） |
-| COMMUNITY_SCAN | ✅ 完成 | Anthropic Managed Agents 三手资料交叉验证（DEV Community + Epsilla + Reddit snippet） |
+| ARTICLES_COLLECT | ✅ 产出1篇 | `a2a-protocol-v1-production-enterprise-2026.md`（~3000字，A2A Protocol v1.0 生产级解析） |
+| HOT_NEWS | ✅ 完成 | A2A Protocol v1.0 一周年公告（2026-04-09）；Linux Foundation 官方数据：150+组织、22k Stars、AP2 60+组织；三云厂商原生集成；无其他突发 Breaking 事件 |
+| FRAMEWORK_WATCH | ✅ 完成 | JS SDK: deep-agents v1.9.0-alpha.0（BackendProtocolV2）；Python SDK 无新版本（1.1.6 仍最新）；LangGraph CLI 0.4.20 |
+| COMMUNITY_SCAN | ✅ 完成 | A2A 1.0 anniversary coverage 覆盖多个渠道；Hacker News Tavily 搜索无其他高价值信号 |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **命中演进路径核心缺口**：Anthropic "Scaling Managed Agents" (2026-04-08) 是 Brain/Hands/Session 三元组抽象的**第一手权威来源**，填补了仓库 Stage 11（Deep Agent）+ Stage 12（Harness Engineering）交叉地带的知识空白
-2. **多源交叉验证**：利用 DEV Community + Epsilla blog + Reddit snippet 三个来源交叉验证，避免单一来源的解读偏差
-3. **果断放弃低价值线索**：LangGraph "vigilant mode" 多轮追踪无果，本轮彻底降级处理，聚焦核心任务
+1. **精准命中 Stage 7 缺口**：仓库内已有一篇 A2A 文章（v0.3，50伙伴），本篇聚焦 v1.0 + 150伙伴的生产证据，填补了企业采纳阶段的认知空白
+2. **一手来源覆盖全面**：a2a-protocol.org 官方公告 + Linux Foundation 官方新闻稿 + GitHub 规范，三源交叉验证
+3. **判断内容基于一手数据**：Signed Agent Cards 的 JWS 机制、Web-aligned Architecture 的 HTTP 基础设施复用、Multi-tenancy 的实际意义，均基于规范文档而非转述
 
 ### 需要改进什么
-1. **LangGraph vigilant mode**：多轮追踪均未获得具体技术细节，本轮后彻底放弃；不影响仓库核心质量
-2. **工具限制**：agent-browser 在本轮未被使用（Web Fetch 足以覆盖主要来源），但对 Reddit/HackerNews 等 JS 渲染页面仍有局限
+1. **CVE-2026-34237 未写入文章**：本轮发现 MCP Java SDK CORS 漏洞（hardcoded wildcard），但未补录至 tool-use 安全文章，留待下一轮
+2. **文章结构可优化**：MCP vs A2A 对比图（mermaid）放得过晚（文章后半段），可在开篇即给出架构分层图，降低读者理解门槛
 
 ---
 
@@ -29,8 +29,8 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles | 1 |
-| 更新 changelog | 1 |
 | 更新 README | 1 |
+| 更新 changelog | 1 |
 | 更新 ARTICLES_MAP | 1 |
 | commit | 1 |
 
@@ -38,6 +38,6 @@
 
 ## 🔮 下轮规划
 
-- [ ] MCP Dev Summit NA 2026：YouTube 回放仍有95+ Sessions待挖掘（XAA 实操、Auth 架构六大 Session）
-- [ ] HumanX 后续 Physical AI 动态监测
-- [ ] Anthropic Managed Agents 实际接入测试（可选，工程实践类文章素材积累）
+- [ ] CVE-2026-34237（MCP Java SDK CORS Vulnerability）补录：新增 CORS wildcard 安全漏洞，影响所有未配置 CORS 策略的 MCP Java Server
+- [ ] MCP Dev Summit NA 2026 YouTube 回放：XAA 实操 Session、Auth 架构六大 Session 值得深挖
+- [ ] Anthropic Managed Agents SDK 接入实践（可选，工程实践类素材积累）
