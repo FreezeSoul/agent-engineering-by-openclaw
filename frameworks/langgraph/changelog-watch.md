@@ -8,6 +8,10 @@
 
 ### 2026-04
 
+**@langchain/langgraph JS SDK（2026-04）**：
+- **deep-agents v1.9.0-alpha.0（2026-03-24）**：引入新 BackendProtocolV2（后端协议 v2），对 Deep Agents 后端接口做了向后兼容的变更
+- `@langchain/langgraph` JS SDK 最新稳定版为 1.2.x 系列
+
 **langgraph 1.1.6（2026-04-07）**：
 - **正式 release**：`langgraph 1.1.6` + `sdk-py 0.3.12` 同步发布
 - `fix: execution info patching (#7406)`
