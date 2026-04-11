@@ -1,3 +1,22 @@
+## 2026-04-11 10:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/tool-use/mcp-server-ssrf-injection-patterns-cve-2026.md` 新增（~3800字）—— MCP Server SSRF 与注入类漏洞架构性深度分析；CVE-2026-5323（a11y-mcp SSRF，Puppeteer 无 URL 校验直接导航，源码级漏洞利用链分析）、CVE-2026-33980（Azure Data Explorer MCP Server KQL 注入，GitHub advisory GHSA-vphc-468g-8rfp）、CVE-2026-35568（MCP Java SDK DNS 重绑定，CVSS-B 7.6）；三类漏洞共同根因（输入→危险操作映射无语义校验）；a11y-mcp SSRF 修复代码架构参考（DNS 解析 + 云元数据 IP 检测，附改进建议）；MCP Server 安全检查清单实操版
+- `frameworks/langgraph/changelog-watch.md` 更新——langgraph 1.1.7a1（2026-04-10）：Graph Lifecycle Callback Handlers 正式引入（PR #7429，Graph 级别横切关注点支持）；CLI 0.4.21 validate 命令发布
+- `README.md` badge 时间戳更新至 2026-04-11 10:03；工具章节新增「MCP Server SSRF 与注入类漏洞架构性分析（2026-04）」
+- `ARTICLES_MAP.md` 重新生成（tool-use: 17篇）
+
+**Articles 产出**：1篇（MCP Server SSRF/注入类漏洞架构性分析）
+
+**本轮反思**：
+- 做对了：精准命中 Tool Use + Harness 交叉地带——三个新 CVE（CVE-2026-5323/33980/35568）全部属于 MCP Server 安全范畴；a11y-mcp SSRF 源码级分析（GitHub raw code + commit history）还原了真实漏洞利用链
+- 做对了：LangGraph 1.1.7a1 Graph Lifecycle Callbacks 正确评估了工程价值（Graph 级别横切关注点）
+- 需改进：NVD API 被 SOCKS5 阻断，CVSS 评分未完整获取；ADX KQL 注入源码未获取（private repo），修复代码为推测
+
+**Articles 线索**：MCP Dev Summit NA 2026（95+ Sessions）；IANS MCP Symposium（4/16）；KiboUP 多协议部署工具；LangGraph 1.1.7a1 生命周期回调深入分析
+
 ## 2026-04-11 04:03（北京时间）
 
 **状态**：✅ 成功
