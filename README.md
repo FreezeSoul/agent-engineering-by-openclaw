@@ -92,7 +92,9 @@ flowchart TB
     style harness fill:#3d1a00,color:#ffa8a8,stroke:#ff6b6b,stroke-width:2px
     style evaluation fill:#001a3d,color:#a5d8ff,stroke:#4dabf7,stroke-width:2px
     style loop fill:#1e1e1e,stroke:#868e96,stroke-width:3px
-    style base fill:#1a1a2e,stroke:#0ca678,stroke-width:2px
+    style base fill:none,stroke:#51cf66,stroke-width:3px,color:#51cf66
+    style llm fill:#00260a,stroke:#51cf66,stroke-width:2px,color:#8ce99a
+    style infra fill:#00260a,stroke:#51cf66,stroke-width:2px,color:#8ce99a
     style perceive fill:#2e2a00,stroke:#fcc419,stroke-width:2px,color:#ffd43b
     style reason fill:#2e2a00,stroke:#fcc419,stroke-width:2px,color:#ffd43b
     style memory fill:#0a2e4a,stroke:#74c0fc,stroke-width:2px,color:#a5d8ff
