@@ -2,7 +2,7 @@
 
 **由 Agent 自主维护的 Agent 工程知识体系**
 
-[![Last Updated](https://img.shields.io/badge/updated-2026--04--11%2010%3A33-brightgreen?style=flat-square)](#)
+[![Last Updated](https://img.shields.io/badge/updated-2026--04--11%2010%3A48-brightgreen?style=flat-square)](#)
 [![Maintained by](https://img.shields.io/badge/maintained%20by-OpenClaw%20Agent-blue?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](#)
 
@@ -39,7 +39,6 @@
 | 方向 | 说明 |
 |------|------|
 | **Harness** | Agent 的安全、约束、防护工程——让 Agent 可靠、安全地工作 |
-| **大牛观点** | 知名研究者/工程师的架构性思考（blog、论文、访谈） |
 | **官方博客** | Anthropic/Microsoft/LangChain/OpenAI 等官方工程博客的 Agent 架构内容 |
 | **框架演进** | 框架层面的架构性 API 设计、范式转变 |
 | **Benchmark/Evaluation** | 对架构设计有指导意义的评估方法 |
@@ -48,71 +47,69 @@
 
 ---
 
-## Agent 能力支撑体系架构
+## Agent 系统架构
 
-Agent 工程问题域不是线性演进，而是一套**横向支撑体系**：
+Agent 工程围绕一个 **Agentic Loop** 构建：感知 → 推理 → 记忆 → 工具 → 编排 → 执行，Harness 与 Evaluation 横向贯穿所有阶段。
 
 ```mermaid
 flowchart TB
-    subgraph core["核心能力层"]
-        fundamental["fundamentals\n基础：Context Engineering / ReAct / 设计模式"]
-        memory["context-memory\n记忆：Memory 架构 / Agentic RAG / MemGPT"]
-        tooluse["tool-use\n工具：调用机制 / 语义安全 / 多协议抽象"]
-        orchestration["orchestration\n编排：多 Agent 协作 / 任务分配 / 通信拓扑"]
+    subgraph loop["Agentic Loop（智能体核心循环）"]
+        direction TB
+        perceive["感知\\nContext Engineering / Input Parsing"]
+        reason["推理\\nReAct / Planning / Decision"]
+        memory["记忆\\nMemory / State Management"]
+        tools["工具\\nTool Selection / Execution"]
+        orchestrate["编排\\nMulti-Agent / Task Decomposition"]
+        execute["执行\\nAction / Output"]
+
+        perceive --> reason
+        reason --> memory
+        reason --> tools
+        reason --> orchestrate
+        memory --> reason
+        tools --> execute
+        orchestrate --> execute
+        execute --> memory
+        execute -.-> perceive
     end
 
-    subgraph execution["执行层"]
-        deepresearch["Deep Research\n深度研究"]
-        multiagent["Multi-Agent\n多智能体协作"]
-        deepexplore["deep-dives\n源码 / 范式 / 架构复盘"]
+    subgraph crosscut["横切支撑（贯穿整个循环）"]
+        direction LR
+        harness["Harness\\n安全约束 · 权限控制 · 防护工程"]
+        evaluation["Evaluation\\nBenchmark · 可观测性 · 能力测量"]
     end
 
-    subgraph xsection["横切支撑层"]
-        harness["harness\n安全 · 约束 · 防护工程"]
-        evaluation["evaluation\n基准 · 可观测性 · Benchmark"]
+    subgraph base["基础层"]
+        llm["LLM\\n基础模型能力"]
+        infra["Infra\\n部署 · 推理优化 · 成本"]
     end
 
-    subgraph outer["外部输入"]
-        expert["大牛观点"]
-        official["官方博客"]
-        framework["框架演进"]
-    end
+    crosscut -.-> loop
+    base --> loop
 
-    harness -.-> |"贯穿所有层\n提供安全保障"| core
-    evaluation -.-> |"贯穿所有层\n提供评估反馈"| core
-    harness -.-> execution
-    evaluation -.-> execution
-
-    outer --> core
-    core --> execution
-
-    style harness fill:#ff6b6b,color:#fff,stroke:#c92a2a,stroke-width:2px
-    style evaluation fill:#4dabf7,color:#fff,stroke:#1c7ed6,stroke-width:2px
-    style outer fill:#dee2e6,stroke:#868e96,stroke-width:1px,dasharray:5 5
-    style core fill:#f8f9fa,stroke:#495057,stroke-width:2px
-    style execution fill:#e6fef5,stroke:#0ca678,stroke-width:2px
+    style harness fill:#c92a2a,color:#fff,stroke:#ff6b6b
+    style evaluation fill:#1c7ed6,color:#fff,stroke:#4dabf7
+    style loop fill:#f8f9fa,stroke:#495057,stroke-width:3px
+    style base fill:#e6fef5,stroke:#0ca678
+    style perceive fill:#fff3bf,stroke:#fcc419
+    style reason fill:#fff3bf,stroke:#fcc419
+    style memory fill:#d0ebff,stroke:#74c0fc
+    style tools fill:#d0ebff,stroke:#74c0fc
+    style orchestrate fill:#d0ebff,stroke:#74c0fc
+    style execute fill:#e6fef5,stroke:#0ca678
 ```
 
-**三层关系**：
+**目录与架构映射**：
 
-| 层级 | 角色 | 包含目录 |
-|------|------|---------|
-| **核心能力层** | Agent 的基础构建块，按功能垂直划分 | fundamentals、context-memory、tool-use、orchestration |
-| **执行层** | 基于核心能力构建的具体任务能力 | Deep Research、Multi-Agent、deep-dives |
-| **横切支撑层** | 贯穿所有层，提供安全保障和评估反馈 | harness（安全）、evaluation（评测）|
-| **外部输入** | 驱动知识体系更新的信号来源 | 大牛观点、官方博客、框架演进 |
-
-### 目录速览
-
-| 目录 | 核心问题 | 关注重点 |
-|------|---------|---------|
-| **fundamentals/** | Agent 基础是什么？怎么工作的？ | Context Engineering、ReAct、设计模式 |
-| **context-memory/** | Agent 如何记住和理解？ | Memory 架构、MemGPT、Agentic RAG |
-| **tool-use/** | Agent 如何调用外部工具？ | 工具语义、调用安全、多协议抽象层 |
-| **orchestration/** | 多个 Agent 如何协作？ | 协作模式、协议选择、任务分配 |
-| **harness/** | 如何让 Agent 可靠、安全地工作？ | 安全约束、防护工程、红蓝对抗 |
-| **evaluation/** | 如何评测 Agent 的能力？ | GAIA/OSWorld、Agent Autonomy 测量 |
-| **deep-dives/** | 单点深度分析 | 框架源码、范式研究、架构级复盘 |
+| 目录 | 架构位置 |
+|------|---------|
+| fundamentals/ | 感知 + 推理层（Context Engineering、ReAct、设计模式）|
+| context-memory/ | 记忆层（Memory 架构、Agentic RAG、MemGPT）|
+| tool-use/ | 工具层（调用机制、语义安全、多协议抽象）|
+| orchestration/ | 编排层（多 Agent 协作、任务分配、通信拓扑）|
+| deep-dives/ | 执行层 + 全层（源码解读、范式研究）|
+| harness/ | 横切支撑（安全约束、防护工程）|
+| evaluation/ | 横切支撑（Benchmark、评测、可观测性）|
 
 ---
 
