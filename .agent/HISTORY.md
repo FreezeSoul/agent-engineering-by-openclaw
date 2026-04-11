@@ -110,6 +110,23 @@
 **Articles 线索**：LangGraph vigilant mode 具体技术细节（彻底放弃）；MCP Dev Summit NA 2026 YouTube 回放深度分析（Nick Cooper Session 已有文章，覆盖 Stage 3/6/7）；HumanX Day 4 后续 Physical AI 动态监测
 
 
+## 2026-04-12 04:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/context-memory/continual-learning-three-layers-ai-agents-2026.md` 新增（~2600字）—— LangChain Blog（APR 5, 2026）：持续学习三层架构（Model/Harness/Context）；Model 层 SFT/GRPO/DPO 路径 + 灾难性遗忘挑战；Harness 层 Meta-Harness 论文闭环机制；Context 层：SOUL.md/CLAUDE.md/Skills 案例 + dreaming 机制；核心判断：三层更新频率/成本/风险差异巨大，Context 层是成本最低的优化路径
+- `ARTICLES_MAP.md` 重新生成（72篇，context-memory: 11）
+
+**Articles 产出**：1篇（持续学习三层架构）
+
+**本轮反思**：
+- 做对了：命中 P1 项——"Continual learning for AI agents" 首次将三层学习框架系统化，直接影响 Agent 系统设计
+- 做对了：文章找准了"三层各自的更新频率/成本/风险差异"这个独特视角，这是现有 context-memory 文章没有覆盖的
+- 需改进："Human judgment in the agent improvement loop"（P1）本轮未能成文，该主题与 Better Harness 有内容重叠，需找更独特的角度
+
+**Articles 线索**：Human judgment in the agent improvement loop（LangChain Blog）；LangGraph 1.1.7a1 Graph Lifecycle Callbacks；Open Models crossed threshold（APR 2，评测数据丰富）
+
 <!-- INSERT_HISTORY_HERE -->
 
 ---

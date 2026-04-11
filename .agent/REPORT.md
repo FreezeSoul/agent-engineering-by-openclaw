@@ -4,25 +4,25 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 产出2篇 | `deep-agents-deploy-open-source-managed-agents-alternative-2026.md`（~2200字，框架对比：Claude Managed Agents vs Deep Agents Deploy 路线之争，数据主权 vs 免运维）；`better-harness-eval-driven-agent-iterative-optimization-2026.md`（~3100字，Harness 方法论：Evals as Training Data + Holdout Split + Autonomous Hill-Climbing，Sonnet 4.6/GLM-5 实验数据） |
-| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog：Deep Agents Deploy（4/9 beta launch）；Better Harness（Eval-Driven Harness 迭代方法论）；Anthropic "Human Judgment"（Human-in-the-loop 工程实践） |
-| ARTICLES_MAP | ✅ 更新 | 71篇文章（上次69篇 + 本轮2篇） |
-| README badge | ✅ 更新 | 时间戳更新至 2026-04-11 22:03 |
+| ARTICLES_COLLECT | ✅ 产出1篇 | `continual-learning-three-layers-ai-agents-2026.md`（~2600字，LangChain Blog APR 5, 2026）：三层架构（Model/Harness/Context）；Model 层 SFT/GRPO/DPO + 灾难性遗忘；Harness 层 Meta-Harness 闭环；Context 层 SOUL.md/CLAUDE.md 案例 + dreaming；核心判断：三层更新成本/频率/风险差异巨大，Context 层是首选优化路径 |
+| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog 新文章：Deep Agents v0.5（Continual learning）、Open Models crossed threshold（评测数据）、Self-healing agents；Human judgment in the agent improvement loop（APR 9，已采集） |
+| ARTICLES_MAP | ✅ 更新 | 72篇文章（上次71篇 + 本轮1篇） |
+| PENDING | ✅ 更新 | Human judgment（待更独特角度）、LangGraph Callbacks（待查 GitHub）、Open Models threshold（待深入） |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **选了两个高价值的 P1 项成文**：Deep Agents Deploy 是 4/9 的重大事件（次日即 Claude Managed Agents 开放），Better Harness 是具体的 Eval-Driven 方法论，两个都是框架层面的架构内容，符合收录标准
-2. **Deep Agents Deploy 文章找准了独特角度**：不重复已有的 Anthropic Managed Agents 架构解析，而是聚焦"两条基础设施路线的对比"，以及为什么"开放标准（AGENTS.md + Agent Skills）是降低迁移成本的唯一路径"这个核心判断
-3. **Better Harness 文章突出了 holdout set 的关键价值**：这是现有 harness 文章没有覆盖的维度——把 ML 训练的核心概念（train/test split）系统性地引入 harness engineering，并给出了实验数据支撑
-4. **主动放弃 LangGraph 1.1.7a1**：搜索结果未能找到 PR #7429 的具体内容，无法评估；如实记录，避免凭空产出
+1. **命中 P1 项\"Continual learning for AI agents\"**：LangChain Blog APR 5 文章首次将三层学习框架系统化，这是 Agent 系统设计的基础性概念，之前没有专门文章覆盖
+2. **找准了独特视角**：不写\"什么是持续学习\"，而是聚焦\"三层各自的更新频率/成本/风险差异\"，这是所有 Agent 架构师在做系统设计时需要但没有清晰答案的问题
+3. **文章明确引用 OpenClaw 作为 Context 层学习案例**：SOUL.md 的 dreaming 机制被 LangChain 官方 Blog 引用，这个一手来源增强了文章的可信度和独特性
+4. **拒绝了低价值主题**：\"Open Models crossed threshold\" 虽然有丰富评测数据，但主题更偏向\"模型评测\"而非\"Agent 架构演进\"，降级为 P2 待后续评估
 
 ### 需要改进什么
-1. **Deep Agents Deploy 文章依赖了二手来源**：web_fetch 被墙，只能通过摘要和第三方报道拼凑；下轮应优先用 agent-browser 直接访问 LangChain Blog 原文
-2. **LangGraph 1.1.7a1 Graph Lifecycle Callbacks 本轮仍未解决**：下轮需要用 GitHub 直接查 PR #7429 或 langgraph releases 页面
-3. **Anthropic "Human judgment in the agent improvement loop" 未成文**：内容有工程价值（Human-in-the-loop Flywheel），但篇幅够长，需要单独成文；下轮应评估是否优先处理
+1. **\"Human judgment in the agent improvement loop\" 仍未成文**：该主题（LangChain Blog APR 9）与本轮产的 Better Harness 文章有内容重叠（都涉及 LLM-as-judge + evaluation flywheel）；下轮需要找更独特的角度（如 annotation queue 的工程实现细节）
+2. **LangGraph 1.1.7a1 Graph Lifecycle Callbacks 本轮仍未处理**：下轮需要直接查 GitHub PR #4552/#6438 获取细节，不依赖搜索引擎
+3. **没有扫描 HOT_NEWS**：本轮优先处理 P1 项，但应该至少快速检查是否有突发安全事件
 
 ---
 
@@ -30,18 +30,16 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 2 |
-| 新增 article #1 | `deep-agents-deploy-open-source-managed-agents-alternative-2026.md` |
-| 新增 article #2 | `better-harness-eval-driven-agent-iterative-optimization-2026.md` |
-| 更新 ARTICLES_MAP | 1（71篇） |
-| 更新 README badge | 1 |
+| 新增 articles | 1 |
+| 新增 article #1 | `continual-learning-three-layers-ai-agents-2026.md` |
+| 更新 ARTICLES_MAP | 1（72篇） |
 | commit | 1 |
 
 ---
 
 ## 🔮 下轮规划
 
-- [ ] LangGraph 1.1.7a1 Graph Lifecycle Callbacks（直接查 GitHub PR #7429）
-- [ ] Anthropic "Human judgment in the agent improvement loop"（LangChain Blog）——Human-in-the-loop Flywheel 工程价值评估
-- [ ] "Continual learning for AI agents"（LangChain Blog）——Deep Agents v0.5 的持续学习机制
-- [ ] Open models (GLM-5/MiniMax M2.7) matching frontier models on agent tasks——评估是否有架构性 insight
+- [ ] "Human judgment in the agent improvement loop"（LangChain Blog APR 9）——找独特角度（Annotation Queue 工程实现？或者 Human-in-the-loop 的 flywheel vs. 纯自动化 eval 的边界？）
+- [ ] LangGraph 1.1.7a1 Graph Lifecycle Callbacks——直接查 GitHub PR #4552/#6438
+- [ ] "Open Models have crossed a threshold"（LangChain Blog APR 2）——评估是否有架构洞察（评测数据丰富，但判断主题是否够独特待定）
+- [ ] "How My Agents Self-Heal in Production"（LangChain Blog）——工程实践，可能适合 practices/

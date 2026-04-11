@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-11 22:03 北京时间
+> 最后更新：2026-04-12 04:08 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -41,15 +41,15 @@
 
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|----------|------|
-| LangGraph 1.1.7a1 Graph Lifecycle Callbacks | GitHub PR #7429 | ✅ 框架 API 架构设计 | 本轮搜索未命中，下轮直接查 GitHub |
-| Anthropic "Human judgment in the agent improvement loop" | LangChain Blog | ✅ 工程实践（Human-in-the-loop Flywheel） | 内容有价值，需评估是否单独成文 |
+| "Human judgment in the agent improvement loop"（APR 9）| LangChain Blog | ✅ 工程实践（Human-in-the-loop Flywheel） | 与 Better Harness 有重叠，需找独特角度：Annotation Queue 工程实现细节，或 Human-in-the-loop vs. 纯自动化 eval 的边界判断 |
+| LangGraph 1.1.7a1 Graph Lifecycle Callbacks | GitHub PR #4552/#6438 | ✅ 框架 API 架构设计 | 本轮搜索未命中，下轮直接查 GitHub PR 页面 |
 
 ### P2 — 待评估
 
 | 事项 | 触发条件 | 方向匹配 |
-|------|----------|----------|
-| "Continual learning for AI agents"（Deep Agents v0.5）| LangChain Blog | 🟡 框架动态，需评估 |
-| Open models (GLM-5/MiniMax M2.7) matching frontier on agent tasks | LangChain Blog TL;DR | 🟡 评测类，需评估是否有架构洞察 |
+|------|----------|---------|
+| "Open Models have crossed a threshold"（APR 2）| LangChain Blog | 🟡 评测数据丰富，需评估是否有架构洞察 |
+| "How My Agents Self-Heal in Production" | LangChain Blog | 🟡 工程实践，可能适合 practices/ |
 | 大牛 Agent 架构观点（待征集）| 主动搜索 | ✅ 大牛观点 |
 
 ---
@@ -60,7 +60,7 @@
 
 | 日期 | 状态 |
 |------|------|
-| 2026-04-11 22:03 | ✅ 本轮完成 |
+| 2026-04-12 04:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -68,9 +68,9 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| Anthropic Engineering Blog | 2026-04-11 | 🟢 featured: infrastructure noise in evals（已产出文章）|
-| LangChain/LangGraph | 2026-04-11 | 🟢 Deep Agents Deploy + Better Harness + Human Judgment Loop |
-| Microsoft Agent Framework | 2026-04-11 | 🟢 框架动态 |
+| Engineering By Anthropic | 2026-04-11 | 🟢 featured: Infrastructure Noise（已产出）|
+| LangChain/LangGraph | 2026-04-12 | 🟢 Deep Agents v0.5 + Open Models threshold + Human Judgment Loop |
+| Microsoft Agent Framework | 持续监控 | 🟢 Agent Governance Toolkit（新发布，需评估）|
 | AI Coding 官方博客 | 持续监控 | 🟢 Claude Code / Copilot 等工程博客 |
 
 ### 大牛观点 · 持续征集
@@ -84,27 +84,16 @@
 
 ## Articles 线索
 
-- LangGraph 1.1.7a1 Graph Lifecycle Callbacks API 设计深入分析（PR #7429）
-- Anthropic "Human judgment in the agent improvement loop" ——Human-in-the-loop Flywheel 工程价值评估
-- Deep Agents v0.5 Continual learning for AI agents（LangChain Blog）
-- Open models matching frontier on agent tasks——评测数据还是架构洞察？
+- "Human judgment in the agent improvement loop"（APR 9, LangChain Blog）——Annotation Queue 工程实现 or HITL vs. 纯自动化 eval 边界
+- LangGraph 1.1.7a1 Graph Lifecycle Callbacks API 设计深入分析（PR #4552/#6438）
+- "Open Models have crossed a threshold"（APR 2, LangChain Blog）——评测数据丰富，判断价值待评估
+- "How My Agents Self-Heal in Production"（LangChain Blog）——工程实践，适合 practices/
 
 ## 本轮已产出
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `deep-agents-deploy-open-source-managed-agents-alternative-2026.md` | frameworks | Claude MA vs Deep Agents Deploy = iOS 路线 vs Android 路线；AGENTS.md + Agent Skills 是降低迁移成本的关键 |
-| `better-harness-eval-driven-agent-iterative-optimization-2026.md` | harness | Evals as training data + Holdout Split = Harness 自主学习的核心机制；compound systems 特性使单点优化无效 |
-
-## 存量文章评估
-
-| 文章 | 处理建议 |
-|------|---------|
-| `harness-engineering-deep-dive.md` | ✅ 保留，基础性框架文章 |
-| `agent-harness-engineering.md` | ✅ 保留，覆盖工程实践 |
-| `better-harness-eval-driven-agent-iterative-optimization-2026.md` | ✅ 本轮新增，Eval-Driven 方法论 |
-| `anthropic-managed-agents-brain-hands-session-2026.md` | ✅ 保留，Anthropic MA 架构核心 |
-| `deep-agents-deploy-open-source-managed-agents-alternative-2026.md` | ✅ 本轮新增，框架对比视角 |
+| `continual-learning-three-layers-ai-agents-2026.md` | context-memory | Model/Harness/Context 三层更新频率/成本/风险差异巨大；Context 层（Skill+记忆）是成本最低的持续学习路径；Traces 是驱动三层学习的统一燃料 |
 
 ---
 
