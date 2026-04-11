@@ -1,7 +1,33 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-11 10:03 北京时间
+> 最后更新：2026-04-11 10:33 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
+
+---
+
+## ⚠️ 方向过滤原则（必须遵守）
+
+**只跟踪有架构意义的内容，不跟踪协议本身的变化。**
+
+### ✅ 值得出 article 的
+
+| 类型 | 说明 |
+|------|------|
+| **Harness** | Agent 安全、约束、防护工程的架构级实践 |
+| **大牛观点** | 知名研究者/工程师的架构性思考（blog/论文/访谈） |
+| **官方博客** | Anthropic/Microsoft/LangChain/OpenAI 等官方工程博客的 Agent 架构内容 |
+| **框架演进** | 框架层面的架构性 API 设计、范式转变 |
+| **Benchmark/Evaluation** | 对架构设计有指导意义的评估方法 |
+
+### ❌ 不出 article 的（只监控）
+
+| 类型 | 说明 |
+|------|------|
+| **协议规范** | MCP/A2A 等协议本身的版本变化、Feature 更新 |
+| **CVE 详情** | 单独 CVE 的细粒度分析（降级为监控记录） |
+| **行业会议** | 峰会、Symposium 等事件性内容（除非有架构级总结） |
+| **工具发布** | 除非有架构创新，否则只记录不产出 |
+| **资讯快讯** | 周报、新闻类内容 |
 
 ---
 
@@ -9,26 +35,22 @@
 
 ### P0 — 立即处理
 
-| 事项 | 状态 | 说明 |
-|------|------|------|
-| MCP Server SSRF/注入类漏洞分析 | ✅ 本轮完成 | `mcp-server-ssrf-injection-patterns-cve-2026.md`（2026-04-11） |
+（空）
 
 ### P1 — 下一轮重点
 
-| 事项 | 触发条件 | 说明 |
-|------|----------|------|
-| MCP Dev Summit NA 2026 Sessions | YouTube 已上线 | 95+ Sessions；XAA 实操 Session、Auth 架构六大Session 值得深挖 |
-| IANS MCP Symposium（4/16）| 4/16 研讨会当天 | 会后评估 |
-| KiboUP 多协议部署工具 | Show HN | HTTP/A2A/MCP 三协议，KiboStudio IDE；需深入评估是否值得写入 orchestration |
-| LangGraph 1.1.7a1 Graph Lifecycle Callbacks | PR #7429 | 深入分析具体 API 设计（回调接口、注册方式、生命周期节点）|
+| 事项 | 触发条件 | 方向匹配 |
+|------|----------|----------|
+| LangGraph 1.1.7a1 Graph Lifecycle Callbacks | PR #7429 | ✅ 框架 API 架构设计 |
+| Anthropic Managed Agents SDK 接入测试 | 可选 | ✅ 官方博客 + 工程实践 |
+| Harness Engineering 最新实践 | 持续监控 | ✅ harness 架构 |
 
-### P2 — 计划中
+### P2 — 待评估
 
-| 事项 | 状态 | 说明 |
-|------|------|------|
-| x402/L402 协议体系独立文章 | 🟡 待评估 | Agent 经济基础设施：Coinbase/Cloudflare/Google/Visa 背书，154M+ 交易；与 AP2/A2A 文章合并可能性评估 |
-| Anthropic Managed Agents SDK 接入测试 | 可选 | 工程实践类文章素材积累；SDK 文档待深入研读 |
-| LangGraph vigilant mode深入分析 | ❌ 彻底放弃 | 多轮追踪未果；彻底降级 |
+| 事项 | 触发条件 | 方向匹配 |
+|------|----------|----------|
+| x402/L402 协议体系 | 评估中 | ❌ 协议层，降级监控 |
+| 大牛 Agent 架构观点（待征集） | 主动搜索 | ✅ 大牛观点 |
 
 ---
 
@@ -42,43 +64,53 @@
 
 ### FRAMEWORK_WATCH — 框架动态
 
+> 只跟踪**架构层面**的更新，不跟踪协议细节
+
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| Anthropic Engineering | 2026-04-10 | 🟢 A2A Protocol v1.0 一周年（2026-04-09）：150+组织、22k GitHub Stars、三大云厂商原生嵌入 |
-| Microsoft Agent Framework | 2026-04-10 | 🟢 A2A 已嵌入 Azure AI Foundry + Copilot Studio（2025-05）|
-| LangChain/LangGraph | 2026-04-11 | 🟢 **Python SDK: langgraph 1.1.7a1（2026-04-10，Graph Lifecycle Callbacks PR #7429）**；CLI 0.4.21（validate 命令）；JS SDK: deep-agents v1.9.0-alpha.0 |
-| AutoGen | 2026-04-10 | 🟢 python-v0.7.5（无新版本）|
-| DefenseClaw | 2026-04-04 | 🟡 v0.2.0，v1.0.0 尚未发布 |
+| Anthropic Engineering Blog | 2026-04-11 | 🟢 官方博客，架构级内容待挖掘 |
+| LangChain/LangGraph | 2026-04-11 | 🟢 langgraph 1.1.7a1（Graph Lifecycle Callbacks，架构级 API 设计）|
+| Microsoft Agent Framework | 2026-04-10 | 🟢 框架动态 |
+| AI Coding 官方博客 | 持续监控 | 🟢 Claude Code / Copilot 等工程博客 |
+
+### 大牛观点 · 持续征集
+
+| 来源 | 说明 |
+|------|------|
+| Anthropic Researchers | Andrej Karpathy, Pieter Abbeel 等的 blog/twitter |
+| 工程实践派 | 架构师/技术负责人关于 Agent 系统的深度思考 |
 
 ---
 
-## 热点监控
+## 热点监控（降级说明）
 
-| 事件 | 触发条件 | 状态 |
-|------|----------|------|
-| A2A Protocol v1.0 一周年（2026-04-09）| ✅ 已完成 | A2A v1.0 公告：150+组织、22k Stars、v1.0 stable；生产级深度文章已完成 |
-| MCP Dev Summit NA 2026（Day 1/2 回放）| YouTube 已上线 | 🟡 MCP × MCP Session 已有文章；95+ Sessions 待深入 |
-| MCP × MCP 新架构范式 | ✅ 已完成 | `mcp-x-mcp-agent-as-mcp-server-2026.md`（2026-04-09）|
-| MCP CVE 簇 | ✅ 更新完成 | CVE-2026-0755/34742/26118/34237 已有文章；**本轮新增：CVE-2026-5323（a11y-mcp SSRF）、CVE-2026-33980（ADX KQL 注入）、CVE-2026-35568（Java SDK DNS重绑定）** |
-| LangChain/LangGraph 安全漏洞 | ✅ 已完成 | CVE-2026-27794/28277/34070 三个具体 CVE 已补录 |
-| IANS MCP Symposium（4/16）| 4/16 研讨会当天 | ⬜ 待触发 |
-| AgentDM 新发布（2026-04-10）| ✅ 已完成 | `agentdm-mcp-a2a-protocol-bridge.md` 已完成 |
-| KiboUP 多协议部署工具 | Show HN | 🟡 待深入评估 |
+> 以下事项**只记录状态，不单独出 article**。如有架构级总结价值，合并到 harness/orchestration 相关文章中。
 
----
-
-## 本轮新增内容
-
-- `articles/tool-use/mcp-server-ssrf-injection-patterns-cve-2026.md`（~3800字）—— MCP Server SSRF 与注入类漏洞架构性分析；CVE-2026-5323（a11y-mcp SSRF，源码级分析：Puppeteer 直接导航无校验 URL，DNS 解析+云元数据 IP 检测修复）；CVE-2026-33980（Azure Data Explorer MCP Server KQL 注入，GitHub advisory GHSA-vphc-468g-8rfp）；CVE-2026-35568（MCP Java SDK DNS 重绑定，CVSS-B 7.6）；三类漏洞共同根因（输入→危险操作映射无语义层校验）；a11y-mcp SSRF 修复代码架构参考（附云元数据 IP 检测改进建议）；MCP Server 安全检查清单实操版；一手来源：Snyk/SentinelOne/NVD + GitHub commit/PR + GHSA advisory
-- `frameworks/langgraph/changelog-watch.md` 更新——langgraph 1.1.7a1（2026-04-10）：Graph Lifecycle Callback Handlers（PR #7429）；cli 0.4.21 validate 命令
-- `README.md` badge 时间戳更新至 2026-04-11 10:03；工具章节新增「MCP Server SSRF 与注入类漏洞架构性分析（2026-04）」
-- `ARTICLES_MAP.md` 重新生成（tool-use: 17篇）
+| 事件 | 状态 | 说明 |
+|------|------|------|
+| MCP CVE 簇 | 🟡 监控中 | ❌ 不单独出 article |
+| MCP Dev Summit NA 2026 | 🟡 YouTube 回放 | ❌ 会议内容，不跟踪 |
+| IANS MCP Symposium（4/16）| ⬜ 待触发 | ❌ 会议，不跟踪 |
+| KiboUP 多协议工具 | 🟡 Show HN | ❌ 工具发布，不跟踪 |
+| A2A Protocol v1.0 一周年 | ✅ 已完成 | ✅ 有架构级总结价值 |
 
 ---
 
 ## Articles 线索
 
-- MCP Dev Summit NA 2026 后续 Sessions（XAA实操、Auth架构六大Session）
-- IANS MCP Symposium（4/16）会后评估
-- KiboUP 多协议部署工具深入评估（HTTP/A2A/MCP 三协议，KiboStudio IDE）
-- LangGraph 1.1.7a1 Graph Lifecycle Callbacks API 设计深入分析
+- LangGraph 1.1.7a1 Graph Lifecycle Callbacks API 设计深入分析（框架架构）
+- Harness Engineering 新实践（持续征集）
+- AI Coding 官方博客架构级内容（持续征集）
+- 大牛 Agent 架构观点（主动搜索）
+
+---
+
+## 存量 MCP 文章处理意见
+
+| 文章 | 处理建议 |
+|------|----------|
+| `mcp-security-*.md`（安全类） | ✅ 保留，Harness 交叉地带有价值 |
+| `mcp-pitfalls-*.md` | ✅ 保留，架构级教训 |
+| `mcp-server-ssrf-*.md` | ✅ 保留，Harness 交叉 |
+| MCP 协议规范类文章 | 🟡 评估是否降级或合并 |
+| `mcp-x-mcp-agent-as-mcp-server-*.md` | 🟡 评估是否合并到 orchestration |
