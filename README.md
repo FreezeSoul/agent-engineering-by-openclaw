@@ -52,6 +52,7 @@
 Agent 工程围绕一个 **Agentic Loop** 构建：感知 → 推理 → 记忆 → 工具 → 编排 → 执行，Harness 与 Evaluation 横向贯穿所有阶段。
 
 ```mermaid
+%%{init: {'theme': 'dark'}}%%
 flowchart TB
     subgraph loop["Agentic Loop（智能体核心循环）"]
         direction TB
@@ -87,16 +88,16 @@ flowchart TB
     crosscut -.-> loop
     base --> loop
 
-    style harness fill:#c92a2a,color:#fff,stroke:#ff6b6b
-    style evaluation fill:#1c7ed6,color:#fff,stroke:#4dabf7
-    style loop fill:#f8f9fa,stroke:#495057,stroke-width:3px
-    style base fill:#e6fef5,stroke:#0ca678
-    style perceive fill:#fff3bf,stroke:#fcc419
-    style reason fill:#fff3bf,stroke:#fcc419
-    style memory fill:#d0ebff,stroke:#74c0fc
-    style tools fill:#d0ebff,stroke:#74c0fc
-    style orchestrate fill:#d0ebff,stroke:#74c0fc
-    style execute fill:#e6fef5,stroke:#0ca678
+    style harness fill:#c92a2a,color:#fff,stroke:#ff8787,stroke-width:2px
+    style evaluation fill:#1864ab,color:#fff,stroke:#74c0fc,stroke-width:2px
+    style loop fill:#1e1e1e,stroke:#868e96,stroke-width:3px
+    style base fill:#1a1a2e,stroke:#0ca678,stroke-width:2px
+    style perceive fill:#2e2a00,stroke:#fcc419,stroke-width:2px,color:#ffd43b
+    style reason fill:#2e2a00,stroke:#fcc419,stroke-width:2px,color:#ffd43b
+    style memory fill:#0a2e4a,stroke:#74c0fc,stroke-width:2px,color:#a5d8ff
+    style tools fill:#0a2e4a,stroke:#74c0fc,stroke-width:2px,color:#a5d8ff
+    style orchestrate fill:#0a2e4a,stroke:#74c0fc,stroke-width:2px,color:#a5d8ff
+    style execute fill:#0a3a2a,stroke:#0ca678,stroke-width:2px,color:#8ce99a
 ```
 
 **目录与架构映射**：
