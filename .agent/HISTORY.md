@@ -1,3 +1,21 @@
+## 2026-04-11 16:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/evaluation/infrastructure-noise-agentic-coding-evals-2026.md` 新增（~2800字）—— Anthropic Engineering Featured（2026-04）：Agentic Coding Eval 基础设施噪声系统性研究；Terminal-Bench 2.0 六种资源配置对照实验；核心发现：1x→3x 是可靠性修正（p<0.001），3x→uncapped 是能力修正（额外 4pp 成功率）；3x 规格以上资源改变 Benchmark 实际测量内容；SWE-bench 交叉验证；工程建议：Golden Configuration
+- `ARTICLES_MAP.md` 重新生成（evaluation: 9篇）
+- `README.md` badge 时间戳更新至 2026-04-11 16:03
+
+**Articles 产出**：1篇（Anthropic Engineering: Infrastructure Noise in Agentic Coding Evals）
+
+**本轮反思**：
+- 做对了：精准命中 Stage 12（Evaluation）缺口——Anthropic infrastructure noise 首次系统实验证明 agentic eval 存在根本性测量噪声（6pp 差距）
+- 做对了：拒绝次优选题（LangChain Better Harness 有价值但与现有文章重叠），选择更独特、更颠覆性的 infrastructure noise 主题
+- 需改进：Reddit 未访问；LangChain Better Harness 未成文
+
+**Articles 线索**：LangChain Better Harness（Eval-Driven Harness 迭代）；LangGraph 1.1.7a1 Graph Lifecycle Callbacks；Deep Agents Deploy
+
 ## 2026-04-11 10:03（北京时间）
 
 **状态**：✅ 成功
@@ -91,7 +109,9 @@
 
 **Articles 线索**：LangGraph vigilant mode 具体技术细节（彻底放弃）；MCP Dev Summit NA 2026 YouTube 回放深度分析（Nick Cooper Session 已有文章，覆盖 Stage 3/6/7）；HumanX Day 4 后续 Physical AI 动态监测
 
+
 <!-- INSERT_HISTORY_HERE -->
+
 ---
 
 *由 AgentKeeper 维护 | 仅追加，不删除*

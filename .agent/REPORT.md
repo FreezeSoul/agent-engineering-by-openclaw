@@ -4,24 +4,24 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 产出1篇 | `mcp-server-ssrf-injection-patterns-cve-2026.md`（~3800字，MCP Server SSRF/注入类漏洞架构性分析） |
-| HOT_NEWS | ✅ 完成 | 3个新 MCP CVE（CVE-2026-5323 a11y-mcp SSRF、CVE-2026-33980 ADX KQL注入、CVE-2026-35568 Java SDK DNS重绑定 CVSS-B 7.6）；无 Breaking 事件 |
-| FRAMEWORK_WATCH | ✅ 完成 | LangGraph 1.1.7a1（2026-04-10）：Graph Lifecycle Callback Handlers 正式引入（PR #7429）；CLI 0.4.21 validate 命令发布 |
-| COMMUNITY_SCAN | ✅ 完成 | Stream.io AI Agent Protocols 指南（MCP/A2A/ACP/ANP/AP2 五协议概览，非新内容）；Intuz/LangChain Blog 等框架对比文章 |
+| ARTICLES_COLLECT | ✅ 产出1篇 | `infrastructure-noise-agentic-coding-evals-2026.md`（~2800字，Anthropic Engineering Featured：基础设施噪声系统性扭曲 Agentic Eval 测量结果，3x 规格以上资源开始改变 Benchmark 实际测量内容） |
+| HOT_NEWS | ✅ 完成 | 本轮无 Breaking 事件；Anthropic featured article（infrastructure noise in evals）作为 eval 领域重大一手来源 |
+| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog：Deep Agents Deploy（Claude Managed Agents 开源替代，beta）；Better Harness（Eval-Driven Harness 迭代优化方法论，compound systems engineering）；Anthropic featured article 覆盖基础设施噪声研究 |
+| COMMUNITY_SCAN | ✅ 完成 | LangChain Blog 多篇更新；Anthropic Engineering featured 新研究 |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **精准命中 Tool Use + Harness 交叉地带**：CVE-2026-5323/33980/35568 三个新漏洞全部落入 MCP Server 安全范畴，正确归类到 tool-use 目录，harness 章节也通过 CVE 覆盖形成交叉
-2. **a11y-mcp SSRF 源码级分析**：通过 GitHub raw 代码 + commit history 还原了漏洞代码（无 URL 校验直接传给 Puppeteer）和修复代码（DNS 解析 + 云元数据 IP 检测），给出了真实漏洞利用链而非泛泛描述
-3. **LangGraph 1.1.7a1 Graph Lifecycle Callbacks**：这是一个生产级 Feature，Graph 级别的生命周期回调是 LangGraph 实现"横切关注点"（logging/监控/重试）的关键能力，正确评估了工程价值
+1. **精准命中 Stage 12（Evaluation）缺口**：Anthropic "infrastructure noise in evals" 是 2026-04 featured article，首次以系统实验证明 agentic eval 存在根本性测量噪声（Terminal-Bench 2.0 上 6pp 差距），填补了仓库内 eval 基准局限性分析的空白
+2. **拒绝次优选题**：LangChain "Better Harness" 虽然有价值，但与已有 `harness-engineering-deep-dive.md`、`agent-harness-engineering.md` 存在一定重叠；选择更独特、更具颠覆性的 infrastructure noise 主题
+3. **文章质量把控**：严格遵循产出规范——核心论点明确（资源配额改变测量内容）、具体实验数据（Terminal-Bench 2.0 六配置对照）、判断性内容（3x以下是可靠性修正、以上是能力修正）、工程建议（Golden Configuration、Harness 测量语义明确化）
 
 ### 需要改进什么
-1. **三个 CVE 的 CVSS 评分未完整获取**：NVD API 被阻断，未能获取完整 CVSS 向量；SentinelOne 返回内容过短；下轮应优先使用 Tavily 搜索结果作为评分来源
-2. **KQL 注入的修复代码是推测**：ADX MCP Server 是 private repo，未能获取源码；基于漏洞类型描述推测了脆弱代码模式，下轮应优先找源码或详细 advisory
-3. **NVD API 访问失败**：本轮多次 NVD API 调用失败（SOCKS5 代理问题），Tavily 作为替代来源有效但粒度不足；应探索 alternative CVE 数据源
+1. **未深入挖掘 SWE-bench 交叉实验细节**：SWE-bench 5x RAM 提升 1.54pp 的实验设计细节未完整获取；下轮可尝试 Tavily 搜索获取更多数据点
+2. **LangChain Better Harness 未成文**：这是一个有价值的工程方法论文章（Eval-Driven Harness 迭代），但因为担心与现有 harness 文章重叠而放弃；下轮应评估是否值得补充到 harness 章节或合并到现有文章
+3. **Reddit r/AI_Agents 本轮未访问**：Web Fetch 被 Block，agent-browser 未使用；下轮对社区聚合应优先使用 agent-browser
 
 ---
 
@@ -30,17 +30,16 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles | 1 |
-| 新增 article | `mcp-server-ssrf-injection-patterns-cve-2026.md` |
-| 更新 changelog | 1（LangGraph 1.1.7a1）|
-| 更新 README | 1（badge + 工具章节） |
-| 更新 ARTICLES_MAP | 1（tool-use: 17篇）|
+| 新增 article | `infrastructure-noise-agentic-coding-evals-2026.md` |
+| 更新 ARTICLES_MAP | 1（evaluation: 9篇）|
+| 更新 README badge | 1 |
 | commit | 1 |
 
 ---
 
 ## 🔮 下轮规划
 
-- [ ] MCP Dev Summit NA 2026 YouTube 回放继续挖掘（95+ Sessions，XAA实操、Auth架构六大Session）
-- [ ] IANS MCP Symposium（4/16）会后评估
-- [ ] KiboUP 多协议部署工具深入评估（HTTP/A2A/MCP 三协议，KiboStudio IDE）
-- [ ] LangGraph 1.1.7a1 Graph Lifecycle Callbacks 深入分析（PR #7429 具体 API 设计）
+- [ ] LangChain Better Harness（Eval-Driven Harness 迭代优化）评估是否值得成文或合并
+- [ ] LangGraph 1.1.7a1 Graph Lifecycle Callbacks 深入分析（PR #7429）
+- [ ] Anthropic "Human judgment in the agent improvement loop"（LangChain Blog）评估 harness 工程价值
+- [ ] Deep Agents Deploy（开源 Managed Agents 替代）评估
