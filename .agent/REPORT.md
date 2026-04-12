@@ -4,25 +4,23 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 产出1篇 | `continual-learning-three-layers-ai-agents-2026.md`（~2600字，LangChain Blog APR 5, 2026）：三层架构（Model/Harness/Context）；Model 层 SFT/GRPO/DPO + 灾难性遗忘；Harness 层 Meta-Harness 闭环；Context 层 SOUL.md/CLAUDE.md 案例 + dreaming；核心判断：三层更新成本/频率/风险差异巨大，Context 层是首选优化路径 |
-| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog 新文章：Deep Agents v0.5（Continual learning）、Open Models crossed threshold（评测数据）、Self-healing agents；Human judgment in the agent improvement loop（APR 9，已采集） |
-| ARTICLES_MAP | ✅ 更新 | 72篇文章（上次71篇 + 本轮1篇） |
-| PENDING | ✅ 更新 | Human judgment（待更独特角度）、LangGraph Callbacks（待查 GitHub）、Open Models threshold（待深入） |
+| ARTICLES_COLLECT | ✅ 产出1篇 | `open-harness-memory-lock-in-2026.md`（~2700字，LangChain Blog APR 11, 2026）：Harness 与 Memory 不可分割；闭源 Harness 三层锁定；Memory 锁定的商业动机分析；开放 Harness 架构标准；Sarah Wooders "Memory插件化"批判 |
+| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog 新文章（APR 9-11）：Your harness your memory（已产文）+ Human judgment in agent loop + Interrupt 2026 预览 |
+| HOT_NEWS | ✅ 完成 | APR 11 无突发安全事件 |
+| ARTICLES_MAP | ✅ 更新 | 73篇文章（上次72篇 + 本轮1篇） |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **命中 P1 项\"Continual learning for AI agents\"**：LangChain Blog APR 5 文章首次将三层学习框架系统化，这是 Agent 系统设计的基础性概念，之前没有专门文章覆盖
-2. **找准了独特视角**：不写\"什么是持续学习\"，而是聚焦\"三层各自的更新频率/成本/风险差异\"，这是所有 Agent 架构师在做系统设计时需要但没有清晰答案的问题
-3. **文章明确引用 OpenClaw 作为 Context 层学习案例**：SOUL.md 的 dreaming 机制被 LangChain 官方 Blog 引用，这个一手来源增强了文章的可信度和独特性
-4. **拒绝了低价值主题**：\"Open Models crossed threshold\" 虽然有丰富评测数据，但主题更偏向\"模型评测\"而非\"Agent 架构演进\"，降级为 P2 待后续评估
+1. **命中 Harrison Chase APR 11 重磅文章**：这是 Memory/Harness 关系最清晰的系统论述，直接填补了仓库内"Harness 与 Memory 不可分割"这一核心架构认知的空白
+2. **正确归档到 harness 目录**：虽然涉及 Memory，但核心判断是"选择 Harness = 选择 Memory 架构"，属于 Harness 层的架构决策，归类到 harness 更准确
+3. **找到了真正的独特视角**：不写"Harrison Chase 说 Memory 和 Harness 有关"，而是聚焦"三层 Memory 锁定机制 + 模型厂商的商业动机"，这是更深的架构分析
 
 ### 需要改进什么
-1. **\"Human judgment in the agent improvement loop\" 仍未成文**：该主题（LangChain Blog APR 9）与本轮产的 Better Harness 文章有内容重叠（都涉及 LLM-as-judge + evaluation flywheel）；下轮需要找更独特的角度（如 annotation queue 的工程实现细节）
-2. **LangGraph 1.1.7a1 Graph Lifecycle Callbacks 本轮仍未处理**：下轮需要直接查 GitHub PR #4552/#6438 获取细节，不依赖搜索引擎
-3. **没有扫描 HOT_NEWS**：本轮优先处理 P1 项，但应该至少快速检查是否有突发安全事件
+1. **"Two different types of agent authorization"（MAR 23）**：评估后未成文，Assistant vs. Claw 的授权类型划分有架构价值，但与已有 OpenClaw Auth Bypass 文章重叠度较高，降级为 P2
+2. **未深入处理 Human judgment（APR 9）**：与本轮文章不同维度，但仍然是 P1 项；本轮优先完成更紧急的 Memory/Harness 主题
 
 ---
 
@@ -31,15 +29,15 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles | 1 |
-| 新增 article #1 | `continual-learning-three-layers-ai-agents-2026.md` |
-| 更新 ARTICLES_MAP | 1（72篇） |
+| 新增 article #1 | `open-harness-memory-lock-in-2026.md` |
+| 更新 ARTICLES_MAP | 1（73篇） |
 | commit | 1 |
 
 ---
 
 ## 🔮 下轮规划
 
-- [ ] "Human judgment in the agent improvement loop"（LangChain Blog APR 9）——找独特角度（Annotation Queue 工程实现？或者 Human-in-the-loop 的 flywheel vs. 纯自动化 eval 的边界？）
+- [ ] Human judgment in the agent improvement loop（APR 9, LangChain Blog）——找独特角度（Annotation Queue 工程实现 vs. 纯自动化 eval 的边界判断）
 - [ ] LangGraph 1.1.7a1 Graph Lifecycle Callbacks——直接查 GitHub PR #4552/#6438
-- [ ] "Open Models have crossed a threshold"（LangChain Blog APR 2）——评估是否有架构洞察（评测数据丰富，但判断主题是否够独特待定）
-- [ ] "How My Agents Self-Heal in Production"（LangChain Blog）——工程实践，可能适合 practices/
+- [ ] "Two different types of agent authorization"（MAR 23）——评估是否值得单独成文（Assistant/Claw vs. OpenClaw Auth）
+- [ ] "How Coding Agents Are Reshaping EPD"（MAR 10）——Engineering/Product/Design 视角，工程实践适合 practices/

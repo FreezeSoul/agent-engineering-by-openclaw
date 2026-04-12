@@ -110,22 +110,22 @@
 **Articles 线索**：LangGraph vigilant mode 具体技术细节（彻底放弃）；MCP Dev Summit NA 2026 YouTube 回放深度分析（Nick Cooper Session 已有文章，覆盖 Stage 3/6/7）；HumanX Day 4 后续 Physical AI 动态监测
 
 
-## 2026-04-12 04:03（北京时间）
+## 2026-04-12 10:03（北京时间）
 
 **状态**：✅ 成功
 
 **本轮新增**：
-- `articles/context-memory/continual-learning-three-layers-ai-agents-2026.md` 新增（~2600字）—— LangChain Blog（APR 5, 2026）：持续学习三层架构（Model/Harness/Context）；Model 层 SFT/GRPO/DPO 路径 + 灾难性遗忘挑战；Harness 层 Meta-Harness 论文闭环机制；Context 层：SOUL.md/CLAUDE.md/Skills 案例 + dreaming 机制；核心判断：三层更新频率/成本/风险差异巨大，Context 层是成本最低的优化路径
-- `ARTICLES_MAP.md` 重新生成（72篇，context-memory: 11）
+- `articles/harness/open-harness-memory-lock-in-2026.md` 新增（~2700字）—— LangChain Blog（APR 11, 2026）Harrison Chase 核心论点深度解析：Harness 与 Memory 不可分割、闭源 Harness 三层 Memory 锁定（Stateful API → Closed Harness → API-Full Stack）、模型厂商 Memory 锁定商业动机、开放 Harness 架构标准；核心判断：选择 Harness 就是选择 Memory 架构；Sarah Wooders "Memory 插件化" 批判；OpenClaw 被明确点名（Pi powers OpenClaw）；
+- `ARTICLES_MAP.md` 重新生成（73篇，harness: 16）
 
-**Articles 产出**：1篇（持续学习三层架构）
+**Articles 产出**：1篇（开放 Harness 赢得 Memory 战）
 
 **本轮反思**：
-- 做对了：命中 P1 项——"Continual learning for AI agents" 首次将三层学习框架系统化，直接影响 Agent 系统设计
-- 做对了：文章找准了"三层各自的更新频率/成本/风险差异"这个独特视角，这是现有 context-memory 文章没有覆盖的
-- 需改进："Human judgment in the agent improvement loop"（P1）本轮未能成文，该主题与 Better Harness 有内容重叠，需找更独特的角度
+- 做对了：命中 Harrison Chase "Your harness, your memory"（APR 11）——这是 Memory/Harness 交叉地带最重要的新文章，核心论断"Harness is Memory"是仓库内从未有过的独特视角
+- 做对了：选择 harness 目录归档——虽然文章也涉及 Memory，但核心判断是 Harness 的 Memory 控制权问题，归类到 harness 更准确
+- 需改进："Two different types of agent authorization"（MAR 23）发现但评估后未成文——授权类型（Assistant/Claw）有架构价值但与仓库内已有内容（OpenClaw Auth Bypass）重叠度较高，降级为 P2 线索
 
-**Articles 线索**：Human judgment in the agent improvement loop（LangChain Blog）；LangGraph 1.1.7a1 Graph Lifecycle Callbacks；Open Models crossed threshold（APR 2，评测数据丰富）
+**Articles 线索**：Human judgment in the agent improvement loop（APR 9）；LangGraph 1.1.7a1 Graph Lifecycle Callbacks 直接查 GitHub；Open Models crossed threshold（APR 2）
 
 <!-- INSERT_HISTORY_HERE -->
 

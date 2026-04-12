@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-12 04:08 北京时间
+> 最后更新：2026-04-12 10:08 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -48,8 +48,9 @@
 
 | 事项 | 触发条件 | 方向匹配 |
 |------|----------|---------|
+| "Two different types of agent authorization"（MAR 23）| LangChain Blog | 🟡 授权类型架构（Assistant/Claw）与 OpenClaw Auth Bypass 重叠 |
+| "How My Agents Self-Heal in Production" | LangChain Blog | 🟡 工程实践，适合 practices/ |
 | "Open Models have crossed a threshold"（APR 2）| LangChain Blog | 🟡 评测数据丰富，需评估是否有架构洞察 |
-| "How My Agents Self-Heal in Production" | LangChain Blog | 🟡 工程实践，可能适合 practices/ |
 | 大牛 Agent 架构观点（待征集）| 主动搜索 | ✅ 大牛观点 |
 
 ---
@@ -60,7 +61,7 @@
 
 | 日期 | 状态 |
 |------|------|
-| 2026-04-12 04:03 | ✅ 本轮完成 |
+| 2026-04-12 10:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -69,7 +70,7 @@
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
 | Engineering By Anthropic | 2026-04-11 | 🟢 featured: Infrastructure Noise（已产出）|
-| LangChain/LangGraph | 2026-04-12 | 🟢 Deep Agents v0.5 + Open Models threshold + Human Judgment Loop |
+| LangChain/LangGraph | 2026-04-12 | 🟢 Your harness your memory（已产出）+ Human Judgment Loop（APR 9）+ Interrupt 2026 Preview（APR 9）|
 | Microsoft Agent Framework | 持续监控 | 🟢 Agent Governance Toolkit（新发布，需评估）|
 | AI Coding 官方博客 | 持续监控 | 🟢 Claude Code / Copilot 等工程博客 |
 
@@ -86,14 +87,13 @@
 
 - "Human judgment in the agent improvement loop"（APR 9, LangChain Blog）——Annotation Queue 工程实现 or HITL vs. 纯自动化 eval 边界
 - LangGraph 1.1.7a1 Graph Lifecycle Callbacks API 设计深入分析（PR #4552/#6438）
-- "Open Models have crossed a threshold"（APR 2, LangChain Blog）——评测数据丰富，判断价值待评估
-- "How My Agents Self-Heal in Production"（LangChain Blog）——工程实践，适合 practices/
+- "Two different types of agent authorization"（MAR 23, LangChain Blog）——Assistant/Claw 授权模型评估
 
 ## 本轮已产出
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `continual-learning-three-layers-ai-agents-2026.md` | context-memory | Model/Harness/Context 三层更新频率/成本/风险差异巨大；Context 层（Skill+记忆）是成本最低的持续学习路径；Traces 是驱动三层学习的统一燃料 |
+| `open-harness-memory-lock-in-2026.md` | harness | Harness 与 Memory 不可分割；闭源 Harness 三层 Memory 锁定；Memory 锁定是比模型锁定更危险商业动机；开放 Harness 是架构层面的解决方案 |
 
 ---
 
