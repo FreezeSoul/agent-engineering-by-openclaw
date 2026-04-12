@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-12 10:08 北京时间
+> 最后更新：2026-04-12 14:06 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -41,17 +41,16 @@
 
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|----------|------|
-| "Human judgment in the agent improvement loop"（APR 9）| LangChain Blog | ✅ 工程实践（Human-in-the-loop Flywheel） | 与 Better Harness 有重叠，需找独特角度：Annotation Queue 工程实现细节，或 Human-in-the-loop vs. 纯自动化 eval 的边界判断 |
-| LangGraph 1.1.7a1 Graph Lifecycle Callbacks | GitHub PR #4552/#6438 | ✅ 框架 API 架构设计 | 本轮搜索未命中，下轮直接查 GitHub PR 页面 |
+| "Human judgment in the agent improvement loop"（APR 9）| LangChain Blog | ✅ Human-in-the-loop Flywheel 工程实践 | 核心架构：Production → Automated Eval → Annotation Queue → Better Tests → Improved Agent；找独特角度：Annotation Queue 的工程实现细节，或 HITL vs. 纯自动化 eval 的边界判断 |
+| LangGraph 1.1.7a1 Graph Lifecycle Callbacks | GitHub PR #4552/#6438 | ✅ 框架 API 架构设计 | 本轮搜索命中回调文档；下轮直接查 GitHub PR |
+| "How My Agents Self-Heal in Production" | LangChain Blog | 🟡 工程实践，适合 practices/ | Self-healing deployment pipeline 的架构分析 |
 
 ### P2 — 待评估
 
 | 事项 | 触发条件 | 方向匹配 |
 |------|----------|---------|
+| Anthropic 2026 Agentic Coding Trends Report（PDF）| resources.anthropic.com | 🟡 八个趋势，Rakuten/CRED/TELUS/Zapier 案例；需评估是否有独特架构洞察 |
 | "Two different types of agent authorization"（MAR 23）| LangChain Blog | 🟡 授权类型架构（Assistant/Claw）与 OpenClaw Auth Bypass 重叠 |
-| "How My Agents Self-Heal in Production" | LangChain Blog | 🟡 工程实践，适合 practices/ |
-| "Open Models have crossed a threshold"（APR 2）| LangChain Blog | 🟡 评测数据丰富，需评估是否有架构洞察 |
-| 大牛 Agent 架构观点（待征集）| 主动搜索 | ✅ 大牛观点 |
 
 ---
 
@@ -61,7 +60,7 @@
 
 | 日期 | 状态 |
 |------|------|
-| 2026-04-12 10:03 | ✅ 本轮完成 |
+| 2026-04-12 14:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -69,31 +68,28 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| Engineering By Anthropic | 2026-04-11 | 🟢 featured: Infrastructure Noise（已产出）|
-| LangChain/LangGraph | 2026-04-12 | 🟢 Your harness your memory（已产出）+ Human Judgment Loop（APR 9）+ Interrupt 2026 Preview（APR 9）|
+| Engineering By Anthropic | 2026-04-12 | 🟡 2026 Agentic Coding Trends Report（8个趋势，需评估）|
+| LangChain/LangGraph | 2026-04-12 | 🟢 Anatomy of Agent Harness（已产文）+ Open SWE（已产文）+ Human Judgment Loop（APR 9，P1）+ Self-Heal in Production（待评估）|
 | Microsoft Agent Framework | 持续监控 | 🟢 Agent Governance Toolkit（新发布，需评估）|
 | AI Coding 官方博客 | 持续监控 | 🟢 Claude Code / Copilot 等工程博客 |
-
-### 大牛观点 · 持续征集
-
-| 来源 | 说明 |
-|------|------|
-| Anthropic Researchers | Andrej Karpathy, Pieter Abbeel 等的 blog/twitter |
-| 工程实践派 | 架构师/技术负责人关于 Agent 系统的深度思考 |
 
 ---
 
 ## Articles 线索
 
-- "Human judgment in the agent improvement loop"（APR 9, LangChain Blog）——Annotation Queue 工程实现 or HITL vs. 纯自动化 eval 边界
+- "Human judgment in the agent improvement loop"（APR 9, LangChain Blog）——Production Trace → LLM Judge → Annotation Queue → Better Tests 的完整 Flywheel
 - LangGraph 1.1.7a1 Graph Lifecycle Callbacks API 设计深入分析（PR #4552/#6438）
-- "Two different types of agent authorization"（MAR 23, LangChain Blog）——Assistant/Claw 授权模型评估
+- "How My Agents Self-Heal in Production"——GTM Agent 的 Self-Healing 部署 Pipeline 架构
+- Anthropic 2026 Agentic Coding Trends Report——八大趋势，Rakuten/CRED/TELUS/Zapier
+
+---
 
 ## 本轮已产出
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `open-harness-memory-lock-in-2026.md` | harness | Harness 与 Memory 不可分割；闭源 Harness 三层 Memory 锁定；Memory 锁定是比模型锁定更危险商业动机；开放 Harness 是架构层面的解决方案 |
+| `anatomy-of-agent-harness-2026.md` | harness | Agent = Model + Harness（第一性原理定义）；从模型局限推导 Harness 四大组件：文件系统、代码执行、沙箱、Memory/Search；Harness > Memory（Memory 是 Harness 子组件）|
+| `open-swe-internal-coding-agents-2026.md` | frameworks | Stripe/Ramp/Coinbase 三大公司独立开发，架构收敛到五大模式；Open SWE 是 Harness Anatomy 的第一个大规模生产验证；组合优于 Fork 的框架演进模式 |
 
 ---
 

@@ -1,15 +1,17 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-04-12 10:09:17
+> Auto-generated at 2026-04-12 14:06 北京时间
 
-> Total articles: 73
+> Total articles: 75
 
 ---
 
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | 开放 Harness 赢得 Agent 记忆战：为什么你的 Harness 就是你的 Memory | harness | unknown | [articles/harness/open-harness-memory-lock-in-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/open-harness-memory-lock-in-2026.md) |
+| 1 | Agent = Model + Harness：Harness 的第一性原理分析 | harness | 2026-04-12 | [articles/harness/anatomy-of-agent-harness-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/anatomy-of-agent-harness-2026.md) |
+| 2 | Open SWE：内部编程 Agent 的架构收敛 | frameworks | 2026-04-12 | [articles/frameworks/open-swe-internal-coding-agents-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/frameworks/open-swe-internal-coding-agents-2026.md) |
+| 3 | 开放 Harness 赢得 Agent 记忆战：为什么你的 Harness 就是你的 Memory | harness | unknown | [articles/harness/open-harness-memory-lock-in-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/open-harness-memory-lock-in-2026.md) |
 | 2 | 持续学习的三层架构：Model、Harness 与 Context | context-memory | 2026-04-12 | [articles/context-memory/continual-learning-three-layers-ai-agents-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/context-memory/continual-learning-three-layers-ai-agents-2026.md) |
 | 3 | Better Harness：Eval-Driven Agent 迭代优化的工程方法论 | harness | 2026-04-11 | [articles/harness/better-harness-eval-driven-agent-iterative-optimization-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/better-harness-eval-driven-agent-iterative-optimization-2026.md) |
 | 4 | Red Team/Blue Team Agent Fabric：AI Agent 安全测试的三层架构 | harness | 2026-04-11 | [articles/harness/red-team-blue-team-agent-fabric-three-layer-security-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/red-team-blue-team-agent-fabric-three-layer-security-2026.md) |
