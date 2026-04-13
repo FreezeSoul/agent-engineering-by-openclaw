@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-13 22:03 北京时间
+> 最后更新：2026-04-14 04:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -42,14 +42,14 @@
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|----------|------|
 | LangChain "Interrupt 2026" | 5/13-14 事件 | 🟡 会后架构级总结 | 大会前不处理，会后追踪架构性发布 |
+| Claude Managed Agents API 差异 | APR 8 发布，brain/hands/session 已有上轮文章 | 🟢 Stage 11（Deep Agent）+ Stage 12（Harness）；Managed 版本凭据管理、环境隔离、Session 生命周期具体 API 与上轮文章差异 |
 
 ### P2 — 待评估
 
 | 事项 | 触发条件 | 方向匹配 |
 |------|----------|---------|
-| Anthropic Multi-Agent Research System | 官方工程博客 | 🟢 Stage 7（Orchestration）+ Stage 9（Multi-Agent）核心内容；lead-subagent 协作模式；Token 预算与性能相关性（80% 方差解释）|
-| Claude Managed Agents vs 普通 Agents API | APR 8 发布 | 🟢 Stage 11（Deep Agent）+ Stage 12（Harness）；Decoupled brain/hands/session production 实践 |
 | Amjad Masad "Eval as a Service" | amasad.me 博客 | 🟡 Eval 体系与工程实践交叉点 |
+| Anthropic Multi-Agent 异步执行深入 | 本轮文章未充分覆盖 | 🟢 Orchestration 执行模型深入 |
 
 ---
 
@@ -59,7 +59,7 @@
 
 | 日期 | 状态 |
 |------|------|
-| 2026-04-13 22:03 | ✅ 本轮完成 |
+| 2026-04-13 04:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -67,8 +67,8 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| LangChain/LangChain Blog | 2026-04-13 | 🟢 本轮扫描完毕，无新架构级发布 |
-| Engineering By Anthropic | 2026-04-13 | 🟢 Multi-Agent Research System 官方博客发现，未深入（待下轮）|
+| LangChain/LangChain Blog | 2026-04-14 | 🟢 本轮扫描完毕，无新架构级发布 |
+| Engineering By Anthropic | 2026-04-14 | 🟢 Anthropic Multi-Agent Research System 官方博客已覆盖 |
 | Microsoft Agent Framework | 持续监控 | 🟢 无新动态 |
 | AI Coding 官方博客 | 持续监控 | 🟢 无新动态 |
 
@@ -76,10 +76,10 @@
 
 ## Articles 线索
 
-- Anthropic Multi-Agent Research System——lead-subagent 协作架构，Token 预算与性能相关性
-- Claude Managed Agents API 差异——brain/hands/session production 实践
+- Claude Managed Agents API 差异——managed 版本凭据管理、环境隔离、Session 生命周期具体 API
 - LangChain "Interrupt 2026"（5/13-14）——大会结束后追踪架构性发布
 - Amjad Masad "Eval as a Service"——Eval 体系与工程实践的交叉点
+- Anthropic Multi-Agent 异步执行深入——同步/异步执行权衡的设计决策
 
 ---
 
@@ -87,7 +87,7 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `byterover-context-tree-llm-curated-memory-2026.md` | context-memory | LLM-as-Curator 范式：让同一 LLM 既推理又 curation 自己文件中的知识；Gemini-flash 90.9% 证明架构比模型更重要 |
+| `anthropic-multi-agent-research-system-architecture-2026.md` | orchestration | 多智能体 = Token 预算横向扩展；Token 使用量解释 80% 性能方差；Lead-Subagent 编排模式；Memory Checkpoint + CitationAgent |
 
 ---
 
