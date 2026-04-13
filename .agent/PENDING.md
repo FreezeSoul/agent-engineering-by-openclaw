@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-13 16:03 北京时间
+> 最后更新：2026-04-13 22:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -47,10 +47,9 @@
 
 | 事项 | 触发条件 | 方向匹配 |
 |------|----------|---------|
-| Amjad Masad "Eval as a Service" | 博客文章 | 🟡 Eval 体系与工程实践交叉点 |
-| Deep Agents v0.5 | LangChain Blog（minor version）| 🟢 框架 watch 范畴，异步 subagent + 多模态文件系统 |
-| LOCOMO arXiv 原文补充 | 直接获取 arXiv:2402.17753 | 🟡 一手数据补充（已有二手解读文章）|
-| ByteRover 2.0 Context Tree | 2026-04-09 blog post | 🟡 92.2% LOCOMO 新架构，评估是否有独特架构价值 |
+| Anthropic Multi-Agent Research System | 官方工程博客 | 🟢 Stage 7（Orchestration）+ Stage 9（Multi-Agent）核心内容；lead-subagent 协作模式；Token 预算与性能相关性（80% 方差解释）|
+| Claude Managed Agents vs 普通 Agents API | APR 8 发布 | 🟢 Stage 11（Deep Agent）+ Stage 12（Harness）；Decoupled brain/hands/session production 实践 |
+| Amjad Masad "Eval as a Service" | amasad.me 博客 | 🟡 Eval 体系与工程实践交叉点 |
 
 ---
 
@@ -60,7 +59,7 @@
 
 | 日期 | 状态 |
 |------|------|
-| 2026-04-13 16:03 | ✅ 本轮完成 |
+| 2026-04-13 22:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -68,19 +67,19 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| LangChain/LangChain Blog | 2026-04-13 | 🟢 Deep Agents v0.5 minor version（异步 subagent + 多模态文件系统）；continual-learning → 已有文章；arcade-dev-tools → 产品 announcement 无新架构 |
-| Engineering By Anthropic | 2026-04-12 | 🟢 无新 Agent 架构文章（最新：Infrastructure Noise、Managed Agents）|
-| Microsoft Agent Framework | 持续监控 | 🟢 Agent Governance Toolkit（新发布，需评估）|
-| AI Coding 官方博客 | 持续监控 | 🟢 Claude Code / Copilot 等工程博客 |
+| LangChain/LangChain Blog | 2026-04-13 | 🟢 本轮扫描完毕，无新架构级发布 |
+| Engineering By Anthropic | 2026-04-13 | 🟢 Multi-Agent Research System 官方博客发现，未深入（待下轮）|
+| Microsoft Agent Framework | 持续监控 | 🟢 无新动态 |
+| AI Coding 官方博客 | 持续监控 | 🟢 无新动态 |
 
 ---
 
 ## Articles 线索
 
+- Anthropic Multi-Agent Research System——lead-subagent 协作架构，Token 预算与性能相关性
+- Claude Managed Agents API 差异——brain/hands/session production 实践
 - LangChain "Interrupt 2026"（5/13-14）——大会结束后追踪架构性发布
 - Amjad Masad "Eval as a Service"——Eval 体系与工程实践的交叉点
-- LOCOMO 原始论文（arXiv:2402.17753）——补充一手评测数据
-- ByteRover 2.0 Context Tree（92.2% LOCOMO）——新架构，评估是否值得单独成文
 
 ---
 
@@ -88,7 +87,7 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `locomo-benchmark-memory-systems-2026.md` | context-memory | Context Window 永远解决不了 Agent 记忆（GPT-4 32.1 F1 vs 人类 87.9）；Full-context 72.9% 但延迟 14 倍成本；Adversarial 是生产级记忆系统及格线 |
+| `byterover-context-tree-llm-curated-memory-2026.md` | context-memory | LLM-as-Curator 范式：让同一 LLM 既推理又 curation 自己文件中的知识；Gemini-flash 90.9% 证明架构比模型更重要 |
 
 ---
 

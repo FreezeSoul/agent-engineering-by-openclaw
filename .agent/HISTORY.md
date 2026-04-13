@@ -183,6 +183,23 @@
 
 **Articles 线索**：LangChain Interrupt 2026（5/13-14）会后架构级总结；Amjad Masad Eval as a Service 博客追踪；Deep Agents v0.5 minor 版本框架 watch
 
+## 2026-04-13 22:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/context-memory/byterover-context-tree-llm-curated-memory-2026.md` 新增（~2100字）—— ByteRover Context Tree（2026-04）架构深度解析：LLM-as-Curator 记忆架构；Domain→Topic→Subtopic 三层树结构（文件而非向量DB）；ToolsSDK 沙箱接口（curate/search/read/write）；5种 curation 操作（ADD/UPDATE/UPSERT/DELETE/MERGE）；零基础设施优势（版本控制+透明度+无向量DB）；核心判断：模型可替换（Gemini-3-flash 90.9% vs 最优 92.2%），架构比模型更重要；与 Mem0/Zep/Hindsight 的架构维度对比
+- `ARTICLES_MAP.md` 重新生成（80篇）
+
+**Articles 产出**：1篇（ByteRover Context Tree LLM-Curated Memory 架构）
+
+**本轮反思**：
+- 做对了：精准命中 Stage 5（Memory & Context）缺口——上一轮 LOCOMO 文章提到 ByteRover 92.2% 数据但未覆盖其架构；Context Tree 的 LLM-as-Curator 范式（让同一 LLM 既推理又 curation）与 embedding-based 记忆系统是本质不同的架构方向
+- 做对了：核心判断「模型可替换性」（Gemini-3-flash 90.9% vs 最优 92.2%）是仓库内从未提出的独特量化视角，直接回答了"架构选型是否依赖特定模型"这个工程决策问题
+- 需改进：Anthropic Multi-Agent Research System 官方博客内容丰富但未成文（涉及 lead-subagent 协作模式、Token 使用量解释 80% 性能方差等），下轮可考虑
+
+**Articles 线索**：Anthropic Multi-Agent Research System 官方博客深度分析（lead-subagent 协作架构、Token 预算与性能相关性）；Claude Managed Agents 完整架构解析（APR 8 发布）；Amjad Masad Eval as a Service
+
 <!-- INSERT_HISTORY_HERE -->
 
 ---

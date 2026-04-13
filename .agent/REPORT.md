@@ -4,23 +4,23 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 产出1篇 | `locomo-benchmark-memory-systems-2026.md`（~2600字）：LOCOMO Benchmark 深度解析；ACL 2024 基准；5类评测问题设计；Mem0 ECAI 2025 10方案横评；Full-context vs 选择性记忆的 accuracy-latency tradeoff；Adversarial 是生产级记忆及格线 |
-| HOT_NEWS | ✅ 完成 | 无重大 breaking news；本轮 LangChain 新发布均已覆盖或有现有文章对应 |
-| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog 扫描完毕；Deep Agents v0.5 minor 版本未深入（async subagents + multi-modal filesystem，框架 watch 范畴）；所有新发布均已处理 |
-| COMMUNITY_SCAN | ✅ 完成 | Tavily 搜索覆盖 LOCOMO、Mem0、Agent Harness 等关键词；BestBlogs Dev 页面需 JS 渲染降级 |
+| ARTICLES_COLLECT | ✅ 产出1篇 | `byterover-context-tree-llm-curated-memory-2026.md`（~2100字）：Context Tree 架构深度解析；LLM-as-Curator 范式；Domain→Topic→Subtopic 三层文件树；ToolsSDK 沙箱接口；5种 curation 操作；模型可替换性量化数据（Gemini-flash 90.9% vs 最优 92.2%）；与 Mem0/Zep/Hindsight 架构维度对比 |
+| HOT_NEWS | ✅ 完成 | 无重大 breaking news；Anthropic Claude Managed Agents（APR 8）已在上轮覆盖 |
+| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog 和 Anthropic Engineering 扫描完毕；本轮无新框架级发布 |
+| COMMUNITY_SCAN | ✅ 完成 | Tavily 搜索 ByteRover Context Tree + LOCOMO + Anthropic agent；Anthropic Multi-Agent Research System 发现但本轮未深入 |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **命中 Stage 5（Memory）关键缺口**：仓库内有 GAAMA（图增强）和 BeliefShift（信念动态），但缺少对 LOCOMO benchmark 本身的系统性分析；Mem0 ECAI 2025 的 10 方案横评数据（Full-context 72.9% vs Mem0 66.9%，但延迟 14 倍差距）是仓库内从未有过的量化数据
-2. **Adversarial 判断性内容独特**：LOCOMO 的 Adversarial 类别（446 题，正确答案是"从未讨论"）是仓库内从未明确提出的判断——"能回答'什么没发生过'是生产级记忆系统的及格线"
-3. **正确评估 LangChain 所有新发布**：continual-learning 有现有文章对应、arcade-dev-tools 产品 announcement 无架构新 insight、deep-agents-v0-5 minor 版本——全部正确判断为不单独成文
+1. **精准命中 Stage 5（Memory）架构缺口**：上一轮 LOCOMO 文章已提 ByteRover 92.2% 数据但未覆盖其架构；Context Tree 的 LLM-as-Curator 范式（让同一 LLM 既推理又 curation）与 embedding-based 系统是本质不同的架构方向，值得单独成文
+2. **核心判断「模型可替换性」独特**：Gemini-3-flash 90.9% vs 最优 92.2%，差距仅 1.3pp——直接回答了"架构选型是否依赖特定模型"这个工程决策问题，仓库内从未提出
+3. **正确评估 ByteRover 与 Mem0 的关系**：ByteRover 的贡献不是另一个 embedding 变种，而是颠覆性的"LLM 自己写文件"范式，这篇文章准确识别并分析了这一本质差异
 
 ### 需要改进什么
-1. **LOCOMO 原始论文细节未获取**：Mem0 评测数据依赖 Mem0 blog 和 ByteRover blog 二手解读，LOCOMO 原始 arXiv 论文（arXiv:2402.17753）正文细节未直接获取；下轮应直接从 arXiv 获取一手数据
-2. **BestBlogs Dev 无法直接 fetch**：页面需要 JS 渲染，后续考虑使用 headless browser 或降级监控
+1. **Anthropic Multi-Agent Research System 未深入**：官方工程博客内容丰富（lead-subagent 协作模式、Token 预算与性能相关性 80% 方差解释），本轮因时间分配未成文，下轮可评估是否值得
+2. **本轮文章未涉及 Claude Managed Agents 完整架构**：APR 8 发布（Decoupled brain/hands/session），已有上轮 Managed Agents 文章但未覆盖 managed 版本的具体 API 差异
 
 ---
 
@@ -29,28 +29,28 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles | 1 |
-| 新增 article #1 | `locomo-benchmark-memory-systems-2026.md`（context-memory 目录，Stage 5）|
-| 更新 ARTICLES_MAP | 1（79篇）|
+| 新增 article #1 | `byterover-context-tree-llm-curated-memory-2026.md`（context-memory 目录，Stage 5）|
+| 更新 ARTICLES_MAP | 1（80篇）|
 | commit | 1 |
 
 ---
 
 ## 🔮 下轮规划
 
-- [ ] LangChain "Interrupt 2026"（5/13-14）会后架构级总结（按事件时间已加入 PENDING）
-- [ ] Amjad Masad "Eval as a Service"博客追踪——Eval 体系与工程实践交叉
-- [ ] Deep Agents v0.5 minor 版本 changelog（框架 watch）
-- [ ] LOCOMO 原始论文 arXiv:2402.17753 一手数据补充
+- [ ] Anthropic Multi-Agent Research System 官方博客深度分析（lead-subagent 协作架构）
+- [ ] Claude Managed Agents vs 普通 Agents API 差异（APR 8 发布，brain/hands/session 三元组 production 实践）
+- [ ] LangChain "Interrupt 2026"（5/13-14）会前架构预判
 
 ---
 
 ## 本轮产出文章摘要
 
-### 1. locomo-benchmark-memory-systems-2026.md
-- **核心判断**：Context Window 永远解决不了记忆问题——GPT-4 在 16K context 下仅 32.1 F1（人类 87.9），差距是架构问题而非模型大小问题
-- **五类评测**：Single-hop/Multi-hop/Temporal/Open Domain/Adversarial；Adversarial 是生产部署的及格线
-- **Mem0 横评数据**：Full-context 72.9% 但延迟 9.87s + Token 14倍成本；Mem0 66.9% 延迟 0.71s；ByteRover 2.0 92.2% Context Tree
-- **架构意义**：选择性记忆 + 正确架构可以打败 Full-context；记忆架构选型取决于问题类型分布
+### 1. byterover-context-tree-llm-curated-memory-2026.md
+- **核心判断**：Context Tree 是 LLM-native 的记忆架构——不是 embedding 变种，是让同一个 LLM 既推理又 curation 自己文件中的知识
+- **三层树结构**：Domain → Topic → Subtopic，每层有 context.md 定义语义边界
+- **ToolsSDK 沙箱**：curate/search/read/write/detectDomains 五类操作，有状态反馈循环
+- **模型可替换性**：Gemini-3-flash 90.9% vs 最优 92.2%，差距 1.3pp 证明架构携带主要能力
+- **架构对比**：ByteRover（文件+LLM curation）vs Mem0（向量DB+embedding）vs Zep（图）vs Hindsight（4网络）
 
 ---
 
