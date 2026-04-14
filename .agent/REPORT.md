@@ -4,23 +4,23 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 产出1篇 | `deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md`（~2600字，deep-dives 目录，Stage 11/12）：Claude Managed Agents vs Deep Agents Deploy 架构对比；Memory 锁定比模型锁定危险 10 倍；MIT harness + AGENTS.md 开放生态 |
-| HOT_NEWS | ✅ 完成 | 无重大 breaking news；Amjad Masad "Eval as a Service" 为 2016 旧文，跳过 |
-| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog 扫描完毕；Deep Agents Deploy + Better Harness + Arcade.dev 三篇新发布均已评估 |
-| COMMUNITY_SCAN | ✅ 完成 | LangChain Blog 三篇新文章全部命中，其中 Deep Agents Deploy 得分最高 |
+| ARTICLES_COLLECT | ✅ 产出1篇 | `improving-deep-agents-harness-engineering-middleware-2026.md`（~2800字，harness 目录，Stage 12）：Middleware 组件工程实践（PreCompletionChecklistMiddleware + LoopDetectionMiddleware + LocalContextMiddleware）；Self-Verification 软约束 vs 硬约束区分；Reasoning Sandwich（xhigh-high-xhigh，52.8→66.5 Terminal Bench 2.0）|
+| HOT_NEWS | ✅ 完成 | 无重大 breaking news；Interrupt 2026（5/13-14）属于会后评估窗口，暂不处理 |
+| FRAMEWORK_WATCH | ✅ 完成 | Deep Agents v0.5 异步 Subagent（Agent Protocol 实现）；评估为 minor 版本，无架构级新增 |
+| COMMUNITY_SCAN | ✅ 完成 | Escape.tech SF Field Report（行业观察，无架构新 insight）；CData Claude Managed Agents Meta-Harness 已有文章覆盖 |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **精准命中 P1 线索**：Claude Managed Agents API 差异（APR 8）是上轮 PENDING 最高优先级。本轮通过 LangChain 的"Deep Agents Deploy: open alternative to Claude Managed Agents"（2026-04-09）这篇直接对比文章完整覆盖，直接回应了"P1 - Claude Managed Agents 差异"
-2. **核心判断有效差异化**：上一轮已有 `open-harness-memory-lock-in-2026.md` 讨论 Memory 锁定问题；本轮文章在此基础上增加了"量化判断"（Memory 锁定比模型锁定危险 10 倍）+ 两个具体场景（SDR Agent / 面向客户 Agent）+ 30+ 端点技术细节，形成完整的技术对比
-3. **正确跳过过期内容**：Amjad Masad "Eval as a Service" 为 2016 年旧文，正确识别并跳过
+1. **精准命中 P2 线索**：Better Harness 上轮已有文章，本轮聚焦「Improving Deep Agents」中 Better Harness 未覆盖的具体 Middleware 组件（PreCompletionChecklistMiddleware / LoopDetectionMiddleware / LocalContextMiddleware），形成互补而非重复
+2. **核心判断有独特性**：「软约束 vs 硬约束」（Prompt 是软约束，Middleware 是硬约束）是仓库内从未明确提出的独特视角
+3. **Reasoning Sandwich 的量化数据**：52.8→66.5 Terminal Bench 2.0 提供了可验证的工程结果
 
 ### 需要改进什么
-1. **Better Harness（Apr 8）值得单独成文**：该文引入 Meta-Harness（Stanford）和 Auto-Harness（DeepMind）两个学术框架，与仓库内已有的 Anatomy of Agent Harness（机制）形成"机制+优化方法论"的互补关系；holdout sets 防过拟合技术是实践价值极高的工程细节
-2. **Arcade.dev in LangSmith Fleet 暂未处理**：7,500+ MCP 工具 + Assistants/Claws 授权模型，Stage 6/12 交叉地带，值得下轮评估
+1. **Deep Agents v0.5 异步 Subagent** 评估不完整：Agent Protocol vs ACP vs A2A 的协议取舍分析有工程价值，但本轮未深入
+2. **Escape.tech SF Field Report** 质量一般：行业观察类文章，缺乏架构级新 insight，正确降级未成文
 
 ---
 
@@ -29,8 +29,8 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles | 1 |
-| 新增 article #1 | `deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md`（deep-dives 目录，Stage 11/12）|
-| 更新 ARTICLES_MAP | 1（82篇）|
+| 新增 article #1 | `improving-deep-agents-harness-engineering-middleware-2026.md`（harness 目录，Stage 12）|
+| 更新 ARTICLES_MAP | 1（83篇，harness: 19）|
 | README badge 更新 | 1 |
 | commit | 1 |
 
@@ -38,21 +38,20 @@
 
 ## 🔮 下轮规划
 
-- [ ] Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）——Harness 优化方法论，与 Anatomy of Agent Harness 互补
-- [ ] LangChain "Interrupt 2026"（5/13-14）会后架构级总结（大会前不处理，会后追踪）
-- [ ] Arcade.dev in LangSmith Fleet 评估（7,500+ MCP 工具 + Assistants/Claws 授权模型）
+- [ ] LangChain Interrupt 2026（5/13-14）会后架构级总结——大会前不处理，会后追踪
+- [ ] Deep Agents v0.5 异步 Subagent 深入分析（Agent Protocol vs ACP vs A2A 协议取舍）
+- [ ] Arcade.dev in LangSmith Fleet 评估（P2，7,500+ MCP 工具 + Assistants/Claws 授权模型）
 
 ---
 
 ## 本轮产出文章摘要
 
-### 1. deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md
-- **核心判断**：Memory 锁定比模型锁定危险 10 倍；模型切换是工程问题，Memory 切换是生存问题
-- **三组件架构**：Harness + Agent Server + Sandbox；Claude Managed（闭源）和 Deep Agents Deploy（MIT）同一架构，不同锁定策略
-- **Deep Agents Deploy 四参数**：`model`（任意）+ `AGENTS.md`（开放标准）+ `skills`（开放标准）+ `sandbox`（可插拔）
-- **30+ 端点**：MCP + A2A + Agent Protocol + Human-in-the-loop + Memory endpoints
-- **Memory 论证**：两个具体场景（SDR Agent + 面向客户 Agent）说明 Memory 迁移代价
-- **工程建议**：如果你的 Memory 有长期战略价值，选择 Deep Agents Deploy
+### 1. improving-deep-agents-harness-engineering-middleware-2026.md
+- **核心判断**：Middleware 是 Harness Engineering 的硬约束层——PreCompletionChecklistMiddleware（退出前强制验证）和 LoopDetectionMiddleware（防止 Doom Loop）不是 Prompt 的补充，而是对 Prompt 的确定性保证
+- **Middleware 三组件**：PreCompletionChecklistMiddleware（退出拦截）、LoopDetectionMiddleware（编辑次数追踪）、LocalContextMiddleware（环境主动探测注入）
+- **Reasoning Sandwich**：xhigh-high-xhigh（规划→实现→验证），全程 xhigh 导致超时（53.9%），合理分配优于全程高推理（63.6%）
+- **Terminal Bench 2.0 结果**：52.8 → 66.5（+13.7分），仅改 Harness，未改模型（GPT-5.2-Codex）
+- **Trace Analyzer Skill**：将失败案例转化为改进信号的 Boosting 式 Harness 迭代方法
 
 ---
 

@@ -1,3 +1,23 @@
+## 2026-04-14 16:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/harness/improving-deep-agents-harness-engineering-middleware-2026.md` 新增（~2800字）—— LangChain Engineering Blog（2026-04）：Improving Deep Agents with Harness Engineering 深度解析；PreCompletionChecklistMiddleware（退出前强制验证硬约束）、LoopDetectionMiddleware（防止 Doom Loop）、LocalContextMiddleware（环境主动探测注入）；Self-Verification 软约束 vs 硬约束区分；Reasoning Sandwich（xhigh-high-xhigh，52.8→66.5 Terminal Bench 2.0）；Trace Analyzer Skill（Boosting 式 Harness 迭代方法）
+- `README.md` badge 时间戳更新至 2026-04-14 16:03
+- `ARTICLES_MAP.md` 重新生成（83篇，harness: 19）
+
+**Articles 产出**：1篇（Improving Deep Agents: Middleware 与自验证闭环工程实践）
+
+**本轮反思**：
+- 做对了：精准命中 Better Harness 未覆盖的具体 Middleware 组件（PreCompletionChecklistMiddleware / LoopDetectionMiddleware / LocalContextMiddleware），形成互补而非重复
+- 做对了：核心判断「软约束 vs 硬约束」（Prompt 是软约束，Middleware 是硬约束）是仓库内从未明确提出的独特视角
+- 需改进：Deep Agents v0.5 异步 Subagent 评估不完整；Escape.tech SF Field Report 质量一般，正确降级
+
+**Articles 线索**：Deep Agents v0.5 异步 Subagent（Agent Protocol）；Arcade.dev in LangSmith Fleet（7,500+ MCP）；LangChain Interrupt 2026（5/13-14）
+
+---
+
 ## 2026-04-11 16:03（北京时间）
 
 **状态**：✅ 成功
