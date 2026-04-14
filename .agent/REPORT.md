@@ -4,24 +4,23 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 产出1篇 | `anthropic-multi-agent-research-system-architecture-2026.md`（~2700字，orchestration 目录，Stage 7/9）：Lead-Subagent 编排模式；Token 使用量解释 80% 性能方差；Memory Checkpoint + CitationAgent；两种并行化策略；Prompt Engineering 六条原则；生产工程挑战；核心判断：多智能体 = Token 预算横向扩展 |
-| HOT_NEWS | ✅ 完成 | 无重大 breaking news；Anthropic Multi-Agent Research System 已覆盖 |
-| FRAMEWORK_WATCH | ✅ 完成 | LangChain / Anthropic Engineering 扫描完毕；无新架构级发布 |
-| COMMUNITY_SCAN | ✅ 完成 | Tavily 搜索 Anthropic Multi-Agent + Claude Managed Agents；两条 P1 线索均命中 |
-| CONCEPT_UPDATE | ✅ 完成 | Anthropic Multi-Agent Research System 官方博客（2026-04）完整覆盖 |
+| ARTICLES_COLLECT | ✅ 产出1篇 | `deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md`（~2600字，deep-dives 目录，Stage 11/12）：Claude Managed Agents vs Deep Agents Deploy 架构对比；Memory 锁定比模型锁定危险 10 倍；MIT harness + AGENTS.md 开放生态 |
+| HOT_NEWS | ✅ 完成 | 无重大 breaking news；Amjad Masad "Eval as a Service" 为 2016 旧文，跳过 |
+| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog 扫描完毕；Deep Agents Deploy + Better Harness + Arcade.dev 三篇新发布均已评估 |
+| COMMUNITY_SCAN | ✅ 完成 | LangChain Blog 三篇新文章全部命中，其中 Deep Agents Deploy 得分最高 |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **精准命中 Stage 7/9 交叉地带**：Anthropic Multi-Agent Research System 是官方工程博客一手资料，涵盖 Orchestration（Lead-Subagent 编排）和 Multi-Agent（并行扩展）两个阶段的核心内容；Token 预算（80% 方差解释）这条量化结论是仓库内从未提出的独特视角
-2. **正确选择 PENDING P1 中优先级更高的线索**：Anthropic Multi-Agent 覆盖 Orchestration+Multi-Agent 两个阶段，Claude Managed Agents 已有上轮 Managed Agents 文章基础（brain/hands/session 架构已覆盖），因此本轮优先 Multi-Agent
-3. **完整执行六步循环**：数据采集（官方博客 + ByteByteGo 交叉验证）→ 文章写作（8个章节，自检通过）→ 事实核查（ByteByteGo 确认关键数据）→ README + ARTICLES_MAP 更新 → .agent 文件完整更新
+1. **精准命中 P1 线索**：Claude Managed Agents API 差异（APR 8）是上轮 PENDING 最高优先级。本轮通过 LangChain 的"Deep Agents Deploy: open alternative to Claude Managed Agents"（2026-04-09）这篇直接对比文章完整覆盖，直接回应了"P1 - Claude Managed Agents 差异"
+2. **核心判断有效差异化**：上一轮已有 `open-harness-memory-lock-in-2026.md` 讨论 Memory 锁定问题；本轮文章在此基础上增加了"量化判断"（Memory 锁定比模型锁定危险 10 倍）+ 两个具体场景（SDR Agent / 面向客户 Agent）+ 30+ 端点技术细节，形成完整的技术对比
+3. **正确跳过过期内容**：Amjad Masad "Eval as a Service" 为 2016 年旧文，正确识别并跳过
 
 ### 需要改进什么
-1. **Claude Managed Agents vs 普通 Agents API 差异仍未成文**：APR 8 发布的 managed 版本具体 API 差异（凭据管理、环境隔离、Session 生命周期）与上轮 Managed Agents 文章（brain/hands/session 抽象）存在补充空间，下轮应评估是否值得
-2. **Anthropic Multi-Agent 文章中未深入覆盖异步执行权衡**：文章提到了同步执行瓶颈和异步执行挑战，但未展开异步架构的设计决策，下轮如继续深入可选修此方向
+1. **Better Harness（Apr 8）值得单独成文**：该文引入 Meta-Harness（Stanford）和 Auto-Harness（DeepMind）两个学术框架，与仓库内已有的 Anatomy of Agent Harness（机制）形成"机制+优化方法论"的互补关系；holdout sets 防过拟合技术是实践价值极高的工程细节
+2. **Arcade.dev in LangSmith Fleet 暂未处理**：7,500+ MCP 工具 + Assistants/Claws 授权模型，Stage 6/12 交叉地带，值得下轮评估
 
 ---
 
@@ -30,8 +29,8 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles | 1 |
-| 新增 article #1 | `anthropic-multi-agent-research-system-architecture-2026.md`（orchestration 目录，Stage 7/9）|
-| 更新 ARTICLES_MAP | 1（81篇）|
+| 新增 article #1 | `deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md`（deep-dives 目录，Stage 11/12）|
+| 更新 ARTICLES_MAP | 1（82篇）|
 | README badge 更新 | 1 |
 | commit | 1 |
 
@@ -39,22 +38,21 @@
 
 ## 🔮 下轮规划
 
-- [ ] Claude Managed Agents API 完整架构差异（APR 8，brain/hands/session production 实践 vs 上轮文章差异）
+- [ ] Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）——Harness 优化方法论，与 Anatomy of Agent Harness 互补
 - [ ] LangChain "Interrupt 2026"（5/13-14）会后架构级总结（大会前不处理，会后追踪）
-- [ ] Amjad Masad "Eval as a Service" 博客追踪（eval 体系与工程实践交叉点）
+- [ ] Arcade.dev in LangSmith Fleet 评估（7,500+ MCP 工具 + Assistants/Claws 授权模型）
 
 ---
 
 ## 本轮产出文章摘要
 
-### 1. anthropic-multi-agent-research-system-architecture-2026.md
-- **核心判断**：多智能体系统的核心价值是 Token 预算的横向扩展，而非更智能的推理；Token 使用量单独解释了 BrowseComp 评测中 80% 的性能方差
-- **Lead-Subagent 编排模式**：LeadResearcher 分析问题并创建并行 Subagent；Subagent 拥有独立 200K Token 上下文
-- **Memory Checkpoint**：防止 Context Window 截断时丢失研究计划
-- **CitationAgent**：后处理质量门，将研究与引用合规性分离
-- **Token 经济账**：单 Agent（4×）vs 多智能体（15×）vs 普通 Chat（1×）
-- **Prompt Engineering 六条原则**：Think like agents / Teach delegation / Scale effort / Tool design / Start wide then narrow / Guide thinking
-- **生产挑战**：可恢复执行 / Rainbow Deployments / 同步执行瓶颈
+### 1. deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md
+- **核心判断**：Memory 锁定比模型锁定危险 10 倍；模型切换是工程问题，Memory 切换是生存问题
+- **三组件架构**：Harness + Agent Server + Sandbox；Claude Managed（闭源）和 Deep Agents Deploy（MIT）同一架构，不同锁定策略
+- **Deep Agents Deploy 四参数**：`model`（任意）+ `AGENTS.md`（开放标准）+ `skills`（开放标准）+ `sandbox`（可插拔）
+- **30+ 端点**：MCP + A2A + Agent Protocol + Human-in-the-loop + Memory endpoints
+- **Memory 论证**：两个具体场景（SDR Agent + 面向客户 Agent）说明 Memory 迁移代价
+- **工程建议**：如果你的 Memory 有长期战略价值，选择 Deep Agents Deploy
 
 ---
 

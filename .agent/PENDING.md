@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-14 04:03 北京时间
+> 最后更新：2026-04-14 10:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -42,13 +42,13 @@
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|----------|------|
 | LangChain "Interrupt 2026" | 5/13-14 事件 | 🟡 会后架构级总结 | 大会前不处理，会后追踪架构性发布 |
-| Claude Managed Agents API 差异 | APR 8 发布，brain/hands/session 已有上轮文章 | 🟢 Stage 11（Deep Agent）+ Stage 12（Harness）；Managed 版本凭据管理、环境隔离、Session 生命周期具体 API 与上轮文章差异 |
 
 ### P2 — 待评估
 
 | 事项 | 触发条件 | 方向匹配 |
 |------|----------|---------|
-| Amjad Masad "Eval as a Service" | amasad.me 博客 | 🟡 Eval 体系与工程实践交叉点 |
+| Better Harness | Apr 8，LangChain Blog | 🟢 Stage 12（Harness Engineering）；Meta-Harness（Stanford）+ Auto-Harness（DeepMind）+ holdout sets 防过拟合 |
+| Arcade.dev in LangSmith Fleet | Apr 7，LangChain Blog | 🟢 Stage 6（Tool Use）+ Stage 12（Harness）；7,500+ MCP 工具 + Assistants/Claws 授权模型 |
 | Anthropic Multi-Agent 异步执行深入 | 本轮文章未充分覆盖 | 🟢 Orchestration 执行模型深入 |
 
 ---
@@ -59,7 +59,7 @@
 
 | 日期 | 状态 |
 |------|------|
-| 2026-04-13 04:03 | ✅ 本轮完成 |
+| 2026-04-14 04:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -67,8 +67,8 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| LangChain/LangChain Blog | 2026-04-14 | 🟢 本轮扫描完毕，无新架构级发布 |
-| Engineering By Anthropic | 2026-04-14 | 🟢 Anthropic Multi-Agent Research System 官方博客已覆盖 |
+| LangChain/LangChain Blog | 2026-04-14 | 🟢 Deep Agents Deploy（Apr 9）+ Better Harness（Apr 8）+ Arcade.dev（Apr 7）三篇新发布全部评估 |
+| Engineering By Anthropic | 2026-04-14 | 🟢 无新工程博客发布（Multi-Agent Research System 已在上一轮覆盖）|
 | Microsoft Agent Framework | 持续监控 | 🟢 无新动态 |
 | AI Coding 官方博客 | 持续监控 | 🟢 无新动态 |
 
@@ -76,9 +76,9 @@
 
 ## Articles 线索
 
-- Claude Managed Agents API 差异——managed 版本凭据管理、环境隔离、Session 生命周期具体 API
+- Better Harness（Apr 8，LangChain Blog）——Meta-Harness（Stanford）+ Auto-Harness（DeepMind）+ holdout sets；与 Anatomy of Agent Harness 互补
+- Arcade.dev in LangSmith Fleet（Apr 7）——7,500+ MCP 工具 + Assistants/Claws 授权模型；Stage 6/12 交叉地带
 - LangChain "Interrupt 2026"（5/13-14）——大会结束后追踪架构性发布
-- Amjad Masad "Eval as a Service"——Eval 体系与工程实践的交叉点
 - Anthropic Multi-Agent 异步执行深入——同步/异步执行权衡的设计决策
 
 ---
@@ -87,7 +87,7 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `anthropic-multi-agent-research-system-architecture-2026.md` | orchestration | 多智能体 = Token 预算横向扩展；Token 使用量解释 80% 性能方差；Lead-Subagent 编排模式；Memory Checkpoint + CitationAgent |
+| `deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md` | deep-dives | Memory 锁定比模型锁定危险 10 倍；Deep Agents Deploy MIT harness + AGENTS.md 开放生态；30+ 端点 |
 
 ---
 

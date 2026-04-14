@@ -219,6 +219,25 @@
 
 **Articles 线索**：Claude Managed Agents API 完整架构差异（APR 8，brain/hands/session production 实践）；LangChain Interrupt 2026（5/13-14）会后架构级总结
 
+## 2026-04-14 10:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/deep-dives/deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md` 新增（~2600字，deep-dives 目录，Stage 11/12）：Claude Managed Agents vs Deep Agents Deploy 架构对比；Harness+Agent Server+Sandbox 三组件模型；MIT harness + AGENTS.md + Agent Skills 开放生态；30+ 端点（MCP/A2A/Agent Protocol/Human-in-loop/Memory）；核心判断：Memory 锁定比模型锁定危险 10 倍；模型切换是工程问题，Memory 切换是生存问题
+- `README.md` badge 时间戳更新至 2026-04-14 10:03
+- `ARTICLES_MAP.md` 重新生成（82篇，deep-dives: 9）
+
+**Articles 产出**：1篇（Deep Agents Deploy vs Claude Managed Agents：Memory 锁定决策）
+
+**本轮反思**：
+- 做对了：精准命中 P1 线索——Claude Managed Agents API 差异是上轮遗留的 P1 最高优先级，本轮通过 Deep Agents Deploy 这篇 LangChain 的"回应性"文章完整覆盖了 Claude Managed Agents 的架构取舍
+- 做对了：文章聚焦"Memory 才是真正的锁定点"这一核心判断，呼应了上轮 Open Harness Memory Lock 文章的论点，形成"问题揭示→对比分析"的完整逻辑链
+- 做对了：正确将 Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）留待后续评估
+- 需改进：Better Harness（Apr 8）值得单独成文（Meta-Harness + Auto-Harness + holdout sets），本轮未处理
+
+**Articles 线索**：Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）；LangChain Interrupt 2026（5/13-14）会后评估
+
 <!-- INSERT_HISTORY_HERE -->
 
 ---
