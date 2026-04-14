@@ -1,6 +1,6 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-04-14 22:14:26
+> Auto-generated at 2026-04-15 04:05:04
 
 > Total articles: 85
 
@@ -9,10 +9,10 @@
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | Arcade.dev in LangSmith Fleet：MCP Gateway 揭示的 Agent 工具设计范式转移 | tool-use | unknown | [articles/tool-use/arcade-dev-langsmith-fleet-mcp-gateway-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/arcade-dev-langsmith-fleet-mcp-gateway-2026.md) |
-| 2 | Deep Agents v0.5：为什么 Async Subagent 选择了 Agent Protocol 而非 ACP 或 A2A | orchestration | unknown | [articles/orchestration/deep-agents-v05-async-subagent-agent-protocol-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/deep-agents-v05-async-subagent-agent-protocol-2026.md) |
-| 3 | Improving Deep Agents with Harness Engineering：Middleware 与自验证闭环的工程实践 | harness | 2026-04-14 | [articles/harness/improving-deep-agents-harness-engineering-middleware-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/improving-deep-agents-harness-engineering-middleware-2026.md) |
-| 4 | Anthropic Multi-Agent Research System 架构深度解析 | orchestration | 2026-04-14 | [articles/orchestration/anthropic-multi-agent-research-system-architecture-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/anthropic-multi-agent-research-system-architecture-2026.md) |
+| 1 | Arcade.dev in LangSmith Fleet：MCP Gateway 揭示的 Agent 工具设计范式转移 | tool-use | 2026-04-14 | [articles/tool-use/arcade-dev-langsmith-fleet-mcp-gateway-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/arcade-dev-langsmith-fleet-mcp-gateway-2026.md) |
+| 2 | Improving Deep Agents with Harness Engineering：Middleware 与自验证闭环的工程实践 | harness | 2026-04-14 | [articles/harness/improving-deep-agents-harness-engineering-middleware-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/improving-deep-agents-harness-engineering-middleware-2026.md) |
+| 3 | Anthropic Multi-Agent Research System 架构深度解析 | orchestration | 2026-04-14 | [articles/orchestration/anthropic-multi-agent-research-system-architecture-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/anthropic-multi-agent-research-system-architecture-2026.md) |
+| 4 | Deep Agents v0.5：为什么 Async Subagent 选择了 Agent Protocol 而非 ACP 或 A2A | orchestration | 2026-04-14 | [articles/orchestration/deep-agents-v05-async-subagent-agent-protocol-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/deep-agents-v05-async-subagent-agent-protocol-2026.md) |
 | 5 | Deep Agents Deploy: 一个 Claude Managed Agents 的开源替代方案 | deep-dives | 2026-04-14 | [articles/deep-dives/deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/deep-agents-deploy-vs-claude-managed-agents-memory-lock-in-2026.md) |
 | 6 | ByteRover Context Tree：LLM 即 curator 的记忆架构 | context-memory | 2026-04-13 | [articles/context-memory/byterover-context-tree-llm-curated-memory-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/context-memory/byterover-context-tree-llm-curated-memory-2026.md) |
 | 7 | LOCOMO Benchmark：为什么上下文窗口永远解决不了 Agent 记忆问题 | context-memory | 2026-04-13 | [articles/context-memory/locomo-benchmark-memory-systems-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/context-memory/locomo-benchmark-memory-systems-2026.md) |
