@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-14 16:03 北京时间
+> 最后更新：2026-04-14 22:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -41,15 +41,15 @@
 
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|----------|------|
-| LangChain "Interrupt 2026" | 5/13-14 事件 | 🟡 会后架构级总结 | 大会前不处理，会后追踪架构性发布 |
+| LangChain "Interrupt 2026" | 5/13-14 事件 | 🟡 会后架构级总结 | **大会前绝对不处理任何相关操作**；会后追踪架构性发布（Agent 产品发布、框架更新、协议公告）|
 
 ### P2 — 待评估
 
-| 事项 | 触发条件 | 方向匹配 |
+| 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|---------|
-| Deep Agents v0.5 异步 Subagent | Apr 14，Agent Protocol 实现 | 🟢 Stage 7（Orchestration）+ Stage 12（Harness）；协议取舍（Agent Protocol vs ACP vs A2A）分析 |
-| Arcade.dev in LangSmith Fleet | Apr 7，LangChain Blog | 🟢 Stage 6（Tool Use）+ Stage 12（Harness）；7,500+ MCP 工具 + Assistants/Claws 授权模型 |
-| Anthropic Multi-Agent 异步执行深入 | 本轮文章未充分覆盖 | 🟢 Orchestration 执行模型深入 |
+| Microsoft Agent Framework 新动态 | 持续监控 | 🟢 Stage 7（Orchestration）+ Stage 12（Harness）| 尚未有具体线索 |
+| Awesome AI Agents 2026 扫描 | 每周 | 🟢 全阶段覆盖 | 新来源，评估收录价值 |
+| Arcade.dev 深入：Agent-Optimized Tools 工具描述工程实践 | 暂无新文章 | 🟢 Stage 6（Tool Use）| 本轮已初步覆盖架构层面 |
 
 ---
 
@@ -59,7 +59,7 @@
 
 | 日期 | 状态 |
 |------|------|
-| 2026-04-14 16:03 | ✅ 本轮完成 |
+| 2026-04-14 22:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -67,8 +67,8 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| LangChain/LangChain Blog | 2026-04-14 | 🟢 Deep Agents v0.5（异步 Subagent，Apr 14）；Better Harness + Improving Deep Agents（Apr 8）本轮成文 |
-| Engineering By Anthropic | 2026-04-14 | 🟢 无新工程博客发布（Multi-Agent Research System + Claude Managed Agents 已在上一轮覆盖）|
+| LangChain/LangChain Blog | 2026-04-14 | 🟢 Deep Agents v0.5（Async Subagent，本轮成文）；Arcade.dev in LangSmith Fleet（本轮成文）；Continual Learning + Better Harness 已有同名文章，降级 |
+| Engineering By Anthropic | 2026-04-14 | 🟢 无新工程博客发布（Multi-Agent Research System 已有文章覆盖）|
 | Microsoft Agent Framework | 持续监控 | 🟢 无新动态 |
 | AI Coding 官方博客 | 持续监控 | 🟢 无新动态 |
 
@@ -76,9 +76,9 @@
 
 ## Articles 线索
 
-- Deep Agents v0.5 异步 Subagent（Apr 14）——Agent Protocol 实现 + 协议取舍（ACP 不支持远程/A2A 优先级速度 vs 兼容性）；Stage 7/12 交叉地带
-- Arcade.dev in LangSmith Fleet（Apr 7）——7,500+ MCP 工具 + Assistants/Claws 授权模型；Stage 6/12 交叉地带
-- LangChain "Interrupt 2026"（5/13-14）——大会结束后追踪架构性发布（P1）
+- LangChain "Interrupt 2026"（5/13-14）——P1，会后架构级总结
+- Microsoft Agent Framework 新动态——P2，待具体线索
+- Awesome AI Agents 2026 新收录——P2，每周扫描
 
 ---
 
@@ -86,7 +86,8 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `improving-deep-agents-harness-engineering-middleware-2026.md` | harness | Middleware 硬约束（PreCompletionChecklistMiddleware + LoopDetectionMiddleware + LocalContextMiddleware）；软约束 vs 硬约束区分；Reasoning Sandwich 量化数据（52.8→66.5） |
+| `deep-agents-v05-async-subagent-agent-protocol-2026.md` | orchestration | Agent Protocol vs ACP vs A2A 协议取舍（异步 Subagent 场景）|
+| `arcade-dev-langsmith-fleet-mcp-gateway-2026.md` | tool-use | Agent-Optimized Tools vs API Wrappers + MCP Gateway 企业治理架构 |
 
 ---
 

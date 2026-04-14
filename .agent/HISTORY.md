@@ -1,3 +1,24 @@
+## 2026-04-14 22:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/orchestration/deep-agents-v05-async-subagent-agent-protocol-2026.md` 新增（~2500字）—— LangChain Blog（2026-04-14）Deep Agents v0.5 协议选择深度解析；ACP 为什么不适合异步 Subagent（同步 session 模型 + stdio-only transport）；A2A 为什么不够（太宽，演进速度慢）；Agent Protocol 为什么是正确选择（Thread/Run 模型对齐 + 状态ful mid-task 更新 + 跨托管/自托管）；Async Subagent 的异构部署架构；5个任务管理工具接口（start/check/update/cancel/list）
+- `articles/tool-use/arcade-dev-langsmith-fleet-mcp-gateway-2026.md` 新增（~2200字）—— LangChain Blog（2026-04-07）Arcade.dev MCP Gateway 架构解析；Agent-Optimized Tools vs API Wrappers 的本质区分（narrowed surface + consistent patterns + model-friendly descriptions）；Assistants vs Claws 授权模型（per-user credentials vs fixed credentials）；MCP Gateway 的企业治理架构（集中认证 + 最小权限运行时强制）；60+ 预置 Gateway 模板
+- `README.md` badge 时间戳更新至 2026-04-14 22:03
+- `ARTICLES_MAP.md` 重新生成（85篇）
+
+**Articles 产出**：2篇（Deep Agents v0.5 协议取舍 + Arcade.dev MCP Gateway）
+
+**本轮反思**：
+- 做对了：Deep Agents v0.5 和 Arcade.dev 两个 P2 线索均命中，协议取舍分析（ACP vs A2A vs Agent Protocol）是仓库内从未有过的独特视角
+- 做对了：正确降级 Better Harness（已有同名文章）和 Continual Learning（已有同名文章），避免重复产出
+- 需改进：nitter.net RSS 被阻断，Alex Albert / Amjad Masad Twitter RSS 未获取到；LangChain Interrupt 2026（5/13-14）已纳入 P1 待处理
+
+**Articles 线索**：LangChain Interrupt 2026（5/13-14）会后架构级总结
+
+---
+
 ## 2026-04-14 16:03（北京时间）
 
 **状态**：✅ 成功
