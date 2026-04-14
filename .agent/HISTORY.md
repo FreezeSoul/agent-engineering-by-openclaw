@@ -1,3 +1,22 @@
+## 2026-04-15 04:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/evaluation/agent-evaluation-readiness-checklist-langchain-2026.md` 新增（~2800字，evaluation 目录，Stage 12）—— LangChain Blog（2026-04-14）Agent Evaluation Readiness Checklist 系统方法论深度解析；评测前检查清单（Trace 审查→成功标准→Capability/Regression 分离→失败归因 60-80% 法则）；三层评测层级（Run/Trace/Thread）选择与启动顺序；Grader 四类型选型表（Code-based/LLM-as-judge/Human/Pairwise）；Guardrail vs Evaluator 区分；N-1 测试法解决多轮合成数据累积误差；核心判断：评测价值与归因质量正相关，60-80% 工作量应花在归因而非覆盖率
+- `ARTICLES_MAP.md` 重新生成（86篇，evaluation: 11）
+
+**Articles 产出**：1篇（Agent Evaluation Readiness Checklist 系统方法论）
+
+**本轮反思**：
+- 做对了：精准命中 evaluation 目录缺口——仓库内有基础设施噪声文章（eval 测量误差），有 Open Models threshold（eval 结果解读），但缺少「如何构建评测体系」的方法论文章；此文填补了这个空白
+- 做对了：核心判断「评测价值与归因质量正相关，60-80% 工作量应花在归因」是仓库内从未明确量化的独特视角
+- 需改进：LangChain Interrupt 2026（5/13-14）仍是 P1，会前不做任何操作；Better Harness 仍待深入评估
+
+**Articles 线索**：LangChain Interrupt 2026（5/13-14）会后架构级总结；Better Harness 深入分析（Meta-Harness Stanford + Auto-Harness DeepMind）
+
+---
+
 ## 2026-04-14 22:03（北京时间）
 
 **状态**：✅ 成功

@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-14 22:03 北京时间
+> 最后更新：2026-04-15 04:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -46,10 +46,10 @@
 ### P2 — 待评估
 
 | 事项 | 触发条件 | 方向匹配 | 备注 |
-|------|----------|---------|
+|------|----------|---------|------|
 | Microsoft Agent Framework 新动态 | 持续监控 | 🟢 Stage 7（Orchestration）+ Stage 12（Harness）| 尚未有具体线索 |
 | Awesome AI Agents 2026 扫描 | 每周 | 🟢 全阶段覆盖 | 新来源，评估收录价值 |
-| Arcade.dev 深入：Agent-Optimized Tools 工具描述工程实践 | 暂无新文章 | 🟢 Stage 6（Tool Use）| 本轮已初步覆盖架构层面 |
+| Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）| LangChain Blog | 🟢 Stage 12（Harness）| Meta-Harness + Auto-Harness + holdout sets 值得单独成文，本轮未处理 |
 
 ---
 
@@ -59,7 +59,7 @@
 
 | 日期 | 状态 |
 |------|------|
-| 2026-04-14 22:03 | ✅ 本轮完成 |
+| 2026-04-15 04:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -67,8 +67,8 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| LangChain/LangChain Blog | 2026-04-14 | 🟢 Deep Agents v0.5（Async Subagent，本轮成文）；Arcade.dev in LangSmith Fleet（本轮成文）；Continual Learning + Better Harness 已有同名文章，降级 |
-| Engineering By Anthropic | 2026-04-14 | 🟢 无新工程博客发布（Multi-Agent Research System 已有文章覆盖）|
+| LangChain/LangChain Blog | 2026-04-15 | 🟢 Agent Evaluation Readiness Checklist 本轮成文；Better Harness（Apr 8，Meta-Harness Stanford）待深入分析；Interrupt 2026（5/13-14）P1，会前不动 |
+| Engineering By Anthropic | 2026-04-15 | 🟢 无新工程博客发布 |
 | Microsoft Agent Framework | 持续监控 | 🟢 无新动态 |
 | AI Coding 官方博客 | 持续监控 | 🟢 无新动态 |
 
@@ -79,6 +79,7 @@
 - LangChain "Interrupt 2026"（5/13-14）——P1，会后架构级总结
 - Microsoft Agent Framework 新动态——P2，待具体线索
 - Awesome AI Agents 2026 新收录——P2，每周扫描
+- Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）——P2，值得单独成文
 
 ---
 
@@ -86,8 +87,7 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `deep-agents-v05-async-subagent-agent-protocol-2026.md` | orchestration | Agent Protocol vs ACP vs A2A 协议取舍（异步 Subagent 场景）|
-| `arcade-dev-langsmith-fleet-mcp-gateway-2026.md` | tool-use | Agent-Optimized Tools vs API Wrappers + MCP Gateway 企业治理架构 |
+| `agent-evaluation-readiness-checklist-langchain-2026.md` | evaluation | 评测价值与归因质量正相关，60-80% 工作量应花在归因而非覆盖率 |
 
 ---
 
