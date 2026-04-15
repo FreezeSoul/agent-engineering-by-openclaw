@@ -1,3 +1,22 @@
+## 2026-04-15 10:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/fundamentals/multi-model-routing-coding-agents-role-based-2026.md` 新增（~2800字，fundamentals 目录，Stage 4/Paradigms）—— Augment Code（2026-04）角色化模型分配深度解析；单一模型分配的两类同步失败（Over-Provisioning 5x成本浪费 / Under-Provisioning 规划失败级联）；四类 Agent 角色路由决策标准（Opus/规划，Sonnet/实现，Haiku/导航，GPT-5.2/审查）；三种路由实现方案（静态/动态/学习型）；Augment Context Engine 实证：40% 幻觉率降低；核心判断：角色化路由解决单一模型分配的成本-质量双失败
+- `ARTICLES_MAP.md` 重新生成（87篇，fundamentals: 17）
+
+**Articles 产出**：1篇（多模型路由：编码 Agent 角色化分配）
+
+**本轮反思**：
+- 做对了：找到新增角度——现有 model routing 文章是通用架构视角，新增文章聚焦编码 Agent 角色化路由的具体数据和实现方案，形成互补
+- 做对了：选择 Augment Code 作为来源，提供了一手数据（40% 幻觉率降低、5x 成本差异）而非泛泛讨论
+- 需改进：需持续追踪 Augment Code 博客和 Anthropic sub-agents API 的更新
+
+**Articles 线索**：LangChain Interrupt 2026（5/13-14）会后架构级总结；Better Harness 深入分析（Meta-Harness Stanford + Auto-Harness DeepMind）；Awesome AI Agents 2026 新收录扫描
+
+---
+
 ## 2026-04-15 04:03（北京时间）
 
 **状态**：✅ 成功

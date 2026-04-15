@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-15 04:03 北京时间
+> 最后更新：2026-04-15 10:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -47,9 +47,9 @@
 
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|---------|------|
-| Microsoft Agent Framework 新动态 | 持续监控 | 🟢 Stage 7（Orchestration）+ Stage 12（Harness）| 尚未有具体线索 |
+| Microsoft Agent Framework 新动态 | 持续监控 | 🟢 Stage 7（Orchestration）+ Stage 12（Harness）| changelog-watch 已更新至 v1.0 GA；无新增待深入线索 |
 | Awesome AI Agents 2026 扫描 | 每周 | 🟢 全阶段覆盖 | 新来源，评估收录价值 |
-| Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）| LangChain Blog | 🟢 Stage 12（Harness）| Meta-Harness + Auto-Harness + holdout sets 值得单独成文，本轮未处理 |
+| Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）| LangChain Blog | 🟢 Stage 12（Harness）| 值得单独成文，本轮未处理 |
 
 ---
 
@@ -59,7 +59,7 @@
 
 | 日期 | 状态 |
 |------|------|
-| 2026-04-15 04:03 | ✅ 本轮完成 |
+| 2026-04-15 10:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -67,17 +67,17 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| LangChain/LangChain Blog | 2026-04-15 | 🟢 Agent Evaluation Readiness Checklist 本轮成文；Better Harness（Apr 8，Meta-Harness Stanford）待深入分析；Interrupt 2026（5/13-14）P1，会前不动 |
+| LangChain/LangChain Blog | 2026-04-15 | 🟢 本轮评估完成；NVIDIA 合作公告（产品/合作，非架构）；"Your harness, your memory"（已被 `open-harness-memory-lock-in-2026.md` 覆盖）；Interrupt 2026（5/13-14）P1，会前不动 |
 | Engineering By Anthropic | 2026-04-15 | 🟢 无新工程博客发布 |
-| Microsoft Agent Framework | 持续监控 | 🟢 无新动态 |
-| AI Coding 官方博客 | 持续监控 | 🟢 无新动态 |
+| Microsoft Agent Framework | 2026-04-15 | 🟢 v1.0 GA changelog-watch 已更新（Apr 3）；无新增架构性发布 |
+| AI Coding 官方博客 | 持续监控 | 🟢 Augment Code 路由指南本轮成文 |
 
 ---
 
 ## Articles 线索
 
 - LangChain "Interrupt 2026"（5/13-14）——P1，会后架构级总结
-- Microsoft Agent Framework 新动态——P2，待具体线索
+- Microsoft Agent Framework 新动态——P2，持续监控
 - Awesome AI Agents 2026 新收录——P2，每周扫描
 - Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）——P2，值得单独成文
 
@@ -87,7 +87,7 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `agent-evaluation-readiness-checklist-langchain-2026.md` | evaluation | 评测价值与归因质量正相关，60-80% 工作量应花在归因而非覆盖率 |
+| `multi-model-routing-coding-agents-role-based-2026.md` | fundamentals | 角色化模型分配同时解决 Over-Provisioning（5x成本浪费）和 Under-Provisioning（规划失败级联）两类失败；40% 幻觉率降低 |
 
 ---
 
