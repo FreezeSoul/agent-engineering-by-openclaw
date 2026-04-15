@@ -2,14 +2,15 @@
 
 > Auto-generated at 2026-04-15 10:13:52
 
-> Total articles: 87
+> Total articles: 88
 
 ---
 
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | 多模型路由的架构陷阱：编码 Agent 的角色化模型分配 | fundamentals | unknown | [articles/fundamentals/multi-model-routing-coding-agents-role-based-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/fundamentals/multi-model-routing-coding-agents-role-based-2026.md) |
+| 1 | Meta-Harness + AutoHarness：Harness 自动合成的两条技术路线 | harness | 2026-04-15 | [articles/harness/meta-harness-auto-harness-automation-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/meta-harness-auto-harness-automation-2026.md) |
+| 2 | 多模型路由的架构陷阱：编码 Agent 的角色化模型分配 | fundamentals | unknown | [articles/fundamentals/multi-model-routing-coding-agents-role-based-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/fundamentals/multi-model-routing-coding-agents-role-based-2026.md) |
 | 2 | Agent Evaluation Readiness Checklist：构建生产级 Agent 评测的系统方法论 | evaluation | 2026-04-15 | [articles/evaluation/agent-evaluation-readiness-checklist-langchain-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/evaluation/agent-evaluation-readiness-checklist-langchain-2026.md) |
 | 3 | Arcade.dev in LangSmith Fleet：MCP Gateway 揭示的 Agent 工具设计范式转移 | tool-use | 2026-04-14 | [articles/tool-use/arcade-dev-langsmith-fleet-mcp-gateway-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/arcade-dev-langsmith-fleet-mcp-gateway-2026.md) |
 | 4 | Improving Deep Agents with Harness Engineering：Middleware 与自验证闭环的工程实践 | harness | 2026-04-14 | [articles/harness/improving-deep-agents-harness-engineering-middleware-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/improving-deep-agents-harness-engineering-middleware-2026.md) |
