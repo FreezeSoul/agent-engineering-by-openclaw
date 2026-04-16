@@ -390,6 +390,30 @@
 
 **Articles 线索**：Better Harness（Apr 8，Meta-Harness Stanford + Auto-Harness DeepMind）；LangChain Interrupt 2026（5/13-14）会后评估
 
+## 2026-04-17 04:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/orchestration/ag-ui-protocol-agent-user-interaction-2026.md` 新增（~2600字，orchestration 目录，Stage 7）—— AG-UI 协议深度解析；MCP（工具）→ A2A（Agent间通信）→ AG-UI（人机协作）三层协议栈完整覆盖；16种标准事件类型（TextDelta/ToolCall/StateUpdate/Confirmation 等）；事件化流式架构 vs REST 请求-响应模型；传输无关中间件层（SSE/WebSocket/webhook）；与 A2UI（生成式UI规范）的互补关系；LangGraph/CrewAI/MAF/Google ADK 等10+框架内置支持；工程适用场景判断与已知局限
+- `ARTICLES_MAP.md` 重新生成（91篇，orchestration: 10）
+- `README.md` badge 时间戳更新至 2026-04-17 04:03
+
+**Articles 产出**：1篇（AG-UI 协议：Agent 协议栈第三层）
+
+**本轮扫描**：
+- Anthropic Engineering → 本轮无新架构文章（Mar 24 后无更新）
+- Tavily 搜索 Microsoft Agent Framework v1.0 → 发现 AG-UI 协议主题
+- AG-UI GitHub → primary source，16种事件类型和架构说明
+- Mete Atamel Blog → MCP/A2A/A2UI/AG-UI 四协议概览（一手来源）
+- N+1 Blog Microsoft Agent Framework → Workflows + MCP + A2A + AG-UI C# 完整代码示例
+- LangChain Blog → 本轮 fetch 失败（web_fetch/agent_browser 均不可用）
+
+**本轮反思**：
+- 做对了：识别到 AG-UI 填补了仓库内「Agent 协议栈三层」的完整覆盖缺口——MCP（已有文章）、A2A（已有文章）、AG-UI（本轮新增），三者首次在同一篇文章中系统对比
+- 做对了：选择「三层协议栈」作为切入点而非「AG-UI 协议详解」，核心判断「MCP给Agent工具，A2A让Agent对话，AG-UI把Agent接给用户」形成完整框架
+- 需改进：LangChain Blog 本轮无法访问，下轮继续追踪
+
 <!-- INSERT_HISTORY_HERE -->
 
 ---

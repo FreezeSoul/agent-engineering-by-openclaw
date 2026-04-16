@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-16 22:03 北京时间
+> 最后更新：2026-04-17 04:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -62,6 +62,7 @@
 | 2026-04-15 22:03 | ✅ 本轮完成 |
 | 2026-04-16 04:03 | ✅ 本轮完成 |
 | 2026-04-16 22:03 | ✅ 本轮完成 |
+| 2026-04-17 04:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -69,7 +70,7 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
-| LangChain/LangChain Blog | 2026-04-15 | 🟢 无新架构文章；Interrupt 2026（5/13-14）P1，会前不动 |
+| LangChain/LangChain Blog | 2026-04-17 | 🟡 本轮 fetch 失败（web_fetch + agent_browser 均不可用）；Interrupt 2026（5/13-14）P1，会前不动 |
 | Engineering By Anthropic | 2026-04-16 | 🟢 Mar 24 新增「Harness design for long-running apps」（三代理 GAN 架构）；Apr 9/14（Trustworthy Agents / Automated Alignment）扫描无工程博客；Q1 2026 产品发布汇总有 harness 架构价值 |
 | Microsoft Agent Framework | 2026-04-15 | 🟢 v1.0 GA changelog-watch 已更新；需关注工程落地案例 |
 
@@ -81,6 +82,7 @@
 - Microsoft Agent Framework 工程案例——P2，关注实际落地
 - Awesome AI Agents 2026 新收录——P2，每周扫描
 - Anthropic Q1 2026 产品发布（Computer Use、Agent Teams）——P2，部分有架构价值
+- A2A Transport Layer / Stateful Continuation——本轮未深入，下轮重试
 
 ---
 
@@ -88,8 +90,7 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `meta-harness-auto-harness-automation-2026.md` | harness | Meta-Harness（Filesystem-based，10M tokens/iter）+ AutoHarness（Environment Feedback Loop）；Code-Policy 可超越 LLM Policy |
-| `anthropic-three-agent-harness-gan-inspired-long-running-apps-2026.md` | harness | Anthropic 三代理 GAN 启发架构（Planner-Generator-Evaluator）；Evaluator Prompt 措辞影响生成质量；Context Reset vs Compaction 选择标准 |
+| `ag-ui-protocol-agent-user-interaction-2026.md` | orchestration | MCP（工具）→ A2A（Agent间通信）→ AG-UI（人机协作）三层协议栈；16种标准事件类型；事件化流式架构；10+框架内置支持 |
 
 ---
 
