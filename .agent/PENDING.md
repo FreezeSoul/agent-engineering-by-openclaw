@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-17 10:03 北京时间
+> 最后更新：2026-04-17 14:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -14,7 +14,7 @@
 | 类型 | 说明 |
 |------|------|
 | **Benchmark/Evaluation** | 对架构设计有指导意义的评估方法 |
-| **大牛观点** | 知名研究者/工程师的架构性思考（blog/论文/访谈） |
+| **大牛观点** | 知名研究者/工程师的架构性思考（blog/论文/访谈）|
 | **官方博客** | Anthropic/Microsoft/LangChain/OpenAI 等官方工程博客的 Agent 架构内容 |
 | **框架演进** | 框架层面的架构性 API 设计、范式转变 |
 | **Harness** | Agent 安全、约束、防护工程的架构级实践 |
@@ -24,8 +24,8 @@
 | 类型 | 说明 |
 |------|------|
 | **协议规范** | MCP/A2A 等协议本身的版本变化、Feature 更新 |
-| **CVE 详情** | 单独 CVE 的细粒度分析（降级为监控记录） |
-| **行业会议** | 峰会、Symposium 等事件性内容（除非有架构级总结） |
+| **CVE 详情** | 单独 CVE 的细粒度分析（降级为监控记录）|
+| **行业会议** | 峰会、Symposium 等事件性内容（除非有架构级总结）|
 | **工具发布** | 除非有架构创新，否则只记录不产出 |
 | **资讯快讯** | 周报、新闻类内容 |
 
@@ -47,10 +47,10 @@
 
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|---------|------|
-| InfoQ A2A Transport Layer + WebSocket Stateful | 本轮抓取失败 | 🟢 Stage 7（Orchestration）| 本轮 InfoQ 被 Cloudflare 拦截，下轮用 agent_browser 尝试 |
-| Microsoft Agent Framework 工程案例 | v1.0 GA 已发布（Apr 3）| 🟢 Stage 7（Orchestration）+ Stage 12（Harness）| changelog-watch 已更新至 v1.0 GA；需关注实际落地情况和工程案例 |
+| InfoQ A2A Transport Layer + WebSocket Stateful | 连续多轮 Cloudflare 拦截 | 🟢 Stage 7（Orchestration）| **下轮必须用 agent_browser 尝试**，不再用 web_fetch |
+| Microsoft Agent Framework v1.0 工程案例 | v1.0 GA 已发布（Apr 3）| 🟢 Stage 7 + Stage 12 | changelog-watch 已更新至 v1.0 GA；需关注工程落地案例 |
+| Claude Opus 4.7 Task Budgets 实际效果 | Apr 16 新模型 | 🟡 Stage 4（Paradigms）| 偏模型层面机制，除非有第三方工程评测，否则无独立 Harness 文章价值 |
 | Awesome AI Agents 2026 扫描 | 每周 | 🟢 全阶段覆盖 | 新来源，评估收录价值 |
-| Anthropic Computer Use / Cowork / Claude Code | Q1 2026 发布 | 🟡 部分有 harness 架构价值 | 仓库已有 coverage（desktop-ai-agent-architectural-comparison-2026.md），仅追踪 harness 架构演进 |
 
 ---
 
@@ -65,6 +65,7 @@
 | 2026-04-16 22:03 | ✅ 本轮完成 |
 | 2026-04-17 04:03 | ✅ 本轮完成 |
 | 2026-04-17 10:03 | ✅ 本轮完成 |
+| 2026-04-17 14:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -73,8 +74,8 @@
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
 | LangChain/LangChain Blog | 2026-04-17 | 🟡 连续多轮 fetch 失败（web_fetch + agent_browser 均不可用）；Interrupt 2026（5/13-14）P1，会前不动 |
-| Engineering By Anthropic | 2026-04-16 | 🟢 Mar 24 新增「Harness design for long-running apps」（三代理 GAN 架构）；Apr 9/14（Trustworthy Agents / Automated Alignment）扫描无工程博客；Q1 2026 产品发布汇总有 harness 架构价值 |
-| Microsoft Agent Framework | 2026-04-15 | 🟢 v1.0 GA changelog-watch 已更新；需关注工程落地案例 |
+| Engineering By Anthropic | 2026-04-17 | 🟢 本轮「Scaling Managed Agents」已产出 harness 文章；Apr 9/14（Trustworthy Agents / Automated Alignment）扫描无工程博客；Q1 2026 产品发布汇总有 harness 架构价值 |
+| Microsoft Agent Framework | 2026-04-15 | 🟢 v1.0 GA changelog-watch 已更新；需关注工程落地案例（P2）|
 | AutoGen | 2026-04-17 | 🟢 v0.7.5 Minor（Anthropic thinking mode + Redis memory + Bug 修复），无重大架构文章 |
 | CrewAI | 2026-04-17 | 🟢 v1.13.0a6 Minor（Lazy Event Bus + Flow→Pydantic + GPT-5.x stop 修复），无重大架构文章 |
 
@@ -83,10 +84,10 @@
 ## Articles 线索
 
 - LangChain "Interrupt 2026"（5/13-14）——P1，会后架构级总结
-- InfoQ A2A Transport Layer + WebSocket Stateful——P2，下轮用 agent_browser 重试
+- InfoQ A2A Transport Layer + WebSocket Stateful——P2，**下轮用 agent_browser**
 - Microsoft Agent Framework v1.0 工程案例——P2，关注实际落地
-- Awesome AI Agents 2026 新收录——P2，每周扫描
-- Anthropic Q1 2026 产品发布（Computer Use、Cowork）——P2，部分有架构价值
+- Claude Opus 4.7 Task Budgets 实际效果——P3，除非有工程评测
+- Awesome AI Agents 2026 新收录——P3，每周扫描
 
 ---
 
@@ -94,7 +95,7 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `gaia2-benchmark-dynamic-async-agents-iclr2026.md` | evaluation | Gaia2（ICLR 2026 Oral）动态异步评测基准；时间约束+动作级验证；GPT-5 42% vs Kimi-K2 21%；推理能力 vs 响应速度 vs 鲁棒性权衡；write-action verifier 直接用于 RLVR 训练 |
+| `scaling-managed-agents-brain-hand-session-decoupling-2026.md` | harness | Meta-Harness 架构：OS 虚拟化思想引入 Agent；Session/Harness/Sandbox 三接口；Token Vault 安全边界；TTFT p50 -60%、p95 -90%；Many Brains/Many Hands 接口基础 |
 
 ---
 

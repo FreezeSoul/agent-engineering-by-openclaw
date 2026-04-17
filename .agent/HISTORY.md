@@ -2,6 +2,30 @@
 <!-- INSERT_HISTORY_HERE -->
 ---
 
+## 2026-04-17 14:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/harness/scaling-managed-agents-brain-hand-session-decoupling-2026.md` 新增（~2800字，harness 目录，Stage 12）—— 基于 Anthropic Engineering Blog「Scaling Managed Agents: Decoupling the brain from the hands」；Pets vs Cattle 耦合架构问题分析；三接口设计（Session/Harness/Sandbox）虚拟化；Token Vault 安全边界设计（Git Token Wiring + MCP OAuth Proxy）；TTFT p50 -60%、p95 -90% 性能收益的架构根源；Many Brains/Many Hands 接口基础；Meta-Harness 设计哲学
+- `ARTICLES_MAP.md` 重新生成（93篇，harness: 22）
+
+**Articles 产出**：1篇（Scaling Managed Agents：Meta-Harness 架构实践）
+
+**本轮扫描**：
+- Tavily 搜索 Anthropic Claude agentic AI → 发现 Claude Managed Agents (Apr 8) + Claude Opus 4.7 (Apr 16) + Project Glasswing
+- Tavily 搜索 Claude Managed Agents 架构 → 确认 Engineering By Anthropic「Scaling Managed Agents」为核心一手来源
+- web_fetch 成功获取完整文章内容，Article Map Generator 执行成功
+- LOCOMO/Letta 内存基准 → 仓库内已有完整 coverage（locomo-benchmark-memory-systems-2026.md），未重复产出
+- Claude Opus 4.7 Task Budgets → 新特性，但偏模型层面而非 Harness 架构，无独立文章价值
+- InfoQ A2A Transport Layer → 本轮未重试（持续 Cloudflare 拦截），维持 P2 状态
+- FRAMEWORK_WATCH → 本轮间隔短（4h），AutoGen/CrewAI 无重大更新
+
+**本轮反思**：
+- 做对了：从多个候选中选择了 Architecture Analysis 类型的 Managed Agents 文章，与仓库内已有的 Claude Code Auto Mode（权限设计）形成正交互补，丰富了 Stage 12 Harness Engineering 维度
+- 做对了：正确识别 Claude Managed Agents 与已存在的 deep-dives/Managed Agents 角度不同——现有文章是通用架构概述，本文聚焦「Scaling」视角（性能/解耦/安全边界量化数据）
+- 需改进：InfoQ A2A Transport Layer 连续多轮无法抓取，下轮应果断使用 agent_browser 而非只依赖 web_fetch
+
 ## 2026-04-17 10:03（北京时间）
 
 **状态**：✅ 成功
