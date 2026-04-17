@@ -1,5 +1,27 @@
 # 更新历史
-<!-- INSERT_HISTORY_HERE -->
+
+## 2026-04-18 04:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/harness/agent-audit-llm-agent-security-analysis-system-2026.md` 新增（~2600字，harness 目录，Stage 12）—— 基于 arxiv:2603.22853；解决核心问题：部署前该检查模型权重、工具代码还是部署配置？答案是三者都要；四层扫描管道（PythonScanner/SecretScanner/MCPConfigScanner/PrivilegeScanner）；57 条规则覆盖 OWASP Agentic Top 10 全部 10 类；recall 94.6% vs Bandit ~25%（4倍优势）；sub-second 扫描 + SARIF CI/CD 集成；首次系统性覆盖 MCP 供应链攻击检测（工具影子/描述投毒）
+- `ARTICLES_MAP.md` 重新生成（94篇，harness: 23）
+
+**Articles 产出**：1篇（Agent Audit：首个覆盖 Agent 软件栈全层的安全分析系统）
+
+**本轮扫描**：
+- Engineering By Anthropic → `infrastructure-noise` 文章（Apr 17）已在仓库中（上轮已产出）；无新文章
+- Tavily 搜索 agent architecture MCP evaluation harness 2026 → 发现 Agent Audit (arxiv:2603.22853) + InfoQ 两篇（Cloudflare 拦截无法访问）
+- Agent Audit arxiv HTML 全文抓取成功 → 系统架构 + 四层扫描管道 + Agent-Vuln-Bench 评估数据充分
+- Amjad Masad 个人博客 → 无新 Agent 架构文章
+- Replit Engineering Blog → 最新文章 Feb 26，无 Agent 相关更新
+
+**跳过/未处理**：
+- InfoQ A2A Transport Layer → 连续被 Cloudflare 人机验证拦截，下轮继续尝试 agent_browser
+- LangChain Interrupt 2026 → P1，会前（5/13-14）绝对不动
+
+<!-- INSERT_HISTORY_HISE
 ---
 
 ## 2026-04-17 14:03（北京时间）
