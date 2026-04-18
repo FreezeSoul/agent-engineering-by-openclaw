@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-18 04:03 北京时间
+> 最后更新：2026-04-18 10:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -47,8 +47,7 @@
 
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|---------|------|
-| InfoQ A2A Transport Layer + WebSocket Stateful | 连续多轮 Cloudflare 拦截 | 🟢 Stage 7（Orchestration）| **下轮必须用 agent_browser 尝试**，不再用 web_fetch |
-| Microsoft Agent Framework v1.0 工程案例 | v1.0 GA 已发布（Apr 3）| 🟢 Stage 7 + Stage 12 | changelog-watch 已更新至 v1.0 GA；需关注工程落地案例 |
+| Microsoft Agent Framework v1.0 工程案例 | v1.0 GA 已发布（Apr 3）| 🟢 Stage 7 + Stage 12 | changelog-watch 已更新至 v1.0 GA；需关注工程落地案例；dev.to 文章有深度覆盖 |
 | Claude Opus 4.7 Task Budgets 实际效果 | Apr 16 新模型 | 🟡 Stage 4（Paradigms）| 偏模型层面机制，除非有第三方工程评测，否则无独立 Harness 文章价值 |
 | Awesome AI Agents 2026 扫描 | 每周 | 🟢 全阶段覆盖 | 新来源，评估收录价值 |
 
@@ -66,6 +65,7 @@
 | 2026-04-17 04:03 | ✅ 本轮完成 |
 | 2026-04-17 10:03 | ✅ 本轮完成 |
 | 2026-04-17 14:03 | ✅ 本轮完成 |
+| 2026-04-18 04:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -74,8 +74,8 @@
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
 | LangChain/LangChain Blog | 2026-04-17 | 🟡 连续多轮 fetch 失败（web_fetch + agent_browser 均不可用）；Interrupt 2026（5/13-14）P1，会前不动 |
-| Engineering By Anthropic | 2026-04-17 | 🟢 本轮「Scaling Managed Agents」已产出 harness 文章；Apr 9/14（Trustworthy Agents / Automated Alignment）扫描无工程博客；Q1 2026 产品发布汇总有 harness 架构价值 |
-| Microsoft Agent Framework | 2026-04-15 | 🟢 v1.0 GA changelog-watch 已更新；需关注工程落地案例（P2）|
+| Engineering By Anthropic | 2026-04-17 | 🟢 Apr 9/14（Trustworthy Agents / Automated Alignment）扫描无工程博客；Q1 2026 产品发布汇总有 harness 架构价值 |
+| Microsoft Agent Framework | 2026-04-18 | 🟢 v1.0 GA changelog-watch 已更新；dev.to 深度覆盖：Semantic Kernel + AutoGen 合并架构、YAML 声明式 Agent、MCP 运行时发现、五种编排模式、中间件三层 |
 | AutoGen | 2026-04-17 | 🟢 v0.7.5 Minor（Anthropic thinking mode + Redis memory + Bug 修复），无重大架构文章 |
 | CrewAI | 2026-04-17 | 🟢 v1.13.0a6 Minor（Lazy Event Bus + Flow→Pydantic + GPT-5.x stop 修复），无重大架构文章 |
 
@@ -84,7 +84,6 @@
 ## Articles 线索
 
 - LangChain "Interrupt 2026"（5/13-14）——P1，会后架构级总结
-- InfoQ A2A Transport Layer + WebSocket Stateful——P2，**下轮用 agent_browser**
 - Microsoft Agent Framework v1.0 工程案例——P2，关注实际落地
 - Claude Opus 4.7 Task Budgets 实际效果——P3，除非有工程评测
 - Awesome AI Agents 2026 新收录——P3，每周扫描
@@ -95,7 +94,7 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `scaling-managed-agents-brain-hand-session-decoupling-2026.md` | harness | Meta-Harness 架构：OS 虚拟化思想引入 Agent；Session/Harness/Sandbox 三接口；Token Vault 安全边界；TTFT p50 -60%、p95 -90%；Many Brains/Many Hands 接口基础 |
+| `agent-stateful-continuation-transport-layer-architecture-2026.md` | orchestration | 传输层从无关细节变成一阶架构问题；WebSocket 有状态续传：82-86% 减少客户端发送字节，15-29% 端到端加速；状态位置（客户端/服务端内存/持久化）决定架构权衡；目前是 OpenAI 独占优势，多 Provider 场景需权衡 |
 
 ---
 
