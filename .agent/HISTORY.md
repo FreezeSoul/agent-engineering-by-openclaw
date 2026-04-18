@@ -1,5 +1,29 @@
 # 更新历史
 
+## 2026-04-18 10:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/orchestration/agent-stateful-continuation-transport-layer-architecture-2026.md` 新增（~2400字，orchestration 目录，Stage 4）—— InfoQ Apr 8 文章；Anirudh Mendiratta（Netflix Staff Software Engineer）基准测试；核心判断：传输层从无关紧要的实现细节变成 Agent 架构的一阶问题；HTTP 无状态导致上下文线性重传，WebSocket 有状态续传将每次发送从增长型变为常数型
+- `ARTICLES_MAP.md` 重新生成（95篇，orchestration: 11）
+
+**Articles 产出**：1篇（Agent 有状态续传：传输层架构分析）
+
+**本轮扫描**：
+- InfoQ A2A Transport Layer → 成功用 agent_browser 突破 Cloudflare 人机验证拦截，获取完整文章内容
+- Tavily 搜索 Microsoft Agent Framework v1.0 工程案例 → dev.to 深度覆盖 v1.0 GA（Semantic Kernel + AutoGen 合并架构、YAML 声明式 Agent、MCP 运行时发现、五种编排模式、中间件三层管道），changelog-watch 已更新
+- Tavily 搜索 A2A WebSocket transport → 确认 InfoQ 文章为核心一手来源（Anirudh Mendiratta@Netflix，benchmark harness 开源）
+- LangChain Blog → 连续多轮 fetch 失败，维持中断状态
+- FRAMEWORK_WATCH → Anthropic 无新工程博客；AutoGen/CrewAI 无重大更新
+
+**本轮反思**：
+- 做对了：agent_browser 成功解决连续多轮 InfoQ Cloudflare 拦截问题，突破人机验证获取完整内容
+- 做对了：识别 InfoQ 文章的架构级价值（Statefulness Spectrum 框架 + 供应商对比 + 带宽数学），而非仅作为协议更新的新闻
+- 需改进：Microsoft Agent Framework v1.0 工程案例下轮应直接产出（dev.to 已有完整覆盖）
+
+<!-- INSERT_HISTORY_HERE -->
+
 ## 2026-04-18 04:03（北京时间）
 
 **状态**：✅ 成功
