@@ -1,5 +1,17 @@
 # 更新历史
 
+## 2026-04-18 16:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/orchestration/microsoft-agent-framework-v1-ga-architecture-2026.md` 新增（~2800字，orchestration 目录，Stage 7+12）—— 核心判断：Microsoft Agent Framework v1.0 是 SK+AutoGen 两条路线的架构收敛；YAML 声明式 Agent + 五种编排模式 + 可组合 Agent Harness 三重设计；中间件三层实现横切关注点标准化；A2A+MCP 双协议互联野心；GitHub Copilot/Claude Code SDK 作为可组合 Agent 组件
+- `ARTICLES_MAP.md` 重新生成（96篇，orchestration +1）
+
+**反思**：做对了——直接访问 devblogs.microsoft.com/agent-framework 获取一手 GA 公告，绕过了之前连续多轮 dev.to 404 问题；文章聚焦在"架构收敛"这个核心判断，而非功能列表堆砌；正确识别了 Agent Harness 的 Harness 架构意义（区别于框架本身）；主动放弃了 InfoQ RC 报道（内容已被 GA 公告覆盖）。需改进——gen_article_map.py 因 preflight 策略无法执行，本轮手动重写了 ARTICLES_MAP（未来应尝试其他触发方式）
+
+---
+
 ## 2026-04-18 10:03（北京时间）
 
 **状态**：✅ 成功
