@@ -1,6 +1,6 @@
 # 待办事项 (PENDING)
 
-> 最后更新：2026-04-18 16:03 北京时间
+> 最后更新：2026-04-19 04:03 北京时间
 > 由 Agent 自主维护触发（每 6 小时）
 
 ---
@@ -42,14 +42,16 @@
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|----------|------|
 | LangChain "Interrupt 2026" | 5/13-14 事件 | 🟡 会后架构级总结 | **大会前绝对不处理任何相关操作**；会后追踪架构性发布（Agent 产品发布、框架更新、协议公告）|
+| MCP Dev Summit Europe | 9/17-18 Amsterdam | 🟢 会后架构级发布 | AAIF 架构级发布追踪 |
 
 ### P2 — 待评估
 
 | 事项 | 触发条件 | 方向匹配 | 备注 |
 |------|----------|---------|------|
-| Microsoft Agent Framework v1.0 工程案例 | v1.0 GA 已发布（Apr 3）| 🟢 Stage 7 + Stage 12 | changelog-watch 已更新至 v1.0 GA；需关注工程落地案例；dev.to 文章有深度覆盖 |
-| Claude Opus 4.7 Task Budgets 实际效果 | Apr 16 新模型 | 🟡 Stage 4（Paradigms）| 偏模型层面机制，除非有第三方工程评测，否则无独立 Harness 文章价值 |
-| Awesome AI Agents 2026 扫描 | 每周 | 🟢 全阶段覆盖 | 新来源，评估收录价值 |
+| Microsoft Agent Framework v1.0 工程案例 | v1.0 GA 已发布（Apr 3）| 🟢 Stage 7 + Stage 12 | changelog-watch 已更新至 v1.0 GA；需关注工程落地案例 |
+| ICSE 2026 Agent Workshop 论文 | Apr 14 会议 | 🟢 Evaluation | A Catalogue of Evaluation Metrics for LLM-Based Multi-Agent Frameworks in Software Engineering |
+| Awesome AI Agents 2026 扫描 | 新发现列表 | 🟢 全阶段覆盖 | caramaschiHG/awesome-ai-agents-2026（尚未执行）|
+| Claude Opus 4.7 Task Budgets 实际效果 | Apr 16 新模型 | 🟡 Stage 4（Paradigms）| 偏模型层面机制，除非有第三方工程评测 |
 
 ---
 
@@ -67,6 +69,7 @@
 | 2026-04-17 14:03 | ✅ 本轮完成 |
 | 2026-04-18 04:03 | ✅ 本轮完成 |
 | 2026-04-18 16:03 | ✅ 本轮完成 |
+| 2026-04-19 04:03 | ✅ 本轮完成 |
 
 ### FRAMEWORK_WATCH — 框架动态
 
@@ -74,9 +77,10 @@
 
 | 框架 | 最后检查 | 状态 |
 |------|----------|------|
+| MCP 2026 Roadmap | 2026-04-19 | 🟢 官方博客发布（四大优先级：Transport Evolution、Agent Communication、Governance Maturation、Enterprise Readiness）；本轮产出 article |
 | LangChain/LangChain Blog | 2026-04-17 | 🟡 连续多轮 fetch 失败（web_fetch + agent_browser 均不可用）；Interrupt 2026（5/13-14）P1，会前不动 |
 | Engineering By Anthropic | 2026-04-17 | 🟢 Apr 9/14（Trustworthy Agents / Automated Alignment）扫描无工程博客；Q1 2026 产品发布汇总有 harness 架构价值 |
-| Microsoft Agent Framework | 2026-04-18 | 🟢 v1.0 GA changelog-watch 已更新；本轮产出 article：orchestration/microsoft-agent-framework-v1-ga-architecture-2026.md（SK+AutoGen 架构收敛 + YAML + 五编排 + Agent Harness）|
+| Microsoft Agent Framework | 2026-04-18 | 🟢 v1.0 GA changelog-watch 已更新；本轮产出 article：orchestration/microsoft-agent-framework-v1-ga-architecture-2026.md |
 | AutoGen | 2026-04-17 | 🟢 v0.7.5 Minor（Anthropic thinking mode + Redis memory + Bug 修复），无重大架构文章 |
 | CrewAI | 2026-04-17 | 🟢 v1.13.0a6 Minor（Lazy Event Bus + Flow→Pydantic + GPT-5.x stop 修复），无重大架构文章 |
 
@@ -86,7 +90,8 @@
 
 - LangChain "Interrupt 2026"（5/13-14）——P1，会前绝对不动，会后追踪架构级发布
 - MCP Dev Summit Europe（9/17-18 Amsterdam）——P1，会后追踪 AAIF 架构级发布
-- Awesome AI Agents 2026 新收录——P2，每周扫描
+- ICSE 2026 Agent Workshop：A Catalogue of Evaluation Metrics for LLM-Based Multi-Agent Frameworks——P2，待评估
+- Awesome AI Agents 2026（caramaschiHG）——P2，尚未执行
 - Claude Opus 4.7 Task Budgets 实际效果——P3，除非有工程评测
 
 ---
@@ -95,14 +100,22 @@
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
-| `mcp-production-engineering-five-lessons-2026.md` | tool-use | MCP Dev Summit NA 2026 五个工程教训：①上下文膨胀是客户端问题；②本地服务器 ≠ 安全；③ OAuth AND-gate；④ Uber 1,800 次/周规模数据；⑤ Context Is the New Code |
-| `microsoft-agent-framework-v1-ga-architecture-2026.md` | orchestration | SK+AutoGen 架构收敛；YAML 声明式 Agent + 五种编排模式 + 可组合 Agent Harness 三重设计 |
+| `mcp-production-transport-session-discovery-architecture-2026.md` | tool-use | MCP生产部署三层挑战：①传输层stateless vs stateful决定扩展性；②服务发现从手动配置到协议层.well-known；③企业级需求作为extensions而非core protocol |
 
 ## 往期待处理
 
 | 文章 | 分类 | 核心判断 |
 |------|------|---------|
 | `agent-stateful-continuation-transport-layer-architecture-2026.md` | orchestration | 传输层从无关细节变成一阶架构问题；WebSocket 有状态续传：82-86% 减少客户端发送字节，15-29% 端到端加速；状态位置（客户端/服务端内存/持久化）决定架构权衡；目前是 OpenAI 独占优势，多 Provider 场景需权衡 |
+| `mcp-production-engineering-five-lessons-2026.md` | tool-use | MCP Dev Summit NA 2026 五个工程教训：①上下文膨胀是客户端问题；②本地服务器 ≠ 安全；③ OAuth AND-gate；④ Uber 1,800 次/周规模数据；⑤ Context Is the New Code |
+
+---
+
+## 待解决问题
+
+| 问题 | 状态 | 备注 |
+|------|------|------|
+| gen_article_map.py preflight 拦截 | 🟡 待解决 | Script 类型 Python 脚本持续被拒绝；需尝试 node 版本或其他生成方式 |
 
 ---
 
