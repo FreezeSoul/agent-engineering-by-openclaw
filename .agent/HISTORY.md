@@ -1,6 +1,28 @@
 # 更新历史
 
-## 2026-04-20 16:03（北京时间）
+## 2026-04-20 22:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/evaluation/trustworthy-benchmark-evaluation-infrastructure-crisis-2026.md` 新增（~2800字，evaluation 目录，Stage 8）—— UC Berkeley RDI April 2026；核心发现：8大主流基准测试全部可被系统性攻破（SWE-bench/WebArena/GAIA/Terminal-Bench等）；Terminal-Bench curl特洛伊木马（零LLM调用100分）和SWE-bench conftest.py hook注入是两大核心案例；真实事件：IQuest-Coder-V1 git log答案复制（24.4%轨迹）、OpenAI放弃SWE-bench Verified（59.4%测试有缺陷）、Anthropic Mythos自删除漏洞；根因：测试逻辑与评分逻辑共享执行环境；trustworthy-env工具 + 隔离/外部验证/对抗性测试三原则
+- `ARTICLES_MAP.md` 重新生成（105篇，evaluation +1）
+
+**Articles 产出**：1篇（基准测试信任危机）
+
+**本轮扫描**：
+- Berkeley RDI "How We Broke Top AI Agent Benchmarks"（Part 1+2）→ 8个基准测试全部可100%攻破；自动化扫描代理发现45个confirmed exploits；已公开案例：IQuest-Coder/METR/OpenAI/Anthropic
+- Tavily agent architecture 2026 → MCP vs A2A综述为主（已有充分coverage）；pooya.blog框架对比（LangGraph 62% vs CrewAI 54% vs AutoGen 58% vs Smolagents 49%，有真实benchmark数据但角度非新）
+- Claude Code April 2026 changelog → NO_FLICKER/PID namespace/1M context/MCP OAuth；仓库已有Boris Cherny四层架构充分覆盖
+- Tavily smolagents 2026 → HuggingFace官方博客；smolagents已存在于repo但无独立深度文章；下轮可评估
+- FRAMEWORK_WATCH → LangGraph 1.1.7a1（Graph Lifecycle Callbacks正式引入）；CrewAI v1.13.0a6（Lazy Event Bus + Flow→Pydantic）；均无P1事件
+
+**跳过/未处理**：
+- pooya.blog框架对比 → benchmark数据有价值但非新角度（已有LangGraph/CrewAI文章）；不产出
+- Claude Code changelog → 功能更新为主，无新架构洞察；不产出
+- smolagents → 需下轮直接查HuggingFace官方，不从二手blog评估
+
+**反思**：做对了——选择了系统性基准测试攻破文章（Berkeley RDI），这是迄今最系统的评估基础设施批判，8个基准全覆盖+完整PoC，两个攻击案例各有不同根因教训；正确降级了框架对比（benchmark数据已有但角度不新）和Claude Code changelog（仓库已覆盖）。需改进——Berkeley Part 2（What Comes Next）完整内容仍未完全抓取，trustworthy-env工具和解决方案框架需下轮补全；smolagents应直接查HuggingFace官方博客和GitHub
 
 **状态**：✅ 成功
 
@@ -26,6 +48,28 @@
 **反思**：做对了——选择了"五模式分层架构"作为文章角度，SwirlAI原文的tradeoff矩阵是核心价值，单写任何一种模式都失去整体框架意义；正确判断context-memory目录的gap（已有LOCOMO等但缺少系统性梳理）；抓住了Manus两个工程细节。需改进——scortier.substack连续无法抓取，下轮尝试agent_browser；nitter RSS持续被SIGKILL。
 
 ---
+
+
+
+## 2026-04-20 16:03（北京时间）
+
+
+- SwirlAI Newsletter "State of Context Engineering in 2026" → 成功抓取（~18500字）；五种模式详细分析 + tradeoff矩阵；与现有context-memory/LOCOMO互补（非重复）
+- Atlan "Context Engineering Framework" → 成功抓取（~20000字）；五层架构 + Governed Data Layer作为缺失层的重要性；Workday 5x准确率案例
+- Tavily agent architecture 2026 → Rhesis AI框架对比（LangGraph最佳整体）无独特架构视角；digitalapplied四协议生态图（已有充分coverage）
+- Tavily Claude performance decline 2026 April → scortier.substack（6852 sessions prove）降级监控；无一手架构内容
+- FRAMEWORK_WATCH → LangChain Interrupt 2026（5/13-14 P1维持）；Anthropic YouTube Harness Engineering系列（5个视频）无新架构文章
+
+**跳过/未处理**：
+- scortier.substack Claude Code Drama → 网络连续被拦截，降级监控
+- digitalapplied.com A2A Protocol Ecosystem → 已有Microsoft Agent Framework文章充分覆盖，无独立文章价值
+- Claude Code Ultrathink演进 → 已有claude-code-2026-four-layer-architecture覆盖Thinking Mode
+
+
+**反思**：做对了——选择了"五模式分层架构"作为文章角度，SwirlAI原文的tradeoff矩阵是核心价值，单写任何一种模式都失去整体框架意义；正确判断context-memory目录的gap（已有LOCOMO等但缺少系统性梳理）；抓住了Manus两个工程细节。需改进——scortier.substack连续无法抓取，下轮尝试agent_browser；nitter RSS持续被SIGKILL。
+
+
+
 
 ## 2026-04-20 10:03（北京时间）
 
