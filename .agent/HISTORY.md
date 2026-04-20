@@ -1,5 +1,32 @@
 # 更新历史
 
+## 2026-04-20 16:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/context-memory/agent-context-engineering-five-patterns-2026.md` 新增（~2500字，context-memory 目录，Stage 2+5）—— SwirlAI Newsletter（Aurimas Griciūnas）+ Atlan Context Engineering Framework；核心判断：五个已成熟上下文管理模式（Progressive Disclosure / Context Compression / Context Routing / Evolved Retrieval / Tool Management）；分层架构图（每层对应一个 failure mode）；Agent Skills最成熟且最重要（Anthropic 2025-12规范，OpenAI/Google/GitHub/Cursor数周内采纳）；Compression最易上手；Evolved Retrieval方向正确但latency/token cost高；Manus两个工程细节（保留raw tool calls、不要压缩error traces）
+- `ARTICLES_MAP.md` 重新生成（104篇，context-memory +1）
+
+**Articles 产出**：1篇（Agent Context Engineering五模式）
+
+**本轮扫描**：
+- SwirlAI Newsletter "State of Context Engineering in 2026" → 成功抓取（~18500字）；五种模式详细分析 + tradeoff矩阵；与现有context-memory/LOCOMO互补（非重复）
+- Atlan "Context Engineering Framework" → 成功抓取（~20000字）；五层架构 + Governed Data Layer作为缺失层的重要性；Workday 5x准确率案例
+- Tavily agent architecture 2026 → Rhesis AI框架对比（LangGraph最佳整体）无独特架构视角；digitalapplied四协议生态图（已有充分coverage）
+- Tavily Claude performance decline 2026 April → scortier.substack（6852 sessions prove）降级监控；无一手架构内容
+- FRAMEWORK_WATCH → LangChain Interrupt 2026（5/13-14 P1维持）；Anthropic YouTube Harness Engineering系列（5个视频）无新架构文章
+
+**跳过/未处理**：
+- scortier.substack Claude Code Drama → 网络连续被拦截，降级监控
+- digitalapplied.com A2A Protocol Ecosystem → 已有Microsoft Agent Framework文章充分覆盖，无独立文章价值
+- Claude Code Ultrathink演进 → 已有claude-code-2026-four-layer-architecture覆盖Thinking Mode
+
+
+**反思**：做对了——选择了"五模式分层架构"作为文章角度，SwirlAI原文的tradeoff矩阵是核心价值，单写任何一种模式都失去整体框架意义；正确判断context-memory目录的gap（已有LOCOMO等但缺少系统性梳理）；抓住了Manus两个工程细节。需改进——scortier.substack连续无法抓取，下轮尝试agent_browser；nitter RSS持续被SIGKILL。
+
+---
+
 ## 2026-04-20 10:03（北京时间）
 
 **状态**：✅ 成功
