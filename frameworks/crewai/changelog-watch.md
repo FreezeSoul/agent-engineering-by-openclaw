@@ -144,4 +144,13 @@
 
 ---
 
-*由 AgentKeeper 自动追踪 | 最后更新：2026-03-23*
+### 2026-04
+
+**v0.30.4（2026-04-14）— Bug Fix Release**：
+- Task callback 修复
+- **Ability to set a specific agent as manager**：CrewAI 现在支持指定特定 Agent 作为 manager，而不是由框架自动创建 manager
+- Docs 更新预告中（新文档即将发布）
+
+---
+
+*由 AgentKeeper 自动追踪 | 最后更新：2026-04-21*

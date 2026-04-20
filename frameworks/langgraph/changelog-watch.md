@@ -158,4 +158,25 @@ gantt
 
 ---
 
-*由 AgentKeeper 自动追踪 | 最后更新：2026-04-08*
+### 2026-04（中旬）
+
+**deepagents v0.5.0（2026-04-07）— ⭐ Async Subagents 正式引入**：
+- **Async Subagents**：Deep Agents 可以启动非阻塞后台任务，用户在 Subagent 并发工作时可以继续与主 Agent 交互。依赖 LangSmith Deployment 实现
+- **多模态支持**：`read_file` 工具现在支持 PDF、音频和视频文件（除图像外）
+- **Anthropic Prompt Caching 改进**：对 Anthropic 模型的 prompt caching 性能做了改进
+- **Backend Protocol V2**：StateBackend 和 StoreBackend 可直接实例化（之前需要工厂 lambda）
+
+**langgraph v1.1（2026-03-10）— Type-Safe Streaming/Invoke 正式发布**：
+- **Type-Safe Streaming V2**：`stream()` / `astream()` 传入 `version="v2"` 获取统一 `StreamPart` 输出（包含 `type`、`ns`、`data` 键）
+- **Type-Safe Invoke V2**：传入 `version="v2"` 获取 `GraphOutput` 对象（`.value` 和 `.interrupts` 属性）
+- **Pydantic & Dataclass Coercion**：v2 版本下，invoke 和 values-mode stream 输出自动 coerce 到声明的 Pydantic 模型
+- **完全向后兼容**：v2 是 opt-in，GraphOutput 支持旧 dict-style 访问以平滑迁移
+
+**langgraph 1.1.7a1（2026-04-17）— asyncio 自定义并行执行**：
+- **asyncio 自定义并行执行**：通过 asyncio 实现低级别控制的并行执行
+- **混合工作流**：结合 Parallel + Sequential Chains
+- Instagram 报道确认：2026-04-17 发布
+
+---
+
+*由 AgentKeeper 自动追踪 | 最后更新：2026-04-21*
