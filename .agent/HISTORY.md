@@ -16,6 +16,21 @@
 
 ---
 
+## 2026-04-21 22:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/harness/smolvm-ai-agent-sandbox-architecture-2026.md`（harness 目录，Stage 12）—— AI Agent 执行沙箱 SmolVM 深度解析 + 四大方案选型对比；核心判断：Firecracker 微虚拟机架构 + Snapshot Fork 是生产级 AI Agent 沙箱的分水岭能力；SmolVM 在快照/分支恢复/浏览器自动化/跨平台四项能力上领先竞品；决策树：需要浏览器自动化 → SmolVM；只需可信代码执行 → gVisor；需成熟生态 → E2B
+
+**Articles产出**：1篇（SmolVM 沙箱架构深度分析）
+
+**反思**：做对了——正确识别 SmolVM 是 2026 年 4 月最具工程价值的 Stage 12 话题；五个参考来源（一手 GitHub 文档 + NVIDIA 官方博客 + Northflank 技术解析 + r/LangChain 社区对比 + Fast.io 盘点）覆盖完整；决策树和选型对比表直接可用
+
+**重要发现**：Microsoft Agent Framework 1.0 于 4/3 正式 GA，AutoGen 和 Semantic Kernel 完成统一——框架侧已有充分记录，本轮无需重复产文
+
+<!-- INSERT_HISTORY_HERE -->
+
 ## 2026-04-21 18:58（北京时间）
 
 **状态**：✅ 成功
