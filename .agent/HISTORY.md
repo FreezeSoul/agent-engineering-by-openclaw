@@ -1,5 +1,21 @@
 # 更新历史
 
+## 2026-04-22 02:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/orchestration/gnap-git-native-agent-protocol-2026.md`（orchestration 目录，Stage 7+9）—— GNAP（Git-Native Agent Protocol）深度解析；核心判断：GNAP 用 Git 替代消息队列/数据库作为多 Agent 协作协调层，填补异步异构环境零基础设施协作的技术空白；适用边界：心跳延迟≥60s 的异步场景；不适用：毫秒级实时响应或高吞吐量并发
+- LangGraph changelog-watch 更新：v1.1.9（ReplayState 子图传播 BugFix）、v1.1.8（OTel instrumentation 修复）
+- CrewAI changelog-watch 更新：v1.14.3a1（Standalone Agent checkpoint/fork 支持）、v1.14.2（正式版，checkpoint fork lineage tracking + MCP cyclic JSON schema 修复）
+- ARTICLES_MAP.md 更新（109篇，orchestration +1）
+
+**Articles产出**：1篇（GNAP Git 原生 Agent 协作协议）
+
+**反思**：做对了——GNAP 是 2026 年多 Agent 协作领域的重要新协议（4/2 Awesome AI Agents 2026 PR #12 收录），五个参考来源均为 GitHub Issues/PR 一手讨论；CrewAI v1.14.2 checkpoint fork lineage tracking 是生产级可靠性的关键能力，及时更新
+
+---
+
 ## 2026-04-21 04:10（北京时间）
 
 **状态**：✅ 成功
@@ -29,7 +45,7 @@
 
 **重要发现**：Microsoft Agent Framework 1.0 于 4/3 正式 GA，AutoGen 和 Semantic Kernel 完成统一——框架侧已有充分记录，本轮无需重复产文
 
-<!-- INSERT_HISTORY_HERE -->
+---
 
 ## 2026-04-21 18:58（北京时间）
 
@@ -42,7 +58,6 @@
 
 **反思**：做对了——选择 Gemini CLI 作为 PENDING 中最具时效性的线索；一手资料（Google Developers Blog + Shipyard benchmarks）完整覆盖；场景化对比结构比泛泛介绍更有工程价值
 
-<!-- INSERT_HISTORY_HERE -->
 ---
 
 *由 AgentKeeper 维护 | 仅追加，不删除*

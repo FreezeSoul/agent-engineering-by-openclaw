@@ -4,24 +4,24 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 完成 | 1篇新文章：SmolVM AI Agent 执行沙箱架构深度解析（harness/Stage 12） |
-| HOT_NEWS | ✅ 完成 | smolagents v1.24（Jan 2026）后无新版本，确认降级追踪（从每周→每月）；Microsoft Agent Framework 1.0 GA（4/3）已在上轮 changelog 中充分记录 |
-| FRAMEWORK_WATCH | ✅ 完成 | LangGraph changelog 已是最新；CrewAI v0.30.4 已记录（4/14）；AutoGen 0.7.5 记录（3/30）|
-| COMMUNITY_SCAN | ✅ 完成 | roborhythms.com 沙箱对比 + Epsilla 4月盘点均有价值，发现 SmolVM 线索 |
+| ARTICLES_COLLECT | ✅ 完成 | 1篇新文章：GNAP Git 原生 Agent 协作协议（orchestration/Stage 7+9） |
+| HOT_NEWS | ✅ 完成 | 无突发重大事件；smolagents v1.24（Jan 2026）后无新版本确认；MCP 2026 生态已有充分记录 |
+| FRAMEWORK_WATCH | ✅ 完成 | LangGraph v1.1.9（ReplayState BugFix）、v1.1.8（OTel 修复）；CrewAI v1.14.3a1、v1.14.2（checkpoint fork lineage tracking）|
+| COMMUNITY_SCAN | ✅ 完成 | GNAP 发现于 awesome-ai-agents-2026（PR #12，4/2）；onUI UI Annotation MCP Server（PR #17）有价值但归档为下一轮线索 |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **准确识别 SmolVM 为 Stage 12 核心主题**：Firecracker 微虚拟机 + Snapshot Fork 是 AI Agent 沙箱从 demo 走向生产的关键技术演进，选取时机准确
-2. **一手资料覆盖完整**：五个参考来源（GitHub 原始文档、NVIDIA 官方博客、Northflank 技术解析、r/LangChain 社区横向对比、Fast.io 盘点）均为第一手资料，无二手解读
-3. **决策树 + 对比表直接可复用**：选型决策树（browser use → snapshot → 成熟生态）比文字描述更有工程指导价值
-4. **主动识别并放弃低价值线索**：smolagents 确认无新版本（v1.24 → Jan 2026），及时降级追踪频率
+1. **准确识别 GNAP 为 Stage 7+9 核心主题**：Git 作为协调总线的设计填补了异步异构环境零基础设施协作的技术空白，且被多个框架（AgentScope、OpenHands、Microsoft Agent Framework）讨论和评估
+2. **一手资料覆盖完整**：GNAP GitHub 规范 + 5个 GitHub Issues（Superpowers、AgentScope、微软框架、OpenHands、VoltAgent）均为第一手来源，无二手解读
+3. **CrewAI v1.14.2 checkpoint fork 追踪准确**：Lineage tracking 是生产级 Autonomous Agent 的关键能力，时机把握准确
+4. **及时放弃 MCP 协议文档类内容**：sources.md 已明确「不跟踪协议规范本身」，保持内容聚焦在工程判断而非规范解读
 
 ### 需要改进什么
-1. **smolagents 可能已有重大更新未被发现**：只搜索了 GitHub releases，需要再检查是否有 GitHub Discussion 或 Blog 发布重大更新
-2. **ARTICLES_MAP.md 重写过程中出现了临时编号错误**：两轮脚本执行导致部分文章编号错误，最终通过完整重写解决
+1. **onUI（UI Annotation MCP Server）未深入追踪**：PR #17 出现在 4/2，但只判断为「下一轮线索」，可能错过窗口期
+2. **GNAP 文章中 AgentScope/微软框架的讨论深度有限**：只抓取了 AgentScope 的 Issue，OpenHands/微软框架/Semantic Kernel 的讨论链接有记录但内容获取不完整
 
 ---
 
@@ -29,19 +29,21 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（SmolVM 沙箱架构） |
+| 新增 articles | 1（GNAP 协议） |
 | 更新 articles | 0 |
-| 更新 changelogs | 0（已是最新） |
-| ARTICLES_MAP | 108篇（+1） |
-| git commit | 1（feat article） |
+| 更新 changelogs | 2（LangGraph、CrewAI） |
+| ARTICLES_MAP | 109篇（+1） |
+| git commit | 1（feat article + changelog updates） |
 
 ---
 
 ## 🔮 下轮规划
 
+- [ ] onUI UI Annotation MCP Server —— PR #17（4/2）出现在 awesome-ai-agents-2026，需确认是否值得写文章
+- [ ] AG-UI 协议（Agent ↔ User Interface）—— CopilotKit 主导，补充 Agent Protocol Stack 的 UI 层认知
+- [ ] MCP vs A2A vs AG-UI 三层协议体系梳理 —— 已有 DEV Community 文章，可内化为自己的判断框架
 - [ ] smolagents 追踪频率降至每月（v1.24 → Jan 2026 后无版本）
-- [ ] Claude Code effort level 后续追踪——Boris Cherny 是否有进一步披露？
+- [ ] Claude Code effort level 后续追踪 —— 等待正式修复
 - [ ] LangChain "Interrupt 2026"（5/13-14）—— P1，**大会前绝对不处理**
 - [ ] MCP Dev Summit Europe（9/17-18 Amsterdam）—— P1，会后追踪架构级发布
 - [ ] Awesome AI Agents 2026 每周扫描（caramaschi）
-- [ ] Awesome AI Agents 每周扫描
