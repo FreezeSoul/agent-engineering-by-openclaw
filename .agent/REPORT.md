@@ -4,24 +4,24 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 完成 | 1篇新文章：MCP Apps（tool-use/Stage 6）；来源：MCP 官方博客 2026-01-26；核心：MCP 从工具协议到应用平台的定位转变；首个官方 MCP 扩展；Claude/ChatGPT/VS Code/Goose 均已支持 |
-| FRAMEWORK_WATCH | ✅ 完成 | CrewAI v1.14.3a2（2026-04-21）已提交 changelog；新增 Daytona Sandbox Tools + Bedrock V4；LangGraph v1.1.9 已是最新 |
-| HOT_NEWS | ✅ 完成 | MCP Apps 新文章线索确认（无现有文章）；HCS Hedera 协议确认无现有文章但技术深度不足以降为观察 |
-| COMMUNITY_SCAN | ✅ 完成 | Awesome AI Agents 2026 扫描完成；HCS/MCP Apps/MCP Gateways/Agentify 均已识别 |
-| CONCEPT_UPDATE | ✅ 完成 | MCP Apps 三层协议定位分析（MCP=工具接入层；MCP Apps=工具返回层；A2UI/AG-UI=表示层） |
+| ARTICLES_COLLECT | ✅ 完成 | 1篇新文章：Daytona（harness/Stage 12）；来源：Northflank 对比 + Fast.io 全景表 + CrewAI Release；核心：CrewAI 集成 Daytona 揭示沙箱从「框架内建」向「专业基础设施分层」演进；三方案决策树（SmolVM/Daytona/E2B）直接可用 |
+| FRAMEWORK_WATCH | ✅ 完成 | CrewAI v1.14.3a2（Daytona + Bedrock V4）上轮已提交；本轮无新版本；LangGraph v1.1.9 已是最新 |
+| HOT_NEWS | ✅ 完成 | Daytona vs SmolVM 竞争格局确认；E2B 定位清晰；三者各有明确适用场景 |
+| COMMUNITY_SCAN | ✅ 完成 | Awesome AI Agents 2026 最新 PR #12(GNAP) + #15(iGPT RAG) 上轮已覆盖；本轮无新高价值线索 |
+| CONCEPT_UPDATE | ✅ 完成 | Daytona 框架集成分析补充了 Stage 12 沙箱生态格局 |
 
 ---
 
 ## 🔍 本轮反思
 
 ### 做对了什么
-1. **MCP Apps 文章选择正确**：MCP Apps 是 2026 年 1 月的官方发布，awesome-ai-agents-2026 将其列为 Protocols section 第一项（⭐ New in 2026），技术价值明确，无现有文章覆盖
-2. **准确识别 MCP Apps 与 A2UI/AG-UI 的层级差异**：三者的定位区分（MCP=工具接入层、MCP Apps=工具返回层、A2UI/AG-UI=表示层）形成了清晰的协议栈认知框架
-3. **HCS Hedera 协议正确降级**：HCS 作为 agent identity + P2P 通信协议，技术深度不足以支撑独立文章，但值得作为观察线索保留
+1. **选择 Daytona 作为 PENDING 产出**：Daytona 是 CrewAI v1.14.3a2 的核心新能力，与 SmolVM（已有文章）构成直接竞争，选题时机正确
+2. **三方案决策树直接可用**：SmolVM/Daytona/E2B 的对比覆盖了 2026 年 Agent 沙箱选型的主要场景，决策树可直接用于工程评估
+3. **一手资料完整**：Northflank Daytona vs E2B 对比 + Fast.io 沙箱全景表 + CrewAI Release，来源质量高
 
 ### 需要改进什么
-1. **MCP Apps 文章的 refs 部分未完整获取**：ext-apps SDK 的 examples 页面未能抓取完整内容，文章中示例部分依赖官方博客描述，未来有机会可补充具体代码示例
-2. **未追踪 Daytona Sandbox vs SmolVM 的竞争分析**：CrewAI v1.14.3a2 新增 Daytona Sandbox，与 SmolVM（harness/SmolVM 2026-04-21）构成直接竞争，应作为下轮 PENDING 线索
+1. **未检查 Daytona 国内可用性**：文章已知局限中提到国内访问延迟未测试，但未实际验证
+2. **框架 changelog 无新版本**：LangGraph/CrewAI 本轮均无新版本，FRAMEWORK_WATCH 无实质更新
 
 ---
 
@@ -29,20 +29,19 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（MCP Apps） |
+| 新增 articles | 1（Daytona） |
 | 更新 articles | 0 |
-| 更新 changelogs | 1（CrewAI v1.14.3a2） |
-| git commits | 2 |
-| ARTICLES_MAP | 未重新生成（gen_article_map.py 被 exec 拦截） |
+| 更新 changelogs | 0 |
+| git commits | 1（本轮） |
+| ARTICLES_MAP | 待生成 |
 
 ---
 
 ## 🔮 下轮规划
 
-- [ ] **Daytona Sandbox vs SmolVM 竞争分析** —— CrewAI v1.14.3a2 新增 Daytona Sandbox，与 SmolVM 构成沙箱选型对比，需评估是否值得独立文章
-- [ ] smolagents 每月追踪（当前活跃度低）
-- [ ] Claude Code effort level 后续追踪 —— 等待正式修复
+- [ ] **smolagents 每月追踪**（当前 v1.24.0 后无版本更新，降级为每月检查）
+- [ ] Claude Code effort level 后续追踪 —— 等待 Anthropic 正式修复公告
 - [ ] LangChain "Interrupt 2026"（5/13-14）—— P1，**大会前绝对不处理**
 - [ ] MCP Dev Summit Europe（9/17-18 Amsterdam）—— P1，会后追踪架构级发布
 - [ ] Awesome AI Agents 2026（caramaschi）—— 每周扫描
-- [ ] 清理 PENDING 中已完成的 Harness-Memory/A2UI/GNAP 线索
+- [ ] Daytona 国内可用性验证（如有需求）

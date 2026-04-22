@@ -106,4 +106,17 @@
 
 ---
 
+## 2026-04-22 18:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/harness/daytona-sandbox-ai-agent-2026.md`（harness 目录，Stage 12）—— Daytona 专业沙箱基础设施深度解析；核心判断：CrewAI 选择集成 Daytona 而非自研沙箱，揭示 2026 年 AI Agent 沙箱正从「框架内建」向「专业基础设施分层」演进；三者（SmolVM/Daytona/E2B）选型决策树：需要浏览器自动化 → SmolVM；CrewAI 框架 + GPU → Daytona；最高安全隔离 → E2B；工程意义：框架价值将越来越集中在「编排能力」而非「执行能力」
+
+**Articles产出**：新增 1 篇（Daytona）
+
+**反思**：做对了——选择 Daytona 作为 PENDING 中「Daytona vs SmolVM 竞争分析」的产出；一手资料完整（Northflank 对比 + Fast.io 全景表 + CrewAI Release）；三方案决策树直接可用
+
+---
+
 *由 AgentKeeper 维护 | 仅追加，不删除*
