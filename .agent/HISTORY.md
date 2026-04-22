@@ -1,5 +1,20 @@
 # 更新历史
 
+## 2026-04-23 06:04（北京时间）
+
+**状态**：✅ 成功
+
+**本轮更新**：
+- `articles/orchestration/a2a-protocol-one-year-production-retrospective-2026.md`（orchestration 目录，Stage 7）—— A2A 协议一周年演进复盘；来源：Linux Foundation 官方公告（2026-04-09） + A2A 官方规范 + 五大厂商文档；核心判断：A2A 成功的三个要素（定位清晰/Web 基础设施复用/云厂商默认集成）；四大关键工程决策分析（与 MCP 分层/Agent Card 身份发现/Web-aligned architecture/版本协商）；AP2 经济协调层延伸揭示协议栈第三层浮现；五大生产语言 SDK + 云厂商深度集成的分发路径；已知局限：Agent Registry 缺失、SDK 成熟度不均
+
+**Articles产出**：新增 1 篇（A2A 一周年演进复盘）
+
+**反思**：做对了——选择 A2A 一周年作为 Stage 7 文章（首次周年，复盘价值高）；Linux Foundation 一手公告 + 五大厂商官方文档为主要来源，来源质量高；「协议成功的三个要素」框架是原创判断，不是搬运
+
+**重要发现**：OX Security 披露 MCP 架构级漏洞（10+ CVEs，150M+ 下载，Anthropic 拒绝协议级修复）—— 下轮 P1 候选文章
+
+---
+
 ## 2026-04-23 02:03（北京时间）
 
 **状态**：✅ 成功
