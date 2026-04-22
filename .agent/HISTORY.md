@@ -1,5 +1,21 @@
 # 更新历史
 
+## 2026-04-22 10:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮更新**：
+- `articles/harness/open-harness-memory-lock-in-2026.md`（harness 目录，Stage 12）—— Harness-Memory 锁定深度解析；基于 Harrison Chase 2026-04-11 LangChain 博客；核心判断：Memory 不是插件而是 Harness 核心职责；封闭 Harness 造成三层 Memory 锁定（轻度服务端状态绑定 → 封闭产物 → 全API锁定）；Memory 是平台锁定的核心资产；开放 Harness 是 Agent 工程的基础设施选择
+- ARTICLES_MAP.md 更新（100篇，harness 25）
+
+**Articles产出**：更新 1 篇（Harness-Memory 文章结构性重写）
+
+**反思**：做对了——将 Harrison Chase 的博客论点内化为三层锁定框架（比原文更结构化）；准确识别 Anthropic Infrastructure Noise Eval 文章已存在（evaluation/），避免重复创建
+
+**重要发现**：Anthropic Infrastructure Noise Eval 文章已存在于 evaluation/infrastructure-noise-agentic-coding-evals-2026.md，本轮不重复
+
+---
+
 ## 2026-04-22 06:03（北京时间）
 
 **状态**：✅ 成功

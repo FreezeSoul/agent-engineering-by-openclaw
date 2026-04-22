@@ -1,6 +1,6 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-04-22 06:08:44
+> Auto-generated at 2026-04-22 10:27:08
 
 > Total articles: 110
 
@@ -9,7 +9,7 @@
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | A2UI 协议深度解析：Agent 如何「生成」而非「返回」用户界面 | orchestration | unknown | [articles/orchestration/a2ui-google-agent-to-ui-protocol-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/a2ui-google-agent-to-ui-protocol-2026.md) |
+| 1 | A2UI 协议深度解析：Agent 如何「生成」而非「返回」用户界面 | orchestration | 2026-04-22 | [articles/orchestration/a2ui-google-agent-to-ui-protocol-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/a2ui-google-agent-to-ui-protocol-2026.md) |
 | 2 | GNAP：Git 作为多 Agent 协作的无服务器协调层 | orchestration | 2026-04-22 | [articles/orchestration/gnap-git-native-agent-protocol-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/gnap-git-native-agent-protocol-2026.md) |
 | 3 | Gemini CLI 深度分析：Google 开源 Terminal Agent 战力评估 | tool-use | 2026-04-21 | [articles/tool-use/gemini-cli-google-open-source-terminal-agent-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/gemini-cli-google-open-source-terminal-agent-2026.md) |
 | 4 | Claude Code 静默降级：Provider Default 作为隐性 Harness 层 | harness | 2026-04-21 | [articles/harness/claude-code-effort-level-default-instability-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/claude-code-effort-level-default-instability-2026.md) |
@@ -46,7 +46,7 @@
 | 35 | Open Models 跨越 Agent 任务门槛：GLM-5 / MiniMax M2.7 评测深度解析 | evaluation | 2026-04-13 | [articles/evaluation/open-models-crossed-threshold-agent-eval-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/evaluation/open-models-crossed-threshold-agent-eval-2026.md) |
 | 36 | 持续学习的三层架构：Model、Harness 与 Context | context-memory | 2026-04-12 | [articles/context-memory/continual-learning-three-layers-ai-agents-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/context-memory/continual-learning-three-layers-ai-agents-2026.md) |
 | 37 | Agent = Model + Harness：Harness 的第一性原理分析 | harness | 2026-04-12 | [articles/harness/anatomy-of-agent-harness-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/anatomy-of-agent-harness-2026.md) |
-| 38 | 开放 Harness 赢得 Agent 记忆战：为什么你的 Harness 就是你的 Memory | harness | 2026-04-12 | [articles/harness/open-harness-memory-lock-in-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/open-harness-memory-lock-in-2026.md) |
+| 38 | LangChain Blog: Your Harness, Your Memory | harness | 2026-04-12 | [articles/harness/open-harness-memory-lock-in-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/open-harness-memory-lock-in-2026.md) |
 | 39 | Open SWE：内部编程 Agent 的架构收敛 | frameworks | 2026-04-12 | [articles/frameworks/open-swe-internal-coding-agents-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/frameworks/open-swe-internal-coding-agents-2026.md) |
 | 40 | Better Harness：Eval-Driven Agent 迭代优化的工程方法论 | harness | 2026-04-11 | [articles/harness/better-harness-eval-driven-agent-iterative-optimization-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/better-harness-eval-driven-agent-iterative-optimization-2026.md) |
 | 41 | Red Team/Blue Team Agent Fabric：AI Agent 安全测试的三层架构 | harness | 2026-04-11 | [articles/harness/red-team-blue-team-agent-fabric-three-layer-security-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/red-team-blue-team-agent-fabric-three-layer-security-2026.md) |
