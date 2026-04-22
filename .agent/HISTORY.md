@@ -1,5 +1,19 @@
 # 更新历史
 
+## 2026-04-22 14:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮更新**：
+- `articles/tool-use/mcp-apps-official-extension-interactive-ui-2026.md`（tool-use 目录，Stage 6）—— MCP Apps 官方扩展深度解析；来源：MCP 官方博客 2026-01-26；核心判断：MCP 从「USB-C 工具协议」扩展为「应用平台」；MCP Apps 是首个官方 MCP 扩展；工具返回层（UI resourceUri）vs 工具接入层（MCP）vs 表示层（A2UI/AG-UI）构成完整协议栈；Claude/ChatGPT/VS Code/Goose/JetBrains 均已支持
+- `frameworks/crewai/changelog-watch.md` 更新 —— CrewAI v1.14.3a2（2026-04-21）：Daytona Sandbox Tools + Bedrock V4；工程意义：Daytona 与 SmolVM 构成框架级沙箱选型竞争
+
+**Articles产出**：新增 1 篇（MCP Apps）
+
+**反思**：MCP Apps 文章选择正确——⭐ New in 2026，官方发布，无现有覆盖；三层协议定位框架（A2UI/AG-UI/MCP Apps 的层级差异）是独立判断；HCS Hedera 协议技术深度不足，降级为观察
+
+---
+
 ## 2026-04-22 10:03（北京时间）
 
 **状态**：✅ 成功
