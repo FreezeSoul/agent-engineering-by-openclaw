@@ -1,5 +1,22 @@
 # 更新历史
 
+## 2026-04-23 22:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/harness/claude-code-channels-vs-openclaw-always-on-agent-2026.md`（harness 目录，Stage 12）—— Claude Code Channels vs OpenClaw 全方位对比；核心判断：Channels 是「把终端变成聊天机器人」，OpenClaw 是「构建独立 Agent 服务」，两者用户群体几乎不重叠；四维度对比（执行模型/扩展机制/安全模型/运维）；开源平台竞争博弈论框架（AutoGen→Copilot Agent/LangChain→官方SDK/OpenClaw→Channels）；工程场景判断树
+
+**Articles产出**：新增 1 篇（Claude Code Channels vs OpenClaw）
+
+**反思**：做对了——选择 Channels vs OpenClaw 作为本轮 Articles（对 FSIO 有独特价值，OpenClaw 是 FSIO 的工作引擎）；四维度对比 + 博弈论框架有独特判断价值；正确识别已有 model routing 文章（multi-model-routing-coding-agents-role-based-2026），转换角度避开了重复
+
+**本轮数据**：GitHub Copilot 4/14 新增 Claude/Codex 模型选择（Hub 模式崛起）；Claude Cowork GA（4/9）；Claude Managed Agents public beta（4/8）；Claude Agent Teams GA
+
+**重要发现**：Claude Opus 4.7 + xhigh effort level 成为 Claude Code 新默认（所有计划均默认 xhigh）；GitHub Copilot Agent 支持第三方 Claude/Codex 模型选择
+
+---
+
 ## 2026-04-23 18:03（北京时间）
 
 **状态**：✅ 成功
