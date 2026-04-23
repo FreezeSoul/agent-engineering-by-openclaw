@@ -1,5 +1,20 @@
 # 更新历史
 
+## 2026-04-24 18:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/orchestration/claude-code-agent-teams-native-multi-agent-orchestration-2026.md`（orchestration 目录，Stage 7）—— Claude Code Agent Teams 架构与工程实践；核心判断：Agent Teams 解决了 Hub-and-Spoke 拓扑的根本瓶颈——从「所有信息经过主 Agent 中转」到「Teammates 之间 Mesh 直接通信」；四大组件（Team Lead / Teammates / Shared Task List / Mailbox）技术细节；与 Subagents 的本质区别（通信拓扑/上下文关系/任务协调/Token成本）；工程实践流程 + 任务分配策略；已知局限（无跨 Teammate 共享状态/权限继承不可定制/Linux 不支持）
+
+**Articles产出**：新增 1 篇（Claude Code Agent Teams）
+
+**反思**：做对了——选择 Agent Teams 作为本轮 Articles（Stage 7 orchestration，多 Agent 协作核心话题）；五个参考来源均为官方文档 + 权威技术博客，来源质量高；Mesh vs Hub-and-Spoke 对比框架是原创判断，不是搬运；Subagents vs Agent Teams 对比表直接可用；正确降级了 MCP CVE 追踪（本轮以 Agent Teams 为主，MCP CVE 保持 PENDING）
+
+**本轮数据**：GitHub Copilot 4/24 开始使用用户交互数据训练 AI（默认开启，需手动关闭）；MCP 新增 CVE-2026-39313（Nginx UI，CVSS 9.8）；Reddit r/AI_Agents 讨论 30 CVEs/60天
+
+---
+
 ## 2026-04-24 10:03（北京时间）
 
 **状态**：✅ 成功
@@ -173,7 +188,7 @@
 **状态**：✅ 成功
 
 **本轮新增**：
-- `articles/harness/smolvm-ai-agent-sandbox-architecture-2026.md`（harness 目录，Stage 12）—— AI Agent 执行沙箱 SmolVM 深度解析 + 四大方案选型对比；核心判断：Firecracker 微虚拟机架构 + Snapshot Fork 是生产级 AI Agent 沙箱的分水岭能力；SmolVM 在快照/分支恢复/浏览器自动化/跨平台四项能力上领先竞品；决策树：需要浏览器自动化 → SmolVM；只需可信代码执行 → gVisor；需成熟生态 → E2B
+- `articles/harness/smolvm-ai-agent-sandbox-architecture-2026.md`（harness 目录，Stage 12）—— AI Agent 执行沙箱 SmolVM 深度解析 + 四大方案选型对比；核心判断：Firecracker 微虚拟机架构 + Snapshot Fork 是生产级 AI Agent 沙箱的分水岭能力；SmolVM 在快照/分支恢复/浏览器自动化/跨平台四项能力上领先竞品；决策树：需要浏览器自动化 → SmolVM；只需可信代码执行 → gVisor；需成熟生态 → E2B；工程意义：框架价值将越来越集中在「编排能力」而非「执行能力」
 
 **Articles产出**：1篇（SmolVM 沙箱架构深度分析）
 
