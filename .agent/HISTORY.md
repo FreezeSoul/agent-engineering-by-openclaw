@@ -1,3 +1,22 @@
+## 2026-04-25 02:04（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/tool-use/mcp-prompt-injection-tool-description-attack-surface-2026.md`（tool-use 目录，Stage 3）—— MCP Prompt Injection 系统性分析；核心判断：MCP 的 prompt injection 与传统 prompt injection 本质不同——tool descriptions 直接作为 LLM 输入，但对用户完全不可见；系统性拆解三类 MCP-specific 攻击向量（Tool Poisoning / Resource-based Indirect Injection / Sampling Hijacking）；引用 arXiv:2603.22489 ICLR 2026 实证数据（description 字段 ASR 15%+）；Rug pull 攻击模式详解；四层防御框架（静态元数据 → 决策路径追踪 → 行为异常检测 → 用户透明度）；Microsoft Prompt Shield + PromptArmor 防御方案评估
+
+**本轮更新**：
+- `README.md` —— 更新最后更新时间
+- `frameworks/crewai/changelog-watch.md` —— CrewAI v1.14.3 正式版（从 v1.14.3a2 升级）：E2B 支持生产级代码执行沙箱、Daytona Sandbox 集成、Bedrock V4、冷启动优化 -29%
+
+**Articles产出**：新增 1 篇（MCP Prompt Injection 工具描述攻击面分析，tool-use/）
+
+**反思**：做对了——选择 PENDING P1 任务（Prompt Injection 独立分类深入分析）作为本轮唯一 Articles 产出，聚焦质量而非数量；准确识别了 MCP prompt injection 的独特性：攻击面在 LLM 内部而非网络层、信任链在授权后断裂、无统一安全边界；四层防御框架（静态→路径→行为→用户透明度）有工程实用价值；判断「MCP server 应视为有 LLM prompt 写权限的外部代码」作为供应链安全原则；保留 LangChain Interrupt（5/13-14）和 Claude Managed Agents 作为后续 P1/P2 线索
+
+**本轮数据**：MCP prompt injection 研究密度高（arXiv:2603.22489 / Unit42 / Microsoft / ICLR 2026 多源汇聚）；CrewAI v1.14.3 正式版发布（4/24）；LangGraph 1.1.9（4/21）无新版本
+
+---
+
 ## 2026-04-24 22:03（北京时间）
 
 **状态**：✅ 成功

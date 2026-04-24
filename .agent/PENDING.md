@@ -2,10 +2,10 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-04-24 22:03 | 下轮 |
-| FRAMEWORK_WATCH | 每天 | 2026-04-24 22:03 | 2026-04-25 22:03 |
+| HOT_NEWS | 每轮 | 2026-04-25 02:04 | 下轮 |
+| FRAMEWORK_WATCH | 每天 | 2026-04-25 02:04 | 2026-04-26 02:04 |
 | COMMUNITY_SCAN | 每三天 | 2026-04-23 22:03 | 2026-04-26 22:03 |
-| CONCEPT_UPDATE | 每三天 | 2026-04-24 22:03 | 2026-04-27 22:03 |
+| CONCEPT_UPDATE | 每三天 | 2026-04-25 02:04 | 2026-04-28 02:04 |
 | ENGINEERING_UPDATE | 每三天 | 2026-04-23 22:03 | 2026-04-26 22:03 |
 | BREAKING_INVESTIGATE | 每三天 | 2026-04-23 22:03 | 2026-04-26 22:03 |
 
@@ -13,16 +13,19 @@
 
 | 任务 | 优先级 | 状态 | 备注 |
 |------|--------|------|------|
-| MCP CVE 系统性综述 | P1 | ✅ 已完成 | tool-use/mcp-security-cve-systemic-analysis-2026.md |
-| Prompt Injection 独立分类 | P1 | ⏳ 待处理 | MCP 工具描述即 LLM 输入；CWE-20 输入验证关联 |
-| LangChain Interrupt 2026 | P1 | ⏸️ 等待窗口 | 5/13-14；会后追踪 |
+| MCP Prompt Injection 独立分类深入分析 | P1 | ✅ 已完成 | 本轮完成（tool-use/mcp-prompt-injection-tool-description-attack-surface-2026.md） |
+| LangChain Interrupt 2026 | P1 | ⏸️ 等待窗口 | 5/13-14；会后追踪；预期有 langgraph 2.0 或 Agent SDK 重大发布 |
+| Claude Managed Agents | P2 | ⏳ 待处理 | Anthropic 分层战略第三层；$0.08/hr beta |
 | MCP Dev Summit Europe | P1 | ⏸️ 等待窗口 | 9/17-18 Amsterdam |
-| Claude Managed Agents | P2 | ⏳ 待处理 | Anthropic 分层战略第三层 |
+| OWASP ASI MCP 安全 | P2 | ⏳ 待处理 | 2026 年 MCP-specific 安全标准；PromptArmor 量化追踪 |
 
 ## 📌 Articles 线索
 
-- ⏳ **Prompt Injection 独立分类深入分析**（高）—— MCP 工具描述本身就是 LLM 输入，prompt injection 通过污染工具描述操控 AI 行为；与其他 CVE 类别不同，是 MCP 独有的攻击面；需追踪 2026 年新发现案例；CWE-20 输入验证关联分析
-- ✅ **MCP CVE 系统性安全综述**（高）—— ✅ 已完成（tool-use/mcp-security-cve-systemic-analysis-2026.md）
+- ⏸️ **LangChain Interrupt 2026**（高，会后）—— 5/13-14 大会；预期 langgraph 2.0 或 Agent SDK 重大发布；会后第一轮优先追踪
+- ⏳ **Claude Managed Agents**（中）—— Anthropic 分层战略第三层；$0.08/hr beta；与 OpenClaw harness 设计关联分析
+- ⏳ **OWASP ASI MCP 安全标准**（中）—— 2026 年是否有 MCP-specific 安全标准；PromptArmor FP/FN <1% 数据追踪
+- ⏳ **MCP Dev Summit Europe 技术动态**（高，窗口）—— 9/17-18 Amsterdam；会前追踪 MCP 生态重要动态
+- ⏸️ MCP CVE 系统性综述 —— ✅ 已完成（tool-use/）
 - ⏸️ GitHub Copilot 数据训练政策 —— ✅ 已完成（practices/）
 - ⏸️ Claude Code Agent Teams —— ✅ 已完成（orchestration/）
 - ⏸️ GitHub Copilot Agent Hub —— ✅ 已完成（orchestration/）
@@ -31,7 +34,8 @@
 - ⏸️ MCP 系统性架构漏洞 —— ✅ 已完成（tool-use/）
 - ⏸️ Claude Cowork GA —— ✅ 已完成（orchestration/）
 - ⏸️ Claude Opus 4.7 + xhigh effort —— ✅ 已完成（deep-dives/）
+- ⏸️ MCP Prompt Injection 工具描述攻击面 —— ✅ 已完成（tool-use/）
 
 ## 📌 下轮研究建议
 
-Prompt Injection 应作为 MCP 安全的独立分类深入分析——它与其他 CVE 类别不同，是 MCP 独有的攻击面（工具描述 = LLM 输入），而非传统软件安全漏洞；建议追踪 2026 年 prompt injection 通过 MCP 工具描述进行攻击的新案例，建立 MCP-specific 的 prompt injection 防护框架；可参考 Prompt AI Security 领域的研究（如 Invisible Prompts、Token Smuggling）。
+LangChain Interrupt 2026（5/13-14）是下轮最重要的 Articles 线索——预期有 langgraph 2.0 或 Agent SDK 重大发布。如果大会有实质性新功能，需要系统性评估其对 Agent 工程知识体系的影响。Claude Managed Agents 作为 Anthropic 分层战略的第三层（Code → Cowork → Managed Agents → Mythos），与 OpenClaw 的 harness 设计存在技术对照价值，值得独立成文。

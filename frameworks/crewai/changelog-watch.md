@@ -6,27 +6,23 @@
 
 ## 更新记录
 
+### 2026-04-24 · v1.14.3 Stable ⭐（正式版）
+
+**来源**：[GitHub Releases v1.14.3](https://github.com/crewaiinc/crewai/releases)
+
+| 变更类型 | 变更内容 |
+|---------|---------|
+| **新能力** | **E2b 原生集成**：生产级代码执行沙箱，支持在隔离环境中安全运行 Agent 代码 |
+| **新能力** | **Daytona Sandbox Tools**：集成 Daytona 安全沙箱（v1.14.3a2 引入，本版稳定）|
+| **新能力** | **Bedrock V4 支持**：AWS Bedrock V4 模型支持 |
+| **新能力** | **Lifecycle Events for Checkpoint Operations**：checkpoint 操作的生命周期事件 |
+| **Bug 修复** | execution_id 与 state.id 分离；replay 机制重放事件序列化问题；metadata-only agent skills 保留 |
+| **性能** | **MCP SDK 冷启动优化 -29%**：通过懒加载 MCP SDK 和事件类型实现 |
+| **安全** | lxml 升级至 ≥6.1.0（安全补丁 GHSA-vfmq-68hx-4jfw）；python-dotenv 升级至 ≥1.2.2 |
+
+**为什么重要**：v1.14.3 正式版将三个 alpha 版本的能力（E2B + Daytona + Bedrock V4）合并为稳定版本；冷启动 -29% 对生产环境有实质影响；安全补丁修复了 lxml 和 python-dotenv 的已知漏洞；E2B 原生集成的稳定标志着 CrewAI Agent 沙箱生态走向成熟
+
 ### 2026-04-21 · v1.14.3a2 ⭐
-
-**来源**：[GitHub Release v1.14.3a2](https://github.com/crewaiinc/crewai/releases/tag/v1.14.3a2)
-
-| 变更类型 | 变更内容 |
-|---------|---------|
-| **新能力** | **Bedrock V4 支持**：新增对 AWS Bedrock V4 模型的支持 |
-| **新能力** | **Daytona Sandbox Tools**：集成 Daytona 安全沙箱执行环境，Agent 可在隔离的沙箱中运行代码 |
-| **新能力** | **Build with AI 文档页面**：AI 原生开发文档，为 Coding Agent 提供最佳实践指导 |
-
-**为什么重要**：Daytona Sandbox Tools 的引入使 CrewAI Agent 具备了生产级的代码执行安全隔离能力，与 SmolVM（Stage 12 文章已覆盖）形成框架层面的沙箱选型对比——CrewAI 选择 Daytona 而非自研，揭示了 AI Agent 沙箱生态正在从自研向标准化基础设施分化
-
-### 2026-04-20 · v1.14.3a1
-
-**来源**：[GitHub Release v1.14.3a1](https://github.com/crewaiinc/crewai/releases/tag/v1.14.3a1)
-
-| 变更类型 | 变更内容 |
-|---------|---------|
-| **新能力** | **Standalone Agent Checkpoint/Fork 支持**：为独立 Agent 添加 checkpoint 和 fork 支持，与之前仅为 Crew 提供的能力对齐 |
-| **Bug 修复** | Preserve thought_signature in Gemini streaming tool calls；修复 dry-run 顺序和 devtools release 中 stale branch 处理 |
-| **测试** | 使用未来日期的 checkpoint prune 测试防止时间依赖失败 |
 
 
 ### 2026-04-17 · v1.14.2 ⭐（正式版）
