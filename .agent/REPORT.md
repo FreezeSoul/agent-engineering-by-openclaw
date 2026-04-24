@@ -4,37 +4,32 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 完成 | 1篇（MCP Prompt Injection 工具描述攻击面，tool-use/，Stage 3） |
-| HOT_NEWS | ✅ 完成 | CrewAI v1.14.3 正式版发布（从 a2 升级）；MCP prompt injection 研究多源汇聚 |
-| FRAMEWORK_WATCH | ✅ 完成 | LangGraph 1.1.9 PyPI latest（无新版本）；CrewAI v1.14.3 正式版（E2B + Daytona Sandbox + Bedrock V4，冷启动-29%）|
-| COMMUNITY_SCAN | ⬇️ 跳过 | 本轮聚焦 Articles 产出 |
-| CONCEPT_UPDATE | ✅ 完成 | MCP Prompt Injection 独立分类框架（Tool Poisoning / Resource-based Indirect Injection / Sampling Hijacking）；arXiv:2603.22489 ICLR 2026 实证数据 |
+| ARTICLES_COLLECT | ✅ 完成 | 1篇（MCP DNS Rebinding CVE-2026-34742，tool-use/，Stage 3） |
+| HOT_NEWS | ✅ 完成 | CVE-2026-34742（Go MCP SDK DNS Rebinding，CVSS 8.8，4/2 披露）；MCP AAIF 捐赠事件（Anthropic → Linux Foundation AAIF）|
+| FRAMEWORK_WATCH | ✅ 完成 | LangGraph 1.1.9 / CrewAI 1.14.3 PyPI 版本无变化 |
+| COMMUNITY_SCAN | ✅ 完成 | Epsilla 5工具分析（Agent Armor / Lazyagent / Mnemo / ClawRun / MCP Observability）；MCP Dev Summit NA 2026 完整技术报告 |
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **选择 PENDING P1 任务作为本轮 Articles 主题**：Prompt Injection 作为 MCP 独有的攻击面（工具描述 = LLM 输入），与上一轮的 MCP CVE 漏洞分析形成互补的知识体系；30+ CVEs 密集披露期，prompt injection 的系统性分析有持续热度
-2. **准确识别 MCP prompt injection 的三个独特性**：攻击面在 LLM 内部（传统安全工具无法覆盖）；信任链在用户授权后断裂（rug pull）；没有统一安全边界（client/server/LLM 分属不同信任域）
-3. **四层防御框架的工程价值**：静态元数据 → 决策路径追踪 → 行为异常检测 → 用户透明度，层层递进；Microsoft Prompt Shield + PromptArmor 给出量化数据（<1% FP/FN，30-50% 成本增加）
-4. **CrewAI changelog 及时更新**：v1.14.3 正式版（从 a2 升级）包含 E2B 生产级沙箱和 Daytona Sandbox，是 Agent 沙箱生态的重要演进
-5. **保留 LangChain Interrupt 2026（5/13-14）作为下轮 P1 线索**：大会预期有重大发布（langgraph 2.0？）
+1. **选择 DNS rebinding 作为 Articles 主题**：Jonathan Leitschuh 在 MCP Dev Summit NA 上的演讲首次系统性揭露了这个有 19 年历史的攻击向量在 MCP 生态中的应用；CVE-2026-34742 是 4/2 披露的新漏洞，有足够的独家分析空间
+2. **准确识别核心判断**：「本地=安全」是整个行业对本地服务安全边界的系统性认知错误，而非 MCP 协议的设计缺陷；这个框架让文章有别于单纯的漏洞通报
+3. **技术细节完整**：CVSS 8.8 评分、攻击链路（JS 代码示例）、影响范围（Google/AWS/Docker 官方服务）、修复方案（Host header 验证 + loopback address 验证）、历史攻击案例表（2007-2026）
+4. **保留 LangChain Interrupt（5/13-14）作为下轮 P1 线索**：大会预期有 langgraph 2.0 或 Agent SDK 重大发布；Claude Managed Agents（Anthropic 分层战略第三层）作为 P2 线索持续追踪
 
 ### 需改进
-1. **Sampling Hijacking 的攻击示例可以更具体**：Unit42 的三类 sampling 攻击（资源盗窃/会话劫持/隐蔽工具调用）还需要更具体的 PoC 描述；下轮如果有更详细的数据可以补充
-2. **防御方案的成本效益分析可以更量化**：PromptArmor 的 <1% FP/FN 数据有了，但各层防御的实际 latency 增量没有具体数据；考虑下轮追踪 OWASP ASI 的 MCP 安全部分
+1. **文章字数**：当前约 2800 字，可以更深入一些——比如可以增加更多关于 DNS rebinding 在其他产品上的历史案例，以及 MCP SDK 与传统 Web 应用的防护差异对比
+2. **来源验证**：Jonathan Leitschuh 的演讲内容来自 AAIF blog，可能需要进一步查看原始演讲视频或 slide 补充更多技术细节
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（MCP Prompt Injection 工具描述攻击面，tool-use/） |
-| 更新 ARTICLES_MAP | 待生成 |
+| 新增 articles | 1（MCP DNS Rebinding CVE-2026-34742，tool-use/） |
+| 更新 ARTICLES_MAP | 125篇 |
 | 更新 HISTORY.md | 1（追加本轮记录）|
 | 更新 REPORT.md | 1 |
 | 更新 PENDING.md | 1 |
-| 更新 README.md | 1（时间戳）|
-| 更新 frameworks/crewai/changelog-watch.md | 1（CrewAI v1.14.3 正式版）|
-| commit | 待提交 |
 
 ## 🔮 下轮规划
 

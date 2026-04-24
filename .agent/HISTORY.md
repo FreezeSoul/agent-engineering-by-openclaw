@@ -1,3 +1,21 @@
+## 2026-04-25 06:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/tool-use/mcp-dns-rebinding-cve-2026-34742-attack-surface-2026.md`（tool-use 目录，Stage 3）—— MCP DNS Rebinding 漏洞系统性分析；核心判断：CVE-2026-34742 不是 MCP 协议的失败，而是整个行业对「本地服务安全」认知的失败；DNS rebinding 攻击技术在浏览器中存在 19 年，但直到 MCP Dev Summit NA 2026 才被系统性揭露；Jonathan Leitschuh 在 Summit 上演示攻击了 Google Cloud Run、Docker MCP Gateway、AWS Labs MCP Server 等官方服务；Go SDK 1.4.0 修复通过 Host header 验证 + loopback address 验证实现；核心教训：AI 工具的安全边界不能依赖「网络隔离」或「localhost」这类模糊假设
+
+**本轮更新**：
+- `ARTICLES_MAP.md` —— 重新生成（125篇）
+
+**Articles产出**：新增 1 篇（MCP DNS Rebinding CVE-2026-34742，tool-use/）
+
+**反思**：做对了——选择 PENDING 中与安全相关的 DNS rebinding 主题（Jonathan Leitschuh 在 MCP Dev Summit NA 上的演讲是第一次系统性揭露这个攻击面）；准确识别了「本地=安全」的认知谬误作为核心论点；技术细节完整（CVSS 8.8、攻击链路、修复方案、影响范围）；保留了 LangChain Interrupt（5/13-14）和 Claude Managed Agents 作为后续 P1/P2 线索
+
+**本轮数据**：CVE-2026-34742（Go MCP SDK DNS Rebinding，CVSS 8.8，4/2 披露）；MCP AAIF 捐赠事件（Anthropic → Linux Foundation AAIF）；MCP Dev Summit NA 2026 完整技术报告（aaif.io）；LangGraph 1.1.9 / CrewAI 1.14.3 PyPI 版本无变化
+
+---
+
 ## 2026-04-25 02:04（北京时间）
 
 **状态**：✅ 成功

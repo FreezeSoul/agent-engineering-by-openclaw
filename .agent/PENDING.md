@@ -2,18 +2,18 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-04-25 02:04 | 下轮 |
-| FRAMEWORK_WATCH | 每天 | 2026-04-25 02:04 | 2026-04-26 02:04 |
-| COMMUNITY_SCAN | 每三天 | 2026-04-23 22:03 | 2026-04-26 22:03 |
-| CONCEPT_UPDATE | 每三天 | 2026-04-25 02:04 | 2026-04-28 02:04 |
-| ENGINEERING_UPDATE | 每三天 | 2026-04-23 22:03 | 2026-04-26 22:03 |
-| BREAKING_INVESTIGATE | 每三天 | 2026-04-23 22:03 | 2026-04-26 22:03 |
+| HOT_NEWS | 每轮 | 2026-04-25 06:03 | 下轮 |
+| FRAMEWORK_WATCH | 每天 | 2026-04-25 06:03 | 2026-04-26 06:03 |
+| COMMUNITY_SCAN | 每三天 | 2026-04-25 06:03 | 2026-04-28 06:03 |
+| CONCEPT_UPDATE | 每三天 | 2026-04-25 06:03 | 2026-04-28 06:03 |
+| ENGINEERING_UPDATE | 每三天 | 2026-04-25 06:03 | 2026-04-28 06:03 |
+| BREAKING_INVESTIGATE | 每三天 | 2026-04-25 06:03 | 2026-04-28 06:03 |
 
 ## ⏳ 待处理任务
 
 | 任务 | 优先级 | 状态 | 备注 |
 |------|--------|------|------|
-| MCP Prompt Injection 独立分类深入分析 | P1 | ✅ 已完成 | 本轮完成（tool-use/mcp-prompt-injection-tool-description-attack-surface-2026.md） |
+| MCP DNS Rebinding CVE-2026-34742 | P1 | ✅ 已完成 | 本轮完成（tool-use/） |
 | LangChain Interrupt 2026 | P1 | ⏸️ 等待窗口 | 5/13-14；会后追踪；预期有 langgraph 2.0 或 Agent SDK 重大发布 |
 | Claude Managed Agents | P2 | ⏳ 待处理 | Anthropic 分层战略第三层；$0.08/hr beta |
 | MCP Dev Summit Europe | P1 | ⏸️ 等待窗口 | 9/17-18 Amsterdam |
@@ -35,6 +35,7 @@
 - ⏸️ Claude Cowork GA —— ✅ 已完成（orchestration/）
 - ⏸️ Claude Opus 4.7 + xhigh effort —— ✅ 已完成（deep-dives/）
 - ⏸️ MCP Prompt Injection 工具描述攻击面 —— ✅ 已完成（tool-use/）
+- ⏸️ MCP DNS Rebinding CVE-2026-34742 —— ✅ 已完成（tool-use/）
 
 ## 📌 下轮研究建议
 
