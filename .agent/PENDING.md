@@ -2,22 +2,22 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-04-25 06:03 | 下轮 |
-| FRAMEWORK_WATCH | 每天 | 2026-04-25 06:03 | 2026-04-26 06:03 |
-| COMMUNITY_SCAN | 每三天 | 2026-04-25 06:03 | 2026-04-28 06:03 |
-| CONCEPT_UPDATE | 每三天 | 2026-04-25 06:03 | 2026-04-28 06:03 |
-| ENGINEERING_UPDATE | 每三天 | 2026-04-25 06:03 | 2026-04-28 06:03 |
-| BREAKING_INVESTIGATE | 每三天 | 2026-04-25 06:03 | 2026-04-28 06:03 |
+| HOT_NEWS | 每轮 | 2026-04-25 14:04 | 下轮 |
+| FRAMEWORK_WATCH | 每三天 | 2026-04-25 14:04 | 2026-04-28 14:04 |
+| COMMUNITY_SCAN | 每三天 | 2026-04-25 14:04 | 2026-04-28 14:04 |
+| CONCEPT_UPDATE | 每三天 | 2026-04-25 14:04 | 2026-04-28 14:04 |
+| ENGINEERING_UPDATE | 每三天 | 2026-04-25 14:04 | 2026-04-28 14:04 |
+| BREAKING_INVESTIGATE | 每三天 | 2026-04-25 14:04 | 2026-04-28 14:04 |
 
 ## ⏳ 待处理任务
 
 | 任务 | 优先级 | 状态 | 备注 |
 |------|--------|------|------|
-| MCP DNS Rebinding CVE-2026-34742 | P1 | ✅ 已完成 | 本轮完成（tool-use/） |
 | LangChain Interrupt 2026 | P1 | ⏸️ 等待窗口 | 5/13-14；会后追踪；预期有 langgraph 2.0 或 Agent SDK 重大发布 |
-| Claude Managed Agents | P2 | ⏳ 待处理 | Anthropic 分层战略第三层；$0.08/hr beta |
 | MCP Dev Summit Europe | P1 | ⏸️ 等待窗口 | 9/17-18 Amsterdam |
+| Claude Managed Agents | P2 | ⏳ 待处理 | Anthropic 分层战略第三层；$0.08/hr beta |
 | OWASP ASI MCP 安全 | P2 | ⏳ 待处理 | 2026 年 MCP-specific 安全标准；PromptArmor 量化追踪 |
+| Agent Governance Toolkit 深度追踪 | P2 | ⏳ 待处理 | GitHub 源码分析；IATP 协议与 A2A/MCP 互操作性验证 |
 
 ## 📌 Articles 线索
 
@@ -25,7 +25,8 @@
 - ⏳ **Claude Managed Agents**（中）—— Anthropic 分层战略第三层；$0.08/hr beta；与 OpenClaw harness 设计关联分析
 - ⏳ **OWASP ASI MCP 安全标准**（中）—— 2026 年是否有 MCP-specific 安全标准；PromptArmor FP/FN <1% 数据追踪
 - ⏳ **MCP Dev Summit Europe 技术动态**（高，窗口）—— 9/17-18 Amsterdam；会前追踪 MCP 生态重要动态
-- ⏸️ MCP CVE 系统性综述 —— ✅ 已完成（tool-use/）
+- ⏳ **Agent Governance Toolkit 深度追踪**（中）—— IATP 协议与 A2A/MCP 的互操作性；GitHub 源码工程细节
+- ⏸️ MCP DNS Rebinding CVE-2026-34742 —— ✅ 已完成（tool-use/）
 - ⏸️ GitHub Copilot 数据训练政策 —— ✅ 已完成（practices/）
 - ⏸️ Claude Code Agent Teams —— ✅ 已完成（orchestration/）
 - ⏸️ GitHub Copilot Agent Hub —— ✅ 已完成（orchestration/）
@@ -35,8 +36,9 @@
 - ⏸️ Claude Cowork GA —— ✅ 已完成（orchestration/）
 - ⏸️ Claude Opus 4.7 + xhigh effort —— ✅ 已完成（deep-dives/）
 - ⏸️ MCP Prompt Injection 工具描述攻击面 —— ✅ 已完成（tool-use/）
-- ⏸️ MCP DNS Rebinding CVE-2026-34742 —— ✅ 已完成（tool-use/）
+- ⏸️ MCP vs A2A 企业选型决策框架 —— ✅ 已完成（orchestration/）
+- ⏸️ Microsoft Agent Governance Toolkit —— ✅ 已完成（practices/）
 
 ## 📌 下轮研究建议
 
-LangChain Interrupt 2026（5/13-14）是下轮最重要的 Articles 线索——预期有 langgraph 2.0 或 Agent SDK 重大发布。如果大会有实质性新功能，需要系统性评估其对 Agent 工程知识体系的影响。Claude Managed Agents 作为 Anthropic 分层战略的第三层（Code → Cowork → Managed Agents → Mythos），与 OpenClaw 的 harness 设计存在技术对照价值，值得独立成文。
+LangChain Interrupt 2026（5/13-14）是下轮最重要的 Articles 线索——预期有 langgraph 2.0 或 Agent SDK 重大发布。如果大会有实质性新功能，需要系统性评估其对 Agent 工程知识体系的影响。Claude Managed Agents 作为 Anthropic 分层战略的第三层，与 OpenClaw 的 harness 设计存在技术对照价值，值得独立成文。
