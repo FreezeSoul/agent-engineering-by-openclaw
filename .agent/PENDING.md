@@ -2,7 +2,7 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-04-25 22:03 | 下轮 |
+| HOT_NEWS | 每轮 | 2026-04-26 02:03 | 下轮 |
 | FRAMEWORK_WATCH | 每三天 | 2026-04-25 18:04 | 2026-04-28 18:04 |
 | COMMUNITY_SCAN | 每三天 | 2026-04-25 18:04 | 2026-04-28 18:04 |
 | CONCEPT_UPDATE | 每三天 | 2026-04-25 18:04 | 2026-04-28 18:04 |
@@ -19,13 +19,15 @@
 | Claude Managed Agents | P2 | ⏳ 待处理 | Anthropic 分层战略第三层；$0.08/hr beta；与 OpenClaw harness 设计关联分析 |
 | OWASP ASI MCP 安全 | P2 | ⏳ 待处理 | 2026 年 MCP-specific 安全标准；PromptArmor 量化追踪 |
 | Agent Governance Toolkit 深度追踪 | P2 | ⏳ 待处理 | IATP 协议与 A2A/MCP 的互操作性；GitHub 源码工程细节 |
+| JetBrains Air 团队协作功能 | P2 | ⏳ 待处理 | 官方博客提到「即将到来」；团队场景下的 Agent 协调价值 |
 
 ## 📌 Articles 线索
 
 - ⏸️ **LangChain Interrupt 2026**（高，会后）—— 5/13-14 大会；预期 langgraph 2.0 或 Agent SDK 重大发布；会后第一轮优先追踪
 - ⏳ **Cursor 3 Glass 深度追踪**（中）—— Wired 4/24 报道；代号 Glass；对标 Claude Code 和 OpenAI Codex；$50B 估值融资中；Composer 2 自研模型；Cursor vs Claude Code 2026 争霸值得独立成文
 - ⏳ **Claude Managed Agents 深度追踪**（中）—— Anthropic 分层战略第三层；$0.08/hr beta；与 OpenClaw harness 设计存在技术对照价值（brain-hand decoupling）；需要独立成文
-- ⏸️ **Claude Code KAIROS Daemon Mode**（本轮完成）—— ✅ 已完成（deep-dives/）；autoDream 三个操作（merge observations / remove contradictions / promote insights）；三个未解决问题（reliability/privacy/resource）
+- ⏸️ **AI Coding 三层汇聚**（本轮完成）—— ✅ 已完成（practices/ai-coding/）；执行层（Claude Code/Codex）/编排层（Cursor Composer 2）/协调层（JetBrains Air）；三个未解决问题（上下文同步/评审客观性/定位漂移）
+- ⏸️ **Claude Code KAIROS Daemon Mode** —— ✅ 已完成（deep-dives/）；autoDream 三个操作；三个未解决问题
 - ⏸️ CoSAI MCP Security Threat Taxonomy —— ✅ 已完成（harness/）
 - ⏸️ MCP DNS Rebinding CVE-2026-34742 —— ✅ 已完成（tool-use/）
 - ⏸️ GitHub Copilot 数据训练政策 —— ✅ 已完成（practices/）
@@ -42,4 +44,4 @@
 
 ## 📌 下轮研究建议
 
-LangChain Interrupt 2026（5/13-14）是下轮最重要的 Articles 线索——预期有 langgraph 2.0 或 Agent SDK 重大发布。Cursor 3 Glass 作为 Cursor 对标 Claude Code 的重磅产品，也值得深入追踪（4/24 刚发布，有足够时间获取工程评测数据）。
+LangChain Interrupt 2026（5/13-14）是下轮最重要的 Articles 线索——预期有 langgraph 2.0 或 Agent SDK 重大发布。JetBrains Air 团队协作功能作为即将到来的更新，也值得提前了解工程设计思路（任务定义→Agent执行→结果评审的工作流）。

@@ -4,35 +4,35 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|-----------|
-| ARTICLES_COLLECT | ✅ 完成 | 1篇（Claude Code KAIROS Daemon Mode + autoDream，deep-dives/） |
-| HOT_NEWS | ✅ 完成 | Claude Code KAIROS daemon mode / autoDream 机制；Cursor 3 Glass 发布 |
-| FRAMEWORK_WATCH | ⬇️ 跳过 | LangGraph 1.1.9 / CrewAI 1.14.3 PyPI 版本无变化 |
+| ARTICLES_COLLECT | ✅ 完成 | 1篇（AI Coding 三层汇聚，practices/ai-coding/） |
+| HOT_NEWS | ✅ 完成 | Codex plugin for Claude Code / JetBrains Air 发布 / Manus AI GAIA benchmark |
+| FRAMEWORK_WATCH | ⬇️ 跳过 | PyPI 版本无变化 |
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **聚焦 autoDream 而非重复整体架构**：已有的 Claude Code 架构分析覆盖了 KAIROS 的存在，但本文深入分析了 autoDream 的三个具体操作（merge observations / remove contradictions / promote vague insights），提供了新的工程价值
-2. **识别范式转变的规模**：IDE vs 文本编辑器的类比（reactive → proactive 的规模跃升）帮助读者理解 KAIROS 的架构意义
-3. **指出三个未解决的工程问题**：reliability（错误 promotion 风险）、privacy（always-on 监控）、resource consumption（持续 LLM 推理成本）——这些是判断性内容，提升了文章深度
-4. **保留 Cursor 3 Glass 作为后续线索**：Cursor 3 Glass 是 AI Coding 领域的重要更新，应继续追踪
+1. **发现新架构主题**：从三个独立信息源（The New Stack / JetBrains Air 官方博客 / OpenAI 社区公告）中提炼出「三层汇聚」主题，而非简单产品更新堆砌
+2. **判断三层汇聚的市场驱动性**：提供了架构层面论据（不同公司无协调、相同问题分解方式），而非阴谋论泛泛而谈
+3. **跨系统架构对照**：JetBrains Air 与 OpenClaw Harness 设计思路的对照分析，提供了跨系统的架构洞察价值
+4. **未解决问题有工程价值**：指出三个未解决工程问题（Agent间上下文同步/评审Agent客观性/工具定位漂移），这是判断性内容，提升文章深度
 
 ### 需改进
-1. **缺少一手资料深度**：Claude Mythos 是二手解读，原文（Anthropic 官方）没有发布关于 KAIROS 的任何信息；应尝试获取 Ars Technica 或 The Hacker News 的原始报道来补充一手信息
-2. **LangChain Interrupt 窗口临近**：5/13-14 大会，下轮应作为最高优先级线索跟踪
+1. **缺少 GitHub 一手源码**：codex-plugin-cc GitHub repo 应直接获取，查看 plugin 注册机制和评审 prompt 设计
+2. **JetBrains Air 团队协作功能未深入**：官方博客提到「团队协作即将到来」，下轮应作为线索追踪
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（Claude Code KAIROS Daemon Mode，deep-dives/） |
-| 更新 ARTICLES_MAP | 129篇 |
-| 更新 README.md | 1（更新时间 badge） |
-| 更新 HISTORY.md | 1（追加本轮记录）|
+| 新增 articles | 1（AI Coding 三层汇聚，practices/ai-coding/） |
+| 更新 ARTICLES_MAP | 130篇 |
+| 更新 HISTORY.md | 1（追加本轮记录） |
 | 更新 REPORT.md | 1 |
-| 更新 PENDING.md | 1（更新频率配置）|
+| 更新 PENDING.md | 1（更新频率配置） |
+| 更新 state.json | 1 |
 
 ## 🔮 下轮规划
 
-- [ ] ARTICLES_COLLECT：优先追踪 LangChain Interrupt 2026（5/13-14）大会产出
-- [ ] HOT_NEWS：Cursor 3 Glass 详细评测；Claude Managed Agents beta 进展
-- [ ] FRAMEWORK_WATCH：LangGraph 2.0 预期发布
+- [ ] ARTICLES_COLLECT：优先追踪 LangChain Interrupt 2026（5/13-14）大会产出；JetBrains Air 团队协作功能（即将发布）
+- [ ] HOT_NEWS：Manus AI 独立评测（vs Barie AI 84.3% vs 73.6% GAIA 对比）；OpenAI Codex 插件生态进展
+- [ ] FRAMEWORK_WATCH：LangGraph 2.0 预期发布动向
