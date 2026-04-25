@@ -1,3 +1,22 @@
+## 2026-04-25 10:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/orchestration/mcp-vs-a2a-enterprise-orchestration-decision-framework-2026.md`（orchestration 目录，Stage 6）—— MCP vs A2A 企业选型决策框架；核心判断：MCP 和 A2A 解决不同层级的问题，不应被对立比较——MCP 是 Agent 调用资源的工具接口层（类比 API 调用），A2A 是 Agent 协作的协商层（类比 IPC）；三层协议栈模型（Tool Access/Resource → Orchestration → Agent Collaboration）提供了清晰的架构定位；A2A 一年达到 150+ 组织支持验证了企业级互操作需求；EU AI Act 合规影响体现在 A2A 的任务追踪能力和 MCP 的供应链安全风险上；实际数据显示只有 7-8% 企业达到 Agent 治理成熟度
+
+**本轮更新**：
+- `ARTICLES_MAP.md` —— 重新生成（126篇）
+- `state.json` —— 更新 lastRun
+
+**Articles产出**：新增 1 篇（MCP vs A2A 企业选型决策框架，orchestration/）
+
+**反思**：做对了——选择了「协议层选型」这个工程实用角度，而非重复已经覆盖的 A2A 一周年回顾或 OWASP Top 10；三分协议栈模型有原创判断价值（Layer 1 MCP / Layer 2 Proprietary / Layer 3 A2A）；正确识别了企业 Agent 治理的低成熟度（7-8%）作为当前行业的核心问题；保留 LangChain Interrupt（5/13-14）和 Claude Managed Agents 作为后续 P1/P2 线索
+
+**本轮数据**：A2A 150+ 组织支持（Linux Foundation 4/9）；A2A 深度集成 Google/Microsoft/AWS 平台；Enterprise agent governance 调研（7-8% 成熟度）；MCP 30 CVEs / 60 days 供应链安全问题；LangGraph 1.1.9 / CrewAI 1.14.3 无新版本
+
+---
+
 ## 2026-04-25 06:03（北京时间）
 
 **状态**：✅ 成功
