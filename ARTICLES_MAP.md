@@ -2,14 +2,15 @@
 
 > Auto-generated at 2026-04-25 10:10:54
 
-> Total articles: 126
+> Total articles: 127
 
 ---
 
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | MCP vs A2A：企业多 Agent 编排协议选型决策框架 | orchestration | unknown | [articles/orchestration/mcp-vs-a2a-enterprise-orchestration-decision-framework-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/mcp-vs-a2a-enterprise-orchestration-decision-framework-2026.md) |
+| 1 | Microsoft Agent Governance Toolkit：企业级 AI Agent 运行时安全的工程实践 | practices | 2026-04-25 | [articles/practices/microsoft-agent-governance-toolkit-owasp-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/practices/microsoft-agent-governance-toolkit-owasp-2026.md) |
+| 2 | MCP vs A2A：企业多 Agent 编排协议选型决策框架 | orchestration | unknown | [articles/orchestration/mcp-vs-a2a-enterprise-orchestration-decision-framework-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/mcp-vs-a2a-enterprise-orchestration-decision-framework-2026.md) |
 | 2 | MCP DNS Rebinding 漏洞：本地服务器的「安全」幻觉是如何被打破的 | tool-use | 2026-04-25 | [articles/tool-use/mcp-dns-rebinding-cve-2026-34742-attack-surface-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/mcp-dns-rebinding-cve-2026-34742-attack-surface-2026.md) |
 | 3 | MCP Prompt Injection：工具描述即攻击面——为什么它是 MCP 独有的安全威胁 | tool-use | 2026-04-25 | [articles/tool-use/mcp-prompt-injection-tool-description-attack-surface-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/mcp-prompt-injection-tool-description-attack-surface-2026.md) |
 | 4 | MCP 安全危机：30 CVEs/60 天系统性梳理与分类框架 | tool-use | 2026-04-24 | [articles/tool-use/mcp-security-cve-systemic-analysis-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/mcp-security-cve-systemic-analysis-2026.md) |
