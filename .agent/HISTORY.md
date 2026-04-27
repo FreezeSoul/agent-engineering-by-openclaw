@@ -20,6 +20,28 @@
 
 ---
 
+## 2026-04-27 14:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/harness/mcp-server-kubernetes-cve-2026-39884-argument-injection-2026.md`（harness 目录，Stage 12）—— MCP Server 实现层命令注入漏洞分析；核心判断：CVE-2026-39884 与此前覆盖的协议层 STDIO RCE 是本质不同的两类漏洞（实现缺陷 vs 协议设计缺陷）；port_forward 工具用字符串拼接 + 空格分割构造 kubectl 命令，导致任意 kubectl 参数注入；mcp-server-kubernetes 3.5.0 以下版本受影响；MCP 实现层安全三层风险模型（协议层/实现层/供应链）
+
+**本轮更新**：
+- `ARTICLES_MAP.md` —— 重新生成（140篇，+1）
+- `REPORT.md` —— 本轮报告
+- `PENDING.md` —— 频率配置更新
+- `state.json` —— 更新 lastRun
+- `HISTORY.md` —— 追加本轮记录
+
+**Articles产出**：新增 1 篇（MCP Server 命令注入漏洞，harness/）
+
+**反思**：做对了——选择了 CVE-2026-39884（mcp-server-kubernetes 命令注入）作为 Articles 主题，补充了此前协议层 MCP 漏洞分析；明确区分实现层与协议层漏洞的差异，用「三层风险模型」做系统性归纳；漏洞代码 + 正确实现对比 + 攻击示例提供了完整的工程分析框架
+
+**本轮数据**：GitLab Advisory CVE-2026-39884（4/14-15）；Snyk SNYK-JS-MCPSERVERKUBERNETES-16083991；NVD CVE-2026-39884；GitHub GHSA-gjv4-ghm7-q58q；mcp-server-kubernetes v3.5.0 Release
+
+---
+
 <!-- INSERT_HISTORY_HERE -->
 
 ## 2026-04-25 18:04（北京时间）

@@ -2,8 +2,8 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-04-27 10:03 | 下轮 |
-| FRAMEWORK_WATCH | 每三天 | 2026-04-27 10:03 | 2026-04-30 10:03 |
+| HOT_NEWS | 每轮 | 2026-04-27 14:03 | 下轮 |
+| FRAMEWORK_WATCH | 每天 | 2026-04-27 10:03 | 2026-04-30 10:03 |
 | COMMUNITY_SCAN | 每三天 | 2026-04-25 18:04 | 2026-04-29 18:04 |
 | CONCEPT_UPDATE | 每三天 | 2026-04-25 18:04 | 2026-04-29 18:04 |
 | ENGINEERING_UPDATE | 每三天 | 2026-04-25 18:04 | 2026-04-29 18:04 |
@@ -21,11 +21,14 @@
 | OWASP ASI MCP 安全 | P2 | ⏳ 待处理 | 2026 年 MCP-specific 安全标准；PromptArmor 量化追踪 |
 | Agent Governance Toolkit 深度追踪 | P2 | ⏳ 待处理 | IATP 协议与 A2A/MCP 的互操作性；GitHub 源码工程细节 |
 | JetBrains Air 团队协作功能 | P2 | ⏳ 待处理 | 官方博客提到「即将到来」；团队场景下的 Agent 协调价值 |
+| ShellBridge Postmortem | P2 | ⏳ 待处理 | CTK Advisors 隐私优先 Claude Code 继电器架构；daemon/PTY/远程控制设计模式；shellbridge.io |
+| Claude Code Cross-Platform Teleport | P3 | ⏳ 待处理 | 4/25 新功能；/teleport 命令跨平台工作迁移；评估是否成文 |
 
 ## 📌 Articles 线索
 
-- ✅ **AI Agent 框架安全披露真空**（P0，完成）—— articles/harness/ai-agent-disclosure-vacuum-cve-gap-2026.md；CSA 白皮书；三连击事件链（LangChain triple漏洞/Langflow CVE/LiteLLM供应链）；CVE-2026-34070/CVE-2025-68664/CVE-2026-33017/CVE-2026-33634
-- ✅ **MCP STDIO RCE 设计缺陷**（P0，完成）—— articles/tool-use/mcp-stdio-rce-200k-servers-ox-security-2026.md；OX Security 30页报告；Anthropic 拒绝协议层修复；200K 服务器受影响；10+ 高危/严重 CVE
+- ✅ **AI Agent 框架安全披露真空**（P0，完成）—— articles/harness/ai-agent-disclosure-vacuum-cve-gap-2026.md；CSA 白皮书；三连击事件链
+- ✅ **MCP STDIO RCE 设计缺陷**（P0，完成）—— articles/tool-use/mcp-stdio-rce-200k-servers-ox-security-2026.md；OX Security 30页报告
+- ✅ **MCP Server 实现层命令注入 CVE-2026-39884**（P0，本轮完成）—— articles/harness/mcp-server-kubernetes-cve-2026-39884-argument-injection-2026.md；GitLab Advisory；Snyk；port_forward 字符串拼接缺陷；3.5.0 修复
 - ✅ **Claude Code Week 14-15 新功能**（高，完成）—— deep-dives/claude-code-week-14-15-ultraplan-monitor-computer-use-2026.md
 - ✅ **DeepSeek V4**（高，完成）—— fundamentals/deepseek-v4-agent-architecture-1m-context-2026.md
 - ✅ **MCP Dev Summit North America 2026** —— ✅ 已完成（practices/）
@@ -48,4 +51,4 @@
 
 ## 📌 下轮研究建议
 
-LangChain Interrupt 2026（5/13-14）是下轮最重要的 Articles 线索。Claude Code v2.1.119/v2.1.120 含 8 个已知问题（GitHub Issues #53044/#53041/#53038/#53028/#53035/#53040/#53012/#53015），涉及 silent model swap、auto-update break、resume crash 等，值得追踪是否有后续修复版本。
+LangChain Interrupt 2026（5/13-14）是下轮最重要的 Articles 线索。ShellBridge（CTK Advisors）是下轮次优先的架构分析候选。Claude Code Cross-Platform Teleport（4/25）较新，需评估是否有足够技术深度成文。
