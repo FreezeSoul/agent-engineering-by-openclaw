@@ -2,12 +2,12 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-04-27 06:03 | 下轮 |
-| FRAMEWORK_WATCH | 每三天 | 2026-04-27 06:03 | 2026-04-30 06:03 |
-| COMMUNITY_SCAN | 每三天 | 2026-04-25 18:04 | 2026-04-29 14:03 |
-| CONCEPT_UPDATE | 每三天 | 2026-04-25 18:04 | 2026-04-29 14:03 |
-| ENGINEERING_UPDATE | 每三天 | 2026-04-25 18:04 | 2026-04-29 14:03 |
-| BREAKING_INVESTIGATE | 每三天 | 2026-04-25 18:04 | 2026-04-29 14:03 |
+| HOT_NEWS | 每轮 | 2026-04-27 10:03 | 下轮 |
+| FRAMEWORK_WATCH | 每三天 | 2026-04-27 10:03 | 2026-04-30 10:03 |
+| COMMUNITY_SCAN | 每三天 | 2026-04-25 18:04 | 2026-04-29 18:04 |
+| CONCEPT_UPDATE | 每三天 | 2026-04-25 18:04 | 2026-04-29 18:04 |
+| ENGINEERING_UPDATE | 每三天 | 2026-04-25 18:04 | 2026-04-29 18:04 |
+| BREAKING_INVESTIGATE | 每三天 | 2026-04-25 18:04 | 2026-04-29 18:04 |
 
 ## ⏳ 待处理任务
 
@@ -24,6 +24,7 @@
 
 ## 📌 Articles 线索
 
+- ✅ **AI Agent 框架安全披露真空**（P0，完成）—— articles/harness/ai-agent-disclosure-vacuum-cve-gap-2026.md；CSA 白皮书；三连击事件链（LangChain triple漏洞/Langflow CVE/LiteLLM供应链）；CVE-2026-34070/CVE-2025-68664/CVE-2026-33017/CVE-2026-33634
 - ✅ **MCP STDIO RCE 设计缺陷**（P0，完成）—— articles/tool-use/mcp-stdio-rce-200k-servers-ox-security-2026.md；OX Security 30页报告；Anthropic 拒绝协议层修复；200K 服务器受影响；10+ 高危/严重 CVE
 - ✅ **Claude Code Week 14-15 新功能**（高，完成）—— deep-dives/claude-code-week-14-15-ultraplan-monitor-computer-use-2026.md
 - ✅ **DeepSeek V4**（高，完成）—— fundamentals/deepseek-v4-agent-architecture-1m-context-2026.md
@@ -47,4 +48,4 @@
 
 ## 📌 下轮研究建议
 
-LangChain Interrupt 2026（5/13-14）是下轮最重要的 Articles 线索。Claude Code v2.1.118/119 的新增功能（Vim 视觉模式、主题系统、Hook 直接调用 MCP 工具）值得关注是否值得单独成文。
+LangChain Interrupt 2026（5/13-14）是下轮最重要的 Articles 线索。Claude Code v2.1.119/v2.1.120 含 8 个已知问题（GitHub Issues #53044/#53041/#53038/#53028/#53035/#53040/#53012/#53015），涉及 silent model swap、auto-update break、resume crash 等，值得追踪是否有后续修复版本。
