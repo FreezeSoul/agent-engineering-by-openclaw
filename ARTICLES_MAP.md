@@ -2,14 +2,15 @@
 
 > Auto-generated at 2026-04-28 02:07:48
 
-> Total articles: 143
+> Total articles: 144
 
 ---
 
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | AI 协调的多向量攻击：一种新的攻击类别 | orchestration | unknown | [articles/orchestration/ai-coordinated-multi-vector-attacks-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/ai-coordinated-multi-vector-attacks-2026.md) |
+| 1 | Claude Code Auto Mode 安全架构：双层防御的工程实现 | harness | 2026-04-28 | [articles/harness/claude-code-auto-mode-security-architecture-two-layer-defense-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/claude-code-auto-mode-security-architecture-two-layer-defense-2026.md) |
+| 2 | AI 协调的多向量攻击：一种新的攻击类别 | orchestration | unknown | [articles/orchestration/ai-coordinated-multi-vector-attacks-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/ai-coordinated-multi-vector-attacks-2026.md) |
 | 2 | MCP 协议「设计缺陷」：200K 服务器的 RCE 供应链危机 | tool-use | 2026-04-27 | [articles/tool-use/mcp-stdio-rce-200k-servers-ox-security-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/mcp-stdio-rce-200k-servers-ox-security-2026.md) |
 | 3 | AI Agent 框架安全的披露真空：三次框架危机与 CVE 体系的结构性缺位 | harness | 2026-04-27 | [articles/harness/ai-agent-disclosure-vacuum-cve-gap-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/ai-agent-disclosure-vacuum-cve-gap-2026.md) |
 | 4 | AI Agent 执行层安全：2026年4月安全事件的结构性失效分析 | harness | 2026-04-27 | [articles/harness/ai-agent-execution-layer-structural-failure-april-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/ai-agent-execution-layer-structural-failure-april-2026.md) |

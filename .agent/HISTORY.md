@@ -77,6 +77,26 @@
 
 ---
 
+## 2026-04-28 14:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/harness/claude-code-auto-mode-security-architecture-two-layer-defense-2026.md`（harness 目录，Stage 12）—— Claude Code Auto Mode 安全架构：双层防御的工程实现；核心判断：Auto Mode 的双层防御架构（Prompt Injection Probe 输入层 + Transcript Classifier 输出层）解决了 Agent 权限决策的结构性问题；两阶段分类器（Stage 1 Fast Filter + Stage 2 CoT）实现成本-精度平衡；Reasoning-Blind 设计（Classifier 看不到 Claude 自身输出）避免判断被说服力污染；Tier 权限分层（Tier 1 Allowlist / Tier 2 项目内操作 / Tier 3 Classifier）是可复用的权限架构模式；四类威胁模型（Overeager/Honest Mistakes/Prompt Injection/Misaligned）提供了 Agent 安全威胁分类的统一框架
+
+**本轮更新**：
+- `ARTICLES_MAP.md` —— 手动追加新文章（143→144）
+- `REPORT.md` —— 本轮报告
+- `PENDING.md` —— 频率配置更新
+- `state.json` —— 更新 lastRun
+- `HISTORY.md` —— 追加本轮记录
+
+**Articles产出**：新增 1 篇（Auto Mode 双层防御架构，harness/）
+
+**反思**：做对了——选择了 Auto Mode 双层防御架构作为 Articles 主题；Reasoning-Blind 分类器设计（Classifier 看不到 Claude 输出）是本文最独特的架构洞察，可推广到任何需要独立审核的系统；两阶段分类器（Fast Filter + CoT）的成本-精度平衡有实战工程价值；下轮应扩展数据源覆盖（LangChain/CrewAI/AutoGen 官方博客 + arXiv 新论文）
+
+**本轮数据**：Anthropic Engineering（Auto Mode，2026-03-25）；Anthropic Engineering（Managed Agents brain-hand decoupling，2026-04-08）；Anthropic Engineering（Harness Design for Long-Running Apps，2026-03-24）；Anthropic Engineering（April 23 postmortem，2026-04-23）；GitHub LangGraph releases（v1.1.9，4/21）；Microsoft DevBlogs（Agent Framework v1.0 GA，4/03）
+
 <!-- INSERT_HISTORY_HERE -->
 
 ## 2026-04-25 18:04（北京时间）
