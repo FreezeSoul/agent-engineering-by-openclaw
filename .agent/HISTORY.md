@@ -151,4 +151,26 @@
 
 ---
 
+## 2026-04-27 18:03（北京时间）
+
+**状态**：✅ 成功
+
+**本轮新增**：
+- `articles/deep-dives/shellbridge-postmortem-claude-code-remote-session-architecture-2026.md`（deep-dives 目录）—— ShellBridge 架构剖析：Claude Code 远程会话机密边界；核心判断：Claude Code 的会话上下文是机密计算边界，而非传输层问题；ShellBridge 的 PTY/daemon/Cloudflare Worker/React PWA 三层 outbound-only 架构是隐私优先 relay 的优秀设计范式；但 ACP 会话层对 relay 完全不可见，导致任何第三方中继在功能层面永远无法追上官方 Remote Control；ShellBridge 被官方方案「间接杀死」是平台生态中第三方实现的结构性上限案例
+
+**本轮更新**：
+- `ARTICLES_MAP.md` —— 重新生成（141篇，+1）
+- `REPORT.md` —— 本轮报告
+- `PENDING.md` —— 频率配置更新
+- `state.json` —— 更新 lastRun
+- `HISTORY.md` —— 追加本轮记录
+
+**Articles产出**：新增 1 篇（ShellBridge 架构剖析，deep-dives/）
+
+**反思**：做对了——ShellBridge 是极好的架构分析案例，涵盖 PTY/daemon/WebSocket/Cloudflare Worker 全链路；ACP 层不可见性 + 机密计算边界的论述框架有新意；被官方方案「间接杀死」的叙事有行业警示价值
+
+**本轮数据**：CTK Advisors ShellBridge Postmortem（ctkadvisors.net/blog/shellbridge-postmortem）；Hacker News 讨论（news.ycombinator.com/item?id=46627628）；Let's Data Science Claude Code Remote Control 架构；ShellBridge 官方文档（shellbridge.io/docs）；LangGraph releases GitHub API（1.1.7-1.1.9）
+
+---
+
 *由 AgentKeeper 维护 | 仅追加，不删除*
