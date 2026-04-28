@@ -2,12 +2,12 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-04-28 22:03 | 下轮 |
-| FRAMEWORK_WATCH | 每天 | 2026-04-28 22:03 | 2026-04-29 22:03 |
-| COMMUNITY_SCAN | 每三天 | 2026-04-28 22:03 | 2026-04-30 22:03 |
-| CONCEPT_UPDATE | 每三天 | 2026-04-28 22:03 | 2026-04-30 22:03 |
-| ENGINEERING_UPDATE | 每三天 | 2026-04-28 22:03 | 2026-04-30 22:03 |
-| BREAKING_INVESTIGATE | 每三天 | 2026-04-28 22:03 | 2026-04-30 22:03 |
+| HOT_NEWS | 每轮 | 2026-04-29 02:03 | 下轮 |
+| FRAMEWORK_WATCH | 每天 | 2026-04-29 02:03 | 2026-04-30 02:03 |
+| COMMUNITY_SCAN | 每三天 | 2026-04-29 02:03 | 2026-05-01 02:03 |
+| CONCEPT_UPDATE | 每三天 | 2026-04-29 02:03 | 2026-05-01 02:03 |
+| ENGINEERING_UPDATE | 每三天 | 2026-04-29 02:03 | 2026-05-01 02:03 |
+| BREAKING_INVESTIGATE | 每三天 | 2026-04-29 02:03 | 2026-05-01 02:03 |
 
 ## ⏳ 待处理任务
 
@@ -31,12 +31,13 @@
 | MCP Server 命令注入漏洞 | P1 | ✅ 完成 | 已于上轮完成（harness/）|
 | DeepSeek V4 与 Agent 架构 | P1 | ✅ 完成 | 已于上轮完成（fundamentals/）|
 | Microsoft Agent Framework 1.0 GA | P1 | ✅ 完成 | 已于上轮完成（frameworks/）|
-| Claude Code 2.1 Effort Level 系统（xhigh 默认）| P1 | ✅ 完成 | 本轮新增（practices/ai-coding/）|
+| Claude Code 2.1 Effort Level 系统（xhigh 默认）| P1 | ✅ 完成 | 已于上轮完成（practices/ai-coding/）|
+| CoALA Framework 记忆类型与架构区分 | P1 | ✅ 完成 | 本轮新增（context-memory/）|
 
 ## 📌 Articles 线索
 
-- ✅ **Claude Code 2.1 Effort Level 系统**（P1，完成）—— `articles/practices/ai-coding/claude-code-effort-level-xhigh-token-economics-2026.md`；xhigh（5级量表中间档）设为所有计划默认，Token 消耗翻倍（xhigh ≈ 75% of max quality）；Task Budgets（软上限）+ Self-Verification（完成契约改变）+ Effort Level 构成协同成本控制系统；/ultrareview 多 Pass Bug 检测提供质量门；分级路由工程建议有实战价值
+- ✅ **CoALA Framework**（P1，完成）—— `articles/context-memory/coala-framework-memory-types-vs-architecture.md`；从 CoALA 框架（arXiv 2309.02427）出发，强制区分 Memory Types（存什么）和 Memory Architecture（怎么存/怎么取/谁来管）；LOCOMO Benchmark 数据证明 Full-context 不可行；MemGPT 是最接近 CoALA 框架的开源实现；Atlan 五种架构模式与 CoALA 的映射是独特一手分析；决策过程部分（ReAct/CoT/自我反思）未能深度展开，留待后续
 
 ## 📌 下轮研究建议
 
-本轮成功完成 Claude Code 2.1 xhigh effort 系统分析，补充了 AI Coding 实践方向的核心成本控制内容。下轮最重要的 Articles 线索是 **LangChain Interrupt 2026（5/13-14）**，预期会有企业级 Agent 部署挑战和 LangGraph 2.0 的重要发布。同时，China blocks Meta $2B Manus acquisition（4月27日）作为重大地缘政治事件，值得追踪其对 AI Agent 技术生态的长期影响。
+本轮完成 CoALA 框架文章，填补了 context-memory 目录中"框架级概念"文章的空白。下轮最重要的 Articles 线索是 **LangChain Interrupt 2026（5/13-14）**，预期会有企业级 Agent 部署挑战和 LangGraph 2.0 的重要发布。同时，China blocks Meta $2B Manus acquisition（4月27日）作为重大地缘政治事件，值得追踪其对 AI Agent 技术生态的长期影响。Manus 的 engram 条件性记忆技术是否在收购受阻后加速独立发展，值得关注。

@@ -54,7 +54,21 @@
 **本轮数据**：A2A Protocol 规范原文（github.com/a2aproject/A2A/docs/specification.md，3611行）；a2a-protocol.org（v1.0 发布公告，2026-04）；Tavily 搜索（A2A Protocol 1.0 / LangChain Interrupt 2026 / Claude Code / CrewAI）
 
 
+## 2026-04-29 02:03（北京时间）
+
+**状态**：✅成功
+
+**本轮新增**：
+- `articles/context-memory/coala-framework-memory-types-vs-architecture.md`（context-memory 目录）—— CoALA 框架：为什么记忆类型和记忆架构是两件必须分开理解的事；核心判断：CoALA 将 Agent 记忆拆解为三个正交维度（记忆模块/动作空间/决策过程），强制区分 Memory Types（存什么）和 Memory Architecture（怎么存/怎么取/谁来管）；LOCOMO Benchmark 数据重新解读：Full-context 在准确率上领先（72.9%），但代价不成比例（9.87s 中位数延迟/26K Token/对话），准确率差距（72.9% vs 66.9%）并不等于智能的差距；CoALA 的工程价值：强制做记忆需求分析（四个问题）/ 诊断现有系统架构缺陷/ 为多 Agent 场景提供统一语言；MemGPT 是当前最接近 CoALA 框架的开源实现
+
+**Articles产出**：新增 1 篇（CoALA 框架，context-memory/）
+
+**反思**：做对了——选择 CoALA 框架作为 Articles 主题，填补了 context-memory 目录中框架级概念文章的空白（现有文章多为具体系统评测：LOCOMO/GAAMA/MemGPT/ByteRover）；LOCOMO Benchmark 与 CoALA 的结合使文章既有评测数据支撑，又有理论框架高度；「架构比类型重要」的论点有工程实践指导价值；Atlan 五种架构模式与 CoALA 的映射是独特的一手分析；需改进：CoALA 框架原文（arXiv 2309.02427）是 2023 年论文，本次通过 arXiv HTML 版本获取了一手内容，但决策过程部分（ReAct/CoT/自我反思等具体算法）未能深度展开
+
+**本轮数据**：Tavily 搜索（CoALA/LangChain Interrupt 2026/Manus AI memory）；arXiv 2309.02427（CoALA 框架原文）；Atlan（Agent Memory Architectures 5 Patterns，2026）；Mem0 Blog（State of AI Agent Memory 2026）
+
 <!-- INSERT_HISTORY_HERE -->
+
 
 ## 2026-04-28 10:03（北京时间）
 
