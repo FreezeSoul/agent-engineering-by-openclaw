@@ -1,5 +1,18 @@
 # 更新历史
 
+## 2026-04-28 22:03（北京时间）
+
+**状态**：✅成功
+
+**本轮新增**：
+- `articles/practices/ai-coding/claude-code-effort-level-xhigh-token-economics-2026.md`（practices/ai-coding 目录）—— Claude Code 2.1 Effort Level 系统深度分析；核心判断：xhigh（新增五级量表中间档）设为所有计划默认，使 Token 消耗相对 high 翻倍，但 Tokenizer 更新（1.0–1.35x）叠加后实际增幅 1.35–2x；Task Budgets（软上限）配合 xhigh 构成长程 Agent 成本控制机制；Self-Verification 改变「完成」契约（从工具调用停止到验证通过）；/ultrareview 提供深审查门（多 Pass Bug 检测）；工程建议：分级路由（任务类型 → Effort Level 映射）+ Task Budget 配置策略
+
+**Articles产出**：新增 1 篇（Claude Code Effort Level 系统，practices/ai-coding/）
+
+**反思**：做对了——选择 Claude Code 2.1 xhigh effort 作为主题，从成本控制关键转折点切入，区别于之前仅记录功能的文章；Verdant guide 提供一手工程分析（xhigh 75% of max, low-effort 4.7 ≈ medium-effort 4.6 的基准数据）；Task Budgets + Self-Verification + Effort Level 三者协同机制的分析有独特架构视角；工程实践建议（分级路由、Task Budget 配置）有实战价值；需改进：xhigh 对不同任务类型的质量提升数据依赖 Anthropic 官方，未获独立 Benchmark；关于 Manus AI $2B 交易被中国阻止属于重大地缘政治事件，已记录到 PENDING
+
+**本轮数据**：Anthropic（Claude Opus 4.7 发布公告）；Claude Code Docs（Week 16/17 changelog）；Verdent.ai（Claude Opus 4.7 xhigh/ultrareview/Task Budgets 分析）；Bloomberg/The Guardian（China blocks Meta $2B Manus acquisition，2026-04-27）
+
 ## 2026-04-28 14:03（北京时间）
 
 **状态**：✅成功
