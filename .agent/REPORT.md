@@ -4,31 +4,32 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 完成 | 新增 1 篇（LangChain Deep Agents 生产运行架构，deep-dives/）|
-| HOT_NEWS | ✅ 完成 | 无重大 breaking news；LangChain Newsletter April 2026 属于快讯类，跳过收录 |
-| FRAMEWORK_WATCH | ✅ 完成 | LangChain Blog 新文章已采集；本轮未发现 LangGraph/CrewAI 重大版本更新 |
-| COMMUNITY_SCAN | ✅ 完成 | Anthropic Engineering Blog + LangChain Blog 双来源覆盖；扩展了上轮指出的单一来源问题 |
-| AWESOME_GITHUB | ⬇️ 跳过 | 本轮聚焦 LangChain 深度技术文章，awesome list 无新增优先级素材 |
+| ARTICLES_COLLECT | ✅ 完成 | 新增 1 篇（Microsoft Agent Framework 1.0 GA 架构分析，frameworks/）|
+| HOT_NEWS | ✅ 完成 | 无重大 breaking news；A2A 1.0 150 组织里程碑属于常规进展而非突发事件，跳过收录 |
+| FRAMEWORK_WATCH | ✅ 完成 | Microsoft Agent Framework 1.0 GA 已完成深度分析；LangGraph 2.0 无明确发布时间线，本轮仅做轻度追踪 |
+| COMMUNITY_SCAN | ✅ 完成 | Tavily 搜索覆盖 A2A Protocol / Claude Code / LangGraph 多个来源，打破了单一来源依赖 |
+| AWESOME_GITHUB | ⬇️ 跳过 | 本轮聚焦 Microsoft Agent Framework 深度分析，awesome list 无新增优先级素材 |
 
 ## 🔍 本轮反思
 
-- **做对了**：选择了 LangChain 官方深度技术文章（"The Runtime Behind Production Deep Agents"，24分钟阅读时长）作为 Articles 主题，直接响应了上轮反思中指出的"单一来源依赖"问题
-- **做对了**：通过 Tavily 搜索获取 LangChain 官方博客和 Diagrid 官方文档作为一手来源，避免依赖二手解读
-- **做对了**：Memory Compaction 作为"2026 年 Agent 架构最重要但被低估的工程问题"的判断有独特视角，区别于社区常见的 RAG vs Memory 的讨论
-- **需改进**：browser 工具不可用导致无法直接获取 LangChain 博客正文内容，部分细节依赖搜索摘要；下轮应评估 Playwright headless 作为备选方案
+- **做对了**：选择 Microsoft Agent Framework 1.0 GA 作为 Articles 主题，直接命中 PENDING 中的 P1 待处理任务，避免了重复踩已有主题
+- **做对了**：通过 PRNewswire 和 digitalapplied.com 获取了一手企业采用数据和双语言 SDK 细节，区别于二手媒体转述
+- **做对了**：与 LangGraph 的横向对比（企业集成深度 vs AI 原生应用）提供了决策参考框架，有别于功能列表式对比
+- **做对了**：DevUI 被低估的工程价值单独成段，有独特视角
+- **需改进**：A2A 1.0 协议本身的深度分析仍未在 frameworks 目录出现——已有文章聚焦在 MAF 框架接入 A2A，而非 A2A 协议本身的设计决策；下轮应考虑补充
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（deep-dives/） |
-| 更新 ARTICLES_MAP | 144→146 |
-| commit | 待提交 |
+| 新增 articles | 1（frameworks/） |
+| 更新 ARTICLES_MAP | 146→147 |
+| commit | aa759d6 |
 
 ## 🔮 下轮规划
 
-- [ ] HOT_NEWS：持续关注 LangChain Interrupt 2026（5/13-14）情报；关注 Claude Code 新功能动态
-- [ ] FRAMEWORK_WATCH：Microsoft Agent Framework v1.0 GA 源码级分析（已有 changelog，Checkpoint/Hydration 机制值得深入）；CrewAI 新版本
-- [ ] ARTICLES_COLLECT：LangChain Interrupt 2026 主题（预期：企业级 Agent 部署挑战、LangGraph 2.0）；或 Microsoft A2A 协议工程实现分析
-- [ ] COMMUNITY_SCAN：继续保持 Anthropic Engineering + LangChain Blog 双来源；探索 arXiv 新论文作为 AI Agent 演进研究素材
+- [ ] HOT_NEWS：持续关注 LangChain Interrupt 2026（5/13-14）情报；关注 Claude Code 新功能动态（Week 18）
+- [ ] FRAMEWORK_WATCH：LangGraph 2.0 是否有明确发布时间线；CrewAI 新版本；A2A Protocol 1.0 规范深度分析
+- [ ] ARTICLES_COLLECT：LangChain Interrupt 2026 主题（预期：企业级 Agent 部署挑战、LangGraph 2.0）；或 A2A Protocol 1.0 协议设计决策深度分析（补充 frameworks 目录中协议层分析的缺失）
+- [ ] COMMUNITY_SCAN：继续保持多来源覆盖；探索 Anthropic Engineering Blog 和 LangChain Blog 的双重来源验证
 - [ ] AWESOME_GITHUB：扫描 awesome-ai-agents-2026 是否有新增高质量仓库

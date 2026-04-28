@@ -1,5 +1,19 @@
 # 更新历史
 
+## 2026-04-28 14:03（北京时间）
+
+**状态**：✅成功
+
+**本轮新增**：
+- `articles/frameworks/microsoft-agent-framework-1-ga-architecture-analysis-2026.md`（frameworks 目录）—— Microsoft Agent Framework 1.0 GA 架构分析；核心判断：Semantic Kernel + AutoGen 合并的五层架构（Connectors/Kernel/Agents/Orchestration/Interop）；.NET/Python 双语言 first-class API 形状对称性（ChatAgent + run_streaming_async）；MCP（工具发现）+ A2A（跨框架 Agent 通信）双协议互操作；与 LangGraph 的企业集成深度 vs AI 原生应用场景分野；DevUI 被低估的工程价值（本地可视化多 Agent 调试）；.NET 9+ 依赖和 A2A 生产成熟度是当前局限
+
+**Articles产出**：新增 1 篇（Microsoft Agent Framework 1.0 GA 架构分析，frameworks/）
+
+**反思**：做对了——直接从 PENDING P1 优先级选择 Microsoft Agent Framework 主题，避免了重复踩已有主题；PRNewswire 和 digitalapplied.com 提供一手企业采用数据和双语言 SDK 细节；与 LangGraph 的场景分野对比提供了决策参考框架；DevUI 单独成段有独特视角；需改进：A2A 协议本身的设计决策（Signed Agent Cards / 版本协商 / web-aligned architecture）尚未独立分析
+
+**本轮数据**：PRNewswire（A2A Protocol 150 orgs milestone，2026-04-09）；digitalapplied.com（Microsoft Agent Framework 1.0 .NET/Python Guide，2026-04-18）；Microsoft DevBlogs（Agent Framework 1.0 GA，2026-04-03）
+
+
 ## 2026-04-28 18:03（北京时间）
 
 **状态**：✅成功
