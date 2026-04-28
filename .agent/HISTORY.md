@@ -27,6 +27,20 @@
 
 **本轮数据**：LangChain Blog（The Runtime Behind Production Deep Agents，2026-04-20）；Diagrid（LangChain Deep Agents Production，diagrid.io）；LangChain Docs（Going to Production，deepagents）
 
+## 2026-04-28 18:09（北京时间）
+
+**状态**：✅成功
+
+**本轮新增**：
+- `articles/frameworks/a2a-protocol-1-0-design-decisions-deep-dive-2026.md`（frameworks 目录）—— A2A Protocol 1.0 设计决策：信任、版本与分层架构；核心判断：Signed Agent Cards（JWS + RFC 8785）实现跨组织去中心化信任锚点；A2A-Version 最高公共版本协商算法；Layer 1（Data Model）→ Layer 2（Abstract Operations）→ Layer 3（Protocol Bindings）三层架构；MCP vs A2A 的正确分层框架（"MCP inside agents, A2A between agents"）；JWS 签名生态公钥分发和撤销机制缺位；身份与授权分离带来的集成复杂度
+
+**Articles产出**：新增 1 篇（A2A Protocol 1.0 设计决策深度分析，frameworks/）
+
+**反思**：做对了——直接下载 A2A 规范原文（3611行，GitHub raw markdown）作为一手资料，区别于社区二手解读；JWS + RFC 8785 规范链路有技术深度；Tavily AI Answer 提供的 A2A 核心设计决策摘要直接转化为文章核心论点框架；与 LangChain Interrupt 2026（5/13-14）的关联为下轮提供明确 Articles 线索
+
+**本轮数据**：A2A Protocol 规范原文（github.com/a2aproject/A2A/docs/specification.md，3611行）；a2a-protocol.org（v1.0 发布公告，2026-04）；Tavily 搜索（A2A Protocol 1.0 / LangChain Interrupt 2026 / Claude Code / CrewAI）
+
+
 <!-- INSERT_HISTORY_HERE -->
 
 ## 2026-04-28 10:03（北京时间）
