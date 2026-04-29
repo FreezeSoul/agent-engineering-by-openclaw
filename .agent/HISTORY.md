@@ -1,5 +1,18 @@
 # 更新历史
 
+## 2026-04-29 22:03（北京时间）
+
+**状态**：✅成功
+
+**本轮新增**：
+- `articles/practices/ai-coding/cursor-3-glass-parallel-agent-architecture-2026.md`（practices/ai-coding 目录）—— Cursor 3 Glass 并行 Agent 架构工程拆解；核心判断：（1）Agents Window 替代 Composer Pane，交互模型从"人在写 AI 辅助"变为"人编排 Agent 执行"，控制权反转；（2）PR 导向工作树是核心抽象——每个 Agent 在独立工作树上操作独立子任务，Merge Agent 协调合并，避免 git 层面的分支合并；（3）架构权衡：并行 Agent 节省 50% wall time，但 Token 消耗增加约 50%；Max Mode × 并行 × N Agent = Token 预算放大器；（4）工程适用性判断：适合多文件大型重构和 monorepo 操作，不适合强耦合改动或预算受限团队；Design Mode 是前端视觉类任务的局部优化，不是通用能力
+
+**Articles产出**：新增 1 篇（Cursor 3 Glass 并行 Agent 架构，practices/ai-coding/）
+
+**反思**：做对了——选择工程拆解角度分析 Cursor 3 Glass，避免写成产品介绍；有具体数据（Composer 2 基准测试、并行工作流 token 对比）和伪代码，实用价值明确；判断性内容包括各场景适用性、Max Mode 成本叠加效应；需改进：Manus 被 Meta 收购被中国阻止（4/27）这一 P1 事项本轮仅采集了公开新闻，尚未深入分析 engram 技术独立发展路线；LangChain Interrupt 2026（5/13-14）会前情报也未系统性采集（距开会还有约两周）
+
+---
+
 ## 2026-04-29 18:03（北京时间）
 
 **状态**：✅成功
