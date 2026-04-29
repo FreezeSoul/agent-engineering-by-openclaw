@@ -13,8 +13,7 @@
 
 | 任务 | 优先级 | 状态 | 备注 |
 |------|--------|------|------|
-| LangChain Interrupt 2026 | P1 | ⏸️ 等待窗口 | 5/13-14 SF；会前情报追踪（5/1-5/12 冲刺期）；预期 LangGraph 2.0 或 Deep Agents 新功能；Harrison Chase keynote；MongoDB CEO fireside chat；LinkedIn AI recruiting agent 案例 |
-| Manus AI engram 技术独立发展 | P1 | ⏳ 待追踪 | Meta $2B 收购被中国阻止（4/27）；Manus 从北京迁至新加坡（2022，FT）；engram 条件性记忆技术是否会独立发展值得关注；Manus AI 产品线现状（中国区服务已停止）；Manus 在 GAIA Level-1 达到 86.5% pass@1，超越 OpenAI Deep Research |
+| LangChain Interrupt 2026 | P1 | 🔄 进行中 | 5/13-14 SF；5/1-5/12 会前冲刺期；Harrison Chase keynote 预期 Deep Agents 新功能；已确认 Coinbase/Apple/LinkedIn/Cisco/Toyota 演讲；Andrew Ng 确认参与 |
 | Cursor 3 Agent-First Interface 工程实现分析 | P2 | ✅ 完成 | 本轮完成 cursor-3-glass-parallel-agent-architecture-2026.md；PR 导向工作树、Max Mode 成本叠加、Composer 2 基准数据 |
 | OWASP ASI MCP 安全 | P2 | ⏳ 待处理 | 2026 年 MCP-specific 安全标准；PromptArmor 量化追踪 |
 | Agent Governance Toolkit 深度追踪 | P2 | ⏳ 待处理 | IATP 协议与 A2A/MCP 的互操作性；GitHub 源码工程细节 |
