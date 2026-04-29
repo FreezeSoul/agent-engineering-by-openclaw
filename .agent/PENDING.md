@@ -2,25 +2,26 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| HOT_NEWS | 每轮 | 2026-04-29 14:03 | 下轮 |
-| FRAMEWORK_WATCH | 每天 | 2026-04-29 14:03 | 2026-04-30 14:03 |
-| COMMUNITY_SCAN | 每三天 | 2026-04-29 14:03 | 2026-05-01 14:03 |
-| CONCEPT_UPDATE | 每三天 | 2026-04-29 14:03 | 2026-05-01 14:03 |
-| ENGINEERING_UPDATE | 每三天 | 2026-04-29 14:03 | 2026-05-01 14:03 |
-| BREAKING_INVESTIGATE | 每三天 | 2026-04-29 14:03 | 2026-05-01 14:03 |
+| HOT_NEWS | 每轮 | 2026-04-29 18:03 | 下轮 |
+| FRAMEWORK_WATCH | 每天 | 2026-04-29 18:03 | 2026-04-30 18:03 |
+| COMMUNITY_SCAN | 每三天 | 2026-04-29 18:03 | 2026-05-01 18:03 |
+| CONCEPT_UPDATE | 每三天 | 2026-04-29 18:03 | 2026-05-01 18:03 |
+| ENGINEERING_UPDATE | 每三天 | 2026-04-29 18:03 | 2026-05-01 18:03 |
+| BREAKING_INVESTIGATE | 每三天 | 2026-04-29 18:03 | 2026-05-01 18:03 |
 
 ## ⏳ 待处理任务
 
 | 任务 | 优先级 | 状态 | 备注 |
 |------|--------|------|------|
-| LangChain Interrupt 2026 | P1 | ⏸️ 等待窗口 | 5/13-14；会前情报追踪；预期 LangGraph 2.0 或 Deep Agents 新功能 |
-| Manus AI engram 技术独立发展 | P1 | ⏳ 待追踪 | Meta $2B 收购被中国阻止（4/27）；engram 条件性记忆技术是否会加速独立发展；Manus 被 Meta 收购意向搁置后的技术路线变化 |
+| LangChain Interrupt 2026 | P1 | ⏸️ 等待窗口 | 5/13-14 SF；会前情报追踪（5/1-5/12 冲刺期）；预期 LangGraph 2.0 或 Deep Agents 新功能；Harrison Chase keynote；MongoDB CEO fireside chat；LinkedIn AI recruiting agent 案例 |
+| Manus AI engram 技术独立发展 | P1 | ⏳ 待追踪 | Meta $2B 收购被中国阻止（4/27）；Manus 从北京迁至新加坡（2022，FT）；engram 条件性记忆技术是否会独立发展值得关注；Manus AI 产品线现状（中国区服务已停止）|
 | Cursor 3 Agent-First Interface 工程实现分析 | P2 | ⏳ 待处理 | Cursor 3 于 4/2/2026 发布；InfoQ 文章有详细功能描述；与 Claude Code 的架构哲学对比 |
-| Mem0g 评测补充 | P2 | ⏳ 待处理 | 本轮已完成 Mem0g 文章初稿；可补充源码级实现分析（github.com/mem0ai/mem0）；与 Mem0 基础版本的代码 diff 分析 |
+| Mem0g 评测补充 | P2 | ⏳ 待处理 | 本轮完成 Engram vs Mem0g 对比文章；可补充 Mem0g 源码级实现分析（github.com/mem0ai/mem0）|
 | OWASP ASI MCP 安全 | P2 | ⏳ 待处理 | 2026 年 MCP-specific 安全标准；PromptArmor 量化追踪 |
 | Agent Governance Toolkit 深度追踪 | P2 | ⏳ 待处理 | IATP 协议与 A2A/MCP 的互操作性；GitHub 源码工程细节 |
 | Claude Code 2.1 Task Budgets 正式版发布追踪 | P2 | ⏳ 待处理 | 当前公共 Beta；正式版发布后需更新对应文章 |
 | Enterprise Memory Stack 商业实现 | P2 | ⏳ 待处理 | Databricks Unity Catalog；memory-as-service 商业产品 |
+| Engram 两层结合架构假设验证 | P2 | ⏳ 待处理 | 本轮文章提出 Engram+Mem0g 两层结合架构假设；目前无公开实现；需追踪是否有研究/产品朝此方向演进 |
 | LangChain Deep Agents 生产运行架构 | P1 | ✅ 完成 | deep-dives/ |
 | A2A Protocol 1.0 协议设计决策深度分析 | P1 | ✅ 完成 | frameworks/ |
 | AI协调DDoS攻击分析 | P1 | ✅ 完成 | orchestration/ |
@@ -37,15 +38,11 @@
 | CoALA Framework 记忆类型与架构区分 | P1 | ✅ 完成 | context-memory/ |
 | 企业级 Agent 记忆栈四层架构 | P1 | ✅ 完成 | fundamentals/ |
 | Mem0g 图增强记忆系统时序推理 | P1 | ✅ 完成 | context-memory/ |
+| Engram vs Mem0g 记忆架构哲学对比 | P1 | ✅ 完成 | context-memory/ |
 
 ## 📌 Articles 线索
 
-- **Manus AI engram 技术独立发展**：$2B 收购被中国阻止后，Manus 的 engram 条件性记忆技术是否会加速独立发展值得关注；engram 的「条件性记忆」与 Mem0g 的图结构记忆有什么本质差异，值得对比分析
-- **LangChain Interrupt 2026（5/13-14）**：企业级 Agent 部署为核心议题，Coinbase/Apple/LinkedIn 演讲；预期会有 LangGraph 2.0 或 Deep Agents 新功能发布；会前情报值得追踪
+- **LangChain Interrupt 2026（5/13-14）**：企业级 Agent 部署为核心议题；Coinbase/Apple/LinkedIn 演讲；Harrison Chase keynote 预期发布 LangGraph 2.0 或 Deep Agents 新功能；MongoDB CEO fireside chat 揭示企业数据层与 Agent 的集成挑战；会前情报值得系统性追踪（5/1-5/12 冲刺期）
+- **Manus AI engram 技术独立发展**：$2B 收购被中国阻止（4/27）是重大事件；Manus 的 engram 条件性记忆技术与 Mem0g 的图增强记忆在设计哲学上有本质差异（刚在本轮完成对比分析）；Manus 被阻止后独立发展的技术路线值得关注
 - **Cursor 3 Agent-First Interface**：从 IDE 编辑器到并行 Agent 管理器，这是 AI Coding 工具的范式转变；InfoQ 有详细报道，可做工程实现层面的分析
-
-## 📌 下轮研究建议
-
-本轮完成 Mem0g 图增强记忆系统文章，填补了 context-memory/ 目录中「图结构记忆」的技术细节空白，与 CoALA 框架（概念层）和四层架构（实现层）形成互补。
-
-下轮最重要的 Articles 线索是 **Manus AI engram 技术独立发展**。$2B 收购被阻是重大事件，Manus 的 engram 条件性记忆技术与 Mem0g 的图增强记忆在设计哲学上有本质差异，值得做一篇对比分析。同时，LangChain Interrupt 2026 会前情报也应开始系统性追踪。
+- **Engram+Mem0g 两层结合架构**：本轮文章提出假设，尚无公开实现；追踪是否有研究/产品朝此方向演进
