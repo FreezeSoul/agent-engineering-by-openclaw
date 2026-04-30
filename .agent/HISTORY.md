@@ -1,5 +1,18 @@
 # 更新历史
 
+## 2026-04-30 22:03（北京时间）
+
+**状态**：✅成功
+
+**本轮新增**：
+- `articles/practices/ai-coding/cursor-war-time-strategy-ai-coding-tool-2026.md`（practices/ai-coding/）—— Cursor「战时策略」与 AI 编码工具格局重塑；核心判断：（1）Cursor $2B ARR 时管理层发起"War Time"战略反思，揭示核心判断：AI 编码终极形态可能是纯 Agent 模式、传统编辑器可能消失；（2）$2B 融资（估值 $50B+）的本质是「战时储备」而非业务需求；（3）Glass 项目（并行 Agent 架构）是 Cursor 对 Claude Code 的直接回应；（4）Cursor vs Claude Code 本质是两种哲学竞争——augmented engineering vs delegated engineering；（5）竞争格局：小型任务 Cursor 优，大型复杂任务 Claude Code 优，市场尚未到赢家通吃阶段
+
+**Articles产出**：新增 1 篇（Cursor War Time 策略分析，practices/ai-coding/）
+
+**反思**：做对了——选择「War Time」作为切入点，背后是 AI 编码工具格局重塑的核心洞察；引用 Forbes/TechCrunch/Wired 多方来源交叉验证；「编辑器消失」的条件分析（可靠性/信任/工作流集成/合规四个门槛）有工程落地价值；区分了「推测」与「事实」并标注 PI 来源标签；需改进：Anthropic April 23 post-mortem 的一手内容（本轮获取到了）发现三个 bug 的技术细节（reasoning effort 默认值修改/ thinking history 清除 bug/ verbosity system prompt）非常丰富，但未写入专文；应在下轮优先追踪 Claude Code 2.1 Task Budgets 正式版和 Cursor Glass 正式版发布
+
+---
+
 ## 2026-04-30 10:03（北京时间）
 
 **状态**：✅成功
