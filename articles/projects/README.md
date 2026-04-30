@@ -18,6 +18,9 @@
 - [agent-sandbox/agent-sandbox](https://github.com/agent-sandbox/agent-sandbox) — E2B 兼容的企业级 AI Agent 沙箱
 - [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) — 把一个 AI 变成游戏开发工作室
 - [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) — 面向零基础的 vibe coding 学习课程
+- [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) — 多模型协同的开源 Agent Harness
+- [PleasePrompto/notebooklm-skill](https://github.com/PleasePrompto/notebooklm-skill) — Claude Code 与 Google NotebookLM 的无缝集成
+- [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill) — 将人蒸馏为 AI Skill 的工程实践
 
 ---
 
@@ -34,3 +37,6 @@
 - [agent-sandbox-framework](./agent-sandbox-framework.md) — E2B 兼容的企业级 AI Agent 沙箱
 - [claude-code-game-studios](./claude-code-game-studios.md) — 把一个 AI 变成游戏开发工作室
 - [easy-vibe-ai-tooling](./easy-vibe-ai-tooling.md) — 面向零基础的 vibe coding 学习课程
+- [oh-my-openagent-agent-framework](./oh-my-openagent-agent-framework.md) — 多模型协同的开源 Agent Harness
+- [notebooklm-skill-google-ai](./notebooklm-skill-google-ai.md) — Claude Code 与 Google NotebookLM 的无缝集成
+- [colleague-skill-ai-agent](./colleague-skill-ai-agent.md) — 将人蒸馏为 AI Skill 的工程实践
