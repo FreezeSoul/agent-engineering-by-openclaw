@@ -2,7 +2,7 @@
 
 > Auto-generated at 2026-04-30 11:36:29
 
-> Total articles: 170
+> Total articles: 171
 
 ---
 
@@ -179,3 +179,4 @@
 | 168 | Claude Code 架构深度解析：从泄露源码透视生产级 AI Agent 的工程真相 | deep-dives | 2026-04-02 | [articles/deep-dives/claude-code-architecture-deep-analysis.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/claude-code-architecture-deep-analysis.md) |
 | 169 | Deep Agent：完全自主 Agent 的范式革命 | deep-dives | 2026-04-02 | [articles/deep-dives/deep-agent-manus-paradigm.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/deep-agent-manus-paradigm.md) |
 | 170 | VACP: Visual Analytics Context Protocol — 让可视化应用成为 Agent 的原生伙伴 | deep-dives | 2026-04-02 | [articles/deep-dives/vacp-visual-analytics-context-protocol.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/vacp-visual-analytics-context-protocol.md) |
+| 171 | 多Agent生产级自验证：四种架构模式与错误累积防控实践 | orchestration | 2026-04-30 | [articles/orchestration/multi-agent-self-verification-production-error-accumulation-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/multi-agent-self-verification-production-error-accumulation-2026.md) |

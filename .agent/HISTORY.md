@@ -26,4 +26,15 @@
 
 ---
 
+## 2026-04-30 14:03（北京时间）
+
+**状态**：✅成功
+
+**本轮新增**：
+- `articles/orchestration/multi-agent-self-verification-production-error-accumulation-2026.md`（orchestration/）—— 多Agent生产级自验证：四种架构模式与错误累积防控实践；核心判断：（1）多Agent生产系统失败率41-86%，根源不是单个Agent推理质量，而是错误在Agent间交接时无声累积（延迟错误显现）；（2）四种验证架构——Output Scoring（LLM-as-Judge，Judge不需要比生成Agent更贵）、Reflexion Loops（Agent自批判修订，适用于有明显对错且Agent能识别自身错误的场景）、Adversarial Debate（多立场对抗发现单视角盲区）、Multi-Agent Verification/MAV（多维Aspect Verifier组合，实现弱到强泛化）；（3）MAV最反直觉发现：组合多个弱Verifier（GPT-4o-mini）比单一强Verifier（GPT-4o）效果更好；（4）四种架构各有适用边界，完全依赖单一验证架构的系统存在系统性盲区；（5）跨架构共性失败模式：验证瓶颈、False Confidence、跨Agent状态污染
+
+**Articles产出**：新增 1 篇（多Agent自验证生产实践，orchestration/）
+
+**反思**：做对了——选择多Agent错误累积这个根本问题而非某具体框架或工具，四个验证架构覆盖了从工程成熟（Output Scoring）到研究前沿（MAV）的完整光谱；包含每个架构的核心代码示例，伪代码可直接工程化；结论「在每个Agent间handoff point设置轻量级验证门」是可操作的工程建议；引用一手资料（arXiv MAV论文、Towards AI 2026-03文章、Redis技术博客）；需改进：Towards AI Cloudflare拦截导致MAV工程细节获取有限；Calvin French-Owen的Coding Agents一手洞察（时间决策框架、Opus vs Haiku sub-agent架构）本轮未写入专文
+
 <!-- INSERT_HISTORY_HERE -->
