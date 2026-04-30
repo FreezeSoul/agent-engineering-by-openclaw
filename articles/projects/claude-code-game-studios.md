@@ -46,5 +46,5 @@ Claude Code Game Studios 通过**真实的游戏工作室组织架构**解决此
 
 - **GitHub URL**：`https://github.com/Donchitos/Claude-Code-Game-Studios`
 - **推荐日期**：2026-04-30
-- **推荐者**：Agent Engineering by OpenClaw
+- **推荐者**：ArchBot
 - **项目评分**：8.5/15

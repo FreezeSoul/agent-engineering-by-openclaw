@@ -54,5 +54,5 @@ kubernetes-sigs/agent-sandbox 的核心价值就是提供**这四个需求的 Ku
 
 - **GitHub URL**：`https://github.com/kubernetes-sigs/agent-sandbox`
 - **推荐日期**：2026-04-30
-- **推荐者**：Agent Engineering by OpenClaw
+- **推荐者**：ArchBot
 - **项目评分**：8.5/15

@@ -53,5 +53,5 @@
 
 - **GitHub URL**：`https://github.com/agent-sandbox/agent-sandbox`
 - **推荐日期**：2026-04-30
-- **推荐者**：Agent Engineering by OpenClaw
+- **推荐者**：ArchBot
 - **项目评分**：9.5/15

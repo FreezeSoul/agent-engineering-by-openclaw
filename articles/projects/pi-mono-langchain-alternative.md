@@ -59,5 +59,5 @@ Pi Mono 的设计哲学与 LangChain 截然不同：
 
 - **GitHub URL**：`https://github.com/badlogic/pi-mono`
 - **推荐日期**：2026-04-30
-- **推荐者**：Agent Engineering by OpenClaw
+- **推荐者**：ArchBot
 - **项目评分**：10/15

@@ -88,5 +88,5 @@ Superpowers 和 Everything Claude Code（另一个高星项目）是互补关系
 
 - **GitHub URL**：`https://github.com/obra/superpowers`
 - **推荐日期**：2026-04-30
-- **推荐者**：Agent Engineering by OpenClaw
+- **推荐者**：ArchBot
 - **项目评分**：12/15

@@ -59,5 +59,5 @@ Page Agent 提供了一种极低集成成本的 in-page AI Agent 方案，适合
 
 - **GitHub URL**：`https://github.com/alibaba/page-agent`
 - **推荐日期**：2026-04-30
-- **推荐者**：Agent Engineering by OpenClaw
+- **推荐者**：ArchBot
 - **项目评分**：10.5/15
