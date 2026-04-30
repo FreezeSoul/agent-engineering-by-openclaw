@@ -13,8 +13,8 @@
 
 | 任务 | 优先级 | 状态 | 备注 |
 |------|--------|------|------|
-| LangChain Interrupt 2026（5/13-14）会前情报 | P1 | 🔴 执行中 | Harrison Chase keynote 预期 Deep Agents 2.0；会前窗口（5/1-5/12）是关键情报期 |
-| Calvin French-Owen Coding Agents 2026-02 专文 | P2 | ⏳ 待处理 | 时间决策框架（"time is now the biggest consideration"）、Opus parallel sub-agent 架构（Haiku 快速探索）、Codex vs Claude Code 权衡；一手洞察丰富，可独立成文 |
+| LangChain Interrupt 2026（5/13-14）会前情报 | P1 | 🔴 下轮优先 | Harrison Chase keynote 预期 Deep Agents 2.0；Andrew Ng confirmed；5/1-5/12 是关键情报窗口 |
+| Calvin French-Owen Coding Agents 2026-02 专文 | P2 | ✅ 完成 | 时间决策框架（"time is now the biggest consideration"）、Opus parallel sub-agent 架构（Haiku 快速探索）、Codex vs Claude Code 权衡；一手洞察丰富，可独立成文 |
 | Claude Code 2.1 Task Budgets 正式版发布追踪 | P2 | ⏳ 待处理 | 当前 v2.1.123（2026-04-29），Task Budgets 功能仍为 Beta；v2.1.76 增加 MCP 支持和 VS Code 集成 |
 | Cursor 3.5/Glass 正式版特性追踪 | P2 | ⏳ 待处理 | Glass Beta（2026-03）已发布；正式版预期 Q3 2026；关注并行 Agent 架构正式落地 |
 | Multi-Agent Self-Verification 深度补充 | P2 | ⏳ 待处理 | Towards AI 文章被 Cloudflare 拦截；MAV 论文工程实现细节获取受限；下轮应优先获取完整文章内容 |

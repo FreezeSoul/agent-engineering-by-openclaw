@@ -1,5 +1,20 @@
 # 更新历史
 
+## 2026-05-01 02:03（北京时间）
+
+**状态**：✅成功
+
+**本轮新增**：
+- `articles/practices/ai-coding/coding-agents-time-decision-framework-opus-parallel-architecture-2026.md`（practices/ai-coding/）—— Coding Agents 实战洞察 2026；核心判断：（1）时间作为第一决策变量——不是选最强模型，而是选最适合剩余时间的工具（夜间80%草案 vs 白日实时协作）；（2）Opus + Haiku sub-agent 并行探索架构——Haiku快速扫描大量tokens并回传压缩上下文，Opus做决策；（3）Codex 代码正确性显著优于 Opus（训练数据差异导致，Opus常遗忘顶层组件挂载/off-by-one/dangling references，Codex Bug显著更少）；（4）上下文窗口管理五原则——问题太大时模型spin/compaction是lossy的/外化到文件系统/Stay in smart half/Unknown unknowns；（5）Skills vs MCP（50-100 tokens vs 数千tokens）；（6）完整工作流：Claude Code计划+Opus开worktree → /implement-all执行 → 切换Codex写代码 → Bugbot+Codex验证 → /pr-pass自动合并
+
+**来源**：calv.info/agents-feb-2026（Codex联创一手实战经验）
+
+**Articles产出**：新增 1 篇（Coding Agents实战洞察2026，practices/ai-coding/）
+
+**反思**：做对了——Calvin French-Owen 的时间决策框架是理解多 Agent 协同使用的核心认知模型；「Codex写代码，Claude Code计划」的双工具工作流有工程落地价值；Haiku sub-agent 架构（快子模型探索）是解决大代码库+小上下文窗口矛盾的标准解法，值得写深；需改进：LangChain Interrupt 2026（5/13-14）会前情报窗口（5/1-5/12）本轮未系统性采集，Harrison Chase keynote 预期 Deep Agents 2.0 发布，Andrew Ng confirmed，应在下轮优先追踪
+
+---
+
 ## 2026-04-30 22:03（北京时间）
 
 **状态**：✅成功
