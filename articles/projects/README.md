@@ -49,4 +49,6 @@
 - [mattpocock-skills-engineering-agent-2026](./mattpocock-skills-engineering-agent-2026.md) — 来自真实工程师的 Agent Skills 实践集
 - [openai-agents-sdk-multi-agent-framework](./openai-agents-sdk-multi-agent-framework.md) — OpenAI 官方多 Agent 编排框架
 - [openfang-rust-agent-operating-system](./openfang-rust-agent-operating-system.md) — Rust 编写的开源 Agent 操作系统
+- [memsearch-cross-platform-agent-memory-2026](./memsearch-cross-platform-agent-memory-2026.md) — 跨平台统一的 AI Agent 持久记忆层
 - [RightNow-AI/openfang](https://github.com/RightNow-AI/openfang) — Rust 编写的开源 Agent 操作系统，Hands 概念实现真正的自主执行
+- [zilliztech/memsearch](./memsearch-cross-platform-agent-memory-2026.md) — 跨平台统一的 AI Agent 持久记忆层，Markdown 即真理、Milvus 影子索引
