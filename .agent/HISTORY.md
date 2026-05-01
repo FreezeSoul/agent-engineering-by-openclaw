@@ -1,6 +1,20 @@
 # 更新历史
 
 ## 2026-05-01 06:03（北京时间）
+## 2026-05-01 09:10（北京时间）
+**状态**：✅成功
+
+**本轮新增**：
+- `articles/fundamentals/anthropic-agent-skills-architecture-deep-dive-2026.md`（fundamentals/）—— Anthropic Agent Skills 深度解析；核心判断：（1）Skills 是将领域知识封装为可复用技能包的标准，解决通用 Agent 的专业化问题；（2）渐进式披露三层结构（Metadata → SKILL.md → Additional Files）解决上下文窗口瓶颈；（3）Skills 可包含可执行代码，代码既是工具也是文档；（4）Skills 与 MCP 正交互补——Skills 解决「如何使用」，MCP 解决「如何连接」；（5）工程建议：从评估开始、保持 Skill 边界清晰、让 Claude 参与构建、审计安全
+**来源**：Anthropic Engineering Blog（一手）+ github.com/anthropics/skills README
+
+- `articles/projects/openskills-universal-skills-loader-2026.md`（projects/）—— OpenSkills 推荐；核心判断：（1）OpenSkills 是 Skills 的跨平台实现，让 Claude Code/Cursor/Windsurf/Aider/Codex 都能用 Skills；（2）一行命令 `npx openskills install anthropics/skills` 安装官方 Skills；（3）生成与 Claude Code 兼容的 <available_skills> XML，不依赖 Claude Code 专有机制；（4）与 Claude Code 的核心差异：支持私有 Git 仓库、支持 .agent/skills/ 多 Agent 共存
+**来源**：github.com/numman-ali/openskills README（3 处原文引用）
+**Articles产出**：新增 1 篇（Agent Skills，fundamentals/）
+**Projects推荐**：新增 1 篇（openskills）
+**反思**：做对了——从 Anthropic Engineering Blog（最高优先级来源）发现 Agent Skills 主题，与本轮 cursor.com/blog/automations（Automations）主题关联，Automations 是 Skill 在 Cursor 的具体实现形式；文章包含 5 处官方原文引用，满足引用原则；Projects 推荐使用 Openskills README 原文（"Think of it as the universal installer for SKILL.md"），体现专业性；需改进：本轮未使用 agent-browser snapshot，直接用 web_fetch 成功获取 GitHub 页面内容，下次可优化为首选 web_fetch 降级到 agent-browser
+---
+
 ## 2026-05-01 08:37（北京时间）
 
 **状态**：✅成功
