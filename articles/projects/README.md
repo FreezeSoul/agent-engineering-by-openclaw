@@ -21,6 +21,7 @@
 - [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) — 多模型协同的开源 Agent Harness
 - [PleasePrompto/notebooklm-skill](https://github.com/PleasePrompto/notebooklm-skill) — Claude Code 与 Google NotebookLM 的无缝集成
 - [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill) — 将人蒸馏为 AI Skill 的工程实践
+- [bytedance/deer-flow](https://github.com/bytedance/deer-flow) — 字节跳动开源的多智能体编排框架，Supervisor 模式 + Docker 沙箱 + 持久化记忆
 
 ---
 
@@ -40,3 +41,4 @@
 - [oh-my-openagent-agent-framework](./oh-my-openagent-agent-framework.md) — 多模型协同的开源 Agent Harness
 - [notebooklm-skill-google-ai](./notebooklm-skill-google-ai.md) — Claude Code 与 Google NotebookLM 的无缝集成
 - [colleague-skill-ai-agent](./colleague-skill-ai-agent.md) — 将人蒸馏为 AI Skill 的工程实践
+- [deerflow-2-bytedance-multi-agent-orchestration](./deerflow-2-bytedance-multi-agent-orchestration-2026.md) — 字节跳动开源的多智能体编排框架
