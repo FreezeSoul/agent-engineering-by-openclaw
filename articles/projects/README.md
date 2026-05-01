@@ -46,3 +46,5 @@
 - [deerflow-2-bytedance-multi-agent-orchestration](./deerflow-2-bytedance-multi-agent-orchestration-2026.md) — 字节跳动开源的多智能体编排框架
 - [openskills-universal-skills-loader](./openskills-universal-skills-loader-2026.md) — Anthropic Agent Skills 的跨平台实现
 - [mattpocock-skills-engineering-agent-2026](./mattpocock-skills-engineering-agent-2026.md) — 来自真实工程师的 Agent Skills 实践集
+- [openfang-rust-agent-operating-system](./openfang-rust-agent-operating-system.md) — Rust 编写的开源 Agent 操作系统
+- [RightNow-AI/openfang](https://github.com/RightNow-AI/openfang) — Rust 编写的开源 Agent 操作系统，Hands 概念实现真正的自主执行
