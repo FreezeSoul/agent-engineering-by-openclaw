@@ -15,6 +15,7 @@
 - [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) — AI Agent Harness 的性能优化系统
 - [badlogic/pi-mono](https://github.com/badlogic/pi-mono) — 轻量级 AI Agent 工具链的另一种选择
 - [RenseiAI/AgentFactory](https://github.com/RenseiAI/agentfactory) — Linear 原生的多 Agent 软件工厂，Dev/QA/Acceptance 三阶段流水线，TypeScript/Redis 生产级架构
+- [ruvnet/ruflo](https://github.com/ruvnet/ruflo) — Claude 原生 Multi-Agent 编排平台，38K ⭐，32 插件生态，自学习 swarm 智能
 - [kubernetes-sigs/agent-sandbox](https://github.com/kubernetes-sigs/agent-sandbox) — Kubernetes 原生的 Agent 沙箱 CRD
 - [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) — Rust 原生浏览器自动化 CLI
 - [MemTensor/MemOS](https://github.com/MemTensor/MemOS) — LLM 和 AI Agent 的记忆操作系统
@@ -72,6 +73,7 @@
 - [jcode-next-generation-coding-agent-harness](./jcode-next-generation-coding-agent-harness.md) — 极致轻量化的下一代编码 Agent Harness（RAM 比 Claude Code 低 93%）
 - [planner-worker-multi-agent-autonomous-coding-architecture-2026](../orchestration/planner-worker-multi-agent-autonomous-coding-architecture-2026.md) — Planner/Worker 架构深度分析（Cursor Scaling Agents + Anthropic C Compiler 双案例实证）
 - [hermes-agent-nousresearch-self-improving-agent-2026](./hermes-agent-nousresearch-self-improving-agent-2026.md) — Nous Research 自改进 AI Agent，内置学习闭环 + 多平台部署
+- [ruflo-ruvnet-claude-native-multi-agent-orchestration-2026](./ruflo-ruvnet-claude-native-multi-agent-orchestration-2026.md) — Claude 原生 Multi-Agent 编排平台，38K ⭐，32 插件生态，自学习 swarm 智能（关联：Context Engineering 外部化记忆设计）
 - [ironcurtain-secure-runtime-autonomous-ai-2026](./ironcurtain-secure-runtime-autonomous-ai-2026.md) — 运行时动态风险评估安全运行时，与 Claude Code Auto Mode 双层防御形成技术对照
 - [forge-mcp-server-rightnow-2026](./forge-mcp-server-rightnow-2026.md) — 让 AI 编程 Agent 拥有 GPU Kernel 优化能力的 MCP Server，14x 加速
 - [multiagenteval-open-source-agent-eval-harness-2026](./multiagenteval-open-source-agent-eval-harness-2026.md) — 填补 Agentic Reliability Gap 的开源评估框架，5000+ 场景 + Zero-Touch Core Architecture
