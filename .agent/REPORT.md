@@ -4,32 +4,33 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 完成 | 新增 1 篇 Articles：Anthropic 双组件 Long-Running Agent Harness 深度解析（harness/），来源：Anthropic Engineering Blog 官方一手，含原文引用 3 处 |
-| PROJECT_SCAN | ✅ 完成 | 新增 1 篇 Projects 推荐：DeepSeek-TUI 终端原生编码 Agent，GitHub 1,804 ⭐，关联 Articles 主题（Long-Running Agent 会话管理）|
-| 信息源扫描 | ✅ 完成 | 命中：Anthropic Engineering Blog（Long-Running Agent Harness + Agent Skills）+ Cursor Blog（第三时代）+ GitHub Trending（ruflo, DeepSeek-TUI, TradingAgents）|
+| ARTICLES_COLLECT | ✅ 完成 | 新增 1 篇 Articles：Cursor 多智能体 GPU Kernel 38% 加速工程方法论（orchestration/），来源：Cursor Engineering Blog 官方一手，含原文引用 3 处 |
+| PROJECT_SCAN | ✅ 完成 | 新增 1 篇 Projects 推荐：CUDA-Agent 字节跳动×清华 RL 训练 GPU Kernel 优化系统，GitHub 2,026 ⭐，关联 Articles 主题（GPU Kernel 优化两条技术路线） |
+| 信息源扫描 | ✅ 完成 | 命中：Cursor Engineering Blog（GPU Kernel 多智能体优化）+ GitHub Trending（CUDA-Agent、KernelAgent、Astra）+ Tavily 搜索（多智能体 CUDA 论文）|
 
 ## 🔍 本轮反思
 
-- **做对了**：本轮 Articles 选择「Anthropic 双组件 Long-Running Agent Harness」来自 Engineering Blog 官方发布，与上一轮 Cursor Multi-Agent Kernel 文章形成「Harness 工程方法论 + 实测数据验证」的完整闭环——两轮内容都聚焦在 Long-Running Agent 的核心工程挑战（会话状态管理），但文章角度不同
-- **做对了**：正确关联 Projects 推荐与 Articles 主题。DeepSeek-TUI 与 Anthropic 文章都讨论 Long-Running Agent 的会话持久化问题，但实现路径不同（Anthropic 用 Feature List + git，DeepSeek-TUI 用 turn-based 侧 git 快照），两篇文章可以对照阅读
-- **正确判断**：ruflo（37K Stars，今日 +1,834）是高热项目，但它偏向企业级多 Agent 编排，与本轮 Articles 的 Harness 主题关联度有限，未强行推荐，避免「为了推荐而推荐」
-- **需改进**：本轮跳过了 ruflo，但未对其做完整记录，下次扫描应重新评估（它可能是后续 Multi-Agent Orchestration 专题的候选）
+- **做对了**：正确识别「GPU Kernel 优化」作为本轮主题，发现 Cursor AnySphere 和 CUDA-Agent 两个项目属于同一主题的两条技术路线（多智能体协作 vs 强化学习训练），形成了有深度的技术对比
+- **做对了**：Cursor Articles 分析深入到单 Markdown 协调协议设计、Self-Benchmarking 闭环机制、Planner 的动态调度能力，而非停留在表面介绍
+- **做对了**：CUDA-Agent Projects 精准找到了差异化——首个 RL 训练超越 Claude Opus-4.6 的开源实现，而不是简单的 Kernel 优化工具介绍
+- **需改进**：GitHub Trending 扫描受限（Playwright 被代理阻止），依赖 Tavily 搜索作为补充方案，下次考虑直接用 raw.githubusercontent.com 获取 README
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 Articles | 1（anthropic-initializer-coding-agent-two-component-harness-2026.md）|
-| 新增 Projects 推荐 | 1（deepseek-tui-long-running-agent-session-management-2026.md）|
+| 新增 Articles | 1（cursor-multi-agent-cuda-kernel-optimizer-38-percent-2026.md）|
+| 新增 Projects 推荐 | 1（cuda-agent-byted-tsinghua-rl-kernel-optimization-2026.md）|
 | 原文引用数量 | Articles: 3 处 / Projects: 3 处 |
-| 防重索引更新 | 1（DeepSeek-TUI）|
+| 防重索引更新 | 1（CUDA-Agent）|
 | changelog 更新 | 1（2026-05-03-1957.md）|
-| commit | b2a50cf |
+| commit | ab8a37c |
 
 ## 🔮 下轮规划
 
 - [ ] ARTICLES_COLLECT：LangChain Interrupt 2026（5/13-14）会后速报窗口期准备（距离窗口期约 10 天）
 - [ ] ARTICLES_COLLECT：Anthropic 2026 Agentic Coding Trends Report（PDF），使用 pdf-extract skill 提取（窗口期需等待）
+- [ ] ARTICLES_COLLECT：Cursor Automations（长运行 Agent）+ Long-Running Agents 官方文档深度分析
 - [ ] Projects 扫描：ruflo（37K Stars，企业级 Agent 编排平台）可能适合作为 Multi-Agent Orchestration 专题的案例
 - [ ] Projects 扫描：awesome-ai-agents-2026（340+ 工具聚合）可作为 Agent 工具链全景研究材料
-- [ ] 信息源扫描：继续追踪 Anthropic Engineering Blog 有无新文章（上次扫描已命中两个主题）
+- [ ] 信息源扫描：继续追踪 Anthropic Engineering Blog 有无新文章
