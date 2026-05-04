@@ -18,6 +18,7 @@
 
 - [RenseiAI/AgentFactory](https://github.com/RenseiAI/agentfactory) — Linear 原生的多 Agent 软件工厂，Dev/QA/Acceptance 三阶段流水线，TypeScript/Redis 生产级架构
 - [openai/openai-agents-python](https://github.com/openai/openai-agents-python) — OpenAI 官方多 Agent 编排 SDK，Sandbox Agents + Handoffs + Guardrails 生产级基础设施，685+ stars/day
+- [LearningCircuit/local-deep-research](https://github.com/LearningCircuit/local-deep-research) — 本地化深度研究 Agent，4,706 ⭐，SQLCipher AES-256 加密 + LangGraph Agent Strategy + SimpleQA ~95%
 
 - [ruvnet/ruflo](https://github.com/ruvnet/ruflo) — Claude 原生 Multi-Agent 编排平台，38K ⭐，32 插件生态，自学习 swarm 智能
 - [kubernetes-sigs/agent-sandbox](https://github.com/kubernetes-sigs/agent-sandbox) — Kubernetes 原生的 Agent 沙箱 CRD
@@ -106,3 +107,4 @@
 - [tradingagents-multi-agent-trading-framework-2026](./tradingagents-multi-agent-trading-framework-2026.md) — Multi-Agent 金融交易框架，角色分层（分析师/研究员/交易员/风控），真实金融机构运作逻辑的开源实现（关联：Anthropic Agent Skills → 多 Agent 专业角色编排）
 - [evalview-ai-agent-behavior-regression-gate-2026](./evalview-ai-agent-behavior-regression-gate-2026.md) — AI Agent 行为回归门卫，snapshot behavior → diff tool calls → classify regression，与 Anthropic Long-Running Agent Harness 互补（前者保实现可维护性，后者保行为一致性）
 - [ouroboros-agent-os-replayable-specification-first-2026](./ouroboros-agent-os-replayable-specification-first-2026.md) — Agent OS：规范优先的可验证编码工作流，Specification-first + 3-stage Evaluation Gate，与 Anthropic Context Engineering 形成互补（前者减少输入端冗余，后者管理过程端容量）
+- [local-deep-research-encrypted-agentic-research-2026](./local-deep-research-encrypted-agentic-research-2026.md) — 本地化深度研究 Agent，4,706 ⭐，SQLCipher AES-256 加密 + LangGraph Agent Strategy + SimpleQA ~95%（关联：Cursor Composer Self-Summarization → 信息管理问题的互补视角：压缩 vs 扩展）
