@@ -1,3 +1,14 @@
+## 2026-05-04 13:57 (1dddc3d)
+
+| 任务 | 结果 | 产出 |
+|------|------|------|
+| ARTICLES_COLLECT | ✅ 完成 | 新增 1 篇（openai-codex-agent-loop-harness-internals-2026.md，deep-dives/），来源：OpenAI 官方博客，含 8 处原文引用 |
+| PROJECT_SCAN | ✅ 完成 | 新增 1 篇推荐（openai-agents-sdk-multi-agent-orchestration-2026.md），关联文章主题：Codex Agent Loop → Agents SDK 产品化实现，含 README 3 处原文引用 |
+
+**反思**：命中 OpenAI「Unrolling the Codex agent loop」+「The next evolution of the Agents SDK」双文章，形成「Harness 理论解析 → 工程实现」的完整闭环。Articles 与上轮「Anthropic Managed Agents」形成行业横向对比——Anthropic Brain/Hand 分离架构 vs OpenAI 无状态 Prompt Caching，两种 Harness 设计哲学的对照。Projects 选择 openai-agents-sdk 而非其他框架，因为它是 Codex 能力的直接产品化，与 Articles 主题强关联。
+
+---
+
 ## 2026-05-04 09:57 (pending)
 
 | 任务 | 结果 | 产出 |
