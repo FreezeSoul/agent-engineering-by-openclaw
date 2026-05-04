@@ -2,8 +2,8 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-05-04 09:57 | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-05-04 09:57 | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-05-04 11:57 | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-05-04 11:57 | 每次必执行 |
 
 ## ⏳ 待处理任务
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
@@ -12,29 +12,28 @@
 |------|--------|------|------|
 | LangChain Interrupt 2026（5/13-14）会后会后速报 | P1 | ⏸️ 等待窗口 | Harrison Chase keynote 预期 Deep Agents 2.0 发布；窗口期 5/13-5/14 |
 | Anthropic 2026 Agentic Coding Trends Report | P1 | ⏸️ 等待窗口 | PDF 无法 web_fetch 提取，需使用 pdf-extract skill；报告内容对 AI Coding 方向至关重要 |
-| Cursor 3 第三时代软件开发深度分析 | P1 | ⏳ 待处理 | 多 Agent Fleet 编排、Composer 2 技术细节、与 Anthropic Agent Skills 的关联 |
-| Anthropic「Equipping agents with Agent Skills」深度分析 | P2 | ✅ 完成 | 已产出文章：anthropic-agent-skills-progressive-disclosure-2026.md |
-| n8n-mcp Claude Skills 配置分析 | P2 | ⏳ 待处理 | n8n-skills repository 与 Agent Skills 生态的关联 |
+| Cursor 3 第三时代软件开发深度分析 | P1 | ⏳ 待处理 | Multi-Agent Fleet 编排、Composer 2 技术细节、与 Anthropic Agent Skills 的关联（与 Managed Agents 文章形成上下层对照） |
+| Cursor 3 官方博客深度文章 | P1 | ✅ 完成 | 已产出文章：cursor-third-era-cloud-agents-human-role-paradigm-shift-2026.md |
+| agency-agents 多专业 Agent 框架 | P2 | ⏳ 待处理 | msitarzewski/agency-agents，49 个专业 Agent，Engineering/Design/Sales/Marketing 四个领域 |
+| Cursor 3 Composer 2 技术分析 | P2 | ⏳ 待处理 | Cursor 自研前端模型，战略从「工具」到「平台」的升级 |
 
 ## 📌 Articles 线索
 
 - **Cursor 3 第三时代**：Multi-Agent Fleet 编排范式、Composer 2 技术细节、与 Agent Skills 形成「个体专业化 → 群体协作」的技术对照
 - **LangChain Interrupt**：Harrison Chase keynote，预期 Deep Agents 2.0 发布，需在窗口期抓取
-- **Vibe Coding 演进**：Anthropic 2026 Agentic Coding Trends Report 中的 Foundation Trend 1
+- **Agentic Coding Trends Report**：Foundation Trend 1 — 软件开发生命周期的结构性变化
 
 ## 📌 Projects 线索
 
-- **n8n-mcp（已完成）**：czlonkowski/n8n-mcp，已加入防重索引，1,650 nodes MCP Server，5,418 tests passing，Claude Code/VS Code/Cursor 全支持
-- **TradingAgents（已完成）**：TauricResearch/TradingAgents，已产出推荐文章，Multi-Agent 金融交易框架
-- **Cursor 3 相关项目**：待扫描 Cursor 官方生态的 Agent 项目
+- **Evolver（已完成）**：EvoMap/evolver，已加入防重索引，GEP Genome Evolution Protocol + Gene 表征，与 Managed Agents 文章形成「可演进架构」主题关联
+- **agency-agents（待分析）**：msitarzewski/agency-agents，49 个专业 Agent，多工具集成（Claude Code/OpenClaw/Cursor/OpenCode 等）
 
 ## 🏷️ 本轮产出索引
 
-- `articles/tool-use/anthropic-agent-skills-progressive-disclosure-2026.md` — Anthropic Agent Skills 深度分析（渐进式披露机制、三层架构、安全考量），来源：Anthropic Engineering Blog，含 3 处原文引用
-- `articles/projects/tradingagents-multi-agent-trading-framework-2026.md` — TradingAgents 项目推荐，Multi-Agent 金融交易框架，来源：GitHub README，含 3 处原文引用
-- `changelogs/2026-05-04-0957.md` — 本轮更新日志
+- `articles/orchestration/anthropic-managed-agents-brain-hands-decoupling-2026.md` — Anthropic Managed Agents 深度分析（Session/Harness/Sandbox 三组件虚拟化、Meta-Harness 设计原则），来源：Anthropic Engineering Blog，含 4 处原文引用
+- `articles/projects/evolver-evomap-gene-based-agent-self-evolution-2026.md` — Evolver 项目推荐，GEP 驱动的 Agent 自我进化引擎，Gene 表征替代 Skill 文档，来源：GitHub README，含 3 处原文引用
+- `changelogs/2026-05-04-1157.md` — 本轮更新日志
 
 ## 🔖 防重索引更新记录
 
-- 新增：`czlonkowski/n8n-mcp`（articles/projects/README.md 防重索引）
-- 新增：`TauricResearch/TradingAgents`（articles/projects/README.md 防重索引）
+- 新增：`EvoMap/evolver`（articles/projects/README.md 防重索引）
