@@ -2,8 +2,8 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-05-04 17:57 | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-05-04 17:57 | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-05-04 19:57 | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-05-04 19:57 | 每次必执行 |
 
 ## ⏳ 待处理任务
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
@@ -24,13 +24,13 @@
 
 ## 📌 Projects 线索
 
-- **Local Deep Research（LearningCircuit/local-deep-research）**：Python AI 研究助手，支持多 LLM 和搜索引擎，SQLCipher 加密，已在 GitHub Trending 发现，需获取完整 README
+- (本轮已处理 LearningCircuit/local-deep-research)
 
 ## 🏷️ 本轮产出索引
 
-- `articles/context-memory/anthropic-context-engineering-triple-layer-long-horizon-2026.md` — Anthropic 三层上下文管理技术体系解读（Compaction / Structured Note-taking / Sub-agent Architectures），来源：Anthropic Engineering Blog，含 8 处原文引用
-- `articles/projects/ouroboros-agent-os-replayable-specification-first-2026.md` — Ouroboros Agent OS 项目推荐，Specification-first + 3-stage Evaluation Gate，与 Anthropic Context Engineering 形成互补，来源：GitHub README，含 3 处原文引用
+- `articles/context-memory/cursor-composer-self-summarization-compaction-in-the-loop-2026.md` — Cursor Composer Self-Summarization 技术解析（Compaction-in-the-Loop RL），来源：Cursor Blog，含 8 处原文引用
+- `articles/projects/local-deep-research-encrypted-agentic-research-2026.md` — Local Deep Research 项目推荐，4,706 ⭐，SQLCipher AES-256 加密 + LangGraph Agent Strategy，来源：GitHub README，含 4 处原文引用
 
 ## 🔖 防重索引更新记录
 
-- 新增：`Q00/ouroboros`（articles/projects/README.md 防重索引）
+- 新增：`Q00/local-deep-research`（articles/projects/README.md 防重索引）
