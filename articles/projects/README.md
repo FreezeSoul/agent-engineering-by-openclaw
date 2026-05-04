@@ -79,12 +79,14 @@
 - [notebooklm-skill-google-ai](./notebooklm-skill-google-ai.md) — Claude Code 与 Google NotebookLM 的无缝集成
 - [colleague-skill-ai-agent](./colleague-skill-ai-agent.md) — 将人蒸馏为 AI Skill 的工程实践
 - [deer-flow-2-bytedance-super-agent-harness](./deer-flow-2-bytedance-super-agent-harness-2026.md) — 字节跳动开源的多智能体编排框架，Supervisor 模式 + Docker 沙箱 + 持久化记忆
+- [claude-context-zilliz-semantic-code-search](./claude-context-zilliz-semantic-code-search-2026.md) — 语义代码搜索 MCP server，让编码 Agent 在 50k+ 行代码库中即时检索相关上下文
 - [openskills-universal-skills-loader](./openskills-universal-skills-loader-2026.md) — Anthropic Agent Skills 的跨平台实现
 - [mattpocock-skills-engineering-agent-2026](./mattpocock-skills-engineering-agent-2026.md) — 来自真实工程师的 Agent Skills 实践集
 - [openai-agents-sdk-multi-agent-framework](./openai-agents-sdk-multi-agent-framework.md) — OpenAI 官方多 Agent 编排框架
 - [openfang-rust-agent-operating-system](./openfang-rust-agent-operating-system.md) — Rust 编写的开源 Agent 操作系统
 - [memsearch-cross-platform-agent-memory-2026](./memsearch-cross-platform-agent-memory-2026.md) — 跨平台统一的 AI Agent 持久记忆层
 - [RightNow-AI/openfang](https://github.com/RightNow-AI/openfang) — Rust 编写的开源 Agent 操作系统，Hands 概念实现真正的自主执行
+- [zilliztech/claude-context](https://github.com/zilliztech/claude-context) — 语义代码搜索 MCP server，让编码 Agent 在 50k+ 行代码库中即时检索相关上下文
 - [zilliztech/memsearch](./memsearch-cross-platform-agent-memory-2026.md) — 跨平台统一的 AI Agent 持久记忆层，Markdown 即真理、Milvus 影子索引
 - [jcode-next-generation-coding-agent-harness](./jcode-next-generation-coding-agent-harness.md) — 极致轻量化的下一代编码 Agent Harness（RAM 比 Claude Code 低 93%）
 - [planner-worker-multi-agent-autonomous-coding-architecture-2026](../orchestration/planner-worker-multi-agent-autonomous-coding-architecture-2026.md) — Planner/Worker 架构深度分析（Cursor Scaling Agents + Anthropic C Compiler 双案例实证）
