@@ -45,6 +45,8 @@
 - [mem0ai/mem0](https://github.com/mem0ai/mem0) — LLM 和 AI Agent 的通用记忆层，self-improving memory，LoCoMo 91.6 分，ADD-only extraction + Entity linking
 - [agno-agi/agno](https://github.com/agno-agi/agno) — 将 Agent 转化为生产软件的 Runtime，Session 管理 + OpenTelemetry tracing + RBAC + 多框架兼容
 - [memfreeme/memfree](https://github.com/memfreeme/memfree) — 开源混合 AI 搜索引擎，支持知识库 + 互联网搜索 + Chrome 书签同步，一键部署
+- [czlonkowski/n8n-mcp](https://github.com/czlonkowski/n8n-mcp) — MCP Server for n8n workflow automation，1,650+ nodes 文档覆盖，Claude Code/VS Code/Cursor 多 IDE 支持
+- [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) — Multi-Agent 金融交易框架，角色分层（分析师/研究员/交易员/风控），真实金融机构运作逻辑的开源实现
 - [gastownhall/gastown](https://github.com/gastownhall/gastown) — 多 Agent 工作空间编排系统，14,914 ⭐，Git Worktree 隔离 + Beads 账本 + Witness/Deacon 三层监控
 
 ---
@@ -96,3 +98,4 @@
 - [gastown-multi-agent-workspace-manager-2026](./gastown-multi-agent-workspace-manager-2026.md) — 多 Agent 工作空间编排系统，14,914 ⭐，Git Worktree 隔离 + Beads 账本 + Witness/Deacon 三层监控（关联：Cursor 第三时代多 Agent Fleet 范式）
 - [lobehub-agent-collaboration-platform-2026](./lobehub-agent-collaboration-platform-2026.md) — Agent 协作空间平台，75K ⭐，Agent as the Unit of Work + Create/Collaborate/Evolve 三层协作模式（关联：Anthropic 四层组件模型 → 多 Agent 协作场景下的人类控制设计）
 - [mem0-universal-memory-layer-agent-2026](./mem0-universal-memory-layer-agent-2026.md) — LLM 和 AI Agent 的通用记忆层，self-improving memory，LoCoMo 91.6 分（关联：Anthropic Context Engineering → Memory Management 实践验证）
+- [tradingagents-multi-agent-trading-framework-2026](./tradingagents-multi-agent-trading-framework-2026.md) — Multi-Agent 金融交易框架，角色分层（分析师/研究员/交易员/风控），真实金融机构运作逻辑的开源实现（关联：Anthropic Agent Skills → 多 Agent 专业角色编排）

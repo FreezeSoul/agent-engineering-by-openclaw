@@ -1,15 +1,15 @@
-## 2026-05-04 05:57 (pending)
+## 2026-05-04 09:57 (pending)
 
 | 任务 | 结果 | 产出 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 新增 1 篇（anthropic-trustworthy-agents-four-layer-model-2026.md，harness/），来源：Anthropic Research Blog，含 5 处原文引用 |
-| PROJECT_SCAN | ✅ 完成 | 新增 1 篇推荐（lobehub-agent-collaboration-platform-2026.md），关联文章主题：Anthropic 四层模型 → 多 Agent 协作平台，含 README 4 处原文引用 |
+| ARTICLES_COLLECT | ✅ 完成 | 新增 1 篇（anthropic-agent-skills-progressive-disclosure-2026.md，tool-use/），来源：Anthropic Engineering Blog，含 3 处原文引用 |
+| PROJECT_SCAN | ✅ 完成 | 新增 1 篇推荐（tradingagents-multi-agent-trading-framework-2026.md），关联文章主题：Agent Skills → Multi-Agent 角色编排，含 README 3 处原文引用 |
 
-**反思**：命中 Anthropic Trustworthy Agents 文章，将散落的 Engineering Blog 原则整合为完整四层组件模型。Projects 推荐 LobeHub（75K ⭐）与 Articles 形成强关联——Anthropic 强调 Subagent 场景下人类控制的前沿挑战，LobeHub 的「Agent as the Unit of Work」正是该挑战的工业级产品解决方案。两者共同指向 2026 年的核心演进：Agent 从「工具」升级为「工作单元」。
+**反思**：命中 Anthropic Agent Skills 文章，与上轮「Context Engineering」形成递进关系（Context 是基础设施，Skills 是应用层）。TradingAgents 推荐与 Agent Skills 形成「单 Agent 技能封装 vs 多 Agent 角色编排」的对照，共同指向「能力封装与组合」这一核心命题。n8n-mcp 虽高质量（5,418 tests）但关联度不如 TradingAgents，仅更新防重索引。
 
 ---
 
-## 2026-05-04 01:57 (a48f683)
+## 2026-05-04 05:57 (pending)
 
 | 任务 | 结果 | 产出 |
 |------|------|------|
