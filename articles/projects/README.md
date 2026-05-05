@@ -27,6 +27,7 @@
 - [kubernetes-sigs/agent-sandbox](https://github.com/kubernetes-sigs/agent-sandbox) — Kubernetes 原生的 Agent 沙箱 CRD
 - [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) — Rust 原生浏览器自动化 CLI
 - [lobehub/lobe-chat](https://github.com/lobehub/lobe-chat) — Agent 协作空间，75K ⭐，Agent as the Unit of Work 设计理念
+- [omxyz/lumen](https://github.com/omxyz/lumen) — 视觉优先浏览器 Agent，screenshot→action 循环 + 两层上下文压缩，100% WebVoyager 成功率
 - [MemTensor/MemOS](https://github.com/MemTensor/MemOS) — LLM 和 AI Agent 的记忆操作系统
 - [alibaba/page-agent](https://github.com/alibaba/page-agent) — 让任何网页都能被自然语言控制
 - [agent-sandbox/agent-sandbox](https://github.com/agent-sandbox/agent-sandbox) — E2B 兼容的企业级 AI Agent 沙箱
@@ -121,3 +122,4 @@
 - [overstory-multi-agent-orchestration-git-worktree-2026](./overstory-multi-agent-orchestration-git-worktree-2026.md) — Git Worktree 隔离的多 Agent 编排工具，让单个 Claude Code Session 变身多 Agent 团队（关联：Cursor 第三代软件开发 → Agent Fleet 架构的第三种路线：本地化隔离 + 实时干预）
 - [mcp-agent-lastmile-ai-mcp-framework-2026](./mcp-agent-lastmile-ai-mcp-framework-2026.md) — 用简单模式构建高效 Agent 的 MCP 框架，Full MCP Support + Temporal Durable Execution（关联：动态上下文发现 → Token 效率工程）
 - [opensearch-agent-health-opensearch-eval-harness-2026](./opensearch-agent-health-opensearch-eval-harness-2026.md) — OpenSearch 官方的 Agent 评估框架，Golden Path Trajectory 对比 + OpenTelemetry + LLM Judge（关联：Cursor Harness 持续改进 → 测量驱动改进的工程实现）
+- [lumen-omxyz-vision-first-browser-agent-context-compression-2026](./lumen-omxyz-vision-first-browser-agent-context-compression-2026.md) — 视觉优先浏览器 Agent，screenshot→action 循环 + 两层上下文压缩（80% threshold），与 Cursor Self-Summarization 形成训练侧×工程侧的互补（关联：Context Engineering → 注意力预算管理与压缩触发机制工程实现）
