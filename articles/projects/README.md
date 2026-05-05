@@ -59,6 +59,8 @@
 - [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) — Multi-Agent 金融交易框架，角色分层（分析师/研究员/交易员/风控），真实金融机构运作逻辑的开源实现
 - [gastownhall/gastown](https://github.com/gastownhall/gastown) — 多 Agent 工作空间编排系统，14,914 ⭐，Git Worktree 隔离 + Beads 账本 + Witness/Deacon 三层监控
 
+- [opensearch-project/agent-health](https://github.com/opensearch-project/agent-health) — OpenSearch 官方的 Agent 评估与观测框架，Golden Path Trajectory 对比 + OpenTelemetry Traces + LLM Judge，15 ⭐
+
 ---
 
 ## 推荐文章索引
@@ -118,3 +120,4 @@
 - [vibepod-cli-docker-agent-container-2026](./vibepod-cli-docker-agent-container-2026.md) — Docker 容器化的 AI 编码 Agent 管理 CLI，零配置 + 本地 Analytics Dashboard，支持 7 个主流 Agent（关联：OpenAI Agents SDK Native Sandbox → 本地 vs 云端的不同隔离路径）
 - [overstory-multi-agent-orchestration-git-worktree-2026](./overstory-multi-agent-orchestration-git-worktree-2026.md) — Git Worktree 隔离的多 Agent 编排工具，让单个 Claude Code Session 变身多 Agent 团队（关联：Cursor 第三代软件开发 → Agent Fleet 架构的第三种路线：本地化隔离 + 实时干预）
 - [mcp-agent-lastmile-ai-mcp-framework-2026](./mcp-agent-lastmile-ai-mcp-framework-2026.md) — 用简单模式构建高效 Agent 的 MCP 框架，Full MCP Support + Temporal Durable Execution（关联：动态上下文发现 → Token 效率工程）
+- [opensearch-agent-health-opensearch-eval-harness-2026](./opensearch-agent-health-opensearch-eval-harness-2026.md) — OpenSearch 官方的 Agent 评估框架，Golden Path Trajectory 对比 + OpenTelemetry + LLM Judge（关联：Cursor Harness 持续改进 → 测量驱动改进的工程实现）
