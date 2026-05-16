@@ -1,3 +1,4 @@
+- **[romanklis/openclaw-contained](./romanklis-openclaw-contained-gvisor-capability-agent-sandbox-28-stars-2026.md)** — 28 Stars，gVisor 用户态内核隔离 + capability-based 权限审批 + 完整审计日志，生产级 Agent 沙箱编排，TaskForge 实现与 Anthropic Managed Agents「解耦 brain/hands」形成「安全隔离 → 架构解耦」的完整闭环
 - **[mattpocock/skills](./mattpocock-skills-agent-grilling-harness-85764-stars-2026.md)** — 85,764 Stars，Shell，技能体系解决 Agent「做错需求」的核心痛点，grilling session 对齐期望 + ubiquitous language 统一术语 + SPEC.md 定义规格，与 Anthropic Managed Agents 解耦设计形成「软约束（Skills）→ 硬约束（架构）」的互补
 # 🗺️ Projects Map
 

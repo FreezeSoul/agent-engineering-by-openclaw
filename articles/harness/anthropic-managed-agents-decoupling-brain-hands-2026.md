@@ -1,122 +1,109 @@
-# Anthropic Managed Agents：解耦设计如何让 Agent 架构「活」得更久
+# Anthropic Managed Agents：解耦大脑与双手的 Agent 系统设计
 
-> 原文：[Scaling Managed Agents: Decoupling the brain from the hands](https://www.anthropic.com/engineering/managed-agents)（Anthropic Engineering Blog，2026-04-08）
-
----
-
-## 核心问题：Harness 为何会过时
-
-Anthropic 在这篇博客里揭示了一个关键矛盾：**模型在进化，但 harness 中的假设不一定跟着变**。
-
-他们举了一个很具体的例子：Claude Sonnet 4.5 时代，因为担心上下文接近上限时会「焦虑」（context anxiety）导致任务提前终止，所以他们在 harness 里加了 context reset 机制。但同样的 harness 放到 Claude Opus 4.5 上运行时，这个行为消失了——context reset 变成了「死代码」。
-
-> "We found that the behavior was gone. The resets had become dead weight."
-
-这句话点出了问题的本质：**当你发现 harness 里某段逻辑「不再需要」了，说明它曾经服务的那个模型假设已经过时了**。而问题的关键不在于某段代码该不该删，而在于整个架构是否能容纳这种变化。
-
-Managed Agents 的解法是把 Agent 的核心组件（session、harness、sandbox）变成**接口**，而不是实现——操作系统曾经用同样的思路，让 software 摆脱了 hardware 的束缚。
+> **来源**：[Anthropic Engineering Blog - Scaling Managed Agents: Decoupling the brain from the hands](https://www.anthropic.com/engineering/managed-agents)，2026年4月8日
 
 ---
 
-## 三层解耦：brain、hands、session
+## 核心问题：一个被反复验证的工程教训
 
-Anthropic 的解决方案是把 Agent 分解成三个独立接口：
+Anthropic 在构建 Managed Agents 时遇到了一个经典问题：**当模型能力提升后，之前针对旧模型设计的 harness 会成为限制**。
 
-### 1. Session：append-only log
+他们举了一个具体例子：在 Claude Sonnet 4.5 时代，Agent 会在接近 context limit 时提前结束任务（所谓"context anxiety"）。当时的解决方案是在 harness 中加入 context resets。但当换成 Claude Opus 4.5 后，这个行为消失了——之前精心设计的 resets 变成了多余代码。
 
-```python
-# 每次交互只追加，不修改
-emitEvent(id, event)  # 写入 session
-getSession(id)        # 读取 session
-```
+> "We expect harnesses to continue evolving."
 
-Session 是一个纯粹的日志系统，与具体怎么执行解耦。当 harness 崩溃重启后，只需要调用 `wake(sessionId)` + `getSession(id)` 就能恢复到崩溃前的状态，继续执行。
-
-这解决了一个根本问题：**harness 不再需要「活」着**。之前的架构里，harness 和 session 耦合在同一进程，一旦容器崩溃，整个 session 就丢了。现在 session 是外部持久化的，harness 可以随时重建。
-
-### 2. Harness：Agent loop，不再是宠物
-
-```python
-# harness 调用 container（以及其他工具）作为普通工具
-execute(name, input) → string  # 调用 sandbox
-provision({resources})         # 创建新 container
-
-# 关键：当 container 失败时，harness 把它当作工具调用失败处理
-# Claude 收到错误后决定是否重试，重试时会初始化新的 container
-```
-
-Harness 变成了 cattle（牲口），不是 pet（宠物）。容器挂了？没关系，当作工具调用失败处理，Claude 决定重试，新容器自动上线。
-
-### 3. Sandbox：执行环境，可以替换
-
-```python
-# sandbox 是被 harness 调用的外部资源
-execute(name, input) → string
-```
-
-Sandbox 不知道自己被哪个 harness 调用，harness 也不知道 sandbox 是什么实现。任何符合接口的资源都可以插进来——本地容器、远程 VPC、企业私有基础设施……
+这句话背后是一个深刻的工程哲学：**harness 是模型能力的函数，而不是独立的常量**。当模型进化时，harness 必须跟着变，否则就会从助力变成阻力。
 
 ---
 
-## Pet vs Cattle：一个经典的运维隐喻在 Agent 时代的复活
+## 解耦架构：OS 思想在 Agent 系统的应用
 
-Anthropic 指出他们最初把 session、harness、sandbox 全部放进同一个容器，结果制造了一个「pet」：如果容器挂了，session 也丢了；如果容器无响应，工程师只能打开 shell 进入容器调试——而这个容器里往往还有用户数据，根本不允许这样操作。
+Managed Agents 的核心架构师从操作系统的历史中找到了答案。 decades ago, operating systems solved this problem by virtualizing hardware into abstractions—process, file—general enough for programs that didn't exist yet.
 
-```
-旧架构（Pet）：
-┌─────────────────────────────┐
-│  Container (Pet)             │
-│  ├── Session (in-memory)     │
-│  ├── Harness (in-process)   │
-│  └── Sandbox (local)        │
-│                             │
-│  ❌ Container dies → session lost
-│  ❌ Can't debug without entering container
-│  ❌ Can't connect to customer's VPC
-└─────────────────────────────┘
-```
+Anthropic 将这个思想搬到了 Agent 系统：
 
-```
-新架构（Cattle）：
-┌──────────────────────────────────────┐
-│  Session (外部持久化)                  │
-│  ├── emitEvent() ← harness 写入       │
-│  └── getSession()                     │
-│                                       │
-│  Harness (可重建)                     │
-│  ├── wake(sessionId)                  │
-│  └── for each turn: emit → call API   │
-│                                       │
-│  Sandbox ← 被当作工具调用              │
-│  └── execute(name, input) → string    │
-│      (可以是任何符合接口的实现)        │
-└──────────────────────────────────────┘
+| 组件 | 传统设计 | Managed Agents 解耦 |
+|------|---------|---------------------|
+| **Session** | 存在 harness 内存中 | 独立接口，append-only log |
+| **Harness** | 与 sandbox 耦合在同一容器 | 独立服务，可重启 |
+| **Sandbox** | 只能有一个 | 可以有多个，按需创建 |
 
-✅ Container dies → tool-call error → Claude retry → new container
-✅ Harness dies → new harness → wake(sessionId) → resume
-✅ 任何资源都可以成为 sandbox
-```
-
-这个思路在分布式系统里并不新鲜——Netflix 早在 2010 年代就用「no pet servers」原则改造了他们的基础设施。但把它引入 Agent 架构设计，Anthropic 是第一次系统性地说清楚的。
+三个接口：`execute(name, input) → string`、`wake(sessionId)`、`emitEvent(id, event)`——不多不少，刚好够描述 Agent 的行为而不约束实现。
 
 ---
 
-## 一个反直觉的教训：AI Agent 的工程问题，本质上是分布式系统问题
+## "Pet vs Cattle"：从宠物到牛
 
-这篇文章最值得记下的结论是：**当模型能力提升后，之前用来弥补模型短板的 harness 逻辑可能会变成冗余**。
+原来的设计把 session、harness、sandbox 全塞进一个容器，好处是文件编辑是 direct syscalls，没有服务边界。但代价是：容器成了"宠物"——挂了就得 nurse back to health。
 
-这意味着 harness 必须设计成可演进的：当你发现某段假设不再成立时，能轻易地把它去掉，而不是被它困住。Anthropic 的解耦架构提供了这个能力——因为每个组件都是可替换的，所以即使模型出了新能力，旧的假设可以被逐个退役。
+解耦后：
 
-这个教训对任何在做 Agent 架构的人是适用的：**不要把当前的模型能力假设写死在 harness 里，要让它们可以撤退**。
+- **Sandbox 挂了** → harness 捕获 tool-call error → Claude 决定重试 → 新容器用 `provision({resources})` 初始化。不用 nurse，直接替换。
+- **Harness 挂了** → session log 在 harness 之外 → 新 harness 用 `wake(sessionId)` + `getSession(id)` 恢复，继续从上次位置运行。
 
----
-
-**引用来源**
-
-> "A common thread across this work is that harnesses encode assumptions about what Claude can't do on its own. However, those assumptions need to be frequently questioned because they can go stale as models improve."
-
-> "Decoupling the brain from the hands meant the harness no longer lived inside the container. It called the container the way it called any other tool: execute(name, input) → string. The container became cattle."
+笔者认为：**这个设计最聪明的地方不是"可以容错"，而是把"容错"变成了系统的默认行为，而不是特殊处理**。当所有组件都是 cattle，你不需要为每种失败情况写专门的恢复代码。
 
 ---
 
-*归档目录：`harness/` | 来源：Anthropic Engineering Blog | 2026-05-16*
+## 安全边界：token 永远不到达 sandbox
+
+原架构中，未信任代码（Claude 生成的）和凭证共存于同一容器。Prompt injection 只要能让 Claude 读取自己的环境，就能拿到 token。
+
+Managed Agents 的解决：
+
+1. **Git**：每个仓库的 access token 在 sandbox 初始化时写入本地 git remote，push/pull 不需要 agent 处理 token
+2. **MCP 工具**：OAuth token 存在外部 vault，MCP proxy 根据 session 关联的 token 去 vault 取 credential，harness 完全不知晓任何凭证
+
+> "The structural fix was to make sure the tokens are never reachable from the sandbox where Claude's generated code runs."
+
+这是防御深度（defense in depth）的体现：**不是在 prompt 层面限制 Claude 能做什么，而是在架构层面让"错误行为"物理上不可能**。
+
+---
+
+## Session 不是 context window
+
+这是一个容易被混淆的点。Long-horizon 任务超过 context window 时，标准做法（compaction、context trimming）都是不可逆的——你必须在压缩前决定保留什么。
+
+Managed Agents 的 session 作为 context object 在 context window 之外存在，通过 `getEvents()` 接口让 brain 按需拉取：positional slices、rewind 几个 event 向前看、或在某个 action 前 reread context。
+
+> "We separated the concerns of recoverable context storage in the session and arbitrary context management in the harness because we can't predict what specific context engineering will be required in future models."
+
+这句话的关键在于：**他们不预测未来模型需要什么样的 context engineering，所以把 storage 和 management 分开，让 harness 去encode具体策略，而session只保证 durability 和可查询性**。这是接口设计哲学的胜利。
+
+---
+
+## 性能收益：60% p50 TTFT 下降，90%+ p95 下降
+
+原架构中，每个 brain 都需要一个容器来运行推理。每个 session 必须 clone repo、boot process、fetch pending events——即使这个 session 根本不需要 sandbox。
+
+解耦后，sandbox 是按需创建的（通过 `execute(name, input) → string` 调用）。不需要 sandbox 的 session 可以立即开始推理，不需要等容器 provision。
+
+结果：
+- **p50 TTFT 下降 ~60%**
+- **p95 TTFT 下降 >90%**
+
+这对用户体验是决定性的：TTFT 是用户最能感知到的延迟。推理的开始不再被 sandbox setup blocking。
+
+---
+
+## Many brains, many hands：扩展性
+
+解耦还解锁了一个新能力：**一个 brain 可以连接多个 hands**。
+
+在单容器时代，一个 Claude 实例只能操作一个 shell环境。如果那个 shell 挂了，所有 hands 都丢。解耦后，每个 hand 是 `execute(name, input) → string` 的工具，harness 不知道 hand 是容器、手机还是模拟器。没有 hand 耦合到任何 brain，所以 brains 可以互相传递 hands。
+
+---
+
+## 笔者判断：这是 Agent 系统设计的"操作系统级"突破
+
+Managed Agents 的意义不只是"让 Claude 更强"，而是证明了：
+
+**Agent 的各组件（brain/hands/session）有不同的变化速率和生命周期，不应该绑在一起**。
+
+笔者认为这个设计有三点值得学习：
+
+1. **接口优于实现**：三个接口（execute/wake/emitEvent）定义了 Agent 的行为边界，具体实现可以随时替换而不影响其他组件
+2. **从 model 角度看 harness**：当 model 能力跃升时，harness 中的很多"保护性代码"会变成冗余，甚至是性能负担
+3. **安全架构的物理隔离**：credential 不只是"不让 Claude 看到"，而是从架构上让 sandbox 永远无法 reach 到 token 存储
+
+> — [Anthropic Engineering Blog: Scaling Managed Agents](https://www.anthropic.com/engineering/managed-agents)（2026-04-08）
