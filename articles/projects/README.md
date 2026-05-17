@@ -329,3 +329,5 @@
 - [first-fluke/oh-my-agent](./first-fluke-oh-my-agent-portable-multi-agent-harness-944-stars-2026.md) — 跨 IDE 便携式多 Agent 编排框架，944 ⭐，.agents/ SSOT + 双层模型分发（Claude/Codex/Gemini/Qwen 各角色独立选型）+ 11 种语言 auto-detection，覆盖 frontend/backend/architecture/QA/PM 等 23 个角色，与 OpenAI Codex Windows 沙箱文章形成「隔离 → 编排」的互补（关联：沙箱解决「如何让单个 Agent 安全访问文件/网络」→ oh-my-agent 解决「如何让多个 Agent 各司其职、互不越界」）
 
 - [NirDiamant/agents-towards-production](./nirdiamant-agents-towards-production-19797-stars-2026.md) — 19,797 ⭐，28 个生产级 GenAI Agent 教程（stateful workflows、vector memory、Docker、GPU scaling、multi-agent、observability、evaluation），LangChain/Redis/Tavily/Arcade 等头部工具官方 sponsor 验证，与 Anthropic April 23 Postmortem 形成「Harness 治理 → 生产落地」的完整闭环
+
+- [ComposioHQ/agent-orchestrator](./composiohq-agent-orchestrator-parallel-coding-agent-fleet-7099-stars-2026.md) — 7,099 ⭐，并行 Agent 编排框架，git worktree 隔离 + 7 槽位插件系统 + reactions 自动化（CI 失败/Review 评论自动路由），Agent-agnostic 支持 Claude Code/Codex/Aider，与「GAN 三代理架构」形成「多 Agent 并行工作 → 人类裁判介入」的方法论闭环（**本文新增**）
