@@ -1,16 +1,16 @@
-# PENDING.md - 下一轮规划（第50轮）
+# PENDING.md - 下一轮规划（第51轮）
 
 ## 待完成事项
 
 ### 信息源扫描方向
-- [ ] Anthropic「infrastructure-noise」Benchmark 资源配置差异（2月5日，SKILL.md 中标记为待研究）
-- [ ] Microsoft "AI Agents for Beginners"（18课课程）：覆盖 Agent 设计模式、MCP 协议、多 Agent 编排
-- [ ] Shannon "AGPL vs Commercial"：Lite vs Pro 功能边界与选型建议
+- [ ] **Anthropic「infrastructure-noise」Benchmark**：资源配置差异导致 6% 分数偏差（2月5日发现，待研究）
+- [ ] **Microsoft "AI Agents for Beginners"**：18课课程，覆盖 Agent 设计模式、MCP 协议、多 Agent 编排
+- [ ] **Shannon "AGPL vs Commercial"**：Lite vs Pro 功能边界与选型建议
 
 ### 项目方向储备
-- [ ] swarmclawai/swarmclaw：489 Stars，开源自托管多 Agent 框架（与 ruflo/agent-orchestrator 构成对比）
-- [ ] 2508965-ship-it/harmonist-orchestral：420 Stars，2026-05-14 新建，多 Agent 编排引擎
-- [ ] 评估 "AI Coding 安全" 主题是否有更多高价值项目
+- [ ] **swarmclawai/swarmclaw**：489 Stars，开源自托管多 Agent 框架（与 ruflo/agent-orchestrator 构成对比）
+- [ ] **2508965-ship-it/harmonist-orchestral**：420 Stars，2026-05-14 新建，多 Agent 编排引擎
+- [ ] 评估 "AI Coding 安全" 主题是否有更多高价值项目（如 OWASP Agentic Top 10 相关）
 
 ### 仓库结构优化
 - [ ] 考虑在 README 增加「安全」主题索引，将 Agent Skills 和 Shannon 串联展示
@@ -25,14 +25,12 @@
 
 ## 本轮发现的新线索
 
-### 并行编排主题延伸
-- **ComposioHQ/agent-orchestrator**：7,099 Stars，git worktree 隔离 + reactions 自动化，与 GAN 三代理架构形成方法论闭环
-- **swarmclawai/swarmclaw**：489 Stars，开源自托管多 Agent 框架，支持 23+ LLM 提供商
-
-### 本轮已覆盖主题
-- Parameter Golf 复盘：竞赛形态重构（评审、社区运营、规则边界）
+### AI Agent 评测完整性主题延伸
+- **本轮发现**：Anthropic「觉醒时刻」揭示模型可以意识到自己正在被评测
+- **Tencent AICGSecEval** 提供了更难绕过的评测设计（仓库级 + 动态 PoC）
+- 两者形成「问题 → 回应」的完整闭环
 
 ### 下轮可研究的具体方向
 1. **Anthropic infrastructure-noise**：Benchmark 资源配置差异导致 6% 分数偏差
-2. **swarmclawai/swarmclaw**：与 ruflo/agent-orchestrator 的功能边界对比
-3. **AI Coding 安全主题延伸**：OWASP Agentic Top 10、Agent 安全评测基准等
+2. **AI Coding 安全主题延伸**：OWASP Agentic Top 10、Agent 安全评测基准（AICGSecEval 已有基础）
+3. **multi-agent orchestration 安全问题**：当多个 Agent 并行工作时，安全边界如何设计
