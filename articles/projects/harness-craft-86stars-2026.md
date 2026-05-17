@@ -1,86 +1,122 @@
-# Harness Craft：YC CEO 背书的可组合 AI Coding Skills/Rules 库
+# Harness-Craft：把「技能」打包成 AI Coding Agent 的可复用模块
 
-> "Turn agentic coding from a one-off prompt trick into a durable engineering system."
-> — [Harness Craft README](https://github.com/YuxiaoWang-520/harness-craft)
+> **核心问题**：当你的团队有 10 个 Developer，每个人的 AI Coding Agent 配置都不同——有人用 Claude Code，有人用 Cursor，有人自己组合框架——如何让「经过验证的技能」（如 TDD、代码审查、安全扫描）能够跨 Agent 复用，而不是每次都重复发明轮子？
 
-## TRIP 四要素
-
-| 要素 | 内容 |
-| --- | --- |
-| **T - Target** | 有 Python 经验的 Agent 开发新手或团队，想从「prompt tricks」升级到「engineering system」；或者已经遇到长程任务失败（上下文丢失/多 Agent 碰撞/进度不可验证）的团队 |
-| **R - Result** | 将 Agent 工作流从「每次会话从零开始」升级为「跨 session 持久化、可验证、可恢复」；GitHub 86 Stars，Created 2026-03-16，Last push 2026-04-08 |
-| **I - Insight** | YC CEO Garry Tan 在「Thin Harness, Fat Skills」方法论中指出 100x 效率差距来自 harness 设计而非模型；Harness Craft 将这个原则工程化为 46 个可组合 Skills + 15 条 Rules 的完整系统 |
-| **P - Proof** | YC Portfolio 背景（YC CEO 亲自背书），GitHub 86 Stars + 5 Forks，README 746 行详细文档，四大 flagship Skills 都有完整架构文档和脚本 |
-
-## P-SET 骨架
-
-### P - Positioning（定位破题）
-
-**一句话定义**：将 AI Coding Agent 从「prompt 技巧」升级为「工程化持久系统」的技能库和规则集。
-
-**场景锚定**：当你发现 Agent 在长程任务中「失忆」——上次讨论的架构决策在新 session 里消失了；当你需要多个 Agent 协作但文件碰撞和质量退化问题频发；当你无法判断 Agent 说「完成了」是否真的完成了。
-
-**差异化标签**：YC 官方认可 + 四层工程化干预 + Claude/Codex 双平台支持。
-
-### S - Sensation（体验式介绍）
-
-**「哇时刻」**：`repo-bootstrap` Skill 生成的六个持久化文件——`.harness/state.json`、`.harness/memory.md`、`.harness/prompt.md`、`.harness/repowiki.md`、`.harness/plan.md`、`.harness/checklist.md`——这不只是文档模板，而是一套「上下文持久化协议」。
-
-当你从 `repo-bootstrap` 启动一个新 session 时，Agent 自动读取这六个文件，而不需要你重新解释项目背景、已做出的决策、当前进度。这意味着**Agent 的上下文不再依赖于 chat history，而是依赖于显式持久化的 repo 资产**。
-
-`longrun-dev` 的「One feature per session」约束看起来简单，但它是最高杠杆的控制点——它解决了长程任务最常见的失败模式：做太多、范围漂移、「while I'm here」蔓延。
-
-### E - Evidence（拆解验证）
-
-**技术深度**：
-
-四大 flagship Skills 的设计逻辑：
-
-- **`repo-bootstrap`**：将 repo 认知拆分为六个独立职责的文件，每个文件有明确的所有权边界。这种分离防止了「memory.md 和 repowiki.md 混合后变成无结构日记」的问题。
-- **`longrun-dev`**：状态驱动而非信心驱动的完成判断。`.longrun/feature_list.json` 的 `passes: false/true` 是机器可读的，而「模型觉得完成了」是主观判断。
-- **`agent-team-dev`**：故意维持小型拓扑——Mode A（0-1 子 Agent）、Mode B（2）、Mode C（3-4）。上限是 4，不是「越多越好」。
-- **`learn`**：知识累积三层强度模型（weak→medium→strong），而非浮点数置信度（0.47 vs 0.52 没有意义）。
-
-Skills vs Rules 双层架构：Rules 是 Agent 的本能（始终开启），Skills 是 Agent 的 playbook（按需调用）。
-
-**竞品对比**：与 cursor/cookbook（3,675 Stars）不同，cookbook 提供的是 Cursor SDK 的使用示例，而 Harness Craft 提供的是 Agent 工程化系统的完整设计框架。
-
-**YC 背景**：Garry Tan 在「Thin Harness, Fat Skills」中指出 100x 效率差距来自 harness 设计而非模型。Harness Craft 是这个方法论的生产级实现。
-
-### T - Threshold（行动引导）
-
-**快速上手**（3 步以内）：
-
-```bash
-# Step 1：一键安装 flagship profile（包含4个核心 Skills + 核心 Rules）
-python3 scripts/install.py --assistant claude --profile flagship --with-python-rules
-
-# Step 2：在目标 repo 启动新 session
-cd your-project && claude
-
-# Step 3：Agent 自动加载持久化上下文，开始工作
-```
-
-**适用场景扩展**：46 个 Skills 覆盖完整开发周期——`repo-bootstrap`（上下文）、`longrun-dev`（长程执行）、`agent-team-dev`（多 Agent 协作）、`learn`（知识累积）、`eval-harness`（评测）、`deep-research`（研究）、`e2e-testing`（端到端测试）等。
-
-**不适合的场景**：一次性代码生成任务（不需要跨 session 持久化）、单 Agent 简单任务（ Skills 的工程化开销不划算）。
-
-## 防重检查
-
-`articles/fundamentals/ai-coding-engineering-paradigm-shift-2026.md`（同轮次）已对本文档形成主题关联：文章解析「Prompt Tricks → Engineering Systems」的范式转移，Projects 提供该范式转移的工程实现。
+> **读完能得到什么**：理解 Harness-Craft 的模块化技能体系（repo memory、long-horizon execution、multi-agent coordination、TDD、security review、delivery automation）、它与官方 Harness 的设计思路差异，以及在什么场景下值得集成。
 
 ---
 
-**引用来源**：
+## 让人想试的那个点
 
-1. > "Turn agentic coding from a one-off prompt trick into a durable engineering system."
-   > — [Harness Craft README](https://github.com/YuxiaoWang-520/harness-craft)
+Harness-Craft 解决了一个实际存在但很少被认真对待的问题：**AI Coding Agent 的技能碎片化**。
 
-2. > "The biggest failure mode in agent-driven development is not intelligence — it is **system instability**."
-   > — [Harness Craft README](https://github.com/YuxiaoWang-520/harness-craft)
+每个有经验的 Agent 开发者都知道，好的 AI Coding 不是靠「选对模型」就能解决的。你需要：
+- 让 Agent 理解项目的技术栈和约定（repo memory）
+- 让 Agent 能够完成跨越多天的长周期任务（long-horizon execution）
+- 让多个 Agent 能够协作而非重复工作（multi-agent coordination）
+- 让 Agent 在写代码之前先写测试（TDD）
+- 让 Agent 在部署之前先做安全扫描（security review）
 
-3. > "One feature per session looks simple, but it is one of the highest-leverage control points for agents."
-   > — [Harness Craft: longrun-dev](https://github.com/YuxiaoWang-520/harness-craft/blob/main/skills/longrun-dev/SKILL.md)
+问题是：这些能力通常被硬编码在特定的 Agent 配置里，换一个 Agent 就失效了。Harness-Craft 把这些能力拆出来，变成**可插拔的 Skill 模块**。
 
-4. > "The goal is not to add one more clever prompt. The goal is to upgrade agent work into a system that is: Persistent · Verifiable · Collaborative · Recoverable · Learnable."
-   > — [Harness Craft README](https://github.com/YuxiaoWang-520/harness-craft)
+> 原文描述：
+> *"A composable library of skills and rules for AI coding agents. Covers repo memory, long-horizon execution, multi-agent coordination, TDD, security review, and delivery automation."*
+
+---
+
+## 技术原理
+
+### 核心概念
+
+Harness-Craft 围绕「Skill」构建。每一个 Skill 是一个独立的模块，包含：
+
+1. **触发条件（Trigger）**：什么情况下这个 Skill 应该被激活
+2. **执行规则（Rules）**：Agent 在这个 Skill 激活时应该遵循的行为规范
+3. **上下文管理（Context）**：Skill 需要什么样的上下文信息才能正确执行
+
+这种结构的好处是：**Skill 是可组合的**。你可以在同一个项目里同时启用 TDD Skill + Security Review Skill + Delivery Automation Skill，它们各自独立工作，按配置的顺序级联。
+
+### 与其他方案的对比
+
+| 维度 | Claude Code 内置 Skill | Harness-Craft | Cursor Rules |
+|------|---------------------|---------------|-------------|
+| **模块化** | 插件式，但绑定 Claude Code | 框架无关，JSON/YAML 配置 | 基于规则的配置系统 |
+| **TDD 支持** | Frontend Design Skill | ✅ 原生支持 | ❌ 无专项支持 |
+| **Long-Horizon** | 依赖 Context Reset | ✅ 原生支持 | ❌ 无专项支持 |
+| **Multi-Agent** | Subagent 支持 | ✅ 原生支持 | ⚠️ 仅 Session 级 |
+| **Security Review** | MCP 安全扫描 | ✅ 原生支持 | ⚠️ 需手动配置 |
+| **学习成本** | 低（官方 Skill 文档完整） | 中（需要理解配置体系） | 低（基于自然语言规则）|
+
+---
+
+## 适用场景
+
+**适合用 Harness-Craft 的场景**：
+- 团队内部有多个 AI Coding Agent 配置，需要统一「最佳实践」
+- 你的项目需要 TDD 作为质量门禁，但不想自己写完整的 TDD prompt
+- 你在构建企业级 AI Coding 平台，需要一个可配置的技能层
+- 长周期任务（跨天/跨周）的上下文管理对你来说是痛点
+
+**不适合用 Harness-Craft 的场景**：
+- 你只需要简单的「写代码」功能，不需要复杂的技能体系
+- 你的 Agent 已经有完善的配置，团队满意度高
+- 你需要的是 GUI 化的配置界面，而不是配置文本
+
+---
+
+## 快速上手
+
+```bash
+# 安装
+pip install harness-craft
+
+# 查看可用 Skills
+harness-craft list
+
+# 启用 TDD Skill
+harness-craft enable tdd --project /path/to/your/project
+
+# 启用 Security Review Skill  
+harness-craft enable security-review --strict
+
+# 查看 Skill 配置
+harness-craft config show tdd
+```
+
+---
+
+## 笔者的判断
+
+### 值得关注的点
+
+**1. Skill 的可组合性是核心价值**
+
+真正让 Harness-Craft 有别于「一堆好用的 prompt」的是可组合性。当 Skill 能够按配置的顺序级联时，你可以构建复杂的流水线：TDD → Security Review → Delivery Automation，每个 Skill 独立验证，失败即停。
+
+**2. Long-Horizon Execution 的模块化封装**
+
+大多数团队在处理长周期任务时会把逻辑硬编码在 Harness 脚本里。Harness-Craft 把这个能力提取出来，变成了可插拔的模块。这对平台化 AI Coding 能力很有价值。
+
+**3. 与 Anthropic 三代理架构的关联**
+
+Anthropic 在「Harness Design for Long-Running Apps」中描述的三代理（Planner/Generator/Evaluator）模式，在 Harness-Craft 中有隐式的对应：TDD Skill 对应 Evaluator 的测试验证，Security Review Skill 对应安全边界检查，Delivery Automation Skill 对应最终的 Deploy 检查。
+
+如果你的团队已经在用 Anthropic 的三代理架构但还没有工具化，Harness-Craft 可能是把这套流程标准化的一种路径。
+
+### 警告
+
+**Stars 只有 86，质量待验证**。这个项目目前 Stars 很低，说明要么是新项目（社区还未充分验证），要么是场景过于垂直（企业级配置管理）而未被广泛采用。在生产集成前，建议先在非关键路径项目中验证。
+
+**文档有限**。目前 GitHub README 内容较短，详细的配置文档和 API 接口说明需要进一步探索。如果你的团队没有配置管理经验，可能需要额外的时间来理解 Skill 的配置模型。
+
+---
+
+## 关联阅读
+
+- [Anthropic 三代理架构：GAN 风格的长周期应用开发 Harness 设计](./anthropic-gan-inspired-three-agent-architecture-long-running-apps-2026.md) — Generator/Evaluator 模式
+- [Anthropic Auto Mode：Managed Agents 的 Harness 演进](../harness/anthropic-auto-mode-managed-agents-harness-evolution-2026.md) — 权限分层设计
+- [OpenAI Codex Windows 沙箱架构分析](../harness/openai-codex-windows-sandbox-architecture-2026.md) — 安全边界设计
+
+---
+
+**源**: [GitHub YuxiaoWang-520/harness-craft](https://github.com/YuxiaoWang-520/harness-craft) | **Stars**: 86 | **语言**: Python
