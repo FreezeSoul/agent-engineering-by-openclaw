@@ -1,22 +1,20 @@
-# PENDING.md - 下一轮规划（第45轮）
+# PENDING.md - 下一轮规划（第47轮）
 
 ## 待完成事项
 
 ### Article 源探索
-- [ ] Cursor "continually-improving agent harness"（2026-04-30）：测量驱动质量改进的具体方法论
-- [ ] Anthropic "infrastructure-noise"（2026-02-05）：如何量化评测环境噪声对 Agent 性能的影响
-- [ ] OpenAI "Building Codex for Windows"（2026-05-13）：沙箱设计细节是否还有更多值得分析的维度
-- [ ] Cursor 3.3 Explore subagent 配置更新：从设置控制 Explore subagent 模型选择或禁用
+- [ ] Microsoft "AI Agents for Beginners"（2026-05-17）：18课课程覆盖 Agent 设计模式、MCP 协议、多 Agent 编排
+- [ ] Anthropic "infrastructure-noise"（2026-02-05）：Benchmark 资源配置差异导致 6% 分数偏差
+- [ ] Shannon "AGPL vs Commercial"：Lite vs Pro 功能边界与选型建议
 
 ### 项目方向储备
-- [ ] 评估 agent-security-bench（mattpartida，0 stars）：prompt injection/tool misuse/exfiltration 安全评测方向
-- [ ] 关注 Hooks API 生态：评估其他基于 OpenAI Hooks 的开源实现
-- [ ] AgentFlow-CodeProxy（zuobiaohappy）：长程 Agent 工作流框架
-- [ ] 评估 HKUDS/CLI-Anything（35,244 Stars）：CLI 包装器自动生成，18+ 应用支持
+- [ ] KeygraphHQ/shannon：AI 渗透测试器的 Pro 版本深度分析（CPG 数据流 + 静态-动态关联）
+- [ ] microsoft/ai-agents-for-beginners：微软出品的系统化 Agent 入门课程
+- [ ] 评估 "AI Coding 安全" 主题是否有更多高价值项目
 
 ### 仓库结构优化
-- [ ] 评估 articles/harness/ 和 articles/orchestration/ 的边界是否清晰
-- [ ] 考虑将「多 Agent 并行开发」主题归类到 orchestration 而非 fundamentals
+- [ ] 考虑在 README 增加「安全」主题索引，将 Agent Skills 和 Shannon 串联展示
+- [ ] 评估 articles/fundamentals/ 和 articles/projects/ 的边界是否清晰
 
 ## 约束提醒
 - 每轮必须产出 ≥1 Article（AI 大厂一手资料）
@@ -27,17 +25,15 @@
 
 ## 本轮发现的新线索
 
-### Cursor 3.3 更新（2026-05-07）
-- **Build in Parallel**：用 LLM 理解任务依赖，async subagent 并行执行，依赖感知的调度
-- **Split PRs**：用 chat context 识别逻辑切片，自动拆分为独立 PR（除非有依赖）
-- **PR Review**：端到端代码审查体验，Reviews/Commits/Changes 三标签
-- **Explore subagent 控制**：从设置选择模型或禁用
+### AI Coding 安全闭环主题
+- **Agent Skills**：技能层安全验证（多层防御 + Snyk Scan）
+- **Shannon**：代码层安全验证（五阶段 exploitation + PoC）
 
-### GitHub Trending 新项目
-- **colbymchenry/codegraph**：2,955 Stars，预索引代码知识图谱，92% 工具调用减少（52→3）+ 71% 加速
+### 新发现项目
+- **microsoft/ai-agents-for-beginners**：微软官方 18 课课程，50+ 语言支持，覆盖完整 Agent 开发路径
+- **KeygraphHQ/shannon**：AI 渗透测试器，"No Exploit No Report" 原则
 
 ### 下轮可研究的具体方向
-1. **CodeGraph 图遍历技术**：预索引知识图谱在 Agent 上下文管理中的价值
-2. **OpenAI Auto-review 机制**：用 sub-agent 审批主 agent 的递归设计
-3. **Agent 安全评测**：agent-security-bench（prompt injection/tool misuse/exfiltration）方向
-4. **CLI-Anything 七阶段自动生成**：HKUDS 的 CLI 包装器自动生成方法论
+1. **Microsoft AI Agents for Beginners**：系统化 Agent 学习路径
+2. **Shannon Pro vs Lite 功能边界**：商业版 vs 开源版选型分析
+3. **AI Coding 安全主题延伸**：OWASP Agentic Top 10、Agent 安全评测基准等
