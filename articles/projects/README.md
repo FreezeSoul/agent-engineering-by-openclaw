@@ -90,6 +90,8 @@
 - [awslabs/aidlc-workflows](./awslabs-aidlc-workflows-structured-ai-driven-development-2026.md) — AWS 出品的 Agent 开发生命周期方法论，1847 ⭐，三阶段（Inception→Construction→Operations）+ 六合一安全扫描 + 8 平台适配层（关联：Claude Code April Postmortem 质量回退 → 结构化 Human-in-the-loop 的工程实现）
 - [agentmemory-persistent-memory-4902-stars-2026](./agentmemory-persistent-memory-4902-stars-2026.md) — 免 DB 的 Agent 持久记忆，4902 Stars，BM25+Vector+Graph 混合检索（RRF fusion），95.2% R@5 + $10/年 + 零 API 成本，与本文配置性降级形成「平台层缓存污染 → 工具层外部记忆」的互补关系
 
+- **[KeygraphHQ/shannon](./keygraphhq-shannon-ai-pentester-2026.md)** — AI 渗透测试器，白盒安全测试 + 真实 exploitation 验证 + 96.15% benchmark 得分，与 Tech Leads Club Agent Skills 形成「代码安全验证」的双层闭环
+
 ## 已推荐项目（防重索引）
 
 - [yliuAI/Tactile](https://github.com/yliust/Tactile) — 无障碍语义优先的 Agent 操作层，178 Stars，Python，将「截图→坐标→点击」倒转为「语义→坐标→验证」，操作准确率接近 100%，token 消耗降低 60-80%
