@@ -35,6 +35,8 @@
 
 - [itsuzef/goalkeeper](./itsuzef-goalkeeper-contract-driven-claude-code-5-stars-2026.md) — 合约驱动的 Claude Code 目标执行框架，5 Stars，2026-05-11 创建，独立 Judge 子代理对抗 Definition of Done，反占位符规则自动拒绝 stub/`.todo`/`it.only`，与 Augment AGENTS.md 研究形成「配置定义 → 完成验证」的完整闭环（关联：Augment 发现好 AGENTS.md = Haiku→Opus 升级 → Goalkeeper 定义 DoD + Judge 验证完成 = 结构化配置工程的两个维度）
 
+- [colbymchenry/codegraph](./colbymchenry-codegraph-pre-indexed-knowledge-graph-2955-stars-2026.md) — 预索引代码知识图谱，2,955 Stars，TypeScript，92% 工具调用减少（52→3）+ 71% 加速，Claude Code Explore agent 专用 `codegraph_explore` 工具替代 grep/find/ls，与 Cursor 3.3 Build in Parallel 形成「单 Agent 高效探索 → 多 Agent 并行执行」的完整工作流
+
 - [huggingface/skills](./huggingface-skills-interoperable-agent-tools-1881-stars-2026.md) — Hugging Face 官方 Agent Skills 库，1,881 Stars，标准 SKILL.md 格式，interoperable with Claude Code / Codex / Gemini CLI / Cursor，与 Cursor Autoinstall 形成「训练环境自动化 vs 工具定义标准化」的互补
 
 - [anthropics/skills](./anthropics-skills-official-agent-skills-implementation-2026.md) — Anthropic 官方 Agent Skills 开源仓库，SKILL.md 极简格式 + 生产级 docx/pdf/pptx/xlsx 技能实现 + Claude Code 插件市场集成，与 Cursor Autoinstall 形成「技能定义 → 技能执行」的完整闭环
