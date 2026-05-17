@@ -10,6 +10,7 @@
 - [zed-industries/zed](./zed-industries-zed-multiplayer-code-editor-82800-stars-2026.md) — 高性能多人代码编辑器，82,800 Stars，Rust 内核 + Tree-sitter 内置解析，10 倍于 VS Code 的性能，Atom/Tree-sitter 创始团队作品，多人协作直接做进编辑器内核
 - [warpdotdev/warp](./warpdotdev-warp-modern-terminal-agents-58461-stars-2026.md) — 现代化终端 + 云端 Agent 编排平台，58,461 Stars，Rust UI 框架 + Oz 云端并行 Agent + 命令历史智能搜索，把终端变成 AI 时代的开发者控制台
 - [slopus/happy](./slopus-happy-mobile-claude-code-20718-stars-2026.md) — 移动端 Claude Code/Codex 控制台，20,718 Stars，Expo 构建 + 端到端加密 + 推送通知实时介入，躺在沙发上也能控制 AI 编码 Agent 的工作进度
+- [Yechan-Heo/oh-my-codex](./yeachan-heo-oh-my-codex-codex-workflow-layer-28856-stars-2026.md) — Codex Workflow Layer，28,856 Stars，$deep-interview→$ralplan→$ralph/$team 标准流程 + 多 Agent 并行（tmux）+ .omx/ 状态持久化，与 OpenAI Hooks GA 形成「接口规范 → 具体实现」闭环（关联：OpenAI 定义 Hooks 接口 → OMX 给出基于 Hooks 的 workflow 实现）
 - [getpaseo/paseo](./getpaseo-paseo-multi-agent-interface-6141-stars-2026.md) — 统一多 Agent 控制界面，6,141 Stars，Daemon 架构 + 跨设备客户端 + Skills 编排协议，Claude Code/Codex/OpenCode 一个界面全搞定
 - [KeWang0622/agent-zero-to-hero](./KeWang0622-agent-zero-to-hero-14-stars-2026.md) — 从零构建 Claude-Code 形态的 Agent Harness，14 Stars，7 周课程 + 19 章节 + 4500 行 Python + 42 测试，6 行核心 Loop 代码揭示所有编码 Agent 本质，与 Cursor Bootstrapping Autoinstall 形成「RL 环境自举 → 工程落地」的完整闭环
 - [YuxiaoWang-520/harness-craft](./harness-craft-86stars-2026.md) — 可组合 AI Coding Skills/Rules 库，86 Stars，YC CEO 背书，46 Skills + 15 Rules，Claude/Codex 双平台支持，将 Agent 从「prompt tricks」升级为「工程化持久系统」，与本文「AI Coding 工程化范式转移」形成「范式定义 → 工程实现」闭环
@@ -92,6 +93,8 @@
 - [yliuAI/Tactile](https://github.com/yliust/Tactile) — 无障碍语义优先的 Agent 操作层，178 Stars，Python，将「截图→坐标→点击」倒转为「语义→坐标→验证」，操作准确率接近 100%，token 消耗降低 60-80%
 
 - [GreyhavenHQ/greywall](https://github.com/GreyhavenHQ/greywall) — 容器无关的内核级 Agent 沙箱，183 Stars，Landlock + Seccomp BPF + eBPF 五层防护，--learning 自动生成最小权限配置，与「多 Agent 并行开发（Git Lock）」形成「安全隔离」的互补
+
+- [Yechan-Heo/oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) — Codex Workflow Layer，28,856 Stars，$deep-interview→$ralplan→$ralph/$team 标准流程 + 多 Agent 并行（tmux）+ .omx/ 状态持久化，与 OpenAI Hooks GA 形成「接口规范 → 具体实现」闭环
 
 - [Storybloq/storybloq](https://github.com/Storybloq/storybloq) — 跨会话上下文持久化，217 Stars，TypeScript，`.story/` 文件约定 + CLI + 43 工具 MCP Server，与 Cursor Composer Autoinstall 形成「环境自动化 vs Session 连续性」的互补
 - [openclaw/clawbench](./openclaw-clawbench-trace-based-agent-benchmark-89-stars-2026.md) — 追踪评分优先的 Agent 评测框架，89 Stars，评分完整技术栈（harness + config + model）而非仅 LLM，13 种失败模式检测 + 47.3% 方差分解为噪声，与 Anthropic April Postmortem 形成「配置变更风险 → 系统性评测」的完整闭环
