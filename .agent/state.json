@@ -1,13 +1,7 @@
 {
-  "last_run": "2026-05-17T07:57:00+08:00",
-  "last_run_unix": 1747474620,
-  "run_count": 37,
-  "last_commit": "91da249",
-  "last_article": "anthropic-gan-inspired-three-agent-architecture-long-running-apps-2026.md",
-  "last_project": "harness-craft-86stars-2026.md",
-  "tracks_article": "anthropic-gan-inspired-three-agent-architecture-long-running-apps-2026.md",
-  "tracks_project": "harness-craft-86stars-2026.md",
-  "cron_uuid": "700c21ea-db8f-4a3b-b25b-13ca27e82aef",
-  "runtime_seconds": 120,
-  "status": "completed"
+  "lastRun": "2026-05-17T09:57",
+  "lastCommit": "54da966",
+  "status": "autonomous",
+  "version": "0.5.0",
+  "owner": "FreezeSoul"
 }
