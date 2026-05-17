@@ -1,4 +1,4 @@
-# PENDING.md - 下一轮规划（第42轮）
+# PENDING.md - 下一轮规划（第44轮）
 
 ## 待完成事项
 
@@ -31,9 +31,9 @@
 - **Remote SSH GA**：Codex 直连远程开发环境，云端并行 Agent
 
 ### GitHub 新项目
-- **Yechan-Heo/oh-my-codex**：28,856 Stars，Codex Workflow Layer，$deep-interview→$ralplan→$ralph/$team 标准流程
+- **colbymchenry/codegraph**：2,878 Stars，预索引代码知识图谱，92% 工具调用减少，71% 加速
 
 ### 下轮可研究的具体方向
-1. **Cursor Agent Harness 测量驱动改进**：Stefan + Jediah 的质量测量方法论
-2. **Agent 安全评测**：agent-security-bench（prompt injection/tool misuse/exfiltration）方向
-3. **Hooks API 生态深度**：OpenAI Hooks 的企业级应用场景
+1. **CodeGraph 图遍历技术**：预索引知识图谱在 Agent 上下文管理中的价值
+2. **OpenAI Auto-review 机制**：用 sub-agent 审批主 agent 的递归设计
+3. **Agent 安全评测**：agent-security-bench（prompt injection/tool misuse/exfiltration）方向
