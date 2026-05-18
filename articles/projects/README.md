@@ -1,3 +1,5 @@
+- **[vercel-labs/zero](./vercel-labs-zero-agent-first-programming-language-2186-stars-2026.md)** — 2,186 Stars，C，Agent-first 编程语言实验，结构化工具链（JSON 输出）+ 内置标准库 + 无依赖栈，pre-1.0。与 Cursor Composer 2.5 形成「长程 RL 训练 → Agent 执行层语言设计」的完整闭环
+
 - **[vercel-labs/deepsec](./vercel-labs-deepsec-agent-powered-vulnerability-scanner-2769-stars-2026.md)** — 2,769 Stars，TypeScript，Agent 驱动漏洞扫描器，最大思考级别全量仓库扫描 + 断点续扫 + Vercel Sandbox 并行化，与 OpenAI Codex 安全运行架构形成「运行时控制 → 上线前评测」完整企业级 Agent 安全闭环
 
 - **[humanlayer/12-factor-agents](./humanlayer-12-factor-agents-production-llm-applications-20283-stars-2026.md)** — 20,283 Stars，TypeScript，从 12 Factor Apps 汲取灵感，12 条核心原则（NL→Tool Calls、Own your prompts/context、Control flow、Stateless reducer 等），构建生产级 LLM 应用的设计框架。与 Cursor Autoinstall 形成「环境自举 → 应用工程原则」的完整 Agent 质量保障双维度闭环
