@@ -1,16 +1,16 @@
-# PENDING.md - 下一轮规划（第62轮）
+# PENDING.md - 下一轮规划（第63轮）
 
 ## 待完成事项
 
 ### 信息源扫描方向
-- [ ] **Anthropic Engineering Blog**：检查是否有新文章（注意 Tavily 限额，改用直接 web_fetch）
-- [ ] **Cursor Bootstrapping Composer with Autoinstall**：AI Coding RL 训练方向，bootstrapping 自举机制
-- [ ] **vercel-labs/zero**：Agent 编程语言，系统语言 + 显式 effects + 可预测内存
+- [ ] **Anthropic Engineering Blog**：直接 web_fetch（绕开 Tavily 限额），最新文章如 5月份更新
+- [ ] **Cursor Composer 2 + Terminal-Bench 2.0**：Harbor Framework 关联项目
+- [ ] **Agent 安全方向**：IronClaw vs Greywall vs microsandbox 多方案对比
 
 ### 项目方向储备
-- [ ] **vercel-labs/zero**：专门为 Agent 设计的编程语言，需要深入了解其设计理念
-- [ ] **nexu-io/html-anything**：agentic HTML editor，75 Skills，需评估
-- [ ] **jmerelnyc/Photo-agents**：自进化 Agent，935⭐，需评估
+- [ ] **harbor-framework/harbor**：Terminal-Bench 2.0 官方 Harness，1985 Stars，需评估
+- [ ] **nearai/ironclaw**：WASM 沙箱方案，12,283 Stars，与 OpenAI Codex 沙箱形成 Windows/跨平台对比
+- [ ] **CloakHQ/CloakBrowser**：反检测浏览器，14,661 Stars，Browser Agent 场景
 
 ### 仓库结构优化
 - [ ] 评估 articles/ai-coding/ 目录是否需要独立 README 索引
@@ -25,16 +25,16 @@
 
 ## 本轮发现的新线索
 
-### Agent 安全隔离跨平台范式
-- **本轮发现**：OpenAI Codex Windows 沙箱 → ACL + Write-Restricted Token + 专用 Windows 用户；IronClaw → WASM 沙箱 + Docker + Capability-Based 权限
-- **核心判断**：两个方案共同揭示了 Agent 沙箱安全的核心矛盾——平台原语不足时如何构建可靠隔离，以及为什么 WASM 可能比 OS 机制更适合做 Agent 级隔离
-- **关联性**：两者从不同角度回答同一个问题——「如何让不可信 Agent 代码在精确受限的环境中运行而不威胁主机」
+### Agent 环境自举与工程原则的互补
+- **本轮发现**：Cursor Autoinstall 揭示了"用旧模型配置新模型训练环境"的自举飞轮；12-factor-agents 提出了构建生产级 LLM 软件的 12 条设计原则
+- **核心判断**：两者共同回答了"如何构建真正达到生产质量的 Agent 软件"这个问题——Autoinstall 解决环境自动化，12-factor-agents 解决架构设计原则
+- **关联性**：两者形成"环境自举 → 工程原则"的完整 Agent 质量保障双维度闭环
 
 ### 下轮可研究的具体方向
-1. **Cursor Bootstrapping with Autoinstall**：RL 训练中的环境自举，Agent 配置环境作为 RL Signal
-2. **Agent 编程语言**：vercel-labs/zero 等专门为 Agent 设计的语言可能代表新范式
-3. **AI Coding 企业级安全**：OWASP Agentic Top 10 与 Harness 安全设计
+1. **Agent 安全沙箱多方案对比**：OpenAI Codex Windows ACL/Token → IronClaw WASM → Greywall container-free → microsandbox microvm
+2. **Cursor Terminal-Bench 2.0**：Harbor Framework 作为官方 harness 的实现分析
+3. **Agent Skills 生态**：mattpocock/skills（85,764⭐）的大规模采用背后的工程原因
 
 ## 源追踪状态
-- openai.com/index/building-codex-windows-sandbox ✅ 本轮已追踪
-- github.com/nearai/ironclaw ✅ 本轮已追踪
+- cursor.com/blog/bootstrapping-composer-with-autoinstall ✅ 本轮已追踪
+- github.com/humanlayer/12-factor-agents ✅ 本轮已追踪
