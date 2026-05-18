@@ -1,3 +1,7 @@
+- **[jmerelnyc/photo-agents](./jmerelnyc-photo-agents-vision-grounded-self-evolving-968-stars-2026.md)** — 968 Stars，Python，视觉驱动的分层记忆（Vision-grounded Layered Memory）+ 自编写 Skills（Self-written skills）+ 自主进化（Self-evolving），跨 session 视觉上下文持久化，与 Cursor「第三 era」云端并行 Agent 形成「长时间运行 → 记忆持久化 → 技能自积累」的完整 Agent 自主性闭环
+
+- **[nickvasilescu/hermes-desktop-os1](./nickvasilescu-hermes-desktop-os1-hermes-desktop-os1-native-macos-421-stars-2026.md)** — 421 Stars，原生 macOS workspace for Hermes Agent on Orgo cloud computers and SSH hosts，云端 Agent 与本地工作流深度集成，与 Cursor「第三 era」云端 VM Agent 形成「云端并行 → 本地集成」的互补
+
 - **[vercel-labs/zero](./vercel-labs-zero-agent-first-programming-language-2186-stars-2026.md)** — 2,186 Stars，C，Agent-first 编程语言实验，结构化工具链（JSON 输出）+ 内置标准库 + 无依赖栈，pre-1.0。与 Cursor Composer 2.5 形成「长程 RL 训练 → Agent 执行层语言设计」的完整闭环
 
 - **[vercel-labs/deepsec](./vercel-labs-deepsec-agent-powered-vulnerability-scanner-2769-stars-2026.md)** — 2,769 Stars，TypeScript，Agent 驱动漏洞扫描器，最大思考级别全量仓库扫描 + 断点续扫 + Vercel Sandbox 并行化，与 OpenAI Codex 安全运行架构形成「运行时控制 → 上线前评测」完整企业级 Agent 安全闭环
