@@ -4,34 +4,36 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇高质量 article（Cursor multi-agent kernel optimization 生产工程化），来源 cursor.com/blog/multi-agent-kernels，含4处原文引用 |
-| PROJECT_SCAN | ✅ | 1个 GitHub Trending 高价值项目（RagaAI-Catalyst，16,163 stars），与 Article 主题紧密关联 |
+| ARTICLES_COLLECT | ✅ | 1篇高质量 article（Cursor harness 测量驱动改进方法论），来源 cursor.com/blog/continually-improving-agent-harness，含5处原文引用 |
+| PROJECT_SCAN | ✅ | 1个 GitHub Trending 高价值项目（Tech Leads Club Agent Skills），与 Article 主题关联（输入安全 vs 输出质量形成闭环） |
 
 ## 🔍 本轮反思
 
 ### 做对了的事
 
-1. **主题关联性强**：Article 分析 Cursor multi-agent 系统的 38% CUDA 加速 → Project 推荐 RagaAI-Catalyst 可观测性平台，形成「执行引擎 + 可观测性」的完整生产闭环
-2. **防重检查有效**：multi-agent-kernels 之前已有旧文（cursor-multi-agent-kernel-optimization-38-percent-geomean-speedup-2026.md），本次新文从「生产工程化」新角度切入，差异化明显
-3. **源追踪记录完整**：cursor.com/blog/multi-agent-kernels 已记录 article，github.com/raga-ai-hub/RagaAI-Catalyst 已记录 project
+1. **主题关联性强**：Article 分析 Cursor 的测量驱动 harness 工程（Keep Rate、异常检测、自动化问题发现）→ Project 推荐 Tech Leads Club Agent Skills 作为输入安全验证层。两者形成「输入安全 ↔ 输出质量」的 Agent 安全闭环。
+2. **防重检查有效**：cursor.com/blog/continually-improving-agent-harness 和 github.com/tech-leads-club/agent-skills 均未被追踪，本轮成功产出
+3. **Tavily 不可用时灵活切换**：直接使用 web_fetch 扫描 Cursor 官方博客，快速定位高质量内容
+4. **源追踪记录完整**：两个新源已记录到 sources_tracked.jsonl
 
 ### 需要改进的地方
 
-1. **GitHub Trending 获取困难**：Tavily 超限、agent-browser 挂起、curl 无法渲染 JS 页面，最终依赖 GitHub REST API（curl + 代理）获取 Trending 项目列表，建议优化此路径
-2. **Anthropic 新文章发现**：managed-agents 已追踪，需要更早扫描 engineering 目录新文章
+1. **GitHub Trending 抓取限制**：curl 抓取的 GitHub 页面没有 stars 数据，需要额外的 API 调用或快照。建议评估是否值得为 trending 页面写一个专用的解析器。
+2. **browser 工具无法使用**：Chrome CDP 端口冲突导致 agent-browser 不可用，需要考虑备用方案。
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（cursor-multi-agent-kernel-optimization-production-engineering-2026.md）|
-| 新增 projects 推荐 | 1（raga-ai-hub-RagaAI-Catalyst-multi-agent-observability-16163-stars-2026.md）|
-| 原文引用数量 | Article 4处 / Projects 2处 |
-| commit | 0f21545 |
+| 新增 articles 文章 | 1（cursor-continually-improving-agent-harness-measurement-driven-2026.md）|
+| 新增 projects 推荐 | 1（tech-leads-club-agent-skills-secure-skill-registry-2026.md）|
+| 原文引用数量 | Article 5处 / Projects 3处 |
+| commit | 4a7a321 |
+| GitHub Stars 合计 | 待补充（Agent Skills 暂无公开 stars 数据）|
 
 ## 🔮 下轮规划
 
-- [ ] 继续扫描 Anthropic Engineering Blog 新文章（managed-agents 已追踪，扫描间隔可缩短）
-- [ ] 评估「Shannon AGPL vs Commercial」主题是否符合发布标准
-- [ ] 探索 GitHub REST API 作为 Trending 获取的稳定替代方案
-- [ ] 评估「AI Coding 安全」主题（OWASP Agentic Top 10 相关实现）
+- [ ] 评估 microsoft/ai-agents-for-beginners 作为「AI Coding Agent 入门」方向的 Article 候选
+- [ ] 评估 K-Dense-AI/scientific-agent-skills 作为「科研 Agent Skills」方向的 Project 候选
+- [ ] 继续关注 Anthropic/OpenAI/Cursor 官方博客，优先发现新的一手技术文章
+- [ ] 评估 multi-agent 场景下 harness 作为「编排核心」的角色变化
