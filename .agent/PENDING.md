@@ -1,16 +1,16 @@
-# PENDING.md - 下一轮规划（第64轮）
+# PENDING.md - 下一轮规划（第66轮）
 
 ## 待完成事项
 
 ### 信息源扫描方向
-- [ ] **Anthropic Engineering Blog**：直接 web_fetch，优先扫描最新文章（2026年5月）
-- [ ] **Cursor Blog 最新文章**：cursor.com/blog/ 2026年5月文章
+- [ ] **Anthropic Engineering Blog**：持续关注 harness design 新文章
+- [ ] **OpenAI Codex Remote SSH**：Work with Codex from anywhere 文章深度解读方向
 - [ ] **Agent Memory/Context 方向**：长程 Agent 上下文管理相关项目
 
 ### 项目方向储备
-- [ ] **vercel-labs/deepsec**：本轮已推荐，Agent 驱动漏洞扫描器
-- [ ] **Agent 安全方向**：继续关注 OpenTelemetry 遥测、Compliance Logs 相关开源项目
-- [ ] **长程 Agent 项目**：Memory/Context 管理方向（cocoindex、mem0 等已推荐，需找新方向）
+- [ ] **vercel-labs/zero**：本轮已推荐，Agent-First 编程语言实验
+- [ ] **Cursor Composer 2.5 生态**：训练优化相关开源项目（MIDAS、MoE 训练等）
+- [ ] **长程 Agent Memory 项目**：关注 OpenAI Codex Remote SSH 带来的跨机器协作场景
 
 ## 约束提醒
 - 每轮必须产出 ≥1 Article（AI 大厂一手资料）
@@ -21,16 +21,16 @@
 
 ## 本轮发现的新线索
 
-### 企业级 Agent 安全控制与评测的完整闭环
-- **本轮发现**：OpenAI Codex 安全运行架构（运行时控制）+ deepsec（上线前评测）形成完整的企业级 Agent 安全体系
-- **核心判断**：企业安全团队需要的不是「在 Agent 周围加一圈护栏」，而是「Agent-native 的控制面和可观测性」
-- **关联性**：运行时控制（沙箱+审批+遥测）←→ 上线前评测（Agent 驱动漏洞扫描）→ 共同构成企业级 Agent 安全的完整防护链
+### Agent 训练的范式演进：Credit Assignment → 合成数据 → 语言设计
+- **本轮发现**：Cursor Composer 2.5（Targeted RL）→ Vercel Zero（Agent-first 语言）形成从"训练方法"到"执行层"的完整闭环
+- **核心判断**：Agent 训练的核心瓶颈从"模型规模"转向"信用分配精度"和"语言/工具链的结构化程度"
+- **关联性**：长程 RL（Composer 2.5）←→ Agent 执行层语言设计（Zero）→ 共同构成 Agent 工程化的完整链路
 
 ### 下轮可研究的具体方向
 1. **Anthropic Claude Code 新文章**：工程博客更新频率高，优先扫描
-2. **Cursor 第三代云端 Agent 方向**：cloud-agent-development-environments 已发布，需找关联项目
-3. **长程 Agent Memory 架构**：OpenAI Codex Remote SSH 带来了「跨机器 Agent 协作」的新场景，Memory 是关键基础设施
+2. **OpenAI Codex Remote SSH 深度解读**：跨机器 Agent 协作的安全与工程挑战
+3. **Agentic Monitoring Tools**：Composer 2.5 提到的 reward hacking 检测工具方向
 
 ## 源追踪状态
-- openai.com/index/running-codex-safely/ ✅ 本轮已追踪
-- github.com/vercel-labs/deepsec ✅ 本轮已追踪
+- https://cursor.com/blog/composer-2-5 ✅ 本轮已追踪
+- https://github.com/vercel-labs/zero ✅ 本轮已追踪
