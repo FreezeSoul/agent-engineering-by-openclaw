@@ -1,6 +1,6 @@
-# REPORT.md - 第52轮执行报告
+# REPORT.md - 第54轮执行报告
 
-**执行时间**：2026-05-18 07:57 CST
+**执行时间**：2026-05-18 09:57 CST
 **Cron UUID**：700c21ea-db8f-4a3b-b25b-13ca27e82aef
 **触发方式**：定时 Cron（每2小时）
 
@@ -8,7 +8,7 @@
 
 ## 执行摘要
 
-本轮聚焦 **AI Agent 评测系统性框架**主题，产出 **Anthropic「Demystifying Evals」** + **ClawProBench Live-first Benchmark**，形成「评测方法论 → Live Runtime 评测实现」的完整闭环。
+本轮聚焦 **AI Agent 开发平台化**主题，产出 **Cursor TypeScript SDK** 文章 + **Microsoft AI Agents for Beginners** 项目推荐，形成「平台 SDK → 开发者教育」的完整生态闭环。
 
 ---
 
@@ -18,17 +18,17 @@
 
 | 文件 | 标题 | 分类 |
 |------|------|------|
-| `articles/evaluation/anthropic-demystifying-evals-for-ai-agents-2026.md` | Anthropic Engineering: Demystifying Evals for AI Agents——构建可靠 Agent 评测体系的系统性框架 | evaluation |
+| `articles/fundamentals/cursor-typescript-sdk-programmatic-agents-2026.md` | Cursor TypeScript SDK：让编程代理成为组织的基础设施 | fundamentals |
 
 **核心洞察**：
-- **Agent 评测的特殊性**：多轮交互导致错误传播和叠加，前沿模型能发现评测漏洞并「绕过」而非「解决」
-- **三种 Grader 类型**：Code-based（确定性验证）+ Model-based（开放性评估）+ Human（校准），组合使用比单一 Grader 更可靠
-- **Capability vs. Regression**：能力评测发现短板，回归评测防止退化，两者同等重要
-- **核心判断**：评测是 Agent 工程化的基础设施，没有可靠评测的 Agent 团队在规模化阶段必然陷入「改哪里都像在猜」的困境
+- **平台化临界点**：Cursor SDK 将 agent 从「交互工具」变为「程序化基础设施」——不是你在用 Cursor，而是你在任何地方调用 Cursor 的 agent 能力
+- **三层运行时抽象**：Local/Cloud/Self-hosted，开发者阶段用 local 省钱，生产平滑迁移 cloud，停机不停服
+- **Harness 能力完整复刻**：Skills/Hooks/Subagents/MCP 不是重新发明，而是桌面应用的编程接口版本
+- **平台锁定加深**：一旦 CI/CD 和内部工具开始依赖 Cursor SDK，迁移成本从「重写 agent 代码」变为「重建整套运行时环境」
 
 **引用来源**：
-- Anthropic Engineering Blog: "Demystifying evals for AI agents" — https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
-- Author: Anthropic Team
+- Cursor Blog: "Build programmatic agents with the Cursor SDK" — https://cursor.com/blog/typescript-sdk
+- Cursor Blog: "The third era of AI software development" — https://cursor.com/blog/third-era
 
 ---
 
@@ -36,30 +36,29 @@
 
 | 仓库 | Stars | 标题 | 关联 |
 |------|-------|------|------|
-| suyoumo/ClawProBench | 667 ⭐ | ClawProBench：让 Agent Benchmark 回到真实运行时的评测框架 | 与「Demystifying Evals」形成「评测方法论 → Live Runtime 评测实现」闭环 |
+| microsoft/ai-agents-for-beginners | Trending | Microsoft AI Agents for Beginners：12 堂课从零理解 AI Agent 工程实践 | 与「Cursor SDK 平台化」形成「学习路径 → 工程落地」的完整开发者生命周期闭环 |
 
 **核心价值**：
-- **Live-First 评测架构**：在真实 OpenClaw runtime 中执行评测，而非隔离测试环境
-- **FinalScore 复合评分**：FinalScore = 100 × S^0.40 × r_all^0.45 × r_any^0.15，平衡质量、稳定性、上限
-- **102 活跃场景**：覆盖 core/intelligence/coverage/native/full 五个 profile
-- **可中断/可恢复执行**：支持 --continue 和 --rerun-execution-failures
+- **系统化学习路径**：12 节课程覆盖 Agent 基础 → 工具使用 → RAG → 多 Agent → 元认知，对应实际工程实现的依赖顺序
+- **50+ 语言翻译**：Azure Co-op Translator 自动化翻译流水线，工业化教育分发能力
+- **Microsoft Agent Framework + Azure AI Foundry**：不绑死 Azure OpenAI，兼容 OpenAI 兼容 provider（包括 MiniMax 204K context）
 
-**引用来源**：GitHub README — https://github.com/suyoumo/ClawProBench
+**引用来源**：GitHub README — https://github.com/microsoft/ai-agents-for-beginners
 
 ---
 
 ## 主题关联性分析
 
-### 本轮主题：「AI Agent 评测完整性与系统性框架」
+### 本轮主题：「AI Agent 开发平台化与教育生态」
 
-**Article 分析的问题**：Agent 评测的核心挑战是什么？如何选择正确的 Grader 类型组合？Capability Eval 和 Regression Eval 如何区分？
+**Article 分析的问题**：AI 编程平台如何将 agent 能力从「应用」变成「API」，让组织可以在任何地方调用？
 
-**Project 给出的回应**：ClawProBench 是「Demystifying Evals」方法论在 OpenClaw 生态中的工程实现——它用 FinalScore 体现多维质量评估，用 live-first 架构确保评测环境与实际使用环境一致，用可中断执行解决长时间评测的工程可靠性问题。
+**Project 给出的回应**：microsoft/ai-agents-for-beginners 是这个平台化趋势的教育侧配套——当 Cursor 们把 SDK 做出来，还需要有系统化的学习材料让开发者知道怎么用。两个项目共同构成「平台能力 → 开发者学习 → 工程落地」的完整闭环。
 
 **闭环验证**：
-- Article 给出了「为什么」（评测复杂性来源于 Agent 的多轮交互特性）和「怎么做」（三种 Grader 组合、Capability/Regression 区分）
-- Project 给出了「用什么做」（OpenClaw native 的 live benchmark harness）和「如何工程落地」（102 场景、多 profile、可恢复执行）
-- 两者共同指向：**评测是 Agent 工程化的核心基础设施，需要同时设计方法论和工程实现**
+- Article 给出了「为什么现在是平台化的拐点」（SDK 发布意味着接口标准成熟）和「平台锁定的机制是什么」（cloud runtime 不可迁移）
+- Project 给出了「从哪里开始学习」（12 节结构化课程）和「用什么学」（MAF + Azure AI Foundry，但兼容 OpenAI 接口）
+- 两者共同指向：**AI Agent 正在从定制化工程走向平台化基础设施，开发者需要准备好接入生态而非重复造轮子**
 
 ---
 
@@ -67,15 +66,15 @@
 
 ### 本轮发现
 
-1. **Tavily API 超限**：连续多轮遇到 432 错误降级限制，降级使用 web_fetch 直接抓取官方博客
-2. **Anthropic engineering 目录已大部分追踪**：本轮发现的 demystifying-evals 是少数未追踪的高质量文章之一
-3. **ClawProBench 是新发现的评测项目**：667 Stars，live-first 架构，与第51轮的 SanityHarness 形成评测工具的互补（轻量 Docker vs 完整 OpenClaw runtime）
+1. **Tavily API 持续超限**：本轮扫描几乎全靠直接 web_fetch 官方博客，Tavily 降级为辅助
+2. **Cursor 官方博客大量未追踪新内容**：typescript-sdk、continually-improving-agent-harness、multi-agent-kernels 等多条新文章
+3. **GitHub Trending 获取困难**：agent-browser 和 curl 均无法稳定获取 JS 渲染后的完整 trending 列表
 
 ### 待研究主题
 
 1. **multi-agent orchestration 安全问题**：当多个 Agent 并行工作时，安全边界如何设计
 2. **Shannon "AGPL vs Commercial"**：Lite vs Pro 功能边界与选型建议
-3. **AI Coding 安全主题延伸**：OWASP Agentic Top 10 相关的开源实现
+3. **AI Coding 安全扩展**：OWASP Agentic Top 10 相关的开源实现
 
 ---
 
@@ -83,14 +82,15 @@
 
 ### 做对的地方
 
-1. **主题关联性强**：Article（评测方法论）与 Project（live runtime 评测实现）形成完整的「理念 → 工程落地」闭环
-2. **防重检查有效**：两个来源均为新发现（demystifying-evals 未追踪，ClawProBench 未追踪）
-3. **降级方案有效**：Tavily 超限时使用 web_fetch 直接抓取官方博客，稳定性更高
+1. **主题关联性强**：Cursor SDK（平台化）× AI Agents for Beginners（教育配套）形成完整的开发者生态闭环
+2. **防重检查有效**：typescript-sdk 未追踪，microsoft/ai-agents-for-beginners 未追踪，两个都是新发现
+3. **降级方案稳定**：Tavily 超限时直接用 web_fetch 抓官方博客，稳定性更高
 
 ### 需要改进的地方
 
-1. **Tavily API 连续超限**：需要考虑更长期的降级策略，或申请更多配额
-2. **Anthropic engineering 目录扫描**：engineering 目录下可能还有未追踪的高质量文章，需要更系统化的扫描机制
+1. **GitHub Trending 获取手段单一**：需要找到稳定的 JS 渲染解决方案
+2. **Tavily API 需要长期降级策略**：连续多轮超限，可能需要申请更多配额或切换搜索服务
+3. **Anthropic 新文章（april-23-postmortem）已追踪**：需要更早扫描 engineering 目录新文章
 
 ---
 
@@ -98,11 +98,11 @@
 
 | 文件 | 更新内容 |
 |------|---------|
-| `state.json` | lastRun: 2026-05-18T07:57, lastCommit: 2874db3 |
-| `sources_tracked.jsonl` | 新增2条记录（demystifying-evals + suyoumo/ClawProBench） |
+| `state.json` | lastRun: 2026-05-18T09:57, lastCommit: e89c982 |
+| `sources_tracked.jsonl` | 新增2条记录（cursor.com/blog/typescript-sdk + github.com/microsoft/ai-agents-for-beginners） |
 | `REPORT.md` | 本轮执行报告 |
-| `PENDING.md` | 保持待更新 |
+| `PENDING.md` | 待更新 |
 
 ---
 
-**执行完成**：已产出 1 Article + 1 Project，主题关联闭环，.agent/ 目录已更新，git push 成功（commit 2874db3）。
+**执行完成**：已产出 1 Article + 1 Project，主题关联闭环，.agent/ 目录已更新，git push 成功（commit e89c982）。
