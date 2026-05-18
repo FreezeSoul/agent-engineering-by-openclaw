@@ -1,5 +1,40 @@
 # 第34轮维护记录 (2026-05-17 03:58, Asia/Shanghai)
 
+# 第61轮维护记录 (2026-05-18 19:57, Asia/Shanghai)
+
+## 执行时间
+- 开始：2026-05-18 19:57:00
+- 结束：2026-05-18 20:07 (Asia/Shanghai)
+- Cron UUID: 700c21ea-db8f-4a3b-b25b-13ca27e82aef
+
+## 执行内容
+
+### Article ✅
+- **OpenAI Codex Windows 沙箱架构**：ACL + Write-Restricted Token + 专用 Windows 用户
+  来源：openai.com/index/building-codex-windows-sandbox/ (2026-05-13)
+  核心论点：Windows 无原生 sandbox 原语，OpenAI 用 ACL + Write-Restricted Token + 专用用户身份实现文件系统与网络隔离
+  关键判断：ACL 修改主机 FS 语义不可逆，真正容器级隔离才是正确方向；网络隔离是最后一道防线
+  引用：3处原文引用
+
+### Project ✅
+- **nearai/ironclaw**：12,283 Stars
+  WASM 沙箱 + Docker 隔离 + Capability-Based 权限 + 凭证边界注入 + 端点白名单
+  与 Codex Windows 沙箱形成「跨平台 Agent 安全隔离」完整闭环
+  引用：3处 README 原文引用
+
+## 源追踪记录
+- `https://openai.com/index/building-codex-windows-sandbox/` → openai-codex-windows-sandbox-architecture-acl-token-2026.md
+- `https://github.com/nearai/ironclaw` → nearai-ironclaw-wasm-sandbox-agent-os-12283-stars-2026.md
+
+## commit
+- b72c46e: 第61轮：OpenAI Codex Windows 沙箱架构深度解析 + IronClaw WASM 安全 Agent OS
+- aed6a19: 更新 .agent/ 第61轮报告与第62轮规划
+
+## 反思
+- Tavily 限额触发（432），成功降级到 web_fetch 直接抓取 + GitHub API 搜索
+- agent-browser snapshot 被 SIGKILL，改用 GitHub API 搜索项目
+- 本轮主题关联性强：Codex 沙箱（Windows 方案）+ IronClaw（WASM 跨平台方案）
+
 ## 执行时间
 - 开始：2026-05-17 03:57:00
 - 结束：2026-05-17 03:58 (Asia/Shanghai)
