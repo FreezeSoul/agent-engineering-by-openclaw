@@ -1,4 +1,4 @@
-# PENDING.md - 下一轮规划（第52轮）
+# PENDING.md - 下一轮规划（第53轮）
 
 ## 待完成事项
 
@@ -13,7 +13,7 @@
 - [ ] 评估 "AI Coding 安全" 主题是否有更多高价值项目
 
 ### 仓库结构优化
-- [ ] 考虑在 README 增加「评测」主题索引，将 infrastructure-noise 和 AI-resistant evaluations 串联展示
+- [ ] 考虑在 README 增加「评测」主题索引，将 infrastructure-noise、AI-resistant evaluations、demystifying-evals 串联展示
 - [ ] 评估 articles/fundamentals/ 和 articles/projects/ 的边界是否清晰
 
 ## 约束提醒
@@ -25,10 +25,9 @@
 
 ## 本轮发现的新线索
 
-### AI Agent 评测演进主题延伸
-- **本轮发现**：Anthropic「AI 抗性评估设计演进」揭示技术面试被 AI 攻克的完整路径
-- **SanityHarness** 提供了轻量级评测工具的工程实现
-- 两者形成「问题 → 解决方案」的完整闭环
+### AI Agent 评测系统性框架主题
+- **本轮发现**：Anthropic「Demystifying Evals」提供了完整的 Agent 评测术语体系和 Grader 选择框架
+- **ClawProBench** 提供了 Live-first benchmark 的工程实现，两者形成「方法论 → 工程实现」闭环
 
 ### 下轮可研究的具体方向
 1. **multi-agent orchestration 安全**：多个 Agent 并行时的 trust boundary 如何设计

@@ -110,3 +110,33 @@
 - 本轮主题聚焦「AI 评测完整性与抗性设计」，Article 与 Project 形成完整的理念→实现闭环
 - 防重检查有效，两个来源均为新发现
 - PENDING.md 更新不及时导致重复分析（上轮已完成 infrastructure-noise）
+## 第52轮维护记录 (2026-05-18 07:57, Asia/Shanghai)
+
+## 执行时间
+- 开始：2026-05-18 07:57:00
+- 结束：2026-05-18 07:58 (Asia/Shanghai)
+- Cron UUID: 700c21ea-db8f-4a3b-b25b-13ca27e82aef
+
+## 执行内容
+
+### Article ✅
+- **Anthropic Demystifying Evals**：Agent 评测系统性框架，核心是 Grader 类型组合（Code-based/Model-based/Human）选择、Capability vs. Regression 区分
+  - 核心论点：评测是 Agent 工程化的核心基础设施
+  - 关键判断：三种 Grader 组合使用比单一 Grader 更可靠
+
+### Project ✅
+- **suyoumo/ClawProBench**：667 Stars
+  - Live-first benchmark harness，102 活跃场景，FinalScore 复合评分
+  - 与 Article 形成「方法论 → Live Runtime 评测实现」完整闭环
+
+## 源追踪记录
+- `https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents` → anthropic-demystifying-evals-for-ai-agents-2026.md
+- `https://github.com/suyoumo/ClawProBench` → suyoumo-ClawProBench-667-stars-2026.md
+
+## commit
+- 2874db3: feat: Anthropic Demystifying Evals + ClawProBench Live-first Benchmark (第52轮)
+
+## 反思
+- 本轮主题聚焦「AI Agent 评测系统性框架」，Article 与 Project 形成完整的「方法论 → 工程实现」闭环
+- Tavily API 连续超限，降级使用 web_fetch 直接抓取官方博客
+- ClawProBench 与 SanityHarness 形成评测工具的互补（轻量 Docker vs 完整 OpenClaw runtime）
