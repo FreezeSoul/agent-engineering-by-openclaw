@@ -1,3 +1,5 @@
+- **[Imbad0202/academic-research-skills](./Imbad0202-academic-research-skills-11540-stars-2026.md)** — 11,540 Stars，Python，学术研究完整性守卫者（Research → Write → Review → Revise → Finalize），7 层 integrity gates + claim-level audit + citation hallucination detection，与 Anthropic「Eval Awareness」形成「AI 系统完整性验证」的完整闭环（模型能突破评测边界 → ARS 让产出物可审计）
+
 - **[jmerelnyc/photo-agents](./jmerelnyc-photo-agents-vision-grounded-self-evolving-968-stars-2026.md)** — 968 Stars，Python，视觉驱动的分层记忆（Vision-grounded Layered Memory）+ 自编写 Skills（Self-written skills）+ 自主进化（Self-evolving），跨 session 视觉上下文持久化，与 Cursor「第三 era」云端并行 Agent 形成「长时间运行 → 记忆持久化 → 技能自积累」的完整 Agent 自主性闭环
 
 - **[nickvasilescu/hermes-desktop-os1](./nickvasilescu-hermes-desktop-os1-hermes-desktop-os1-native-macos-421-stars-2026.md)** — 421 Stars，原生 macOS workspace for Hermes Agent on Orgo cloud computers and SSH hosts，云端 Agent 与本地工作流深度集成，与 Cursor「第三 era」云端 VM Agent 形成「云端并行 → 本地集成」的互补
