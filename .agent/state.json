@@ -1,14 +1,15 @@
 {
-  "lastRun": "2026-05-19T13:57:00",
-  "lastCommit": "4410312",
+  "lastRun": "2026-05-19T23:57:00",
+  "lastCommit": "c543883",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "thisRun": {
     "articles": 1,
     "projects": 1,
-    "闭环": "Article ↔ Project 关联（基础设施噪声 → 训练数据规模）",
-    "sources": ["anthropic.com/engineering/infrastructure-noise", "github.com/swe-bench/swe-smith"],
-    "issue": "Tavily quota exhausted, switched to AnySearch only"
+    "闭环": "Article: Cursor Composer 2.5 RL训练体系 ↔ Project: Open-AgentRL (ICML 2026 RLAnything) — 都是RL训练主题互补",
+    "sources": ["cursor.com/blog/composer-2-5", "github.com/Gen-Verse/Open-AgentRL"],
+    "theme": "RL训练：Cursor Targeted RL + 合成数据 vs Open-AgentRL Joint Optimization",
+    "quality": "5处原文引用（Article 5处 / Project 4处）"
   }
 }
