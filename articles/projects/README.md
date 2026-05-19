@@ -349,3 +349,5 @@
 - [ComposioHQ/agent-orchestrator](./composiohq-agent-orchestrator-parallel-coding-agent-fleet-7099-stars-2026.md) — 7,099 ⭐，并行 Agent 编排框架，git worktree 隔离 + 7 槽位插件系统 + reactions 自动化（CI 失败/Review 评论自动路由），Agent-agnostic 支持 Claude Code/Codex/Aider，与「GAN 三代理架构」形成「多 Agent 并行工作 → 人类裁判介入」的方法论闭环（**本文新增**）
 
 - [vchain/mini-swe-agent：100行代码的极致简约设计（2026）](vchain-mini-swe-agent-100-lines-2026.md) — 74% SWE-bench，Princeton/Stanford团队出品
+
+- [HKUDS/nanobot：OpenClaw精神继承者，42.7k Stars的极简个人AI Agent（2026）](hkuds-nanobot-ultra-lightweight-personal-agent-2026.md) — 多channel、MCP、Memory，与mini-swe-agent形成「极简Agent双路径」对比

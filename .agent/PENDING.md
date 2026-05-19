@@ -1,40 +1,36 @@
-# PENDING.md - 下一轮规划（第72轮）
+# PENDING.md - 下一轮规划（第73轮）
 
 ## 待完成事项
 
 ### 信息源扫描方向
-- [ ] **Anthropic Engineering Blog**：关注「Scaling Managed Agents」（brain/hands 解耦架构）、Agent-Computer Interface 专题
-- [ ] **nanobot 专题**：HKUDS/nanobot（42.7k Stars）与 mini-swe-agent 形成「简单性」双路径对比
-- [ ] **GitHub Trending**：multi-agent orchestration、harness 安全方向新项目
+- [ ] **Anthropic Engineering Blog**：managed-agents专题（brain/hands解耦架构）、harness-design-long-running-apps深度应用
+- [ ] **GitHub Trending**：open-multi-agent（6156 Stars，TypeScript-native multi-agent orchestration）待追踪
+- [ ] **极简Agent横评方向**：nanobot vs mini-swe-agent vs AgentSilex — 三条极简路径的系统对比
 
 ### 项目方向储备
-- [ ] **nano-swe-agent vs nanobot**：两条「极简 Agent」路径的选择与适用场景
-- [ ] **SWE-bench 评测方向**：Claude Code、SWE-agent、mini-swe-agent 横评
-- [ ] **Agent-Computer Interface**：工具设计最佳实践（MCP、A2A、ACI 对比）
+- [ ] **open-multi-agent**：TypeScript-native多Agent编排，3个运行时依赖，与Anthropic的orchestrator-workers模式高度相关
+- [ ] **nanobot生态**：与OpenClaw的关联性研究
+- [ ] **MACP协议**：multiagentcognition/macp — 实时Agent协调协议，填补A2A+MCP的空白
 
 ## 约束提醒
-- 每轮必须产出 ≥1 Article（AI 大厂一手资料）
+- 每轮必须产出 ≥1 Article（AI大厂一手资料）
 - 每轮必须产出 1 个 GitHub Trending Project
 - 防重以项目路径（owner/repo）为准
 - 质量优先于数量
-- 主题关联性：Article 与 Project 必须形成闭环
+- 主题关联性：Article与Project必须形成闭环
 
 ## 本轮发现的新线索
 
-### Anthropic「简单模式」的核心洞见
-- **本轮发现**：Anthropic 明确提出「最成功的 Agent 实现不是用复杂框架，而是简单可组合模式」，mini-swe-agent 完美实证
-- **核心判断**：「不是框架变强了，是模型变强了」——当模型能力足够时，bash + 线性历史就能达到 SOTA
+### 极简Agent的双路径
+1. **mini-swe-agent（vchain，第71轮）**：无工具接口，subprocess.run，学术研究导向
+2. **nanobot（HKUDS，第72轮）**：多channel、MCP、Memory，生产环境导向
 
-### 两条「极简 Agent」路径
-1. **mini-swe-agent（vchain）**：无工具接口，subprocess.run，bash only，学术研究导向
-2. **nanobot（HKUDS）**：多 channel 集成，memory，MCP，生产环境导向
-- 两者都「简单」，但目标不同——下轮可以形成对比专题
+两者共同验证了Anthropic的「简单模式」理念，但服务于完全不同的目标。
 
-### 下轮可研究的具体方向
-1. **Anthropic「Scaling Managed Agents」深度延伸**：brain/hands 解耦的工程实现细节
-2. **nanobot 与 mini-swe-agent 对比**：两条极简 Agent 路径的选择指南
-3. **GitHub Trending 中的 harness 安全工具**：Agent 执行层的安全隔离方案
+### open-multi-agent（待下轮）
+- 6156 Stars，TypeScript-native
+- 与Anthropic orchestrator-workers工作流模式高度相关
+- 可作为下轮Project候选
 
 ## 源追踪状态
-- https://www.anthropic.com/engineering/building-effective-agents ✅ 本轮已追踪
-- https://github.com/vchain/mini-swe-agent ✅ 本轮已追踪
+- https://github.com/HKUDS/nanobot ✅ 第72轮已追踪

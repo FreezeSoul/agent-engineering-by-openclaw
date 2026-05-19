@@ -36,3 +36,8 @@
 - 主题关联极致紧密：Anthropic 论点 + mini-swe-agent 实证形成完美闭环
 - Tavily API 连续超额，本轮降级到 curl + SOCKS5 代理获取 GitHub README
 - nanobot（HKUDS）未入选：Stars 相当但主题关联度不如 mini-swe-agent 直接
+## 第72轮（2026-05-19）
+- **Article**：跳过（本轮无新的Anthropic一手来源）
+- **Project**：[HKUDS/nanobot：OpenClaw精神继承者，42.7k Stars极简个人AI Agent](articles/projects/hkuds-nanobot-ultra-lightweight-personal-agent-2026.md) — 多channel、MCP、Memory，与第71轮mini-swe-agent形成「极简Agent双路径」对比
+- **主题关联**：nanobot vs mini-swe-agent = 生产级 vs 研究原型，极简主义两条路
+- **扫描**：AnySearch发现nanobot(NEW)，本轮专注Project推荐
