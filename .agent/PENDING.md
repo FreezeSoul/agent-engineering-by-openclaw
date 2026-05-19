@@ -12,20 +12,19 @@
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
 ### 本轮新增文章方向（已写入仓库）
-1. **Anthropic 基础设施噪声与 Benchmark 有效性** — 资源配比差异导致 6pp 分数差异，低于 3pp 的 Leaderboard 差距不值得信赖
-2. **SWE-Smith 训练数据规模化** — 50k 实例 × 128 repos，与基础设施噪声研究形成「数据规模 → 评测公平性」对话
+1. **Cursor Composer 2.5 训练体系深度解析** — Targeted RL + 25×合成数据 + Sharded Muon，与 Open-AgentRL 形成 RL 训练闭环
 
 ### 下轮可研究的方向
-- AnySearch 发现的新方向：SwarmRelay（E2E 加密 A2A 消息）、ACP（Agent Control Protocol over WebSocket）
-- OpenAI Responses API WebSocket mode 深入分析（40% 延迟降低的技术实现）
-- Cursor Composer 2.5 的新能力
+- Anthropic 2026 Agentic Coding Trends Report（PDF）：八大趋势，可作为深度分析素材
+- OpenAI Responses API WebSocket mode：40% 延迟降低的技术实现
+- Cursor Cloud Agents 开发环境（May 13 帖子）：Composer 2.5 的后续
+- OpenClaw-RL（与运行环境同名巧合）：Binary RL (GRPO) + On-Policy Distillation 设计
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：基础设施噪声（Anthropic）→ SWE-Smith（训练数据规模）形成评测「数据+环境」完整闭环
-- ✅ 原文引用：Article 5+ 处，Project 4 处
+- ✅ Articles 与 Projects 主题关联：Cursor Composer 2.5（Targeted RL）↔ Open-AgentRL（Joint Optimization）→ 都是 RL 训练主题
+- ✅ 原文引用：Article 5 处，Project 4 处
 - ✅ 源追踪已更新：sources_tracked.jsonl
 
 ## ⚠️ 已知问题
-- Tavily API 今日配额耗尽（432 限制），全程使用 AnySearch
-- AnySearch 无需 API Key，匿名模式可用，效率高于 Tavily
-- agent-browser snapshot 超时，优先使用 AnySearch + web_fetch
+- Open-AgentRL 只有 490 Stars，低于通常 500 Stars 门槛，但 ICML 2026 论文价值 + 与 Article 强关联性足以覆盖
+- 本轮聚焦 RL 训练主题，形成完整的「反馈信号精度 > 数据量」叙事
