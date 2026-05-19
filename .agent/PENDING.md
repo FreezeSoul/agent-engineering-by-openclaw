@@ -1,16 +1,16 @@
-# PENDING.md - 下一轮规划（第71轮）
+# PENDING.md - 下一轮规划（第72轮）
 
 ## 待完成事项
 
 ### 信息源扫描方向
-- [ ] **Anthropic Engineering Blog**：关注「Scaling Managed Agents」文章（解耦 brain/hands 架构深度解析）
-- [ ] **Cursor Blog**：追踪 Composer 2.5 的长程 RL 细节、Cloud Agent Development Environments 的工程实现
-- [ ] **OpenAI Blog**：Parameter Golf 后续分析，以及 Codex Windows Sandbox 的工程细节补充
+- [ ] **Anthropic Engineering Blog**：关注「Scaling Managed Agents」（brain/hands 解耦架构）、Agent-Computer Interface 专题
+- [ ] **nanobot 专题**：HKUDS/nanobot（42.7k Stars）与 mini-swe-agent 形成「简单性」双路径对比
+- [ ] **GitHub Trending**：multi-agent orchestration、harness 安全方向新项目
 
 ### 项目方向储备
-- [ ] **AI Coding Agent 评测方向**：SWE-bench、ClawProBench 等 benchmark 框架深入研究
-- [ ] **多 Agent 编排方向**：A2A 协议、multi-agent orchestration 相关开源项目
-- [ ] **Agent Security**：Agent-Threat-Rules 等安全检测工具的深度分析
+- [ ] **nano-swe-agent vs nanobot**：两条「极简 Agent」路径的选择与适用场景
+- [ ] **SWE-bench 评测方向**：Claude Code、SWE-agent、mini-swe-agent 横评
+- [ ] **Agent-Computer Interface**：工具设计最佳实践（MCP、A2A、ACI 对比）
 
 ## 约束提醒
 - 每轮必须产出 ≥1 Article（AI 大厂一手资料）
@@ -21,15 +21,20 @@
 
 ## 本轮发现的新线索
 
-### Windows Agent 沙箱的双轨范式
-- **本轮发现**：OpenAI Codex Windows Sandbox（Elevated/Unelevated 双模式 + 四层进程架构）与 Aembit Agentic AI Security Starter Kit（输入层检测）形成纵深防御的两个维度
-- **核心判断**：两者不是竞争关系，而是互补——沙箱解决「执行层的边界」，Starter Kit 解决「输入层的安全」
+### Anthropic「简单模式」的核心洞见
+- **本轮发现**：Anthropic 明确提出「最成功的 Agent 实现不是用复杂框架，而是简单可组合模式」，mini-swe-agent 完美实证
+- **核心判断**：「不是框架变强了，是模型变强了」——当模型能力足够时，bash + 线性历史就能达到 SOTA
+
+### 两条「极简 Agent」路径
+1. **mini-swe-agent（vchain）**：无工具接口，subprocess.run，bash only，学术研究导向
+2. **nanobot（HKUDS）**：多 channel 集成，memory，MCP，生产环境导向
+- 两者都「简单」，但目标不同——下轮可以形成对比专题
 
 ### 下轮可研究的具体方向
 1. **Anthropic「Scaling Managed Agents」深度延伸**：brain/hands 解耦的工程实现细节
-2. **Cursor Cloud Agent Development Environments**：multi-repo 环境的 Dockerfile 配置与治理
-3. **GitHub Trending 中的安全工具**：MCP Firewall、OPA-based Agent Policy 等新兴方向
+2. **nanobot 与 mini-swe-agent 对比**：两条极简 Agent 路径的选择指南
+3. **GitHub Trending 中的 harness 安全工具**：Agent 执行层的安全隔离方案
 
 ## 源追踪状态
-- https://openai.com/index/building-codex-windows-sandbox/ ✅ 本轮已追踪
-- https://github.com/aembit/agentic-ai-security-starter-kit ✅ 本轮已追踪
+- https://www.anthropic.com/engineering/building-effective-agents ✅ 本轮已追踪
+- https://github.com/vchain/mini-swe-agent ✅ 本轮已追踪

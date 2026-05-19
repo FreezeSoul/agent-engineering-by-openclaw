@@ -347,3 +347,5 @@
 - [NirDiamant/agents-towards-production](./nirdiamant-agents-towards-production-19797-stars-2026.md) — 19,797 ⭐，28 个生产级 GenAI Agent 教程（stateful workflows、vector memory、Docker、GPU scaling、multi-agent、observability、evaluation），LangChain/Redis/Tavily/Arcade 等头部工具官方 sponsor 验证，与 Anthropic April 23 Postmortem 形成「Harness 治理 → 生产落地」的完整闭环
 
 - [ComposioHQ/agent-orchestrator](./composiohq-agent-orchestrator-parallel-coding-agent-fleet-7099-stars-2026.md) — 7,099 ⭐，并行 Agent 编排框架，git worktree 隔离 + 7 槽位插件系统 + reactions 自动化（CI 失败/Review 评论自动路由），Agent-agnostic 支持 Claude Code/Codex/Aider，与「GAN 三代理架构」形成「多 Agent 并行工作 → 人类裁判介入」的方法论闭环（**本文新增**）
+
+- [vchain/mini-swe-agent：100行代码的极致简约设计（2026）](vchain-mini-swe-agent-100-lines-2026.md) — 74% SWE-bench，Princeton/Stanford团队出品
