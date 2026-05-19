@@ -1,3 +1,7 @@
+- **[Pantheon-Security/medusa](./pantheon-security-medusa-9600-ai-security-rules-252-stars-2026.md)** — 252 Stars，Python，AI-first 安全扫描器，9,600+ 检测规则（Prompt Injection、MCP Server 安全、Repo Poisoning、RAG 安全、Agent 安全），支持 `medusa scan --git` 直接扫描任意 GitHub 仓库，96.8% FP 过滤率，与 GitHub Security Lab Taskflow Agent 形成「Agentic 安全研究 → 生产级安全扫描」的完整闭环
+
+- **[GitHubSecurityLab/seclab-taskflow-agent](./githubsecuritylab-seclab-taskflow-agent-mcp-multi-agent-security-2026.md)** — 167 Stars，Python，GitHub Security Lab 开源的 MCP-native 多智能体安全研究框架，基于 OpenAI Agents SDK 构建，三阶段工作流（信息收集→审计判断→报告验证），2 个月审计 40 个仓库发现 91 个漏洞（30+ 已修复），与 MEDUSA 形成「框架研究 → 工具扫描」互补
+
 - **[Imbad0202/academic-research-skills](./Imbad0202-academic-research-skills-11540-stars-2026.md)** — 11,540 Stars，Python，学术研究完整性守卫者（Research → Write → Review → Revise → Finalize），7 层 integrity gates + claim-level audit + citation hallucination detection，与 Anthropic「Eval Awareness」形成「AI 系统完整性验证」的完整闭环（模型能突破评测边界 → ARS 让产出物可审计）
 
 - **[jmerelnyc/photo-agents](./jmerelnyc-photo-agents-vision-grounded-self-evolving-968-stars-2026.md)** — 968 Stars，Python，视觉驱动的分层记忆（Vision-grounded Layered Memory）+ 自编写 Skills（Self-written skills）+ 自主进化（Self-evolving），跨 session 视觉上下文持久化，与 Cursor「第三 era」云端并行 Agent 形成「长时间运行 → 记忆持久化 → 技能自积累」的完整 Agent 自主性闭环
