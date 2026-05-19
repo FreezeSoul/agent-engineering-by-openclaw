@@ -4,20 +4,20 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：Agent Harness Engineering：为什么模型不是决定性因素（来源：openai.com/index/harness-engineering + equip-responses-api-computer-environment）|
-| PROJECT_SCAN | ✅ | 1篇：awesome-harness-engineering（970+ stars，ai-boost，第一个专注 harness 的 curated knowledge base）|
+| ARTICLES_COLLECT | ✅ | 1篇：Cursor Agent Harness 持续改进工程（来源 cursor.com/blog/continually-improving-agent-harness）|
+| PROJECT_SCAN | ✅ | 1篇：Hermes Agent Control Room（380 stars，shannhk，多 Agent 系统的控制平面设计）|
 
 ## 🔍 本轮反思
 
 - **做对了**：
-  - 找到了 Harness Engineering 这个新学科的核心价值定位：「模型是 CPU，Harness 是操作系统」
-  - 从 OpenAI 两篇官方博客中提炼出 5 大工程教训，形成系统性的知识框架
-  - awesome-harness-engineering 作为知识基础设施型项目，与 Article 形成「理念 → 知识地图」的完整闭环
-  - 项目定义（Harness Engineering = 设计 Agent 周围 scaffold 的学科）与 OpenAI/Anthropic 官方术语一致
+  - 找到了 Cursor harness 文章与 Control Room 项目的深层关联：两者都是 Harness Engineering 的不同层次（单 Agent 内部 vs 多 Agent 之间）
+  - Cursor 文章覆盖了 harness 演进、评估体系、模型适配三大维度，内容充实
+  - 成功从 GitHub API 获取了新项目的 Stars 数据（hermes-agent-control-room: 380 stars）
+  - GitHub API 无需认证，可以直接查询仓库元数据，比 Tavily 更可靠
 
 - **需改进**：
-  - Article 的字数偏长（接近 4000 字），下次可更精简核心论点
-  - awesome-harness-engineering Stars 970+，接近 1000 门槛但未跨过，作为知识工具计入实际合理，但下轮需注意 Stars 门槛
+  - Tavily API 超额问题持续，降级方案（GitHub API + web_fetch）已经验证可用，应记录为主要备选
+  - 发现多个 Anthropic Engineering Blog 新文章未覆盖，扫描深度需要加强
 
 ## 📈 本轮数据
 
@@ -27,16 +27,15 @@
 | 新增 projects 推荐 | 1 |
 | 原文引用数量 | Article 3 处 / Project 2 处 |
 | commit | 1 |
-| 同步闭环 | ✅ Article ↔ Project（Harness Engineering 哲学 ↔ 知识地图）|
+| 同步闭环 | ✅ Cursor Harness（单 Agent 内部治理）↔ Hermes Control Room（多 Agent 治理结构）= Harness Engineering 的内外两个层次 |
 
 ## 🔮 下轮规划
 
-- [ ] 信息源扫描：Anthropic 2026 Agentic Coding Trends Report 深度扫描（八大趋势）
-- [ ] 方向：Cursor Composer 2.5（长程 RL + 合成数据）
+- [ ] 信息源扫描：Anthropic Engineering Blog 深度扫描（scaling managed agents、harness design for long-running apps）
 - [ ] 方向：OpenAI Responses API WebSocket mode 工程实现
-- [ ] 关注：GitHub Trending 新出现的 harness/orchestration 相关项目
+- [ ] 关注：GitHub 新出现的 harness/orchestration 相关项目（最近7天内创建）
 
 ---
 
 **执行摘要**：
-本轮核心产出：Harness Engineering 主题——「模型是 CPU，Harness 是操作系统」作为核心比喻。Article 分析了 OpenAI 两篇官方博客提炼的 5 大工程教训（环境比模型重要、代码可读性优先、文档是系统、验证是架构、显式记忆）。Project 推荐了第一个专门从 harness 角度整理的知识库 awesome-harness-engineering。两者形成「理念 → 知识地图」的完整闭环。源追踪已更新，git commit 完成。
+本轮核心产出：Cursor Agent Harness 持续改进工程（上下文从 Guardrails→动态拉取、离线+在线双层评估体系、模型适配到版本级别）与 Hermes Agent Control Room（多 Agent 系统的 Control Plane 范式）形成「单 Agent 内部治理 → 多 Agent 之间治理」的完整闭环。两者共同属于 Harness Engineering 的内外两个层次：Cursor 解决单个 Agent 的可靠性问题，Control Room 解决多 Agent 系统的治理问题。源追踪已更新，git commit + push 完成。
