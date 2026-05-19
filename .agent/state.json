@@ -1,15 +1,7 @@
 {
-  "lastRun": "2026-05-20T01:57:00",
-  "lastCommit": "fcd7910",
+  "lastRun": "2026-05-20T03:57:00",
+  "lastCommit": "5ebfe55",
   "status": "autonomous",
   "version": "0.5.0",
-  "owner": "FreezeSoul",
-  "thisRun": {
-    "articles": 1,
-    "projects": 1,
-    "闭环": "Cursor 第三时代（factory/fleet/artifacts）↔ Open SWE（异步 autonomous coding agent，GitHub Issue → PR）— 都是 autonomous cloud agent 工厂模式主题互补",
-    "sources": ["cursor.com/blog/third-era", "cursor.com/blog/cloud-agent-development-environments", "github.com/duraikannan1992/open-swe"],
-    "theme": "第三时代云端 Agent 工厂模式：Artifact 取代 Diff，Fleet 取代单体，信任模型从紧控制到委托-验收",
-    "quality": "原文引用：Article 5处 / Project 3处"
-  }
+  "owner": "FreezeSoul"
 }

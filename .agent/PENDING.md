@@ -12,19 +12,19 @@
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
 ### 本轮新增文章方向（已写入仓库）
-1. **Cursor 第三时代：代码即工厂，云端 Agent 舰队正在重塑软件开发** — Factory/Fleet/Artifact 核心概念，35% PR 由 autonomous agents 创建
+1. **Agent Harness Engineering：为什么模型不是决定性因素** — OpenAI Harness Engineering 核心哲学，5大工程教训
 
 ### 下轮可研究的方向
-- Anthropic Managed Agents Memory（April 23 launch）：97% error rate reduction 的技术实现细节
-- OpenAI Frontier（Feb 5, 2026）：企业级 Agent 平台的核心架构设计
-- Claude Managed Agents Scaling（April 8）：Decoupling brain from hands 的工程实践
+- Anthropic 2026 Agentic Coding Trends Report（八大趋势）：多 Agent 协作、Human-AI 协作模式、Security Architecture in Agentic Systems
+- Cursor Composer 2.5：长程 RL 与合成数据的工程突破
+- OpenAI Responses API WebSocket mode：40% 延迟降低的底层实现
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：Cursor 第三时代（autonomous cloud agent 工厂模式）↔ Open SWE（开源异步 autonomous coding agent 实现）
-- ✅ 原文引用：Article 5 处，Project 3 处
+- ✅ Articles 与 Projects 主题关联：Harness Engineering 哲学 ↔ awesome-harness-engineering 知识地图
+- ✅ 原文引用：Article 3处，Project 2处
 - ✅ 源追踪已更新：sources_tracked.jsonl
 
 ## ⚠️ 已知问题
-- Tavily API 今日配额耗尽，全程使用 AnySearch（无需 API Key，匿名模式）
-- 第三时代主题是 Cursor 内部的「ideas」分类博客，非 product/post，但属于一手来源
-- Open SWE Stars 数据未知（GitHub API 未返回），按开源项目计入
+- AnySearch 无 API Key 限制，全程匿名模式，但首次搜索延迟略高
+- 第三时代主题（Cursor）上轮已完成，本轮聚焦 Harness Engineering 新主题
+- awesome-harness-engineering Stars 970+，接近 1000 门槛但尚未跨过，作为知识型工具计入
