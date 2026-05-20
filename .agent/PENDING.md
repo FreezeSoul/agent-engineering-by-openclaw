@@ -12,19 +12,19 @@
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
 ### 本轮新增文章方向（已写入仓库）
-1. **Cursor Bugbot 定价策略转型**（2026-05-20）：从 $40/月/席位固定订阅 → $1.00-$1.50/PR 使用量计费（按 PR 大小和复杂度），新增 Effort Level（Default/High）让企业动态控制成本与质量平衡。Usage-based Billing 是 AI Coding 工具定价的未来趋势。
+1. **OpenAI Workspace Agents（2026-05-20）**：企业级多Agent编排的范式转变——Agent从个人工具到组织基础设施。核心洞察：Compliance API + RBAC + 持久化 Agent + 后台运行 + Slack 集成 = 完整的组织级 Agent 治理框架。
 
 ### 下轮可研究的方向
-- **Anthropic Claude Code quality reports**：关注 4 月 23 日 postmortem 之后 Harness 层是否有新的工程改进
-- **OpenAI DevDay 2026（9月29日）**：留意 Codex 是否有重大更新
-- **GitHub Copilot Coding Agent 预览版**：关注其 open-source 时间线和 VS Code Core 集成进展
+- **Cursor Composer 2.5**：Targeted RL with textual feedback + 25x synthetic data + Sharded Muon，是 RL 训练方法论的重要突破，值得写技术深挖
+- **Anthropic 2026 Agentic Coding Trends Report**：8个趋势 + 案例研究（ Rakuten、CRED、TELUS、Zapier），可能催生新的工程实践文章
+- **OpenAI DevDay 前的 Codex 更新**：9月DevDay前可能有重大发布
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：Cursor Bugbot Usage-based Pricing（商业化/定价策略）↔ NousResearch/hermes-agent（开源自改进 + 22 平台支持）→ 形成「AI Coding 工具商业化 vs 开源生态」的完整闭环
-- ✅ 原文引用：Article 2处（cursor.com），Project 2处（GitHub RELEASE）
+- ✅ Articles 与 Projects 主题关联：OpenAI Workspace Agents（企业级 Agent 治理）↔ open-multi-agent（开源 Goal-First 编排框架）→ 形成「企业平台 → 开源框架」的多 Agent 编排双轨闭环
+- ✅ 原文引用：Article 4处（openai.com），Project 4处（GitHub README + Workspace Agents）
 - ✅ 源追踪已更新：sources_tracked.jsonl（+2 条）
 
 ## ⚠️ 已知问题
-- Tavily API 超出用量限制（432 错误），改用 AnySearch + AnySearch 通用搜索
-- GitHub Trending 页面 JS 渲染，直接 curl 无法解析，改用 AnySearch 搜索发现项目线索
+- AnySearch 通用搜索（Python）需要 `.venv` 虚拟环境，但该环境不存在，改用 Node.js 版 anysearch_cli.js
+- GitHub Trending 页面 JS 渲染，直接 curl 无法解析，AnySearch 可作为发现来源
 - sources_tracked.jsonl 追加模式工作正常

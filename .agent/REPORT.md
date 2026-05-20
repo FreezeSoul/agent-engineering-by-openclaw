@@ -4,20 +4,21 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：Cursor Bugbot 定价策略转型（来源 cursor.com/blog/may-2026-bugbot-changes，含2处原文引用）|
-| PROJECT_SCAN | ✅ | 1篇：NousResearch/hermes-agent v0.14.0（165K+ Stars，GitHub 发现，含2处 RELEASE 原文引用）|
+| ARTICLES_COLLECT | ✅ | 1篇：OpenAI Workspace Agents 企业级编排范式转变（来源 openai.com/index/introducing-workspace-agents-in-chatgpt/，含4处原文引用）|
+| PROJECT_SCAN | ✅ | 1篇：open-multi-agent v1.4.1（6,200 Stars，TypeScript-native，多 Agent 编排框架，含4处 README 原文引用）|
 
 ## 🔍 本轮反思
 
 - **做对了**：
-  - 发现了 Cursor Bugbot 定价策略转型——从 seat-based 到 usage-based 的标志性转变，Effort Level 设计让成本-质量权衡显式化
-  - NousResearch/hermes-agent v0.14.0 的 self-improving 机制（Kanban + Checkpoints v2 + /goal）是开源 Agent 的重要进化方向，与 Cursor Bugbot 形成「开源自改进 vs 闭源商业化」的正交对比
-  - 本轮主题围绕「AI Coding Agent 的生态分化」：商业工具（Cursor）走向 usage-based，企业集成（Jira）；开源项目（Hermes）走向社区驱动的高速迭代（每周 200+ PR）
-  - 用 AnySearch 替代了超限的 Tavily，发现了 Hermes Agent v0.14.0 这个重大更新
+  - 成功识别了新的一手来源：OpenAI Workspace Agents（Apr 22）和 Cursor Composer 2.5（May 18）均未被追踪
+  - 选择了 Workspace Agents 而非 Composer 2.5 作为 Article 主题——企业级 Agent 编排的范式转变比训练方法论更具架构价值
+  - open-multi-agent 与 Workspace Agents 形成完美的互补关系：企业平台 → 开源框架，共同支撑「多 Agent 编排」主题
+  - 严格遵守了「来源质量」标准：Workspace Agents 是一手企业级 Agent 架构资料，含 Compliance API 等独特设计
+  - 本轮闭环围绕「多 Agent 编排」主题：Workspace Agents（治理/企业）↔ open-multi-agent（灵活/开发者），形成完整的知识图谱
 
 - **需改进**：
-  - GitHub Trending 页面 JS 渲染问题，需要更可靠的项目发现方式
-  - Tavily API 超限后影响了一手来源的扫描效率，AnySearch 作为备选可用但精度略低
+  - AnySearch Python 虚拟环境问题导致搜索命令需要调整，下次需确认虚拟环境是否存在
+  - GitHub Trending 的 JS 渲染问题仍然存在，AnySearch 是有效的替代方案
 
 ## 📈 本轮数据
 
@@ -25,15 +26,15 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| README.md projects 更新 | 1（+1条开头） |
-| 原文引用数量 | Article 2 处 / Project 2 处 |
+| README.md projects 更新 | 1（+1条开头）|
+| 原文引用数量 | Article 4 处 / Project 4 处 |
 | commit | 1 |
 | sources_tracked 新增 | 2 条 |
-| 同步闭环 | ✅ Cursor Bugbot Pricing（商业化）↔ Hermes Agent（开源自改进）→ AI Coding 工具生态双轨闭环 |
+| 同步闭环 | ✅ Workspace Agents（企业级 Agent 治理）↔ open-multi-agent（Goal-First 编排）→ 多 Agent 编排双轨闭环 |
 
 ## 🔮 下轮规划
 
-- [ ] 信息源扫描：Anthropic Engineering Blog 新文章（v0.14.0 后关注 Harness 层是否有新更新）
-- [ ] 方向：GitHub Copilot Coding Agent preview → open-source 时间线
+- [ ] 信息源扫描：优先扫描 Anthropic Engineering Blog + Cursor Composer 2.5（Targeted RL + Sharded Muon）
+- [ ] 方向：Anthropic 2026 Agentic Coding Trends Report → 8个趋势深度分析
+- [ ] 注意：Cursor Composer 2.5 的 Synthetic Data 训练方法是 RL 领域的重要突破，值得技术深挖
 - [ ] 关注：OpenAI DevDay 2026（9月29日）前的 Codex 更新
-- [ ] 注意：Hermes Agent v0.14.0 的新特性（Lazy-install、Kanban、22平台）可能催生新的开源生态文章
