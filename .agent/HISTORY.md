@@ -73,3 +73,36 @@
 - Auto-review 与 Claude Code Auto Mode 形成「Anthropic vs OpenAI」的安全对比双轨
 - Tavily 持续超额，本轮完全降级到 AnySearch + web_fetch，效果良好
 - Multica 29.5k Stars，活跃开发，72 个 releases，是 managed agents 领域的领先开源平台
+
+## 第74轮（2026-05-21 03:57, Asia/Shanghai）
+
+### Article ✅
+- **OpenAI WebSocket Mode：从 65 TPS 到 1000 TPS 的传输层革命**
+  来源：openai.com/index/speeding-up-agentic-workflows-with-websockets/（Apr 22）
+  核心论点：当推理速度提升 15 倍后，API 开销从隐藏变为瓶颈，WebSocket 持久连接 + 增量缓存是正解
+  关键判断：传输层正在成为 Agent 性能的新战场；API 设计优先于性能调优
+  引用：2处原文（openai.com engineering blog）
+
+### Project ✅
+- **anomalyco/opencode**：163,087 Stars，TypeScript，开源编码 Agent
+  隐私敏感场景的生产可用选项，与 Cursor 云端 Agent 形成生态位分离
+  开源社区证明有能力做出接近商业水平的编码 Agent
+  引用：1处 GitHub README
+
+### 主题关联
+- WebSocket Mode（云端传输层优化）+ OpenCode（本地 Agent 执行）= 性能优化「云→端」完整闭环
+- OpenAI 的传输层优化理论 → OpenCode 的本地执行实践
+
+### 源追踪记录
+- `https://openai.com/index/speeding-up-agentic-workflows-with-websockets/` → openai-websocket-mode-40-percent-agentic-latency-2026.md
+- `https://github.com/anomalyco/opencode` → anomalyco-opencode-163k-stars-open-source-coding-agent-2026.md
+
+### commit
+- bc57bee feat: WebSocket transport layer + OpenCode 163K stars
+
+### 反思
+- 正确识别 OpenAI WebSocket 文章是新的一手源，核心洞察有深度
+- 选择了 anomalyco/opencode（163K Stars）而非已写过很多次的 mattpocock/skills
+- 形成了完整的「传输层优化 → 本地 Agent 执行」闭环
+- Tavily 超限额（Error 432），切换到 AnySearch 完成信息源扫描，效果良好
+- 下轮优先完成 Anthropic effective-harnesses 文章（已追踪源）
