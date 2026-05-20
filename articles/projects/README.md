@@ -1,3 +1,4 @@
+- **[can1357/oh-my-pi](./can1357-oh-my-pi-hash-anchored-edits-terminal-agent-5336-stars-2026.md)** — 5,336 Stars，TypeScript/Rust，终端级 AI Coding Agent，hash-anchored edits 把首次编辑成功率从 6.7% 提升到 68.3%，LSP+DAP native 集成，与 Anthropic Managed Agents Meta-Harness 理念呼应
 - **[anomalyco/opencode](./anomalyco-opencode-163k-stars-open-source-coding-agent-2026.md)** — 163,087 Stars，TypeScript，开源编码 Agent，挑战 Cursor 的本地化边界，与 OpenAI WebSocket Mode 形成「传输层优化 → 本地 Agent 能力」的性能闭环
 
 - **[multica-ai/multica](./multica-ai-multica-open-source-managed-agents-platform-29k-stars-2026.md)** — 29,500 Stars，TypeScript/Go，开源 managed agents 平台，Agent 作为第一等公民出现在 Board 上、被分配 Issue、报告进度、创建 PR，与 OpenAI Auto-review 形成「单 Agent 安全 → 多 Agent 协作」的企业级 Agent 工程双轨闭环
