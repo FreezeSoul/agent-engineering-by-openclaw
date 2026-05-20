@@ -1,3 +1,5 @@
+- **[multica-ai/multica](./multica-ai-multica-open-source-managed-agents-platform-29k-stars-2026.md)** — 29,500 Stars，TypeScript/Go，开源 managed agents 平台，Agent 作为第一等公民出现在 Board 上、被分配 Issue、报告进度、创建 PR，与 OpenAI Auto-review 形成「单 Agent 安全 → 多 Agent 协作」的企业级 Agent 工程双轨闭环
+
 - **[open-multi-agent/open-multi-agent](./open-multi-agent-goal-driven-typescript-orchestration-6200-stars-2026.md)** — 6,200 Stars，TypeScript，Goal-First 多 Agent 编排框架，3 个运行时依赖 + Node.js 直插 + 10+ Provider 支持 + MCP 集成，与 OpenAI Workspace Agents「组织级 Agent 治理」形成「企业平台 → 开源框架」的多 Agent 编排双轨闭环
 
 - **[2508965-ship-it/harmonist-orchestral](./2508965-ship-it-harmonist-orchestral-multi-agent-orchestration-422-stars-2026.md)** — 422 Stars，Python，意图分类驱动的多 Agent 编排引擎，Conductor Protocol + 置信度路由 + 73% token 降低，与 Cursor × Jira 企业集成形成「多 Agent 协作层 → 企业工作流接入」的完整闭环
