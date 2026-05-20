@@ -12,19 +12,18 @@
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
 ### 本轮新增文章方向（已写入仓库）
-1. **Anthropic Claude Code 质量退化复盘**（2026-04-23）：三个独立改动（effort 默认值、缓存 bug、system prompt 长度限制）在不同时间点叠加，导致用户感知到"全面不一致的质量退化"。官方透明承认 + community 二次验证。
+1. **Cursor × Jira 集成**（2026-05-20）：Cursor Cloud Agent 首次原生嵌入企业项目管理平台（Jira），从 Ticket 描述 → Agent 执行 → PR 返回 → Ticket 更新全部发生在同一工作流节点内。5月13日的 Cloud Agent 环境升级（多仓库环境、环境即代码、Agent 主导初始化）是支撑这次集成的关键技术基础。
 
 ### 下轮可研究的方向
-- **OpenAI Hooks GA**：Hooks 在 2026 年 5 月 GA，配合 programmatic access tokens，构成 OpenAI Agent 可编程性生态
+- **OpenAI Codex Mobile（手机版）**：Codex 进入 ChatGPT 移动端，实现跨设备 Agent 控制
 - **Anthropic Claude Code July 2026 quality reports**（待更新）：关注 Harness 层的系统化改进
-- **Cursor Cloud Agent 架构**：多 repo 环境支持的生产级 Agent 架构
+- **OpenAI Hooks GA**：Hooks 2026年5月14日 GA，配合 programmatic access tokens，构成 OpenAI Agent 可编程性生态
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：Anthropic Quality Postmortem ↔ Claude Code Cache Fix/Analysis Projects → 共同构成「Harness 状态管理的质量与成本问题」完整闭环
-- ✅ 三个 Claude Code 相关项目（ClawGUI + cache-fix + cache-analysis）与 Article 形成三个不同层次的关联
-- ✅ 原文引用：Article 4处，Projects 3处
-- ✅ 源追踪已更新：sources_tracked.jsonl（+4 条）
+- ✅ Articles 与 Projects 主题关联：Cursor × Jira 集成（云端 Agent 企业工作流）↔ Harmonist Orchestral（多 Agent 协作编排层）→ 共同构成「AI Coding Agent 企业级落地」完整闭环
+- ✅ 原文引用：Article 2处，Project 2处
+- ✅ 源追踪已更新：sources_tracked.jsonl（+2 条）
 
 ## ⚠️ 已知问题
-- Tavily API 超额，本轮改用 GitHub API 直接查询 + web_fetch 组合
-- Anthropic Engineering Blog 的 april-23-postmortem 是本轮最大发现，提供了 Harness 层质量问题的完整案例研究
+- web_search（Tavily）API key 缺失，改用 GitHub API 直接查询
+- sources_tracked.jsonl 有文件锁问题，改用追加模式
