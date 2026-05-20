@@ -4,21 +4,21 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：Cursor三角色架构（Planner-Worker-Judge），来源cursor.com/blog，4处原文引用 |
-| PROJECT_SCAN | ✅ | 1篇：Agent Cube（竞争开发+司法审查），来源github.com/aetheronhq/agent-cube，3处引用 |
+| ARTICLES_COLLECT | ✅ | 1篇：Cursor自驱动代码库分层Ownership，来源cursor.com/blog，3处原文引用 |
+| PROJECT_SCAN | ✅ | 1篇：microsoft/agent-framework生产级多语言框架，来源GitHub README，2处引用 |
 
 ## 🔍 本轮反思
 
 - **做对了**：
-  - 正确识别了scaling-agents和multi-agent-kernels两个URL属于同一Article主题（多Agent协作），合并写入了单一文件
-  - Agent Cube是全新发现（未被sources_tracked.jsonl追踪），研究基础扎实（Aetheric 2022 Best-of-N等4项研究），生产验证完整（Aetheron Connect v2项目34K行代码），选择正确
-  - Article与Project形成主题闭环：Cursor三角色架构（"如何让多Agent扩展"）↔ Agent Cube（"如何让每个输出质量更高"），共同回答多Agent协作的两个不同维度问题
-  - 严格遵守了「来源质量」标准：cursor.com/blog是一手Cursor工程博客，含完整设计决策和技术细节
+  - 正确识别了cursor.com/blog/self-driving-codebases是新的独立源（未追踪），与scaling-agents形成互补但独立的文章
+  - Anthropic effective-harnesses-for-long-running-agents 也是全新发现，Initializer+Coding Agent双轨模式是长时运行Agent的重要范式
+  - microsoft/agent-framework 虽然Stars尚未建立（刚发布），但作为微软官方生产级框架，与Cursor自驱动代码库形成「理论→工程实现」的闭环
+  - 正确关联：Cursor自驱动（Goal→DAG分解） ↔ microsoft/agent-framework（Graph-based workflow）→ 多Agent编排的两种范式对比
 
 - **需改进**：
-  - Tavily API持续超额（Error 432），完全依赖AnySearch + web_fetch + curl作为备选方案
-  - Agent Cube Stars较低（6 Stars），但因生产验证完整且形成闭环而入库，下次可更关注Stars > 500的门限
-  - Anthropic "Demystifying evals for AI agents"（eval设计）和Cursor Composer 2.5（May 18）未被深入扫描，下轮优先
+  - Anthropic effective-harnesses 文章尚未产出，仅记录了源。下轮需要单独完成这篇文章
+  - microsoft/agent-framework Stars 显示为0（GitHub还未收录该新仓库的Stars数据），下轮确认后更新
+  - sources_tracked.jsonl 存在于两个位置（skill目录和repo目录），需要确认哪个是主数据源
 
 ## 📈 本轮数据
 
@@ -26,13 +26,13 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 4 处 / Project 3 处 |
-| commit | 1 (cd88f40) |
+| 原文引用数量 | Article 3 处 / Project 2 处 |
+| commit | 1 (7545e7f) |
 | sources_tracked 新增 | 3 条 |
-| 同步闭环 | ✅ Cursor三角色架构 ↔ Agent Cube竞争-审查 → 多Agent协作「扩展+质量」双轨闭环 |
+| 同步闭环 | ✅ Cursor分层Ownership ↔ microsoft/agent-framework → 多Agent编排「理论→生产」闭环 |
 
 ## 🔮 下轮规划
-- [ ] 信息源扫描：优先扫描Anthropic "Demystifying evals for AI agents"（eval体系）+ Cursor Composer 2.5（May 18，RL训练细节）
-- [ ] 方向：Cursor cloud development environments（云端隔离VM基础设施）+ Anthropic "Building a C compiler"多Agent并行协作编译深度重写
-- [ ] 注意：Tavily API配额问题持续，考虑升级计划或探索其他搜索方案
-- [ ] 关注：OpenAI DevDay 2026（9月29日）前的Codex更新可能催生新的Article主题
+- [ ] 信息源扫描：优先完成Anthropic effective-harnesses文章写作（Initializer+Coding Agent双轨模式）
+- [ ] 方向：OpenAI Codex Enterprise Security五支柱 + Cursor Composer 2.5 RL训练体系
+- [ ] 项目：microsoft/agent-framework Stars补全 + 确认是否有新的高质量项目
+- [ ] 注意：sources_tracked.jsonl 路径统一性问题需要解决
