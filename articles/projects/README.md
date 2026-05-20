@@ -1,3 +1,5 @@
+- **[2508965-ship-it/harmonist-orchestral](./2508965-ship-it-harmonist-orchestral-multi-agent-orchestration-422-stars-2026.md)** — 422 Stars，Python，意图分类驱动的多 Agent 编排引擎，Conductor Protocol + 置信度路由 + 73% token 降低，与 Cursor × Jira 企业集成形成「多 Agent 协作层 → 企业工作流接入」的完整闭环
+
 - **[ZJU-REAL/ClawGUI](./zju-real-clawgui-unified-gui-agent-training-eval-deploy-1256-stars-2026.md)** — 1,256 Stars，Python，浙大统一 GUI Agent 训练/评估/部署框架（clawgui-eval + clawgui-rl + clawgui-agent + clawgui-app 四模块），Online RL 训练 + 标准化 Benchmark + 真实设备部署，与 Anthropic「质量退化复盘」的 Eval 教训形成「评估驱动训练」的完整闭环
 
 - **[cnighswonger/claude-code-cache-fix](./cnighswonger-claude-code-cache-fix-226-stars-2026.md)** — 226 Stars，修复 Claude Code resumed sessions 成本增加 20 倍的 prompt cache regression，直接对应 Anthropic April 2026 postmortem 中的第二个改动（缓存清除 bug）
