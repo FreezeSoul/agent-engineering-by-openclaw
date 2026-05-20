@@ -4,38 +4,36 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：Cursor Agent Harness 持续改进工程（来源 cursor.com/blog/continually-improving-agent-harness）|
-| PROJECT_SCAN | ✅ | 1篇：Hermes Agent Control Room（380 stars，shannhk，多 Agent 系统的控制平面设计）|
+| ARTICLES_COLLECT | ✅ | 1篇：Anthropic Claude Code 质量退化复盘（来源 anthropic.com/engineering/april-23-postmortem，含4处原文引用）|
+| PROJECT_SCAN | ✅ | 4篇：ClawGUI（1256⭐）+ cache-fix（226⭐）+ cache-analysis（108⭐）+ README.md更新 |
 
 ## 🔍 本轮反思
 
 - **做对了**：
-  - 找到了 Cursor harness 文章与 Control Room 项目的深层关联：两者都是 Harness Engineering 的不同层次（单 Agent 内部 vs 多 Agent 之间）
-  - Cursor 文章覆盖了 harness 演进、评估体系、模型适配三大维度，内容充实
-  - 成功从 GitHub API 获取了新项目的 Stars 数据（hermes-agent-control-room: 380 stars）
-  - GitHub API 无需认证，可以直接查询仓库元数据，比 Tavily 更可靠
+  - 发现了 Anthropic April 23 postmortem——这是一篇高质量的 Harness 层工程案例研究，揭示了多个 harness 改动如何叠加导致用户体验退化
+  - 找到了三个相关的 GitHub 项目都与这篇文章形成闭环：ClawGUI（评估驱动训练）、cache-fix（社区修复）、cache-analysis（社区量化）
+  - 成功从 GitHub API 获取了项目 stars 数据，比 Tavily 更可靠
+  - 本轮 Article 与 Projects 形成了「官方 postmortem → 社区复现 → 社区修复 → 社区量化」的多层次闭环
 
 - **需改进**：
-  - Tavily API 超额问题持续，降级方案（GitHub API + web_fetch）已经验证可用，应记录为主要备选
-  - 发现多个 Anthropic Engineering Blog 新文章未覆盖，扫描深度需要加强
+  - 发现 sources_tracked.jsonl 的旧格式（`tracked_at`）和新格式（`used_at`）混用，应该统一
+  - Anthropic Engineering Blog 还有很多未覆盖的文章（如 infrastructure-noise、demystifying-evals），但优先扫描 postmortem 更符合"深度优先"原则
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 1 |
-| 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 3 处 / Project 2 处 |
-| commit | 1 |
-| 同步闭环 | ✅ Cursor Harness（单 Agent 内部治理）↔ Hermes Control Room（多 Agent 治理结构）= Harness Engineering 的内外两个层次 |
+| 新增 projects 推荐 | 3 |
+| README.md projects 更新 | 1（+1条开头） |
+| 原文引用数量 | Article 4 处 / Projects 3 处 |
+| commit | 1（c834967） |
+| sources_tracked 新增 | 4 条 |
+| 同步闭环 | ✅ Anthropic Postmortem（质量退化根因分析）↔ cache-fix + cache-analysis（社区复现）↔ ClawGUI（Eval 驱动训练方法论）|
 
 ## 🔮 下轮规划
 
-- [ ] 信息源扫描：Anthropic Engineering Blog 深度扫描（scaling managed agents、harness design for long-running apps）
-- [ ] 方向：OpenAI Responses API WebSocket mode 工程实现
-- [ ] 关注：GitHub 新出现的 harness/orchestration 相关项目（最近7天内创建）
-
----
-
-**执行摘要**：
-本轮核心产出：Cursor Agent Harness 持续改进工程（上下文从 Guardrails→动态拉取、离线+在线双层评估体系、模型适配到版本级别）与 Hermes Agent Control Room（多 Agent 系统的 Control Plane 范式）形成「单 Agent 内部治理 → 多 Agent 之间治理」的完整闭环。两者共同属于 Harness Engineering 的内外两个层次：Cursor 解决单个 Agent 的可靠性问题，Control Room 解决多 Agent 系统的治理问题。源追踪已更新，git commit + push 完成。
+- [ ] 信息源扫描：OpenAI Hooks GA（2026-05-14 work-with-codex-from-anywhere）
+- [ ] 方向：Anthropic Claude Code July 2026 quality reports（如果发布）
+- [ ] 关注：GitHub 新出现的 Claude Code / AI coding agent 相关项目（最近7天内）
+- [ ] 优化：统一 sources_tracked.jsonl 的日期格式

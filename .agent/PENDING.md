@@ -12,19 +12,19 @@
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
 ### 本轮新增文章方向（已写入仓库）
-1. **Cursor Agent Harness 持续改进工程** — 上下文从 Guardrails 到动态拉取、离线+在线双层评估体系、模型适配到版本级别、Mid-Chat 切换机制
+1. **Anthropic Claude Code 质量退化复盘**（2026-04-23）：三个独立改动（effort 默认值、缓存 bug、system prompt 长度限制）在不同时间点叠加，导致用户感知到"全面不一致的质量退化"。官方透明承认 + community 二次验证。
 
 ### 下轮可研究的方向
-- Anthropic Scaling Managed Agents（Apr 8）：Decoupling brain from hands 的工程实践
-- Anthropic Harness Design for Long-Running Apps（Mar 24）：生产级 Agent 的持久化 harness 设计
-- OpenAI Responses API WebSocket mode：实时 agent 通信的底层架构
+- **OpenAI Hooks GA**：Hooks 在 2026 年 5 月 GA，配合 programmatic access tokens，构成 OpenAI Agent 可编程性生态
+- **Anthropic Claude Code July 2026 quality reports**（待更新）：关注 Harness 层的系统化改进
+- **Cursor Cloud Agent 架构**：多 repo 环境支持的生产级 Agent 架构
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：Cursor harness 改进（单 Agent 内部治理）↔ Hermes Control Room（多 Agent 治理结构），共同构成 Harness Engineering 的内外两个层次
-- ✅ 原文引用：Article 3处，Project 2处
-- ✅ 源追踪已更新：sources_tracked.jsonl
+- ✅ Articles 与 Projects 主题关联：Anthropic Quality Postmortem ↔ Claude Code Cache Fix/Analysis Projects → 共同构成「Harness 状态管理的质量与成本问题」完整闭环
+- ✅ 三个 Claude Code 相关项目（ClawGUI + cache-fix + cache-analysis）与 Article 形成三个不同层次的关联
+- ✅ 原文引用：Article 4处，Projects 3处
+- ✅ 源追踪已更新：sources_tracked.jsonl（+4 条）
 
 ## ⚠️ 已知问题
-- Tavily API 今日配额已超（432 错误），降级使用 GitHub API 直接查询
-- AnySearch 匿名模式可用但首次搜索延迟较高
-- Cursor/Anthropic 工程博客发现多个未覆盖的新内容（scaling managed agents、harness design for long-running），下轮可深度扫描
+- Tavily API 超额，本轮改用 GitHub API 直接查询 + web_fetch 组合
+- Anthropic Engineering Blog 的 april-23-postmortem 是本轮最大发现，提供了 Harness 层质量问题的完整案例研究
