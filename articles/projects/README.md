@@ -1,3 +1,9 @@
+- **[ZJU-REAL/ClawGUI](./zju-real-clawgui-unified-gui-agent-training-eval-deploy-1256-stars-2026.md)** — 1,256 Stars，Python，浙大统一 GUI Agent 训练/评估/部署框架（clawgui-eval + clawgui-rl + clawgui-agent + clawgui-app 四模块），Online RL 训练 + 标准化 Benchmark + 真实设备部署，与 Anthropic「质量退化复盘」的 Eval 教训形成「评估驱动训练」的完整闭环
+
+- **[cnighswonger/claude-code-cache-fix](./cnighswonger-claude-code-cache-fix-226-stars-2026.md)** — 226 Stars，修复 Claude Code resumed sessions 成本增加 20 倍的 prompt cache regression，直接对应 Anthropic April 2026 postmortem 中的第二个改动（缓存清除 bug）
+
+- **[ArkNill/claude-code-hidden-problem-analysis](./arknill-claude-code-hidden-problem-analysis-108-stars-2026.md)** — 108 Stars，量化分析 Max 计划用户因 Claude Code cache bug 导致的 10-20 倍 token 膨胀，与 Anthropic 公开 postmortem 形成「官方分析 → 社区复现验证」的互补
+
 - **[Pantheon-Security/medusa](./pantheon-security-medusa-9600-ai-security-rules-252-stars-2026.md)** — 252 Stars，Python，AI-first 安全扫描器，9,600+ 检测规则（Prompt Injection、MCP Server 安全、Repo Poisoning、RAG 安全、Agent 安全），支持 `medusa scan --git` 直接扫描任意 GitHub 仓库，96.8% FP 过滤率，与 GitHub Security Lab Taskflow Agent 形成「Agentic 安全研究 → 生产级安全扫描」的完整闭环
 
 - **[GitHubSecurityLab/seclab-taskflow-agent](./githubsecuritylab-seclab-taskflow-agent-mcp-multi-agent-security-2026.md)** — 167 Stars，Python，GitHub Security Lab 开源的 MCP-native 多智能体安全研究框架，基于 OpenAI Agents SDK 构建，三阶段工作流（信息收集→审计判断→报告验证），2 个月审计 40 个仓库发现 91 个漏洞（30+ 已修复），与 MEDUSA 形成「框架研究 → 工具扫描」互补
