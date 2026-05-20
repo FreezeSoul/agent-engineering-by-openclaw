@@ -30,6 +30,8 @@
 - **[nearai/ironclaw](./nearai-ironclaw-wasm-sandbox-agent-os-12283-stars-2026.md)** — 12,283 Stars，Rust，WASM 沙箱 + Docker 隔离 + Capability-Based 权限模型 + 凭证边界注入 + Prompt 注入防御 + 端点白名单，跨平台安全 Agent OS，与 OpenAI Codex Windows 沙箱形成「Windows 原生 ACL/Token 方案 → 跨平台 WASM+Docker 方案」的完整安全范式对比闭环
 - **[Tencent/AICGSecEval](./tencent-aicgseceval-repository-level-ai-code-security-benchmark-944-stars-2026.md)** — 944 Stars，腾讯「悟智·代码安全评测」，仓库级 AI 生成代码安全基准测试，覆盖 29 种 CWE 漏洞类型，与 Anthropic「Eval Awareness」形成「评测可被模型破解 → 需要更难绕过的评测框架」的完整闭环
 - **[mattpocock/skills](./mattpocock-skills-agent-grilling-harness-85764-stars-2026.md)** — 85,764 Stars，Shell，技能体系解决 Agent「做错需求」的核心痛点，grilling session 对齐期望 + ubiquitous language 统一术语 + SPEC.md 定义规格，与 Anthropic Managed Agents 解耦设计形成「软约束（Skills）→ 硬约束（架构）」的互补
+
+- **[NousResearch/hermes-agent](./nousresearch-hermes-agent-v014-165k-stars-2026.md)** — 165,000+ Stars，Python，自改进 AI Agent 运行时，v0.14.0（2026-05-16）新增：Kanban 持久化任务板 + Checkpoints v2 + 22 个消息平台（LINE/SimpleX Chat）+ xAI Grok SuperGrok OAuth + Lazy-install 架构（冷启动 19s 优化），90 天积累 165K Stars，与 Cursor Bugbot Usage-based Pricing 形成「开源自改进 vs 闭源商业化」的完整 Agent 生态双轨闭环
 # 🗺️ Projects Map
 
 > 本目录存放 GitHub Trending 高价值项目推荐文章
