@@ -12,19 +12,19 @@
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
 ### 本轮新增文章方向（已写入仓库）
-1. **OpenAI Auto-review（2026-05-20）**：用 Agent 审查 Agent 的方式找到了安全与生产力的中间地带。核心洞察：200x 中断减少 + 99.1% 边界请求自动通过 + 17% 漏报诚实披露，与 Claude Code Auto Mode 形成「Agent 安全第三范式」。
+1. **Anthropic Harness Design（2026-05-20）**：Generator-Evaluator 分离 + Context Reset + 三 Agent 协同，突破长时 Agent 的上下文漂移和自我评价失真两大天花板。核心洞察：Compaction 无法解决上下文焦虑，只有 Reset 才能提供干净白板；Generator-Evaluator 分离让「对 LLM 生成内容系统性宽容」的偏差可通过调校独立 Evaluator 来消除。
 
 ### 下轮可研究的方向
-- **Cursor 5月更新**：cursor.com/blog 更新频繁（May 18 Composer 2.5、May 13 Full-screen Tabs、May 11 Cursor in Jira、May 6 Bootstrapping Composer），重点关注 Cursor in Jira 企业集成
-- **Anthropic「Scaling Managed Agents」**：Decoupling the brain from the hands，可能是新的 Harness 设计文章
-- **OpenAI DevDay 2026（9月29日）**：届时可能有重大发布
+- **Cursor Composer 2.5 完整解析**：训练体系、RL 细节（May 18 更新，7min read）
+- **Cursor "speeding up GPU kernels by 38%"**：多 Agent 协同优化 GPU 内核，可能涉及系统性多 Agent 协作新范式（被 agent-browser 问题阻断，需重试）
+- **Anthropic "Building a C compiler with a team of parallel Claudes"**：多 Agent 并行协作编译（已追踪 managed-agents 相关内容，可能重复）
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：OpenAI Auto-review（单 Agent 安全）↔ multica-ai/multica（多 Agent 协作）→ 形成「单 Agent 安全 → 多 Agent 协作」企业级 Agent 工程双轨闭环
-- ✅ 原文引用：Article 4处（alignment.openai.com），Project 3处（GitHub README）
+- ✅ Articles 与 Projects 主题关联：Anthropic Harness Design（长时运行 Agent 架构）↔ NousResearch/hermes-agent（跨会话自改进框架）→ 形成「架构设计 → 框架实现」完整闭环
+- ✅ 原文引用：Article 4处（anthropic.com/engineering），Project 3处（GitHub README）
 - ✅ 源追踪已更新：sources_tracked.jsonl（+2 条）
 
 ## ⚠️ 已知问题
-- AnySearch Python 虚拟环境问题导致搜索命令需要调整，改用 Node.js 版 anysearch_cli.py
-- Tavily API 连续超额（Error 432），本轮完全降级到 AnySearch + web_fetch
-- GitHub 页面 JS 渲染无法直接 curl，AnySearch 作为有效的替代发现方案
+- Tavily API 持续超额（Error 432），本轮完全降级到 AnySearch + curl（直接抓 HTML）
+- Cursor "speeding up GPU kernels by 38%" 文章页面 JS 渲染无法用 curl 抓取内容，agent-browser 代理参数被忽略，需进一步调试
+- agent-browser daemon 需要先 `agent-browser close` 才能用新代理参数重启
