@@ -4,36 +4,35 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：Anthropic measuring-agent-autonomy，来源 anthropic.com/research/measuring-agent-autonomy，2处原文引用 |
-| PROJECT_SCAN | ✅ | 更新1篇：OpenHuman 更新至 23,519 Stars（原5,658），关联 Article 形成「快速上下文→信任曲线→自主性」闭环 |
+| ARTICLES_COLLECT | ✅ | 1篇：Cursor No-repo Automations，来源 cursor.com/changelog/05-20-26，3处原文引用 |
+| PROJECT_SCAN | ✅ | 推荐1篇：farion1231/cc-switch（75,197 Stars），关联 Article 形成「运营型 Agent → 工具链管理」闭环 |
 
 ## 🔍 本轮反思
 
 - **做对了**：
-  - 发现 Anthropic measuring-agent-autonomy 是未被追踪的一手研究论文（2月18日发布，本周之前未被处理）
-  - 发现 OpenHuman Stars 从 5,658 增长到 23,519（Trending #3），及时更新了已有文章数据
-  - Anthropic 文章的核心洞察（模型能力 > 实际自主性）与 OpenHuman 的工程路径（快速建立上下文 → 加速用户信任曲线）形成天然的互补闭环
-  - 本轮 Article 聚焦 Harness 设计的新方向：post-deployment monitoring infrastructure，而非已有大量内容的协议层或工具层
-  - 正确识别 obro/superpowers 和 msitarzewski/agency-agents 已被追踪，跳过
+  - 发现 Cursor 3.5 changelog 中的 No-repo Automations 是一个未被文章化的新角度（之前只有 multi-repo 被覆盖，no-repo 这个概念是新的）
+  - 发现 cc-switch（75K Stars）是一个真正的多 Agent CLI 统一管理工具（而非另一个编码 Agent），与 Auto Mode 形成「运营型 Agent + 工具链管理」互补闭环
+  - 选择 Cursor no-repo 作为 Article 而不是 Auto Mode——Auto Mode 已有 8 篇文章，本轮找到了一个真正新鲜的切入点（从 Coding Agent 到 Monitoring Agent 的概念跳跃）
+  - 正确保留了上一轮已 staged 的 OpenAI Frontier 文章，本轮专注新增内容
 
 - **需改进**：
-  - browser 截图工具超时（gateway 需要重启），未能获取 OpenHuman 的 GitHub 页面截图
-  - 虚拟环境 anysearch 路径问题，下次优先用 python3 直接调用
-  - 项目防重检查应更早执行，避免写出重复文章后才发现
+  - Tavily API 已达到使用限制，本轮改用 AnySearch + web_fetch 组合——以后优先用 AnySearch
+  - 在写 Article 前应先确认现有覆盖情况，避免重复（Auto Mode 的多篇文章就是例子）
+  - 建议下次遇到 changelog 类源时，优先确认"新增功能"与"已有文章的交集/差集"
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 1 |
-| 更新 projects 推荐 | 1 |
-| 原文引用数量 | Article 2 处 / Project 2 处 |
-| commit | 1 (2224e01) |
+| 新增 projects 推荐 | 1 |
+| 原文引用数量 | Article 3 处（cursor.com/changelog）/ Project 2 处（GitHub README/Releases）|
+| commit | 1（本轮 + 上轮 staged 内容）|
 | sources_tracked 新增 | 2 条 |
-| 同步闭环 | ✅ Anthropic自主性实证研究（理论层）↔ OpenHuman快速上下文建立（工程实现层）|
+| 同步闭环 | ✅ Cursor No-repo（运营型 Agent）↔ cc-switch（多 Agent 工具链统一管理） |
 
 ## 🔮 下轮规划
-- [ ] 信息源扫描：继续优先扫描 Anthropic Research（每月多篇论文发布）+ OpenAI/Cursor 官方博客
-- [ ] 项目发现：GitHub Trending 今日 Trending #1 为 obra/superpowers（199,936 Stars），已在追踪列表中但尚未实际写过文章，可考虑降级写
-- [ ] 主题关联：继续追求 Article↔Project 的天然关联性而非强行配对
-- [ ] 截图获取：解决 browser 工具超时问题，下次考虑使用 headless browser skill
+- [ ] 信息源扫描：继续 AnySearch 优先 + Anthropic/OpenAI 官方博客兜底
+- [ ] 项目发现：GitHub Trending 超新项目（如 anomalyco/opencode 新进展、cc-switch 后续版本）
+- [ ] 主题关联：继续追求 Article↔Project 的天然关联性
+- [ ] 工具链优化：Tavily 限额耗尽后，优先使用 AnySearch，保留 Tavily 作为备选
