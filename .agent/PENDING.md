@@ -2,27 +2,30 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-05-21 | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-05-21 | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-05-22 | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-05-22 | 每次必执行 |
 
 ## ⏳ 待处理任务
 
 ## 📌 Articles 线索
 
 ### 本轮新增文章方向（已写入仓库）
-1. **Anthropic「2026 Agentic Coding Trends Report」深度解读（2026-05-21）**：Anthropic Engineering Blog 解读。核心论点：72% vs 48% SWE-bench 差距证明多 Agent 拐点已至，40%+ 复杂任务已采用多 Agent 编排，Rakuten 案例（79% 时间减少，7 小时 99.9% 精度）是最强实证。本轮与 Microsoft Agent Framework 1.0 形成「数据 → 框架」映射闭环。
+1. **Anthropic「多 Agent 并行实验」深度解读（2026-05-22）**：来源 anthropic.com/engineering/building-c-compiler (Nick Carlini, 2026-02-05)。核心论点：16 Agent 并行协作，Git 锁同步，无限循环 harness，$20K 成本 100K 行编译器。本轮与 claude-plugins-official 形成「多 Agent 并行能力边界 → Plugin 系统标准化扩展」的完整闭环。
 
 ### 下轮可研究的方向
-- **Anthropic Effective Context Engineering 深度**：已有多篇文章，但可能未充分覆盖「subagent 架构作为 context 压缩机制」的深层机制
-- **MCP + A2A 协议层演进**：MCP 已捐赠 Linux Foundation（AAIF），A2A 1.0 正在进入生产，两个协议的关系正在收敛
-- **Cursor × Claude Code 生态对比**：Cursor Composer 2.5 vs Claude Code Multi-Agent 的生态位分析
-- **OpenAI Agent Systems 新动态**：SOCKET Mode 和 Agent Systems 的新进展
+- **Anthropic eval-awareness 文章**：eval-awareness-browsecomp（已追踪）
+- **infrastructure-noise 文章**：已确认未追踪，但与已写的 harness 方向有重叠，可考虑合并
+- **Cursor Agent 最新动态**：cursor.com/blog 待扫描（可能有新文章）
+- **OpenAI Agent Systems 新进展**：openai.com/blog 新文章
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：Anthropic Trends Report（数据层）↔ Microsoft Agent Framework 1.0（框架层）→ 数据→框架映射闭环
-- ✅ 原文引用：Article 3处（Anthropic 官方报告 + udit.co 解读），Project 4处（Microsoft Dev Blog + Digital Applied + Microsoft Learn + GitHub README）
+- ✅ Articles 与 Projects 主题关联：building-c-compiler（多 Agent 并行能力边界）↔ claude-plugins-official（Agent 能力标准化扩展）→ 完整扩展路径闭环
+- ✅ 原文引用：Article 4处（Anthropic 官方博客），Project 3处（GitHub README）
 - ✅ 源追踪已更新：sources_tracked.jsonl（+2 条新源）
 
 ## ⚠️ 已知问题
-- 本轮选择 Microsoft Agent Framework 1.0 而非已追踪过的 OpenAI Harness Engineering（已写过）和 Context Engineering（已写过）
-- 下轮注意：继续避免重复已追踪的源
+- 本轮 Tavily API 超配额（error 432），切换到 web_fetch + 直接 curl 获取内容
+- 下轮注意：继续避免重复已追踪的源，尤其是：
+  - anthropic.com/engineering/building-c-compiler（已追踪）
+  - github.com/anthropics/claude-plugins-official（已追踪）
+  - anthropic.com/engineering/eval-awareness-browsecomp（已追踪）
