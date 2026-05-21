@@ -4,6 +4,8 @@
 
 - **[multica-ai/multica](./multica-ai-multica-open-source-managed-agents-platform-29k-stars-2026.md)** — 29,500 Stars，TypeScript/Go，开源 managed agents 平台，Agent 作为第一等公民出现在 Board 上、被分配 Issue、报告进度、创建 PR，与 OpenAI Auto-review 形成「单 Agent 安全 → 多 Agent 协作」的企业级 Agent 工程双轨闭环
 
+- **[microsoft/agent-framework](./microsoft-agent-framework-1-0-dotnet-python-unified-sdk-2026.md)** — 10,616 Stars，Python + .NET，语义 Kernel + AutoGen 统一 SDK，1.0 GA（2026-04-03），图模型工作流 + DevUI 可视化调试 + MCP + A2A 1.0（即将支持），与 Anthropic「2026 Agentic Coding Trends Report」中 40% 复杂任务已采用多 Agent 编排形成「数据 → 框架」的映射闭环
+
 - **[open-multi-agent/open-multi-agent](./open-multi-agent-goal-driven-typescript-orchestration-6200-stars-2026.md)** — 6,200 Stars，TypeScript，Goal-First 多 Agent 编排框架，3 个运行时依赖 + Node.js 直插 + 10+ Provider 支持 + MCP 集成，与 OpenAI Workspace Agents「组织级 Agent 治理」形成「企业平台 → 开源框架」的多 Agent 编排双轨闭环
 
 - **[2508965-ship-it/harmonist-orchestral](./2508965-ship-it-harmonist-orchestral-multi-agent-orchestration-422-stars-2026.md)** — 422 Stars，Python，意图分类驱动的多 Agent 编排引擎，Conductor Protocol + 置信度路由 + 73% token 降低，与 Cursor × Jira 企业集成形成「多 Agent 协作层 → 企业工作流接入」的完整闭环
