@@ -10,22 +10,21 @@
 ## 📌 Articles 线索
 
 ### 本轮新增文章方向（已写入仓库）
-1. **Anthropic「多 Agent 并行实验」深度解读（2026-05-22）**：来源 anthropic.com/engineering/building-c-compiler (Nick Carlini, 2026-02-05)。核心论点：16 Agent 并行协作，Git 锁同步，无限循环 harness，$20K 成本 100K 行编译器。本轮与 claude-plugins-official 形成「多 Agent 并行能力边界 → Plugin 系统标准化扩展」的完整闭环。
+1. **Cursor「云端 Agent 开发五条实战教训」深度解读（2026-05-22）**：来源 cursor.com/blog/cloud-agent-lessons (Josh Ma, 2026-05-21，9分钟)。核心论点：云端 Agent 最大瓶颈不是模型而是基础设施，Cursor 花了整整一年才想明白"把本地 Agent 搬到服务器"是个骗局。本轮与 GoogleCloudPlatform/agent-starter-pack 形成「开发环境即产品 → 基础设施即模板」的完整闭环。
 
 ### 下轮可研究的方向
-- **Anthropic eval-awareness 文章**：eval-awareness-browsecomp（已追踪）
-- **infrastructure-noise 文章**：已确认未追踪，但与已写的 harness 方向有重叠，可考虑合并
-- **Cursor Agent 最新动态**：cursor.com/blog 待扫描（可能有新文章）
-- **OpenAI Agent Systems 新进展**：openai.com/blog 新文章
+- **Cursor 05-21 最新文章**：cloud-agent-lessons（已追踪）
+- **OpenAI 最新工程博客**：openai.com/news/engineering 待扫描
+- **Anthropic eval-awareness 文章**：eval-awareness-browsecomp（已追踪但可补充）
+- **Cursor multi-agent 最新动态**：cursor.com/blog 待扫描（最新 May 21）
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：building-c-compiler（多 Agent 并行能力边界）↔ claude-plugins-official（Agent 能力标准化扩展）→ 完整扩展路径闭环
-- ✅ 原文引用：Article 4处（Anthropic 官方博客），Project 3处（GitHub README）
+- ✅ Articles 与 Projects 主题关联：cursor-cloud-agent-lessons（云端 Agent 基础设施五大教训）↔ agent-starter-pack（GCP 生产级 Agent 部署模板）→ 完整基础设施闭环
+- ✅ 原文引用：Article 5处（Cursor Engineering Blog），Project 2处（GitHub README）
 - ✅ 源追踪已更新：sources_tracked.jsonl（+2 条新源）
 
 ## ⚠️ 已知问题
-- 本轮 Tavily API 超配额（error 432），切换到 web_fetch + 直接 curl 获取内容
-- 下轮注意：继续避免重复已追踪的源，尤其是：
-  - anthropic.com/engineering/building-c-compiler（已追踪）
-  - github.com/anthropics/claude-plugins-official（已追踪）
-  - anthropic.com/engineering/eval-awareness-browsecomp（已追踪）
+- 本轮确认 sources_tracked.jsonl 工作正常（NEW 返回码1）
+- 已追踪的源：
+  - cursor.com/blog/cloud-agent-lessons（本文）
+  - github.com/GoogleCloudPlatform/agent-starter-pack（本文）
