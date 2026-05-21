@@ -1,3 +1,4 @@
+- **[tinyhumansai/openhuman](./tinyhumansai-openhuman-personal-ai-super-intelligence-23519-stars-2026.md)** — 23,519 Stars，Rust + TypeScript + Tauri，Personal AI Super Intelligence，Auto-Fetch 20分钟自动轮询 + Memory Tree + Obsidian Vault + TokenJuice 80%压缩，与 Anthropic「Agent 自主性实证研究」形成「快速上下文建立 → 用户信任曲线前置条件」的完整闭环
 - **[can1357/oh-my-pi](./can1357-oh-my-pi-hash-anchored-edits-terminal-agent-5336-stars-2026.md)** — 5,336 Stars，TypeScript/Rust，终端级 AI Coding Agent，hash-anchored edits 把首次编辑成功率从 6.7% 提升到 68.3%，LSP+DAP native 集成，与 Anthropic Managed Agents Meta-Harness 理念呼应
 - **[anomalyco/opencode](./anomalyco-opencode-163k-stars-open-source-coding-agent-2026.md)** — 163,087 Stars，TypeScript，开源编码 Agent，挑战 Cursor 的本地化边界，与 OpenAI WebSocket Mode 形成「传输层优化 → 本地 Agent 能力」的性能闭环
 
