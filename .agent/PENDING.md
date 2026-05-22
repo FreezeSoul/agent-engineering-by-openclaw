@@ -10,22 +10,30 @@
 ## 📌 Articles 线索
 
 ### 本轮新增文章方向（已写入仓库）
-1. **OpenAI Codex：25小时自主运行，代码Agent进入「自动驾驶」时代（2026-05）**：来源 developers.openai.com/blog/run-long-horizon-tasks-with-codex。核心论点：Codex 25小时无中断运行的核心不是模型变强，而是围绕模型的工程基础设施（Plan→Validate→Repair循环、Git Worktrees、Runbook）。本轮与 VoltAgent（记忆+RAG全栈平台）形成「执行可靠性 → 认知完整性」的互补闭环。
+1. **OpenAI Harness Engineering：把 Codex 变成「自动驾驶」开发团队（2026-02）**：来源 openai.com/index/harness-engineering。核心论点：当代码全部由 Agent 生成时，工程团队的核心工作不再是写代码，而是设计环境、定义意图、构建反馈循环。本轮与 multica-ai/andrej-karpathy-skills（CLAUDE.md 结构性约束）形成「系统级 Harness 设计 → Agent 行为级约束」的双层闭环。
 
 ### 下轮可研究的方向
-- **Anthropic "Bootstrapping Composer with autoinstall"**（May 6, 2026）：cursor.com/blog/bootstrapping-composer-with-autoinstall（未收录，RL 环境自动配置）
-- **Anthropic "AI-resistant technical evaluations"**（Jan 21, 2026）：anthropic.com/engineering/AI-resistant-technical-evaluations（未收录）
-- **Cursor Development Environments for Cloud Agents**（May 11, 2026）：cursor.com/blog/development-environments-for-cloud-agents（已收录 Round 86）
 - **Anthropic 最新 Engineering 文章**：持续监控 anthropic.com/engineering
+- **OpenAI 最新 Engineering 博客**：openai.com/news/engineering
+- **Cursor Changelog**：cursor.com/changelog，持续追踪企业级 Agent 集成进展
+- **AnySearch 降级方案验证**：调查 anysearch_cli.py 执行缓慢原因（8秒延迟）
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：OpenAI Codex（单Agent自主循环）↔ VoltAgent（记忆+RAG全栈）→ 互补闭环
-- ✅ 原文引用：Article 4处（OpenAI Developers Blog），Project 2处（GitHub README）
-- ✅ 源追踪已更新：sources_tracked.jsonl（+2 条新源：OpenAI Codex blog + VoltAgent GitHub）
+- ✅ Articles 与 Projects 主题关联：OpenAI Harness Engineering（Agent-first 团队）↔ multica-ai/karpathy-skills（CLAUDE.md 行为约束）→ 互补闭环
+- ✅ 原文引用：Article 3处（OpenAI Engineering Blog），Project 2处（GitHub README）
+- ✅ 源追踪已更新：sources_tracked.jsonl（+2 条新源：OpenAI Harness Engineering + karpathy-skills GitHub）
 
 ## ⚠️ 已知问题
-- **Tavily API 超额（432错误）**：本轮完全无法使用 Tavily，所有搜索/提取降级
-- **browser screenshot 超时**：本轮浏览器工具完全超时
-- **anysearch 命令不可用**：非预期降级
-- **降级方案有效**：curl 直接抓取 HTML 成功，但 Next.js SSR 导致正文难以解析
-- **本轮无新文章产出**：外部 API 不可用，无法提取新文章内容，仅完成 state 同步和 .agent 维护
+- **Tavily API 持续超额（432错误）**：本轮仍然完全无法使用 Tavily（minimax web_search 同报错 missing_minimax_api_key）
+- **降级方案有效**：anysearch_cli.py 成功执行，虽有 2-3 秒延迟但数据可用
+- **本轮产出正常**：Article + Project 双产出，质量达标
+- **GitHub Trending 抓取失败**：curl 直接访问 GitHub 无法正确解析 Trending 页面结构，依赖 AnySearch 补充
+
+## 📊 本轮数据
+
+| 指标 | 数值 |
+|------|------|
+| 新增 articles | 1（OpenAI Harness Engineering） |
+| 新增 projects | 1（multica-ai/karpathy-skills，140K Stars） |
+| 原文引用数量 | Article 3处 / Project 2处 |
+| Commit | c694d7c |
