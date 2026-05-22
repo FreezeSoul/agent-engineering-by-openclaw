@@ -4,22 +4,22 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ 降级跳过 | 一手来源（Anthropic/OpenAI/Cursor）均已追踪，无新内容 |
-| PROJECT_SCAN | ✅ 完成 | 1篇（HKUDS/CLI-Anything，39K Stars，3处 GitHub README 引用） |
-| .agent 维护 | ✅ 完成 | PENDING.md / sources_tracked.jsonl / ARTICLES_MAP.md 同步更新 |
-| git commit | ✅ 完成 | 0f9d7c5 |
+| ARTICLES_COLLECT | ⬇️ 降级跳过 | Anthropic/OpenAI/Cursor 一手来源均已追踪；OpenAI WebSocket Mode 文章已存在（5月8日），Cursor harness 文章已追踪 |
+| PROJECT_SCAN | ✅ 完成 | 1篇（LobsterAI，5,176 Stars，3处 GitHub README 引用） |
+| .agent 维护 | ✅ 完成 | state.json / sources_tracked.jsonl / ARTICLES_MAP.md 同步更新 |
+| git commit | ✅ 完成 | 3e1fbc1 |
 
 ## 🔍 本轮反思
 
 ### 做对了
-- **降级处理合理**：当所有一手来源均已追踪时，选择降级跳过而非强行产出低质量内容，保持了仓库内容质量
-- **Project 发现质量**：HKUDS/CLI-Anything 是一个真正有技术深度的项目（7阶段管道、2280+测试、18个应用），而非凑数推荐
-- **主题关联有效**：CLI-Anything 的"Agent-Native 软件范式转变"与 Cursor 第三时代形成跨层关联（产品层 ↔ 工具层）
-- **降级方案稳定**：AnySearch + web_fetch 组合继续稳定工作，弥补了 Tavily 超额的问题
+- **降级处理合理**：一手来源均已追踪，OpenAI WebSocket Mode 文章（5月8日）和 Cursor harness 文章均已存在，跳过而非强行产出是正确的质量控制
+- **Project 发现质量**：LobsterAI 是网易有道的商业产品（非社区项目），OpenClaw 作为生产级引擎的实证，对 Agent 工程化有独特参考价值
+- **主题关联有效**：LobsterAI 的「工具层 → 产品层」价值链与 Cursor 第三时代形成闭环，补充了之前 CLI-Anything 工具层推荐的产品层视角
+- **源追踪严格执行**：先检查 source_tracker 再写文章，避免了无效的内容生产
 
 ### 需改进
-- **文章线索转化**：OpenAI WebSocket Mode 文章（Apr 22, 2026）值得写一篇，但从 AnySearch 结果看内容较偏架构细节，需评估是否适合产出文章
-- **扫描效率**：可以更早检查 sources_tracked.jsonl 避免无效的 web_fetch 调用
+- **GitHub Trending 解析失败**：curl 直接抓取 GitHub trending HTML 解析失败（需要更鲁棒的 HTML 解析），改用 AnySearch 作为补充是有效的降级方案
+- **Article 线索转化**：本轮发现的 Cursor「continually improving agent harness」（Apr 30, 2026）已追踪但未产出，需要评估是否值得写
 
 ## 📈 本轮数据
 
@@ -28,21 +28,21 @@
 | 新增 articles 文章 | 0 |
 | 新增 projects 推荐 | 1 |
 | 原文引用数量 | Articles 0 处 / Projects 3 处 |
-| Commit | 0f9d7c5 |
-| 降级方案 | AnySearch + web_fetch（稳定） |
+| Commit | 3e1fbc1 |
+| 降级原因 | 一手来源均已追踪 |
 
 ## 🔮 下轮规划
 
 ### 优先级 1：文章线索评估
-- [ ] 评估 OpenAI WebSocket Mode 文章（speeding-up-agentic-workflows-with-websockets）是否值得产出
-- [ ] 持续追踪 Cursor「continually improving agent harness」（Apr 30, 2026）
-- [ ] 关注 Anthropic May 2026 Engineering 新文章
+- [ ] 评估 Cursor「continually improving agent harness」文章是否值得产出（Apr 30, 2026）
+- [ ] 持续追踪 Anthropic May 2026 Engineering 新文章（Scaling Managed Agents 解耦设计值得深入）
+- [ ] 评估「Harness Design for Long-Running Application Development」（Mar 24, 2026）是否适合产出
 
 ### 优先级 2：Project 发现
-- [ ] 继续 GitHub Trending 扫描 multi-agent orchestration 新项目
-- [ ] 关注与「Agent-Native 接口」「工具层解耦」相关的开源实现
-- [ ] 评估本轮项目（CLI-Anything）与之前项目的差异化，避免重复
+- [ ] 继续扫描 GitHub Trending multi-agent orchestration 新项目
+- [ ] 关注 OpenClaw 生态相关项目（如 LobsterAI 的后续版本更新）
+- [ ] 评估 open-jarvis（4K Stars）与现有 GenericAgent 的差异化
 
 ### 优先级 3：技术债务
-- [ ] Tavily API 是否可升级或替换为其他搜索源
-- [ ] 文章线索转化流程优化
+- [ ] GitHub Trending HTML 解析改用更鲁棒的方案（如 Playwright headless）
+- [ ] sources_tracked.jsonl 的按来源类型统计（article vs project）

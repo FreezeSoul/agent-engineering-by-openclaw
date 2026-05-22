@@ -12,33 +12,31 @@
 ## 📌 Articles 线索
 
 ### 本轮无新增文章
-原因分析：本次扫描的一手来源（Anthropic / OpenAI / Cursor）均已追踪：
-- `openai.com/index/running-codex-safely/` → 5月18日已写（OpenAI Codex 安全运行架构）
-- `cursor.com/blog/third-era` → 5月20日已写（Cursor 第三时代）
-- `anthropic.com/engineering/building-agents-with-the-claude-agent-sdk` → 5月21日已写（Claude Agent SDK 核心设计原则）
-- `cursor.com/blog/cloud-agent-lessons` → 5月22日07:57已写（Cursor云端Agent构建一年后的六条核心教训）
+原因分析：一手来源（Anthropic/OpenAI/Cursor）均已追踪，降级跳过
+- `openai.com/index/speeding-up-agentic-workflows-with-websockets/` → 5月8日已写（WebSocket Mode Agent Loop 优化）
+- `cursor.com/blog/continually-improving-agent-harness` → 已追踪但未写（Apr 30, 2026）
+- `anthropic.com/engineering` → 近期文章均已覆盖（Managed Agents / Harness Design / Claude Code Auto Mode）
 
 ### 下轮可研究的方向
-- **OpenAI WebSocket Mode 新进展**：`openai.com/index/speeding-up-agentic-workflows-with-websockets/`（Apr 22, 2026），40%延迟改善，1000 TPS
-- **Anthropic May 2026 Engineering Posts**：持续追踪 anthropic.com/engineering 是否有新文章
-- **GitHub Trending 持续扫描**：关注 multi-agent orchestration 领域新项目
-- **Cursor Continually improving agent harness**：`cursor.com/blog/continually-improving-agent-harness`（Apr 30, 2026），Harness 迭代哲学
+- **Cursor「continually improving agent harness」**：`cursor.com/blog/continually-improving-agent-harness`（Apr 30, 2026），Harness 迭代哲学、Context Window 演变、Eval 体系
+- **Anthropic「Scaling Managed Agents」**：`anthropic.com/engineering/managed-agents`（Apr 8, 2026），brain/hands 解耦设计值得深入分析
+- **Anthropic「Harness Design for Long-Running」**：`anthropic.com/engineering/harness-design-long-running-apps`（Mar 24, 2026），长时间运行 Agent 的防护设计
+- **GitHub Trending 持续扫描**：关注 multi-agent orchestration 新项目
 
 ## 🔄 本轮同步闭环情况
 - ⬇️ Articles：本轮无新增（一手来源均已追踪，降级跳过）
-- ✅ Projects：HKUDS/CLI-Anything（39K Stars），与 Cursor「第三时代」主题形成"工具层 Agent-Native 范式转变"关联
+- ✅ Projects：LobsterAI（5K Stars），与 Cursor「第三时代」形成「工具层 → 产品层」价值链闭环
 - ✅ 原文引用：Project 3处（GitHub README × 3）
 - ✅ 源追踪已更新：sources_tracked.jsonl（+1 条新源）
 
 ## ⚠️ 已知问题
-- **Tavily API 超额**：本轮继续 AnySearch + web_fetch 组合，已成稳定降级方案
-- **一手来源重复**：需持续追踪新文章，避免重复写作
+- **GitHub Trending 解析失败**：curl 直接抓取 HTML 解析不可靠，需改用 Playwright headless 或更鲁棒的方案
 
 ## 📊 本轮数据
 
 | 指标 | 数值 |
 |------|------|
 | 新增 articles | 0（来源均已追踪，降级跳过） |
-| 新增 projects | 1（HKUDS/CLI-Anything，39K Stars） |
+| 新增 projects | 1（LobsterAI，5,176 Stars） |
 | 原文引用数量 | Article 0处 / Project 3处 |
-| Commit | 0f9d7c5 |
+| Commit | 3e1fbc1 |
