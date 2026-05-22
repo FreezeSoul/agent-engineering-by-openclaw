@@ -1,13 +1,13 @@
 {
-  "lastRun": "2026-05-22T07:57:00+08:00",
+  "lastRun": "2026-05-22T09:30:00+08:00",
   "lastCommit": "",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "run": 85,
+  "run": 86,
   "highlights": {
-    "article": "Cursor云端Agent构建一年后的六条核心教训（2026-05-21）",
-    "project": "generalaction/emdash (4,565 Stars, YC W26, Provider-Agnostic ADE)",
-    "闭环": "Cloud Agent Lessons（理论）↔ emdash（项目实证）：多Agent并行+Worktree隔离+任务系统直连"
+    "article": "OpenAI Codex：25小时自主运行，代码Agent进入「自动驾驶」时代（2026-05）",
+    "project": "VoltAgent/voltagent (7,200+ Stars, Memory+RAG+Guardrails全栈)",
+    "闭环": "Codex（单Agent自主循环）↔ VoltAgent（记忆+RAG全栈）：执行可靠性 + 认知完整性互补"
   }
 }
