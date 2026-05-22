@@ -4,45 +4,44 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ 降级跳过 | Anthropic/OpenAI/Cursor 一手来源均已追踪；OpenAI WebSocket Mode 文章已存在（5月8日），Cursor harness 文章已追踪 |
-| PROJECT_SCAN | ✅ 完成 | 1篇（LobsterAI，5,176 Stars，3处 GitHub README 引用） |
-| .agent 维护 | ✅ 完成 | state.json / sources_tracked.jsonl / ARTICLES_MAP.md 同步更新 |
-| git commit | ✅ 完成 | 3e1fbc1 |
+| ARTICLES_COLLECT | ✅ 完成 | 1篇（Anthropic AI-Resistant Take-Home，2026-01-21） |
+| PROJECT_SCAN | ✅ 完成 | 1篇（ECC，188,394 Stars） |
+| .agent 维护 | ✅ 完成 | PENDING.md / sources_tracked.jsonl 同步更新 |
+| git commit | 🔄 待提交 | 本轮完成后的 commit |
 
 ## 🔍 本轮反思
 
 ### 做对了
-- **降级处理合理**：一手来源均已追踪，OpenAI WebSocket Mode 文章（5月8日）和 Cursor harness 文章均已存在，跳过而非强行产出是正确的质量控制
-- **Project 发现质量**：LobsterAI 是网易有道的商业产品（非社区项目），OpenClaw 作为生产级引擎的实证，对 Agent 工程化有独特参考价值
-- **主题关联有效**：LobsterAI 的「工具层 → 产品层」价值链与 Cursor 第三时代形成闭环，补充了之前 CLI-Anything 工具层推荐的产品层视角
-- **源追踪严格执行**：先检查 source_tracker 再写文章，避免了无效的内容生产
+- **直接 curl 获取 Anthropic 文章内容**：虽然 HTML 含 JS 渲染，但通过 `grep <h1|class="headline"` 成功提取了文章标题和摘要，确认了 article 的存在和内容
+- **ECC 项目发现质量高**：188K Stars 远超同领域，Agent Harness 性能优化是一个被低估的工程方向
+- **Article-Project 闭环有效**：Anthropic AI-Resistant Evaluations（评估设计挑战）+ ECC（Harness 性能优化）+ 之前的 infrastructure-noise 文章（Eval 基础设施噪声）形成三层闭环
+- **主动直接抓取验证**：不依赖 AnySearch，直接 curl 目标 URL 验证内容，发现了"AI-resistant-technical-evaluations"和"infrastructure-noise"两个 article 都未被追踪
 
 ### 需改进
-- **GitHub Trending 解析失败**：curl 直接抓取 GitHub trending HTML 解析失败（需要更鲁棒的 HTML 解析），改用 AnySearch 作为补充是有效的降级方案
-- **Article 线索转化**：本轮发现的 Cursor「continually improving agent harness」（Apr 30, 2026）已追踪但未产出，需要评估是否值得写
+- **GitHub Trending HTML 解析**：curl 直接抓取 HTML 仍不可靠，需要 Playwright headless 方案
+- **Anthropic article 列表页扫描**：应该直接 curl `https://www.anthropic.com/engineering` 尝试提取所有 article 链接，而不是逐个猜测 URL
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 0 |
+| 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Articles 0 处 / Projects 3 处 |
-| Commit | 3e1fbc1 |
-| 降级原因 | 一手来源均已追踪 |
+| 原文引用数量 | Article 1处 / Project 1处 |
+| Commit | 待提交 |
+| sources_tracked 条目 | +2（总计 63） |
 
 ## 🔮 下轮规划
 
 ### 优先级 1：文章线索评估
-- [ ] 评估 Cursor「continually improving agent harness」文章是否值得产出（Apr 30, 2026）
-- [ ] 持续追踪 Anthropic May 2026 Engineering 新文章（Scaling Managed Agents 解耦设计值得深入）
-- [ ] 评估「Harness Design for Long-Running Application Development」（Mar 24, 2026）是否适合产出
+- [ ] Cursor「continually improving agent harness」（Apr 30, 2026）——Harness 迭代哲学
+- [ ] Anthropic「Scaling Managed Agents」（Apr 8, 2026）——brain/hands 解耦设计
+- [ ] Anthropic「Harness Design for Long-Running」（Mar 24, 2026）
 
 ### 优先级 2：Project 发现
-- [ ] 继续扫描 GitHub Trending multi-agent orchestration 新项目
-- [ ] 关注 OpenClaw 生态相关项目（如 LobsterAI 的后续版本更新）
-- [ ] 评估 open-jarvis（4K Stars）与现有 GenericAgent 的差异化
+- [ ] GitHub Trending multi-agent orchestration 新项目（>3000 Stars）
+- [ ] 关注 bytedance/deer-flow（69K Stars）等大型 Agent 项目
 
 ### 优先级 3：技术债务
-- [ ] GitHub Trending HTML 解析改用更鲁棒的方案（如 Playwright headless）
-- [ ] sources_tracked.jsonl 的按来源类型统计（article vs project）
+- [ ] 实现 Anthropic Engineering 列表页的可靠扫描（Playwright 或可靠 HTML 解析）
+- [ ] GitHub Trending HTML 解析改用 Playwright headless
