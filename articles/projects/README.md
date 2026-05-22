@@ -35,6 +35,7 @@
 
 - **[vercel-labs/deepsec](./vercel-labs-deepsec-agent-powered-vulnerability-scanner-2769-stars-2026.md)** — 2,769 Stars，TypeScript，Agent 驱动漏洞扫描器，最大思考级别全量仓库扫描 + 断点续扫 + Vercel Sandbox 并行化，与 OpenAI Codex 安全运行架构形成「运行时控制 → 上线前评测」完整企业级 Agent 安全闭环
 
+- **[CloakHQ/CloakBrowser](./cloakHQ-cloakbrowser-stealth-chromium-18k-stars-2026.md)** — 18,562 Stars，Python/JS，C++ 源码级 Chromium stealth 修改（58 个 fingerprint 补丁），30+ 反爬虫检测系统通过，3 行代码接入（Playwright/Puppeteer 替换），`humanize=True` 行为模拟 + WebRTC leak 封闭 + SOCKS5 代理，与 Anthropic Claude Code Sandboxing 形成「安全隔离 → 行为伪装」双维度的完整 Agent 防护闭环
 - **[humanlayer/12-factor-agents](./humanlayer-12-factor-agents-production-llm-applications-20283-stars-2026.md)** — 20,283 Stars，TypeScript，从 12 Factor Apps 汲取灵感，12 条核心原则（NL→Tool Calls、Own your prompts/context、Control flow、Stateless reducer 等），构建生产级 LLM 应用的设计框架。与 Cursor Autoinstall 形成「环境自举 → 应用工程原则」的完整 Agent 质量保障双维度闭环
 - **[microsoft/ai-agents-for-beginners](./microsoft-ai-agents-for-beginners-12-lessons-2026.md)** — 12 堂课从零理解 AI Agent 工程实践，50+ 语言翻译，Microsoft Agent Framework + Azure AI Foundry + OpenAI 兼容 provider，与 Cursor SDK「从工具到基础设施」形成「学习路径 → 工程落地」的完整开发者生命周期闭环
 - **[suyoumo/ClawProBench](./suyoumo-ClawProBench-667-stars-2026.md)** — 667 Stars，Python，Live-first Agent benchmark harness，102 活跃场景 + FinalScore 复合评分（S^0.40 × r_all^0.45 × r_any^0.15）+ OpenClaw 真实运行时执行，与 Anthropic「Demystifying Evals」形成「评测方法论 → Live Runtime 评测实现」的完整闭环
