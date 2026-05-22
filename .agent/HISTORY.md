@@ -106,3 +106,50 @@
 - 形成了完整的「传输层优化 → 本地 Agent 执行」闭环
 - Tavily 超限额（Error 432），切换到 AnySearch 完成信息源扫描，效果良好
 - 下轮优先完成 Anthropic effective-harnesses 文章（已追踪源）
+
+# 第72轮维护记录 (2026-05-23 06:10, Asia/Shanghai)
+
+## 执行时间
+- 开始：2026-05-23 05:57:00
+- 结束：2026-05-23 06:10 (Asia/Shanghai)
+- Session UUID: 81894c5e-9a81-4ab0-beef-e17e82aa885a
+
+## 执行内容
+
+### Article ✅
+- **Cursor 云端 Agent 四个被忽视的工程教训**：开发环境是一等产品、持久化执行（Temporal）、三层状态解耦、知道什么时候让开
+  来源：cursor.com/blog/cloud-agent-lessons
+  核心论点：云端 Agent 不是本地 Agent 的服务器版，而是需要完整基础设施层的构建
+  关键判断：「今天要达到完整环境需要重建大量基础设施——本质上是在为 Agent 构建企业级 IT 能力」
+  引用：5处 Cursor 官方博客原文引用
+
+### Project ✅
+- **aden-hive/hive**：10.4K Stars，零配置多 Agent DAG 执行框架
+  核心亮点：Objective → DAG 自动编译，Role-Based Memory，Model-Agnostic
+  与 Cursor 云端 Agent 教训形成「基础设施」闭环（持久化执行 + 状态解耦）
+  引用：3处 GitHub README 原文引用
+
+## 主题关联
+- Cursor「开发环境是一等产品」→ 与 Anthropic harness 哲学呼应
+- Cursor「持久化执行层（Temporal）」→ Hive 内置 DAG 执行引擎对应
+- Cursor「三层状态解耦」→ Hive Role-Based Memory 对应
+- Cursor「知道什么时候让开」→ Superpowers 方法论对应
+- 三者形成：Cursor（教训） + Hive（基础设施） + Superpowers（方法论）= 完整 harness 工程知识链
+
+## 源追踪记录
+- `https://cursor.com/blog/cloud-agent-lessons` → cursor-cloud-agent-four-engineering-lessons-2026.md
+- `https://github.com/adenhq/hive` → aden-hive-hive-zero-setup-multi-agent-dag-harness-10408-stars-2026.md
+
+## commit
+- 3b547b4 feat: Cursor cloud agent lessons + Hive multi-agent harness
+- 47eb317 chore: update .agent state for next run
+
+## 反思
+- 选题方向精准：Cursor 是云端 Agent 领域的首个企业级实战复盘，harness 工程知识链完整
+- Project 筛选方向对：Hive（10.4K Stars）是新的零配置多 Agent harness 方向，与 Cursor/Temporal 形成差异化
+- gen_article_map.py 继续超时（>15秒），可能 article 数量已超过脚本处理能力
+
+## 下轮规划
+- Cursor「self-driving codebases」（Michael Truell 第三时代愿景）
+- Anthropic「Claude Code Best Practices」（code.claude.com）
+- caveman（63K Stars）——输出压缩 + token 节省方向
