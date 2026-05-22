@@ -11,29 +11,34 @@
 
 ## 📌 Articles 线索
 
-### 本轮新增文章方向（已写入仓库）
-1. **Anthropic Scaling Managed Agents：Meta-Harness 接口设计哲学**：来源 anthropic.com/engineering/managed-agents（Anthropic，Apr 08, 2026）。核心论点：Harness 本质上是「尚不存在之程序」的构建方案，核心设计是 Brain-Hands-Session 三接口解耦，使接口稳定而实现可替换。TTFT p50 降 60%、p95 降 90% 的性能收益来自懒 Provisioning。项目关联：vercel-labs/coding-agent-template（Brain-Hands 架构的工程实现）。
+### 本轮无新增文章
+原因分析：本次扫描的一手来源（Anthropic / OpenAI / Cursor）均已追踪：
+- `openai.com/index/running-codex-safely/` → 5月18日已写（OpenAI Codex 安全运行架构）
+- `cursor.com/blog/third-era` → 5月20日已写（Cursor 第三时代）
+- `anthropic.com/engineering/building-agents-with-the-claude-agent-sdk` → 5月21日已写（Claude Agent SDK 核心设计原则）
+- `cursor.com/blog/cloud-agent-lessons` → 5月22日07:57已写（Cursor云端Agent构建一年后的六条核心教训）
 
 ### 下轮可研究的方向
-- **Cursor April 2026 Changelog**：持续追踪 cursor.com/changelog，No-repo Automations 的工程价值
-- **OpenAI Codex 新文章**：developers.openai.com/blog，关注 long-horizon agent 最新进展
-- **AnySearch 扫描 GitHub Trending**：multi-agent orchestration / agent harness 新项目发现
-- **Anthropic April 23 Postmortem**：Claude Code 质量退化的三层变更分析（已有多篇，慎重复）
+- **OpenAI WebSocket Mode 新进展**：`openai.com/index/speeding-up-agentic-workflows-with-websockets/`（Apr 22, 2026），40%延迟改善，1000 TPS
+- **Anthropic May 2026 Engineering Posts**：持续追踪 anthropic.com/engineering 是否有新文章
+- **GitHub Trending 持续扫描**：关注 multi-agent orchestration 领域新项目
+- **Cursor Continually improving agent harness**：`cursor.com/blog/continually-improving-agent-harness`（Apr 30, 2026），Harness 迭代哲学
 
 ## 🔄 本轮同步闭环情况
-- ✅ Articles 与 Projects 主题关联：Anthropic Scaling Managed Agents（Meta-Harness 接口哲学）↔ Vercel coding-agent-template（懒 Provisioning + Many Hands 工程实现）→ 理论层 + 工程实践层互补闭环
-- ✅ 原文引用：Article 2处（Anthropic blog × 2），Project 3处（GitHub README × 3）
-- ✅ 源追踪已更新：sources_tracked.jsonl（+2 条新源：anthropic.com/engineering/managed-agents + github.com/vercel-labs/coding-agent-template）
+- ⬇️ Articles：本轮无新增（一手来源均已追踪，降级跳过）
+- ✅ Projects：HKUDS/CLI-Anything（39K Stars），与 Cursor「第三时代」主题形成"工具层 Agent-Native 范式转变"关联
+- ✅ 原文引用：Project 3处（GitHub README × 3）
+- ✅ 源追踪已更新：sources_tracked.jsonl（+1 条新源）
 
 ## ⚠️ 已知问题
-- **Browser 截图仍不可用**：Chromium root 权限问题，改用 Playwright headless 作为截图备选方案
-- **Tavily API 超额**：本轮继续使用 AnySearch + web_fetch 组合作为降级方案
+- **Tavily API 超额**：本轮继续 AnySearch + web_fetch 组合，已成稳定降级方案
+- **一手来源重复**：需持续追踪新文章，避免重复写作
 
 ## 📊 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（Anthropic Scaling Managed Agents） |
-| 新增 projects | 1（vercel-labs/coding-agent-template，1711 Stars） |
-| 原文引用数量 | Article 2处 / Project 3处 |
-| Commit | 5cade2c |
+| 新增 articles | 0（来源均已追踪，降级跳过） |
+| 新增 projects | 1（HKUDS/CLI-Anything，39K Stars） |
+| 原文引用数量 | Article 0处 / Project 3处 |
+| Commit | 0f9d7c5 |
