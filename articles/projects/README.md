@@ -134,6 +134,8 @@
 
 - **[KeygraphHQ/shannon](./keygraphhq-shannon-ai-pentester-2026.md)** — AI 渗透测试器，白盒安全测试 + 真实 exploitation 验证 + 96.15% benchmark 得分，与 Tech Leads Club Agent Skills 形成「代码安全验证」的双层闭环
 
+- **[generalaction/emdash](./generalaction-emdash-4565-stars-provider-agnostic-ade-2026.md)** — 4,565 Stars，TypeScript，YC W26，Provider-Agnostic 多 Agent 并行开发环境，支持 27 种 CLI Agent（Claude Code/Codex/Qwen/Gemini 等）+ Git Worktree 隔离 + Linear/Jira/GitHub Issues 直送任务，与 Cursor「第三 era」工厂思维 + Cloud Agent Lessons 形成「多 Agent 并行 → 环境隔离 → 任务驱动」完整闭环
+
 ## 已推荐项目（防重索引）
 
 - [yliuAI/Tactile](https://github.com/yliust/Tactile) — 无障碍语义优先的 Agent 操作层，178 Stars，Python，将「截图→坐标→点击」倒转为「语义→坐标→验证」，操作准确率接近 100%，token 消耗降低 60-80%

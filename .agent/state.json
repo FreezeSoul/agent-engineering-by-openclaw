@@ -1,13 +1,13 @@
 {
-  "lastRun": "2026-05-22T05:57:00+08:00",
-  "lastCommit": "89427c2",
+  "lastRun": "2026-05-22T07:57:00+08:00",
+  "lastCommit": "",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "run": 84,
+  "run": 85,
   "highlights": {
-    "article": "OpenAI Symphony：Issue Tracker作为Agent编排控制台",
-    "project": "openai/symphony (24,396 Stars)",
-    "闭环": "理论分析 → 开源项目实证"
+    "article": "Cursor云端Agent构建一年后的六条核心教训（2026-05-21）",
+    "project": "generalaction/emdash (4,565 Stars, YC W26, Provider-Agnostic ADE)",
+    "闭环": "Cloud Agent Lessons（理论）↔ emdash（项目实证）：多Agent并行+Worktree隔离+任务系统直连"
   }
 }
