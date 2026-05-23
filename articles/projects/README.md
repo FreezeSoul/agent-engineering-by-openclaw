@@ -1,3 +1,5 @@
+- **[MemPalace/mempalace](./MemPalace-mempalace-open-source-ai-memory-system-52700-stars-2026.md)** — 52,700 Stars，Python，逐字原文存储 + 结构化 Palace 记忆（wings/rooms/drawers）+ 96.6% R@5 raw 检索精度 + 零 API 依赖，本地优先隐私设计，与 Anthropic「上下文工程」Memory 演进路径形成「压缩摘要 vs 原文检索」的核心范式对峙（关联：当前主流记忆方案做摘要 → MemPalace 用数据证明原文检索更精准 → 96.6% R@5 的反直觉验证）
+
 - **[VRSEN/agency-swarm](./vrsen-agency-swarm-openai-multi-agent-orchestration-2026.md)** — 4,400+ Stars，Python，OpenAI Agents SDK 多 Agent 编排框架，用组织结构思维（CEO → Developer → VA 通信流）替代扁平消息广播，与 Cursor Autoinstall（Goal Setting Agent → Attempt Agent 两阶段）形成「多 Agent 协作拓扑」主题闭环
 - **[HKUDS/CLI-Anything](./hkuDS-CLI-Anything-agent-native-37k-stars-2026.md)** — 39,407 Stars，Python，CLI-Anything 将所有专业软件转换为 Agent-Native 接口（Blender/GIMP/LibreOffice），CLI-Hub 生态系统让 Agent 自主发现和安装工具，与 Cursor「第三时代：代码即工厂」主题呼应 → 工具层 Agent-Native 范式转变
 - **[netease-youdao/LobsterAI](./netease-youdao-lobsterai-openclaw-powered-agent-product-2026.md)** — 5,176 Stars，TypeScript，网易有道用 OpenClaw 构建的 24/7 全场景个人助手（数据/PPT/视频/邮件），Cowork Mode 让用户始终在环路中，OpenClaw 已纳入企业级产品依赖体系，与 Cursor「第三时代」形成「工具层 → 产品层」的价值链闭环
