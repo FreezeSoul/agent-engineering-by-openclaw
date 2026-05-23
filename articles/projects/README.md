@@ -393,3 +393,5 @@
 - [vchain/mini-swe-agent：100行代码的极致简约设计（2026）](vchain-mini-swe-agent-100-lines-2026.md) — 74% SWE-bench，Princeton/Stanford团队出品
 
 - [HKUDS/nanobot：OpenClaw精神继承者，42.7k Stars的极简个人AI Agent（2026）](hkuds-nanobot-ultra-lightweight-personal-agent-2026.md) — 多channel、MCP、Memory，与mini-swe-agent形成「极简Agent双路径」对比
+
+- **[mikeyobrien/ralph-orchestrator](./mikeyobrien-ralph-orchestrator-rust-ai-agent-orchestration-3000-stars-2026.md)** — 3,000+ Stars，Rust，多后端 Agent 编排框架（Claude Code / Codex / OpenCode / Gemini CLI / Copilot CLI 等），Hat System 专业角色协调 + Backpressure 门控（测试/lint/typecheck 不通过则拒绝）+ RObot 人在环路（Telegram 实时介入），与 OpenAI Symphony（Linear 任务板控制）和 Edict（三省六部制度）形成「任务控制层」三足鼎立：状态机看板 vs 制度性审核 vs 角色帽系统
