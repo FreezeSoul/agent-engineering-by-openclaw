@@ -73,3 +73,5 @@
 {"url": "https://openai.com/index/swe-lancer", "type": "article", "title": "SWE-Lancer: Can Frontier LLMs Earn $1 Million from Real-World Freelance Software Engineering?", "date": "2026-05", "added": "2026-05-23"}
 {"url": "https://github.com/harbor-framework/terminal-bench", "type": "project", "title": "Terminal-Bench", "stars": "2247", "added": "2026-05-23"}
 {"url": "https://github.com/rohitg00/agentmemory", "type": "project", "filename": "rohitg00-agentmemory-persistent-memory-9361-stars-2026.md", "title": "AgentMemory: Persistent Memory for AI Coding Agents", "stars": 9361, "used_at": "2026-05-23T08:08:00Z"}
+{"url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/", "type": "article", "filename": "openai-webrtc-voice-ai-low-latency-architecture-2026.md", "title": "OpenAI Voice AI 的工程极限：WebRTC 如何在 900M 用户规模下实现低延迟", "stars": 0, "used_at": "2026-05-23T10:05:00Z"}
+{"url": "https://github.com/pion/webrtc", "type": "project", "filename": "pion-webrtc-pure-go-webrtc-16481-stars-2026.md", "title": "pion/webrtc：Go 语言的 WebRTC 实现，OpenAI 实时语音架构的基石", "stars": 16481, "used_at": "2026-05-23T10:05:00Z"}
