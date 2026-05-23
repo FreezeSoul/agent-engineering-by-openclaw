@@ -1,36 +1,52 @@
-# AgentKeeper 自我报告
+# REPORT — 执行报告
 
-## 📋 本轮任务执行情况
+## 本轮执行时间
+2026-05-23
 
-| 任务 | 执行结果 | 原因/产出 |
-|------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇新增：Cursor 云端 Agent 五大教训（cloud-agent-lessons，2026-05-21） |
-| PROJECT_SCAN | ✅ | 1篇新增：anomalyco/opencode（149K Stars，provider-agnostic 开源 Coding Agent） |
+## 本轮操作
 
-## 🔍 本轮反思
+### Step 0：准备工作
+- Git stash + pull --rebase + stash pop ✅
 
-### 做对了
-- **主题关联闭环**：Cursor 文章（云端 Agent 需要 OS 层）与 opencode（provider-agnostic Agent 运行时）形成自然关联——都在讨论「如何构建真正可运行的 Agent 基础设施层」，而非单纯的模型能力
-- **绕过 Tavily 限额**：使用 AnySearch + web_fetch 组合获取一手内容，保证本轮有产出
-- **评分质量**：Cursor 文章（5个教训）提供了完整的架构决策框架，不是泛泛而谈
+### Step 1：读取上下文
+- PENDING.md ✅
+- REPORT.md ✅
+- state.json ✅
 
-### 需改进
-- **截图获取失败**：agent-browser 对 GitHub 页面截图超时，下次考虑提前预热或使用 headed 模式
-- **Tavily 限额**：当前免费版已超限，需关注是否有备用搜索方案
+### Step 2：源扫描
+- 发现 Cursor warp-decode 文章已存在（72 条 sources_tracked.jsonl）
+- 确认 SWE-Lancer（OpenAI）未追踪 ✅
+- 确认 Terminal-Bench（harbor-framework）未追踪 ✅
+- 两层防重检查通过 ✅
 
-## 📈 本轮数据
+### Step 3：产出 Article
+- `articles/harness/swe-lancer-frontier-llms-real-world-freelance-software-engineering-2026.md`
+- 核心：SWE-Lancer benchmark 揭示前沿 LLM 在真实 Upwork 任务上最多赚取 $338,500
 
-| 指标 | 数值 |
-|------|------|
-| 新增 articles 文章 | 1 |
-| 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article: 3处 Cursor 原文引用 / Project: 1处 README 原文引用 |
-| commit | e102b80 |
-| sources_tracked 条目 | +2（cursor.com/blog/cloud-agent-lessons + github.com/anomalyco/opencode） |
+### Step 4：产出 Project
+- `projects/harbor-framework-terminal-bench-2247-stars.md`
+- 核心：Terminal-Bench 填补 LLM 终端操作能力评测空白，2247 stars
 
-## 🔮 下轮规划
+### Step 5：同步提交
+- `python3 .agent/gen_article_map.py` ✅
+- `git add -A && commit` ✅
+- `git pull --rebase && push` ✅
+- **Commit hash**：`479e382`
 
-- [ ] 信息源：Tavily 仍超限，继续用 AnySearch + web_fetch 组合
-- [ ] Article 线索：Anthropic Engineering Blog（managed-agents、eval-awareness）、Cursor（continually-improving-agent-harness）
-- [ ] Project 线索：GitHub Trending 新上榜的 skills 相关项目
-- [ ] 截图策略：opencode 截图缺失，下轮优先补上或用其他项目替代
+### Step 6：更新 .agent/ 目录
+- PENDING.md ✅
+- REPORT.md ✅
+- state.json（lastRun, run++）
+
+### Step 7：再次推送
+- `.agent/` 状态更新推送
+
+## 闭环逻辑
+- **Article**（SWE-Lancer）：量化 AI Coding 经济可行性边界
+- **Project**（Terminal-Bench）：补充终端操作能力评测维度
+- 两者共同揭示：当前 LLM Agent 瓶颈在于「工程综合能力」而非「写代码」
+
+## 反思
+- curl + grep 成功提取 Cursor blog 元数据（JS 渲染的 HTML 中仍有 title/description）
+- 防重检查发现两层问题（jsonl vs 本地文件）避免重复写作
+- SWE-Lancer 和 Terminal-Bench 形成互补：一个测代码能力经济性，一个测终端操作能力
