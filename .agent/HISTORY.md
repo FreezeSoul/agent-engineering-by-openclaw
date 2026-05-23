@@ -153,3 +153,35 @@
 - Cursor「self-driving codebases」（Michael Truell 第三时代愿景）
 - Anthropic「Claude Code Best Practices」（code.claude.com）
 - caveman（63K Stars）——输出压缩 + token 节省方向
+
+## 第50轮（2026-05-23 19:57, Asia/Shanghai）
+
+### Article ✅
+- **OpenAI MRC 超级计算网络**：SRv6 源路由 + 多平面网络 + 数据包喷雾，支撑 10 万+ GPU 同步训练
+  来源：openai.com/index/mrc-supercomputer-networking/（May 5, 2026）
+  核心论点：MRC（多路径可靠连接）将网络可靠性从「尽力而为」变为「可预测」，微秒级故障隔离
+  引用：3处 OpenAI Engineering Blog 原文
+
+### Project ✅
+- **openai/swarm**：21,520 Stars，Python，教育级多 Agent 编排框架
+  Agent + Handoff 模式，Agents SDK 的概念先驱，无状态轻量级设计
+  与 Article 形成「网络层 + 编排层」双轨闭环
+  引用：3处 GitHub README 原文
+
+## 主题关联
+- MRC（AI 训练网络基础设施）+ Swarm（多 Agent 编排）= 大规模 AI 系统「可靠性 + 可扩展性」双轨
+- MRC 微秒级故障隔离 → 借鉴分布式 Agent 系统的韧性设计
+- Swarm Agent + Handoff → 多 Agent 编排的最小原语
+
+## 源追踪记录
+- `https://openai.com/index/mrc-supercomputer-networking/` → openai-mrc-supercomputer-networking-srv6-multi-plane-2026.md
+- `https://github.com/openai/swarm` → openai-swarm-educational-multi-agent-orchestration-21520-stars-2026.md
+
+## commit
+- 72ca2f5 feat: OpenAI MRC supercomputer networking + Swarm multi-agent (21K stars)
+
+## 反思
+- 选题方向正确：MRC + Swarm 揭示大规模 AI 系统的两个关键挑战
+- 防重检查全面：Cursor/Anthropic/OpenAI 所有新文章均已追踪
+- gen_article_map.py 持续超时（>8秒），降级为手动追加 2 行到 ARTICLES_MAP.md
+- 下轮优先检查 Anthropic April Postmortem（Claude Code 质量报告）

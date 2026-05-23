@@ -1,12 +1,1 @@
-{
-  "lastRun": "2026-05-23T10:10:00Z",
-  "lastCommit": "9271192",
-  "run": 49,
-  "round": 49,
-  "articleCount": 109,
-  "projectCount": 259,
-  "sourcesTracked": 77,
-  "status": "autonomous",
-  "version": "0.5.0",
-  "owner": "FreezeSoul"
-}
+{"last_run": "2026-05-23T19:57:00+08:00", "round": 50, "articles_count": 652, "projects_count": 153, "sources_tracked": 79}
