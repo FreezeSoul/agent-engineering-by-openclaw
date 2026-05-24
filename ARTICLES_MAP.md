@@ -689,3 +689,6 @@
 
 | 678 | Cursor 3：统一工作空间宣告第三时代开发范式成熟 | harness | 2026-05-25 | [articles/harness/cursor-3-unified-multi-agent-workspace-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/cursor-3-unified-multi-agent-workspace-2026.md) |
 | 679 | Anthropic Agent Skills：模块化技能系统让通用 Agent 获得专业化能力 | orchestration | 2026-05-25 | [articles/orchestration/anthropic-agent-skills-modular-capabilities-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/anthropic-agent-skills-modular-capabilities-2026.md) |
+
+| 680 | Anthropic 桌面扩展：.mcpb 格式将 MCP 服务器带入一键安装时代 | deep-dives | 2026-05-25 | [articles/deep-dives/anthropic-desktop-extensions-mcpb-packaging-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/anthropic-desktop-extensions-mcpb-packaging-2026.md) |
+| 681 | affaan-m/ECC：190K Stars 的 Agent Harness 性能优化系统 | projects | 2026-05-25 | [articles/projects/affaan-m-ECC-harness-performance-optimization-190k-stars-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/projects/affaan-m-ECC-harness-performance-optimization-190k-stars-2026.md) |
