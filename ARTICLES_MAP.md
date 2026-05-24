@@ -1,6 +1,6 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-05-24 21:28:50
+> Auto-generated at 2026-05-24 21:58:42
 
 > Total articles: 673
 
@@ -9,12 +9,12 @@
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | Anthropic 工件具设计原则：让 Agent 高效使用工具的工程实践 | fundamentals | unknown | [articles/fundamentals/anthropic-writing-effective-tools-agents-engineering-principles-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/fundamentals/anthropic-writing-effective-tools-agents-engineering-principles-2026.md) |
-| 2 | AI 模型进化如何驱动更雄心勃勃的工作——来自 500 家公司的研究洞察 | cursor-better-models-ambitious-work-jevons-effect-2026.md | 2026-05-24 | [articles/cursor-better-models-ambitious-work-jevons-effect-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/cursor-better-models-ambitious-work-jevons-effect-2026.md) |
-| 3 | 重新定义人机协作带宽：Cursor Canvas 如何让 AI Agent 输出「可交互」而非「可阅读」 | context-memory | 2026-05-24 | [articles/context-memory/cursor-canvas-agent-visualization-ui-paradigm-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/context-memory/cursor-canvas-agent-visualization-ui-paradigm-2026.md) |
-| 4 | Anthropic 三月事故复盘：为什么间歇性 Bug 比持续性 Bug 更难修 | practices | 2026-05-24 | [articles/practices/anthropic-postmortem-three-bugs-intermittent-claude-degradation-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/practices/anthropic-postmortem-three-bugs-intermittent-claude-degradation-2026.md) |
-| 5 | 从 Claude Code 质量事件看 Agent 工程的核心教训：问题不在模型，在 Harness | harness | 2026-05-24 | [articles/harness/anthropic-claude-code-quality-regression-harness-lessons-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/anthropic-claude-code-quality-regression-harness-lessons-2026.md) |
-| 6 | Cursor 云端 Agent 构建一年后的核心教训：为什么基础设施才是产品 | orchestration | 2026-05-24 | [articles/orchestration/cursor-cloud-agent-one-year-five-core-lessons-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/cursor-cloud-agent-one-year-five-core-lessons-2026.md) |
+| 1 | AI 模型进化如何驱动更雄心勃勃的工作——来自 500 家公司的研究洞察 | cursor-better-models-ambitious-work-jevons-effect-2026.md | 2026-05-24 | [articles/cursor-better-models-ambitious-work-jevons-effect-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/cursor-better-models-ambitious-work-jevons-effect-2026.md) |
+| 2 | 重新定义人机协作带宽：Cursor Canvas 如何让 AI Agent 输出「可交互」而非「可阅读」 | context-memory | 2026-05-24 | [articles/context-memory/cursor-canvas-agent-visualization-ui-paradigm-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/context-memory/cursor-canvas-agent-visualization-ui-paradigm-2026.md) |
+| 3 | Anthropic 三月事故复盘：为什么间歇性 Bug 比持续性 Bug 更难修 | practices | 2026-05-24 | [articles/practices/anthropic-postmortem-three-bugs-intermittent-claude-degradation-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/practices/anthropic-postmortem-three-bugs-intermittent-claude-degradation-2026.md) |
+| 4 | 从 Claude Code 质量事件看 Agent 工程的核心教训：问题不在模型，在 Harness | harness | 2026-05-24 | [articles/harness/anthropic-claude-code-quality-regression-harness-lessons-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/anthropic-claude-code-quality-regression-harness-lessons-2026.md) |
+| 5 | Cursor 云端 Agent 构建一年后的核心教训：为什么基础设施才是产品 | orchestration | 2026-05-24 | [articles/orchestration/cursor-cloud-agent-one-year-five-core-lessons-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/cursor-cloud-agent-one-year-five-core-lessons-2026.md) |
+| 6 | Anthropic 工件具设计原则：让 Agent 高效使用工具的工程实践 | fundamentals | 2026-05-24 | [articles/fundamentals/anthropic-writing-effective-tools-agents-engineering-principles-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/fundamentals/anthropic-writing-effective-tools-agents-engineering-principles-2026.md) |
 | 7 | Cursor 稳定性工程：多进程架构下的 OOM 治理与崩溃追踪 | fundamentals | 2026-05-24 | [articles/fundamentals/cursor-app-stability-crash-oom-multi-process-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/fundamentals/cursor-app-stability-crash-oom-multi-process-2026.md) |
 | 8 | OpenAI Codex Agent Loop 深度解析：上下文管理、Prompt 缓存与自动 Compaction | fundamentals | 2026-05-24 | [articles/fundamentals/openai-unrolling-codex-agent-loop-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/fundamentals/openai-unrolling-codex-agent-loop-2026.md) |
 | 9 | Tabnine Enterprise Context Engine：企业级 AI 编码的「上下文基础设施」战争 | fundamentals | 2026-05-24 | [articles/fundamentals/tabnine-enterprise-context-engine-context-infrastructure-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/fundamentals/tabnine-enterprise-context-engine-context-infrastructure-2026.md) |
