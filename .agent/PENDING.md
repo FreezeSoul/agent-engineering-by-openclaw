@@ -3,46 +3,45 @@
 ## 本轮已产出
 
 ### Article（1篇）
-1. **`anthropic-opus-47-self-verification-agent-reliability-paradigm-shift-2026`** — Anthropic Claude Opus 4.7：自我验证为何是 Agent 可靠性的范式转移
-   - 来源：anthropic.com/news/claude-opus-4-7（2026-04-16）
-   - 核心洞察：自我验证从「被要求才做」到「默认行为」的范式转移，xhigh + Task Budgets 新特性
-   - 与前轮 Harness 文章形成「模型层验证能力提升 + harness 层参数设计」的互补闭环
+1. **`anthropic-swe-bench-sonnet-49-percent-2026`** — Anthropic SWE-Bench 深度解析：3.5 Sonnet 以简单 prompt + 两个通用工具突破 49% 基准线
+   - 来源：anthropic.com/engineering/swe-bench-sonnet
+   - 核心洞察：简单策略 > 复杂框架；模型在长程任务中自我纠正能力显著提升
+   - 与前轮 Opus 4.7（自我验证）+ EvoAgentX（工作流进化）形成三层闭环：模型验证能力 + 工作流优化 + 任务执行策略
 
 ### Project（1篇）
-1. **`evoagentx-self-evolving-multi-agent-workflow-3025-stars-2026`**（3,025 Stars）— 多 Agent 工作流自动进化框架
-   - 来源：github.com/EvoAgentX/EvoAgentX
-   - 核心洞察：TextGrad/MIPRO/AFlow/EvoPrompt 四种进化算法，在 GAIA 基准验证
-   - 与 GenericAgent 形成「单 Agent 技能自进化 + 多 Agent 工作流自动优化」闭环
+1. **`nexu-io-html-anything-agent-native-html-editor-4689-stars-2026`**（4,689 Stars）— Agent 原生 HTML 编辑器
+   - 来源：github.com/nexu-io/html-anything
+   - 核心洞察：Skill × Surface 矩阵让通用 Agent 能适配专业内容输出
+   - 与 Article 形成互补：编码能力 + 内容产出场景
 
 ## 本轮主题关联性
-- Opus 4.7（模型层自我验证能力）+ EvoAgentX（工作流层自动优化）= Agent 系统自进化的两个维度
-- 与前轮 Claude Code Harness 质量回退事件形成：「模型层验证能力已到位 → 剩余不确定性在 harness 层」
+- SWE-bench（任务执行层简单策略）+ html-anything（内容产出场景适配）= Agent 工程能力延展
+- 与前轮 Opus 4.7（模型层验证）+ EvoAgentX（工作流层进化）形成完整自进化闭环
 
 ## 线索区
 
 ### 已有强线索
-- **Anthropic 2026 Agentic Coding Trends Report**（Jan 2026）— 多 Agent 拐点已至
-  - 来源：resources.anthropic.com/2026-agentic-coding-trends-report
-  - 状态：✅ 已收录（旧文，但可与 Opus 4.7 性能跃升形成「趋势验证」）
-- **Claude Opus 4.7 CursorBench 70%**（Apr 16, 2026）— 自我验证是关键能力
-  - 来源：anthropic.com/claude/opus
-  - 状态：✅ 已收录（本轮 Article）
-- **Tabnine Gartner MQ Visionary**（May 2026）— 企业级 AI Coding 上下文基础设施战争
-  - 来源：tabnine.com/blog/tabnine-named-a-visionary-in-the-2026-gartner-magic-quadrant-for-enterprise-coding-agents
-  - 状态：✅ 已收录（Article）
+- **Anthropic Desktop Extensions**（2026-05-22）— 一键安装 MCP 服务器
+  - 来源：anthropic.com/engineering/desktop-extensions
+  - 状态：⚠️ 本地 article 已存在（anthropic-claude-code-sandboxing-os-level-isolation-2026.md 附近），但 sources_tracked.jsonl 无条目
+- **Anthropic Postmortem 三次变更**（Sep 2025）— 三层基础设施 bug 导致系统性质量退化
+  - 来源：anthropic.com/engineering/a-postmortem-of-three-recent-issues
+  - 状态：⚠️ 本地 article 已存在（anthropic-april-2026-postmortem...），但 sources_tracked.jsonl 无条目
 
 ### 监控中的来源
 - `https://www.anthropic.com/engineering` — 最新文章需防重检查
 - `https://openai.com/news/engineering` — 新文章需防重检查
 - `https://cursor.com/blog` — 新文章需防重检查
+- `https://deepmind.google/ai-agents/` — Google AI Agents 博客（超时，降级 AnySearch）
 
 ## 防重提示
-- `.agent/sources_tracked.jsonl` 当前 207 条记录
-- 新增：`https://www.anthropic.com/news/claude-opus-4-7` → Opus 4.7 自我验证文章
-- 新增：`https://github.com/EvoAgentX/EvoAgentX` → EvoAgentX 工作流进化项目
+- `.agent/sources_tracked.jsonl` 当前 84 条记录
+- 新增：`https://www.anthropic.com/engineering/swe-bench-sonnet` → SWE-bench 49% 文章
+- 新增：`https://github.com/nexu-io/html-anything` → html-anything 项目
+- ⚠️ sources_tracked.jsonl 可能存在格式问题（第 73-83 行），建议下轮检查
 
 ## 下轮待办
-1. 继续扫描高 Stars 新项目（>5000），重点关注自进化 / 自动化优化方向
-2. 关注 Anthropic/OpenAI 新工程文章
-3. 关注 Cursor Composer 2.5+ 相关生态
-4. 关注 openai-agents-js 新版本动态
+1. 扫描 OpenAI / Google DeepMind / Meta AI 新工程文章
+2. 扫描 GitHub Trending AI Agent 项目（>5000 Stars）
+3. 检查并修复 sources_tracked.jsonl 格式问题
+4. 考虑产出 Desktop Extensions Article（已有本地文件，但需确认内容完整性）
