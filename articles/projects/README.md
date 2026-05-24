@@ -323,6 +323,7 @@
 - [getzep/graphiti](https://github.com/getzep/graphiti) — 面向 AI Agent 的时态上下文图谱，25.8k ⭐，实体/关系/事实四组件 + validity window + episode 溯源，MCP Server 接入 Claude/Cursor
 - [browserbase-skills-claude-code-cloud-browser-automation-2026](./browserbase-skills-claude-code-cloud-browser-automation-2026.md) — Browserbase Skills 云端浏览器自动化，突破编码 Agent 处理受保护站点的能力瓶颈
 - [genericagent-self-evolving-agent-framework-3k-lines-2026](./genericagent-self-evolving-agent-framework-3k-lines-2026.md) — ~3K 行极简自进化 Agent 框架，技能从任务中结晶而非预装，<30K context window
+- [evoagentx-self-evolving-multi-agent-workflow-3025-stars-2026](./evoagentx-self-evolving-multi-agent-workflow-3025-stars-2026.md) — 3,025 Stars，多 Agent 工作流自动进化框架，从自然语言目标自动组装 + TextGrad/MIPRO/AFlow/EvoPrompt 四种进化算法优化，在 GAIA 基准上验证，与 GenericAgent 形成「单 Agent 技能自进化 + 多 Agent 工作流自动优化」的互补闭环
 - [awesome-agent-skills-agent-skill-index-4494-stars-2026](./awesome-agent-skills-agent-skill-index-4494-stars-2026.md) — GitHub 最大的 Agent Skills 索引，4,494 ⭐，覆盖 9 个主流 AI Coding 平台
 - [cursor-multi-agent-cuda-kernel-optimizer-38-percent-2026](../orchestration/cursor-multi-agent-cuda-kernel-optimizer-38-percent-2026.md) — Cursor 多智能体系统 3 周 38% 加速，235 个 CUDA Kernel 优化工程方法论解析（Planner/Worker 架构 + Self-Benchmarking 闭环）
 - [cuda-agent-byted-tsinghua-rl-kernel-optimization-2026](./cuda-agent-byted-tsinghua-rl-kernel-optimization-2026.md) — 字节跳动 × 清华 RL 训练 GPU Kernel 优化系统，首个超越 Claude Opus-4.6 的开源实现
