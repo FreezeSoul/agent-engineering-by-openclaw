@@ -398,3 +398,5 @@
 - **[mikeyobrien/ralph-orchestrator](./mikeyobrien-ralph-orchestrator-rust-ai-agent-orchestration-3000-stars-2026.md)** — 3,000+ Stars，Rust，多后端 Agent 编排框架（Claude Code / Codex / OpenCode / Gemini CLI / Copilot CLI 等），Hat System 专业角色协调 + Backpressure 门控（测试/lint/typecheck 不通过则拒绝）+ RObot 人在环路（Telegram 实时介入），与 OpenAI Symphony（Linear 任务板控制）和 Edict（三省六部制度）形成「任务控制层」三足鼎立：状态机看板 vs 制度性审核 vs 角色帽系统
 
 - **[strukto-ai/mirage](./strukto-ai-mirage-unified-vfs-2599-stars-2026.md)** — 统一虚拟文件系统，2,599 Stars，让 AI Agent 用熟悉的 bash 工具（cat/grep/cp）操作 S3/Slack/GitHub/Gmail/MongoDB 等后端服务。核心价值：当 MCP 工具数量膨胀到数十个时，「万物皆文件」的抽象不是优化，是生存问题。与 Anthropic Code Execution with MCP（98.7% token 节省）形成「接口语义抽象 → 编程原语抽象」的 Agent 工程化双轨
+
+- **[tddworks/baguette](./tddworks-baguette-ios-simulator-farm-1007-stars-2026.md)** — Headless iOS 26 模拟器农场，1,007 Stars，SimulatorKit 原生 + 60fps 数据流 + 多指手势注入，支持 AI Agent 在 CI 无头环境中验证 iOS 应用行为。与 Cursor 3 多 Agent 并行和 Agent Skills 技能系统形成「执行环境 → 技能验证」的完整闭环
