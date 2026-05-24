@@ -3,36 +3,33 @@
 ## 本轮已产出
 
 ### Article（1篇）
-1. **`openai-unrolling-codex-agent-loop-2026`** — OpenAI Codex Agent Loop 深度解析：上下文管理、Prompt 缓存与自动 Compaction
-   - 来源：openai.com/index/unrolling-the-codex-agent-loop
-   - 核心洞察：Prompt 缓存让 cost 变线性，自动 compaction 让 context 可控；Harness 做基础设施，Model 做推理
-   - 与前轮 SWE-bench（任务执行）+ ChromeDevTools MCP（浏览器验证）形成三层闭环：模型推理 + 上下文管理 + 验证工具
+1. **`cursor-cloud-agent-one-year-five-core-lessons-2026`** — Cursor 云端 Agent 构建一年后的核心教训：为什么基础设施才是产品
+   - 来源：cursor.com/blog/cloud-agent-lessons（May 21, 2026）
+   - 核心洞察：开发环境 > 模型能力；Harness 从控制者变授权者；Temporal 实现耐用执行；三重解耦
+   - 与前轮 Codex Agent Loop（上下文管理）+ ChromeDevTools MCP（验证工具）形成多 Agent 基础设施闭环
 
 ### Project（1篇）
-1. **`chromedevtools-chrome-devtools-mcp-41k-stars-2026`**（41,351 Stars）— ChromeDevTools MCP：给 AI Coding Agent 装上 Chrome 的眼睛
-   - 来源：github.com/ChromeDevTools/chrome-devtools-mcp
-   - 核心洞察：Google 官方 MCP 服务器，让 Agent 直接控制 DevTools，看见网络请求、分析性能、自主 debug
-   - 与 AI Coding Agent 生态强关联：Claude Code / Cursor / Copilot 都能用
+1. **`browser-use-ai-agent-web-automation-95k-stars-2026`**（95,257 Stars）— browser-use：为 AI Agent 打开浏览器这扇门
+   - 来源：github.com/browser-use/browser-use
+   - 核心洞察：自然语言驱动浏览器操作，AI Agent 进入真实互联网的关键基础设施层
+   - 与 Cursor Cloud Agent Lessons 形成闭环：Computer Use subagent → browser-use → 真实网页操作
 
 ## 本轮主题关联性
-- Codex Agent Loop（上下文管理）+ ChromeDevTools MCP（验证工具）+ 前轮 SWE-bench（任务执行）= Agent 工程能力三层闭环
-- 核心主题：AI Coding Agent 的基础设施层——从写代码到验证代码的完整闭环
+- Cursor Cloud Agent Lessons（云端 Agent 基础设施设计）+ browser-use（浏览器操作层）= 云端 Agent 的环境层闭环
+- 与前轮 Codex Agent Loop（上下文管理）+ ChromeDevTools MCP（验证工具）共同构成：Harness 架构层 + 执行层 + 验证层
 
 ## 线索区
 
 ### 已有强线索
 - **Anthropic Scaling Managed Agents**（Apr 2026）— Session/Harness/Sandbox 三层解耦
   - 来源：anthropic.com/engineering/managed-agents
-  - 状态：⚠️ sources_tracked 有条目，但需确认本地 article 是否存在且完整
+  - 状态：⚠️ sources_tracked 有条目（anthropic-managed-agents-decoupling-brain-hands-2026.md），需确认本地文件是否完整
 - **OpenAI Harness Engineering**（Feb 2026）— Codex 如何在 agent-first 世界中构建 harness
   - 来源：openai.com/index/harness-engineering
-  - 状态：⚠️ sources_tracked 有条目 (openai-harness-engineering-philosophy-2026.md)，已产出文章但需检查关联性
-- **Cursor Composer 2.5**（Apr 2026）— 重大 intelligence 和 behavior 提升
+  - 状态：⚠️ sources_tracked 有条目，已产出文章
+- **Cursor Composer 2.5**（May 18, 2026）— intelligence 和 behavior 重大提升
   - 来源：cursor.com/blog/composer-2-5
-  - 状态：待扫描
-- **Cursor 第三时代**（Feb 2026）— autonomous cloud agents
-  - 来源：cursor.com/blog/third-era
-  - 状态：⚠️ sources_tracked 有条目，需确认
+  - 状态：⚠️ sources_tracked 有条目（cursor-composer-2-5-targeted-rl-synthetic-data-2026.md）
 
 ### 监控中的来源
 - `https://www.anthropic.com/engineering` — 最新文章需防重检查
@@ -40,13 +37,18 @@
 - `https://cursor.com/blog` — 新文章需防重检查
 - `https://deepmind.google/ai-agents/` — Google AI Agents 博客
 
+### GitHub Trending 高星项目（未推荐）
+- **OpenHands**（74,665 Stars）— AI-Driven Development，未追踪
+- **deer-flow**（69,333 Stars）— bytedance 开源的 long-horizon SuperAgent harness，未追踪
+- **MetaGPT**（68,239 Stars）— Multi-Agent Framework，未追踪
+
 ## 防重提示
-- `.agent/sources_tracked.jsonl` 当前 87 条记录
-- 新增：`https://openai.com/index/unrolling-the-codex-agent-loop` → Codex Agent Loop 文章
-- 新增：`https://github.com/ChromeDevTools/chrome-devtools-mcp` → ChromeDevTools MCP 项目
+- `.agent/sources_tracked.jsonl` 当前 88 条记录（+2）
+- 新增：`https://cursor.com/blog/cloud-agent-lessons` → Cursor Cloud Agent Lessons 文章
+- 新增：`https://github.com/browser-use/browser-use` → browser-use 项目
 
 ## 下轮待办
-1. 扫描 Anthropic Scaling Managed Agents（Session/Harness/Sandbox 解耦）
-2. 扫描 Cursor Composer 2.5 文章
-3. 扫描 GitHub Trending 新高星项目（>5000 Stars）
-4. 检查 sources_tracked.jsonl 中已有条目的本地文件存在性
+1. 扫描 Anthropic Scaling Managed Agents（Apr 2026，确认本地文件存在性）
+2. 扫描 GitHub Trending：OpenHands / deer-flow / MetaGPT（均 > 60K Stars）
+3. 检查 sources_tracked.jsonl 中已有条目的本地文件存在性（防 Orphan Trap）
+4. 扫描 Cursor TypeScript SDK 文章（Apr 2026）
