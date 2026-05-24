@@ -1,70 +1,66 @@
-# REPORT — 执行报告（第85轮）
+# REPORT — 执行报告（第86轮）
 
 ## 本轮执行时间
-- 开始：2026-05-24 21:58 (Asia/Shanghai)
-- 结束：2026-05-24 22:00 (Asia/Shanghai)
+- 开始：2026-05-24 23:57 (Asia/Shanghai)
+- 结束：2026-05-25 00:04 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
 - ✅ Git pull --rebase（无冲突，master 已最新）
-- ✅ 读取 PENDING.md / REPORT.md / state.json（round 84）
+- ✅ 读取 PENDING.md / REPORT.md / state.json（round 85）
 
 ### Step 1：信息源扫描
-- ✅ AnySearch 通用搜索（发现 Skills 生态爆发）
-- ✅ GitHub API 查询 Stars（mattpocock/skills 103K，anthropics/skills 140K）
-- ✅ 检查 sources_tracked.jsonl（96条，mattpocock/skills 和 anthropics/skills 均未追踪）
+- ✅ AnySearch 通用搜索（发现 KohakuTerrarium、Nanobot v0.2、GitHub Trending 概览）
+- ✅ 检查 sources_tracked.jsonl（98条，新增 4 条 → 102条）
+- ✅ 发现 KohakuTerrarium（新项目，329 Stars，未达 Project 门槛）
+- ✅ Tavily API 超额（432 error），切换到 AnySearch
 
 ### Step 2：发现新主题
-- **mattpocock/skills** — 社区工程纪律技能集（103K Stars，未追踪）
-- **anthropics/skills** — 官方 Agent Skills 开放标准（140K Stars，未追踪）
+- **SLEIGHT-Bench**：Anthropic Alignment Science Blog 新研究（2026-05-19）
+- **Claude Code Auto Mode**：Anthropic Engineering 已有文章（2026-03-25）
 
 ### Step 3：产出 Article（1篇）
-- ✅ mattpocock-skills-engineering-discipline-ai-coding-agents-2026.md
-- 主题：Matt Pocock Skills 的工程纪律封装——四大失败模式、设计哲学、核心技能详解
-- 引用：README 中"小而美可组合"、"渐进式披露"、"Ubiquitous Language"原文
+- ✅ sleight-bench-ai-monitor-blind-spots-11-categories-2026.md
+- 主题：AI 监控的11类系统性盲点——N-hops/Omission/Jailbreaks 达0%检测率
+- 引用：论文（arXiv:2605.16626）+ alignment.anthropic.com 原文 + claude-code-auto-mode 工程实现
 
-### Step 4：产出 Project（1篇）
-- ✅ anthropics-skills-agent-skills-open-standard-140k-stars-2026.md
-- 主题：anthropics/skills 作为 Agent Skills 开放标准的事实定义者
-- Stars: 140K，Agent Skills 开放标准（agentskills.io）技术实现
-- 引用：README 中"Skills are folders of instructions..."、"动态加载"等
+### Step 4：产出 Project（跳过）
+- ⚠️ KohakuTerrarium（329 Stars）未达门槛（≥500）
+- ⚠️ hermes-agent（162K Stars）已追踪
+- ✅ nanobot（43K Stars）已追踪
 
 ### Step 5：同步 + 提交
-- ✅ sources_tracked.jsonl 更新（+2 条，共 98 条）
+- ✅ sources_tracked.jsonl 更新（+2 条，共 102 条）
 - ✅ ARTICLES_MAP.md 更新
 - ✅ git add -A
 - ✅ git commit
 - ✅ git push
-- Commit: 8255661
-
-### Step 6：截图（跳过）
-- ⚠️ browser 工具超时，chimp.js/SIGKILL 失败，跳过截图
+- Commit: 3f87913
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 1 |
-| 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 3处 / Project 3处 |
-| sources_tracked | 98条（+2） |
-| Commit | 8255661 |
+| 新增 projects 推荐 | 0 |
+| 原文引用数量 | Article 4 处（含论文 + 官方博客）|
+| sources_tracked | 102条（+4） |
+| Commit | 3f87913 |
 
 ## 本轮反思
 
 ### 做对了
-- **选题质量**：mattpocock/skills + anthropics/skills 形成完美闭环——社区实践 vs 官方标准
-- **关联设计**：两篇文章通过"Skills"主题形成内在关联，共同指向 AI Coding Agent 工程素养问题
-- **防重成功**：两个项目均未被追踪，选题新颖
+- **选题质量**：SLEIGHT-Bench 揭示了 AI 监控的系统性盲点，与 Claude Code Auto Mode 形成完美闭环（理论 vs 工程实现）
+- **关联设计**：文章通过「监控盲点 → Agent 设计启示 → Auto Mode 实际对应」形成清晰逻辑链
+- **防重成功**：sleight-bench 和 claude-code-auto-mode 均未被追踪
 
 ### 需改进
-- 截图工具不可用（browser 超时 + chimp.js SIGKILL），建议下轮尝试 agent-browser 或专用 headless 方案
-- Tavily API 超额，考虑降级到 AnySearch 作为主要搜索工具
-- gen_article_map.py 超时，考虑优化或备用方案
+- Tavily API 超额（432 error），本轮依赖 AnySearch，需注意下轮是否有可用额度
+- Project 发现未能产出（KohakuTerrarium Stars 329，不达门槛；主要项目均已追踪）
+- gen_article_map.py 超时（SIGKILL），但 ARTICLES_MAP.md 仍通过 git diff 更新
 
 ## 下轮规划
-- [ ] 扫描 Anthropic claude-code-best-practices
-- [ ] 评估 addyosmani/agent-skills（45K Stars）追踪状态
-- [ ] 继续监控 GitHub Trending，发现新的高价值 Agent 项目
-- [ ] 考虑截图工具修复方案
+- [ ] 扫描 Anthropic 最新 Engineering Blog
+- [ ] 继续监控 GitHub Trending
+- [ ] 评估是否有新的一手来源值得深度分析
