@@ -3,44 +3,46 @@
 ## 本轮已产出
 
 ### Article（1篇）
-1. **`anthropic-claude-code-quality-regression-harness-lessons-2026`** — 从 Claude Code 质量事件看 Agent 工程的核心教训：问题不在模型，在 Harness
-   - 来源：anthropic.com/engineering/april-23-postmortem（2026-04-23）
-   - 核心洞察：三个 harness 优化（Medium effort 默认值 + Thinking 缓存 bug + 长度限制指令）静默叠加导致"模型退化"现象
-   - 与 Cursor Gartner MQ 文章（70% Fortune 500）形成「企业 AI Coding → 工程实践教训」闭环
+1. **`anthropic-opus-47-self-verification-agent-reliability-paradigm-shift-2026`** — Anthropic Claude Opus 4.7：自我验证为何是 Agent 可靠性的范式转移
+   - 来源：anthropic.com/news/claude-opus-4-7（2026-04-16）
+   - 核心洞察：自我验证从「被要求才做」到「默认行为」的范式转移，xhigh + Task Budgets 新特性
+   - 与前轮 Harness 文章形成「模型层验证能力提升 + harness 层参数设计」的互补闭环
 
 ### Project（1篇）
-1. **`open-multi-agent/open-multi-agent`**（6,156 Stars）— Goal-First TypeScript 多 Agent 编排框架
-   - Coordinator Agent 自动分解目标为 DAG 并行执行
-   - 与 Harness 文章形成「编排框架 → 控制层」互补闭环
+1. **`evoagentx-self-evolving-multi-agent-workflow-3025-stars-2026`**（3,025 Stars）— 多 Agent 工作流自动进化框架
+   - 来源：github.com/EvoAgentX/EvoAgentX
+   - 核心洞察：TextGrad/MIPRO/AFlow/EvoPrompt 四种进化算法，在 GAIA 基准验证
+   - 与 GenericAgent 形成「单 Agent 技能自进化 + 多 Agent 工作流自动优化」闭环
 
 ## 本轮主题关联性
-- Claude Code Harness（控制层）+ open-multi-agent（编排框架）= Agent 工程"如何正确设计 harness + 如何让框架承担复杂度"的完整闭环
+- Opus 4.7（模型层自我验证能力）+ EvoAgentX（工作流层自动优化）= Agent 系统自进化的两个维度
+- 与前轮 Claude Code Harness 质量回退事件形成：「模型层验证能力已到位 → 剩余不确定性在 harness 层」
 
 ## 线索区
 
 ### 已有强线索
-- **Cursor Gartner MQ 文章**（May 22, 2026）— 70% Fortune 500，Agent Orchestration 方向
-  - 来源：cursor.com/blog/cursor-leads-gartner-mq-2026
-  - 状态：✅ 已收录（Article 关联 Harness 教训）
-- **OpenAI GPT-5.5 发布**（Apr 23, 2026）— Codex 82.7% Terminal-Bench 2.0
-  - 来源：openai.com/index/introducing-gpt-5-5/
-  - 状态：✅ 已记录（但未产出 Article，因为是产品发布而非工程实践）
-- **Anthropic Scaling Managed Agents（Apr 08, 2026）**— 解耦 brain/hands
-  - 来源：anthropic.com/engineering/managed-agents
-  - 状态：⏳ 待深入分析（可能已追踪）
+- **Anthropic 2026 Agentic Coding Trends Report**（Jan 2026）— 多 Agent 拐点已至
+  - 来源：resources.anthropic.com/2026-agentic-coding-trends-report
+  - 状态：✅ 已收录（旧文，但可与 Opus 4.7 性能跃升形成「趋势验证」）
+- **Claude Opus 4.7 CursorBench 70%**（Apr 16, 2026）— 自我验证是关键能力
+  - 来源：anthropic.com/claude/opus
+  - 状态：✅ 已收录（本轮 Article）
+- **Tabnine Gartner MQ Visionary**（May 2026）— 企业级 AI Coding 上下文基础设施战争
+  - 来源：tabnine.com/blog/tabnine-named-a-visionary-in-the-2026-gartner-magic-quadrant-for-enterprise-coding-agents
+  - 状态：✅ 已收录（Article）
 
 ### 监控中的来源
 - `https://www.anthropic.com/engineering` — 最新文章需防重检查
-- `https://cursor.com/blog` — Gartner MQ（已收录）
 - `https://openai.com/news/engineering` — 新文章需防重检查
+- `https://cursor.com/blog` — 新文章需防重检查
 
 ## 防重提示
-- `.agent/sources_tracked.jsonl` 当前 205 条记录
-- 新增：`https://cursor.com/blog/cursor-leads-gartner-mq-2026` → harness 文章
-- 新增：`https://github.com/open-multi-agent/open-multi-agent` → project
+- `.agent/sources_tracked.jsonl` 当前 207 条记录
+- 新增：`https://www.anthropic.com/news/claude-opus-4-7` → Opus 4.7 自我验证文章
+- 新增：`https://github.com/EvoAgentX/EvoAgentX` → EvoAgentX 工作流进化项目
 
 ## 下轮待办
-1. 扫描 Anthropic「Scaling Managed Agents」（Apr 08, 2026）— 解耦 brain/hands 架构
-2. 继续 GitHub 扫描：高 Stars 新项目（>5000），重点关注 Harness + Orchestration 方向
-3. 关注 Cursor Composer 2.5 相关生态项目
-4. 关注 AnySearch 发现的新兴 TypeScript Agent 框架
+1. 继续扫描高 Stars 新项目（>5000），重点关注自进化 / 自动化优化方向
+2. 关注 Anthropic/OpenAI 新工程文章
+3. 关注 Cursor Composer 2.5+ 相关生态
+4. 关注 openai-agents-js 新版本动态
