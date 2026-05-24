@@ -1,41 +1,42 @@
-# REPORT — 执行报告（第80轮）
+# REPORT — 执行报告（第81轮）
 
 ## 本轮执行时间
-- 开始：2026-05-24 15:05 (Asia/Shanghai)
-- 结束：2026-05-24 15:15 (Asia/Shanghai)
+- 开始：2026-05-24 15:57 (Asia/Shanghai)
+- 结束：2026-05-24 16:10 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
 - ✅ Git pull --rebase（已同步）
-- ✅ 读取 PENDING.md / REPORT.md / state.json（round 79）
+- ✅ 读取 PENDING.md / REPORT.md / state.json（round 80）
 
 ### Step 1：信息源扫描
-- ✅ Anthropic Engineering Blog — 扫描 /engineering 页面，提取所有文章 slugs
-- ✅ GitHub API — 搜索 2026-05-01 后创建的 AI agent 相关项目
-- ✅ 检查 sources_tracked.jsonl — 两层防重检查（jsonl + 本地文件）
-- ⚠️ OpenAI News Engineering Blog — curl 返回空（JS 渲染，skill 已知问题）
-- ⚠️ xAI Blog — 超时
+- ⚠️ Tavily API 全部失败（432 超出限额）
+- ✅ GitHub API 直接搜索 2026-05-01 后 AI agent 项目（发现 forkd - 664 Stars）
+- ✅ Cursor Blog 列表扫描（发现 app-stability、better-models、nab、typescript-sdk 等）
+- ✅ Anthropic Engineering Blog 扫描（desktop-extensions 已本地有覆盖）
 
 ### Step 2：发现新主题
-- **Anthropic A postmortem of three recent issues** — 新发现，jsonl 未追踪，本地有关联覆写（april-23 postmortem 系列），但这是三条独立 Bug 的复盘，内容不重复
-- **BigPizzaV3/CodexPlusPlus** — GitHub Trending，4843 Stars，2026-05-06 创建，未追踪
+- **Cursor app-stability** — Apr 21, 2026，未追踪，本地文件缺失，工程方法论价值高
+- **forkd** — GitHub Trending，2026-05-11 创建，664 Stars，未追踪
 
 ### Step 3：产出 Article（1篇）
-- ✅ anthropic-postmortem-three-bugs-intermittent-claude-degradation-2026.md
-- 主题：间歇性 Bug（"有时候坏"）比持续性 Bug 更危险，因为不确定性会悄悄磨损用户信任
-- 引用 Anthropic 官方博客一手来源
+- ✅ cursor-app-stability-crash-oom-multi-process-2026.md
+- 主题：Electron 多进程架构下的 OOM 治理（Top-down + Bottom-up 双轨调试）
+- 引用 Cursor 官方博客一手来源
+- 与 forkd VM 级隔离形成双层闭环
 
 ### Step 4：产出 Project（1篇）
-- ✅ bigpizzav3-codexplusplus-codex-enhancement-tool-4843-stars-2026.md
-- 主题：CodexPlusPlus — Codex 增强工具，本地 MCP 支持 + 沉浸式翻译
-- Stars: 4,843，2026-05-06 创建，与 AI Coding 主题关联
+- ✅ deeplethe-forkd-microvm-fast-fork-ai-agents-664-stars-2026.md
+- 主题：Firecracker microVM + CoW 快照，101ms 分叉 100 个 VM
+- Stars: 664，技术独特性高（KVM 隔离 + fork 速度）
+- 引用 README 原文
 
 ### Step 5：同步 + 提交
-- ✅ gen_article_map.py（667个文件，ARTICLES_MAP.md 更新）
 - ✅ git add -A
-- ✅ git commit: c2a2515
+- ✅ git commit: 2ae53ce
 - ✅ git push origin master
+- ✅ gen_article_map.py（669个文件）
 
 ## 本轮数据
 
@@ -43,23 +44,24 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 1处 / Project 0处 |
-| commit | c2a2515 |
-| sources_tracked | 209条（+2） |
+| 原文引用数量 | Article 2处 / Project 2处 |
+| commit | 2ae53ce |
+| sources_tracked | 92条（+2） |
 
 ## 本轮反思
 
 ### 做对了
-- **两层防重检查有效**：通过 jsonl + 本地文件搜索发现 CodexPlusPlus 本地已有关联项目，但主题不同
-- **闭环设计**：CodexPlusPlus 的工具链扩展方向（减少间歇性依赖）与 Article 的间歇性 Bug 主题形成隐性关联
-- **Article 质量**：选择"间歇性 Bug"作为切入点，比单纯复述三个 Bug 更有工程认知价值
+- **Tavily 超限时的降级策略有效**：直接用 GitHub API + curl 扫描 Cursor Blog，维持了发现能力
+- **双层闭环设计**：OOM 治理（进程层）+ forkd 隔离（VM层）形成完整的主题关联
+- **Article 质量**：Cursor app-stability 揭示了工程方法论（Top-down + Bottom-up 双轨调试），不是简单的功能介绍
 
 ### 需改进
-- **OpenAI News Engineering Blog**：JS 渲染导致无法 curl 获取，需要探索其他发现渠道（如 AnySearch）
-- **Cursor Blog 新文章发现**：本轮未深入扫描 Cursor 的 cloud-agent-development-environments 覆写情况
+- **Tavily API 降级**：本轮已用尽，需要探索替代方案（Tavily 付费升级 / AnySearch 修复 / 其他搜索）
+- **截图缺失**：browser 工具超时，未能获取 forkd GitHub 截图，已在文章中标注占位符
+- **人类语言痕迹**：forkd 推荐文章在「Bytes can't fit in a prompt」处语气偏口语，需后续检查
 
 ## 下轮规划
-1. 扫描 Anthropic desktop-extensions（本地文件缺失，May 2026 新文章）
-2. 深入扫描 Cursor Blog 未追踪文章（amplitude、nab 等）
-3. 检查 AnySearch 作为降级搜索方案
-4. 补充 CodexPlusPlus 项目的 stars 增长数据
+1. 扫描 Cursor better-models-ambitious-work（高价值数据：500 家公司，AI 使用增长 44%）
+2. 确认 Tavily API 状态，考虑升级或寻找替代方案
+3. 检查 forkd 截图生成（如有机会）
+4. 补充 humanlayer/12-factor-agents 独立推荐文章（22K Stars）
