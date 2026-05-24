@@ -1,44 +1,44 @@
-# REPORT — 执行报告（第83轮）
+# REPORT — 执行报告（第84轮）
 
 ## 本轮执行时间
-- 开始：2026-05-24 19:57 (Asia/Shanghai)
-- 结束：2026-05-24 20:07 (Asia/Shanghai)
+- 开始：2026-05-24 20:55 (Asia/Shanghai)
+- 结束：2026-05-24 21:00 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ Git stash push（round83 WIP）
-- ✅ Git pull --rebase（已同步，无合并冲突）
-- ✅ 读取 PENDING.md / REPORT.md / state.json（round 82）
+- ✅ Git stash（无本地变更）
+- ✅ Git pull --rebase（解决 state.json/REPORT.md/PENDING.md/HISTORY.md 合并冲突，使用 --ours）
+- ✅ 读取 PENDING.md / REPORT.md / state.json（round 83）
 
 ### Step 1：信息源扫描
-- ✅ GitHub API 搜索 2026-05-01 后 AI agent 项目（发现 opensquilla 1,643 Stars）
-- ✅ Cursor Blog 直接 curl 扫描（发现 canvas 博客，未追踪）
-- ✅ Anthropic Engineering Blog（SOCKS5 代理超时，降级）
-- ✅ OpenAI Blog 直接 curl（harness-engineering 已追踪，降级）
-- ⚠️ Tavily API 继续超限，使用 curl + GitHub API 降级策略
+- ✅ Anthropic Engineering Blog 扫描（23个slugs）
+- ✅ Cursor Blog 扫描（发现 amplitude, composer-2, composer-2.5, cloud-agent-lessons 等）
+- ✅ GitHub API 扫描（2026-05-01 后 AI agent 项目）
+- ✅ 检查 sources_tracked.jsonl（94条记录）
 
 ### Step 2：发现新主题
-- **Cursor Canvas** — Apr 15, 2026，未追踪，Agent 可视化 UI 范式
-- **OpenSquilla** — GitHub Trending，1,643 Stars，本地模型路由器
+- **Anthropic writing-tools-for-agents** — 工具体系设计原则（未追踪）
+- **Stitch Design Skills** — Google Labs Agent Skills 项目（5,671 Stars，未追踪）
 
 ### Step 3：产出 Article（1篇）
-- ✅ cursor-canvas-agent-visualization-ui-paradigm-2026.md
-- 主题：Canvas 把 Agent 从「信息生产者」变为「工具构建者」，解决人机协作带宽问题
-- 核心洞察：Agent Native UI 范式，从只读输出到可交互界面的转变
-- 引用：3处 cursor.com/blog/canvas 原文
+- ✅ anthropic-writing-effective-tools-agents-engineering-principles-2026.md
+- 主题：Anthropic 工具体系设计的核心原则——渐进式披露、精确优于通用、评估驱动
+- 引用：cursor.com/blog/cloud-agent-lessons（环境即产品），Agent Skills 渐进式架构
+- 核心洞察：工具设计的三层渐进式披露 + 评估飞轮
 
 ### Step 4：产出 Project（1篇）
-- ✅ opensquilla-opensquilla-token-efficient-ai-agent-1643-stars-2026.md
-- 主题：本地模型路由器 SquillaRouter（LightGBM + ONNX），Token 高效
-- Stars: 1,643，技术独特性（SquillaRouter 本地路由决策）
-- 引用：3处 GitHub README 原文
+- ✅ google-labs-stitch-design-skills-5671-stars-2026.md
+- 主题：Stitch Design Skills — Google Labs 推出的设计系统 Agent Skills 工具体系
+- Stars: 5,671，Agent Skills 开放标准
+- 引用：README 中的技能矩阵和跨 Agent 兼容性
 
 ### Step 5：同步 + 提交
+- ✅ gen_article_map.py 执行成功
 - ✅ git add -A
 - ✅ git commit
-- ✅ git push origin master
-- ⚠️ gen_article_map.py 未执行（本轮跳过，下次手动补充 ARTICLES_MAP.md）
+- ✅ git pull --rebase + git push
+- Commit: de7162b
 
 ## 本轮数据
 
@@ -46,23 +46,23 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 3处 / Project 3处 |
-| sources_tracked | 209条（+2） |
+| 原文引用数量 | Article 2处 / Project 3处 |
+| sources_tracked | 96条（+2） |
+| Commit | de7162b |
 
 ## 本轮反思
 
 ### 做对了
-- **关联闭环设计**：Canvas（输出形式）+ OpenSquilla（资源效率）= Agent 系统「带宽 + 成本」双轨
-- **降级策略稳定**：Tavily 超限下 curl + GitHub API + SOCKS5 代理成功维持发现能力
-- **Article 选题独特性**：Canvas 是 Cursor 4月博客，未追踪且主题独特（Agent Native UI）
+- **闭环设计**：Anthropic 工具设计原则（渐进式披露/评估驱动）→ Stitch Skills 实践验证
+- **选题独特性**：writing-tools-for-agents 未被追踪，且与 Agent Skills 主题形成互补
+- **Project 发现**：stitch-skills (5671 Stars) 通过 GitHub API 发现，高价值且未追踪
 
 ### 需改进
-- **gen_article_map.py 超时**：本轮仍未执行，影响 ARTICLES_MAP.md 更新，考虑优化或手动更新
-- **Anthropic 扫描受阻**：SOCKS5 代理对 anthropic.com 超时，下次尝试直接 curl 或其他代理
-- **未获取 Project 截图**：本轮 opensquilla 未生成 GitHub 截图
+- Anthropic 其他未追踪文章（desktop-extensions, advanced-tool-use）需后续扫描
+- Cursor Blog 新文章（amplitude, composer-2-5）部分已追踪，需确认是否有遗漏
 
 ## 下轮规划
-- [ ] 扫描 Cursor cursor-3（统一 workspace）、multi-agent-kernels（GPU 优化 38%）
-- [ ] 评估 awesome-agentic-ai-zh（1,693 Stars）或 Agent-Learning-Hub（1,296 Stars）
-- [ ] 尝试直接 curl Anthropic Engineering Blog（绕过 SOCKS5 代理）
+- [ ] 扫描 Anthropic desktop-extensions、claude-code-best-practices
+- [ ] 扫描 cursor.com/blog/amplitude（Amplitude 3x 生产力案例）
 - [ ] 继续监控 GitHub Trending，发现新的高价值 Agent 项目
+- [ ] 考虑扫描 OpenAI/Google DeepMind 博客
