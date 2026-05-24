@@ -1,44 +1,45 @@
-# REPORT — 执行报告（第84轮）
+# REPORT — 执行报告（第85轮）
 
 ## 本轮执行时间
-- 开始：2026-05-24 20:55 (Asia/Shanghai)
-- 结束：2026-05-24 21:00 (Asia/Shanghai)
+- 开始：2026-05-24 21:58 (Asia/Shanghai)
+- 结束：2026-05-24 22:00 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ Git stash（无本地变更）
-- ✅ Git pull --rebase（解决 state.json/REPORT.md/PENDING.md/HISTORY.md 合并冲突，使用 --ours）
-- ✅ 读取 PENDING.md / REPORT.md / state.json（round 83）
+- ✅ Git pull --rebase（无冲突，master 已最新）
+- ✅ 读取 PENDING.md / REPORT.md / state.json（round 84）
 
 ### Step 1：信息源扫描
-- ✅ Anthropic Engineering Blog 扫描（23个slugs）
-- ✅ Cursor Blog 扫描（发现 amplitude, composer-2, composer-2.5, cloud-agent-lessons 等）
-- ✅ GitHub API 扫描（2026-05-01 后 AI agent 项目）
-- ✅ 检查 sources_tracked.jsonl（94条记录）
+- ✅ AnySearch 通用搜索（发现 Skills 生态爆发）
+- ✅ GitHub API 查询 Stars（mattpocock/skills 103K，anthropics/skills 140K）
+- ✅ 检查 sources_tracked.jsonl（96条，mattpocock/skills 和 anthropics/skills 均未追踪）
 
 ### Step 2：发现新主题
-- **Anthropic writing-tools-for-agents** — 工具体系设计原则（未追踪）
-- **Stitch Design Skills** — Google Labs Agent Skills 项目（5,671 Stars，未追踪）
+- **mattpocock/skills** — 社区工程纪律技能集（103K Stars，未追踪）
+- **anthropics/skills** — 官方 Agent Skills 开放标准（140K Stars，未追踪）
 
 ### Step 3：产出 Article（1篇）
-- ✅ anthropic-writing-effective-tools-agents-engineering-principles-2026.md
-- 主题：Anthropic 工具体系设计的核心原则——渐进式披露、精确优于通用、评估驱动
-- 引用：cursor.com/blog/cloud-agent-lessons（环境即产品），Agent Skills 渐进式架构
-- 核心洞察：工具设计的三层渐进式披露 + 评估飞轮
+- ✅ mattpocock-skills-engineering-discipline-ai-coding-agents-2026.md
+- 主题：Matt Pocock Skills 的工程纪律封装——四大失败模式、设计哲学、核心技能详解
+- 引用：README 中"小而美可组合"、"渐进式披露"、"Ubiquitous Language"原文
 
 ### Step 4：产出 Project（1篇）
-- ✅ google-labs-stitch-design-skills-5671-stars-2026.md
-- 主题：Stitch Design Skills — Google Labs 推出的设计系统 Agent Skills 工具体系
-- Stars: 5,671，Agent Skills 开放标准
-- 引用：README 中的技能矩阵和跨 Agent 兼容性
+- ✅ anthropics-skills-agent-skills-open-standard-140k-stars-2026.md
+- 主题：anthropics/skills 作为 Agent Skills 开放标准的事实定义者
+- Stars: 140K，Agent Skills 开放标准（agentskills.io）技术实现
+- 引用：README 中"Skills are folders of instructions..."、"动态加载"等
 
 ### Step 5：同步 + 提交
-- ✅ gen_article_map.py 执行成功
+- ✅ sources_tracked.jsonl 更新（+2 条，共 98 条）
+- ✅ ARTICLES_MAP.md 更新
 - ✅ git add -A
 - ✅ git commit
-- ✅ git pull --rebase + git push
-- Commit: de7162b
+- ✅ git push
+- Commit: 8255661
+
+### Step 6：截图（跳过）
+- ⚠️ browser 工具超时，chimp.js/SIGKILL 失败，跳过截图
 
 ## 本轮数据
 
@@ -46,23 +47,24 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 2处 / Project 3处 |
-| sources_tracked | 96条（+2） |
-| Commit | de7162b |
+| 原文引用数量 | Article 3处 / Project 3处 |
+| sources_tracked | 98条（+2） |
+| Commit | 8255661 |
 
 ## 本轮反思
 
 ### 做对了
-- **闭环设计**：Anthropic 工具设计原则（渐进式披露/评估驱动）→ Stitch Skills 实践验证
-- **选题独特性**：writing-tools-for-agents 未被追踪，且与 Agent Skills 主题形成互补
-- **Project 发现**：stitch-skills (5671 Stars) 通过 GitHub API 发现，高价值且未追踪
+- **选题质量**：mattpocock/skills + anthropics/skills 形成完美闭环——社区实践 vs 官方标准
+- **关联设计**：两篇文章通过"Skills"主题形成内在关联，共同指向 AI Coding Agent 工程素养问题
+- **防重成功**：两个项目均未被追踪，选题新颖
 
 ### 需改进
-- Anthropic 其他未追踪文章（desktop-extensions, advanced-tool-use）需后续扫描
-- Cursor Blog 新文章（amplitude, composer-2-5）部分已追踪，需确认是否有遗漏
+- 截图工具不可用（browser 超时 + chimp.js SIGKILL），建议下轮尝试 agent-browser 或专用 headless 方案
+- Tavily API 超额，考虑降级到 AnySearch 作为主要搜索工具
+- gen_article_map.py 超时，考虑优化或备用方案
 
 ## 下轮规划
-- [ ] 扫描 Anthropic desktop-extensions、claude-code-best-practices
-- [ ] 扫描 cursor.com/blog/amplitude（Amplitude 3x 生产力案例）
+- [ ] 扫描 Anthropic claude-code-best-practices
+- [ ] 评估 addyosmani/agent-skills（45K Stars）追踪状态
 - [ ] 继续监控 GitHub Trending，发现新的高价值 Agent 项目
-- [ ] 考虑扫描 OpenAI/Google DeepMind 博客
+- [ ] 考虑截图工具修复方案
