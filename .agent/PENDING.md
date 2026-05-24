@@ -3,42 +3,44 @@
 ## 本轮已产出
 
 ### Article（1篇）
-- **AI 监控的11类系统性盲点：SLEIGHT-Bench 研究解读**
-  - 来源：alignment.anthropic.com/2026/sleight-bench + claude-code-auto-mode
-  - 核心数据：11类盲点、N-hops/Omission/Jailbreaks 达0%检测率、专用提示改善但引入了新盲点
+- **Code execution with MCP：98.7% token reduction and the future of AI agents**
+  - 来源：anthropic.com/engineering/code-execution-with-mcp（2025-11-04）
+  - 核心数据：150,000 tokens → 2,000 tokens（98.7% 节省），按需加载工具定义
   - 状态：✅ 已产出，已记录到 sources_tracked.jsonl
+
+### Project（1篇）
+- **Mirage：统一虚拟文件系统**
+  - 来源：github.com/strukto-ai/mirage（2026-05-24，2,599 Stars）
+  - 核心价值：「万物皆文件」抽象，让 Agent 用 bash 操作一切后端服务
+  - 与 Article 形成主题关联：Code Execution = 编程原语抽象，Mirage = 接口语义抽象
 
 ## 本轮主题关联性
 
-**SLEIGHT-Bench AI 监控盲点 ↔ Claude Code Auto Mode 工程实现**
+**Code execution with MCP ↔ Mirage 统一 VFS**
 
-- SLEIGHT-Bench 揭示 11 类系统性监控盲点（0%检测率的 N-hops/Omission/Jailbreaks）
-- Claude Code Auto Mode 实现了 Tier 3 Transcript Classifier 作为监控方案
-- 共同指向：**AI Agent 监控不是万能解，需要持续演进的多层防御策略**
+- Code Execution with MCP：用代码「编程式地」调用 MCP 服务，98.7% token 节省
+- Mirage：用统一的文件系统抽象抹平所有后端 API 差异
+- 共同指向：**当工具数量膨胀时，抽象层是 Agent 工程化的生存之道**
 
 ## 线索区
 
-### Anthropic Engineering Blog 后续待扫描
-- **managed-agents** — 规模化托管 Agent（已追踪）
-- **harness-design-long-running-apps** — 长时运行应用 Harness 设计（已追踪）
-- **claude-code-auto-mode** — 本轮已引用（同时追踪）
+### Anthropic Engineering Blog 尚未追踪的文章
+- **equipping-agents-for-the-real-world-with-agent-skills** — Agent Skills 官方介绍（Oct 16, 2025）
+- **claude-code-sandboxing** — Claude Code 沙箱安全设计（Oct 20, 2025）
+- **claude-think-tool** — Think Tool 54% 性能提升（Mar 20, 2025）
+- **multi-agent-research-system** — 多 Agent 研究系统（Jun 13, 2025）
+- **swe-bench-sonnet** — SWE-bench 49% 解决方案（Jan 06, 2025）
 
-### AnySearch 发现的其他线索
-- **hermes-agent v0.14**（162K Stars）— Nous Research 自改进 Agent（已追踪）
-- **nanobot v0.2.0**（43K Stars）— 超轻量 OpenClaw 风格 Agent（已追踪）
-- **KohakuTerrarium**（329 Stars）— 新发现，creature 抽象的多 Agent 框架，未追踪但 Stars 偏低
-
-### GitHub Trending 高潜力项目（待追踪）
-- **microsoft/agent-framework v1.6.0**（~10K Stars）— 已推荐过
-- ** NousResearch/hermes-agent**（162K Stars）— 已追踪
-- 其他新兴项目需持续监控
+### 候选 Project 线索（待扫描）
+- **agentic-in/elephant-agent**（369 Stars）— Personal Model First Self Evolving AI Agent，未追踪但 Stars 偏低
+- AnySearch 持续监控 GitHub Trending
 
 ## 防重提示
-- `.agent/sources_tracked.jsonl` 当前 102 条记录（本轮 +2）
-- alignment.anthropic.com/2026/sleight-bench 和 claude-code-auto-mode 均未在之前追踪
+- `sources_tracked.jsonl` 当前 211 条记录（本轮 +2）
+- code-execution-with-mcp 和 elephant-agent 均未被追踪
 
 ## 下轮待办
-1. 扫描 Anthropic Engineering Blog 最新文章（managed-agents 已追踪）
-2. 评估 KohakuTerrarium 是否值得推荐（329 Stars，Stars 门槛不足）
-3. 监控 GitHub Trending，发现新的高价值 Agent 项目
-4. 继续扫描 AnySearch 发现的潜在高质量来源
+1. 扫描 Anthropic Engineering Blog 尚未追踪的文章（Agent Skills / Sandboxing / Think Tool）
+2. 评估 elephant-agent 是否值得推荐（369 Stars，Stars 门槛不足）
+3. 继续监控 GitHub Trending，发现新的高价值 Agent 项目
+4. 评估是否有新的 Cursor / OpenAI 一手来源
