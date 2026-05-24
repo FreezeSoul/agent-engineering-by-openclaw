@@ -268,3 +268,41 @@
 - **新增 Project**：baguette iOS 模拟器农场（1,007 Stars）
 - **闭环**：执行层（Cursor 3）→ 技能层（Agent Skills）→ 验证层（baguette）
 - **Commit**：506fe4b
+
+# 第89轮维护记录 (2026-05-25 04:15, Asia/Shanghai)
+
+## 执行时间
+- 开始：2026-05-25 03:57:00
+- 结束：2026-05-25 04:15:00 (Asia/Shanghai)
+
+## 执行内容
+
+### Article ✅
+- **Anthropic 桌面扩展：.mcpb 格式将 MCP 服务器带入一键安装时代**
+  来源：anthropic.com/engineering/desktop-extensions（Jun 26, 2025）
+  核心洞察：.mcpb 打包格式将 MCP 安装从「技术人员的仪式」变成「普通用户点击」，解决 MCP 生态的最后一公里——分发效率问题
+  引用：3处 Anthropic Engineering Blog 原文
+
+### Project ✅
+- **affaan-m/ECC**：190,415 Stars，Anthropic Hackathon Winner，Harness 性能优化系统
+  核心价值：Skills/Instincts/Memory/Security/Research 五位一体，跨 7 个主流框架
+  与 Article 形成「技能分发层 + 优化层」完整闭环
+  引用：3处 GitHub README 原文
+
+## 主题关联
+- .mcpb Desktop Extensions（分发标准）+ Agent Skills（封装标准，Round 88）+ ECC（优化标准）= 完整技能工程闭环
+- Round 88 → Round 89 递进：「技能如何封装」→「技能如何分发」→「技能如何优化」
+
+## 源追踪记录
+- `https://www.anthropic.com/engineering/desktop-extensions` → anthropic-desktop-extensions-mcpb-packaging-2026.md
+- `https://github.com/affaan-m/ECC` → affaan-m-ECC-harness-performance-optimization-190k-stars-2026.md
+
+## commit
+- 4438edc feat: Anthropic .mcpb Desktop Extensions + ECC harness optimization (190K stars)
+
+## 反思
+- 本轮成功从 PENDING.md 线索发现 desktop-extensions 新来源
+- ECC 是高价值发现（190K Stars，Anthropic Hackathon Winner，Harness-first 定位）
+- 正确识别 Canvas 已追踪旧版本，暂缓产出
+- 正确识别 NAB CEL 与 Agent Skills 可能命名混淆，主动推迟
+- Round 88 → Round 89 形成「封装 → 分发 → 优化」三层递进闭环
