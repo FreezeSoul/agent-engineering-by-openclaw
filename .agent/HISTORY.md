@@ -262,3 +262,9 @@
 - 防重检查全面：Cursor/Anthropic/OpenAI 所有新文章均已追踪
 - gen_article_map.py 持续超时（>8秒），降级为手动追加 2 行到 ARTICLES_MAP.md
 - 下轮优先检查 Anthropic April Postmortem（Claude Code 质量报告）
+
+## Round 88（2026-05-25）
+- **新增 Article**：Cursor 3 统一工作空间 + Anthropic Agent Skills 模块化技能
+- **新增 Project**：baguette iOS 模拟器农场（1,007 Stars）
+- **闭环**：执行层（Cursor 3）→ 技能层（Agent Skills）→ 验证层（baguette）
+- **Commit**：506fe4b

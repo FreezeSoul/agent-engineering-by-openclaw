@@ -2,45 +2,52 @@
 
 ## 本轮已产出
 
-### Article（1篇）
-- **Code execution with MCP：98.7% token reduction and the future of AI agents**
-  - 来源：anthropic.com/engineering/code-execution-with-mcp（2025-11-04）
-  - 核心数据：150,000 tokens → 2,000 tokens（98.7% 节省），按需加载工具定义
+### Article（2篇）
+- **Cursor 3：统一工作空间宣告第三时代开发范式成熟**
+  - 来源：cursor.com/blog/cursor-3（2026-04-02）
+  - 核心论点：Cursor 3 从 IDE 重写为 Agent 指挥中心，multi-workspace + Local/Cloud 无缝切换
+  - 状态：✅ 已产出，已记录到 sources_tracked.jsonl
+
+- **Anthropic Agent Skills：模块化技能系统让通用 Agent 获得专业化能力**
+  - 来源：anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills（2025-10-16）
+  - 核心论点：SKILL.md 开放标准封装垂直专业知识，实现 Agent 能力的可组合和可移植
   - 状态：✅ 已产出，已记录到 sources_tracked.jsonl
 
 ### Project（1篇）
-- **Mirage：统一虚拟文件系统**
-  - 来源：github.com/strukto-ai/mirage（2026-05-24，2,599 Stars）
-  - 核心价值：「万物皆文件」抽象，让 Agent 用 bash 操作一切后端服务
-  - 与 Article 形成主题关联：Code Execution = 编程原语抽象，Mirage = 接口语义抽象
+- **baguette：iOS 26 模拟器农场**
+  - 来源：github.com/tddworks/baguette（1,007 Stars）
+  - 核心价值：Headless iOS 模拟器，AI Agent CI 验证基础设施
+  - 关联 Article：Cursor 3 多 Agent 并行 + Agent Skills 技能系统 → 都需要测试验证环境
 
 ## 本轮主题关联性
 
-**Code execution with MCP ↔ Mirage 统一 VFS**
+**Cursor 3 + Agent Skills + baguette**
 
-- Code Execution with MCP：用代码「编程式地」调用 MCP 服务，98.7% token 节省
-- Mirage：用统一的文件系统抽象抹平所有后端 API 差异
-- 共同指向：**当工具数量膨胀时，抽象层是 Agent 工程化的生存之道**
+- Cursor 3：Agent 指挥中心（多 Agent 并行执行）
+- Agent Skills：Agent 专业能力来源（技能封装）
+- baguette：Agent 能力验证环境（真实 iOS 模拟器）
+
+三层架构：**执行层（Cursor 3）→ 技能层（Skills）→ 验证层（baguette）**
 
 ## 线索区
 
-### Anthropic Engineering Blog 尚未追踪的文章
-- **equipping-agents-for-the-real-world-with-agent-skills** — Agent Skills 官方介绍（Oct 16, 2025）
-- **claude-code-sandboxing** — Claude Code 沙箱安全设计（Oct 20, 2025）
-- **claude-think-tool** — Think Tool 54% 性能提升（Mar 20, 2025）
-- **multi-agent-research-system** — 多 Agent 研究系统（Jun 13, 2025）
-- **swe-bench-sonnet** — SWE-bench 49% 解决方案（Jan 06, 2025）
+### 尚未追踪的 Anthropic Engineering Blog
+- claude-think-tool（2025-02-12）— Think Tool 54% 性能提升，older article
+- claude-code-best-practices — Cursor 官方最佳实践（2026-05-14），来自 Cursor 自己的 docs
+- desktop-extensions（2025-04-22）— MCP 打包格式 .mcpb 一键安装
 
-### 候选 Project 线索（待扫描）
-- **agentic-in/elephant-agent**（369 Stars）— Personal Model First Self Evolving AI Agent，未追踪但 Stars 偏低
-- AnySearch 持续监控 GitHub Trending
+### 尚未追踪的 Cursor Blog
+- canvas（2026-04-15）— Agent 可视化 Canvas，与 Cursor 3 界面相关
+- cursor-leads-gartner-mq-2026 — Gartner MQ 领导地位
+- app-stability — OOM/崩溃处理（已追踪但本地文件可能已存在）
+- better-models-ambitious-work — 模型能力提升
 
-## 防重提示
-- `sources_tracked.jsonl` 当前 211 条记录（本轮 +2）
-- code-execution-with-mcp 和 elephant-agent 均未被追踪
+### 候选 Project 线索
+- tddworks/baguette（1,007 Stars）✅ 已产出
+- AnySearch 持续监控 GitHub Trending（Stars > 1000）
 
 ## 下轮待办
-1. 扫描 Anthropic Engineering Blog 尚未追踪的文章（Agent Skills / Sandboxing / Think Tool）
-2. 评估 elephant-agent 是否值得推荐（369 Stars，Stars 门槛不足）
-3. 继续监控 GitHub Trending，发现新的高价值 Agent 项目
-4. 评估是否有新的 Cursor / OpenAI 一手来源
+1. 扫描 claude-think-tool（Think Tool 历史文章，值得评估是否有新视角）
+2. 扫描 desktop-extensions（MCP 打包格式演进）
+3. 扫描 cursor.com/blog/canvas（Agent 可视化 Canvas）
+4. 继续监控 GitHub Trending（iOS 26 框架窗口期）
