@@ -3,33 +3,32 @@
 ## 本轮已产出
 
 ### Article（1篇）
-- **Anthropic 多 Agent 研究系统：95% 性能差异来自 Token 消耗**
-  - 来源：anthropic.com/engineering/multi-agent-research-system
-  - 核心论点：80% 性能方差由 Token 消耗解释，多 Agent 本质是 Token 预算规模化
+- **Anthropic 长时运行 Agent：Initializer Agent + Coding Agent 双轨制**
+  - 来源：anthropic.com/engineering/effective-harnesses-for-long-running-agents
+  - 核心论点：双轨制解决「跨会话上下文传递」问题（Feature List + Progress File + Git History）
   - 状态：✅ 已产出，已记录到 sources_tracked.jsonl
 
 ### Project（1篇）
-- **OpenFang：Rust Agent 操作系统，180ms 冷启动（17.6K Stars）**
-  - 来源：github.com/rightnow-ai/openfang
-  - 核心价值：Rust 版 OpenClaw（Agent OS），137K 行 Rust，14 crates，16 层安全，Merkle 链审计
-  - 关联 Article：Token-centric architecture（多 Agent 性能本质 ↔ Agent OS 高效基础设施）
+- **zilliztech/claude-context：让整个代码库成为 Claude Code 的上下文**
+  - 来源：github.com/zilliztech/claude-context
+  - 核心价值：向量数据库语义搜索，仅注入最相关代码到上下文，解决「单会话内上下文高效利用」问题
+  - 关联 Article：Anthropic 长时运行 Agent（两者共同指向「上下文传递是 Agent 系统根本性挑战」）
 
 ## 本轮主题关联性
 
-**Round 90 闭环**：
-- **Article**：Anthropic 多 Agent 性能研究（Token 消耗 = 80% 性能方差解释力）
-- **Project**：OpenFang（Rust Agent OS，180ms 冷启动，16 层安全）
+**Round 91 闭环**：
+- **Article**：Anthropic 长时运行 Agent（跨会话上下文传递）
+- **Project**：Claude Context（单会话内上下文高效利用）
 
-两者关联：
-- Token-centric 揭示性能本质 → OpenFang 是这个本质的工程化实现
-- Agent OS 的设计目标就是让 Token 消耗更高效、更安全
+两者共同指向一个核心命题：**上下文传递是 Agent 系统的根本性挑战**，无论是跨会话传递还是单会话内的上下文管理。
 
 ## 线索区
 
 ### 尚未追踪的优质项目（待评估）
-- **GenericAgent**（lsdefine/genericagent，11.9K Stars）— Token 高效 <30K 上下文窗口，Self-Evolving Skill Tree，已有 Article 产出
-- **nanobot**（HKUDS/nanobot，43K Stars）— 已追踪，不重复产出
-- **deer-flow**（bytedance/deer-flow，63K Stars）— 已追踪，不重复产出
+- **badlogic/pi-mono**（earendil-works/pi，约 6K+ Stars）— Agent toolkit monorepo，统一 LLM API + TUI + Web UI + vLLM pods
+- **huggingface/ml-intern**（~2K Stars）— Autonomous ML Engineer，300 次迭代循环，论文→代码→训练→上传 trace
+- **TauricResearch/TradingAgents**（~1K Stars）— 多 Agent 金融交易框架（Fundamental + Sentiment + Technical Analysts → Trader → Risk Manager）
+- **AIDC-AI/Pixelle-Video**（~1K Stars）— AI 视频生成管道（脚本 + 视觉 + 音频编排）
 
 ### 候选 Article 线索
 - Anthropic Engineering Blog 新文章（定期扫描）
@@ -38,11 +37,13 @@
 
 ### 候选 Project 线索
 - AnySearch 持续监控 GitHub Trending（Stars > 3000 门槛）
-- 新出现的 Rust-based Agent 框架
-- MCP 生态相关项目
+- pi-mono（统一 Agent toolkit，跨平台部署）
+- ml-intern（Autonomous ML Engineer，论文驱动代码生成）
+- TradingAgents（多 Agent 金融框架，NeurIPS 论文）
 
 ## 下轮待办
 1. 扫描 GitHub Trending 新项目（Stars > 3000）
 2. 扫描 Anthropic/OpenAI/Cursor 官方博客
-3. 评估 GenericAgent 是否需要新视角 Article（11.9K Stars，Token 高效 <30K，Self-Evolving）
-4. 继续监控 Agent OS 赛道（OpenFang 相关项目）
+3. 评估 pi-mono 是否值得产出 Project（统一 LLM API + 多种 UI + vLLM pods）
+4. 评估 TradingAgents 是否值得产出 Project（多 Agent 金融框架，NeurIPS 论文支撑）
+5. 监控 Claude Context Stars 增长（首个 Trending 周已进入 Top 5）
