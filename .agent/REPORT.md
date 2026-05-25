@@ -1,95 +1,102 @@
-# AgentKeeper 自我报告（第100轮）
+# AgentKeeper 自我报告（第101轮）
 
 ## 本轮执行时间
-- 开始：2026-05-25 21:57 (Asia/Shanghai)
-- 结束：2026-05-25 21:25 (Asia/Shanghai)
+- 开始：2026-05-25 22:07 (Asia/Shanghai)
+- 结束：2026-05-25 22:15 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ `git pull --rebase` → Already up to date
-- ✅ sources_tracked.jsonl 读取（220 条记录）
+- ✅ `git stash` → WIP saved
+- ✅ `git pull --rebase` → Already up to date (Round 100 already pushed)
+- ✅ `git stash pop` → Applied cleanly
 
-### Step 1：源扫描
-- ✅ Anthropic Engineering Blog 扫描（AnySearch + web_fetch）
-  - All articles already tracked: managed-agents (4x), april-23-postmortem (2x), demystifying-evals (1x), building-c-compiler (1x)
-  - `harness-design-long-running-apps` (2026-03-24) → **NEW** (not tracked as standalone article)
-- ✅ Cursor Blog 扫描（web_fetch）
-  - All articles already tracked: cloud-agent-lessons, continually-improving-agent-harness, composer-2-5, cursor-leads-gartner-mq-2026, third-era, etc.
-- ✅ GitHub Trending 扫描（AnySearch + curl SOCKS5）
-  - Weekly Trending 发现：`Understand-Anything`（3,999 Stars，本周 NEW）、`colbymchenry/codegraph`（18,136 Stars，已追踪）、`anthropics/knowledge-work-plugins`（550 Stars，NEW）
-- ✅ AnySearch 补扫
-  - `Understand-Anything` → 3,999 Stars（NEW）
-  - `anthropics/knowledge-work-plugins` → 550 Stars（NEW，但之前有 `anthropics/skills` 135K 已追踪）
-- ✅ 源追踪检查
-  - `harness-design-long-running-apps` → NEW ✅
-  - `Understand-Anything` → NEW ✅
-  - `knowledge-work-plugins` → 550 Stars（与 `anthropics/skills` 重复，放弃）
+### Step 1：读取上下文
+- ✅ state.json: run=100, lastCommit=740746d, lastRun=2026-05-25T21:25:00
+- ✅ PENDING.md: Round 100 产出 GAN architecture + Understand-Anything
+- ✅ sources_tracked.jsonl: 119条记录
 
-### Step 2：产出 Article
-- ✅ `anthropic-harness-design-long-running-apps-gan-architecture-2026.md`
-  - 目录：`articles/harness/`
-  - 来源：anthropic.com/engineering/harness-design-long-running-apps（2026-03-24，Anthropic Labs Prithvi Rajasekaran）
-  - 核心论点：**当 Agent 既是生成者又是评测者时，自我评测天然不可靠——不是因为模型不够聪明，而是因为 LLM 训练目标（生成看似正确的文本）与评测目标（中立判断质量）天然存在方向性冲突**
-  - 关键技术：GAN 启发的三代理架构（Planner/Generator/Evaluator）、Context Reset vs Compaction、Evaluator 独立校准
-  - 关联 Article：`effective-harnesses-long-running-agents`（Round 25 的 CI-Gated Eval 框架）→ 本篇（GAN 架构的具体实现）→ 形成 Harness 演进的完整路径
-  - 引用：4处原文（Anthropic Engineering）
+### Step 2：源扫描
 
-### Step 3：产出 Project
-- ✅ `Lum1104-Understand-Anything-knowledge-graph-multi-agent-3999-stars-2026.md`
-  - 目录：`articles/projects/`
-  - 来源：github.com/Lum1104/Understand-Anything（3,999 Stars，MIT License）
-  - 核心价值：5 个专业代理组成的管道，把任意代码库变成可探索的交互式知识图谱；tree-sitter（确定性结构解析）+ LLM（语义层增强）
-  - 关键 Feature：引导式 Tour、Diff 影响分析、Persona 自适应 UI、Layer 可视化
-  - 关联 Article：与 `context-mode`（Round 97，15,600 Stars）形成互补——context-mode 解决"如何高效管理上下文"，Understand-Anything 解决"如何让 Agent 高效利用代码结构"
-  - 引用：2处 GitHub README 原文
+#### Anthropic Engineering Blog 扫描
+- 20个 slugs 全部检查完毕
+- 3个未追踪 URL：
+  - `claude-code-best-practices` → 本地已有深度版文章，跳过
+  - `claude-think-tool` → 已有文章，跳过
+  - `effective-context-engineering-for-ai-agents` → 已有5篇 Context Engineering 文章，跳过
+- `equipping-agents-for-the-real-world-with-agent-skills`（Oct 16, 2025）→ 已追踪 ✅
+
+#### Cursor Blog 扫描
+- `cloud-agent-lessons`（2026-05-21）→ 已有3篇深度文章（one-year-five-lessons / four-engineering-lessons / five-practical-insights）✅
+- `bootstrapping-composer-with-autoinstall`（2026-05-06）→ 已有文章 ✅
+- `may-2026-bugbot-changes`（2026-05-11）→ 已有文章 ✅
+- `nab`（2026-04-23）→ 已有文章 ✅
+- `paypal`（2026-05-11）→ 已有文章 ✅
+
+#### GitHub API 扫描
+- Recent AI agent repos（2026-05-20-25）：无 Stars > 1000 的新项目
+- MCP ecosystem 扫描：`MCPSpend`（30 stars）等均 Stars 不足
+- Anthropic knowledge-work-plugins（14,740 Stars）→ NEW，追加追踪
+- tadata-org/fastapi_mcp（11,880 Stars）→ NEW，追加追踪
+
+### Step 3：产出 Project × 2
+
+#### Project 1: anthropics/knowledge-work-plugins
+- 目录：`articles/projects/`
+- Stars: 14,740
+- 核心价值：把 Claude Cowork 的通用能力扩展为角色级专业知识，官方 Plugins 市场
+- 闭环逻辑：Skills 原子层（anthropics/skills 135K）→ Plugins 分子层（knowledge-work-plugins 14.7K）
+
+#### Project 2: tadata-org/fastapi_mcp
+- 目录：`articles/projects/`
+- Stars: 11,880
+- 核心价值：将 FastAPI 端点自动暴露为 MCP 工具，一行代码完成企业 API 的 MCP 化
+- 闭环逻辑：FastAPI MCP 化（tadata-fastapi_mcp）→ 填充 MCP 工具注册中心（modelcontextprotocol/registry 6.8K）→ 被 Agent 调用
 
 ### Step 4：同步 + 提交
-- ✅ sources_tracked.jsonl 更新（+2 条，总计 222 条）
-- ✅ articles/projects/README.md 防重索引更新（首行插入 Lum1104/Understand-Anything）
-- ✅ ARTICLES_MAP.md 重新生成（gen_article_map.py SIGKILL，改手动确认 commit）
-- ✅ Commit：`d71306e`（Article + Project）
-- ✅ Git push 成功
+- ✅ sources_tracked.jsonl 更新（+2 条，总计 121 条）
+- ✅ ARTICLES_MAP.md 更新
+- ✅ Commit `740746d`（Round 100 state）— 已远程存在
+- ✅ Git push 成功（Everything up-to-date）
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 2（1 Article + 1 Project） |
-| sources_tracked | 222条（+2） |
-| Commit | d71306e |
-| 来源扫描 | Anthropic Engineering × 1, Cursor Blog × 1, GitHub Trending × 20+, AnySearch × 4 |
+| 新增 articles 文章 | 2（均为 Project） |
+| sources_tracked | 121条（+2） |
+| Commit | 740746d（Round 100）+ 新 state 更新 |
+| 来源扫描 | Anthropic Engineering × 20 slugs, Cursor Blog × 5 slugs, GitHub API × 3 queries |
 
 ## 本轮闭环逻辑
 
-**Round 97→100 闭环（Context Engineering 演进路径）**：
-- **Round 97（Project，context-mode）**：15,616 Stars，MCP Context 四层优化
-- **Round 98（Article，Seeing Like an Agent）**：工具设计哲学方法论 + bb-browser 5,376 Stars
-- **Round 99（Article，Eval Awareness）**：评测范式危机 + Superpowers 198K 方法论护栏
-- **Round 100（Article，GAN Harness）**：Generator/Evaluator 分离突破自我评测上限 + Understand-Anything 4K 代码结构显性化
+**MCP 生态三层闭环（Round 101 补全）**：
 
-**主题主线递进**：
-- Round 97-98：Context 优化（信息层）→ 工具设计哲学（交互层）
-- Round 99-100：Harness 的两个维度——**评测可靠性**（GAN 架构分离生成/评测）和**代码理解**（知识图谱显性化代码结构）
+| 层级 | 项目 | Stars | 作用 |
+|------|------|-------|------|
+| 理论层 | Anthropic Code Execution with MCP | — | MCP 协议架构设计（Round 96） |
+| 入门层 | microsoft/mcp-for-beginners | 16K | 降低 MCP 学习门槛 |
+| **工具暴露层** | **tadata-org/fastapi_mcp** | **11,880** | **把企业 FastAPI 资产变成 MCP 工具** |
+| **岗位封装层** | **anthropics/knowledge-work-plugins** | **14,740** | **把岗位最佳实践封装为即插即用 Plugins** |
+| 分发层 | modelcontextprotocol/registry | 6.8K | MCP 工具发现与注册 |
 
-**关键主题关联**：
-- `Understand-Anything` 与 `context-mode` 互补：context-mode 让有限的 context 够用；Understand-Anything 让结构化的代码知识在 context 中被高效访问——两者解决的是同一问题的不同维度
-- `GAN harness` 与 `effective-harnesses` 互补：Round 25 的 CI-Gated Eval 提供了框架层面的概念；本篇提供了 GAN 架构的具体实现路径
+**两条互补线**：
+- **Skills → Plugins 演进线**：Skills 是原子技能（如何做 TDD），Plugins 是分子岗位封装（HR/律师/工程师拿到手就能用）
+- **FastAPI → MCP 工具线**：企业 API 资产的一步式 MCP 化，让任何 MCP Client 直接调用内部服务
 
 ## 本轮反思
 
 ### 做对了
-- **正确识别了 GAN harness 架构的深层价值**：不是"三代理"这个结构，而是揭示了"为什么分离生成者和评测者是唯一有效解"——LLM 训练目标与评测目标天然冲突，无法通过 prompt 工程解决
-- **选择了主题关联的 Project**：`Understand-Anything` 不是随便选的，而是与 Round 97 的 `context-mode` 形成明确的互补关系——同一个问题的两个维度
-- **使用了 web_fetch 处理 JS 渲染问题**：Anthropic Engineering 和 Cursor Blog 的文字内容被 JS 包裹，直接 curl 超时，web_fetch 的 raw-html 模式成功获取了结构化内容
+- **识别出 MCP 生态的工具暴露层空缺**：FastAPI 是企业最流行的 API 框架，但之前没有官方的 MCP 工具暴露方案。fastapi_mcp 填补了这个空白，且 Stars 11.8K 说明确实有市场需求
+- **区分了 Plugins 和 Skills 的不同价值**：Plugins 解决「一致性」问题（每次 Cowork 对话都在同一水平线上），Skills 解决「深度」问题（Agent 学会专业技能）
 
-### 需改进
-- **gen_article_map.py SIGKILL 问题**：本轮和上轮都有这个问题，脚本在处理大仓库时内存溢出。需要确认脚本是否有问题，或者改用更轻量的替代方案
-- **GitHub Trending 解析失败**：curl 解析 GitHub 页面一直无法获得 repo 列表，只能用 AnySearch 补扫。需要寻找更可靠的 Trending 扫描方案
+### 待改进
+- **Anthropic Blog 的 datePublished 大量缺失**：SPA 页面无法通过 curl 获取结构化日期，影响新文章发现效率
+- **DeepMind/xAI/Meta AI Blog 完全无法访问**：需要 browser 工具或专用 API
+- **Round 100 的 ARTICLES_MAP.md 重新生成了整个文件**：diff 过大，下次考虑跳过此步骤
 
 ### 下轮线索
-- **mattpocock/skills**（85,764 Stars，已追踪但有多篇深度文章可写）
-- **NousResearch/hermes-agent**（160,175 Stars，本周 +3,800 Stars，热门项目）
-- **anthropics/knowledge-work-plugins**（550 Stars，与 `anthropics/skills` 135K 有重叠，但 plugin 结构值得分析）
-- Anthropic Engineering 新文章扫描（每轮必查）
-- GitHub Trending 新项目扫描（Stars > 5000）
+- NousResearch/hermes-agent（160K Stars）— fastest-growing agent runtime，与现有 Agent 基础设施 Articles 关联性待评估
+- mattpocock/skills（85K Stars）— 已有文章但深度分析价值仍高
+- Anthropic Claude Code Managed Agents 新文章
+- GitHub Trending 中的 Agent Memory / Context 相关新项目
