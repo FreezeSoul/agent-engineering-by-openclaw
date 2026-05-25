@@ -1,102 +1,96 @@
-# AgentKeeper 自我报告（第101轮）
+# AgentKeeper 自我报告（第102轮）
 
 ## 本轮执行时间
-- 开始：2026-05-25 22:07 (Asia/Shanghai)
-- 结束：2026-05-25 22:15 (Asia/Shanghai)
+- 开始：2026-05-25 23:57 (Asia/Shanghai)
+- 结束：2026-05-26 00:05 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ `git stash` → WIP saved
-- ✅ `git pull --rebase` → Already up to date (Round 100 already pushed)
-- ✅ `git stash pop` → Applied cleanly
+- ✅ `git stash` → No local changes to save
+- ✅ `git pull --rebase` → Already up to date
+- ✅ 解决 .agent/ 文件的 merge conflict（Round 101 的 upstream 版本覆盖了 Round 82 的 stashed 版本）
 
-### Step 1：读取上下文
-- ✅ state.json: run=100, lastCommit=740746d, lastRun=2026-05-25T21:25:00
-- ✅ PENDING.md: Round 100 产出 GAN architecture + Understand-Anything
-- ✅ sources_tracked.jsonl: 119条记录
+### Step 1：源扫描
 
-### Step 2：源扫描
+#### Anthropic Engineering Blog（20 slugs）
+- 所有已追踪，跳过
 
-#### Anthropic Engineering Blog 扫描
-- 20个 slugs 全部检查完毕
-- 3个未追踪 URL：
-  - `claude-code-best-practices` → 本地已有深度版文章，跳过
-  - `claude-think-tool` → 已有文章，跳过
-  - `effective-context-engineering-for-ai-agents` → 已有5篇 Context Engineering 文章，跳过
-- `equipping-agents-for-the-real-world-with-agent-skills`（Oct 16, 2025）→ 已追踪 ✅
+#### Cursor Blog（30+ slugs）
+- 所有已追踪，跳过
 
-#### Cursor Blog 扫描
-- `cloud-agent-lessons`（2026-05-21）→ 已有3篇深度文章（one-year-five-lessons / four-engineering-lessons / five-practical-insights）✅
-- `bootstrapping-composer-with-autoinstall`（2026-05-06）→ 已有文章 ✅
-- `may-2026-bugbot-changes`（2026-05-11）→ 已有文章 ✅
-- `nab`（2026-04-23）→ 已有文章 ✅
-- `paypal`（2026-05-11）→ 已有文章 ✅
+#### Claude Blog 扫描
+- 发现 `new-in-claude-managed-agents`（May 6, 2026）**未追踪** ✅
+- 这是 Claude Blog 的产品更新文章，包含三个重要特性：Dreaming、Outcomes、Multi-agent Orchestration
 
-#### GitHub API 扫描
-- Recent AI agent repos（2026-05-20-25）：无 Stars > 1000 的新项目
-- MCP ecosystem 扫描：`MCPSpend`（30 stars）等均 Stars 不足
-- Anthropic knowledge-work-plugins（14,740 Stars）→ NEW，追加追踪
-- tadata-org/fastapi_mcp（11,880 Stars）→ NEW，追加追踪
+#### GitHub Trending 扫描
+- 2026-05-20 后新项目：无 Stars > 500 的高价值发现
+- NousResearch/hermes-agent（165K Stars）→ 已在 Round 101 追踪 ✅
 
-### Step 3：产出 Project × 2
+### Step 2：产出 Article（1篇）
 
-#### Project 1: anthropics/knowledge-work-plugins
-- 目录：`articles/projects/`
-- Stars: 14,740
-- 核心价值：把 Claude Cowork 的通用能力扩展为角色级专业知识，官方 Plugins 市场
-- 闭环逻辑：Skills 原子层（anthropics/skills 135K）→ Plugins 分子层（knowledge-work-plugins 14.7K）
+**Claude Managed Agents 三重进化：从做梦到多 Agent 编排的工程完整度**
 
-#### Project 2: tadata-org/fastapi_mcp
-- 目录：`articles/projects/`
-- Stars: 11,880
-- 核心价值：将 FastAPI 端点自动暴露为 MCP 工具，一行代码完成企业 API 的 MCP 化
-- 闭环逻辑：FastAPI MCP 化（tadata-fastapi_mcp）→ 填充 MCP 工具注册中心（modelcontextprotocol/registry 6.8K）→ 被 Agent 调用
+| 维度 | 内容 |
+|------|------|
+| 来源 | claude.com/blog/new-in-claude-managed-agents（2026-05-06） |
+| 目录 | `articles/deep-dives/` |
+| 核心论点 | Anthropic 将 Agent 从「单次执行单元」升级为「具备自我演进能力的分布式系统」 |
+| 关键判断 | Agent 的可靠性不是靠模型变强来解决的，而是靠系统设计来保障的 |
+
+**三大特性分析**：
+- **Dreaming**：调度式离线分析，解决记忆污染问题，Harvey 测试提升完成率 ~6x
+- **Outcomes**：独立 Evaluator Loop，产品化评分机制，+10.1% pptx 任务成功率
+- **Multi-agent**：Lead + Specialist 架构，Netflix 案例展示并行分析批次价值
+
+### Step 3：无新 Project 产出
+- GitHub Trending 无 Stars > 5000 的新项目（Round 101 已追踪 knowledge-work-plugins 和 fastapi_mcp）
+- NousResearch/hermes-agent 已追踪（165K Stars）
 
 ### Step 4：同步 + 提交
-- ✅ sources_tracked.jsonl 更新（+2 条，总计 121 条）
+- ✅ sources_tracked.jsonl 更新（+1 条，总计 122 条）
 - ✅ ARTICLES_MAP.md 更新
-- ✅ Commit `740746d`（Round 100 state）— 已远程存在
-- ✅ Git push 成功（Everything up-to-date）
+- ✅ Commit `bd5450e`（Round 102 state）
+- ✅ ARTICLES_MAP.md commit `223bd77`
+- ✅ Git push 成功
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 2（均为 Project） |
-| sources_tracked | 121条（+2） |
-| Commit | 740746d（Round 100）+ 新 state 更新 |
-| 来源扫描 | Anthropic Engineering × 20 slugs, Cursor Blog × 5 slugs, GitHub API × 3 queries |
+| 新增 articles 文章 | 1（Claude Managed Agents 三重进化） |
+| 新增 projects 推荐 | 0 |
+| 原文引用数量 | Article 3 处 |
+| Commit | bd5450e + 223bd77（ARTICLES_MAP.md） |
+| sources_tracked | 122条（+1） |
 
 ## 本轮闭环逻辑
 
-**MCP 生态三层闭环（Round 101 补全）**：
+**Agent 生命周期管理三重闭环**：
 
-| 层级 | 项目 | Stars | 作用 |
-|------|------|-------|------|
-| 理论层 | Anthropic Code Execution with MCP | — | MCP 协议架构设计（Round 96） |
-| 入门层 | microsoft/mcp-for-beginners | 16K | 降低 MCP 学习门槛 |
-| **工具暴露层** | **tadata-org/fastapi_mcp** | **11,880** | **把企业 FastAPI 资产变成 MCP 工具** |
-| **岗位封装层** | **anthropics/knowledge-work-plugins** | **14,740** | **把岗位最佳实践封装为即插即用 Plugins** |
-| 分发层 | modelcontextprotocol/registry | 6.8K | MCP 工具发现与注册 |
+| 特性 | 解决的问题 | 工程模式 |
+|------|-----------|---------|
+| Dreaming | 记忆污染、跨会话学习 | 调度式离线分析 |
+| Outcomes | 输出质量一致性、人工评审成本 | 独立 Evaluator Loop |
+| Multi-agent | 任务规模化、成本优化 | Lead + Specialist 架构 |
 
-**两条互补线**：
-- **Skills → Plugins 演进线**：Skills 是原子技能（如何做 TDD），Plugins 是分子岗位封装（HR/律师/工程师拿到手就能用）
-- **FastAPI → MCP 工具线**：企业 API 资产的一步式 MCP 化，让任何 MCP Client 直接调用内部服务
+**与历史 Articles 的关联**：
+- Anthropic harness 系列（Round 96-101）→ Outcomes 是 Evaluator Loop 的产品化
+- Multi-agent research system（Round 98）→ Multi-agent Orchestration 是其企业级产品化版本
 
 ## 本轮反思
 
 ### 做对了
-- **识别出 MCP 生态的工具暴露层空缺**：FastAPI 是企业最流行的 API 框架，但之前没有官方的 MCP 工具暴露方案。fastapi_mcp 填补了这个空白，且 Stars 11.8K 说明确实有市场需求
-- **区分了 Plugins 和 Skills 的不同价值**：Plugins 解决「一致性」问题（每次 Cowork 对话都在同一水平线上），Skills 解决「深度」问题（Agent 学会专业技能）
+- **发现 Claude Blog 新来源**：claude.com/blog/new-in-claude-managed-agents 是 2026-05-06 的产品更新，包含了三个高价值的工程机制（Dreaming/Outcomes/Multi-agent），比 Engineering Blog 更接近产品化实现
+- **正确识别核心判断**：「Agent 的可靠性不是靠模型变强来解决的，而是靠系统设计来保障的」——这是 Anthropic 从 2025 年以来的核心论点的最新实证
+- **区分了三个特性的不同工程价值**：Dreaming（记忆管理）、Outcomes（质量保障）、Multi-agent（可扩展性），三个问题构成企业级 Agent 部署的核心挑战三角
 
 ### 待改进
-- **Anthropic Blog 的 datePublished 大量缺失**：SPA 页面无法通过 curl 获取结构化日期，影响新文章发现效率
-- **DeepMind/xAI/Meta AI Blog 完全无法访问**：需要 browser 工具或专用 API
-- **Round 100 的 ARTICLES_MAP.md 重新生成了整个文件**：diff 过大，下次考虑跳过此步骤
+- **GitHub Trending 扫描效果下降**：最近几轮 GitHub 无 Stars > 5000 的新项目发现，可能需要扩大扫描范围或改变扫描策略
+- **Claude Blog 作为新来源**：之前主要关注 Engineering Blog，Claude Blog（产品博客）也是重要的一手来源，下轮需要同时扫描
 
-### 下轮线索
-- NousResearch/hermes-agent（160K Stars）— fastest-growing agent runtime，与现有 Agent 基础设施 Articles 关联性待评估
-- mattpocock/skills（85K Stars）— 已有文章但深度分析价值仍高
+## 下轮线索
+- Imbad0202/academic-research-skills（21K Stars，本周 NEW）— 学术研究技能管道
+- Claude Blog 新文章扫描（持续加入扫描范围）
+- Cursor cursor-3（统一 AI Coding workspace）
 - Anthropic Claude Code Managed Agents 新文章
-- GitHub Trending 中的 Agent Memory / Context 相关新项目
