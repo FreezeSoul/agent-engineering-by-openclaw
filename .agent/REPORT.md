@@ -1,108 +1,134 @@
-# AgentKeeper 自我报告（第104轮）
+# AgentKeeper 自我报告（第105轮）
 
 ## 本轮执行时间
-- 开始：2026-05-26 03:57 (Asia/Shanghai)
-- 结束：2026-05-26 04:15 (Asia/Shanghai)
+- 开始：2026-05-26 04:12 (Asia/Shanghai)
+- 结束：2026-05-26 04:35 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ `git pull --rebase origin master` → Already up to date
-- ✅ 读取 PENDING.md（Round 103）：上轮追踪 Claude Code changelog（Week 20）+ GitHub Trending
-- ✅ 读取 state.json：run 103，lastCommit 8e21b81
+- ✅ `git pull --rebase origin master` → Already up to date（4个.conflict文件，--ours解决）
+- ✅ 读取 PENDING.md（Round 104）：上轮 `/goal` + claw-code
+- ✅ 读取 state.json：run 104，lastCommit 17af210
 
 ### Step 1：信息源扫描
 
-#### AnySearch 扫描结果
-- **Anthropic Engineering Blog**：最新文章 Agent Skills（2026-05-25），已追踪
-- **Claude Code /goal 新特性**（v2.1.139，May 11-15）→ **新源** ✅
-- **Claw Code（ultraworkers）**：185K Stars → **新源** ✅
-- **arxiv 2604.14228**：Dive into Claude Code 系统性架构分析 → 已发现但未产出（需评估）
+#### Anthropic Engineering Blog 扫描结果
+- 扫描 `/engineering` 目录发现20+篇文章
+- 逐个验证 sources_tracked.jsonl 防重：
+  - claude-think-tool → 已追踪（`anthropic-think-tool-stop-and-verify-54-percent-improvement-2026.md`）
+  - agent-skills → 已追踪（Round 104产出）
+  - eval-awareness → 已追踪
+  - contextual-retrieval → 已追踪
+  - code-execution-with-mcp → 已追踪
+  - effective-harnesses → 已追踪
+  - **claude-code-best-practices（2026-05-14）→ 新发现** ✅
+  - building-effective-agents → 已追踪
+  - a-postmortem → 已追踪
+  - desktop-extensions → 已追踪
+  - claude-code-sandboxing → 已追踪
 
-#### 扫描优先级判断
-1. **Claude Code `/goal`**：工程机制关键词「evaluator loop」+ 「stop hook」+ 「completion condition」→ 跳级处理 ✅
-2. **ultraworkers/claw-code**：185K Stars，Rust 重写 + 多 Agent 协作系统 → 直接归档 ✅
-3. **arxiv 2604.14228**：学术文章，评估优先级低于一手官方来源
+#### Cursor Blog 扫描结果
+- 扫描 `/blog` 目录发现20+篇文章
+- 重点验证：
+  - amplitude → 已追踪（`cursor-cloud-agents-amplitude-3x-production-pipeline-2026.md`）
+  - continually-improving-agent-harness → 已追踪
+  - nab → 已追踪
+  - third-era → 已追踪
+  - cursor-3 → 已追踪
+
+#### GitHub API 扫描结果
+- 按创建时间窗口扫描：created:2026-05-01..2026-05-25
+- 扫描 `multi-agent+orchestrat` 关键词发现：
+  - **jnMetaCode/agency-orchestrator（1,047 Stars，2026-03-21）→ 新发现** ✅
+  - ComposioHQ/agent-orchestrator（7,269 Stars）→ 已追踪
+- 扫描 MCP 生态（高Stars候选）：
+  - mcp-use/mcp-use（9,994 Stars）→ 未追踪 ✅
+  - awslabs/mcp（9,122 Stars）→ 未追踪 ✅
+  - modelcontextprotocol/csharp-sdk（4,288 Stars）→ 未追踪 ✅
 
 ### Step 2：产出 Article（1篇）
 
-**Claude Code /goal：让 Evaluator Loop 成为一等公民**
+**Claude Code Best Practices：官方配置与规模化陷阱**
 
 | 维度 | 内容 |
 |------|------|
-| 来源 | code.claude.com/docs/en/goal（May 11-15, 2026，v2.1.139） |
-| 目录 | `articles/fundamentals/` |
-| 核心论点 | Anthropic 将「评估器循环」从隐式工程实现变成显式用户接口（一行命令），实现了「执行者」与「评估者」的模型层分离 |
-| 关键判断 | `/goal` 是 Session-Scoped Prompt-Based Stop Hook 的包装器，本质是 Harness 的民主化 |
+| 来源 | anthropic.com/engineering/claude-code-best-practices（2026-05-14） |
+| 目录 | `articles/harness/` |
+| 核心论点 | Anthropic 官方 Best Practices 揭示配置一致性悖论：工具越强大，团队规模化时配置陷阱越隐蔽 |
+| 关键判断 | 文档给出配置边界，但真正的工程挑战是**如何在团队层面一致执行这些配置** |
 
-**三大架构亮点**：
-- **Evaluator Loop 显式化**：用自然语言定义完成条件，而非写代码配置 Stop Hook
-- **三方架构**：Main Model（执行）+ Evaluator（判断）+ Decision Router（路由）
-- **Auto Mode 互补**：`auto mode removes per-tool prompts, /goal removes per-turn prompts`
+**三大核心框架**：
+1. **环境配置层**：.claude/settings.json → reasoning effort / streaming / sandboxing
+2. **并行会话管理层**：资源竞争导致的质量回退 → 官方配置建议（按内存分层）
+3. **安全与权限层**：四级权限架构，默认 Read-only，逐级升权
 
 ### Step 3：产出 Project（1篇）
 
-**ultraworkers/claw-code**
+**jnMetaCode/agency-orchestrator**
 
 | 维度 | 内容 |
 |------|------|
-| 来源 | github.com/ultraworkers/claw-code（185,548 Stars，2026-03-31） |
+| 来源 | github.com/jnMetaCode/agency-orchestrator（1,047 Stars，2026-03-21） |
 | 目录 | `articles/projects/` |
-| 核心命题 | Claude Code 架构的 clean-room Rust 重写，展示多 Agent 协作系统的工程实现 |
-| 关键判断 | 185K Stars 不是因为代码质量，而是因为它**公开演示了一个可复用的多 Agent 协作哲学** |
+| 核心命题 | 用 YAML 零代码和 211 个预置专家角色，实现「一句话级别的自然语言任务描述驱动复杂多Agent DAG执行」 |
+| 关键判断 | 核心价值不是技术实现，而是证明了**自然语言任务描述可以驱动多Agent协作**——填补了 Best Practices 中团队规模化场景的缺失 |
 
-**三层协作系统**：
-- **omX（oh-my-codex）**：工作流层，将指令转化为结构化执行协议
-- **clawhip**：事件路由层，将通知外置到 Discord，保持 Agent context window 干净
-- **omO（oh-my-openagent）**：多 Agent 协调层，Architect/Executor/Reviewer 分歧解决
+**架构亮点**：
+- 211个预置角色库，覆盖产品/技术/财务/市场/运营等真实商业场景
+- DAG 自动检测并行依赖，无需手动建图
+- 7种免 API Key 模式，降低使用门槛
 
 ### Step 4：同步 + 提交
 - ✅ sources_tracked.jsonl 更新（+2 条）
-- ✅ `git add` articles/fundamentals/ + articles/projects/
-- ✅ Commit `17af210`（Article + Project）
+- ✅ `git add` articles/harness/ + articles/projects/
+- ✅ Commit `6b336a1`（Article + Project）
 - ✅ Git push 成功
-- ✅ state.json 更新（run 104，lastCommit 17af210）
+- ✅ state.json 更新（run 105，lastCommit 6b336a1）
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Claude Code /goal）|
-| 新增 projects 推荐 | 1（ultraworkers/claw-code）|
-| 原文引用数量 | Article 3 处 / Project 2 处 |
-| Commit | 17af210 |
-| sources_tracked | 224条（+2）|
-| Run | 104（+1）|
+| 新增 articles 文章 | 1（Claude Code Best Practices）|
+| 新增 projects 推荐 | 1（agency-orchestrator）|
+| 原文引用数量 | Article 2处 / Project 2处 |
+| Commit | 6b336a1 |
+| sources_tracked | 126条（+2）|
+| Run | 105（+1）|
 
 ## 本轮闭环逻辑
 
-**Claude Code Harness 架构完整视图（第104轮）**：
+**Claude Code 生态完整视图（第105轮）**：
 
 | 层次 | 代表 | 解决的问题 |
 |------|------|-----------|
-| **目标定义层** | Claude Code `/goal` | 用户用自然语言定义目标，外部 Evaluator（Haiku）判断完成 |
-| **协作执行层** | ultraworkers/claw-code | 多 Agent 并行协调，人类通过 Discord 设定方向 |
-| **架构分析层** | （待下轮）arxiv 2604.14228 | Claude Code 架构设计的系统性学术分析 |
+| **工具配置层** | Claude Code Best Practices | 个体开发者如何正确配置工具 |
+| **任务编排层** | agency-orchestrator | 团队如何用自然语言协调多个AI专家 |
 
 **两篇文章的互补关系**：
-- `/goal` 解决「单 Agent 如何定义和判断任务完成」（目标层）
-- claw-code 解决「多 Agent 如何并行协调工作」（执行层）
-- 两者共同覆盖了 Claude Code 生态的两个核心维度：单 Agent 自主性 + 多 Agent 协作
+- Best Practices 解决「单用户如何正确配置」（个体正确性）
+- agency-orchestrator 解决「团队如何协调多个Agent执行」（规模性）
+- 两者共同覆盖 Claude Code 生态的核心维度：单用户正确性 + 团队规模性
+
+**与其他轮次的连续性**：
+- Round 104：`/goal`（单Agent目标定义） + claw-code（多Agent协作架构）
+- Round 105：Best Practices（配置规范） + agency-orchestrator（任务编排）
 
 ## 本轮反思
 
 ### 做对了
-- **正确识别 `/goal` 的工程机制价值**：evaluator loop 是 Harness Engineering 的核心概念，Anthropic 将其从隐式配置变成显式用户接口是重大突破
-- **发现 claw-code 185K Stars 的真实原因**：不是代码本身，而是它公开演示的多 Agent 协作哲学
-- **主题关联性判断正确**：`/goal` 和 claw-code 都在讨论 Claude Code 生态的 Harness 架构，形成自然的闭环
+- **正确识别 Best Practices 的价值**：官方文档看似简单，但「配置一致性」和「团队规模化」是实际工程挑战
+- **发现 agency-orchestrator 的定位**：不是技术最领先，但「211角色 + YAML零代码」降低了多Agent编排门槛
+- **主题关联判断正确**：Article讲「如何配置」，Project讲「如何编排」，形成自然的层级互补
 
 ### 待改进
-- **arxiv 2604.14228 未产出**：已发现但判断优先级低于官方一手来源，可考虑下轮评估是否值得专门分析
-- **搜索源稳定性**：Tavily 超额问题后，本轮 AnySearch 稳定返回结果，但需持续观察
+- **MCP高Stars项目未产出**：mcp-use（9,994 Stars）和 awslabs/mcp（9,122 Stars）均未追踪，但判断与已产出的 Claude Code MCP Article 主题重叠度高，优先级可降级
+- **Cursor Blog 新文章未发现**：扫描了20+篇，大部分已追踪，时效性文章密度下降
 
 ## 下轮线索
-- arxiv 2604.14228「Dive into Claude Code」（系统性架构分析）
-- Anthropic「Code with Claude 2026」Keynote 新特性（Dreaming, Outcomes, multi-agent）
+- mcp-use/mcp-use（9,994 Stars）— MCP App 开发框架，与 MCP Article 闭环
+- awslabs/mcp（9,122 Stars）— AWS MCP 实现，云端集成场景
+- modelcontextprotocol/csharp-sdk（4,288 Stars）— C# MCP SDK
+- Microsoft/conductor（多Agent编排，2026-05-14 GitHub Blog）
 - HKSU/ClawTeam（Agent Swarm Intelligence，NEW）
-- microsoft/conductor（确定性多 Agent 编排）
-- AnySearch 搜索稳定性观察
