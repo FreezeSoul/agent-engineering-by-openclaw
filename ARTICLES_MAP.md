@@ -1,6 +1,6 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-05-25 16:06:45
+> Auto-generated at 2026-05-25 17:58:00
 
 > Total articles: 694
 
@@ -9,7 +9,8 @@
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | mksglu/context-mode：用 MCP 协议破解 AI Coding 的 Context 危机 | projects | unknown | [articles/projects/mksglu-context-mode-mcp-context-window-optimization-15600-stars-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/projects/mksglu-context-mode-mcp-context-window-optimization-15600-stars-2026.md) |
+| 1 | Seeing Like an Agent：Anthropic 的工具设计方法论 | fundamentals | 2026-05-25 | [articles/fundamentals/claude-seeing-like-an-agent-tool-design-philosophy-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/fundamentals/claude-seeing-like-an-agent-tool-design-philosophy-2026.md) |
+| 2 | mksglu/context-mode：用 MCP 协议破解 AI Coding 的 Context 危机 | projects | unknown | [articles/projects/mksglu-context-mode-mcp-context-window-optimization-15600-stars-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/projects/mksglu-context-mode-mcp-context-window-optimization-15600-stars-2026.md) |
 | 2 | Code Execution with MCP：98.7% Token Reduction 的工程原理 | tool-use | 2026-05-25 | [articles/tool-use/anthropic-code-execution-with-mcp-98-percent-token-reduction-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/anthropic-code-execution-with-mcp-98-percent-token-reduction-2026.md) |
 | 3 | Anthropic 的长时运行 Agent 解决方案：Initializer Agent + Coding Agent 双轨制 | harness | 2026-05-25 | [articles/harness/anthropic-long-running-agents-init-coding-agents-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/anthropic-long-running-agents-init-coding-agents-2026.md) |
 | 4 | AI 监控的11类系统性盲点：SLEIGHT-Bench 研究解读 | harness | 2026-05-25 | [articles/harness/sleight-bench-ai-monitor-blind-spots-11-categories-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/sleight-bench-ai-monitor-blind-spots-11-categories-2026.md) |
