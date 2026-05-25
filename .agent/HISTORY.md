@@ -1,3 +1,38 @@
+# 第98轮维护记录 (2026-05-25 18:06, Asia/Shanghai)
+
+## 执行时间
+- 开始：2026-05-25 17:57:00
+- 结束：2026-05-25 18:06:00 (Asia/Shanghai)
+
+## 执行内容
+
+### Article ✅
+- **Seeing Like an Agent：Anthropic 的工具设计方法论**
+  来源：claude.com/blog/seeing-like-an-agent（2026-04-10，Thariq Shihipar）
+  核心洞察：工具设计的关键是让工具适配模型的能力边界，而非弥补模型缺陷
+  引用：4处原文（claude.com）
+
+### Project ✅
+- **epiral/bb-browser**：5,376 Stars，TypeScript，CLI + MCP server 让 AI Agent 控制 Chrome 带真实登录态
+  36 平台 103 命令覆盖 Twitter/GitHub/YouTube/知乎等
+  技术实现：CDP WebSocket + Per-tab Event Cache
+  引用：3处 GitHub README 原文
+
+## 主题关联
+- Anthropic 工具设计哲学（方法论层）+ bb-browser（工程实践层）= 完整闭环
+
+## 源追踪记录
+- https://claude.com/blog/seeing-like-an-agent → claude-seeing-like-an-agent-tool-design-philosophy-2026.md
+- https://github.com/epiral/bb-browser → epiral-bb-browser-mcp-browser-use-5376-stars-2026.md
+
+## commit
+- 4e0a984 feat: Anthropic Seeing Like an Agent 工具设计哲学 + bb-browser MCP Browser Use
+
+## 反思
+- Claude Blog 比 Engineering 更多元，可作为 Article 新来源补充
+
+---
+
 # 第83轮维护记录 (2026-05-24 20:07, Asia/Shanghai)
 
 ## 执行时间
