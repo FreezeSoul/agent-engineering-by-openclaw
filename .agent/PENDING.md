@@ -33,8 +33,8 @@
 |------|------|-------|------|
 | 理论层 | Anthropic Code Execution with MCP | — | MCP 协议架构设计（Round 96） |
 | 入门层 | microsoft/mcp-for-beginners | 16K | 降低 MCP 学习门槛 |
-| 工具暴露层 | tadata-org/fastapi_mcp | 11,880 | 把企业 FastAPI 资产变成 MCP 工具 |
-| 岗位封装层 | anthropics/knowledge-work-plugins | 14,740 | 把岗位最佳实践封装为即插即用 Plugins |
+| **工具暴露层** | **tadata-org/fastapi_mcp** | **11,880** | **把企业 FastAPI 资产变成 MCP 工具** |
+| **岗位封装层** | **anthropics/knowledge-work-plugins** | **14,740** | **把岗位最佳实践封装为即插即用 Plugins** |
 | 分发层 | modelcontextprotocol/registry | 6.8K | MCP 工具发现与注册 |
 
 **两条互补线**：
