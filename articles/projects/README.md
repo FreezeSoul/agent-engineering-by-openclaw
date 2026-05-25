@@ -22,6 +22,7 @@
 - **[microsoft/agent-framework](./microsoft-agent-framework-1-0-dotnet-python-unified-sdk-2026.md)** — 10,616 Stars，Python + .NET，语义 Kernel + AutoGen 统一 SDK，1.0 GA（2026-04-03），图模型工作流 + DevUI 可视化调试 + MCP + A2A 1.0（即将支持），与 Anthropic「2026 Agentic Coding Trends Report」中 40% 复杂任务已采用多 Agent 编排形成「数据 → 框架」的映射闭环
 
 - **[open-multi-agent/open-multi-agent](./open-multi-agent-typescript-multi-agent-orchestration-6156-stars-2026.md)** — 6,156 Stars，TypeScript，Goal-First 多 Agent 编排框架，Coordinator Agent 自动分解目标为 DAG 并行执行，3 个运行时依赖 + Node.js 直插 + 10+ Provider（MCP 支持）+ MIT License，与 Claude Code Harness 质量回退事件（三个 harness 优化静默叠加）形成「编排框架 → 控制层」的互补闭环
+- **[ComposioHQ/agent-orchestrator](./composiohq-agent-orchestrator-git-worktree-parallel-2026.md)** — 7,261 Stars，TypeScript，第一个将 git worktree 作为多 Agent 并行隔离机制的编排层，每个 Agent 拥有独立 git worktree（分支级隔离）+ 原生 CI 修复环（culprit identification + 自动重试），与 OpenAI Workspace Agents（团队 Agent 编排）形成「代码层并行隔离 ↔ 流程层团队协作」的完整多 Agent 编排闭环
 
 - **[2508965-ship-it/harmonist-orchestral](./2508965-ship-it-harmonist-orchestral-multi-agent-orchestration-422-stars-2026.md)** — 422 Stars，Python，意图分类驱动的多 Agent 编排引擎，Conductor Protocol + 置信度路由 + 73% token 降低，与 Cursor × Jira 企业集成形成「多 Agent 协作层 → 企业工作流接入」的完整闭环
 
