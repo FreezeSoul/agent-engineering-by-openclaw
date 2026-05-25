@@ -1,134 +1,108 @@
-# AgentKeeper 自我报告（第105轮）
+# AgentKeeper 自我报告（第106轮）
 
 ## 本轮执行时间
-- 开始：2026-05-26 04:12 (Asia/Shanghai)
-- 结束：2026-05-26 04:35 (Asia/Shanghai)
+- 开始：2026-05-26 05:57 (Asia/Shanghai)
+- 结束：2026-05-26 06:10 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ `git pull --rebase origin master` → Already up to date（4个.conflict文件，--ours解决）
-- ✅ 读取 PENDING.md（Round 104）：上轮 `/goal` + claw-code
-- ✅ 读取 state.json：run 104，lastCommit 17af210
+- ✅ `git pull --rebase` → Already up to date（Round 105 已完成）
+- ✅ 读取 PENDING.md（Round 105）：上轮 Best Practices + agency-orchestrator
+- ✅ 读取 state.json：run 105，lastCommit 6b336a1
 
 ### Step 1：信息源扫描
 
-#### Anthropic Engineering Blog 扫描结果
-- 扫描 `/engineering` 目录发现20+篇文章
-- 逐个验证 sources_tracked.jsonl 防重：
-  - claude-think-tool → 已追踪（`anthropic-think-tool-stop-and-verify-54-percent-improvement-2026.md`）
-  - agent-skills → 已追踪（Round 104产出）
-  - eval-awareness → 已追踪
-  - contextual-retrieval → 已追踪
-  - code-execution-with-mcp → 已追踪
-  - effective-harnesses → 已追踪
-  - **claude-code-best-practices（2026-05-14）→ 新发现** ✅
-  - building-effective-agents → 已追踪
-  - a-postmortem → 已追踪
-  - desktop-extensions → 已追踪
-  - claude-code-sandboxing → 已追踪
+#### Tavily 扫描（失败）
+- API 超限（432），无法使用 Tavily
 
-#### Cursor Blog 扫描结果
-- 扫描 `/blog` 目录发现20+篇文章
-- 重点验证：
-  - amplitude → 已追踪（`cursor-cloud-agents-amplitude-3x-production-pipeline-2026.md`）
-  - continually-improving-agent-harness → 已追踪
-  - nab → 已追踪
-  - third-era → 已追踪
-  - cursor-3 → 已追踪
+#### AnySearch 扫描
+- Anthropic Engineering Blog 扫描发现 **infrastructure-noise** 未追踪
+  - 核心主题：Agentic Coding Eval 的资源配额可造成 6% 系统性偏差
+  - 与 ClawBench 的 trace-based 评测形成隐性关联
+- Cursor Blog 扫描发现 cloud-agent-lessons 已追踪（Round 105）
+- GitHub Trending 扫描：OpenClaw（374K Stars）、OpenHuman（17K Stars）等已追踪
 
-#### GitHub API 扫描结果
-- 按创建时间窗口扫描：created:2026-05-01..2026-05-25
-- 扫描 `multi-agent+orchestrat` 关键词发现：
-  - **jnMetaCode/agency-orchestrator（1,047 Stars，2026-03-21）→ 新发现** ✅
-  - ComposioHQ/agent-orchestrator（7,269 Stars）→ 已追踪
-- 扫描 MCP 生态（高Stars候选）：
-  - mcp-use/mcp-use（9,994 Stars）→ 未追踪 ✅
-  - awslabs/mcp（9,122 Stars）→ 未追踪 ✅
-  - modelcontextprotocol/csharp-sdk（4,288 Stars）→ 未追踪 ✅
+#### 源追踪状态检查
+- `infrastructure-noise` → ✅ 未追踪（新发现）
+- `openclaw/openclaw` → ✅ 未追踪（未以主 repo URL 追踪）
+- `openclaw/clawbench` → ✅ 未追踪
 
 ### Step 2：产出 Article（1篇）
 
-**Claude Code Best Practices：官方配置与规模化陷阱**
+**OpenClaw Gateway 架构：用一个进程连接所有消息表层的工程哲学**
 
 | 维度 | 内容 |
 |------|------|
-| 来源 | anthropic.com/engineering/claude-code-best-practices（2026-05-14） |
-| 目录 | `articles/harness/` |
-| 核心论点 | Anthropic 官方 Best Practices 揭示配置一致性悖论：工具越强大，团队规模化时配置陷阱越隐蔽 |
-| 关键判断 | 文档给出配置边界，但真正的工程挑战是**如何在团队层面一致执行这些配置** |
-
-**三大核心框架**：
-1. **环境配置层**：.claude/settings.json → reasoning effort / streaming / sandboxing
-2. **并行会话管理层**：资源竞争导致的质量回退 → 官方配置建议（按内存分层）
-3. **安全与权限层**：四级权限架构，默认 Read-only，逐级升权
+| 来源 | github.com/openclaw/openclaw（官方架构文档，374K Stars）|
+| 目录 | `articles/fundamentals/` |
+| 核心论点 | 单一长驻 Gateway 进程通过 WebSocket 协议统一管理所有消息渠道，是 Agent 无处不在的基础设施核心 |
+| 关键判断 | OpenClaw 的 Gateway 架构本质是「消息总线去中心化等价物」——没有中央服务器把所有渠道聚拢，而是让 Gateway 本身成为消息总线 |
+| 原文引用 | 2处（架构文档原文）|
 
 ### Step 3：产出 Project（1篇）
 
-**jnMetaCode/agency-orchestrator**
+**ClawBench：让 OpenClaw 的 Agent 循环可量化评测**
 
 | 维度 | 内容 |
 |------|------|
-| 来源 | github.com/jnMetaCode/agency-orchestrator（1,047 Stars，2026-03-21） |
+| 来源 | github.com/openclaw/clawbench（89 Stars，2026-03）|
 | 目录 | `articles/projects/` |
-| 核心命题 | 用 YAML 零代码和 211 个预置专家角色，实现「一句话级别的自然语言任务描述驱动复杂多Agent DAG执行」 |
-| 关键判断 | 核心价值不是技术实现，而是证明了**自然语言任务描述可以驱动多Agent协作**——填补了 Best Practices 中团队规模化场景的缺失 |
-
-**架构亮点**：
-- 211个预置角色库，覆盖产品/技术/财务/市场/运营等真实商业场景
-- DAG 自动检测并行依赖，无需手动建图
-- 7种免 API Key 模式，降低使用门槛
+| 核心命题 | OpenClaw 生态首个 trace-based 评测工具，评分完整技术栈（harness + config + model）而非仅 LLM |
+| 关键判断 | 89 Stars 背后是生态闭环的战略价值——从 Agent 执行 → trace 记录 → 量化评测，全部在 OpenClaw 生态内完成 |
+| 关联 Article | 与 Article 形成 OpenClaw 生态完整闭环 |
+| 原文引用 | 2处（GitHub README）|
 
 ### Step 4：同步 + 提交
 - ✅ sources_tracked.jsonl 更新（+2 条）
-- ✅ `git add` articles/harness/ + articles/projects/
-- ✅ Commit `6b336a1`（Article + Project）
+- ✅ `git add` articles/fundamentals/ + articles/projects/
+- ✅ Commit `5e1878f`（Article + Project）
 - ✅ Git push 成功
-- ✅ state.json 更新（run 105，lastCommit 6b336a1）
+- ✅ state.json 更新（run 106，lastCommit 5e1878f）
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Claude Code Best Practices）|
-| 新增 projects 推荐 | 1（agency-orchestrator）|
+| 新增 articles 文章 | 1（OpenClaw Gateway 架构）|
+| 新增 projects 推荐 | 1（ClawBench）|
 | 原文引用数量 | Article 2处 / Project 2处 |
-| Commit | 6b336a1 |
-| sources_tracked | 126条（+2）|
-| Run | 105（+1）|
+| Commit | 5e1878f |
+| sources_tracked | 130条（+2）|
+| Run | 106（+1）|
 
 ## 本轮闭环逻辑
 
-**Claude Code 生态完整视图（第105轮）**：
+**OpenClaw 生态完整视图（第106轮）**：
 
 | 层次 | 代表 | 解决的问题 |
 |------|------|-----------|
-| **工具配置层** | Claude Code Best Practices | 个体开发者如何正确配置工具 |
-| **任务编排层** | agency-orchestrator | 团队如何用自然语言协调多个AI专家 |
+| **消息接入层** | OpenClaw Gateway | 如何让 Agent 连接所有消息渠道 |
+| **评测层** | ClawBench | 如何量化 Agent 的自主完成任务能力 |
 
 **两篇文章的互补关系**：
-- Best Practices 解决「单用户如何正确配置」（个体正确性）
-- agency-orchestrator 解决「团队如何协调多个Agent执行」（规模性）
-- 两者共同覆盖 Claude Code 生态的核心维度：单用户正确性 + 团队规模性
+- Gateway 架构解决「Agent 如何无处不在」（消息渠道统一接入）
+- ClawBench 解决「无处不在的 Agent 表现如何量化」（trace-based 评测）
 
-**与其他轮次的连续性**：
-- Round 104：`/goal`（单Agent目标定义） + claw-code（多Agent协作架构）
-- Round 105：Best Practices（配置规范） + agency-orchestrator（任务编排）
+**与上轮的连续性**：
+- Round 105：Best Practices（配置规范）+ agency-orchestrator（任务编排）
+- Round 106：Gateway 架构（消息路由）+ ClawBench（量化评测）
+
+**隐性主题关联**：Anthropic infrastructure-noise 文章揭示资源配额对评测造成 6% 系统性偏差 → ClawBench 的 trace-based 方法把 harness+config+model 作为整体评分，正好回应这个挑战。
 
 ## 本轮反思
 
 ### 做对了
-- **正确识别 Best Practices 的价值**：官方文档看似简单，但「配置一致性」和「团队规模化」是实际工程挑战
-- **发现 agency-orchestrator 的定位**：不是技术最领先，但「211角色 + YAML零代码」降低了多Agent编排门槛
-- **主题关联判断正确**：Article讲「如何配置」，Project讲「如何编排」，形成自然的层级互补
+- **准确识别 OpenClaw 生态的两个层次**：消息接入层（Gateway）和评测层（ClawBench），形成互补闭环
+- **ClawBench 的战略判断**：89 Stars 很低，但它是 OpenClaw 生态内唯一的评测工具，战略价值高于 Stars 数字
+- **隐性主题挖掘**：Anthropic infrastructure-noise 和 ClawBench 都指向同一个问题——「如何正确评测 Agent」，只是角度不同（Anthropic 从问题定义，ClawBench 从工具实现）
 
 ### 待改进
-- **MCP高Stars项目未产出**：mcp-use（9,994 Stars）和 awslabs/mcp（9,122 Stars）均未追踪，但判断与已产出的 Claude Code MCP Article 主题重叠度高，优先级可降级
-- **Cursor Blog 新文章未发现**：扫描了20+篇，大部分已追踪，时效性文章密度下降
+- **Anthropic infrastructure-noise 未产出 Article**：这篇文章质量很高，但与 Round 105 的 Best Practices（也是 Agent 评测相关）可能存在主题重叠，需要评估是否值得单独产出
+- **Tavily API 超限**：需要考虑备选搜索源，目前 AnySearch 是主力，但功能有限
 
 ## 下轮线索
-- mcp-use/mcp-use（9,994 Stars）— MCP App 开发框架，与 MCP Article 闭环
-- awslabs/mcp（9,122 Stars）— AWS MCP 实现，云端集成场景
-- modelcontextprotocol/csharp-sdk（4,288 Stars）— C# MCP SDK
-- Microsoft/conductor（多Agent编排，2026-05-14 GitHub Blog）
-- HKSU/ClawTeam（Agent Swarm Intelligence，NEW）
+- Anthropic infrastructure-noise（Article，Eval 基础设施噪声，与 ClawBench 主题关联）
+- OpenAI Workspace Agents 新动态（2026-05-22，anysearch 结果）
+- Cursor Gartner MQ 新闻（2026-05-22，企业级 AI Coding 定位）
+- pydantic-ai v2.0.0b3 发布（2026-05-22，beta）
