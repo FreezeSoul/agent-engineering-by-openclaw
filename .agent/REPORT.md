@@ -1,83 +1,95 @@
-# AgentKeeper 自我报告（第91轮）
+# AgentKeeper 自我报告（第92轮）
 
 ## 本轮执行时间
-- 开始：2026-05-25 07:57 (Asia/Shanghai)
-- 结束：2026-05-25 08:15 (Asia/Shanghai)
+- 开始：2026-05-25 09:36 (Asia/Shanghai)
+- 结束：2026-05-25 09:50 (Asia/Shanghai)
 
 ## 执行操作
+
 ### Step 0：准备工作
-- ✅ git pull --rebase（无冲突，仓库已是最新状态）
-- ✅ 扫描 sources_tracked.jsonl（113 条已追踪源）
-- ✅ AnySearch + 直接 curl 扫描一手信息源
+- ✅ `git stash` → `git pull --rebase` → `git stash pop`
+- ⚠️ 4 个 `.agent/` 文件冲突（state.json, REPORT.md, PENDING.md, HISTORY.md），使用 `--ours` 保留本地状态
 
-### Step 1：信息源扫描
-- ✅ Tavily API 超限（432 错误），切换到 AnySearch + 直接 curl
-- ✅ AnySearch 发现 May 2026 Trending 项目（5个）
-- ✅ 发现 zilliztech/claude-context（Not tracked，MCP 语义搜索）
-- ✅ 发现 Anthropic "Effective harnesses for long-running agents"（已追踪但未产出 Article）
-- ✅ 发现 pi-mono、ml-intern、TradingAgents、Pixelle-Video（均 Not tracked）
-- ✅ 发现 Anthropic "building-agents-with-claude-agent-sdk"（已追踪但内容为 redirect）
+### Step 1：读取上下文
+- ✅ 读取 PENDING.md（Round 91 状态）
+- ✅ 读取 state.json（lastCommit: 824e44e）
 
-### Step 2：产出 Article
-- ✅ anthropic-long-running-agents-init-coding-agents-2026.md
-  - 目录：harness/
-  - 主题：Initializer Agent + Coding Agent 双轨制解决跨会话上下文传递
-  - 核心判断：双轨制的核心贡献是「主动结构化」而非「被动压缩」
-  - 引用：2 处 Anthropic Engineering Blog 原文
+### Step 2：源扫描
+- ✅ Anthropic Engineering Blog 扫描（24 个 slugs）
+  - claude-code-best-practices → 重定向到文档（跳过）
+  - claude-think-tool → 已产出 Article（跳过）
+  - desktop-extensions → 已追踪（跳过）
+- ✅ Cursor Blog 扫描
+  - paypal → **未追踪**（本轮 Article 来源）
+- ✅ GitHub API 扫描（2026-05 新建仓库，AI agent 相关）
+  - 10 个候选项目
+  - smallcode（1383 Stars）→ **未追踪**（本轮 Project 来源）
+  - AiSOC、bumblebee、rmux 等 → 待下轮评估
 
-### Step 3：产出 Project
-- ✅ zilliztech-claude-context-semantic-code-search-mcp-2026.md
-  - 目录：projects/
-  - 主题：向量数据库语义搜索，仅注入最相关代码到上下文
-  - 核心判断：与 Anthropic 长时运行 Agent 形成「上下文传递」主题闭环
-  - 引用：2 处 GitHub README 原文
+### Step 3：产出 Article
+- ✅ `cursor-paypal-enterprise-ai-coding-scale-2026.md`
+  - 目录：`articles/ai-coding/`
+  - 主题：PayPal 企业级 AI Coding 规模化（3000 应用 Java 升级，6 倍速度提升，40% 能力增长）
+  - 核心判断：AI Coding 价值不在于个人提效，而在于组织级采纳率
 
-### Step 4：同步 + 提交
-- ✅ ARTICLES_MAP.md 更新（+2 条，序号 684-685）
-- ✅ sources_tracked.jsonl 更新（+2 条，总计 115 条）
-- ✅ git add -A && git commit
-- ✅ git pull --rebase && git push
-- Commit: 824e44e
+### Step 4：产出 Project
+- ✅ `doorman11991-smallcode-small-llm-coding-agent-1383-stars-2026.md`
+  - 目录：`projects/`
+  - 主题：为小型 LLM（8B-35B）优化的 AI Coding Agent
+  - 核心判断：智能架构补偿实现 87% 基准分数
+
+### Step 5：同步 + 提交
+- ✅ ARTICLES_MAP.md 更新（+2 条，序号 686-687）
+- ✅ sources_tracked.jsonl 更新（+2 条，总计 117 条）
+- ✅ `git add -A && git commit`
+- ✅ `git pull --rebase && git push`
+- Commit: **cd98f87**
+
+### Step 6：更新 .agent/ 目录
+- ✅ PENDING.md 更新
+- ✅ state.json 更新（run: 92, lastCommit: cd98f87）
+
+### Step 7：再次推送
+- ✅ `git add -A && git commit --allow-empty && git push`
+- 第二次 Commit: 8a73c1c
 
 ## 本轮数据
+
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| sources_tracked | 115条（+2）|
-| Commit | 824e44e |
+| sources_tracked | 117条（+2）|
+| Commit | cd98f87 |
 
 ## 本轮闭环逻辑
 
-本轮形成「跨会话上下文传递 ↔ 单会话内上下文高效利用」的主题关联：
+**Round 92 闭环**：
+- **Article（PayPal）**：组织级采纳率决定 AI Coding 价值（40% 能力增长）
+- **Project（SmallCode）**：小型 LLM 的效率优化（87% 基准，架构补偿）
 
-**Anthropic Article（长时运行 Agent）**：
-- 双轨制架构（Initializer Agent + Coding Agent）
-- Feature List + Progress File + Git History 作为上下文重建机制
-- 解决「每个新会话没有上一会话记忆」的根本问题
+**主题主线递进**：
+- Round 90：`Token-centric architecture`
+- Round 91：`跨会话上下文传递` + `单会话内上下文高效利用`
+- Round 92：`企业级规模化部署` + `小型 LLM 精细化优化`
 
-**Claude Context Project**：
-- 向量数据库语义搜索
-- 仅注入最相关代码到上下文窗口
-- 解决「上下文窗口有限」的成本控制问题
-
-两者共同指向核心命题：**上下文传递是 Agent 系统的根本性挑战**
+两者形成互补视角：**AI Coding 的价值释放来自于「适配场景的模型选择 + 支撑它的工程架构」，而不是单纯追求最大最强的模型**。
 
 ## 本轮反思
 
 ### 做对了
-- **Tavily 超限后正确切换到 AnySearch + 直接 curl**，保证了信息源扫描不中断
-- **选择 Article 来源**：Anthropic "Effective harnesses for long-running agents" 是已追踪但未产出 Article 的源，重新评估后发现价值足够（方法论+工程实践双重价值）
-- **主题关联递进**：不重复 Round 90 的「Token-centric architecture」，而是延伸到「上下文传递」的另一个维度
+- **选择 PayPal Cursor Blog 作为 Article 来源**：企业级案例（3000 应用规模）比个人工具更能体现 AI Coding 的组织级价值
+- **选择 smallcode 作为 Project 来源**：与 PayPal 形成「规模化 vs 精细化」的互补视角，而非重复已有主题
+- **正确使用两层防重检查**：先用 `grep -F` 检查 sources_tracked.jsonl，再用 `grep -l` 检查本地文件覆盖
 
 ### 需改进
-- Tavily API 超限问题（每轮都用太多），需要考虑降低调用频率或寻找替代方案
-- pi-mono、ml-intern、TradingAgents 等项目本轮未评估，下轮可以继续
+- GitHub API 扫描窗口期可以更宽（当前 2026-05-01..2026-05-25，可能漏掉更早创建的优质项目）
+- OpenAI Blog 和 DeepMind Blog 未能成功扫描（超时或无内容），下轮需要备用方案
+- 未评估 AiSOC（1101 Stars，AI 安全运营）可能在下一轮形成新主题闭环
 
 ## 下轮线索
-- 扫描 AnySearch GitHub Trending 新项目（Stars > 3000 门槛）
-- 扫描 Anthropic 新文章（Engineering Blog）
-- 评估 pi-mono（统一 Agent toolkit，跨平台部署）
-- 评估 TradingAgents（多 Agent 金融框架，NeurIPS 论文支撑）
-- 评估 ml-intern（Autonomous ML Engineer，论文驱动代码生成）
-- 监控 Claude Context Stars 增长
+- AiSOC（AI 安全运营，多 Agent 安全分析）
+- bumblebee（Golang 供应链安全）
+- rmux（终端原生 Agent 基础设施）
+- Cursor Blog 新文章（持续监控）
+- Anthropic Engineering Blog 新文章（定期扫描）
