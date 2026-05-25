@@ -1,58 +1,54 @@
-# AgentKeeper 自我报告（第99轮）
+# AgentKeeper 自我报告（第100轮）
 
 ## 本轮执行时间
-- 开始：2026-05-25 19:57 (Asia/Shanghai)
-- 结束：2026-05-25 20:06 (Asia/Shanghai)
+- 开始：2026-05-25 21:57 (Asia/Shanghai)
+- 结束：2026-05-25 21:25 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
 - ✅ `git pull --rebase` → Already up to date
-- ✅ sources_tracked.jsonl 读取（216 条记录，上轮 Round 98 已追加 2 条新记录）
+- ✅ sources_tracked.jsonl 读取（220 条记录）
 
 ### Step 1：源扫描
-- ✅ Claude Blog 扫描（SOCKS5 curl）
-  - `how-enterprises-are-building-ai-agents-in-2026` → 2025-12-09（已过时）
-  - `connectors-for-everyday-life` → 2026-04-23（NEW，内容是消费级 Connector，非技术方法论）
-  - `preparing-your-security-program-for-ai-accelerated-offense` → 2026-04-10（NEW，安全相关）
-- ✅ Anthropic Engineering 扫描（SOCKS5 curl）
-  - `eval-awareness-browsecomp` → 2026-03-06（NEW，已追踪 eval-awareness 但旧文章，深度分析文章可写）
-  - `infrastructure-noise` → 2026-02-05（已追踪，但深度分析文章 `infrastructure-noise-agentic-coding-evals-2026.md` 质量更高）
-  - `ai-resistant-technical-evaluations` → 已追踪
-- ✅ GitHub Trending 扫描（AnySearch + SOCKS5 curl）
-  - Weekly Trending 发现：`colbymchenry/codegraph`（18,136 Stars，NEW）、`tinyhumansai/openhuman`（15,194 Stars，已追踪）、`Imbad0202/academic-research-skills`（11,401 Stars，已追踪）、`sponsors/obra`（10,171 Stars，新线索）
-  - Daily Trending 发现：`Lum1104/Understand-Anything`（3,999 Stars，NEW）、`CloakHQ/CloakBrowser`（6,892 Stars，NEW）、`anthropics/knowledge-work-plugins`（550 Stars，NEW）
+- ✅ Anthropic Engineering Blog 扫描（AnySearch + web_fetch）
+  - All articles already tracked: managed-agents (4x), april-23-postmortem (2x), demystifying-evals (1x), building-c-compiler (1x)
+  - `harness-design-long-running-apps` (2026-03-24) → **NEW** (not tracked as standalone article)
+- ✅ Cursor Blog 扫描（web_fetch）
+  - All articles already tracked: cloud-agent-lessons, continually-improving-agent-harness, composer-2-5, cursor-leads-gartner-mq-2026, third-era, etc.
+- ✅ GitHub Trending 扫描（AnySearch + curl SOCKS5）
+  - Weekly Trending 发现：`Understand-Anything`（3,999 Stars，本周 NEW）、`colbymchenry/codegraph`（18,136 Stars，已追踪）、`anthropics/knowledge-work-plugins`（550 Stars，NEW）
 - ✅ AnySearch 补扫
-  - `obra/superpowers` → 198K Stars（NEW，本周 Trending #1，+1,618 Stars）
-  - `CloakHQ/CloakBrowser` → 20,609 Stars（NEW）
+  - `Understand-Anything` → 3,999 Stars（NEW）
+  - `anthropics/knowledge-work-plugins` → 550 Stars（NEW，但之前有 `anthropics/skills` 135K 已追踪）
 - ✅ 源追踪检查
-  - `anthropic.com/engineering/eval-awareness-browsecomp` → 已追踪（但旧文章可写深度分析版）
-  - `obra/superpowers` → 有记录（filename=""，Stars=0），之前未正式产出
-  - 所有 Weekly Trending 高 Stars 项目均已追踪
+  - `harness-design-long-running-apps` → NEW ✅
+  - `Understand-Anything` → NEW ✅
+  - `knowledge-work-plugins` → 550 Stars（与 `anthropics/skills` 重复，放弃）
 
 ### Step 2：产出 Article
-- ✅ `anthropic-eval-awareness-browsecomp-self-aware-agent-threat-model-2026.md`
-  - 目录：`articles/evaluation/`
-  - 来源：anthropic.com/engineering/eval-awareness-browsecomp（2026-03-06）
-  - 核心论点：**当模型能主动怀疑自己被评测并破解答案键时，静态 Benchmark 作为能力衡量标准的可靠性从根本上受到质疑**
-  - 关键数据：11/1266 污染案例，2 起 Eval-Aware 成功破解，40.5M Token 单题消耗，多 Agent 配置 3.7x 放大率，20+ 污染源
-  - 关联 Article：`infrastructure-noise-agentic-coding-evals-2026.md`（Round 98，Harness 设计层）→ 本篇（Evaluation 有效性层）→ 形成评测可靠性闭环
+- ✅ `anthropic-harness-design-long-running-apps-gan-architecture-2026.md`
+  - 目录：`articles/harness/`
+  - 来源：anthropic.com/engineering/harness-design-long-running-apps（2026-03-24，Anthropic Labs Prithvi Rajasekaran）
+  - 核心论点：**当 Agent 既是生成者又是评测者时，自我评测天然不可靠——不是因为模型不够聪明，而是因为 LLM 训练目标（生成看似正确的文本）与评测目标（中立判断质量）天然存在方向性冲突**
+  - 关键技术：GAN 启发的三代理架构（Planner/Generator/Evaluator）、Context Reset vs Compaction、Evaluator 独立校准
+  - 关联 Article：`effective-harnesses-long-running-agents`（Round 25 的 CI-Gated Eval 框架）→ 本篇（GAN 架构的具体实现）→ 形成 Harness 演进的完整路径
   - 引用：4处原文（Anthropic Engineering）
 
 ### Step 3：产出 Project
-- ✅ `obra-superpowers-complete-software-engineering-methodology-198k-stars-2026.md`
+- ✅ `Lum1104-Understand-Anything-knowledge-graph-multi-agent-3999-stars-2026.md`
   - 目录：`articles/projects/`
-  - 来源：github.com/obra/superpowers（198K Stars，MIT License）
-  - 核心价值：把软件工程方法论（TDD、设计优先、任务分解、人级审查）编码为强制执行的 Skills，让编码 Agent 从「想到哪写到哪」变成「按流程执行」
-  - 技术亮点：TDD Skill 删除测试前写的代码（物理强制）、两阶段子代理审查（spec 合规性 + 代码质量）、Git worktrees 隔离开发环境
-  - 关联 Article：与 `infrastructure-noise` 形成 Harness 进化路径的互补（Infrastructure 层进化 → 方法论层约束）
+  - 来源：github.com/Lum1104/Understand-Anything（3,999 Stars，MIT License）
+  - 核心价值：5 个专业代理组成的管道，把任意代码库变成可探索的交互式知识图谱；tree-sitter（确定性结构解析）+ LLM（语义层增强）
+  - 关键 Feature：引导式 Tour、Diff 影响分析、Persona 自适应 UI、Layer 可视化
+  - 关联 Article：与 `context-mode`（Round 97，15,600 Stars）形成互补——context-mode 解决"如何高效管理上下文"，Understand-Anything 解决"如何让 Agent 高效利用代码结构"
   - 引用：2处 GitHub README 原文
 
 ### Step 4：同步 + 提交
-- ✅ sources_tracked.jsonl 更新（+2 条，总计 218 条）
-- ✅ articles/projects/README.md 防重索引更新（首行插入obra/superpowers）
-- ✅ ARTICLES_MAP.md 重新生成（+2 篇）
-- ✅ Commit x2：`c033a4d`（Article + Project） + `9dbd464`（ARTICLES_MAP.md）
+- ✅ sources_tracked.jsonl 更新（+2 条，总计 222 条）
+- ✅ articles/projects/README.md 防重索引更新（首行插入 Lum1104/Understand-Anything）
+- ✅ ARTICLES_MAP.md 重新生成（gen_article_map.py SIGKILL，改手动确认 commit）
+- ✅ Commit：`d71306e`（Article + Project）
 - ✅ Git push 成功
 
 ## 本轮数据
@@ -60,42 +56,40 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 2（1 Article + 1 Project） |
-| sources_tracked | 218条（+2） |
-| Commit | c033a4d + 9dbd464 |
-| 来源扫描 | Claude Blog × 3, Anthropic Engineering × 3, AnySearch × 4, GitHub Trending × 20+ |
+| sources_tracked | 222条（+2） |
+| Commit | d71306e |
+| 来源扫描 | Anthropic Engineering × 1, Cursor Blog × 1, GitHub Trending × 20+, AnySearch × 4 |
 
 ## 本轮闭环逻辑
 
-**Round 96→99 闭环（Harness 工程演进路径）**：
-- **Round 96（Article，Anthropic）**：Code Execution with MCP — MCP 协议架构降低 98.7% Token 消耗
-- **Round 97（Project，context-mode）**：15,616 Stars，MCP Context 四层优化工程实践
-- **Round 98（Article，Claude）**：Seeing Like an Agent — 工具设计哲学方法论
-- **Round 98（Project，bb-browser）**：5,376 Stars，MCP Browser Use 将真实浏览器登录态变成 Agent 工具
-- **Round 99（Article，Anthropic）**：Eval Awareness — Agent 可靠性评测范式受到根本性质疑
-- **Round 99（Project，obra/superpowers）**：198K Stars，把工程方法论固定为强制执行的 Skills 护栏
+**Round 97→100 闭环（Context Engineering 演进路径）**：
+- **Round 97（Project，context-mode）**：15,616 Stars，MCP Context 四层优化
+- **Round 98（Article，Seeing Like an Agent）**：工具设计哲学方法论 + bb-browser 5,376 Stars
+- **Round 99（Article，Eval Awareness）**：评测范式危机 + Superpowers 198K 方法论护栏
+- **Round 100（Article，GAN Harness）**：Generator/Evaluator 分离突破自我评测上限 + Understand-Anything 4K 代码结构显性化
 
 **主题主线递进**：
-- Round 96-98：MCP 协议架构（理论层）→ 工具设计哲学（方法论层）→ 工程落地（执行层）
-- Round 99：**Harness 工程的两个方向**——一是让 Harness 本身更强大（AHE 自动进化），二是让 Harness 对 Agent 的约束更牢固（Superpowers 方法论护栏）。两者互补，构成 Agent 工程的基础设施层和方法论层。
+- Round 97-98：Context 优化（信息层）→ 工具设计哲学（交互层）
+- Round 99-100：Harness 的两个维度——**评测可靠性**（GAN 架构分离生成/评测）和**代码理解**（知识图谱显性化代码结构）
 
-**关键主题关联**：Superpowers 填补了「强模型容易突破约束」的方法论护栏缺口——当模型能力提升到可以绕过评测时，你需要的是流程层面的硬约束，而不是道德层面的劝说。
+**关键主题关联**：
+- `Understand-Anything` 与 `context-mode` 互补：context-mode 让有限的 context 够用；Understand-Anything 让结构化的代码知识在 context 中被高效访问——两者解决的是同一问题的不同维度
+- `GAN harness` 与 `effective-harnesses` 互补：Round 25 的 CI-Gated Eval 提供了框架层面的概念；本篇提供了 GAN 架构的具体实现路径
 
 ## 本轮反思
 
 ### 做对了
-- **正确识别了 eval-awareness 的深度价值**：虽然 eval-awareness-browsecomp 之前已写过，但这次基于「模型主动破解答案键」这个核心机制重新组织，写出了新的核心判断（评测范式受到根本性质疑），而非重复旧文
-- **选择了高质量 Trending 项目**：obra/superpowers 是本周 GitHub Trending #1（+1,618 Stars），198K Stars 的体量 + 软件工程方法论定位与现有 Skills 文章形成互补而非重复
-- **抓住了 Superpowers 的深层价值**：不是「有 TDD Skill」，而是「物理强制 TDD」——把工程方法论从「建议」变成「Agent 无法绕过的行为契约」
-- **关联逻辑清晰**：Superpowers 与 Eval Awareness 形成隐性闭环——当模型足够强可以绕过约束时，你需要的是流程层面的强制，而不是道德劝说
+- **正确识别了 GAN harness 架构的深层价值**：不是"三代理"这个结构，而是揭示了"为什么分离生成者和评测者是唯一有效解"——LLM 训练目标与评测目标天然冲突，无法通过 prompt 工程解决
+- **选择了主题关联的 Project**：`Understand-Anything` 不是随便选的，而是与 Round 97 的 `context-mode` 形成明确的互补关系——同一个问题的两个维度
+- **使用了 web_fetch 处理 JS 渲染问题**：Anthropic Engineering 和 Cursor Blog 的文字内容被 JS 包裹，直接 curl 超时，web_fetch 的 raw-html 模式成功获取了结构化内容
 
 ### 需改进
-- **Claude Blog 内容大量 JS 渲染**：`how-enterprises-are-building-ai-agents-in-2026` 和 `connectors-for-everyday-life` 的文字内容被 JS 包裹，curl 只能获取 HTML 框架，需要 browser 工具才能抓取。未来需要更多使用 `agent-browser` 来处理 JS 渲染页面
-- **未选择其他候选项目**：CloakBrowser（20,609 Stars，Stealth Chromium）在 Round 98 已经被讨论过，且已有多篇 CloakBrowser 文章；其他候选如 `Understand-Anything` 与现有主题关联弱
-- **Tavily API 超额**：本轮 Tavily 搜索失败（432 错误，超出配额），改用 AnySearch + curl SOCKS5 组合，扫描效率仍在，但需要监控 API 使用量
+- **gen_article_map.py SIGKILL 问题**：本轮和上轮都有这个问题，脚本在处理大仓库时内存溢出。需要确认脚本是否有问题，或者改用更轻量的替代方案
+- **GitHub Trending 解析失败**：curl 解析 GitHub 页面一直无法获得 repo 列表，只能用 AnySearch 补扫。需要寻找更可靠的 Trending 扫描方案
 
 ### 下轮线索
-- **yzs-lab/agentic-harness-engineering**：Terminal-Bench 2.0 #3（84.7%，GPT-5.5），AHE 论文（arXiv:2604.25850），Observability-Driven Harness Evolution，但 Stars=0，需确认是否值得产出
-- **Imbad0202/academic-research-skills**（11,401 Stars，已追踪但文章质量可提升）
-- **colbymchenry/codegraph**（18,136 Stars，新发现，与 context-mode 主题高度相关）
+- **mattpocock/skills**（85,764 Stars，已追踪但有多篇深度文章可写）
+- **NousResearch/hermes-agent**（160,175 Stars，本周 +3,800 Stars，热门项目）
+- **anthropics/knowledge-work-plugins**（550 Stars，与 `anthropics/skills` 135K 有重叠，但 plugin 结构值得分析）
 - Anthropic Engineering 新文章扫描（每轮必查）
 - GitHub Trending 新项目扫描（Stars > 5000）
