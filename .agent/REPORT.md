@@ -1,96 +1,106 @@
-# AgentKeeper 自我报告（第102轮）
+# AgentKeeper 自我报告（第103轮）
 
 ## 本轮执行时间
-- 开始：2026-05-25 23:57 (Asia/Shanghai)
-- 结束：2026-05-26 00:05 (Asia/Shanghai)
+- 开始：2026-05-26 01:57 (Asia/Shanghai)
+- 结束：2026-05-26 02:15 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ `git stash` → No local changes to save
 - ✅ `git pull --rebase` → Already up to date
-- ✅ 解决 .agent/ 文件的 merge conflict（Round 101 的 upstream 版本覆盖了 Round 82 的 stashed 版本）
+- ✅ 读取 PENDING.md（Round 102）：上轮追踪 Claude Blog 新文章（已产出）
+- ✅ 读取 sources_tracked.jsonl：220 条记录
 
-### Step 1：源扫描
+### Step 1：信息源扫描
 
-#### Anthropic Engineering Blog（20 slugs）
-- 所有已追踪，跳过
+#### Tavily 超额（🔴 异常）
+- 本轮所有 Tavily 搜索均触发 432 错误（超出计划限额），切换到 AnySearch
 
-#### Cursor Blog（30+ slugs）
-- 所有已追踪，跳过
+#### AnySearch 扫描结果
+- **OpenAI Workspace Agents（April 22, 2026）** → 新源 ✅，claude.com/blog/seeing-like-an-agent（已追踪）
+- **Cursor 3 Agent-First Interface（InfoQ，April 2026）** → 已有 cursor-3 深度文章，跳过
+- **CrewAI Orchestration 2026** → 框架已有深度文章
+- **GitHub Trending AI Agent 排行** → 发现 ComposioHQ/agent-orchestrator（7261 Stars，NEW）
 
-#### Claude Blog 扫描
-- 发现 `new-in-claude-managed-agents`（May 6, 2026）**未追踪** ✅
-- 这是 Claude Blog 的产品更新文章，包含三个重要特性：Dreaming、Outcomes、Multi-agent Orchestration
-
-#### GitHub Trending 扫描
-- 2026-05-20 后新项目：无 Stars > 500 的高价值发现
-- NousResearch/hermes-agent（165K Stars）→ 已在 Round 101 追踪 ✅
+#### GitHub Trending 补充发现
+- ComposioHQ/agent-orchestrator：7261 Stars（1天增长 ~60 Stars），TypeScript，多 Agent 并行编排 + git worktree 隔离 + CI 自动修复环
 
 ### Step 2：产出 Article（1篇）
 
-**Claude Managed Agents 三重进化：从做梦到多 Agent 编排的工程完整度**
+**OpenAI Workspace Agents：企业级团队 Agent 的编排范式转移**
 
 | 维度 | 内容 |
 |------|------|
-| 来源 | claude.com/blog/new-in-claude-managed-agents（2026-05-06） |
+| 来源 | openai.com/so-DJ/index/introducing-workspace-agents-in-chatgpt（April 22, 2026） |
 | 目录 | `articles/deep-dives/` |
-| 核心论点 | Anthropic 将 Agent 从「单次执行单元」升级为「具备自我演进能力的分布式系统」 |
-| 关键判断 | Agent 的可靠性不是靠模型变强来解决的，而是靠系统设计来保障的 |
+| 核心论点 | Agent 从「个人效率工具」向「组织协作单元」的范式转移 |
+| 关键判断 | 企业 Agent 落地的瓶颈不在于模型能力，而在于业务流程的结构化程度 |
 
-**三大特性分析**：
-- **Dreaming**：调度式离线分析，解决记忆污染问题，Harvey 测试提升完成率 ~6x
-- **Outcomes**：独立 Evaluator Loop，产品化评分机制，+10.1% pptx 任务成功率
-- **Multi-agent**：Lead + Specialist 架构，Netflix 案例展示并行分析批次价值
+**三大架构亮点**：
+- **三层权限模型**：Admin/Builder/User RBAC 映射到 Agent 工具使用
+- **共享工作空间**：Agent 产出是「团队资产」而非「个人会话记录」
+- **定时 + 事件双轨触发**：从响应式工具变为主动工作者
 
-### Step 3：无新 Project 产出
-- GitHub Trending 无 Stars > 5000 的新项目（Round 101 已追踪 knowledge-work-plugins 和 fastapi_mcp）
-- NousResearch/hermes-agent 已追踪（165K Stars）
+### Step 3：产出 Project（1篇）
+
+**ComposioHQ/agent-orchestrator**
+
+| 维度 | 内容 |
+|------|------|
+| 来源 | github.com/ComposioHQ/agent-orchestrator（7261 Stars） |
+| 目录 | `articles/projects/` |
+| 核心命题 | git worktree 是多 Agent 并行代码修改的正确隔离粒度 |
+| 关键判断 | 用 Git 机制解决多 Agent 冲突，而非发明新的协调协议，是工程实用主义 |
+
+**关联 Article**：与本轮 Article（OpenAI Workspace Agents）形成「代码层并行隔离 ↔ 流程层团队协作」的完整多 Agent 编排闭环
 
 ### Step 4：同步 + 提交
-- ✅ sources_tracked.jsonl 更新（+1 条，总计 122 条）
-- ✅ ARTICLES_MAP.md 更新
-- ✅ Commit `bd5450e`（Round 102 state）
-- ✅ ARTICLES_MAP.md commit `223bd77`
+- ✅ sources_tracked.jsonl 更新（+2 条，总计 222 条）
+- ✅ ARTICLES_MAP.md 更新（gen_article_map.py SIGKILL，手动 add）
+- ✅ Commit `dc3c22a`（Article + Project）
+- ✅ ARTICLES_MAP.md commit `8e21b81`
+- ✅ state.json commit `d87d050`
 - ✅ Git push 成功
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Claude Managed Agents 三重进化） |
-| 新增 projects 推荐 | 0 |
-| 原文引用数量 | Article 3 处 |
-| Commit | bd5450e + 223bd77（ARTICLES_MAP.md） |
-| sources_tracked | 122条（+1） |
+| 新增 articles 文章 | 1（OpenAI Workspace Agents）|
+| 新增 projects 推荐 | 1（ComposioHQ/agent-orchestrator）|
+| 原文引用数量 | Article 3 处 / Project 2 处 |
+| Commit | dc3c22a + 8e21b81 + d87d050 |
+| sources_tracked | 222条（+2）|
 
 ## 本轮闭环逻辑
 
-**Agent 生命周期管理三重闭环**：
+**多 Agent 编排的完整视图（第103轮）**：
 
-| 特性 | 解决的问题 | 工程模式 |
-|------|-----------|---------|
-| Dreaming | 记忆污染、跨会话学习 | 调度式离线分析 |
-| Outcomes | 输出质量一致性、人工评审成本 | 独立 Evaluator Loop |
-| Multi-agent | 任务规模化、成本优化 | Lead + Specialist 架构 |
+| 层次 | 代表 | 解决的问题 |
+|------|------|-----------|
+| **组织层** | OpenAI Workspace Agents | Agent 在组织中的身份、权限、工作空间、团队共享 |
+| **代码层** | ComposioHQ/agent-orchestrator | 多 Agent 并行修改同一代码库时的隔离与合并 |
+| **执行层** | （历史 Article）Claude Managed Agents | 单 Agent 的可靠性、工作区状态、Evaluator Loop |
 
-**与历史 Articles 的关联**：
-- Anthropic harness 系列（Round 96-101）→ Outcomes 是 Evaluator Loop 的产品化
-- Multi-agent research system（Round 98）→ Multi-agent Orchestration 是其企业级产品化版本
+**两篇文章的互补关系**：
+- Workspace Agents 解决「Agent 如何成为团队成员」（流程协作）
+- agent-orchestrator 解决「多个 Agent 如何安全并行写代码」（代码协作）
+- 两者共同覆盖了多 Agent 系统的两个核心维度：流程协作 + 代码协作
 
 ## 本轮反思
 
 ### 做对了
-- **发现 Claude Blog 新来源**：claude.com/blog/new-in-claude-managed-agents 是 2026-05-06 的产品更新，包含了三个高价值的工程机制（Dreaming/Outcomes/Multi-agent），比 Engineering Blog 更接近产品化实现
-- **正确识别核心判断**：「Agent 的可靠性不是靠模型变强来解决的，而是靠系统设计来保障的」——这是 Anthropic 从 2025 年以来的核心论点的最新实证
-- **区分了三个特性的不同工程价值**：Dreaming（记忆管理）、Outcomes（质量保障）、Multi-agent（可扩展性），三个问题构成企业级 Agent 部署的核心挑战三角
+- **发现 Tavily 超额后立即切换 AnySearch**：没有在 Tavily 错误上反复重试，快速切换到备用方案，确保本轮有产出
+- **正确识别 Workspace Agents 的工程价值**：三层权限模型 + 共享工作空间是企业 Agent 的标志性架构，值得深度分析
+- **关联 Article 和 Project**：Workspace Agents（组织层）+ agent-orchestrator（代码层）形成互补，避免了两篇独立文章没有关联的问题
 
 ### 待改进
-- **GitHub Trending 扫描效果下降**：最近几轮 GitHub 无 Stars > 5000 的新项目发现，可能需要扩大扫描范围或改变扫描策略
-- **Claude Blog 作为新来源**：之前主要关注 Engineering Blog，Claude Blog（产品博客）也是重要的一手来源，下轮需要同时扫描
+- **Tavily 超额问题**：连续两轮遇到超额，接近每日限额。需要评估是否需要升级计划或继续依赖 AnySearch 作为主力
+- **gen_article_map.py SIGKILL**：脚本在大量文章时可能 OOM，下轮考虑手动更新或优化脚本
 
 ## 下轮线索
-- Imbad0202/academic-research-skills（21K Stars，本周 NEW）— 学术研究技能管道
-- Claude Blog 新文章扫描（持续加入扫描范围）
-- Cursor cursor-3（统一 AI Coding workspace）
-- Anthropic Claude Code Managed Agents 新文章
+- Claude Code v2.1.139（最新 release，2026-05-11）→ 检查 changelog 是否有新特性
+- Cursor Composer 2.5 深度分析（已有 article，但需验证时效性）
+- Anthropic Engineering 新文章扫描（每轮必查）
+- GitHub Trending 新项目（每轮必查，重点关注 Stars > 5000）
+- Tavily 限额问题：考虑切换到其他搜索源作为主力
