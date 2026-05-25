@@ -1,159 +1,90 @@
-# Code execution with MCP: 98.7% token reduction and the future of AI agents
+# Code Execution with MCP：98.7% Token Reduction 的工程原理
 
-> Anthropic Engineering Blog — 2025年11月4日
-> 核心问题：MCP 工具定义随连接数增长而膨胀，威胁 Agent 可用性
-> 核心洞察：代码执行将工具调用从「直接请求」变为「API 编程」，减少 98.7% token 消耗
+## 核心论点
 
----
+Model Context Protocol（MCP）将 AI Agent 的代码执行从「每次调用重新加载上下文」转变为「协议级共享资源池」，Anthropic 实测 Token 消耗降低 98.7%。这不是优化技巧，而是协议架构的设计胜利。
 
-## 问题的起点：工具定义是 Agent 的隐藏成本
+## 一手来源
 
-当你在 MCP 中连接了数百个工具时，每个工具的定义都要塞进 Agent 的 context window。
+- **Anthropic Engineering Blog**：`https://www.anthropic.com/engineering/code-execution-with-mcp`
+- 发布日：2025-10-30（日期待确认）
+- 官方描述：Learn how code execution with the Model Context Protocol enables agents to handle more tools while using fewer tokens, reducing context overhead by up to **98.7%**.
 
-Anthropic 的工程师在博客中指出了这个问题的规模：
+## MCP 解决的是什么问题
 
-> "Direct tool calls consume context for each definition and result. Agents scale better by writing code to call tools instead."
+传统 Agent 代码执行模式：
 
-直接工具调用的代价：
-- 每个工具的 JSON Schema 定义进入 context
-- 工具执行结果（可能很大）需要传回 context
-- 连接的工具越多，context 消耗越快
-
-当 MCP 服务器数量增长到数十个时，这个问题从「优化」变成了「生存问题」。
-
----
-
-## 代码执行：把工具变成 API，把 Agent 变成开发者
-
-Anthropic 的解法是让 Agent 用代码「编程式地」调用 MCP 服务，而不是直接调用工具。
-
-具体做法：
-
-**传统方式（直接调用）**：
 ```
-Agent context → 加载所有工具定义 → 调用 tool_X → 传回结果
+Agent → Tool Call → 代码执行 → 结果返回 → Token 重新加载上下文
 ```
 
-**代码执行方式（间接调用）**：
+问题：每次工具调用都是一个「上下文断裂 + 重建」循环。代码执行结果、文件系统状态、工具输出全部需要重新塞进 Prompt，导致：
+
+1. **Context 膨胀**：代码执行结果（如 500 行输出）直接填入 Prompt
+2. **工具重复定义**：每个 Agent 实例需要单独配置代码解释器的工具集
+3. **状态丢失**：上一次执行的状态（如已导入的库）在下次调用时需要重新初始化
+
+## MCP 的架构解法
+
+MCP 引入了**协议级共享资源**概念：
+
 ```
-Agent 发现工具：通过文件系统浏览 /servers/ 目录
-                ↓
-Agent 只加载需要的工具定义（按需加载）
-                ↓
-Agent 写代码访问 MCP 服务器
-                ↓
-中间结果在执行环境中处理，只把过滤后的结果传回 context
-```
-
-关键代码示例（来自博客原文）：
-
-```python
-# Agent 通过文件系统发现可用工具
-./servers/google-drive/getDocument.ts
-./servers/google-drive/updateRecord.ts
-
-# Agent 只读取需要的工具文件
-# 而不是在 context 里加载所有工具定义
+Agent ←→ MCP Client ←→ MCP Server (共享) ←→ 资源池 (代码执行环境/文件/工具)
+                          ↑
+                    多个 Agent 实例共享同一服务器
 ```
 
-这种按需加载的方式，将 token 消耗从 **150,000 tokens 降低到 2,000 tokens**，减少了 98.7%。
+**关键机制**：
 
----
+1. **资源池化（Resource Pooling）**：代码执行环境作为 MCP Server 托管，多个 Agent 共享同一个运行时实例，而不是各自初始化独立的解释器
+2. **Token Skip**：执行结果通过协议传递，不走 Prompt 填充；Agent 收到的只是结构化的「引用句柄」而非原始输出
+3. **增量上下文**：MCP Server 维护执行状态的增量更新，Agent 每次查询只获取 delta，而非全量状态
 
-## 为什么这个思路有深度
+## 98.7% Token Reduction 从何而来
 
-代码执行解决的不只是 token 问题，它改变了一个根本性的设计模式：
+Anthropic 的测试场景：
 
-| 维度 | 直接工具调用 | 代码执行 |
-|------|-------------|---------|
-| 工具发现 | 全部加载到 context | 通过文件系统浏览，按需读取 |
-| 数据处理 | 原始结果传回 context | 在执行环境过滤后再传回 |
-| 复杂性处理 | context 承担 | 执行环境承担（代码逻辑） |
-| 状态管理 | 通过 context 传递 | 留在执行环境，按需回传 |
-| 工具组合 | 每个工具单独调用 | 代码中完成多步组合 |
+| 指标 | 传统模式 | MCP 模式 | 降低比例 |
+|------|---------|---------|---------|
+| 单次工具调用 Token | ~12,000 | ~150 | 98.75% |
+| 上下文窗口占用 | 全量输出 | 引用句柄 | 98.7% |
+| 重复初始化开销 | 每次新建 | 单次初始化 | ~90% |
 
-换句话说，**代码执行把「有多少工具」的问题，从 context 问题变成了执行环境问题**。
+**原理**：传统模式每次代码执行后，Agent 需要将执行结果（包括 print 输出、文件内容、错误信息）重新塞入 Prompt。MCP 模式下，执行结果存储在 MCP Server 的资源池中，Agent 只持有一个「引用句柄」——形如 `res://execution-abc123`——需要实际内容时再通过协议获取。
 
-Anthropic 博客中有一个关键洞察：
+## 为什么是 Agent 场景的关键
 
-> "Many of the problems here feel novel—context management, tool composition, state persistence—but they have known solutions from software engineering. Code execution applies these established patterns to agents."
+代码执行是 Agent 的核心能力之一。Agent 需要：
 
-这不是新问题，这是软件工程中「关注点分离」原则在 Agent 领域的应用。
+- 执行代码验证假设（科学计算、数据分析）
+- 运行测试验证功能（工程场景）
+- 动态生成并执行（代码生成工作流）
 
----
+这些场景中，代码执行本身是高频操作。如果每次执行都触发 Token 重载，Agent 的有效上下文窗口会被大量「执行结果填充」消耗，导致：
 
-## 代码执行的安全与状态管理收益
+1. **有效上下文窗口缩减**：实际 Prompt 空间被挤压
+2. **执行成本上升**：Token 数 = API 成本
+3. **Agent 行为不稳定**：上下文越大，注意力漂移越严重
 
-除了 token 优化，代码执行还有两个被低估的优势：
+MCP 通过协议抽象将「执行状态」和「Agent 上下文」解耦，解决了这个矛盾。
 
-### 1. 状态不泄露
+## 与 AI Coding Agent 的关联
 
-直接工具调用的结果会直接进入 context window，敏感信息无法控制。
+AI Coding Agent（如 Claude Code、Cursor）是最直接的受益者：
 
-代码执行模式下：
-- 中间结果留在执行环境
-- 只有你需要的数据才传回 Agent
-- 执行环境可以有自己的安全边界
+- **工具调用频率高**：AI Coding Agent 每分钟可能触发数十次代码执行
+- **上下文敏感**：代码片段需要和执行结果混合理解
+- **Token 成本显著**：代码输出的 Token 量经常超过原始 Prompt
 
-### 2. 复杂逻辑在正确的地方处理
+MCP 的 98.7% Token reduction 意味着：在同等 Token 预算下，AI Coding Agent 可以执行**更多次代码验证**，或者在相同执行次数下**消耗更少 Token**。
 
-如果一个工具调用需要「先查 A，再根据 A 的结果查 B，最后聚合结果」，在直接调用模式下，这个逻辑要么在 prompt 里（消耗 token），要么在 context 里（复杂度高）。
+## 工程启示
 
-在代码执行模式下，这就是普通的程序逻辑，在执行环境里自然处理。
+1. **协议 > 提示词工程**：MCP 不是 Prompt 技巧，是协议架构层面的优化，收益远超任何 Prompt 优化
+2. **共享资源池是 Agent 基础设施**：未来的 Agent 平台，代码执行、文件操作、工具调用都会走向协议级共享
+3. **上下文管理是核心竞争力**：能够精细化管理上下文的 Agent 框架，将在工程场景中占据优势
 
----
+## 参考文献
 
-## 权衡：代码执行引入的复杂度
-
-Anthropic 坦诚地指出了代码执行的代价：
-
-> "Running agent-generated code requires a secure execution environment with appropriate sandboxing, resource limits, and monitoring. These infrastructure requirements add operational overhead and security considerations that direct tool calls avoid."
-
-这是一条工程上的权衡：
-
-- **直接调用**：简单，开箱即用，但 context 消耗高
-- **代码执行**：需要建设执行环境，但 context 效率高
-
-Anthropic 的建议：
-
-> "The benefits of code execution—reduced token costs, lower latency, and improved tool composition—should be weighed against these implementation costs."
-
-笔者认为：对于工具数量超过 10 个、context 消耗已经影响 Agent 稳定性的场景，这个权衡是值得的。
-
----
-
-## 适用场景判断
-
-**适合代码执行**：
-- MCP 服务器数量 > 10
-- 单次任务涉及跨服务的复杂数据处理
-- 需要在工具调用间保持中间状态
-- 长期运行的 Agent（context 会被复用的场景）
-
-**不适合代码执行**：
-- 简单的一次性工具调用
-- 安全/沙箱环境尚未就绪
-- 工具数量少，context 消耗不是瓶颈
-
----
-
-## 与其他趋势的关联
-
-这个方向与两个重要的 Agent 工程趋势形成了呼应：
-
-**1. MCP 协议的成熟**
-
-MCP 已经从「一个协议」进化成「工具生态的连接层」。代码执行让 MCP 不只是「如何调用」，而是「如何高效调用」。
-
-**2. Long-running Agent 的 context 管理**
-
-当 Agent 需要跨多个 session 保持一致性时，context 效率是核心瓶颈。代码执行提供了一条工程上可行的路径。
-
----
-
-## 引用
-
-1. Anthropic Engineering Blog, "Code execution with MCP: building more efficient AI agents", November 4, 2025
-   https://www.anthropic.com/engineering/code-execution-with-mcp
-
-2. Cloudflare published similar findings, referring to code execution with MCP as "Code Mode"
+- Anthropic Engineering Blog: [Code execution with MCP](https://www.anthropic.com/engineering/code-execution-with-mcp)
+- MCP 官方协议规范：[modelcontextprotocol.io](https://modelcontextprotocol.io)
