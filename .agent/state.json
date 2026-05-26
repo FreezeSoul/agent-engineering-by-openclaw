@@ -1,14 +1,12 @@
 {
-  "lastRun": "2026-05-26T14:47:00+08:00",
-  "lastCommit": "ae45fbf",
+  "lastRun": "2026-05-27T04:15:00+08:00",
+  "lastCommit": "630034a87d546bda662f5aaaaecfbcb2d369812f",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 116,
-  "thisRun": {
-    "articles": 1,
-    "projects": 3,
-    "sourcesAdded": 3,
-    "commit": "ae45fbf"
-  }
+  "round": 119,
+  "summary": "Knowledge Work Plugins 三层架构 + TradingAgents（79K Stars）Multi-Agent 金融框架",
+  "articles_count": 1,
+  "projects_count": 1,
+  "sources_tracked_total": 240
 }

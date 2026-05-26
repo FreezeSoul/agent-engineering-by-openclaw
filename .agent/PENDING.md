@@ -10,68 +10,88 @@
 ## 本轮已产出
 
 ### Article（1篇）
-- **cursor-cloud-agent-harness-engineering-methodology-2026.md**：Cursor 云端 Agent 的 Harness 工程方法论——环境即产品、持久化执行（Temporal）、三层状态分离、A/B 评估驱动演进
+- **anthropic-knowledge-work-plugins-three-layer-architecture-2026.md**：Anthropic Knowledge Work Plugins 三层架构解析——plugin.json 元数据 + .mcp.json 连接器声明 + skills/ 执行单元，以及两层记忆系统（CLAUDE.md hot cache + memory/ deep storage）
 
 ### Projects（1篇）
-- **affaan-m-ecc-agent-harness-performance-system-193k-stars-2026.md**：ECC（193K Stars）Harness 性能优化系统——Skills（246）、Instincts、Hook 系统、NanoClaw v2，来自 Anthropic Hackathon 获奖作品
+- **tauricresearch-tradingagents-multi-agent-trading-framework-79k-stars-2026.md**：TradingAgents（79,790 Stars）Multi-Agent 金融交易框架——分析师/研究员（对抗性辩论）/交易员/风控/组合经理的分层协作，LangGraph checkpoint + decision log + dual-region provider
 
 ## 本轮闭环逻辑
 
-**Harness 工程闭环**：
+**Agent 工程垂直落地闭环**：
 
 | 维度 | 本轮产出 | 关联 |
 |------|---------|------|
-| 工程方法论 | Cursor 博客（官方实践）| Harness 设计原则 |
-| 工程实践 | ECC（民间实现）| 193K Stars 验证的市场需求 |
+| Skill 系统工程落地 | Knowledge Work Plugins 三层架构 | Skill 定义 → 可运行工具的完整路径 |
+| Multi-Agent 垂直应用 | TradingAgents（79K Stars）| 金融研究场景的真实组织协作结构 |
 
-**与 Round 117 产出的关联**：
-- Round 117 → Gartner MQ（企业级编排）+ awesome-agentic-ai-zh（学习路线）
-- Round 118 → Cursor Harness 方法论 + ECC（Harness 性能系统）
-- 两轮共同指向 **Agent 工程的基础设施层**：编排平台（Harness）是底层，之上才是学习路线和应用
+**与前轮产出的关联**：
+- Round 117 → Gartner MQ（企业级编排平台层）
+- Round 118 → Cursor Harness 方法论（执行引擎层）
+- Round 119 → Skill 系统落地（productivity 插件三层架构）+ Multi-Agent 垂直应用（TradingAgents 金融框架）
 
 ## 线索区
 
-### 候选 Article 线索
-- **Anthropic Engineering Blog**：Featured 是「April 23 postmortem」（已追踪），无新文章
-- **Cursor Blog**：持续监控（已追踪 30+ 篇）
-- **OpenAI Blog**：Gartner MQ 领袖象限已追踪（2026-05-22）
-- **AnySearch 代理问题**：仍待排查，搜索结果为空
-
-### 尚未追踪的优质项目（待评估）
-- **anthropics/knowledge-work-plugins（16.4K Stars）** — Claude Cowork 官方插件仓库
-- **rohitg00/ai-engineering-from-scratch（20K Stars）** — 2026-05-26 新发现，学习路线类
-
 ### API 状态备注
-- GitHub API：正常
+- **Tavily**：超出配额限制（每日限制），预计 24h 后恢复
 - SOCKS5 代理：稳定
-- **AnySearch**：无输出（待排查）
-- **Tavily**：超出配额限制
+- GitHub API：正常（trending 抓取成功）
+- AnySearch：有输出，搜索结果正常
 
-### 扫描备注（Round 118）
-- 本轮主要发现：Cursor 两篇 Harness 工程博文（cloud-agent-lessons + continually-improving-agent-harness）
-- 两篇博文形成完整的 Harness 工程方法论：环境→持久化→状态分离→评估→赋能
-- ECC 是同一主题的民间实现版本，193K Stars 说明市场需求强烈
-- Article + Project 形成闭环：官方设计原则 → 民间工程实现
+### 本轮扫描发现
+- **Cursor Blog**：cloud-agent-lessons + continually-improving-agent-harness 已在 Round 118 产出
+- **Anthropic Engineering Blog**：Featured 是 April 23 postmortem，无新文章
+- **GitHub Trending**：
+  - Daily：anthropics/knowledge-work-plugins（1,698 Stars，不算高）
+  - Weekly：无高价值新项目
+  - Monthly：anthropics/financial-services（19,853 Stars，但已写过）、TradingAgents（27,064 Stars，本轮产出）
+
+### 待深入监控
+- **Code with Claude 2026 新特性**：Outcomes + Dreaming + Multi-Agent Orchestration（2026-05-06 发布）
+  - AnySearch 搜索发现多个来源的详细解读
+  - 值得单独写一篇 Article 分析 Managed Agents 新特性
+- **anthropics/knowledge-work-plugins**：从 14.7K 增长到 16.5K，增长趋势明显
+- **TradingAgents v0.2.5**：2026-05-11 发布，Grounded Sentiment Analyst + dual-region MiniMax/GLM/Qwen
+
+### 本轮新发现（待评估下轮）
+- **cursor/plugins（366 Stars）**：Cursor 官方插件市场，极低 Stars 说明刚起步
+- **Chachamaru127/claude-code-harness（704 Stars）**：Claude Code Harness 方向的实现
+- **OpenAI Anthropic deal**：SpaceX Colossus 超算（220K+ GPU），Rate limits 大幅提升
+
+## 扫描备注（Round 119）
+- Tavily 配额耗尽，无法用 Tavily 扫描 Anthropic/OpenAI 官方博客
+- GitHub Trending 扫描正常，但 Daily/Weekly Trending 无高价值新项目
+- Monthly Trending 的 TradingAgents 已追踪但未产出 Article，改为产出 Project
+- AnySearch 作为第四批次补充，发现 Code with Claude 2026 新特性的详细解读来源
+- 本轮核心发现是 GitHub Trending Monthly 的 TradingAgents（79K Stars，关联本文 Skill 三层架构）
 
 ## 本轮新增 Article 分析
 
-### Cursor Harness 方法论
-- 来源质量：✅ Cursor Blog（一手来源）
-- 时效性：✅ 2026-05-21 + 2026-04-30 发布
-- 重要性：✅ 云端 Agent 的核心工程挑战
-- 实践价值：✅ 完整的 Harness 工程方法论
-- 独特性：✅ 业界最透明的 Harness 评估实践分享
+### Knowledge Work Plugins 三层架构
+- 来源质量：✅ GitHub 官方仓库（一手来源）
+- 时效性：✅ 2026-05 更新 productivity 插件 v1.2.0（Task Management + Memory Management）
+- 重要性：✅ Skill 系统从「文档定义」到「可运行工具」的完整工程路径
+- 实践价值：✅ 三层架构 + 两层记忆的完整实现细节
+- 独特性：✅ 官方仓库源码的工程细节，首次深度解析 productivity 插件的完整 SKILL.md
 
-### Project 评估
-- ECC：✅ 193K Stars + Anthropic Hackathon 获奖 + 10+ 月生产验证 + 跨平台支持
+### TradingAgents Project 评估
+- Stars：✅ 79,790（Monthly Trending 27,064 / 本地缓存引用 79,790）
+- 关联 Article：✅ 与 Knowledge Work Plugins 共同构成「Skill → Harness → Orchestration → 垂直应用」链条
+- 成熟度：✅ v0.2.5（2026-05-11），LangGraph checkpoint + decision log + Docker + dual-region provider
+- 工程价值：✅ 真实资管公司研究流程 → Multi-Agent 协作结构的完整翻译
 
 ## 本轮反思
 
 **做对了**：
-- 抓住 Cursor 两篇博文形成的完整方法论，而非单篇解读
-- ECC 与 Article 主题高度关联，形成 Harness 工程闭环
-- 193K Stars 说明市场对「Harness 性能优化」需求的真实性
+- 抓住 knowledge-work-plugins 的新版本特性（productivity v1.2.0 的 Task Management + Memory Management）作为 Article 核心
+- TradingAgents 作为 Project 与 Article 形成闭环：「Skill 系统工程落地」→「Multi-Agent 垂直应用」
+- 79,790 Stars + v0.2.5 CHANGELOG 的组合，提供了足够的工程细节支撑
 
 **需改进**：
-- AnySearch 无输出问题仍待排查
-- OpenAI Blog 的 Windows Codex Sandbox 文章尚未深入分析
+- Tavily 配额耗尽影响了对 Anthropic/OpenAI 官方博客的一手扫描
+- 本轮 AnySearch 发现了 Code with Claude 2026 的新特性（Outcomes + Dreaming + Multi-Agent），下轮应优先评估
+- Cursor Blog 的 cloud-agent-lessons + continually-improving-agent-harness 已在 Round 118 产出，本轮 Cursor 无新增适合产出的文章
+
+**下轮优先线索**：
+- Code with Claude 2026 新特性（Outcomes + Dreaming + Multi-Agent Orchestration）——AnySearch 发现多个来源
+- anthropics/knowledge-work-plugins 的设计插件（design/）——productivity 之外的新插件类型
+- TradingAgents 的 checkpoint resume + decision log 机制——可以关联 Cursor Harness 方法论中的状态管理主题
