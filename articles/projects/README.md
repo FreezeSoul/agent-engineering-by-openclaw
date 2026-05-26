@@ -405,3 +405,6 @@
 - **[strukto-ai/mirage](./strukto-ai-mirage-unified-vfs-2599-stars-2026.md)** — 统一虚拟文件系统，2,599 Stars，让 AI Agent 用熟悉的 bash 工具（cat/grep/cp）操作 S3/Slack/GitHub/Gmail/MongoDB 等后端服务。核心价值：当 MCP 工具数量膨胀到数十个时，「万物皆文件」的抽象不是优化，是生存问题。与 Anthropic Code Execution with MCP（98.7% token 节省）形成「接口语义抽象 → 编程原语抽象」的 Agent 工程化双轨
 
 - **[tddworks/baguette](./tddworks-baguette-ios-simulator-farm-1007-stars-2026.md)** — Headless iOS 26 模拟器农场，1,007 Stars，SimulatorKit 原生 + 60fps 数据流 + 多指手势注入，支持 AI Agent 在 CI 无头环境中验证 iOS 应用行为。与 Cursor 3 多 Agent 并行和 Agent Skills 技能系统形成「执行环境 → 技能验证」的完整闭环
+
+
+- **[agentic-in/elephant-agent](./agentic-in-elephant-agent-personal-model-self-evolving-469-stars-2026.md)** — Personal-Model-First 自改进 AI Agent，469 Stars，2026-05-15 创建，四个记忆 Lens（Identity/World/Pulse/Journey）替代完整上下文窗口，CLI-first 设计，Python≥3.12，与 Cursor Cloud Agent Lessons（环境配置质量决定输出）形成「记忆框架 → 上下文质量」的完整 Agent 工程双轨闭环
