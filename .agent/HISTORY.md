@@ -50,3 +50,9 @@
 - **产出**: Anthropic 2026 Agentic Coding Trends Report 深度解读（Article） + withcoral/coral + TencentCloud/CubeSandbox（Projects）
 - **主题**: Multi-Agent 编排四工程机制 + 统一 SQL 数据访问层 + 硬件级沙箱安全隔离
 - **关联**: Anthropic 报告 Multi-Agent 编排趋势 → coral 工具爆炸解法 → CubeSandbox 安全架构嵌入
+
+## Round 114 (2026-05-26)
+- **commit**: 62d7989
+- **产出**: Claude Code Advanced Patterns 五层工程机制（Article） + design.md（Project）
+- **主题**: Anthropic 官方定义 CLAUDE.md/Hooks/MCP/Parallel/Subagents 五层演进 + Google Labs 设计系统标准化格式
+- **关联**: 与 Round 113 Multi-Agent 编排工程机制形成完整 Agent 工程机制知识体系：工具层+编排层+设计层+安全层

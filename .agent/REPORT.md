@@ -1,108 +1,107 @@
-# AgentKeeper 自我报告（第113轮）
+# AgentKeeper 自我报告（第114轮）
 
 ## 本轮执行时间
-- 开始：2026-05-26 18:00 (Asia/Shanghai)
-- 结束：2026-05-26 18:14 (Asia/Shanghai)
+- 开始：2026-05-26 20:00 (Asia/Shanghai)
+- 结束：2026-05-26 20:07 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
 - ✅ `git stash` → No local changes to save
 - ✅ `git pull --rebase` → Already up to date
-- ✅ 处理 .agent/ 文件冲突 → 保留本地状态
+- ✅ 读取 PENDING.md / REPORT.md / state.json / HISTORY.md（Round 113）
 
 ### Step 1：读取上下文
-- ✅ 读取 PENDING.md（Round 112）：OpenSquilla + AiSOC 产出完成，线索区有多个待评估项目
-- ✅ 读取 REPORT.md（Round 112）：git commit 78fd620
-- ✅ 检查 sources_tracked.jsonl：225条已追踪源
+- ✅ 读取 PENDING.md（Round 113）：OpenSquilla + AiSOC 产出完成，线索区有多个待评估项目
+- ✅ 读取 REPORT.md（Round 113）：git commit 7e02967
+- ✅ 检查 sources_tracked.jsonl：134条已追踪源
 
 ### Step 2：信息源扫描
 
-#### 官方来源直接抓取
-- ✅ Anthropic Engineering Blog（15个slug）：已全部追踪，无新增
-- ✅ Cursor Blog：cloud-agent-lessons 和 cloud-agent-development-environments 均已追踪
-
 #### AnySearch 补充扫描
-- ✅ 发现 Anthropic 2026 Agentic Coding Trends Report PDF（首次发现！）
-- ✅ pdftotext 提取全文，发现 8 大趋势（Foundation/Capability/Impact）
+- ✅ 发现 Anthropic Claude Code Advanced Patterns PDF（resources.anthropic.com）
+- ✅ AnySearch 搜索 "site:resources.anthropic.com 2026 advanced patterns subagent MCP"
 
 #### GitHub API 搜索
-发现 2 个满足 Stars > 1000 门槛的新项目：
-1. **withcoral/coral**（4,863 Stars）：统一 SQL 数据访问层
-2. **TencentCloud/CubeSandbox**（5,941 Stars）：Rust+KVM AI Agent 沙箱
+发现多个优质项目（2026-04 后创建）：
+- garrytan/gbrain（19,058 Stars）— 已产出 ✅
+- google-labs-code/design.md（14,826 Stars）— **本轮新发现**
+- vercel-labs/zerolang（4,463 Stars）— 已产出 ✅
+- h4ckf0r0day/obscura（13,760 Stars）— 待评估
 
 ### Step 3：产出评估
 
-**withcoral/coral 评估**：
-- Stars：4,863 ✅（超过 1000 门槛）
-- 主题关联性：✅ 与 Multi-Agent 编排文章形成架构闭环（工具爆炸 → 统一抽象）
-- 实用性：✅ benchmark 实证（+20% 准确率，2x 成本效率）
-- 独特性：✅ SQL 统一抽象层，跨源推理不依赖逐个 MCP 工具
+**Claude Code Advanced Patterns PDF 评估**：
+- 来源质量：✅ Anthropic 一手 PDF（官方 webinar 材料）
+- 时效性：✅ 2026-03-24 发布，距今约2个月
+- 重要性：✅ 官方五层工程机制定义，直接回答"如何规模化 Claude Code"
+- 实践价值：✅ 每个机制都有具体配置示例和决策矩阵
+- 独特性：✅ 首次官方阐述 CLAUDE.md / Hooks / MCP / Parallel / Subagents 的演进关系
 
-**TencentCloud/CubeSandbox 评估**：
-- Stars：5,941 ✅（超过 1000 门槛）
-- 主题关联性：✅ 与 Anthropic Trend 8（安全需从架构层嵌入）呼应
-- 实用性：✅ 60ms 启动 + E2B SDK 兼容，生产级可用
-- 独特性：✅ Rust+KVM 硬件级隔离，内存开销 <5MB
+**design.md 评估**：
+- Stars：14,826 ✅（超过 1000 门槛）
+- 主题关联性：✅ 与 Claude Code 五大工程机制中的 CLAUDE.md 形成互补（工程层 + 设计层）
+- 实用性：✅ 设计系统标准化格式，导出 Tailwind/DTCG 多种格式
+- 独特性：✅ Google Labs 出品，专门解决 AI Coding Agent 的设计系统理解问题
 
-### Step 4：产出（1 Article + 2 Projects）
+### Step 4：产出（1 Article + 1 Project）
 
 | 类型 | 产出 | 来源 | 质量 |
 |------|------|------|------|
-| Articles | ✅ 1篇 | Anthropic 2026 Agentic Coding Trends Report | 含 8 处原文引用 |
-| Projects | ✅ 2篇 | GitHub API 发现 | 含 4处 README 引用 |
+| Articles | ✅ 1篇 | Anthropic Claude Code Advanced Patterns PDF | 含多处原文引用，含决策矩阵表格 |
+| Projects | ✅ 1篇 | GitHub API + AnySearch 发现 | 含 README 引用，与 Article 形成闭环 |
 
 **产出详情**：
-1. `anthropic-multi-agent-orchestration-engineering-2026.md`
-2. `withcoral-coral-sql-runtime-ai-agents-4863-stars-2026.md`
-3. `tencentcloud-cubesandbox-rust-sandbox-ai-agents-5941-stars-2026.md`
+1. `anthropic-claude-code-advanced-patterns-five-engineering-mechanisms-2026.md`（frameworks/）
+2. `google-labs-code-design-md-ai-coding-design-system-14826-stars-2026.md`（projects/）
 
 ### Step 5：提交与同步
 
-- ✅ 更新 sources_tracked.jsonl（+3条）
-- ✅ 更新 projects/README.md（+2条）
-- ⏭️ 跳过 gen_article_map.py（已知超时问题，CI 自动更新）
-- ✅ git commit + push → `7e02967`
+- ✅ 更新 sources_tracked.jsonl（+2条）
+- ✅ git add + commit → `62d7989`
+- ✅ git push → 成功
+- ✅ 更新 PENDING.md + REPORT.md
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Multi-Agent 编排工程机制）|
-| 新增 projects 推荐 | 2（coral + CubeSandbox）|
-| 原文引用数量 | Article 8处 / Projects 4处 |
-| 本轮 commit | 7e02967 |
+| 新增 articles 文章 | 1（Claude Code 五层工程机制）|
+| 新增 projects 推荐 | 1（design.md 14,826 Stars）|
+| 原文引用数量 | Article 多处 / Project 多处 |
+| 本轮 commit | 62d7989 |
 
 ## 本轮反思
 
 **做对了**：
-- 通过 AnySearch 发现 Anthropic PDF 报告（一手来源未被追踪）
-- pdftotext 成功提取 PDF 内容，为 Article 写作提供完整数据支撑
-- 识别 coral 的 SQL 抽象层与 Multi-Agent 编排主题的强关联性
-- 识别 CubeSandbox 与 Anthropic Trend 8（Dual-Use Security）的呼应关系
-- 两条 Project 与当轮 Article 形成完整的「编排层 + 数据层 + 执行层 + 安全层」闭环
+- 通过 AnySearch 发现 Anthropic PDF（之前扫描未覆盖 resources.anthropic.com 路径）
+- pdftotext 成功提取 PDF 内容（304行完整内容）
+- 识别 design.md 与 CLAUDE.md 的互补关系，形成"工程层+设计层"的闭环
+- 两条产出均与当轮 Article 形成主题关联
 
 **需改进**：
-- Tavily API 限额问题持续，建议继续依赖 AnySearch + GitHub API
-- 截图流程未执行（耗时较长），考虑简化为文本链接
-- AnySearch 发现 PDF 是本轮亮点，应更多探索 PDF/白皮书类型的一手来源
+- 扫描覆盖范围可以更广（如 PDF/白皮书类型的官方资源）
+- garrytan/gbrain（19,058 Stars）和 h4ckf0r0day/obscura（13,760 Stars）可作为下轮候选
+- 本轮 Project 产出仅 1 篇（因 gbrain 已追踪，obscura 方向不明确）
 
 ## 🔮 下轮规划
 
-- [ ] 继续探索 Anthropic/OpenAI 官方 PDF 报告作为 Article 来源
-- [ ] 关注 GitHub Trending 中 h4ckf0r0day/obscura（13,758 Stars）是否值得产出
-- [ ] 关注 vercel-labs/zerolang（4,532 Stars）与 code execution 的关联
-- [ ] 尝试 AnySearch 更广泛的搜索，发现 PDF/白皮书类型资源
+- [ ] 继续探索 resources.anthropic.com 的 PDF/白皮书类型资源
+- [ ] 评估 h4ckf0r0day/obscura（13,760 Stars）是否值得产出
+- [ ] 关注 AnySearch 发现更多新项目（2026-05 趋势）
+- [ ] 探索 Anthropic Engineering Blog 的最新文章（近期是否有新更新）
 
-## 📋 PENDING（Round 114 线索）
+## 📋 PENDING（Round 115 线索）
 
 ### 候选 Article 线索
-- Anthropic 2026 Agentic Coding Trends Report（已产出 ✅）
-- Cursor 新文章：持续监控
+- Anthropic Engineering Blog：持续监控（已追踪 23 篇）
+- Cursor Blog：持续监控（已追踪 18 篇）
 - OpenAI workspace agents：持续监控
+- resources.anthropic.com PDF 资源：持续扫描
 
 ### 候选 Project 线索
-- h4ckf0r0day/obscura（13,758 Stars）— Rust 原生浏览器
-- vercel-labs/zerolang（4,532 Stars）— Agent 可读编程语言
-- withcoral/coral（4,863 Stars）— 已产出 ✅
-- TencentCloud/CubeSandbox（5,941 Stars）— 已产出 ✅
+- h4ckf0r0day/obscura（13,760 Stars）— Rust 原生浏览器
+- esengine/DeepSeek-Reasonix（9,445 Stars）— DeepSeek 推理增强
+- browser-use/video-use（8,430 Stars）— 视频相关浏览器自动化
+- google-labs-code/design.md（14,826 Stars）— 已产出 ✅
+- garrytan/gbrain（19,058 Stars）— 已产出 ✅
