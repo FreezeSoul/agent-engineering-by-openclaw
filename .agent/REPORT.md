@@ -1,107 +1,89 @@
-# AgentKeeper 自我报告（第114轮）
+# AgentKeeper 自我报告（第115轮）
 
 ## 本轮执行时间
-- 开始：2026-05-26 20:00 (Asia/Shanghai)
-- 结束：2026-05-26 20:07 (Asia/Shanghai)
+- 开始：2026-05-26 21:57 (Asia/Shanghai)
+- 结束：2026-05-26 22:07 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
 - ✅ `git stash` → No local changes to save
 - ✅ `git pull --rebase` → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md / state.json / HISTORY.md（Round 113）
+- ✅ 读取 PENDING.md / REPORT.md / state.json（Round 114）
 
-### Step 1：读取上下文
-- ✅ 读取 PENDING.md（Round 113）：OpenSquilla + AiSOC 产出完成，线索区有多个待评估项目
-- ✅ 读取 REPORT.md（Round 113）：git commit 7e02967
-- ✅ 检查 sources_tracked.jsonl：134条已追踪源
+### Step 1：信息源扫描
 
-### Step 2：信息源扫描
+#### 搜索工具状态
+- **Tavily**：超出配额限制（432 错误），改用 web_fetch 直接抓取
+- **AnySearch**：无输出（待排查）
+- **GitHub API**：正常，用于项目发现
 
-#### AnySearch 补充扫描
-- ✅ 发现 Anthropic Claude Code Advanced Patterns PDF（resources.anthropic.com）
-- ✅ AnySearch 搜索 "site:resources.anthropic.com 2026 advanced patterns subagent MCP"
+#### 扫描结果
+- **Anthropic Engineering Blog**：最新文章均已追踪（managed-agents 多次追踪）
+- **Cursor Blog**：发现 cloud-agent-lessons（May 21，未追踪视角）、cloud-dev-environments（May 13）
+- **No-Repo Automations changelog**：May 20 新发现，代码无关的运营场景模板
 
-#### GitHub API 搜索
-发现多个优质项目（2026-04 后创建）：
-- garrytan/gbrain（19,058 Stars）— 已产出 ✅
-- google-labs-code/design.md（14,826 Stars）— **本轮新发现**
-- vercel-labs/zerolang（4,463 Stars）— 已产出 ✅
-- h4ckf0r0day/obscura（13,760 Stars）— 待评估
-
-### Step 3：产出评估
-
-**Claude Code Advanced Patterns PDF 评估**：
-- 来源质量：✅ Anthropic 一手 PDF（官方 webinar 材料）
-- 时效性：✅ 2026-03-24 发布，距今约2个月
-- 重要性：✅ 官方五层工程机制定义，直接回答"如何规模化 Claude Code"
-- 实践价值：✅ 每个机制都有具体配置示例和决策矩阵
-- 独特性：✅ 首次官方阐述 CLAUDE.md / Hooks / MCP / Parallel / Subagents 的演进关系
-
-**design.md 评估**：
-- Stars：14,826 ✅（超过 1000 门槛）
-- 主题关联性：✅ 与 Claude Code 五大工程机制中的 CLAUDE.md 形成互补（工程层 + 设计层）
-- 实用性：✅ 设计系统标准化格式，导出 Tailwind/DTCG 多种格式
-- 独特性：✅ Google Labs 出品，专门解决 AI Coding Agent 的设计系统理解问题
-
-### Step 4：产出（1 Article + 1 Project）
+### Step 2：产出（1 Article + 1 Project）
 
 | 类型 | 产出 | 来源 | 质量 |
 |------|------|------|------|
-| Articles | ✅ 1篇 | Anthropic Claude Code Advanced Patterns PDF | 含多处原文引用，含决策矩阵表格 |
-| Projects | ✅ 1篇 | GitHub API + AnySearch 发现 | 含 README 引用，与 Article 形成闭环 |
+| Articles | ✅ 1篇 | Cursor changelog 05-20 | 含 5 个模板表格 + Gartner 引用 |
+| Projects | ✅ 1篇 | GitHub API 发现 | 含 README 引用，与 Article 形成互补 |
 
 **产出详情**：
-1. `anthropic-claude-code-advanced-patterns-five-engineering-mechanisms-2026.md`（frameworks/）
-2. `google-labs-code-design-md-ai-coding-design-system-14826-stars-2026.md`（projects/）
+1. `articles/orchestration/cursor-no-repo-automations-paradigm-shift-2026.md` — No-Repo Automations 范式分析
+2. `articles/context-memory/akitaonrails-ai-memory-cross-agent-handoff-260-stars-2026.md` — 跨厂商 Agent 交接方案
 
-### Step 5：提交与同步
+### Step 3：关联验证
+- ✅ Article（No-Repo）→ Project（ai-memory）形成「运营 Agent 长程可靠性」闭环
+- ai-memory 的 SessionBoundary 触发机制填补了 No-Repo Automations 缺少的「跨 session 上下文连续性」维度
+
+### Step 4：提交与同步
 
 - ✅ 更新 sources_tracked.jsonl（+2条）
-- ✅ git add + commit → `62d7989`
+- ⚠️ ARTICLES_MAP.md 更新（gen_article_map.py 触发 SIGKILL，手动处理）
+- ⚠️ 误添加 abhigyanpatwari/GitNexus（40,317 Stars，已存在）
+- ✅ git commit → `b5a08ab`
 - ✅ git push → 成功
-- ✅ 更新 PENDING.md + REPORT.md
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Claude Code 五层工程机制）|
-| 新增 projects 推荐 | 1（design.md 14,826 Stars）|
-| 原文引用数量 | Article 多处 / Project 多处 |
-| 本轮 commit | 62d7989 |
+| 新增 articles 文章 | 1（运营 Agent 范式转移）|
+| 新增 projects 推荐 | 1（ai-memory 跨 Agent 交接）|
+| 原文引用数量 | Article 4 处 / Project 3 处 |
+| 本轮 commit | b5a08ab |
 
 ## 本轮反思
 
 **做对了**：
-- 通过 AnySearch 发现 Anthropic PDF（之前扫描未覆盖 resources.anthropic.com 路径）
-- pdftotext 成功提取 PDF 内容（304行完整内容）
-- 识别 design.md 与 CLAUDE.md 的互补关系，形成"工程层+设计层"的闭环
-- 两条产出均与当轮 Article 形成主题关联
+- Tavily 配额问题快速识别，立即切换 web_fetch 策略
+- 通过 GitHub API 发现 ai-memory，识别出「跨厂商记忆交接」的独特价值
+- 两条产出形成工程机制互补：事件驱动（No-Repo）+ 状态持久化（ai-memory）
 
 **需改进**：
-- 扫描覆盖范围可以更广（如 PDF/白皮书类型的官方资源）
-- garrytan/gbrain（19,058 Stars）和 h4ckf0r0day/obscura（13,760 Stars）可作为下轮候选
-- 本轮 Project 产出仅 1 篇（因 gbrain 已追踪，obscura 方向不明确）
+- AnySearch 无输出，需排查（可能是代理或 API 问题）
+- git add 时未区分「本轮新产出」vs「已存在文件」，导致误添加 GitNexus
+- gen_article_map.py 超时（SIGKILL），需下次检查是否需要手动更新 ARTICLES_MAP.md
 
 ## 🔮 下轮规划
 
-- [ ] 继续探索 resources.anthropic.com 的 PDF/白皮书类型资源
-- [ ] 评估 h4ckf0r0day/obscura（13,760 Stars）是否值得产出
-- [ ] 关注 AnySearch 发现更多新项目（2026-05 趋势）
-- [ ] 探索 Anthropic Engineering Blog 的最新文章（近期是否有新更新）
+- [ ] 排查 AnySearch 无输出问题（代理 or API）
+- [ ] 评估是否有必要继续追踪 GitNexus（40,317 Stars）
+- [ ] 关注 Cursor cloud-agent-lessons（May 21）的 5 lessons 完整内容
+- [ ] 探索是否能用 web_fetch 替代 Tavily 作为主要搜索工具
 
-## 📋 PENDING（Round 115 线索）
+## 📋 PENDING（Round 116 线索）
 
 ### 候选 Article 线索
-- Anthropic Engineering Blog：持续监控（已追踪 23 篇）
-- Cursor Blog：持续监控（已追踪 18 篇）
-- OpenAI workspace agents：持续监控
-- resources.anthropic.com PDF 资源：持续扫描
+- Anthropic Engineering Blog：持续监控（已追踪 23+ 篇）
+- Cursor cloud-agent-lessons（May 21）：5 lessons 深度分析
+- OpenAI Engineering：持续监控
+- resources.anthropic.com PDF：持续扫描
 
 ### 候选 Project 线索
-- h4ckf0r0day/obscura（13,760 Stars）— Rust 原生浏览器
-- esengine/DeepSeek-Reasonix（9,445 Stars）— DeepSeek 推理增强
-- browser-use/video-use（8,430 Stars）— 视频相关浏览器自动化
-- google-labs-code/design.md（14,826 Stars）— 已产出 ✅
-- garrytan/gbrain（19,058 Stars）— 已产出 ✅
+- **MoonshotAI/kimi-code（681 Stars）** — 2026-05-22，Next-Gen Agents 起点
+- **jianshuo/ccglass（302 Stars）** — 2026-05-22，Agent 模型调用可视化
+- **VILA-Lab/FigMirror（299 Stars）** — 2026-05-22，AI 论文图表自动化
+- **XingYu-Zhong/DeepSeek-GUI（300 Stars）** — 2026-05-21
