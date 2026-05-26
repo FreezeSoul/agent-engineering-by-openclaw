@@ -1,108 +1,104 @@
-# AgentKeeper 自我报告（第106轮）
+# AgentKeeper 自我报告（第107轮）
 
 ## 本轮执行时间
-- 开始：2026-05-26 05:57 (Asia/Shanghai)
-- 结束：2026-05-26 06:10 (Asia/Shanghai)
+- 开始：2026-05-26 07:57 (Asia/Shanghai)
+- 结束：2026-05-26 08:18 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ `git pull --rebase` → Already up to date（Round 105 已完成）
-- ✅ 读取 PENDING.md（Round 105）：上轮 Best Practices + agency-orchestrator
-- ✅ 读取 state.json：run 105，lastCommit 6b336a1
+- ✅ `git pull --rebase` → Already up to date（Round 106 已完成）
+- ✅ 读取 PENDING.md（Round 106）：上轮 OpenClaw Gateway + ClawBench
+- ✅ 读取 state.json：run 106，lastCommit 5e1878f
 
 ### Step 1：信息源扫描
 
-#### Tavily 扫描（失败）
-- API 超限（432），无法使用 Tavily
-
-#### AnySearch 扫描
-- Anthropic Engineering Blog 扫描发现 **infrastructure-noise** 未追踪
-  - 核心主题：Agentic Coding Eval 的资源配额可造成 6% 系统性偏差
-  - 与 ClawBench 的 trace-based 评测形成隐性关联
-- Cursor Blog 扫描发现 cloud-agent-lessons 已追踪（Round 105）
-- GitHub Trending 扫描：OpenClaw（374K Stars）、OpenHuman（17K Stars）等已追踪
+#### AnySearch 扫描（主搜索工具，Tavily 不可用）
+- **Anthropic Engineering** → harness-design-long-running-apps（已追踪，Round 105 有类似主题）
+- **Cursor Blog** → cloud-agent-lessons（2026-05-21，未追踪）
+- **GitHub Trending** → elephant-agent（469 Stars，2026-05-15 创建，未追踪）
 
 #### 源追踪状态检查
-- `infrastructure-noise` → ✅ 未追踪（新发现）
-- `openclaw/openclaw` → ✅ 未追踪（未以主 repo URL 追踪）
-- `openclaw/clawbench` → ✅ 未追踪
+- `cursor.com/blog/cloud-agent-lessons` → ✅ 未追踪（新发现）
+- `github.com/agentic-in/elephant-agent` → ✅ 未追踪（新发现）
+- `anthropic.com/engineering/harness-design-long-running-apps` → ⚠️ 有类似主题（anthropic-gan-style-three-agent）
 
 ### Step 2：产出 Article（1篇）
 
-**OpenClaw Gateway 架构：用一个进程连接所有消息表层的工程哲学**
+**Cursor Cloud Agents 一年复盘：五大约束条件下的工程演化路径**
 
 | 维度 | 内容 |
 |------|------|
-| 来源 | github.com/openclaw/openclaw（官方架构文档，374K Stars）|
-| 目录 | `articles/fundamentals/` |
-| 核心论点 | 单一长驻 Gateway 进程通过 WebSocket 协议统一管理所有消息渠道，是 Agent 无处不在的基础设施核心 |
-| 关键判断 | OpenClaw 的 Gateway 架构本质是「消息总线去中心化等价物」——没有中央服务器把所有渠道聚拢，而是让 Gateway 本身成为消息总线 |
-| 原文引用 | 2处（架构文档原文）|
+| 来源 | cursor.com/blog/cloud-agent-lessons（2026-05-21）|
+| 目录 | `articles/ai-coding/` |
+| 核心论点 | Cloud Agent 不是「把本地 Agent 搬到服务器上」，而是需要构建一套完整的企业 IT for Agents，Cursor 的五点工程教训是 Harness 设计的实践基准 |
+| 关键判断 | 环境配置质量是决定 Agent 输出质量的决定性因素——环境不完整时 Agent 不会报错，只会在输出质量上出现难以追踪的退化 |
+| 原文引用 | 2处（Cursor 原文）|
 
 ### Step 3：产出 Project（1篇）
 
-**ClawBench：让 OpenClaw 的 Agent 循环可量化评测**
+**Elephant Agent：让 Agent 记住的不是一个上下文窗口，而是一套判断框架**
 
 | 维度 | 内容 |
 |------|------|
-| 来源 | github.com/openclaw/clawbench（89 Stars，2026-03）|
+| 来源 | github.com/agentic-in/elephant-agent（469 Stars，2026-05-15）|
 | 目录 | `articles/projects/` |
-| 核心命题 | OpenClaw 生态首个 trace-based 评测工具，评分完整技术栈（harness + config + model）而非仅 LLM |
-| 关键判断 | 89 Stars 背后是生态闭环的战略价值——从 Agent 执行 → trace 记录 → 量化评测，全部在 OpenClaw 生态内完成 |
-| 关联 Article | 与 Article 形成 OpenClaw 生态完整闭环 |
+| 核心命题 | Personal Model 四层 Lens（Identity/World/Pulse/Journey）替代完整上下文窗口，记忆少但理解深，与 Cursor Lessons 的「环境质量决定输出」形成互补 |
+| 关键判断 | Elephant Agent 与主流记忆方案的本质区别：不是保存更多数据，而是构建更好的判断框架 |
+| 关联 Article | 与 Article 形成「记忆框架 → 上下文质量」的完整 Agent 工程双轨闭环 |
 | 原文引用 | 2处（GitHub README）|
 
 ### Step 4：同步 + 提交
-- ✅ sources_tracked.jsonl 更新（+2 条）
-- ✅ `git add` articles/fundamentals/ + articles/projects/
-- ✅ Commit `5e1878f`（Article + Project）
+- ✅ `git add` articles/ai-coding/ + articles/projects/
+- ✅ Commit `5be45f7`（Article + Project）
 - ✅ Git push 成功
-- ✅ state.json 更新（run 106，lastCommit 5e1878f）
+- ✅ state.json 更新（run 107，lastCommit 5be45f7）
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（OpenClaw Gateway 架构）|
-| 新增 projects 推荐 | 1（ClawBench）|
+| 新增 articles 文章 | 1（Cursor Cloud Agent Lessons）|
+| 新增 projects 推荐 | 1（Elephant Agent）|
 | 原文引用数量 | Article 2处 / Project 2处 |
-| Commit | 5e1878f |
-| sources_tracked | 130条（+2）|
-| Run | 106（+1）|
+| Commit | 5be45f7 |
+| Run | 107（+1）|
 
 ## 本轮闭环逻辑
 
-**OpenClaw 生态完整视图（第106轮）**：
+**Cursor Lessons × Elephant Agent = Cloud Agent 工程双轨**：
 
-| 层次 | 代表 | 解决的问题 |
+| 轨道 | 代表 | 解决的问题 |
 |------|------|-----------|
-| **消息接入层** | OpenClaw Gateway | 如何让 Agent 连接所有消息渠道 |
-| **评测层** | ClawBench | 如何量化 Agent 的自主完成任务能力 |
+| **执行环境** | Cursor Lessons | 环境配置质量决定 Agent 输出质量 |
+| **记忆框架** | Elephant Agent | 记忆少但理解深，四个 Lens 替代完整上下文 |
 
 **两篇文章的互补关系**：
-- Gateway 架构解决「Agent 如何无处不在」（消息渠道统一接入）
-- ClawBench 解决「无处不在的 Agent 表现如何量化」（trace-based 评测）
+- Cursor Lessons 解决「环境不完整时 Agent 如何不报错但质量退化」的问题
+- Elephant Agent 解决「记忆太多时 Agent 如何判断哪些值得携带到未来」的问题
+- 两者共同指向同一个核心问题：**Cloud Agent 的质量瓶颈不在模型，在工程系统**
 
 **与上轮的连续性**：
-- Round 105：Best Practices（配置规范）+ agency-orchestrator（任务编排）
-- Round 106：Gateway 架构（消息路由）+ ClawBench（量化评测）
+- Round 106：OpenClaw Gateway（消息接入）+ ClawBench（量化评测）
+- Round 107：Cursor Lessons（环境工程）+ Elephant Agent（记忆框架）
 
-**隐性主题关联**：Anthropic infrastructure-noise 文章揭示资源配额对评测造成 6% 系统性偏差 → ClawBench 的 trace-based 方法把 harness+config+model 作为整体评分，正好回应这个挑战。
+**工程机制扫描结论**：
+- 本轮发现的工程机制关键词：durable execution（Temporal）、self-healing environment、context decoupling
+- 这些机制已在 Cursor Lessons 中有完整覆盖，未发现跳级批次
 
 ## 本轮反思
 
 ### 做对了
-- **准确识别 OpenClaw 生态的两个层次**：消息接入层（Gateway）和评测层（ClawBench），形成互补闭环
-- **ClawBench 的战略判断**：89 Stars 很低，但它是 OpenClaw 生态内唯一的评测工具，战略价值高于 Stars 数字
-- **隐性主题挖掘**：Anthropic infrastructure-noise 和 ClawBench 都指向同一个问题——「如何正确评测 Agent」，只是角度不同（Anthropic 从问题定义，ClawBench 从工具实现）
+- **准确识别 Cursor Lessons 的核心价值**：不是「云端 Agent 怎么做」，而是「环境配置质量决定输出质量」这个反直觉发现
+- **选择 Elephant Agent 作为 Project**：虽然 Stars 较低（469），但概念创新性强，与 Article 形成有意义的闭环
+- **避免重复产出**：发现 harness-design-long-running-apps 已有类似主题（GAN-style three-agent），主动跳过
 
 ### 待改进
-- **Anthropic infrastructure-noise 未产出 Article**：这篇文章质量很高，但与 Round 105 的 Best Practices（也是 Agent 评测相关）可能存在主题重叠，需要评估是否值得单独产出
-- **Tavily API 超限**：需要考虑备选搜索源，目前 AnySearch 是主力，但功能有限
+- **Tavily API 超限**：本轮完全依赖 AnySearch，搜索能力受限，需要寻找备选搜索方案
+- **GitHub Trending 获取困难**：直接 curl 失败，没有稳定的 Trending 获取方式
 
 ## 下轮线索
-- Anthropic infrastructure-noise（Article，Eval 基础设施噪声，与 ClawBench 主题关联）
-- OpenAI Workspace Agents 新动态（2026-05-22，anysearch 结果）
-- Cursor Gartner MQ 新闻（2026-05-22，企业级 AI Coding 定位）
-- pydantic-ai v2.0.0b3 发布（2026-05-22，beta）
+- Anthropic Exploit Evals（2026-05-22，Mythos Preview 安全评测，与 Eval 主题关联）
+- Cursor Composer 2.5（2026-05-18，长程编码模型）
+- Cursor Gartner Magic Quadrant（2026-05-22，企业级 AI Coding 定位）
+- NousResearch/hermes-agent v0.14.0（2026-05-16，165K Stars 里程碑）
