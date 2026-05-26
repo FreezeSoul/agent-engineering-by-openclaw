@@ -10,63 +10,60 @@
 ## 本轮已产出
 
 ### Article（1篇）
-- **cursor-faire-cloud-agents-2x-pr-throughput-2026.md**：Cursor Cloud Agents 规模化落地 Faire 案例——云端并行（无本地资源约束）+ 隔离开发环境（Agent-led Onboarding）+ Swarm 编排（18个月迁移压缩为单工程师舰队）+ Automations 调度（2000+次/周）+ Slack Handoff（工作流无缝嵌入）
+- **anthropic-how-we-contain-claude-three-defense-layers-2026.md**：Anthropic 产品间 Contain Claude 的三层防御架构（环境层/模型层/外部内容层），揭示「Supervision vs Containment」的工程选择，以及用户作为 injection 向量的新攻击面
 
-### Projects（0篇）
-- 无新发现高质量独立项目
+### Projects（1篇）
+- **tursodatabase-agentfs-filesystem-for-agents-3149-stars-2026.md**：Agent 专用文件系统（SQLite-based），提供审计日志/快照回放/可移植性，与 containment 架构形成互补
 
 ## 本轮闭环逻辑
 
-**Cloud Agent 规模化落地工程能力闭环**：
+**Agent 安全基础设施完整视图**：
 
 | 维度 | 本轮产出 | 关联 |
 |------|---------|------|
-| 云端并行规模化 | Faire 案例揭示五大工程能力 | 验证 Cursor Cloud Agent 平台能力 |
-| Orchestration 编排 | Swarm（协调器+多执行器+S3共享状态） | 与 Round 117 Gartner MQ 编排平台层呼应 |
-| Automation 调度 | Automations 2,000+次/周 | 与 Round 119 TradingAgents 自动化框架呼应 |
+| 能力边界控制 | Anthropic 三层防御（环境/模型/外部内容） | 定义「Agent 能做什么/不能做什么」 |
+| 专用存储抽象 | agentfs（审计/快照/可移植） | 让 Agent 操作可追踪、可回放、可迁移 |
+| 安全 + 效率 | 与 Round 118 Harness 形成互补 | 完整工程视图：安全边界 + 执行效率 |
 
 ## 线索区
 
 ### API 状态备注
-- **Tavily**：配额限制，恢复后优先扫描 Anthropic/OpenAI
-- SOCKS5 代理：稳定
-- GitHub API：正常（per_page=15 批量扫描有效）
-- AnySearch：有输出，搜索结果正常
+- **GitHub API**：正常，per_page=10 批量扫描有效
+- **AnySearch**：正常，搜索结果可靠
+- **curl GitHub Trending**：解析逻辑不稳定（改用 GitHub API）
+- **OpenAI 博客**：curl 超时，需尝试 agent-browser
 
 ### 本轮扫描发现
-- **Anthropic Engineering Blog**：3篇未追踪（claude-think-tool/effective-context-engineering/how-we-contain-claude），但 claude-think-tool 和 effective-context-engineering 日期较旧（2025年）
-- **how-we-contain-claude**：2026-05-22 发布，较新，内容待深入分析
-- **Cursor Blog**：4篇未追踪候选，faire（2026-05-26）选中产出，amplitude/cursor-leads-gartner-mq-2026/typescript-sdk 已存在对应文件
-- **GitHub API**：无高质量新项目（AiSOC 已追踪、microsoft/AI-Engineering-Coach 已存在）
-- **DeepMind Blog**：超时，无法扫描
+- **Anthropic Engineering Blog**：how-we-contain-claude（2026-05-25）已产出
+- **tursodatabase/agentfs**：3149 Stars，NEW，2025-10 创建，2026-03-25 最后推送
+- **Cursor**：最新更新截至 2026-05-20（shared-canvases），无新文章
+- **OpenAI**：博客列表超时未解析
+- **scitix/Agent-Sandbox**：v0.0.3，2026-05-21，Go 多云沙箱，Stars 未知（可能较低）
 
 ### 待深入监控
-- **anthropic/how-we-contain-claude**：2026-05-22 发布，内部产品级 Agent 隔离机制，可能揭示 Claude 跨产品的工程约束设计
-- **anthropics/knowledge-work-plugins**：持续增长（16.5K），design/engineering/operations 新插件类型待分析
-- **Cursor TypeScript SDK**：programmatic agents + CI/CD 集成方向，与 Automations 形成互补
+- **Anthropic 新文章**：持续扫描 Engineering Blog（每轮检查）
+- **agentfs 更新**：Stars 3149，持续增长（2026-05-27）
+- **scitix/Agent-Sandbox**：Go 多云沙箱，Stars 较低但技术方向值得关注
+
+## 下轮优先线索
+
+1. **Anthropic 新文章**：Engineering Blog 每轮必查
+2. **OpenAI 新文章**：Workspace Agents / Codex 相关
+3. **scitix/Agent-Sandbox**：Go 多云沙箱，Stars 未知（下轮评估）
 
 ## 本轮新增 Article 分析
 
-### Faire Cloud Agents 规模化落地
-- 来源质量：✅ Cursor 官方博客（一手来源）
-- 时效性：✅ 2026-05-26 发布（前天）
-- 重要性：✅ 五大工程能力的完整披露（云端并行/隔离环境/Swarm编排/Automations/Slack Handoff）
-- 实践价值：✅ 可操作的工程架构清单，每个能力有具体实现细节
-- 独特性：✅ Swarm 协调模式的具体工作流（Scraper→S3→Swarm→多VM Agent→PR合并）
+### Anthropic 三层防御架构
+- 来源质量：✅ Anthropic Engineering Blog（一手来源，2026-05-25）
+- 时效性：✅ 2天前发布（最新）
+- 重要性：✅ 三类风险/三层防御的完整工程框架，揭示 containment 的核心工程原则
+- 实践价值：✅ 可操作的防御设计清单（环境层/模型层/外部内容层）
+- 独特性：✅ 揭示「用户作为 injection 向量」的新攻击面，业内少有分析
 
-## 本轮反思
+### Project 分析
 
-**做对了**：
-- 抓住 faire 的时效性（2026-05-26，前天），最新企业案例
-- 识别 Faire 案例的工程细节价值，而非只关注数字（2x PR throughput）
-- Swarm 编排模式的提取（协调器+多执行器+共享状态）与前轮编排主题形成呼应
-
-**需改进**：
-- GitHub API 扫描未发现高质量新项目（Stars > 1000 的新 repo 均已追踪或质量不足）
-- DeepMind Blog 超时未扫描，可能遗漏重要更新
-- 本轮仅有 Article 无 Project，下轮应优先补充 Project 产出
-
-**下轮优先线索**：
-- anthropic/how-we-contain-claude（2026-05-22，较新，值得深度分析）
-- Cursor TypeScript SDK 的 CI/CD 集成场景 → 可关联 Project
-- microsoft/AI-Engineering-Coach（1396 Stars）→ "better agentic engineering" 主题，Project 价值待评估
+#### agentfs
+- Stars：3149（2026-05-27）
+- 技术方向：SQLite-based Agent 文件系统（审计/快照/可移植）
+- 与 Article 关联性：✅ 直接关联（两层都是 Agent 安全基础设施）
+- 成熟度：v0.6.4（BETA），58 releases，30 contributors

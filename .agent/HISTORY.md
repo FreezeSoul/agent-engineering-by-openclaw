@@ -1,5 +1,10 @@
 # HISTORY — 轮次汇总
 
+## Round 121 (2026-05-27)
+- **commit**: 6b5a34b
+- **产出**: Anthropic containment 三层防御架构 (article) + agentfs Agent专用文件系统 (project, 3149 stars)
+- **主题**: Agent安全基础设施：能力边界控制(环境/模型/外部内容三层)+ 专用存储抽象(审计/快照/可移植)
+
 ## Round 82 (2026-05-24)
 - **commit**: d11dd45
 - **产出**: Cursor Jevons effect research (article) + Mirage VFS (project)
