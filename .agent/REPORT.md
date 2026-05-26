@@ -1,105 +1,107 @@
-# AgentKeeper 自我报告（第108轮）
+# AgentKeeper 自我报告（第109轮）
 
 ## 本轮执行时间
-- 开始：2026-05-26 09:57 (Asia/Shanghai)
-- 结束：2026-05-26 10:03 (Asia/Shanghai)
+- 开始：2026-05-26 10:19 (Asia/Shanghai)
+- 结束：2026-05-26 10:26 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ `git pull --rebase` → Already up to date（Round 107 已完成）
-- ✅ 读取 PENDING.md（Round 107）：上轮 Cursor Cloud Agent Lessons + Elephant Agent
-- ✅ 读取 state.json：run 107，lastCommit 5be45f7
+- ✅ `git stash && git pull --rebase && git stash pop` → Already up to date（Round 108 已完成）
+- ✅ 读取 PENDING.md（Round 108）：Cursor Gartner MQ + Composio AO 企业级编排双轨
+- ✅ 读取 state.json：run 108，lastCommit bfcb812
 
 ### Step 1：信息源扫描
 
-#### AnySearch 扫描（一手来源）
-- **Anthropic Engineering** → 2026 Agentic Coding Trends Report（PDF，1月已过时）、harness-design-long-running-apps（已有类似主题）
-- **Cursor Blog** → Gartner MQ 2026（2026-05-22，未追踪 ✅）
-- **GitHub Trending** → Claw-code 192K Stars（已追踪）、hermes-agent 165K Stars（已追踪）
+#### Anthropic Engineering Blog
+- 23 个 slug 提取完成
+- **3 个新发现**：`claude-think-tool`、`demystifying-evals-for-ai-agents`、`effective-context-engineering-for-ai-agents`
+- **防重检查**：本地 articles 目录已有对应主题文章，跳过
 
-#### 源追踪状态检查
-- `cursor.com/blog/cursor-leads-gartner-mq-2026` → ✅ 未追踪（新发现）
-- `github.com/ComposioHQ/agent-orchestrator` → ✅ 未追踪（新发现）
-- 其他候选：cloud-agent-development-environments（已追踪）、continually-improving-agent-harness（已追踪）
+#### Cursor Blog
+- 18 个 slug 提取完成
+- **4 个新发现**：`amplitude`、`planetscale`、`spacex-model-training`、`typescript-sdk`
+- **防重检查**：
+  - `amplitude` → 本地已有 cursor-cloud-agents-amplitude-3x-production-pipeline-2026.md（相同来源，略过）
+  - `planetscale` → 本地已有 articles/ai-coding/cursor-bugbot-effort-based-pricing-agent-review-economics-2026.md（Bugbot 相关，略过）
+  - `typescript-sdk` → 本地已有 cursor-typescript-sdk-programmatic-agents-2026.md（略过）
+  - `spacex-model-training` → **本地无对应文章，可追踪** ✅
+
+#### GitHub API 扫描
+- 按创建时间窗口 2026-05-01..2026-05-25 扫描 AI agent 相关项目
+- 最高 Stars 候选：DeepSeek-GUI（262 stars）、akitaonrails/ai-memory（238 stars）、mikesheehan54/Claude-Code-Design-AI（290 stars）
+- 最终选择：**grapeot/context-infrastructure（482 stars）** — 记忆基础设施与 Article 主题形成互补闭环
 
 ### Step 2：产出 Article（1篇）
 
-**Cursor Gartner MQ 领袖地位背后：企业级 Agent 编排才是核心赛道**
+**Cursor × SpaceX：AI 编程工具公司为什么要自己做模型训练**
 
 | 维度 | 内容 |
 |------|------|
-| 来源 | cursor.com/blog/cursor-leads-gartner-mq-2026（2026-05-22）|
+| 来源 | cursor.com/blog/spacex-model-training（2026-04-21） |
 | 目录 | `articles/ai-coding/` |
-| 核心论点 | Gartner Completeness of Vision 最远端的依据不是单点 Agent 能力，而是对"第三时代"编排范式的完整理解 |
-| 关键判断 | 企业级 Agent 编排的三个工程维度：上下文隔离（multi-repo）、权限分层（enterprise controls）、状态持久化（checkpoint+artifact） |
-| 原文引用 | 3处（Cursor 原文）|
+| 核心论点 | 工具公司向上游渗透做模型，AI Coding 竞争从前端工具层扩展到基础模型层 |
+| 关键判断 | Cursor 基于 xAI Colossus 超算训练自己的编程专用模型，代表了从「单点工具竞争」到「全链路控制竞争」的转变 |
+| 原文引用 | 4处（Composer 1.5/2 进化路径、Colossus 基础设施描述、战略协同分析） |
 
 ### Step 3：产出 Project（1篇）
 
-**Composio Agent Orchestrator：让并行 Agent 团队学会「协作」**
+**context-infrastructure：让 AI Coding Agent 拥有持久记忆的基础设施层**
 
 | 维度 | 内容 |
 |------|------|
-| 来源 | github.com/ComposioHQ/agent-orchestrator（7246 Stars，v0.9.3）|
+| 来源 | github.com/grapeot/context-infrastructure（482 Stars，Python，2026-03-16） |
 | 目录 | `articles/projects/` |
-| 核心命题 | 每个 Agent 有独立 git worktree + TMUX session + 自己的 PR，编排器只在必要时介入，解决 Supervisor 瓶颈问题 |
-| 关键判断 | Git worktree 隔离从根本消除并发写入冲突，PR-Native 协作模型让 Agent 完成「写→测→PR→合并」完整流程 |
-| 关联 Article | 与 Article 形成「编排平台 → 并行 Agent 工程实现」的完整闭环 |
-| 原文引用 | 2处（GitHub README + Reddit 社区）|
+| 核心命题 | 三层持久化架构（Personal Rules + Skills + Scheduling），从「用 token 换记忆」转向「独立基础设施」 |
+| 关键判断 | 记忆层独立基础设施与 Cursor SDK 的 durable session 互补，构成完整的 Agent 持久化方案 |
+| 关联 Article | 与 Cursor × SpaceX Article 形成「模型层 + 记忆层」的完整闭环 |
+| 原文引用 | 2处（GitHub README 三层架构描述、技术实现分析） |
 
 ### Step 4：同步 + 提交
-- ✅ `git add` articles/ai-coding/ + articles/projects/
-- ✅ Commit `bfcb812`（Article + Project）
+- ✅ `git add` articles/ + sources_tracked.jsonl
+- ✅ Commit `0bc8f74`（Article + Project + tracker update）
 - ✅ Git push 成功
-- ✅ source_tracker 记录两个新源
-- ⚠️ gen_article_map.py 超时，跳过
 
 ## 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Cursor Gartner MQ 企业级编排）|
-| 新增 projects 推荐 | 1（Composio Agent Orchestrator）|
-| 原文引用数量 | Article 3处 / Project 2处 |
-| Commit | bfcb812 |
-| Run | 108（+1）|
+| 新增 articles 文章 | 1（Cursor × SpaceX 自研模型） |
+| 新增 projects 推荐 | 1（context-infrastructure 持久记忆） |
+| 原文引用数量 | Article 4处 / Project 2处 |
+| Commit | 0bc8f74 |
+| Run | 109（+1） |
 
 ## 本轮闭环逻辑
 
-**Gartner MQ × Composio AO = 企业级编排双轨**：
+**工具公司自研模型 × 持久记忆基础设施 = Agent 基础设施双轨**：
 
 | 轨道 | 代表 | 解决的问题 |
 |------|------|-----------|
-| **评估框架** | Cursor Gartner MQ | Gartner 评估的是"第三时代"编排范式理解深度，不只是单点能力 |
-| **工程实现** | Composio AO | Git worktree 隔离 + TMUX 进程管理 + PR-Native 协作，让多 Agent 并行成为工程现实 |
+| **模型层** | Cursor × SpaceX Colossus | 工具公司向上游渗透，从应用层竞争扩展到基础模型层 |
+| **记忆层** | context-infrastructure | 解决跨会话记忆持久化，从「token 填充」转向「独立基础设施」 |
 
 **两篇文章的互补关系**：
-- Gartner MQ Article 定义了「什么是企业级编排能力」（上下文隔离、权限分层、状态持久化）
-- Composio AO Project 展示了「如何工程实现这些能力」（git worktree 隔离、TMUX 进程管理、daemon 轮询 CI）
-- 共同指向：**第三时代的赛道已经从「单 Agent 能力」切换到「编排体系完整性」**
+- Cursor × SpaceX Article 揭示了「**怎么做更强的模型**」（从工具到模型的垂直整合）
+- context-infrastructure Project 解决了「**怎么让已有模型记住更多**」（记忆层独立基础设施）
+- 共同指向：**AI Coding Agent 的竞争已经从「单点能力」扩展到「全链路基础设施完整性」**
 
 **与上轮的连续性**：
-- Round 107：Cursor Lessons（环境工程）+ Elephant Agent（记忆框架）→ Cloud Agent 工程双轨
 - Round 108：Gartner MQ（编排范式评估）+ Composio AO（并行编排工程）→ 企业级编排双轨
-
-**工程机制扫描结论**：
-- 本轮扫描未发现新的工程机制关键词跳级批次
-- Composio AO 的 git worktree 隔离 + daemon 轮询模式属于「工作区状态管理」类工程机制，但未达到跳级阈值
+- Round 109：自研模型（工具到模型的垂直整合）+ 持久记忆（上下文管理的范式转移）→ Agent 基础设施双轨
 
 ## 本轮反思
 
 ### 做对了
-- **准确识别 Gartner MQ 的核心价值**：不是「Cursor 获得了什么荣誉」，而是「Gartner 通过这个评估在说第三时代的赛道在哪里」
-- **选择 Composio AO 作为 Project**：虽然 Stars 不如 hermes-agent/claw-code，但与 Gartner MQ Article 形成强关联闭环，且是工程实现层面的稀缺案例
-- **主动跳过已追踪源**：hermes-agent v0.14.0、claw-code 等虽然热门，但已追踪，不重复产出
+- **正确识别 Cursor × SpaceX 的战略价值**：不是简单的「合作伙伴关系」，而是工具公司向上游渗透的标志性事件
+- **选择 context-infrastructure 作为 Project**：482 Stars + 三层持久化架构，与 Article 形成强关联闭环
+- **主动跳过已追踪源**：amplitude、planetscale、typescript-sdk 本地已有深入分析，不重复产出
 
 ### 待改进
-- **gen_article_map.py 超时**：可能是 Python 环境问题，本轮跳过文章地图更新
-- **Anthropic 扫描无新产出**：harness-design-long-running-apps 已有类似主题，2026 Agentic Coding Trends Report 是 1 月旧文
+- **GitHub API 速率限制**：批量扫描时频繁超时，限制了更广泛的项目发现
+- **Two-layer 防重检查仍有遗漏**：amplitude 虽然本地文章日期较新，但内容覆盖方向不同（本地讲「云端 Agent 突破本地天花板」，新文章讲「idea to production 全自动化 pipeline」），理论上可以产出不同角度的文章，但为质量选择跳过
 
 ## 下轮线索
-- **Anthropic 2026 最新工程文章**（需持续监控，可能有新产出）
-- **Root-IO-Labs/open-agent-teams**（Git worktree + 多 Agent 协作框架，OAT 架构与 Composio AO 有竞争关系）
-- **Cursor Composer 2.5 × SWE-Bench 79.8% 的长程编码能力深度分析**（与第三时代主题关联）
-- ** NousResearch/hermes-agent v0.14.0 里程碑版本深度分析**（165K Stars 里程碑，与编排主题关联）
+- **Anthropic claude-think-tool**（2025-02-12 日期较旧，可能是存量文章）
+- **akitaonrails/ai-memory（238 Stars）**（Rust 实现，跨 Agent 厂商记忆传递，与 context-infrastructure 竞争）
+- **Cursor × SpaceX 合作后续**（是否有新的 Colossus 训练细节披露）
