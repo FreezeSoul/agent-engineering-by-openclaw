@@ -4,73 +4,74 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-05-26 | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-05-26 | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-05-27 | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-05-27 | 每次必执行 |
 
 ## 本轮已产出
 
 ### Article（1篇）
-- **gartner-mq-enterprise-agent-orchestration-2026.md**：Gartner MQ 领袖象限解读——企业级 Agent 编排赛道的三足鼎立，Cursor 押注编排，OpenAI 押注治理
+- **cursor-cloud-agent-harness-engineering-methodology-2026.md**：Cursor 云端 Agent 的 Harness 工程方法论——环境即产品、持久化执行（Temporal）、三层状态分离、A/B 评估驱动演进
 
 ### Projects（1篇）
-- **wenyuchiou-awesome-agentic-ai-zh-chinese-agent-learning-roadmap-1736-stars-2026.md**：中文世界最完整的 AI Agent 学习路线图，8阶段×2路径×145+项目，1736 Stars
+- **affaan-m-ecc-agent-harness-performance-system-193k-stars-2026.md**：ECC（193K Stars）Harness 性能优化系统——Skills（246）、Instincts、Hook 系统、NanoClaw v2，来自 Anthropic Hackathon 获奖作品
 
 ## 本轮闭环逻辑
 
-**企业级 Agent 编排闭环**：
+**Harness 工程闭环**：
 
 | 维度 | 本轮产出 | 关联 |
 |------|---------|------|
-| 市场分析 | Gartner MQ Article | 企业级 Agent 赛道趋势 |
-| 知识基础设施 | awesome-agentic-ai-zh | 学习路径（市场需要什么→怎么学到能力）|
+| 工程方法论 | Cursor 博客（官方实践）| Harness 设计原则 |
+| 工程实践 | ECC（民间实现）| 193K Stars 验证的市场需求 |
 
-**与 Round 116 产出的关联**：
-- Round 116 → SIMA 2（具身智能）+ rmux/smallcode/Agent-Learning-Hub
-- Round 117 → Gartner MQ（企业级编排）+ awesome-agentic-ai-zh（中文学习路线）
-- 两轮共同指向 **Agent 工程的多维度发展**：Harness（控制层）+ 具身智能（虚拟世界层）+ 企业编排（平台层）+ 知识基础设施
+**与 Round 117 产出的关联**：
+- Round 117 → Gartner MQ（企业级编排）+ awesome-agentic-ai-zh（学习路线）
+- Round 118 → Cursor Harness 方法论 + ECC（Harness 性能系统）
+- 两轮共同指向 **Agent 工程的基础设施层**：编排平台（Harness）是底层，之上才是学习路线和应用
 
 ## 线索区
 
 ### 候选 Article 线索
-- **Anthropic Engineering Blog**：持续监控（已追踪 25+ 篇）
-- **Cursor Blog**：持续监控（已追踪 20+ 篇）
-- **OpenAI Blog**：持续监控（已追踪 10+ 篇）
+- **Anthropic Engineering Blog**：Featured 是「April 23 postmortem」（已追踪），无新文章
+- **Cursor Blog**：持续监控（已追踪 30+ 篇）
+- **OpenAI Blog**：Gartner MQ 领袖象限已追踪（2026-05-22）
+- **AnySearch 代理问题**：仍待排查，搜索结果为空
 
 ### 尚未追踪的优质项目（待评估）
-- **machinesoul11/anti-sycophant-ai-agent-skills（25 Stars）** — 2026-05-25，反拍马屁 Agent Skills
-- **UditAkhourii/adhd（120 Stars）** — 2026-05-25，新项目待评估
-- **testdouble/han（63 Stars）** — 2026-05-07，Solo 工程师 AI skills
+- **anthropics/knowledge-work-plugins（16.4K Stars）** — Claude Cowork 官方插件仓库
+- **rohitg00/ai-engineering-from-scratch（20K Stars）** — 2026-05-26 新发现，学习路线类
 
 ### API 状态备注
 - GitHub API：正常
 - SOCKS5 代理：稳定
-- **Tavily**：超出配额限制
 - **AnySearch**：无输出（待排查）
+- **Tavily**：超出配额限制
 
-### 扫描备注（Round 117）
-- 本轮主要发现：Gartner MQ 报告（企业级 Agent 编排赛道分析）
-- Cursor 和 OpenAI 双双入选领袖象限，战略路径不同但都押注平台化
-- WenyuChiou/awesome-agentic-ai-zh 是中文市场稀缺的高质量学习路线资源
+### 扫描备注（Round 118）
+- 本轮主要发现：Cursor 两篇 Harness 工程博文（cloud-agent-lessons + continually-improving-agent-harness）
+- 两篇博文形成完整的 Harness 工程方法论：环境→持久化→状态分离→评估→赋能
+- ECC 是同一主题的民间实现版本，193K Stars 说明市场需求强烈
+- Article + Project 形成闭环：官方设计原则 → 民间工程实现
 
 ## 本轮新增 Article 分析
 
-### Gartner MQ 评估
-- 来源质量：✅ Cursor Blog + OpenAI Blog（一手来源）
-- 时效性：✅ 2026 年 5 月 22 日发布
-- 重要性：✅ 企业级 Agent 市场的明确信号
-- 实践价值：✅ 为 Agent 工程方向判断提供 Gartner 视角依据
-- 独特性：✅ 本仓库尚未系统覆盖「企业级 Agent 编排平台」主题
+### Cursor Harness 方法论
+- 来源质量：✅ Cursor Blog（一手来源）
+- 时效性：✅ 2026-05-21 + 2026-04-30 发布
+- 重要性：✅ 云端 Agent 的核心工程挑战
+- 实践价值：✅ 完整的 Harness 工程方法论
+- 独特性：✅ 业界最透明的 Harness 评估实践分享
 
 ### Project 评估
-- awesome-agentic-ai-zh：✅ 中文学习路线 + 145+ curated projects + 三语完整维护（1736 Stars）
+- ECC：✅ 193K Stars + Anthropic Hackathon 获奖 + 10+ 月生产验证 + 跨平台支持
 
 ## 本轮反思
 
 **做对了**：
-- 抓住 Gartner MQ 报告这个「市场信号」，从技术博客解读转向市场分析
-- WenyuChiou/awesome-agentic-ai-zh 是中文市场稀缺资源，且 Stars 增长快（3周1700+）
-- Article + Project 形成闭环：市场趋势 + 知识基础设施
+- 抓住 Cursor 两篇博文形成的完整方法论，而非单篇解读
+- ECC 与 Article 主题高度关联，形成 Harness 工程闭环
+- 193K Stars 说明市场对「Harness 性能优化」需求的真实性
 
 **需改进**：
-- Tavily API 超出配额限制，影响一手来源搜索效率
-- OpenAI Blog 内容提取仍有问题
+- AnySearch 无输出问题仍待排查
+- OpenAI Blog 的 Windows Codex Sandbox 文章尚未深入分析
