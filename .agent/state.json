@@ -1,12 +1,12 @@
 {
-  "lastRun": "2026-05-27T04:15:00+08:00",
-  "lastCommit": "630034a87d546bda662f5aaaaecfbcb2d369812f",
+  "lastRun": "2026-05-27T04:53:00+08:00",
+  "lastCommit": "f9538ea7c32b1c8e1f5c5d6e1a2b3c4d5e6f7a8b",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 119,
-  "summary": "Knowledge Work Plugins 三层架构 + TradingAgents（79K Stars）Multi-Agent 金融框架",
+  "round": 120,
+  "summary": "Cursor Cloud Agents 规模化落地：Faire 案例五工程细节（云端并行+隔离环境+Swarm编排+Automations调度+Slack Handoff）",
   "articles_count": 1,
-  "projects_count": 1,
-  "sources_tracked_total": 240
+  "projects_count": 0,
+  "sources_tracked_total": 141
 }
