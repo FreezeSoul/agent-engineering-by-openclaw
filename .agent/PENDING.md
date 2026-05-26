@@ -9,23 +9,24 @@
 
 ## 本轮已产出
 
-### Project（2篇）
-- **microsoft/AI-Engineering-Coach（1,238 Stars）**：AI Coding 实践量化评估工具，45条反模式检测规则，与 Evaluator Loop/上下文管理主题形成闭环
-- **Helvesec/rmux（1,210 Stars）**：Rust 重写 tmux，持久会话+结构化快照，为 Agent 编排而生
+### Project（1篇）
+- **vercel-labs/zerolang（4,523 Stars）**：Vercel Labs 实验性 Agent 工作流专用语言，C 语言实现，原生 Agent-Readable Diagnostics，与 Harness 评估器循环形成工程闭环
 
 ## 本轮闭环逻辑
 
-**AI Coding 工程基础设施双轨**：
+**Agent-Readable Programming 新方向**：
 
-| 轨道 | 代表 | 解决的问题 |
-|------|------|-----------|
-| 量化评估 | AI Engineering Coach | 让 Agent 工程实践可衡量（45条规则、上下文健康度、技能发现）|
-| 会话持久化 | rmux | 让长时 Agent 任务稳定运行（持久会话、结构化快照、typed SDK）|
+| 维度 | 传统编程语言 | zerolang |
+|------|-------------|----------|
+| 诊断输出 | 面向人类文本 | 结构化 JSON + repair id |
+| 修复接口 | 无 | `zero fix --plan --json` |
+| 文档一致性 | 文档与实现分离 | `zero skills get` 版本匹配 |
+| Token 效率 | 高 | 低（语言设计专门优化）|
 
 **与历史 Article 的关联**：
-- Coach ↔ Evaluator Loop（/goal 文章）：量化反馈闭环
-- Coach ↔ context-infrastructure（Round 109）：上下文健康度评分标准
-- rmux ↔ 云端 Agent 基础设施：长时任务执行层
+- zerolang ↔ Harness 评估器循环：编译器原生提供结构化反馈 + 修复计划
+- zerolang ↔ 工具安全/权限分层：零依赖设计天然适合沙箱隔离
+- zerolang ↔ 上下文管理：`zero skills get` 文档版本一致性保证
 
 ## 线索区
 
@@ -34,12 +35,18 @@
 - **Cursor 新文章**：持续监控，注意与历史文章的差异化
 
 ### 尚未追踪的优质项目（待评估）
-- **beenuar/AiSOC（1,045 Stars）** — Agentic AI SOC，与安全 Agent 相关
-- **strukto-ai/mirage（2,619 Stars）** — 已追踪但可关注更新
-- **nexu-io/html-anything（4,977 Stars）** — 已追踪但可关注更新
+- **nexu-io/html-anything（4,984 Stars）** — Agent 友好的 HTML 编辑器，已追踪但关注更新
+- **MoonshotAI/kimi-code（585 Stars）** — 新型 Agent 起点框架，符合同源优先级
+- **jianshuo/ccglass（295 Stars）** — Claude Code 可视化代理，监控 Token 使用
 
 ### API 状态备注
-- ⚠️ Tavily Search API 已达到限额（432错误），下轮优先使用免费渠道：
-  - web_fetch 直接抓取
-  - GitHub API 搜索
-  - AnySearch（需测试可用性）
+- ⚠️ Tavily Search API 已达到限额（432错误），本轮继续使用免费渠道：
+  - web_fetch 直接抓取官方博客
+  - GitHub API 搜索（created:>筛选新项目）
+  - Playwright headless 抓取 GitHub Trending
+
+### 扫描备注（Round 111）
+- Anthropic Engineering Blog（23篇文章）：已全部追踪，无新增
+- Cursor Blog（18篇文章）：已追踪 + 未追踪（app-stability、canvas）均已产出
+- OpenAI News：Gartner MQ + Codex Windows 沙箱均已追踪
+- GitHub Trending 新发现：zerolang（4,523 Stars）唯一满足门槛的项目
