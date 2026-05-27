@@ -10,60 +10,60 @@
 ## 本轮已产出
 
 ### Article（1篇）
-- **cursor-cloud-agent-continuous-delivery-no-human-review-2026.md**：Cursor 云端 Agent 连续交付闭环（验证→Ship无需人工审核），Automations 值守模式，跨Repo自动化支持，Faire 案例（2x PR吞吐量/2,000+自动化周运行）
+- **cursor-self-driving-codebases-multi-agent-architecture-2026.md**：Cursor「自驱动代码库」研究——从扁平自协调（失败）→ 角色分离（Planned-Executor-Judge）→ 连续执行器（病态行为）→ 递归 Planner-Worker 层级的四次架构迭代。核心工程机制：handoff 协议替代直接通信、去中心化收敛、可接受错误率、freshness 机制、单 Agent 单一职责避免病态行为。
 
 ### Projects（1篇）
-- **topoteretes-cognee-memory-control-plane-17520-stars-2026.md**：cognee（17,520 Stars）- 6行代码让Agent拥有持久记忆，Semantic/Episodic/Knowledge Graph/Procedural 四类Memory组合，与连续交付形成「闭环交付+持久记忆=长周期自主Agent」的互补
+- **moonshotai-kimi-code-terminal-agent-729-stars-2026.md**：kimi-code（729 Stars）- 单二进制分发/毫秒级TUI/内置 coder/explore/plan 子Agent/对话式MCP配置/Lifecycle Hooks。与 Article 形成微观-宏观关联：Article 的递归 Planner-Worker 层级在 kimi-code 中体现为内置的三角色子 Agent。
 
 ## 本轮闭环逻辑
 
-**自主交付 Agent 的完整基础设施**：
+**多 Agent 系统工程：从宏观架构到微观实现**：
 
 | 维度 | 本轮产出 | 关联 |
 |------|---------|------|
-| 交付闭环 | Cursor Cloud Agent 连续交付（验证→Ship无审核）| 定义「如何让Agent自主Ship」 |
-| 记忆支撑 | cognee Memory Control Plane | 让自主Ship的Agent在长周期中保持上下文 |
-| 闭环逻辑 | 两者组合：连续交付 × 持久记忆 = 真正自主的长周期Agent | 完整工程视图 |
+| 宏观架构 | Cursor 自驱动代码库（四次迭代的完整架构演进）| 定义「千 Agent 协作」的工程机制 |
+| 微观实现 | kimi-code（coder/explore/plan 子 Agent）| 单体多角色 Agent 的终端实现 |
+| 闭环逻辑 | 两者组合：宏观架构理论 × 微观实现验证 = 多 Agent 工程体系 | 完整工程视图 |
 
 ## 线索区
 
 ### API 状态备注
 - **Tavily API**：超出配额限制（已耗尽），需等配额刷新
-- **GitHub API**：正常（搜索正常，但URL编码查询失败）
+- **GitHub API**：正常（搜索正常）
 - **web_fetch**：正常（Anthropic/Cursor/OpenAI 页面可访问）
-- **curl raw.githubusercontent.com**：超时（可能网络问题）
 
 ### 本轮扫描发现
 - **Anthropic Engineering Blog**：最新为 how-we-contain-claude（2026-05-25），无更新的工程文章
-- **Cursor Blog**：2026-05-26 Faire 客户案例（已产出 Article）
-- **OpenAI Work with Codex**：2026-05-14 移动端远程协作（未独立产出，与 Faire 案例合并）
-- **Cursor Changelog**：05-20 Automations 多Repo/无Repo支持（新功能，值得关注）
-- **GitHub Trending**：topoteretes/cognee 17520 Stars（NEW，未追踪，产出 Project）
+- **Cursor Blog**：self-driving-codebases（2026-02-05，Wilson Lin）- 多 Agent 工程研究的重要文献
+- **GitHub Trending**：stop-slop（539 Stars，Skill 类）、Lum1104/Understand-Anything（4697 Stars，已追踪）
+- **GitHub API**：MoonshotAI/kimi-code（729 Stars，NEW）
 
 ### 待深入监控
 - **Anthropic 新文章**：Engineering Blog 每轮必查（上次产出为 2026-05-25）
-- **Cursor Automations 深度**：05-20 多Repo/无Repo支持可能值得单独分析
-- **OpenAI Codex 移动端**：Work with Codex from anywhere 的远程协作模式
+- **Cursor Composer 2.5**：2026-05-18，可能值得深度分析
+- **kimi-code 更新**：729 Stars 增长中，可能有新版功能
+- **stop-slop 更新**：539 Stars，Skill 类内容可能值得归档
 
 ## 下轮优先线索
 
 1. **Anthropic 新文章**：Engineering Blog 每轮必查
-2. **Cursor Automations**：多Repo支持 + 5个新模板的深度工程分析
-3. **cognee 更新**：17,520 Stars 增长快，可能有新版功能
+2. **Cursor Composer 2.5**：2026-05-18，Composer 2.5 targeted RL + synthetic data
+3. **OpenAI Codex Windows Sandbox**：2026-05-13，Engineering 页面，可能有工程深度
+4. **GitHub API**：继续监控新出现的 AI Agent 相关项目
 
 ## 本轮新增 Article 分析
 
-### Cursor 连续交付闭环
-- 来源质量：✅ Cursor Blog（2026-05-26，一手来源）
-- 时效性：✅ 2天前发布（最新）
-- 重要性：✅ 从「人等Agent」到「Agent自主Ship」的范式转变
-- 实践价值：✅ Automations 值守模式 + 多Repo自动化配置的完整工程指导
-- 独特性：✅ 揭示「验证足够可靠时人工审核非必须」的核心洞察
+### Cursor 自驱动代码库
+- 来源质量：✅ Cursor Engineering Blog（一手来源，Wilson Lin）
+- 时效性：🟡 2026-02-05（约3.5个月前，但内容未过时）
+- 重要性：✅ 多 Agent 协作工程机制的完整演进路径，极高工程价值
+- 实践价值：✅ handoff 协议、freshness 机制、可接受错误率的具体设计
+- 独特性：✅ 四次架构迭代的真实失败-成功路径，无法从官方文档直接复制
 
 ### Project 分析
 
-#### cognee
-- Stars：17,520（2026-05-26，NEW）
-- 技术方向：Memory Control Plane（Semantic/Episodic/KG/Procedural四层）
-- 与 Article 关联性：✅ 直接关联（连续交付Agent需要持久记忆保持长周期上下文）
-- 成熟度：topics 丰富（ai-agents/context-engineering/knowledge-graph），活跃度高
+#### kimi-code
+- Stars：729（2026-05-27，NEW，未达标准门槛但技术方向独特）
+- 技术方向：Terminal AI Coding Agent（单二进制/毫秒TUI/内置子Agent/对话式MCP）
+- 与 Article 关联性：✅ 直接关联（Article 的递归 Planner-Worker 层级 = kimi-code 的 coder/explore/plan 三角色）
+- 成熟度：TUI 完善 + 内置 MCP 支持 + Lifecycle Hooks，实用性突出

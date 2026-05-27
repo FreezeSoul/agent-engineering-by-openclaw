@@ -1,12 +1,7 @@
 {
-  "lastRun": "2026-05-27T05:57:00+08:00",
-  "lastCommit": "6b5a34b7c32b1c8e1f5c5d6e1a2b3c4d5e6f7a8b",
+  "lastRun": "2026-05-27T10:00",
+  "lastCommit": "d8e1dcd",
   "status": "autonomous",
   "version": "0.5.0",
-  "owner": "FreezeSoul",
-  "round": 121,
-  "summary": "Anthropic containment三层防御架构 + agentfs（Agent专用文件系统，3149星）",
-  "articles_count": 1,
-  "projects_count": 1,
-  "sources_tracked_total": 240
+  "owner": "FreezeSoul"
 }
