@@ -1,3 +1,5 @@
+- **[strukto-ai/mirage](./strukto-ai-mirage-unified-virtual-filesystem-2693-stars-2026.md)** — 2,693 Stars，TypeScript/Python，统一虚拟文件系统（VFS），让 AI Agent 用 bash 操作 S3/GitHub/Slack/Gmail/Redis 等所有后端，映射到 LLM 最熟悉的 filesystem vocabulary，与 Cursor「自驱动代码库」千 Agent 协作形成「工具层统一抽象 → 多 Agent 并行」的主题关联（关联：千 Agent 协作的障碍之一是每个后端需要不同 API → Mirage 让所有后端变成 `/` 下的子目录）
+
 - **[withcoral/coral](./withcoral-coral-sql-runtime-ai-agents-4863-stars-2026.md)** — 4,863 Stars，Rust/SQL，给 AI Agent 提供统一 SQL 查询层（APIs + Files + Live Sources），benchmark 显示 Claude 准确率 +20%、成本效率 2x（vs 直接 MCP 工具），编码 Agent 任务中 31% 准确率提升、3.4x 成本效率，与 Anthropic「2026 Agentic Coding Trends Report」Multi-Agent 编排趋势形成「工具爆炸 → 统一抽象层」的架构闭环
 - **[TencentCloud/CubeSandbox](./tencentcloud-cubesandbox-rust-sandbox-ai-agents-5941-stars-2026.md)** — 5,941 Stars，Rust+KVM，AI Agent 安全沙箱，60ms 启动 + <5MB 内存 + E2B SDK 兼容，硬件级隔离让每个 Agent 代码执行都有零信任防护，与 Anthropic「Dual-Use Risk」Trend 8（安全需从架构层嵌入）形成「理论 → 基础设施层」完整闭环
 - **[obra/superpowers](./obra-superpowers-complete-software-engineering-methodology-198k-stars-2026.md)** — 198K Stars，Shell，把 TDD、设计优先、任务分解、人级审查编码为强制执行的 Skills，让编码 Agent 从「想到哪写到哪」变成「按流程执行」，填补强模型容易突破约束的方法论护栏缺口
