@@ -10,10 +10,10 @@
 ## 本轮已产出
 
 ### Article（1篇）
-- **cursor-self-driving-codebases-thousand-agent-architecture-evolution-2026.md**：Cursor Wilson Lin 的千 Agent 协作架构演进复盘，来源 cursor.com/blog/self-driving-codebases（2026-02-05）。核心：扁平共享状态文件（失败，锁竞争）→ Planner-Executor-Judge 三层结构（成功），Continuous Executor 长时稳定性工程。
+- **cursor-continually-improving-our-agent-harness-2026.md**：Cursor Stefan Heule & Jediah Katz 的 Harness 量化迭代方法论，来源 cursor.com/blog/continually-improving-our-agent-harness（2026-04-30）。核心：Harness 质量 = 量化评估 × 系统化迭代 × 深度模型适配；Keep Rate + A/B 测试 + 错误分类体系。
 
-### Project（1篇）
-- **strukto-ai-mirage-unified-virtual-filesystem-2693-stars-2026.md**：统一虚拟文件系统，2693 Stars，让 Agent 用 bash 操作 S3/GitHub/Slack/Gmail 等所有后端，与 Cursor 千 Agent 协作形成工具层统一需求的关联闭环。
+### Project（0篇）
+- oh-my-pi 已在 Round 124 产出，本轮确认防重，跳过
 
 ## 线索区
 
@@ -23,23 +23,19 @@
 - **AnySearch**：正常，代理使用 socks5h://127.0.0.1:1080
 
 ### 本轮扫描发现
-- **Cursor Blog 最新文章**：
-  - `self-driving-codebases`（2026-02-05，Feb 5）→ **已推荐**（架构演进复盘）
-  - `faire`（May 26）→ 已追踪（cursor-cloud-agent-continuous-delivery-no-human-review-2026.md）
+- **Cursor cloud-agent-lessons（May 21）**：已追踪（Round 126）
+- **Cursor continually improving our agent harness（Apr 30）**：**已产出 Article（Round 127）**
 - **GitHub 2026年5月新 repo（未追踪）**：
-  - `nexu-io/html-anything`（5132 Stars，NEW）→ 未关联，跳过
-  - `aattaran/deepclaude`（1973 Stars）→ Claude Code 兼容层，无新视角
-  - `datawhalechina/Agent-Learning-Hub`（1671 Stars）→ 教育类，非工程机制
-  - `Doorman11991/smallcode`（1481 Stars）→ 无关联，跳过
-  - `microsoft/AI-Engineering-Coach`（1435 Stars）→ 教育类，跳过
-  - `vercel-labs/zerolang`（4570 Stars）→ **已追踪**（Round 125）
+  - `can1357/oh-my-pi`（5336 Stars）→ **已追踪**（Round 124）
+  - `open-multi-agent/open-multi-agent`（6252 Stars）→ 已追踪
+  - `najeed/ai-agent-eval-harness`（21 Stars）→ Stars 过低，跳过
 
 ## 下轮优先线索
 
-1. **Anthropic Engineering Blog**：每轮必查，关注 harness 三篇（managed-agents/effective-harnesses/harness-design-long-running-apps）是否有后续更新
-2. **LearnAgentic Substack**：「Inside Agent Harnesses」文章（Anthropic/OpenAI/LangChain/Stripe 四家对比）值得深度分析，但需确认是否一手来源
-3. **GitHub 新出现的 AI Agent 项目**：持续关注 2026年5月新 repo，Stars > 2000 且有独特工程机制的优先
-4. ** Faire 案例文章**：完整版（web_fetch 只截取了前 8000 chars），可能有更多工程细节
+1. **Anthropic Engineering Blog**：每轮必查，关注 Claude Agent SDK 深度定制、harness 评测框架等工程机制文章
+2. **Cursor Blog 最新文章**：cloud-agent-lessons 已覆盖，continually-improving 已覆盖，持续扫描新文章
+3. **GitHub Agent Harness 领域**：EleutherAI/lm-evaluation-harness + awesome-agent-harness 类项目，关注评测标准化方向
+4. **AI Agent 多 Agent 协作**：open-multi-agent（6252 Stars）值得关注，但需找到独特的工程机制视角
 
 ## 工程机制关键词监控
 
