@@ -9,70 +9,56 @@
 
 ## 本轮已产出
 
-### Article（0篇）
-- 无新 Article 产出
-- Anthropic 工程博客新发现均已追踪或文章重复度过高：
-  - `claude-code-auto-mode`（Mar 25, 2026）：已追踪（7篇+）
-  - `scaling-managed-agents`（Apr 8, 2026）：已追踪
-  - `harness-design-long-running-apps`（Mar 24, 2026）：已追踪
-  - `code-execution-mcp`：URL 404，不存在
-- OpenAI/Others：尚无明确新主题
-
-### Project（1篇）
-- **`ai-boost/awesome-harness-engineering`**（1,150 Stars）
-  - 来源：GitHub Trending
-  - 目录：`articles/projects/`
-  - 主题：Harness Engineering 知识地图，聚合 OpenAI/Anthropic/Google/Martin Fowler 一手来源
-  - 关联：与阶段12（Harness Engineering）深度契合
+### Article（1篇）
+- **`openai-agents-sdk-next-evolution-harness-compute-separation-2026.md`**
+  - 来源：OpenAI Blog (Apr 15, 2026)
+  - 目录：`articles/fundamentals/`
+  - 核心论点：OpenAI Agents SDK 首次实现模型提供商 SDK 中 harness/compute 彻底分离，代表从「模型 API 包装器」到「基础设施级 harness 提供商」的根本转变
+  - 关键洞察：内置 snapshotting + rehydrate、原生沙箱隔离、多 Agent 并行编排、安全凭证隔离
   - ✅ 已 commit + push + jsonl 记录
+
+### Project（0篇）
+- 本轮无新 Project 产出
+- GitHub Trending 扫描发现：pi-mono、TradingAgents、claude-context 等均已推荐过
+- 新发现的 study8677/awesome-architecture（515 Stars）主题与本轮 Article 无关联，跳过
 
 ## 线索区
 
-### API 状态备注
-- **Tavily API**：已耗尽（错误码 432），本轮使用 AnySearch + curl/web_fetch 降级方案
-- **AnySearch**：正常（主要搜索工具）
-- **GitHub API**：正常
-
 ### 本轮扫描发现
-- **awesome-harness-engineering**（GitHub Trending, 1,150 Stars）：✅ NEW → 写 Project 推荐
-  - 主题：Harness Engineering 资源地图，与阶段12直接关联
-  - 引用来源：OpenAI Harness Engineering + Codex Agent Loop + Anthropic 多个工程文档
-- **Anthropic Engineering Blog**：全部已追踪，无新未覆盖主题
-  - `claude-code-auto-mode`（Mar 25）：7篇+已有文章
-  - `scaling-managed-agents`（Apr 8）：已有对应文章
-  - `harness-design-long-running-apps`（Mar 24）：已有对应文章
-- **Cursor Changelog**：May 2026 更新内容均为产品功能类，非工程机制方向
+- **OpenAI Agents SDK Next Evolution**（Apr 15, 2026）：✅ NEW → 写 Article
+  - 主题：Harness 与 Compute 分离、Snapshot/Rehydrate、原生沙箱、并行多 Agent 编排
+  - 与阶段12（Harness Engineering）深度契合，与 OpenAI Codex 系列形成知识闭环
+- **eval-skills（developers.openai.com）**：403 禁止访问，下轮可用 agent-browser 重试
+- **GitHub 新兴项目**：近期（May 21-25）新建仓库 Stars 均 <600，与 Article 无直接关联
 
-### GitHub Trending 扫描
-- 本轮直接扫描 GitHub Trending 页面（curl），超时无响应
-- AnySearch 返回 awesome-ai-agents-2026 / awesome-harness-engineering 等汇总类列表
-- awesome-harness-engineering 是本轮唯一 Stars > 1000 的高质量发现
+### 工程机制关键词持续监控
+- **Harness/评估器循环**：evaluator loop, harness, goal mode, stop condition
+- **接力/恢复机制**：resume, checkpoint, progress file, session recovery, snapshot, rehydrate
+- **工作区状态管理**：working state, clean state, artifact, handover, manifest
+- **多 Agent 协作**：multi-agent orchestration, agent swarm, subagent isolation
+- **工具安全/权限分层**：permission, sandbox, allowlist, guardrail, credential isolation
+
+### 潜在 Article 线索
+1. **OpenAI eval-skills 系统**：Testing Agent Skills Systematically with Evals（需要 agent-browser 访问）
+2. **Anthropic 新文章**：持续扫描 Mar-Jun 2026 Engineering Blog
+3. **Cursor 新文章**：持续扫描 Cursor Blog/Changelog
+4. **Meta REA**：Ranking Engineer Agent 工程机制（尚未确认）
 
 ## 下轮优先线索
 
-1. **Anthropic Engineering Blog**：持续关注新文章（Mar-Jun 2026），尤其 harness/evaluation/orchestration 方向
-2. **GitHub 新发现项目**：持续扫描 Stars > 1000 的新 repo（直接 curl GitHub 失败，需找替代方案）
-3. **awesome-harness-engineering 引用来源追溯**：列表中引用的 arXiv 论文（Natural-Language Agent Harnesses、Terminal Coding Agent Scaffolding）可能值得深度分析
-4. **Meta REA 项目**：Meta Engineering Blog 的 Ranking Engineer Agent，涉及多日 Pipeline + Hibernate/Wake Checkpoint
-
-## 工程机制关键词监控
-
-持续关注以下关键词的出现（新源跳级处理）：
-- **Harness/评估器循环**：evaluator loop, harness, goal mode, stop condition
-- **接力/恢复机制**：resume, checkpoint, progress file, session recovery
-- **工作区状态管理**：working state, clean state, artifact, handover
-- **多 Agent 协作**：multi-agent, orchestration, A2A protocol
-- **工具安全/权限分层**：permission, sandbox, allowlist, guardrail, hook system
-- **Agent 安全/Containment**：blast radius, containment architecture, isolation
+1. **OpenAI eval-skills**：使用 agent-browser 获取 developers.openai.com/blog/eval-skills 内容
+2. **GitHub 新兴项目**：持续扫描 2026-05 新建仓库，Stars > 500
+3. **OpenAI Responses API 深度分析**：模型到 Agent 的演进路径
+4. **Anthropic Engineering Blog 新文章**：持续监控
 
 ## 防重提示
 
-- `.agent/sources_tracked.jsonl` 当前 **250 条记录**（本轮 +1）
-- 本轮 Project 已完成，无 Article 产出
+- `.agent/sources_tracked.jsonl` 当前 **151 条记录**（本轮 +1）
+- 本轮 Article 已完成，Project 无新增
 
 ## 本轮执行摘要
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ⬇️ | 无新主题，所有发现均已追踪或重复度高 |
-| PROJECT_SCAN | ✅ | awesome-harness-engineering，1,150 Stars，与阶段12关联 |
+| ARTICLES_COLLECT | ✅ | 1篇 Article（OpenAI Agents SDK Next Evolution）|
+| PROJECT_SCAN | ⬇️ | 无新项目（所有发现均已推荐或 Stars 不达标）|
