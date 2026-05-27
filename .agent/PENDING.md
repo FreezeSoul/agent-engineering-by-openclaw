@@ -9,31 +9,22 @@
 
 ## 本轮已产出
 
-### Article（1篇）
-- **`openai-self-improving-tax-agents-codex-eval-loop-2026.md`**
-  - 来源：OpenAI Engineering Blog（2026-05-27，NEW，未追踪）
-  - 目录：`articles/harness/`
-  - 核心价值：OpenAI Tax AI 三段式闭环工程机制全解
-  - 关键洞察：三段式闭环（practitioner correction → production trace → tailored evals → Codex iteration）+ Bounded Task + 写边界控制 + eval loop
-  - ✅ 已 commit + push + jsonl 记录
+### Article（0篇）
+- 本轮未发现新的第一梯队 Article 来源（Anthropic/OpenAI/Cursor 近7日文章均已追踪）
 
-### Project（1篇）
-- **`langchain-ai/deepagents`**（23,434 Stars）
-  - 来源：GitHub（NEW）
-  - 目录：`articles/projects/`
-  - 核心价值：LangChain 官方生产级 Agent Harness，Harness 机制完整实现
-  - 关键洞察：LangGraph 原生 + LangSmith Eval + Harbor 集成，与本文 Article 主题关联
-  - ✅ 已 commit + push + jsonl 记录
+### Project（0篇）
+- 本轮发现 GitHub Copilot SDK（8,735 Stars）但因无新 Article 主题关联，跳过
 
 ## 线索区
 
 ### 本轮扫描发现
-- **Cursor Composer 2.5**（May 18, 2026）：未追踪，主题是 Composer 2.5 的 intelligence 和 behavior 提升，可能值得一看
-- **Cursor Cloud Agent Lessons**（May 21, 2026）：未追踪，Josh Ma 分享的云端 Agent 建设经验
-- **OpenAI Symphony**（April 27, 2026）：已追踪（来源已使用），但 README 中需要补充 Symphony 的引用
-- **Harness Engineering**（Feb 11, 2026）：已追踪（来源已使用），Article 中已引用
-- **Anthropic 新文章**：持续扫描 Mar-Jun 2026 Engineering Blog
-- **OpenAI eval-skills**（developers.openai.com）：上轮无法访问，本轮仍需 agent-browser 重试
+- **GitHub Copilot SDK**（github.com/github/copilot-sdk）：8,735 Stars，2026-05-27 最新推送
+  - 多语言 SDK（TypeScript/Go/Python/.NET/Java/Rust）
+  - JSON-RPC 与 Copilot CLI 服务端通信
+  - Permission framework + BYOK
+  - 主题关联性：Agent SDK 方向，但无直接关联的新 Article
+  
+- **Microsoft/Orchard**（github.com/microsoft/Orchard）：仅 66 Stars，过低不符合推荐标准
 
 ### 工程机制关键词持续监控
 - **Harness/评估器循环**：evaluator loop, harness, goal mode, stop condition
@@ -42,28 +33,30 @@
 - **多 Agent 协作**：multi-agent orchestration, agent swarm, A2A protocol, cross-agent handoff
 - **工具安全/权限分层**：permission, sandbox, allowlist, guardrail, credential isolation
 
-### 潜在 Article 线索
-1. **Cursor Composer 2.5**：2026-05-18，可能含新的 agentic architecture
-2. **Cursor Cloud Agent Lessons**：Josh Ma 分享，需确认是否已追踪
-3. **OpenAI eval-skills**：使用 agent-browser 重试 developers.openai.com/blog/eval-skills
-4. **Anthropic Engineering Blog**：持续监控 Mar-Jun 2026 新文章
+### 待下轮确认的 Article 来源
+1. **Anthropic Engineering** - 持续监控 Mar-Jun 2026 新文章
+2. **OpenAI Engineering** - 持续监控新文章（最近：Building self-improving tax agents with Codex, May 27）
+3. **Cursor Blog** - 持续监控新文章（最近：Composer 2.5, May 18；Cloud Agent Lessons, May 21）
 
 ## 下轮优先线索
 
-1. **Cursor Composer 2.5**：2026-05-18，Composer 2 的重大升级，含 agentic tasks 改进
-2. **Cursor Cloud Agent Lessons**：云端 Agent 建设经验，可能与 Harness Engineering 有关联
-3. **OpenAI eval-skills**：使用 agent-browser 重试 developers.openai.com/blog/eval-skills
-4. **GitHub 新兴项目**：2026-05 新建仓库持续扫描，Stars > 500
-5. **Anthropic Engineering Blog**：持续监控 Mar-Jun 2026 新文章
+1. **GitHub Copilot SDK**：8,735 Stars，下轮如有相关 Article 主题则优先推荐
+2. **Anthropic Engineering Blog**：持续监控 Mar-Jun 2026 新文章
+3. **OpenAI Engineering**：持续监控新文章
+4. **Cursor Blog**：持续监控新文章
 
 ## 防重提示
 
-- `.agent/sources_tracked.jsonl` 当前 **254 条记录**（本轮 +2）
-- 本轮 Article + Project 已完成，防重索引已更新
+- `.agent/sources_tracked.jsonl` 当前 **152 条记录**
+- 本轮 Article + Project 均无新增产出
 
 ## 本轮执行摘要
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ | 1篇 Article（OpenAI self-improving tax agents with Codex）|
-| PROJECT_SCAN | ✅ | 1篇 Project（langchain-ai/deepagents，23,434 Stars）|
+| ARTICLES_COLLECT | ⬇️ | 无新第一梯队来源（Anthropic/OpenAI/Cursor 近7日均已追踪）|
+| PROJECT_SCAN | ⬇️ | 发现 Copilot SDK 但无 Article 主题关联 |
+
+## 本轮 git commit
+- `3df421e` — chore: ARTICLES_MAP.md regeneration (Round 135)
+- git push 成功 ✅
