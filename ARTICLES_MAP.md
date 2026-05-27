@@ -1,6 +1,6 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-05-27 16:03:48
+> Auto-generated at 2026-05-27 18:04:48
 
 > Total articles: 744
 
@@ -9,11 +9,11 @@
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | Cursor 如何持续迭代 Agent Harness：工程实践全解 | harness | unknown | [articles/harness/cursor-continually-improving-our-agent-harness-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/cursor-continually-improving-our-agent-harness-2026.md) |
-| 2 | oh-my-pi：终端 AI Coding Agent 的工程样本 | projects | unknown | [articles/projects/can1357-oh-my-pi-terminal-coding-agent-3597-stars-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/projects/can1357-oh-my-pi-terminal-coding-agent-3597-stars-2026.md) |
-| 3 | Anthropic 如何在产品间 Contain Claude：Agent 安全的三层防御架构 | harness | 2026-05-27 | [articles/harness/anthropic-how-we-contain-claude-three-defense-layers-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/anthropic-how-we-contain-claude-three-defense-layers-2026.md) |
-| 4 | Cursor Cloud Agent 连续交付：如何在无人干预下让 Agent 自动Ship代码 | harness | 2026-05-27 | [articles/harness/cursor-cloud-agent-continuous-delivery-no-human-review-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/cursor-cloud-agent-continuous-delivery-no-human-review-2026.md) |
-| 5 | Cursor 云端 Agent 的 Harness 工程方法论：两篇博客的底层逻辑 | harness | 2026-05-27 | [articles/harness/cursor-cloud-agent-harness-engineering-methodology-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/cursor-cloud-agent-harness-engineering-methodology-2026.md) |
+| 1 | 三起事故，一次复盘：Anthropic 如何从 Claude Code 质量回归中提取工程教训 | practices | 2026-05-27 | [articles/practices/ai-coding/anthropic-claude-code-quality-postmortem-three-bugs-compounding-effects-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/practices/ai-coding/anthropic-claude-code-quality-postmortem-three-bugs-compounding-effects-2026.md) |
+| 2 | Anthropic 如何在产品间 Contain Claude：Agent 安全的三层防御架构 | harness | 2026-05-27 | [articles/harness/anthropic-how-we-contain-claude-three-defense-layers-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/anthropic-how-we-contain-claude-three-defense-layers-2026.md) |
+| 3 | Cursor Cloud Agent 连续交付：如何在无人干预下让 Agent 自动Ship代码 | harness | 2026-05-27 | [articles/harness/cursor-cloud-agent-continuous-delivery-no-human-review-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/cursor-cloud-agent-continuous-delivery-no-human-review-2026.md) |
+| 4 | Cursor 云端 Agent 的 Harness 工程方法论：两篇博客的底层逻辑 | harness | 2026-05-27 | [articles/harness/cursor-cloud-agent-harness-engineering-methodology-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/cursor-cloud-agent-harness-engineering-methodology-2026.md) |
+| 5 | Cursor 如何持续迭代 Agent Harness：工程实践全解 | harness | 2026-05-27 | [articles/harness/cursor-continually-improving-our-agent-harness-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/cursor-continually-improving-our-agent-harness-2026.md) |
 | 6 | Anthropic Knowledge Work Plugins 三层架构解析：从 Skill 定义到生产力插件的工程实现 | orchestration | 2026-05-27 | [articles/orchestration/anthropic-knowledge-work-plugins-three-layer-architecture-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/anthropic-knowledge-work-plugins-three-layer-architecture-2026.md) |
 | 7 | Cursor「自驱动代码库」复盘：千Agent协作的架构演进实录 | orchestration | 2026-05-27 | [articles/orchestration/cursor-self-driving-codebases-thousand-agent-architecture-evolution-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/cursor-self-driving-codebases-thousand-agent-architecture-evolution-2026.md) |
 | 8 | Gartner MQ 验证：企业级 AI Coding 平台的三足鼎立 | orchestration | 2026-05-27 | [articles/orchestration/cursor-third-era-gartner-mq-enterprise-agent-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/cursor-third-era-gartner-mq-enterprise-agent-2026.md) |
