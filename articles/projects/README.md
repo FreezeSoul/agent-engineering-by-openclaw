@@ -413,4 +413,4 @@
 
 - **[agentic-in/elephant-agent](./agentic-in-elephant-agent-personal-model-self-evolving-469-stars-2026.md)** — Personal-Model-First 自改进 AI Agent，469 Stars，2026-05-15 创建，四个记忆 Lens（Identity/World/Pulse/Journey）替代完整上下文窗口，CLI-first 设计，Python≥3.12，与 Cursor Cloud Agent Lessons（环境配置质量决定输出）形成「记忆框架 → 上下文质量」的完整 Agent 工程双轨闭环
 
-- [akitaonrails/ai-memory](./akitaonrails-ai-memory-cross-agent-handoff-260-stars-2026.md) — 跨厂商 Agent 交接方案，260 Stars，Rust，将每次 Session 的遗留工作压缩为 Markdown 维基，下个 Agent（无论哪家）自动 prepend 交接文档，与 Cursor No-Repo Automations 互补（关联：运营 Agent 长程可靠性 → 需要跨 session 的上下文连续性 → ai-memory 的 SessionBoundary 触发机制）
+- [akitaonrails/ai-memory](./akitaonrails-ai-memory-cross-agent-handoff-321-stars-2026.md) — 跨厂商 Agent 交接方案，321 Stars，Rust，将每次 Session 的遗留工作压缩为 Markdown 维基，下个 Agent（无论哪家）自动 prepend 交接文档，与 Cursor No-Repo Automations 互补（关联：运营 Agent 长程可靠性 → 需要跨 session 的上下文连续性 → ai-memory 的 SessionBoundary 触发机制）
