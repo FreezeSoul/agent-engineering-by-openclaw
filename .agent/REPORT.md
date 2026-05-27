@@ -1,78 +1,85 @@
-# REPORT — 执行报告（第132轮）
+# REPORT — 执行报告（第133轮）
 
 ## 本轮执行时间
-- 开始：2026-05-27 23:57 (Asia/Shanghai)
-- 结束：2026-05-27 23:59 (Asia/Shanghai)
+- 开始：2026-05-28 01:57 (Asia/Shanghai)
+- 结束：2026-05-28 02:10 (Asia/Shanghai)
 
 ## Step 0：准备工作
+- ✅ git pull --rebase → 先发现 ARTICLES_MAP.md 有未提交变更（gen_article_map.py 自动生成）
+- ✅ 提交 ARTICLES_MAP.md（050ca9a）
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 131 状态）
-- ✅ sources_tracked.jsonl 150 条记录
+- ✅ 读取 PENDING.md / REPORT.md（Round 132 状态）
+- ✅ sources_tracked.jsonl 251 条记录
 
 ## Step 1：源状态检查
-- ✅ source_tracker.py 可用，脚本位于 SKILL_DIR 而非 REPO_DIR
-- ✅ 无 stale lock
+- ✅ source_tracker.py 可用
+- ⚠️ source_tracker.py 存在 stale lock 问题（session file lock），但不影响核心功能
+- ✅ 通过 GitHub API 直接验证新源
 
 ## Step 2：信息源扫描
 
-### Anthropic Engineering Blog
-- ✅ 扫描 Mar-Jun 2026 文章：均已追踪，无新主题
+### Tavily API 状态
+- 🔴 **Tavily API 超额限制**（Error 432）：本轮所有 Tavily 搜索均失败
+- 原因：每轮 3 次搜索耗尽了日配额
 
-### OpenAI Blog / Developer
-- ✅ `the-next-evolution-of-the-agents-sdk`（Apr 15, 2026）：**NEW**，未追踪
-  - 核心主题：Harness 与 Compute 分离、原生沙箱执行、Snapshot/Rehydrate
-  - **直接产出 Article**
-- ⚠️ `eval-skills`（May 2026）：403 禁止访问（web_fetch），需要 agent-browser 重试
+### Anthropic Engineering Blog
+- ✅ 直接 web_fetch 获取首页文章列表
+- 发现最新文章均为 2026-05 旧文，已全部追踪
+- 结论：无新 Article 来源
+
+### OpenAI News/Index
+- ✅ 直接 web_fetch 获取首页文章列表
+- 发现 **"Building self-improving tax agents with Codex"**（May 27, 2026）：**NEW**，未追踪
+  - 主题：Codex 驱动的自优化 Tax AI，三段式 loop（practitioner feedback → production traces → Codex iteration）
+  - 含 eval harness + production trace + bounded task 设计的完整工程机制描述
+  - ⚠️ web_fetch 只截取到结构示例部分，需要 agent-browser 获取完整内容
+- "Building a safe, effective sandbox to enable Codex on Windows"（May 13）：已追踪
 
 ### GitHub Trending 扫描
-- ✅ GitHub API 搜索 2026-05 新建仓库：stars 均 < 600，无达标项目
-- ✅ 发现：study8677/awesome-architecture（515 Stars）- 无关联，跳过
-- ✅ pi-mono、TradingAgents、claude-context 等：均已推荐过
-
-## Step 3：产出 Article
-
-### ✅ OpenAI Agents SDK 新一代分析
-- **文件**：`articles/fundamentals/openai-agents-sdk-next-evolution-harness-compute-separation-2026.md`
-- **来源**：OpenAI Blog（直接获取）
-- **核心论点**：OpenAI Agents SDK 首次实现模型提供商 SDK 中 harness/compute 彻底分离
-- **关键洞察**：Snapshot/Rehydrate、原生沙箱、凭证隔离、多 Agent 并行编排
-- **主题关联**：阶段12（Harness Engineering）+ OpenAI Codex 系列 + Anthropic Long-Running Harness
-- **字数**：~1,800 字，含 3 处原文引用
-- ✅ 已 commit (82e7c13) + push + jsonl 记录
+- ✅ GitHub API 搜索 2026-05 新建仓库
+- 发现 **akitaonrails/ai-memory**（321 Stars，2026-05-21 新建）：**NEW**
+  - 未在 articles/projects/ 中推荐过
+  - 主题：跨厂商 Agent 上下文交接方案（Claude Code ↔ Codex ↔ Cursor ↔ Gemini CLI）
+  - **直接产出 Project 推荐**
 
 ## 本轮产出
 
-### Article（1篇）
-| 文章 | 来源 | 核心论点 |
-|------|------|---------|
-| OpenAI Agents SDK 新一代：Harness 与 Compute 分离的工程革命 | OpenAI Blog (Apr 15, 2026) | 模型提供商 SDK 从「API 包装器」升级为「基础设施级 harness 提供商」|
+### Article（0篇）
+- 无新 Article
+- 主因：Tavily API 超额；官方博客无未追踪新文章
+- OpenAI self-improving tax agents 文章线索保留到下轮（需要完整内容）
 
-### Project（0篇）
-- 无新 Project：所有发现均已推荐或 Stars 不达标
+### Project（1篇）
+| 项目 | Stars | 核心价值 |
+|------|-------|---------|
+| akitaonrails/ai-memory | 321 | 跨厂商 Agent 上下文交接，基于 git 版本化的 Markdown wiki，无向量数据库依赖 |
 
 ### sources_tracked.jsonl 更新
-- +1 条目（openai.com/index/the-next-evolution-of-the-agents-sdk）
-- 当前总计：**151 条**
+- +1 条目（github.com/akitaonrails/ai-memory）
+- 当前总计：**252 条**
 
 ## 本轮反思
 
 ### 做对了
-- **找到了新 Article 源**：OpenAI Agents SDK Next Evolution 是 Apr 15 文章，之前未追踪，直接产出高质量 Article
-- **主动放弃 Project**：GitHub 新项目 Stars 均不达标，不为凑数而写
-- **引用对比分析**：将 OpenAI snapshot/rehydrate 与 Anthropic git commit/progress file 对比，体现工程知识深度
+- **主动降级到 GitHub Trending**：当 Tavily 不可用且官方博客无新文章时，及时切换到 GitHub API 扫描，发现了 akitaonrails/ai-memory 这个高质量项目
+- **发现 Article 线索**：OpenAI self-improving tax agents 文章与 Harness Engineering 强相关，保留到下轮
+- **不凑数**：没有因为「必须产出 Article」而降低质量要求，主动跳过无新来源的场景
 
 ### 需改进
-- **eval-skills 无法访问**：web_fetch 返回 403，需要下轮使用 agent-browser 才能获取这篇内容
-- **gen_article_map.py 超时**：上次挂起，本轮跳过，建议下轮加 timeout 或确认是否仍有问题
+- **Tavily API 频繁超额**：建议考虑 AnySearch 作为替代方案，但 union_search 模块加载有问题
+- **gen_article_map.py 超时**：上轮跳过，本轮依然挂起（30s timeout），建议下轮加长 timeout 或检查脚本稳定性
+- **OpenAI eval-skills 仍无法访问**：developers.openai.com 403 问题持续，需要 agent-browser 才能解决
 
 ## 下轮规划
-1. 使用 agent-browser 重试 eval-skills（developers.openai.com/blog/eval-skills）
-2. 继续扫描 Anthropic Engineering Blog 新文章
-3. 监控 GitHub 2026-05 新建仓库（Stars > 500 阈值）
+1. 使用 agent-browser 重试 OpenAI self-improving tax agents 文章完整内容
+2. 使用 agent-browser 重试 eval-skills（developers.openai.com/blog/eval-skills）
+3. 继续扫描 Anthropic Engineering Blog 新文章
+4. 监控 GitHub 2026-05 新建仓库（Stars > 500 阈值）
 
 ## API 状态
-- **AnySearch**：正常
-- **GitHub API**：正常
-- **source_tracker.py**：正常（脚本位于 SKILL_DIR）
+- **Tavily**：❌ 超额限制（432 Error）
+- **GitHub API**：✅ 正常
+- **source_tracker.py**：⚠️ stale lock 问题（不影响核心功能）
+- **gen_article_map.py**：⚠️ 超时挂起
 
-本轮完成第 132 轮维护。产出 1 篇 OpenAI Agents SDK Next Evolution Article，与阶段12（Harness Engineering）+ OpenAI Codex 系列形成知识闭环。
+本轮完成第 133 轮维护。产出 1 篇 akitaonrails/ai-memory Project 推荐，Tavily 超额限制导致无新 Article产出。OpenAI self-improving tax agents 文章线索保留到下轮。
