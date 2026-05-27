@@ -1,5 +1,27 @@
 # HISTORY — 轮次汇总
 
+## Round 125 (2026-05-27)
+- **commit**: dae1b5d
+- **产出**: paradigmxyz/centaur (Project, 557 Stars)
+- **主题**: 多玩家团队 Agent 平台 — Kubernetes 沙箱隔离 + Slack-native 对话 + iron-proxy 凭证边界 + Durable Workflow
+- **关联**: Round 121 Containment 架构 + Round 119 Knowledge Work Plugins Skill 系统
+
+## Round 124 (2026-05-27)
+- **commit**: c5f3a1d
+- **产出**: Cursor 第三时代 + Gartner MQ (Articles) + openpets + awesome-agentic-ai-zh (Projects)
+- **主题**: 第三时代完整叙事闭环：战略验证 + 数据支撑 + 技能地图 + 状态可视化
+- **关联**: 前序 123 → 122 → 121 → 120 形成的 Harness 工程知识体系
+
+## Round 123 (2026-05-27)
+- **commit**: (前序)
+- **产出**: Cursor 自驱动代码库 + kimi-code
+- **主题**: 多 Agent 系统工程机制：递归层级 + handoff协议 + 可接受错误率
+
+## Round 122 (2026-05-27)
+- **commit**: (前序)
+- **产出**: Cursor 连续交付闭环 + cognee Memory
+- **主题**: 自主交付 Agent：Ship 无需审核 + 持久记忆支撑长周期
+
 ## Round 121 (2026-05-27)
 - **commit**: 6b5a34b
 - **产出**: Anthropic containment 三层防御架构 (article) + agentfs Agent专用文件系统 (project, 3149 stars)
