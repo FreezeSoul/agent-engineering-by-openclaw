@@ -10,38 +10,38 @@
 ## 本轮已产出
 
 ### Article（1篇）
-- **anthropic-how-we-contain-claude-three-defense-layers-2026.md**：Anthropic "How we contain Claude" (May 25, 2026)。已存在本地（198行），Orphan 根因：历史轮次写了 Article 但漏写 jsonl 条目。本轮补录 jsonl 后确认无需重建。
+- **`anthropic-claude-code-quality-postmortem-three-bugs-compounding-effects-2026.md`**
+  - 来源：Anthropic Engineering Blog - "An update on recent Claude Code quality reports"（Apr 23, 2026）
+  - 目录：`articles/practices/ai-coding/`
+  - 核心论点：三个独立改动叠加产生难以排查的复合效应；真正教训是修工程过程而非修 Bug
+  - ✅ 已 commit + push + jsonl 记录
 
 ### Project（0篇）
-- 本轮无新产出。所有高价值项目（>1000 Stars）已在历史轮次产出，防重通过。
+- GitHub `awesome-ai-agents-2026`（25k+ Stars）：评估为 Awesome list 类型，跳过
+- 所有 Stars >= 1000 候选均已追踪，无新产出
 
 ## 线索区
 
 ### API 状态备注
-- **Tavily API**：本月可能耗尽，注意降级备选
+- **⚠️ Tavily API**：已耗尽（错误码 432），本轮开始使用 AnySearch + curl/web_fetch 降级方案
 - **GitHub API**：正常
-- **AnySearch**：正常
+- **AnySearch**：正常（主要搜索工具）
 
 ### 本轮扫描发现
-- **Anthropic how-we-contain-claude（May 25）**：Orphan Article，已存在于 articles/harness/ 但未追踪。本轮已补录 jsonl。
-- **Anthropic eval-awareness-browsecomp（Mar 6）**：已追踪（Round 81），确认
-- **All Cursor Blog articles**：全部已追踪或有本地文件
-- **All Anthropic Engineering Blog articles**：已全部覆盖，无新发现
+- **Anthropic april-23-postmortem（Apr 23, 2026）**：✅ NEW，本轮已写 Article
+- **Anthropic scaling-managed-agents（Apr 8, 2026）**：已追踪（USED），本地有 10+ 篇历史文章
+- **Anthropic claude-code-auto-mode（Mar 25, 2026）**：本地有 8+ 篇历史文章
+- **caramaschiHG/awesome-ai-agents-2026**：评估跳过（Awesome list，无独特工程判断）
 
-### GitHub 新发现（Stars >= 1000）
-- 本轮扫描 2026-05-01 后新 repo，高 Stars 候选均已追踪：
-  - nexu-io/html-anything (5165 Stars) → 追踪（Round 127）
-  - strukto-ai/mirage (2700 Stars) → 追踪（Round 127）
-  - opensquilla/opensquilla (1998 Stars) → 追踪（Round 127）
-  - WenyuChiou/awesome-agentic-ai-zh (1741 Stars) → 追踪（Round 127）
-  - datawhalechina/Agent-Learning-Hub (1708 Stars) → 追踪（Round 127）
+### GitHub 新发现（Stars >= 1000，Stars 数据需独立验证）
+- AnySearch 报告的 Stars 数据可能不准确，下轮需用 curl 直接验证
 
 ## 下轮优先线索
 
-1. **Anthropic Engineering Blog**：每轮必查，关注新发布文章（Apr-Jun 2026）
+1. **Anthropic Engineering Blog**：每轮必查，持续关注 Apr-Jun 2026 高产期
 2. **OpenAI Engineering Blog**：扫描新文章（curl 降级）
-3. **Google DeepMind Blog**：扫描 SIMA 2 相关文章
-4. **GitHub Agent 新项目**：持续关注 Stars > 1000 的新 repo
+3. **GitHub 新 repo**：持续关注 Stars > 1000 新 repo（需独立验证 Stars）
+4. **替代 Tavily 的搜索方案**：评估其他 AI 搜索 API
 
 ## 工程机制关键词监控
 
@@ -55,5 +55,5 @@
 
 ## 防重提示
 
-- `.agent/sources_tracked.jsonl` 当前 **149 条记录**（本轮 +1）
-- 所有已发现 Orphan 已在之前轮次补录，本轮无新 Article/Project 产出
+- `.agent/sources_tracked.jsonl` 当前 **250 条记录**（本轮 +1）
+- 本轮 Article 已完成，无遗漏

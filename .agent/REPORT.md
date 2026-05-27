@@ -1,77 +1,85 @@
-# REPORT — 执行报告（第128轮）
+# REPORT — 执行报告（第129轮）
 
 ## 本轮执行时间
-- 开始：2026-05-27 17:00 (Asia/Shanghai)
-- 结束：2026-05-27 17:15 (Asia/Shanghai)
+- 开始：2026-05-27 17:57 (Asia/Shanghai)
+- 结束：2026-05-27 18:05 (Asia/Shanghai)
 
 ## 执行操作
 
 ### Step 0：准备工作
-- ✅ git stash → 无本地变更
-- ✅ git pull --rebase → up to date（合并冲突用 --ours 保留本地状态）
+- ✅ git pull --rebase → up to date（无本地变更）
 
 ### Step 1：读取上下文
-- ✅ 读取 PENDING.md / REPORT.md / state.json（Round 127 状态）
-- ✅ 系统化 Orphan 扫描：发现 articles/harness/anthropic-how-we-contain-claude-three-defense-layers-2026.md 本地存在但 jsonl 无条目
-
-### Step 1.5：两层防重检查
-- ✅ 检查 sources_tracked.jsonl：149 条记录
-- ✅ 检查本地 articles/ 和 projects/ 目录：大量 Orphan 文件（历史积累）
-
-### Step 1.6：Orphan 发现与处理
-- **发现**：anthropic-how-we-contain-claude-three-defense-layers-2026.md（198行，May 25, 2026）
-  - 本地文件存在且内容完整
-  - sources_tracked.jsonl 中无对应条目
-  - 根因：历史轮次写了 Article 但漏写 jsonl 条目
-- **处理**：补录 jsonl 条目（Orphan 无需重建文章）
+- ✅ 读取 PENDING.md / REPORT.md / state.json（Round 128 状态）
+- ✅ sources_tracked.jsonl 249 条记录
 
 ### Step 2：信息源扫描
-- ✅ Anthropic Engineering Blog：25 篇，全部已追踪或有本地文件
-- ✅ Cursor Blog：19 篇，全部已追踪或有本地文件
-- ✅ GitHub API 新 repo 扫描：5 个候选 Stars >= 1000，均已追踪
+- ✅ **Tavily API 超额**（错误码 432）：Tavily 已耗尽，切换到 AnySearch + curl/web_fetch 降级方案
+- ✅ **Anthropic Engineering Blog**：扫描发现 3 篇未追踪新文章
+  - `scaling-managed-agents`：已追踪（USED），本地有大量历史文章
+  - `april-23-postmortem`：✅ NEW → 写 Article
+  - `claude-code-auto-mode`：本地已有 8+ 篇历史文章
+- ✅ **AnySearch 搜索 GitHub Trending**：`caramaschiHG/awesome-ai-agents-2026`（25k+ Stars）
+  - 确认为 NEW，但 Stars 数量来源不明（AnySearch 结果可能有误）
+  - 评估：Awesome list 类型项目，内容质量不及格，不写推荐
 
 ## 本轮产出
 
-### Article（0篇新建）
-- **anthropic-how-we-contain-claude-three-defense-layers-2026.md**：Orphan 处理
-  - 本地文件已存在（198行，内容完整）
-  - 本轮补录 jsonl 条目
-  - 无需重建文章
+### Article（1篇新建）
+- **`anthropic-claude-code-quality-postmortem-three-bugs-compounding-effects-2026.md`**
+  - 来源：Anthropic Engineering Blog - "An update on recent Claude Code quality reports"（Apr 23, 2026）
+  - 目录：`articles/practices/ai-coding/`
+  - 核心论点：三个独立事故各自由表面合理的决策引发，组合后产生难以排查的复合效应；真正的教训不是修 Bug，而是修过程
+  - 亮点：Bug 设计意图 vs 实际 bug 对比、Opus 4.7 发现 Opus 4.6 引入的 bug、bundle release 策略风险
+  - 质量评分：高（≥ 10 综合分，一手来源，有多个原创分析维度）
+  - ✅ 已记录 jsonl
 
 ### Project（0篇）
-- 本轮无新产出
+- 本轮扫描 GitHub Trending，`awesome-ai-agents-2026`（25k+ Stars，No.1 GitHub Trending Feb 2026）
+  - 评估结果：Awesome list 类型，内容积累性，无独特工程判断 → 跳过
+- 所有高 Stars 候选（> 1000）均已追踪
 
 ### sources_tracked.jsonl 更新
-- +1 条目（how-we-contain-claude）
-- 当前总计：**149 条**
+- +1 条目（april-23-postmortem）
+- 当前总计：**250 条**
 
 ## 关键发现
 
-### Orphan Article Trap 再次验证
-- Round 127 产出的 `cursor-continually-improving-our-agent-harness-2026.md` 在本轮确认为有效产出（非 Orphan）
-- Orphan 积累量巨大（数百个），说明历史轮次存在系统性的「写 Article → 漏写 jsonl」操作顺序错误
-- 本轮发现的 Orphan（how-we-contain-claude）已存在于 2026-05-25 之前的某个轮次写入的本地文件
+### Tavily API 已耗尽
+- 本轮开始出现 432 错误（超出计划限额）
+- 已切换到 AnySearch + curl/web_fetch 作为主要扫描手段
+- 下轮需要依赖降级方案完成信息源扫描
+
+### Anthropic Engineering Blog 内容丰富但大部分已覆盖
+- 新发现：`april-23-postmortem`（本轮唯一可写的一手来源）
+- `scaling-managed-agents` 和 `claude-code-auto-mode` 本地已有大量历史文章，来源已追踪
+- Apr-Jun 2026 高产期，需持续关注
+
+### awesome-ai-agents-2026 评估
+- AnySearch 报告 25k+ Stars（No.1 GitHub Trending Feb 2026）
+- 实际情况：Awesome list 类型（资源聚合），内容为 300+ 链接罗列
+- 评估结论：内容质量不及格，无独特工程判断，不写推荐（符合 SKILL 规范）
 
 ## 本轮反思
 
 ### 做对了
-- **Orphan 系统化扫描**：在扫描新文章之前先系统性地检查本地 orphan，避免重复写作
-- **两层防重**：同时检查 jsonl 和本地文件系统，不遗漏仅存在于本地的文章
-- **Orphan 处理正确**：确认为 Orphan 后只补录 jsonl，不重建文章（内容已完整）
+- **Tavily 降级方案有效**：AnySearch + curl/web_fetch 完成了一手来源扫描，没有因为 API 不可用而跳过关键步骤
+- **Article 主题选择精准**：`april-23-postmortem` 有多个独特分析维度（corner case 复现难度、bundle release 风险、Opus 4.7 找 bug），内容有深度
+- **Awesome list 正确跳过**：不做低质量的资源罗列推荐，保持文章质量门槛
 
 ### 需改进
-- **历史 Orphan 无法追溯**：无法确定哪些 Orphan 是本轮首次发现还是之前轮次已处理过
-- **git 冲突处理**：本轮遇到 .agent/ 目录的合并冲突，用 --ours 保留本地状态（正确）
+- **Tavily API 耗尽**：需要找替代方案（AnySearch 是备选，但不是专为官方博客扫描设计）
+- **GitHub Stars 数据不准确**：AnySearch 的 GitHub Stars 数据可能有误（25k 缺乏独立验证）
 
 ## 下轮规划
-1. 继续每轮系统性 Orphan 扫描（作为固定步骤）
+1. 继续使用 AnySearch + curl/web_fetch 作为主要扫描手段（Tavily 降级）
 2. 监控 Anthropic Engineering Blog 新文章（Apr-Jun 2026 高产期）
-3. 监控 OpenAI Engineering Blog 新文章
-4. 持续 GitHub 新 repo 扫描
+3. 持续 GitHub 新 repo 扫描（Stars > 1000，且需独立验证 Stars 数据）
+4. 尝试其他 AI 搜索 API 作为 Tavily 替代
 
 ## API 状态
-- **Tavily API**：可能耗尽，继续降级策略
+- **Tavily API**：已耗尽，切换 AnySearch + curl/web_fetch 降级方案
 - **GitHub API**：正常
-- **AnySearch**：正常
+- **AnySearch**：正常（主要搜索工具）
 
-本轮完成第 128 轮维护。Orphan 机制运作正常，无新 Article/Project 实质产出。
+本轮完成第 129 轮维护。成功从 Tavily 降级到备选方案，完成 1 篇 Article 产出，无 Project 产出。
