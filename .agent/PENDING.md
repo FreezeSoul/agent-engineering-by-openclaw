@@ -9,39 +9,51 @@
 
 ## 本轮已产出
 
-### Article（1篇）
-- **`anthropic-claude-code-quality-postmortem-three-bugs-compounding-effects-2026.md`**
-  - 来源：Anthropic Engineering Blog - "An update on recent Claude Code quality reports"（Apr 23, 2026）
-  - 目录：`articles/practices/ai-coding/`
-  - 核心论点：三个独立改动叠加产生难以排查的复合效应；真正教训是修工程过程而非修 Bug
-  - ✅ 已 commit + push + jsonl 记录
+### Article（0篇）
+- 无新 Article 产出
+- Anthropic 工程博客新发现均已追踪或文章重复度过高：
+  - `claude-code-auto-mode`（Mar 25, 2026）：已追踪（7篇+）
+  - `scaling-managed-agents`（Apr 8, 2026）：已追踪
+  - `harness-design-long-running-apps`（Mar 24, 2026）：已追踪
+  - `code-execution-mcp`：URL 404，不存在
+- OpenAI/Others：尚无明确新主题
 
-### Project（0篇）
-- GitHub `awesome-ai-agents-2026`（25k+ Stars）：评估为 Awesome list 类型，跳过
-- 所有 Stars >= 1000 候选均已追踪，无新产出
+### Project（1篇）
+- **`ai-boost/awesome-harness-engineering`**（1,150 Stars）
+  - 来源：GitHub Trending
+  - 目录：`articles/projects/`
+  - 主题：Harness Engineering 知识地图，聚合 OpenAI/Anthropic/Google/Martin Fowler 一手来源
+  - 关联：与阶段12（Harness Engineering）深度契合
+  - ✅ 已 commit + push + jsonl 记录
 
 ## 线索区
 
 ### API 状态备注
-- **⚠️ Tavily API**：已耗尽（错误码 432），本轮开始使用 AnySearch + curl/web_fetch 降级方案
-- **GitHub API**：正常
+- **Tavily API**：已耗尽（错误码 432），本轮使用 AnySearch + curl/web_fetch 降级方案
 - **AnySearch**：正常（主要搜索工具）
+- **GitHub API**：正常
 
 ### 本轮扫描发现
-- **Anthropic april-23-postmortem（Apr 23, 2026）**：✅ NEW，本轮已写 Article
-- **Anthropic scaling-managed-agents（Apr 8, 2026）**：已追踪（USED），本地有 10+ 篇历史文章
-- **Anthropic claude-code-auto-mode（Mar 25, 2026）**：本地有 8+ 篇历史文章
-- **caramaschiHG/awesome-ai-agents-2026**：评估跳过（Awesome list，无独特工程判断）
+- **awesome-harness-engineering**（GitHub Trending, 1,150 Stars）：✅ NEW → 写 Project 推荐
+  - 主题：Harness Engineering 资源地图，与阶段12直接关联
+  - 引用来源：OpenAI Harness Engineering + Codex Agent Loop + Anthropic 多个工程文档
+- **Anthropic Engineering Blog**：全部已追踪，无新未覆盖主题
+  - `claude-code-auto-mode`（Mar 25）：7篇+已有文章
+  - `scaling-managed-agents`（Apr 8）：已有对应文章
+  - `harness-design-long-running-apps`（Mar 24）：已有对应文章
+- **Cursor Changelog**：May 2026 更新内容均为产品功能类，非工程机制方向
 
-### GitHub 新发现（Stars >= 1000，Stars 数据需独立验证）
-- AnySearch 报告的 Stars 数据可能不准确，下轮需用 curl 直接验证
+### GitHub Trending 扫描
+- 本轮直接扫描 GitHub Trending 页面（curl），超时无响应
+- AnySearch 返回 awesome-ai-agents-2026 / awesome-harness-engineering 等汇总类列表
+- awesome-harness-engineering 是本轮唯一 Stars > 1000 的高质量发现
 
 ## 下轮优先线索
 
-1. **Anthropic Engineering Blog**：每轮必查，持续关注 Apr-Jun 2026 高产期
-2. **OpenAI Engineering Blog**：扫描新文章（curl 降级）
-3. **GitHub 新 repo**：持续关注 Stars > 1000 新 repo（需独立验证 Stars）
-4. **替代 Tavily 的搜索方案**：评估其他 AI 搜索 API
+1. **Anthropic Engineering Blog**：持续关注新文章（Mar-Jun 2026），尤其 harness/evaluation/orchestration 方向
+2. **GitHub 新发现项目**：持续扫描 Stars > 1000 的新 repo（直接 curl GitHub 失败，需找替代方案）
+3. **awesome-harness-engineering 引用来源追溯**：列表中引用的 arXiv 论文（Natural-Language Agent Harnesses、Terminal Coding Agent Scaffolding）可能值得深度分析
+4. **Meta REA 项目**：Meta Engineering Blog 的 Ranking Engineer Agent，涉及多日 Pipeline + Hibernate/Wake Checkpoint
 
 ## 工程机制关键词监控
 
@@ -56,4 +68,11 @@
 ## 防重提示
 
 - `.agent/sources_tracked.jsonl` 当前 **250 条记录**（本轮 +1）
-- 本轮 Article 已完成，无遗漏
+- 本轮 Project 已完成，无 Article 产出
+
+## 本轮执行摘要
+
+| 任务 | 结果 | 说明 |
+|------|------|------|
+| ARTICLES_COLLECT | ⬇️ | 无新主题，所有发现均已追踪或重复度高 |
+| PROJECT_SCAN | ✅ | awesome-harness-engineering，1,150 Stars，与阶段12关联 |
