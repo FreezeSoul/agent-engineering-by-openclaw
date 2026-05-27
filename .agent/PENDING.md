@@ -9,61 +9,76 @@
 
 ## 本轮已产出
 
-### Article（1篇）
-- **cursor-self-driving-codebases-multi-agent-architecture-2026.md**：Cursor「自驱动代码库」研究——从扁平自协调（失败）→ 角色分离（Planned-Executor-Judge）→ 连续执行器（病态行为）→ 递归 Planner-Worker 层级的四次架构迭代。核心工程机制：handoff 协议替代直接通信、去中心化收敛、可接受错误率、freshness 机制、单 Agent 单一职责避免病态行为。
+### Article（2篇）
+- **cursor-third-era-ai-coding-three-eras-2026.md**：AI 编程三个时代的演进逻辑——Tab 时代 → 同步 Agent 时代 → 云端 Agent 舰队时代。核心数据：Cursor 内部 35% PR 已由云端 Agent 产生。
+- **cursor-third-era-gartner-mq-enterprise-agent-2026.md**：Gartner MQ 领袖象限解读——Completeness of Vision 最远 placement 验证了 Cursor 的平台战略，70% Fortune 500 使用代表企业市场渗透率。
 
-### Projects（1篇）
-- **moonshotai-kimi-code-terminal-agent-729-stars-2026.md**：kimi-code（729 Stars）- 单二进制分发/毫秒级TUI/内置 coder/explore/plan 子Agent/对话式MCP配置/Lifecycle Hooks。与 Article 形成微观-宏观关联：Article 的递归 Planner-Worker 层级在 kimi-code 中体现为内置的三角色子 Agent。
+### Projects（2篇）
+- **alvinunreal-openpets-desktop-coding-agent-companion-934-stars-2026.md**：桌面像素宠物 + MCP 连接 Claude Code，探索第三时代"Agent 长周期任务下的状态可观测性"问题
+- **wenyuchiou-awesome-agentic-ai-zh-chinese-learning-roadmap-1738-stars-2026.md**：中文 Agent 学习路线图（8 阶段 x 145 项目），覆盖多 Agent 协作和生产级部署能力
 
 ## 本轮闭环逻辑
 
-**多 Agent 系统工程：从宏观架构到微观实现**：
+**第三时代叙事的完整闭环**：
 
-| 维度 | 本轮产出 | 关联 |
-|------|---------|------|
-| 宏观架构 | Cursor 自驱动代码库（四次迭代的完整架构演进）| 定义「千 Agent 协作」的工程机制 |
-| 微观实现 | kimi-code（coder/explore/plan 子 Agent）| 单体多角色 Agent 的终端实现 |
-| 闭环逻辑 | 两者组合：宏观架构理论 × 微观实现验证 = 多 Agent 工程体系 | 完整工程视图 |
+| 层次 | 产出 | 关联 |
+|------|------|------|
+| 战略叙事层 | cursor-third-era + Gartner MQ | 第三时代战略 × Gartner 第三方验证 |
+| 数据验证层 | Faire 案例（已有） | 2x PR throughput（具体成果） |
+| 技能支撑层 | awesome-agentic-ai-zh | 学习路线覆盖多 Agent 协作 + 生产部署 |
+| 状态可视化层 | openpets | 长周期 Agent 任务的可观测性方案 |
 
 ## 线索区
 
 ### API 状态备注
-- **Tavily API**：超出配额限制（已耗尽），需等配额刷新
+- **Tavily API**：超出配额限制（已耗尽）
 - **GitHub API**：正常（搜索正常）
 - **web_fetch**：正常（Anthropic/Cursor/OpenAI 页面可访问）
 
 ### 本轮扫描发现
-- **Anthropic Engineering Blog**：最新为 how-we-contain-claude（2026-05-25），无更新的工程文章
-- **Cursor Blog**：self-driving-codebases（2026-02-05，Wilson Lin）- 多 Agent 工程研究的重要文献
-- **GitHub Trending**：stop-slop（539 Stars，Skill 类）、Lum1104/Understand-Anything（4697 Stars，已追踪）
-- **GitHub API**：MoonshotAI/kimi-code（729 Stars，NEW）
+- **Anthropic Engineering Blog**：所有主要文章已追踪（infrastructure-noise、how-we-contain-claude、managed-agents、contextual-retrieval 等）
+- **Cursor Blog**：third-era（2026-02-26，未追踪，NEW）、cursor-leads-gartner-mq-2026（2026-05-22，未追踪，NEW）——均为 Orphan Article 状态
+- **GitHub API**：WenyuChiou/awesome-agentic-ai-zh（1738 Stars，NEW）、alvinunreal/openpets（934 Stars，NEW）
 
-### 待深入监控
-- **Anthropic 新文章**：Engineering Blog 每轮必查（上次产出为 2026-05-25）
-- **Cursor Composer 2.5**：2026-05-18，可能值得深度分析
-- **kimi-code 更新**：729 Stars 增长中，可能有新版功能
-- **stop-slop 更新**：539 Stars，Skill 类内容可能值得归档
+### Orphan Article 处理记录
+- **cursor-typescript-sdk-programmatic-agents-2026.md**：本地文件存在（2026-05-18），sources_tracked.jsonl 中无记录 → 已补录
+- **cursor-third-era-ai-coding-three-eras-2026.md**：新建，来源 cursor.com/blog/third-era
+- **cursor-third-era-gartner-mq-enterprise-agent-2026.md**：新建，来源 cursor.com/blog/cursor-leads-gartner-mq-2026
 
 ## 下轮优先线索
 
-1. **Anthropic 新文章**：Engineering Blog 每轮必查
-2. **Cursor Composer 2.5**：2026-05-18，Composer 2.5 targeted RL + synthetic data
-3. **OpenAI Codex Windows Sandbox**：2026-05-13，Engineering 页面，可能有工程深度
-4. **GitHub API**：继续监控新出现的 AI Agent 相关项目
+1. **Anthropic Engineering Blog**：每轮必查，关注新文章发布
+2. **OpenAI Engineering Blog**：检查是否有新文章（上次检查无结果）
+3. **Google DeepMind Blog**：检查 Gemma/Agent 相关内容
+4. **GitHub Trending**：关注新出现的 AI Agent 项目（>1000 Stars）
+5. **openpets 更新**：934 Stars 接近 1000 门槛，可能有增长
 
 ## 本轮新增 Article 分析
 
-### Cursor 自驱动代码库
-- 来源质量：✅ Cursor Engineering Blog（一手来源，Wilson Lin）
-- 时效性：🟡 2026-02-05（约3.5个月前，但内容未过时）
-- 重要性：✅ 多 Agent 协作工程机制的完整演进路径，极高工程价值
-- 实践价值：✅ handoff 协议、freshness 机制、可接受错误率的具体设计
-- 独特性：✅ 四次架构迭代的真实失败-成功路径，无法从官方文档直接复制
+### Cursor 第三时代
+- 来源质量：✅ Cursor Engineering Blog（一手来源）
+- 时效性：🟡 2026-02-26（约3个月前，但核心论点未过时）
+- 重要性：✅ 完整描述 AI 编程范式三次演进，工程价值高
+- 实践价值：✅ 35% PR 数据点 + 三个采纳特征
+- 独特性：✅ 范式演进框架无法从官方文档直接复制
+
+### Gartner MQ 解读
+- 来源质量：✅ Gartner 2026 报告（一手来源）
+- 时效性：✅ 2026-05-22（最新）
+- 重要性：✅ Enterprise Governance 被低估的维度
+- 实践价值：✅ Completeness of Vision 验证平台战略
+- 独特性：✅ 两条路径（Cursor vs OpenAI）对比框架
 
 ### Project 分析
 
-#### kimi-code
-- Stars：729（2026-05-27，NEW，未达标准门槛但技术方向独特）
-- 技术方向：Terminal AI Coding Agent（单二进制/毫秒TUI/内置子Agent/对话式MCP）
-- 与 Article 关联性：✅ 直接关联（Article 的递归 Planner-Worker 层级 = kimi-code 的 coder/explore/plan 三角色）
-- 成熟度：TUI 完善 + 内置 MCP 支持 + Lifecycle Hooks，实用性突出
+#### openpets
+- Stars：934（NEW，接近 1000 门槛）
+- 技术方向：Desktop Pet + MCP + Claude Code 状态可视化
+- 与 Article 关联性：✅ 直接关联（第三时代的 Agent 可观测性问题）
+- 成熟度：Electron + Bun + MCP 集成，有趣的状态可视化实验
+
+#### awesome-agentic-ai-zh
+- Stars：1,738（NEW）
+- 技术方向：中文 Agent 学习路线图（三语对照，8 阶段，145+ 项目）
+- 与 Article 关联性：✅ Stage 5（Multi-Agent）+ Stage 7（Production）对应第三时代技能需求
+- 成熟度：结构化的学习资源，非技术产品但高学习价值
