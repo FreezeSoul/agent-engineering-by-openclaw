@@ -113,3 +113,15 @@
 - **产出**: github/copilot-sdk (Project, 8,735 Stars)
 - **主题**: 多语言 Agent SDK — Python/TypeScript/Go/.NET/Java/Rust + JSON-RPC + Copilot CLI 运行时 + BYOK + 权限分层
 - **关联**: OpenAI Agents SDK（框架 vs 能力集成层目标用户定位对比）
+
+## Round 144 (2026-05-28)
+- **commit**: 162859a → c6b4771
+- **产出**: Cursor TypeScript SDK article + wshobson/agents Project (36k Stars)
+- **主题**: Cursor TypeScript SDK → Programmatic Agents → Enterprise Infrastructure，与 wshobson/agents（多 Agent Harness 框架）形成 SDK = "如何调用" ↔ Harness = "用什么调用"的闭环
+- **关联**: TypeScript SDK（工具接口层） + Multi-harness（执行环境层）= 企业级 AI Coding Platform 基础设施完整拼图
+
+## Round 145 (2026-05-28)
+- **commit**: 1f2184e → 73eec9a → 64ba937
+- **产出**: Cursor Agent Sandbox article + langflow-ai/langflow Project (148k Stars)
+- **主题**: Agent 沙箱跨平台安全工程（Landlock/seccomp/Seatbelt） + 可视化 Multi-Agent 编排平台
+- **关联**: Cursor Agent Sandbox（权限边界层） ↔ Langflow（Multi-Agent 协作结构层），两者是不同工程层次的互补——沙箱定义"能做什么边界"，编排定义"多个 Agent 如何协作分工"

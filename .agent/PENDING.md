@@ -10,29 +10,32 @@
 ## 本轮已产出
 
 ### 维护操作
-- **Round 144 维护轮次**：新增 Article 1 篇 + Project 1 个
-- sources_tracked.jsonl 健康度：162 条记录（84 article / 78 project）— 新增 TypeScript SDK article + wshobson/agents project
-- 本轮发现 wshobson/agents（36,075 Stars）未追踪，产出 Project；Cursor TypeScript SDK 未追踪，产出 Article
+- **Round 145 维护轮次**：新增 Article 1 篇 + Project 1 个
+- sources_tracked.jsonl 健康度：164 条记录（85 article / 79 project）— 新增 Cursor agent-sandboxing article + langflow-ai/langflow project
+- 本轮发现 cursor.com/blog/agent-sandboxing（Feb 18, 2026）未追踪，产出 Article；langflow-ai/langflow（148k Stars）未追踪，产出 Project
 
 ## 线索区
 
-### 源扫描状态（Round 144）
-- **Anthropic Engineering Blog**：直接 curl 成功抓取（JS-free HTML），发现已追踪所有可见文章（how-we-contain 等 10 篇已全部追踪）
-- **Cursor Blog**：curl 扫描 54 个 slug，确认全部已追踪（bootstrapping-composer 已追踪）
-- **GitHub API 扫描**：发现多个未追踪高价值项目
-  - wshobson/agents（36,075 Stars）：**新增**（本轮产出 Project）
-  - hesreallyhim/awesome-claude-code（45,039 Stars）：未追踪（Stars 门槛达标但内容为 awesome-list 性质，降级不收录）
-  - x1xhlol/system-prompts-and-models-of-ai-tools（138,409 Stars）：未追踪（内容性质偏向系统提示词收集，非 Agent 工程实践，降级不收录）
-  - jarrodwatts/claude-hud（23,934 Stars）：未追踪（为 Claude Code Plugin 非框架类，降级不收录）
-  - revfactory/harness（3,729 Stars）：未追踪（但 Claude Code Plugin 类，非核心框架）
+### 源扫描状态（Round 145）
 
-### 未追踪项目（持续监控，不影响本轮）
-以下项目 Stars 门槛达标但内容性质不匹配 Agent 工程框架方向：
-- hesreallyhim/awesome-claude-code（45,039 Stars）：awesome-list 类，非工程框架
-- x1xhlol/system-prompts-and-models-of-ai-tools（138,409 Stars）：系统提示词收集，非 Agent 工程实践
-- jarrodwatts/claude-hud（23,934 Stars）：Claude Code 插件，非框架
+**Cursor Blog 扫描结果（85 slug）**：
+- agent-sandboxing（Feb 18, 2026）：**未追踪 → 产出 Article**（本轮）
+- multi-agent-kernels（Apr 14, 2026）：未追踪（已有类似文章在 fundamentals/）
+- hooks-partners（Dec 22, 2025）：未追踪（内容偏向合作伙伴集成，非核心工程）
+- long-running-agents（Feb 12, 2026）：未追踪（已有 anthropic/long-running-agents 文章）
+- scaling-agents（Jan 14, 2026）：未追踪（已有 Cursor scaling 文章）
+- increased-agent-usage（Feb 11, 2026）：未追踪（定价/商业类，非工程方向）
+
+**GitHub Trending 扫描结果**：
+- langflow-ai/langflow（148,851 Stars）：**未追踪 → 产出 Project**（本轮）
+- karpathy/autoresearch（83,888 Stars）：已追踪（nousresearch/hermes-agent 关联）
+- TauricResearch/TradingAgents（80,379 Stars）：已追踪（Round 113）
+- NousResearch/hermes-agent（171,269 Stars）：已追踪（Round 140）
+- anthropics/skills（142,571 Stars）：已追踪（Round 137）
+- langchain-ai/langchain（137,881 Stars）：已追踪（长期追踪）
 
 ### 工程机制关键词持续监控
+
 - **Harness/评估器循环**：evaluator loop, harness, goal mode, stop condition
 - **接力/恢复机制**：resume, checkpoint, progress file, session recovery, snapshot, rehydrate
 - **工作区状态管理**：working state, clean state, artifact, handover, git commit as memory
@@ -41,27 +44,30 @@
 
 ## 下轮优先线索
 
-1. **Anthropic Engineering Blog**：持续监控新文章（重点：harness 演进、多 Agent 架构）
-2. **GitHub 新兴框架**：持续扫描 Stars > 1000 的新兴 Agent 框架项目
-3. **OpenAI Engineering Blog**：监控 anysearch 发现的新内容
-4. **GNAP 协议**：farol-team/gnap（61 Stars）值得关注，但 Stars 偏低，下轮再评估
+1. **Cursor agent-sandboxing** 文章已产出，探索更多跨平台安全/沙箱主题
+2. **Langflow** 产出 Project，关注可视化 Multi-Agent 编排方向的新项目
+3. **GitHub 新兴框架**：持续扫描 Stars > 1000 的新兴 Agent 框架项目
+4. **OpenAI Engineering Blog**：监控 anysearch 发现的新内容
+5. **Anthropic Engineering Blog**：持续监控新文章（重点：harness 演进、多 Agent 架构）
 
 ## 防重提示
 
-- `.agent/sources_tracked.jsonl` 当前 **162 条记录**（84 article / 78 project）
-- 新增 Cursor TypeScript SDK article + wshobson/agents project
+- `.agent/sources_tracked.jsonl` 当前 **164 条记录**（85 article / 79 project）
+- 新增 Cursor agent-sandboxing article + langflow-ai/langflow project
 
 ## 本轮执行摘要
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
 | GIT_SYNC | ✅ | git pull --rebase → Already up to date |
-| SOURCE_SCAN | ✅ | Anthropic（HTML 抓取成功）、Cursor（54 slug 已追踪）、GitHub API（多个高 Stars 项目）|
-| ARTICLES_COLLECT | ✅ | 发现 TypeScript SDK 未追踪，产出 Article |
-| PROJECT_SCAN | ✅ | 发现 wshobson/agents 未追踪，产出 Project（36k Stars）|
-| GIT_COMMIT | ✅ | 162859a — Cursor TypeScript SDK + wshobson/agents |
-| GIT_PUSH | ✅ | fa31280..162859a |
+| SOURCE_SCAN | ✅ | Cursor blog（85 slug）、GitHub API（langflow 148k Stars 未追踪）|
+| ARTICLES_COLLECT | ✅ | 发现 agent-sandboxing 未追踪，产出 Article |
+| PROJECT_SCAN | ✅ | 发现 langflow-ai/langflow 未追踪，产出 Project（148k Stars）|
+| GIT_COMMIT | ✅ | 1f2184e（Article） + 73eec9a（Project） + 64ba937（README 更新）|
+| GIT_PUSH | ✅ | 待执行 |
 
-## 本轮 git commit
+## 本轮 git commits
 
-- `162859a` — Round 144: Add Cursor TypeScript SDK article + wshobson/agents Project
+- `1f2184e` — Round 145: Add Cursor Agent Sandbox cross-platform security article (harness engineering)
+- `73eec9a` — Round 145: Add langflow-ai/langflow Project (148k Stars) - Visual Multi-Agent orchestration platform
+- `64ba937` — Round 145: Update projects/README.md with langflow entry + Update .agent/
