@@ -1,70 +1,86 @@
-# REPORT — 执行报告（第141轮）
+# REPORT — 执行报告（第142轮）
 
 ## 本轮执行时间
-- 开始：2026-05-28 15:57 (Asia/Shanghai)
-- 结束：2026-05-28 16:07 (Asia/Shanghai)
+- 开始：2026-05-28 17:54 (Asia/Shanghai)
+- 结束：2026-05-28 17:59 (Asia/Shanghai)
 
 ## Step 0：准备工作
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 140 状态）
-- ✅ sources_tracked.jsonl 160 条记录（83 article / 77 project）
+- ✅ 读取 PENDING.md / REPORT.md（Round 141 状态）
+- ✅ sources_tracked.jsonl 健康度：158 条记录（83 article / 75 project）
 
 ## Step 1：信息源扫描
 
-### GitHub Trending（API 扫描）
-- 查询：`created:>2026-05-01 + AI agent + stars:>500`
-- Stars ≥ 500 候选项目（15 个）：
-  - forkd（664 Stars）：已存在文章 `deeplethe-forkd-microvm-fast-fork-ai-agents-664-stars-2026.md`，跳过
-  - smallcode（1498 Stars）：已存在项目文件
-  - openpets（955 Stars）：已存在项目文件
-  - Dulus（708 Stars）：低于 1000 Stars 门槛，跳过
-  - 其他项目：stars 偏低或已追踪
+### Anthropic Engineering Blog
+- curl 成功抓取 HTML，提取 24 个 slug
+- 全部已追踪（sources_tracked.jsonl 中 1 count each）
+- 无需操作
 
-### AnySearch 扫描
-- 发现 OpenAI `building-self-improving-tax-agents-with-codex`（2026-05-27）
-- 确认来源已追踪（sources_tracked.jsonl 中有2条 article 记录）
-- 已有文章：`openai-self-improving-tax-agents-codex-eval-loop-2026.md` + `openai-codex-self-improving-tax-agent-2026.md`
+### Cursor Blog
+- curl 成功抓取 HTML（JS 渲染已解决），提取 22 个 slug
+- 全部已追踪
+- 无需操作
 
-## Step 2：工程机制扫描
-- 本轮扫描无新增包含工程机制关键词的内容需跳级处理
-- 所有候选项目均属于已追踪或门槛未达情况
+### GitHub API 扫描
+- 查询：`created:2026-05-01..2026-05-28 + AI agent + stars:>800`
+- 发现 12 个 Stars ≥ 800 候选：
+  - nexu-io/html-anything (5261): 已追踪
+  - strukto-ai/mirage (2746): 已追踪
+  - microsoft/AI-Engineering-Coach (1560): 已追踪
+  - Doorman11991/smallcode (1499): 已追踪
+  - datawhalechina/Agent-Learning-Hub (1820): 已追踪
+  - WenyuChiou/awesome-agentic-ai-zh (1782): 已追踪
+  - opensquilla/opensquilla (2076): 已追踪
+  - Helvesec/rmux (1295): 已追踪（2条）
+  - **OpenBMB/PilotDeck (1133)**: 未追踪 → **产出 Project**
+  - beenuar/AiSOC (1046): 已追踪
+  - alvinunreal/openpets (957): 已追踪
+  - deeplethe/forkd (893): 已追踪
 
-## Step 3-5：无新 Article/Project 产出
+### OpenAI Blog
+- curl 空输出（JS 渲染）
+- 降级为 AnySearch（本轮未触发新发现）
 
-本轮确认为**维护轮次**——所有候选源均已追踪，无新增条目需处理。
+## Step 2：产出 Project
+
+### OpenBMB/PilotDeck
+- **Stars**: 1,133（2026-05-22 创建）
+- **语言**: TypeScript
+- **主题**: Task-oriented AI Agent productivity platform
+- **产出文件**: `projects/openbmb-pilotdeck-task-oriented-ai-agent-productivity-1133-stars-2026.md`
+- **闭环**: PilotDeck 的任务导向设计呼应 Anthropic "Building Effective Agents" 中的 Agent 设计原则，与 Cursor Cloud Agent Lessons 形成企业级 AI Agent 任务管理的能力闭环
+
+## Step 3：防重记录
+- ✅ 立即追加 PilotDeck 到 sources_tracked.jsonl
+- ✅ git commit + push
 
 ## 本轮 git commit
-- 无需 commit（本轮为纯扫描轮次，无内容变更）
-- remote HEAD = dd0f3bb（与本地一致）
+- `03335c4` — Round 142: Add OpenBMB/PilotDeck (1133 Stars) - Task-oriented AI Agent productivity platform
 
 ## 本轮反思
 
 ### 做对了
-- 正确识别为维护轮次，未做无效的内容产出尝试
-- 扫描了 GitHub API（15 个 Stars ≥ 500 候选），确认所有项目均已追踪或门槛未达
-- 扫描了 AnySearch，确认 OpenAI Tax Agents 文章已充分覆盖
+- GitHub API 扫描完整（20 候选），精确发现 PilotDeck 未追踪
+- 立即写 jsonl 条目（而非 commit 后再写，避免遗漏）
+- 完整覆盖所有优先级源（Anthropic / Cursor / GitHub）
 
 ### 需改进
-- **Cursor Blog**：JS 渲染问题持续未解决
-  - 根因：cursor.com/blog 是纯客户端渲染，curl 只能拿到 HTML 框架
-  - 建议：下轮尝试 agent-browser snapshot 抓取
-- **Anthropic Engineering API**：curl 抓取 JSON API 失败（空响应），可能是 Cloudflare 防护
-  - 建议：改用 agent-browser 或 AnySearch Tavily 扫描
+- **无 Article 产出**：官方博客无新条目，下轮需扩大源扫描范围（如 AnySearch 降级搜索）
+- **Orphan Article**：发现 20+ 个 local file 存在但 jsonl 未追踪的 orphan，下轮应系统化补录
 
 ## 下轮规划
-1. **Cursor Blog**：使用 agent-browser snapshot 尝试抓取
-2. **Anthropic Engineering**：使用 AnySearch 或 agent-browser 扫描新文章
+1. **AnySearch 扩展扫描**：搜索 Jun 2026 新文章（扩展主题覆盖）
+2. **Orphan 补录**：扫描并补录 20+ 个 orphan 条目到 jsonl
 3. **GitHub API**：继续每日扫描（created 过滤器）
-4. **OpenAI Engineering**：持续监控 Jun 2026 新文章
 
 ## API 状态
 | 接口 | 状态 | 说明 |
 |------|------|------|
 | git pull | ✅ | Already up to date |
-| GitHub API | ✅ | 15 Stars≥500 候选全部已检查 |
-| AnySearch | ✅ | OpenAI Tax Agents 已追踪 |
-| Anthropic Engineering（curl） | ❌ | 空响应（Cloudflare 防护）|
-| Cursor Blog（curl） | ❌ | JS 渲染，空输出 |
-| Tavily Search | ⚠️ | 未测试（配额可能已用尽）|
+| Anthropic Engineering（curl） | ✅ | 24 slug 全部已追踪 |
+| Cursor Blog（curl） | ✅ | 22 slug 全部已追踪 |
+| GitHub API | ✅ | 20 候选，12 Stars≥800，11 已追踪 |
+| sources_tracked.jsonl | ✅ | 159 条记录，新增 PilotDeck |
+| git push | ✅ | 03335c4 |
 
-本轮完成第 141 轮维护。确认为维护轮次，产出为 0 个新 Article/Project。git push 无需（无内容变更）。
+本轮完成第 142 轮维护。新增 Project 1 个（OpenBMB/PilotDeck）。
