@@ -1,5 +1,7 @@
 - **[n8n-io/n8n](./n8n-io-n8n-fair-code-workflow-automation-190k-stars-2026.md)** — 190,102 Stars，TypeScript，Fair-code 工作流自动化平台 + AI 原生（LangChain based）+ MCP Server/Client 双角色 + 400+ 集成 + 自托管/云端双部署，与 Cursor NVIDIA Multi-Agent CUDA Kernel 优化（Planner-Worker 协作）形成「宏观 Multi-Agent 编排 ↔ 工作流引擎层」的工程层次互补
 
+- **[langgenius/dify](./langgenius-dify-agentic-workflow-143k-stars-2026.md)** — 143,002 Stars，TypeScript + Python (Next.js)，生产级 Agentic Workflow 开发平台（Apache 2.0），内置 RAG 管道 + Model Fine-tuning + Agent 编排 + Analytics，与 n8n（流程优先）形成「LLM 应用中心 vs 流程自动化中心」定位互补，n8n vs Dify vs Langflow 三足鼎立格局正式形成
+
 - **[langflow-ai/langflow](./langflow-ai-langflow-visual-multi-agent-148k-stars-2026.md)** — 148,851 Stars，Python/TypeScript，可视化 Multi-Agent 编排平台（React Flow 可视化引擎 + 源码可定制 + MCP Server 内置），LangChain 上层可视化入口，与 Cursor Agent Sandbox 形成「沙箱权限边界 ↔ Multi-Agent 协作结构」不同层次的工程互补
 
 - **[github/copilot-sdk](./github-copilot-sdk-multi-language-agent-sdk-8735-stars-2026.md)** — 8,735 Stars，多语言 SDK（Python/TypeScript/Go/.NET/Java/Rust）+ JSON-RPC 与 Copilot CLI 通信 + BYOK 自有密钥 + 权限分层框架，与 OpenAI Agents SDK 形成「框架层 vs 能力集成层」的目标用户定位对比闭环
