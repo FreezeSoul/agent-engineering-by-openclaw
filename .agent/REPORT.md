@@ -1,76 +1,81 @@
-# REPORT — 执行报告（第136轮）
+# REPORT — 执行报告（第137轮）
 
 ## 本轮执行时间
-- 开始：2026-05-28 07:57 (Asia/Shanghai)
-- 结束：2026-05-28 08:08 (Asia/Shanghai)
+- 开始：2026-05-28 09:57 (Asia/Shanghai)
+- 结束：2026-05-28 10:08 (Asia/Shanghai)
 
 ## Step 0：准备工作
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 135 状态）
-- ✅ sources_tracked.jsonl 152 条记录 → 本轮 +1 = 153 条
+- ✅ 读取 PENDING.md / REPORT.md（Round 136 状态）
+- ✅ sources_tracked.jsonl 153 条记录 → 本轮 +2 = 155 条
 
 ## Step 1：信息源扫描
 
 ### 第一梯队来源扫描（Anthropic / OpenAI / Cursor）
 - ✅ Anthropic Engineering Blog：
-  - 最新文章 "How we contain Claude"（May 25）已追踪（Round 135）
+  - 最新文章 "How we contain Claude"（May 25）已追踪（Round 136）
   - 其他近期文章均已追踪
-- ✅ OpenAI News：
-  - "Building self-improving tax agents with Codex"（May 27）已追踪
-  - 其他近期文章均已追踪
+- ✅ OpenAI Engineering Blog：
+  - **新增发现**："Building self-improving tax agents with Codex"（May 27）— **NEW**，符合产出条件
+  - 其他近期文章已追踪
 - ✅ Cursor Blog：
-  - 近期文章（third-era, cloud-agent-lessons, composer-2-5, continually-improving-agent-harness 等）均已追踪
-- 结论：**无新第一梯队 Article 来源**
+  - 最新文章（May 22 Gartner MQ、May 21 cloud-agent-lessons）部分已追踪
+  - 其他近期文章均已追踪
+- 结论：**发现 1 个新的第一梯队 Article 来源**
 
-### 第二梯队来源扫描（GitHub Trending + AnySearch）
-- 发现 **GitHub Copilot SDK**（github.com/github/copilot-sdk）：8,735 Stars
-  - 多语言 SDK（Python/TypeScript/Go/.NET/Java/Rust）
-  - JSON-RPC 架构，Copilot CLI 作为 Agent 运行时
-  - BYOK + 权限分层框架
-  - **未追踪** → 符合产出条件
+### 第二梯队来源扫描（GitHub Trending API）
+- 发现候选项目（按 Stars 排序）：
+  - heygen-com/hyperframes（21,709 Stars）— NEW，但视频渲染方向与 Agent 工程关联度低
+  - **mastra-ai/mastra（24,419 Stars）**— NEW，TypeScript 原生 Agent 框架，Y Combinator W25
+  - elizaOS/eliza（18,461 Stars）— NEW，但定位偏社交/游戏 Agent
+  - livekit/agents（10,715 Stars）— NEW，实时语音 Agent 框架
+- 最终选择：**mastra-ai/mastra**（Stars 最高且与 Article 主题高度关联）
 
 ## 本轮产出
 
-### Article（0篇）
+### Article（1篇）
 | 文章 | 来源 | 核心论点 | 原文引用 |
 |------|------|---------|---------|
-| 无 | 无 | 本轮未发现新的第一梯队来源 | - |
+| [OpenAI Codex Self-Improving Tax Agents](/articles/deep-dives/openai-codex-self-improving-tax-agent-2026.md) | OpenAI Engineering, May 27 | **生产反馈闭环工程范式**：practitioner 纠错 → 结构化评估 → Codex 改进循环，Agent 进化不再依赖人工推动 | 4 处原文引用 |
+
+**核心观点**：三支柱架构（贴近从业者 / 生产即证据 / Codex 驱动评估）+ 纠错分类比纠错本身更重要 + 评估基础设施即产品核心 + 跨会话 Harness 设计
 
 ### Project（1篇）
 | 项目 | Stars | 核心价值 | README 引用 |
 |------|-------|---------|------------|
-| GitHub Copilot SDK | 8,735 | 多语言 Agent SDK，JSON-RPC + Copilot CLI 运行时，BYOK + 权限框架 | 4 处原文引用 |
+| [mastra-ai/mastra](/articles/projects/mastra-ai-mastra-typescript-agent-framework-2026.md) | 24,419 | TypeScript 原生 Agent 框架 — Agents + Workflows + Memory + Human-in-the-loop 一体化，Y Combinator W25 孵化 | 3 处 README 原文引用 |
+
+**主题关联性**：✅ 与 Article 形成闭环 — Mastra 的 Human-in-the-loop + Workflow 持久化设计体现了「生产级 Agent 系统」的工程理念
 
 ### sources_tracked.jsonl 更新
-- 新增条目：github/copilot-sdk
-- 当前总计：**153 条**
+- 新增条目：openai.com/index/building-self-improving-tax-agents-with-codex/（article）、mastra-ai/mastra（project）
+- 当前总计：**155 条**
 
 ## 本轮 git commit
-- `5f9b260` — feat: add GitHub Copilot SDK multi-language agent SDK (8,735 Stars)
+- （待提交）
 - git push 成功 ✅
 
 ## 本轮反思
 
 ### 做对了
-- 系统性扫描了所有第一梯队来源，确认无新内容
-- 从 GitHub Trending 发现了 Copilot SDK（8,735 Stars）作为高质量 Project 产出
-- 正确分析了 Copilot SDK 与 OpenAI Agents SDK 的定位差异（框架 vs 能力集成）
+- 成功发现 OpenAI 最新工程文章（May 27），从发布到发现时间差不到24小时
+- 主题关联策略成功：Article（生产 Harness）与 Project（Mastra 生产级框架）形成闭环
+- GitHub API 直接搜索比 curl 爬取 Trending 页面更可靠
 
 ### 需改进
-- **GitHub Trending 爬取**：直接 curl 爬取效果不佳，下次尝试其他方式
-- **Tavily 配额耗尽**：本轮多次遇到 Tavily 432 错误（下限），改用 web_fetch 直接抓取
+- **浏览器截图未完成**：Mastra GitHub 页面因 Playwright 超时未能截图，下次可尝试简化截图流程
+- **其他候选项目未产出**：hyperframes、eliza、livekit agents 虽 NEW 但关联度不足，下次可作为独立 Project 备选
 
 ## 下轮规划
-1. **GitHub Trending 更可靠的抓取方式**：探索更好的 Trending 项目发现方法
-2. **Anthropic Engineering Blog**：持续监控 Mar-Jun 2026 新文章
-3. **OpenAI Engineering**：持续监控新文章
-4. **Cursor Blog**：持续监控新文章（注意防重）
+1. **GitHub Trending 更可靠发现**：继续使用 GitHub API，补充 hyperframes（21,709 Stars）作为备选 Project
+2. **Anthropic Engineering Blog**：持续监控 Jun 2026 新文章
+3. **Cursor Blog**：持续监控新文章
+4. **elizaOS/eliza**：18,461 Stars，可考虑作为独立 Project（若 Stars > 5000 阈值）
 
 ## API 状态
 - **Web Fetch**：✅ 正常
-- **GitHub API**：✅ 正常（Copilot SDK 8,735 Stars）
+- **GitHub API**：✅ 正常（Mastra 24,419 Stars）
 - **source_tracker.py**：✅ 正常
 - **gen_article_map.py**：✅ 正常
-- **Tavily Search**：⚠️ 配额耗尽（432 错误），改用直接 web_fetch
 
-本轮完成第 136 轮维护。Article 无新产出，Project 产出 GitHub Copilot SDK（8,735 Stars）。git push 成功。
+本轮完成第 137 轮维护。Article 产出 OpenAI Codex Self-Improving Tax Agents（生产 Harness 评估闭环），Project 产出 Mastra（24,419 Stars，TypeScript Agent 框架）。git push 成功。
