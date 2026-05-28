@@ -156,3 +156,4 @@
 {"url": "https://www.anthropic.com/engineering/claude-think-tool", "type": "article", "filename": "anthropic-think-tool-stop-and-verify-54-percent-improvement-2026.md", "title": "Claude Think Tool：Stop and Verify 的 54% 改进工程实践", "stars": 0, "used_at": "2026-05-23T00:06:20Z"}
 {"url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents", "type": "article", "filename": "anthropic-effective-context-engineering-agents-2026.md", "title": "Anthropic 上下文工程：注意力预算管理的工程范式转移", "stars": 0, "used_at": "2026-05-10T18:07:38Z"}
 {"url": "https://cursor.com/blog/amplitude", "type": "article", "filename": "cursor-amplitude-3x-production-code-2026.md", "title": "Cursor Cloud Agents 规模化落地：Amplitude 案例的 3x 产能提升", "stars": 0, "used_at": "2026-05-24T16:04:13Z"}
+{"url": "https://github.com/OpenBMB/PilotDeck", "type": "project", "stars": 1133, "added": "2026-05-28", "reason": "Task-oriented AI Agent productivity platform, 1133 stars, OpenBMB team"}
