@@ -10,27 +10,27 @@
 ## 本轮已产出
 
 ### 维护操作
-- **Round 143 维护轮次**：新增 Project 1 个（ComposioHQ/trustclaw）
-- sources_tracked.jsonl 健康度：160 条记录（83 article / 77 project）— 新增 trustclaw 条目
-- 本轮发现 trustclaw（715 Stars）未追踪，产出 Project 文件并记录到 jsonl
+- **Round 144 维护轮次**：新增 Article 1 篇 + Project 1 个
+- sources_tracked.jsonl 健康度：162 条记录（84 article / 78 project）— 新增 TypeScript SDK article + wshobson/agents project
+- 本轮发现 wshobson/agents（36,075 Stars）未追踪，产出 Project；Cursor TypeScript SDK 未追踪，产出 Article
 
 ## 线索区
 
-### 源扫描状态（Round 143）
-- **Anthropic Engineering Blog**：API endpoint `/api/blog` 返回 404，改用 curl 直接抓取（已解决）
-- **Cursor Blog**：curl 成功返回页面内容（JS 渲染已解决）
-- **GitHub API**：扫描 20 个候选，Stars ≥ 1000 的项目中多数已追踪
-  - ComposioHQ/trustclaw（715 Stars）：**新增**（本轮产出）
-- **其他未追踪 GitHub 项目**：simonlin1212/TradingAgents-astock（725）、ComposioHQ/trustclaw（715）、KevRojo/Dulus（708）等
+### 源扫描状态（Round 144）
+- **Anthropic Engineering Blog**：直接 curl 成功抓取（JS-free HTML），发现已追踪所有可见文章（how-we-contain 等 10 篇已全部追踪）
+- **Cursor Blog**：curl 扫描 54 个 slug，确认全部已追踪（bootstrapping-composer 已追踪）
+- **GitHub API 扫描**：发现多个未追踪高价值项目
+  - wshobson/agents（36,075 Stars）：**新增**（本轮产出 Project）
+  - hesreallyhim/awesome-claude-code（45,039 Stars）：未追踪（Stars 门槛达标但内容为 awesome-list 性质，降级不收录）
+  - x1xhlol/system-prompts-and-models-of-ai-tools（138,409 Stars）：未追踪（内容性质偏向系统提示词收集，非 Agent 工程实践，降级不收录）
+  - jarrodwatts/claude-hud（23,934 Stars）：未追踪（为 Claude Code Plugin 非框架类，降级不收录）
+  - revfactory/harness（3,729 Stars）：未追踪（但 Claude Code Plugin 类，非核心框架）
 
-### 未追踪 Press 来源
-以下新闻来源均未追踪（Round 142 遗留），下轮可考虑作为第三批次降级补充：
-- thenewstack.io/cursor-open-sources-security-agents/（2026-03-16）
-- techcrunch.com/2026/03/05/cursor-is-rolling-out-a-new-system-for-agentic-coding/（2026-03-05）
-- bloomberg.com/news/articles/2026-03-02/cursor-recurring-revenue-doubles（2026-03-02）
-- cnbc.com/2026/02/24/cursor-announces-major-update（2026-02-24）
-
-⚠️ 注意：以上 Press 来源为媒体第三方报道，非官方一手来源。按 SKILL 规范，Articles 须来自 Anthropic/OpenAI/Cursor 等官方博客。这些 Press 来源仅作降级补充，不作为主要 Articles 来源。
+### 未追踪项目（持续监控，不影响本轮）
+以下项目 Stars 门槛达标但内容性质不匹配 Agent 工程框架方向：
+- hesreallyhim/awesome-claude-code（45,039 Stars）：awesome-list 类，非工程框架
+- x1xhlol/system-prompts-and-models-of-ai-tools（138,409 Stars）：系统提示词收集，非 Agent 工程实践
+- jarrodwatts/claude-hud（23,934 Stars）：Claude Code 插件，非框架
 
 ### 工程机制关键词持续监控
 - **Harness/评估器循环**：evaluator loop, harness, goal mode, stop condition
@@ -41,26 +41,27 @@
 
 ## 下轮优先线索
 
-1. **Anthropic Engineering Blog**：监控新文章（重点：harness 演进、多 Agent 架构）
-2. **GitHub API 新项目**：持续扫描 Stars ≥ 700 新项目（trustclaw 周边生态）
-3. **OpenAI Engineering**：JS 渲染问题已确认，降级 AnySearch
-4. **Orphan Article 补录**：扫描并补录 20+ 个 orphan 条目到 jsonl（长期任务）
+1. **Anthropic Engineering Blog**：持续监控新文章（重点：harness 演进、多 Agent 架构）
+2. **GitHub 新兴框架**：持续扫描 Stars > 1000 的新兴 Agent 框架项目
+3. **OpenAI Engineering Blog**：监控 anysearch 发现的新内容
+4. **GNAP 协议**：farol-team/gnap（61 Stars）值得关注，但 Stars 偏低，下轮再评估
 
 ## 防重提示
 
-- `.agent/sources_tracked.jsonl` 当前 **160 条记录**（83 article / 77 project）
-- 新增 ComposioHQ/trustclaw 条目（715 Stars）
+- `.agent/sources_tracked.jsonl` 当前 **162 条记录**（84 article / 78 project）
+- 新增 Cursor TypeScript SDK article + wshobson/agents project
 
 ## 本轮执行摘要
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
 | GIT_SYNC | ✅ | git pull --rebase → Already up to date |
-| SOURCE_SCAN | ✅ | Anthropic（API 404，改用 curl）、Cursor（22 slug ✓）、GitHub API（20 候选）|
-| ARTICLES_COLLECT | ⬇️ | 维护轮次，无新 Article（官方博客无新条目）|
-| PROJECT_SCAN | ✅ | 发现 trustclaw（715 Stars）未追踪，产出 Project |
-| GIT_COMMIT | ✅ | 76943b5 — ComposioHQ/trustclaw |
+| SOURCE_SCAN | ✅ | Anthropic（HTML 抓取成功）、Cursor（54 slug 已追踪）、GitHub API（多个高 Stars 项目）|
+| ARTICLES_COLLECT | ✅ | 发现 TypeScript SDK 未追踪，产出 Article |
+| PROJECT_SCAN | ✅ | 发现 wshobson/agents 未追踪，产出 Project（36k Stars）|
+| GIT_COMMIT | ✅ | 162859a — Cursor TypeScript SDK + wshobson/agents |
+| GIT_PUSH | ✅ | fa31280..162859a |
 
 ## 本轮 git commit
 
-- `76943b5` — Round 143: Add ComposioHQ/trustclaw (715 Stars) - Self-hostable personal AI agent with vector memory + Composio tools + Telegram
+- `162859a` — Round 144: Add Cursor TypeScript SDK article + wshobson/agents Project

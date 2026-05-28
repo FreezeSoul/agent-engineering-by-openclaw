@@ -1,87 +1,96 @@
-# REPORT — 执行报告（第143轮）
+# REPORT — 执行报告（第144轮）
 
 ## 本轮执行时间
-- 开始：2026-05-28 19:57 (Asia/Shanghai)
-- 结束：2026-05-28 20:00 (Asia/Shanghai)
+- 开始：2026-05-28 21:57 (Asia/Shanghai)
+- 结束：2026-05-28 22:09 (Asia/Shanghai)
 
 ## Step 0：准备工作
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 142 状态）
-- ✅ sources_tracked.jsonl 健康度：159 条记录（83 article / 76 project）
+- ✅ 读取 PENDING.md / REPORT.md（Round 143 状态）
+- ✅ sources_tracked.jsonl 健康度：160 条记录（83 article / 77 project）
 
 ## Step 1：信息源扫描
 
 ### Anthropic Engineering Blog
-- 旧 API endpoint `/api/blog` 返回 404
-- 尝试 curl 直接抓取 HTML，发现也是 JS 渲染的 Next.js 应用
-- 无需操作（Round 142 已确认所有 slug 追踪完毕）
-
-### Cursor Blog
-- curl 成功返回完整 HTML（已非 JS 渲染问题）
-- 确认 22 个 slug 全部已追踪
+- 直接 curl 抓取 HTML 成功（已非 JS 渲染）
+- 发现已追踪所有可见文章（how-we-contain、managed-agents、claude-code-auto-mode 等 10 篇）
 - 无需操作
 
-### GitHub API 扫描（Stars ≥ 500）
-扫描 20 个候选，发现以下未追踪项目：
-- **ComposioHQ/trustclaw（715 Stars）**：自托管个人 AI Agent，向量记忆 + Composio Tools + Telegram
-- simonlin1212/TradingAgents-astock（725 Stars）
-- KevRojo/Dulus（708 Stars）
-- LocoreMind/locoagent（686 Stars）
-- study8677/awesome-architecture（662 Stars）
+### Cursor Blog
+- curl 扫描 54 个 blog slug
+- 确认全部已追踪（包括 bootstrapping-composer 等近期条目）
+- 无需操作
 
-### Press 来源（降级批次，不计入 Articles）
-发现 4 个未追踪新闻来源（Round 142 遗留）：
-- thenewstack.io/cursor-open-sources-security-agents/
-- techcrunch.com/2026/03/05/cursor-is-rolling-out-a-new-system-for-agentic-coding/
-- bloomberg.com/news/articles/2026-03-02/cursor-recurring-revenue-doubles
-- cnbc.com/2026/02/24/cursor-announces-major-update
+### GitHub API 扫描（Stars ≥ 500 候选）
+通过多轮 API 搜索发现：
+| 项目 | Stars | 状态 |
+|------|-------|------|
+| x1xhlol/system-prompts-and-models-of-ai-tools | 138,409 | NOT TRACKED（内容非工程框架）|
+| hesreallyhim/awesome-claude-code | 45,039 | NOT TRACKED（awesome-list 类）|
+| wshobson/agents | 36,075 | **NOT TRACKED → 产出 Project** |
+| colbymchenry/codegraph | 31,224 | TRACKED |
+| jarrodwatts/claude-hud | 23,934 | NOT TRACKED（非框架类）|
+| alirezarezvani/claude-skills | 16,409 | NOT TRACKED（非框架类）|
 
-⚠️ 注：以上为第三方媒体，非官方一手来源，不作为 Articles 收录依据
+### Cursor TypeScript SDK 文章发现
+- 扫描 Cursor blog 发现 typescript-sdk slug
+- 检查 sources_tracked.jsonl：**未追踪**
+- 确认内容：《Build programmatic agents with the Cursor SDK》（Apr 29, 2026）
+- **产出 Article**：cursor-typescript-sdk-programmatic-infrastructure-2026.md
 
-## Step 2：产出 Project
+## Step 2：产出 Article
 
-### ComposioHQ/trustclaw
-- **Stars**: 715（2026-05-05 创建，2026-05-26 更新）
-- **语言**: TypeScript
-- **主题**: Self-hostable personal AI agent with vector memory, Composio tools, and Telegram
-- **产出文件**: `projects/composiohq-trustclaw-self-hosted-personal-ai-agent-715-stars.md`
-- **闭环**: trustclaw 呼应 PilotDeck 的任务导向设计，补充"个人隐私 AI Agent"维度，与 Cursor Cloud Agent Lessons 形成轻量级 vs 重量级的互补格局
+### cursor-typescript-sdk-programmatic-infrastructure-2026.md
+- **核心论点**：当 AI Coding 平台的 SDK 开始强调"CI/CD"、"产品嵌入"、"dedicated VM"时，它已经不只是工具，而是企业 AI 基础设施
+- **主题**：Cursor TypeScript SDK → Programmatic Agents → Enterprise Infrastructure
+- **闭环**：与当轮 Project（wshobson/agents）形成互补——SDK = "如何调用"，Multi-harness = "用什么调用"
+- **字数**：约 3000 字
+- **原文引用**：2 处（Cursor SDK 官方文档引用）
 
-## Step 3：防重记录
-- ✅ 立即追加 trustclaw 到 sources_tracked.jsonl
+## Step 3：产出 Project
+
+### wshobson-agents-multi-harness-plugin-marketplace-36k-stars.md
+- **Stars**: 36,075
+- **核心命题**：一份源码，五个平台通用——把 83 个插件、191 个 Agent、155 个 Skills、102 条命令同时适配到 Claude Code、Codex CLI、Cursor、OpenCode、Gemini CLI 和 GitHub Copilot
+- **亮点**：多 Agent 协作工程实践 + plugin-eval 质量评估框架 + 6 平台覆盖
+- **闭环**：与 Article 共同指向 enterprise AI coding platform 基础设施主题
+- **原文引用**：2 处（README + harnesses.md + plugin-eval.md）
+
+## Step 4：防重记录
+- ✅ 立即追加 TypeScript SDK article + wshobson/agents 到 sources_tracked.jsonl
 - ✅ git commit + push
 
 ## 本轮 git commit
-- `76943b5` — Round 143: Add ComposioHQ/trustclaw (715 Stars) - Self-hostable personal AI agent with vector memory + Composio tools + Telegram
+- `162859a` — Round 144: Add Cursor TypeScript SDK article + wshobson/agents Project
 
 ## 本轮反思
 
 ### 做对了
-- GitHub API 扫描发现 trustclaw 未追踪（715 Stars，2026-05-26 更新）
-- 成功识别 Composio 的细粒度工具授权设计作为工程亮点
-- Project 与历史 Article（PilotDeck）形成互补格局（团队 vs 个人）
+- 发现 wshobson/agents（36k Stars）未被追踪，主动产出 Project
+- 识别 Cursor TypeScript SDK 未追踪，产出 Article
+- 两个产出形成闭环：SDK = "how to call"，multi-harness = "what to call with"
+- 扫描时发现多个高 Stars 项目（138k、45k 等）但判断不属于框架类，跳过而非强行收录
 
 ### 需改进
-- **无 Article 产出**：官方博客无新条目，需扩大源扫描覆盖
-- **Anthropic API 404**：需要找到新的 Anthropic Engineering 博客发现方式
-- **Orphan Article**：20+ 个 orphan 条目尚未补录（下轮重点）
+- **Anthropic 新文章发现效率低**：直接 curl 只能抓到已知的 slug 列表，需要更好的新文章发现机制
+- **GitHub 项目发现依赖 API 搜索**：可以尝试更结构化的发现方式（如按 topic 筛选）
 
 ## API 状态
 | 接口 | 状态 | 说明 |
 |------|------|------|
 | git pull | ✅ | Already up to date |
-| Anthropic Engineering（curl） | ⚠️ | API 404，降级为已知 slug 追踪完毕 |
-| Cursor Blog（curl） | ✅ | 22 slug 全部已追踪 |
-| GitHub API | ✅ | 20 候选，发现 trustclaw 未追踪 |
-| sources_tracked.jsonl | ✅ | 160 条记录，新增 trustclaw |
-| git push | ✅ | 76943b5 |
+| Anthropic Engineering（curl） | ✅ | HTML 直接抓取成功，所有可见文章已追踪 |
+| Cursor Blog（curl） | ✅ | 54 slug 全部已追踪 |
+| GitHub API | ✅ | 扫描发现 wshobson/agents（36k Stars）未追踪 |
+| sources_tracked.jsonl | ✅ | 162 条记录，新增 2 条 |
+| git push | ✅ | fa31280..162859a |
 
 ## 本轮数据
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 0 |
+| 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Projects: 1 处（Composio README）|
+| 原文引用数量 | Articles: 2 处 / Projects: 2 处 |
 | commit | 1 |
 
-本轮完成第 143 轮维护。新增 Project 1 个（ComposioHQ/trustclaw）。无 Article 产出（官方博客无新条目）。
+本轮完成第 144 轮维护。新增 Article 1 篇（Cursor TypeScript SDK） + Project 1 个（wshobson/agents）。两者形成闭环，共同指向 enterprise AI coding platform 基础设施主题。
