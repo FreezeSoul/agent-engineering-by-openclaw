@@ -1,3 +1,5 @@
+- **[langflow-ai/langflow](./langflow-ai-langflow-visual-multi-agent-148k-stars-2026.md)** — 148,851 Stars，Python/TypeScript，可视化 Multi-Agent 编排平台（React Flow 可视化引擎 + 源码可定制 + MCP Server 内置），LangChain 上层可视化入口，与 Cursor Agent Sandbox 形成「沙箱权限边界 ↔ Multi-Agent 协作结构」不同层次的工程互补
+
 - **[github/copilot-sdk](./github-copilot-sdk-multi-language-agent-sdk-8735-stars-2026.md)** — 8,735 Stars，多语言 SDK（Python/TypeScript/Go/.NET/Java/Rust）+ JSON-RPC 与 Copilot CLI 通信 + BYOK 自有密钥 + 权限分层框架，与 OpenAI Agents SDK 形成「框架层 vs 能力集成层」的目标用户定位对比闭环
 
 - **[strukto-ai/mirage](./strukto-ai-mirage-unified-virtual-filesystem-2693-stars-2026.md)** — 2,693 Stars，TypeScript/Python，统一虚拟文件系统（VFS），让 AI Agent 用 bash 操作 S3/GitHub/Slack/Gmail/Redis 等所有后端，映射到 LLM 最熟悉的 filesystem vocabulary，与 Cursor「自驱动代码库」千 Agent 协作形成「工具层统一抽象 → 多 Agent 并行」的主题关联（关联：千 Agent 协作的障碍之一是每个后端需要不同 API → Mirage 让所有后端变成 `/` 下的子目录）
