@@ -131,3 +131,10 @@
 - **产出**: Cursor NVIDIA Multi-Agent CUDA Kernel Optimization article + n8n-io/n8n Project (190k Stars)
 - **主题**: Cursor × NVIDIA 合作 — Planner-Worker 多 Agent 架构 + 3 周 38% 加速 + SOL-ExecBench 评估循环 + 235 个 CUDA 内核并行优化；n8n 工作流自动化平台（Fair-code + LangChain AI + MCP Server/Client 双角色）
 - **关联**: Cursor NVIDIA（Multi-Agent 协作层） ↔ n8n（工作流编排引擎层），两者形成「宏观 Multi-Agent 编排 ↔ 工作流引擎」的工程层次互补
+
+## Round 147 (2026-05-29)
+- **commit**: 71153b6
+- **产出**: cursor-composer-2-5-targeted-rl-credit-assignment (Article) + langgenius/dify (Project, 143K Stars)
+- **主题**: Targeted RL with textual feedback 解决长 rollout 信用分配难题；Dify 三足鼎立格局（n8n 190K / Dify 143K / Langflow 148K）
+- **关联**: Cursor Composer 2.5 ↔ Dify 形成「RL 训练工程 ↔ LLM 应用平台」工程层次互补
+- **注意**: Tavily 超限额（Error 432）切换 web_fetch；AnySearch .venv 损坏待修复
