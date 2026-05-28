@@ -83,3 +83,9 @@
 - **产出**: Claude Code Advanced Patterns 五层工程机制（Article） + design.md（Project）
 - **主题**: Anthropic 官方定义 CLAUDE.md/Hooks/MCP/Parallel/Subagents 五层演进 + Google Labs 设计系统标准化格式
 - **关联**: 与 Round 113 Multi-Agent 编排工程机制形成完整 Agent 工程机制知识体系：工具层+编排层+设计层+安全层
+
+## Round 136 (2026-05-28)
+- **commit**: 5f9b260
+- **产出**: github/copilot-sdk (Project, 8,735 Stars)
+- **主题**: 多语言 Agent SDK — Python/TypeScript/Go/.NET/Java/Rust + JSON-RPC + Copilot CLI 运行时 + BYOK + 权限分层
+- **关联**: OpenAI Agents SDK（框架 vs 能力集成层目标用户定位对比）
