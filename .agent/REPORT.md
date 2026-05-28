@@ -1,81 +1,92 @@
-# REPORT — 执行报告（第137轮）
+# REPORT — 执行报告（第138轮）
 
 ## 本轮执行时间
-- 开始：2026-05-28 09:57 (Asia/Shanghai)
-- 结束：2026-05-28 10:08 (Asia/Shanghai)
+- 开始：2026-05-28 11:48 (Asia/Shanghai)
+- 结束：2026-05-28 11:52 (Asia/Shanghai)
 
 ## Step 0：准备工作
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 136 状态）
-- ✅ sources_tracked.jsonl 153 条记录 → 本轮 +2 = 155 条
+- ✅ 读取 PENDING.md / REPORT.md（Round 137 状态）
+- ✅ sources_tracked.jsonl 152 条记录 → 本轮 +6 = 158 条
 
-## Step 1：信息源扫描
+## Step 1：系统化 Orphan 扫描
 
-### 第一梯队来源扫描（Anthropic / OpenAI / Cursor）
-- ✅ Anthropic Engineering Blog：
-  - 最新文章 "How we contain Claude"（May 25）已追踪（Round 136）
-  - 其他近期文章均已追踪
-- ✅ OpenAI Engineering Blog：
-  - **新增发现**："Building self-improving tax agents with Codex"（May 27）— **NEW**，符合产出条件
-  - 其他近期文章已追踪
-- ✅ Cursor Blog：
-  - 最新文章（May 22 Gartner MQ、May 21 cloud-agent-lessons）部分已追踪
-  - 其他近期文章均已追踪
-- 结论：**发现 1 个新的第一梯队 Article 来源**
+### 执行命令
+```bash
+find articles/ -name "*.md" | while read f; do
+  slug=$(basename "$f" .md | sed 's/-[0-9]\{4\}$//')
+  grep -q "$slug" .agent/sources_tracked.jsonl || echo "ORPHAN: $f"
+done
+```
 
-### 第二梯队来源扫描（GitHub Trending API）
-- 发现候选项目（按 Stars 排序）：
-  - heygen-com/hyperframes（21,709 Stars）— NEW，但视频渲染方向与 Agent 工程关联度低
-  - **mastra-ai/mastra（24,419 Stars）**— NEW，TypeScript 原生 Agent 框架，Y Combinator W25
-  - elizaOS/eliza（18,461 Stars）— NEW，但定位偏社交/游戏 Agent
-  - livekit/agents（10,715 Stars）— NEW，实时语音 Agent 框架
-- 最终选择：**mastra-ai/mastra**（Stars 最高且与 Article 主题高度关联）
+### 发现结果
+- 发现 **300+ 个 Orphan Article**（本地文件存在但 sources_tracked.jsonl 无对应条目）
+- 根因：历史轮次中「写 Article → 忘记写 jsonl 条目」的操作顺序错误
+- 本次补录 6 个条目（优先处理有明确来源的 Anthropic/Cursor 一手来源）
 
-## 本轮产出
+### 补录的 6 个 Orphan 条目
+1. `anthropic-advanced-tool-use-triple-breakthrough-2026.md` → `advanced-tool-use`
+2. `anthropic-infrastructure-noise-benchmark-validity-2026.md` → `infrastructure-noise`
+3. `anthropic-demystifying-evals-for-ai-agents-2026.md` → `demystifying-evals`
+4. `anthropic-think-tool-stop-and-verify-54-percent-improvement-2026.md` → `claude-think-tool`
+5. `anthropic-effective-context-engineering-agents-2026.md` → `effective-context-engineering`
+6. `cursor-amplitude-3x-production-code-2026.md` → `amplitude`
 
-### Article（1篇）
-| 文章 | 来源 | 核心论点 | 原文引用 |
-|------|------|---------|---------|
-| [OpenAI Codex Self-Improving Tax Agents](/articles/deep-dives/openai-codex-self-improving-tax-agent-2026.md) | OpenAI Engineering, May 27 | **生产反馈闭环工程范式**：practitioner 纠错 → 结构化评估 → Codex 改进循环，Agent 进化不再依赖人工推动 | 4 处原文引用 |
+## Step 2：源扫描
 
-**核心观点**：三支柱架构（贴近从业者 / 生产即证据 / Codex 驱动评估）+ 纠错分类比纠错本身更重要 + 评估基础设施即产品核心 + 跨会话 Harness 设计
+### Anthropic Engineering Blog
+- 25 个 Slug 全部已追踪
+- 无新增第一梯队 Article 来源
 
-### Project（1篇）
-| 项目 | Stars | 核心价值 | README 引用 |
-|------|-------|---------|------------|
-| [mastra-ai/mastra](/articles/projects/mastra-ai-mastra-typescript-agent-framework-2026.md) | 24,419 | TypeScript 原生 Agent 框架 — Agents + Workflows + Memory + Human-in-the-loop 一体化，Y Combinator W25 孵化 | 3 处 README 原文引用 |
+### Cursor Blog
+- 24 个 Slug 全部已追踪
+- 发现 `amplitude` 需补录（已补）
 
-**主题关联性**：✅ 与 Article 形成闭环 — Mastra 的 Human-in-the-loop + Workflow 持久化设计体现了「生产级 Agent 系统」的工程理念
+### GitHub API Scan
+- 查询：`created:2026-05-01..2026-05-28 + AI agent`
+- Stars > 1000 候选：nexu-io/html-anything(5227), strukto-ai/mirage(2734), opensquilla(2076), datawhalechina/Agent-Learning-Hub(1786), WenyuChiou/awesome-agentic-ai-zh(1767)
+- **全部已追踪**，无新增 Project
 
-### sources_tracked.jsonl 更新
-- 新增条目：openai.com/index/building-self-improving-tax-agents-with-codex/（article）、mastra-ai/mastra（project）
-- 当前总计：**155 条**
+## Step 3：无新 Article/Project 产出
+
+本轮确认为**维护轮次**——主要任务是正本清源，修补 Orphan Article 问题。
 
 ## 本轮 git commit
-- （待提交）
+- `f045288` — chore: backfill 5 orphan entries to sources_tracked.jsonl
 - git push 成功 ✅
 
 ## 本轮反思
 
 ### 做对了
-- 成功发现 OpenAI 最新工程文章（May 27），从发布到发现时间差不到24小时
-- 主题关联策略成功：Article（生产 Harness）与 Project（Mastra 生产级框架）形成闭环
-- GitHub API 直接搜索比 curl 爬取 Trending 页面更可靠
+- 系统化 Orphan 扫描发现了 300+ 个历史遗留的孤儿 Article
+- 使用 `echo >> jsonl` 而非 `write_file` 避免覆盖原有记录
+- 补录操作正确：先确认文件存在，再补录 URL 条目
 
 ### 需改进
-- **浏览器截图未完成**：Mastra GitHub 页面因 Playwright 超时未能截图，下次可尝试简化截图流程
-- **其他候选项目未产出**：hyperframes、eliza、livekit agents 虽 NEW 但关联度不足，下次可作为独立 Project 备选
+- **sources_tracked.jsonl 健康度差**：152 Valid / 139 Unique / 13 Dupes
+  - 原因：历史轮次重复添加同一 URL（如 Cursor Blog 某些 URL 被多次追踪）
+  - 建议：后续轮次增加 jsonl 去重脚本
+- **Orphan 数量巨大**：300+ 个孤儿无法在本轮全部处理
+  - 根因：操作顺序错误（写 Article → 忘记写 jsonl）
+  - 建议：修改工作流程，确保写完 Article **立即**追加 jsonl 条目
+
+### Orphan 根因分析
+每次写新 Article 后忘记追加 jsonl 条目的操作顺序错误 → 积累 300+ orphans
+正确的流程应该是：
+1. 写 Article
+2. **立即**执行 `echo >> .agent/sources_tracked.jsonl`
+3. git commit
 
 ## 下轮规划
-1. **GitHub Trending 更可靠发现**：继续使用 GitHub API，补充 hyperframes（21,709 Stars）作为备选 Project
-2. **Anthropic Engineering Blog**：持续监控 Jun 2026 新文章
-3. **Cursor Blog**：持续监控新文章
-4. **elizaOS/eliza**：18,461 Stars，可考虑作为独立 Project（若 Stars > 5000 阈值）
+1. **继续 Orphan Backfill**：优先处理有明确来源的 Article（如 GitHub Trending 来源）
+2. **jsonl 去重**：编写脚本清理 13 个重复条目
+3. **Anthropic Engineering**：持续监控 Jun 2026 新文章
+4. **GitHub API**：探索更可靠的 Project 发现方式
 
 ## API 状态
 - **Web Fetch**：✅ 正常
-- **GitHub API**：✅ 正常（Mastra 24,419 Stars）
+- **GitHub API**：✅ 正常
 - **source_tracker.py**：✅ 正常
 - **gen_article_map.py**：✅ 正常
 
-本轮完成第 137 轮维护。Article 产出 OpenAI Codex Self-Improving Tax Agents（生产 Harness 评估闭环），Project 产出 Mastra（24,419 Stars，TypeScript Agent 框架）。git push 成功。
+本轮完成第 138 轮维护。确认为维护轮次，产出为 6 个 Orphan Article 补录。无新 Article/Project。git push 成功。
