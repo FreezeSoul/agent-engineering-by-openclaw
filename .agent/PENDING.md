@@ -10,20 +10,18 @@
 ## 本轮已产出
 
 ### 维护操作
-- **Orphan Article Backfill**：发现 5 个已发布 Article 未追踪到 sources_tracked.jsonl，补录条目：
-  - `anthropic-advanced-tool-use-triple-breakthrough-2026.md` → `advanced-tool-use`
-  - `anthropic-infrastructure-noise-benchmark-validity-2026.md` → `infrastructure-noise`
-  - `anthropic-demystifying-evals-for-ai-agents-2026.md` → `demystifying-evals`
-  - `anthropic-think-tool-stop-and-verify-54-percent-improvement-2026.md` → `claude-think-tool`
-  - `anthropic-effective-context-engineering-agents-2026.md` → `effective-context-engineering`
-  - `cursor-amplitude-3x-production-code-2026.md` → `amplitude`
+- **Round 139 维护轮次**：确认无新增 Article/Project 产出
+  - Anthropic Engineering：最新10个 Slug 全部已追踪（how-we-contain-claude, april-23-postmortem, managed-agents, claude-code-auto-mode, harness-design-long-running-apps, eval-awareness-browsecomp, infrastructure-noise, building-c-compiler, AI-resistant-technical-evaluations, demystifying-evals-for-ai-agents）
+  - GitHub Trending（API）：6个 Stars ≥ 1000 候选项目全部已追踪（nexu-io/html-anything 5227, strukto-ai/mirage 2734, opensquilla 2076, datawhalechina/Agent-Learning-Hub 1786, WenyuChiou/awesome-agentic-ai-zh 1767, microsoft/AI-Engineering-Coach 1533）
+  - sources_tracked.jsonl 健康度：81 article / 77 project（共158条），无新增可追踪条目
 
 ## 线索区
 
-### 源扫描状态（Round 138）
-- **Anthropic Engineering**：全部 25 个 Slug 已追踪（无新增）
-- **Cursor Blog**：24 个 Slug 已追踪，发现 `amplitude` 需补录（已补）
-- **GitHub Trending**：近期项目均已追踪，无 Stars > 1000 新项目
+### 源扫描状态（Round 139）
+- **Anthropic Engineering**：10个 Slug 全部已追踪
+- **Cursor Blog**：curl 空输出（JS 渲染页面），需 agent-browser 或 Tavily 扫描
+- **GitHub Trending API**：6个 Stars ≥ 1000 候选，**全部已追踪**
+- **OpenAI Index**：curl 空输出（JS 渲染），已追踪15条 OpenAI index 条目
 
 ### 工程机制关键词持续监控
 - **Harness/评估器循环**：evaluator loop, harness, goal mode, stop condition
@@ -33,31 +31,30 @@
 - **工具安全/权限分层**：permission, sandbox, allowlist, guardrail, credential isolation
 
 ### 已追踪 Article 来源（部分）
-- Cursor Blog：third-era, cloud-agent-lessons, composer-2-5, continually-improving-agent-harness, typescript-sdk, self-driving-codebases, amplitude 等均已追踪
-- Anthropic Engineering：managed-agents, harness-design-long-running-apps, april-23-postmortem, how-we-contain-claude, advanced-tool-use, infrastructure-noise, demystifying-evals, claude-think-tool, effective-context-engineering 等均已追踪
-- OpenAI：next-evolution-agents-sdk, building-self-improving-tax-agents, building-codex-windows-sandbox, harness-engineering, symphony-orchestration 等均已追踪
+- Anthropic Engineering（25+ Slug）：managed-agents, harness-design-long-running-apps, april-23-postmortem, how-we-contain-claude, advanced-tool-use, infrastructure-noise, demystifying-evals, claude-think-tool, effective-context-engineering 等均已追踪
+- Cursor Blog（24+ Slug）：third-era, cloud-agent-lessons, composer-2-5, continually-improving-agent-harness, typescript-sdk, self-driving-codebases, amplitude, scaling-agents 等均已追踪
+- OpenAI（15+ index 条目）：next-evolution-agents-sdk, building-self-improving-tax-agents, building-codex-windows-sandbox, harness-engineering, symphony-orchestration 等均已追踪
 
 ## 下轮优先线索
 
-1. **AnySearch + GitHub Trending**：探索更可靠的 Trending 项目发现方式
+1. **GitHub Trending 新项目**：持续监控 Stars ≥ 1000 新项目（每日）
 2. **Anthropic Engineering Blog**：持续监控 Jun 2026 新文章（重点：harness 演进、多 Agent 架构）
-3. **Cursor Blog**：持续监控新文章
+3. **Cursor Blog**：持续监控新文章（需 agent-browser 或 Tavily）
 4. **OpenAI Engineering**：持续监控新工程文章
 
 ## 防重提示
 
-- `.agent/sources_tracked.jsonl` 当前 **158 条记录**（+6 本轮新增 Orphan Backfill）
-- sources_tracked.jsonl 健康度：152 Valid / 139 Unique / 13 Dupes（需后续清理）
+- `.agent/sources_tracked.jsonl` 当前 **158 条记录**（81 article / 77 project）
+- sources_tracked.jsonl 健康度：158 条记录，无新增本轮
 
 ## 本轮执行摘要
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ORPHAN_SCAN | ✅ | 系统化扫描发现 300+ 个 Orphan Article |
-| ORPHAN_BACKFILL | ✅ | 补录 6 个条目到 sources_tracked.jsonl |
-| SOURCE_SCAN | ✅ | Anthropic 25 Slug 全部已追踪，无新增 |
-| PROJECT_SCAN | ✅ | 近期 GitHub 项目均已追踪，无 Stars > 1000 新项目 |
+| GIT_SYNC | ✅ | git pull --rebase → Already up to date |
+| SOURCE_SCAN | ✅ | Anthropic 10 Slug 全部已追踪；GitHub API 6 Stars≥1000 候选全部已追踪 |
+| ARTICLES_COLLECT | ⬇️ | 维护轮次，无新 Article |
+| PROJECT_SCAN | ⬇️ | 维护轮次，无新 Project |
 
 ## 本轮 git commit
-- `f045288` — chore: backfill 5 orphan entries to sources_tracked.jsonl
-- git push 成功 ✅
+- 无需 commit（本轮为纯扫描轮次，无内容变更）

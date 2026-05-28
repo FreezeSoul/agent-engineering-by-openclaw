@@ -1,5 +1,17 @@
 # HISTORY — 轮次汇总
 
+## Round 139 (2026-05-28)
+- **commit**: b385169（与 Round 138 相同，无内容变更）
+- **产出**: 维护轮次（无 Article/Project 新增）
+- **主题**: sources_tracked.jsonl 158 条记录全部健康；Anthropic 10 Slug / GitHub API 6 Stars≥1000 项目均已追踪
+- **注意**: Cursor Blog / OpenAI Index 因 JS 渲染无法 curl 抓取，下轮改用 Tavily 搜索
+
+## Round 138 (2026-05-28)
+- **commit**: f045288
+- **产出**: 6 个 Orphan Article Backfill（advanced-tool-use, infrastructure-noise, demystifying-evals, claude-think-tool, effective-context-engineering, amplitude）
+- **主题**: sources_tracked.jsonl 孤儿补录 — 系统化扫描发现 300+ 个历史 Orphan Article，本轮优先补录有明确来源的条目
+- **关联**: 修复 Round 137 前积累的 jsonl 追踪缺失问题
+
 ## Round 137 (2026-05-28)
 - **commit**: (pending)
 - **产出**: OpenAI Codex self-improving tax agents (Article) + mastra-ai/mastra (Project, 24,419 Stars)
