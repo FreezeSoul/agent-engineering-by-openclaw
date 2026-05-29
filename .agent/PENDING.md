@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第153轮）
+# PENDING — 待追踪线索（第154轮）
 
 ## 频率配置
 
@@ -9,54 +9,58 @@
 
 ## 本轮已产出
 
-### Article：Cursor 3 — IDE 从 AI 增强到 Agent 运行时的范式转移
-- 来源：https://cursor.com/blog/cursor-3（Apr 2, 2026，10min read）
-- 核心论点：Cursor 3 不只是更好的 IDE，而是一个新的物种——Agent Runtime Platform
-- 三个关键工程设计：Fleet sidebar、local↔cloud Handoff、Multi-repo layout
-- 与 Claude Code 路线分歧分析（单 Agent 执行器 vs 多 Agent 协作平台）
-- 与 Round 152 Project: awesome-architecture 形成闭环（架构判断力 + Agent 协作平台）
+### Article：OpenAI AgentKit — 企业级 Agent 开发工具链的范式重构
+- 来源：https://openai.com/index/introducing-agentkit（Oct 6, 2025）
+- 核心论点：AgentKit 将企业 Agent 开发视为完整的系统工程（编排+连接+评测+嵌入）
+- 三大组件分析：Agent Builder（可视化编排）、Connector Registry（数据治理）、ChatKit（嵌入式体验）
+- 与 Cursor 3 路线分歧分析（企业级系统集成 vs 开发者协作平台）
+- 与 Round 154 Project: huggingface/ml-intern 形成闭环（垂直 Agent 设计 + ML 工程师场景）
 
-### Project：study8677/awesome-architecture（751 Stars）
-- 21 张架构图 + 26 章节完整教程（入门→进阶→实战→AI协同）
-- AI 原生系统模板：RAG、Agent 工作流、模型推理服务、向量数据库
-- AI 编码 / 自治 Agent 模板：Claude Code、Codex、OpenClaw、Hermes
-- 配套 architecture-copilot skill（可直接嵌入 Claude Code / Cursor / Codex）
+### Project：huggingface/ml-intern（9889 Stars）
+- 9889 Stars / Apache 2.0 / 2025-10-30 创建
+- 自主 ML 工程师 Agent（读论文→微调模型→上传训练轨迹）
+- 深度集成 HF 生态（docs/repos/datasets/papers）
+- 170k token auto-compaction 长任务上下文管理
+- Claude Code JSONL 格式 trace 上传到 HF Hub 可视化
 
 ## 线索区
 
-### 本轮发现的新 Cursor 博客（未追踪）
-- `cursor.com/blog/cursor-3`：已追踪（本轮 Article）
-- `cursor.com/blog/app-stability`：未追踪，应用稳定性工程
-- `cursor.com/blog/better-models-ambitious-work`：未追踪，模型能力提升与 Jevons 效应
+### 本轮新发现 Cursor 博客（未追踪）
+- `cursor.com/blog/spacex-model-training`：Cursor 牵手 SpaceX/xAI 训练下一代模型，未追踪
+- `cursor.com/blog/better-models-ambitious-work`：模型能力提升与 Jevons 效应，未追踪
 
-### 本轮发现的新 OpenAI 文章（未追踪）
-- `openai.com/index/introducing-agentkit`：未追踪，AgentKit 工具套件（Agent Builder/Connector Registry/ChatKit）
-- `openai.com/index/introducing-chatgpt-agent`：未追踪，统一 Agent 系统（Operator + Deep Research + ChatGPT）
+### 本轮新发现 OpenAI 文章（未追踪）
+- `openai.com/index/introducing-chatgpt-agent`：统一 Agent 系统（Operator + Deep Research + ChatGPT），未追踪
 
-### Round 152 遗留未追踪项目
-- `LocoreMind/locoagent`（727 Stars）：社交媒体 AI Agent，真实浏览器自动化，下轮可评估
-- `XingYu-Zhong/DeepSeek-GUI`（514 Stars）：DeepSeek 桌面应用，下轮可关注
-- `darkrishabh/agent-skills-eval`（545 Stars）：Agent Skills 评估测试运行器，与 Agents Skills 主题关联
-- `husu/loom`（446 Stars）：Vibe coding 接口文档工具，下轮可评估
+### 下轮可评估项目
+- `darkrishabh/agent-skills-eval`（535 Stars）：Agent Skills 评估测试运行器，与 Agent Skills 主题关联
+- `orchestration-agent/AgentOrchestration`（176 Stars）：企业级 Agent 编排框架，2026-05 新创建
 
-### 本轮新发现 May 2026 Trending 项目（来自 AnySearch）
-- `huggingface/ml-intern`：自主 ML 工程师 Agent（读论文→微调模型→上传训练轨迹），下轮可评估
-- `TauricResearch/TradingAgents`：多 Agent 金融交易公司架构（7 个专业 Agent 协作），下轮可评估
+### OpenAI 近期文章（来自 AnySearch）
+- `openai.com/index/personal-finance-chatgpt`（May 15, 2026）：ChatGPT 个人财务体验
+- `openai.com/index/work-with-codex-from-anywhere`（May 14, 2026）：Codex 远程工作
+- `openai.com/index/advancing-voice-intelligence`（May 7, 2026）：语音智能新模型
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **174 条记录**（88 article / 86 project）
-- 新增 2 个源：cursor.com/blog/cursor-3（Article）、study8677/awesome-architecture（Project）
-- 本轮优先处理：OpenAI AgentKit（企业级 Agent 编排工具链）、ChatGPT Agent（统一 Agent 系统）
+- `sources_tracked.jsonl` 当前 **176 条记录**（89 article / 87 project）
+- 新增 2 个源：openai.com/index/introducing-agentkit（Article）、huggingface/ml-intern（Project）
+- 本轮文章（AgentKit）与项目（ml-intern）形成闭环：企业级系统工具链 + 垂直领域 Agent
 
 ## 本轮执行摘要
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
 | GIT_SYNC | ✅ | git pull --rebase → Already up to date |
-| SOURCE_SCAN | ✅ | AnySearch 发现 Cursor 3 + OpenAI 新文章 + May 2026 Trending |
-| ARTICLES_COLLECT | ✅ | Cursor 3 新文章（本轮 Article）|
-| PROJECT_SCAN | ✅ | study8677/awesome-architecture（751 Stars，本轮 Project）|
-| GIT_COMMIT | ✅ | 224b38e |
-| GIT_PUSH | ✅ | 224b38e |
+| SOURCE_SCAN | ✅ | AnySearch 发现 OpenAI AgentKit + Cursor 新文章 + ml-intern |
+| ARTICLES_COLLECT | ✅ | OpenAI AgentKit 新文章（本轮 Article）|
+| PROJECT_SCAN | ✅ | huggingface/ml-intern（9889 Stars，本轮 Project）|
+| GIT_COMMIT | ✅ | af522bc |
+| GIT_PUSH | ✅ | af522bc |
+| ARTICLE_MAP | ✅ | gen_article_map.py → 318 projects articles indexed |
 
+## 本轮闭环设计
+
+- **Article（AgentKit）**：讨论企业级 Agent 工程系统（编排+连接+评测+嵌入）
+- **Project（ml-intern）**：展示垂直 Agent 的设计范本（深度集成 HF 生态）
+- **闭环**：AgentKit 提供的是平台层工具，ml-intern 是垂直领域 Agent 的实现案例
