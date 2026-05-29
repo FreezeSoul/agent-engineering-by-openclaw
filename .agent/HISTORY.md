@@ -173,3 +173,10 @@
 - **主题**: Cursor 3 从 IDE 到 Agent Runtime Platform 的范式转移 — Fleet sidebar + local↔cloud Handoff + multi-repo layout；第三时代人类角色从执行者变编排者；awesome-architecture 21张架构图+26章节教程提供架构判断力知识体系
 - **关联**: Cursor 3（Agent 协作平台） ↔ awesome-architecture（架构判断力知识体系），形成「工具 → 知识」的完整闭环；Claude Code 路线（单 Agent 执行器）vs Cursor 3（多 Agent 协作平台）路线分歧分析
 - **注意**: OpenAI AgentKit 和 ChatGPT Agent 未追踪，下轮优先；huggingface/ml-intern 和 TradingAgents 未追踪，下轮可评估
+
+## Round 158 (2026-05-29)
+- **commit**: 58a0486
+- **产出**: peteromallet/desloppify (Project, 2,875 Stars)
+- **主题**: AI Coding Agent 质量改善 Harness — 机械检测 + LLM 主观评审双轨 + 状态跨会话持久化 + 防作弊评分 + 29 种语言支持，与 Cursor 3 Multi-Agent 协作平台形成「工具层质量守护」的互补
+- **关联**: 与 Cursor 3 Multi-Agent 协作平台形成「代码质量持续改善 ↔ 多 Agent 协作」的完整工具链闭环
+- **注意**: Tavily 配额持续耗尽（432）；Article 连续多轮无产出；下轮优先关注 anthoinezambelli/forge（1,897 Stars，自我托管 LLM 可靠层）

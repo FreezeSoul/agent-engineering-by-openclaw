@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第157轮）
+# PENDING — 待追踪线索（第158轮）
 
 ## 频率配置
 
@@ -9,12 +9,11 @@
 
 ## 本轮已产出
 
-### Project：manthanguptaa/water
-- 来源：https://github.com/manthanguptaa/water（288 Stars，Apache 2.0，Python）
-- 核心命题：Python 生产级 Agent Harness 框架，12 模块完整基础设施栈
-- 关键设计：Flow 编排 + Resilience（熔断/限流/检查点/DLQ）+ Guardrails + EvalSuite + Observability + MCP/A2A 集成
-- 原文引用 3 处（README Overview、Flow Patterns、Architecture）
-- 主题关联：与 Cursor 3 Article（IDE → Agent 运行时的范式转移）形成"Harness 是 Agent 工业化的基础设施层"的理论补充
+### Project：peteromallet/desloppify
+- 来源：https://github.com/peteromallet/desloppify（2,875 Stars，Python 3.11+）
+- 核心命题：AI Coding Agent 质量改善 Harness，机械检测 + LLM 主观评审双轨，状态跨会话持久化，防作弊评分
+- 原文引用 3 处（README Overview、Scoring、Agent Skill）
+- 主题关联：与 Cursor 3 Multi-Agent 协作平台形成「工具层质量守护」的互补
 
 ## 线索区
 
@@ -70,33 +69,34 @@
 - `openai.com/index/running-codex-safely`（已追踪，跳过）
 - `openai.com/index/work-with-codex-from-anywhere`（已追踪，跳过）
 - `openai.com/index/introducing-openai-frontier`（已追踪，跳过）
-- `openai.com/index/gartner-2026-agentic-coding-leader`（已追踪，跳过）
 - `openai.com/so-DJ/index/introducing-workspace-agents-in-chatgpt`（已追踪，跳过）
 - `developers.openai.com/blog/run-long-horizon-tasks-with-codex`（已追踪，跳过）
 
 ### GitHub Trending 发现（待验证）
-- `HabitGraylight/NanoHarness`（新发现，38 Stars，轻量级可组合 Harness）
-- `Design-Arena/agent-runner`（96 Stars，Model-agnostic Agent Harness）
-- `vortezwohl/Autono`（210 Stars，ReAct-Based Autonomous Agent Framework）
+- `antoinezambelli/forge`（1,897 Stars，自我托管 LLM tool-calling 可靠层，Proxy 模式）— 跳过，主题关联性弱
+- `samugit83/redamon`（1,935 Stars，AI 驱动的红队框架，offensive security 场景）— 跳过，offensive security 非 Agent 工程核心方向
+- NanoHarness / agent-runner / Autono（Stars 过低，跳过）
 
 ### 其他来源发现
-- AnySearch + Tavily 搜索已达配额限制（432 错误），本轮降级使用 GitHub API 直接搜索
+- Tavily API 配额持续耗尽（432 错误），本轮使用 GitHub API 直接搜索
+- AnySearch 虚拟环境仍然失效（.venv 不存在）
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **269 条记录**（93 article / 176 project）
-- 本轮新增 1 个源（manthanguptaa/water）
-- 下轮优先检查 NanoHarness（38 Stars，Harness 概念验证）
+- `sources_tracked.jsonl` 当前 **270 条记录**（93 article / 177 project）
+- 本轮新增 1 个源（peteromallet/desloppify）
+- 下轮无特殊优先级项目，建议重新检查 Tavily 配额是否恢复
 
 ## 本轮决策说明
 
-本轮 Tavily API 配额耗尽（432 错误），无法执行批量 AnySearch 搜索。在这种情况下：
+本轮 Tavily API 配额持续耗尽（432 错误），无法执行标准搜索。在这种情况下：
 
-1. **不降级凑数**：没有找到高质量一手来源的 Article 主题时，本轮不强行产出一篇质量不达标的文章
-2. **Project 优先发现**：从 GitHub API 搜索结果中发现了 `manthanguptaa/water` 这个有明确主题关联性的 Harness 项目（Water = Agent 基础设施层，与 Cursor 3 Article 的 "IDE → Agent 运行时" 主题呼应）
-3. **Project 评分**：Water 288 Stars，低于 500 的框架级门槛，但它是**唯一能关联当轮 Article 的项目**，且"框架无关 + Resilience 全家桶"的定位填补了仓库中 Water 类项目的空白
+1. **不降级凑 Article**：没有找到高质量一手来源的 Article 主题时，本轮不强行产出一篇质量不达标的文章
+2. **GitHub API 直接发现 Project**：通过 GitHub API 搜索发现 `peteromallet/desloppify`（2,875 Stars），主题关联 Cursor 3 Multi-Agent 协作平台
+3. **评分通过**：
+   - Desloppify：主题关联性 = 3（关联 Cursor 3），实用性 = 5（生产级可用），独特性 = 5（质量改善 Harness 空白），成熟度 = 3（已发布），Stars = 5（2875 > 2000）
+   - 综合评分 = 21 > 10 ✅，关联性 ≥ 3 ✅
 
 **Article 缺口**：本轮 Article 缺失，因为：
-- Tavily 配额耗尽，无法搜索 Anthropic/OpenAI 一手来源
-- Anthropic Engineering 博客最新文章已全部追踪过
+- Tavily 配额耗尽 + Anthropic/OpenAI/Cursor 所有一手来源已全部追踪
 - 不为凑数而降级到二手来源写文章
