@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第160轮）
+# PENDING — 待追踪线索（第161轮）
 
 ## 频率配置
 
@@ -14,14 +14,11 @@
 - **原则坚守**：不为凑数而降级到二手来源写文章
 
 ### Project：⬇️ 跳过
-- **原因**：GitHub 近7天新创建（2026-05-23~30）的 Agent 项目 Stars 均 < 500，无达标项目
-- **新发现**（Stars 不达标，仅供记录）：
-  - `nv-tlabs/Gamma-World`（292 Stars，多智能体世界建模）— Stars < 500，跳过
-  - `2aronS/Duel-Agents`（349 Stars，CLI/SDK/IDE 决斗代理插件）— Stars < 500，跳过
-  - `quarqlabs/agent-oss`（178 Stars，递归证据门控认知运行时）— Stars < 500，跳过
-  - `NabilAziz99/agent-runtime`（121 Stars，Claude Code agent-runtime Python 移植）— Stars < 500，跳过
-  - `UditAkhourii/adhd`（512 Stars，Tree-of-thought 剪枝技能）— Stars 500~1000 之间，跳过
-  - `withkynam/vibecode-pro-max-kit`（493 Stars，Spec-driven coding harness）— Stars < 500，跳过
+- **原因**：GitHub 近期活跃项目 Stars 均极低（0-3 stars），无达标项目
+- **扫描结果**：
+  - 新创建仓库（2026-05-23~30）：最高 132 Stars（aws-samples/sample-well-architected-skills-and-steering），未达 500 门槛
+  - 近期更新仓库（>2026-05-28）：全部 0-3 Stars
+  - 高 Star 仓库：均已追踪，无新增项目
 
 ## 线索区
 
@@ -52,12 +49,11 @@
 
 ### 未追踪 Cursor 文章
 - `cursor.com/blog/cursor-3`（已追踪，跳过）
-- `cursor.com/blog/cloud-agent-lessons`（已追踪，跳过）
-- `cursor.com/blog/cloud-agent-development-environments`（已追踪，跳过）
-- `cursor.com/blog/continually-improving-agent-harness`（已追踪，跳过）
+- `cursor.com/blog/cloud-agent-lessons`（已追踪，跳过——多条深度分析）
+- `cursor.com/blog/cloud-agent-development-environments`（已追踪，跳过——多条深度分析）
+- `cursor.com/blog/continually-improving-agent-harness`（已追踪，跳过——多条深度分析）
 - `cursor.com/blog/third-era`（已追踪，跳过）
-- `cursor.com/blog/multi-agent-kernels`（已追踪，跳过）
-- `cursor.com/blog/composer-2`（已追踪，跳过）
+- `cursor.com/blog/composer-2-5`（已追踪，跳过——多条深度分析）
 - `cursor.com/blog/typescript-sdk`（已追踪，跳过）
 - `cursor.com/blog/scaling-agents`（已追踪，跳过）
 - `cursor.com/blog/faire`（已追踪，跳过）
@@ -81,18 +77,14 @@
 - `developers.openai.com/blog/run-long-horizon-tasks-with-codex`（已追踪，跳过）
 
 ### GitHub 高 Star 项目（已追踪）
-- NousResearch/hermes-agent（172,698 Stars）✅ 已追踪
-- langflow-ai/langflow（148,880 Stars）✅ 已追踪
-- langgenius/dify（143,114 Stars）✅ 已追踪
-- langchain-ai/langchain（137,984 Stars）✅ 已追踪
-- google-gemini/gemini-cli（104,720 Stars）✅ **未追踪但 Stars 增长为主，非新项目**
-- browser-use/browser-use（96,180 Stars）✅ 已追踪
-- OpenHands/OpenHands（75,317 Stars）✅ 已追踪
-- lobehub/lobehub（77,942 Stars）✅ 已追踪
-
-### 其他来源发现
-- Tavily API 配额持续耗尽（432错误），无法执行标准 Article 扫描
-- AnySearch 虚拟环境正常工作（Python CLI 可用）
+- NousResearch/hermes-agent（172,761 Stars）✅ 已追踪
+- langflow-ai/langflow（148,883 Stars）✅ 已追踪
+- langgenius/dify（143,117 Stars）✅ 已追踪
+- langchain-ai/langchain（137,985 Stars）✅ 已追踪
+- google-gemini/gemini-cli（104,722 Stars）✅ 已追踪
+- browser-use/browser-use（96,191 Stars）✅ 已追踪
+- OpenHands/OpenHands（75,324 Stars）✅ 已追踪
+- lobehub/lobehub（77,944 Stars）✅ 已追踪
 
 ## 防重提示
 
@@ -106,20 +98,20 @@
 |------|------|------|
 | Tavily Search | ❌ | 配额耗尽（432），需升级计划 |
 | GitHub API | ✅ | 正常，用于项目发现 |
-| AnySearch | ✅ | 正常工作（Python CLI） |
+| AnySearch | ⚠️ | 平台内部错误（'type' object is not subscriptable）|
+| Union Search CLI | ⚠️ | Google API key 缺失，Tavily adapter 报错 |
 
 ## 本轮决策说明
 
-本轮 Tavily API 配额持续耗尽，导致无法执行标准 Article 扫描。一手来源已全部追踪（23 Anthropic + 14 Cursor + 13 OpenAI = 50条官方文章）。
+本轮 Tavily API 配额持续耗尽，导致无法执行标准 Article 扫描。所有一手来源已全部追踪（23 Anthropic + 14 Cursor + 13 OpenAI = 50条官方文章）。
 
-GitHub 新创建仓库（>2026-05-23）深度扫描结果：
-- Stars > 500 的新项目：0个
-- Stars 100-500 的新项目：6个（均低于门槛）
-- 最高：UditAkhourii/adhd（512 Stars，Tree-of-thought 剪枝）
+GitHub 近期活跃项目扫描结果：
+- 新创建仓库（2026-05-23~30）：最高 132 Stars（aws-samples），全部未达 500 门槛
+- 近期更新仓库（>2026-05-28）：全部 0-3 Stars，极低活跃度
 
 **坚持原则**：不为凑数而降级到二手来源或推荐 Stars 过低的项目。
 
 **下轮优先**：
 - 检查 Tavily 配额是否恢复（需用户升级计划）
 - 继续监控 GitHub 新创建高 Star 项目
-- AnySearch + GitHub API 双轨并行发现
+- 探索替代搜索方案（union-search-skill 的 GitHub 平台搜索）
