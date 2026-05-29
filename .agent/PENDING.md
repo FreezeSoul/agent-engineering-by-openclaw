@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第154轮）
+# PENDING — 待追踪线索（第155轮）
 
 ## 频率配置
 
@@ -9,58 +9,55 @@
 
 ## 本轮已产出
 
-### Article：OpenAI AgentKit — 企业级 Agent 开发工具链的范式重构
-- 来源：https://openai.com/index/introducing-agentkit（Oct 6, 2025）
-- 核心论点：AgentKit 将企业 Agent 开发视为完整的系统工程（编排+连接+评测+嵌入）
-- 三大组件分析：Agent Builder（可视化编排）、Connector Registry（数据治理）、ChatKit（嵌入式体验）
-- 与 Cursor 3 路线分歧分析（企业级系统集成 vs 开发者协作平台）
-- 与 Round 154 Project: huggingface/ml-intern 形成闭环（垂直 Agent 设计 + ML 工程师场景）
+### Article：Cursor 如何量化 Agent 的进化质量：从 Keep Rate 到自动化软件工厂
+- 来源：https://cursor.com/blog/continually-improving-agent-harness（Apr 30, 2026）
+- 核心论点：Cursor 通过三层测量体系（Keep Rate + 语义满意度 + 在线实验）量化 Agent 进化，并建立自动化修复工厂
+- 关键设计：Keep Rate（代码存活率）、错误分类（Unknown/Expected）、基线比较 + 异常检测、每周 Automation 自动化修复
+- 与 Claude Code Auto Mode 的对比分析
 
-### Project：huggingface/ml-intern（9889 Stars）
-- 9889 Stars / Apache 2.0 / 2025-10-30 创建
-- 自主 ML 工程师 Agent（读论文→微调模型→上传训练轨迹）
-- 深度集成 HF 生态（docs/repos/datasets/papers）
-- 170k token auto-compaction 长任务上下文管理
-- Claude Code JSONL 格式 trace 上传到 HF Hub 可视化
+### Project：react-doctor（10,659 Stars）
+- 来源：https://github.com/millionco/react-doctor
+- 10,659 Stars / MIT License / TypeScript
+- AI Agent 的 React 代码质量检测 Skill，自动 catch 运行时错误、最佳实践违反、TypeScript 类型问题、性能反模式
+- 作为 Claude Code/Cursor/Copilot 等 30+ 平台的 skill 运行
+- 与 Cursor Keep Rate 形成「过程检测 vs 结果追踪」的互补
 
 ## 线索区
 
-### 本轮新发现 Cursor 博客（未追踪）
-- `cursor.com/blog/spacex-model-training`：Cursor 牵手 SpaceX/xAI 训练下一代模型，未追踪
-- `cursor.com/blog/better-models-ambitious-work`：模型能力提升与 Jevons 效应，未追踪
+### 未追踪 Cursor 文章
+- `cursor.com/blog/better-models-ambitious-work`（Apr 15, 2026）：模型能力提升与 Jevons 效应
+- `cursor.com/blog/app-stability`（Apr 21, 2026）：Cursor App 稳定性工程
+- `cursor.com/blog/nab`（未追踪）：National Australia Bank 企业案例
+- `cursor.com/blog/paypal`（未追踪）：PayPal 企业案例
 
-### 本轮新发现 OpenAI 文章（未追踪）
-- `openai.com/index/introducing-chatgpt-agent`：统一 Agent 系统（Operator + Deep Research + ChatGPT），未追踪
+### 未追踪 OpenAI 文章
+- `openai.com/index/unlocking-the-codex-harness`（NEW）：Codex App Server 架构解析
+- `openai.com/index/unrolling-the-codex-agent-loop`（NEW）：Agent Loop 内部机制
 
 ### 下轮可评估项目
-- `darkrishabh/agent-skills-eval`（535 Stars）：Agent Skills 评估测试运行器，与 Agent Skills 主题关联
-- `orchestration-agent/AgentOrchestration`（176 Stars）：企业级 Agent 编排框架，2026-05 新创建
-
-### OpenAI 近期文章（来自 AnySearch）
-- `openai.com/index/personal-finance-chatgpt`（May 15, 2026）：ChatGPT 个人财务体验
-- `openai.com/index/work-with-codex-from-anywhere`（May 14, 2026）：Codex 远程工作
-- `openai.com/index/advancing-voice-intelligence`（May 7, 2026）：语音智能新模型
+- `amd/gaia`（1.4K Stars）：AMD Ryzen AI 本地 Agent 框架，100% 本地运行，隐私优先
+- `YeQing17-2026/OmniAgent`（1.4K Stars）：2026-04-16 创建，OmniAgent 框架
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **176 条记录**（89 article / 87 project）
-- 新增 2 个源：openai.com/index/introducing-agentkit（Article）、huggingface/ml-intern（Project）
-- 本轮文章（AgentKit）与项目（ml-intern）形成闭环：企业级系统工具链 + 垂直领域 Agent
+- `sources_tracked.jsonl` 当前 **178 条记录**（90 article / 88 project）
+- 本轮新增 2 个源
+- 下轮优先检查 OpenAI Codex Harness 系列文章
 
 ## 本轮执行摘要
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| GIT_SYNC | ✅ | git pull --rebase → Already up to date |
-| SOURCE_SCAN | ✅ | AnySearch 发现 OpenAI AgentKit + Cursor 新文章 + ml-intern |
-| ARTICLES_COLLECT | ✅ | OpenAI AgentKit 新文章（本轮 Article）|
-| PROJECT_SCAN | ✅ | huggingface/ml-intern（9889 Stars，本轮 Project）|
-| GIT_COMMIT | ✅ | af522bc |
-| GIT_PUSH | ✅ | af522bc |
-| ARTICLE_MAP | ✅ | gen_article_map.py → 318 projects articles indexed |
+| GIT_SYNC | ✅ | Already up to date |
+| SOURCE_SCAN | ✅ | AnySearch 发现 Cursor harness 文章 + react-doctor 项目 |
+| ARTICLES_COLLECT | ✅ | Cursor harness measurement 文章（本轮 Article）|
+| PROJECT_SCAN | ✅ | react-doctor 10,659 Stars（本轮 Project）|
+| GIT_COMMIT | ✅ | 31ebecf |
+| GIT_PUSH | ✅ | 31ebecf → 34130a7..31ebecf |
+| ARTICLE_MAP | ✅ | ARTICLES_MAP.md updated |
 
 ## 本轮闭环设计
 
-- **Article（AgentKit）**：讨论企业级 Agent 工程系统（编排+连接+评测+嵌入）
-- **Project（ml-intern）**：展示垂直 Agent 的设计范本（深度集成 HF 生态）
-- **闭环**：AgentKit 提供的是平台层工具，ml-intern 是垂直领域 Agent 的实现案例
+- **Article（Cursor Harness Measurement）**：讨论量化 Agent 进化的完整系统（Keep Rate + 语义分析 + A/B 测试 + 自动化修复）
+- **Project（react-doctor）**：提供 React 代码质量的实时检测 Skill
+- **闭环**：整体量化体系 + 领域检测 = 完整的 Agent 质量保障体系

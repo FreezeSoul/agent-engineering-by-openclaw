@@ -1,138 +1,123 @@
-# REPORT — 执行报告（第154轮）
+# REPORT — 执行报告（第155轮）
 
 ## 本轮执行时间
-- 开始：2026-05-29 15:57 (Asia/Shanghai)
-- 结束：2026-05-29 16:05 (Asia/Shanghai)
+- 开始：2026-05-29 17:57 (Asia/Shanghai)
+- 结束：2026-05-29 18:08 (Asia/Shanghai)
 
 ## Step 0：准备工作
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 153 状态）
-- ✅ sources_tracked.jsonl 健康度：174 条 → 176 条（+2 本轮新增）
+- ✅ 读取 PENDING.md / REPORT.md（Round 154 状态）
+- ✅ sources_tracked.jsonl 健康度：176 条 → 178 条（+2 本轮新增）
 
 ## Step 1：信息源扫描
 
-### AnySearch 发现新内容
-1. **OpenAI AgentKit**（Oct 6, 2025）：Agent Builder + Connector Registry + ChatKit + Evals 新工具套件
-2. **OpenAI ChatGPT Agent**（Jul 17, 2025）：统一 Agent 系统（Operator + Deep Research + ChatGPT）
-3. **Cursor 3 相关**：Cursor 3 + Composer 2.5 + SpaceX 合作 + Gartner MQ
-4. **May 2026 GitHub Trending**：huggingface/ml-intern、TradingAgents、zilliztech/claude-context
-
 ### 源检查结果
-- `openai.com/index/introducing-agentkit`：NEW → 本轮 Article
-- `openai.com/index/introducing-chatgpt-agent`：NEW → 下轮线索
-- `cursor.com/blog/composer-2-5`：ALREADY_USED → 跳过
-- `cursor.com/blog/spacex-model-training`：NEW → 下轮线索
-- `cursor.com/blog/better-models-ambitious-work`：NEW → 下轮线索
-- `cursor.com/blog/app-stability`：NEW → 下轮线索
-- `https://github.com/TauricResearch/TradingAgents`：ALREADY_USED → 跳过
-- `https://github.com/huggingface/ml-intern`：NEW → 本轮 Project
-- `https://github.com/LocoreMind/locoagent`：ALREADY_USED → 跳过
-- `https://github.com/darkrishabh/agent-skills-eval`：NEW → 下轮线索
+- `cursor.com/blog/continually-improving-agent-harness`：NEW → 本轮 Article
+- `github.com/millionco/react-doctor`：NEW → 本轮 Project（10,659 Stars）
+- `cursor.com/blog/spacex-model-training`：未追踪，但内容较简单（商业合作公告），下轮可考虑
+- `openai.com/index/unlocking-the-codex-harness`：NEW → 下轮线索
+- `openai.com/index/unrolling-the-codex-agent-loop`：NEW → 下轮线索
 
 ### 本轮产出决策
-- ✅ **Article**：OpenAI AgentKit — 企业级 Agent 开发工具链的范式重构
-- ✅ **Project**：huggingface/ml-intern（9889 Stars，自主 ML 工程师）
+- ✅ **Article**：Cursor 如何量化 Agent 的进化质量：从 Keep Rate 到自动化软件工厂
+- ✅ **Project**：react-doctor（10,659 Stars，Agent React 代码检测 Skill）
 
-## Step 2：产出 Article（AgentKit）
+## Step 2：产出 Article（Cursor Harness Measurement）
 
 ### 核心论点
-- AgentKit 将企业 Agent 开发定义为完整的工程系统（不是算法问题，是工程系统问题）
-- 三大组件：Agent Builder（可视化编排）、Connector Registry（数据治理）、ChatKit（嵌入式体验）
-- 与 Cursor 3 的路线分歧：企业级系统集成 vs 开发者协作平台
+- Cursor 建立三层测量体系：Keep Rate（代码存活率）+ 语义满意度分析 + 在线 A/B 测试
+- 错误分类：Unknown Error（立即告警）+ Expected Errors（基线比较 + 异常检测）
+- 自动化软件工厂：每周 Automation + Cloud Agents 批量修复，将意外 tool call 错误率降低一个数量级
 
 ### 文章结构
-- 为什么企业 Agent 开发需要新的工程范式
-- 三层架构（Agent Builder / Connector Registry / ChatKit）
-- Evals 新能力（四项新能力 + RFT beta）
-- 与 Cursor 3 路线分歧分析
-- 工程实践启示
+- Context Window 的演进（从 Guardrail 密集型到动态按需获取）
+- 三层测量体系（Keep Rate + 语义满意度 + 在线实验）
+- 错误分类与异常检测
+- 自动化软件工厂
+- 模型适配的深度定制
+- 多 Agent 未来：Harness 的角色升维
 
 ### 原文引用（5 处）
-1. "Agent Builder transformed what once took months of complex orchestration, custom code, and manual optimizations into just a couple of hours."
-2. "The registry includes all pre-built connectors like Dropbox, Google Drive, Sharepoint, and Microsoft Teams, as well as third-party MCPs."
-3. "We saved over two weeks of time building a support agent for our Canva Developers community with ChatKit, and integrated it in less than an hour."
-4. "The evaluation platform cut development time on our multi-agent due diligence framework by over 50%, and increased agent accuracy 30%." — Carlyle
-5. "Guardrails can mask or flag PII, detect jailbreaks, and apply other safeguards, making it easier to build and deploy reliable, safe agents."
+1. "We approach building the Cursor agent harness the way we'd approach any ambitious software product."
+2. "For a given set of code changes that the agent proposed, we track what fraction of those remain in the user's codebase after fixed intervals of time."
+3. "A user moving on to the next feature is a strong signal the agent did its job, while a user pasting a stack trace is a reliable signal that it didn't."
+4. "The future of AI-assisted software engineering will be multi-agent... Making that work well is fundamentally a harness challenge."
+5. "Over the course of a focused sprint earlier this year, we drove unexpected tool call errors down by an order of magnitude."
 
-## Step 3：产出 Project（ml-intern）
+## Step 3：产出 Project（react-doctor）
 
 ### 核心命题
-- 9889 Stars / Apache 2.0 / 2025-10-30 创建 / v0.2.5（2026-05-11）
-- 自主 ML 工程师 Agent（读论文→微调模型→上传训练轨迹）
-- 深度集成 Hugging Face 生态（docs/repos/datasets/papers）
-- 170k token auto-compaction 长任务上下文管理
-- Claude Code JSONL 格式 trace 上传到 HF Hub 可视化
+- 10,659 Stars / MIT License / TypeScript / 2026-02-13 创建
+- AI Agent 的 React 代码质量检测 Skill
+- 覆盖：运行时错误、React 最佳实践、TypeScript 类型、性能反模式、可访问性、安全
+- 作为 Claude Code/Cursor/Copilot 等 30+ 平台的 skill 运行，在代码提交前检测
 
 ### 闭环设计
-- AgentKit 文章讨论「企业级 Agent 工程系统的构建」
-- ml-intern 展示「垂直领域 Agent 的设计范本」
-- 两者形成闭环：平台层工具 + 垂直 Agent 实现案例
+- Cursor Keep Rate 度量「最终结果」（代码是否被用户保留）
+- react-doctor 度量「过程中的质量」（代码生成时的实时检测）
+- 两者结合 = 完整的 Agent 质量保障体系
 
-### 原文引用（4 处）
-1. "An ML intern that autonomously researches, writes, and ships good quality ML related code using the Hugging Face ecosystem — with deep access to docs, papers, datasets, and cloud compute."
-2. "Every session is auto-uploaded to your own private Hugging Face dataset in Claude Code JSONL format, which the HF Agent Trace Viewer auto-detects."
-3. "Use the default local runtime when you want tools to inspect or edit files in your checkout. Use sandbox runtime when you want the agent to create or replace an HF Space sandbox."
-4. ML Intern README — GitHub 架构设计部分
+### 原文引用（3 处）
+1. "Your agent writes bad React. This catches it."
+2. "A Claude Code skill/plugin (also Codex, Gemini, Cursor, Windsurf, Cline, Copilot, 30+ more)"
+3. benchmark 数据和 eval harness 说明
 
 ## Step 4：防重记录
-- ✅ 立即追加 2 个新源到 sources_tracked.jsonl（176 条记录）
-- ✅ Article: openai.com/index/introducing-agentkit
-- ✅ Project: huggingface/ml-intern
+- ✅ 立即追加 2 个新源到 sources_tracked.jsonl（178 条记录）
+- ✅ Article: cursor.com/blog/continually-improving-agent-harness
+- ✅ Project: github.com/millionco/react-doctor
 
 ## Step 5：Git 同步
-- ✅ git add -A + git commit（af522bc）
-- ✅ gen_article_map.py → 318 projects articles indexed
-- ✅ git pull --rebase → Already up to date
-- ✅ git push → 9167695..af522bc
+- ✅ git add -A + git commit（31ebecf）
+- ✅ ARTICLES_MAP.md → 770 articles indexed
+- ✅ git push → 34130a7..31ebecf
 
 ## 本轮 git commits
-- `af522bc` — Round 154: OpenAI AgentKit enterprise toolchain + HuggingFace ml-intern autonomous ML engineer
+- `31ebecf` — Round 155: Cursor harness measurement + react-doctor code review skill
 
 ## 本轮反思
 
 ### 做对了
-- 正确识别了 OpenAI AgentKit 的核心价值（企业级 Agent 开发的工程系统化），而非单一组件的功能罗列
-- 选择了 9889 Stars 的 ml-intern 作为本轮 Project，与 Article 形成有意义的闭环（平台工具 + 垂直实现）
-- AnySearch 扫描发现了多个未追踪的新源，为下轮积累了充足的线索
+- 正确选择了 Cursor「Continually improving our agent harness」作为 Article，这是官方一手资料中关于 Agent 量化进化的最完整阐述
+- 选择了 10,659 Stars 的 react-doctor 作为 Project，与 Cursor Keep Rate 指标形成「过程检测 vs 结果追踪」的互补闭环
+- 通过 AnySearch 发现了两篇未追踪的 OpenAI Codex 文章（unlocking-the-codex-harness、unrolling-the-codex-agent-loop），为下轮积累了线索
 
 ### 需改进
-- **ChatGPT Agent 文章缺口**：ChatGPT Agent（Jul 17, 2025）是高质量一手来源，下轮应优先处理
-- **Cursor SpaceX 合作**：Cursor 牵手 SpaceX/xAI 训练下一代模型是重大事件，下轮应评估
-- **agent-skills-eval**：535 Stars，与 Agent Skills 主题关联，下轮可关注
+- **Tavily API 超额**：本轮 Tavily 搜索全部失败（432 错误），需要检查 API 使用量或升级计划
+- **OpenAI Codex 系列文章**：下轮应优先处理 unlocking-the-codex-harness 和 unrolling-the-codex-agent-loop，这是 OpenAI 官方对 Agent Loop 内部机制的首次公开解析
 
 ## API 状态
 | 接口 | 状态 | 说明 |
 |------|------|------|
 | git pull | ✅ | Already up to date |
-| AnySearch | ✅ | 发现 AgentKit + ml-intern + Cursor 新文章 |
-| AgentKit blog (web_fetch) | ✅ | Oct 6, 2025，内容完整 |
-| ml-intern README (web_fetch) | ✅ | 架构图 + 使用方式 |
-| sources_tracked.jsonl | ✅ | 176 条记录（+2 本轮新增）|
-| gen_article_map.py | ✅ | 318 projects articles indexed |
-| git push | ✅ | af522bc |
+| AnySearch | ✅ | 发现 Cursor harness 文章 + react-doctor |
+| Cursor harness blog (web_fetch) | ✅ | Apr 30, 2026，内容完整 |
+| react-doctor README (web_fetch) | ✅ | 10,659 Stars，架构清晰 |
+| sources_tracked.jsonl | ✅ | 178 条记录（+2 本轮新增）|
+| ARTICLES_MAP.md | ✅ | 770 articles indexed |
+| git push | ✅ | 31ebecf |
 
 ## 本轮数据
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Articles: 5 处 / Projects: 4 处 |
+| 原文引用数量 | Articles: 5 处 / Projects: 3 处 |
 | commit | 1 |
 
 ## 本轮完成
 
-Round 154 维护完成。新增 Article 和 Project 各 1 个：
+Round 155 维护完成。新增 Article 和 Project 各 1 个：
 
-1. **Article**：OpenAI AgentKit — 企业级 Agent 开发工具链的范式重构
-   - 来源：openai.com/index/introducing-agentkit
-   - 核心论点：AgentKit 将企业 Agent 开发视为完整的工程系统
-   - 与 Cursor 3 路线分歧分析
+1. **Article**：Cursor 如何量化 Agent 的进化质量：从 Keep Rate 到自动化软件工厂
+   - 来源：cursor.com/blog/continually-improving-agent-harness
+   - 核心论点：三层测量体系 + 自动化软件工厂
+   - 与 Claude Code Auto Mode 对照
 
-2. **Project**：huggingface/ml-intern（9889 Stars）
-   - 自主 ML 工程师 Agent（读论文→微调模型→上传训练轨迹）
-   - 深度集成 HF 生态
-   - 与 AgentKit 形成闭环
+2. **Project**：react-doctor（10,659 Stars）
+   - AI Agent 的 React 代码质量检测 Skill
+   - 与 Cursor Keep Rate 形成「过程检测 vs 结果追踪」闭环
 
-sources_tracked.jsonl 健康度：176 条记录（89 article / 87 project）。
+sources_tracked.jsonl 健康度：178 条记录（90 article / 88 project）。
 
-下轮优先线索：ChatGPT Agent、Cursor SpaceX 合作、cursor.com/blog/better-models-ambitious-work、darkrishabh/agent-skills-eval。
+下轮优先线索：openai.com/index/unlocking-the-codex-harness、openai.com/index/unrolling-the-codex-agent-loop、cursor.com/blog/better-models-ambitious-work、cursor.com/blog/app-stability。
