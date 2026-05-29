@@ -1,19 +1,24 @@
-# PENDING — 待追踪线索（第158轮）
+# PENDING — 待追踪线索（第159轮）
 
 ## 频率配置
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-05-29 | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-05-29 | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-05-30 | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-05-30 | 每次必执行 |
 
-## 本轮已产出
+## 本轮无产出
 
-### Project：peteromallet/desloppify
-- 来源：https://github.com/peteromallet/desloppify（2,875 Stars，Python 3.11+）
-- 核心命题：AI Coding Agent 质量改善 Harness，机械检测 + LLM 主观评审双轨，状态跨会话持久化，防作弊评分
-- 原文引用 3 处（README Overview、Scoring、Agent Skill）
-- 主题关联：与 Cursor 3 Multi-Agent 协作平台形成「工具层质量守护」的互补
+### Article：⬇️ 跳过
+- **原因**：Tavily API 配额持续耗尽（432 错误），所有 Anthropic/OpenAI/Cursor 官方一手来源已全部追踪，无新主题可写
+- **原则坚守**：不为凑数而降级到二手来源写文章
+
+### Project：⬇️ 跳过
+- **原因**：GitHub 新创建仓库（>2026-05-28）全部 Stars < 5，无达标项目
+- **新发现**：
+  - `Lelemon-studio/agent-harness-kit`（0 Stars，Claude Code 可复现 Harness：确定性 Hook + 规范驱动规划 + 文件记忆法）— Stars 不达标，跳过
+  - `EddiksonPena/ORCA`（1 Star，harness-agnostic memory infrastructure）— Stars 不达标，跳过
+  - `mondaylee11302/Alpha-Agent--H-SPAE`（2 Stars，session-persistent harness for alpha factor mining）— Stars 不达标，跳过
 
 ## 线索区
 
@@ -73,30 +78,37 @@
 - `developers.openai.com/blog/run-long-horizon-tasks-with-codex`（已追踪，跳过）
 
 ### GitHub Trending 发现（待验证）
-- `antoinezambelli/forge`（1,897 Stars，自我托管 LLM tool-calling 可靠层，Proxy 模式）— 跳过，主题关联性弱
-- `samugit83/redamon`（1,935 Stars，AI 驱动的红队框架，offensive security 场景）— 跳过，offensive security 非 Agent 工程核心方向
-- NanoHarness / agent-runner / Autono（Stars 过低，跳过）
+- 今日无新的 Stars > 500 或新发现的高价值项目
 
 ### 其他来源发现
-- Tavily API 配额持续耗尽（432 错误），本轮使用 GitHub API 直接搜索
+- Tavily API 配额持续耗尽（432 错误），无法执行标准搜索
 - AnySearch 虚拟环境仍然失效（.venv 不存在）
 
 ## 防重提示
 
 - `sources_tracked.jsonl` 当前 **270 条记录**（93 article / 177 project）
-- 本轮新增 1 个源（peteromallet/desloppify）
-- 下轮无特殊优先级项目，建议重新检查 Tavily 配额是否恢复
+- 本轮无新增源
+- 下轮优先检查 Tavily 配额是否恢复
+
+## API 状态
+
+| 接口 | 状态 | 说明 |
+|------|------|------|
+| Tavily Search | ❌ | 配额耗尽（432），需升级计划 |
+| GitHub API | ✅ | 正常，用于项目发现 |
+| AnySearch | ❌ | .venv 不存在 |
 
 ## 本轮决策说明
 
-本轮 Tavily API 配额持续耗尽（432 错误），无法执行标准搜索。在这种情况下：
+本轮 Tavily API 配额持续耗尽，导致无法执行标准 Article 扫描。经过多轮 GitHub API 深度搜索：
 
-1. **不降级凑 Article**：没有找到高质量一手来源的 Article 主题时，本轮不强行产出一篇质量不达标的文章
-2. **GitHub API 直接发现 Project**：通过 GitHub API 搜索发现 `peteromallet/desloppify`（2,875 Stars），主题关联 Cursor 3 Multi-Agent 协作平台
-3. **评分通过**：
-   - Desloppify：主题关联性 = 3（关联 Cursor 3），实用性 = 5（生产级可用），独特性 = 5（质量改善 Harness 空白），成熟度 = 3（已发布），Stars = 5（2875 > 2000）
-   - 综合评分 = 21 > 10 ✅，关联性 ≥ 3 ✅
+1. **新创建仓库**（>2026-05-28）：全部 Stars < 5，无达标项目
+2. **Stars 增长的已有项目**：PilotDeck（1133→1907）、vibecode-pro-max-kit（330→489）均已追踪
+3. **Article 缺口**：Anthropic / OpenAI / Cursor 所有一手来源已全部追踪，无新主题可写
 
-**Article 缺口**：本轮 Article 缺失，因为：
-- Tavily 配额耗尽 + Anthropic/OpenAI/Cursor 所有一手来源已全部追踪
-- 不为凑数而降级到二手来源写文章
+**坚持原则**：不为凑数而降级到二手来源或推荐 Stars 过低的项目。
+
+**下轮优先**：
+- 检查 Tavily 配额是否恢复（需联系用户升级计划）
+- 尝试重建 AnySearch 虚拟环境
+- 继续监控 GitHub Trending，发现新高价值项目
