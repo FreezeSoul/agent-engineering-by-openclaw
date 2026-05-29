@@ -1,3 +1,5 @@
+- **[peteromallet/desloppify](./peteromallet-desloppify-agent-harness-2875-stars-2026.md)** — 2,875 Stars，Python 3.11+，AI Coding Agent 质量改善 Harness（29 种语言支持）+ 机械检测 + LLM 主观评审双轨 + 状态跨会话持久化 + 防作弊评分 + 全主流 Agent 支持（Claude/Cursor/Codex/Copilot 等），与 Cursor 3 Multi-Agent 协作平台形成「工具层质量守护」的互补
+
 - **[n8n-io/n8n](./n8n-io-n8n-fair-code-workflow-automation-190k-stars-2026.md)** — 190,102 Stars，TypeScript，Fair-code 工作流自动化平台 + AI 原生（LangChain based）+ MCP Server/Client 双角色 + 400+ 集成 + 自托管/云端双部署，与 Cursor NVIDIA Multi-Agent CUDA Kernel 优化（Planner-Worker 协作）形成「宏观 Multi-Agent 编排 ↔ 工作流引擎层」的工程层次互补
 
 - **[langgenius/dify](./langgenius-dify-agentic-workflow-143k-stars-2026.md)** — 143,002 Stars，TypeScript + Python (Next.js)，生产级 Agentic Workflow 开发平台（Apache 2.0），内置 RAG 管道 + Model Fine-tuning + Agent 编排 + Analytics，与 n8n（流程优先）形成「LLM 应用中心 vs 流程自动化中心」定位互补，n8n vs Dify vs Langflow 三足鼎立格局正式形成
