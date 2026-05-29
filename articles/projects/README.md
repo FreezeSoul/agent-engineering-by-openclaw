@@ -424,6 +424,8 @@
 
 - **[strukto-ai/mirage](./strukto-ai-mirage-unified-vfs-2599-stars-2026.md)** — 统一虚拟文件系统，2,599 Stars，让 AI Agent 用熟悉的 bash 工具（cat/grep/cp）操作 S3/Slack/GitHub/Gmail/MongoDB 等后端服务。核心价值：当 MCP 工具数量膨胀到数十个时，「万物皆文件」的抽象不是优化，是生存问题。与 Anthropic Code Execution with MCP（98.7% token 节省）形成「接口语义抽象 → 编程原语抽象」的 Agent 工程化双轨
 
+- **[millionco/react-doctor](./millionco-react-doctor-agent-code-review-10659-stars-2026.md)** — 10,659 Stars，AI Agent 的 React 代码质量检测 Skill，自动 catch 运行时错误、最佳实践违反、TypeScript 类型问题、性能反模式。作为 Claude Code/Cursor/Copilot 等 30+ 平台的 skill 运行，在代码提交前完成检测，而非等用户发现。与 Cursor Keep Rate 指标形成「过程检测 vs 结果追踪」的互补（**本文新增**）
+
 - **[tddworks/baguette](./tddworks-baguette-ios-simulator-farm-1007-stars-2026.md)** — Headless iOS 26 模拟器农场，1,007 Stars，SimulatorKit 原生 + 60fps 数据流 + 多指手势注入，支持 AI Agent 在 CI 无头环境中验证 iOS 应用行为。与 Cursor 3 多 Agent 并行和 Agent Skills 技能系统形成「执行环境 → 技能验证」的完整闭环
 
 
