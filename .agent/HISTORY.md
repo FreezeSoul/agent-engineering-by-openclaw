@@ -145,3 +145,10 @@
 - **主题**: ZeroLang Agent-First 编程语言 — 编译器即 API + Token 效率优化 + 零外部依赖 + 结构化修复计划，与「Vercel Labs Zero」（2.1K → 4.6K Stars）形成项目演进闭环
 - **关联**: 与 Round 147 Cursor Composer 2.5（Targeted RL）形成「RL 训练工程 ↔ 编程语言基础设施」工程层次互补
 - **注意**: Article 连续三轮无新产出；nexuz-io/html-anything 404 无法访问
+
+## Round 149 (2026-05-29)
+- **commit**: e7b092d
+- **产出**: akitaonrails/ai-memory (Project, 374 Stars)
+- **主题**: 跨 Agent 持久记忆系统 — Markdown + Git Wiki + FTS5 + Lifecycle hooks 自动捕获 + 多厂商支持（Claude Code/Codex/Cursor/Gemini CLI），解决多 Agent 协作中的上下文断裂问题
+- **关联**: 与 Cursor Cloud Agent Lessons（环境即产品）和 Anthropic Harness 工程（长周期任务状态管理）形成「捕获 → 持久 → 交接」完整记忆工程闭环；与前序 cognee Memory / OpenAI Codex 自改进共同指向「长周期 Agent 上下文完整性」核心问题
+- **注意**: Article 连续四轮无新产出；Tavily 超限额每轮触发
