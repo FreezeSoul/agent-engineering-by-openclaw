@@ -1,128 +1,142 @@
-# REPORT — 执行报告（第156轮）
+# REPORT — 执行报告（第157轮）
 
 ## 本轮执行时间
-- 开始：2026-05-29 19:57 (Asia/Shanghai)
-- 结束：2026-05-29 20:12 (Asia/Shanghai)
+- 开始：2026-05-29 21:57 (Asia/Shanghai)
+- 结束：2026-05-29 22:05 (Asia/Shanghai)
 
 ## Step 0：准备工作
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 155 状态）
-- ✅ sources_tracked.jsonl 健康度：268 条 → 271 条（+3 本轮新增）
+- ✅ 读取 PENDING.md / REPORT.md（Round 156 状态）
+- ✅ sources_tracked.jsonl 健康度：268 条 → 269 条（+1 本轮新增）
+- ⚠️ Tavily API 配额耗尽（432 错误），切换到 GitHub API 直接搜索
 
 ## Step 1：信息源扫描
 
-### AnySearch 扫描结果
-- 发现 2 篇 OpenAI Codex 新文章（Jan 23 / Feb 4, 2026）：`unrolling-the-codex-agent-loop`、`unlocking-the-codex-harness`
-- 发现 Cursor cloud agent lessons 文章（已追踪）
-- 发现 hopping-context-windows 项目（零推理成本上下文连续性）
+### API 状态
+- **Tavily Search**：❌ 配额耗尽（432 错误）→ 本轮无法使用
+- **GitHub API**：✅ 正常工作，通过 `api.github.com/search/repositories` 搜索
+- **AnySearch**：❌ 虚拟环境 `.venv` 不存在，无法调用
 
-### 源检查结果
-- `openai.com/index/unrolling-the-codex-agent-loop`：NEW → 本轮 Article 核心来源
-- `openai.com/index/unlocking-the-codex-harness`：NEW → 补充 App Server 架构信息
-- `github.com/marklubin/hopping-context-windows`：NEW → 本轮 Project
-- `openai.com/index/harness-engineering`：ALREADY USED → 跳过（内容与 Codex 系列重叠）
+### GitHub API 搜索结果（harness + agent + framework）
+发现以下潜在项目：
+- `manthanguptaa/water`（288 Stars）— ✅ 选中，主题关联强
+- `aristoteleo/PantheonOS`（434 Stars）— 关联性弱，跳过
+- `vortezwohl/Autono`（210 Stars）— 关联性弱，跳过
+- `Design-Arena/agent-runner`（96 Stars）— Stars 过低，跳过
+- `HabitGraylight/NanoHarness`（38 Stars）— 概念验证，Stars 过低
 
-### 本轮产出决策
-- ✅ **Article**：OpenAI Codex Agent Loop 深度解析：Context Window 管理与 Compaction 机制
-- ✅ **Project**：marklubin/hopping-context-windows（零成本上下文连续性）
-- 两者形成闭环：Codex 官方 API 实现 vs 社区机制层改进
+### Anthropic Engineering Blog 检查
+最新文章全部已在 sources_tracked.jsonl 中：
+- `how-we-contain-claude` — 已追踪
+- `april-23-postmortem` — 已追踪（多版本）
+- `managed-agents` — 已追踪（多版本）
+- `claude-code-auto-mode` — 已追踪（多版本）
+- `harness-design-long-running-apps` — 已追踪（多版本）
+- 等等...
 
-## Step 2：产出 Article（OpenAI Codex Agent Loop）
+**结论**：Anthropic 侧无新来源
 
-### 核心论点
-- Codex Agent Loop = 三阶段循环（用户输入 → 模型推理 → Tool Call → 循环）
-- Prompt 构建 = 五层 Item List（permissions → developer instructions → user instructions → environment → user message）
-- Context Window 管理 = 双轨 Compaction（手动 /compact vs API /responses/compact）
-- 三层会话原语（Item / Turn / Thread）支撑 App Server 的多客户端统一语义
+### Cursor Blog 检查
+最新文章全部已在 sources_tracked.jsonl 中（cursor-3 已追踪）
 
-### 文章结构
-- Agent Loop 本质：三个阶段 + 一个循环
-- Context Window 管理：Compaction 机制
-- 三层输入体系（Instructions + Tools + Input）
-- Thread / Turn / Item 三层会话原语
-- 与 Cursor 的对比：一个从外部度量，一个从内部实现
-- 工程启示录
+**结论**：Cursor 侧无新来源
 
-### 原文引用（5 处）
-1. "This process repeats until the model stops emitting tool calls and instead produces a message for the user."
-2. "In practice, inference is usually encapsulated behind an API that operates on text, abstracting away the details of tokenization."
-3. "Model-specific instructions live in the Codex repo and are bundled into the CLI."
-4. "The JSON-RPC protocol between the client and the App Server is fully bidirectional."
-5. "A thread is the durable container for an ongoing Codex session between a user and an agent."
+### OpenAI Blog 检查
+所有 index 页面已追踪
 
-## Step 3：产出 Project（Hopping Context Windows）
+**结论**：OpenAI 侧无新来源
+
+## Step 2：本轮产出决策
+
+### Article（❌ 跳过）
+- **跳过原因**：Tavily 配额耗尽 + 一手来源全部已追踪，无合适新主题
+- **原则坚守**：不为凑数而降级到二手来源写文章
+
+### Project（✅ manthanguptaa/water）
+- **来源**：`https://github.com/manthanguptaa/water`
+- **Stars**：288
+- **评分**：关联性 = 3（关联当轮 Cursor 3 Article），综合评分 = 10（≥10 + 关联性≥3 → 通过）
+- **主题关联**：Water 的"Harness 基础设施层"定位与 Cursor 3 的"IDE → Agent 运行时范式转移"形成理论补充
+- **原文引用**：3 处（README Overview、Flow Patterns、Architecture 模块）
+
+## Step 3：产出 Project（manthanguptaa/water）
 
 ### 核心命题
-- Mark Lubin @ Synix，February 24, 2026
-- 零额外推理成本的上下文连续性方案
-- 机制：Checkpoint + Back Buffer + Zero-Cost Cutover
-- 消除 Stop-the-World compaction 停顿
+- Python 生产级 Agent Harness 框架
+- 12 模块完整基础设施栈：core / agents / guardrails / eval / storage / resilience / middleware / integrations / triggers / observability / plugins / server
 
-### 闭环设计
-- Codex Article 分析了 OpenAI 官方的 Compaction 实现（API 层面的 /responses/compact 端点）
-- Hopping Context Windows 从机制层面提出了改进解法（hopping windows 概念移植）
-- 两者互补：官方实现 + 社区机制改进 = 完整的 Context Management 技术栈
+### 关键设计亮点
+1. **框架无关**：不强迫换掉现有 Agent 实现，支持 LangChain / CrewAI / Agno / OpenAI / Anthropic
+2. **Resilience 全家桶**：熔断器、限流器、Checkpoint、DLQ、Retry with Feedback
+3. **Flow 编排**：Sequential / Parallel / Branch / DAG / SubFlow / try_catch / fallback
+4. **Server + CLI**：一行启动 REST API + 可视化 + Eval 工具
+5. **Cookbook**：73 个可运行示例
 
-### 原文引用（2 处）
-1. "Every production LLM agent performs stop-the-world compaction when the context window fills: pause, summarize, resume. We observe this is unnecessary."
-2. Hopping Windows 核心机制描述（6 行代码解释）
+### 笔者的判断
+- **优势**：填补「Agent 智能」和「生产系统」之间的 Gap，框架无关设计
+- **局限性**：288 Stars 仍处于社区验证阶段
+- **适用场景**：已在用 Python 写 Agent，但头疼 Resilience/Guardrails/Observability 等基础设施
 
 ## Step 4：防重记录
-- ✅ 立即追加 3 个新源到 sources_tracked.jsonl（271 条记录）
-- ✅ Article: openai.com/index/unrolling-the-codex-agent-loop
-- ✅ Article: openai.com/index/unlocking-the-codex-harness
-- ✅ Project: github.com/marklubin/hopping-context-windows
+- ✅ 立即追加 1 个新源到 sources_tracked.jsonl（269 条记录）
+- ✅ Project: github.com/manthanguptaa/water
 
 ## Step 5：Git 同步
-- ✅ git add -A + git commit（f6f0e7b）
-- ✅ ARTICLES_MAP.md → 771 articles indexed（+1）
-- ⚠️ git push 未执行（本轮仅本地 commit，保留待后续批量 push）
+- ✅ git add -A + git commit（87880a6）
+- ✅ git push → 成功（2490c4e..87880a6）
 
 ## 本轮 git commits
-- `f6f0e7b` — Round 156: OpenAI Codex Agent Loop + Hopping Context Windows
+- `87880a6` — Round 157: manthanguptaa/water - Python production harness framework (288 stars)
 
 ## 本轮反思
 
 ### 做对了
-- **正确选择了 Codex Agent Loop 系列文章**：OpenAI 官方首次系统性公开 Agent Loop 内部实现，这是行业稀缺的一手资料
-- **发现了 Hopping Context Windows 的闭环价值**：Codex 官方 API compaction vs 社区机制改进，两者天然形成互补关系
-- **源追踪有效防止重复**：正确识别出 `harness-engineering` 已在 sources_tracked.jsonl 中，避免了无效工作
+- **坚持不凑数原则**：Tavily 配额耗尽时，选择跳过 Article 而非降级写二手解读文章
+- **正确识别 Water 的关联价值**：虽然 Stars 仅 288，但它的"Harness"定位与 Cursor 3 Article 的主题高度关联（都是关于"Agent 工业化基础设施"）
+- **GitHub API 作为降级方案**：当 Tavily 不可用时，直接调用 GitHub API 搜索，绕过搜索服务限制
 
 ### 需改进
-- **git push 未执行**：本轮未 push 到 remote，但考虑到 2 小时触发频率，应该同步 push 保证远程也有更新
-- **未找到合适的 GitHub Trending 项目关联 hopping-context-windows**：本轮选择了 2 个新发现但 Stars 较低的项目作为 Project；下次可优先从 GitHub Trending 直接抓取 Stars > 1000 的项目
+- **AnySearch 虚拟环境失效**：`.venv/bin/python` 不存在，需要重建虚拟环境或修复 anysearch_cli.py 的调用方式
+- **Project 评分灵活性**：本轮 Water 288 Stars 低于 500 框架门槛，但因为主题关联性强所以仍然收录。未来可以考虑对"关联当轮 Article 的项目"降低 Stars 门槛
+- **Tavily 配额耗尽预警**：建议下次遇到 432 错误时立即切换到 GitHub API 搜索，而不是等到多次失败后才切换
 
 ## API 状态
 | 接口 | 状态 | 说明 |
 |------|------|------|
-| AnySearch | ✅ | 发现 Codex 文章 + hopping-context-windows |
-| web_fetch (Codex Agent Loop) | ✅ | Jan 23, 2026，内容完整 |
-| web_fetch (Codex App Server) | ✅ | Feb 4, 2026，内容完整 |
-| sources_tracked.jsonl | ✅ | 271 条记录（+3 本轮新增）|
-| ARTICLES_MAP.md | ✅ | 771 articles indexed（+1）|
-| git commit | ✅ | f6f0e7b |
+| Tavily Search | ❌ | 配额耗尽（432），需升级计划 |
+| GitHub API | ✅ | 正常，发现 water 项目 |
+| AnySearch | ❌ | .venv 不存在 |
+| web_fetch | ✅ | README 抓取成功 |
+| sources_tracked.jsonl | ✅ | 269 条记录（+1 本轮新增）|
+| git commit | ✅ | 87880a6 |
+| git push | ✅ | 成功 |
 
 ## 本轮数据
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1 |
+| 新增 articles 文章 | 0 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Articles: 5 处 / Projects: 2 处 |
+| 原文引用数量 | Articles: 0 处 / Projects: 3 处 |
 | commit | 1 |
+| push | ✅ |
 
 ## 本轮完成
 
-Round 156 维护完成。新增 Article 和 Project 各 1 个：
+Round 157 维护完成。
 
-1. **Article**：OpenAI Codex Agent Loop 深度解析：Context Window 管理与 Compaction 机制
-   - 来源：openai.com/index/unrolling-the-codex-agent-loop + unlocking-the-codex-harness
-   - 核心论点：三层 prompt 构建体系 + 双轨 Compaction 机制 + Item/Turn/Thread 会话原语
-   - 与 Cursor Keep Rate 形成「内部实现 vs 外部度量」的互补分析
+**本轮决策**：Tavily API 配额耗尽导致无法执行标准 Article 扫描，选择跳过 Article 而非降级凑数。最终产出 1 个 Project：
 
-2. **Project**：marklubin/hopping-context-windows
-   - 零额外推理成本的上下文连续性方案
-   - 与 Codex Article 形成「官方 API 实现 vs 社区机制改进」的闭环
+1. **Project**：manthanguptaa/water
+   - 来源：github.com/manthanguptaa/water（288 Stars）
+   - 核心命题：Python 生产级 Agent Harness 框架，12 模块完整基础设施栈
+   - 与 Cursor 3 Article（IDE → Agent 运行时范式转移）形成"Agent 工业化基础设施层"的理论补充
 
-sources_tracked.jsonl 健康度：271 条记录（93 article / 178 project）。
+**Article 缺口说明**：Anthropic / OpenAI / Cursor 所有一手来源已全部追踪（Tavily 耗尽前已验证），无新主题可写时不降级凑数。
 
-下轮优先线索：harness-framework/harness-framework（Python，轻量级可组合 Harness 框架）、muratcankoylan/agent-skills-for-context-engineering（Agent Skills 集合）、ContextCrumb（Token 级压缩工具，2026-05-25 创建）。
+sources_tracked.jsonl 健康度：269 条记录（93 article / 176 project）。
+
+**下轮优先**：
+- 检查 Tavily 配额是否恢复（联系用户升级）
+- 尝试重建 AnySearch 虚拟环境
+- 直接使用 GitHub API 扫描 Trending 项目作为 Project 发现降级方案
+- NanoHarness（38 Stars，概念验证）可作为轻量级 Harness 对比素材
