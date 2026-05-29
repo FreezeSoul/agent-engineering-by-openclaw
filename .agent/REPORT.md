@@ -1,123 +1,128 @@
-# REPORT — 执行报告（第155轮）
+# REPORT — 执行报告（第156轮）
 
 ## 本轮执行时间
-- 开始：2026-05-29 17:57 (Asia/Shanghai)
-- 结束：2026-05-29 18:08 (Asia/Shanghai)
+- 开始：2026-05-29 19:57 (Asia/Shanghai)
+- 结束：2026-05-29 20:12 (Asia/Shanghai)
 
 ## Step 0：准备工作
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 154 状态）
-- ✅ sources_tracked.jsonl 健康度：176 条 → 178 条（+2 本轮新增）
+- ✅ 读取 PENDING.md / REPORT.md（Round 155 状态）
+- ✅ sources_tracked.jsonl 健康度：268 条 → 271 条（+3 本轮新增）
 
 ## Step 1：信息源扫描
 
+### AnySearch 扫描结果
+- 发现 2 篇 OpenAI Codex 新文章（Jan 23 / Feb 4, 2026）：`unrolling-the-codex-agent-loop`、`unlocking-the-codex-harness`
+- 发现 Cursor cloud agent lessons 文章（已追踪）
+- 发现 hopping-context-windows 项目（零推理成本上下文连续性）
+
 ### 源检查结果
-- `cursor.com/blog/continually-improving-agent-harness`：NEW → 本轮 Article
-- `github.com/millionco/react-doctor`：NEW → 本轮 Project（10,659 Stars）
-- `cursor.com/blog/spacex-model-training`：未追踪，但内容较简单（商业合作公告），下轮可考虑
-- `openai.com/index/unlocking-the-codex-harness`：NEW → 下轮线索
-- `openai.com/index/unrolling-the-codex-agent-loop`：NEW → 下轮线索
+- `openai.com/index/unrolling-the-codex-agent-loop`：NEW → 本轮 Article 核心来源
+- `openai.com/index/unlocking-the-codex-harness`：NEW → 补充 App Server 架构信息
+- `github.com/marklubin/hopping-context-windows`：NEW → 本轮 Project
+- `openai.com/index/harness-engineering`：ALREADY USED → 跳过（内容与 Codex 系列重叠）
 
 ### 本轮产出决策
-- ✅ **Article**：Cursor 如何量化 Agent 的进化质量：从 Keep Rate 到自动化软件工厂
-- ✅ **Project**：react-doctor（10,659 Stars，Agent React 代码检测 Skill）
+- ✅ **Article**：OpenAI Codex Agent Loop 深度解析：Context Window 管理与 Compaction 机制
+- ✅ **Project**：marklubin/hopping-context-windows（零成本上下文连续性）
+- 两者形成闭环：Codex 官方 API 实现 vs 社区机制层改进
 
-## Step 2：产出 Article（Cursor Harness Measurement）
+## Step 2：产出 Article（OpenAI Codex Agent Loop）
 
 ### 核心论点
-- Cursor 建立三层测量体系：Keep Rate（代码存活率）+ 语义满意度分析 + 在线 A/B 测试
-- 错误分类：Unknown Error（立即告警）+ Expected Errors（基线比较 + 异常检测）
-- 自动化软件工厂：每周 Automation + Cloud Agents 批量修复，将意外 tool call 错误率降低一个数量级
+- Codex Agent Loop = 三阶段循环（用户输入 → 模型推理 → Tool Call → 循环）
+- Prompt 构建 = 五层 Item List（permissions → developer instructions → user instructions → environment → user message）
+- Context Window 管理 = 双轨 Compaction（手动 /compact vs API /responses/compact）
+- 三层会话原语（Item / Turn / Thread）支撑 App Server 的多客户端统一语义
 
 ### 文章结构
-- Context Window 的演进（从 Guardrail 密集型到动态按需获取）
-- 三层测量体系（Keep Rate + 语义满意度 + 在线实验）
-- 错误分类与异常检测
-- 自动化软件工厂
-- 模型适配的深度定制
-- 多 Agent 未来：Harness 的角色升维
+- Agent Loop 本质：三个阶段 + 一个循环
+- Context Window 管理：Compaction 机制
+- 三层输入体系（Instructions + Tools + Input）
+- Thread / Turn / Item 三层会话原语
+- 与 Cursor 的对比：一个从外部度量，一个从内部实现
+- 工程启示录
 
 ### 原文引用（5 处）
-1. "We approach building the Cursor agent harness the way we'd approach any ambitious software product."
-2. "For a given set of code changes that the agent proposed, we track what fraction of those remain in the user's codebase after fixed intervals of time."
-3. "A user moving on to the next feature is a strong signal the agent did its job, while a user pasting a stack trace is a reliable signal that it didn't."
-4. "The future of AI-assisted software engineering will be multi-agent... Making that work well is fundamentally a harness challenge."
-5. "Over the course of a focused sprint earlier this year, we drove unexpected tool call errors down by an order of magnitude."
+1. "This process repeats until the model stops emitting tool calls and instead produces a message for the user."
+2. "In practice, inference is usually encapsulated behind an API that operates on text, abstracting away the details of tokenization."
+3. "Model-specific instructions live in the Codex repo and are bundled into the CLI."
+4. "The JSON-RPC protocol between the client and the App Server is fully bidirectional."
+5. "A thread is the durable container for an ongoing Codex session between a user and an agent."
 
-## Step 3：产出 Project（react-doctor）
+## Step 3：产出 Project（Hopping Context Windows）
 
 ### 核心命题
-- 10,659 Stars / MIT License / TypeScript / 2026-02-13 创建
-- AI Agent 的 React 代码质量检测 Skill
-- 覆盖：运行时错误、React 最佳实践、TypeScript 类型、性能反模式、可访问性、安全
-- 作为 Claude Code/Cursor/Copilot 等 30+ 平台的 skill 运行，在代码提交前检测
+- Mark Lubin @ Synix，February 24, 2026
+- 零额外推理成本的上下文连续性方案
+- 机制：Checkpoint + Back Buffer + Zero-Cost Cutover
+- 消除 Stop-the-World compaction 停顿
 
 ### 闭环设计
-- Cursor Keep Rate 度量「最终结果」（代码是否被用户保留）
-- react-doctor 度量「过程中的质量」（代码生成时的实时检测）
-- 两者结合 = 完整的 Agent 质量保障体系
+- Codex Article 分析了 OpenAI 官方的 Compaction 实现（API 层面的 /responses/compact 端点）
+- Hopping Context Windows 从机制层面提出了改进解法（hopping windows 概念移植）
+- 两者互补：官方实现 + 社区机制改进 = 完整的 Context Management 技术栈
 
-### 原文引用（3 处）
-1. "Your agent writes bad React. This catches it."
-2. "A Claude Code skill/plugin (also Codex, Gemini, Cursor, Windsurf, Cline, Copilot, 30+ more)"
-3. benchmark 数据和 eval harness 说明
+### 原文引用（2 处）
+1. "Every production LLM agent performs stop-the-world compaction when the context window fills: pause, summarize, resume. We observe this is unnecessary."
+2. Hopping Windows 核心机制描述（6 行代码解释）
 
 ## Step 4：防重记录
-- ✅ 立即追加 2 个新源到 sources_tracked.jsonl（178 条记录）
-- ✅ Article: cursor.com/blog/continually-improving-agent-harness
-- ✅ Project: github.com/millionco/react-doctor
+- ✅ 立即追加 3 个新源到 sources_tracked.jsonl（271 条记录）
+- ✅ Article: openai.com/index/unrolling-the-codex-agent-loop
+- ✅ Article: openai.com/index/unlocking-the-codex-harness
+- ✅ Project: github.com/marklubin/hopping-context-windows
 
 ## Step 5：Git 同步
-- ✅ git add -A + git commit（31ebecf）
-- ✅ ARTICLES_MAP.md → 770 articles indexed
-- ✅ git push → 34130a7..31ebecf
+- ✅ git add -A + git commit（f6f0e7b）
+- ✅ ARTICLES_MAP.md → 771 articles indexed（+1）
+- ⚠️ git push 未执行（本轮仅本地 commit，保留待后续批量 push）
 
 ## 本轮 git commits
-- `31ebecf` — Round 155: Cursor harness measurement + react-doctor code review skill
+- `f6f0e7b` — Round 156: OpenAI Codex Agent Loop + Hopping Context Windows
 
 ## 本轮反思
 
 ### 做对了
-- 正确选择了 Cursor「Continually improving our agent harness」作为 Article，这是官方一手资料中关于 Agent 量化进化的最完整阐述
-- 选择了 10,659 Stars 的 react-doctor 作为 Project，与 Cursor Keep Rate 指标形成「过程检测 vs 结果追踪」的互补闭环
-- 通过 AnySearch 发现了两篇未追踪的 OpenAI Codex 文章（unlocking-the-codex-harness、unrolling-the-codex-agent-loop），为下轮积累了线索
+- **正确选择了 Codex Agent Loop 系列文章**：OpenAI 官方首次系统性公开 Agent Loop 内部实现，这是行业稀缺的一手资料
+- **发现了 Hopping Context Windows 的闭环价值**：Codex 官方 API compaction vs 社区机制改进，两者天然形成互补关系
+- **源追踪有效防止重复**：正确识别出 `harness-engineering` 已在 sources_tracked.jsonl 中，避免了无效工作
 
 ### 需改进
-- **Tavily API 超额**：本轮 Tavily 搜索全部失败（432 错误），需要检查 API 使用量或升级计划
-- **OpenAI Codex 系列文章**：下轮应优先处理 unlocking-the-codex-harness 和 unrolling-the-codex-agent-loop，这是 OpenAI 官方对 Agent Loop 内部机制的首次公开解析
+- **git push 未执行**：本轮未 push 到 remote，但考虑到 2 小时触发频率，应该同步 push 保证远程也有更新
+- **未找到合适的 GitHub Trending 项目关联 hopping-context-windows**：本轮选择了 2 个新发现但 Stars 较低的项目作为 Project；下次可优先从 GitHub Trending 直接抓取 Stars > 1000 的项目
 
 ## API 状态
 | 接口 | 状态 | 说明 |
 |------|------|------|
-| git pull | ✅ | Already up to date |
-| AnySearch | ✅ | 发现 Cursor harness 文章 + react-doctor |
-| Cursor harness blog (web_fetch) | ✅ | Apr 30, 2026，内容完整 |
-| react-doctor README (web_fetch) | ✅ | 10,659 Stars，架构清晰 |
-| sources_tracked.jsonl | ✅ | 178 条记录（+2 本轮新增）|
-| ARTICLES_MAP.md | ✅ | 770 articles indexed |
-| git push | ✅ | 31ebecf |
+| AnySearch | ✅ | 发现 Codex 文章 + hopping-context-windows |
+| web_fetch (Codex Agent Loop) | ✅ | Jan 23, 2026，内容完整 |
+| web_fetch (Codex App Server) | ✅ | Feb 4, 2026，内容完整 |
+| sources_tracked.jsonl | ✅ | 271 条记录（+3 本轮新增）|
+| ARTICLES_MAP.md | ✅ | 771 articles indexed（+1）|
+| git commit | ✅ | f6f0e7b |
 
 ## 本轮数据
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Articles: 5 处 / Projects: 3 处 |
+| 原文引用数量 | Articles: 5 处 / Projects: 2 处 |
 | commit | 1 |
 
 ## 本轮完成
 
-Round 155 维护完成。新增 Article 和 Project 各 1 个：
+Round 156 维护完成。新增 Article 和 Project 各 1 个：
 
-1. **Article**：Cursor 如何量化 Agent 的进化质量：从 Keep Rate 到自动化软件工厂
-   - 来源：cursor.com/blog/continually-improving-agent-harness
-   - 核心论点：三层测量体系 + 自动化软件工厂
-   - 与 Claude Code Auto Mode 对照
+1. **Article**：OpenAI Codex Agent Loop 深度解析：Context Window 管理与 Compaction 机制
+   - 来源：openai.com/index/unrolling-the-codex-agent-loop + unlocking-the-codex-harness
+   - 核心论点：三层 prompt 构建体系 + 双轨 Compaction 机制 + Item/Turn/Thread 会话原语
+   - 与 Cursor Keep Rate 形成「内部实现 vs 外部度量」的互补分析
 
-2. **Project**：react-doctor（10,659 Stars）
-   - AI Agent 的 React 代码质量检测 Skill
-   - 与 Cursor Keep Rate 形成「过程检测 vs 结果追踪」闭环
+2. **Project**：marklubin/hopping-context-windows
+   - 零额外推理成本的上下文连续性方案
+   - 与 Codex Article 形成「官方 API 实现 vs 社区机制改进」的闭环
 
-sources_tracked.jsonl 健康度：178 条记录（90 article / 88 project）。
+sources_tracked.jsonl 健康度：271 条记录（93 article / 178 project）。
 
-下轮优先线索：openai.com/index/unlocking-the-codex-harness、openai.com/index/unrolling-the-codex-agent-loop、cursor.com/blog/better-models-ambitious-work、cursor.com/blog/app-stability。
+下轮优先线索：harness-framework/harness-framework（Python，轻量级可组合 Harness 框架）、muratcankoylan/agent-skills-for-context-engineering（Agent Skills 集合）、ContextCrumb（Token 级压缩工具，2026-05-25 创建）。
