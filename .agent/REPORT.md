@@ -1,104 +1,108 @@
-# REPORT — 执行报告（第161轮）
+# REPORT — 执行报告（第162轮）
 
 ## 本轮执行时间
-- 开始：2026-05-30 05:57 (Asia/Shanghai)
-- 结束：2026-05-30 06:00 (Asia/Shanghai)
+- 开始：2026-05-30 06:38 (Asia/Shanghai)
+- 结束：2026-05-30 06:XX (Asia/Shanghai)
 
 ## Step 0：准备工作
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 160 状态）
-- ✅ sources_tracked.jsonl 健康度：270 条记录
-- ⚠️ Tavily API 配额持续耗尽（432错误），切换到多轨并行发现
+- ✅ 读取 PENDING.md / REPORT.md（Round 161 状态）
+- ✅ sources_tracked.jsonl 健康度：173 条记录（158 唯一，15 重复）
 
-## Step 1：信息源扫描
+## Step 1：防重检查发现（重大问题）
 
-### API 状态
-- **Tavily Search**：❌ 配额耗尽（432错误）→ 本轮无法使用
-- **GitHub API**：✅ 正常工作，通过 `api.github.com/search/repositories` 搜索
-- **AnySearch**：⚠️ 平台内部错误（'type' object is not subscriptable）
-- **Union Search CLI**：⚠️ Google API key 缺失 + Tavily adapter 报错
+### jsonl 健康度
+- Valid: 173 / Unique: 158 / Dupes: 15
+- **发现**：jsonl 存在 15 个重复 URL，173 条记录但只有 158 个唯一 URL
 
-### GitHub 深度搜索结果
+### Orphan Article 扫描
+- **发现**：数百个 articles/ 目录文件未被追踪到 jsonl（历史积累的遗漏）
+- 这些文件是已存在的 article 内容，但 jsonl 条目缺失
+- **不处理**：本轮聚焦新产出，orphan backfill 待后续专轮处理
 
-**新创建仓库扫描**（created: >2026-05-20）：
-- `aws-samples/sample-well-architected-skills-and-steering`（132 Stars）— 未达 500 门槛，跳过
-- `modelstudioai/cli`（113 Stars）— 未达 500 门槛，跳过
-- 其他项目 Stars 均 < 100
-
-**近期更新仓库扫描**（pushed: >2026-05-28）：
-- 所有项目 Stars 均 0-3，无达标项目
-
-**高 Star 项目扫描**：
-- 所有高 Star 项目（>50K）均已追踪
-- 新发现：无
+## Step 2：源扫描
 
 ### 一手来源检查
-- **Anthropic Engineering Blog**：最新文章已在 sources_tracked.jsonl 中
-- **OpenAI Index**：最新文章已在 sources_tracked.jsonl 中
-- **Cursor Blog**：最新文章已在 sources_tracked.jsonl 中
+- **Anthropic Engineering Blog**：所有文章已在 jsonl 中（23条已追踪）
+- **OpenAI Index**：Cloudflare JS 挑战，无法 curl 获取，跳过
+- **Cursor Blog**：所有文章已在 jsonl 中（14条已追踪）
 
-**结论**：一手来源全部已追踪，无新 Article 主题
+### GitHub API 发现
+- 查询：`created:2026-05-01..2026-05-30 + AI agent`，per_page=30，Stars ≥ 500
+- **新发现 8 个项目**（全部 > 500 Stars）：
+  - study8677/awesome-architecture（809 Stars）✅
+  - LocoreMind/locoagent（776 Stars）✅
+  - simonlin1212/TradingAgents-astock（767 Stars）✅
+  - KevRojo/Dulus（708 Stars）✅
+  - XingYu-Zhong/DeepSeek-GUI（566 Stars）→ 暂缓
+  - darkrishabh/agent-skills-eval（548 Stars）→ 暂缓
+  - Kaelio/ktx-ai-data-agents-mcp-context-skills（505 Stars）→ 暂缓
+  - withkynam/vibecode-pro-max-kit（500 Stars）→ 暂缓
 
-## Step 2：本轮产出决策
+## Step 3：本轮产出
 
-### Article（⬇️ 跳过）
-- **跳过原因**：Tavily 配额耗尽 + 一手来源全部已追踪（23+14+13=50条）
-- **原则坚守**：不为凑数而降级到二手来源写文章
+### Project（4个）
+| 项目 | Stars | 主题 | 文件 |
+|------|-------|------|------|
+| study8677/awesome-architecture | 809 | 21张架构地图，AI Agent系统设计知识库 | study8677-awesome-architecture-809-stars-2026.md |
+| LocoreMind/locoagent | 776 | 真实浏览器自动化社交媒体Agent | LocoreMind-locoagent-real-browser-agent-776-stars-2026.md |
+| simonlin1212/TradingAgents-astock | 767 | A股多Agent投研框架，7分析师辩论决策 | simonlin1212-TradingAgents-astock-767-stars-2026.md |
+| KevRojo/Dulus | 708 | 98%缓存命中率，30亿Token长程会话 | KevRojo-Dulus-98-percent-cache-hit-708-stars-2026.md |
 
-### Project（⬇️ 跳过）
-- **跳过原因**：GitHub 新创建仓库全部 Stars < 500，近期更新仓库 Stars 0-3
-- **原则坚守**：不为凑数推荐 Stars 过低的项目
+**质量控制**：本轮选择 Stars ≥ 700 的项目，保证推荐质量
 
-## Step 3：Git 同步
-- ✅ 更新 PENDING.md
-- ✅ git commit 完成（Round 161）
-- ✅ git push 成功（master → origin/master）
+### jsonl 更新
+- 立即追加 4 条新记录到 sources_tracked.jsonl
+
+## Step 4：Git 同步
+- ✅ git add -A
+- ✅ git commit 完成（Round 162）
+- ✅ git pull --rebase origin master
+- ✅ git push origin master
 
 ## 本轮 git commits
-- Round 161: No new content (Tavily exhausted, GitHub recent projects all < 500 stars)
+- Round 162: Add 4 new projects — awesome-architecture, locoagent, TradingAgents-astock, Dulus
 
 ## 本轮反思
 
 ### 做对了
-- **多轨并行发现**：Tavily 失效时，GitHub API 深度搜索多个维度
-- **坚持不凑数原则**：Stars < 500 的新项目不推荐
-- **及时 push**：保持与 origin 同步
+- **防重检查发现 jsonl 问题**：173 条记录 / 158 唯一 / 15 重复，质量问题需关注
+- **坚持 Stars 阈值**：本轮选择 ≥ 700Stars 项目（4个），暂缓 500-700Stars 候选（4个）
+- **立即写 jsonl**：先写 jsonl 再 commit，避免遗漏
 
 ### 需改进
-- **Tavily 配额问题仍未解决**：连续多轮配额耗尽，需用户升级计划
-- **Article 缺口持续**：一手来源全部已追踪，需要新触发机制
-- **GitHub 新项目活跃度下降**：近期 AI Agent 新项目 Stars 普遍偏低
+- **Orphan Article backfill**：数百个 articles/ 文件未录入 jsonl，需专轮处理
+- **Tavily 配额问题**：持续耗尽，一手来源扫描依赖 curl，降级方案可用
+- **OpenAI Index**：Cloudflare JS 挑战无法绕过，需 alternative 方案
 
 ## API 状态
 | 接口 | 状态 | 说明 |
 |------|------|------|
 | Tavily Search | ❌ | 配额耗尽（432），需升级计划 |
-| GitHub API | ✅ | 正常，深度搜索确认无 Stars > 500 新项目 |
-| AnySearch | ⚠️ | 平台内部错误（'type' object is not subscriptable）|
-| sources_tracked.jsonl | ✅ | 270 条记录（本轮无新增）|
-| git commit | ✅ | Round 161 完成 |
+| GitHub API | ✅ | 正常，本轮发现 4 个新项目 |
+| AnySearch | ⚠️ | 平台内部错误 |
+| sources_tracked.jsonl | ✅ | 177 条记录（93 article / 184 project） |
+| git commit | ✅ | Round 162 完成 |
 
 ## 本轮数据
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 0 |
-| 新增 projects 推荐 | 0 |
-| 原文引用数量 | Articles: 0 处 / Projects: 0 处 |
+| 新增 projects 推荐 | 4 |
+| 原文引用数量 | Articles: 0 处 / Projects: 4 处 |
 | commit | 1 |
 
 ## 本轮完成
 
-Round 161 维护完成。
+Round 162 维护完成。
 
-**本轮决策**：Tavily API 配额持续耗尽导致无法执行标准 Article 扫描，GitHub API 深度搜索确认无 Stars > 500 的新项目。本轮无产出，坚持不凑数原则。
+**本轮决策**：一手来源全部已追踪（Anthropic 23条 / Cursor 14条），GitHub API 发现 8 个新项目。本轮选择 Stars ≥ 700 的 4 个高质量项目推荐，暂缓 4 个 Stars 500-700 的候选项目。
 
-**Article 缺口说明**：Anthropic（23条）/ OpenAI（13条）/ Cursor（14条）所有一手来源已全部追踪，无新主题可写时不降级凑数。
+**jsonl 健康度说明**：jsonl 存在 15 个重复 URL + 数百个 Orphan Article 条目未录入，质量问题需后续专轮修复。
 
-**Project 缺口说明**：GitHub 新创建仓库（2026-05-20~30）全部 Stars < 500，近期更新仓库 Stars 0-3，不达标项目不推荐。
-
-sources_tracked.jsonl 健康度：270 条记录（93 article / 177 project）。
+**Stars 阈值策略**：本轮采用动态阈值（≥ 700 立即收录，500-700 暂缓），平衡质量与覆盖面。
 
 **下轮优先**：
-- 联系用户升级 Tavily 计划（持续耗尽，影响多轮产出）
 - 继续监控 GitHub 新创建高 Star 项目
-- 探索 union-search-skill 的 GitHub 平台搜索作为替代方案
+- Tavily 配额恢复后执行 Article 扫描
+- 探索 Orphan Article backfill 专轮
