@@ -166,3 +166,10 @@
 - **主题**: 并行发散思维框架 — Generator/Critic 机械分离 + 分支硬隔离墙，解决自回归推理中「过早收敛」的结构性问题，5/6 战胜单射基线（+5.17 新颖性 / +7.67 陷阱检测），Repowire 官方集成
 - **关联**: 与 Harness 评估器循环（Evaluator Loop）和 Multi-Agent 隔离协作形成「推理质量 ↔ 架构修复」主题关联；与 Chain-of-Thought 演进路径（CoT → ToT → ADHD）深度关联
 - **注意**: Article 连续五轮无新产出；Tavily 超限额每轮触发；下轮优先关注 VILA-Lab/FigMirror / vibecode-pro-max-kit
+
+## Round 153 (2026-05-29)
+- **commit**: 224b38e
+- **产出**: Cursor 3 Agent Runtime paradigm (Article) + study8677/awesome-architecture (Project, 751 Stars)
+- **主题**: Cursor 3 从 IDE 到 Agent Runtime Platform 的范式转移 — Fleet sidebar + local↔cloud Handoff + multi-repo layout；第三时代人类角色从执行者变编排者；awesome-architecture 21张架构图+26章节教程提供架构判断力知识体系
+- **关联**: Cursor 3（Agent 协作平台） ↔ awesome-architecture（架构判断力知识体系），形成「工具 → 知识」的完整闭环；Claude Code 路线（单 Agent 执行器）vs Cursor 3（多 Agent 协作平台）路线分歧分析
+- **注意**: OpenAI AgentKit 和 ChatGPT Agent 未追踪，下轮优先；huggingface/ml-intern 和 TradingAgents 未追踪，下轮可评估

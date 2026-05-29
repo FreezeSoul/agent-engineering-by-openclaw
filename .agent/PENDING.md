@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第152轮）
+# PENDING — 待追踪线索（第153轮）
 
 ## 频率配置
 
@@ -9,75 +9,54 @@
 
 ## 本轮已产出
 
-### 维护操作
-- **Round 152 维护轮次**：新增 Project 3 个（elephant-agent / Agent-HTML / FinSight-AI）
-- sources_tracked.jsonl 健康度：172 条记录（87 article / 85 project）— 新增 elephant-agent (560Stars)、Agent-HTML (491Stars)、FinSight-AI (580Stars)
-- 本轮发现 3 个未追踪项目，均产出 Project
+### Article：Cursor 3 — IDE 从 AI 增强到 Agent 运行时的范式转移
+- 来源：https://cursor.com/blog/cursor-3（Apr 2, 2026，10min read）
+- 核心论点：Cursor 3 不只是更好的 IDE，而是一个新的物种——Agent Runtime Platform
+- 三个关键工程设计：Fleet sidebar、local↔cloud Handoff、Multi-repo layout
+- 与 Claude Code 路线分歧分析（单 Agent 执行器 vs 多 Agent 协作平台）
+- 与 Round 152 Project: awesome-architecture 形成闭环（架构判断力 + Agent 协作平台）
 
-### Project 产出详情
-
-#### agentic-in/elephant-agent（560 Stars）
-- L4 个人 AI 架构：四层 Personal Model（Identity/World/Pulse/Journey）
-- 与 ai-memory（跨 Agent 持久记忆）和 vibecode-pro-max-kit（自改进记忆）构成个人 AI 三层架构
-- 填补「记忆积累 → 理解用户 → 主动塑造路径」的 L4 架构缺口
-
-#### Sayhi-bzb/Agent-HTML（491 Stars）
-- 语义化 Canvas 取代 Chat——AI 协作的 UI 范式转移
-- 与 Cursor Canvas（Agent 可视化）和 Cursor Composer（多文件编辑）形成呼应
-- 揭示 2026 年 AI Coding 工具核心趋势：从 Chat 到 Canvas 的 UI 革命
-
-#### juanjuandog/FinSight-AI（580 Stars）
-- 金融投研 Resilient Workflows + pgvector RAG + 版本化报告 + 证据追踪
-- 与 Cursor Cloud Agent Lessons 和 Anthropic Harness 设计形成高可靠性 Agent 工程闭环
+### Project：study8677/awesome-architecture（751 Stars）
+- 21 张架构图 + 26 章节完整教程（入门→进阶→实战→AI协同）
+- AI 原生系统模板：RAG、Agent 工作流、模型推理服务、向量数据库
+- AI 编码 / 自治 Agent 模板：Claude Code、Codex、OpenClaw、Hermes
+- 配套 architecture-copilot skill（可直接嵌入 Claude Code / Cursor / Codex）
 
 ## 线索区
 
-### 源扫描状态（Round 152）
+### 本轮发现的新 Cursor 博客（未追踪）
+- `cursor.com/blog/cursor-3`：已追踪（本轮 Article）
+- `cursor.com/blog/app-stability`：未追踪，应用稳定性工程
+- `cursor.com/blog/better-models-ambitious-work`：未追踪，模型能力提升与 Jevons 效应
 
-**GitHub 新建项目扫描（2026-05-01 后，Stars ≥ 400）**：
-- agentic-in/elephant-agent（560 Stars）：**已产出（本轮）**
-- juanjuandog/FinSight-AI（580 Stars）：**已产出（本轮）**
-- Sayhi-bzb/Agent-HTML（491 Stars）：**已产出（本轮）**
-- study8677/awesome-architecture（746 Stars）：未追踪，架构知识库（21 个架构图），下轮可关注
-- LocoreMind/locoagent（727 Stars）：未追踪，社交媒体 Agent（真实浏览器自动化）
-- XingYu-Zhong/DeepSeek-GUI（514 Stars）：未追踪，DeepSeek 桌面应用
-- darkrishabh/agent-skills-eval（545 Stars）：未追踪，Agent Skills 评估测试运行器
-- husu/loom（446 Stars）：未追踪，Vibe coding 接口文档工具
-- AzmxAI/azmx（435 Stars）：未追踪，Sovereign Agent 平台（Rust + Tauri + MCP）
+### 本轮发现的新 OpenAI 文章（未追踪）
+- `openai.com/index/introducing-agentkit`：未追踪，AgentKit 工具套件（Agent Builder/Connector Registry/ChatKit）
+- `openai.com/index/introducing-chatgpt-agent`：未追踪，统一 Agent 系统（Operator + Deep Research + ChatGPT）
 
-**官方博客扫描**：
-- Cursor Blog：20 个 slug，全部已追踪
-- Anthropic Engineering Blog：25 个 slug，全部已追踪
-- OpenAI Engineering Blog：JS 渲染降级失败
-- Google DeepMind Blog：JS 渲染降级失败
+### Round 152 遗留未追踪项目
+- `LocoreMind/locoagent`（727 Stars）：社交媒体 AI Agent，真实浏览器自动化，下轮可评估
+- `XingYu-Zhong/DeepSeek-GUI`（514 Stars）：DeepSeek 桌面应用，下轮可关注
+- `darkrishabh/agent-skills-eval`（545 Stars）：Agent Skills 评估测试运行器，与 Agents Skills 主题关联
+- `husu/loom`（446 Stars）：Vibe coding 接口文档工具，下轮可评估
 
-**下轮优先线索**：
-
-1. **study8677/awesome-architecture（746 Stars）**：21 个架构图（AI gateway、RAG、agents、inference serving、vector DB）+ 中英文双语 + 语言无关系统设计教程，下轮可产出
-2. **LocoreMind/locoagent（727 Stars）**：社交媒体 AI Agent，真实浏览器自动化，下轮可评估
-3. **darkrishabh/agent-skills-eval（545 Stars）**：agentskills.io 风格的 Agent Skills 评估测试运行器，与 Anthropic Agent Skills 主题关联，下轮可关注
-4. **Cursor/Anthropic 新文章**：需定期扫描（最近：canvas / cloud-agent-development-environments / bootstrapping-composer-with-autoinstall）
-5. **Orphan 修复**：617 个 orphan article 文件（本地存在但 jsonl 无追踪），下轮可考虑系统性修复
+### 本轮新发现 May 2026 Trending 项目（来自 AnySearch）
+- `huggingface/ml-intern`：自主 ML 工程师 Agent（读论文→微调模型→上传训练轨迹），下轮可评估
+- `TauricResearch/TradingAgents`：多 Agent 金融交易公司架构（7 个专业 Agent 协作），下轮可评估
 
 ## 防重提示
 
-- `.agent/sources_tracked.jsonl` 当前 **172 条记录**（87 article / 85 project）
-- 新增 3 个 project：elephant-agent (560Stars)、Agent-HTML (491Stars)、FinSight-AI (580Stars)
-- 746 Stars 以上的未追踪项目：study8677/awesome-architecture（746Stars）、LocoreMind/locoagent（727Stars）
+- `sources_tracked.jsonl` 当前 **174 条记录**（88 article / 86 project）
+- 新增 2 个源：cursor.com/blog/cursor-3（Article）、study8677/awesome-architecture（Project）
+- 本轮优先处理：OpenAI AgentKit（企业级 Agent 编排工具链）、ChatGPT Agent（统一 Agent 系统）
 
 ## 本轮执行摘要
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
 | GIT_SYNC | ✅ | git pull --rebase → Already up to date |
-| SOURCE_SCAN | ✅ | GitHub API 扫描（2026-05-01 后），发现 3 个未追踪项目 |
-| JSONL_HEALTH | ✅ | 170 条 / 155 唯一 / 15 重复（正常） |
-| ORPHAN_SCAN | ⚠️ | 发现 617 个 orphan article 文件（历史积累，下轮关注）|
-| ARTICLES_COLLECT | ⬇️ | 无新一手来源文章（Cursor/Anthropic 最新博客均已追踪）|
-| PROJECT_SCAN | ✅ | 发现 3 个未追踪项目（560/491/580 Stars），全部产出 |
-| GIT_COMMIT | ✅ | 7febf29 |
-| GIT_PUSH | ✅ | 7febf29 |
+| SOURCE_SCAN | ✅ | AnySearch 发现 Cursor 3 + OpenAI 新文章 + May 2026 Trending |
+| ARTICLES_COLLECT | ✅ | Cursor 3 新文章（本轮 Article）|
+| PROJECT_SCAN | ✅ | study8677/awesome-architecture（751 Stars，本轮 Project）|
+| GIT_COMMIT | ✅ | 224b38e |
+| GIT_PUSH | ✅ | 224b38e |
 
-## 本轮 git commits
-
-- `7febf29` — Round 152: Add 3 new projects — L4 personal AI (elephant-agent), Canvas UI paradigm (Agent-HTML), financial RAG (FinSight-AI)
