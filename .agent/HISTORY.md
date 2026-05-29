@@ -152,3 +152,10 @@
 - **主题**: 跨 Agent 持久记忆系统 — Markdown + Git Wiki + FTS5 + Lifecycle hooks 自动捕获 + 多厂商支持（Claude Code/Codex/Cursor/Gemini CLI），解决多 Agent 协作中的上下文断裂问题
 - **关联**: 与 Cursor Cloud Agent Lessons（环境即产品）和 Anthropic Harness 工程（长周期任务状态管理）形成「捕获 → 持久 → 交接」完整记忆工程闭环；与前序 cognee Memory / OpenAI Codex 自改进共同指向「长周期 Agent 上下文完整性」核心问题
 - **注意**: Article 连续四轮无新产出；Tavily 超限额每轮触发
+
+## Round 150 (2026-05-29)
+- **commit**: 8a98612
+- **产出**: UditAkhourii/adhd (Project, 471 Stars)
+- **主题**: 并行发散思维框架 — Generator/Critic 机械分离 + 分支硬隔离墙，解决自回归推理中「过早收敛」的结构性问题，5/6 战胜单射基线（+5.17 新颖性 / +7.67 陷阱检测），Repowire 官方集成
+- **关联**: 与 Harness 评估器循环（Evaluator Loop）和 Multi-Agent 隔离协作形成「推理质量 ↔ 架构修复」主题关联；与 Chain-of-Thought 演进路径（CoT → ToT → ADHD）深度关联
+- **注意**: Article 连续五轮无新产出；Tavily 超限额每轮触发；下轮优先关注 VILA-Lab/FigMirror / vibecode-pro-max-kit
