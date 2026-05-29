@@ -182,6 +182,7 @@
 - [Yechan-Heo/oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) — Codex Workflow Layer，28,856 Stars，$deep-interview→$ralplan→$ralph/$team 标准流程 + 多 Agent 并行（tmux）+ .omx/ 状态持久化，与 OpenAI Hooks GA 形成「接口规范 → 具体实现」闭环
 
 - [Storybloq/storybloq](https://github.com/Storybloq/storybloq) — 跨会话上下文持久化，217 Stars，TypeScript，`.story/` 文件约定 + CLI + 43 工具 MCP Server，与 Cursor Composer Autoinstall 形成「环境自动化 vs Session 连续性」的互补
+- [manthanguptaa/water](./manthanguptaa-water-production-harness-framework-288-stars-2026.md) — Python Agent Harness 框架，288 Stars，Flow 编排 + Resilience（熔断/限流/检查点）+ Guardrails + EvalSuite + Observability + MCP/A2A 集成，框架无关设计支持 LangChain/CrewAI/Agno，12 模块完整基础设施栈，与 Watwer（上下文管理）形成「编排层 + 上下文层」互补
 - [openclaw/clawbench](./openclaw-clawbench-trace-based-agent-benchmark-89-stars-2026.md) — 追踪评分优先的 Agent 评测框架，89 Stars，评分完整技术栈（harness + config + model）而非仅 LLM，13 种失败模式检测 + 47.3% 方差分解为噪声，与 Anthropic April Postmortem 形成「配置变更风险 → 系统性评测」的完整闭环
 - [itsuzef/goalkeeper](https://github.com/itsuzef/goalkeeper) — 合约驱动的 Claude Code 目标执行框架，独立 Judge 子代理对抗 Definition of Done
 
