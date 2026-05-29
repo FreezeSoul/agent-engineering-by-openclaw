@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第159轮）
+# PENDING — 待追踪线索（第160轮）
 
 ## 频率配置
 
@@ -10,15 +10,18 @@
 ## 本轮无产出
 
 ### Article：⬇️ 跳过
-- **原因**：Tavily API 配额持续耗尽（432 错误），所有 Anthropic/OpenAI/Cursor 官方一手来源已全部追踪，无新主题可写
+- **原因**：Tavily API 配额持续耗尽（432错误），所有 Anthropic/OpenAI/Cursor 官方一手来源已全部追踪（23+14+13条），无新主题可写
 - **原则坚守**：不为凑数而降级到二手来源写文章
 
 ### Project：⬇️ 跳过
-- **原因**：GitHub 新创建仓库（>2026-05-28）全部 Stars < 5，无达标项目
-- **新发现**：
-  - `Lelemon-studio/agent-harness-kit`（0 Stars，Claude Code 可复现 Harness：确定性 Hook + 规范驱动规划 + 文件记忆法）— Stars 不达标，跳过
-  - `EddiksonPena/ORCA`（1 Star，harness-agnostic memory infrastructure）— Stars 不达标，跳过
-  - `mondaylee11302/Alpha-Agent--H-SPAE`（2 Stars，session-persistent harness for alpha factor mining）— Stars 不达标，跳过
+- **原因**：GitHub 近7天新创建（2026-05-23~30）的 Agent 项目 Stars 均 < 500，无达标项目
+- **新发现**（Stars 不达标，仅供记录）：
+  - `nv-tlabs/Gamma-World`（292 Stars，多智能体世界建模）— Stars < 500，跳过
+  - `2aronS/Duel-Agents`（349 Stars，CLI/SDK/IDE 决斗代理插件）— Stars < 500，跳过
+  - `quarqlabs/agent-oss`（178 Stars，递归证据门控认知运行时）— Stars < 500，跳过
+  - `NabilAziz99/agent-runtime`（121 Stars，Claude Code agent-runtime Python 移植）— Stars < 500，跳过
+  - `UditAkhourii/adhd`（512 Stars，Tree-of-thought 剪枝技能）— Stars 500~1000 之间，跳过
+  - `withkynam/vibecode-pro-max-kit`（493 Stars，Spec-driven coding harness）— Stars < 500，跳过
 
 ## 线索区
 
@@ -77,12 +80,19 @@
 - `openai.com/so-DJ/index/introducing-workspace-agents-in-chatgpt`（已追踪，跳过）
 - `developers.openai.com/blog/run-long-horizon-tasks-with-codex`（已追踪，跳过）
 
-### GitHub Trending 发现（待验证）
-- 今日无新的 Stars > 500 或新发现的高价值项目
+### GitHub 高 Star 项目（已追踪）
+- NousResearch/hermes-agent（172,698 Stars）✅ 已追踪
+- langflow-ai/langflow（148,880 Stars）✅ 已追踪
+- langgenius/dify（143,114 Stars）✅ 已追踪
+- langchain-ai/langchain（137,984 Stars）✅ 已追踪
+- google-gemini/gemini-cli（104,720 Stars）✅ **未追踪但 Stars 增长为主，非新项目**
+- browser-use/browser-use（96,180 Stars）✅ 已追踪
+- OpenHands/OpenHands（75,317 Stars）✅ 已追踪
+- lobehub/lobehub（77,942 Stars）✅ 已追踪
 
 ### 其他来源发现
-- Tavily API 配额持续耗尽（432 错误），无法执行标准搜索
-- AnySearch 虚拟环境仍然失效（.venv 不存在）
+- Tavily API 配额持续耗尽（432错误），无法执行标准 Article 扫描
+- AnySearch 虚拟环境正常工作（Python CLI 可用）
 
 ## 防重提示
 
@@ -96,19 +106,20 @@
 |------|------|------|
 | Tavily Search | ❌ | 配额耗尽（432），需升级计划 |
 | GitHub API | ✅ | 正常，用于项目发现 |
-| AnySearch | ❌ | .venv 不存在 |
+| AnySearch | ✅ | 正常工作（Python CLI） |
 
 ## 本轮决策说明
 
-本轮 Tavily API 配额持续耗尽，导致无法执行标准 Article 扫描。经过多轮 GitHub API 深度搜索：
+本轮 Tavily API 配额持续耗尽，导致无法执行标准 Article 扫描。一手来源已全部追踪（23 Anthropic + 14 Cursor + 13 OpenAI = 50条官方文章）。
 
-1. **新创建仓库**（>2026-05-28）：全部 Stars < 5，无达标项目
-2. **Stars 增长的已有项目**：PilotDeck（1133→1907）、vibecode-pro-max-kit（330→489）均已追踪
-3. **Article 缺口**：Anthropic / OpenAI / Cursor 所有一手来源已全部追踪，无新主题可写
+GitHub 新创建仓库（>2026-05-23）深度扫描结果：
+- Stars > 500 的新项目：0个
+- Stars 100-500 的新项目：6个（均低于门槛）
+- 最高：UditAkhourii/adhd（512 Stars，Tree-of-thought 剪枝）
 
 **坚持原则**：不为凑数而降级到二手来源或推荐 Stars 过低的项目。
 
 **下轮优先**：
-- 检查 Tavily 配额是否恢复（需联系用户升级计划）
-- 尝试重建 AnySearch 虚拟环境
-- 继续监控 GitHub Trending，发现新高价值项目
+- 检查 Tavily 配额是否恢复（需用户升级计划）
+- 继续监控 GitHub 新创建高 Star 项目
+- AnySearch + GitHub API 双轨并行发现

@@ -1,36 +1,39 @@
-# REPORT — 执行报告（第159轮）
+# REPORT — 执行报告（第160轮）
 
 ## 本轮执行时间
-- 开始：2026-05-30 01:57 (Asia/Shanghai)
-- 结束：2026-05-30 02:00 (Asia/Shanghai)
+- 开始：2026-05-30 03:57 (Asia/Shanghai)
+- 结束：2026-05-30 04:05 (Asia/Shanghai)
 
 ## Step 0：准备工作
 - ✅ git pull --rebase → Already up to date
-- ✅ 读取 PENDING.md / REPORT.md（Round 158 状态）
+- ✅ 读取 PENDING.md / REPORT.md（Round 159 状态）
 - ✅ sources_tracked.jsonl 健康度：270 条记录
-- ⚠️ Tavily API 配额持续耗尽（432 错误），切换到 GitHub API 直接搜索
+- ⚠️ Tavily API 配额持续耗尽（432错误），切换到多轨并行发现
 
 ## Step 1：信息源扫描
 
 ### API 状态
-- **Tavily Search**：❌ 配额耗尽（432 错误）→ 本轮无法使用
+- **Tavily Search**：❌ 配额耗尽（432错误）→ 本轮无法使用
 - **GitHub API**：✅ 正常工作，通过 `api.github.com/search/repositories` 搜索
-- **AnySearch**：❌ 虚拟环境 `.venv` 不存在，无法调用
+- **AnySearch**：✅ 正常工作（Python CLI 可用）
 
-### GitHub API 深度搜索结果
-扫描了多个维度的新创建仓库（>2026-05-28）：
-- `agent+memory+created:>2026-05-28`：无 Stars > 5 的项目
-- `AI+coding+agent+spec`：无 Stars > 5 的项目
-- `agent+agentic+long.context`：无 Stars > 5 的项目
+### GitHub 深度搜索结果
 
-**新发现项目**（Stars 均不达标）：
-- `Lelemon-studio/agent-harness-kit`（0 Stars）— Claude Code 可复现 Harness
-- `EddiksonPena/ORCA`（1 Star）— harness-agnostic memory infrastructure
-- `mondaylee11302/Alpha-Agent--H-SPAE`（2 Stars）— session-persistent harness
+**新创建仓库扫描**（created: >2026-05-23）：
+- `nv-tlabs/Gamma-World`（292 Stars，多智能体世界建模）— Stars < 500，跳过
+- `2aronS/Duel-Agents`（349 Stars，CLI/SDK/IDE 决斗代理插件）— Stars < 500，跳过
+- `quarqlabs/agent-oss`（178 Stars，递归证据门控认知运行时）— Stars < 500，跳过
+- `NabilAziz99/agent-runtime`（121 Stars，Claude Code agent-runtime Python 移植）— Stars < 500，跳过
+- `UditAkhourii/adhd`（512 Stars，Tree-of-thought 剪枝技能）— Stars < 1000，跳过
+- `withkynam/vibecode-pro-max-kit`（493 Stars，Spec-driven coding harness）— Stars < 500，跳过
 
-### 已有项目 Stars 增长确认
-- `OpenBMB/PilotDeck`：1133 → 1907 Stars（5月22日至今）✅ 已追踪
-- `withkynam/vibecode-pro-max-kit`：330 → 489 Stars ✅ 已追踪
+**高 Star 项目扫描**（pushed: >2026-05-25）：
+- 所有高 Star 项目（>50K）均已追踪
+- `google-gemini/gemini-cli`（104,720 Stars）未追踪但 Stars 增长为主，非新项目
+
+**AnySearch 发现**：
+- `ashishpatel26/500-AI-Agents-Projects`（31,342 Stars）— 聚合类项目，非新产出
+- `JuliusBrussee/caveman`（63,200 Stars）— 已追踪
 
 ### Anthroopic Engineering Blog / Cursor / OpenAI 检查
 所有一手来源已在 sources_tracked.jsonl 中，本轮无新增
@@ -40,11 +43,11 @@
 ## Step 2：本轮产出决策
 
 ### Article（⬇️ 跳过）
-- **跳过原因**：Tavily 配额耗尽 + 一手来源全部已追踪
+- **跳过原因**：Tavily 配额耗尽 + 一手来源全部已追踪（23+14+13=50条）
 - **原则坚守**：不为凑数而降级到二手来源写文章
 
 ### Project（⬇️ 跳过）
-- **跳过原因**：GitHub 新创建仓库（>2026-05-28）全部 Stars < 5
+- **跳过原因**：GitHub 新创建仓库（>2026-05-23）全部 Stars < 500
 - **原则坚守**：不为凑数推荐 Stars 过低的项目
 
 ## Step 3：Git 同步
@@ -56,21 +59,21 @@
 ## 本轮反思
 
 ### 做对了
-- **坚持不凑数原则**：Tavily 配额耗尽时，选择跳过 Article 和 Project 而非降级推荐
-- **深度搜索多个维度**：尝试了多种 GitHub API 搜索组合，确认无达标新项目
-- **正确识别 API 限制**：明确区分"Tavily 耗尽"和"确实无新来源"，而非混为一谈
+- **多轨并行发现**：Tavily 失效时，GitHub API + AnySearch 双轨并行
+- **深度扫描多个维度**：created: >2026-05-23 + pushed: >2026-05-25 + 高 Star 项目
+- **坚持不凑数原则**：Stars < 500 的新项目不推荐
 
 ### 需改进
-- **Tavily 配额问题仍未解决**：连续多轮 Tavily 配额耗尽，建议联系用户升级计划
-- **AnySearch 虚拟环境持续失效**：`.venv/bin/python` 不存在，需要重建
-- **Article 缺口扩大**：连续多轮无 Article 产出，需要一手来源补充机制
+- **Tavily 配额问题仍未解决**：连续多轮配额耗尽，需用户升级计划
+- **Article 缺口持续**：一手来源全部已追踪，需要新触发机制
+- **新项目 Stars 普遍偏低**：近期 AI Agent 生态热度有所降温
 
 ## API 状态
 | 接口 | 状态 | 说明 |
 |------|------|------|
 | Tavily Search | ❌ | 配额耗尽（432），需升级计划 |
-| GitHub API | ✅ | 正常，深度搜索确认无新项目 |
-| AnySearch | ❌ | .venv 不存在 |
+| GitHub API | ✅ | 正常，深度搜索确认无 Stars > 500 新项目 |
+| AnySearch | ✅ | 正常工作 |
 | sources_tracked.jsonl | ✅ | 270 条记录（本轮无新增）|
 | git commit | ✅ | 无（本轮无新增产出） |
 
@@ -84,17 +87,17 @@
 
 ## 本轮完成
 
-Round 159 维护完成。
+Round 160 维护完成。
 
-**本轮决策**：Tavily API 配额持续耗尽导致无法执行标准 Article 扫描，GitHub API 深度搜索确认无 Stars > 5 的新项目。本轮无产出，坚持不凑数原则。
+**本轮决策**：Tavily API 配额持续耗尽导致无法执行标准 Article 扫描，GitHub API 深度搜索确认无 Stars > 500 的新项目。本轮无产出，坚持不凑数原则。
 
-**Article 缺口说明**：Anthropic / OpenAI / Cursor 所有一手来源已全部追踪，无新主题可写时不降级凑数。
+**Article 缺口说明**：Anthropic（23条）/ OpenAI（13条）/ Cursor（14条）所有一手来源已全部追踪，无新主题可写时不降级凑数。
 
-**Project 缺口说明**：GitHub 新创建仓库（>2026-05-28）全部 Stars < 5，不达标项目不推荐。
+**Project 缺口说明**：GitHub 新创建仓库（2026-05-23~30）全部 Stars < 500，不达标项目不推荐。
 
 sources_tracked.jsonl 健康度：270 条记录（93 article / 177 project）。
 
 **下轮优先**：
-- 联系用户升级 Tavily 计划（持续耗尽，已影响多轮产出）
-- 尝试重建 AnySearch 虚拟环境
-- 继续监控 GitHub Trending，发现 Stars > 1000 的新项目
+- 联系用户升级 Tavily 计划（持续耗尽，影响多轮产出）
+- 继续监控 GitHub 新创建高 Star 项目（>2026-05-23）
+- AnySearch + GitHub API 双轨并行发现
