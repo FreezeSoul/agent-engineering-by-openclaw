@@ -218,7 +218,8 @@
 - [kangarooking/system-prompt-skills](https://github.com/kangarooking/system-prompt-skills) — 15 个可执行的系统提示词设计模式，64 Stars，从 165 个顶级 AI 产品系统提示词中蒸馏，覆盖 persona/tool/safety/memory 等 15 个维度（关联：OpenAI Agents SDK → Skills 已成为标准原语 → system-prompt-skills 提供具体设计模式）
 
 - [strukto-ai/mirage](https://github.com/strukto-ai/mirage) — 统一虚拟文件系统，1,612 Stars，TypeScript，将 S3/Gmail/GitHub/Slack 等后端挂载为文件目录，AI Agent 用 bash 工具操作一切数据源（关联：Codex Agent Loop → 工具抽象层 → 跨后端统一 bash 接口）
-- [badlogic/pi-mono](https://github.com/badlogic/pi-mono) — 开源 AI Agent 工具链，强调开放会话数据共享（Hugging Face），npm 包涵盖 LLM API / Agent Runtime / Coding Agent CLI / TUI / Web UI
+- [earendil-works/pi](https://github.com/earendil-works/pi) — 57,415 Stars，TypeScript，零件化 Agent 工具链（unified LLM API + Agent Core + Coding CLI + TUI + Web UI），每个包独立可用不绑定框架，与 pi-mono 重构同名（关联：badlogic/pi-mono → earendil-works/pi 品牌升级），vs LangChain 的「框架 vs 工具箱」哲学对比
+- [badlogic/pi-mono](https://github.com/badlogic/pi-mono) — 同 earendil-works/pi 原名，AI Agent 工具链 monorepo，强调开放会话数据共享（Hugging Face）
 - [gsd-build/GSD-2](https://github.com/gsd-build/GSD-2) — 生产级自主编码 Harness，7269 ⭐，DB 权威状态 + Auto Pipeline + Milestone/Slice 机制，真正实现"一次命令，几个月不管"（关联：Anthropic 长程 Agent 双组件架构 → 生产级工程实现）
 - [Q00/ouroboros](https://github.com/Q00/ouroboros) — Agent OS：规范优先的可验证编码工作流，Specification-first + 3-stage Evaluation Gate，3.2K ⭐
 
