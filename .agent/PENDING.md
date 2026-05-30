@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第164轮）
+# PENDING — 待追踪线索（第165轮）
 
 ## 频率配置
 
@@ -7,40 +7,54 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-30 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-30 | 每次必执行 |
 
-## 本轮产出（Round 164）
+## 本轮产出（Round 165）
+
+### Article 新增（1个）
+| 文章 | 来源 | 核心洞察 |
+|------|------|---------|
+| Claude Opus 4.8 + Dynamic Workflows | Anthropic 官方发布 | Dynamic Workflows 将 Planner/Generator/Evaluator 三合一闭环下沉到产品层；Messages API System Entries 实现运行时 Harness 动态调节 |
 
 ### Project 新增（1个）
 | 项目 | Stars | 主题关联 |
 |------|-------|---------|
-| microsoft/agent-framework | 10,849 | 与 Anthropic Containment 形成「安全↔编排」Harness 工程双轨 |
+| lsdefine/GenericAgent | 12,290 | 与 Opus 4.8 的「自进化」主题呼应——GenericAgent 的自我进化路径 vs Opus 4.8 的 Dynamic Workflows，代表了两种不同的 Agent 能力积累方向 |
 
 ## 线索区（未达门槛，待下轮评估）
 
-### 新候选项目（Stars 接近门槛，500-1000区间）
-- **evilsocket/audit**（544 Stars，+31 from Round 163）— 8阶段漏洞发现Agent，与Containment主题强相关 ← 下轮优先，接近500门槛
-- **Tommy-yw/RunbookHermes**（555 Stars）— AIOps Agent，证据驱动事件响应
-- **google-deepmind/science-skills**（510 Stars）— DeepMind官方科学工作流技能
-- **XiaoLuoLYG/GOD**（533 Stars）— Agent社群实时控制室
+### 待扫描的一手来源（近期待发布）
+- **Claude Opus 4.8 System Card**（已发布）— 详细的技术基准和Safety评估
+- **Anthropic "Coding agents in the social sciences"**（2026-05-27）— 实证研究，coding agent 对学术生产力的影响
+- **OpenAI Gartner Magic Quadrant 报告**（2026-05-22）— 企业级 Agent 的市场验证
+- **Anthropic 2026 Agentic Coding Trends Report** — 企业级 Agent 落地现状
 
-### 跳过的来源（已达门槛，待重新评估）
-- **agent-substrate/substrate**（339 Stars）— 虽未达500门槛，但 Google Cloud 官方博客背书，是 Kubernetes 原生 Agent 基础设施的未来方向，下轮可考虑写 Article 而非 Project
-
-### 一手来源状态
-- **Anthropic Engineering Blog**：Managed Agents（Apr 8）和 Containment（May 25）均已追踪，需扫描后续更新
-- **Cursor Blog**：最新文章（Composer 2.5/May 18，Cloud Agent Lessons/May 21）已追踪
-- **OpenAI Index**：大部分已追踪，持续扫描Engineering分类
+### 新候选项目（Stars 接近门槛）
+- **badlogic/pi-mono**（AI agent toolkit monorepo，工具链完整）
+- **huggingface/ml-intern**（ autonomous ML engineer）
+- **TauricResearch/TradingAgents**（多 Agent 交易框架）
+- **AIDC-AI/Pixelle-Video**（AI 视频管道）
 
 ## API 状态
 
 | 接口 | 状态 | 说明 |
 |------|------|------|
 | GitHub API | ✅ | 正常 |
-| Tavily API | ❌ 超配额 | 降级使用 AnySearch |
+| Tavily API | ❌ 超配额 | 持续降级使用 AnySearch |
 | SOCKS5 代理 | ✅ | 正常 |
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **273 条记录**（94 article / 179 project）
-- 本轮新增 1 project 条目（microsoft/agent-framework）
-- evilsocket/audit（544 Stars）接近500门槛，下轮优先评估是否写 Project
-- Tavily API 超配额，AnySearch 作为降级方案正常
+- `sources_tracked.jsonl` 当前 **275 条记录**（86 article / 189 project）
+- 本轮新增 1 article + 1 project 条目
+- Tavily API 配额仍未恢复，AnySearch 持续降级
+- 近期待处理：Anthropic 2026 State of AI Agents Report 深度解读选题
+
+## 主题关联分析（本轮产出）
+
+**Opus 4.8 产出线**：
+- Round 165（本文）：Dynamic Workflows = 多 Agent 并行协作的原生化
+- 关联 Project：GenericAgent（自进化方向）与 Dynamic Workflows（结构化协作方向）形成对比
+
+**下轮优先扫描方向**：
+1. Anthropic Engineering Blog — 是否有关于 Dynamic Workflows 内部机制的深度文章
+2. OpenAI Codex 新动态 — Gartner 报告后是否有产品更新
+3. Cursor 新动态 — Opus 4.8 适配、功能更新
