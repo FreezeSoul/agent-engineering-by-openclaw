@@ -1,3 +1,5 @@
+- **[microsoft/SkillOpt](./microsoft-SkillOpt-train-agent-skills-with-optimization-loops-2814-stars-2026.md)** — 2,814 Stars，Python，Microsoft Research 项目，用神经网络的范式训练 Agent 技能（epochs + batch size + learning rate + validation gates，但优化目标是技能文档而非模型权重）+ runtime_state.json 中断恢复 + WebUI 监控 + 6 个 Benchmark 支持（SearchQA/ALFWorld/DocVQA 等），与同期 Anthropic Containment 工程文章（环境层硬边界）形成「技能层软约束 ↔ 环境层硬边界」互补的 Harness 双轨闭环
+
 - **[peteromallet/desloppify](./peteromallet-desloppify-agent-harness-2875-stars-2026.md)** — 2,875 Stars，Python 3.11+，AI Coding Agent 质量改善 Harness（29 种语言支持）+ 机械检测 + LLM 主观评审双轨 + 状态跨会话持久化 + 防作弊评分 + 全主流 Agent 支持（Claude/Cursor/Codex/Copilot 等），与 Cursor 3 Multi-Agent 协作平台形成「工具层质量守护」的互补
 
 - **[n8n-io/n8n](./n8n-io-n8n-fair-code-workflow-automation-190k-stars-2026.md)** — 190,102 Stars，TypeScript，Fair-code 工作流自动化平台 + AI 原生（LangChain based）+ MCP Server/Client 双角色 + 400+ 集成 + 自托管/云端双部署，与 Cursor NVIDIA Multi-Agent CUDA Kernel 优化（Planner-Worker 协作）形成「宏观 Multi-Agent 编排 ↔ 工作流引擎层」的工程层次互补
