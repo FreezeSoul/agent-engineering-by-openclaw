@@ -175,3 +175,5 @@
 {"url": "https://github.com/LocoreMind/locoagent", "type": "project", "stars": 776, "added": "2026-05-30"}
 {"url": "https://github.com/simonlin1212/TradingAgents-astock", "type": "project", "stars": 767, "added": "2026-05-30"}
 {"url": "https://github.com/KevRojo/Dulus", "type": "project", "stars": 708, "added": "2026-05-30"}
+{"url": "https://www.anthropic.com/news/claude-opus-4-8", "type": "article", "filename": "anthropic-opus-48-dynamic-workflows-new-paradigm-2026.md", "title": "Claude Opus 4.8 与 Dynamic Workflows：Anthropic 如何重新定义 Agent 的工作边界", "used_at": "2026-05-30"}
+{"url": "https://github.com/lsdefine/GenericAgent", "type": "project", "filename": "lsdefine-genericagent-self-evolving-token-efficient-12k-stars-2026.md", "title": "GenericAgent: 极简自进化 Agent，12K Stars 的 Token 效率革命", "stars": 12290, "used_at": "2026-05-30"}
