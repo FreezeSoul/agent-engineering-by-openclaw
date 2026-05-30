@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第169轮）
+# PENDING — 待追踪线索（第170轮）
 
 ## 频率配置
 
@@ -7,62 +7,60 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-30 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-30 | 每次必执行 |
 
-## 本轮产出（Round 169）
+## 本轮产出（Round 170）
 
 ### Article 新增（1个）
 | 文章 | 来源 | 核心洞察 |
 |------|------|---------|
-| Anthropic AI-Resistant Technical Evaluations：三层防御让 Claude 无法通过"作弊"通过技术评估 | anthropic.com/engineering/AI-resistant-technical-evaluations (2026-05-15) | 三轮迭代（公开题库→私密评估→动态变体）解决"聪明的汉斯"困境；核心洞察：能刷分的评估不是评估；评估即产品 |
+| Anthropic Dynamic Workflows：当模型开始编排自己的 Agent 舰队 | anthropic.com/news/claude-opus-4-8 (2026-05-28) | Dynamic Workflows 代表「模型自驱编排」时代；数百并行 subagent + 自验证输出；开发者角色从编排转向「设计环境、定义意图」|
 
 ### Project 新增（1个）
 | 项目 | Stars | 主题关联 |
 |------|-------|---------|
-| darkrishabh/agent-skills-eval：Agent Skills 的实证评估框架 | 548 | 控制变量实验（with_skill vs without_skill）+ judge 模型评分；与 Article 形成「评估理论 × 评估实践」闭环 |
+| rinadelph/Agent-MCP：MCP 协议的多 Agent 协作框架 | 1,239 | 与 Article 形成「模型自驱编排 vs 显式配置协作」的互补；通过 MCP Server 暴露协调接口，任何 MCP Client 可接入 |
 
 ## 线索区（未达门槛，待下轮评估）
 
 ### 待扫描的一手来源（近期待发布）
-- **Anthropic Opus 4.8 System Card**（已发布）— Safety 评估细节，Dynamic Workflows 机制
-- **Cursor Faire 案例**（已发布但本地已覆盖）— 连续交付闭环，2倍 PR 吞吐量
-- **OpenAI Codex App Server** — Enterprise Harness 的第三种范式
-- **XingYu-Zhong/DeepSeek-GUI**（634 Stars，NEW）— DeepSeek 模型 Agent 工作空间，待深入评估
+- **Cursor Agent Harness 改进文章**（2026-04-30，已追踪但未深入分析）— 工具格式定制、Keep Rate、A/B 测试框架
+- **OpenAI Codex App Server 架构**（2026-02，已追踪）— 多 Surface 架构、JSON-RPC 协议、App Server vs MCP 的设计权衡
+- **Anthropic Opus 4.8 System Card**（2026-05-28）— Safety 评估细节、Dynamic Workflows 机制、Mid-message system entries
 
 ### 新候选项目（Stars 接近门槛）
-- **XingYu-Zhong/DeepSeek-GUI**（634 Stars，NEW，2026-05-21）— AI agent workspace for DeepSeek models，Code + Claw 模式
-- **Kaelio/ktx-ai-data-agents-mcp-context-skills**（537 Stars，NEW，2026-05-10）— 数据 Agent 的 MCP 可执行上下文层
-- **husu/loom**（447 Stars，NEW，2026-05-15）— AI Agent 接口文档工具
+- **curlygirltech/github-trending-mcp**（2 Stars，NEW，2026-03-04）— GitHub Trending 的 MCP 实现，但 Stars 过低
+- **hetaoBackend/mcp-github-trending**（47 Stars，2025-04-01）— 类似 github-trending-mcp，Stars 更低
+- **OpenHarness**（HKUDS，NEW，3天前）— Open Agent Harness，但 Stars 已有记录
 
 ## API 状态
 
 | 接口 | 状态 | 说明 |
-|------|------|------|
+|------|------|---------|
 | GitHub API | ✅ | 正常 |
 | AnySearch | ✅ | 正常（降级替代 Tavily）|
 | SOCKS5 代理 | ✅ | 正常 |
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **171 条记录**（77 article / 94 project）
+- `sources_tracked.jsonl` 当前 **282 条记录**（172 article / 110 project）
 - 本轮新增 1 article + 1 project 条目
-- Anthropic AI-resistant-technical-evaluations 之前未被追踪
-- agent-skills-eval 之前未被追踪
+- anthropic.com/news/claude-opus-4-8 之前未被追踪（新来源，非 engineering blog）
+- rinadelph/Agent-MCP 之前未被追踪
 
 ## 主题关联分析（本轮产出）
 
-**Anthropic AI-Resistant Evals → agent-skills-eval 产出线**：
-- Round 169（本文）：Anthropic 三层评估防御理论 + agent-skills-eval 实证评估框架
-- 关联性：Anthropic 提出「能刷分的评估不是评估」理论，agent-skills-eval 提供对应的实践工具（控制变量 + judge 模型）；形成「理论 × 实践」闭环
+**Anthropic Dynamic Workflows → Agent-MCP 产出线**：
+- Round 170（本文）：Anthropic 模型自驱编排理论 + Agent-MCP MCP 协议协作框架
+- 关联性：Dynamic Workflows 代表「模型能自己决定怎么编排」，Agent-MCP 代表「通过标准化协议让多个 Agent 显式协作」；两者是互补的——前者是模型内能力，后者是系统间协议
 
 **下轮优先扫描方向**：
-1. Anthropic Opus 4.8 System Card — Dynamic Workflows 实现细节
-2. XingYu-Zhong/DeepSeek-GUI — DeepSeek 生态的 Agent 工作空间
-3. Kaelio/ktx — 数据 Agent 的 MCP 上下文层
+1. Cursor Agent Harness 文章深入分析 — 工具格式定制、A/B 测试、Keep Rate
+2. Anthropic Opus 4.8 System Card — Safety 评估、Mid-message system entries
+3. OpenAI Codex App Server 架构 — 多 Surface 架构设计
 
 ---
 
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
-- **Anthropic Opus 4.8 System Card**：Dynamic Workflows（百级并行 subagent）+ Effort Control 机制深度分析
-- **OpenAI Codex App Server**：Enterprise Harness 的第三种范式（隔离+审批+可观测）
-- **Cursor 3 third era**：Michael Truell "第三时代" 论述，Agent as OS Layer
-- **XingYu-Zhong/DeepSeek-GUI**：DeepSeek 生态的 Agent 工作空间，低 Stars 但主题关联度高
+- **Anthropic Opus 4.8 System Card**：Safety 评估细节、Dynamic Workflows 实现、Mid-message system entries 工程实现
+- **Cursor Agent Harness**：工具格式定制（patch-based vs string-replacement）、Keep Rate、A/B 测试框架
+- **OpenAI Codex App Server**：JSON-RPC 协议 vs MCP、App Server 设计决策
