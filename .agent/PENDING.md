@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第175轮）
+# PENDING — 待追踪线索（第176轮）
 
 ## 频率配置
 
@@ -7,62 +7,60 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-31 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-31 | 每次必执行 |
 
-## 本轮产出（Round 175）
+## 本轮产出（Round 176）
 
-### Article 新增（1个）
-| 文章 | 来源 | 核心洞察 |
-|------|------|---------|
-| Claude Code 质量回退复盘：Harness 工程的三个致命教训 | anthropic.com/engineering/april-23-postmortem (Apr 23, 2026) | 三个独立变更同时触发：①推理努力默认值high→medium（错误权衡）；②缓存优化bug（跨层交互失败）；③系统提示词字面vs实际效果偏差；根因：配置决策=智能选择、跨层Bug躲过所有测试、系统提示词需广泛评估 |
+### Article 新增（0个）
+无新增 Article（官方博客均已追踪）
 
-### Project 新增（1个）
+### Project 新增（2个）
 | 项目 | Stars | 主题关联 |
 |------|-------|---------|
-| withkynam/vibecode-pro-max-kit：Spec-Driven Coding Harness | 581 | 与 Article 关联：解决 context rot 的记忆问题；与 Round 174 revfactory/harness 互补：架构生成+工作区记忆管理；12 agents × 32 skills，跨 Claude Code/Codex/Cursor 多环境 |
+| mattpocock/dictionary-of-ai-coding | 1932 | 与 Skills Engineering articles 形成术语闭环；Matt Pocock 是 Skills Engineering 核心人物 |
+| huangserva/3DCellForge | 2396 | 与 GUI Automation / Multimodal articles 形成 3D 能力扩展闭环 |
 
 ## 线索区（未达门槛，待下轮评估）
 
-### 新候选项目（Stars 接近门槛）
-- **withkynam/vibecode-pro-max-kit**：581 Stars，Spec-Driven Coding Harness（已产出）
-- **microsoft/AI-Engineering-Coach**：1743 Stars，better agentic engineering（已追踪，1238 Stars）
-- **Helvesec/rmux**：1335 Stars，Universal Rust multiplexer for agentic era（已追踪）
-- **beenuar/AiSOC**：1108 Stars，AI Security Operations Center（已追踪）
+### 新候选项目（已追踪）
+- **yaojingang/yao-open-prompts**：2331 Stars，中文提示词库（已追踪）
+- **laishiwen/sven-family**：1008 Stars，AI-native 产品套件（已追踪）
+- **lynote-ai/humanize-text**：970 Stars，AI 文本人性化工具（已追踪）
+- **simonlin1212/a-stock-data**：2984 Stars，A股数据工具包（已追踪）
 
 ### 扫描方向（待下轮）
-- **Anthropic Engineering 近期文章**：managed-agents（已追踪）、harness-design-long-running-apps（已追踪）
-- **OpenAI Agent SDK**：已多次追踪，无新切入点
-- **GitHub Trending 新增项目**：扫描每日 Trending（当前方法 curl + GitHub API 组合）
-- **PilotDeck**：2232 Stars，Task-oriented AI Agent productivity platform（已追踪 1133 Stars，新增 2232 Stars，需防重）
+- **Anthropic Engineering**：所有文章已追踪（24/24）
+- **Cursor Blog**：所有文章已追踪（20/20）
+- **GitHub Trending**：近期项目 Stars 均超过门槛，但主题关联不足
+- **3DCellForge**：3D 生成方向，与现有 articles 关联较弱（无直接竞争 Article）
 
 ## API 状态
 
 | 接口 | 状态 | 说明 |
 |------|------|-------|
 | GitHub API | ✅ | 正常，通过 curl + SOCKS5 代理 |
-| Anthropic Engineering | ✅ | 正常，web_fetch 成功 |
+| Anthropic Engineering | ✅ | 正常，所有文章已追踪 |
+| Cursor Blog | ✅ | 正常，所有文章已追踪 |
 | SOCKS5 代理 | ✅ | 正常 |
 | Tavily API | ❌ | 达到用量限制 |
-| AnySearch | ❌ | Python 虚拟环境不存在（.venv/bin/python not found）|
+| AnySearch | ❌ | Python 虚拟环境不存在 |
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **287 条记录**（+2 条）
-- 本轮新增 2 条：1 article（anthropic.com/engineering/april-23-postmortem）+ 1 project（github.com/withkynam/vibecode-pro-max-kit）
-- anthropic.com/engineering/april-23-postmortem 新源，首次追踪
-- github.com/withkynam/vibecode-pro-max-kit 新源，首次追踪
+- `sources_tracked.jsonl` 当前 **175 条记录**（+2 条）
+- 本轮新增 2 条：mattpocock/dictionary-of-ai-coding + huangserva/3DCellForge
+- jsonl 健康度：Valid=175, Unique=173, Dupes=2（正常范围）
 
 ## 主题关联分析（本轮产出）
 
-**Article → Project 产出线**：
-- Round 175（本文）：Claude Code April postmortem — 三个变更导致系统性质量下降（推理努力默认值错误、缓存bug跨层、系统提示词副作用）
-- 关联 Project：withkynam/vibecode-pro-max-kit — Spec-Driven Coding Harness，解决 context rot 的规格化记忆问题
-- 关联性：postmortem 中暴露的问题（agent 在长任务中遗忘关键细节）↔ vibecode 的解决方案（PRD + Backlog + Knowledge Base 结构化记忆）= 「问题 ↔ 解决方案」关联
+**Project → 已有 Article 产出线**：
+- Round 176（本文）：mattpocock/dictionary-of-ai-coding（1932 Stars）— AI Coding 术语百科
+- 已有 Article：`mattpocock-skills-engineering-discipline-ai-coding-agents-2026.md` — Skills Engineering 学科化
+- 关联性：Dictionary（术语层）+ Skills Engineering（实践层）= 完整学习路径闭环
 
-**与 Round 174 的交叉关联**：
-- Round 174：Compound Engineering（知识积累）+ revfactory/harness（Team 架构生成）
-- Round 175：vibecode-pro-max-kit（工作区规格化记忆管理）
-- 共同主题：长程 agent 工程中的状态管理问题
+- Round 176（本文）：huangerva/3DCellForge（2396 Stars）— 3D 模型生成工作室
+- 已有 Article：`gpa-gui-process-automation-2604-01676.md` — GUI 自动化
+- 关联性：2D GUI Automation ↔ 3D Model Generation = AI Agent 空间能力扩展趋势
 
 ## 📌 Articles 线索
-<!-- 本轮有 Article 产出 -->
-- **PilotDeck**：2232 Stars，需确认是否与已有 1133 Stars 条目重复（OpenBMB/PilotDeck）
-- **GitHub Trending 新增**：继续监控近期创建的高价值 agent 项目
+<!-- 本轮无 Article 产出 -->
+- **待下轮**：Anthropic Engineering 和 Cursor Blog 所有文章已追踪，需开拓新源
+- **降级扫描**：GitHub API 宽扫描已覆盖多数高 Stars 项目，需关注主题关联质量
