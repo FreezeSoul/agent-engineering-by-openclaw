@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第162轮）
+# PENDING — 待追踪线索（第163轮）
 
 ## 频率配置
 
@@ -7,45 +7,41 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-30 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-30 | 每次必执行 |
 
-## 本轮产出（Round 162）
+## 本轮产出（Round 163）
 
-### Project 新增（4个）
+### Article 新增（1个）
+| 主题 | 来源 | 核心论点 |
+|------|------|---------|
+| Anthropic Containment 工程：三层防御架构 | anthropic.com/engineering/how-we-contain-claude | 环境层Containment（硬边界）优于 Supervision（行为层），93%审批疲劳率揭示"人在回路"的根本局限 |
+
+### Project 新增（1个）
 | 项目 | Stars | 主题关联 |
 |------|-------|---------|
-| study8677/awesome-architecture | 809 | 21张架构地图，AI Agent系统设计知识库 |
-| LocoreMind/locoagent | 776 | 真实浏览器自动化社交媒体Agent |
-| simonlin1212/TradingAgents-astock | 767 | A股多Agent投研框架，7分析师辩论决策 |
-| KevRojo/Dulus | 708 | 98%缓存命中率，30亿Token长程会话 |
-
-### jsonl 新增条目
-- study8677/awesome-architecture
-- LocoreMind/locoagent
-- simonlin1212/TradingAgents-astock
-- KevRojo/Dulus
+| microsoft/SkillOpt | 2,814 | 训练技能文档而非模型权重，与Containment工程形成「软约束↔硬边界」互补 |
 
 ## 线索区（未达门槛，待下轮评估）
 
-### GitHub 新候选（Stars 500-700，未达1000门槛）
-- XingYu-Zhong/DeepSeek-GUI（566 Stars）— DeepSeek GUI，暂缓
-- darkrishabh/agent-skills-eval（548 Stars）— Agent Skills测试运行器，暂缓
-- Kaelio/ktx-ai-data-agents-mcp-context-skills（505 Stars）— MCP数据代理上下文层，暂缓
-- withkynam/vibecode-pro-max-kit（500 Stars）— Spec驱动编码 harness，暂缓
+### 高Star新候选（均 > 500 Stars，Round 162已追踪部分）
+- **evilsocket/audit**（556 Stars）— 8阶段漏洞发现Agent，与Containment主题强相关 ← 下轮优先
+- **Tommy-yw/RunbookHermes**（555 Stars）— AIOps Agent，证据驱动事件响应
+- **google-deepmind/science-skills**（510 Stars）— 官方DeepMind科学工作流技能
+- **XiaoLuoLYG/GOD**（533 Stars）— Agent社群实时控制室
 
 ### 一手来源状态
-- **Anthropic Engineering Blog**：全部文章已追踪
-- **OpenAI Index**：Cloudflare JS 挑战，跳过
-- **Cursor Blog**：全部文章已追踪
-
-## 防重提示
-
-- `sources_tracked.jsonl` 当前 **177 条记录**（93 article / 184 project）
-- 本轮新增 4 个 project 条目
-- 下轮优先检查 GitHub 高 Star 新项目
+- **Anthropic Engineering Blog**：May 25新文章已产出（Containment），需扫描后续更新
+- **Cursor Blog**：最新文章（Composer 2.5/May 18，Cloud Agent Lessons/May 21）已追踪
+- **OpenAI Index**：大部分已追踪，持续扫描Engineering分类
 
 ## API 状态
 
 | 接口 | 状态 | 说明 |
 |------|------|------|
-| Tavily Search | ❌ | 配额耗尽（432），需升级计划 |
-| GitHub API | ✅ | 正常，本轮发现 4 个新项目 |
-| AnySearch | ⚠️ | 平台内部错误 |
+| GitHub API | ✅ | 正常，发现多个新项目 |
+| web_fetch (Anthropic) | ✅ | 成功获取Containment文章全文 |
+| SOCKS5 代理 | ✅ | 正常 |
+
+## 防重提示
+
+- `sources_tracked.jsonl` 当前 **272 条记录**（94 article / 178 project）
+- 本轮新增 1 article + 1 project 条目
+- evilsocket/audit 强关联Containment主题，下轮优先
