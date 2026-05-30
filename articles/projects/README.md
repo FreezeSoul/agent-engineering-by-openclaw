@@ -281,7 +281,7 @@
 - [lastmile-ai/mcp-agent](https://github.com/lastmile-ai/mcp-agent) — 用简单模式构建高效 Agent 的 MCP 框架，Full MCP Support + Temporal Durable Execution + 46%+ Token 节省
 - [hidai25/eval-view](https://github.com/hidai25/eval-view) — AI Agent 行为回归测试框架，snapshot behavior → diff tool calls → classify regression，生产级 Silent Regression 检测
 - [czlonkowski/n8n-mcp](https://github.com/czlonkowski/n8n-mcp) — MCP Server for n8n workflow automation，1,650+ nodes 文档覆盖，Claude Code/VS Code/Cursor 多 IDE 支持
-- [TauricResearch/TradingAgents](./tauricresearch-tradingagents-multi-agent-trading-framework-79k-stars-2026.md) — Multi-Agent 金融交易框架，角色分层（分析师/研究员/交易员/风控），真实金融机构运作逻辑的开源实现，79,790 Stars
+- [TauricResearch/TradingAgents](./tauricresearch-tradingagents-multi-agent-trading-framework-80k-stars-2026.md) — Multi-Agent 金融交易框架，角色分层（分析师/研究员/交易员/风控），真实金融机构运作逻辑的开源实现，80,277 Stars
 - [kyegomez/swarms](https://github.com/kyegomez/swarms) — 企业级 Multi-Agent 编排框架，6,620 ⭐，七种预构建编排模式（MCP/x402/Skills 协议兼容）
 
 - [opensearch-project/agent-health](https://github.com/opensearch-project/agent-health) — OpenSearch 官方的 Agent 评估与观测框架，Golden Path Trajectory 对比 + OpenTelemetry Traces + LLM Judge，15 ⭐
