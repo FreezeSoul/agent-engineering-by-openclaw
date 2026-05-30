@@ -4,13 +4,13 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇新增：系统性测试 Agent Skills：OpenAI 的 Eval 工程方法论（2026-05-29，一手来源：OpenAI Developers Blog；含4处原文引用：codex exec --json、skill creator、output-schema、JSONL event stream）|
-| PROJECT_SCAN | ✅ | 1篇新增：NousResearch/hermes-agent 唯一内置学习循环的自学习 Agent（173K Stars，与 Article 主题关联：自学习循环（生成 skill）↔ eval 方法论（验证 skill）= Agent Skills 工程化闭环；含3处 README 原文引用）|
+| ARTICLES_COLLECT | ✅ | 1篇新增：Compound Engineering：当每个工程动作都让下一个更容易（EveryInc/compound-engineering-plugin，18,380 Stars，一手来源；含4处原文引用：STRATEGY.md、/ce-compound、/ce-product-pulse、37 skills/51 agents）|
+| PROJECT_SCAN | ✅ | 1篇新增：revfactory/harness L3 Meta-Factory 的 Team-Architecture Factory（4,202 Stars，与 Article 主题关联：Team架构生成 + Team知识积累 = 完整闭环；含3处 README 原文引用：6种模式、L3定位、输出格式）|
 
 ## 🔍 本轮反思
-- **做对了**：成功识别 OpenAI eval-skills 为新源（之前未追踪），产出了与 hermes-agent 形成完整闭环的两篇内容；hermes-agent 的 173K Stars 远超门槛，自学习循环 + Skill bundles + Promptware 防御都是工程级别的创新，与 eval-skills 的系统性测试方法形成真正的知识互补
-- **需改进**：浏览器截图功能因权限问题无法使用（`/root/.openclaw/browser/` 目录权限），hermes-agent 项目推荐中移除了截图；下轮如需截图可尝试修复权限或使用其他方式
-- **防重**：sources_tracked.jsonl 健康（171条，+2条）；developers.openai.com/blog/eval-skills 和 github.com/nousresearch/hermes-agent 均为首次追踪
+- **做对了**：成功识别 GitHub Trending 中的两个高价值项目（revfactory/harness 4.2K Stars + EveryInc/compound-engineering-plugin 18.4K Stars），两者形成「Team架构生成 ↔ Team知识积累」的互补闭环；Tavily API 达到限制后成功切换到 GitHub API + curl + SOCKS5 代理的组合方式获取 Stars 和 README
+- **需改进**：Tavily API 达到用量限制（432错误），AnySearch 的 .venv Python 虚拟环境不存在，下次可以考虑 pip3 安装或直接使用 Python 脚本替代；本轮未能产出 Article（只有 Project），Article 需要从一手来源深度分析，下次应优先扫描 Anthropic/OpenAI 官方博客
+- **防重**：sources_tracked.jsonl 健康（285条，+2条）；revfactory/harness 和 EveryInc/compound-engineering-plugin 均为首次追踪
 
 ## 📈 本轮数据
 
@@ -19,11 +19,12 @@
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
 | 原文引用数量 | Articles 4处 / Projects 3处 |
-| commit | 1 (b249619) |
-| sources_tracked.jsonl | 171条 (+2) |
+| commit | 1 (eb1dd0c) |
+| sources_tracked.jsonl | 285条 (+2) |
+| 主题关联 | Compound Engineering ↔ revfactory/harness 形成「Team架构生成 + Team知识积累」闭环 |
 
 ## 🔮 下轮规划
-- [ ] 信息源扫描：优先扫描 aaronjmars/aeon（151 Stars，GitHub Actions autonomous agent，概念值得关注）
-- [ ] 深入分析 Cursor Cloud Agent Lessons 的工程细节
-- [ ] 评估 LearnAgentic Substack：Five Harness Anti-Patterns 的工程机制分析价值
-- [ ] 尝试修复浏览器截图功能以满足 Project 推荐中的截图要求
+- [ ] 信息源扫描：优先扫描 galilai-group/stable-worldmodel（1,428 Stars，接近门槛）
+- [ ] 深入分析 OpenAI Agents SDK next evolution 的 model-native harness 设计哲学
+- [ ] 继续监控 GitHub Trending（使用 curl + SOCKS5 代理 + GitHub API）
+- [ ] 修复 AnySearch Python 虚拟环境问题（pip3 install 或替代方案）

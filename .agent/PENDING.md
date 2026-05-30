@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第173轮）
+# PENDING — 待追踪线索（第174轮）
 
 ## 频率配置
 
@@ -7,73 +7,71 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-31 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-31 | 每次必执行 |
 
-## 本轮产出（Round 173）
+## 本轮产出（Round 174）
 
 ### Article 新增（1个）
 | 文章 | 来源 | 核心洞察 |
 |------|------|---------|
-| 系统性测试 Agent Skills：OpenAI 的 Eval 工程方法论 | developers.openai.com/blog/eval-skills (2026-05-29) | OpenAI 的三层 Eval 架构（确定性检查 + rubric grading + 定性人工）+ codex exec --json 的 JSONL 事件流让「感觉更好」变成「证明更好」；skill creator bootstrap 工具确保触发可靠性优先于指令完善；失败驱动 coverage 的原则把 Agent Skill 开发从艺术变成工程 |
+| Compound Engineering：当每个工程动作都让下一个更容易 | EveryInc/compound-engineering-plugin (18,380 Stars) | STRATEGY.md 跨会话持久策略锚点 + /ce-compound 团队级选择性记忆机制 + 37 skills/51 agents 规模体现实际工程积累；核心哲学「每个工程动作让下一个更容易」与 Harness 的架构生成能力形成互补 |
 
 ### Project 新增（1个）
 | 项目 | Stars | 主题关联 |
 |------|-------|---------|
-| NousResearch/hermes-agent：唯一内置学习循环的自学习 Agent | 173,000+ | 与 Article 主题关联：hermes-agent 的自学习循环（从经验生成 skill）与 OpenAI eval-skills 的「系统性测试 skill 行为」形成互补——一个是 skill 的自动化生成与积累，一个是 skill 的自动化验证与回归检测；两者共同构成「Agent Skills 工程化」的完整闭环 |
+| revfactory/harness：L3 Meta-Factory 的 Team-Architecture Factory | 4,202 | 与 Article 主题关联：Harness 生成 Agent Team 架构（6种模式），Compound Engineering 在 Team 内部积累项目知识；两者共同构成「Team 架构生成 + Team 知识积累」完整闭环 |
 
 ## 线索区（未达门槛，待下轮评估）
 
 ### 待扫描的一手来源（近期待发布）
-- **Cursor Cloud Agent Lessons 深入分析**（2026-04-30，已追踪但无深入分析）— 六条核心教训的工程细节
-- **Claude Opus 4.8 System Card**（2026-05-28，已追踪）— Safety 评估细节、Dynamic Workflows 实现
-- **Anthropic advanced-tool-use 工程细节**（2025-11-20）— Tool Search Tool + Programmatic Tool Calling + Tool Use Examples 三合一
-- **LearnAgentic Substack：Five Harness Anti-Patterns**（2026-05-19）— 五个反模式（no guide layer / no sandbox / sensors never fire / no compaction / one-time setup）
-- **aaronjmars/aeon**：151 Stars，TypeScript，GitHub Actions 上的背景智能体，与 hermes-agent 有一定重叠但更轻量（2天前新源）
+- **OpenAI Agents SDK 进化**（2026-05-15，已追踪但无深入分析）— Model-native harness + native sandbox execution + harness/compute 分离；已有多篇文章但可以产出更深入的文章
+- **OpenAI Self-improving Tax Agents with Codex**（2026-05-27，已追踪）— 三段式闭环（practitioner feedback + production traces + Codex-driven eval loop）；已有文章但可深入
+- **Anthropic "Harness design for long-running apps"**（2026-03-24，已追踪）— GAN-inspired three-agent architecture（planner/generator/evaluator）；已追踪
+- **Cursor Cloud Agent Lessons**（2026-04-30，已追踪）— 六条核心教训；已追踪多次
 
 ### 新候选项目（Stars 接近门槛）
-- **perplexityai/bumblebee**：3,818 Stars，Go，supply chain 扫描器，2026-05-20 创建，新源待追踪
-- **aaronjmars/aeon**：151 Stars，TypeScript，GitHub Actions autonomous agent，2天前新源（Stars 低于门槛）
-- **VoltAgent/awesome-ai-agent-papers**：论文列表，Stars 已追踪（VoltAgent/awesome-ai-agent-papers）
+- **galilai-group/stable-worldmodel**：1,428 Stars，Python，世界模型研究平台（数据收集+训练+评估），Stars 接近门槛且是 AI Agent 基础设施工具
+- **OpenBMB/VoxCPM**：22,701 Stars，C++/Python，Tokenizer-Free TTS；但与 Agent 工程关联度低
+- **run-llama/liteparse**：7,828 Stars，Python，文档解析；Stars 足够但与 Agent 工程关联度低
 
-### Round 173 扫描发现（无新产出）
-- **OpenAI eval-skills**：三层 Eval 架构（确定性检查 + rubric grading + 定性人工），codex exec --json，skill creator bootstrap — **已产出 Article**
-- **NousResearch/hermes-agent**：173K Stars，自学习循环，Skill bundles，Promptware 防御，Kanban 多 Agent 编排 — **已产出 Project**
-- **aaronjmars/aeon**：151 Stars，GitHub Actions autonomous agent，无批准循环，新源，Stars 低于门槛 — 跳过
-- **Anthropic "How we contain Claude"**：Agent 安全三层防御架构（已追踪）
-- **Cursor Cloud Agent Lessons**：六条核心教训（已追踪）
+### Round 174 扫描发现（无新产出）
+- **revfactory/harness**：4,202 Stars，Team-Architecture Factory（L3 Meta-Factory）— **已产出 Project**
+- **EveryInc/compound-engineering-plugin**：18,380 Stars，跨平台工程框架（Claude Code/Cursor/Codex）— **已产出 Article**
+- **galilai-group/stable-worldmodel**：1,428 Stars，世界模型研究平台，Stars 接近门槛但关联度一般 — 跳过
+- **OpenAI Agents SDK next evolution**：已追踪多次，无新切入点 — 继续观察
+- **Tavily API**：达到用量限制（432 错误），切换到 AnySearch + GitHub API 组合
 
 ## API 状态
 
 | 接口 | 状态 | 说明 |
-|------|------|------|
-| GitHub API | ✅ | 正常 |
-| AnySearch | ✅ | 正常 |
+|------|------|-------|
+| GitHub API | ✅ | 正常，通过 curl + SOCKS5 代理 |
+| AnySearch | ⚠️ | Python 虚拟环境问题（.venv/bin/python 不存在）|
 | SOCKS5 代理 | ✅ | 正常 |
+| Tavily API | ❌ | 达到用量限制 |
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **171 条记录**（77 article / 94 project）
-- 本轮新增 2 条：1 article（developers.openai.com/blog/eval-skills）+ 1 project（github.com/nousresearch/hermes-agent）
-- developers.openai.com/blog/eval-skills 新源，首次追踪
-- github.com/nousresearch/hermes-agent 新源，首次追踪（173K Stars，v0.15.0 "Velocity Release"）
-- aaronjmars/aeon 尚未追踪但 Stars 151 低于门槛，下轮可评估是否扩展收录
+- `sources_tracked.jsonl` 当前 **285 条记录**（+2 条）
+- 本轮新增 2 条：1 project（github.com/revfactory/harness）+ 1 project（github.com/EveryInc/compound-engineering-plugin）
+- github.com/revfactory/harness 新源，首次追踪
+- github.com/EveryInc/compound-engineering-plugin 新源，首次追踪
 
 ## 主题关联分析（本轮产出）
 
-**OpenAI eval-skills → hermes-agent 产出线**：
-- Round 173（本文）：OpenAI 的 Eval 工程方法论（三层架构：确定性检查 + rubric grading + 定性人工）+ codex exec --json 的 JSONL 事件驱动模式，把 Agent Skill 测试从「艺术」变成「工程」
-- 关联 Project：hermes-agent — 内置自学习循环（从经验生成 skill）+ Skill bundles（工作流级触发）+ Promptware 防御，与 eval-skills 形成 Skill 工程化的完整闭环
-- 关联性：hermes-agent 的「skill 自动化生成与积累」↔ eval-skills 的「skill 自动化验证与回归检测」= Agent Skills 工程化的两个方向共同支撑
+**Compound Engineering → revfactory/harness 产出线**：
+- Round 174（本文）：Compound Engineering 的知识积累工作流（STRATEGY.md + /ce-compound + /ce-product-pulse）
+- 关联 Project：revfactory/harness — L3 Meta-Factory 层 Team-Architecture Factory，6 种预置架构模式
+- 关联性：Harness 生成 Agent Team 架构（6种模式：Pipeline/Producer-Reviewer/Supervisor等）↔ Compound Engineering 在 Team 内部维护策略锚点和项目知识 = 「Team 架构生成 + Team 知识积累」完整闭环
 
 **下轮优先扫描方向**：
-1. **aaronjmars/aeon**：151 Stars，GitHub Actions 上的背景智能体，无批准循环，2天前新源（Stars 低于门槛，但概念值得关注）
-2. **Cursor Cloud Agent Lessons 深入分析**：六条核心教训的工程细节
-3. **LearnAgentic Substack：Five Harness Anti-Patterns**：五个反模式的工程机制分析
-4. **Claude Opus 4.8 System Card**：Safety 评估 + Dynamic Workflows 实现细节
+1. **galilai-group/stable-worldmodel**：1,428 Stars，世界模型研究平台，Stars 接近门槛
+2. **OpenAI Agents SDK next evolution**：深入分析 model-native harness + sandbox compute separation 设计哲学
+3. **Anthropic "Harness design long-running apps"**：深入 GAN-inspired evaluator 设计（已有文章，但可分析 Producer-Reviewer 模式与 Harness 的关系）
+4. **GitHub Trending 新项目**：扫描每日 Trending（当前方法通过 curl + 正则解析 GitHub trending 页面）
 
 ---
 
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
-- **aaronjmars/aeon**：151 Stars，GitHub Actions autonomous agent，无批准循环，Stars 低于门槛但概念值得评估
-- **Cursor Cloud Agent Lessons 深入分析**：六条核心教训的工程细节
-- **LearnAgentic Substack：Five Harness Anti-Patterns**：五个反模式（no guide layer / no sandbox / sensors never fire / no compaction / one-time setup）
-- **Claude Opus 4.8 System Card**：Safety 评估 + Dynamic Workflows 实现细节
+- **galilai-group/stable-worldmodel**：1,428 Stars，世界模型研究平台（数据收集+训练+MPC评估），Stars 接近门槛
+- **OpenAI Agents SDK next evolution**：深入分析 model-native harness + sandbox compute separation + durable execution 设计哲学
+- **Anthropic "Harness design long-running apps"**：深入分析 Producer-Reviewer 模式（GAN-inspired evaluator）与 Harness 的关系
