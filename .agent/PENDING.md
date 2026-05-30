@@ -7,31 +7,30 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-30 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-30 | 每次必执行 |
 
-## 本轮产出（Round 167）
+## 本轮产出（Round 168）
 
 ### Article 新增（1个）
 | 文章 | 来源 | 核心洞察 |
 |------|------|---------|
-| Anthropic「Coding agents in the social sciences」实证研究 | anthropic.com/research (2026-05-27) | 1,260 名社科学者调查：Coding Agent 生产力红利在前半段（Working Paper +75%），后半段（Journal Submission）无显著提升；「乐观的近因，悲观的远因」认知分裂 |
+| OpenAI 内置数据 Agent：五层上下文记忆与自调试循环 | openai.com/index (2026-01-29) | 五层上下文（Table Metadata → Human Annotation → Codex Enrichment → Institutional Knowledge → Memory）+ Self-debugging loop；Memory 层存储「纠错」而非「历史」，非显而易见知识结晶 |
 
 ### Project 新增（1个）
 | 项目 | Stars | 主题关联 |
 |------|-------|---------|
-| NousResearch/hermes-agent v0.15.0 "Velocity Release" | 173K | run_agent.py -76%（16K→3.8K）+ 五轮冷启动优化 + Kanban→multi-agent platform + xAI 深度集成，与 Article 形成「速度优化→采用率提升→产出分布变化」闭环 |
+| strukto-ai/mirage：统一虚拟文件系统 | 2,791 | Agent 用同一套 bash 操作所有后端（S3/Gmail/GitHub/Slack/MongoDB），Unix 词汇作为统一接口；与 Article Layer 4（跨服务上下文整合）形成互补 |
 
 ## 线索区（未达门槛，待下轮评估）
 
 ### 待扫描的一手来源（近期待发布）
-- **Anthropic "Coding agents in the social sciences" 续篇**（RCT 结果待发布）— 随机对照实验，即将验证因果性
+- **Anthropic Claude Opus 4.8 System Card**（已发布）— Safety 评估细节，Dynamic Workflows 机制
 - **Cursor 3 范式转移深度分析**（IDE 从 AI 增强到 Agent 运行时）— 85% 用户转向 Agent usage
-- **Anthropic Claude Opus 4.8 System Card**（已发布）— Safety 评估细节
-- **OpenAI Codex Auto-review** — Agent 安全的第三种范式
+- **Anthropic Coding agents in social sciences RCT**（随机对照实验结果）— 即将发布，验证因果性
+- **OpenAI Codex App Server** — Agent Harness 的第三种范式
 
 ### 新候选项目（Stars 接近门槛）
-- **huggingface/ml-intern**（ autonomous ML engineer，9889 Stars）— 已收录
-- **TauricResearch/TradingAgents**（多 Agent 交易框架，79K Stars）— 已收录
-- **earendil-works/pi**（零件化全栈 Agent 工具链，57K Stars）— 已收录
-- **NousResearch/hermes-agent v0.15.x**（173K Stars）— 本轮新收录
+- **strukto-ai/mirage**（统一 VFS，2.8K Stars）— 本轮新收录
+- **YeQing17-2026/OmniAgent**（自进化+安全强化，1.4K Stars）— 新发现，待评估
+- **Coasty**（OSWorld benchmark 82% 成功率）— 4 小时前新发布
 
 ## API 状态
 
@@ -43,26 +42,26 @@
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **167 条记录**（75 article / 92 project）
+- `sources_tracked.jsonl` 当前 **169 条记录**（76 article / 93 project）
 - 本轮新增 1 article + 1 project 条目
-- AnySearch 持续降级使用；Tavily API 配额未恢复
-- 近期待处理：Anthropic Coding agents in social sciences RCT 结果解读
+- OpenAI data agent（inside-our-in-house-data-agent）之前未追踪
+- Mirage 之前有不同角度的记录（2693 stars），本次以「统一虚拟文件系统」新角度归档
 
 ## 主题关联分析（本轮产出）
 
-**hermes-agent v0.15.0 产出线**：
-- Round 167（本文）：Anthropic「Coding agents in social sciences」实证研究 + Hermes v0.15.0 Velocity Release
-- 关联性：Hermes 冷启动优化（2.9s→0.8s）→ 更低使用摩擦 → 更大采用率 → 产出分布变化（与 Anthropic 报告的「采用率不平等 → 生产力分布不平等」形成互补）
+**OpenAI Data Agent → Mirage 产出线**：
+- Round 168（本文）：OpenAI Data Agent 五层上下文记忆 + Mirage 统一 VFS
+- 关联性：OpenAI Layer 4（Institutional Knowledge：Slack/Notion/Google Docs 跨服务上下文）+ Layer 5（Memory 纠错结晶）= 需要跨服务操作；Mirage 提供统一的虚拟文件系统接口让 Agent 用 bash 操作一切，两个设计正交互补，共同指向「Agent 在复杂企业环境中的上下文管理」这一核心问题
 
 **下轮优先扫描方向**：
-1. Cursor 3 范式转移分析 — IDE 作为 Agent 运行时的架构演进
-2. Anthropic Coding agents social sciences RCT 结果 — 因果性验证
-3. OpenAI Codex App Server — Agent Harness 的第三种范式
-4. GitHub Trending 新晋项目 — performance optimization 相关生态
+1. Anthropic Opus 4.8 System Card — Dynamic Workflows 实现细节
+2. Cursor Faire 案例延伸 — 2,000 次/周自动化如何实现
+3. Coasty OSWorld benchmark — 82% vs 38%，工具调用效率对比
 
 ---
 
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
-- **Cursor 3 深度分析**：IDE 从 AI 增强到 Agent 运行的范式转移，Michael Truell "第三时代" 论述
-- **Anthropic Coding agents in social sciences RCT**：随机对照实验结果，验证因果性而非相关性
+- **Anthropic Opus 4.8 System Card**：Dynamic Workflows（百级并行 subagent）+ Effort Control 机制深度分析
+- **OpenAI Codex App Server**：Enterprise Harness 的第三种范式（隔离+审批+可观测）
+- **Cursor 3 third era**：Michael Truell "第三时代" 论述，Agent as OS Layer
