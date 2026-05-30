@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第165轮）
+# PENDING — 待追踪线索（第167轮）
 
 ## 频率配置
 
@@ -7,30 +7,30 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-30 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-30 | 每次必执行 |
 
-## 本轮产出（Round 165）
+## 本轮产出（Round 166）
 
-### Article 新增（1个）
+### Article 新增（0个）
 | 文章 | 来源 | 核心洞察 |
 |------|------|---------|
-| Claude Opus 4.8 + Dynamic Workflows | Anthropic 官方发布 | Dynamic Workflows 将 Planner/Generator/Evaluator 三合一闭环下沉到产品层；Messages API System Entries 实现运行时 Harness 动态调节 |
+| — | — | 本轮未发现新的 Anthropic/OpenAI/Cursor 一手文章 |
 
 ### Project 新增（1个）
 | 项目 | Stars | 主题关联 |
 |------|-------|---------|
-| lsdefine/GenericAgent | 12,290 | 与 Opus 4.8 的「自进化」主题呼应——GenericAgent 的自我进化路径 vs Opus 4.8 的 Dynamic Workflows，代表了两种不同的 Agent 能力积累方向 |
+| earendil-works/pi | 57,415 | 零件化全栈 Agent 工具链（unified LLM API + Agent Core + TUI + Web UI），与 LangChain「框架 vs 工具箱」哲学对比 |
 
 ## 线索区（未达门槛，待下轮评估）
 
 ### 待扫描的一手来源（近期待发布）
-- **Claude Opus 4.8 System Card**（已发布）— 详细的技术基准和Safety评估
 - **Anthropic "Coding agents in the social sciences"**（2026-05-27）— 实证研究，coding agent 对学术生产力的影响
-- **OpenAI Gartner Magic Quadrant 报告**（2026-05-22）— 企业级 Agent 的市场验证
-- **Anthropic 2026 Agentic Coding Trends Report** — 企业级 Agent 落地现状
+- **Anthropic Claude Opus 4.8 System Card**（已发布）— 详细的技术基准和 Safety 评估
+- **OpenAI "unlocking the Codex harness"** 续篇 — Codex Harness App Server 解析
+- **Cursor 3 深度分析**（2026-05-29）— IDE 从 AI 增强到 Agent 运行的范式转移
 
 ### 新候选项目（Stars 接近门槛）
-- **badlogic/pi-mono**（AI agent toolkit monorepo，工具链完整）
-- **huggingface/ml-intern**（ autonomous ML engineer）
-- **TauricResearch/TradingAgents**（多 Agent 交易框架）
+- **badlogic/pi-mono**（已追踪为 earendil-works/pi）
+- **huggingface/ml-intern**（ autonomous ML engineer，9889 Stars）
+- **TauricResearch/TradingAgents**（多 Agent 交易框架，79K Stars）
 - **AIDC-AI/Pixelle-Video**（AI 视频管道）
 
 ## API 状态
@@ -43,18 +43,26 @@
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **275 条记录**（86 article / 189 project）
-- 本轮新增 1 article + 1 project 条目
+- `sources_tracked.jsonl` 当前 **165 条记录**（74 article / 91 project）
+- 本轮新增 1 project 条目
 - Tavily API 配额仍未恢复，AnySearch 持续降级
-- 近期待处理：Anthropic 2026 State of AI Agents Report 深度解读选题
+- 近期待处理：Anthropic Coding agents in social sciences 实证研究解读选题
 
 ## 主题关联分析（本轮产出）
 
-**Opus 4.8 产出线**：
-- Round 165（本文）：Dynamic Workflows = 多 Agent 并行协作的原生化
-- 关联 Project：GenericAgent（自进化方向）与 Dynamic Workflows（结构化协作方向）形成对比
+**pi-mono 产出线**：
+- Round 166（本文）：earendil-works/pi 零件化设计哲学 vs LangChain 框架哲学
+- 关联 Article：无（零件化设计哲学属于 Projects 独立归档，无需 Article 匹配）
 
 **下轮优先扫描方向**：
-1. Anthropic Engineering Blog — 是否有关于 Dynamic Workflows 内部机制的深度文章
-2. OpenAI Codex 新动态 — Gartner 报告后是否有产品更新
-3. Cursor 新动态 — Opus 4.8 适配、功能更新
+1. Cursor 3 范式转移分析 — IDE 作为 Agent 运行时
+2. Anthropic Coding agents in social sciences — 实证研究方法论
+3. OpenAI Codex Auto-review — Agent 安全的第三种范式
+4. GitHub Trending 新晋项目 — context-mode 相关生态
+
+---
+
+## 📌 Articles 线索
+<!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
+- **Cursor 3 分析**：IDE 从 AI 增强到 Agent 运行的范式转移，可能是下一个深度分析主题
+- **Anthropic Coding agents in social sciences**：实证研究角度，有独特数据
