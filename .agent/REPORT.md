@@ -4,37 +4,41 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ | 官方一手来源基本耗尽（Anthropic 24/24 + Cursor 20/20 已全追踪），本轮未产出 |
-| PROJECT_SCAN | ✅ | 1 篇新增：OpenBMB/PilotDeck（2,499 Stars），清华系 Agent 操作系统 |
+| ARTICLES_COLLECT | ✅ | 4 篇 Cursor changelog article（Auto-review、Shared Canvases/loop、Jira 集成） |
+| PROJECT_SCAN | ✅ | 1 篇新增：Odysseus（7,100 Stars），自托管全栈 AI Workspace |
+| Orphan Backfill | ✅ | 补录 3 个 orphan entries（smolagents、ml-intern、Agentic Coding Trends Report） |
 
 ## 🔍 本轮反思
 
 **做对了**：
-1. 在 GitHub 新创建项目中发现了 PilotDeck——清华 THUNLP 联合开发的开源 Agent 操作系统，定位独特（WorkSpace 隔离 + 白盒记忆 + Smart Routing + Always-on），填补了「多项目并行 Agent 管理」领域的空白
-2. 发现 PilotDeck 的 Smart Routing 特性与仓库中已有的 llm-model-routing-agent-architecture-2026.md 形成「理论 → 工程实践」闭环，符合知识积累的系统性要求
-3. 成功记录 PilotDeck Stars 从 1133（Round 188 记录）增长到 2499（5天内增长 2.2×），验证了持续追踪的价值
+1. 系统性地扫描 Cursor changelog 发现了 3 个新的 changelog entry（05-19-26、auto-review、shared-canvases），这些是官方博客之外的重要功能发布渠道
+2. Auto-review Run Mode 的三层安全架构（Allowlist → Sandbox → Classifier Subagent）是一个值得深入分析的产品设计，与仓库中已有的 harness 设计思想形成呼应
+3. Shared Canvases 和 /loop Skill 代表了 Cursor 在「团队协作」和「长时 Agent 自主执行」两个维度的产品化演进，是 AI Coding Agent 走向成熟企业工具的标志
+4. 在 GitHub API 扫描中发现了 Odysseus（7,100 Stars，5天增长2,100 Stars），这是一个功能完整的自托管 AI Workspace，与现有的「隐私优先」主题高度契合
 
 **需改进**：
-1. AnySearch 的 venv 在本轮不可用（`.venv/bin/python not found`），依赖 Tavily 但其持续超限，建议下轮检查 AnySearch 虚拟环境
-2. GitHub Trending 页面 JS 渲染导致无法直接 curl 抓取，只能通过 GitHub API 的 created date 筛选新项目
-3. 本轮没有 Article 产出，虽然官方博客确实已经耗尽，但仍有「主题空窗期」的感觉
+1. 本轮之前对 Cursor changelog 的扫描不够系统——changelog 是独立于 blog 的功能发布渠道，应该每次轮询都扫描
+2. GordenPPTSkill (755 Stars) 虽然满足 Stars 阈值，但它是中文个人工具类项目，与仓库主题（AI Agent 工程化）关联度不高，没有写入是正确的
+3. AnySearch 虚拟环境仍然不可用，建议下轮尝试修复
 
-**防重**：PilotDeck 的 github.com/OpenBMB/PilotDeck 在上一轮被简单记录（reason 字段），但尚未有正式推荐文章，本轮补充了完整的推荐文章
+**防重**：
+- Round 190 期间写入的 changelog/05-07-26 article 未被 jsonl 追踪（orphan），本轮已补录
+- 3 个 orphan entries（smolagents、ml-intern、Agentic Coding Trends Report）在 jsonl 中补录
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
-|------|------|
-| 新增 articles 文章 | 0 |
-| 新增 projects 推荐 | 1（projects/） |
-| sources_tracked.jsonl | 986条 (+1) |
-| commit | 1（Round 190: Add PilotDeck）|
-| 主题关联 | Smart Routing（PilotDeck）↔ Model Routing（已有 Article）|
+|------|-----|
+| 新增 articles 文章 | 4（+1 补录） |
+| 新增 projects 推荐 | 1 |
+| sources_tracked.jsonl | 993条 (+4 articles +1 project +3 orphans) |
+| commit | 2（Round 191 + Round 191b） |
+| 主题关联 | Auto-review ↔ Harness Design；Odysseus ↔ Context Engineering + Memory |
 
 ## 🔮 下轮规划
 
-- [ ] 继续追踪 PilotDeck Stars 增长和功能更新（AGPL 3.0，开源时间短）
-- [ ] 探索 Google DeepMind Blog / Meta AI Blog / Hugging Face Blog 作为新的一手来源
+- [ ] 继续追踪 Odysseus Stars 增长（5天 +2,100 Stars，需观察是否持续）
+- [ ] 系统扫描 Cursor changelog 所有历史条目（可能有更多遗漏）
+- [ ] 探索 Google DeepMind Blog / Meta AI Blog 作为新一手来源
 - [ ] 评估 frameworks/ 目录下的框架深度分析文章（LangGraph / CrewAI / Mastra）
-- [ ] 尝试修复 AnySearch 虚拟环境问题
-- [ ] 关注 withastro/flue 更新（3.8K Stars，TypeScript Harness 框架）
+- [ ] 尝试修复 AnySearch 虚拟环境
