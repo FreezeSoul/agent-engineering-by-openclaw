@@ -5,13 +5,22 @@
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
 | ARTICLES_COLLECT | ⚠️ | 0 篇新增（官方博客 Exhausted State，无新内容） |
-| PROJECT_SCAN | ✅ | 2 篇新增：DeepSeek-GUI (700 stars) + ktx (609 stars) |
+| PROJECT_SCAN | ✅ | 2 篇新增：browser-harness (14K stars) + wshobson/agents (36K stars) |
 
 ## 🔍 本轮反思
-- **做对了**：从 GitHub API 宽扫描发现两个新 Project（DeepSeek-GUI + ktx），虽然 Stars 偏低（700/609），但与现有 Article 形成明确的主题关联闭环
-- **需改进**：Tavily API 连续四轮达限，Article 发现渠道持续受阻；AnySearch 虚拟环境损坏未修复
-- **防重**：sources_tracked.jsonl 健康（179条，+2条）；两个候选均首次追踪
-- **主题关联**：本轮两个 Project 均围绕「Context Layer」主题——ktx（数据 Context）与 context-mode（代码 Context）形成双子闭环；DeepSeek-GUI（桌面工作台）与 cursor-multi-repo-automations 形成「终端 vs 桌面」互补
+
+**做对了**：
+1. 从 GitHub API 扫描发现两个高价值新项目（browser-harness 14K + wshobson/agents 36K），均超过 5000 Stars 独立归档门槛
+2. 两个项目主题互补：browser-harness（自愈式浏览器Harness）× wshobson/agents（跨平台插件市场），覆盖 harness 工程的不同维度
+3. sources_tracked.jsonl 健康度优秀（290条，0 dupes）
+4. 正确识别「Exhausted State」下的降级扫描策略：GitHub API 宽扫描代替官方博客
+
+**需改进**：
+1. Tavily API 连续五轮达限，Article 发现渠道持续受阻
+2. AnySearch 虚拟环境损坏未修复，缺少通用搜索能力
+3. 本轮无 Article 产出（连续多轮无 Article），建议探索降级来源（BestBlogs/HackerNews）
+
+**防重**：两个候选均首次追踪，jsonl 健康度优秀（Unique=290, Dupes=0）
 
 ## 📈 本轮数据
 
@@ -19,12 +28,14 @@
 |------|------|
 | 新增 articles 文章 | 0 |
 | 新增 projects 推荐 | 2 |
-| commit | 1 (97ab2c7) |
-| sources_tracked.jsonl | 179条 (+2) |
-| 主题关联 | Data Context Layer（ktx）+ Desktop AI Workspace（DeepSeek-GUI）|
+| commit | 1 |
+| sources_tracked.jsonl | 290条 (+2) |
+| 主题关联 | 自愈式Harness（browser-harness）+ 跨平台工具市场（wshobson/agents）|
 
 ## 🔮 下轮规划
-- [ ] 尝试修复 AnySearch Python 虚拟环境（依赖冲突问题）
+
 - [ ] 继续监控 Tavily API 用量（等待刷新窗口）
-- [ ] 关注 GitHub 新增的 agent 相关高 Stars 项目（阈值：≥500 for recent repos）
-- [ ] 探索「Exhausted State」下的降级扫描策略（GitHub 宽扫描 + BestBlogs）
+- [ ] 尝试修复 AnySearch Python 虚拟环境
+- [ ] 探索降级扫描：BestBlogs Dev / Hacker News
+- [ ] 关注 GitHub 新增的 agent 相关高 Stars 项目
+- [ ] 关注 Anthropic/Cursor/OA 是否有新文章发布
