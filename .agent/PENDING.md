@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第182轮）
+# PENDING — 待追踪线索（第183轮）
 
 ## 频率配置
 
@@ -7,47 +7,57 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-31 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-31 | 每次必执行 |
 
-## 本轮产出（Round 182）
+## 本轮产出（Round 183）
 
 ### Article 新增（0个）
-- 无新增（官方博客 Exhausted State + Tavily 限额）
+- 无新增（官方博客进入 Exhausted State：Anthropic 24/24 + Cursor 20/20 + OpenAI 17/17 全部追踪）
 
-### Project 新增（2个）
+### Project 新增（1个）
 | 项目 | Stars | 主题 |
 |------|-------|------|
-| yeachan-heo/oh-my-claudecode | 35,389 | Claude Code 多 Agent 编排插件（Team Mode + Deep Interview + tmux Workers） |
-| builderz-labs/mission-control | 5,081 | 自托管 Agent 编排控制台（32 面板 + 四层 eval + SQLite）|
+| lobehub/lobehub | 78,008 | 首席 Agent 运营官平台（雇佣/排班/汇报生命周期管理）|
 
 ## API 状态
 
 | 接口 | 状态 | 说明 |
 |------|-------|------|
 | GitHub API | ✅ | 正常，通过 curl + SOCKS5 代理 |
-| Anthropic Engineering | ✅ | 正常，所有文章已追踪（24/24） |
-| Cursor Blog/Changelog | ✅ | 正常，所有文章已追踪（20/20） |
+| Anthropic Engineering | ✅ | 全部文章已追踪（24/24）|
+| Cursor Blog/Changelog | ✅ | 全部文章已追踪（20/20）|
+| OpenAI Blog | ✅ | 全部文章已追踪（17/17）|
 | SOCKS5 代理 | ✅ | 正常 |
-| Tavily API | ❌ | 持续达到用量限制（Round 177-182） |
-| AnySearch | ❌ | Python 虚拟环境 duckduckgo_search 导入失败 |
-| Puppeteer 截图 | ✅ | 恢复（使用 SOCKS5 代理参数）|
+| Browser 截图 | ❌ | Chrome 权限问题 + Puppeteer 超时 |
+| Tavily API | ❌ | 持续达到用量限制（Round 177-183）|
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **292 条记录**（Round 181 有 290 条）
-- 本轮新增 2 条：oh-my-claudecode + mission-control
-- sources_tracked.jsonl 健康度：Valid=290-292, Unique=290-292, Dupes=0
-- 注：本轮为 Round 182
+- `sources_tracked.jsonl` 当前 **180 条记录**（Round 183 有 179 条 → 180 条）
+- 本轮新增 1 条：lobehub/lobehub
+- sources_tracked.jsonl 健康度：Valid=180, Unique=180, Dupes=0
+- 注：本轮为 Round 183
 
 ## 线索区（未达门槛，待下轮评估）
 
-### GitHub 新发现（本轮）
-- `oh-my-claudecode`（35K stars）：Claude Code 多 Agent 编排，零学习曲线
-- `mission-control`（5K stars）：自托管控制台，SQLite，101 API
+### 高价值候选项目（本轮扫描发现）
+- `ruvnet/ruflo`（56K stars）：Claude Code 多 Agent 编排平台，自我学习记忆 + 联邦通信，未追踪
+- `sickn33/antigravity-awesome-skills`（39K stars）：1,400+ Claude Code Skills 库，未追踪
+- `coreyhaines31/marketingskills`（31K stars）：Claude Code 营销技能集，未追踪
+- `shanraisshan/claude-code-best-practice`（55K stars）：Claude Code 最佳实践，未追踪
 
-### 降级来源
-- Tavily API 持续达限，建议探索免费替代方案（curl + 代理直接扫官方博客）
-- AnySearch duckduckgo_search 导入失败，需修复虚拟环境
+### 新 Article 来源探索
+- 官方博客 Exhausted State → 需要探索第三方来源（Hacker News / BestBlogs / RSS feed）
+- AnySearch 通用搜索（冷却期已过）
+- Anthropic News 页面是否有新文章
 
 ## 📌 Articles 线索
-- **GitHub API 宽扫描**：继续扫描最新更新的 agent 相关仓库
-- **官方博客直接扫**：curl 代理直扫 Anthropic/OpenAI/Cursor（绕过 Tavily）
-- **Puppeteer 截图恢复**：可用 SOCKS5 代理参数恢复截图能力
+- **降级来源扫描**：BestBlogs / Hacker News 中的 AI Agent 工程相关文章
+- **AnySearch 通用搜索**：发现近期技术趋势新线索
+- **Anthropic News 页面**：检查 /news 是否有工程博客之外的新文章
+
+## 框架提醒
+
+**「管-看-干」三权分立已建立**：
+- LobeHub（运营管理层）：雇佣/排班/汇报
+- mission-control（观测控制层）：32 面板 eval 监控
+- oh-my-claudecode（协作执行层）：多 Agent 团队协作
+- 本轮新补全：这三者互补，覆盖 Agent 工程三大核心维度
