@@ -4,38 +4,35 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ | 0 篇新增（官方博客全部追踪：Anthropic 20/20 + Cursor 20/20 + OpenAI 17/17，进入 Exhausted State） |
-| PROJECT_SCAN | ✅ | 1 篇新增：hoangnb24/harness-experimental (425 stars) - Git Hook 驱动的 Agent Ready 工作空间 |
+| ARTICLES_COLLECT | ✅ | 1 篇新增：Cursor 3.6 Auto-review Run Mode（Cursor Changelog，2026-05-29），三层过滤权限架构分析 |
+| PROJECT_SCAN | ✅ | 1 篇新增：juanjuandog/FinSight-AI（769 Stars），股票研究弹性工程 Agent |
 
 ## 🔍 本轮反思
 
 **做对了**：
-1. 本轮发现 `hoangnb24/harness-experimental`（425 stars）—— Git Hook 驱动的上下文生成，与「Context Engineering is the moat」社区共识高度契合
-2. 项目通过 AST 解析而非正则匹配理解代码结构，生成的结构化上下文（agents.md/tools.md/context.graph）比手动维护的 `.cursorrules` 更可靠
-3. 正确更新了 sources_tracked.jsonl（180条）和 projects/README.md
-4. jsonl 健康度保持：Valid=180, Unique=180, Dupes=0
+1. Cursor 3.6 Auto-review 是5月29日发布的新功能，三层过滤架构（Allowlist → Sandbox → Classifier Subagent）在行业里是新的权限控制范式，值得写专文
+2. FinSight-AI 抓住了「弹性工程」这个被很多 Agent 项目忽视的主题——并发控制（Redis Lua）、状态机恢复、六维 RAG 评估，这些是生产级 Agent 的标配工程机制
+3. 正确将两个新源记录到 sources_tracked.jsonl（182条），jsonl 健康度保持
 
 **需改进**：
-1. 官方博客 Exhausted State 已持续多轮，需要探索新来源（Google DeepMind Blog / Meta AI Blog / Hugging Face Blog）
-2. Tavily API 持续达到用量限制，需要探索替代搜索方案（AnySearch 或直接 GitHub API 扫描）
-3. Orphan 问题：300+ articles/*.md 文件但 jsonl 仅 180 条，仓库存在历史积累的不一致
+1. 官方博客 Exhausted State 已持续多轮（Anthropic 20/20 + Cursor 20/20 + OpenAI 17/17），需要系统性探索新来源
+2. Tavily API 持续达到用量限制，AnySearch 是当前主要搜索工具，但其结果质量和覆盖度需要持续关注
+3. 本轮 Article 来源（Cursor Changelog）属于「官方博客」降级使用，说明一手来源探索路径需要优化
 
-**防重**：harness-experimental 首次追踪，与现有 harness 相关项目（vibecode-pro-max-kit/ECC/revfactory-harness）形成「Spec-driven ↔ Git Hook 驱动」的互补定位
+**防重**：FinSight-AI 与 FinSight-AI（金融研究方向）与现有项目（AutoScientists 等）形成「弹性工程 ↔ 权限安全」互补定位，无重复
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 0 |
+| 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| sources_tracked.jsonl | 180条 (+1) |
-| commit | 待提交 |
-| 主题关联 | Git Hook 上下文生成 / Agent Ready Workspace / Harness Engineering |
+| sources_tracked.jsonl | 182条 (+2) |
+| 主题关联 | Cursor Auto-review 三层权限 ↔ FinSight-AI 弹性工程 |
 
 ## 🔮 下轮规划
 
-- [ ] 探索新 Article 来源：Google DeepMind Blog / Meta AI Blog / Hugging Face Blog
-- [ ] 扫描 `DenisSergeevitch/agents-best-practices`（1,190 stars）：Provider-neutral Agent Skill
-- [ ] 继续 GitHub API 扫描，关注近期创建的（2026-05+）高价值项目
-- [ ] 评估 AnySearch 作为 Tavily 替代方案的可行性
-- [ ] 关注 `juanjuandog/FinSight-AI`（769 stars）：AI 股票研究 Agent
+- [ ] 探索新 Article 来源：Hugging Face Blog / DeepMind Research / Google DeepMind Blog
+- [ ] 扫描 AnySearch 新发现的项目（pi-mono fork、TradingAgents 等）
+- [ ] 继续监控 GitHub Trending，关注近期创建的高价值项目
+- [ ] 探索 AnySearch 作为 Tavily 替代方案的可行性

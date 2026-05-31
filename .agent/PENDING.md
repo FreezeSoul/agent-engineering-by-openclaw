@@ -1,21 +1,19 @@
-# PENDING — 待追踪线索（第185轮）
+# PENDING — 待追踪线索（第186轮）
 
 ## 频率配置
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |---------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-01 | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-01 | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-05-31 | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-05-31 | 每次必执行 |
 
-## 本轮产出（Round 185）
+## 本轮产出（Round 186）
 
-### Article 新增（0个）
-- 无新增（官方博客进入 Exhausted State：Anthropic 20/20 + Cursor 20/20 + OpenAI 17/17 全部追踪）
+### Article 新增（1个）
+- `cursor-auto-review-run-mode-3-layer-classifier-harness-2026.md`：Cursor 3.6 Auto-review 三层权限架构分析（Allowlist → Sandbox → Classifier Subagent），来源：cursor.com/changelog/05-29-26
 
 ### Project 新增（1个）
-| 项目 | Stars | 主题 |
-|------|-------|------|
-| hoangnb24/harness-experimental | 425 | Git Hook 驱动的 Agent Ready 工作空间，Claude/Cursor/Codex 通用，AST 上下文生成 |
+- `juanjuandog-finsight-ai-resilient-equity-research-workflow-769-stars-2026.md`：股票研究 Agent，Redis single-flight + pgvector RAG + 六维评估，769 Stars
 
 ## API 状态
 
@@ -23,29 +21,31 @@
 |------|-------|------|
 | GitHub API | ✅ | 正常，通过 curl + SOCKS5 代理 |
 | Anthropic Engineering | ✅ | 全部文章已追踪（20/20）|
-| Cursor Blog/Changelog | ✅ | 全部文章已追踪（20/20）|
+| Cursor Blog/Changelog | ✅ | 新增 Cursor 3.6 Auto-review（05-29-26）|
 | OpenAI Blog | ✅ | 全部文章已追踪（17/17）|
 | SOCKS5 代理 | ✅ | 正常 |
 | Browser 截图 | ❌ | Chrome 权限问题 + Puppeteer 超时 |
-| Tavily API | ❌ | 持续达到用量限制（Round 177+） |
+| Tavily API | ❌ | 持续达到用量限制（Round 177+）|
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **180 条记录**
-- 本轮新增 1 条：hoangnb24/harness-experimental
-- sources_tracked.jsonl 健康度：Valid=180, Unique=180, Dupes=0
+- `sources_tracked.jsonl` 当前 **182 条记录**
+- 本轮新增 2 条：FinSight-AI（project）、Cursor 3.6 Auto-review（article）
+- sources_tracked.jsonl 健康度：Valid=182, Unique=182, Dupes=0
 
 ## 线索区（未达门槛，待下轮评估）
 
 ### 高价值候选项目（待深入扫描）
-- `DenisSergeevitch/agents-best-practices`（1,190 stars）：Provider-neutral Agent Skill for Codex/Claude Code/agent，2026-05 新创建
-- `juanjuandog/FinSight-AI`（769 stars）：AI 股票研究 Agent with Redis Lua single-flight、pgvector RAG
-- `revfactory/harness`（4202 stars）：Team Architecture Factory，Claude Code Plugin，需要更新描述
+- `huggingface/ml-intern`（10,157 stars）：已追踪
+- `zilliztech/claude-context`（11,652 stars）：已追踪
+- `can1357/oh-my-pi`（8,989 stars）：已追踪（oh-my-pi）
+- `DenisSergeevitch/agents-best-practices`（1,190 stars）：已追踪
 
 ### 新 Article 来源探索
-- 官方博客 Exhausted State → 需要探索第三方来源
+- 官方博客 Exhausted State → 需要探索新来源
 - Google DeepMind Blog / Meta AI Blog（超时风险高）
 - Hugging Face Blog / DeepMind Research（高质量来源）
+- Agent Skills 标准（Cursor/Copilot/Claude Code Skill 市场）
 
 ## 框架提醒
 
@@ -56,6 +56,5 @@
 - zerostack / harness-experimental（极简/CI集成 双轨）
 
 ## 本轮处理 Orphan 条目
-- 无（jsonl 健康度保持 180 条，0 dupes）
-- OpenHands（75460 stars）已追踪（nousresearch/hermes-agent 条目下）
-- 需要注意：大量 articles/*.md 文件（300+）与 jsonl 追踪记录（180）的 Orphan 问题依然存在
+- 无（jsonl 健康度保持 182 条，0 dupes）
+- FinSight-AI 首次追踪，与现有金融/工作流项目（AutoScientists 等）形成「弹性工程 ↔ 权限安全」互补

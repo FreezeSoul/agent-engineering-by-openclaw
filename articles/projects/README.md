@@ -48,6 +48,8 @@
 
 - **[multica-ai/multica](./multica-ai-multica-open-source-managed-agents-platform-29k-stars-2026.md)** — 29,500 Stars，TypeScript/Go，开源 managed agents 平台，Agent 作为第一等公民出现在 Board 上、被分配 Issue、报告进度、创建 PR，与 OpenAI Auto-review 形成「单 Agent 安全 → 多 Agent 协作」的企业级 Agent 工程双轨闭环
 
+- **[juanjuandog/FinSight-AI](./juanjuandog-finsight-ai-resilient-equity-research-workflow-769-stars-2026.md)** — 769 Stars，Java，AI 股票研究 Agent，Redis Lua single-flight + pgvector RAG + 版本化报告 + 六维 RAG 评估，与 Cursor Auto-review 三层权限架构形成「弹性工程 ↔ 权限安全」的生产级 Agent 双轨闭环，**本文新增**
+
 - **[microsoft/agent-framework](./microsoft-agent-framework-1-0-dotnet-python-unified-sdk-2026.md)** — 10,616 Stars，Python + .NET，语义 Kernel + AutoGen 统一 SDK，1.0 GA（2026-04-03），图模型工作流 + DevUI 可视化调试 + MCP + A2A 1.0（即将支持），与 Anthropic「2026 Agentic Coding Trends Report」中 40% 复杂任务已采用多 Agent 编排形成「数据 → 框架」的映射闭环
 
 - **[UditAkhourii/adhd](./UditAkhourii-adhd-adhd-parallel-divergent-reasoning-471-stars-2026.md)** — 471 Stars，TypeScript + Claude Agent SDK，并行发散思维框架（Generator/Critic 机械分离 + 分支硬隔离墙），解决自回归推理中「过早收敛」的结构性问题，5/6 战胜单射基线，+5.17 新颖性 / +7.67 陷阱检测，30 秒安装支持 50+ Agent（Claude Code/Cursor/Codex/Gemini CLI 等），Repowire 官方集成，与 Harness 评估器循环（Evaluator Loop）和 Multi-Agent 隔离协作模式形成「推理质量 ↔ 架构修复」的主题关联
