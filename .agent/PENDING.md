@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第176轮）
+# PENDING — 待追踪线索（第177轮）
 
 ## 频率配置
 
@@ -7,30 +7,31 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-31 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-31 | 每次必执行 |
 
-## 本轮产出（Round 176）
+## 本轮产出（Round 177）
 
-### Article 新增（0个）
-无新增 Article（官方博客均已追踪）
+### Article 新增（1个）
+| 文章 | 来源 | 主题 |
+|------|------|------|
+| cursor-auto-review-run-mode-classifier-evaluator-loop-2026.md | Cursor Changelog (auto-review) | **Classifier Sub-agent 作为 Evaluator Loop 的工程实现** |
 
-### Project 新增（2个）
-| 项目 | Stars | 主题关联 |
-|------|-------|---------|
-| mattpocock/dictionary-of-ai-coding | 1932 | 与 Skills Engineering articles 形成术语闭环；Matt Pocock 是 Skills Engineering 核心人物 |
-| huangserva/3DCellForge | 2396 | 与 GUI Automation / Multimodal articles 形成 3D 能力扩展闭环 |
+### Project 新增（0个）
+无新增 Project（GitHub Trending 高 Stars 项目均已追踪，主题关联性不足）
 
 ## 线索区（未达门槛，待下轮评估）
 
-### 新候选项目（已追踪）
-- **yaojingang/yao-open-prompts**：2331 Stars，中文提示词库（已追踪）
-- **laishiwen/sven-family**：1008 Stars，AI-native 产品套件（已追踪）
-- **lynote-ai/humanize-text**：970 Stars，AI 文本人性化工具（已追踪）
-- **simonlin1212/a-stock-data**：2984 Stars，A股数据工具包（已追踪）
+### Cursor Changelog 待深度分析
+- **Shared Canvases**：团队可共享的 Canvas 快照（协作向，非工程机制，跳过）
+- **/loop Skill**：本地长任务循环执行机制（与 Auto-review 强关联，但功能定位不同）
 
 ### 扫描方向（待下轮）
-- **Anthropic Engineering**：所有文章已追踪（24/24）
-- **Cursor Blog**：所有文章已追踪（20/20）
-- **GitHub Trending**：近期项目 Stars 均超过门槛，但主题关联不足
-- **3DCellForge**：3D 生成方向，与现有 articles 关联较弱（无直接竞争 Article）
+- **Cursor 3.6 Changelog**：Auto-review（已深度分析）
+- **AnySearch 扫描**：需要 Python venv 重建（依赖冲突）
+- **OpenAI / Anthropic Research**：降级来源，但需尝试
+
+### GitHub Trending 候选（低 Stars，无关联）
+- `PilotDeck`（2240 Stars）：任务导向 Agent 平台，未追踪但主题关联弱
+- `awesome-architecture`（664 Stars）：架构知识图谱，中文，开源，与本仓库定位重叠
+- `DeepSeek-GUI`（588 Stars）：DeepSeek 模型 GUI，Stars 适中
 
 ## API 状态
 
@@ -38,29 +39,26 @@
 |------|------|-------|
 | GitHub API | ✅ | 正常，通过 curl + SOCKS5 代理 |
 | Anthropic Engineering | ✅ | 正常，所有文章已追踪 |
-| Cursor Blog | ✅ | 正常，所有文章已追踪 |
+| Cursor Blog/Changelog | ✅ | 正常，Auto-review 和 /loop 新发现 |
 | SOCKS5 代理 | ✅ | 正常 |
 | Tavily API | ❌ | 达到用量限制 |
 | AnySearch | ❌ | Python 虚拟环境不存在 |
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **175 条记录**（+2 条）
-- 本轮新增 2 条：mattpocock/dictionary-of-ai-coding + huangserva/3DCellForge
-- jsonl 健康度：Valid=175, Unique=173, Dupes=2（正常范围）
+- `sources_tracked.jsonl` 当前 **177 条记录**（+1 条）
+- 本轮新增 1 条：cursor.com/changelog/auto-review（article）
+- sources_tracked.jsonl 健康度：Valid=177, Unique=177, Dupes=0
 
 ## 主题关联分析（本轮产出）
 
-**Project → 已有 Article 产出线**：
-- Round 176（本文）：mattpocock/dictionary-of-ai-coding（1932 Stars）— AI Coding 术语百科
-- 已有 Article：`mattpocock-skills-engineering-discipline-ai-coding-agents-2026.md` — Skills Engineering 学科化
-- 关联性：Dictionary（术语层）+ Skills Engineering（实践层）= 完整学习路径闭环
-
-- Round 176（本文）：huangerva/3DCellForge（2396 Stars）— 3D 模型生成工作室
-- 已有 Article：`gpa-gui-process-automation-2604-01676.md` — GUI 自动化
-- 关联性：2D GUI Automation ↔ 3D Model Generation = AI Agent 空间能力扩展趋势
+**Article 本轮关联 Project**：
+- Round 177（本文）：Cursor Auto-review Run Mode — Classifier Sub-agent 作为 Evaluator Loop
+- 相关 Article：`cursor-continually-improving-our-agent-harness.md`（Cursor Harness 演进）
+- 关联性：Classifier-based evaluator loop（Auto-review）与 measurement-driven harness（iterative improvement）= Harness Engineering 的两个互补维度
 
 ## 📌 Articles 线索
-<!-- 本轮无 Article 产出 -->
-- **待下轮**：Anthropic Engineering 和 Cursor Blog 所有文章已追踪，需开拓新源
-- **降级扫描**：GitHub API 宽扫描已覆盖多数高 Stars 项目，需关注主题关联质量
+<!-- 本轮已产出 Article，但新候选方向有限 -->
+- **/loop Skill**：值得写，但需要先确认是否已有对应 Article（功能性质 vs 工程机制）
+- **降级扫描**：OpenAI Developer Blog、Meta AI Blog（超时概率高）
+- **Cursor Changelog 3.6 之后**：需要关注是否有新的 Harness 机制更新
