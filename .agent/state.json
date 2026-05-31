@@ -1,11 +1,12 @@
 {
-  "lastRun": "2026-05-31T21:57",
-  "lastCommit": "7e4ac86",
+  "lastRun": "2026-06-01T01:18",
+  "lastCommit": "7d3d778",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 186,
-  "articlesNew": 1,
-  "projectsNew": 1,
-  "sourcesTracked": 182
+  "round": 187,
+  "articlesNew": 0,
+  "projectsNew": 0,
+  "sourcesTracked": 983,
+  "note": "Orphan backfill: 803 entries added, jsonl now 983 unique entries. All sources exhausted."
 }
