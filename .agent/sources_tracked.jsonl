@@ -173,3 +173,5 @@
 {"url": "https://github.com/withkynam/vibecode-pro-max-kit", "type": "project", "filename": "withkynam-vibecode-pro-max-kit-spec-driven-harness-581-stars-2026.md", "title": "vibecode-pro-max-kit：上下文轮转的解药——Spec-Driven Coding Harness", "stars": 581, "used_at": "2026-05-31T05:57:00Z"}
 {"url": "https://github.com/mattpocock/dictionary-of-ai-coding", "type": "project", "stars": 1932, "discovered_at": "2026-05-31", "theme": "AI coding terminology"}
 {"url": "https://github.com/huangserva/3DCellForge", "type": "project", "stars": 2396, "discovered_at": "2026-05-31", "theme": "3D model generation"}
+{"url": "https://cursor.com/changelog/05-20-26", "type": "article", "filename": "cursor-multi-repo-automations-cross-codebase-agent-engineering-2026.md", "title": "Cursor 3.5 Multi-repo Automations：跨代码库 Agent 的工程范式突破", "used_at": "2026-05-31T11:57:00Z"}
+{"url": "https://github.com/mksglu/context-mode", "type": "project", "filename": "mksglu-context-mode-multi-repo-context-engineering-16k-stars-2026.md", "title": "context-mode：多仓库 Agent 的 Context 工程基础设施", "stars": 16044, "used_at": "2026-05-31T11:57:00Z"}
