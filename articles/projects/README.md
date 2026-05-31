@@ -1,3 +1,5 @@
+- **[OpenBMB/PilotDeck](./openbmb-pilotdeck-workspace-agent-os-2500-stars-2026.md)** — 2,499 Stars，TypeScript，清华 THUNLP 联合开发 Agent 操作系统（WorkSpace 隔离 + 白盒记忆 + Smart Routing + Always-on）+ 按任务难度自动路由模型节省 77% 成本 + MCP 原生支持 + 飞书/微信/Discord IM 集成，与已有的 model routing 文章（llm-model-routing-agent-architecture）形成「理论 → 工程实践」完整闭环（Round 190）
+
 - **[JetBrains/koog](./jetbrains-koog-jvm-enterprise-agent-framework-4k-stars-2026.md)** — ~4,000 Stars，Kotlin/JVM，JetBrains 开源 Agent 框架，1.0 正式版首个「一年 API 不破坏」承诺 + Stable/Beta 模块分层 + 全平台 OpenTelemetry + Anthropic Prompt Caching 框架级支持，与 koog 1.0 Article 形成「框架定位 → 企业落地路径」完整闭环（Round 189）
 
 - **[Yechan-Heo/oh-my-claudecode](./yeachan-heo-oh-my-claudecode-multi-agent-orchestration-35389-stars-2026.md)** — 35,389 Stars，TypeScript，Claude Code 多 Agent 编排插件（Team Mode + Deep Interview + tmux Workers）+ 零学习曲线自然语言界面，与 wshobson/agents（工具市场）+ mission-control（控制台）形成「工具 → 执行编排 → 统一控制台」完整链路
