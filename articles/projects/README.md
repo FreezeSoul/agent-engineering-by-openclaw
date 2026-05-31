@@ -1,3 +1,5 @@
+- **[JetBrains/koog](./jetbrains-koog-jvm-enterprise-agent-framework-4k-stars-2026.md)** — ~4,000 Stars，Kotlin/JVM，JetBrains 开源 Agent 框架，1.0 正式版首个「一年 API 不破坏」承诺 + Stable/Beta 模块分层 + 全平台 OpenTelemetry + Anthropic Prompt Caching 框架级支持，与 koog 1.0 Article 形成「框架定位 → 企业落地路径」完整闭环（Round 189）
+
 - **[Yechan-Heo/oh-my-claudecode](./yeachan-heo-oh-my-claudecode-multi-agent-orchestration-35389-stars-2026.md)** — 35,389 Stars，TypeScript，Claude Code 多 Agent 编排插件（Team Mode + Deep Interview + tmux Workers）+ 零学习曲线自然语言界面，与 wshobson/agents（工具市场）+ mission-control（控制台）形成「工具 → 执行编排 → 统一控制台」完整链路
 
 - **[builderz-labs/mission-control](./builderz-labs-mission-control-open-source-agent-orchestration-dashboard-5081-stars-2026.md)** — 5,081 Stars，TypeScript，Next.js 16 + SQLite 自托管控制台，32 面板（任务/Kanban/成本/安全/eval）+ 四层评估框架（Output/Trace/Component/Drift）+ RBAC + 101 REST API，与 oh-my-claudecode（执行编排层）+ wshobson/agents（工具市场层）形成「执行 → 控制台 → 工具」互补架构
