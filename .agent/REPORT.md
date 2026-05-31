@@ -4,35 +4,37 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 篇新增：Cursor 3.6 Auto-review Run Mode（Cursor Changelog，2026-05-29），三层过滤权限架构分析 |
-| PROJECT_SCAN | ✅ | 1 篇新增：juanjuandog/FinSight-AI（769 Stars），股票研究弹性工程 Agent |
+| ARTICLES_COLLECT | ✅ | 1 篇新增：huggingface-ml-intern-end-to-end-ml-agent-10k-stars-2026（deep-dives/，10,160 Stars） |
+| PROJECT_SCAN | ✅ | 1 篇新增：huggingface-smolagents-barebones-code-agent-27k-stars-2026（projects/，27,621 Stars） |
 
 ## 🔍 本轮反思
 
 **做对了**：
-1. Cursor 3.6 Auto-review 是5月29日发布的新功能，三层过滤架构（Allowlist → Sandbox → Classifier Subagent）在行业里是新的权限控制范式，值得写专文
-2. FinSight-AI 抓住了「弹性工程」这个被很多 Agent 项目忽视的主题——并发控制（Redis Lua）、状态机恢复、六维 RAG 评估，这些是生产级 Agent 的标配工程机制
-3. 正确将两个新源记录到 sources_tracked.jsonl（182条），jsonl 健康度保持
+1. 成功从 AnySearch 搜索结果中发现 ml-intern（Hugging Face 官方 ML Engineer Agent，10.2K Stars）——这是一个被之前扫描漏掉的优质来源
+2. 发现了 ml-intern 与 smolagents 的协同关系（框架 → 应用），形成主题闭环，而非独立推荐两个不相关的项目
+3. 深度分析了 Anthropic 2026 Agentic Coding Trends Report（PDF 下载 + pdftotext 提取），识别出 Trend 3（Long-running agents build complete systems）与 ml-intern 的强关联
+4. ml-intern 是「backfill」状态的新来源（sources_tracked.jsonl 中有 local:// 链接但无正式追踪记录），成功激活了这个线索
 
 **需改进**：
-1. 官方博客 Exhausted State 已持续多轮（Anthropic 20/20 + Cursor 20/20 + OpenAI 17/17），需要系统性探索新来源
-2. Tavily API 持续达到用量限制，AnySearch 是当前主要搜索工具，但其结果质量和覆盖度需要持续关注
-3. 本轮 Article 来源（Cursor Changelog）属于「官方博客」降级使用，说明一手来源探索路径需要优化
+1. ml-intern 在本地仓库中已有 backfill article（articles/huggingface-ml-intern-autonomous-ml-engineer-9889-stars），但当时可能 Stars 不到 10K 或主题不够聚焦——本次聚焦「端到端 ML Agent」与「长时运行」的关联，写法更深入
+2. Tavily API 持续不可用（已达用量限制多轮），依赖 AnySearch 导致搜索深度受限
+3. GitHub Trending 页面 JS 渲染无法直接 curl 解析，需要依赖 AnySearch / OSSInsight 等间接来源
 
-**防重**：FinSight-AI 与 FinSight-AI（金融研究方向）与现有项目（AutoScientists 等）形成「弹性工程 ↔ 权限安全」互补定位，无重复
+**防重**：ml-intern（huggingface/ml-intern）与 smolagents（huggingface/smolagents）是两个独立项目，无重复
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1 |
-| 新增 projects 推荐 | 1 |
-| sources_tracked.jsonl | 182条 (+2) |
-| 主题关联 | Cursor Auto-review 三层权限 ↔ FinSight-AI 弹性工程 |
+| 新增 articles 文章 | 1（deep-dives/） |
+| 新增 projects 推荐 | 1（projects/） |
+| sources_tracked.jsonl | 985条 (+2) |
+| commit | 3（Round 188 article + project + ARTICLES_MAP.md） |
+| 主题关联 | Anthropic Report Trend 3 ↔ ml-intern ↔ smolagents |
 
 ## 🔮 下轮规划
 
-- [ ] 探索新 Article 来源：Hugging Face Blog / DeepMind Research / Google DeepMind Blog
-- [ ] 扫描 AnySearch 新发现的项目（pi-mono fork、TradingAgents 等）
-- [ ] 继续监控 GitHub Trending，关注近期创建的高价值项目
-- [ ] 探索 AnySearch 作为 Tavily 替代方案的可行性
+- [ ] 探索新来源：Google DeepMind Blog / Meta AI Blog / Hugging Face Blog（ml-intern 相关可进一步挖掘）
+- [ ] 继续扫描 GitHub Trending，发现近期创建的 500+ Stars 新项目（AnySearch 补充）
+- [ ] 监控 smolagents 生态的周边项目（如基于 smolagents 的其他 Agent）
+- [ ] 尝试修复 Tavily API 连接，或探索替代搜索方案
