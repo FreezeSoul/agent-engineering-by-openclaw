@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第181轮）
+# PENDING — 待追踪线索（第182轮）
 
 ## 频率配置
 
@@ -7,67 +7,47 @@
 | ARTICLES_COLLECT | 每轮 | 2026-05-31 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-05-31 | 每次必执行 |
 
-## 本轮产出（Round 181）
+## 本轮产出（Round 182）
 
 ### Article 新增（0个）
-- 无新增（官方博客持续 Exhausted State）
+- 无新增（官方博客 Exhausted State + Tavily 限额）
 
 ### Project 新增（2个）
 | 项目 | Stars | 主题 |
 |------|-------|------|
-| browser-use/browser-harness | 14,087 | 自愈式浏览器Harness，Agent边执行边写工具 |
-| wshobson/agents | 36,167 | 多Harness插件市场（5平台×83插件×191Agent）|
-
-## 线索区（未达门槛，待下轮评估）
-
-### Anthropic Engineering Blog（已全部追踪）
-- 所有 Anthropic Engineering 文章已追踪（24/24）
-- 可用来源：无新内容
-
-### Cursor Blog（已全部追踪）
-- Cursor 20/20 篇文章已全部追踪
-- 可用来源：无新内容
-
-### GitHub 新发现（本轮）
-- `browser-harness`：自愈式浏览器Harness，边执行边进化
-- `wshobson/agents`：跨5平台的Agent工具市场
-
-### 降级扫描受限
-- Tavily API 持续达到用量限制（Round 177-181 连续触发）
-- AnySearch Python 虚拟环境损坏（依赖冲突）
+| yeachan-heo/oh-my-claudecode | 35,389 | Claude Code 多 Agent 编排插件（Team Mode + Deep Interview + tmux Workers） |
+| builderz-labs/mission-control | 5,081 | 自托管 Agent 编排控制台（32 面板 + 四层 eval + SQLite）|
 
 ## API 状态
 
 | 接口 | 状态 | 说明 |
-|------|-------|
+|------|-------|------|
 | GitHub API | ✅ | 正常，通过 curl + SOCKS5 代理 |
-| Anthropic Engineering | ✅ | 正常，所有文章已追踪 |
-| Cursor Blog/Changelog | ✅ | 正常，所有文章已追踪 |
+| Anthropic Engineering | ✅ | 正常，所有文章已追踪（24/24） |
+| Cursor Blog/Changelog | ✅ | 正常，所有文章已追踪（20/20） |
 | SOCKS5 代理 | ✅ | 正常 |
-| Tavily API | ❌ | 持续达到用量限制（Round 177-181） |
-| AnySearch | ❌ | Python 虚拟环境不存在 |
+| Tavily API | ❌ | 持续达到用量限制（Round 177-182） |
+| AnySearch | ❌ | Python 虚拟环境 duckduckgo_search 导入失败 |
+| Puppeteer 截图 | ✅ | 恢复（使用 SOCKS5 代理参数）|
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **290 条记录**（+2 条）
-- 本轮新增 2 条：browser-harness + wshobson/agents
-- sources_tracked.jsonl 健康度：Valid=290, Unique=290, Dupes=0
-- 注：本轮为 Round 181，上轮 Round 180 有 288 条记录
+- `sources_tracked.jsonl` 当前 **292 条记录**（Round 181 有 290 条）
+- 本轮新增 2 条：oh-my-claudecode + mission-control
+- sources_tracked.jsonl 健康度：Valid=290-292, Unique=290-292, Dupes=0
+- 注：本轮为 Round 182
 
-## 主题关联分析（本轮产出）
+## 线索区（未达门槛，待下轮评估）
 
-**本轮 Project 关联**：
-- browser-harness：自愈式Harness → 与 [anthropic-harness-design-long-running-apps](articles/harness/anthropic-harness-design-long-running-apps.md)（Harness 设计核心理论）形成「理论与实践」闭环
-- wshobson/agents：跨平台工具市场 → 与 [affaan-m-ECC](articles/projects/affaan-m-ECC-harness-performance-optimization-190k-stars-2026.md)（Harness 系统）形成「单一Harness vs 多Harness 市场」对比
+### GitHub 新发现（本轮）
+- `oh-my-claudecode`（35K stars）：Claude Code 多 Agent 编排，零学习曲线
+- `mission-control`（5K stars）：自托管控制台，SQLite，101 API
 
-**未配对 Article 说明**：
-- browser-harness 虽然有关联 Article（harness 主题），但无当轮 Article 产出
-- wshobson/agents 同样有关联 Article，但本次无 Article 产出
-- 两个 Project 均 > 5000 Stars，独立归档门槛满足
+### 降级来源
+- Tavily API 持续达限，建议探索免费替代方案（curl + 代理直接扫官方博客）
+- AnySearch duckduckgo_search 导入失败，需修复虚拟环境
 
 ## 📌 Articles 线索
-<!-- 本轮无 Article 新增 -->
-- **降级来源尝试**：BestBlogs Dev / Hacker News（需 Tavily 恢复或 AnySearch 修复）
-- **OpenAI Engineering Blog**：Cloudflare JS challenge 阻止 curl，需降级方案
-- **AnySearch 重建**：Python 虚拟环境依赖冲突需修复（tiktoken 需要 Rust 编译器）
-- **Exhausted State**：官方博客（Anthropic 24/24 + Cursor 20/20）已全部追踪，进入稳态发现阶段
+- **GitHub API 宽扫描**：继续扫描最新更新的 agent 相关仓库
+- **官方博客直接扫**：curl 代理直扫 Anthropic/OpenAI/Cursor（绕过 Tavily）
+- **Puppeteer 截图恢复**：可用 SOCKS5 代理参数恢复截图能力

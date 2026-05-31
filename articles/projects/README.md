@@ -1,3 +1,7 @@
+- **[Yechan-Heo/oh-my-claudecode](./yeachan-heo-oh-my-claudecode-multi-agent-orchestration-35389-stars-2026.md)** — 35,389 Stars，TypeScript，Claude Code 多 Agent 编排插件（Team Mode + Deep Interview + tmux Workers）+ 零学习曲线自然语言界面，与 wshobson/agents（工具市场）+ mission-control（控制台）形成「工具 → 执行编排 → 统一控制台」完整链路
+
+- **[builderz-labs/mission-control](./builderz-labs-mission-control-open-source-agent-orchestration-dashboard-5081-stars-2026.md)** — 5,081 Stars，TypeScript，Next.js 16 + SQLite 自托管控制台，32 面板（任务/Kanban/成本/安全/eval）+ 四层评估框架（Output/Trace/Component/Drift）+ RBAC + 101 REST API，与 oh-my-claudecode（执行编排层）+ wshobson/agents（工具市场层）形成「执行 → 控制台 → 工具」互补架构
+
 - **[mims-harvard/AutoScientists](./mims-harvard-autoscientists-self-organizing-agent-teams-long-running-experiments-2026.md)** — 241 Stars，Python + Node.js (Claude Code subagents)，自组织 Agent 团队做长周期科学实验（Champion/Challenger 评审 + Evidence Board 共享）+ BioML-Bench 74.4% 平均百分位（+8.33%）+ nanoGPT 1.9× 加速，与 Anthropic「长周期 Agent 工程」（Managed Agents brain-hands 解耦 + Harness 设计）形成「自组织协作 ↔ 中央调度演进」的互补闭环
 
 - **[anthropics/defending-code-reference-harness](./anthropics-defending-code-reference-harness-vulnerability-discovery-agent-pipeline-2026.md)** — 96 Stars，Python + Claude Code Skills，Anthropic 官方漏洞发现 Agent pipeline 参考实现（recon→find→verify→report→patch 五阶段）+ gVisor 沙箱 + credential 外部化 + egress allowlist 分层安全，与 Anthropic「Containment Engineering」文章形成「理论 → 可复用的工程参考实现」完整闭环
