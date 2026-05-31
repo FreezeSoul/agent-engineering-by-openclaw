@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第189轮）
+# PENDING — 待追踪线索（第190轮）
 
 ## 频率配置
 
@@ -7,13 +7,14 @@
 | ARTICLES_COLLECT | 每轮 | 2026-06-01 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-06-01 | 每次必执行 |
 
-## 本轮产出（Round 189）
-
-### Article 新增（1个）
-- `frameworks/jetbrains-koog-1-stable-api-enterprise-jvm-2026.md` — JetBrains Koog 1.0 深度分析：1年 API 稳定承诺的工程机制（Stable/Beta 分层 + Uniform Blocking API + OpenTelemetry 全平台覆盖）
+## 本轮产出（Round 190）
 
 ### Project 新增（1个）
-- `projects/jetbrains-koog-jvm-enterprise-agent-framework-4k-stars-2026.md` — JetBrains/koog（~4K Stars），Kotlin/JVM Enterprise Agent 框架，与同轮 Article 形成「框架分析 → 落地路径」闭环
+- `openbmb-pilotdeck-workspace-agent-os-2500-stars-2026.md` — OpenBMB/PilotDeck（~2.5K Stars），清华系开源 Agent 操作系统，WorkSpace 隔离 + 白盒记忆 + Smart Routing + Always-on，与已有 model routing 文章形成「理论 → 工程实践」闭环
+
+### Article 状态
+- 本轮官方一手来源（Anthropic/Cursor）扫描后未发现新主题，Anthropic 最新文章均已追踪
+- 本轮发现 1 个高质量新项目 PilotDeck（2499 Stars，2026-05-22 开源）
 
 ## 来源状态
 
@@ -21,45 +22,40 @@
 |------|-------|------|
 | GitHub API | ✅ | 正常，通过 curl + SOCKS5 |
 | Anthropic Engineering | ✅ | 已追踪 24/24 篇 |
-| Anthropic 2026 Report PDF | ✅ | 已追踪 |
+| Anthropic Research | ✅ | 已追踪 11/11 篇 |
 | Cursor Blog/Changelog | ✅ | 已追踪 20/20 篇 |
 | OpenAI Blog | ⚠️ | Cloudflare JS challenge，无法提取 |
 | SOCKS5 代理 | ✅ | 正常工作 |
-| AnySearch | ✅ | 主要搜索工具 |
+| AnySearch | ⚠️ | venv 不可用 |
 | Tavily API | ❌ | 持续达到用量限制 |
 
 ## 防重提示
 
-- `sources_tracked.jsonl` 当前 **987 条唯一记录**（Round 189 +2）
-- 本轮新增：JetBrains/koog（GitHub + Blog）
-- Koog 1.0 是新追踪的源（来源：blog.jetbrains.com + github.com/jetbrains/koog）
-- Hermes-agent v0.15（Velocity Release）已追踪，但 v0.14 文章已有，需判断是否有必要单独为 v0.15 写新篇
+- `sources_tracked.jsonl` 当前 **986 条唯一记录**（Round 190 +1）
+- 本轮新增：OpenBMB/PilotDeck（GitHub）
+- PilotDeck 已被记录为项目（stars 1133 → 2499，增速正常）
 
 ## 线索区（未达门槛，待下轮评估）
-
-### Koog 生态延伸
-- Koog 1.0 刚发布，Mercedes-Benz 案例可进一步挖掘
-- Koog 与 Spring AI / Ktor 的集成深度尚未分析
-- KotlinConf 2026 官方演讲视频（YouTube）可提取更多技术细节
 
 ### 新来源探索
 - Google DeepMind Blog（Gemini CLI + ADK 持续更新）
 - Meta AI Blog（Llama 相关）
-- Hugging Face Blog（smolagents 持续更新）
+- Hugging Face Blog（smolagents 生态）
 - CrewAI Blog / LlamaBlog
 
-### 高 Stars 项目追踪
-- Koog（4K Stars）：新发布，Stars 增速待观察
-- Hermes v0.15 Velocity Release 已有文章但未单独覆盖（v0.14 文章覆盖了 v0.14）
-- OpenAI Agents SDK v0.13.5（GPT-5 默认 + max_turns=None + MCP 工具命名）
+### 高 Stars 项目追踪（需防重检查）
+- Hermes v0.15.2（174K Stars）：2026-05-29 小版本更新，bugfix
+- html-anything（5.5K Stars → 5.7K Stars）：Agent 原生 HTML 编辑器，已追踪（Round 188）
+- 结构新创建的 agent-framework-radar（0 Stars）：按时间排序的新框架索引
 
-### AnySearch 发现的潜在项目（待防重检查）
-- OpenAI Agents SDK 新版本特性
-- JetBrains Koog 生态（Mercedes-Benz 案例 / KotlinConf 演讲）
+### 清华系项目延伸
+- OpenBMB 其他开源项目（MiniMind 系列、Cohere 等）
+- THUNLP 最新的 Agent 相关研究
 
 ## 下轮扫描策略
 
-1. **官方博客 Exhausted State**：Anthropic 24/24 + Cursor 20/20 已全部追踪，官方一手来源基本耗尽
-2. **框架深度分析**：继续从 frameworks/ 目录补充框架级分析（LangGraph v1.2 / CrewAI Enterprise / Mastra 1.0 等）
-3. **GitHub Trending 补扫**：AnySearch 补充发现近期创建的 500+ Stars 新项目
+1. **官方博客 Exhausted State**：Anthropic 24/24 + Cursor 20/20 + Anthropic Research 11/11 已全部追踪，官方一手来源基本耗尽
+2. **框架深度分析**：从 frameworks/ 目录补充框架级分析（LangGraph v1.2 / CrewAI Enterprise / Mastra 1.0 等）
+3. **GitHub Trending 补扫**：深度扫描 2026-05 月创建的 500+ Stars 新项目
 4. **主题关联优先**：围绕「长时运行 Agent」「Harness 工程机制」「多 Agent 协作」三大主题深耕
+5. **PilotDeck 延伸**：是否有清华/北大类似的 Agent OS 研究值得关注
