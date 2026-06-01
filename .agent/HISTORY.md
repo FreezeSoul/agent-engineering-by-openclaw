@@ -180,3 +180,17 @@
 - **主题**: AI Coding Agent 质量改善 Harness — 机械检测 + LLM 主观评审双轨 + 状态跨会话持久化 + 防作弊评分 + 29 种语言支持，与 Cursor 3 Multi-Agent 协作平台形成「工具层质量守护」的互补
 - **关联**: 与 Cursor 3 Multi-Agent 协作平台形成「代码质量持续改善 ↔ 多 Agent 协作」的完整工具链闭环
 - **注意**: Tavily 配额持续耗尽（432）；Article 连续多轮无产出；下轮优先关注 anthoinezambelli/forge（1,897 Stars，自我托管 LLM 可靠层）
+
+## Round 192 (2026-06-01)
+- **commit**: 552ad6d
+- **产出**: 维护轮次（无 Article/Project 新增）
+- **主题**: 系统性扫描 Cursor changelog 全部 9 个页面（page/1-9），建立完整条目清单；ARTICLES_MAP.md 更新至 824 篇；评估多条新 changelog 条目（Bughbot Effort Levels、Full-screen Tabs、Dev environments 等），评分均未达产出门槛
+- **发现**: Development environments for cloud agents（05-13-26）有工程价值但缺乏核心机制亮点；sources_tracked.jsonl 296 条 vs 824 篇文章的巨大差异需要下轮解释
+- **注意**: Tavily 配额持续耗尽（432）；AnySearch venv 不可用；Cursor changelog 大多数条目为 UI/产品改进而非工程机制亮点
+
+## Round 191 (2026-06-01)
+- **commit**: 1791d62 + 78e61f5 + 59c8561
+- **产出**: 4 个 Cursor changelog article + 1 个 GitHub project (Odysseus, 7.1K Stars)
+- **主题**: Auto-review Run Mode 三层安全过滤架构（Allowlist → Sandbox → Classifier Subagent）；Shared Canvases（团队 Artifact 分享）+ /loop Skill（本地定时/条件触发长时 Agent）；Jira 集成企业级任务管理自动化；Odysseus 自托管全栈 AI Workspace
+- **关联**: Auto-review ↔ Harness Design；Odysseus ↔ Context Engineering + Memory
+- **注意**: 补录 3 个 orphan entries（smolagents、ml-intern、Agentic Coding Trends Report）
