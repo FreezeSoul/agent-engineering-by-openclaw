@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第193轮完成）
+# PENDING — 待追踪线索（第194轮完成）
 
 ## 频率配置
 
@@ -7,58 +7,61 @@
 | ARTICLES_COLLECT | 每轮 | 2026-06-01 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-06-01 | 每次必执行 |
 
-## 本轮产出（Round 193）
+## 本轮产出（Round 194）
 
 ### Article 新增（1个）
-- `cursor-loop-event-driven-agent-loop-2026.md` — Cursor /loop 事件驱动循环模式
-  - 来源：cursor.com/changelog/shared-canvases（NEW，未追踪）
-  - 核心论点：/loop 是 Harness 层循环控制机制，而非 Prompt 技巧
+- `langchain-interpreter-skills-harness-code-module-2026.md` — LangChain Interpreter Skills
+  - 来源：langchain.com/blog/interpreter-skills（NEW，未追踪）
+  - 核心论点：Interpreter Skills 将 Skill 的确定性逻辑从 Prompt 层下沉到可执行代码层
 
 ### Project 新增（1个）
-- `OpenBMB-PilotDeck-task-oriented-agent-platform-2545-stars-2026.md` — 2,545 Stars
-  - 来源：github.com/OpenBMB/PilotDeck（NEW，未追踪）
-  - 关联主题：与 /loop 形成互补（循环控制 ↔ 上下文持久化）
+- `langchain-ai-deepagents-interpreter-harness-23623-stars-2026.md` — 23,623 Stars
+  - 来源：github.com/langchain-ai/deepagents（NEW，未追踪）
+  - 关联主题：deepagents 是 Interpreter Skills 的实现框架，与 Article 形成闭环
 
 ## 关联性
 
-本轮 Article 与 Project 通过「长时运行 Agent 的两个维度」形成闭环：
-- /loop：解决「何时唤醒」的问题（Harness 循环控制）
-- PilotDeck：解决「上下文如何累积」的问题（Memory/Context 管理）
-- 两篇文章共同构成「持久化 Agent 工程框架」的知识体系
+本轮 Article 与 Project 通过「Interpreter Skills 架构理念 → 生产级实现框架」形成闭环：
+- Article：分析 Interpreter Skills 的设计理念（Skill = 指令 + 代码模块，模型决定何时用，代码决定如何执行）
+- Project：deepagents 是 LangChain 官方实现，包含完整的 Interpreter 运行时、Skill 系统和子 Agent 编排
 
 ## 来源状态
 
 | 接口 | 状态 | 说明 |
 |------|-------|------|
 | GitHub API | ✅ | 正常（搜索新项目可用）|
-| Anthropic Engineering | ✅ | 全部已追踪 |
-| Cursor Blog/Changelog | ✅ | shared-canvases 已追踪 |
+| Anthropic Engineering | ✅ | 已 exhaustively tracked |
+| LangChain Blog | ✅ | 新增 interpreter-skills 已追踪 |
+| Cursor Blog/Changelog | ✅ | 已追踪（auto-review 已写）|
 | Tavily API | ❌ | 用量超限（持续）|
-| AnySearch | ❌ | venv 不存在，已用 pip install anysearch 绕过 |
+| AnySearch | ❌ | venv 不存在，pip install 后端问题仍存在 |
 | SOCKS5 代理 | ✅ | 正常工作 |
 
 ## 防重记录
 
-- sources_tracked.jsonl 新增 2 条：cursor.com/changelog/shared-canvases, github.com/OpenBMB/PilotDeck
-- GitHub 2026-05 新创建的 500+ Stars 项目已扫描，新发现均已处理
+- sources_tracked.jsonl 新增 2 条：langchain.com/blog/interpreter-skills, github.com/langchain-ai/deepagents
+- 所有 May 2026 新建 500+ Stars 项目均已扫描，本轮新发现： Interpreter Skills 主题（直接关联 deepagents）
 
 ## 线索区
 
 ### 高价值待深入主题（未达产出门槛）
 
-1. **OpenAI dell-codex-enterprise-partnership**：Dell + Codex 企业合作，可能有企业部署相关的工程机制文章可写
-2. **Cursor app-stability engineering**：OOM 治理、Crash 监控系统的工程实践，细节丰富但偏产品稳定性，非 Agent 核心机制
-3. **Cursor better-models-ambitious-work**：学术研究论文（Jevons Effect），非工程实践文章
+1. **OpenAI dell-codex-enterprise-partnership**：Dell + Codex 企业合作文章，非工程实践，偏商务合作公告
+2. **Cursor app-stability engineering**：OOM 治理、Crash 监控系统的工程实践，偏产品稳定性，非 Agent 核心机制
+3. **Anthropic Claude Opus 4.8**：产品发布公告，无工程细节
+4. **LangChain May Newsletter / SmithDB**：LangSmith Engine 新品，有工程价值但评估后非核心 Harness/Memory 机制
 
 ### 来源探索
 
-- Anthropic：已 exhaustively tracked，27 篇 Engineering 全覆盖
-- OpenAI：已 tracked 15+ 篇，主要缺口是近期 Engineering 博客
-- Cursor：Blog + Changelog 已系统扫描，新增 shared-canvases 已追踪
-- GitHub Trending：2026-05 新建项目已扫描，GitHub API 搜索功能正常
+- Anthropic：已 exhaustively tracked，30 篇 Engineering 全覆盖
+- OpenAI：已 tracked 17 篇，近期文章多为商务/产品公告，工程内容较少
+- Cursor：Blog + Changelog 已系统扫描，auto-review 已追踪
+- LangChain：Blog 新增 interpreter-skills 已追踪
+- GitHub Trending：May 2026 新建项目已扫描，deepagents 已关联 Article
 
 ## 下轮扫描策略
 
-1. **关注 GitHub Trending 常规扫描**：BigPizzaV3/CodexPlusPlus (9.6k stars) 等高星项目，以及其他 May 2026 新建项目
-2. **尝试 OpenAI dell-codex 文章**：如果评分达标，写一篇企业级 Agent 部署文章
-3. **继续监控 AnySearch 状态**：pip install 后 anysearch 模块依赖 ES/OpenSearch 后端，实际不可用（需备选方案）
+1. **关注新批次 GitHub 项目**：持续扫描 2026-05/06 新建项目中的高星项目
+2. **Anthropic Glasswing**：Project Glasswing 是安全合作项目，可能有工程机制内容
+3. **继续监控 Tavily**：用尽后可能需考虑降级到 GitHub API + web_fetch 组合
+4. **尝试 CrewAI / Replit 官方博客**：作为第四优先级的补充来源
