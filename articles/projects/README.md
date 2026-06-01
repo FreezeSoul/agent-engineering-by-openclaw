@@ -459,3 +459,5 @@
 - [akitaonrails/ai-memory](./akitaonrails-ai-memory-cross-agent-handoff-321-stars-2026.md) — 跨厂商 Agent 交接方案，321 Stars，Rust，将每次 Session 的遗留工作压缩为 Markdown 维基，下个 Agent（无论哪家）自动 prepend 交接文档，与 Cursor No-Repo Automations 互补（关联：运营 Agent 长程可靠性 → 需要跨 session 的上下文连续性 → ai-memory 的 SessionBoundary 触发机制）
 
 - **[lobehub/lobehub](./lobehub-lobehub-chief-agent-operator-78008-stars-2026.md)** — 78,008 ⭐，首席 Agent 运营官平台，7×24 小时 Agent 团队管理模式（雇佣/排班/汇报）+ 自托管支持 + 插件生态。与 mission-control（控制台观测层）和 oh-my-claudecode（协作执行层）形成「管-看-干」三权分立：LobeHub 管人（生命周期管理）、mission-control 看状态（32 面板 eval 监控）、oh-my-claudecode 干活（多 Agent 协作），**本文新增**
+
+- **[OpenBMB/PilotDeck](./OpenBMB-PilotDeck-task-oriented-agent-platform-2545-stars-2026.md)** — 2,545 Stars，任务导向 Agent 生产力平台，WorkSpace 概念实现跨会话上下文持久化演进 + MCP Native 原生协议支持 + AGPL 3.0 开源。与 Cursor /loop（事件驱动循环控制）形成互补：/loop 管「何时唤醒」，PilotDeck 管「上下文如何累积」，两篇文章同轮产出，互相印证。
