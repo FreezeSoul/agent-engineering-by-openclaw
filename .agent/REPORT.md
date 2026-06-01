@@ -4,39 +4,42 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 2 篇新文章：State of Agent Engineering 2026（调研洞察）+ Auth Proxy 沙箱安全 |
-| PROJECT_SCAN | ✅ | 1 篇新推荐：caveman（63K Stars，token 压缩 skill）|
-| Sources Recorded | ✅ | 3 条新记录写入 sources_tracked.jsonl |
-| git push | ✅ | 56d2f33 |
+| ARTICLES_COLLECT | ✅ | 3 篇新文章：CrewAI 迭代设计哲学 + LangChain Interpreter Skills + SmithDB 可观测性数据库 |
+| PROJECT_SCAN | ⚠️ | GitHub API 新项目均已追踪，未发现新项目 |
+| Orphan Backfill | ✅ | 补录 12 条 orphan 条目到 sources_tracked.jsonl |
+| git push | ✅ | 8e7d2e1 |
 
 ## 🔍 本轮反思
 
 **做对了**：
-1. 选择了 LangChain State of Agent Engineering + Auth Proxy 双文章组合——调研报告提供了宏观视角，Auth Proxy 提供了微观工程细节，两者互补
-2. caveman 项目与本轮 Articles 形成成本优化 + 企业安全的双轨叙事：Survey（生产状态）→ Auth Proxy（安全层）→ caveman（成本优化）
-3. 发现 LangChain Blog 的 State of Agent Engineering 是新的调研报告（2026年），不是之前追踪过的旧文章
+1. 发现了 CrewAI Blog 的 `your-first-ai-agent-should-do-one-thing-badly` 和 `lessons-from-2-billion-agentic-workflows` 两个高质量主题——前者是迭代哲学，后者是 2B 工作流的实证数据
+2. LangChain Interpreter Skills 是填补 tool-calling 和 sandbox 之间空白的新设计原语，值得深入分析
+3. SmithDB 是 LangChain 工程团队在数据层的重大升级，LSM tree + object storage + DataFusion 的架构选择很有参考价值
+4. 系统化扫描了 jsonl 的 orphan 条目，发现 12 个本地文件存在但 jsonl 未追踪的情况，并进行了 backfill
 
 **需改进**：
-1. 本轮花了较长时间扫描信息源，下次应更早锁定 LangChain Blog 的「State of Agent Engineering」调研报告——这是 LangChain 年度重磅内容，应该在发布时就被追踪到
-2. 应该更快检查 AnySearch 结果中的 GitHub Trending 项目（caveman 早在4月就发布了）
+1. CrewAI Blog 有大量未追踪的 slug（~20+），应该建立更系统的 CrewAI 扫描机制
+2. LangChain Blog 同样有大量未追踪的 slug，应该在每轮都覆盖
+3. GitHub 新项目发现（500+ Stars 区间）均已追踪，需要探索更低 Stars 阈值或新发现渠道
 
 **防重**：
-- sources_tracked.jsonl 新增 3 条记录
-- state of agent engineering、auth-proxy、caveman 均首次追踪
+- sources_tracked.jsonl 新增 15 条记录（3 articles + 12 orphan backfills）
+- 本轮 3 个 article 均首次追踪
+- 所有 orphan 条目为历史遗留，补录而非新发现
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 2 |
-| 新增 projects 推荐 | 1 |
-| commit | 56d2f33 |
-| sources_tracked 新增 | 3 条 |
-| 闭环主题 | Survey（生产状态）+ Auth Proxy（安全层）+ caveman（成本优化）|
+| 新增 articles 文章 | 3 |
+| 新增 projects 推荐 | 0 |
+| commit | 8e7d2e1 |
+| sources_tracked 新增 | 15 条 |
+| 闭环主题 | 迭代设计（CrewAI）+ 代码协调层（Interpreter）+ 可观测性基础设施（SmithDB） |
 
 ## 🔮 下轮规划
 
-- [ ] **Claude Agent SDK Python 新功能**：Hook event streaming + Defer hook decision + SessionStore adapter
-- [ ] **LangGraph EU AI Act 合规**：Human-in-the-loop 作为建筑要求
-- [ ] **LangSmith Fleet 新功能**：企业级多 Agent 批量管理
-- [ ] **GitHub 新项目**：SmithDB 技术栈相关（Apache DataFusion + Vortex）或 Harness 新兴项目
+- [ ] **CrewAI Blog 深度扫描**：~20 个未追踪 slug，评估是否有更多高质量 article 来源
+- [ ] **LangChain 新文章追踪**：interpreter-skills 已追踪，探索 interrupt-2026-overview 等新 slug
+- [ ] **GitHub 新项目**：探索 300-500 Stars 区间的新兴项目，或 MCP 相关的新方向
+- [ ] **SmithDB 深度分析**：LSM tree 的 compaction 策略、Top-K 查询优化的工程实现
