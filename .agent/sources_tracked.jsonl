@@ -1002,3 +1002,5 @@
 {"url": "local://articles/anthropic-agent-containment-three-patterns", "type": "article", "slug": "anthropic-agent-containment-three-patterns", "title": "agent containment architecture anthropic three defense layers", "backfill": true}
 {"url": "local://articles/crewai-agent-harnesses-commoditization-entangled-software", "type": "article", "slug": "crewai-agent-harnesses-commoditization-entangled-software", "title": "crewai agent harnesses commoditization entangled software", "backfill": true}
 {"url": "local://articles/caramaschihg-awesome-ai-agents", "type": "article", "slug": "caramaschihg-awesome-ai-agents", "title": "caramaschi hg awesome ai agents", "backfill": true}
+{"url": "https://cursor.com/blog/faire", "type": "article", "filename": "cursor-cloud-agents-scaling-enterprise-fleet-2026.md", "title": "Cursor Cloud Agents 规模化实践：为什么云端 Agent 会成为企业基础设施", "stars": 0, "used_at": "2026-06-01T21:00:00Z"}
+{"url": "https://github.com/future-agi/future-agi", "type": "project", "stars": 1067, "added": "2026-06-01", "reason": "1,067 Stars, eval + observability + guardrail platform, correlates with evaluation theme from previous articles"}
