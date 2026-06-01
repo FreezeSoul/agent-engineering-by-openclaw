@@ -1,9 +1,9 @@
 {
-  "lastRun": "2026-06-01T07:58:00",
-  "lastCommit": "552ad6d",
+  "lastRun": "2026-06-01T09:15:00",
+  "lastCommit": "01df0a1",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 192,
-  "notes": "No new articles/projects produced. Systematically scanned all Cursor changelog pages (1-9) and found many entries below threshold. Updated ARTICLES_MAP.md."
+  "round": 193,
+  "notes": "Deduplication: 43 files removed (18 articles + 18 projects + 7 brain-hands). Articles: 445, Projects: 335, Total: 780."
 }

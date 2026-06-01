@@ -194,3 +194,14 @@
 - **主题**: Auto-review Run Mode 三层安全过滤架构（Allowlist → Sandbox → Classifier Subagent）；Shared Canvases（团队 Artifact 分享）+ /loop Skill（本地定时/条件触发长时 Agent）；Jira 集成企业级任务管理自动化；Odysseus 自托管全栈 AI Workspace
 - **关联**: Auto-review ↔ Harness Design；Odysseus ↔ Context Engineering + Memory
 - **注意**: 补录 3 个 orphan entries（smolagents、ml-intern、Agentic Coding Trends Report）
+
+## Round 193 (2026-06-01)
+- **commit**: 01df0a1 + 1e7e807（两次提交）
+- **产出**: 去重维护（无新 Article/Project 产出）
+- **主题**: 系统性重复检测与归并
+  - **Articles 去重（18 个文件）**：cursor-dynamic-context-discovery 5→1、claude-code-april-postmortem 7→1、anthropic-april-postmortem 4→2
+  - **Projects 去重（18 个文件）**：同项目多 Stars 版本合并（如 golutra 3444>3408、strukto-ai-mirage 2599>1922）
+  - **Brain-Hands 去重（7 个文件）**：harness/ 6→1、orchestration/ 3→1
+- **净减少**: 43 个文件（articles: 452→445, projects: 353→335 → total: 824→780）
+- **防重机制**: 建立了重复文件检测流程，下次运行前应检查同类模式
+
