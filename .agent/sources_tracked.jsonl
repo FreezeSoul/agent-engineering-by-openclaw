@@ -993,3 +993,7 @@
 {"url": "https://github.com/pewdiepie-archdaemon/odysseus", "type": "project", "filename": "pewdiepie-archdaemon-odysseus-self-hosted-ai-workspace-7100-stars-2026.md", "title": "Odysseus：自托管 AI Workspace，隐私优先的本地 Agent 平台", "stars": 7100, "added": "2026-06-01"}
 {"url": "https://www.langchain.com/blog/interpreter-skills", "type": "article", "filename": "langchain-interpreter-skills-harness-code-module-2026.md", "title": "LangChain Interpreter Skills：将 Harness 逻辑下沉到可执行代码模块", "added": "2026-06-01"}
 {"url": "https://github.com/langchain-ai/deepagents", "type": "project", "filename": "langchain-ai-deepagents-interpreter-harness-23623-stars-2026.md", "title": "langchain-ai/deepagents: 自带解释器的生产级 Agent Harness", "stars": 23623, "added": "2026-06-01"}
+{"url": "cursor.com/blog/loop", "type": "article", "slug": "cursor-loop-event-driven-agent-loop", "date": "2026-05-01", "source": "cursor"}
+{"url": "github.com/OpenBMB/PilotDeck", "type": "project", "slug": "OpenBMB-PilotDeck-task-oriented-agent-platform", "date": "2026-05-01", "source": "github"}
+{"url": "langchain.com/blog/token-streams-to-agent-streams", "type": "article", "slug": "langchain-token-streams-to-agent-streams", "date": "2026-06-01", "source": "langchain"}
+{"url": "github.com/future-agi/future-agi", "type": "project", "slug": "future-agi-agent-eval-observability-platform", "date": "2026-06-01", "source": "github"}
