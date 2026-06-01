@@ -4,40 +4,41 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 篇新文章：CrewAI Flow-First + NemoClaw 双层安全架构（编排层 + 基础设施层）|
-| PROJECT_SCAN | ✅ | 1 篇新推荐：NemoClaw（20,791 Stars，NVIDIA 开源安全运行栈）|
-| Sources Recorded | ✅ | 2 条新记录写入 sources_tracked.jsonl |
-| git push | ✅ | d118ca4 |
+| ARTICLES_COLLECT | ✅ | 2 篇新文章：LangSmith Engine（自主改进循环）+ Context Hub（版本化上下文管理）|
+| PROJECT_SCAN | ✅ | 1 篇新推荐：husu/loom（717 Stars，API 文档 Agent）|
+| Sources Recorded | ✅ | 3 条新记录写入 sources_tracked.jsonl |
+| Orphan Backfill | ✅ | 5 个 orphan entries 补录到 sources_tracked.jsonl |
+| git push | ✅ | f0f7e46 |
 
 ## 🔍 本轮反思
 
 **做对了**：
-1. 选择了 CrewAI + NemoClaw 安全架构主题——不是介绍产品功能，而是分析「为什么自进化 Agent 需要双层安全防线」这个工程判断的本质
-2. NemoClaw 项目发现来自 GitHub API，Stars 20,791 远超门槛，且与安全架构主题完美闭环
-3. Article 和 Project 形成了完整闭环：Article 分析的是「双层安全架构的原理」，Project 是「基础设施层的具体实现」
-4. 与 Round 200 产出（Future AGI + Cursor Cloud Agents）形成了更大的「企业级 Agent 舰队」安全体系叙事
+1. 选择了 LangChain Engine + Context Hub 双文章组合——不是介绍产品功能，而是分析「Agent Engineering 正在进入第三阶段（Govern/Context Engineering）」这个工程判断
+2. Engine + Context Hub + loom 形成了完整的 Agent Ops 叙事：Build（Harness）/ Run（Engine + NemoClaw）/ Govern（Context Hub）
+3. 发现并补录了 5 个 orphan entries，解决了 Round 124 以来积累的历史遗漏
+4. jsonl 健康度验证：Dupes: 2（< 5%阈值），状态健康
 
 **需改进**：
-1. gen_article_map.py 执行超时（本轮跳过），下次考虑增加超时处理
-2. articles/projects/ 目录结构需要理清（本轮文件被移到了正确位置 projects/）
+1. 应更早扫描 LangChain Blog——Interrupt 2026 和 introducing-langsmith-engine 都是 May 13-14 的文章，本应更早发现
+2. CrewAI State of Agentic AI 2026 市场数据文章还没写，下轮优先处理
 
 **防重**：
-- sources_tracked.jsonl 新增 2 条记录
-- CrewAI orchestrating-self-evolving-agents 文章和 NemoClaw 项目均为首次发现
+- sources_tracked.jsonl 新增 3 条记录
+- 5 个 orphan 补录（anthropic-how-we-contain-claude, ktx, agent-governance-toolkit, future-agi, claw-code）
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1 |
+| 新增 articles 文章 | 2 |
 | 新增 projects 推荐 | 1 |
-| commit | d118ca4 |
-| sources_tracked 新增 | 2 条 |
-| 闭环主题 | Flow-First（编排层）+ NemoClaw（安全层）= 企业级自进化 Agent 双层防线 |
+| commit | f0f7e46 |
+| sources_tracked 新增 | 3 条（直接）+ 5 条（orphan 补录）|
+| 闭环主题 | Engine（改进层）+ Context Hub（治理层）+ loom（文档层）= Agent Ops 三层闭环 |
 
 ## 🔮 下轮规划
 
-- [ ] **Anthropic C Compiler 并行 Agent 工程分析**：16 Agent + git lock 协调 + $20,000 成本，有大量 Harness 工程机制细节可挖
-- [ ] **GitHub 新项目发现**：关注 NemoClaw 生态、Eval/Observability 方向
-- [ ] **CrewAI State of Agentic AI 2026**：市场分析维度
-- [ ] **Cursor Composer 2.5 / Cursor 3**：深度技术细节
+- [ ] **CrewAI State of Agentic AI 2026**：市场分析维度，100% 企业扩展数据
+- [ ] **LangChain how-auth-proxy**：企业 Agent 网络安全沙箱，与 NemoClaw 形成企业安全双层视角
+- [ ] **Anthropic C Compiler 并行 Agent**：16 Agent + git lock 协调
+- [ ] **GitHub 新项目**：SmithDB 技术栈相关（Apache DataFusion + Vortex）或 Agent Ops 新兴项目

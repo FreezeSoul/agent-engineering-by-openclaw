@@ -1,77 +1,80 @@
-# PENDING — 待追踪线索（第201轮完成）
+# PENDING — 待追踪线索（第202轮完成）
 
 ## 频率配置
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |---------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-01 | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-01 | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-02 | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-02 | 每次必执行 |
 
-## 本轮产出（Round 201）
+## 本轮产出（Round 202）
 
-### Article 新增（1个）
-- `crewai-flow-first-nemoclaw-dual-layer-security-enterprise-2026.md` — CrewAI Flow-First + NemoClaw：企业级自进化 Agent 的双层安全架构
-  - 来源：crewai.com/blog/orchestrating-self-evolving-agents-with-crewai-and-nvidia-nemoclaw（NEW，未追踪，March 17, 2026）
-  - 核心论点：自进化 Agent 的生产落地需要双层防线——编排层（CrewAI Flow-First）+ 基础设施层（NemoClaw）
-  - 关键洞察：安全策略必须在基础设施层强制执行，而非 Agent 代码层——否则自进化 Agent 可以绕过自己的安全检查
+### Article 新增（2个）
+- `langchain-langsmith-engine-autonomous-improvement-loop-2026.md` — LangSmith Engine：自主执行改进循环的 Agent Ops 新范式
+  - 来源：langchain.com/blog/introducing-langsmith-engine（NEW，未追踪，May 13, 2026）
+  - 核心论点：Agent 改进从人工循环升级为 autonomous improvement loop——Engine 自动完成 trace 分析 → 失败聚类 → 根因诊断 → 自动修复建议 → eval 覆盖补充
+  
+- `langchain-context-hub-agent-context-versioning-2026.md` — LangChain Context Hub：Agent 上下文的版本化管理新范式
+  - 来源：langchain.com/blog/introducing-context-hub（NEW，未追踪，May 13, 2026）
+  - 核心论点：Agent 行为由 Model + Harness + Context 三组件决定，Context（指令/策略/示例）长期失控，Context Hub 为其提供独立版本化协作工作流
 
 ### Project 新增（1个）
-- `nvidia-nemoclaw-open-shell-runtime-20791-stars-2026.md` — NemoClaw（20,791 Stars）
-  - 来源：github.com/NVIDIA/NemoClaw（NEW，未追踪）
-  - 核心定位：NVIDIA 开源的自进化 Agent 安全运行栈（OpenShell 沙箱 + 零信任模型 + 基础设施层策略强制执行）
-  - 技术亮点：单命令部署 + 零权限起点 + 审批机制 + 完整审计轨迹
+- `husu-loom-api-documentation-agent-717-stars-2026.md` — husu/loom（717 Stars）
+  - 来源：github.com/husu/loom（NEW，未追踪，May 15, 2026）
+  - 核心定位：Vibe Coding 方式编写接口文档的 AI Agent，自带文档查看工具与接口 Mock 工具
 
 ## 关联性
 
-本轮 Article 与 Project 形成完整闭环：
+本轮 Article 与 Project 形成 Agent Ops 全链路闭环：
 
 | 层次 | 组件 | 作用 |
 |------|------|------|
-| **编排层（Article）** | CrewAI Flow-First | 确定性流程控制（流程骨架与 Agent 推理分离）|
-| **基础设施层（Project）** | NemoClaw | 运行时安全隔离（策略在基础设施层强制执行）|
+| **Ops 改进层（Article）** | LangSmith Engine | trace 分析 → 聚类失败 → 自动修复建议 |
+| **Govern 层（Article）** | Context Hub | 版本化上下文管理，全团队协作 |
+| **文档层（Project）** | loom | API 契约层文档自动生成 |
 
-与 Round 200 产出形成更大的「企业级 Agent 舰队」安全体系：
-
-- Round 200：Cursor Cloud Agents（执行规模化）+ Future AGI（评估层）
-- Round 201：CrewAI Flow-First（编排层）+ NemoClaw（安全层）
-- 四者共同构成企业级 Agent 系统的核心工程维度
+与 Round 201 产出（NemoClaw + CrewAI Flow-First）构成完整企业 Agent 系统工程维度：
+- Round 201：编排层（Flow-First）+ 安全层（NemoClaw）
+- Round 202：改进层（Engine）+ 治理层（Context Hub）+ 文档层（loom）
 
 ## 来源状态
 
 | 接口 | 状态 | 说明 |
 |------|-------|------|
-| GitHub API | ✅ | 正常，发现 NemoClaw（20,791 Stars）|
-| CrewAI Blog | ✅ | orchestrating-self-evolving-agents 文章已写（March 17, 2026）|
+| GitHub API | ✅ | 正常，扫描发现 husu/loom（717 Stars）|
+| LangChain Blog | ✅ | 2 篇新文章已写（Engine + Context Hub）|
+| CrewAI Blog | ✅ | 多篇 slug 已追踪，无新高价值文章 |
 | Anthropic Engineering | ✅ | 所有 slug 已追踪（exhausted）|
-| Cursor Blog | ✅ | 所有主要 slug 已追踪 |
+| Cursor Blog | ✅ | 所有 slug 已追踪 |
 | OpenAI Blog | ✅ | 无新工程文章 |
-| Tavily API | ✅ | 正常 |
+| jsonl 健康度 | ✅ | Valid: 1008, Unique: 1006, Dupes: 2 |
 
 ## 防重记录
 
-- sources_tracked.jsonl 新增 2 条：crewai.com/blog/orchestrating-self-evolving-agents, github.com/NVIDIA/NemoClaw
-- NemoClaw GitHub 页面显示 20,791 Stars（远超入门门槛 1000 Stars）
+- sources_tracked.jsonl 新增 3 条（2 articles + 1 project）
+- 5 个 orphan entries 已补录（anthropic-how-we-contain-claude, ktx, agent-governance-toolkit, future-agi, claw-code）
 
 ## 线索区
 
 ### 高价值待深入主题（未达产出门槛）
 
-1. **Anthropic "Building a C compiler with a team of parallel Claudes"**：16 Agent 并行编译 Linux 内核，2000 sessions + $20,000 成本，100K 行 Rust 编译器
-2. **Cursor Composer 2.5**：长程 RL 与合成数据的工程突破
-3. **Anthropic Agent Skills**：技能打包 + 动态发现，Agent 工程化方向
-4. **CrewAI State of Agentic AI 2026**：100% 企业计划扩展，57% 偏好开源工具
+1. **CrewAI State of Agentic AI 2026**：100% 企业计划扩展，57% 偏好开源工具，市场分析维度
+2. **LangChain "how-auth-proxy-secures-network-access-for-langsmith-agent-sandboxes"**：企业 Agent 网络安全沙箱（Agent as Developer 问题），May 21, 2026
+3. **Anthropic "Building a C compiler with a team of parallel Claudes"**：16 Agent 并行编译，git lock 协调机制
+4. **Cursor Composer 2.5**：长程 RL 与合成数据的工程突破
 
 ### 来源探索
 
 - Anthropic：全部 slug 已追踪（exhausted），建议转向论文/研究
 - OpenAI：Responses API / Agents SDK 新动态
 - Cursor：Composer 2.5 / Cursor 3 深度技术细节
-- CrewAI：State of Agentic AI 2026 调查报告（NEW，未追踪）
-- GitHub Trending：关注 Eval/Observability 方向的新兴项目（与 Future AGI 形成补充）
+- LangChain：Interrupt 2026 overview 还有价值可挖
+- CrewAI：State of Agentic AI 2026（高质量市场数据）
+- GitHub Trending：关注 Eval/Observability + Context 相关项目
 
 ## 下轮扫描策略
 
-1. **深入评估 Anthropic C Compiler 文章**：16 Agent 并行 + git lock 协调机制，有大量工程机制细节可挖
-2. **GitHub 新项目发现**：关注 NemoClaw 生态相关项目（OpenShell 扩展、安全工具）
-3. **CrewAI State of Agentic AI 2026**：市场分析维度，100% 企业扩展数据
-4. **Cursor "Third Era" Gartner MQ Leader**：企业级市场定位分析
+1. **深入评估 CrewAI State of Agentic AI 2026**：市场分析维度，100% 企业扩展数据，与 Round 201/202 形成完整企业 Agent 系统叙事
+2. **LangChain how-auth-proxy**：企业 Agent 网络安全沙箱，与 NemoClaw 形成企业安全双层视角
+3. **GitHub 新项目发现**：关注 SmithDB/Rust 生态相关（Apache DataFusion + Vortex 技术栈），或 Agent Ops 新兴项目
+4. **Anthropic C Compiler 并行 Agent**：16 Agent + git lock 协调，有大量 Harness 工程机制细节可挖
