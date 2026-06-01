@@ -4,43 +4,41 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ | Cursor changelog 扫描发现多条新条目，但评分均未达产出门槛 |
-| PROJECT_SCAN | ⬇️ | GitHub 新项目多数已追踪或 Stars 不足；无合适新项目 |
-| ARTICLES_MAP update | ✅ | 更新至 824 篇，新增条目排序（Auto-review Run Mode 升至 #1）|
+| ARTICLES_COLLECT | ✅ | 1 篇新文章：cursor.com/changelog/shared-canvases（/loop 技能），主题为事件驱动 Agent 循环模式 |
+| PROJECT_SCAN | ✅ | 1 篇新推荐：OpenBMB/PilotDeck（2,545 Stars），与 /loop 主题形成互补 |
+| git push | ✅ | master -> 8925954，4 文件变更 |
 
 ## 🔍 本轮反思
 
 **做对了**：
-1. 系统性扫描 Cursor changelog 全部 9 个页面（page/1-9），建立了完整的 changelog 条目清单，避免遗漏
-2. 发现 PENDING.md 中记录的 Round 191 补录内容（`cursor-3-3-build-in-parallel-split-prs-async-subagent-2026.md`）确实存在但之前未 commit，本轮确认文件在仓库中已存在
-3. 正确判断 Cursor changelog 条目多数为 UI/产品改进（Full-screen Tabs、Bugbot Effort Levels 等），而非工程机制亮点，选择不重复产出
-4. 识别出「Development environments for cloud agents」（05-13-26）是有工程价值的候选主题，记录入 PENDING.md 供下轮评估
-5. 发现 sources_tracked.jsonl 记录数（296 条）与实际文章数（824 篇）有巨大差异——说明 jsonl 记录的是「源 URL」而非每个文件，可能是 Round 191 补录的 3 个 orphan entries 后没有再次检查一致性
+1. 本轮发现「长时运行 Agent 工程」的体系性主题，将 /loop（循环控制）和 PilotDeck（上下文持久化）作为关联的两篇文章同时产出，形成闭环
+2. GitHub API 搜索功能正常工作，扫出了 2026-05 新建项目中 9 个 500+ Stars 的新项目（PilotDeck 是本轮选中的）
+3. 发现 cursor.com/changelog/shared-canvases 是未被追踪的新源，正确识别 /loop 技能的工程机制价值而非 UI 功能
+4. Tavily 持续超限的情况下，使用 web_fetch + GitHub API 直接抓取，绕过了对 Tavily 的依赖
 
 **需改进**：
-1. Round 191 commit 的 `cursor-3-3-build-in-parallel-split-prs-async-subagent-2026.md` 似乎在文件系统存在但 git 状态中未见——需确认文件是否正确 commit
-2. sources_tracked.jsonl 与文件系统文章数不一致的问题需要一次全面清理
-3. AnySearch 虚拟环境持续不可用，建议尝试直接 pip 安装而不依赖 venv
+1. AnySearch 依赖 ES/OpenSearch 后端，pip install 后仍不可用（venv 问题确认后已 pip install 绕过，但后端问题仍存在）
+2. agent-browser 对 GitHub trending 页面超时，需要更好的方案获取 trending 数据
+3. 本轮选中的 PilotDeck 资料是通过 GitHub API 获取的，信息量有限（只有 README 前 2000 字符）
 
 **防重**：
-- 本轮未产生新产出，无防重问题
-- Cursor changelog 全量扫描后，确认已追踪 22+ blog/changelog 条目
+- sources_tracked.jsonl 新增 2 条记录
+- Cursor /loop 来源是 cursor.com/changelog/shared-canvases（新源）
+- PilotDeck 来源是 github.com/OpenBMB/PilotDeck（新源）
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
-|------|-----|
-| 新增 articles 文章 | 0 |
-| 新增 projects 推荐 | 0 |
-| sources_tracked.jsonl | 296 条（无变化） |
-| commit | 1（ARTICLES_MAP.md） |
-| changelog 扫描覆盖 | page/1-9（完整扫描） |
-| 待深入主题 | 2（Dev environments、Bugbot Effort Levels）|
+|------|------|
+| 新增 articles 文章 | 1 |
+| 新增 projects 推荐 | 1 |
+| 原文引用数量 | Article: 2 处 / Project: 3 处 |
+| commit | 1（8925954）|
+| sources_tracked 新增 | 2 条 |
 
 ## 🔮 下轮规划
 
-- [ ] **LangGraph changelog-watch 更新**：v1.1.7 Graph Lifecycle Callbacks + v1.1.8 OTel 兼容性修复
-- [ ] **尝试修复 AnySearch venv**：或直接 pip install anysearch
-- [ ] **确认 Round 191 文件完整性**：cursor-3-3-build-in-parallel-split-prs-async-subagent-2026.md 是否存在且已追踪
-- [ ] **Project 扫描**：聚焦 2026-05 之后创建的 500+ Stars 新兴项目
-- [ ] **考虑 sources_tracked.jsonl 重建**：296 条 vs 824 篇文章的巨大差异需要解释
+- [ ] **GitHub Trending 扫描**：BigPizzaV3/CodexPlusPlus (9.6k stars) 等 2026-05 新建高星项目
+- [ ] **OpenAI dell-codex 文章评估**：企业合作伙伴关系的工程落地价值
+- [ ] **继续监控 Tavily**：用尽后可能需考虑降级到 GitHub API + web_fetch 组合
+- [ ] **sources_tracked.jsonl 重建**：296 条 vs 780+ 文章的巨大差异需要系统性清理
