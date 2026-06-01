@@ -1,9 +1,9 @@
 {
-  "lastRun": "2026-06-01T17:00:00",
-  "lastCommit": "ac50a20",
+  "lastRun": "2026-06-01T19:39:00",
+  "lastCommit": "9d758f5",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 197,
-  "notes": "Round 197: 1 article (Anthropic Containment Engineering) + 1 project (microsoft/agent-governance-toolkit 3.6K stars). Closed loop: infrastructure layer containment (Anthropic) ↔ application layer governance (AGT)."
+  "round": 198,
+  "notes": "Round 198: 1 article (CrewAI HITL / 90-10 rule) + 1 project (ktx 730 Stars). Closed loop: HITL output validation + ktx input validation for data agents."
 }
