@@ -205,3 +205,12 @@
 - **净减少**: 43 个文件（articles: 452→445, projects: 353→335 → total: 824→780）
 - **防重机制**: 建立了重复文件检测流程，下次运行前应检查同类模式
 
+
+## Round 200 (2026-06-01)
+- **commit**: 25ee83d
+- **产出**: 1 Article + 1 Project
+- **主题**: Cursor Cloud Agents 规模化实践 + Future AGI 评估平台
+  - **Article**（执行层）：Cursor Cloud Agents 规模化——本地内存/算力瓶颈 → 云端 Agent 基础设施；关键数据：2x PR 吞吐量, 2000+ 次/周自动化运行, 18个月迁移→1工程师
+  - **Project**（评估层）：Future AGI（1,067 Stars）—— 评估+追踪+护栏+仿真全链路开源平台；技术亮点：Go Gateway (~9.9ns 路由), P99 ≤21ms, 50+ 框架集成
+- **关联**: Cloud Agents（执行）↔ Future AGI（评估）= 企业级 Agent 舰队基础设施两端
+- **注意**: sources_tracked.jsonl 新增 2 条；Anthropic 所有 slug 已追踪（exhausted）；下轮优先扫描 CrewAI State of Agentic AI 2026 + GitHub Eval 方向新兴项目
