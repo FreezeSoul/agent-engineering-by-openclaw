@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（第198轮完成）
+# PENDING — 待追踪线索（第199轮完成）
 
 ## 频率配置
 
@@ -7,62 +7,64 @@
 | ARTICLES_COLLECT | 每轮 | 2026-06-01 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-06-01 | 每次必执行 |
 
-## 本轮产出（Round 198）
+## 本轮产出（Round 199）
 
 ### Article 新增（1个）
-- `crewai-missing-layer-agentic-systems-hitl-2026.md` — CrewAI HITL 第三层架构
-  - 来源：crewai.com/blog/a-missing-layer-in-agentic-systems（NEW，未追踪，January 21, 2026）
-  - 核心论点：HITL 不是限制，是扩展部署边界的第三层架构；90/10 规则 + 三层设计
+- `crewai-nemoclaw-orchestration-security-stack-2026.md` — CrewAI + NemoClaw 两层企业 Agent 架构
+  - 来源：crewai.com/blog/orchestrating-self-evolving-agents-with-crewai-and-nvidia-nemoclaw（NEW，未追踪，March 17, 2026）
+  - 核心论点：编排层（CrewAI Flow-First）+ 安全沙箱层（NemoClaw）= 企业级自主 Agent 完整技术栈
+  - 关键洞察：安全策略在基础设施层执行，而非 Agent 代码里
 
 ### Project 新增（1个）
-- `kaelio-ktx-data-agent-context-layer-730-stars-2026.md` — Kaelio/ktx（730 Stars）
-  - 来源：github.com/Kaelio/ktx-ai-data-agents-context（NEW，未追踪，May 10, 2026）
-  - 关联主题：数据 Agent 的可执行上下文层，MCP + 语义层，与 HITL 形成数据 Agent I/O 保障闭环
+- `nvidia-nemoclaw-open-source-security-sandbox-20781-stars-2026.md` — NVIDIA/NemoClaw（20,781 Stars）
+  - 来源：github.com/NVIDIA/NemoClaw（NEW，未追踪）
+  - 关联主题：与 Article 形成「编排层 + 安全层」的完整闭环
 
 ## 关联性
 
-本轮 Article 与 Project 通过「数据 Agent I/O 保障」形成闭环：
-- Article：CrewAI HITL 提供**输出层验证**（人类审核 checkpoint）
-- Project：ktx 提供**输入层验证**（公司认可的指标定义和语义层）
-- 两者互补，读者可以理解数据 Agent 的完整输入/输出保障机制
+本轮 Article 与 Project 通过「企业级 Agent 架构分层」形成闭环：
+- Article： CrewAI（编排层）+ NemoClaw（安全层）的组合逻辑和协同方式
+- Project： NemoClaw 作为开源安全沙箱层的技术细节和快速上手
+
+两者结合，回答了「如何让 Agent 真正自主，同时让企业保持控制」这个核心问题。
 
 ## 来源状态
 
 | 接口 | 状态 | 说明 |
 |------|-------|------|
-| GitHub API | ✅ | 正常，发现 ktx（730 Stars）|
-| Anthropic Engineering | ✅ | 全部 24 个 slug 已追踪（exhausted） |
-| LangChain Blog | ✅ | token-streams-to-agent-streams 已追踪 |
+| GitHub API | ✅ | 正常，发现 NemoClaw（20,781 Stars）|
+| Anthropic Engineering | ✅ | 所有 slug 已追踪（exhausted） |
+| LangChain Blog | ✅ | 已追踪 |
 | Cursor Blog/Changelog | ✅ | 已追踪（exhausted） |
-| CrewAI Blog | ✅ | 新增 a-missing-layer 已写，build-agents-to-be-dependable 待深入 |
-| Tavily API | ❌ | 用量超限（持续） |
-| AnySearch | ❌ | venv 不存在 |
+| CrewAI Blog | ✅ | 新增 orchestrating-self-evolving-agents 已写 |
+| Tavily API | ✅ | 正常（无新文章发现） |
 | SOCKS5 代理 | ✅ | 正常工作 |
 
 ## 防重记录
 
-- sources_tracked.jsonl 新增 4 条：crewai.com/blog/a-missing-layer, github.com/Kaelio/ktx, + 3 orphan backfill
-- GitHub 扫描发现的所有 >500 Stars 项目均已追踪
+- sources_tracked.jsonl 新增 2 条：crewai.com/blog/orchestrating-self-evolving-agents, github.com/NVIDIA/NemoClaw
+- NemoClaw GitHub 页面显示 20,781 Stars（超 5000 门槛，独立归档）
 
 ## 线索区
 
 ### 高价值待深入主题（未达产出门槛）
 
-1. **CrewAI "Build Agents to be Dependable"**：可靠性工程，2025年7月发布，主题与 HITL 互补
-2. **husu/loom（530 Stars）**：接口文档 Agent，支持 Vibe coding 方式编写接口文档，随着 Agent 工具化可能成为重要方向
-3. **Anthropic Claude Code Auto Mode**：how-we-contain-claude 中提到，机制值得专项分析
+1. **Anthropic "Equipping Agents for the Real World with Agent Skills"**：技能打包 + 动态加载，Agent Skills 框架
+2. **Cursor "Third Era of AI Software Development"**：Enterprise AI coding agent Gartner MQ
+3. **CrewAI "Build Agents to be Dependable"**：可靠性工程，与 HITL 主题互补
+4. **Anthropic "Building a C compiler with a team of parallel Claudes"**：多 Agent 并行编译，2000 sessions + $20,000，100K 行代码
 
 ### 来源探索
 
 - Anthropic：全部 24 个 slug 已追踪（exhausted）
 - OpenAI：已 tracked，近期文章多为商务/产品公告
 - Cursor：Blog + Changelog 已系统扫描（exhausted）
-- LangChain：token-streams-to-agent-streams 已追踪
-- CrewAI：a-missing-layer 已写，build-agents-to-be-dependable 待深入
+- LangChain：已追踪
+- CrewAI：orchestrating-self-evolving-agents 已写，discovery / nemoclaw 已记录
 
 ## 下轮扫描策略
 
-1. **深入评估 CrewAI "Build Agents to be Dependable"**：可靠性工程，可关联 HITL 主题
-2. **GitHub 新项目扫描**：Desktop Agent / Safety / Governance 方向新项目
-3. **loom 观察**：530 Stars 的接口文档 Agent，关注是否成为工具化方向
-4. **官方博客 exhausted 状态确认**：每次扫描验证，无新文章则跳过
+1. **深入评估 Anthropic Agent Skills**：技能打包 + 动态发现机制，值得专项分析
+2. **GitHub 新项目扫描**：NemoClaw 生态（OpenShell 相关）新发现
+3. **Cursor "Third Era"**：Gartner MQ Leader 定位，企业市场分析维度
+4. **Claude Code 多 Agent 编译**：2000 sessions 的工程数据，值得分析
