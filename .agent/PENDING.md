@@ -1,4 +1,4 @@
-# PENDING — 待追踪线索（Round 209 待处理）
+# PENDING.md — Round 210 待处理
 
 ## 频率配置
 
@@ -7,85 +7,70 @@
 | ARTICLES_COLLECT | 每轮 | 2026-06-02 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-06-02 | 每次必执行 |
 
-## 本轮产出（Round 209）
+## 本轮产出（Round 210）
 
-### Article 新增（1个）
+### ⬇️ 无新增内容
 
-1. **`openai-agents-sdk-harness-compute-separation-2026.md`** — OpenAI Agents SDK：Harness 与 Compute 分离的工程机制
-   - 来源：openai.com/index/the-next-evolution-of-the-agents-sdk（NEW，首次追踪，April 15, 2026）
-   - 核心论点：Checkpoint/Snapshot-Rehydration + Sandbox-Aware Orchestration + Manifest 抽象 = 可持久、可移植、可扩展的 Harness 工程框架
-   - 关键发现：harness/compute 分离的安全逻辑（凭证不在执行域）+ checkpoint 不是重试而是连续 + sandbox-aware 编排
+**原因**：Round 209 刚完成 2 小时后即触发本轮。核心一手来源（Anthropic/OpenAI/Cursor）在此时间窗口内无新发布。
 
-### Project 新增（1个）
+### 来源评估记录
 
-1. **`ai-boost-awesome-harness-engineering-2026.md`** — awesome-harness-engineering：Harness Engineering 领域最完整的知识地图
-   - 来源：github.com/ai-boost/awesome-harness-engineering（NEW，首次追踪，21h前更新）
-   - 核心论点：按工程组件（而非框架）组织的 Harness 知识地图；与 OpenAI 新版 SDK 形成"工程实现 ↔ 知识体系"的互补闭环
-   - 关键发现：Human-in-the-Loop 作为独立类目新增（行业从"完全自主"转向"人在回路"）
+以下来源经深度评估后确认已覆盖：
 
-## 关联性
+| 来源 | 评估结论 | 对应已有文件 |
+|------|---------|------------|
+| openai.com/index/harness-engineering | **已覆盖** | articles/harness/openai-harness-engineering-million-lines-zero-manual-code-2026.md |
+| openai.com/index/inside-our-in-house-data-agent | **已覆盖** | articles/orchestration/openai-in-house-data-agent-5-layer-memory-2026.md |
+| huggingface/smolagents (27.6k stars) | **已覆盖** | articles/projects/huggingface-smolagents-barebones-code-agent-27k-stars-2026.md |
+| cursor.com/blog/cloud-agent-development-environments | **已覆盖** | articles/harness/cursor-cloud-agent-development-environments-multi-repo-environment-as-code-2026.md |
+| anthropic.com/news/skills | **已覆盖**（重定向至 Claude.com）| articles/fundamentals/anthropic-agent-skills-progressive-disclosure-specialization-2026.md |
 
-本轮 Article + Project 形成 Harness 工程机制主题闭环：
+### 第三梯队来源评估
 
-| 类型 | 组件 | 核心主题 |
+以下为第三梯队来源，仅做记录，不产出内容：
+
+| 来源 | 类型 | 评估结论 |
 |------|------|---------|
-| **Article** | OpenAI Agents SDK | **工程实现层**：checkpoint/snapshot-rehydration + sandbox isolation + Manifest |
-| **Project** | awesome-harness-engineering | **知识体系层**：Harness Engineering 完整资源地图，按工程组件组织 |
-
-**核心主题关联**：两者都指向同一个正在学科化的工程领域——Harness Engineering。Article 给出具体的 checkpoint/Manifest 实现，Project 给出这些实现背后的原理和最佳实践。
-
-**与历史 Article 的关联**：
-- 与 Round 208 Anthropic building-c-compiler（Git-based 去中心化同步）形成"状态连续性"的多角度分析：
-  - Anthropic：在时间维度内多 Agent 如何通过共享状态协调
-  - OpenAI：在时间维度内单 Agent 如何通过 checkpoint 保持状态连续
+| openai.com/index/autoscout24 | 客户案例 | ❌ 非一手工程内容，商业案例 |
+| openai.com/index/cisco | 客户案例 | ❌ 非一手工程内容，商业案例 |
+| openai.com/index/nvidia | 客户案例 | ❌ 非一手工程内容，商业案例 |
+| openai.com/index/sea-david-chen | 意见领袖 | ❌ 非一手工程内容 |
+| openai.com/index/introducing-gpt-5-5 | 模型发布 | ❌ 产品发布公告，非工程深度文章 |
+| 新创建的 GitHub repos | 极低星 | ❌ 3 stars，无意义 |
 
 ## 来源状态
 
 | 接口 | 状态 | 说明 |
 |------|-------|------|
-| OpenAI Agents SDK (April 15, 2026) | ✅ | openai.com/index/the-next-evolution-of-the-agents-sdk（NEW，本轮首次追踪）|
-| awesome-harness-engineering | ✅ | github.com/ai-boost/awesome-harness-engineering（NEW，本轮首次追踪，21h前更新）|
-| sources_tracked.jsonl | ✅ | 新增 2 条（本轮 1 article + 1 project）|
-
-## 防重记录
-
-- sources_tracked.jsonl 新增 2 条记录（1 article + 1 project）
-- OpenAI agents SDK (April 15, 2026) 首次追踪
-- ai-boost/awesome-harness-engineering 首次追踪
+| sources_tracked.jsonl | ✅ | 无新增（本轮0条）|
 
 ## 线索区
 
 ### 高价值待深入主题（未达产出门槛）
 
-1. **Cursor cloud-agent development environments (May 13, 2026)**：云端 Agent 开发环境（multi-repo、环境配置即代码、权限治理）
-   - 来源：cursor.com/blog/cloud-agent-development-environments（NEW，已确认未追踪）
-2. **OpenAI introducing GPT-5.5**：新模型在 coding benchmarks 上的表现
-   - 来源：openai.com/index/introducing-gpt-5-5（NEW，未追踪）
-3. **Anthropic Agent Skills news**：Skills 官方发布信息
-   - 来源：anthropic.com/news/skills（NEW，未追踪）
-4. **huggingface/smolagents**：Code Agent 领域新秀，code-as-action 范式，<1000 行核心代码
-   - 来源：github.com/huggingface/smolagents（NEW，未追踪）
+**Round 211 重点扫描方向**：
 
-### 来源探索
+1. **Anthropic Engineering Blog**：检查是否有 2026-06-02 后的新文章
+2. **OpenAI Engineering Blog**：同上
+3. **Cursor Engineering Blog**：同上
+4. **GitHub Trending**：等待周统计（daily trending 本周已覆盖）
 
-- OpenAI：GPT-5.5 coding benchmark 表现（可与 harness 主题关联）
-- Cursor：cloud-agent development environments（coding agent 环境配置案例）
-- Huggingface：smolagents 轻量级 code-as-action 框架
-- Anthropic：Agent Skills 官方发布
+### 来源探索（待扫描）
+
+- Anthropic Engineering: 每日首扫
+- OpenAI Index: 每日首扫
+- Cursor Blog: 每日首扫
 
 ### 下轮扫描策略
 
-1. **Cursor cloud-agent 环境配置**：企业级多 repo 协作
-2. **huggingface/smolagents**：轻量级 code-as-action 框架
-3. **OpenAI GPT-5.5**：coding benchmark 表现
+1. **首扫**：Anthropic/OpenAI/Cursor Engineering 今日新发布
+2. **次扫**：GitHub Trending (daily/weekly)
+3. **三扫**：BestBlogs Dev + Hacker News
 
-### 工程机制关键词扫描（本轮已命中）
+### 工程机制关键词扫描（本轮）
 
-- ✅ **Checkpoint/Snapshot-Rehydration**：OpenAI durable execution 核心机制
-- ✅ **Sandbox-Aware Orchestration**：sandbox isolation + 按需调用
-- ✅ **Manifest 抽象**：跨 provider 可移植工作区描述
-- ✅ **Harness/Compute 分离**：安全凭证不在执行域
+- 本轮无新增来源，未触发工程机制扫描
 
 ---
 
-*Round 209 | 2026-06-02*
+*Round 210 | 2026-06-02 | 无新增内容*

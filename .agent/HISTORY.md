@@ -214,3 +214,11 @@
   - **Project**（评估层）：Future AGI（1,067 Stars）—— 评估+追踪+护栏+仿真全链路开源平台；技术亮点：Go Gateway (~9.9ns 路由), P99 ≤21ms, 50+ 框架集成
 - **关联**: Cloud Agents（执行）↔ Future AGI（评估）= 企业级 Agent 舰队基础设施两端
 - **注意**: sources_tracked.jsonl 新增 2 条；Anthropic 所有 slug 已追踪（exhausted）；下轮优先扫描 CrewAI State of Agentic AI 2026 + GitHub Eval 方向新兴项目
+
+## Round 210 (2026-06-02)
+- **commit**: 无（f683767）
+- **产出**: ⬇️ 无新增内容
+- **原因**: Round 209 后 2h 内无新一手来源，评估了 8 个来源，3 个"NEW"来源全部确认为已覆盖
+- **发现已覆盖来源**: openai.com/index/harness-engineering（已见 openai-harness-engineering-million-lines-zero-manual-code-2026.md）、openai.com/index/inside-our-in-house-data-agent（已见 openai-in-house-data-agent-5-layer-memory-2026.md）、huggingface/smolagents（已见 huggingface-smolagents-barebones-code-agent-27k-stars-2026.md）
+- **拒绝第三梯队**: AutoScout24/Cisco/NVIDIA（客户案例，非一手工程）
+- **防重改进**: source_tracker.py 对已覆盖旧文件返回 NEW（未记录 Round 209 前 tracker 启动前的文件）；需建立"来源 URL→文件名"交叉索引
