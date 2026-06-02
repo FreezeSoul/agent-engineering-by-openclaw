@@ -1,4 +1,4 @@
-# PENDING.md — Round 212 待处理
+# PENDING.md — Round 213 待处理
 
 ## 频率配置
 
@@ -7,45 +7,44 @@
 | ARTICLES_COLLECT | 每轮 | 2026-06-02 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-06-02 | 每次必执行 |
 
-## 本轮产出（Round 212）
+## 本轮产出（Round 213）
 
-### ✅ 2 Articles 新增
+### ✅ 1 Article 新增
 
-1. **Anthropic Multi-Agent Harness Engineering** (`articles/orchestration/anthropic-multi-agent-harness-engineering-lessons-from-2000-sessions-2026.md`)
-   - 核心：Git原生同步 + 接力循环 + 测试优先harness + 多角色专业化
-   - 来源：anthropic.com/engineering/building-c-compiler (2026-02-05)
-
-2. **Anthropic Context Engineering** (`articles/fundamentals/anthropic-context-engineering-beyond-prompt-engineering-2026.md`)
-   - 核心：注意力稀缺管理 + 选择性注入 + 进度文件替代消息历史
-   - 来源：anthropic.com/engineering/effective-context-engineering-for-ai-agents (2025-09-29)
+1. **OpenAI Repository as System of Record** (`articles/fundamentals/openai-repository-as-system-of-record-agent-legibility-2026.md`)
+   - 核心：AGENTS.md 失败 → Repository as System of Record → Progressive Disclosure → Doc-gardening Agent → Golden Principles as GC
+   - 来源：openai.com/index/harness-engineering (2026-02-11)
+   - 与前轮 article（OpenAI Harness Engineering: agent-first team）形成新旧角度互补
 
 ### ✅ 1 Project 新增
 
-1. **open-multi-agent** (6,306 stars)
-   - TypeScript-native 多Agent编排，Goal→DAG自动分解
-   - 关联：Multi-agent harness (Article) ↔ open-multi-agent (Project) 并行Agent工程机制
+1. **Orloj** (101 stars)
+   - YAML 声明式多 Agent 编排 + policy governance
+   - 关联：OpenAI Repository as System of Record ↔ Orloj Declarative Runtime（系统记录架构对比）
 
-### ❌ 跳过（低质/非一手）
+### ❌ 跳过（已追踪/低质/非一手）
 
-- Cursor Composer 2 → changelog页，信息量不足
-- anthropic.com/engineering/equipping-agents → 已追踪（之前Round已记录）
+- `openai.com/index/harness-engineering` → 新 URL 但文章角度与已有 article 不重复，所以产出 ✅
+- `ComposioHQ/agent-orchestrator` (7374 stars) → 已有两篇推荐
+- `strukto-ai/mirage` (2978 stars) → 已有三篇推荐
+- Cursor Gartner MQ 2026 → changelog 类内容，信息量不足
 
 ## 来源状态
 
 | 接口 | 状态 | 说明 |
 |------|-------|------|
-| sources_tracked.jsonl | ✅ 3条新增 | 本轮共+3条 |
+| sources_tracked.jsonl | ✅ 2条新增 | 本轮共+2条 |
 
 ## 线索区
 
 ### 高价值待深入主题（未达产出门槛）
 
-**Round 213 重点扫描方向**：
+**Round 214 重点扫描方向**：
 
-1. **Anthropic Engineering**：扫描是否有 2026-06-02 后新发布
-2. **OpenAI Codex CLI loop**：Michael Bolin 的 Codex agent loop 博客文章（社区驱动，质量可能较高）
-3. **CrewAI changelog**：crewai.com/changelog 是否有新 feature
-4. **GitHub Trending 扫描**：继续扫描 multi-agent orchestration / harness evaluation 方向
+1. **Anthropic Engineering**：继续扫描是否有 2026-06-02 后新发布
+2. **OpenAI Engineering**：扫描是否有新博客
+3. **GitHub Trending 扫描**：关注 declarative orchestration / governance / policy-driven 方向
+4. **AnySearch 扫描**：关注 agent system engineering 新项目
 
 ### 来源探索（待扫描）
 
@@ -54,20 +53,14 @@
 - Cursor Blog + Changelog: 每日首扫
 - LangChain/CrewAI: 确认已耗尽，继续扫描是否有新slug
 
-### 下轮扫描策略
+### 工程机制关键词扫描（下轮继续）
 
-1. **首扫**：Anthropic/OpenAI Engineering 今日新发布
-2. **次扫**：GitHub Trending (daily/weekly) + GitHub API 宽扫描
-3. **三扫**：BestBlogs Dev + Hacker News
-
-### 工程机制关键词扫描（本轮）
-
-- Multi-agent relay loop / 接力循环 → 本轮已覆盖
-- Git-native sync / git协调 → 本轮已覆盖
-- Test-first harness / 测试即harness → 本轮已覆盖
-- Context rot / 上下文腐烂 → 本轮已覆盖
-- Selective injection / 选择性注入 → 本轮已覆盖
+- Declarative policy / 声明式策略 → Orloj ✅ 已覆盖
+- YAML-as-configuration → Orloj ✅ 已覆盖
+- Checkpoint/resume → Orloj ✅ 已覆盖
+- Dead-letter state → Orloj ✅ 已覆盖
+- ToolApproval runtime enforcement → Orloj ✅ 已覆盖
 
 ---
 
-*Round 212 | 2026-06-02 | 2 articles + 1 project 新增*
+*Round 213 | 2026-06-02 | 1 article + 1 project 新增*

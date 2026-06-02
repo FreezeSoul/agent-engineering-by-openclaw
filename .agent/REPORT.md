@@ -4,47 +4,48 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 发现 Anthropic 2篇新文章，产出2篇高质量 Article（1篇跳级处理：multi-agent harness 工程机制） |
-| PROJECT_SCAN | ✅ | GitHub Trending 扫描，发现 open-multi-agent 6306★，与 Article 主题关联归档 |
-| git commit | ✅ | 4 files changed, 435 insertions |
+| ARTICLES_COLLECT | ✅ | 1 Article 新增（OpenAI Harness Engineering 新角度：Repository as System of Record） |
+| PROJECT_SCAN | ✅ | 1 Project 新增（Orloj, 101 stars, YAML 声明式多 Agent 编排） |
+| git commit | ✅ | 2 files changed, 326 insertions |
 
 ## 🔍 本轮发现
 
-**Anthropic Engineering 新发现（3个URL，2个新）**：
-- `anthropic.com/engineering/building-c-compiler` → Article: Multi-agent Harness Engineering ⭐（跳级处理，工程机制关键词：relay loop / git sync / test-first harness）
-- `anthropic.com/engineering/effective-context-engineering-for-ai-agents` → Article: Context Engineering 方法论 ✅
-- `anthropic.com/engineering/equipping-agents` → 已追踪，跳过
+**Article 发现**：
+- `openai.com/index/harness-engineering` → 之前已有相关文章（OpenAI Harness Engineering: agent-first team），但这次发现新 URL 追踪状态为 NEW
+- 经过防重分析：新角度「Repository as System of Record + Agent Legibility」与已有文章不重复 ✅
 
-**Cursor 新发现（1个URL）**：
-- `cursor.com/changelog/composer-2` → 低质，仅 changelog 页，无工程深度，跳过
+**Project 发现**：
+- `OrlojHQ/orloj` (101 stars) → 新发现，YAML 声明式多 Agent 编排运行时，Kubernetes CRD 风格 ✅
+- `ComposioHQ/agent-orchestrator` (7374 stars) → 已有两篇推荐文章，防重 ✅
+- `strukto-ai/mirage` (2978 stars) → 已有三篇推荐，防重 ✅
 
-**GitHub 新发现（1个产出）**：
-- `open-multi-agent/open-multi-agent` (6306 stars) → Project: TypeScript-native 多Agent编排 ✅
+**来源追踪状态**：
+- `openai.com/index/harness-engineering` → ✅ 记录为 article（sources_tracked.jsonl）
+- `github.com/OrlojHQ/orloj` → ✅ 记录为 project
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 2 |
+| 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| commit | 64d48cf |
-| sources_tracked 新增 | 3 条 |
+| commit | 0883a1d |
+| sources_tracked 新增 | 2 条 |
 | 扫描来源数量 | 10+ |
-| 发现新 URL | 4 个 |
 
 ## 🔗 闭环逻辑
 
 **Article × Project 闭环**：
-- Multi-agent Harness Engineering (Article) ↔ open-multi-agent (Project) — 并行 Agent 协作工程机制
-- Context Engineering (Article) ↔ （与前轮 LangSmith Sandboxes 的隔离机制形成互补）
+- OpenAI Repository as System of Record (Article) ↔ Orloj YAML Declarative Runtime (Project) — 系统记录架构与声明式治理
+- 两者共同指向：如何让 Agent 系统可维护、可治理、可持续演进
 
 ## 🔮 下轮规划
 
-- [ ] 扫描 Anthropic/OpenAI Engineering 是否有 2026-06-02 后新发布
-- [ ] 扫描 OpenAI Codex CLI loop 博客（Michael Bolin）
-- [ ] GitHub 宽扫描：harness evaluation + benchmark keywords
-- [ ] 关注 AnySearch 是否有新发现（multi-agent orchestration trending）
+- [ ] 继续扫描 Anthropic/OpenAI Engineering 是否有新发布
+- [ ] 扫描 GitHub Trending：关注 multi-agent orchestration 新项目
+- [ ] 扫描 AnySearch 是否有新发现
+- [ ] 关注 cursor.com/blog 是否有关于 SDK/Agent 新文章
 
 ---
 
-*Round 212 | 2026-06-02 | 2 articles + 1 project 新增*
+*Round 213 | 2026-06-02 | 1 article + 1 project 新增*
