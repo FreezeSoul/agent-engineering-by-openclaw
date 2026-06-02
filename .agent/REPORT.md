@@ -4,56 +4,47 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 发现 LangChain/CrewAI 4篇新文章，产出3篇高质量 Article |
-| PROJECT_SCAN | ✅ | GitHub MCP+sandbox 扫描，发现并产出2个高质量 Project |
-| git commit | ✅ | 5 files changed, 320 insertions |
+| ARTICLES_COLLECT | ✅ | 发现 Anthropic 2篇新文章，产出2篇高质量 Article（1篇跳级处理：multi-agent harness 工程机制） |
+| PROJECT_SCAN | ✅ | GitHub Trending 扫描，发现 open-multi-agent 6306★，与 Article 主题关联归档 |
+| git commit | ✅ | 4 files changed, 435 insertions |
 
 ## 🔍 本轮发现
 
-**LangChain 新发现（4个slug）**：
-- `lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith` → Article: Lyft 自助式 Agent 平台
-- `langsmith-sandboxes-generally-available` → Article: LangSmith Sandboxes 硬件隔离
-- `how-we-built-langsmith-engine-our-agent-for-improving-agents` → 跳过（内容重复）
-- `how-auth-proxy-secures-network-access-for-langsmith-agent-sandboxes` → 已追踪，跳过
+**Anthropic Engineering 新发现（3个URL，2个新）**：
+- `anthropic.com/engineering/building-c-compiler` → Article: Multi-agent Harness Engineering ⭐（跳级处理，工程机制关键词：relay loop / git sync / test-first harness）
+- `anthropic.com/engineering/effective-context-engineering-for-ai-agents` → Article: Context Engineering 方法论 ✅
+- `anthropic.com/engineering/equipping-agents` → 已追踪，跳过
 
-**CrewAI 新发现（5个slug）**：
-- `how-crewai-is-evolving-beyond-orchestration-to-create-the-most-powerful-agentic-ai-platform` → Article: CrewAI 平台化转型
-- `enabling-domain-experts-to-build-and-deploy-agentic-workflows-without-the-need-to-write-code` → 低质，跳过
-- `enhancing-crewai-with-copilotkit-integration` → 低质，跳过
-- `crewai-cloudera-ai-agents-with-precision-in-enterprise-workflows` → 低质，跳过
-- `pwc-choses-crewai-to-help-power-theirglobal-agent-os` → 商业案例，跳过
-- `on-prem-agentic-ai-infrastructure-hpe-and-crewai` → 低质，跳过
+**Cursor 新发现（1个URL）**：
+- `cursor.com/changelog/composer-2` → 低质，仅 changelog 页，无工程深度，跳过
 
-**GitHub 新发现（3个候选，2个产出）**：
-- `agent-infra/sandbox` (4891 stars) → Project: All-in-One Agent 沙箱 ✅
-- `vstorm-co/pydantic-deepagents` (832 stars) → Project: Python 版 Claude Code 框架 ✅
-- `instavm/coderunner` (833 stars) → 低 Stars，暂缓
+**GitHub 新发现（1个产出）**：
+- `open-multi-agent/open-multi-agent` (6306 stars) → Project: TypeScript-native 多Agent编排 ✅
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 3 |
-| 新增 projects 推荐 | 2 |
-| commit | 6a17f6e |
-| sources_tracked 新增 | 5 条 |
-| 扫描来源数量 | 16+ |
-| 发现新 slug | 9 个 |
+| 新增 articles 文章 | 2 |
+| 新增 projects 推荐 | 1 |
+| commit | 64d48cf |
+| sources_tracked 新增 | 3 条 |
+| 扫描来源数量 | 10+ |
+| 发现新 URL | 4 个 |
 
 ## 🔗 闭环逻辑
 
 **Article × Project 闭环**：
-- LangSmith Sandboxes (Article) ↔ agent-infra/sandbox (Project) — 执行环境隔离
-- LangSmith Sandboxes (Article) ↔ pydantic-deepagents (Project) — 深度 Agent 架构
-- Lyft Agent Platform (Article) ↔ LangGraph/LangSmith 生态 — 企业级 Agent 平台
+- Multi-agent Harness Engineering (Article) ↔ open-multi-agent (Project) — 并行 Agent 协作工程机制
+- Context Engineering (Article) ↔ （与前轮 LangSmith Sandboxes 的隔离机制形成互补）
 
 ## 🔮 下轮规划
 
-- [ ] 扫描 Anthropic/OpenAI/Cursor Engineering Blog 是否有 2026-06-02 后新发布
-- [ ] 扫描 CrewAI changelog (crewai.com/changelog)
-- [ ] GitHub 宽扫描：multi-agent + orchestration + memory keywords
-- [ ] 关注 AnySearch 是否有新发现
+- [ ] 扫描 Anthropic/OpenAI Engineering 是否有 2026-06-02 后新发布
+- [ ] 扫描 OpenAI Codex CLI loop 博客（Michael Bolin）
+- [ ] GitHub 宽扫描：harness evaluation + benchmark keywords
+- [ ] 关注 AnySearch 是否有新发现（multi-agent orchestration trending）
 
 ---
 
-*Round 211 | 2026-06-02 | 3 articles + 2 projects 新增*
+*Round 212 | 2026-06-02 | 2 articles + 1 project 新增*

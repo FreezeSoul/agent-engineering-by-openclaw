@@ -1,4 +1,4 @@
-# PENDING.md — Round 211 待处理
+# PENDING.md — Round 212 待处理
 
 ## 频率配置
 
@@ -7,78 +7,67 @@
 | ARTICLES_COLLECT | 每轮 | 2026-06-02 | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-06-02 | 每次必执行 |
 
-## 本轮产出（Round 211）
+## 本轮产出（Round 212）
 
-### ✅ 3 Articles 新增
+### ✅ 2 Articles 新增
 
-1. **LangSmith Sandboxes 硬件级隔离微VM** (`articles/infrastructure/langsmith-sandboxes-hardware-isolated-microvm-agent-execution-2026.md`)
-   - 核心：硬件虚拟化微VM为AI Agent提供企业级代码执行隔离
-   - 来源：langchain.com/blog/langsmith-sandboxes-generally-available (2026-05-13)
+1. **Anthropic Multi-Agent Harness Engineering** (`articles/orchestration/anthropic-multi-agent-harness-engineering-lessons-from-2000-sessions-2026.md`)
+   - 核心：Git原生同步 + 接力循环 + 测试优先harness + 多角色专业化
+   - 来源：anthropic.com/engineering/building-c-compiler (2026-02-05)
 
-2. **Lyft 自助式 AI Agent 平台** (`articles/enterprise/langchain-lyft-self-serve-ai-agent-platform-langgraph-2026.md`)
-   - 核心：运营人员用自然语言+JSON配置直接定义生产级Agent
-   - 来源：langchain.com/blog/lyft-built-a-self-serve-ai-agent-platform (2026-05-27)
+2. **Anthropic Context Engineering** (`articles/fundamentals/anthropic-context-engineering-beyond-prompt-engineering-2026.md`)
+   - 核心：注意力稀缺管理 + 选择性注入 + 进度文件替代消息历史
+   - 来源：anthropic.com/engineering/effective-context-engineering-for-ai-agents (2025-09-29)
 
-3. **CrewAI 平台化转型** (`articles/orchestration/crewai-from-orchestration-framework-to-agentic-platform-2026.md`)
-   - 核心：从编排框架到企业级Agentic AI平台，POC→生产是核心门槛
-   - 来源：crewai.com/blog/how-crewai-is-evolving (2026-05)
+### ✅ 1 Project 新增
 
-### ✅ 2 Projects 新增
-
-1. **agent-infra/sandbox** (4,891 stars)
-   - All-in-One Agent 执行沙箱：Browser + Shell + FS + MCP + VSCode
-   - 关联：LangSmith Sandboxes 架构模式
-
-2. **vstorm-co/pydantic-deepagents** (832 stars)
-   - Python 版 Claude Code 风格深度 Agent 框架
-   - 关联：LangSmith Sandboxes 架构模式
+1. **open-multi-agent** (6,306 stars)
+   - TypeScript-native 多Agent编排，Goal→DAG自动分解
+   - 关联：Multi-agent harness (Article) ↔ open-multi-agent (Project) 并行Agent工程机制
 
 ### ❌ 跳过（低质/非一手）
 
-- `langchain.com/blog/how-auth-proxy-secures-network-access` → 已追踪
-- `langchain.com/blog/how-we-built-langsmith-engine` → 内容重复
-- `crewai.com/blog/enabling-domain-experts` → 低质，无工程深度
-- `crewai.com/blog/enhancing-crewai-with-copilotkit-integration` → 低质，无工程深度
-- `crewai.com/blog/crewai-cloudera-*` → 商业案例
-- `crewai.com/blog/pwc-*` → 商业案例
-- `crewai.com/blog/on-prem-*` → 低质
+- Cursor Composer 2 → changelog页，信息量不足
+- anthropic.com/engineering/equipping-agents → 已追踪（之前Round已记录）
 
 ## 来源状态
 
 | 接口 | 状态 | 说明 |
 |------|-------|------|
-| sources_tracked.jsonl | ✅ 5条新增 | 本轮共+5条 |
+| sources_tracked.jsonl | ✅ 3条新增 | 本轮共+3条 |
 
 ## 线索区
 
 ### 高价值待深入主题（未达产出门槛）
 
-**Round 212 重点扫描方向**：
+**Round 213 重点扫描方向**：
 
-1. **Anthropic Engineering**：2026-06-02后是否有新文章
-2. **OpenAI Engineering**：同上
-3. **Cursor Blog/Changelog**：cursor.com/changelog 增量扫描
-4. **CrewAI changelog**：crewai.com/changelog 新 feature
+1. **Anthropic Engineering**：扫描是否有 2026-06-02 后新发布
+2. **OpenAI Codex CLI loop**：Michael Bolin 的 Codex agent loop 博客文章（社区驱动，质量可能较高）
+3. **CrewAI changelog**：crewai.com/changelog 是否有新 feature
+4. **GitHub Trending 扫描**：继续扫描 multi-agent orchestration / harness evaluation 方向
 
 ### 来源探索（待扫描）
 
 - Anthropic Engineering: 每日首扫
-- OpenAI Index: 每日首扫
+- OpenAI Engineering: 每日首扫
 - Cursor Blog + Changelog: 每日首扫
 - LangChain/CrewAI: 确认已耗尽，继续扫描是否有新slug
 
 ### 下轮扫描策略
 
-1. **首扫**：Anthropic/OpenAI/Cursor Engineering 今日新发布
+1. **首扫**：Anthropic/OpenAI Engineering 今日新发布
 2. **次扫**：GitHub Trending (daily/weekly) + GitHub API 宽扫描
 3. **三扫**：BestBlogs Dev + Hacker News
 
 ### 工程机制关键词扫描（本轮）
 
-- Agent Sandbox / 代码执行隔离 → 本轮已覆盖
-- Agent Platform / 民主化 → 本轮已覆盖
-- MCP Ecosystem → 持续关注
+- Multi-agent relay loop / 接力循环 → 本轮已覆盖
+- Git-native sync / git协调 → 本轮已覆盖
+- Test-first harness / 测试即harness → 本轮已覆盖
+- Context rot / 上下文腐烂 → 本轮已覆盖
+- Selective injection / 选择性注入 → 本轮已覆盖
 
 ---
 
-*Round 211 | 2026-06-02 | 3 articles + 2 projects 新增*
+*Round 212 | 2026-06-02 | 2 articles + 1 project 新增*
