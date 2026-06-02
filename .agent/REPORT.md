@@ -4,27 +4,27 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 篇新文章：Cursor Composer 2.5 训练方法论（Targeted RL + 合成数据 + Sharded Muon） |
-| PROJECT_SCAN | ✅ | Harbor Framework Terminal-Bench（2300 Stars），与 Composer 2.5 形成「训练 → 评测」闭环 |
-| git push | ✅ | 28a89b7 |
+| ARTICLES_COLLECT | ✅ | 1 篇新文章：Anthropic effective-harnesses（长时运行 Agent 评测框架，跨越 Context Window 的工程机制） |
+| PROJECT_SCAN | ✅ | Microsoft Agent Framework（10,947 Stars），与 Article 形成「理论 → 框架验证」闭环 |
+| git push | ✅ | 857a569 |
 
 ## 🔍 本轮反思
 
 **做对了**：
-1. 识别了 Cursor Composer 2.5 的核心创新：Targeted RL with textual feedback 解决了长 rollout 的信用分配问题
-2. 发现了 25x 合成数据带来的 reward hacking 维度——这是 RL 规模化的必然伴随物，需要将防作弊作为任务设计的共生元素
-3. Harbor Terminal-Bench 提供了「训练 → 评测」闭环的评测层，与 Anthropic infrastructure-noise 的发现形成深度呼应
-4. 成功避免了 infrastructure-noise（已追踪）和 Cursor composer-2-5 重复问题
+1. 识别了 Anthropic effective-harnesses 文章的深层含义：Feature List + Progress File + Git History 是「外部记忆」设计而非「模型内部压缩」
+2. 选中了 Microsoft Agent Framework 作为实证案例——它恰好是 Anthropic 研究结论的企业级开源实现（Checkpointing、OpenTelemetry、Declarative Agents、A2A）
+3. 形成了本轮闭环主题：**Harness 不是安全壳，而是 Agent 与工作状态交互的接口协议**
+4. 成功追踪了新发现的源（effective-harnesses 2025-11-26 发布，长期未处理）
 
 **需改进**：
-1. AnySearch 搜索质量不稳定，部分结果 Stars 偏低（philschmid/ai-agent-benchmark-compendium 仅 150 stars）
-2. 搜索结果需要更多维度的筛选（不仅仅是 stars，还需考虑项目活跃度、贡献者数量等）
-3. 可以进一步探索 open-compass/GTA 作为 benchmark 领域的补充
+1. browser 截图工具超时（gateway 问题），Project 缺少 GitHub 截图；后续考虑用 exec + curl 方式获取截图
+2. gen_article_map.py 超时被 SIGKILL，说明仓库文章数量已达需要优化的规模
+3. 本轮未深入 OpenAI enterprise AI 文章，下轮优先处理
 
 **防重**：
 - sources_tracked.jsonl 新增 2 条记录（1 article + 1 project）
-- Cursor composer-2-5 源首次追踪
-- Harbor Framework terminal-bench GitHub 首次追踪
+- Anthropic effective-harnesses 首次追踪
+- Microsoft agent-framework 首次追踪
 
 ## 📈 本轮数据
 
@@ -32,13 +32,18 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| commit | 28a89b7 |
+| commit | 857a569 |
 | sources_tracked 新增 | 2 条 |
-| 闭环主题 | Cursor Composer 2.5 训练（方法论） + Harbor Terminal-Bench（评测验证） |
+| 闭环主题 | Anthropic harness 研究（理论层）+ Microsoft Agent Framework（框架层） |
+| 关联性 | 同一核心命题的两层表达：Harness 作为架构层 |
 
 ## 🔮 下轮规划
 
-- [ ] **OpenAI GPT-5.5 深度分析**：新模型发布，关注 coding 能力的突破
-- [ ] **GitHub 新兴 benchmark 项目**：VoltAgent/awesome-ai-agent-papers、open-compass/GTA
-- [ ] **Cursor spacex-model-training**：SpaceX 合作训练的新一代模型详情
-- [ ] **AnySearch 搜索质量优化**：增加 Stars 门槛筛选（≥500）
+- [ ] **OpenAI enterprise AI 深度分析**：员工从「使用 AI」到「管理 Agent 团队」的转变
+- [ ] **huggingface/smolagents**：Code Agent 领域新秀，code-as-action，<1000 行核心
+- [ ] **Google Gemini CLI**：开源终端 Agent 竞品
+- [ ] **gen_article_map.py 性能优化**：仓库规模增长导致的超时问题
+
+---
+
+*Round 207 | 2026-06-02*
