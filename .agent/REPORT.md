@@ -4,24 +4,25 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 Article 新增（OpenAI Harness Engineering 新角度：Repository as System of Record） |
-| PROJECT_SCAN | ✅ | 1 Project 新增（Orloj, 101 stars, YAML 声明式多 Agent 编排） |
-| git commit | ✅ | 2 files changed, 326 insertions |
+| ARTICLES_COLLECT | ✅ | 1 Article 新增（Claude Code Dynamic Workflows，显式编排 vs 隐式推理） |
+| PROJECT_SCAN | ✅ | 1 Project 新增（AG Kit, 7635 Stars, TypeScript Agent 模板系统） |
+| git commit | ✅ | c20fcfd，3 files changed，1179 insertions |
 
 ## 🔍 本轮发现
 
 **Article 发现**：
-- `openai.com/index/harness-engineering` → 之前已有相关文章（OpenAI Harness Engineering: agent-first team），但这次发现新 URL 追踪状态为 NEW
-- 经过防重分析：新角度「Repository as System of Record + Agent Legibility」与已有文章不重复 ✅
+- `code.claude.com/docs/en/whats-new/2026-w22` → Week 22 新增 Dynamic Workflows（研究预览）
+- BM25 相似度 65.3 分（vs initializer/coding agent 分离架构），但核心论点不同（显式脚本 vs 隐式推理）✅
+- 与 AG Kit 形成正交互补闭环
 
 **Project 发现**：
-- `OrlojHQ/orloj` (101 stars) → 新发现，YAML 声明式多 Agent 编排运行时，Kubernetes CRD 风格 ✅
-- `ComposioHQ/agent-orchestrator` (7374 stars) → 已有两篇推荐文章，防重 ✅
-- `strukto-ai/mirage` (2978 stars) → 已有三篇推荐，防重 ✅
+- `github.com/vudovn/ag-kit` (7,635 Stars) → TypeScript AI Agent 模板系统，全新源 ✅
+- 20 Specialist Agents + 45 Skills + 13 Workflows，Markdown 配置层
+- 与 Dynamic Workflows 形成「执行层 ↔ 知识层」互补
 
-**来源追踪状态**：
-- `openai.com/index/harness-engineering` → ✅ 记录为 article（sources_tracked.jsonl）
-- `github.com/OrlojHQ/orloj` → ✅ 记录为 project
+**防重检查**：
+- Dynamic Workflows BM25 65.3 → 判断为不同核心论点（脚本化 vs 架构分离）
+- `microsoft/agent-framework`、`HKUDS/nanobot` → 已追踪，跳过
 
 ## 📈 本轮数据
 
@@ -29,23 +30,23 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| commit | 0883a1d |
+| commit | c20fcfd |
 | sources_tracked 新增 | 2 条 |
 | 扫描来源数量 | 10+ |
 
 ## 🔗 闭环逻辑
 
 **Article × Project 闭环**：
-- OpenAI Repository as System of Record (Article) ↔ Orloj YAML Declarative Runtime (Project) — 系统记录架构与声明式治理
-- 两者共同指向：如何让 Agent 系统可维护、可治理、可持续演进
+- Claude Code Dynamic Workflows（编排脚本化）↔ AG Kit（知识配置化）
+- 两者共同指向：多 Agent 系统的工程化——编排逻辑脚本化、领域知识配置化、中间结果结构化
 
 ## 🔮 下轮规划
 
 - [ ] 继续扫描 Anthropic/OpenAI Engineering 是否有新发布
-- [ ] 扫描 GitHub Trending：关注 multi-agent orchestration 新项目
+- [ ] 扫描 Claude Code Week 23 是否有新功能
+- [ ] 扫描 GitHub Trending 是否有新的 multi-agent orchestration 项目
 - [ ] 扫描 AnySearch 是否有新发现
-- [ ] 关注 cursor.com/blog 是否有关于 SDK/Agent 新文章
 
 ---
 
-*Round 213 | 2026-06-02 | 1 article + 1 project 新增*
+*Round 214 | 2026-06-03 | 1 article + 1 project 新增 | commit c20fcfd*

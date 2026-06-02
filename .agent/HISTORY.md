@@ -222,3 +222,10 @@
 - **发现已覆盖来源**: openai.com/index/harness-engineering（已见 openai-harness-engineering-million-lines-zero-manual-code-2026.md）、openai.com/index/inside-our-in-house-data-agent（已见 openai-in-house-data-agent-5-layer-memory-2026.md）、huggingface/smolagents（已见 huggingface-smolagents-barebones-code-agent-27k-stars-2026.md）
 - **拒绝第三梯队**: AutoScout24/Cisco/NVIDIA（客户案例，非一手工程）
 - **防重改进**: source_tracker.py 对已覆盖旧文件返回 NEW（未记录 Round 209 前 tracker 启动前的文件）；需建立"来源 URL→文件名"交叉索引
+
+## Round 214 (2026-06-03)
+- **commit**: c20fcfd
+- **Article**: Claude Code Dynamic Workflows：把多Agent编排从隐式决策变成显式代码
+- **Project**: AG Kit (7,635 Stars) - TypeScript AI Agent 模板系统
+- **关联**: Dynamic Workflows (编排脚本化) ↔ AG Kit (知识配置化)
+- **scan**: Anthropic Engineering, OpenAI Blog, Cursor Blog, Claude Code Docs, GitHub Trending, AnySearch
