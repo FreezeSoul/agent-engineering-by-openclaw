@@ -4,25 +4,27 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 Article 新增（Claude Code Dynamic Workflows，显式编排 vs 隐式推理） |
-| PROJECT_SCAN | ✅ | 1 Project 新增（AG Kit, 7635 Stars, TypeScript Agent 模板系统） |
-| git commit | ✅ | c20fcfd，3 files changed，1179 insertions |
+| ARTICLES_COLLECT | ✅ | 1 Article 新增（CrewAI Cognitive Memory，认知记忆三重陷阱） |
+| PROJECT_SCAN | ✅ | 1 Project 新增（AxDSan/mnemosyne, 865 Stars，零依赖亚毫秒记忆） |
+| ORPHAN_BACKFILL | ✅ | 15 个 orphan 条目已补录到 sources_tracked.jsonl |
+| git commit | ✅ | c721d6b，3 files changed，127 insertions |
 
 ## 🔍 本轮发现
 
 **Article 发现**：
-- `code.claude.com/docs/en/whats-new/2026-w22` → Week 22 新增 Dynamic Workflows（研究预览）
-- BM25 相似度 65.3 分（vs initializer/coding agent 分离架构），但核心论点不同（显式脚本 vs 隐式推理）✅
-- 与 AG Kit 形成正交互补闭环
+- `crewai.com/blog/how-we-built-cognitive-memory-for-agentic-systems` → CrewAI 认知记忆系统（2026-06-02）
+- 核心发现：naive vector memory 导致 context bloat / info poisoning / hallucination amplification
+- 三重陷阱的诊断与「结构化 + 时效感知 + 快速访问」的解法框架
 
 **Project 发现**：
-- `github.com/vudovn/ag-kit` (7,635 Stars) → TypeScript AI Agent 模板系统，全新源 ✅
-- 20 Specialist Agents + 45 Skills + 13 Workflows，Markdown 配置层
-- 与 Dynamic Workflows 形成「执行层 ↔ 知识层」互补
+- `github.com/AxDSan/mnemosyne` (865 Stars) → 零依赖亚毫秒记忆系统
+- 为 Hermes Agent 原生设计，不依赖向量数据库
+- 与 CrewAI 认知记忆文章形成完美的「问题 ↔ 解法」闭环
 
 **防重检查**：
-- Dynamic Workflows BM25 65.3 → 判断为不同核心论点（脚本化 vs 架构分离）
-- `microsoft/agent-framework`、`HKUDS/nanobot` → 已追踪，跳过
+- GitHub 新项目全部已追踪（nexu-io/html-anything 到 ComposioHQ/trustclaw）
+- Claude Code Week 23 → 404
+- LangChain designing-efficient-verifiers-for-legal-agents → 识别但未深入
 
 ## 📈 本轮数据
 
@@ -30,23 +32,27 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| commit | c20fcfd |
-| sources_tracked 新增 | 2 条 |
-| 扫描来源数量 | 10+ |
+| orphan backfill | 15 条 |
+| commit | c721d6b |
+| sources_tracked 新增 | 17 条 |
+| jsonl 健康度 | Valid: 1065, Unique: 1049, Dupes: 16 |
 
 ## 🔗 闭环逻辑
 
 **Article × Project 闭环**：
-- Claude Code Dynamic Workflows（编排脚本化）↔ AG Kit（知识配置化）
-- 两者共同指向：多 Agent 系统的工程化——编排逻辑脚本化、领域知识配置化、中间结果结构化
+- CrewAI Cognitive Memory（问题层）→ 揭示 naive vector memory 的三重陷阱
+- AxDSan/mnemosyne（解法层）→ 零依赖 + 结构化 + <1ms 的 Agent 原生记忆
+
+**共同指向**：有效的 Agent 记忆不是「向量数据库+相似度检索」，而是需要 **时效感知 + 结构化存储 + 快速访问** 三位一体的设计。
 
 ## 🔮 下轮规划
 
-- [ ] 继续扫描 Anthropic/OpenAI Engineering 是否有新发布
-- [ ] 扫描 Claude Code Week 23 是否有新功能
-- [ ] 扫描 GitHub Trending 是否有新的 multi-agent orchestration 项目
-- [ ] 扫描 AnySearch 是否有新发现
+- [ ] 深入 LangChain `designing-efficient-verifiers-for-legal-agents`（Harvey 合作，法律 Agent verifier）
+- [ ] 深入 CrewAI 1.0 GA + 企业采用（IBM/Microsoft/P&G 等 Fortune 500）
+- [ ] 扫描 `memind` (895 stars) 是否值得单独推荐
+- [ ] 继续扫描所有官方博客的新 slug
+- [ ] 处理 LangChain 15 个新 slug 中未深入的高价值候选
 
 ---
 
-*Round 214 | 2026-06-03 | 1 article + 1 project 新增 | commit c20fcfd*
+*Round 215 | 2026-06-03 | 1 article + 1 project 新增 | commit c721d6b*
