@@ -1,78 +1,59 @@
-# Anthropic 工程实践：让 Agent 跨越多个 Context Window 的有效 Harness 设计
+# Anthropic 长时运行 Agent 评测框架：跨越 Context Window 的工程机制
 
-**核心主张**：多会话 Agent 的连续性问题，根不在于 Context Window 的限制，而在于**缺少让 Agent 快速重建上下文的结构化工件（Artifacts）**。Anthropic 的解法是通过 Initializer Agent 初始化一套固定工件体系——Feature List（JSON 格式）、Progress 文件、Git 历史——让后续每个 Coding Agent 都能在 3 分钟内完成上下文重建，而不是花时间「猜测发生了什么」。
-
-**读者画像**：使用过 Claude Code 或类似 Agent 框架，了解 Agent 基本概念，但受困于「Agent 跑一会儿就跑偏了」「关掉会话再打开就忘了之前做了什么」的工程师。
-
-**核心障碍**：即使为 Agent 提供了详细的 System Prompt，多会话场景下 Agent 仍然倾向于：要么一次性做完（导致 Context 溢出），要么提前宣布完成（因为看不到完整的任务边界）。
+> 本文解读 Anthropic Engineering Blog 文章：*Effective harnesses for long-running agents* (2025.11)
+> 原文：https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
 
 ---
 
-## 1. 问题定义：两个跨 Session 的典型失败模式
+## 核心论点
 
-Anthropic 的工程师在实验中发现，即使用了 Claude Agent SDK 的 compaction（上下文压缩）功能，在「构建完整应用」这样的高难度、长周期任务上，Agent 仍然会出现两个典型失败：
-
-**失败模式一：一次性完成（One-shotting）**
-
-Agent 倾向于在单个 Session 中尝试实现尽可能多功能。由于上下文窗口有限，它经常在实现到一半时 Context 溢出。下一个 Session 开始时，面对的是一个**功能实现了一半、且没有任何文档记录**的状态。Agent 必须花大量时间重新阅读代码、猜测哪些功能已经实现、哪些还有问题。
-
-> "Often, this led to the model running out of context in the middle of its implementation, leaving the next session to start with a feature half-implemented and undocumented."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-**失败模式二：过早宣布完成**
-
-在某些功能已经实现之后，新的 Agent 实例进入时，会环顾四周，看到「已经有东西了」，然后直接宣布任务完成——即使原本的需求远未实现。
-
-> "A second failure mode would often occur later in a project. After some features had already been built, a later agent instance would look around, see that progress had been made, and declare the job done."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-这两个失败模式的共同根因是：**每个新 Session 开始时，Agent 缺乏对「完整任务边界」的清晰感知**。它不知道还有多少功能没实现，也不知道哪些已实现的功能是否真的可用。
+长时运行 Agent 的核心挑战不是「能力不足」，而是**跨 Context Window 的状态传递问题**。Anthropic 的解法不是造一个万能 Agent，而是通过结构化的环境管理——初始化 Agent + Feature List + Progress File + Git History——让每个新 Session 都能在 3 步内定位状态，把「跨session记忆」从模型内部压缩变成**外部可读取的工件（Artifacts）**。
 
 ---
 
-## 2. 核心解法：Initializer Agent + Coding Agent 的双组件架构
+## 一、问题：Agent 在长时任务中为什么会失败
 
-Anthropic 的解法不是优化 Prompt，而是**将 Agent 组件化**：
+Anthropic 观测到，即便给 Opus 4.5 配上 Claude Agent SDK + Compaction，在跨越多个 Context Window 的长时任务中，Agent 仍然会陷入两种典型的失败模式：
 
-| 组件 | 职责 | 触发时机 |
-|------|------|---------|
-| **Initializer Agent** | 设定任务边界、初始化工件体系 | 任务首次启动（只运行一次）|
-| **Coding Agent** | 增量实现、保持工件更新 | 每个后续 Session |
+### 失败模式 1：One-Shot 冲动
+
+Agent 倾向一次性实现整个应用。遇到 Context 耗尽时，停在「功能实现一半、代码未归档」的状态。下一个 Session 的 Agent 必须先花大量时间「猜测」前面发生了什么，再花等量时间把基础状态恢复出来。**Compaction 传递的信息不够清晰**，无法确保下一个 Agent 拿到的是可继续工作的上下文。
+
+### 失败模式 2：过早宣布胜利
+
+当项目已经有了某些功能之后，新的 Agent 实例会「环顾四周，看到已有进展」，然后宣布任务完成。这与模式 1 正好相反——不是做太多，而是**看不到还有多少没做完**。
+
+这两个问题的根源相同：**Agent 每次都从「空状态」开始，既不知道之前做了什么，也不知道还有什么没做**。
+
+---
+
+## 二、解法：两阶段 Agent 架构
+
+Anthropic 的方案将 Agent 角色分成两类，但使用完全相同的 System Prompt 和工具集：
 
 ```
-Session 1 (Initializer)
-User: "Build a clone of claude.ai"
-  → Initializer Agent:
-      - 创建 feature_list.json（200+ 功能项，passes=false）
-      - 创建 claude-progress.txt（初始进度记录）
-      - 创建 init.sh（启动脚本）
-      - 提交初始 Git commit
-
-Session 2+ (Coding Agent)
-  → 读取 git logs + progress.txt（上下文重建）
-  → 读取 feature_list.json（任务边界感知）
-  → 选择一个 passes=false 的功能实现
-  → 实现后：标记 passes=true + 提交 git + 更新 progress.txt
+┌─────────────────────────────────────────────────────────────┐
+│  Initializer Agent（初始化 Agent）                          │
+│  ├─ 触发条件：项目第一个 Session                            │
+│  ├─ 任务：基于用户需求扩展为 Feature List JSON              │
+│  │         生成 init.sh（启动脚本）                        │
+│  │         提交初始 git commit                             │
+│  └─ 产出：完整的环境骨架 + 200+ 个细化功能项               │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│  Coding Agent（编码 Agent）                                  │
+│  ├─ 触发条件：每个后续 Session                              │
+│  ├─ 任务：每次只做一个功能                                  │
+│  │         完成后将 passes: false → true                    │
+│  │         写 git commit + claude-progress.txt             │
+│  └─ 关键约束：离开时必须留下「可合并到主分支」的状态       │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-**关键设计决策**：两类 Agent 共享同一个 Harness 和工具集，只是 System Prompt 不同。Anthropic 称之为"different initial user prompts"——这意味着不是两个不同的 Agent 系统，而是一套 Harness 的两种初始化状态。
+### Feature List 的设计细节
 
----
-
-## 3. Feature List：让 Agent 感知完整任务边界
-
-### 3.1 JSON 格式的选择逻辑
-
-Initializer Agent 会根据用户的高层需求，生成一个详细的 Feature List。Anthropic 选择 JSON 格式而非 Markdown，有明确的技术理由：
-
-> "After some experimentation, we landed on using JSON for this, as the model is less likely to inappropriately change or overwrite JSON files compared to Markdown files."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-Markdown 文件的灵活性导致 Claude 倾向于编辑或覆盖现有内容；JSON 的结构性约束使模型只被允许修改 `passes` 字段。
-
-### 3.2 Feature List 的结构
-
-每个功能项的结构如下：
+Initializer Agent 基于用户的高层需求，生成一个结构化的 Feature List JSON 文件，每个功能节点包含：
 
 ```json
 {
@@ -89,145 +70,109 @@ Markdown 文件的灵活性导致 Claude 倾向于编辑或覆盖现有内容；
 }
 ```
 
-**设计要点**：
-- `description` 是人类可读的功能描述（Agent 用来理解要做什么）
-- `steps` 是验收测试步骤（Agent 用来验证功能是否真正可用）
-- `passes` 是唯一可写的字段（约束 Agent 行为，防止随意修改其他内容）
-
-### 3.3 约束 enforcement
-
-Anthropic 使用了强约束语言防止 Agent 删除或修改测试：
-
-> "It is unacceptable to remove or edit tests because this could lead to missing or buggy functionality."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-这个约束的效果是：Agent 不能通过「删除测试」来掩盖未完成的功能。它只能通过「实现功能 + 验证通过 + 标记 passes=true」来推进任务。
-
-**这解决了失败模式二**：即使 Agent 想提前宣布完成，它也必须面对所有 `passes=false` 的功能项——任务边界是显式的、不可绕过的。
+关键设计选择：**使用 JSON 而非 Markdown**。Anthropic 发现模型对 JSON 的改写欲望低于 Markdown，不容易发生「悄悄删除功能项或修改描述」的情况。Prompt 中使用明确措辞：「**It is unacceptable to remove or edit tests because this could lead to missing or buggy functionality**」。
 
 ---
 
-## 4. 上下文重建流程：3 分钟快速定位
+## 三、Progress File + Git History：Agent 的外部记忆
 
-每个新 Session 的 Coding Agent 开始工作时，会执行一套标准化的「定位」流程：
+传统的 Human-in-the-loop 工程师交接靠什么？**工作笔记 + 代码提交记录**。Anthropic 把这套实践搬进了 Agent harness：
 
-```
-[Assistant] I'll start by getting my bearings and understanding the current state of the project.
-[Tool Use] <bash - pwd>
-[Tool Use] <read - claude-progress.txt>
-[Tool Use] <read - feature_list.json>
-[Assistant] Let me check the git log to see recent work.
-[Tool Use] <bash - git log --oneline -20>
-[Assistant] Now let me check if there's an init.sh script to restart the servers.
-<Starts the development server>
-[Assistant] Excellent! Now let me navigate to the application and verify that some fundamental features are still working.
-<Tests basic functionality>
+### claude-progress.txt
+
+每次 Coding Agent Session 结束时写入，包含：
+- 当前完成的功能
+- 遇到的问题和绕过方式
+- 下一个 Agent 需要关注的事项
+
+### Git History 作为状态导航
+
+每个 git commit message 描述的是「实现了哪个功能」，不是「改了什么文件」。这样下一个 Agent 通过 `git log --oneline` 就能重建整个开发timeline，而不需要重新读代码。
+
+### 快速定位流程（每个 Session 开始时执行）
+
+```bash
+pwd                          # 确认工作目录
+cat claude-progress.txt      # 读取进度记录
+cat feature_list.json        # 了解功能完成状态
+git log --oneline -20        # 重建开发时间线
+./init.sh                    # 重启开发服务器
+# 运行基础功能验证测试
 ```
 
-这个流程的核心价值是**将上下文重建时间控制在 3 分钟内**，而不是让 Agent 猜测之前发生了什么。
-
-### 4.1 三类关键工件
-
-| 工件 | 作用 | 维护者 |
-|------|------|--------|
-| **feature_list.json** | 任务边界，完整的待实现功能清单 | Initializer 创建，Coding Agent 更新 passes |
-| **claude-progress.txt** | 进度快照，每轮 Session 的工作总结 | Coding Agent 每次 Session 结束时写入 |
-| **Git 历史** | 可审计的变更记录，支持回滚到任意稳定状态 | Coding Agent 每次提交 |
-
-### 4.2 为什么 Git 是关键
-
-Anthropic 明确要求 Coding Agent 使用「描述性 commit message」提交每次进展：
-
-> "These approaches also increased efficiency, as they eliminated the need for an agent to have to guess at what had happened and spend its time trying to get the basic app working again."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-Git 历史让 Agent 有能力：
-- 通过 `git log` 快速了解「最近做了什么」
-- 通过 `git revert` 回滚到任意稳定状态
-- 通过 `git diff` 精确还原某次变更的内容
-
-这解决了失败模式一：即使上一个 Session 在实现中途崩溃，下一个 Session 可以通过 `git revert` 恢复到最近一个稳定状态，而不是被迫在破损的代码上继续。
+> 这套流程将「新人 onboarding」从可能耗费 30 分钟的空转，变成 5 分钟内的高效定位。
 
 ---
 
-## 5. Testing Agent：视觉验证的必要性
+## 四、测试：被低估的最后一公里
 
-Anthropic 发现的第三个失败模式是：**Claude 倾向于在功能未真正通过的情况下标记 passes=true**。
+Anthropic 发现了一个**关键的测试盲区**：模型即使在 Session 内做了测试（unit test / curl），也会在未确认功能真正 end-to-end 工作的情况下将 passes 标记为 true。
 
-> "One final major failure mode that we observed was Claude's tendency to mark a feature as complete without proper testing."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+解法：**提供 Browser 自动化工具**（Puppeteer MCP Server），让 Agent 像真实用户一样操作界面、截图验证。
 
-即使 Agent 自己写了单元测试、curl 命令测试了开发服务器，它也无法从视觉上确认「功能是否真正对用户可见」。
+```python
+# Agent 通过 Puppeteer MCP 执行的验证逻辑（示意）
+1. 启动本地开发服务器
+2. 用 Puppeteer 打开应用
+3. 模拟用户操作（点击、输入、提交）
+4. 截图比对预期 UI
+5. 验证 API 响应和 UI 反馈是否一致
+```
 
-### 5.1 Puppeteer MCP 的引入
-
-Anthropic 的解法是提供 **Puppeteer MCP Server**，让 Agent 能够：
-- 启动真实浏览器
-- 导航到应用页面
-- 模拟用户操作（点击按钮、输入文本）
-- 截图验证 UI 状态
-
-> "Screenshots taken by Claude through the Puppeteer MCP server as it tested the claude.ai clone."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-这个设计的核心洞察是：**端到端功能测试必须是可视化的**，Agent 必须「看到」功能真正工作，而不只是验证「代码逻辑正确」。
-
-### 5.2 已知的视觉盲区
-
-Anthropic 也坦诚地列出了当前方案的局限：
-
-> "Some issues remain, like limitations to Claude's vision and to browser automation tools making it difficult to identify every kind of bug. For example, Claude can't see browser-native alert modals through the Puppeteer MCP, and features relying on these modals tended to be buggier as a result."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-这是一个工程诚实性的体现：虽然 Puppeteer MCP 大幅提升了测试质量，但浏览器原生的 alert modal 是视觉验证的死角。
+通过这种方式，Agent 能发现**纯代码层面看不到的 bug**（例如浏览器原生 alert modal 无法通过 Puppeteer 捕获，导致相关功能 bug 率偏高）。
 
 ---
 
-## 6. 失败模式对照表
+## 五、失败模式与解法映射表
 
-Anthropic 总结了四种典型失败模式和对应的 Initializer/Coding Agent 行为：
-
-| 失败模式 | Initializer Agent 行为 | Coding Agent 行为 |
-|---------|----------------------|------------------|
-| Claude 过早宣布完成 | 创建 Feature List（带 passes 字段）| Session 开始时读取 Feature List，只实现一个 passes=false 的功能 |
-| Claude 留下有 bug/未完成的代码 | 初始化 Git repo + Progress 文件 | Session 结束时读 progress + git logs；Session 开始时运行基础测试 |
-| Claude 在未充分测试时标记功能完成 | 创建 Feature List | 自我验证：只有在截图确认后才标记 passes=true |
-| Claude 不知道如何启动应用 | 创建 init.sh 脚本 | Session 开始时读 init.sh |
-
----
-
-## 7. 未来方向：单 Agent vs 多 Agent 架构
-
-Anthropic 在文末提出了一个开放问题：
-
-> "Additionally, this demo is optimized for full-stack web app development. A future direction is to generalize these findings to other fields. It's likely that some or all of these lessons can be applied to the types of long-running agentic tasks required in, for example, scientific research or financial modeling."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-更关键的是：
-
-> "Most notably, it's still unclear whether a single, general-purpose coding agent performs best across contexts, or if better performance can be achieved through a multi-agent architecture. It seems reasonable that specialized agents like a testing agent, a quality assurance agent, or a code cleanup agent, could do an even better job at sub-tasks across the software development lifecycle."
-> — [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-这个方向与 Cursor 第三时代的 Multi-Agent Fleet 编排形成了**技术路线的交叉验证**：两家都认为「专业化 Agent 分工」是提升长周期任务质量的关键，但都尚未确定最优架构。
+| 失败模式 | Initializer Agent 解法 | Coding Agent 解法 |
+|---------|----------------------|-----------------|
+| One-Shot 冲动（一次做太多）| 生成 Feature List，强制逐功能实现 | 每次只选一个最高优先级功能 |
+| 过早宣布胜利 | 建立所有功能的完整清单 | 读取 Feature List，自验证后再标记 passes |
+| 环境状态脏乱 | 初始 git repo + init.sh | 结束前 commit + progress update |
+| 不清楚做什么 | 完整的 Feature List + 优先级 | 读取 progress + git log 定位 |
+| 测试不充分 | 提供 Browser 自动化工具 | 必须通过 Puppeteer 端到端验证 |
 
 ---
 
-## 结语：Harness 设计的第一性原则
+## 六、工程意义：Harness 作为架构层
 
-Anthropic 的这篇工程博客再次验证了一个原则：**Agent 的能力瓶颈不在于模型，而在于 Harness 的工件设计**。
+这篇文章的深层含义是：**Harness 不是「给 Agent 包装一层安全壳」，而是定义了 Agent 如何与工作状态交互的接口协议**。
 
-核心洞察：
-1. **Feature List 用 JSON 格式 + passes 字段约束**，让任务边界显式化、不可绕过
-2. **Git 历史 + Progress 文件是上下文重建的关键**，而不是 Prompt 本身
-3. **视觉验证（Puppeteer MCP）是端到端测试的必要条件**，纯代码级测试不够
-4. **Initializer Agent 只运行一次**，负责建立完整的工件体系；Coding Agent 负责增量推进
+关键洞察：
 
-> 笔者认为，这套双组件架构的真正价值在于**将「任务定义」与「任务执行」解耦**：Initializer Agent 解决的是「做什么」的问题（任务边界、验收标准），Coding Agent 解决的是「怎么做」的问题（增量实现、进度维护）。这种职责分离使得人类可以在更高层次介入——不是监督每个实现细节，而是审核 Feature List 的完整性。
+1. **外部状态 > 内部记忆**：模型压缩 Context Window 是被动行为，但通过 Feature List + Progress File，Agent 能主动「查询」而非「猜测」状态
+2. **结构化 > 自由文本**：JSON Feature List 强制模型在「状态变更」和「状态查询」之间保持一致的语义，不给模型留下模糊空间
+3. **测试即验证而非完成标志**：将 end-to-end 测试结果作为 passes 的必要条件，防止模型自我安慰
+
+Anthropic 在文末提出了一个开放问题：**单一通用 Agent 是否是最优解**？还是说专用 Agent（测试 Agent、QA Agent、代码清理 Agent）能做得更好？这与 Cursor 的 Multi-Agent Kernel 研究形成呼应——当任务足够复杂时，分工优于全能。
 
 ---
 
-**引用来源**
+## 七、与现有研究的关联
 
-- [Anthropic Engineering: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)（官方工程博客，2026）
-- [Claude Agent SDK Quickstart: Autonomous Coding](https://github.com/anthropics/claude-quickstarts/tree/main/autonomous-coding)（配套代码示例）
-- [Claude 4 Prompting Guide: Multi-context Window Workflows](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices#multi-context-window-workflows)（官方文档）
+| 概念 | 本文 | 相关文献/项目 |
+|------|------|-------------|
+| 跨 Session 状态管理 | Feature List + Progress File + Git History | Anthropic GAN Architecture (harness-design-long-running-apps) |
+| 增量式任务分解 | 每次只做一个功能 | Cursor Composer 2.5 Targeted RL |
+| 端到端测试验证 | Puppeteer MCP 截图验证 | Harbor Terminal-Bench |
+| 多角色 Agent | 文末提出：专用 vs 通用 Agent | Cursor Multi-Agent Kernel (Planner-Worker-Judge) |
+| 工作区状态传递 | Git commit as memory | OpenAI Codex Long Horizon (25h self-driving) |
+
+---
+
+## 八、适用场景判断
+
+**适合使用此 Harness 模式的场景**：
+- 需要跨越数小时乃至数天的复杂软件工程项目
+- 多个 Agent 实例需要协同工作的场景
+- 需要明确的进度追踪和责任边界的任务
+
+**不太适合的场景**：
+- 短时、一次性完成的任务（开销大于收益）
+- 需要强实时性的交互式任务
+- 模型本身能力不足以完成基本功能的情况（Harness 不能替代模型能力）
+
+---
+
+> **引用来源**：Justin Young, "Effective harnesses for long-running agents", *Anthropic Engineering Blog*, November 26, 2025. https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
