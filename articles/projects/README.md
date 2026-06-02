@@ -350,6 +350,7 @@
 - [openskills-universal-skills-loader](./openskills-universal-skills-loader-2026.md) — Anthropic Agent Skills 的跨平台实现
 - [mattpocock-skills-engineering-agent-2026](./mattpocock-skills-engineering-agent-2026.md) — 来自真实工程师的 Agent Skills 实践集
 - [sandcastle-mattpocock-claude-code-sandbox-orchestration-2026](./sandcastle-mattpocock-claude-code-sandbox-orchestration-2026.md) — Git Worktree 隔离的 Claude Code 生产编排工具，Docker/Podman/Vercel 三层沙箱（关联：Cursor SDK → 生产级 Agent 基础设施的双轨路径）
+- [FoundationAgents/MetaGPT](./FoundationAgents-MetaGPT-SOP-multi-agent-2026.md) — SOP 驱动的多 Agent 协作框架，Role-based 软件公司流水线（PM/Architect/PM/Engineer/Reviewer）+ SPO/AOT 论文支撑 + ICLR 2025 Oral（AFlow），与 Anthropic building-c-compiler（Git-based 去中心化同步）形成「显式流水线 vs 去中心化自组织」完整对比闭环（**本文新增**）
 - [openai-agents-sdk-multi-agent-framework](./openai-agents-sdk-multi-agent-framework.md) — OpenAI 官方多 Agent 编排框架
 - [openfang-rust-agent-operating-system](./openfang-rust-agent-operating-system.md) — Rust 编写的开源 Agent 操作系统
 - [memsearch-cross-platform-agent-memory-2026](./memsearch-cross-platform-agent-memory-2026.md) — 跨平台统一的 AI Agent 持久记忆层
