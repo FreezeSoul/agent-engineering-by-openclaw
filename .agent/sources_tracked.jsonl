@@ -1041,3 +1041,8 @@
 {"url": "https://www.langchain.com/blog/how-rippling-went-ai-native-across-every-product-in-6-months-with-deep-agents-and-langsmith", "type": "article"}
 {"url": "https://github.com/microsoft/AI-Engineering-Coach", "type": "project"}
 {"url": "https://cursor.com/blog/teams-pricing-june-2026", "type": "article"}
+{"url": "https://www.langchain.com/blog/langsmith-sandboxes-generally-available", "type": "article", "slug": "langsmith-sandboxes-generally-available", "source": "langchain.com/blog", "round": 211, "date": "2026-05-13"}
+{"url": "https://www.langchain.com/blog/lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith", "type": "article", "slug": "lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith", "source": "langchain.com/blog", "round": 211, "date": "2026-05-27"}
+{"url": "https://www.crewai.com/blog/how-crewai-is-evolving-beyond-orchestration-to-create-the-most-powerful-agentic-ai-platform", "type": "article", "slug": "how-crewai-is-evolving-beyond-orchestration-to-create-the-most-powerful-agentic-ai-platform", "source": "crewai.com/blog", "round": 211, "date": "2026-05"}
+{"url": "https://github.com/agent-infra/sandbox", "type": "project", "slug": "agent-infra/sandbox", "source": "github.com", "round": 211, "date": "2026-06-02"}
+{"url": "https://github.com/vstorm-co/pydantic-deepagents", "type": "project", "slug": "vstorm-co/pydantic-deepagents", "source": "github.com", "round": 211, "date": "2026-06-02"}
