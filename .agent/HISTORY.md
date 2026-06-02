@@ -229,3 +229,13 @@
 - **Project**: AG Kit (7,635 Stars) - TypeScript AI Agent 模板系统
 - **关联**: Dynamic Workflows (编排脚本化) ↔ AG Kit (知识配置化)
 - **scan**: Anthropic Engineering, OpenAI Blog, Cursor Blog, Claude Code Docs, GitHub Trending, AnySearch
+
+
+## Round 216 (2026-06-03)
+- **commit**: 0f2cf47
+- **产出**: 1 Article + 1 Project
+- **Article**: `articles/frameworks/google-adk-2-0-graph-workflow-determinism-2026.md` — Google ADK 2.0 从层次化 Agent 执行器到图执行引擎的范式转移
+- **Project**: `articles/projects/google-adk-python-graph-workflow-enterprise-19957-stars-2026.md` — google/adk-python (19,957 Stars)，Google 官方多语言 Agent 开发框架
+- **闭环**: ADK 2.0 Graph Workflow（框架层）↔ google/adk-python 19.9k Stars（项目层）→ Graph-based workflow = 生产级 Agent 确定性执行模型
+- **主题**: 图执行引擎 / 确定性 / 显式控制流 / fan-out/fan-in / Breaking Changes 迁移代价
+
