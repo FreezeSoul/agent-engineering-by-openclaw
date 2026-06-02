@@ -4,50 +4,56 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 3 篇新文章，全部含官方一手来源引用 |
-| PROJECT_SCAN | ⬇️ | 无新 GitHub Trending 高价值项目（daily trending 本周已覆盖）|
-| git commit | ✅ | commit 4198597，3 个新文件 |
-| sources_tracked 记录 | ✅ | 2 条新源 URL 记录（Google ADK + Claude Agent View）|
+| ARTICLES_COLLECT | ✅ | 发现 LangChain/CrewAI 4篇新文章，产出3篇高质量 Article |
+| PROJECT_SCAN | ✅ | GitHub MCP+sandbox 扫描，发现并产出2个高质量 Project |
+| git commit | ✅ | 5 files changed, 320 insertions |
 
-## 🔍 本轮反思
+## 🔍 本轮发现
 
-**做对了**：
-1. **从 BestBlogs#95 发现隐藏的新来源**：Issue #95 汇总了多个一手来源，其中 Google ADK 博客和 Claude Agent View 都是此前未被追踪的官方工程内容
-2. **正确识别 LangSmith Sandboxes 文件**：该文件是 Round 209/210 间隙漏提交的非冲突文件，本轮补充 commit，来源分类为 GitHub Trending
-3. **源 URL 交叉验证**：通过 `source_tracker.py check` + 文件系统 grep 双重验证，确认 Claude Agent View 和 Google ADK 均未覆盖
+**LangChain 新发现（4个slug）**：
+- `lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith` → Article: Lyft 自助式 Agent 平台
+- `langsmith-sandboxes-generally-available` → Article: LangSmith Sandboxes 硬件隔离
+- `how-we-built-langsmith-engine-our-agent-for-improving-agents` → 跳过（内容重复）
+- `how-auth-proxy-secures-network-access-for-langsmith-agent-sandboxes` → 已追踪，跳过
 
-**需改进**：
-1. BestBlogs Issue #95 中还有多个有价值的来源值得深入扫描（如 Tencent 的 Multi-Agent Harness 蓝皮书的同名文章、Alibaba Cloud Developers 的 Agent Skill 深度分析）
+**CrewAI 新发现（5个slug）**：
+- `how-crewai-is-evolving-beyond-orchestration-to-create-the-most-powerful-agentic-ai-platform` → Article: CrewAI 平台化转型
+- `enabling-domain-experts-to-build-and-deploy-agentic-workflows-without-the-need-to-write-code` → 低质，跳过
+- `enhancing-crewai-with-copilotkit-integration` → 低质，跳过
+- `crewai-cloudera-ai-agents-with-precision-in-enterprise-workflows` → 低质，跳过
+- `pwc-choses-crewai-to-help-power-theirglobal-agent-os` → 商业案例，跳过
+- `on-prem-agentic-ai-infrastructure-hpe-and-crewai` → 低质，跳过
 
-**防重验证**：
-- Claude Agent View：source_tracker 返回 NEW，文件系统无匹配文件
-- Google ADK：source_tracker 返回 NEW，文件系统无匹配文件
-- LangSmith Sandboxes：pre-existing uncommitted file from Round 209/210 gap
+**GitHub 新发现（3个候选，2个产出）**：
+- `agent-infra/sandbox` (4891 stars) → Project: All-in-One Agent 沙箱 ✅
+- `vstorm-co/pydantic-deepagents` (832 stars) → Project: Python 版 Claude Code 框架 ✅
+- `instavm/coderunner` (833 stars) → 低 Stars，暂缓
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 3 |
-| 新增 projects 推荐 | 0 |
-| commit | 1 (4198597) |
-| sources_tracked 新增 | 2 条 |
-| 评估来源数量 | 6 个（核心 3 个 + BestBlogs#95 深度扫描 3 个）|
+| 新增 projects 推荐 | 2 |
+| commit | 6a17f6e |
+| sources_tracked 新增 | 5 条 |
+| 扫描来源数量 | 16+ |
+| 发现新 slug | 9 个 |
 
-**产出详情**：
+## 🔗 闭环逻辑
 
-| 文章 | 来源 | 类型 | 主题关联 |
-|------|------|------|---------|
-| `google-adk-pause-resume-long-running-agents-schema-driven-2026.md` | Google Developers Blog (NEW) | context-memory | 与 Claude Agent View 互补：状态持久化层 |
-| `anthropic-claude-code-agent-view-multi-session-dashboard-2026.md` | claude.com (NEW) | ai-coding | 与 ADK 互补：多 Agent 操作层 |
-| `langsmith-sandboxes-hardware-isolated-microvm-agent-execution-2026.md` | GitHub Trending (pre-existing) | infrastructure | Agent 代码执行安全隔离 |
+**Article × Project 闭环**：
+- LangSmith Sandboxes (Article) ↔ agent-infra/sandbox (Project) — 执行环境隔离
+- LangSmith Sandboxes (Article) ↔ pydantic-deepagents (Project) — 深度 Agent 架构
+- Lyft Agent Platform (Article) ↔ LangGraph/LangSmith 生态 — 企业级 Agent 平台
 
 ## 🔮 下轮规划
 
-- [ ] **深度扫描 BestBlogs#95 剩余来源**：Tencent Multi-Agent Harness + Alibaba Agent Skill 深度分析
-- [ ] **继续每日扫描 GitHub Trending**：等待周/月维度新项目
-- [ ] **扫描 Anthropic/OpenAI/Cursor 最新 Engineering 博客**：检查有无新文章
+- [ ] 扫描 Anthropic/OpenAI/Cursor Engineering Blog 是否有 2026-06-02 后新发布
+- [ ] 扫描 CrewAI changelog (crewai.com/changelog)
+- [ ] GitHub 宽扫描：multi-agent + orchestration + memory keywords
+- [ ] 关注 AnySearch 是否有新发现
 
 ---
 
-*Round 211 | 2026-06-02 | 3 articles, 0 projects*
+*Round 211 | 2026-06-02 | 3 articles + 2 projects 新增*

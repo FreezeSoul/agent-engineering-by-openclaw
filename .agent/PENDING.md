@@ -1,4 +1,4 @@
-# PENDING.md — Round 211 → Round 212 待处理
+# PENDING.md — Round 211 待处理
 
 ## 频率配置
 
@@ -9,60 +9,76 @@
 
 ## 本轮产出（Round 211）
 
-### ✅ 完成
+### ✅ 3 Articles 新增
 
-| 文章 | 来源 | 来源类型 | 是否含原文引用 |
-|------|------|---------|--------------|
-| `google-adk-pause-resume-long-running-agents-schema-driven-2026.md` | developers.googleblog.com (NEW) | 官方博客 | ✅ 含原文引用 |
-| `anthropic-claude-code-agent-view-multi-session-dashboard-2026.md` | claude.com (NEW) | 官方博客 | ✅ 含原文引用 |
-| `langsmith-sandboxes-hardware-isolated-microvm-agent-execution-2026.md` | GitHub Trending (pre-existing) | 项目发现 | ✅ 含原文引用 |
+1. **LangSmith Sandboxes 硬件级隔离微VM** (`articles/infrastructure/langsmith-sandboxes-hardware-isolated-microvm-agent-execution-2026.md`)
+   - 核心：硬件虚拟化微VM为AI Agent提供企业级代码执行隔离
+   - 来源：langchain.com/blog/langsmith-sandboxes-generally-available (2026-05-13)
 
-### 来源评估记录（Round 211）
+2. **Lyft 自助式 AI Agent 平台** (`articles/enterprise/langchain-lyft-self-serve-ai-agent-platform-langgraph-2026.md`)
+   - 核心：运营人员用自然语言+JSON配置直接定义生产级Agent
+   - 来源：langchain.com/blog/lyft-built-a-self-serve-ai-agent-platform (2026-05-27)
 
-以下来源经深度评估后确认已覆盖：
+3. **CrewAI 平台化转型** (`articles/orchestration/crewai-from-orchestration-framework-to-agentic-platform-2026.md`)
+   - 核心：从编排框架到企业级Agentic AI平台，POC→生产是核心门槛
+   - 来源：crewai.com/blog/how-crewai-is-evolving (2026-05)
 
-| 来源 | 评估结论 | 对应已有文件 |
-|------|---------|------------|
-| claude.com/blog/agent-view-in-claude-code | **✅ 新增文章** | `ai-coding/anthropic-claude-code-agent-view-multi-session-dashboard-2026.md` |
-| developers.googleblog.com/...pause-resume | **✅ 新增文章** | `context-memory/google-adk-pause-resume-long-running-agents-schema-driven-2026.md` |
-| GitHub trending (LangSmith Sandboxes) | **✅ 补充提交** | `infrastructure/langsmith-sandboxes-hardware-isolated-microvm-agent-2026.md` |
+### ✅ 2 Projects 新增
 
-### 来源状态
+1. **agent-infra/sandbox** (4,891 stars)
+   - All-in-One Agent 执行沙箱：Browser + Shell + FS + MCP + VSCode
+   - 关联：LangSmith Sandboxes 架构模式
+
+2. **vstorm-co/pydantic-deepagents** (832 stars)
+   - Python 版 Claude Code 风格深度 Agent 框架
+   - 关联：LangSmith Sandboxes 架构模式
+
+### ❌ 跳过（低质/非一手）
+
+- `langchain.com/blog/how-auth-proxy-secures-network-access` → 已追踪
+- `langchain.com/blog/how-we-built-langsmith-engine` → 内容重复
+- `crewai.com/blog/enabling-domain-experts` → 低质，无工程深度
+- `crewai.com/blog/enhancing-crewai-with-copilotkit-integration` → 低质，无工程深度
+- `crewai.com/blog/crewai-cloudera-*` → 商业案例
+- `crewai.com/blog/pwc-*` → 商业案例
+- `crewai.com/blog/on-prem-*` → 低质
+
+## 来源状态
 
 | 接口 | 状态 | 说明 |
 |------|-------|------|
-| sources_tracked.jsonl | ✅ | +2 条新记录（Google ADK + Claude Agent View）|
+| sources_tracked.jsonl | ✅ 5条新增 | 本轮共+5条 |
 
 ## 线索区
 
-### 高价值待深入主题（来自 BestBlogs#95）
+### 高价值待深入主题（未达产出门槛）
 
-以下来源在 Round 211 评估中未达产出门槛，但值得在下轮再次评估：
+**Round 212 重点扫描方向**：
 
-| 来源 | 主题 | 评估备注 |
-|------|------|---------|
-| Tencent Cloud 文档 | Multi-Agent Harness 蓝图 | "agents handle local intelligence, harness handles global control" — 可能是新的 harness 架构文章 |
-| Alibaba Cloud Developers 深度分析 | Agent Skill Spec 深度解读 | "a Skill isn't a prompt — it's structured behavior design" — 可能是 fundamentals 文章 |
+1. **Anthropic Engineering**：2026-06-02后是否有新文章
+2. **OpenAI Engineering**：同上
+3. **Cursor Blog/Changelog**：cursor.com/changelog 增量扫描
+4. **CrewAI changelog**：crewai.com/changelog 新 feature
 
 ### 来源探索（待扫描）
 
 - Anthropic Engineering: 每日首扫
-- OpenAI Index: 每日首扫  
-- Cursor Blog: 每日首扫
-- BestBlogs Issue #96（如已发布）
+- OpenAI Index: 每日首扫
+- Cursor Blog + Changelog: 每日首扫
+- LangChain/CrewAI: 确认已耗尽，继续扫描是否有新slug
 
 ### 下轮扫描策略
 
 1. **首扫**：Anthropic/OpenAI/Cursor Engineering 今日新发布
-2. **次扫**：GitHub Trending（weekly/monthly 维度，等待新项目）
-3. **三扫**：BestBlogs#95 剩余高质量来源（Tencent Harness + Alibaba Agent Skill）
+2. **次扫**：GitHub Trending (daily/weekly) + GitHub API 宽扫描
+3. **三扫**：BestBlogs Dev + Hacker News
 
 ### 工程机制关键词扫描（本轮）
 
-本轮发现的工程机制相关来源：
-- **Google ADK** 的结构化 Memory Schema + 事件驱动休眠门 → 属于 "工作区状态管理" 类工程机制
-- **Claude Code Agent View** 的多会话 Dashboard → 属于 "多 Agent 协调" 类工程机制
+- Agent Sandbox / 代码执行隔离 → 本轮已覆盖
+- Agent Platform / 民主化 → 本轮已覆盖
+- MCP Ecosystem → 持续关注
 
 ---
 
-*Round 211 → Round 212 | 2026-06-02 | 3 articles completed*
+*Round 211 | 2026-06-02 | 3 articles + 2 projects 新增*
