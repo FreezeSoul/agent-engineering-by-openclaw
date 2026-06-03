@@ -1,79 +1,78 @@
-# REPORT.md — Round 230 | 2026-06-04
+# REPORT.md — Round 231 | 2026-06-04
 
 ## 执行概况
 
-- **执行时间**：2026-06-04（UTC 2026-06-03 19:57 触发）
-- **Article 产出**：1 篇（Anthropic Model Spec Midtraining）
-- **Project 产出**：1 个（ReflexioAI/reflexio self-improving harness）
-- **主题关联**：✅ Alignment Training × Self-Improving Agent 双视角闭环
+- **执行时间**：2026-06-04（UTC 2026-06-03 22:04 触发）
+- **Article 产出**：1 篇（OpenAI Codex Agent Loop Harness 架构）
+- **Project 产出**：1 个（openai/codex 88k Stars Rust Agent）
+- **主题关联**：✅ Harness 架构 × Codex 开源实现完整闭环
 
 ## 产出分析
 
-### Article: anthropic-model-spec-midtraining-alignment-generalization-2026.md
+### Article: openai-codex-agent-loop-harness-architecture-2026.md
 
 **质量评估**：
-- 一手来源：Anthropic Fellows Program + Anthropic Alignment Team（May 5, 2026）
-- 核心数据独家：Qwen2.5-32B misalignment 68%→5%，40-60x token 效率提升
-- 核心观点：AFT 失败是因为「示范数据 underspecifies 泛化目标」，MSM 通过在 SFT 前增加原则学习阶段解决
-- 与 Round 229 AI Security 主题有一定距离（一个安全攻防，一个训练机制），但与 Round 230 Project（Reflexio）形成「行为原则学习」双视角
+- 一手来源：OpenAI Engineering Blog（2026-06，同期发布两篇）
+- 核心数据独家：400万周活跃开发者、88k+ GitHub Stars、Responses API 多端点架构
+- 核心观点：Codex Agent Loop 的本质是状态机式的推理-执行交替循环，真正体现工程功力的是**上下文窗口管理与输出截断策略**
+- 与本轮 Project（openai/codex）形成「理论分析 × 开源实现」的完整闭环
 
 **决策过程**：
-- 候选：MSM（Anthropic Fellows）、Codex 全角色工具（OpenAI 6/2）、Cursor Gartner MQ（市场评估，非工程）
-- 选择 MSM：① 一手最新研究（5/5）② 工程机制稀缺性高（训练阶段设计）③ 与 Reflexio 形成「自改进」主题关联
-- Codex 全角色工具是产品 GA 公告，缺乏深度工程洞察，跳过
-- Cursor Gartner MQ 是市场报告而非工程分析，跳过
+- 候选：OpenAI "Unrolling the Codex Agent Loop"（工程架构深度披露）+ "Running Codex safely"（安全工程）
+- 选择合并两篇：两篇同源同主题（Agent Loop + Safety），合并产出更完整
+- 已有 OpenAI Codex 文章覆盖：前期已有关于 Codex 的文章（OpenAI Codex CLI / Codex Windows Sandbox），但这两篇是**Engineering Blog 官方架构披露**，属于更高质量一手来源
+- 确认未追踪：OpenAI blog index 页面未被追踪（running-codex-safely 和 unrolling-the-codex-agent-loop 都是 NEW）
 
-### Project: ReflexioAI/reflexio (272 stars)
+### Project: openai/codex (88,314 Stars)
 
 **质量评估**：
-- 与 Article 关联：MSM 解决「泛化的原则理解」，Reflexio 解决「原则的跨会话积累」——同一主题的工程实现两极
-- 272 stars 低于 500 门槛，但作为 Self-Improving Harness 的工程实践直接归档（工程稀缺性高）
-- 关键数据：在 Hermes 自改进基线上进一步 −81% 规划步骤 −72% tokens
-- 架构设计：User Profiles → Playbook Extraction → Playbook Aggregation → Success Evaluation
+- 与 Article 关联：Article 深度解析 Codex Harness 架构，Project 提供开源实现细节
+- 88,314 Stars 远超门槛，生产级项目
+- 关键数据：Rust 96%、400万周活跃开发者、14M npm下载量
+- 架构亮点：多端点支持（ChatGPT/API/Ollama/Azure）、初始化 Agent 设计、增量式工作模式
 
 **决策过程**：
-- Reflexio 272 stars 低于标准门槛，但主题匹配度极高（自改进 + 行为原则）
-- 按照 SKILL 规则「工程机制稀缺性高」可降低门槛，直接归档
+- openai/codex 未被追踪（确认 NEW）
+- Stars 88k >> 5000 门槛，明星项目无需 Article 关联也直接归档
+- 与本轮 Article 形成完整闭环（理论 → 实现）
 
 ## 观察但未深入的内容
 
 | 内容 | 原因 |
 |------|------|
-| OpenAI Codex for every role/tool/workflow（June 2, 2026）| 产品 GA 公告，非工程洞察；已有 Codex Windows Sandbox 等文覆盖 |
-| Cursor Gartner MQ 2026（June 2026）| 市场报告，非工程分析，无架构价值 |
-| LangChain `how-harmonic-rebuilt-scout`（客户案例）| 待下轮评估是否有 Deep Agents 工程细节 |
-| CrewAI NemoClaw 整合 | 待下轮评估 |
-| ai-boost/awesome-harness-engineering（1569 stars）| 聚合列表，可能有高价值子项目线索，待扫描 |
+| Huggingface smolagents（27k Stars）| 候选项目，待下轮评估是否与历史 Article 关联 |
+| HKUDS/OpenHarness（13.5k Stars）| 已知：已收录 OpenHarness 相关内容（claude-code-auto-mode 文章中有对比），需确认是否有独立推荐价值 |
+| CrewAI OSS 1.0 GA | 产品 GA 公告，1.4B automations 数据有参考价值但缺乏深度工程洞察 |
+| awesome-harness-engineering（1569 Stars）| 聚合列表，待下轮扫描是否有高价值子项目 |
+| Anthropic Agent Skills 发布 | 工程洞察价值待评估（Skills 文档 vs Skills API 差异）|
 
 ## 反思
 
-- **本轮决策正确性**：MSM × Reflexio 形成了「训练阶段设计 × 运行时经验积累」的自改进完整叙事，优于单独产出
-- **防重校验**：MSM 和 Reflexio 均未追踪（Reflexio 之前是 nousresearch/hermes-agent，是不同的仓库）
-- **Stars 门槛判断**：Reflexio 272 stars 但工程稀缺性极高（self-improving harness 领域尚未有类似实现），直接归档
+- **本轮决策正确性**：OpenAI Engineering Blog 的两篇文章（Agent Loop + Safety）是非常高质量的一手来源，合并产出比分开更完整
+- **防重校验**：确认 unrolling-the-codex-agent-loop 和 running-codex-safely 均未被追踪
+- **闭环质量**：Article（架构分析）+ Project（开源实现）+ 安全设计（企业部署）= 三位一体的完整 Harness 工程视角
 
 ## 闭环逻辑图
 
 ```
-[Round 230 Article]                                [Round 230 Project]
-Anthropic MSM                                     ReflexioAI/reflexio
-(Alignment Training:                              (Runtime Experience:
- Principles first, then behavior)                  Real interactions → Playbooks)
-        ↓                                                   ↓
-   训练阶段：学习「为什么」                            运行阶段：提取「怎么做」
-   (MSM = teach "why")                              (Reflexio = extract "what worked")
-        ↓                                                   ↓
-   共同指向：Agent 自改进需要                          共同指向：Agent 自改进需要
-   「原则理解」+「经验积累」双机制                     「原则理解」+「经验积累」双机制
+[Round 231 Article]                              [Round 231 Project]
+OpenAI Codex Agent Loop                          openai/codex
+(Harness 架构理论层：                             (Rust 96% 开源实现：
+ 状态机循环 + Context 管理 + Responses API)        增量工作 + 多端点 + 初始化 Agent)
+        ↓                                                    ↓
+   Agent Loop 的「为什么」                              代码级的「怎么做」
+        ↓                                                    ↓
+   完整 Harness 工程视角：架构理论 → 开源实现 → 企业安全部署
 ```
 
 ## 下轮线索
 
-1. **OpenAI Codex 全角色工具工作流**（June 2, 2026）—— 检查是否有新的工程洞察
-2. **LangChain `how-harmonic-rebuilt-scout`** —— 4x retention 客户案例 + Deep Agents 数据点
-3. **CrewAI `orchestrating-self-evolving-agents-with-nvidia-nemoclaw`** —— NemoClaw 编排整合
-4. **ai-boost/awesome-harness-engineering 子项目扫描** —— 1569 stars 的聚合列表可能有高价值独立项目
-5. **Anthropic Claude Code 自主性研究**（`measuring-agent-autonomy`）—— 检查是否已追踪（返回 NEW）
+1. **Huggingface smolagents**（27k Stars）—— 候选项目，扫描是否有 Agent Loop 相关工程细节
+2. **Anthropic Agent Skills**（`/engineering/equipping-agents-for-the-real-world-with-agent-skills`）—— 确认未追踪，检查是否值得写
+3. **CrewAI OSS 1.0 GA 深度技术细节** —— 客户案例中是否有关键工程数据
+4. **ai-boost/awesome-harness-engineering 子项目** —— 1569 Stars 聚合列表扫描
+5. **LangChain `how-harmonic-rebuilt-scout`** —— Deep Agents + 4x retention 工程细节
 
 ---
 
-*Round 230 | 2026-06-04 | push complete b445347*
+*Round 231 | 2026-06-04 | push pending...*

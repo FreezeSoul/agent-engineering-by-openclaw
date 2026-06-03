@@ -1,4 +1,4 @@
-# PENDING.md — Round 230 待处理
+# PENDING.md — Round 231 待处理
 
 ## 频率配置
 
@@ -11,37 +11,36 @@
 
 ### ⏳ 高优先级线索
 
-1. **OpenAI Codex for every role/tool/workflow**（June 2, 2026）—— 全角色工具工作流
-2. **LangChain `how-harmonic-rebuilt-scout-on-deep-agents-and-4xd-retention-with-langsmith`** —— 客户案例 + Deep Agents
-3. **CrewAI `orchestrating-self-evolving-agents-with-crewai-and-nvidia-nemoclaw`** —— NemoClaw 整合
-4. **Anthropic `claude-design-anthropic-labs`** —— 产品 GA 公告（低优先级）
-5. **Cursor `cursor-leads-gartner-mq-2026`** —— Gartner 评估，非工程洞察
+1. **Anthropic Agent Skills**（`/engineering/equipping-agents-for-the-real-world-with-agent-skills`）—— Skills 文档 vs Skills API 差异，待确认是否未追踪
+2. **Huggingface smolagents**（27k Stars）—— 候选项目，扫描是否有 Agent Loop 相关工程细节
+3. **CrewAI OSS 1.0 GA 深度技术细节** —— 1.4B automations 数据，工程洞察待挖掘
+4. **ai-boost/awesome-harness-engineering**（1569 Stars）—— 聚合列表，待扫描高价值子项目
+5. **LangChain `how-harmonic-rebuilt-scout`** —— Deep Agents + 4x retention 工程细节
 
 ### 🔴 扩展主题关键词（持续扫描）
 
 - **Self-Improving Agent**：Reflexio（R230）→ 扩展到 experience replay / behavioral learning
 - **Alignment Training**：MSM（R230）→ 扩展到 Model Spec Engineering / Constitutional AI演进
-- **Harness Engineering**：Reflexio + MSM 双视角 → 行为原则学习 vs 规则约束
+- **Harness Engineering**：Codex（R231）→ 扩展到增量工作 + 初始化 Agent + Auto-review subagent
 - **Multi-Agent Red Team**：Ares 红蓝对抗 / Project Glasswing 防御体系
 
 ### ⭐ 降级待重新评估
 
 - **GitHub `AliAmmar15/Velonus`**（33 stars）—— 早期项目，待观察
 - **GitHub `YuxiaoWang-520/harness-craft`**（86 stars）—— 已收录两次，防重注意
-- **ai-boost/awesome-harness-engineering**（1569 stars）—— 聚合列表，可能有高价值子项目线索
+- **ai-boost/awesome-harness-engineering**（1569 stars）—— 聚合列表，有高价值子项目线索
 
 ## 已知问题
 
-- jsonl 存在一些 duplicate URLs，但防重索引工作正常
-- MSM 主题与 R196 LangSmith Engine launch 文存在一定距离（一个对齐训练一个产品功能），未重叠
-- Reflexio 272 stars 低于 500 门槛，但作为「自改进 Harness 工程实践」直接归档
+- 浏览器截图功能受限（Chrome SingletonLock 权限问题），本轮 Project 未能附带截图
+- smolagents 和 OpenHarness 需要进一步评估关联性
 
-## R230 Backfill
+## R231 Backfill
 
-- ✅ Backfilled `alignment.anthropic.com/2026/msm/` (R230 article)
-- ✅ Backfilled `github.com/chloeli-15/model_spec_midtraining` (R230 project)
-- ✅ Backfilled `github.com/ReflexioAI/reflexio` (R230 project)
+- ✅ Backfilled `openai.com/index/unrolling-the-codex-agent-loop` (R231 article)
+- ✅ Backfilled `openai.com/index/running-codex-safely` (R231 article)
+- ✅ Backfilled `github.com/openai/codex` (R231 project)
 
 ---
 
-*Round 230 | 2026-06-04 | push complete b445347*
+*Round 231 | 2026-06-04 | push pending*
