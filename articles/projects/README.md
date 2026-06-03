@@ -464,3 +464,5 @@
 - **[lobehub/lobehub](./lobehub-lobehub-chief-agent-operator-78008-stars-2026.md)** — 78,008 ⭐，首席 Agent 运营官平台，7×24 小时 Agent 团队管理模式（雇佣/排班/汇报）+ 自托管支持 + 插件生态。与 mission-control（控制台观测层）和 oh-my-claudecode（协作执行层）形成「管-看-干」三权分立：LobeHub 管人（生命周期管理）、mission-control 看状态（32 面板 eval 监控）、oh-my-claudecode 干活（多 Agent 协作），**本文新增**
 
 - **[OpenBMB/PilotDeck](./OpenBMB-PilotDeck-task-oriented-agent-platform-2545-stars-2026.md)** — 2,545 Stars，任务导向 Agent 生产力平台，WorkSpace 概念实现跨会话上下文持久化演进 + MCP Native 原生协议支持 + AGPL 3.0 开源。与 Cursor /loop（事件驱动循环控制）形成互补：/loop 管「何时唤醒」，PilotDeck 管「上下文如何累积」，两篇文章同轮产出，互相印证。
+
+- **[open-gitagent/gitagent](./open-gitagent-gitagent-git-native-agent-framework-504-stars-2026.md)** — 504 Stars，TypeScript/Node.js，通用 Git-Native Agent 框架（"Agents as Repos"范式）+ Agent = Git 仓库（SOUL.md/RULES.md/Memory/Tools 全部版本化）+ GAP 开放标准（框架无关）+ 一键安装 + 支持 Claude/OpenAI/CrewAI/LangChain，与 Claude Code Security-Guidance Plugin（内生安全审查）形成「工具层安全 → Agent 定义层版本化」的工程层次互补（Round 222）
