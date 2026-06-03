@@ -1058,8 +1058,12 @@
 {"url": "https://openai.com/index/harness-engineering/)（2026", "type": "article", "slug": "openai-repository-as-system-of-record-agent-legibility", "source": "orphan-backfill-r215", "tracked_at": "2026-06-03T02:15:00Z"}
 {"url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)", "type": "article", "slug": "anthropic-context-engineering-beyond-prompt-engineering", "source": "orphan-backfill-r215", "tracked_at": "2026-06-03T02:15:00Z"}
 {"url": "https://github.com/FoundationAgents/MetaGPT)，2025-03", "type": "article", "slug": "FoundationAgents-MetaGPT-SOP-multi-agent", "source": "orphan-backfill-r215", "tracked_at": "2026-06-03T02:15:00Z"}
-{"url": "https://github.com/OrlojHQ/orloj)（2026-06，101", "type": "article", "slug": "orlojhq-orloj-yaml-declarative-multi-agent-runtime", "source": "orphan-backfill-r215", "tracked_at": "2026-06-03T02:15:00Z"}
-{"url": "https://github.com/vudovn/ag-kit)（7,635", "type": "article", "slug": "vudovn-ag-kit-specialist-agents-skills-workflows", "source": "orphan-backfill-r215", "tracked_at": "2026-06-03T02:15:00Z"}
+
+
 {"url": "https://claude.com/blog/agent-view-in-claude-code", "type": "article", "slug": "anthropic-claude-code-agent-view-multi-session-dashboard", "source": "orphan-backfill-r215", "tracked_at": "2026-06-03T02:15:00Z"}
-{"url": "https://www.langchain.com/blog/lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith`", "type": "article", "slug": "langchain-lyft-self-serve-ai-agent-platform", "source": "orphan-backfill-r215", "tracked_at": "2026-06-03T02:15:00Z"}
+
 {"url": "https://www.langchain.com/blog/how-rippling-went-ai-native-across-every-product-in-6-months-with-deep-agents-and-langsmith", "type": "article", "slug": "langchain-rippling-ai-native-enterprise", "source": "orphan-backfill-r215", "tracked_at": "2026-06-03T02:15:00Z"}
+{"url": "https://www.langchain.com/blog/designing-efficient-verifiers-for-legal-agents", "type": "article", "slug": "langchain-harvey-efficient-verifiers-legal-agents", "tracked_at": "2026-06-03T06:30:00Z"}
+{"url": "https://www.crewai.com/blog/agent-harnesses-are-dead", "type": "article", "slug": "crewai-agent-harnesses-dead-entangled-agentic", "tracked_at": "2026-06-03T06:30:00Z"}
+{"url": "https://www.crewai.com/blog/the-state-of-agentic-ai-in-2026", "type": "article", "slug": "crewai-state-of-agentic-ai-2026", "tracked_at": "2026-06-03T06:30:00Z"}
+{"url": "https://github.com/builderz-labs/mission-control", "type": "project", "slug": "builderz-labs-mission-control", "tracked_at": "2026-06-03T06:30:00Z"}
