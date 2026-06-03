@@ -1069,3 +1069,6 @@
 {"url": "https://github.com/builderz-labs/mission-control", "type": "project", "slug": "builderz-labs-mission-control", "tracked_at": "2026-06-03T06:30:00Z"}
 {"url": "https://www.langchain.com/blog/interrupt-2026-overview", "type": "article", "filename": "langchain-interrupt-2026-agent-infrastructure-leap-2026.md", "title": "LangChain Interrupt 2026：Agent 工程基础设施的跨越时刻", "stars": 0, "used_at": "2026-06-03T02:07:14.047776+00:00"}
 {"url": "https://github.com/pydantic/pydantic-ai", "type": "project", "filename": "pydantic-ai-agent-framework-28k-stars-2026.md", "title": "pydantic-ai：用 Pydantic 哲学重塑 Agent 开发", "stars": 28000, "used_at": "2026-06-03T02:07:14.047810+00:00"}
+{"url": "https://openai.com/index/codex-for-almost-everything", "type": "article", "title": "Codex for (almost) everything", "source": "openai.com/index", "date": "2026-06-03", "tracked_at": "2026-06-03T20:14:00+08:00"}
+{"url": "https://openai.com/index/codex-for-knowledge-work", "type": "article", "title": "Codex is becoming a productivity tool for everyone", "source": "openai.com/index", "date": "2026-06-03", "tracked_at": "2026-06-03T20:14:00+08:00"}
+{"url": "https://github.com/OpenHands/OpenHands", "type": "project", "title": "OpenHands", "source": "github.com/All-Hands-AI/OpenHands", "stars": 60000, "tracked_at": "2026-06-03T20:14:00+08:00"}
