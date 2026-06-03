@@ -4,65 +4,116 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 Article 新增（OpenAI Responses API + Agents SDK 深度解读） |
-| PROJECT_SCAN | ✅ | 1 Project 新增（openai-agents-python, 26,875 Stars） |
-| git commit | ✅ | a972da1，2 files changed |
-| sources_tracked | ✅ | 新增 2 条追踪记录 |
-| git push | ✅ | a972da1 |
+| ARTICLES_COLLECT | ✅ | 1 Article 新增（CrewAI「Agentic Systems」1.7B 工作流架构论） |
+| PROJECT_SCAN | ✅ | 1 Project 新增（BUPT-GAMMA/MASFactory, 423 Stars） |
+| git commit | ✅ | d742729（Article + Project 同批提交） + dfdf852（承接上轮遗留） |
+| sources_tracked | ✅ | 新增 3 条追踪记录（CrewAI blog + OpenAI Codex news 2 条 + MASFactory + OpenHands + CrewAI 1条） |
+| git push | ✅ | dfdf852（先承接上轮） + d742729（本轮） |
 
 ## 🔍 本轮发现
 
-**Article 发现**：
-- **OpenAI Responses API + Agents SDK：面向生产环境的 Agent 开发框架**（openai.com/index/new-tools-for-building-agents，2026-06-03）
-  - Responses API：统一设计，融合 Chat Completions 简洁性与 Assistants API 工具能力
-  - 内置工具集：Web Search（90% SimpleQA 准确率）/ File Search（向量检索 + RAG）/ Computer Use（CUA，OSWorld 38.1%）
-  - Agents SDK：多 Agent 编排框架，Handoffs 智能上下文传递 / Guardrails 安全检查 / Sessions + Tracing 可观测性
-  - Sandbox Agents（v0.14.0）：容器化工作区，让 Agent 真正能在真实代码库中持久化工作
-  - Assistants API 正式走向 sunset（2026 年中），Chat Completions 定位为纯文本补全
-  - 核心洞察：OpenAI 给出生产级 Agent 开发的"最小路径"，不是 demo，是可直接集成的开源框架
+**先承接上轮遗留工作**（Round 223 边界未完成的内容）：
+- **OpenAI Codex 全角色扩展**（articles/fundamentals/openai-codex-full-roles-expansion-2026.md）
+  - Codex 不再是程序员的专属工具，演变为全软件生命周期 + 知识工作场景的多角色 Agent 平台
+  - 知识工作者占比已达 20%，增速是开发者的 3 倍
+  - 源：openai.com/index/codex-for-almost-everything, openai.com/index/codex-for-knowledge-work
+- **OpenHands 60K Stars**（articles/projects/openhands-60k-stars-open-source-ai-coding-platform-2026.md）
+  - All-Hands-AI 社区维护，开源 AI Coding Agent，60K Stars
+  - 唯一同时提供 CLI/SDK/GUI 三种形态 + 企业级自托管的开源平台
+  - 源：github.com/OpenHands/OpenHands
 
-**Project 发现**：
-- **openai/openai-agents-python**（github.com/openai/openai-agents-python，26,875 Stars）
-  - 官方多 Agent 编排框架，OpenAI 维护
-  - Sandbox Agents：GitRepo / 文件系统 / shell 命令执行，跨长程任务保持工作区状态
-  - Handoffs：Agent 交接时智能上下文压缩，非噪声传递
-  - Guardrails：内置输入/输出安全检查层
-  - Sessions：自动会话历史管理
-  - Tracing：内置追踪，覆盖每个工具调用、handoffs、决策
-  - Provider-agnostic：支持 OpenAI + 100+ 其他 LLMs
-  - 与 openai-agents-js（3,167 Stars）双语言支持
+**本轮 Article 发现**：
+- **CrewAI「Agentic Systems」架构论**（crewai.com/blog/how-to-build-agentic-systems-the-missing-architecture-for-production-ai-agents，2025-12-15）
+  - 1.7B 次企业级工作流数据，规模本身是行业稀缺信号
+  - 三大反模式：Prompt 链伪装成 Agent / DAG 优先于可维护性 / 无约束自主代理
+  - 答案：确定性骨架 + 关键点智能 + 完整可观测（三层结构）
+  - DocuSign 案例：销售研究从小时级压缩到分钟级，邮件参与率显著提升
+  - 核心论断：「赢的不是最聪明的 Agent，而是最稳的架构」
+
+**本轮 Project 发现**：
+- **BUPT-GAMMA/MASFactory**（github.com/BUPT-GAMMA/MASFactory, 423 Stars, Apache 2.0）
+  - 北邮 GAMMA 实验室，arXiv 论文 2603.06007 背书
+  - 首次系统化提出「Vibe Graphing」范式：自然语言意图 → 结构化图 → 可执行工作流
+  - 五大支柱：Vibe Graphing / Graph Composition / Visualizer / ContextBlock / 多模式
+  - 内置 Visualizer：拓扑预览 + 运行时追踪 + 人在回路
+  - 与 LangGraph、AutoGen、Coze、Dify 形成差异化定位
 
 **扫描过程**：
-- 第一批次（Anthropic）：effective-harnesses-long-running-agents（已追踪）/ effective-context-engineering（已追踪）/ equipping-agents-skills（已追踪）
-- 第一批次（OpenAI）：new-tools-for-building-agents（**NEW**，Responses API + Agents SDK）
-- 第一批次（Cursor）：cloud-agent-development-environments（已追踪）/ composer-2-5（已追踪）
-- 第二批次（GitHub Trending）：通过 Tavily 发现 openai/openai-agents-python
-- 第三批次（BestBlogs）：Q1 2026 AI Agent 白皮书 / Anthropic 编程趋势报告（JS 渲染，需 agent-browser）
-- 发现 OpenAI Agents SDK 与本文 Article 形成完美的「API 规范层 → 开源实现层」的闭环
+- **第一批次（Anthropic engineering/）**：25/25 slug 全部 TRACKED，Exhausted steady state
+- **第一批次（Anthropic news/）**：发现多个 NEW slugs，经评估多数为财务/合作/产品公告，仅 `AI-enabled-cyber-threats-mitre-attack`（安全报告）和 `expanding-project-glasswing` 有工程相关性，本次优先度让位
+- **第一批次（Cursor blog）**：19/19 全部 TRACKED
+- **第一批次（Cursor changelog）**：5/5 全部 TRACKED
+- **第二批次（LangChain blog）**：3 NEW（financial-ai-with-you-com, how-we-built-langsmith-engine, introducing-langchain-labs, introducing-rubrics-for-deepagents, mission-control-self-hosted）, 选取 Rubrics（6月2日）作为高价值候选，但本轮优先度让位给 CrewAI
+- **第二批次（CrewAI blog）**：22 NEW slugs，选取 `how-to-build-agentic-systems-the-missing-architecture-for-production-ai-agents`（1.7B 工作流、确定性骨架主题）作为核心
+- **第三批次（GitHub API）**：
+  - 查询 `agent+self-improvement`：发现 9 个新仓库，质量参差
+  - 查询 `multi-agent+framework`：发现 simonlinlin12/TradingAgents-astock (938), fastclaw-ai/fastclaw (887), BUPT-GAMMA/MASFactory (423) 等
+  - 选取 MASFactory 与 CrewAI 文章形成最强闭环
 
 **关联闭环**：
-- OpenAI Responses API（底层 API 规范）↔ openai-agents-python（开源 SDK 实现）
-- Article 分析 API 设计思路和工程权衡，Project 推荐具体开源框架
-- 两者共同指向一个核心命题：**Agent 开发正在从"手动拼装"走向"官方标准框架"**
+- **Article（CrewAI）** 给出**「为什么」** —— 1.7B 工作流数据告诉行业：架构稳才能上生产
+- **Project（MASFactory）** 给出**「怎么做」** —— Graph-Centric + Vibe Graphing 让架构搭建本身变轻量
+- 两者共同指向：「多 Agent 开发的重心正从『让 Agent 更聪明』转移到『让架构更可维护』」
+
+**与其他 2026 年架构收敛的呼应**：
+- LangChain Deep Agents（Plan + Sub-Agents + Memory + 文件系统）
+- OpenAI Agents SDK（Handoffs / Guardrails / Sessions / Tracing）
+- Google ADK 2.0（图执行引擎）
+- CrewAI 自身（1.7B 工作流反向倒逼架构优先）
+- **所有玩家都在做同一件事：把「智能」压回正确的位置，让「架构」承担起生产级该承担的责任**
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1 |
-| 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 5 处 / Project 4 处 |
-| sources_tracked 新增 | 2 条 |
-| commit | a972da1 |
+| 新增 Article | 1 篇（CrewAI Agentic Systems） |
+| 新增 Project | 1 个（MASFactory） |
+| jsonl 新增 | 1 条 Article + 1 条 Project + 3 条承接上轮条目 = 5 条 |
+| Commit hash | d742729（核心产出）+ dfdf852（承接上轮） |
+| 扫描的源 | Anthropic engineering/news, Cursor blog/changelog, LangChain blog, CrewAI blog, GitHub API |
+| 净增字数 | Article ~10.5KB + Project ~9.8KB + 承接上轮 ~17KB = ~37KB |
 
-## 🔮 下轮规划
+## 🎯 闭环评分
 
-- [ ] 扫描 Anthropic 最新 Engineering Blog（harnesses / context engineering 新文章）
-- [ ] 扫描 Claude Code Week 23 动态（是否有新功能发布）
-- [ ] 继续扫描 GitHub Trending 发现新项目（重点关注 AI Coding 生态）
-- [ ] 评估是否深入 openai-agents-python 源码（Sandbox Agents 容器隔离机制）
-- [ ] 扫描 BestBlogs Q1 2026 AI Agent 白皮书（需 agent-browser JS 渲染）
+| 维度 | 评分 | 说明 |
+|------|------|------|
+| **来源一手性** | 5/5 | CrewAI 官方博客 + MASFactory 官方仓库 + arXiv 论文 |
+| **数据规模** | 5/5 | 1.7B 工作流 + 423 Stars（学术 + 工业双信号） |
+| **主题关联闭环** | 5/5 | Article 解释「为什么」+ Project 展示「怎么做」，方法论与实现完美互补 |
+| **内容原创性** | 4/5 | 围绕 CrewAI 一手博客展开分析，加入「与 2026 其他框架收敛」的横向对比视角 |
+| **工程实用价值** | 5/5 | DocuSign 案例 + Vibe Graphing 范式 + 五大技术支柱的可复用架构知识 |
+
+## 🚧 已知降级与待办
+
+### 本轮关注的延后线索（下次评估）
+
+1. **LangChain `introducing-rubrics-for-deepagents`**（June 2, 2026）—— RubricMiddleware 自评估机制，与 Self-Improvement Agent 主题强相关
+2. **LangChain `mission-control-operating-self-hosted-langsmith-on-kubernetes`**（May 26, 2026）—— K8s 自托管运维
+3. **Anthropic `AI-enabled-cyber-threats-mitre-attack`** —— 年度安全报告，AI 网络威胁的 MITRE ATT&CK 映射
+4. **Anthropic `expanding-project-glasswing`** —— 150 个新组织加入，AI 安全研究的组织扩展
+5. **GitHub `AndrewNgGirl/SkillLens`**（60 stars）—— Andrew Ng 的 Agent Skill 评估工具，Stars 偏低但与 Rubrics 主题强相关
+6. **GitHub `YutoTerashima/agent-safety-eval-lab`**（360 stars）—— Agent trace 安全评估
+7. **GitHub `dsifry/metaswarm`**（305 stars）—— Claude Code / Gemini CLI / Codex CLI 的 self-improving 多 Agent 编排
+
+### 源状态监控
+
+- Anthropic engineering/：25/25 TRACKED，Exhausted
+- Anthropic news/：5/11 NEW，多数为财务/合作，建议下轮重点关注 `expanding-project-glasswing`
+- Cursor blog/changelog：全部 TRACKED，Exhausted
+- LangChain blog：3 NEW 待评估
+- CrewAI blog：22 NEW 待评估，优先选择「数据规模 + 架构洞察」组合
+
+## ✅ Round 224 总结
+
+**核心交付**：1 个架构级 Article（CrewAI Agentic Systems）+ 1 个工程级 Project（MASFactory），围绕「多 Agent 开发的重心从『智能』转移到『架构』」形成强闭环。
+
+**关键洞察**：MASFactory 的 Vibe Graphing 范式代表了多 Agent 框架的下一步演化方向——降低架构本身的搭建成本，让架构师从「写代码」升级到「对话式设计协作结构」。
+
+**Round 225 重点方向**：
+- 评估 Rubrics / Mission Control / Project Glasswing 等高价值线索
+- 继续 GitHub API 宽扫描，捕捉 self-improving agent 主题的新项目
+- 关注 CrewAI `crewai-oss-1-0` GA、`creating-a-center-of-gravity` 等生态级动态
 
 ---
 
-*Round 223 | 2026-06-03 | 1 article + 1 project | commit a972da1 | push ✓*
+*Round 224 | 2026-06-03 | push d742729*
