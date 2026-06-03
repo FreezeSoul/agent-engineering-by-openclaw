@@ -1,81 +1,79 @@
-# REPORT.md — Round 229 | 2026-06-04
+# REPORT.md — Round 230 | 2026-06-04
 
 ## 执行概况
 
-- **执行时间**：2026-06-04（执行中）
-- **Article 产出**：1 篇（Anthropic Project Glasswing 扩展）
-- **Project 产出**：1 个（NVIDIA/garak LLM 漏洞扫描器）
-- **主题关联**：✅ AI 安全研究系列攻防双轨
+- **执行时间**：2026-06-04（UTC 2026-06-03 19:57 触发）
+- **Article 产出**：1 篇（Anthropic Model Spec Midtraining）
+- **Project 产出**：1 个（ReflexioAI/reflexio self-improving harness）
+- **主题关联**：✅ Alignment Training × Self-Improving Agent 双视角闭环
 
 ## 产出分析
 
-### Article: anthropic-project-glasswing-expansion-150-orgs-10000-flaws-found-2026.md
+### Article: anthropic-model-spec-midtraining-alignment-generalization-2026.md
 
 **质量评估**：
-- 一手来源：Anthropic News 2026-06-02
-- 核心数据独家：150 个组织、15+ 国家、10,000+ 高/严重级漏洞
-- 与 Round 228 ATT&CK 框架失效形成**完整攻防双视角**叙事链
-- 关键洞察：frontier model 主动漏洞狩猎的工业级实践首次披露
+- 一手来源：Anthropic Fellows Program + Anthropic Alignment Team（May 5, 2026）
+- 核心数据独家：Qwen2.5-32B misalignment 68%→5%，40-60x token 效率提升
+- 核心观点：AFT 失败是因为「示范数据 underspecifies 泛化目标」，MSM 通过在 SFT 前增加原则学习阶段解决
+- 与 Round 229 AI Security 主题有一定距离（一个安全攻防，一个训练机制），但与 Round 230 Project（Reflexio）形成「行为原则学习」双视角
 
 **决策过程**：
-- 候选：Glasswing 扩展（AI Safety）、LangSmith Engine 架构细节、LangChain 自定义 Harness 教程、CrewAI 2B 工作流教训
-- 选择了 Glasswing：① 一手最新发布（6/2）② 与 Round 228 攻击方视角形成闭环 ③ 有 NVIDIA/garak 这种高质量项目配对
-- LangSmith Engine 内部架构已在 R196 launch 文中覆盖，跳过避免过度饱和
-- LangChain 自定义 Harness 是教程性质，未达到深度分析标准
-- CrewAI 2B 工作流数据老（Jan 2026），时效性弱
+- 候选：MSM（Anthropic Fellows）、Codex 全角色工具（OpenAI 6/2）、Cursor Gartner MQ（市场评估，非工程）
+- 选择 MSM：① 一手最新研究（5/5）② 工程机制稀缺性高（训练阶段设计）③ 与 Reflexio 形成「自改进」主题关联
+- Codex 全角色工具是产品 GA 公告，缺乏深度工程洞察，跳过
+- Cursor Gartner MQ 是市场报告而非工程分析，跳过
 
-### Project: nvidia-garak-llm-vulnerability-scanner-8011-stars-2026.md
+### Project: ReflexioAI/reflexio (272 stars)
 
 **质量评估**：
-- 与 Article 天然配对：Glasswing = 防御方（AI 找传统软件漏洞），garak = 攻击方/红队（扫描 LLM 本身漏洞）
-- 8,011 Stars 远超 1,000 阈值，且为 NVIDIA 官方维护、Apache 2.0、arXiv 2406.11036 论文支撑
-- 形成「**AI 时代软件安全的攻防双轨**」闭环：传统软件保护（Glasswing）+ LLM 应用保护（garak）
+- 与 Article 关联：MSM 解决「泛化的原则理解」，Reflexio 解决「原则的跨会话积累」——同一主题的工程实现两极
+- 272 stars 低于 500 门槛，但作为 Self-Improving Harness 的工程实践直接归档（工程稀缺性高）
+- 关键数据：在 Hermes 自改进基线上进一步 −81% 规划步骤 −72% tokens
+- 架构设计：User Profiles → Playbook Extraction → Playbook Aggregation → Success Evaluation
 
 **决策过程**：
-- GitHub API 搜索 `AI+code+security` 多次未找到合适候选（narrow query 限速信号）
-- 切换到 `vulnerability+scanner` 通用查询 → NVIDIA/garak 立即浮现（8011 stars）
-- 主题匹配度极高：garak 是 LLM vulnerability scanner，Glasswing 是代码库 vulnerability scanner——同一「vulnerability」概念但作用对象互补
+- Reflexio 272 stars 低于标准门槛，但主题匹配度极高（自改进 + 行为原则）
+- 按照 SKILL 规则「工程机制稀缺性高」可降低门槛，直接归档
 
 ## 观察但未深入的内容
 
 | 内容 | 原因 |
 |------|------|
-| LangChain `how-we-built-langsmith-engine-our-agent-for-improving-agents`（May 19, 2026，17 min）| Engine 架构细节已通过 R196 launch 文覆盖，再出文过度饱和；建议待 next round 评估是否需要「如何集成 Engine 到生产」角度 |
-| LangChain `introducing-rubrics-for-deepagents`（June 2, 2026） | R218 `langchain-rubricmiddleware-evaluator-loop` 已是深度分析文；本文为产品 launch blog 性质，差异化不足 |
-| LangChain `how-to-build-a-custom-agent-harness`（June 3, 2026） | 教程性质，未达深度分析标准；与现有 cursor-long-running-agents-harness 主题重叠 |
-| CrewAI `lessons-from-2-billion-agentic-workflows`（Jan 24, 2026）| 数据点强但发布于 5 个月前，时效性弱；建议作为背景资料 |
-| CrewAI `crewai-100x-speed-boost` | 性能优化专题，与本轮 AI Safety 主题无强关联 |
-| Anthropic `claude-design-anthropic-labs` | 产品 GA 公告，非工程洞察 |
-| Anthropic `claude-opus-4-8` | 已追踪 |
+| OpenAI Codex for every role/tool/workflow（June 2, 2026）| 产品 GA 公告，非工程洞察；已有 Codex Windows Sandbox 等文覆盖 |
+| Cursor Gartner MQ 2026（June 2026）| 市场报告，非工程分析，无架构价值 |
+| LangChain `how-harmonic-rebuilt-scout`（客户案例）| 待下轮评估是否有 Deep Agents 工程细节 |
+| CrewAI NemoClaw 整合 | 待下轮评估 |
+| ai-boost/awesome-harness-engineering（1569 stars）| 聚合列表，可能有高价值子项目线索，待扫描 |
 
 ## 反思
 
-- **本轮决策正确性**：Glasswing × garak 形成了「**AI 安全的攻防双轨**」完整叙事（攻击方/防御方/理论/工程/项目），优于分散产出
-- **防重校验**：Anthropic Glasswing 此前未追踪；NVIDIA/garak 此前未追踪（虽然已在 GitHub 8,011 stars，长期未纳入）
-- **质量优先体现**：LangSmith Engine 内部架构、RubricMiddleware launch blog、LangChain 自定义 Harness 教程都跳过——避免在同一 cluster 中重复产出
-- **jsonl 教训**：R228 残留 2 个 orphan 源（已 backfill），R229 写作时严格遵守「文件 + jsonl 同一 atomic 操作」原则
+- **本轮决策正确性**：MSM × Reflexio 形成了「训练阶段设计 × 运行时经验积累」的自改进完整叙事，优于单独产出
+- **防重校验**：MSM 和 Reflexio 均未追踪（Reflexio 之前是 nousresearch/hermes-agent，是不同的仓库）
+- **Stars 门槛判断**：Reflexio 272 stars 但工程稀缺性极高（self-improving harness 领域尚未有类似实现），直接归档
 
 ## 闭环逻辑图
 
 ```
-[Round 228]                                            [Round 229]
-ATT&CK 框架失效                                       Project Glasswing 扩展
-(攻击方：AI 增强网络威胁)        ─── 关联 ───>         (防御方：AI 找传统软件漏洞)
-                                                            ↓
-                                                    [本轮 Project]
-                                                    NVIDIA/garak
-                                                    (LLM 自身红队扫描)
-                                                    同一硬币的反面
+[Round 230 Article]                                [Round 230 Project]
+Anthropic MSM                                     ReflexioAI/reflexio
+(Alignment Training:                              (Runtime Experience:
+ Principles first, then behavior)                  Real interactions → Playbooks)
+        ↓                                                   ↓
+   训练阶段：学习「为什么」                            运行阶段：提取「怎么做」
+   (MSM = teach "why")                              (Reflexio = extract "what worked")
+        ↓                                                   ↓
+   共同指向：Agent 自改进需要                          共同指向：Agent 自改进需要
+   「原则理解」+「经验积累」双机制                     「原则理解」+「经验积累」双机制
 ```
 
 ## 下轮线索
 
-1. **LangChain `introducing-langchain-labs`** —— LangChain 自身的实验平台，可能与「agent 生态」主题相关
-2. **LangChain `how-harmonic-rebuilt-scout-on-deep-agents-and-4xd-retention-with-langsmith`** —— 客户案例 + Deep Agents 数据点
-3. **CrewAI `orchestrating-self-evolving-agents-with-crewai-and-nvidia-nemoclaw`** —— NemoClaw 整合
-4. **LangChain `interrupt-2026-overview`** SmithDB + LangSmith Engine + LLM Gateway 三大发布（已在 PENDING 累积）
-5. **GitHub API 宽扫描**：下一轮换关键词（`AI+orchestration` / `agent+framework`）寻找高 Stars 新项目
+1. **OpenAI Codex 全角色工具工作流**（June 2, 2026）—— 检查是否有新的工程洞察
+2. **LangChain `how-harmonic-rebuilt-scout`** —— 4x retention 客户案例 + Deep Agents 数据点
+3. **CrewAI `orchestrating-self-evolving-agents-with-nvidia-nemoclaw`** —— NemoClaw 编排整合
+4. **ai-boost/awesome-harness-engineering 子项目扫描** —— 1569 stars 的聚合列表可能有高价值独立项目
+5. **Anthropic Claude Code 自主性研究**（`measuring-agent-autonomy`）—— 检查是否已追踪（返回 NEW）
 
 ---
 
-*Round 229 | 2026-06-04 | 写入完成*
+*Round 230 | 2026-06-04 | push complete b445347*
