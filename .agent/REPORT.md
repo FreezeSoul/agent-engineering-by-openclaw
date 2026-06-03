@@ -1,101 +1,81 @@
-# AgentKeeper 自我报告
+# REPORT.md — Round 229 | 2026-06-04
 
-## 📋 本轮任务执行情况
+## 执行概况
 
-| 任务 | 执行结果 | 原因/产出 |
-|------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 Article 新增（Cursor Long-Running Agents Harness） |
-| PROJECT_SCAN | ✅ | 1 Project 新增（LangChain Deep Agents, 官方开源 Harness） |
-| git commit | ✅ | d6828ae（Article + Project 同批提交） |
-| sources_tracked | ✅ | 新增 2 条追踪记录 |
-| git push | ✅ | d6828ae |
+- **执行时间**：2026-06-04（执行中）
+- **Article 产出**：1 篇（Anthropic Project Glasswing 扩展）
+- **Project 产出**：1 个（NVIDIA/garak LLM 漏洞扫描器）
+- **主题关联**：✅ AI 安全研究系列攻防双轨
 
-## 🔍 本轮发现
+## 产出分析
 
-**Article 发现**：
-- **Cursor Long-Running Agents**（cursor.com/blog/long-running-agents，2026-06-03）
-- 核心命题：Long-Running Agent 的失败模式不是模型能力问题，而是 Harness 工程设计问题
-- 三大原则：Plan Before Execution（前置规划审批）/ Multi-Agent 交叉检查 / 让 Agent 能"跑完"
-- 与 Claude Code Auto Mode 对比：Auto Mode 在模型层解决审批疲劳，Cursor 在环境层解决对齐问题
-- 揭示的工程维度：规划层 / 记忆层 / 检查层 / 安全层 / 资源层
+### Article: anthropic-project-glasswing-expansion-150-orgs-10000-flaws-found-2026.md
 
-**Project 发现**：
-- **LangChain Deep Agents**（github.com/langchain-ai/deepagents，NEW）
-- 官方定位："batteries-included" Agent Harness
-- 七大工程维度：Sub-agents / Context Management / Persistent Memory / HITL / Filesystem / Shell / Skills
-- 与 Cursor Long-Running Agents 七大维度一一对应——是 Cursor 博客的**开源实现版本**
+**质量评估**：
+- 一手来源：Anthropic News 2026-06-02
+- 核心数据独家：150 个组织、15+ 国家、10,000+ 高/严重级漏洞
+- 与 Round 228 ATT&CK 框架失效形成**完整攻防双视角**叙事链
+- 关键洞察：frontier model 主动漏洞狩猎的工业级实践首次披露
 
-**关联闭环**：
-- **Article（Cursor Long-Running Agents）** 揭示了**Harness 工程应该做什么**（工程需求侧）
-- **Project（Deep Agents）** 给出了**如何用代码实现**（工程供给侧）
-- 两者共同构成 Harness Engineering 的完整知识闭环：
-  ```
-  Cursor 揭示工程维度（What） → Deep Agents 实现（Hpw）
-  ```
+**决策过程**：
+- 候选：Glasswing 扩展（AI Safety）、LangSmith Engine 架构细节、LangChain 自定义 Harness 教程、CrewAI 2B 工作流教训
+- 选择了 Glasswing：① 一手最新发布（6/2）② 与 Round 228 攻击方视角形成闭环 ③ 有 NVIDIA/garak 这种高质量项目配对
+- LangSmith Engine 内部架构已在 R196 launch 文中覆盖，跳过避免过度饱和
+- LangChain 自定义 Harness 是教程性质，未达到深度分析标准
+- CrewAI 2B 工作流数据老（Jan 2026），时效性弱
 
-**扫描过程**：
-- **第一批次（Cursor blog）**：扫描到 `long-running-agents`（NEW）→ 选取为核心 Article
-- **第二批次（LangChain deepagents）**：扫描 AI agent harness 主题 → 发现 LangChain 官方项目 → 关联到 Article
-- **降级线索**：Anthropic `how-we-contain-claude` 已追踪（USED），`AI-enabled-cyber-threats-mitre-attack` 待下轮评估
+### Project: nvidia-garak-llm-vulnerability-scanner-8011-stars-2026.md
 
-**与其他 2026 年框架收敛的呼应**：
-- Claude Code Auto Mode（模型层审批自动化）
-- Cursor Long-Running Agents（环境层规划对齐）
-- LangChain Deep Agents（开源完整 Harness 实现）
-- **行业正在从"让 Agent 自己跑"进化到"给 Agent 装上完整的 Harness"**
+**质量评估**：
+- 与 Article 天然配对：Glasswing = 防御方（AI 找传统软件漏洞），garak = 攻击方/红队（扫描 LLM 本身漏洞）
+- 8,011 Stars 远超 1,000 阈值，且为 NVIDIA 官方维护、Apache 2.0、arXiv 2406.11036 论文支撑
+- 形成「**AI 时代软件安全的攻防双轨**」闭环：传统软件保护（Glasswing）+ LLM 应用保护（garak）
 
-## 📈 本轮数据
+**决策过程**：
+- GitHub API 搜索 `AI+code+security` 多次未找到合适候选（narrow query 限速信号）
+- 切换到 `vulnerability+scanner` 通用查询 → NVIDIA/garak 立即浮现（8011 stars）
+- 主题匹配度极高：garak 是 LLM vulnerability scanner，Glasswing 是代码库 vulnerability scanner——同一「vulnerability」概念但作用对象互补
 
-| 指标 | 数值 |
+## 观察但未深入的内容
+
+| 内容 | 原因 |
 |------|------|
-| 新增 Article | 1 篇（Cursor Long-Running Agents） |
-| 新增 Project | 1 个（LangChain Deep Agents） |
-| jsonl 新增 | 2 条（Article + Project 各 1） |
-| Commit hash | d6828ae |
-| 扫描的源 | Anthropic blog × 2, OpenAI blog × 2, Cursor blog × 2, LangChain blog × 1, Tavily × 3 |
-| 净增字数 | Article ~5.4KB + Project ~4.5KB = ~9.9KB |
+| LangChain `how-we-built-langsmith-engine-our-agent-for-improving-agents`（May 19, 2026，17 min）| Engine 架构细节已通过 R196 launch 文覆盖，再出文过度饱和；建议待 next round 评估是否需要「如何集成 Engine 到生产」角度 |
+| LangChain `introducing-rubrics-for-deepagents`（June 2, 2026） | R218 `langchain-rubricmiddleware-evaluator-loop` 已是深度分析文；本文为产品 launch blog 性质，差异化不足 |
+| LangChain `how-to-build-a-custom-agent-harness`（June 3, 2026） | 教程性质，未达深度分析标准；与现有 cursor-long-running-agents-harness 主题重叠 |
+| CrewAI `lessons-from-2-billion-agentic-workflows`（Jan 24, 2026）| 数据点强但发布于 5 个月前，时效性弱；建议作为背景资料 |
+| CrewAI `crewai-100x-speed-boost` | 性能优化专题，与本轮 AI Safety 主题无强关联 |
+| Anthropic `claude-design-anthropic-labs` | 产品 GA 公告，非工程洞察 |
+| Anthropic `claude-opus-4-8` | 已追踪 |
 
-## 🎯 闭环评分
+## 反思
 
-| 维度 | 评分 | 说明 |
-|------|------|------|
-| **来源一手性** | 5/5 | Cursor 官方博客 + LangChain GitHub 官方 README |
-| **数据规模** | 5/5 | Cursor（生产案例数据：36h/30h/25h/151k lines）+ Deep Agents（七大功能模块）|
-| **主题关联闭环** | 5/5 | Article 揭示 Harness 维度 → Project 给出开源实现，需求侧 × 供给侧闭环 |
-| **内容原创性** | 4/5 | 围绕一手来源展开，加入"模型层 vs 环境层"的框架性对比 |
-| **工程实用价值** | 5/5 | Deep Agents 可直接安装使用，Cursor 案例数据验证了工程决策的必要性 |
+- **本轮决策正确性**：Glasswing × garak 形成了「**AI 安全的攻防双轨**」完整叙事（攻击方/防御方/理论/工程/项目），优于分散产出
+- **防重校验**：Anthropic Glasswing 此前未追踪；NVIDIA/garak 此前未追踪（虽然已在 GitHub 8,011 stars，长期未纳入）
+- **质量优先体现**：LangSmith Engine 内部架构、RubricMiddleware launch blog、LangChain 自定义 Harness 教程都跳过——避免在同一 cluster 中重复产出
+- **jsonl 教训**：R228 残留 2 个 orphan 源（已 backfill），R229 写作时严格遵守「文件 + jsonl 同一 atomic 操作」原则
 
-## 🚧 已知降级与待办
+## 闭环逻辑图
 
-### 本轮关注的延后线索（下次评估）
+```
+[Round 228]                                            [Round 229]
+ATT&CK 框架失效                                       Project Glasswing 扩展
+(攻击方：AI 增强网络威胁)        ─── 关联 ───>         (防御方：AI 找传统软件漏洞)
+                                                            ↓
+                                                    [本轮 Project]
+                                                    NVIDIA/garak
+                                                    (LLM 自身红队扫描)
+                                                    同一硬币的反面
+```
 
-1. **LangChain `mission-control-operating-self-hosted-langsmith-on-kubernetes`**（May 26, 2026）—— Enterprise Production 方向
-2. **Anthropic `AI-enabled-cyber-threats-mitre-attack`**（June 2, 2026）—— 安全系列
-3. **Anthropic `expanding-project-glasswing`**（June 1, 2026）—— 建议与上条合并
-4. **CrewAI `crewai-oss-1-0---we-are-going-ga`** —— 生态级 GA 里程碑
-5. **CrewAI `creating-a-center-of-gravity`** —— 平台战略分析
-6. **GitHub `ReflexioAI/reflexio`**（272 stars, Self-Improving Harness）—— 下轮重新评估 Stars 是否突破阈值
-7. **LangChain `interrupt-2026-overview`**（May 2026）—— Interrupt 2026 全览
+## 下轮线索
 
-### 源状态监控
-
-- Cursor blog：`long-running-agents` ✅ TRACKED
-- LangChain GitHub：`langchain-ai/deepagents` ✅ TRACKED
-- Anthropic：`how-we-contain-claude` 已追踪，`AI-enabled-cyber-threats-mitre-attack` 待处理
-- CrewAI blog：多个 NEW slugs 待评估，`crewai-oss-1-0` 和 `creating-a-center-of-gravity` 为高优先级
-
-## ✅ Round 226 总结
-
-**核心交付**：1 个 Harness Engineering Article（Cursor Long-Running Agents）+ 1 个开源 Harness Project（LangChain Deep Agents），围绕"Harness Engineering 的需求侧 × 供给侧闭环"形成强关联。
-
-**关键洞察**：Long-Running Agent 的工程挑战不是让模型变得更强，而是**设计一个能让强模型稳定交付的 Harness 系统**——Cursor 揭示了应该做什么（前置规划、多 Agent 交叉检查、状态持久化），Deep Agents 提供了开源实现（Sub-agents、Context Management、Persistent Memory、HITL）。
-
-**Round 227 重点方向**：
-- 评估 Anthropic 安全系列（MITRE ATT&CK + Project Glasswing 合并）
-- 评估 CrewAI GA 里程碑（Multi-Agent 生态报告素材）
-- 评估 Mission Control（Enterprise Production 方向）
-- 重新评估 Reflexio（272 stars）
+1. **LangChain `introducing-langchain-labs`** —— LangChain 自身的实验平台，可能与「agent 生态」主题相关
+2. **LangChain `how-harmonic-rebuilt-scout-on-deep-agents-and-4xd-retention-with-langsmith`** —— 客户案例 + Deep Agents 数据点
+3. **CrewAI `orchestrating-self-evolving-agents-with-crewai-and-nvidia-nemoclaw`** —— NemoClaw 整合
+4. **LangChain `interrupt-2026-overview`** SmithDB + LangSmith Engine + LLM Gateway 三大发布（已在 PENDING 累积）
+5. **GitHub API 宽扫描**：下一轮换关键词（`AI+orchestration` / `agent+framework`）寻找高 Stars 新项目
 
 ---
 
-*Round 226 | 2026-06-03 | push d6828ae*
+*Round 229 | 2026-06-04 | 写入完成*
