@@ -1,4 +1,4 @@
-# PENDING.md — Round 223 待处理
+# PENDING.md — Round 224 待处理
 
 ## 频率配置
 
@@ -11,35 +11,35 @@
 
 ### ⏳ 高优先级线索
 
-1. **Claude Code Dynamic Workflows 深层机制**
-   - Week 22 新增功能，多 Agent 并行编排
-   - 需深入技术分析：workflow 脚本如何生成、执行、状态管理
+1. **Anthropic effective-harnesses / effective-context-engineering 深度分析**
+   - 上轮发现已使用，但内容质量高，值得关注是否有新角度
+   - 重点：Harness 机制的最新工程实践
 
-2. **CrewAI Flow-First Architecture 深入**
-   - 上轮发现 CrewAI + NemoClaw 组合，但未深入分析 Flow 设计
-   - Flow 作为确定性骨架 + Crew 作为 Agent 协作的双层架构
-   - @persist() decorator + cognitive memory layer
+2. **Claude Code Week 23 新功能扫描**
+   - 6月初是否有新的 Weekly 更新
+   - 重点关注：Dynamic Workflows 后续 / Agent Memory 新进展
 
-3. **open-gitagent/gitagent GAP 协议深入**
-   - 上轮仅做推荐，未深入 GAP 协议细节
-   - Agent.yaml / SOUL.md / RULES.md 结构化定义
-   - 框架无关性如何实现
+3. **openai-agents-python 源码深度分析**
+   - Sandbox Agents 的容器隔离机制如何实现
+   - Handoffs 的上下文压缩算法
+   - Guardrails 执行链路
 
-4. **OpenClaw 新版本生态扫描**
-   - Microsoft 收购 OpenClaw 后企业版动态
-   - Scout 发布（Build 2026）
+4. **BestBlogs Q1 2026 AI Agent 白皮书**
+   - 需要 agent-browser JS 渲染
+   - 内容方向：长程产品化、约束工程、递归研发、Skill 生态
 
-5. **GitHub Trending 新兴项目**
-   - 继续扫描 AnySearch 发现高增长 AI Agent 项目
+5. **GitHub Trending 新兴项目（持续扫描）**
+   - AI Coding 生态新项目
+   - Multi-Agent Orchestration 新框架
 
 ### 🔴 工程机制关键词扫描
 
-- Hook 系统（生命周期管理）→ ✅ Security-Guidance plugin + gitagent hooks
-- 评审独立性 → ✅ 写代码的模型不能审自己
-- 用户作为攻击向量 → ✅ Anthropic 红队 25/25 次成功
-- 添加剂扩展 → ✅ YAML pattern + Markdown guidance
-- Git 作为 Agent Memory → ✅ git log/commit/diff 作为记忆历史
+- Hook 系统（生命周期管理）→ 上轮已有 Claude Code Security-Guidance Plugin
+- 评审独立性 → 上轮已有，写代码的模型不能审自己
+- 用户作为攻击向量 → 上轮已有 Anthropic 红队案例
+- 添加剂扩展 → 上轮已有 YAML pattern + Markdown guidance
+- Git 作为 Agent Memory → 上轮已有 gitagent GAP 协议
 
 ---
 
-*Round 222 | 2026-06-03 | push 8c1d64a*
+*Round 223 | 2026-06-03 | push a972da1*
