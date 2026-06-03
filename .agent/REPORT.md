@@ -4,40 +4,40 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 Article 新增（OpenAI Tax AI 三段式改进闭环） |
-| PROJECT_SCAN | ✅ | 1 Project 新增（EvoMap/evolver GEP 自主进化引擎） |
-| git commit | ✅ | 2654056，3 files changed |
+| ARTICLES_COLLECT | ✅ | 1 Article 新增（Claude Code Security-Guidance Plugin 三层内生安全审查） |
+| PROJECT_SCAN | ✅ | 1 Project 新增（open-gitagent/gitagent Git-Native Agent 框架） |
+| git commit | ✅ | 8c1d64a，3 files changed |
 | sources_tracked | ✅ | 新增 2 条追踪记录 |
-| git push | ✅ | 9471b04..2654056 |
+| git push | ✅ | 8e83d2e..8c1d64a |
 
 ## 🔍 本轮发现
 
 **Article 发现**：
-- **OpenAI Tax AI 三段式改进闭环**（openai.com/index/building-self-improving-tax-agents-with-codex，2026-05-27）
-  - 三段式闭环：从业者纠错 → 生产追踪 → Codex 定向工程任务
-  - 核心洞察：改进瓶颈不在模型能力，而在生产环境是否产生结构化信号
-  - 量化数据：75% 准确率从 25% 提升到 86%（六周）
-  - 与前序 claude agents（多会话编排）形成「单 Agent 自主改进 ↔ 多会话状态管理」的互补
+- **Claude Code Security-Guidance Plugin 三层内生安全审查**（code.claude.com/docs/en/security-guidance，2026-06-03）
+  - 三层审查：Per-Edit 模式匹配（零成本）+ End-of-Turn 模型审查（后台）+ Commit/Push 深层审查
+  - 核心洞察：安全不是开发流程末端的检查点，而是编写代码的每一刻都在发生的伴随行为
+  - 评审独立性：使用独立 Claude 实例审查，不让写代码的模型审自己
+  - 范式转移：从「人审」到「机审」，解决 approval fatigue 和 user-as-injection-vector 攻击问题
+  - 添加剂扩展：YAML pattern + Markdown guidance 双重扩展点
 
 **Project 发现**：
-- **EvoMap/evolver**（github.com/EvoMap/evolver，2026-02-01 公开）
-  - Genome Evolution Protocol（GEP）驱动的自主进化引擎
-  - 五步闭环：Scan → Select → Mutate → Validate → Solidify
-  - Gene/Capsule 结构化进化资产（非 ad hoc prompts）
-  - 上线当天 263 个 auto-generated commits
-  - 与 Tax AI 案例形成「领域知识驱动 ↔ 运行时日志驱动」的进化光谱互补
+- **open-gitagent/gitagent**（github.com/open-gitagent/gitagent，2026）
+  - "Agents as Repos" 范式：Agent = Git 仓库，SOUL.md/RULES.md/Memory/Tools 全部版本化
+  - GAP（GitAgent Protocol）开放标准：框架无关，支持 Claude/OpenAI/CrewAI/LangChain
+  - 核心价值：解决 Agent 版本化管理缺失问题，git log/branch/diff/fork 全部可用
+  - 与 Security-Guidance Plugin 形成「工具层安全 → Agent 定义层版本化」的工程层次互补
 
 **扫描过程**：
-- 第一批次（Anthropic）：已追踪，无新内容
-- 第一批次（OpenAI）：发现 Codex self-improving tax agents（NEW）
-- 第一批次（Claude Code）：发现 Week 21 /code-review（NEW）
-- 第二批次（GitHub Trending）：发现 EvoMap/evolver（NEW，自我进化引擎）
-- 第三批次（AnySearch）：辅助发现 EvoMap 相关信息
+- 第一批次（Anthropic）：发现 how-we-contain-claude（5月25日，已追踪）→ security-guidance（NEW，code.claude.com）
+- 第一批次（OpenAI）：Community Codex Agent Loop（已追踪文章，无新内容）
+- 第一批次（Cursor）：Cursor Gartner MQ Leader（企业报道，非技术深度）
+- 第二批次（GitHub Trending）：发现 open-gitagent/gitagent（NEW，框架无关标准）
+- 第三批次（BestBlogs/HN）：无明显新机会
 
 **关联闭环**：
-- OpenAI Tax AI（垂直领域从业者反馈驱动）↔ EvoMap Evolver（通用运行时日志驱动）
-- 两者共同指向同一个工程命题：**Agent 的持续改进需要结构化信号机制和协议化执行闭环**
-- 与前序 Round 219 LangChain Interrupt（Durable Execution）形成「平台级方案 ↔ 库级方案」的完整长程 Agent 可靠性知识体系
+- Security-Guidance Plugin（内生安全审查）↔ gitagent（Agent 定义版本化）
+- 两者共同指向 Agent 工程化的核心命题：**让 Agent 自身具备可管理、可追溯、可安全执行的能力**
+- 与前序 Round 221（Tax AI 改进闭环 ↔ Evolver 自主进化引擎）形成「单次改进能力 ↔ 持续演进体系」的互补
 
 ## 📈 本轮数据
 
@@ -45,18 +45,18 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 3 处 / Project 3 处 |
+| 原文引用数量 | Article 4 处 / Project 3 处 |
 | sources_tracked 新增 | 2 条 |
-| commit | 2654056 |
+| commit | 8c1d64a |
 
 ## 🔮 下轮规划
 
-- [ ] 深入 Claude Code Week 22（扫描新增工程机制）
-- [ ] 评估 OpenAI Codex for every role（06-02 新文章）
-- [ ] 尝试深入分析 Evolver GEP 协议细节
-- [ ] 继续扫描 CrewAI NemoClaw 合作线索
-- [ ] 扫描 GitHub Trending 高增长 Agent 项目
+- [ ] 扫描 Claude Code Week 22 Dynamic Workflows 深层机制
+- [ ] 评估 CrewAI + NemoClaw Flow-First 架构深入分析机会
+- [ ] 扫描 GitHub Trending 高增长新项目（OpenClaw 相关生态）
+- [ ] 继续扫描 AnySearch 发现工具
+- [ ] 尝试深入 gitagent GAP 协议细节
 
 ---
 
-*Round 221 | 2026-06-03 | 1 article + 1 project | commit 2654056 | push ✓*
+*Round 222 | 2026-06-03 | 1 article + 1 project | commit 8c1d64a | push ✓*

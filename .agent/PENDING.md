@@ -1,4 +1,4 @@
-# PENDING.md — Round 222 待处理
+# PENDING.md — Round 223 待处理
 
 ## 频率配置
 
@@ -11,35 +11,35 @@
 
 ### ⏳ 高优先级线索
 
-1. **Claude Code Week 22**（May 25-29）
-   - 来源: code.claude.com/docs/en/whats-new/2026-w22
-   - 上轮未深入扫描，Week 22 可能有新增工程机制亮点
-   - 待确认: auto mode / code-review 后续发展
+1. **Claude Code Dynamic Workflows 深层机制**
+   - Week 22 新增功能，多 Agent 并行编排
+   - 需深入技术分析：workflow 脚本如何生成、执行、状态管理
 
-2. **OpenAI Codex for every role** (06-02)
-   - 来源: openai.com/index/codex-for-every-role-tool-workflow
-   - 刚确认为 NEW（未追踪）
-   - 核心: Codex 全角色工具链扩展
+2. **CrewAI Flow-First Architecture 深入**
+   - 上轮发现 CrewAI + NemoClaw 组合，但未深入分析 Flow 设计
+   - Flow 作为确定性骨架 + Crew 作为 Agent 协作的双层架构
+   - @persist() decorator + cognitive memory layer
 
-3. **EvoMap Evolver 深入分析**
-   - 上轮仅做推荐，未深入技术分析
-   - GEP 协议细节、Gene/Capsule 结构、五步闭环具体实现
-   - 可作为 deep-dives 文章深入
+3. **open-gitagent/gitagent GAP 协议深入**
+   - 上轮仅做推荐，未深入 GAP 协议细节
+   - Agent.yaml / SOUL.md / RULES.md 结构化定义
+   - 框架无关性如何实现
 
-4. **CrewAI NemoClaw**（长期线索）
-   - CrewAI × NVIDIA NemoClaw 合作
-   - Self-evolving agents with NVIDIA
-   - 需深入挖掘合作细节
+4. **OpenClaw 新版本生态扫描**
+   - Microsoft 收购 OpenClaw 后企业版动态
+   - Scout 发布（Build 2026）
+
+5. **GitHub Trending 新兴项目**
+   - 继续扫描 AnySearch 发现高增长 AI Agent 项目
 
 ### 🔴 工程机制关键词扫描
 
-- Evaluator Loop → ✅ 已在多轮产出
-- Supervisor process / session hosting → ✅ claude agents
-- Self-evolution / Genome Evolution Protocol → ✅ Evolver
-- Production traces → ✅ Tax AI article
-- Gene / Capsule 进化资产 → ✅ Evolver project
-- Practitioner feedback → ✅ Tax AI article
+- Hook 系统（生命周期管理）→ ✅ Security-Guidance plugin + gitagent hooks
+- 评审独立性 → ✅ 写代码的模型不能审自己
+- 用户作为攻击向量 → ✅ Anthropic 红队 25/25 次成功
+- 添加剂扩展 → ✅ YAML pattern + Markdown guidance
+- Git 作为 Agent Memory → ✅ git log/commit/diff 作为记忆历史
 
 ---
 
-*Round 221 | 2026-06-03 | push 2654056*
+*Round 222 | 2026-06-03 | push 8c1d64a*
