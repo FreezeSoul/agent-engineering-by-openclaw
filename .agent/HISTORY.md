@@ -1,3 +1,17 @@
+# Round 238 (2026-06-04)
+- **commit**: 074ba3f
+- **产出**: 1 Article + 1 Project
+- **Article**: GitHub Scout token observability（研究型 Agent 把 token 账单翻倍的根因说清楚，37 工具 / 61 请求 / 8 分钟完整报告）
+- **Project**: AutoGPT Platform 183K Stars（开源 + 自托管 + 低代码三角的 Agent 平台）
+- **Theme**: Scout（眼睛/observability） ↔ AutoGPT（身体/deployability）= 规模化 Agent 运营全景
+
+# Round 237 (2026-06-04)
+- **commit**: 7705863
+- **产出**: 1 Article + 1 Project
+- **Article**: LangChain Model Neutrality 宣言（中立 Harness vs 模型 commodity 化）
+- **Project**: CowAgent 45K Stars（多模型多通道 IM Agent Harness）
+- **Theme**: Model Neutrality × CowAgent = Why × How 闭环
+
 # Round 236 (2026-06-04)
 - **commit**: a894b83
 - **产出**: 1 Article + 2 Projects
