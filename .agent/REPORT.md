@@ -1,11 +1,11 @@
-# REPORT.md — Round 239 | 2026-06-04
+# REPORT.md — Round 240 | 2026-06-04
 
 ## 执行概况
 
-- **执行时间**：2026-06-04 18:03（UTC 2026-06-04 10:03 触发）
-- **Article 产出**：1 篇（Cursor Organizations 企业三级治理架构）
-- **Project 产出**：1 篇（paperclipai/paperclip 69K Stars）
-- **主题关联**：✅ 完整闭环——Organization（治理规则，约束边界）↔ Paperclip（编排平台，执行落地）= 规模化 Agent 运营全景
+- **执行时间**：2026-06-04 19:57（UTC 2026-06-04 11:57 触发）
+- **Article 产出**：1 篇（OpenAI Agents SDK Harness-Compute 分离架构）
+- **Project 产出**：1 篇（OpenHands 75K+ Stars）
+- **主题关联**：✅ 完整闭环——Agents SDK（框架设计指南）↔ OpenHands（开源实现）= 设计层→实现层完整闭环
 
 ## 源扫描结果
 
@@ -14,77 +14,75 @@
 | 来源 | 状态 | 新发现 |
 |------|------|--------|
 | Anthropic Engineering | ALL TRACKED | 0（How We Contain Claude 已追踪）|
-| OpenAI Blog | ALL TRACKED | 0（In-house data agent 已追踪）|
-| Cursor Blog/Changelog | 部分追踪 | 3（Organizations ✅、Shared Canvases ✅、/loop Skill ✅）|
-| GitHub Trending | 部分追踪 | 1（paperclipai/paperclip 69K Stars ✅）|
+| OpenAI Blog | 部分追踪 | 2（Next Evolution of Agents SDK ✅、Gartner Leader ✅）|
+| Cursor Blog/Changelog | 部分追踪 | 1（Teams Pricing June 2026 ✅，评估后跳过）|
+| GitHub Trending | 部分追踪 | 1（OpenHands 75K+ ✅）|
 
 ### 重点评估
 
-**Cursor Organizations for Cursor Enterprise（✅ 入选）**：
-- 来源：cursor.com/blog/organizations（一手来源）
-- 核心价值：Org→Team→Group 三层治理模型，企业级 Agent 权限管理的首个可落地框架
-- 工程深度：多租户 SaaS 类比、RBAC for Agents、成本归因、SCIM 驱动自动化
-- 主题稀缺性：Agent 治理在仓库中虽有 AOM 相关内容，但 Org→Team→Group 明确的三层模型尚未覆盖
-- 关联价值：与 Paperclip（Agent 编排平台）形成「治理规则 + 执行平台」互补
+**OpenAI Agents SDK Next Evolution（✅ 入选）**：
+- 来源：openai.com/index/the-next-evolution-of-the-agents-sdk（一手来源，未追踪）
+- 核心价值：Harness-Compute 分离架构 / Durable Execution / Manifest 抽象 / 多沙箱提供商
+- 工程深度：Durable Execution（checkpoint + rehydration）、安全收益（credentials 隔离）、7家沙箱集成
+- 主题稀缺性：Harness-Compute 分离是新的架构范式，不是已有内容的重复
+- 关联价值：与 OpenHands（开源实现）形成「设计方法论 → 工程实现」完整闭环
 
-**paperclipai/paperclip（✅ 入选）**：
-- 来源：GitHub README（69K Stars，MIT License）
-- 核心价值：Org Chart for AI Agents，「如果 OpenClaw 是员工，Paperclip 就是公司」
-- 差异化：首个将企业组织架构（Org Chart + Budget + Governance + Audit）带入 Agent 编排的项目
-- 关联 Article：Organization（治理规则）+ Paperclip（执行平台）= 完整闭环
+**OpenHands（✅ 入选）**：
+- 来源：github.com/openhands/openhands（75K+ Stars，Apache 2.0）
+- 核心价值：CLI / SDK / Cloud 三层架构 / 模型无关 / 企业级自托管
+- 差异化：75K Stars 级别的生产验证 + $18.8M Series A（2026）+ VPC 内自托管
+- 关联 Article：Agents SDK（设计层）+ OpenHands（实现层）= 完整闭环
 
 **跳过的候选**：
-- Cursor 3 announcement（产品级，非工程深度）
-- Cursor Gartner MQ（商业荣誉，无工程内容）
-- Anthropic "How we contain Claude"（已追踪）
-- Microsoft Scout on OpenClaw（第三方来源，OpenClaw 已追踪）
+- Cursor Teams Pricing（定价更新，无工程深度）
+- Gartner Leader（商业荣誉，无 Agent 工程内容）
+- OpenAI DevDay 2026（已追踪）
+- agent-sandbox/agent-sandbox（135 Stars，过低）
 
 ## 产出分析
 
-### Article: cursor-organizations-enterprise-agent-governance-2026.md
+### Article: openai-agents-sdk-harness-compute-separation-2026.md
 
 **质量评估**：
-- 一手来源：Cursor 官方博客（✅ 未追踪，NEW）
-- 核心论点：Org→Team→Group 是企业 Agent 治理的起点，将 Agent 权限从用户身上分离
-- 关键洞察：三层模型类比多租户 SaaS，与 IdP/SCIM 的集成实现自动化入职
-- 引用支撑：2 处官方原文（Organization 定义、NVIDIA 案例引言）
-- 评分：4/5（实用性 / 独特性 / 时效性 / 视角）
+- 一手来源：OpenAI 官方博客（✅ 未追踪，NEW）
+- 核心论点：Harness-Compute 分离是架构范式转移，不是功能特性
+- 关键洞察：分离即安全 / Durable Execution / Manifest 抽象 / 7家沙箱集成
+- 引用支撑：2 处官方原文（Harness 职责描述、安全收益引言）
+- 评分：5/5（时效性 / 重要性 / 实践价值 / 独特性 / 工程机制稀缺性）
 
 **决策过程**：
-- 候选 1：Cursor 3 announcement → 产品级内容，工程深度不足，跳过
-- 候选 2：Cursor Organizations → 企业治理新视角 + 多租户架构类比，✅ 入选
-- 候选 3：Cursor /loop Skill → 新模式但 changelog 深度不足，待观察
+- 候选 1：OpenAI Agents SDK Next Evolution → Durable Execution 是新架构范式，✅ 入选
+- 候选 2：OpenHands → 与 Agents SDK 形成闭环，✅ 首选
+- 候选 3：Cursor Teams Pricing → 定价更新，无工程深度，跳过
 
-### Project: paperclipai-paperclip-org-chart-agents-69000-stars-2026.md
+### Project: openhands-openhands-ai-driven-development-75000-stars-2026.md
 
 **质量评估**：
-- 69K Stars（高门槛，成熟项目）
-- 核心差异化：Org Chart 抽象 + Budget 强制 + Audit Log = 完整的企业 Agent 控制平面
-- License 双轨：MIT License（Paperclip 本身），支持自托管
-- 与 Article 的关联：Organization（治理规则制定）↔ Paperclip（治理规则执行）= 闭环
+- 75K+ Stars（高门槛，成熟项目）
+- 核心差异化：CLI / SDK / Cloud 三层架构 + 模型无关 + 企业级自托管
+- License：Apache 2.0，支持自托管
+- 与 Article 的关联：Agents SDK（设计指南）+ OpenHands（开源实现）= 完整闭环
 
 **决策过程**：
-- 候选 1：paperclipai/paperclip → 与 Organizations 形成闭环，✅ 首选
-- 候选 2：nanobot（43K Stars）→ 已追踪，跳过
-- 候选 3：Microsoft Scout on OpenClaw → 第三方来源，OpenClaw 已追踪，跳过
-
-**⚠️ 截图待补充**：Browser 工具权限问题，需手动补充 GitHub 截图
+- 候选 1：OpenHands → 与 Agents SDK 形成「设计层→实现层」闭环，✅ 首选
+- 候选 2：agent-sandbox → 135 Stars 过低，跳过
+- 候选 3：e2b-dev/code-interpreter → 2,333 Stars，尚在积累中
 
 ## 闭环逻辑
 
 ```
-Article: Cursor Organizations 企业治理架构
-   ↓ 核心问题：Agent 规模化后，如何在不同团队之间分配权限和预算？
-   ↓ 解法：Org→Team→Group 三层模型，Agent 权限与用户权限分离
-   ↓ 关键洞察：三层类比多租户 SaaS，SCIM 驱动自动化入职
+Article: OpenAI Agents SDK Next Evolution
+   ↓ 核心问题：如何让 Agent 系统从「智能」升级到「可靠」？
+   ↓ 解法：Harness-Compute 分离架构 / Durable Execution / Manifest 抽象
+   ↓ 关键洞察：分离即安全 / checkpoint + rehydration = 持久化执行
    ↓
-Project: Paperclip AI
-   ↓ 核心问题：谁来执行治理规则？如何让多个 Agent 协同工作？
-   ↓ 解法：Org Chart + Budget + Heartbeat + Audit = Agent 编排控制平面
-   ↓ 关键数字：69K Stars / MIT License / 支持 Claude Code + OpenClaw + Codex
+Project: OpenHands
+   ↓ 核心问题：如何在生产环境运行真实的 Coding Agent 平台？
+   ↓ 解法：CLI / SDK / Cloud 三层架构 / Docker 隔离 / 企业级自托管
+   ↓ 关键数字：75K+ Stars / $18.8M Series A / 模型无关
    ↓
-闭环：Organization（治理规则，约束边界）↔ Paperclip（编排平台，执行落地）
-      = 规模化 Agent 运营 = 治理 + 编排
+闭环：OpenAI Agents SDK(框架设计指南) ↔ OpenHands(开源实现)
+      = 设计层 → 实现层 完整闭环
 ```
 
 ---
@@ -96,26 +94,27 @@ Project: Paperclip AI
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
 | 原文引用数量 | Articles 2 处 / Projects 1 处 |
-| sources_tracked.jsonl 新增 | 2 条 |
-| commit | pending |
+| sources_tracked.jsonl 新增 | 3 条 |
+| commit | 619256f |
 
 ---
 
 ## 本轮反思
 
 ### 做对了
-- 选择了企业治理 + Agent 编排这个方向，比单写 Cursor 3 产品发布更有长期价值
-- Paperclip 的「Org Chart for Agents」是一个全新的抽象维度，填补了仓库的空白
+- 选择了 Durable Execution + Harness-Compute 分离方向，这是新的架构范式而非已有内容的重复
+- OpenHands 的 75K Stars 提供了充分的生产验证背书，与 Agents SDK 形成完整闭环
 
 ### 需改进
-- Browser 工具不可用，导致 Project 截图缺失，应考虑备选方案（如 Puppeteer 直接截图）
-- /loop skill 虽然是 NEW，但 changelog 深度不足，是否值得花更多时间评估？
+- AnySearch 搜索耗时较长（~8s），可考虑优化搜索策略
+- Cursor Teams Pricing 被识别为 NEW（未追踪），但评估后跳过，可更早过滤
 
 ### 下轮扫描优先级
-1. Cursor /loop Skill（目标驱动 scheduled agent）
-2. Anthropic news/（Project Glasswing 后续）
-3. GitHub Trending 新项目（扩大扫描范围）
+1. OpenHands + Agents SDK 组合的后续发展
+2. Cursor /loop Skill 是否有工程深度内容
+3. GitHub Trending 新项目（e2b-dev 相关生态）
+4. Anthropic news/（Project Glasswing 后续）
 
 ---
 
-*Round 239 | 2026-06-04 | pending push*
+*Round 240 | 2026-06-04 | commit 619256f*

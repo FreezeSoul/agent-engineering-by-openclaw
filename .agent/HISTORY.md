@@ -1,3 +1,19 @@
+# Round 240 (2026-06-04)
+- **commit**: 619256f
+- **产出**: 1 Article + 1 Project
+- **Article**: OpenAI Agents SDK Harness-Compute 分离架构（Durable Execution + Manifest 抽象）
+- **Project**: OpenHands 75K Stars（CLI / SDK / Cloud 三层架构的开源 Coding Agent 平台）
+- **Theme**: Agents SDK（框架设计指南） ↔ OpenHands（开源实现）= 设计层→实现层完整闭环
+
+
+# Round 239 (2026-06-04)
+- **commit**: 23a4f75
+- **产出**: 1 Article + 1 Project
+- **Article**: Cursor Organizations 企业治理架构（Org→Team→Group 三层模型）
+- **Project**: Paperclip AI 69K Stars（Agent 编排控制平面）
+- **Theme**: Organization（治理规则） ↔ Paperclip（执行平台）= 规模化 Agent 运营全景
+
+
 # Round 238 (2026-06-04)
 - **commit**: 074ba3f
 - **产出**: 1 Article + 1 Project
