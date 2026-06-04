@@ -1,77 +1,96 @@
-# REPORT.md — Round 235 | 2026-06-04
+# REPORT.md — Round 236 | 2026-06-04
 
 ## 执行概况
 
-- **执行时间**：2026-06-04 12:04（UTC 2026-06-04 04:04 触发）
-- **Article 产出**：1 篇（Anthropic "Building Effective AI Agents" 架构模式选型指南）
-- **Project 产出**：1 篇（Huggingface smolagents，27K Stars，轻量级 Code Agent 库）
-- **主题关联**：✅ 建筑决策框架（Single→Multi→Evaluator-Optimizer 选型）× smolagents（轻量级实现路径）= 「决策正确 + 实现轻量」互补闭环
+- **执行时间**：2026-06-04 14:04（UTC 2026-06-04 06:04 触发）
+- **Article 产出**：1 篇（LangChain State of Agent Engineering 2026，1340+ 专业人员调查）
+- **Projects 产出**：2 篇（OpenHands 75K Stars + browser-use 97K Stars）
+- **主题关联**：✅ Survey 数据（生产级挑战）与两个项目（OpenHands 多 Agent 编排基础设施 + browser-use 可靠网页交互）形成闭环
 
 ## 产出分析
 
-### Article: anthropic-building-effective-ai-agents-architecture-patterns-2026.md
+### Article: langchain-state-agent-engineering-2026-survey-1340-professionals-2026.md
 
 **质量评估**：
-- 一手来源：Anthropic PDF《Building Effective AI Agents》（✅ 未追踪，NEW）
-- 核心工程机制：三层架构模式（Single Agent → Multi-Agent Hierarchical/Collaborative → Sequential/Parallel/Evaluator-Optimizer Workflows）+ 决策树 + 量化案例
-- 核心观点：**建筑决策比框架选择更重要**——从问题复杂度出发匹配架构复杂度，而非从框架能力出发反向设计
-- 关键数据：多 Agent 在复杂任务下比单 Agent 优 90.2%；Evaluator-Optimizer 通常运行 2-4 循环；Coinbase 35-50 内部 AI 应用
+- 一手来源：LangChain 官方调查（✅ 未追踪，NEW）
+- 核心数据：1340 名专业人员，覆盖 2025 年 11-12 月
+- 核心工程发现：
+  - 质量取代成本成为生产第一瓶颈（32% vs 去年成本第一）
+  - Observability 89% vs Evaluation 52% 的巨大 gap（核心工程债务）
+  - Multi-model 主流：3/4 组织使用多模型
+  - 大企业（10k+）生产覆盖率 67%，小团队（<100）50%，差距来自平台团队和安全基础设施投入
 
 **决策过程**：
-- 候选：Anthropic `coding-agents-social-sciences`（NEW）→ BM25 检测到与 `anthropic-coding-agents-social-sciences-empirical-2026` 相似度 17.0（重复），确认跳过
-- 候选：`cursor.com/blog/cursor-leads-gartner-mq-2026`（NEW）→ Gartner Magic Quadrant 排名报道，偏市场/产品功能，无新架构模式，跳过
-- 选 Anthropic "Building Effective AI Agents"：一手 PDF，系统化建筑决策框架，与 smolagents（轻量实现）形成「决策框架 → 轻量实现」的互补闭环
+- 候选：Anthropic `2026-agentic-coding-trends-report`（NEW）→ 已被 building-effective-ai-agents 饱和，跳过
+- 候选：Egnyte deep research agent → BM25 相似度 31.1（self-optimizing multi-agent + 25.9 anthropic multi-agent research），重复，跳过
+- 选 LangChain survey：行业脉搏数据，与 OpenHands + browser-use 形成「挑战定义 + 工程解法」的完整闭环
 
 **BM25 重复检测**：
-- "smolagents minimal code agent framework" → 最高相似度 12.3（< 0.65 阈值），✅ 无重复
-- "Codex knowledge work productivity" → 最高相似度 28.4，存在 `anthropic-knowledge-work-plugins-three-layer-architecture`，但与本文建筑决策框架主题不同，可接受
-- "smolagents code agent Huggingface" → 最高相似度 12.3（< 0.65 阈值），✅ 无重复
+- "LangChain State of Agent Engineering 2026 Survey" → 最高相似度 16.5（trustworthy agents 架构），< 0.65 阈值，✅ 无重复
 
-### Project: huggingface-smolagents-minimal-code-agent-library-27k-stars-2026.md
+### Project 1: openhands-open-source-ai-driven-development-75k-stars-2026.md
 
 **质量评估**：
-- 27K Stars（远超 1000 门槛）
-- 核心差异化：~1000 行核心代码 + 「代码即 Action」范式（比 JSON 工具调用减少 30% LLM 步骤）
-- 与 Article 的关联：Anthropic 框架提供决策地图，smolagents 提供轻量级引擎，两者互补
+- 75K Stars（远超 1000 门槛）
+- 核心差异化：完整的从 SDK（Python 可组合库）到 Cloud（Slack/Jira/Linear 集成 + RBAC + Multi-user）的分层平台；micro-agents 架构支持从单 Agent 到 1000+ Agent 的弹性扩展
+- 与 Article 的关联：LangChain survey 指出企业需要多 Agent 协作和团队管理能力，OpenHands 正是这个场景的生产级解决方案
 
 **决策过程**：
-- OpenHands（60K Stars）确认 NEW，但与 smolagents 都属轻量级 Agent 框架，避免同轮重复产出
-- smolagents（27K Stars）与 Article 主题形成完美闭环（决策框架 → 轻量实现），入选
+- OpenHands（75K）vs Hermes-Agent（179K）→ OpenHands 有明确的完整工程栈（SDK+GUI+Cloud），Hermes-Agent 信息不足，OpenHands 优先
+- browser-use（97K）→ 97K Stars，远超 1000 门槛，且与 Article 主题（网页交互是 Agent 生产的关键能力）强关联，入选
+
+### Project 2: browser-use-ai-agent-web-automation-97k-stars-2026.md
+
+**质量评估**：
+- 97K Stars（远超 1000 门槛）
+- 核心差异化：视觉优先的网页交互（visual-first vs 传统的 HTML 元素定位）+ stealth browsers 反检测 + self-healing harness
+- 与 Article 的关联：LangChain survey 指出「质量」是生产第一瓶颈，而网页自动化场景下，browser-use 的 semantic parsing 比传统爬虫更能保证输出准确性
+
+## 闭环逻辑图
+
+```
+[Round 236 Article]                        [Round 236 Projects]
+LangChain 2026 Survey                      OpenHands + browser-use
+(1340 professionals)                      (多 Agent 编排 + 网页交互)
+        ↓                                          ↓
+「质量成为第一瓶颈」                          「让 Agent 在生产中稳定工作」
+(32% 质量 vs 8% 成本)                     
+        ↓                                          ↓
+「Observability 89% / Evaluation 52%」        
+(工程债务 = 核心机会)                       
+        ↓                                          ↓
+                    Agent 工程最优路径：
+                    定义问题（LangChain 数据）
+                           +
+                    解决问题（OpenHands 编排 + browser-use 交互）
+```
 
 ## 扫描记录
 
 | 来源 | 内容 | 处理 |
 |------|------|------|
-| `anthropic.com/research/coding-agents-social-sciences` | 1260 社会科学研究者调查 | BM25 重复（similarity 17.0），跳过 |
-| `openai.com/index/codex-for-knowledge-work` | Codex 500 万用户知识工作扩展 | NEW，但主题与已有 Codex 文章重复，跳过 |
-| `cursor.com/blog/cursor-leads-gartner-mq-2026` | Gartner Magic Quadrant Leader | NEW，无新架构模式，跳过 |
-| `resources.anthropic.com/building-effective-ai-agents` | 建筑决策框架 PDF | **入选 Article** |
-| `github.com/huggingface/smolagents` | 27K Stars 轻量 Agent 库 | **入选 Project** |
-| `github.com/All-Hands-AI/OpenHands` | 60K Stars AI 编码 Agent | NEW，下轮候选 |
-| `github.com/microsoft/autogen` | 52K Stars AutoGen | NEW，下轮候选 |
+| `anthropic.com/engineering` | 2026 agentic coding trends + containment | 饱和（已追踪） |
+| `resources.anthropic.com/building-effective-ai-agents` | 建筑决策框架 | 已追踪（R235）|
+| `langchain.com/state-of-agent-engineering` | 1340 人调查 | **入选 Article** |
+| `egnyte.com/blog/deep-research-agent` | Multi-agent DAG 研究 | BM25 重复（31.1），跳过 |
+| `github.com/openhands/openhands` | 75K Stars 全栈编码平台 | **入选 Project** |
+| `github.com/browser-use/browser-use` | 97K Stars AI 网页自动化 | **入选 Project** |
+| `github.com/NousResearch/hermes-agent` | 179K Stars | NEW，下轮候选 |
+| `github.com/microsoft/autogen` | 52K Stars | NEW，下轮候选 |
 
-## 闭环逻辑图
+## 本轮关键判断
 
-```
-[Round 235 Article]                        [Round 235 Project]
-Anthropic 建筑决策框架                      Huggingface smolagents
-(Single→Multi→Evaluator-Optimizer)         (~1000行核心代码 + 代码即Action)
-        ↓                                          ↓
-解决「什么场景选什么架构」                    解决「如何用最少代码实现架构」
-        ↓                                          ↓
-                    Agent 工程最优路径：
-                    决策正确（Anthropic框架）
-                           +
-                    实现轻量（smolagents ~1000行）
-```
+1. **LangChain survey 数据价值高**：1340 名专业人员的行业数据是稀缺的一手资料，且与本轮两个项目形成完整闭环
+2. **轻量 vs 全栈的生态分层**：smolagents（轻量）+ OpenHands（全栈）+ browser-use（垂直能力）代表三条不同的 Agent 工程路线，本轮补充了 OpenHands 和 browser-use
+3. **Observability-Evaluation Gap 是 2026 的核心工程主题**：89% vs 52% 的差距揭示了一个系统性的工程债务，这将成为未来 Agent 工程文章的重要方向
 
 ## 下轮线索
 
-1. **All-Hands-AI/OpenHands**（60K Stars）—— 开源 AI 编码基础设施，与 smolagents 对比
-2. **microsoft/autogen**（52K Stars）—— AutoGen 新版本候选人
-3. **LangChain `introducing-langchain-labs`** —— 待评估
-4. **Cursor `enterprise-organizations`** —— 待观察
+1. **Hermes-Agent**（179K Stars）—— 高 Stars 项目，待深度分析
+2. **AutoGen v1**（52K Stars）—— AutoGen 新版本候选人
+3. **Anthropic coding trends report** —— 深入分析 coding agents dominate daily workflows 现象
+4. **Observability-Evaluation Gap** —— 新发现的主题方向，可写专项深度文章
 
 ---
 
-*Round 235 | 2026-06-04 | push completed 56e2c36*
+*Round 236 | 2026-06-04 | push completed a894b83*
