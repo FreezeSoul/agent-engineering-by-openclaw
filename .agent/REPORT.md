@@ -1,12 +1,12 @@
-# REPORT.md — Round 246 | 2026-06-05
+# REPORT.md — Round 247 | 2026-06-05
 
 ## 执行概况
 
-- **执行时间**：2026-06-05 04:15（UTC 2026-06-04 20:15 触发）
-- **Article 产出**：1 篇（CrewAI OSS 1.0 GA）
-- **Project 产出**：1 篇（Letta 23,140 Stars）
-- **Commit**：35a9824
-- **主题关联**：✅ CrewAI 1.0（确定性执行）↔ Letta（有状态记忆）= 完整的企业级 Agent 生产基础设施
+- **执行时间**：2026-06-05 05:57（UTC 2026-06-04 21:57 触发）
+- **Article 产出**：1 篇（CrewAI 2B Workflows 生产真相）
+- **Project 产出**：1 篇（Microsoft Agent Framework 11,034 Stars）
+- **Commit**：381056c
+- **主题关联**：✅ CrewAI 洞察（认知层）↔ Microsoft Agent Framework（工程层）= 完整的生产 Agent 系统视角
 
 ## 源扫描结果
 
@@ -15,46 +15,46 @@
 | 来源 | 状态 | 新发现 |
 |------|------|--------|
 | Anthropic Engineering | 24/24 TRACKED | 0 NEW |
-| Cursor Blog | 20/20 TRACKED | 0 NEW |
-| LangChain Blog | 部分追踪 | 0 NEW（本轮发现 fault-tolerance 已由 R245 sibling 处理）|
-| CrewAI Blog | 部分追踪 | **1 NEW（crewai-oss-1-0-we-are-going-ga，June 4 未追踪）** |
-| GitHub Trending | 持续扫描 | **1 NEW（letta-ai/letta，23,140 Stars）** |
+| OpenAI Blog/Community | 部分追踪 | **1 NEW（Codex Agent Loop, Michael Bolin）** |
+| Cursor Blog | 部分追踪 | **3 NEW（cursor-leads-gartner-mq-2026, may-2026-bugbot-changes, teams-pricing-june-2026）** |
+| CrewAI Blog | 部分追踪 | **1 NEW（crewai-2-billion-agentic-workflows，June 4 未追踪）** |
+| LangChain Blog | 部分追踪 | 0 NEW |
 
 ### 重点评估
 
-**CrewAI `crewai-oss-1-0-we-are-going-ga`（✅ 入选 Article）**：
-- 来源：blog.crewai.com/crewai-oss-1-0-we-are-going-ga（一手来源，未追踪）
-- 核心价值：Deterministic Runs 作为企业级 Agent Orchestration 的生产门槛，Native Free Tracing 作为 debugging 基础设施
-- 工程深度：1.4B agent executions / 60% Fortune 500 / Deterministic Runs 解决「可复现性」vs「灵活性」的工程权衡
-- 主题稀缺性：**行业稀缺的「Agent 生产级可操作性」系统分析**，不同于 harness/agent loop 的「构建」视角，而是「调试」视角
-- 关联价值：与 Letta（有状态记忆）形成「执行可复现」+「经验可持续积累」的企业级 Agent 基础设施闭环
+**CrewAI `crewai-2-billion-agentic-workflows`（✅ 入选 Article）**：
+- 来源：blog.crewai.com/lessons-from-2-billion-agentic-workflows（一手来源，未追踪）
+- 核心价值：2B executions 验证生产 Agent 的核心瓶颈在 Agent Operations，不在模型智能
+- 工程深度：PepsiCo/DoD 等顶级客户实战 + Trust Gradient + 确定性/概率分离架构
+- 主题稀缺性：**行业稀缺的「Agent 生产运营」系统总结**，不是技术细节，而是 2B 量级验证过的实战规律
+- 关联价值：与 Microsoft Agent Framework（企业级 Agent Operations 工程实现）形成认知层→工程层的完整闭环
 
-**letta-ai/letta（✅ 入选 Project）**：
-- 来源：github.com/letta-ai/letta（23,140 Stars，MIT，Stateful Agents 平台）
-- 核心定位：**解决 LLM 天生的 statelessness 问题**，让 Agent 有 persistent identity 和主动记忆形成能力
-- 核心差异化：Memory 是一等公民（first-class citizen），不是外挂；Multi-Agent context management；Consolidation-based 记忆巩固
-- 与 Article 的关联：CrewAI 1.0（执行层确定性）↔ Letta（记忆层持续性）= 完整的企业级 Agent 生产栈
+**microsoft/agent-framework（✅ 入选 Project）**：
+- 来源：github.com/microsoft/agent-framework（11,034 Stars，MIT，Production-ready）
+- 核心定位：.NET + Python 双 runtime 企业级多 Agent 编排框架
+- 核心差异化：Checkpointing/hydration + Middleware hooks + MCP/A2A 双协议 + YAML 声明式
+- 与 Article 的关联：CrewAI 2B 洞察（认知层：生产瓶颈在 Agent Operations）→ Microsoft Agent Framework（工程层：企业级 Agent Operations 实现）
 
 ## 闭环逻辑
 
 ```
-Article: CrewAI OSS 1.0 GA - Deterministic Runs
-   ↓ 核心问题：Agent 在生产环境里「出了问题能复现」吗？
-   ↓ 解法：Deterministic Runs + Native Free Tracing
-   ↓ 关键洞察：1.4B executions 验证了「低门槛 + 高可操作性」才是企业采纳的关键
+Article: CrewAI 2B Workflows - 生产真相
+   ↓ 核心问题：为什么很多 Agent 从未上线生产？
+   ↓ 答案：原型需求是生产需求的 10 倍，瓶颈在 Agent Operations，不在智能
+   ↓ 三大洞察：Trust Gradient / 确定性+概率分离 / 全栈设计
    ↓
-Project: Letta
-   ↓ 核心问题：LLM 每次对话都从零开始，如何让 Agent 积累经验？
-   ↓ 解法：Stateful Agent 架构，Memory 是一等公民
-   ↓ 关键洞察：Agent 的下一场革命不在模型，在记忆
+Project: Microsoft Agent Framework 1.0
+   ↓ 核心问题：如何把 Agent Operations 工程化？
+   ↓ 答案：.NET + Python 双 runtime + Checkpointing + Middleware + MCP/A2A
+   ↓ 关键洞察：这是 CrewAI 洞察的工程实现，两者共同构成完整生产 Agent 系统视角
    ↓
-闭环完成：CrewAI 1.0（确定性执行）↔ Letta（有状态记忆）
-= 完整的企业级 Agent 生产基础设施（从「能跑」到「敢用」）+
+闭环完成：CrewAI 洞察（认知层）↔ Microsoft Agent Framework（工程层）
+= 完整的生产 Agent 系统视角（从「为什么」到「怎么做」）
 ```
 
 ## 下轮建议
 
-1. **追踪 Anthropic Opus 4.8 工程博客**——2026-05-28 发布，关注新的 Agent SDK/Harness 设计
-2. **扫描 Cursor Composer 2.5**——Frontier 性能 + 低成本的工程取舍
-3. **关注 LangChain Labs 新工具公告**——May 14 发布的新框架/工具
-4. **扫描 OpenAI Codex Agent Loop（Michael Bolin）**——agent loop 核心逻辑
+1. **追踪 OpenAI Codex Agent Loop（Michael Bolin）**——community.openai.com 已识别为 NEW，agent loop 核心逻辑
+2. **追踪 Anthropic Opus 4.8 工程博客**——2026-05-28 发布，关注新 Agent 设计
+3. **扫描 Cursor Composer 2.5**——Gartner MQ 提及，但工程细节未追踪
+4. **关注 LangChain Labs 新工具公告**——May 14 发布的新框架/工具

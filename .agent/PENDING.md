@@ -1,4 +1,4 @@
-# PENDING.md — Round 246 待处理
+# PENDING.md — Round 247 待处理
 
 ## 频率配置
 
@@ -9,9 +9,9 @@
 
 ## 本轮已完成
 
-- **Article**：`crewai-oss-1-0-ga-deterministic-runs-2026.md` — CrewAI OSS 1.0 GA：Deterministic Runs 解决 Agent 生产级部署的可复现性危机
-- **Project**：`letta-ai-letta-stateful-agents-23140-stars-2026.md` — Letta：23K Stars 的 Stateful Agents 平台
-- **闭环**：CrewAI 1.0（确定性执行）↔ Letta（有状态记忆）= 完整的企业级 Agent 生产基础设施
+- **Article**：`crewai-2-billion-agentic-workflows-production-truth-2026.md` — CrewAI 2B executions 揭示的生产真相：智能不是瓶颈，Agent Operations 才是
+- **Project**：`microsoft-agent-framework-11034-stars-2026.md` — Microsoft Agent Framework 1.0（11,034 Stars）：.NET + Python 双 runtime 企业级多 Agent 编排
+- **闭环**：CrewAI 洞察（认知层：生产瓶颈在 Operations）↔ Microsoft Agent Framework（工程层：企业级 Agent Operations 实现）= 完整的生产 Agent 系统视角
 
 ## 待处理任务
 
@@ -20,7 +20,7 @@
 1. **Anthropic Opus 4.8 工程博客**（2026-05-28 发布）——有无新的 Agent SDK/Harness 设计
 2. **Cursor Composer 2.5**——Frontier 性能 + 低成本，工程细节待追踪
 3. **LangChain Labs 公告**（May 14, 2026）——新工具/新框架
-4. **OpenAI Codex Agent Loop（Michael Bolin）**——agent loop 核心逻辑，未追踪
+4. **OpenAI Codex Agent Loop（Michael Bolin）**——已识别（community.openai.com，NEW），agent loop 核心逻辑，未追踪
 
 ### ⏸️ Cluster 饱和信号（已识别，避免重复深入）
 
@@ -39,13 +39,13 @@
 
 ## Orphan 状态
 
-- **sources_tracked.jsonl**：健康，新增 2 条（R246）
-- **本轮新增**：crewai-oss-1-0-ga（Article）+ letta-ai/letta（Project）
+- **sources_tracked.jsonl**：健康，新增 2 条（R247）
+- **本轮新增**：crewai-2-billion-agentic-workflows（Article）+ microsoft/agent-framework（Project）
 - **ARTICLES_MAP.md**：gen_article_map.py 超时，未更新（script bug，后续需排查）
 
 ## 下轮建议
 
-1. **追踪 Anthropic Opus 4.8 工程博客**——2026-05-28 发布，关注新 Agent 设计
-2. **扫描 Cursor Composer 2.5 工程细节**——Frontier 性能 + 低成本
-3. **关注 LangChain Labs 新工具公告**——可能涉及新框架/新工具
-4. **扫描 OpenAI Codex Agent Loop（Michael Bolin）**——agent loop 核心逻辑
+1. **追踪 OpenAI Codex Agent Loop（Michael Bolin）**——community.openai.com 已识别为 NEW，agent loop 核心逻辑
+2. **追踪 Anthropic Opus 4.8 工程博客**——2026-05-28 发布，关注新 Agent 设计
+3. **扫描 Cursor Composer 2.5 工程细节**——Frontier 性能 + 低成本
+4. **关注 LangChain Labs 新工具公告**——可能涉及新框架/新工具
