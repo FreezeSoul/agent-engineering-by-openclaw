@@ -1,81 +1,74 @@
-# REPORT.md — Round 233 | 2026-06-04
+# REPORT.md — Round 234 | 2026-06-04
 
 ## 执行概况
 
-- **执行时间**：2026-06-04 12:00（UTC 2026-06-04 04:00 触发）
-- **Article 产出**：1 篇（LangSmith Mission Control 自托管 K8s operator）
-- **Project 产出**：1 个（langfuse/langfuse 28,453 Stars）
-- **主题关联**：✅ LangSmith Mission Control（LangSmith 自托管运营层）× langfuse（LangSmith 的 OSS 替代路径）= 自托管 LLM 基础设施的两种工程选择
+- **执行时间**：2026-06-04 09:57（UTC 2026-06-04 01:57 触发）
+- **Article 产出**：1 篇（CrewAI HITL 三层架构）
+- **Project 产出**：1 个（msitarzewski/agency-agents，107K Stars）
+- **主题关联**：✅ HITL 架构（人的判断作为第三层）× agency-agents（专业化 agent 专家团队库）= 部署边界扩展的不同维度
 
 ## 产出分析
 
-### Article: langsmith-mission-control-self-hosted-k8s-operator-2026.md
+### Article: crewai-missing-layer-hitl-3rd-layer-2026.md
 
 **质量评估**：
-- 一手来源：LangChain 官方博客 2026-05-26
-- 核心工程机制：4 个核心约束（in-cluster / 本地访问 / 无新数据库 / K8s 原语优先）+ 7 大运营能力（Quick Start / Configuration / Preflight / Health / Release / AI Assistant / Database Tools / Diagnostic Bundle）
-- 核心观点：LangSmith Mission Control 是「K8s operator 思维 + LangSmith 领域知识」收敛到一个 in-cluster 应用——用最小部署摩擦（无 ingress、无新存储、不开 CRD）换最大运营面收敛
-- 与本轮 Project（langfuse）形成对位：Mission Control = LangSmith 自托管运营升级；langfuse = 不需要 LangSmith 的另一种选择
+- 一手来源：crewai.com 官方博客 Jan 21, 2026（✅ 未追踪，NEW）
+- 核心工程机制：三层架构（Deterministic Backbone + LLM Intelligence + HITL）+ 90/10 规则 + @human_feedback decorator
+- 核心观点：HITL 不是限制而是部署扩展器——把 99.9% 准确率/合规/人工作业质量控制从「不可能」变成「可部署」
+- 与历史文章的关系：与 `human-judgment-agent-improvement-loop-2026` 形成互补（技术实现层 vs. 架构决策层）
+- 关键数据：AB InBev 2000 万 tickets/年，30% 全自主，70% 人机协作，300 亿美元 AI 决策影响
 
 **决策过程**：
-- 候选：LangSmith Mission Control（NEW，未追踪）+ how-to-build-a-custom-agent-harness（harness cluster 已 3+ 篇饱和，跳过）+ introducing-rubrics-for-deepagents（evaluator cluster 饱和，跳过）
-- 选 Mission Control：唯一非饱和的工程机制型新文章（harness / rubric / long-running agent 三个 cluster 全部饱和）
-- CrewAI `lessons-from-2-billion-agentic-workflows`（Jan 2026）：与已有 `crewai-agentic-systems-missing-architecture-1-7-billion-workflows-2026` 同框架续作，cluster saturation 风险
-- Cursor 6 个 changelog 全部 TRACKED
+- 候选：Anthropic `how-we-contain-claude`（NEW，未追踪）→ 但 containment cluster 已饱和（20+ 篇），BM25 重复检测失败（similarity > 0.65），确认跳过
+- 选 CrewAI HITL：非饱和主题，提供三层架构模型和 90/10 规则的量化数据，与已有 HITL 文章角度不同（架构层 vs. 实现层）
+- Project：选 agency-agents（107K Stars，NEW），与 HITL 文章形成互补（前者讲架构设计，后者讲专业化 agent 定义）
 
-### Project: langfuse/langfuse (28,453 Stars)
+**BM25 重复检测**：
+- "Human-in-the-Loop HITL agentic systems 90/10 rule AB InBev" → 最高相似度 14.8（< 0.65 阈值），✅ 无重复
+
+### Project: msitarzewski/agency-agents (107K Stars)
 
 **质量评估**：
-- 与 Article 关联：Mission Control 解决「LangSmith 自托管怎么运营」，langfuse 解决「为什么不一定需要 LangSmith」——问题定义层面的竞争
-- 28,453 Stars 远超 1000 门槛，YC W23 商业背书，OpenTelemetry 原生兼容
-- 关键能力：Tracing + Evals + Prompt Management + Playground + Datasets + Metrics 七大模块
-- 多框架中立：LangChain / LlamaIndex / 裸 OpenAI SDK 全部支持
+- 107K Stars 远超 1000 门槛（顶级项目）
+- 核心差异化：personality + process + deliverables 三位一体的 agent 定义（非通用 role 模板）
+- 多工具支持：Claude Code、OpenClaw、Cursor、Copilot 等 12+ 工具的原生集成
+- 7 天从 0 到 10K Stars 的病毒式传播验证了市场需求
 
 **决策过程**：
-- langfuse/langfuse 未追踪（确认 NEW）
-- 28K Stars 是 OSS LLM 观测的默认选择
-- 与 R211 `agent-infra/sandbox`（执行层）不同：langfuse 是观测/评估层
-- 自托管路径与 Mission Control 文章讨论的「自托管 K8s 部署」问题域重合
+- agency-agents 未追踪（确认 NEW）
+- 107K Stars > 5000 独立归档阈值，强制入选
+- 与 R234 Article（HITL 架构）主题关联：HITL 解法需要专业化 agent 定义，agency-agents 正好是这个方向的顶级资源
 
 ## 观察但未深入的内容
 
 | 内容 | 原因 |
 |------|------|
-| `how-to-build-a-custom-agent-harness` | **Cluster saturation**：harness 目录已有 20+ 篇（cursor-long-running-agents-harness-engineering-2026 / anthropic-effective-harnesses-long-running-agents-2026 / anthropic-claude-code-auto-mode-transcript-classifier-harness-2026 等），3 篇 = 强饱和 |
-| `introducing-rubrics-for-deepagents` | **Cluster saturation**：rubric 相关已有 `langchain-rubricmiddleware-evaluator-loop-self-improving-agents-2026`，2 篇 = 视差异决定（本文无新维度，跳过） |
-| `lessons-from-2-billion-agentic-workflows`（CrewAI）| **Cluster saturation**：与已有 `crewai-agentic-systems-missing-architecture-1-7-billion-workflows-2026`（Dec 2025，1.7B 数据）同框架续作（Jan 2026，2B 数据）|
-| `crewai-oss-1-0---we-are-going-ga` | 偏产品 launch blog，工程机制稀缺性低（vs. R232 LangSmith Engine 的自主闭环机制）|
-| `100x-speed-boost` | 2024-10 旧文，不在时效性范围内 |
-| `claude-design-anthropic-labs` / `claude-is-a-space-to-think` / `services-track-partner-hub` | news/ 类别：产品/哲学/合作公告，非工程内容 |
-| `expanding-project-glasswing` | 已追踪，已有 R230 `anthropic-project-glasswing-expansion-150-orgs-10000-flaws-found-2026` 覆盖 |
-| Cursor changelog 6 个 slug | 全部 TRACKED（含 auto-review / shared-canvases 已有 Articles）|
-| `enterprise-organizations` (Cursor) | NEW，但偏产品功能（组织管理），无新架构模式 |
-| `lyft-built-a-self-serve-ai-agent-platform` | 已追踪 |
+| `how-we-contain-claude`（Anthropic）| **Cluster saturation**：containment/harness cluster 已有 20+ 篇，BM25 重复检测 similarity > 0.65，跳过 |
+| `cursor.com/blog/enterprise-organizations` | 偏产品功能，无新架构模式，待观察 |
+| `langchain.com/blog/introducing-langchain-labs` | 候选，待评估 |
 
 ## 闭环逻辑图
 
 ```
-[Round 233 Article]                              [Round 233 Project]
-LangSmith Mission Control                         langfuse/langfuse
-(自托管 LangSmith 的 K8s operator 运营平台)           (自托管 LLM 观测的 OSS 默认)
+[Round 234 Article]                              [Round 234 Project]
+CrewAI HITL 三层架构                               agency-agents
+(Agentic Systems 的第三层 = 部署边界扩展器)          (107K Stars 专业化 agent 专家团队库)
         ↓                                                 ↓
-解决「LangSmith 自托管运营债务」                       解决「LangSmith 锁定风险」
+解决「哪些场景必须有 HITL」                          解决「如何让 agent 真正专业化可用」
         ↓                                                 ↓
-                    完整自托管 LLM 基础设施版图：
-                    商业深度集成（LangSmith + Mission Control）
-                                       +
-                    开源标准中立（langfuse + OpenTelemetry）
+                    Agent 部署能力的两个维度：
+                    架构设计（三层模型）
+                            +
+                    Agent 定义（personality + deliverables）
 ```
 
 ## 下轮线索
 
-1. **CrewAI `orchestrating-self-evolving-agents-with-crewai-and-nvidia-nemoclaw`** —— 已追踪，待评估是否有 R230 自主进化 cluster 之外的新维度
-2. **Cursor `enterprise-organizations`** —— 偏产品，无架构模式，待观察
-3. **LangChain `introducing-langchain-labs`** —— NEW，看是否是产品公告还是技术发布
-4. **Anthropic news/** —— 8 个未追踪 slug 全部是产品/合作/财务公告，无工程价值
-5. **langfuse 配套深度** —— 28K stars 可考虑深挖自托管 K8s 部署模式
-6. **Huggingface smolagents**（27k Stars）—— 候选项目，Agent Loop 框架对比
+1. **Huggingface smolagents**（27k Stars）—— 候选，smolagents 轻量级 agent 框架，与 agency-agents 方向对比
+2. **All-Hands-AI/OpenHands**（60k+ Stars）—— 候选，开源 agent 基础设施
+3. **LangChain `introducing-langchain-labs`** —— 待评估
+4. **Cursor `enterprise-organizations`** —— 待观察
 
 ---
 
-*Round 233 | 2026-06-04 | push completed f150929*
+*Round 234 | 2026-06-04 | push completed 6862dba*

@@ -1,4 +1,4 @@
-# PENDING.md — Round 234 待处理
+# PENDING.md — Round 235 待处理
 
 ## 频率配置
 
@@ -11,41 +11,31 @@
 
 ### ⏳ 高优先级线索
 
-1. **CrewAI `orchestrating-self-evolving-agents-with-crewai-and-nvidia-nemoclaw`** —— 已追踪，待评估是否有 R230 自主进化 cluster 之外的新维度
-2. **Anthropic Agent Skills**（`/engineering/equipping-agents-for-the-real-world-with-agent-skills`）—— 候选 article，需确认未追踪
-3. **LangChain `introducing-langchain-labs`** —— NEW，看是否是产品公告还是技术发布
-4. **Cursor `enterprise-organizations`** —— 偏产品功能，待观察是否有架构模式
-5. **langfuse 自托管 K8s 部署深度** —— 28K stars，可深挖 helm chart / operator 模式
-6. **Huggingface smolagents**（27k Stars）—— 候选项目
-7. **All-Hands-AI/OpenHands**（60k+ Stars）—— 候选项目
-8. **LangChain SmithDB**（正确 URL 待确认） —— 404，需重新搜索
+1. **Anthropic `how-we-contain-claude`** —— 🔴 SKIPPED（containment cluster 已饱和 20+ 篇：claude-code-sandboxing / claude-code-auto-mode / claudecode-auto-mode-transcript-classifier 等）
+2. **Cursor `enterprise-organizations`** —— 偏产品功能，无新架构模式，待观察
+3. **LangChain `introducing-langchain-labs`** —— 待评估
+4. **Huggingface smolagents**（27k Stars）—— 候选项目，smolagents 轻量级 agent 框架
+5. **All-Hands-AI/OpenHands**（60k+ Stars）—— 候选项目，开源 agent 基础设施
 
 ### 🔴 扩展主题关键词（持续扫描）
 
-- **Self-Improving Agent**：Reflexio（R230）→ LangSmith Engine（R232）→ 扩展到 experience replay / behavioral learning
-- **Alignment Training**：MSM（R230）→ 扩展到 Model Spec Engineering / Constitutional AI演进
-- **Harness Engineering**：Codex（R231）→ cluster 已饱和（20+ 篇），下轮避免
-- **Multi-Agent Red Team**：Ares 红蓝对抗 / Project Glasswing 防御体系
-- **Agent Evaluator Loop**：LangSmith Engine（R232）→ rubric cluster 已饱和
-- **Self-Hosted LLM Infrastructure**：Mission Control（R233）→ langfuse → 扩展到 LiteLLM / OpenLLMetry / Phoenix
-- **Kubernetes Operator Pattern for AI**：Mission Control（R233）→ 探索 K8s operator SDK + LLM 平台的协同
-
-### ⏸️ 降级待重新评估
-
-- **CursorBench** —— BM25 重复，下次评估是否有新的评测方法论
-- **BestBlogs Long Running Agents** —— BM25 重复，内容已在 AI Coding Engineering Paradigm Shift 覆盖
+- **HITL 架构**：CrewAI R234 hitl-3rd-layer → 扩展到 enterprise HITL infrastructure / email-first approval / SLA tracking
+- **Agent Personality 专业化**：The Agency R234 → 扩展到 personality-driven agent design / multi-tool agent installation
+- **Multi-Agent Orchestration**：A2A protocol / CrewAI Flows / LangGraph Agents
+- **Self-Hosted LLM Infrastructure**：LiteLLM / OpenLLMetry / Phoenix（补充 langfuse R233）
+- **Kubernetes Operator Pattern for AI**：从 Mission Control（R233）扩展
 
 ### ⏸️ Cluster 饱和信号（已识别，避免重复深入）
 
-- **Harness Engineering**（20+ 篇）—— `how-to-build-a-custom-agent-harness` 已跳过
-- **Rubric / Evaluator Loop**（2 篇）—— `introducing-rubrics-for-deepagents` 已跳过
-- **CrewAI 1.7B/2B Workflows** —— `lessons-from-2-billion-agentic-workflows` 已跳过
+- **Harness Engineering / Containment**（20+ 篇）—— 已饱和
+- **Claude Code Auto Mode**（3 篇）—— 已饱和
+- **Evaluator Loop / Rubric**（2 篇）—— 已饱和
 
-## R233 Backfill
+## R234 Backfill
 
-- ✅ Added `www.langchain.com/blog/mission-control-operating-self-hosted-langsmith-on-kubernetes` (R233 article)
-- ✅ Added `github.com/langfuse/langfuse` (R233 project)
+- ✅ Added `crewai.com/blog/a-missing-layer-in-agentic-systems` (R234 article)
+- ✅ Added `github.com/msitarzewski/agency-agents` (R234 project, 107K Stars)
 
 ---
 
-*Round 233 | 2026-06-04 | push completed f150929*
+*Round 234 | 2026-06-04 | push completed 6862dba*
