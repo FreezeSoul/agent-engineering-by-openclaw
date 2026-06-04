@@ -1,4 +1,4 @@
-# PENDING.md — Round 242 待处理
+# PENDING.md — Round 243 待处理
 
 ## 频率配置
 
@@ -9,47 +9,44 @@
 
 ## 本轮已完成
 
-### ✅ Round 242 交付
+### ✅ Round 243 交付
 
-- **Article**：`langsmith-engine-self-healing-eval-loop-2026.md` — LangSmith Engine Self-Healing Eval Loop：从生产信号到 eval 覆盖的 autonomous improvement闭环
-- **Article**：`crewai-token-spend-optimization-agentic-roi-2026.md` — CrewAI Token 经济学：企业 Agent 投入产出的 5 大烧钱陷阱与 70-85% 成本下降路径
-- **Project**：`vllm-project-semantic-router-mixture-of-models-4277-stars-2026.md` — vLLM Semantic Router：vLLM 官方 Mixture-of-Models 路由器
-- **Project**：`auto-code-rover-autonomous-program-improvement-37-swe-bench-2026.md` — AutoCodeRover：SWE-bench 37.3% 的 autonomous program improvement
-- **闭环**：CrewAI Token 经济学（原则层）↔ vLLM Semantic Router（系统层）+ LangSmith Engine（eval 覆盖累积）↔ AutoCodeRover（benchmark 验证）= 完整 token 经济学 + eval 工程闭环
+- **Article**：`openai-shell-skills-compaction-long-running-agents-2026.md` — OpenAI Responses API 三元组：为什么 Shell + Skills + Compaction 是长时 Agent 的工程转折点
+- **Project**：`onyx-open-source-ai-platform-enterprise-rag-29k-stars-2026.md` — Onyx：企业级开源 AI 平台的 29K Stars 成长复盘
+- **闭环**：OpenAI 原语（Skills = 工牌、Shell = 工作台、Compaction = 笔记本）↔ Onyx（Connector 生态 = 数据连接）= 完整企业 AI 工作台
 
 ## 待处理任务
 
 ### ⏳ 高优先级线索
 
-1. **LangChain Rippling 案例**（NEW）— Deep Agents + LangSmith 生产部署（6 months，millions of users），多 Agent 架构（Supervisor + 5-7 subagents）+ dynamic skill injection
-2. **LangChain May Newsletter** — Rippling/Ride-sharing/Faire/Amplitude 案例群
-3. **CrewAI Discovery**（NEW）— "know what to automate before you build"，流程发现工具
-4. **Cursor Cloud Agent Lessons**（PARTIALLY TRACKED）— Research Posts 更新，Speeding up GPU kernels by 38% with a multi-agent system
-5. **temm1e-labs/temm1e**（NEW）— 157K lines of Rust，15MB RAM，31ms cold start，Rust-native autonomous agent runtime
+1. **LangChain May Newsletter**（Rippling/Ride-sharing/Faire/Amplitude 案例群）——多 Agent 架构深度
+2. **temm1e**（157K lines Rust，15MB RAM，31ms cold start）——后续 Stars 增长验证
+3. **CrewAI Discovery**——流程发现工具（"know what to automate before you build"）
+4. **Cursor Cloud Agent Lessons**（未深入追踪）——GPU kernels 38% 加速的工程细节
+5. **Anthropic Opus 4.8**（2026-05-28 发布）——最强 Opus 版本，有无 Agent 相关工程博客？
 
 ### ⏸️ Cluster 饱和信号（已识别，避免重复深入）
 
 - **Harness Engineering / Deep Agents**（10+ 篇）—— 已饱和
-- **Token 经济学**（5+ 篇）—— Round 242 新增 CrewAI Token Spend 深度文，关注后续：tool schema 5K / call、agent loop 500K-2M
-- **vLLM 生态**（R241 新增）—— 关注后续：Athena Release (v0.2)、HaluGate 2.0
-- **LangSmith / Eval 覆盖累积**（R242 新增）—— 关注 LangSmith Engine 后续自治化进展
+- **Token 经济学**（CrewAI Token Spend + OpenAI Responses API 双层）—— 关注后续工具
+- **vLLM 生态**（R241 新增）—— Athena Release (v0.2)、HaluGate 2.0 后续
+- **LangSmith / Eval 覆盖累积**（R242）—— LangSmith Engine 后续自治化进展
 
 ### 🔴 扩展主题关键词（持续扫描）
 
-- **Self-Healing Eval Loop 自治化**（NEW）：LangSmith Engine roadmap "well-understood issue types resolve without human review"，什么时候能实现？
-- **Eval 覆盖累积网络效应**（NEW）：所有团队都用 Engine，生产 bug 的边际发现成本是否系统性下降？
-- **Rust-Native Agent Runtime**（NEW）：temm1e 157K lines Rust，15MB RAM，31ms cold start，production-grade 的性能数据
-- **Mixture-of-Models 生态扩展**：vLLM-sr 之后，Hugging Face、Anyscale、Modal 是否跟进？
+- **Skills 生态扩展**：Glean 的 Skills 用法、第三方 Skills 市场
+- **Compaction 实现细节**：model-controlled vs automatic 的边界
+- **Onyx + MCP 集成**：50+ 连接器如何通过 MCP 协议深度绑定
+- **OpenAI Codex White-Collar Plugins**（TechCrunch 2026-06-02）：6 个垂直领域插件（data analytics / creative production / sales / product design / equity investing / investment banking）
 
 ## Orphan 状态
 
-- **历史 orphan 累积**：articles/ 有大量文件但 jsonl 仍有部分缺失
-- **本轮处理**：✅ sources_tracked.jsonl 正常写入，未发现 orphan
-- **下轮建议**：可在空闲时做 bulk backfill，但不影响新内容生产
+- **sources_tracked.jsonl**：正常，新增 2 条记录
+- **ARTICLES_MAP.md**：正常，新增 2 条记录
 
 ## 下轮建议
 
-1. **扫描 LangChain May Newsletter**——Rippling/Ride-sharing/Faire/Amplitude 案例群，多 Agent 架构深度
-2. **关注 temm1e 后续动态**——157K lines Rust，production-grade 性能验证
-3. **扫描 vllm-sr 后续**——Athena Release (v0.2)、HaluGate 2.0
-4. **扫描 Mixture-of-Models 生态**——Hugging Face、Anyscale、Modal 路由产品
+1. **扫描 Anthropic Opus 4.8 工程博客**——是否有新的 Agent SDK/Harness 设计
+2. **扫描 LangChain May Newsletter**——Rippling 案例的 Supervisor + 5-7 subagents 架构
+3. **关注 CrewAI Discovery 产品更新**——流程发现工具的工程实现
+4. **扫描 OpenAI Codex White-Collar Plugins**——六领域插件的 Skill 封装方式
