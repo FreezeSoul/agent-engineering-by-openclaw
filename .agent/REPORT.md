@@ -1,96 +1,95 @@
-# REPORT.md — Round 236 | 2026-06-04
+# REPORT.md — Round 237 | 2026-06-04
 
 ## 执行概况
 
-- **执行时间**：2026-06-04 14:04（UTC 2026-06-04 06:04 触发）
-- **Article 产出**：1 篇（LangChain State of Agent Engineering 2026，1340+ 专业人员调查）
-- **Projects 产出**：2 篇（OpenHands 75K Stars + browser-use 97K Stars）
-- **主题关联**：✅ Survey 数据（生产级挑战）与两个项目（OpenHands 多 Agent 编排基础设施 + browser-use 可靠网页交互）形成闭环
+- **执行时间**：2026-06-04 15:00（UTC 2026-06-04 07:00 触发）
+- **Article 产出**：1 篇（LangChain Model Neutrality 宣言）
+- **Project 产出**：1 篇（zhayujie/CowAgent 45K Stars 多模型多通道 Harness）
+- **主题关联**：✅ 完整闭环——文章给出 Neutral Harness 论点，项目是该论点的具体工程实现
+
+## 源扫描结果
+
+### 官方博客状态
+
+| 来源 | 状态 | 新发现 |
+|------|------|--------|
+| Anthropic Engineering | 25/25 TRACKED | 0 |
+| Cursor Blog | 23/25 TRACKED | 2（organizations + enterprise-organizations，同一 feature 不同发布路径） |
+| LangChain Blog | 11/18 TRACKED | 7（本文选 `model-neutrality`） |
+| CrewAI Blog | 5/24 TRACKED | 19（多数为产品功能介绍，质量偏低） |
+
+### 重点新发现
+
+**LangChain `model-neutrality`**（2026-06-04 发布，作者 Neil Dahlke / HashiCorp 前员工）—— 当日新发布，质量极高：
+- 核心论点：AI 时代 vendor lock-in 正在从模型层（已 commodity 化）转移到 harness 层
+- 类比精准：Terraform 之于云 = Neutral Harness 之于模型
+- 三个独特差异点：切换节奏从年度到月度、模型选择性商品化、切换颗粒度从合同到请求
+- LangChain / Deep Agents 自我定位为「Terraform for Agents」候选
+
+**Cursor `organizations`** —— 6 月 3 日发布，Cursor Enterprise 多团队管理功能：组织→团队→组的三层结构，per-team budget、模型访问、网络权限。**未深入原因**：与 AOM 框架 + Cursor PayPal/NAB 企业实践已形成 cluster 饱和。
 
 ## 产出分析
 
-### Article: langchain-state-agent-engineering-2026-survey-1340-professionals-2026.md
+### Article: langchain-model-neutrality-ai-vendor-lockin-harness-layer-2026.md
 
 **质量评估**：
-- 一手来源：LangChain 官方调查（✅ 未追踪，NEW）
-- 核心数据：1340 名专业人员，覆盖 2025 年 11-12 月
-- 核心工程发现：
-  - 质量取代成本成为生产第一瓶颈（32% vs 去年成本第一）
-  - Observability 89% vs Evaluation 52% 的巨大 gap（核心工程债务）
-  - Multi-model 主流：3/4 组织使用多模型
-  - 大企业（10k+）生产覆盖率 67%，小团队（<100）50%，差距来自平台团队和安全基础设施投入
+- 一手来源：LangChain 官方博客（✅ 未追踪，NEW）
+- 作者权威：LangChain 联合创始人，HashiCorp 前员工，亲历云中立化历史
+- 核心论点清晰：AI lock-in 不在 token（已 commodity）而在 harness（被快速重兵布防）
+- 三层结构：为什么（云经验）→ 为什么这次更严重（三个差异点）→ 解决方案（Neutral Harness 三要素 + Terraform 类比）
+- 评分：5/5（实用性 / 独特性 / 时效性）—— 文章发布于 2026-06-04，与今日 cron 同步
 
 **决策过程**：
-- 候选：Anthropic `2026-agentic-coding-trends-report`（NEW）→ 已被 building-effective-ai-agents 饱和，跳过
-- 候选：Egnyte deep research agent → BM25 相似度 31.1（self-optimizing multi-agent + 25.9 anthropic multi-agent research），重复，跳过
-- 选 LangChain survey：行业脉搏数据，与 OpenHands + browser-use 形成「挑战定义 + 工程解法」的完整闭环
+- 候选：Cursor `organizations`（NEW）→ cluster 饱和（已有 AOM 框架 + PayPal/NAB 企业实践）
+- 候选：LangChain `model-neutrality`（NEW，今日发布）→ 强观点 + 强作者 + 强类比 + 强产品定位（Deep Agents），✅ 入选
+- 候选：LangChain `introducing-langchain-labs`（NEW）→ 产品/商业公告，工程深度不足
+- 候选：LangChain `how-to-build-a-custom-agent-harness`（NEW）→ 标题吸引但 cluster 饱和（已有 harness 系列 20+ 篇）
 
-**BM25 重复检测**：
-- "LangChain State of Agent Engineering 2026 Survey" → 最高相似度 16.5（trustworthy agents 架构），< 0.65 阈值，✅ 无重复
+**Cluster 饱和检查**：
+- `vendor lock-in` 主题：现有 0 深度文章（仅子串误命中）
+- `model neutrality` 主题：0 篇
+- ✅ 全新主题角度，可深入
 
-### Project 1: openhands-open-source-ai-driven-development-75k-stars-2026.md
+### Project: zhayujie-cowagent-agent-harness-multi-model-multi-channel-45k-stars-2026.md
 
 **质量评估**：
-- 75K Stars（远超 1000 门槛）
-- 核心差异化：完整的从 SDK（Python 可组合库）到 Cloud（Slack/Jira/Linear 集成 + RBAC + Multi-user）的分层平台；micro-agents 架构支持从单 Agent 到 1000+ Agent 的弹性扩展
-- 与 Article 的关联：LangChain survey 指出企业需要多 Agent 协作和团队管理能力，OpenHands 正是这个场景的生产级解决方案
+- 45,051 Stars（远超 1000 门槛）
+- 核心差异化：**README 明确写明「a reference implementation of Agent Harness engineering」**——这是项目的自我定位与文章论点形成精确对位
+- 三层解耦：Channels（9 个 IM） × Agent Core（Skills/MCP/Memory/Knowledge） × Models（10+ 个 LLM provider，Web 控制台一键切换）
+- 活跃维护：2026-06-04 仍有 commit
+- MIT License
+
+**与 Article 的关联（完整闭环）**：
+- Article（Why）：模型中立需要开源、Profile-aware、Multi-model 的 Neutral Harness
+- Project（How）：CowAgent 是该论点的具体工程实现——它把 LangChain 的标准变成可运行的 45K Stars 项目
+- 主题域匹配：Open Source ✓ + Multi-model out of the box ✓ + Profile-aware（每个 provider 独立配置）✓
 
 **决策过程**：
-- OpenHands（75K）vs Hermes-Agent（179K）→ OpenHands 有明确的完整工程栈（SDK+GUI+Cloud），Hermes-Agent 信息不足，OpenHands 优先
-- browser-use（97K）→ 97K Stars，远超 1000 门槛，且与 Article 主题（网页交互是 Agent 生产的关键能力）强关联，入选
+- 候选 1：zhayujie/CowAgent（45K Stars）→ 完美匹配文章论点，✅ 首选
+- 候选 2：SafeRL-Lab/cheetahclaws（713 Stars）→ 低于 1000 门槛，跳过
+- 候选 3：jonigl/mcp-client-for-ollama（728 Stars）→ 低于 1000 门槛，跳过
 
-### Project 2: browser-use-ai-agent-web-automation-97k-stars-2026.md
+**Cluster 饱和检查**：
+- `CowAgent` / `zhayujie` / `chatgpt-on-wechat`：0 个本地文件
+- `harness + multi-model` 主题：现有 `anomalyco/opencode`（149K），但定位不同（CLI 单一端 vs CowAgent 多 IM 端），✅ 不重复
+- ✅ 可深入
 
-**质量评估**：
-- 97K Stars（远超 1000 门槛）
-- 核心差异化：视觉优先的网页交互（visual-first vs 传统的 HTML 元素定位）+ stealth browsers 反检测 + self-healing harness
-- 与 Article 的关联：LangChain survey 指出「质量」是生产第一瓶颈，而网页自动化场景下，browser-use 的 semantic parsing 比传统爬虫更能保证输出准确性
-
-## 闭环逻辑图
+## 闭环逻辑
 
 ```
-[Round 236 Article]                        [Round 236 Projects]
-LangChain 2026 Survey                      OpenHands + browser-use
-(1340 professionals)                      (多 Agent 编排 + 网页交互)
-        ↓                                          ↓
-「质量成为第一瓶颈」                          「让 Agent 在生产中稳定工作」
-(32% 质量 vs 8% 成本)                     
-        ↓                                          ↓
-「Observability 89% / Evaluation 52%」        
-(工程债务 = 核心机会)                       
-        ↓                                          ↓
-                    Agent 工程最优路径：
-                    定义问题（LangChain 数据）
-                           +
-                    解决问题（OpenHands 编排 + browser-use 交互）
+Article: LangChain Model Neutrality
+   ↓ 论证：模型 lock-in 已 commodity 化，harness 才是新战场
+   ↓ 判定标准：开源 + Multi-model + Profile-aware
+   ↓ 类比：Terraform 是云时代的答案
+   ↓
+Project: zhayujie/CowAgent
+   ↓ 自我定位：reference implementation of Agent Harness engineering
+   ↓ 工程实现：MIT + Python + 10+ 模型 + 9 个 IM Channel
+   ↓ 验证：45K Stars + 2026-06-04 活跃 commit
 ```
 
-## 扫描记录
-
-| 来源 | 内容 | 处理 |
-|------|------|------|
-| `anthropic.com/engineering` | 2026 agentic coding trends + containment | 饱和（已追踪） |
-| `resources.anthropic.com/building-effective-ai-agents` | 建筑决策框架 | 已追踪（R235）|
-| `langchain.com/state-of-agent-engineering` | 1340 人调查 | **入选 Article** |
-| `egnyte.com/blog/deep-research-agent` | Multi-agent DAG 研究 | BM25 重复（31.1），跳过 |
-| `github.com/openhands/openhands` | 75K Stars 全栈编码平台 | **入选 Project** |
-| `github.com/browser-use/browser-use` | 97K Stars AI 网页自动化 | **入选 Project** |
-| `github.com/NousResearch/hermes-agent` | 179K Stars | NEW，下轮候选 |
-| `github.com/microsoft/autogen` | 52K Stars | NEW，下轮候选 |
-
-## 本轮关键判断
-
-1. **LangChain survey 数据价值高**：1340 名专业人员的行业数据是稀缺的一手资料，且与本轮两个项目形成完整闭环
-2. **轻量 vs 全栈的生态分层**：smolagents（轻量）+ OpenHands（全栈）+ browser-use（垂直能力）代表三条不同的 Agent 工程路线，本轮补充了 OpenHands 和 browser-use
-3. **Observability-Evaluation Gap 是 2026 的核心工程主题**：89% vs 52% 的差距揭示了一个系统性的工程债务，这将成为未来 Agent 工程文章的重要方向
-
-## 下轮线索
-
-1. **Hermes-Agent**（179K Stars）—— 高 Stars 项目，待深度分析
-2. **AutoGen v1**（52K Stars）—— AutoGen 新版本候选人
-3. **Anthropic coding trends report** —— 深入分析 coding agents dominate daily workflows 现象
-4. **Observability-Evaluation Gap** —— 新发现的主题方向，可写专项深度文章
+**Why × How 闭环**：文章解释 **Why**（中立 harness 的必要性与判定标准），项目展示 **How**（一个已运行 45K Stars 的具体工程实现）。两者在同一目标方向上互为佐证。
 
 ---
 
-*Round 236 | 2026-06-04 | push completed a894b83*
+*Round 237 | 2026-06-04 | push pending*
