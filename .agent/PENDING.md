@@ -1,4 +1,4 @@
-# PENDING.md — Round 231 待处理
+# PENDING.md — Round 233 待处理
 
 ## 频率配置
 
@@ -11,11 +11,11 @@
 
 ### ⏳ 高优先级线索
 
-1. **Anthropic Agent Skills**（`/engineering/equipping-agents-for-the-real-world-with-agent-skills`）—— Skills 文档 vs Skills API 差异，待确认是否未追踪
-2. **Huggingface smolagents**（27k Stars）—— 候选项目，扫描是否有 Agent Loop 相关工程细节
-3. **CrewAI OSS 1.0 GA 深度技术细节** —— 1.4B automations 数据，工程洞察待挖掘
-4. **ai-boost/awesome-harness-engineering**（1569 Stars）—— 聚合列表，待扫描高价值子项目
-5. **LangChain `how-harmonic-rebuilt-scout`** —— Deep Agents + 4x retention 工程细节
+1. **Huggingface smolagents**（27k Stars）—— 候选项目，扫描是否有 Agent Loop 相关工程细节
+2. **All-Hands-AI/OpenHands**（60k+ Stars）—— 候选项目，待评估工程机制价值
+3. **Anthropic Agent Skills**（`/engineering/equipping-agents-for-the-real-world-with-agent-skills`）—— 候选 article，需确认未追踪
+4. **LangChain SmithDB（正确 URL 待确认）** —— 404，需重新搜索正确 URL
+5. **CrewAI OSS 1.0 GA 深度技术细节** —— 1.4B automations 数据，工程洞察待挖掘
 
 ### 🔴 扩展主题关键词（持续扫描）
 
@@ -23,24 +23,19 @@
 - **Alignment Training**：MSM（R230）→ 扩展到 Model Spec Engineering / Constitutional AI演进
 - **Harness Engineering**：Codex（R231）→ 扩展到增量工作 + 初始化 Agent + Auto-review subagent
 - **Multi-Agent Red Team**：Ares 红蓝对抗 / Project Glasswing 防御体系
+- **Agent Evaluator Loop**：LangSmith Engine（R232）→ 扩展到 evaluator 生成自动化
 
-### ⭐ 降级待重新评估
+### ⏸️ 降级待重新评估
 
-- **GitHub `AliAmmar15/Velonus`**（33 stars）—— 早期项目，待观察
-- **GitHub `YuxiaoWang-520/harness-craft`**（86 stars）—— 已收录两次，防重注意
-- **ai-boost/awesome-harness-engineering**（1569 stars）—— 聚合列表，有高价值子项目线索
+- **CursorBench** —— BM25 重复，下次评估是否有新的评测方法论
+- **BestBlogs Long Running Agents** —— BM25 重复，内容已在 AI Coding Engineering Paradigm Shift 覆盖
 
-## 已知问题
+## R232 Backfill
 
-- 浏览器截图功能受限（Chrome SingletonLock 权限问题），本轮 Project 未能附带截图
-- smolagents 和 OpenHarness 需要进一步评估关联性
-
-## R231 Backfill
-
-- ✅ Backfilled `openai.com/index/unrolling-the-codex-agent-loop` (R231 article)
-- ✅ Backfilled `openai.com/index/running-codex-safely` (R231 article)
-- ✅ Backfilled `github.com/openai/codex` (R231 project)
+- ✅ Backfilled `www.langchain.com/blog/introducing-langsmith-engine` (R232 article)
+- ✅ Backfilled `github.com/anomalyco/opencode` (R232 project)
+- ✅ Backfilled `cursor.com/blog/automations` (R232 article, tracked but not written)
 
 ---
 
-*Round 231 | 2026-06-04 | push pending*
+*Round 232 | 2026-06-04 | push completed 1c4c279*
