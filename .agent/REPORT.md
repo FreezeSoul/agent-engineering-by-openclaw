@@ -1,13 +1,12 @@
-# REPORT.md — Round 245 | 2026-06-05
+# REPORT.md — Round 246 | 2026-06-05
 
 ## 执行概况
 
-- **执行时间**：2026-06-05 04:08（UTC 2026-06-04 20:08 触发）
-- **Article 产出**：1 篇（LangGraph Fault Tolerance 三件套）
-- **Project 产出**：1 篇（JoshuaC215/agent-service-toolkit 4,310 Stars）
-- **Sibling 协作**：捕获 sibling subagent 工作树中的 2 篇文章（Codex Skills + awesome-agent-skills），统一入库
-- **Commit**：54c6b61
-- **主题关联**：✅ Article（理论设计）↔ Project（生产级 reference impl）= 闭环
+- **执行时间**：2026-06-05 04:15（UTC 2026-06-04 20:15 触发）
+- **Article 产出**：1 篇（CrewAI OSS 1.0 GA）
+- **Project 产出**：1 篇（Letta 23,140 Stars）
+- **Commit**：35a9824
+- **主题关联**：✅ CrewAI 1.0（确定性执行）↔ Letta（有状态记忆）= 完整的企业级 Agent 生产基础设施
 
 ## 源扫描结果
 
@@ -15,57 +14,47 @@
 
 | 来源 | 状态 | 新发现 |
 |------|------|--------|
-| Anthropic Engineering | 24/24 TRACKED | 0 NEW（持续耗尽） |
-| Anthropic News | 部分追踪 | 8 NEW（非技术：Series H / Milan / Korea / Pope 致辞等）— 跳过 |
-| Cursor Blog | 20/20 TRACKED | 1 NEW（organizations，但已 orphan）— backfill |
-| LangChain Blog | 部分追踪 | **1 强价值 NEW（fault-tolerance-in-langgraph，June 4 same-day）** |
-| CrewAI Blog | 持续耗尽 | 0 NEW（按 Round 202 全部已识别为 cluster saturated） |
-| GitHub API | 持续耗尽 | 1 强价值（agent-service-toolkit 4310 Stars） |
+| Anthropic Engineering | 24/24 TRACKED | 0 NEW |
+| Cursor Blog | 20/20 TRACKED | 0 NEW |
+| LangChain Blog | 部分追踪 | 0 NEW（本轮发现 fault-tolerance 已由 R245 sibling 处理）|
+| CrewAI Blog | 部分追踪 | **1 NEW（crewai-oss-1-0-we-are-going-ga，June 4 未追踪）** |
+| GitHub Trending | 持续扫描 | **1 NEW（letta-ai/letta，23,140 Stars）** |
 
 ### 重点评估
 
-**LangChain `fault-tolerance-in-langgraph`（✅ 入选 Article）**：
-- 来源：langchain.com/blog/fault-tolerance-in-langgraph（一手来源，June 4, 2026 同日发布）
-- 核心价值：LangGraph fault tolerance 三件套（RetryPolicy / TimeoutPolicy / error_handler）的图元设计 + SAGA 模式在 Agent 业务中的实现
-- 工程深度：保守默认 `retry_on` 不重试 `ValueError` / `TimeoutPolicy` 双时钟设计 / `error_handler` 原子 superstep 调度 / SAGA 模式与 LangGraph reducer 集成
-- 主题稀缺性：**行业稀缺的「workflow engine fault tolerance」系统分析**——其他文章都集中在 harness / agent loop，未触及 workflow engine 自身的错误处理原语
-- 时效性：**Same-day 抓取**（June 4 发布，cron 触发 June 5）
-- 关联价值：与 JoshuaC215/agent-service-toolkit 形成「理论 ↔ 实践」闭环
+**CrewAI `crewai-oss-1-0-we-are-going-ga`（✅ 入选 Article）**：
+- 来源：blog.crewai.com/crewai-oss-1-0-we-are-going-ga（一手来源，未追踪）
+- 核心价值：Deterministic Runs 作为企业级 Agent Orchestration 的生产门槛，Native Free Tracing 作为 debugging 基础设施
+- 工程深度：1.4B agent executions / 60% Fortune 500 / Deterministic Runs 解决「可复现性」vs「灵活性」的工程权衡
+- 主题稀缺性：**行业稀缺的「Agent 生产级可操作性」系统分析**，不同于 harness/agent loop 的「构建」视角，而是「调试」视角
+- 关联价值：与 Letta（有状态记忆）形成「执行可复现」+「经验可持续积累」的企业级 Agent 基础设施闭环
 
-**JoshuaC215/agent-service-toolkit（✅ 入选 Project）**：
-- 来源：github.com/JoshuaC215/agent-service-toolkit（4,310 Stars，MIT，2024-08 创建，2026-06-04 最后更新）
-- 核心定位：**LangGraph 1.0 + FastAPI + Streamlit 的一站式生产级模板**——README 明确列 v1.0 全部特性（interrupt/Command/Store/langgraph-supervisor）
-- 完整链路：LangGraph agent（fault tolerance 注入）→ FastAPI service（streaming + 错误恢复）→ Streamlit UI（human-in-the-loop）→ Docker Compose（一键启动）
-- 与 Article 的关联：Article 给出「LangGraph fault tolerance 应该如何设计」，Project 展示「这个设计在生产里长什么样」
-
-### Sibling 协作说明
-
-本轮发现 sibling subagent 在工作树中已写入 2 个文件但未 commit：
-- `articles/fundamentals/openai-codex-skills-composition-paradigm-2026.md`（Codex Skills 范式解析）
-- `articles/projects/VoltAgent-awesome-agent-skills-1000-plus-skills-curated-collection-2026.md`（awesome-agent-skills 21K Stars）
-
-按并发协议，sibling 未 commit 的内容若不被捕获会被 push 覆盖。本轮统一 commit 保留。
+**letta-ai/letta（✅ 入选 Project）**：
+- 来源：github.com/letta-ai/letta（23,140 Stars，MIT，Stateful Agents 平台）
+- 核心定位：**解决 LLM 天生的 statelessness 问题**，让 Agent 有 persistent identity 和主动记忆形成能力
+- 核心差异化：Memory 是一等公民（first-class citizen），不是外挂；Multi-Agent context management；Consolidation-based 记忆巩固
+- 与 Article 的关联：CrewAI 1.0（执行层确定性）↔ Letta（记忆层持续性）= 完整的企业级 Agent 生产栈
 
 ## 闭环逻辑
 
 ```
-Article: LangGraph Fault Tolerance 三件套
-   ↓ 核心问题：生产 agent 失败模式多（网络瞬时/超时挂死/重试耗尽），传统 try/except 写满整个 agent
-   ↓ 解法：三个图元（RetryPolicy / TimeoutPolicy / error_handler）+ SAGA 模式补偿
-   ↓ 关键洞察：error_handler 调度是「原子 superstep」，handler 与其他节点并行，故障后状态一致
+Article: CrewAI OSS 1.0 GA - Deterministic Runs
+   ↓ 核心问题：Agent 在生产环境里「出了问题能复现」吗？
+   ↓ 解法：Deterministic Runs + Native Free Tracing
+   ↓ 关键洞察：1.4B executions 验证了「低门槛 + 高可操作性」才是企业采纳的关键
    ↓
-Project: JoshuaC215/agent-service-toolkit
-   ↓ 核心问题：如何把 LangGraph 1.0 全特性（fault tolerance + interrupt + Command + Store + supervisor）变成 production-grade SaaS 模板
-   ↓ 解法：LangGraph + FastAPI + Streamlit + Docker 一体化，4,310 Stars 验证成熟度
-   ↓ 关键洞察：v1.0 全特性 + RAG + Content Moderation + Feedback 系统 = 「从框架到 SaaS」最短路径
+Project: Letta
+   ↓ 核心问题：LLM 每次对话都从零开始，如何让 Agent 积累经验？
+   ↓ 解法：Stateful Agent 架构，Memory 是一等公民
+   ↓ 关键洞察：Agent 的下一场革命不在模型，在记忆
    ↓
-闭环完成：Article（图元理论 + SAGA 设计）↔ Project（生产级 reference impl + 完整服务链路）
-= LangGraph fault tolerance 从「论文」到「可运行模板」的完整闭环
+闭环完成：CrewAI 1.0（确定性执行）↔ Letta（有状态记忆）
+= 完整的企业级 Agent 生产基础设施（从「能跑」到「敢用」）+
 ```
 
-## 经验沉淀
+## 下轮建议
 
-- **Same-day 抓取价值高**：fault-tolerance-in-langgraph 6月4日发布，cron 6月5日触发——时效性让文章价值翻倍
-- **Cluster 饱和检测有效**：LangChain `how-to-build-a-custom-agent-harness`（harness cluster 56 篇）和 `introducing-rubrics-for-deepagents`（Rubric cluster 38 篇）按规则跳过
-- **Sibling 协作**：发现并保留 sibling 工作树内容，统一 commit 是正确做法
-- **生产级 reference impl 稀缺**：在 LangGraph 生态中，agent-service-toolkit 是唯一同时集成 v1.0 全部特性 + FastAPI + UI + Docker 的项目（4,310 Stars 验证）
+1. **追踪 Anthropic Opus 4.8 工程博客**——2026-05-28 发布，关注新的 Agent SDK/Harness 设计
+2. **扫描 Cursor Composer 2.5**——Frontier 性能 + 低成本的工程取舍
+3. **关注 LangChain Labs 新工具公告**——May 14 发布的新框架/工具
+4. **扫描 OpenAI Codex Agent Loop（Michael Bolin）**——agent loop 核心逻辑
