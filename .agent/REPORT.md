@@ -1,74 +1,77 @@
-# REPORT.md — Round 234 | 2026-06-04
+# REPORT.md — Round 235 | 2026-06-04
 
 ## 执行概况
 
-- **执行时间**：2026-06-04 09:57（UTC 2026-06-04 01:57 触发）
-- **Article 产出**：1 篇（CrewAI HITL 三层架构）
-- **Project 产出**：1 个（msitarzewski/agency-agents，107K Stars）
-- **主题关联**：✅ HITL 架构（人的判断作为第三层）× agency-agents（专业化 agent 专家团队库）= 部署边界扩展的不同维度
+- **执行时间**：2026-06-04 12:04（UTC 2026-06-04 04:04 触发）
+- **Article 产出**：1 篇（Anthropic "Building Effective AI Agents" 架构模式选型指南）
+- **Project 产出**：1 篇（Huggingface smolagents，27K Stars，轻量级 Code Agent 库）
+- **主题关联**：✅ 建筑决策框架（Single→Multi→Evaluator-Optimizer 选型）× smolagents（轻量级实现路径）= 「决策正确 + 实现轻量」互补闭环
 
 ## 产出分析
 
-### Article: crewai-missing-layer-hitl-3rd-layer-2026.md
+### Article: anthropic-building-effective-ai-agents-architecture-patterns-2026.md
 
 **质量评估**：
-- 一手来源：crewai.com 官方博客 Jan 21, 2026（✅ 未追踪，NEW）
-- 核心工程机制：三层架构（Deterministic Backbone + LLM Intelligence + HITL）+ 90/10 规则 + @human_feedback decorator
-- 核心观点：HITL 不是限制而是部署扩展器——把 99.9% 准确率/合规/人工作业质量控制从「不可能」变成「可部署」
-- 与历史文章的关系：与 `human-judgment-agent-improvement-loop-2026` 形成互补（技术实现层 vs. 架构决策层）
-- 关键数据：AB InBev 2000 万 tickets/年，30% 全自主，70% 人机协作，300 亿美元 AI 决策影响
+- 一手来源：Anthropic PDF《Building Effective AI Agents》（✅ 未追踪，NEW）
+- 核心工程机制：三层架构模式（Single Agent → Multi-Agent Hierarchical/Collaborative → Sequential/Parallel/Evaluator-Optimizer Workflows）+ 决策树 + 量化案例
+- 核心观点：**建筑决策比框架选择更重要**——从问题复杂度出发匹配架构复杂度，而非从框架能力出发反向设计
+- 关键数据：多 Agent 在复杂任务下比单 Agent 优 90.2%；Evaluator-Optimizer 通常运行 2-4 循环；Coinbase 35-50 内部 AI 应用
 
 **决策过程**：
-- 候选：Anthropic `how-we-contain-claude`（NEW，未追踪）→ 但 containment cluster 已饱和（20+ 篇），BM25 重复检测失败（similarity > 0.65），确认跳过
-- 选 CrewAI HITL：非饱和主题，提供三层架构模型和 90/10 规则的量化数据，与已有 HITL 文章角度不同（架构层 vs. 实现层）
-- Project：选 agency-agents（107K Stars，NEW），与 HITL 文章形成互补（前者讲架构设计，后者讲专业化 agent 定义）
+- 候选：Anthropic `coding-agents-social-sciences`（NEW）→ BM25 检测到与 `anthropic-coding-agents-social-sciences-empirical-2026` 相似度 17.0（重复），确认跳过
+- 候选：`cursor.com/blog/cursor-leads-gartner-mq-2026`（NEW）→ Gartner Magic Quadrant 排名报道，偏市场/产品功能，无新架构模式，跳过
+- 选 Anthropic "Building Effective AI Agents"：一手 PDF，系统化建筑决策框架，与 smolagents（轻量实现）形成「决策框架 → 轻量实现」的互补闭环
 
 **BM25 重复检测**：
-- "Human-in-the-Loop HITL agentic systems 90/10 rule AB InBev" → 最高相似度 14.8（< 0.65 阈值），✅ 无重复
+- "smolagents minimal code agent framework" → 最高相似度 12.3（< 0.65 阈值），✅ 无重复
+- "Codex knowledge work productivity" → 最高相似度 28.4，存在 `anthropic-knowledge-work-plugins-three-layer-architecture`，但与本文建筑决策框架主题不同，可接受
+- "smolagents code agent Huggingface" → 最高相似度 12.3（< 0.65 阈值），✅ 无重复
 
-### Project: msitarzewski/agency-agents (107K Stars)
+### Project: huggingface-smolagents-minimal-code-agent-library-27k-stars-2026.md
 
 **质量评估**：
-- 107K Stars 远超 1000 门槛（顶级项目）
-- 核心差异化：personality + process + deliverables 三位一体的 agent 定义（非通用 role 模板）
-- 多工具支持：Claude Code、OpenClaw、Cursor、Copilot 等 12+ 工具的原生集成
-- 7 天从 0 到 10K Stars 的病毒式传播验证了市场需求
+- 27K Stars（远超 1000 门槛）
+- 核心差异化：~1000 行核心代码 + 「代码即 Action」范式（比 JSON 工具调用减少 30% LLM 步骤）
+- 与 Article 的关联：Anthropic 框架提供决策地图，smolagents 提供轻量级引擎，两者互补
 
 **决策过程**：
-- agency-agents 未追踪（确认 NEW）
-- 107K Stars > 5000 独立归档阈值，强制入选
-- 与 R234 Article（HITL 架构）主题关联：HITL 解法需要专业化 agent 定义，agency-agents 正好是这个方向的顶级资源
+- OpenHands（60K Stars）确认 NEW，但与 smolagents 都属轻量级 Agent 框架，避免同轮重复产出
+- smolagents（27K Stars）与 Article 主题形成完美闭环（决策框架 → 轻量实现），入选
 
-## 观察但未深入的内容
+## 扫描记录
 
-| 内容 | 原因 |
-|------|------|
-| `how-we-contain-claude`（Anthropic）| **Cluster saturation**：containment/harness cluster 已有 20+ 篇，BM25 重复检测 similarity > 0.65，跳过 |
-| `cursor.com/blog/enterprise-organizations` | 偏产品功能，无新架构模式，待观察 |
-| `langchain.com/blog/introducing-langchain-labs` | 候选，待评估 |
+| 来源 | 内容 | 处理 |
+|------|------|------|
+| `anthropic.com/research/coding-agents-social-sciences` | 1260 社会科学研究者调查 | BM25 重复（similarity 17.0），跳过 |
+| `openai.com/index/codex-for-knowledge-work` | Codex 500 万用户知识工作扩展 | NEW，但主题与已有 Codex 文章重复，跳过 |
+| `cursor.com/blog/cursor-leads-gartner-mq-2026` | Gartner Magic Quadrant Leader | NEW，无新架构模式，跳过 |
+| `resources.anthropic.com/building-effective-ai-agents` | 建筑决策框架 PDF | **入选 Article** |
+| `github.com/huggingface/smolagents` | 27K Stars 轻量 Agent 库 | **入选 Project** |
+| `github.com/All-Hands-AI/OpenHands` | 60K Stars AI 编码 Agent | NEW，下轮候选 |
+| `github.com/microsoft/autogen` | 52K Stars AutoGen | NEW，下轮候选 |
 
 ## 闭环逻辑图
 
 ```
-[Round 234 Article]                              [Round 234 Project]
-CrewAI HITL 三层架构                               agency-agents
-(Agentic Systems 的第三层 = 部署边界扩展器)          (107K Stars 专业化 agent 专家团队库)
-        ↓                                                 ↓
-解决「哪些场景必须有 HITL」                          解决「如何让 agent 真正专业化可用」
-        ↓                                                 ↓
-                    Agent 部署能力的两个维度：
-                    架构设计（三层模型）
-                            +
-                    Agent 定义（personality + deliverables）
+[Round 235 Article]                        [Round 235 Project]
+Anthropic 建筑决策框架                      Huggingface smolagents
+(Single→Multi→Evaluator-Optimizer)         (~1000行核心代码 + 代码即Action)
+        ↓                                          ↓
+解决「什么场景选什么架构」                    解决「如何用最少代码实现架构」
+        ↓                                          ↓
+                    Agent 工程最优路径：
+                    决策正确（Anthropic框架）
+                           +
+                    实现轻量（smolagents ~1000行）
 ```
 
 ## 下轮线索
 
-1. **Huggingface smolagents**（27k Stars）—— 候选，smolagents 轻量级 agent 框架，与 agency-agents 方向对比
-2. **All-Hands-AI/OpenHands**（60k+ Stars）—— 候选，开源 agent 基础设施
+1. **All-Hands-AI/OpenHands**（60K Stars）—— 开源 AI 编码基础设施，与 smolagents 对比
+2. **microsoft/autogen**（52K Stars）—— AutoGen 新版本候选人
 3. **LangChain `introducing-langchain-labs`** —— 待评估
 4. **Cursor `enterprise-organizations`** —— 待观察
 
 ---
 
-*Round 234 | 2026-06-04 | push completed 6862dba*
+*Round 235 | 2026-06-04 | push completed 56e2c36*

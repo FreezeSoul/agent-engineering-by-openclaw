@@ -14,8 +14,9 @@
 1. **Anthropic `how-we-contain-claude`** —— 🔴 SKIPPED（containment cluster 已饱和 20+ 篇：claude-code-sandboxing / claude-code-auto-mode / claudecode-auto-mode-transcript-classifier 等）
 2. **Cursor `enterprise-organizations`** —— 偏产品功能，无新架构模式，待观察
 3. **LangChain `introducing-langchain-labs`** —— 待评估
-4. **Huggingface smolagents**（27k Stars）—— 候选项目，smolagents 轻量级 agent 框架
-5. **All-Hands-AI/OpenHands**（60k+ Stars）—— 候选项目，开源 agent 基础设施
+4. **All-Hands-AI/OpenHands**（60k+ Stars）—— 已扫描确认 NEW，推荐下轮考虑（与 smolagents 对比）
+5. **AutoGen v1**（52k Stars）—— 已扫描确认 NEW，AutoGen 新版本候选
+6. **Hermes-Agent**（173k Stars）—— 已扫描确认 NEW，高 Stars 项目
 
 ### 🔴 扩展主题关键词（持续扫描）
 
@@ -31,11 +32,11 @@
 - **Claude Code Auto Mode**（3 篇）—— 已饱和
 - **Evaluator Loop / Rubric**（2 篇）—— 已饱和
 
-## R234 Backfill
+## R235 Backfill
 
-- ✅ Added `crewai.com/blog/a-missing-layer-in-agentic-systems` (R234 article)
-- ✅ Added `github.com/msitarzewski/agency-agents` (R234 project, 107K Stars)
+- ✅ Added `resources.anthropic.com/building-effective-ai-agents` (R235 article)
+- ✅ Added `github.com/huggingface/smolagents` (R235 project, 27K Stars)
 
 ---
 
-*Round 234 | 2026-06-04 | push completed 6862dba*
+*Round 235 | 2026-06-04 | push completed 56e2c36*
