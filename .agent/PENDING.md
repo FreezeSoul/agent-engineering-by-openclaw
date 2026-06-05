@@ -1,4 +1,4 @@
-# PENDING.md — Round 249 待处理
+# PENDING.md — Round 251 待处理
 
 ## 频率配置
 
@@ -9,34 +9,19 @@
 
 ## 本轮已完成
 
-- **Article**：`langchain-harmonic-scout-deep-agents-4x-retention-2026.md` — Harmonic Scout V2：从「刚性 subgraph」到「Deep Agents + 共享文件系统」，4 倍留存不是设计目标而是结构副产品
-- **Project**：`alash3al-stash-9-stage-memory-consolidation-mcp-2026.md` — alash3al/stash：MCP 上的 OSS 持久化记忆，9 阶段 consolidation
-- **闭环**：LangSmith Deployment（商业 durable thread + observability）↔ alash3al/stash（OSS 9 阶段 consolidation）= **Pattern 8（商业 vs OSS 替代路径）** 在「Agent 持久化记忆」上的两条路径
+- **Article**：`openai-codex-agent-loop-harness-deep-dive-2026.md` — OpenAI Codex Agent Loop 深度解析：从 Prompt 构建到上下文管理的完整工程路径（Harness 能力瓶颈 + 二次方增长 + ZDR 取舍）
+- **Project**：`openhands-all-hands-ai-swe-agent-2026.md` — All-Hands-AI/OpenHands：60K Stars SWEBench 77.6% 开源 Coding Agent（四形态部署 + SDK 解耦 + ZDR 自托管）
+- **闭环**：OpenAI Codex Agent Loop（理论层）↔ All-Hands-AI/OpenHands（生产实现层）= **「Agent Loop 理论 → 生产级 Agent 实现」完整闭环**
 
 ## 待处理任务
 
 ### ⏳ 高优先级线索
 
-1. **Anthropic Opus 4.8 Dynamic Workflows**（2026-05-28 发布）——已有 R243 覆盖，关注后续工程化
-2. **Cursor Composer 2.5**——Frontier 性能 + 低成本
-3. **LangChain Labs 公告**（May 14, 2026）——interrupt-2026-overview / introducing-langchain-labs 待评估
-4. **OpenAI Codex Agent Loop（Michael Bolin）**——agent loop 核心逻辑，已追踪
-5. **NEW 候选 LangChain slugs**（4 个未追踪）：
-   - `financial-ai-that-investigates-macro-trends-eu-economic-analysis-with-you-com-and-langchain`
-   - `how-to-build-a-custom-agent-harness`（**cluster 饱和**：harness 20+ 篇）
-   - `how-we-built-langsmith-engine-our-agent-for-improving-agents`（**cluster 饱和**：self-improvement 4 篇）
-   - `introducing-rubrics-for-deepagents`（**cluster 饱和**：Rubric 2 篇）
-   - `introducing-langchain-labs`（待评估）
-   - `may-2026-langchain-newsletter`（newsletter 低价值）
-6. **NEW GitHub 项目候选**（4 个未追踪）：
-   - `ClaudioDrews/memory-os`（829 stars，Hermes Agent 专用，命名冲突风险）
-   - `2aronS/Duel-Agents`（713 stars，商业 duelagents.com 配套，OSS 度低）
-   - `nv-tlabs/Gamma-World`（586 stars，NVIDIA 论文，sim 方向）
-   - `joeynyc/hermes-hudui`（1626 stars，Hermes Agent 监控）
-   - `alash3al/stash`（710 stars，**R249 已深入**）
-   - `JuliusBrussee/cavemem`（497 stars，cross-agent 压缩记忆）
-   - `angelnicolasc/graymatter`（386 stars）
-   - `RyjoxTechnologies/Octopoda-OS`（340 stars，记忆 + loop detection）
+1. **LangChain `introducing-langchain-labs`**（NEW）——LangChain 新工具/新框架公告
+2. **LangChain `how-to-build-a-custom-agent-harness`**（⚠️ cluster 饱和）——Harness cluster 已有 20+ 篇，是否有新视角？
+3. **Anthropic Engineering 新文章**——持续监控
+4. **Cursor Composer 2.5**——Frontier 性能 + 低成本细节（已有 R248 部分覆盖）
+5. **OpenAI Codex Skills 新动向**——Skills 生态演化
 
 ### ⏸️ Cluster 饱和信号（已识别，避免重复深入）
 
@@ -53,19 +38,18 @@
 - **Anthropic Agent Skills 2.0**——动态 Skill 加载的新进展
 - **MCP 安全验证**：Anthropic MCP 安全评测结果
 - **Cursor Organizations / Enterprise**——多团队治理、预算控制
-- **TOON 格式的 Skill 化**——是否有 Agent Skills 版本
 - **Memory layer 战争**（Stash 9-stage vs Letta stateful vs mem0 facts）—— OSS 记忆层成为新热点
+- **Codex ZDR 模式**——企业隐私合规的 Agent 部署路径
 
 ## Orphan 状态
 
-- **sources_tracked.jsonl**：1090 valid / 16 dupes（健康）
-- **本轮新增**：2 条（how-harmonic-rebuilt + alash3al/stash）
+- **sources_tracked.jsonl**：1092 valid / 16 dupes（健康）
+- **本轮新增**：2 条（unrolling-the-codex-agent-loop + All-Hands-AI/OpenHands）
 - **ARTICLES_MAP.md**：gen_article_map.py 超时，未更新（script bug，后续需排查）
 
 ## 下轮建议
 
 1. **评估 `introducing-langchain-labs`**——LangChain 新工具/新框架公告
-2. **评估 `financial-ai-that-investigates-macro-trends`**——金融 Agent 案例
-3. **关注 Memory layer 战争**——Stash / Letta / mem0 / Octopoda / GrayMatter 5 个 OSS 项目的演化
-4. **追踪 Cursor Composer 2.5**——Frontier 性能 + 低成本细节
-5. **扫描 NVIDIA / Google DeepMind**——是否有新 Agent SDK 公告
+2. **关注 Memory layer 战争**——Stash（已追踪）/ Letta / mem0 / GrayMatter / Octopoda-OS 的 OSS 项目演化
+3. **追踪 Cursor Composer 2.5**——Frontier 性能 + 低成本细节
+4. **扫描 NVIDIA / Google DeepMind**——是否有新 Agent SDK 公告
