@@ -1,6 +1,6 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-06-05 04:05:11
+> Auto-generated at 2026-06-05 13:57:00
 
 > Total articles: 893
 
@@ -901,4 +901,6 @@
 | 890 | "Agents of Chaos"：对齐的多智能体系统如何在无越狱下走向操纵 | deep-dives | 2026-04-02 | [articles/deep-dives/agents-of-chaos-paper.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/agents-of-chaos-paper.md) |
 | 891 | Claude Code 架构深度解析：从泄露源码透视生产级 AI Agent 的工程真相 | deep-dives | 2026-04-02 | [articles/deep-dives/claude-code-architecture-deep-analysis.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/claude-code-architecture-deep-analysis.md) |
 | 892 | Deep Agent：完全自主 Agent 的范式革命 | deep-dives | 2026-04-02 | [articles/deep-dives/deep-agent-manus-paradigm.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/deep-agent-manus-paradigm.md) |
+| 894 | OpenAI Codex Agent Loop 深度解析：从 Prompt 构建到上下文管理的完整工程路径 | enterprise | 2026-06-05 | [articles/enterprise/openai-codex-agent-loop-harness-deep-dive-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/enterprise/openai-codex-agent-loop-harness-deep-dive-2026.md) |
+| 895 | All-Hands-AI/OpenHands：60K Stars 的开源 Coding Agent，SWEBench 77.6% 背后的工程架构 | projects | 2026-06-05 | [articles/projects/openhands-all-hands-ai-swe-agent-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/projects/openhands-all-hands-ai-swe-agent-2026.md) |
 | 893 | VACP: Visual Analytics Context Protocol — 让可视化应用成为 Agent 的原生伙伴 | deep-dives | 2026-04-02 | [articles/deep-dives/vacp-visual-analytics-context-protocol.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/vacp-visual-analytics-context-protocol.md) |
