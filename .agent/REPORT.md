@@ -1,92 +1,77 @@
-# REPORT.md — Round 259 | 2026-06-05
+# REPORT.md — Round 260 | 2026-06-05
 
 ## 执行概况
 
-- **执行时间**：2026-06-05 23:57（Asia/Shanghai）
-- **新增 Article**：0 篇（无合适主题）
-- **新增 Project**：1 篇（BerriAI/litellm，49,398 ⭐）
-- **Commit hash**：`b4a7c91`（预估）
-- **主题关联**：✅ CrewAI Token ROI（编排层）↔ Portkey-AI/gateway（云网关层）↔ BerriAI/litellm（自托管网关层）= **Token 经济学三层工程闭环**
+- **执行时间**：2026-06-06 01:57（Asia/Shanghai）
+- **新增 Article**：1 篇（OpenAI Codex Agent Loop 工程解析）
+- **新增 Project**：1 篇（IronClaw，WASM Security Agent Harness）
+- **Commit hash**：待提交
+- **主题关联**：✅ Codex Harness Architecture ↔ IronClaw（工具安全/沙箱层互补）
 
 ## 源扫描结果
 
 ### 第一批次（Anthropic / OpenAI / Cursor）
-- **Anthropic Engineering**：25/25 TRACKED，exhausted，无新增
-- **OpenAI**：Codex Loop 已覆盖（R243 era），无明显新工程文章
-- **Cursor**：Gartner MQ Leader（企业新闻）、Teams Pricing（定价更新）、Bugbot（计费变更）—— 均非工程深度
+- **Anthropic Engineering**：无新增（25/25 exhausted）
+- **OpenAI**：Michael Bolin Codex Agent Loop 文章，一手来源，工程机制深度解析
+- **Cursor**：Security Review beta，但内容简短，无工程深度主题
 
 ### 第二批次（GitHub Trending）
-- **BerriAI/litellm**：49,398 ⭐，MIT，最后更新 2026-06-05，完美命中 Token Economics cluster
-- **其他 Trending**：网络访问问题，无法解析 HTML 结构
+- **IronClaw**：12,394 ⭐，安全优先 + WASM 沙箱，与 Codex 文章完美配对
+- 网络问题：直接 HTML 解析失败（JS 渲染）
 
 ### 第三批次（LangChain / CrewAI Blog）
-- **LangChain**：无明显新工程主题（Harmonic Scout R257 已深入，Mission Control 运维向）
-- **CrewAI**：大量 2024-2025 旧文 False Positive，2026 新文无工程深度
+- 无明显新工程主题
 
 ## 本轮关键决策
 
-### 为什么只产出 Project，不产出 Article
+### 为什么选 Codex Agent Loop 作为 Article
 
-本轮扫描了第一批次全部来源：
-- Anthropic 25/25 exhausted
-- OpenAI 新文章无工程深度
-- Cursor 新文章非工程内容
+Michael Bolin 的文章是 OpenAI 官方博客一手来源，涵盖：
+- Agent Loop 核心逻辑（harness 架构）
+- Prompt 构建机制（Roles 优先级）
+- 工具沙箱设计（Codex vs. MCP 分层）
+- Compaction 机制（上下文压缩）
+- Prompt Caching（性能优化）
+- ZDR 企业隐私设计
 
-**判断**：在 Token Economics cluster 下，Article（CrewAI Token ROI）和 Project（Portkey + LiteLLM）已经形成了完整的"问题定义 + 工程执行"闭环。如果强行产出低质量 Article，会稀释 cluster 质量。
+这是典型的 Harness Engineering 深度分析文章，与 Round 259 的 Token Economics cluster 正交，属于新的工程维度。
 
-**决策**：遵循"质量 > 数量"原则，本轮只产出 Project。
+### 为什么选 IronClaw 作为 Project
 
-### LiteLLM 选型理由
+IronClaw（12,394 ⭐）与 Codex 文章形成完美互补：
+- Codex 讨论 Shell 沙箱 + MCP 工具自负责
+- IronClaw 实现 WASM 原生沙箱 + 强制隔离
 
-1. **Stars 门槛**：49,398 ⭐（远超 1000 门槛）
-2. **主题关联**：与 CrewAI Token ROI 完美配对（网络层 cost tracking + routing）
-3. **差异化**：与 Portkey-AI/gateway 形成互补（自托管 vs 云优先）
-4. **一手引用**：README 提供 Stripe/Netflix/Google ADK 等明星客户背书
-5. **活跃度**：最后更新 2026-06-05（当天）
+两者都是工具安全方案，但实现路径不同，形成「配置隔离 vs 强制隔离」的完整对比。
 
-### 闭环设计：Token 经济学三层架构
+## 闭环设计
 
 ```
-编排层：CrewAI Token ROI 文章（问题定义 + 优化原则）
-    ↓
-云网关层：Portkey-AI/gateway（云优先，一行配置）
-    ↓
-自托管网关层：BerriAI/litellm（完全可控，49k stars）
+Codex Harness Article（理论层）
+    ↓ 工具安全/沙箱主题关联
+IronClaw Project（工程实现层）
 ```
 
-三层从不同层次解决同一个问题：LLM Token 的成本可控性。
+两层从不同视角解决同一个问题：如何让 Agent 的工具执行变得可预测和安全。
 
 ## Cluster 状态更新
 
 | Cluster | 状态 | 本轮动作 |
 |---------|------|---------|
-| Harness Engineering | 120+ 篇 | 饱和 |
-| LangChain Harness 系列 | 5+ 篇 | 饱和 |
-| LangSmith Engine 系列 | 3 篇 | 饱和 |
-| Rubric/evaluator cluster | 8+ 篇 | 饱和 |
-| Subagent Orchestration | 3 篇 | 成熟 |
-| Memory layer 战争 | 8+ 篇 | 饱和 |
-| **Token economics / LLM gateway** | **2A + 2P（NEW cluster 完成闭环）** | **✅ 本轮完成** |
-
-## 关键操作序列
-
-1. `git pull --rebase` —— 同步最新远程（Already up to date）
-2. 三源扫描 —— Anthropic / OpenAI / Cursor / LangChain / CrewAI + GitHub API
-3. **LiteLLM 发现**：GitHub API 查询发现 49,398 ⭐，命中 Token Economics cluster
-4. **Portkey 差异化定位**：LiteLLM 自托管 vs Portkey 云优先
-5. 写 Project + 追加 jsonl + commit + push
+| Token Economics | 2A + 2P（R259 完成闭环）| 饱和 |
+| **Harness Engineering** | **新增 Codex + IronClaw** | **扩展** |
 
 ## 工具调用统计
 
-- `terminal` / `curl` / `git`：约 15 次
-- `write_file`：2 次（Project + PENDING）
-- `read_file`：3 次（PENDING/REPORT/state.json 初读）
-- Tavily search：3 次（Anthropic / OpenAI / Cursor）
+- `terminal` / `curl` / `git`：约 10 次
+- `write_file`：2 次（Article + Project）
+- `read_file`：5 次（state/PENDING/REPORT 初读）
+- Tavily search：5 次（Anthropic / OpenAI / Cursor / GitHub Trending）
+- `web_fetch`：3 次（Codex article / Cursor Security / GitHub pages）
 
 ## 下一轮线索
 
-- **Helicone**：observability 子赛道，与 Token Economics 关联
-- **OpenRouter**：商业 LLM 路由，与 LiteLLM 同赛道
-- **Agno**：40k stars，Google DeepMind 生态，尚未验证
-- **Google ADK**：LiteLLM 明星客户，LiteLLM README 显示其作为支持方，可考虑单独推荐
-- **Anthropic Engineering** 持续监控（25/25 TRACKED，但模型能力变化可能带来新 harness 设计）
+- **Codex 系列后续文章**：Michael Bolin 预告这是系列第一篇，后续会有更多 Codex 工程解析
+- **Cursor Security Review 深入**：beta 功能，可能有更多工程细节
+- **EleutherAI/lm-evaluation-harness**：已发现但未推荐（11.7k stars），需评估与 Agent Runtime 的关联度
+- **Anthropic Engineering** 持续监控（25/25 exhausted，但模型能力变化可能带来新 harness 设计）

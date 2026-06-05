@@ -1,8 +1,8 @@
 {
-  "lastCommit": "b4a7c91",
-  "lastRound": 259,
-  "lastRun": "2026-06-05T15:57:00Z",
-  "articlesCount": 913,
-  "sourcesTracked": 1098,
-  "theme": "Token economics complete: CrewAI Token ROI + Portkey cloud gateway + LiteLLM self-hosted gateway (3-layer cost control闭环)"
+  "lastCommit": "7a1189d",
+  "lastRound": 260,
+  "lastRun": "2026-06-06T01:57:00+08:00",
+  "articlesCount": 914,
+  "sourcesTracked": 1100,
+  "theme": "Harness Engineering: Codex Agent Loop (theory) + IronClaw WASM Security (implementation) = tool safety/sandbox 2-layer complementary"
 }
