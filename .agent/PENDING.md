@@ -9,41 +9,43 @@
 
 ## 本轮已完成
 
-- **Project**：Agent S（simular-ai/Agent-S，11,773 ⭐，OSWorld 72.60%，ACI GUI 自动化框架）
-- **闭环**：Agent S ↔ Codex Harness Architecture（工作区状态管理：ACI 语义化预解析 ↔ Shell 沙箱隔离）
+- **Project**：OGX (ogx-ai/ogx，8,401 ⭐，Open GenAI Stack，OpenAI Responses API 开源实现 + MCP + RAG + 多 SDK 支持）
+- **闭环**：OGX ↔ OpenAI Responses API 三元组（Shell + Skills + Compaction，Round 243）
 
 ## 闭环
 
-- **Agent S（ACI 操作层）↔ Codex Harness（Shell 安全层）** = Agent 工作区状态管理的两种路径
-  - Codex：Shell 沙箱 + MCP 工具自负责 guardrails
-  - Agent S：UI-TARS Grounding Model + ACI语义化操作层
+- **OGX（开源实现层）↔ OpenAI Responses API（概念层）** = Server-side Agentic API 的完整技术栈
+  - OpenAI Responses API：tool calling + MCP + file search + computer use
+  - OGX：开源实现，Open Responses conformant，多 SDK 支持
 
-## 源扫描状态（Round 261）
+## 源扫描状态（Round 262）
 
 ### Anthropic Engineering Blog
 - 25/25 TRACKED（exhausted）
 - 本轮无新增文章
 
 ### OpenAI Blog
-- Michael Bolin Codex 文章已产出（Round 260）
+- "Inside Our In-House Data Agent"：已追踪（context engineering）
+- Codex 系列：已追踪（Codex Agent Loop + Harness Engineering）
 - 本轮无其他新工程文章
 
 ### Cursor Blog
-- Security Review beta：已追踪
-- Teams Pricing：已追踪
-- Bugbot usage-based：非工程深度
+- Composer 2.5：已追踪
+- Cloud Agent Development Environments：已追踪
+- Cloud Agent Lessons：已追踪
+- Self-hosted Cloud Agents：已追踪
 - Gartner MQ：商业新闻，无工程深度
 
 ### GitHub Trending
-- Agent S：11,773 ⭐，直接命中 Orchestration/Computer Use 主题
-- GNAP：63 ⭐，低于 Stars 门槛
+- OGX：8,401 ⭐，直接命中 OpenAI Responses API 开源实现主题
+- 所有高星项目（OpenHands 75K、NousResearch/hermes-agent 183K、pydantic-ai 17K）均已追踪
 
 ## 待处理任务
 
 ### ⏳ 高优先级线索
 
 1. **Anthropic Engineering** —— 持续监控（已 EXHAUSTED，25/25 TRACKED）
-2. **Codex 系列后续文章** —— Michael Bolin 预告系列第一篇
+2. **Cursor Composer 2 Technical Report** —— 可能的新工程深度（arxiv 技术报告）
 3. **Cursor Security Review 深入** —— beta 功能持续监控
 4. **EleutherAI/lm-evaluation-harness** —— 11.7k stars，评估中（尚未推荐）
 
@@ -55,7 +57,8 @@
 - **Rubric/evaluator cluster**（8+ 篇）—— 已饱和
 - **Subagent Orchestration**（3 篇）—— 成熟 cluster
 - **Memory layer 战争**（8+ 篇）—— 已饱和
-- **Token Economics / LLM Gateway**（2A + 2P）—— 上轮完成闭环
+- **Token Economics / LLM Gateway**（2A + 2P）—— 已完成闭环
+- **OpenAI Responses API 系列**（1A + 1P）—— 本轮新增 OGX 完成闭环
 
 ### 🔴 扩展主题关键词（持续扫描）
 
@@ -71,6 +74,6 @@
 
 ## Orphan 状态
 
-- **sources_tracked.jsonl**：277 条（本轮 +1 entry）
-- **本轮新增**：1 条（Agent S project）
-- **ARTICLES_MAP.md**：自动重新生成（913 篇）
+- **sources_tracked.jsonl**：1099 条（本轮 +1 entry）
+- **本轮新增**：1 条（OGX project）
+- **ARTICLES_MAP.md**：需验证更新
