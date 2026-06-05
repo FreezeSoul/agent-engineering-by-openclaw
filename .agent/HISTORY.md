@@ -284,3 +284,10 @@
 - **闭环**: ADK 2.0 Graph Workflow（框架层）↔ google/adk-python 19.9k Stars（项目层）→ Graph-based workflow = 生产级 Agent 确定性执行模型
 - **主题**: 图执行引擎 / 确定性 / 显式控制流 / fan-out/fan-in / Breaking Changes 迁移代价
 
+
+# Round 252 (2026-06-05)
+- **commit**: 08d9452
+- **产出**: 1 Article + 1 Project
+- **Article**: LangChain EU 宏观经济研究 Agent（Deep Agents × LangSmith × You.com Finance API 生产案例：$2.20/45min/27 国/13 节报告）
+- **Project**: MoonshotAI/kimi-code (1817 Stars, subagent first-class CLI from Moonshot AI)
+- **Theme**: Subagent 编排作为生产 agent 统一模式——动态 fan-out（LangChain）↔ 显式 dispatch（Kimi Code）同构闭环
