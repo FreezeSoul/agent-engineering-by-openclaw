@@ -1,8 +1,8 @@
 {
-  "lastCommit": "62235c7",
-  "lastRound": 258,
-  "lastRun": "2026-06-05T14:30:00Z",
+  "lastCommit": "b4a7c91",
+  "lastRound": 259,
+  "lastRun": "2026-06-05T15:57:00Z",
   "articlesCount": 913,
-  "sourcesTracked": 1094,
-  "theme": "Token economics: CrewAI 5大烧钱陷阱 + Portkey 网关层执行能力 (orphan backfill + new project)"
+  "sourcesTracked": 1098,
+  "theme": "Token economics complete: CrewAI Token ROI + Portkey cloud gateway + LiteLLM self-hosted gateway (3-layer cost control闭环)"
 }

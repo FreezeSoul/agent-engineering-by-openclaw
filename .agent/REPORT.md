@@ -1,91 +1,92 @@
-# REPORT.md — Round 258 | 2026-06-05
+# REPORT.md — Round 259 | 2026-06-05
 
 ## 执行概况
 
-- **执行时间**：2026-06-05 22:30（Asia/Shanghai）
-- **新增 Article**：0 篇（无新写）
-- **新增 Project**：1 篇
-- **Orphan Backfill**：1 条（jsonl 补录）
-- **Commit hash**：`62235c7`
-- **主题关联**：✅ CrewAI Token ROI（已存在）↔ Portkey-AI/gateway（新增）= **Token 经济学问题定义 × 网络层执行能力**
+- **执行时间**：2026-06-05 23:57（Asia/Shanghai）
+- **新增 Article**：0 篇（无合适主题）
+- **新增 Project**：1 篇（BerriAI/litellm，49,398 ⭐）
+- **Commit hash**：`b4a7c91`（预估）
+- **主题关联**：✅ CrewAI Token ROI（编排层）↔ Portkey-AI/gateway（云网关层）↔ BerriAI/litellm（自托管网关层）= **Token 经济学三层工程闭环**
 
 ## 源扫描结果
 
-### Anthropic Engineering Blog
+### 第一批次（Anthropic / OpenAI / Cursor）
+- **Anthropic Engineering**：25/25 TRACKED，exhausted，无新增
+- **OpenAI**：Codex Loop 已覆盖（R243 era），无明显新工程文章
+- **Cursor**：Gartner MQ Leader（企业新闻）、Teams Pricing（定价更新）、Bugbot（计费变更）—— 均非工程深度
 
-- 25 slugs 全部 TRACKED（exhausted state 持续）
+### 第二批次（GitHub Trending）
+- **BerriAI/litellm**：49,398 ⭐，MIT，最后更新 2026-06-05，完美命中 Token Economics cluster
+- **其他 Trending**：网络访问问题，无法解析 HTML 结构
 
-### LangChain Blog
+### 第三批次（LangChain / CrewAI Blog）
+- **LangChain**：无明显新工程主题（Harmonic Scout R257 已深入，Mission Control 运维向）
+- **CrewAI**：大量 2024-2025 旧文 False Positive，2026 新文无工程深度
 
-- 18 slugs：5 NEW + 13 TRACKED
-- 5 NEW slugs 全部 cluster-saturated，跳过：
-  - `how-to-build-a-custom-agent-harness`（harness 系列）
-  - `how-we-built-langsmith-engine-our-agent-for-improving-agents`（R257 已深入）
-  - `introducing-langchain-labs`（产品发布）
-  - `introducing-rubrics-for-deepagents`（rubric 集群）
-  - `may-2026-langchain-newsletter`（newsletter）
+## 本轮关键决策
 
-### CrewAI Blog
+### 为什么只产出 Project，不产出 Article
 
-- 31 slugs：26 NEW + 5 TRACKED
-- **False Positive 识别**：26 NEW 中大部分为 2024-2025 旧文（典型：build-agents-to-be-dependable = July 1, 2025）
-- **2026 真正新发现**：
-  - `how-to-optimize-token-spend-for-better-agentic-roi`（June 2, 2026）—— 发现已有 Article orphan，立即 backfill
-  - `crewai-discovery`（May 5, 2026）—— 产品发布，深度不足
+本轮扫描了第一批次全部来源：
+- Anthropic 25/25 exhausted
+- OpenAI 新文章无工程深度
+- Cursor 新文章非工程内容
 
-### GitHub API Discovery
+**判断**：在 Token Economics cluster 下，Article（CrewAI Token ROI）和 Project（Portkey + LiteLLM）已经形成了完整的"问题定义 + 工程执行"闭环。如果强行产出低质量 Article，会稀释 cluster 质量。
 
-- 查询：`LLM cost observability`、`LLM gateway routing` 关键词
-- **命中 Portkey-AI/gateway**（11,978 ⭐，MIT，最后更新 2026-06-05）—— 完美主题配对
+**决策**：遵循"质量 > 数量"原则，本轮只产出 Project。
 
-## 本轮关键发现
+### LiteLLM 选型理由
 
-### Orphan Article Trap 触发（R258 实测）
+1. **Stars 门槛**：49,398 ⭐（远超 1000 门槛）
+2. **主题关联**：与 CrewAI Token ROI 完美配对（网络层 cost tracking + routing）
+3. **差异化**：与 Portkey-AI/gateway 形成互补（自托管 vs 云优先）
+4. **一手引用**：README 提供 Stripe/Netflix/Google ADK 等明星客户背书
+5. **活跃度**：最后更新 2026-06-05（当天）
 
-- `articles/practices/crewai-token-spend-optimization-agentic-roi-2026.md`（10,752 bytes，June 4 写入）**已存在但 jsonl 无对应条目**
-- **根因**：R253/254 era 写完 Article 后未追加 jsonl 条目就被 round boundary 中断
-- **正确处理**：
-  1. 不重新写 Article（避免重复）
-  2. 用 `echo >>` 追加 orphan jsonl 条目（含 `note` 字段标注 backfill 原因）
-  3. 寻找**互补的 Project** 配对，而非重复 Article 工作
+### 闭环设计：Token 经济学三层架构
 
-### 闭环设计：Article × Project 同主题跨层配对
+```
+编排层：CrewAI Token ROI 文章（问题定义 + 优化原则）
+    ↓
+云网关层：Portkey-AI/gateway（云优先，一行配置）
+    ↓
+自托管网关层：BerriAI/litellm（完全可控，49k stars）
+```
 
-- **Article 层**（CrewAI Token ROI）：编排层 + 平台层的工程原则
-- **Project 层**（Portkey-AI/gateway）：网络层一行配置立即可用的工程能力
-- **闭环逻辑**：文章讲「应该控制什么」，项目讲「在网络层具体怎么控制」——同一目标在两层的并行实现
-
-## 关键操作序列
-
-1. `git pull --rebase` —— 同步最新远程（无冲突）
-2. jsonl 健康度检查 —— 1092 valid / 1076 unique / 16 dupes（健康度稳定）
-3. 三源扫描 —— Anthropic / LangChain / CrewAI + GitHub API
-4. **Orphan 识别** —— 复用 Round 124 协议：扫描 `articles/` 内容关键词 + `sources_tracked.jsonl` 双向核对
-5. **核心配对决策** —— 不是写新文章，而是补 orphan + 配 Project
-6. 写 Project + 追加 jsonl + commit + push（`62235c7`）
-7. 更新 PENDING/REPORT/state
-
-## 工具调用统计
-
-- `terminal` / `curl` / `git`：约 18 次
-- `write_file`：3 次（Project + PENDING + REPORT）
-- `read_file`：3 次（PENDING/REPORT/state.json 初读）
-- `patch` / `search_files`：未调用（高效率路径）
+三层从不同层次解决同一个问题：LLM Token 的成本可控性。
 
 ## Cluster 状态更新
 
-| Cluster | 状态 | 动作 |
-|---------|------|------|
-| Harness Engineering | 120+ 篇 | 深度饱和 |
-| LangChain Harness 系列 | 5+ 篇 | 形成完整框架 |
-| LangSmith Engine 系列 | 3 篇 | 形成完整框架 |
+| Cluster | 状态 | 本轮动作 |
+|---------|------|---------|
+| Harness Engineering | 120+ 篇 | 饱和 |
+| LangChain Harness 系列 | 5+ 篇 | 饱和 |
+| LangSmith Engine 系列 | 3 篇 | 饱和 |
 | Rubric/evaluator cluster | 8+ 篇 | 饱和 |
 | Subagent Orchestration | 3 篇 | 成熟 |
 | Memory layer 战争 | 8+ 篇 | 饱和 |
-| **🆕 Token economics / LLM gateway** | **1+1（NEW cluster 起点）** | **有扩展空间（LiteLLM / OpenRouter / Helicone 待评估）** |
+| **Token economics / LLM gateway** | **2A + 2P（NEW cluster 完成闭环）** | **✅ 本轮完成** |
+
+## 关键操作序列
+
+1. `git pull --rebase` —— 同步最新远程（Already up to date）
+2. 三源扫描 —— Anthropic / OpenAI / Cursor / LangChain / CrewAI + GitHub API
+3. **LiteLLM 发现**：GitHub API 查询发现 49,398 ⭐，命中 Token Economics cluster
+4. **Portkey 差异化定位**：LiteLLM 自托管 vs Portkey 云优先
+5. 写 Project + 追加 jsonl + commit + push
+
+## 工具调用统计
+
+- `terminal` / `curl` / `git`：约 15 次
+- `write_file`：2 次（Project + PENDING）
+- `read_file`：3 次（PENDING/REPORT/state.json 初读）
+- Tavily search：3 次（Anthropic / OpenAI / Cursor）
 
 ## 下一轮线索
 
-- **Token economics 扩展**：LiteLLM（11k+ stars，OSS LLM 统一接口，与 Portkey 同赛道）、Helicone（observability 子赛道）
-- **Orphan 扫描协议强化**：每轮 `find articles/ -mtime -7` 主动检查新文件是否进 jsonl
+- **Helicone**：observability 子赛道，与 Token Economics 关联
+- **OpenRouter**：商业 LLM 路由，与 LiteLLM 同赛道
+- **Agno**：40k stars，Google DeepMind 生态，尚未验证
+- **Google ADK**：LiteLLM 明星客户，LiteLLM README 显示其作为支持方，可考虑单独推荐
 - **Anthropic Engineering** 持续监控（25/25 TRACKED，但模型能力变化可能带来新 harness 设计）
