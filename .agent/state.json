@@ -1,8 +1,8 @@
 {
-  "lastCommit": "pending",
-  "lastRound": 257,
-  "lastRun": "2026-06-05T13:57:00Z",
-  "articlesCount": 912,
-  "sourcesTracked": 1095,
-  "theme": "Agent 工程基础设施深化：评估闭环 + Harness 演进"
+  "lastCommit": "62235c7",
+  "lastRound": 258,
+  "lastRun": "2026-06-05T14:30:00Z",
+  "articlesCount": 913,
+  "sourcesTracked": 1094,
+  "theme": "Token economics: CrewAI 5大烧钱陷阱 + Portkey 网关层执行能力 (orphan backfill + new project)"
 }

@@ -1,69 +1,91 @@
-# REPORT.md — Round 257 | 2026-06-05
+# REPORT.md — Round 258 | 2026-06-05
 
 ## 执行概况
 
-- **执行时间**：2026-06-05 21:57（Asia/Shanghai）
-- **Article 产出**：2 篇
-- **Commit hash**：待提交
-- **主题关联**：✅ LangChain Harness Anatomy（续）↔ LangSmith Engine（工程架构）= **Agent 工程基础设施深化：评估闭环 + Harness 演进**
+- **执行时间**：2026-06-05 22:30（Asia/Shanghai）
+- **新增 Article**：0 篇（无新写）
+- **新增 Project**：1 篇
+- **Orphan Backfill**：1 条（jsonl 补录）
+- **Commit hash**：`62235c7`
+- **主题关联**：✅ CrewAI Token ROI（已存在）↔ Portkey-AI/gateway（新增）= **Token 经济学问题定义 × 网络层执行能力**
 
 ## 源扫描结果
 
-### LangChain Blog 新发现
+### Anthropic Engineering Blog
 
-| 文章 | 状态 | 新发现 |
-|------|------|--------|
-| The Anatomy of an Agent Harness | 补充新角度 | Ralph Loop + Model-Harness 耦合飞轮 + 前沿问题清单 |
-| How We Built LangSmith Engine | 补充工程架构 | 三组件架构（Trace Screener / Investigator / Memory）+ Issue 创建流程 |
+- 25 slugs 全部 TRACKED（exhausted state 持续）
 
-### Cursor Composer 2.5 覆盖确认
+### LangChain Blog
 
-- 现有文章 `cursor-composer-2-5-targeted-rl-synthetic-data-2026.md` 已覆盖：Targeted RL、文本反馈、25× 合成数据、Sharded Muon、Dual Mesh HSDP（10+ 处关键词）
-- 现有文章 `cursor-composer-2-5-targeted-rl-credit-assignment-2026.md` 已覆盖：Credit Assignment 难题、解决思路
-- **结论**：无需新增，继续监控 RL 训练细节的进一步披露
+- 18 slugs：5 NEW + 13 TRACKED
+- 5 NEW slugs 全部 cluster-saturated，跳过：
+  - `how-to-build-a-custom-agent-harness`（harness 系列）
+  - `how-we-built-langsmith-engine-our-agent-for-improving-agents`（R257 已深入）
+  - `introducing-langchain-labs`（产品发布）
+  - `introducing-rubrics-for-deepagents`（rubric 集群）
+  - `may-2026-langchain-newsletter`（newsletter）
 
-### PENDING 高优先级线索处理
+### CrewAI Blog
 
-| 线索 | 状态 | 动作 |
-|------|------|------|
-| LangChain Anatomy of Agent Harness | ✅ 已覆盖 | 新增续篇：Ralph Loop + 耦合飞轮 |
-| LangSmith Engine 工程实现 | ✅ 已覆盖 | 新增工程架构详解 |
-| Cursor Composer 2.5 深度分析 | ⚠️ 已有覆盖 | 内容已饱和，标记为 CLUSTERED |
-| LangChain Custom Agent Harness | ⚠️ 已有覆盖 | 由现有 harness 文章覆盖 |
-| MCP 安全评测 | ⚠️ 已有覆盖 | 由 `mcp-security-cve-systemic-analysis-2026.md` 覆盖 |
+- 31 slugs：26 NEW + 5 TRACKED
+- **False Positive 识别**：26 NEW 中大部分为 2024-2025 旧文（典型：build-agents-to-be-dependable = July 1, 2025）
+- **2026 真正新发现**：
+  - `how-to-optimize-token-spend-for-better-agentic-roi`（June 2, 2026）—— 发现已有 Article orphan，立即 backfill
+  - `crewai-discovery`（May 5, 2026）—— 产品发布，深度不足
 
-## 新增文章
+### GitHub API Discovery
 
-### 1. langchain-anatomy-agent-harness-model-training-harness-coupling-2026.md
+- 查询：`LLM cost observability`、`LLM gateway routing` 关键词
+- **命中 Portkey-AI/gateway**（11,978 ⭐，MIT，最后更新 2026-06-05）—— 完美主题配对
 
-**核心增量**：
-- Ralph Loop 三段式：Hook 拦截 → 干净 Context 注入 → Filesystem 状态持久化
-- Model Training × Harness Design 耦合飞轮机制
-- 5 个前沿问题清单：Ralph Loop 标准化、Self-Verification 可靠性、Context 动态管理、Subagent 可复用性、Harness 自动化优化
+## 本轮关键发现
 
-**与前置文章关系**：补充 `anatomy-of-agent-harness-2026.md` 的演进趋势部分
+### Orphan Article Trap 触发（R258 实测）
 
-### 2. langsmith-engine-trace-driven-autonomous-improvement-loop-2026.md
+- `articles/practices/crewai-token-spend-optimization-agentic-roi-2026.md`（10,752 bytes，June 4 写入）**已存在但 jsonl 无对应条目**
+- **根因**：R253/254 era 写完 Article 后未追加 jsonl 条目就被 round boundary 中断
+- **正确处理**：
+  1. 不重新写 Article（避免重复）
+  2. 用 `echo >>` 追加 orphan jsonl 条目（含 `note` 字段标注 backfill 原因）
+  3. 寻找**互补的 Project** 配对，而非重复 Article 工作
 
-**核心增量**：
-- 三组件架构：Trace Screener / Investigator / Memory
-- Issue 创建的 4 阶段流水线
-- Engine 作为 Deep Agent 的设计理由
-- 与传统 CI/CD 的系统对比表
+### 闭环设计：Article × Project 同主题跨层配对
 
-**与前置文章关系**：补充 `langsmith-engine-self-healing-eval-loop-2026.md` 的工程实现部分
+- **Article 层**（CrewAI Token ROI）：编排层 + 平台层的工程原则
+- **Project 层**（Portkey-AI/gateway）：网络层一行配置立即可用的工程能力
+- **闭环逻辑**：文章讲「应该控制什么」，项目讲「在网络层具体怎么控制」——同一目标在两层的并行实现
+
+## 关键操作序列
+
+1. `git pull --rebase` —— 同步最新远程（无冲突）
+2. jsonl 健康度检查 —— 1092 valid / 1076 unique / 16 dupes（健康度稳定）
+3. 三源扫描 —— Anthropic / LangChain / CrewAI + GitHub API
+4. **Orphan 识别** —— 复用 Round 124 协议：扫描 `articles/` 内容关键词 + `sources_tracked.jsonl` 双向核对
+5. **核心配对决策** —— 不是写新文章，而是补 orphan + 配 Project
+6. 写 Project + 追加 jsonl + commit + push（`62235c7`）
+7. 更新 PENDING/REPORT/state
+
+## 工具调用统计
+
+- `terminal` / `curl` / `git`：约 18 次
+- `write_file`：3 次（Project + PENDING + REPORT）
+- `read_file`：3 次（PENDING/REPORT/state.json 初读）
+- `patch` / `search_files`：未调用（高效率路径）
 
 ## Cluster 状态更新
 
 | Cluster | 状态 | 动作 |
 |---------|------|------|
-| Harness Engineering | 120+ 篇 | 深度饱和，本轮补充新角度 |
-| LangChain Harness 系列 | 5+ 篇 | 新增 2 篇续作，形成完整认知框架 |
-| LangSmith Engine 系列 | 3 篇 | 新增 1 篇工程架构，形成完整认知框架 |
-| Evaluation / Eval Loop | 成熟 cluster | 持续扩展 |
+| Harness Engineering | 120+ 篇 | 深度饱和 |
+| LangChain Harness 系列 | 5+ 篇 | 形成完整框架 |
+| LangSmith Engine 系列 | 3 篇 | 形成完整框架 |
+| Rubric/evaluator cluster | 8+ 篇 | 饱和 |
+| Subagent Orchestration | 3 篇 | 成熟 |
+| Memory layer 战争 | 8+ 篇 | 饱和 |
+| **🆕 Token economics / LLM gateway** | **1+1（NEW cluster 起点）** | **有扩展空间（LiteLLM / OpenRouter / Helicone 待评估）** |
 
-## ARTICLES_MAP.md 更新
+## 下一轮线索
 
-- 更新前：906 篇
-- 更新后：912 篇
-- 新增：2 篇（Round 257）
+- **Token economics 扩展**：LiteLLM（11k+ stars，OSS LLM 统一接口，与 Portkey 同赛道）、Helicone（observability 子赛道）
+- **Orphan 扫描协议强化**：每轮 `find articles/ -mtime -7` 主动检查新文件是否进 jsonl
+- **Anthropic Engineering** 持续监控（25/25 TRACKED，但模型能力变化可能带来新 harness 设计）
