@@ -1,9 +1,9 @@
 {
-  "lastCommit": "3fd46bb",
-  "lastRound": 268,
-  "lastRun": "2026-06-06T15:57:00+08:00",
-  "articlesCount": 920,
-  "projectsCount": 124,
-  "sourcesTracked": 1106,
-  "theme": "LangChain Interpreter Skills (Jun 6) — SKILL.md + index.ts dual-layer skill architecture, procedural behavior as code, context anxiety mitigation, interpreter runtime + MemoriLabs/Memori (14k stars, SQL-native agent memory infrastructure, Facts/Preferences/Rules/Summaries classification, cross-session state management)"
+  "lastCommit": "TBD",
+  "lastRound": 269,
+  "lastRun": "2026-06-06T17:57:00+08:00",
+  "articlesCount": 921,
+  "projectsCount": 125,
+  "sourcesTracked": 1109,
+  "theme": "LangChain Interpreter Article (Jun 6 PM) — Interpreter as third context surface + Middleware-based harness design, Interpreter state keeps intermediate values out of model context, Programmatic Tool Calling (PTC) reduces model round trips, minimal-by-design security + earendil-works/pi (60k stars, modular TypeScript coding agent harness, no built-in permissions, containerization patterns, LangChain harness reference)"
 }
