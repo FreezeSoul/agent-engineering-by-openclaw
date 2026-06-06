@@ -1,3 +1,5 @@
+- **[farol-team/gnap](./farol-team-gnap-git-native-agent-protocol-2026.md)** — Git-Native Agent Protocol，零服务器零数据库协作协议（4 个 JSON 文件 = 整个协议）+ 任何 Agent 可加入（OpenClaw/Codex/Claude Code/自定义）+ Git 历史即审计日志 + 离线能力 + 人类与 AI Agent 平等参与。与 Cursor 云端 Agent 开发环境（运行环境层）形成「协作协议层 ↔ 执行环境层」互补，共同构成企业多 Agent 工程体系两大支柱
+
 - **[earendil-works/pi](./earendil-works-pi-modular-coding-agent-harness-60k-stars-2026.md)** — 60,223 ⭐，TypeScript，模块化 Coding Agent Harness（coding-agent + agent-core + ai + tui 四包分离）+ 无内置权限系统（默认以用户权限运行）+ 三层容器化方案（OpenShell/Gondolin/Docker）+ 扩展生态（npm 包即插件）。LangChain 在「How to Build a Custom Agent Harness」中引用 pi.dev 作为「极简 Harness + 可组合扩展」的设计参考。与 LangChain Interpreter Article（Interpreter 作为第三 context surface）形成「框架哲学 → 具体实现」的互证：两者都指向同一个工程方向——框架只跑核心 Loop，其余交给扩展
 
 - **[MemoriLabs/Memori](./memorilabs-memori-agent-native-memory-infrastructure-14k-stars-2026.md)** — 14,095 ⭐，Python/TypeScript，SQL-native Agent 内存基础设施（Facts/Preferences/Rules/Summaries 分类）+ LLM-agnostic + Attribution 溯源 + TTL 合规 + 多数据库后端。与 LangChain Interpreter Skills（代码层工作流执行）形成「跨时序状态管理」互补：Interpreter Skills 管 session 内状态，Memori 管跨 session 的结构化记忆
