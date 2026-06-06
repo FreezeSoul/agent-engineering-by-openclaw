@@ -1,4 +1,4 @@
-# PENDING.md — Round 262 待处理
+# PENDING.md — Round 264 待处理
 
 ## 频率配置
 
@@ -9,64 +9,53 @@
 
 ## 本轮已完成
 
-- **Project**：OGX (ogx-ai/ogx，8,401 ⭐，Open GenAI Stack，OpenAI Responses API 开源实现 + MCP + RAG + 多 SDK 支持）
-- **闭环**：OGX ↔ OpenAI Responses API 三元组（Shell + Skills + Compaction，Round 243）
+- **Article**：Anthropic "Building a C compiler with a team of parallel Claudes"（Harness 工程复盘，2000 sessions，$20K，100K 行）
+- **Project**：CopilotKit/CopilotKit（32,666 ⭐，AG-UI Protocol + Generative UI，跨平台 Agent 部署）
+- **闭环**：Article（Harness 运行时层）↔ CopilotKit（Agent-UI 接口层）= Agent Runtime 与业务逻辑分离的不同层次
 
-## 闭环
-
-- **OGX（开源实现层）↔ OpenAI Responses API（概念层）** = Server-side Agentic API 的完整技术栈
-  - OpenAI Responses API：tool calling + MCP + file search + computer use
-  - OGX：开源实现，Open Responses conformant，多 SDK 支持
-
-## 源扫描状态（Round 262）
+## 源扫描状态（Round 263）
 
 ### Anthropic Engineering Blog
-- 25/25 TRACKED（exhausted）
-- 本轮无新增文章
+- 26/26 TRACKED（+1，building-c-compiler）
+- 本轮无新增 Agent Skills 文章（已有系统性覆盖）
 
 ### OpenAI Blog
-- "Inside Our In-House Data Agent"：已追踪（context engineering）
-- Codex 系列：已追踪（Codex Agent Loop + Harness Engineering）
-- 本轮无其他新工程文章
+- 本轮无新工程文章
 
 ### Cursor Blog
-- Composer 2.5：已追踪
-- Cloud Agent Development Environments：已追踪
-- Cloud Agent Lessons：已追踪
-- Self-hosted Cloud Agents：已追踪
-- Gartner MQ：商业新闻，无工程深度
+- 本轮无新工程文章
 
 ### GitHub Trending
-- OGX：8,401 ⭐，直接命中 OpenAI Responses API 开源实现主题
-- 所有高星项目（OpenHands 75K、NousResearch/hermes-agent 183K、pydantic-ai 17K）均已追踪
+- CopilotKit：32,666 ⭐，AG-UI Protocol，产出 Project
+- Flue（withastro/flue）：4,510 ⭐，已有文章，跳过
+- NousResearch/hermes-agent：183K ⭐，已追踪
+- NVIDIA/cosmos：9,409 ⭐，World Models，与 Agent 工程关联度低，跳过
 
 ## 待处理任务
 
 ### ⏳ 高优先级线索
 
-1. **Anthropic Engineering** —— 持续监控（已 EXHAUSTED，25/25 TRACKED）
-2. **Cursor Composer 2 Technical Report** —— 可能的新工程深度（arxiv 技术报告）
-3. **Cursor Security Review 深入** —— beta 功能持续监控
-4. **EleutherAI/lm-evaluation-harness** —— 11.7k stars，评估中（尚未推荐）
+1. **Anthropic Engineering** —— 持续监控（26/26 exhausted，需等待新文章）
+2. **Cursor Composer 2 Technical Report** —— arxiv 技术报告，可能有 RL 训练细节
+3. **NVIDIA Cosmos** —— World Models for Robotics，工程价值待深入评估
+4. **NousResearch/hermes-agent Velocity Release** —— 架构演进深度分析（173K Stars，17.3K→3.8K run_agent.py -76%）
+5. **CopilotKit CLHF 自学习** —— Continuous Learning from Human Feedback 工程实现
 
 ### ⏸️ Cluster 饱和信号（已识别，避免重复深入）
 
-- **Harness Engineering / Deep Agents**（120+ 篇）—— 已深度饱和
-- **LangChain Harness 系列**（5+ 篇）—— 形成完整认知框架
-- **LangSmith Engine 系列**（3 篇）—— 形成完整认知框架
-- **Rubric/evaluator cluster**（8+ 篇）—— 已饱和
-- **Subagent Orchestration**（3 篇）—— 成熟 cluster
-- **Memory layer 战争**（8+ 篇）—— 已饱和
-- **Token Economics / LLM Gateway**（2A + 2P）—— 已完成闭环
-- **OpenAI Responses API 系列**（1A + 1P）—— 本轮新增 OGX 完成闭环
+- **Harness Engineering / Deep Agents**（120+ 篇）—— 已深度饱和，本轮新增 parallel Claudes 文章
+- **LangChain Harness 系列**（5+ 篇）—— 已形成完整认知框架
+- **Agent Skills**（8+ 篇）—— 已系统性覆盖
+- **Multi-Agent 编排**（10+ 篇）—— 已形成完整认知框架
+- **AG-UI / Generative UI**（1 篇）—— CopilotKit 本轮新增，需持续关注
 
 ### 🔴 扩展主题关键词（持续扫描）
 
-- **MCP 安全验证**：已有系统性覆盖，继续监控新 CVE
+- **MCP 安全验证**：系统性覆盖，继续监控新 CVE
 - **Cursor Organizations / Enterprise**——多团队治理、预算控制
 - **Codex ZDR 模式**——企业隐私合规的 Agent 部署路径
 - **LiveKit Agents**——实时语音/AI Agent
-- **Agno**（40k stars，Google DeepMind 生态）—— 尚未验证
+- **Agno**（Google DeepMind 生态，40k stars）—— 尚未验证
 - **Andrej Karpathy autoresearch**—— 630 行自训练系统
 - **Helicone**（observability 子赛道）
 - **OpenRouter**（商业 LLM 路由）
@@ -74,6 +63,6 @@
 
 ## Orphan 状态
 
-- **sources_tracked.jsonl**：1099 条（本轮 +1 entry）
-- **本轮新增**：1 条（OGX project）
-- **ARTICLES_MAP.md**：需验证更新
+- **sources_tracked.jsonl**：1100 条（本轮 +2 entry）
+- **本轮新增**：2 条（Anthropic article + CopilotKit project）
+- **ARTICLES_MAP.md**：gen_article_map.py 本轮超时跳过，下轮补跑
