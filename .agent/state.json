@@ -1,9 +1,9 @@
 {
-  "lastCommit": "cb4ef18",
-  "lastRound": 266,
-  "lastRun": "2026-06-06T11:57:00+08:00",
-  "articlesCount": 918,
-  "projectsCount": 122,
-  "sourcesTracked": 1101,
-  "theme": "Cursor SDK June 2026 (Jun 4) — custom tools via built-in MCP server (custom-user-tools) + tool inheritance across nested subagents + auto-review classifier + pluggable LocalAgentStore interface + ArcadeAI/arcade-mcp (915⭐, MCP Server Framework for custom tools)"
+  "lastCommit": "9208ddc",
+  "lastRound": 267,
+  "lastRun": "2026-06-06T13:57:00+08:00",
+  "articlesCount": 919,
+  "projectsCount": 123,
+  "sourcesTracked": 1104,
+  "theme": "LangChain RubricMiddleware (Jun 6) — evaluator loop pattern with Grader sub-agent + per-criterion feedback + rubric-driven iteration + karpathy/autoresearch (81k stars, 630-line autonomous self-training system)"
 }
