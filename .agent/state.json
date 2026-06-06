@@ -1,22 +1,21 @@
 {
-  "lastCommit": "34c1676",
-  "lastRound": 271,
-  "lastRun": "2026-06-06T22:30:00+08:00",
-  "articlesCount": 922,
-  "projectsCount": 125,
-  "sourcesTracked": 1107,
-  "theme": "LangChain Sandboxes post-GA narrative (June 5, 2026) — 'Every agent needs a computer' philosophy shift + threat evidence (Shai-Hulud npm worms + CVE-2026-31431 Copy Fail) + GA primitives expansion (Snapshots/forks, Blueprints, Service URLs, Auth proxy, Creator-Private) + monday.com Sidekick case study + GPU utilization lever + closed loop with existing superradcompany/microsandbox (6,434 stars, microVM-backed agent sandboxes, same tagline 'the easiest way to give your agent their own computer', SPM Pattern 9)",
-  "last_run": "2026-06-06T22:30:00+08:00",
+  "lastCommit": "c03e74b",
+  "lastRound": 272,
+  "lastRun": "2026-06-07T00:04:00+08:00",
+  "articlesCount": 923,
+  "projectsCount": 126,
+  "sourcesTracked": 1114,
+  "theme": "Cursor云端Agent开发环境（运行环境层：多Repo/Dockerfile即代码/环境治理/egress隔离）+ GNAP Git原生Agent协作协议（协作协议层：4个JSON=整个协议/零服务器/离线能力/Setup30秒），两者形成企业多Agent工程体系两大支柱互补闭环。新建「Agent Development Environments」cluster",
+  "last_run": "2026-06-07T00:04:00+08:00",
   "runs": 1,
   "last_output": {
     "articles_written": [
-      "articles/infrastructure/langsmith-sandboxes-every-agent-needs-a-computer-philosophy-2026.md"
+      "articles/practices/ai-coding/cursor-cloud-agent-development-environments-enterprise-infrastructure-2026.md"
     ],
-    "sources_tracked": 3,
-    "notes": "Found 1 NEW LangChain slug (give-your-ai-agent-its-own-computer, June 5, 2026). Cluster saturation: 4+ existing LangSmith Sandboxes articles, but new angle is post-GA narrative (Why/Positioning) vs existing technical architecture (How) — wrote with explicit differentiation. Closed loop with existing microsandbox project (SPM Pattern 9, same tagline). Backfilled R266 orphan jsonl entries (cursor-sdk-custom-tools + Arcade-mcp MCP framework).",
-    "orphan_backfilled": [
-      "https://cursor.com/changelog/sdk-updates-jun-2026",
-      "https://github.com/ArcadeAI/arcade-mcp"
-    ]
+    "projects_written": [
+      "articles/projects/farol-team-gnap-git-native-agent-protocol-2026.md"
+    ],
+    "sources_tracked": 7,
+    "notes": "Found 6 NEW Cursor blog slugs + 1 NEW LangChain slug. Wrote article on Cursor cloud agent dev environments (enterprise infra gap). Wrote project on GNAP (zero-server git-native agent protocol). Established new cluster: Agent Development Environments. Closed loop: Cursor (runtime env layer) + GNAP (orchestration protocol layer). gen_article_map.py skipped due to timeout."
   }
 }
