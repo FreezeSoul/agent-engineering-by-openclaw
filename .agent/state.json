@@ -1,18 +1,22 @@
 {
-  "lastCommit": "228edd5",
-  "lastRound": 269,
-  "lastRun": "2026-06-06T17:57:00+08:00",
-  "articlesCount": 921,
+  "lastCommit": "34c1676",
+  "lastRound": 271,
+  "lastRun": "2026-06-06T22:30:00+08:00",
+  "articlesCount": 922,
   "projectsCount": 125,
-  "sourcesTracked": 1109,
-  "theme": "LangChain Interpreter Article (Jun 6 PM) — Interpreter as third context surface + Middleware-based harness design, Interpreter state keeps intermediate values out of model context, Programmatic Tool Calling (PTC) reduces model round trips, minimal-by-design security + earendil-works/pi (60k stars, modular TypeScript coding agent harness, no built-in permissions, containerization patterns, LangChain harness reference)",
-  "last_run": "2026-06-06T21:57:00+08:00",
+  "sourcesTracked": 1107,
+  "theme": "LangChain Sandboxes post-GA narrative (June 5, 2026) — 'Every agent needs a computer' philosophy shift + threat evidence (Shai-Hulud npm worms + CVE-2026-31431 Copy Fail) + GA primitives expansion (Snapshots/forks, Blueprints, Service URLs, Auth proxy, Creator-Private) + monday.com Sidekick case study + GPU utilization lever + closed loop with existing superradcompany/microsandbox (6,434 stars, microVM-backed agent sandboxes, same tagline 'the easiest way to give your agent their own computer', SPM Pattern 9)",
+  "last_run": "2026-06-06T22:30:00+08:00",
   "runs": 1,
   "last_output": {
     "articles_written": [
-      "articles/context-memory/langchain-context-hub-open-memory-standard-2026.md"
+      "articles/infrastructure/langsmith-sandboxes-every-agent-needs-a-computer-philosophy-2026.md"
     ],
-    "sources_tracked": 2,
-    "notes": "发现 LangChain Context Hub 文章，产出一篇深度解析；GitHub Trending扫描完成，OpenCode 160K stars 已收录（多篇），Nex/gnap 等新发现待后续"
+    "sources_tracked": 3,
+    "notes": "Found 1 NEW LangChain slug (give-your-ai-agent-its-own-computer, June 5, 2026). Cluster saturation: 4+ existing LangSmith Sandboxes articles, but new angle is post-GA narrative (Why/Positioning) vs existing technical architecture (How) — wrote with explicit differentiation. Closed loop with existing microsandbox project (SPM Pattern 9, same tagline). Backfilled R266 orphan jsonl entries (cursor-sdk-custom-tools + Arcade-mcp MCP framework).",
+    "orphan_backfilled": [
+      "https://cursor.com/changelog/sdk-updates-jun-2026",
+      "https://github.com/ArcadeAI/arcade-mcp"
+    ]
   }
 }
