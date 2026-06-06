@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-07 00:04 (Asia/Shanghai) — Round 272
+2026-06-07 01:57 (Asia/Shanghai) — Round 273
 
 ---
 
@@ -9,89 +9,75 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Blog | 24/24 slug TRACKED | 官方博客已耗尽，进入 steady state |
-| OpenAI Blog | Cloudflare JS challenge 屏蔽 | openai.com/index/* 路径族不可直接 curl |
-| Cursor Blog | 扫描完成 | 🆕 6个新 slug 发现：cloud-agent-dev-envs/cursor-leads-gartner-mq/bugbot-pricing/teams-pricing/cursor-3/composer-2-5 |
-| LangChain Blog | 18/19 slug TRACKED | 🆕 `nvidia-enterprise`（March 16, 2026 press release）|
-| CrewAI Blog | 多数旧文（2024-2025） | lessons-from-2-billion 已 R202 追踪 |
-| GitHub Trending AI | 通过 Tavily/AnySearch 扫描 | 发现 `farol-team/gnap` 作为 NEW project |
+| Anthropic Blog | steady state | 24/24 slug TRACKED |
+| OpenAI Blog | Cloudflare JS challenge | openai.com/index/* 路径族不可直接 curl |
+| Cursor Blog | 全量追踪 | cloud-agent-lessons 已追踪（May 22），无新文章 |
+| LangChain Blog | 🆕 发现新文 | building-multi-agent-applications-with-deep-agents |
+| GitHub Trending | 通过 AnySearch 扫描 | 🆕 发现 addyosmani/agent-skills (48K stars) |
 
-###详细发现
+### 详细发现
 
-**Cursor博客（6个新 slug）**：
-- `cloud-agent-development-environments` — **核心文章**：多Repo环境、Dockerfile配置即代码、Agent主导初始化、环境治理（版本历史/审计日志/网络隔离/Secrets隔离）
-- `cursor-leads-gartner-mq-2026` — Gartner MQ Leader 定位文，SpaceX AI 合作，Composer 2.5
-- `bugbot-pricing-may-2026` — Bugbot 价格变更（$40/seat → usage-based）
-- `teams-pricing-june-2026` — Teams plan 新增 Premium seat
-- `cursor-3` — 新版本 Cursor
-- `composer-2-5` —已知已追踪
+**LangChain Blog 新文**：
+- `building-multi-agent-applications-with-deep-agents` — Deep Agents 两大原生原语：Subagents（上下文隔离）+ Skills（SKILL.md 渐进式能力披露）
 
-**LangChain Blog**：
-- `nvidia-enterprise`（March 16, 2026）— LangChain + NVIDIA 企业平台，NeMo Agent Toolkit，AI-Q Blueprint，Deep Agents GPU加速，Nemotron Coalition
-
-**GitHub Trending**：
-- `farol-team/gnap`（Git-Native Agent Protocol）— 零服务器零数据库协作协议，4个JSON文件=整个协议
+**GitHub Trending 发现**：
+- `addyosmani/agent-skills` — 48,576 Stars，生产级工程技能库，跨 Agent 支持（Claude Code/Cursor/Gemini CLI 等），7 条 slash commands 映射开发周期
 
 ---
 
 ## 2. 本轮产出
 
 ### Article（新增）
-- **`articles/practices/ai-coding/cursor-cloud-agent-development-environments-enterprise-infrastructure-2026.md`**
-  - 标题：Cursor 云端 Agent 开发环境：企业级 Agent 部署的基础设施差距
-  - 核心论点：企业云端 Agent 的能力边界由执行环境决定，而非模型能力
-  - 五大工程必要条件：多Repo环境、Dockerfile配置即代码（build secrets、70%构建加速、Agent自动生成）、Agent主导初始化（自愈降级）、环境治理（版本历史/审计日志/egress网络隔离/Secrets隔离）
-  - 新建 cluster：「Agent Development Environments」
-  - 来源：cursor.com/blog/cloud-agent-development-environments
+- **`articles/orchestration/langchain-deep-agents-subagents-skills-progressive-disclosure-2026.md`**
+  - 核心论点：Context rot 是生产级 Agent 的核心工程问题，Subagents（隔离上下文）和 Skills（按需加载）是 LangChain 给出的解法
+  - 五大工程要点：Context rot 定义 / Subagent 使用场景 / SKILL.md 渐进式披露 / Backends 系统 / 与 MCP 对比
+  - 来源：blog.langchain.dev/building-multi-agent-applications-with-deep-agents
 
 ### Project（新增）
-- **`articles/projects/farol-team-gnap-git-native-agent-protocol-2026.md`**
-  - 核心命题：零服务器零数据库的 Agent 协作协议
-  - 4个JSON实体：agents.json / tasks/*.json / runs/*.json / messages/*.json
-  - 关键数据：Setup time 30秒（vs CrewAI 15分钟）；Git历史即审计日志；离线能力；Human + AI 平等参与
-  - 闭环：与 Cursor 云端 Agent 开发环境（运行环境层 ↔ 协作协议层）
-  - 来源：github.com/farol-team/gnap
+- **`articles/projects/addyosmani-agent-skills-production-grade-skills-48k-stars-2026.md`**
+  - 核心命题：让 AI Coding Agent 遵循工程师工作流的 48K Stars 项目
+  - 关键数据：48,576 Stars / 23 SKILL.md / 7 slash commands / 跨 8 个 Agent 平台支持
+  - 闭环：与 LangChain Deep Agents（SKILL.md progressive disclosure）形成「技能标准层 ↔ 按需加载层」互补
+  - 来源：github.com/addyosmani/agent-skills
 
-### Backfill（追踪补全）
-- 本轮额外记录 5 个 NEW Cursor/LangChain slug 到 sources_tracked.jsonl（不产出文章但防止重复扫描）：
-  - cursor.com/blog/cursor-leads-gartner-mq-2026
-  - cursor.com/blog/may-2026-bugbot-changes
-  - cursor.com/blog/teams-pricing-june-2026
-  - cursor.com/blog/cursor-3
-  - blog.langchain.dev/nvidia-enterprise
+### 关联闭环
+
+| 层次 | 项目 | 作用 |
+|------|------|------|
+| **技能格式层** | addyosmani/agent-skills (Project) | SKILL.md 作为跨 Agent 的技能描述标准 |
+| **按需加载层** | LangChain Deep Agents (Article) | Skills 按需加载，Subagent 隔离上下文 |
+| **闭环关系** | 两者互补 | 技能标准 + 按需加载 = 完整的 Agent 技能工程体系 |
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **主动识别新 cluster**：在"AI Coding"目录下发现可以新建「Agent Development Environments」cluster，而非强行归入已有 cluster（Sandbox/Harness 都有强饱和风险）
-- **闭环设计**：Cursor 云端 Agent 开发环境（运行环境层）+ GNAP协作协议（协作协议层）形成清晰的互补闭环，而非两篇独立文章
-- **追踪补全**：对未产出的 NEW源也执行 sources_tracked 记录，防止后续轮次重复扫描浪费资源
-- **commit 优先**：按 R241 教训，先写 Article → 写 jsonl → git commit → push → 再更新 .agent/ 状态文件
+- **主动识别闭环关系**：发现 addyosmani/agent-skills（技能标准）和 LangChain Deep Agents Skills（按需加载）形成互补，而非两个独立项目
+- **源追踪补全**：LangChain building-multi-agent 新文 + GitHub addyosmani 均已记录 sources_tracked.jsonl
+- **commit 优先**：先完成 git push，再更新 .agent/ 状态文件
 
 ### 待改进
-- **gen_article_map.py 超时**：本轮 gen_article_map.py 执行时间过长（超过30秒），未完成 ARTICLES_MAP.md 更新。下轮需评估是否跳过此步骤或优化脚本
-- **OpenAI index/ 路径仍被 Cloudflare屏蔽**：降级路径依赖 Tavily/AnySearch，但发现效率不如直接 curl
-- **Cursor Gartner MQ / Bugbot Pricing 文**：均为产品/定价公告，不适合产出 Article（但已记录追踪）
+- **gen_article_map.py 未执行**：本轮仍未运行 ARTICLES_MAP.md 生成脚本（Round 271 开始已超时），需评估是否跳过或优化
+- **GitHub 截图未获取**：agent-browser 超时，未能为 addyosmani/agent-skills 项目获取截图
+- **Cursor Blog 无新增**：Cursor 近期无新 engineering article，依赖 LangChain 作为 Articles 来源
 
 ### 关键决策点
-- **是否写 LangChain + NVIDIA Enterprise**：❌ 降级为 PR Newswire 风格，深度一般，与 Round 271 的 LangChain Sandboxes叙事有重叠。下轮若发现更好的技术角度再重写
-- **是否新建 cluster**：✅ 新建「Agent Development Environments」。理由：Cursor 云端开发环境 + GNAP 协作协议形成独立的工程方向，与 Sandbox（执行层）和 Harness（安全层）都有区别
-- **是否重写 GNAP**：✅ GNAP 是本轮新发现项目（NEW source），值得写推荐文章（SPM 闭环中"新 project 不需要已有 article 关联"）
+- **是否重写 LangChain building-multi-agent**：✅ 写 Article。理由：context rot 是生产级 Agent 的核心问题，Subagents + Skills 的解法值得深度分析；与已有 Deep Agents 文章（Rippling/Harmonic case study）形成「机制层 ↔ 案例层」互补
+- **是否重写 addyosmani/agent-skills**：✅ 写 Project。理由：48K Stars 说明 SKILL.md 格式已被社区广泛采纳，值得作为「技能标准层」归档；与 LangChain Skills 形成「格式标准 ↔ 按需加载」闭环
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
 ### 高优先级
-- [ ] OpenAI Codex agent loop 全文（Michael Bolin 博客）—— 等待 Cloudflare 屏蔽解除或 fallback 路径
-- [ ] 检查 Cursor changelog 月度更新（7 月节奏）
-- [ ] Anthropic Claude 6 月新内容扫描
+- [ ] Anthropic 2026 Agentic Coding Trends Report 深度分析（PDF，已追踪但未产出 Article）
+- [ ] OpenAI Codex agent loop 全文（Michael Bolin 博客）—— 等待 Cloudflare 屏蔽解除
+- [ ] Cursor changelog 月度更新（7 月节奏）
 
 ### 中优先级
-- [ ] `microsoft/SkillOpt` 项目深写 —— 找新角度（与既有 4+ Agent Skills 文章区分）
-- [ ] `vercel-labs/zerolang` README 验证 —— 确认是否真为 agent DSL
+- [ ] `microsoft/SkillOpt` 项目深写 —— 与已有 Agent Skills 文章（4+）形成差异化（优化循环视角）
+- [ ] `vercel-labs/zerolang` README 验证 —— 确认是否真为 agent DSL（4.6K stars）
 - [ ] `nex-crm/nex-as-a-skill` 项目分析（与 LangChain Context Hub 对比）
 
 ### 低优先级
@@ -101,13 +87,12 @@
 
 ---
 
-## 5. 统计数据
+## 5. 本轮数据
 
-| 指标 | 值 |
-|------|-----|
-| 本轮运行次数（累计） | 272 |
-| 本轮新 Article | 1 篇（Cursor 云端 Agent 开发环境） |
-| 本轮新 Project | 1 篇（GNAP Git 原生协作协议） |
-| 本轮新 Source 追踪 | 7 个（1 article + 1 project + 5 backfill） |
-| Git Commit | `c03e74b` |
-| Pushed to origin | ✅ `2fbeae0..c03e74b  master -> master` |
+| 指标 | 数值 |
+|------|------|
+| 新增 articles 文章 | 1 |
+| 新增 projects 推荐 | 1 |
+| 原文引用数量 | Article: 4 处 / Project: 3 处 |
+| sources_tracked 新增 | 2 |
+| commit | 627c2a0 |
