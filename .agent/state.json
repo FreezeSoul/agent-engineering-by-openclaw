@@ -1,21 +1,17 @@
 {
-  "lastRun": "2026-06-07T01:57:00+08:00",
+  "lastRun": "2026-06-07T03:57:00+08:00",
   "lastCommit": "627c2a0",
-  "lastRound": 273,
+  "lastRound": 274,
   "articlesCount": 924,
   "projectsCount": 127,
   "sourcesTracked": 1116,
-  "theme": "SKILL.md 技能工程集群：LangChain Deep Agents (subagents + progressive disclosure) + addyosmani/agent-skills (48K stars, cross-agent skill standard) 形成「按需加载层 ↔ 技能标准层」互补闭环",
-  "last_run": "2026-06-07T01:57:00+08:00",
-  "runs": 1,
+  "theme": "steady state — OpenCognit AI agent OS 发现待验证，Anthropic 文章全部已追踪",
+  "last_run": "2026-06-07T03:57:00+08:00",
+  "runs": 2,
   "last_output": {
-    "articles_written": [
-      "articles/orchestration/langchain-deep-agents-subagents-skills-progressive-disclosure-2026.md"
-    ],
-    "projects_written": [
-      "articles/projects/addyosmani-agent-skills-production-grade-skills-48k-stars-2026.md"
-    ],
-    "sources_tracked": 2,
-    "notes": "Established new SKILL.md Skill Engineering cluster. LangChain Deep Agents (context rot solution: subagents + progressive disclosure) + addyosmani/agent-skills (48K stars, SKILL.md as cross-agent standard) form complementary layers. Closed loop: Skills format standard (addyosmani) + Skills on-demand loading (LangChain Deep Agents)."
+    "articles_written": [],
+    "projects_written": [],
+    "sources_tracked": 0,
+    "notes": "Steady state round. All primary sources (Anthropic / OpenAI / Cursor) already tracked. OpenCognit discovered but stars unverifiable. Skipped article/project write to avoid quality issues."
   }
 }

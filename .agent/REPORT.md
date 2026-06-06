@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-07 01:57 (Asia/Shanghai) — Round 273
+2026-06-07 03:57 (Asia/Shanghai) — Round 274
 
 ---
 
@@ -9,81 +9,68 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Blog | steady state | 24/24 slug TRACKED |
-| OpenAI Blog | Cloudflare JS challenge | openai.com/index/* 路径族不可直接 curl |
-| Cursor Blog | 全量追踪 | cloud-agent-lessons 已追踪（May 22），无新文章 |
-| LangChain Blog | 🆕 发现新文 | building-multi-agent-applications-with-deep-agents |
-| GitHub Trending | 通过 AnySearch 扫描 | 🆕 发现 addyosmani/agent-skills (48K stars) |
+| Anthropic Engineering Blog | steady state | 所有关键文章（effective-harnesses / effective-context-engineering / harness-design-long-running-apps）已追踪 |
+| OpenAI Blog | 无新内容 | DevDay 2026 仅是 save-the-date 页面，无实质性工程文章 |
+| Cursor Blog | steady state | 无新增 engineering article |
+| GitHub Trending | 扫描完成 | 发现 OpenCognit/opencognit（AI agent OS）但无法获取 stars 数据 |
 
 ### 详细发现
 
-**LangChain Blog 新文**：
-- `building-multi-agent-applications-with-deep-agents` — Deep Agents 两大原生原语：Subagents（上下文隔离）+ Skills（SKILL.md 渐进式能力披露）
+**Anthropic 已追踪文章确认**：
+- `effective-harnesses-for-long-running-agents` — Round 272 已有 initializer pattern 文章
+- `effective-context-engineering-for-ai-agents` — Round 271 已有 attention budget 分析
+- `harness-design-long-running-apps` — Round 265 已有 GAN-style evaluator 文章
+- 所有来源均已出现在 sources_tracked.jsonl
 
-**GitHub Trending 发现**：
-- `addyosmani/agent-skills` — 48,576 Stars，生产级工程技能库，跨 Agent 支持（Claude Code/Cursor/Gemini CLI 等），7 条 slash commands 映射开发周期
+**OpenCognit 项目发现**：
+- 描述：「The open-source AI agent OS — CEO orchestrator, persistent memory, real execution, atomic budgets. Self-hosted. No cloud lock-in.」
+- 定位：Zero Human Company OS，多 Agent 团队协作平台
+- 状态：无法获取准确 stars 数量，跳过本轮写入（需下轮验证）
 
 ---
 
 ## 2. 本轮产出
 
-### Article（新增）
-- **`articles/orchestration/langchain-deep-agents-subagents-skills-progressive-disclosure-2026.md`**
-  - 核心论点：Context rot 是生产级 Agent 的核心工程问题，Subagents（隔离上下文）和 Skills（按需加载）是 LangChain 给出的解法
-  - 五大工程要点：Context rot 定义 / Subagent 使用场景 / SKILL.md 渐进式披露 / Backends 系统 / 与 MCP 对比
-  - 来源：blog.langchain.dev/building-multi-agent-applications-with-deep-agents
-
-### Project（新增）
-- **`articles/projects/addyosmani-agent-skills-production-grade-skills-48k-stars-2026.md`**
-  - 核心命题：让 AI Coding Agent 遵循工程师工作流的 48K Stars 项目
-  - 关键数据：48,576 Stars / 23 SKILL.md / 7 slash commands / 跨 8 个 Agent 平台支持
-  - 闭环：与 LangChain Deep Agents（SKILL.md progressive disclosure）形成「技能标准层 ↔ 按需加载层」互补
-  - 来源：github.com/addyosmani/agent-skills
-
-### 关联闭环
-
-| 层次 | 项目 | 作用 |
+| 任务 | 结果 | 原因 |
 |------|------|------|
-| **技能格式层** | addyosmani/agent-skills (Project) | SKILL.md 作为跨 Agent 的技能描述标准 |
-| **按需加载层** | LangChain Deep Agents (Article) | Skills 按需加载，Subagent 隔离上下文 |
-| **闭环关系** | 两者互补 | 技能标准 + 按需加载 = 完整的 Agent 技能工程体系 |
+| ARTICLES_COLLECT | ⬇️ 跳过 | 所有一手来源（Anthropic / OpenAI / Cursor）本期无新工程文章 |
+| PROJECT_SCAN | ⬇️ 跳过 | OpenCognit stars 不明确，无法满足 Stars 门槛判断 |
+
+### 决策理由
+
+- **Articles**：Anthropic 的三篇关键工程文章均已在 Round 271-273 完成，无重复写同一来源的必要
+- **Projects**：OpenCognit 项目描述有吸引力（CEO orchestrator + atomic budgets），但无 stars 数据无法判断是否达到 ≥1000 门槛
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **主动识别闭环关系**：发现 addyosmani/agent-skills（技能标准）和 LangChain Deep Agents Skills（按需加载）形成互补，而非两个独立项目
-- **源追踪补全**：LangChain building-multi-agent 新文 + GitHub addyosmani 均已记录 sources_tracked.jsonl
-- **commit 优先**：先完成 git push，再更新 .agent/ 状态文件
+- 确认了所有一手来源的追踪状态，避免重复写入
+- 主动发现 OpenCognit 作为潜在 Project 候选（需下轮跟进）
 
 ### 待改进
-- **gen_article_map.py 未执行**：本轮仍未运行 ARTICLES_MAP.md 生成脚本（Round 271 开始已超时），需评估是否跳过或优化
-- **GitHub 截图未获取**：agent-browser 超时，未能为 addyosmani/agent-skills 项目获取截图
-- **Cursor Blog 无新增**：Cursor 近期无新 engineering article，依赖 LangChain 作为 Articles 来源
-
-### 关键决策点
-- **是否重写 LangChain building-multi-agent**：✅ 写 Article。理由：context rot 是生产级 Agent 的核心问题，Subagents + Skills 的解法值得深度分析；与已有 Deep Agents 文章（Rippling/Harmonic case study）形成「机制层 ↔ 案例层」互补
-- **是否重写 addyosmani/agent-skills**：✅ 写 Project。理由：48K Stars 说明 SKILL.md 格式已被社区广泛采纳，值得作为「技能标准层」归档；与 LangChain Skills 形成「格式标准 ↔ 按需加载」闭环
+- OpenCognit stars 数据获取失败：web_fetch 超时，应尝试 agent-browser 截图方案
+- 本轮无新增 content，属于「维护性 round」，下轮应优先确认 OpenCognit stars
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
 ### 高优先级
-- [ ] Anthropic 2026 Agentic Coding Trends Report 深度分析（PDF，已追踪但未产出 Article）
-- [ ] OpenAI Codex agent loop 全文（Michael Bolin 博客）—— 等待 Cloudflare 屏蔽解除
-- [ ] Cursor changelog 月度更新（7 月节奏）
+- [ ] **OpenCognit/opencognit stars 验证** → 确认是否达到 Project 门槛（≥1000）
+  - 若 Stars > 5000 → 独立归档 Project
+  - 若 Stars 1000-5000 → 关联当轮 Article 再写入
+  - 若 Stars < 1000 → 跳过
+- [ ] **Anthropic 2026 Agentic Coding Trends Report**（PDF）深度分析 — 已在追踪但未产出 Article
 
 ### 中优先级
-- [ ] `microsoft/SkillOpt` 项目深写 —— 与已有 Agent Skills 文章（4+）形成差异化（优化循环视角）
-- [ ] `vercel-labs/zerolang` README 验证 —— 确认是否真为 agent DSL（4.6K stars）
-- [ ] `nex-crm/nex-as-a-skill` 项目分析（与 LangChain Context Hub 对比）
+- [ ] Cursor changelog 月度更新（7 月节奏）
+- [ ] `microsoft/SkillOpt` 项目深写 — 与 Agent Skills 集群形成差异化（优化循环视角）
 
 ### 低优先级
-- [ ] `earendil-works/gondolin` 项目深写 —— 与 microsandbox 对比（同一域 OSS 不同实现）
-- [ ] `farol-team/gnap` GNAP v2+ 版本跟踪（RFC draft，关注协议成熟度）
-- [ ] gen_article_map.py 性能优化评估
+- [ ] OpenAI Codex agent loop 全文（Michael Bolin 博客）—— 等待 Cloudflare 屏蔽解除
+- [ ] `vercel-labs/zerolang` README 验证
 
 ---
 
@@ -91,8 +78,26 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1 |
-| 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article: 4 处 / Project: 3 处 |
-| sources_tracked 新增 | 2 |
-| commit | 627c2a0 |
+| 新增 articles 文章 | 0 |
+| 新增 projects 推荐 | 0 |
+| 原文引用数量 | 0 |
+| sources_tracked 新增 | 0 |
+| commit | —（本轮无写入）|
+
+---
+
+## 6. Cluster 状态追踪
+
+| Cluster | 文章数 | 状态 | 备注 |
+|---------|--------|------|------|
+| SKILL.md 技能工程 | 1+1 | 🟡 活跃 | Round 273 新建（本轮无更新）|
+| Self-evolving Agents | 24+ | ⚠️ 饱和 | 持续监控 |
+| Harness Engineering | 30+ | ⚠️ 饱和 | 持续监控 |
+| Agent Skills | 5+ | ⚠️ 接近饱和 | SkillOpt 待写 |
+| Sandbox / Agent Execution | 5+ | ⚠️ 强饱和 | — |
+| Memory Layer | 6+ | ⚠️ 接近饱和 | — |
+| LangSmith Engine | 4+ | ⚠️ 接近饱和 | — |
+
+---
+
+*Round 274 | 2026-06-07 03:57 | AgentKeeper*
