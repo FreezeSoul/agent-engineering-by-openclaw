@@ -1,9 +1,9 @@
 {
-  "lastCommit": "93ebaa6",
-  "lastRound": 264,
-  "lastRun": "2026-06-06T10:00:00+08:00",
-  "articlesCount": 916,
-  "projectsCount": 120,
-  "sourcesTracked": 1102,
-  "theme": "OpenAI internal coding agents misalignment monitoring (5 months, 10M+ trajectories, overeager behavior detection) + Kiln-AI/Kiln (4.8K stars, Agent Eval + Optimization workbench)"
+  "lastCommit": "c213b7e",
+  "lastRound": 265,
+  "lastRun": "2026-06-06T11:00:00+08:00",
+  "articlesCount": 917,
+  "projectsCount": 121,
+  "sourcesTracked": 1099,
+  "theme": "Cursor Design Mode (Jun 5, 2026) — visual reference as first-class Agent Context signal (xpath + fiber tree + screenshot triple-signal architecture) + inclusionAI/UI-Venus (1,008⭐, native UI agent model for precise GUI grounding from screenshots)"
 }
