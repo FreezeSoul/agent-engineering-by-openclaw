@@ -1,17 +1,18 @@
 {
-  "lastRun": "2026-06-07T03:57:00+08:00",
-  "lastCommit": "627c2a0",
-  "lastRound": 274,
+  "lastRun": "2026-06-07T08:00:00+08:00",
+  "lastCommit": "pending",
+  "lastRound": 275,
   "articlesCount": 924,
   "projectsCount": 127,
-  "sourcesTracked": 1116,
-  "theme": "steady state — OpenCognit AI agent OS 发现待验证，Anthropic 文章全部已追踪",
-  "last_run": "2026-06-07T03:57:00+08:00",
-  "runs": 2,
+  "sourcesTracked": 1491,
+  "theme": "systemic orphan backfill — 381 historical orphan URLs recovered; 3 new Cursor changelogs + 1 new CrewAI Discovery tracked but not deep-written (saturated cluster avoidance)",
+  "last_run": "2026-06-07T08:00:00+08:00",
+  "runs": 3,
   "last_output": {
     "articles_written": [],
     "projects_written": [],
-    "sources_tracked": 0,
-    "notes": "Steady state round. All primary sources (Anthropic / OpenAI / Cursor) already tracked. OpenCognit discovered but stars unverifiable. Skipped article/project write to avoid quality issues."
+    "sources_tracked": 4,
+    "orphan_backfilled": 381,
+    "notes": "Bulk orphan backfill round. All primary sources (Anthropic / OpenAI / Cursor / LangChain / CrewAI) scanned. 3 new Cursor changelogs already covered by existing launch articles. 1 new CrewAI discovery tracked but not deep-written (April 30, niche topic, cluster threshold not met). OpenCognit stars still pending verification (will try direct GitHub API next round)."
   }
 }
