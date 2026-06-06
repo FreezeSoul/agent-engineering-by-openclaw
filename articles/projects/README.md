@@ -1,3 +1,5 @@
+- **[MemoriLabs/Memori](./memorilabs-memori-agent-native-memory-infrastructure-14k-stars-2026.md)** — 14,095 ⭐，Python/TypeScript，SQL-native Agent 内存基础设施（Facts/Preferences/Rules/Summaries 分类）+ LLM-agnostic + Attribution 溯源 + TTL 合规 + 多数据库后端。与 LangChain Interpreter Skills（代码层工作流执行）形成「跨时序状态管理」互补：Interpreter Skills 管 session 内状态，Memori 管跨 session 的结构化记忆
+
 - **[karpathy/autoresearch](./karpathy-autoresearch-autonomous-self-training-agent-81k-stars-2026.md)** — 81,851 ⭐，Python/MIT，Andrej Karpathy 的 630 行自训练系统：给 Agent 一个小型 LLM 训练环境，它修改代码→训练5分钟→检查结果→再修改，循环往复直到满足目标。本质上是 evaluator loop 的实物化——执行→评分→反馈→再执行。与 LangChain RubricMiddleware（Grader sub-agent 驱动的迭代修正）形成「框架层 ↔ 实践层」互补：前者定义 evaluator loop 的工程框架，后者展示同一模式在 LLM 自训练场景的具体实现
 
 - **[Kiln-AI/Kiln](./kiln-ai-kiln-agent-eval-optimization-workbench-4867-stars-2026.md)** — 4,867 ⭐，Python/MIT，Agent Eval + Optimization 工作台（Eval Builder + Auto-Optimize + Subagents + Fine-tuning + Synthetic Data）+ 同一数据集贯穿完整 AI 开发循环 + Git 原生协作 + 本地优先（Ollama 离线可用）+ 190+ 模型库 + MCP 原生，与 OpenAI Monitoring Article（Round 264）形成「检测问题（OpenAI）→ 改进系统（Kiln）」完整工程闭环

@@ -1,9 +1,9 @@
 {
-  "lastCommit": "9208ddc",
-  "lastRound": 267,
-  "lastRun": "2026-06-06T13:57:00+08:00",
-  "articlesCount": 919,
-  "projectsCount": 123,
-  "sourcesTracked": 1104,
-  "theme": "LangChain RubricMiddleware (Jun 6) — evaluator loop pattern with Grader sub-agent + per-criterion feedback + rubric-driven iteration + karpathy/autoresearch (81k stars, 630-line autonomous self-training system)"
+  "lastCommit": "3fd46bb",
+  "lastRound": 268,
+  "lastRun": "2026-06-06T15:57:00+08:00",
+  "articlesCount": 920,
+  "projectsCount": 124,
+  "sourcesTracked": 1106,
+  "theme": "LangChain Interpreter Skills (Jun 6) — SKILL.md + index.ts dual-layer skill architecture, procedural behavior as code, context anxiety mitigation, interpreter runtime + MemoriLabs/Memori (14k stars, SQL-native agent memory infrastructure, Facts/Preferences/Rules/Summaries classification, cross-session state management)"
 }
