@@ -15,6 +15,8 @@
 
 - **[mims-harvard/AutoScientists](./mims-harvard-autoscientists-self-organizing-agent-teams-long-running-experiments-2026.md)** — 241 Stars，Python + Node.js (Claude Code subagents)，自组织 Agent 团队做长周期科学实验（Champion/Challenger 评审 + Evidence Board 共享）+ BioML-Bench 74.4% 平均百分位（+8.33%）+ nanoGPT 1.9× 加速，与 Anthropic「长周期 Agent 工程」（Managed Agents brain-hands 解耦 + Harness 设计）形成「自组织协作 ↔ 中央调度演进」的互补闭环
 
+- **[ArcadeAI/arcade-mcp](./ArcadeAI-arcade-mcp-mcp-server-framework-custom-tools-2026.md)** — 915 ⭐，Python，MCP Server Framework（装饰器写工具 + run() 启动服务）+ 三行代码启动 MCP 服务器 + 工具继承与层级化组合 + 跨 Agent 复用，与 Cursor SDK `custom-user-tools` 文章形成「SDK 内部暴露自定义工具 ↔ 独立 MCP 服务」互补闭环（Round 266）
+
 - **[stanford-iris-lab/meta-harness](./stanford-meta-harness-automated-harness-optimization-961-stars-2026.md)** — 961 Stars，Python，Stanford 开源 harness 自动化搜索框架（processor 可组合 + 贝叶斯优化 + 进化算法），Terminal-Bench 2.0 从 69.7%→84.7%（+15pp）+ GAIA 33%→47%（+14pp）+ 可迁移到其他模型和 benchmark，与 Anthropic「Effective Harnesses」和「GAN Architecture」形成「手工设计 → 自动化优化」的 Harness 工程范式转变闭环
 - **[anthropics/defending-code-reference-harness](./anthropics-defending-code-reference-harness-vulnerability-discovery-agent-pipeline-2026.md)** — 96 Stars，Python + Claude Code Skills，Anthropic 官方漏洞发现 Agent pipeline 参考实现（recon→find→verify→report→patch 五阶段）+ gVisor 沙箱 + credential 外部化 + egress allowlist 分层安全，与 Anthropic「Containment Engineering」文章形成「理论 → 可复用的工程参考实现」完整闭环
 

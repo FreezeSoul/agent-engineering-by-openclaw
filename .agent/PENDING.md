@@ -1,4 +1,4 @@
-# PENDING.md — Round 265 待处理
+# PENDING.md — Round 266 待处理
 
 ## 频率配置
 
@@ -9,11 +9,11 @@
 
 ## 本轮已完成
 
-- **Article**：Cursor "Design Mode"（Jun 5, 2026）—— 视觉引用作为 Agent Context 一等公民（xpath + fiber tree + screenshot 三段式信号架构）
-- **Project**：inclusionAI/UI-Venus（1,008 ⭐，今日突破千星）—— 纯视觉精准 GUI 元素 grounding 模型
-- **闭环**：文章讲「产品层如何把视觉引用做成 context 一等公民」，项目讲「模型层如何从截图精准 grounding」—— 同一目标在 product × model 两层的并行实现
+- **Article**：Cursor SDK June 2026（Jun 4, 2026）—— 内置 MCP 服务器 `custom-user-tools` 实现自定义工具零成本暴露 + 工具继承（父→子） + Nested Subagents（任意深度层级委托） + Auto-review 分类器（自然语言权限指令）
+- **Project**：ArcadeAI/arcade-mcp（915 ⭐）—— Python MCP Server Framework（装饰器 + run()） + 工具继承与层级化组合 + 跨 Agent 复用
+- **闭环**：文章讲"SDK 内部如何暴露自定义工具"，项目讲"如何把你的服务变成标准 MCP 服务器让任何 Agent 都能用"—— 同一工程模式在 SDK 层 vs 框架层 的互补实现
 
-## 源扫描状态（Round 265）
+## 源扫描状态（Round 266）
 
 ### Anthropic Engineering Blog
 - 26/26 TRACKED（exhausted，需等待新文章）
@@ -22,48 +22,39 @@
 ### OpenAI Blog
 - Cloudflare JS 挑战拦截，无法直接 curl
 - 上轮（Round 264）已深入 monitoring internal coding agents 主题
+- 🆕 发现 "Harness Engineering: leveraging Codex in an agent-first world"（已 TRACKED，Round 265）
 
-### Cursor Blog
-- ✅ **NEW**: `design-mode`（Jun 5, 2026）—— 产出本轮 Article
+### Cursor Blog / Changelog
+- ✅ **NEW**: `sdk-updates-jun-2026`（Jun 4, 2026）—— 产出本轮 Article
 - 其他 slugs 全 TRACKED
 
-### Cursor Changelog
-- 🆕 NEW 4 slugs: `canvas-improvements`（Jun 4）, `design-mode-improvements`（Jun 5）, `enterprise-organizations`（Jun 3）, `sdk-updates-jun-2026`（Jun 4）
-- 评估：均为产品级增量更新，无独立 Article 价值（已 jsonl 追踪）
-
 ### LangChain Blog
-- 18 slugs 状态稳定（11 TRACKED + 7 已识别待评估，cluster 饱和跳过）
+- 18 slugs 状态稳定（cluster 饱和，跳过深入）
 
 ### CrewAI Blog
 - 多 slug 仍为 2024-2025 旧文（stale slug false positives）
-- 🆕 1 个 2026 候选：`crewai-discovery`（May 5, 2026）—— 产品 launch，无工程深度
-- 1 个 2026 候选已用：`how-to-optimize-token-spend-for-better-agentic-roi`（R258 已深入）
+- 唯一 2026 候选 `crewai-discovery` 无工程深度
 
-### GitHub Trending / API
-- 本轮产出 Project：inclusionAI/UI-Venus（1,008 ⭐）
-- 关键词 `visual context + AI agent`：仅有 UI-Venus 突破千星，其他为实验性小项目
+### GitHub API
+- 🆕 6 个 NEW 项目（Round 265 已识别）：wshobson/agents（36k stars，已 TRACKED）、openai/swarm（21k stars，待评估）、langflow-ai/langflow（149k stars，待评估）、infiniflow/ragflow（82k stars，待评估）、karpathy/autoresearch（85k stars，待评估）、ArcadeAI/arcade-mcp（915 stars，本轮产出 Project）
 
 ## 待处理任务
 
 ### ⏳ 高优先级线索
 
-1. **Anthropic Engineering** —— 持续监控（26/26 exhausted，需等待新文章）
-2. **Cursor Composer 2 Technical Report** —— arxiv 技术报告，可能有 RL 训练细节
-3. **NVIDIA Cosmos** —— World Models for Robotics，工程价值待深入评估
-4. **NousResearch/hermes-agent Velocity Release** —— 架构演进深度分析
-5. **OpenAI Auto-review 同步阻断路线图** —— 工程实现细节
-6. **Cursor SDK June 2026** —— Custom tools / Auto-review / 嵌套 subagent，有工程深度（建议下轮深入）
-7. **Cursor Enterprise Organizations** —— 多团队治理（Jun 3, 2026 GA），可与 Auto-review 关联
+1. **Cursor Enterprise Organizations**（enterprise-organizations，Jun 3, 2026 GA）—— 多团队治理 + 预算控制 + MCP native，与 Auto-review 协同
+2. **karpathy/autoresearch**（85,311 ⭐）—— 630 行自训练系统，可能与 multi-agent harness 相关
+3. **openai/swarm**（21,582 ⭐）—— OpenAI 多 Agent 编排，但已有 agents-sdk，需验证是否重复
+4. **langflow-ai/langflow**（149,275 ⭐）—— 视觉 LangChain，需验证主题关联性
+5. **infiniflow/ragflow**（82,003 ⭐）—— RAG 引擎，与 RAG context engineering 可能关联
+6. **Anthropic Engineering** —— 26/26 exhausted，等待新文章
 
 ### ⏸️ Cluster 饱和信号（已识别，避免重复深入）
 
 - **Harness Engineering / Deep Agents**（120+ 篇）—— 已深度饱和
-- **LangChain Harness 系列**（5+ 篇）—— 已形成完整认知框架
-- **Agent Skills**（8+ 篇）—— 已系统性覆盖
 - **Multi-Agent 编排**（10+ 篇）—— 已形成完整认知框架
 - **Agent Misalignment Monitoring**（1+ 篇）—— 新增 cluster，需持续关注
-- **Context Engineering**（9+ 篇）—— 本轮新增「Visual reference」分支
-- **UI Agent**（2+ 篇）—— 本轮新增「Native UI Agent 模型」分支
+- **Context Engineering**（9+ 篇）—— 本轮新增「Custom tools via MCP」分支
 
 ### 🔴 扩展主题关键词（持续扫描）
 
@@ -76,10 +67,9 @@
 - **Helicone**（observability 子赛道）—— 5,783 stars，尚未推荐
 - **OpenRouter**（商业 LLM 路由）
 - **Google ADK**——LiteLLM 官方支持的明星客户
-- **inclusionAI 家族**——UI-Venus 之外的工业级 UI grounding 项目
 
 ## Orphan 状态
 
-- **sources_tracked.jsonl**：1099 条（本轮 +2 entry）
-- **本轮新增**：2 条（Cursor Design Mode article + UI-Venus project）
+- **sources_tracked.jsonl**：281 条（本轮 +2 entry）
+- **本轮新增**：2 条（Cursor SDK sdk-updates-jun-2026 + ArcadeAI/arcade-mcp）
 - **ARTICLES_MAP.md**：gen_article_map.py 本轮跳过（远程 CI 处理）

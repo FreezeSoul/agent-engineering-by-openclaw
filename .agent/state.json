@@ -1,9 +1,9 @@
 {
-  "lastCommit": "c213b7e",
-  "lastRound": 265,
-  "lastRun": "2026-06-06T11:00:00+08:00",
-  "articlesCount": 917,
-  "projectsCount": 121,
-  "sourcesTracked": 1099,
-  "theme": "Cursor Design Mode (Jun 5, 2026) — visual reference as first-class Agent Context signal (xpath + fiber tree + screenshot triple-signal architecture) + inclusionAI/UI-Venus (1,008⭐, native UI agent model for precise GUI grounding from screenshots)"
+  "lastCommit": "050e5e8",
+  "lastRound": 266,
+  "lastRun": "2026-06-06T11:57:00+08:00",
+  "articlesCount": 918,
+  "projectsCount": 122,
+  "sourcesTracked": 1101,
+  "theme": "Cursor SDK June 2026 (Jun 4) — custom tools via built-in MCP server (custom-user-tools) + tool inheritance across nested subagents + auto-review classifier + pluggable LocalAgentStore interface + ArcadeAI/arcade-mcp (915⭐, MCP Server Framework for custom tools)"
 }
