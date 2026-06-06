@@ -1,9 +1,9 @@
 {
-  "lastCommit": "31af1d9",
-  "lastRound": 263,
-  "lastRun": "2026-06-06T08:07:00+08:00",
-  "articlesCount": 915,
-  "projectsCount": 119,
-  "sourcesTracked": 1100,
-  "theme": "Anthropic Parallel Claudes harness engineering (2000 sessions, $20K, 100K lines C compiler) + CopilotKit AG-UI Protocol (32.6K stars)"
+  "lastCommit": "93ebaa6",
+  "lastRound": 264,
+  "lastRun": "2026-06-06T10:00:00+08:00",
+  "articlesCount": 916,
+  "projectsCount": 120,
+  "sourcesTracked": 1102,
+  "theme": "OpenAI internal coding agents misalignment monitoring (5 months, 10M+ trajectories, overeager behavior detection) + Kiln-AI/Kiln (4.8K stars, Agent Eval + Optimization workbench)"
 }
