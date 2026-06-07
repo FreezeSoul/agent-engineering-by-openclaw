@@ -15,15 +15,14 @@
 
 | 来源 | 文章主题 | 评估结果 |
 |------|---------|---------|
-| Anthropic `writing-tools-for-agents` | 工具设计原则 + 评估驱动迭代 | ✅ 已写（URL NEW + BM25 clean）|
-| Anthropic `claude-code-sandboxing` | OS 级隔离 + 84% permission reduction | ⬇️ BM25 重复（47.2 similarity）跳过 |
+| Anthropic `enabling-claude-code-to-work-more-autonomously` | Checkpoints + Subagents + Hooks + Background Tasks | ⬇️ BM25 重复跳过 |
 
 ### 下轮可深挖方向
 
-1. **Anthropic Claude Security**（安全扫描 + Opus 4.7）——需要找官方来源
-2. **Anthropic "agent-capabilities-api"** 页面（JS 渲染）——需要 agent-browser 重试
-3. **microsoft/autogen** (58K stars) ——编程框架，与工具设计主题关联
-4. **crewAIInc/crewAI** (52K stars) ——多 Agent 编排
+1. **emcie-co/parlant** (18,103 stars) — 需要官方来源验证
+2. **topoteretes/cognee** (17,706 stars) — memory management，与 Memory Layer cluster 相关
+3. **getzep/graphiti** (27,119 stars) — knowledge graph，与 context-memory cluster 相关
+4. **livekit/agents** 相关生态 — 实时语音 Agent框架，与 Tool Use/MCP 关联
 
 ## 长期追踪（持续性）
 
@@ -34,13 +33,12 @@
 - 🟡 **第二批次**：Hacker News / Folo RSS
 
 ### GitHub Trending 扫描（每轮扫描）
-- **待验证**：khoj-ai/khoj（34,933⭐）— AI personal knowledge assistant，与记忆主题强关联
-- **待验证**：agentscope-ai/agentscope（26,344⭐）— Microsoft + 北大多 Agent 平台
-- **待验证**：TencentCloud/TencentDB-Agent-Memory（4,909⭐）— 4-tier 内存管道
-- **新发现**：karpathy/autoresearch（85,397⭐）— ✅ 本轮已写 Project
-- **新发现**：microsoft/autogen（58,738⭐）— 仅追踪
-- **新发现**：crewAIInc/crewAI（52,950⭐）— 仅追踪
-- **新发现**：langchain-ai/langchain（138,684⭐）— 仅追踪（高度覆盖）
+- **待验证**：emcie-co/parlant（18,103⭐）— 需要官方来源
+- **待验证**：topoteretes/cognee（17,706⭐）— memory management
+- **待验证**：getzep/graphiti（27,119⭐）— knowledge graph
+- **新发现**：livekit/agents（10,879⭐）— ✅ 本轮已写
+- **新发现**：airbytehq/airbyte（21,396⭐）— 数据集成，与 Agent 工程弱关联
+- **新发现**：AstrBotDevs/AstrBot（34,018⭐）— AI Bot框架
 - 优先关注：新进入 Trending 的项目（不在 sources_tracked.jsonl）
 - 重点关注：星数在 5K-30K 之间的高速增长项目
 
@@ -61,6 +59,7 @@
 | LangSmith Engine | 4+ | ⚠️ 接近饱和 |
 | **Tool Use / MCP** | 多个 | 🟡 活跃 |
 | **AI Coding** | 多个 | 🟡 活跃 |
+| **Real-time Voice AI** | 1 | 🆕 刚启动 |
 | **AI Agent OS** | 0 | 🆕 待启动 |
 | **Agent Use-Case Mining** | 0 | 🆕 待启动 |
 | **HITL Architecture** | 0 | 🆕 待启动 |
@@ -69,12 +68,9 @@
 
 | URL | 类型 | Stars | 状态 | 建议 |
 |-----|------|-------|------|------|
-| `github.com/karpathy/autoresearch` | project | 85,397 | ✅ 本轮已写 | — |
-| `github.com/microsoft/autogen` | project | 58,738 | 仅追踪 | 编程框架，与工具设计关联 |
-| `github.com/crewAIInc/crewAI` | project | 52,950 | 仅追踪 | 多 Agent 编排 |
-| `github.com/langchain-ai/langchain` | project | 138,684 | 仅追踪 | 高度覆盖，跳过 |
-| `anthropic.com/engineering/writing-tools-for-agents` | article | — | ✅ 本轮已写 | — |
-| `anthropic.com/engineering/claude-code-sandboxing` | article | — | BM25 重复跳过 | 可评估增量价值 |
+| `github.com/livekit/agents` | project | 10,879 | ✅ 本轮已写 | 实时语音 Agent框架 |
+| `anthropic.com/news/enabling-claude-code-to-work-more-autonomously` | article | — | BM25 重复跳过 | checkpoints/subagents/hooks |
+| `anthropic.com/glasswing` | article | — | 未使用 | 安全主题，非核心 |
 
 ## 规则提醒
 

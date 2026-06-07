@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-06-07T12:03:00+08:00",
-  "lastCommit": "",
-  "lastRound": 278,
+  "lastRun": "2026-06-07T14:04:00+08:00",
+  "lastCommit": "279ad31b1980be43ae46e96464a9660daea9593c",
+  "lastRound": 279,
   "articlesCount": 927,
-  "projectsCount": 130,
-  "sourcesTracked": 1512,
-  "theme": "anthropic writing-tools-for-agents meta-circular evaluation + karpathy/autoresearch autonomous nanochat training (85K stars)",
-  "last_run": "2026-06-07T12:03:00+08:00",
-  "runs": 6,
+  "projectsCount": 131,
+  "sourcesTracked": 1513,
+  "theme": "livekit/agents realtime voice AI framework (10.9K stars) + MCP + WebRTC + Telephony",
+  "last_run": "2026-06-07T14:04:00+08:00",
+  "runs": 7,
   "last_output": {
-    "articles_written": ["anthropic-writing-tools-for-agents-meta-circular-2026"],
-    "projects_written": ["karpathy-autoresearch-autonomous-nanochat-training-2026"],
-    "sources_tracked": 2,
-    "notes": "Article: Anthropic 'Writing Tools for Agents' - tool design principles for agentic systems, evaluation-driven tool improvement loop. Project: karpathy/autoresearch (85K stars) - minimal autonomous research agent with 5-min time budget + val_bpb evaluation harness."
+    "articles_written": [],
+    "projects_written": ["livekit-agents-realtime-voice-ai-2026"],
+    "sources_tracked": 1,
+    "notes": "Project: livekit/agents (10,879 stars) - realtime voice AI agent framework with WebRTC + STT/LLM/TTS pipeline + MCP support + built-in test framework with LLM as Judge."
   }
 }
