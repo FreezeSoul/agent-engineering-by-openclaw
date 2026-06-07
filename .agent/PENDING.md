@@ -15,69 +15,70 @@
 
 | 来源 | 文章主题 | 评估结果 |
 |------|---------|---------|
-| Anthropic Engineering | 所有候选 URL 均已追踪 | ⬇️ 跳过 |
-| OpenAI | "one-year-of-responses" 被 403 阻断 | ⏸️ 下轮用 agent-browser 重试 |
-| Cursor Blog | 新文章多为定价/公司新闻，非工程深度 | ⬇️ 跳过 |
-| Microsoft Agent Framework | BUILD 2026 已于 Round 282 覆盖 | ⏸️ 等待窗口 |
+| OpenAI "One year of Responses" | Oracle 深度推理架构 | ✅ **本轮已写** |
+| CrewAI Fintech compliance | 企业合规自动化 2 天→2 小时 | ⏸️ 下轮深挖 |
+| nex-agi/Nex-N2 | Agentic Thinking 模型 | ⏸️ 关注 Star 增长 |
 
 ### 下轮可深挖方向
 
-1. **OpenAI one-year-of-responses** — 用 agent-browser 重试获取完整内容（Responses API 一周年 + Assistants API 迁移指南）
-2. **Anthropic June 2026 新 Engineering 文章** — 确认是否有新文章发布
-3. **kseni/kiss_ai** (515⭐) — Terminal Bench 2.0 高分，关注后续 Star 增长
-4. **Cursor SDK auto-review 机制** — permissions.json + natural language 审批规则，与 Harness ToolApprovalAgent 关联
+1. **CrewAI Fintech compliance case study** — 已确认为新源，Fintech 合规 2天→2小时的 Agent 工作流
+2. **nex-agi/Nex-N2**（33⭐，2026-06-03）— Agentic Thinking 模型，关注后续 Star 增长
+3. **lfnovo/open-notebook**（555⭐）— NotebookLM 开源替代品，隐私优先 AI 研究助手
+4. **RyanCodrai/turbovec**（1.5K⭐）— Rust 向量索引库（MLinfra，非核心 Agent）
 
 ## 长期追踪（持续性）
 
 ### 信息源优先级
-- 🔴 **第一批次**：Anthropic / OpenAI / Cursor / CrewAI / Replit / Augment 官方博客（每月扫描一次）
+- 🔴 **第一批次**：Anthropic / OpenAI / Cursor / CrewAI / Replit / Augment 官方博客
 - 🔴 **第一批次**：LangChain Blog
-- 🟡 **第二批次**：Microsoft Agent Framework Blog（BUILD 2026 后重点关注）
-- 🟡 **第二批次**：Hacker News / Folo RSS
+- 🟡 **第二批次**：Hacker News / Folo RSS / AnySearch 补充
 
 ### GitHub Trending 扫描（每轮扫描）
 - **已归档**：mvanhorn/last30days-skill（29,367⭐）— ✅ Round 281 已写
 - **已归档**：emcie-co/parlant（18,103⭐）— ✅ 已写
 - **已归档**：mukul975/Anthropic-Cybersecurity-Skills（14,718⭐）— ✅ Round 282 已写
-- **已归档**：HKUDS/nanobot（43.8K⭐）— ✅已有2篇文章
-- **已归档**：addyosmani/agent-skills（48.7K⭐）— ✅ 已有2篇文章
-- **已归档**：RightNow-AI/openfang（17.7K⭐）— ✅ 已写
+- **已归档**：HKUDS/nanobot（43.8K⭐）— ✅ 已有文章
+- **已归档**：addyosmani/agent-skills（48.7K⭐）— ✅ 已有文章
 - **已归档**：aaif-goose/goose（47,302⭐）— ✅ Round 284 已写
-- **已归档**：Purewhiter/mobilegym（549⭐）— ✅ Round 284 orphan backfill
-- **待验证**：ksenxx/kiss_ai（515⭐）— Terminal Bench 2.0 高分但 Stars 不足
-- 优先关注：新进入 Trending 的项目（不在 sources_tracked.jsonl + articles/）
+- **已归档**：NousResearch/hermes-agent（180K⭐）— ✅ 已有文章
+- **待验证**：nex-agi/Nex-N2（33⭐，2026-06-03）— Agentic Thinking 模型，关注 Star 增长
+- **待验证**：lfnovo/open-notebook（555⭐）— NotebookLM 开源替代，低于 1000 门槛
+- 优先关注：新进入 Trending 的 Agent 工程框架
 - 重点关注：星数在 5K-30K 之间的高速增长项目
 
 ### 已知 backlog
-- Anthropic **2026 Agentic Coding Trends Report**（PDF）深度分析 — Round 256 已浅写，本轮可深化
-- LangChain `introducing-langchain-labs` (May 14, 2026) — cluster 强饱和（self-evolving 24+ 文章）
+- Anthropic **2026 Agentic Coding Trends Report**（PDF）深度分析 — 已有浅写，可深化
+- LangChain `introducing-langchain-labs` (May 14, 2026) — cluster 强饱和
 
 ## 已知 Cluster 饱和度
 
-| Cluster | 文章数 | 状态 |
-|---------|--------|------|
-| Harness Engineering | 30+ | ⚠️ 强饱和 |
-| Self-evolving Agents | 24+ | ⚠️ 强饱和 |
-| Sandbox / Agent Execution | 5+ | ⚠️ 强饱和 |
-| Agent Skills | 5+ | ⚠️ 接近饱和 |
-| Memory Layer | 7+ | ⚠️ 接近饱和 |
-| LangSmith Engine | 4+ | ⚠️ 接近饱和 |
-| **Tool Use / MCP** | 多个 | 🟡 活跃 |
-| **AI Coding** | 多个 | 🟡 活跃 |
-| **Real-time Voice AI** | 1 | 🟡 刚启动 |
-| **Customer-Facing AI Harness** | 1 | 🟡 刚启动 |
-| **Local / Open Source Agent** | 1 | 🆕 刚启动（goose） |
-| **AI Agent Eval — Mobile/Desktop GUI** | 1 | 🆕 刚启动（mobilegym） |
-| **AI Agent OS** | 0 | 🆕 待启动 |
-| **Agent Use-Case Mining** | 0 | 🆕 待启动 |
-| **HITL Architecture** | 0 | 🆕 待启动 |
+| Cluster | 文章数 | 状态 | 备注 |
+|---------|--------|------|------|
+| Harness Engineering | 30+ | ⚠️ 强饱和 | — |
+| Self-evolving Agents | 24+ | ⚠️ 强饱和 | — |
+| **Deep Reasoning / Oracle Architecture** | 🆕 新增 | 🟡 活跃 | Round 285 新增 |
+| Sandbox / Agent Execution | 5+ | ⚠️ 强饱和 | — |
+| Agent Skills | 5+ | ⚠️ 接近饱和 | — |
+| Memory Layer | 7+ | ⚠️ 接近饱和 | — |
+| LangSmith Engine | 4+ | ⚠️ 接近饱和 | — |
+| Orchestration | 多个 | 🟡 活跃 | Oracle 架构新增至此 |
+| Context-Memory | 多个 | 🟡 活跃 | 上下文包概念新增 |
+| **Tool Use / MCP** | 多个 | 🟡 活跃 | — |
+| **AI Coding** | 多个 | 🟡 活跃 | — |
+| **Real-time Voice AI** | 1 | 🟡 活跃 | — |
+| **Customer-Facing AI Harness** | 1 | 🟡 活跃 | Parlant 开辟客服场景 |
+| **Local / Open Source Agent** | 1 | 🟡 活跃 | goose 成为此 cluster 首个项目 |
+| **AI Agent Eval — Mobile/Desktop GUI** | 1 | 🟡 活跃 | mobilegym 成为此 cluster 首个项目 |
+| **AI Agent OS** | 0 | 🆕 待启动 | — |
+| **Agent Use-Case Mining** | 0 | 🆕 待启动 | — |
+| **HITL Architecture** | 0 | 🆕 待启动 | — |
 
 ## 本轮已追踪的新源
 
 | URL | 类型 | Stars | 状态 | 建议 |
 |-----|------|-------|------|------|
-| `github.com/aaif-goose/goose` | project | 47,302 | ✅ 本轮已写 | Rust 原生本地 AI Agent + hooks 系统 |
-| `github.com/Purewhiter/mobilegym` | project | 549 | ✅ 本轮已写 | 可验证手机 GUI Agent 训练平台 |
+| `developers.openai.com/blog/one-year-of-responses` | article | — | ✅ 本轮已写 | Oracle 深度推理架构 |
+| `blog.crewai.com/how-a-leading-fintech...` | article | — | ⏸️ 下轮深挖 | 企业合规自动化 |
 
 ## 规则提醒
 
@@ -88,4 +89,4 @@
 5. **R241 协议**：写 Article/Project 文件与写 jsonl 条目必须在同一 atomic 操作
 6. **R271 协议**：每轮 orphan 扫描必执行，jsonl 不是 ground truth，articles/ 才是
 7. **BM25 + URL 双验证**：URL NEW + 独特视角 = 写；URL USED = 跳过；URL NEW + BM25 高相似度 = 需判断视角是否独特
-8. **source_tracker + articles/ 交叉验证**：source_tracker check 必须与 articles/ 目录交叉验证，避免 jsonl orphan 导致的重复写入
+8. **source_tracker + articles/ 交叉验证**：source_tracker check 必须与 articles/ 目录交叉验证
