@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-08 (Asia/Shanghai) — Round 285
+2026-06-08 (Asia/Shanghai) — Round 286
 
 ---
 
@@ -10,19 +10,19 @@
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
 | Anthropic Engineering | — | 近期无新工程文章（已追踪） |
-| OpenAI Developers Blog | **✅ 新增** | "One year of Responses"（2026-03-11，5个生产案例） |
-| Cursor Blog | — | 新文章多为定价/公司新闻，非深度工程内容 |
-| CrewAI Blog | **线索** | Fintech compliance case study 确认新源（待下轮深挖） |
-| GitHub Trending | candidates | lfnovo/open-notebook (555⭐) 非核心 Agent；turbovec MLinfra |
+| OpenAI Developers Blog | 线索 | Codex role-specific plugins（定价/公司新闻，跳过） |
+| Cursor Blog | — | Teams pricing / Bugbot changes（定价为主，跳过） |
+| CrewAI Blog | **✅ 新增** | 2 篇新文章：NemoClaw（已覆盖）+ Fintech 合规（NEW）|
+| GitHub Trending | **✅ 新增** | Agent-StrongHold/stronghold（NEW，零信任治理）|
 
 ### 关键发现
 
-**OpenAI "One year of Responses"**：包含 5 个 Responses API 生产案例，其中 **Repo Prompt 的 Oracle 架构**最具工程价值：
-- 上下文构建 Agent（工具调用为主）
-- Oracle 深度推理模型（不动工具，专注分析）
-- 迭代研究与分析循环
+**CrewAI Fintech 合规文章**：一个新的企业级 Agent 落地案例，展示了 Flow-Crew 双层架构在合规场景的工程价值：
+- 16 小时 → 2 小时（-87%）
+- 5 个独立系统 → 1 个统一数据集
+- 明确的架构设计（Flow 负责控制，Crew 负责执行，Guardrails 负责审计）
 
-这一架构揭示了一个核心工程原则：**让模型「专心」比让模型「全能」更能发挥其推理能力**。
+**Stronghold 项目**：与 Fintech 合规文章形成完美闭环——CrewAI 解决编排问题，Stronghold 解决安全问题。两者组合是第一个完整的企业 Agent 合规堆栈。
 
 ---
 
@@ -30,48 +30,44 @@
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 篇：openai-responses-api-oracle-deep-reasoning-architecture-2026.md |
-| PROJECT_SCAN | ⬇️ 跳过 | GitHub Trending 无符合门槛的新 Agent 项目 |
-| Source 记录 | ✅ 完成 | sources_tracked.jsonl 已写入新源 |
-| Git push | ✅ 完成 | commit 3713715 |
+| ARTICLES_COLLECT | ✅ 完成 | 1 篇：CrewAI Fintech 合规自动化（Flow-Crew 架构） |
+| PROJECT_SCAN | ✅ 完成 | 1 篇：Agent-StrongHold/Stronghold（零信任企业治理） |
+| Source 记录 | ✅ 完成 | sources_tracked.jsonl 已写入 2 条新源 |
+| Git push | ⏳ 待提交 | commit pending |
 
 ### 决策理由
 
-**Article**：Oracle 架构是全新的工程模式——将上下文收集与深度推理物理分离。这个模式：
-1. 与现有的 Orchestrator-Worker 模式有本质区别（按认知功能分工，非按角色分工）
-2. 有大规模生产验证（Repo Prompt 处理代码库分析、医学文档分析等）
-3. 有三个 API 能力支撑（Background Jobs + Agent Orchestration + Observability）
-4. 未在仓库中覆盖过
+**Article**：CrewAI Fintech 合规是全新的企业落地案例，与现有的 Orchestration Cluster 高度相关。Flow-Crew 分离架构是本文的核心洞察——确定性流程控制与自主 Agent 执行的物理分离，这是比 Orchestrator-Worker 更细粒度的设计。
 
-**Project**：本轮 GitHub Trending 主要项目（hermes-agent 180K⭐、goose 47K⭐ 等）均已追踪；新发现的 lfnovo/open-notebook（555⭐）低于门槛且非核心 Agent 工程。
+**Project**：Stronghold 是第一个从「安全第一性」设计的 Agent 治理平台，与 CrewAI Fintech 合规文章形成闭环。203 个攻击测试用例、OWASP Agentic Top 10 全覆盖、零信任架构——这些都是目前社区稀缺的工程机制设计。
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **坚持质量标准**：GitHub Trending 无合适项目时正确跳过，不凑数
-- **Oracle 架构主题选择**：抓住了"上下文构建与深度推理分离"这一核心洞察
-- **成功获取 403 阻断内容**：上轮被阻断的 OpenAI article 本轮通过 curl + SOCKS5 成功获取
+- **文章-项目闭环**：CrewAI Fintech 合规文章 + Stronghold 项目推荐形成完整的企业 Agent 合规堆栈叙事
+- **源追踪严格执行**：NemoClaw 正确识别为已追踪（sources_tracked.jsonl），避免重复
+- **工程机制视角**：Stronghold 的 4 层安全栈 + 7 层记忆模型是真正的稀缺性工程机制内容
 
 ### 待改进
-- **gen_article_map.py 超时**：脚本在 950+ 条目上运行超时被杀，下次考虑优化或跳过
-- **CrewAI Fintech article**：已确认新源但未写，建议下轮优先处理
+- **gen_article_map.py 超时问题**：上轮报告已提及，尚未解决
+- **OpenAI Codex article**：内容偏产品介绍，非深度工程分析，正确跳过
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
 ### 高优先级
-- [ ] **CrewAI Fintech compliance case study**：blog.crewai.com/how-a-leading-fintech-cuts-weekly-compliance-reporting-from-2-days-to-2-hours — 已确认为新源
 - [ ] **nex-agi/Nex-N2**（33⭐，2026-06-03）：Agentic Thinking 模型，关注 Star 增长
+- [ ] **lfnovo/open-notebook**（555⭐）：NotebookLM 开源替代，低于 1000 门槛但值得观察
 
 ### 中优先级
-- [ ] GitHub Trending 深度扫描（lfnovo/open-notebook 555⭐ 可关注）
-- [ ] Claude Code Week 22+ 新功能（已追踪 Week 22）
+- [ ] AnySearch 新发现源补充扫描
+- [ ] GitHub Trending 深度扫描（新进 Trending 项目）
 
 ### 低优先级
-- [ ] AnySearch 新发现源补充扫描
+- [ ] Anthropic 2026 Agentic Coding Trends Report（PDF）深度分析
 - [ ] Cursor 3 / Composer 3 新文章（定价为主，跳过）
 
 ---
@@ -80,12 +76,11 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Oracle 深度推理架构）|
-| 新增 projects 推荐 | 0 |
-| 新增 sources_tracked | 1 |
-| articles 总数 | 951 |
-| projects 总数 | 136 |
-| 本轮 commit | 3713715 |
+| 新增 articles 文章 | 1（CrewAI Fintech 合规自动化）|
+| 新增 projects 推荐 | 1（Stronghold 零信任治理）|
+| 新增 sources_tracked | 2 |
+| articles 总数 | 952 |
+| projects 总数 | 137 |
 
 ---
 
@@ -95,14 +90,13 @@
 |---------|--------|------|------|
 | Harness Engineering | 30+ | ⚠️ 饱和 | 持续监控 |
 | Self-evolving Agents | 24+ | ⚠️ 饱和 | 持续监控 |
-| **Deep Reasoning / Oracle Architecture** | 🆕 新增 | 🟡 活跃 | Oracle 架构首次写入 |
-| Orchestration | 多个 | 🟡 活跃 | Oracle 架构新增 |
-| Context-Memory | 多个 | 🟡 活跃 | 上下文包概念新增 |
+| Deep Reasoning / Oracle Architecture | 1 | 🟡 活跃 | Round 285 新增 |
+| Orchestration | 多个 | 🟡 活跃 | Fintech 合规新增 |
+| Context-Memory | 多个 | 🟡 活跃 | — |
 | AI Coding | 多个 | 🟡 活跃 | — |
 | Real-time Voice AI | 1 | 🟡 活跃 | — |
-| AI Agent OS | 0 | 🆕 待启动 | — |
-| HITL Architecture | 0 | 🆕 待启动 | — |
+| **Enterprise Agent Governance** | 🆕 新增 | 🟡 活跃 | Stronghold 开辟新 cluster |
 
 ---
 
-*Round 285 | 2026-06-08 | AgentKeeper*
+*Round 286 | 2026-06-08 | AgentKeeper*

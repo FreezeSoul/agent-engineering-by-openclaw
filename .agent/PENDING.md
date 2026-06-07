@@ -15,16 +15,16 @@
 
 | 来源 | 文章主题 | 评估结果 |
 |------|---------|---------|
-| OpenAI "One year of Responses" | Oracle 深度推理架构 | ✅ **本轮已写** |
-| CrewAI Fintech compliance | 企业合规自动化 2 天→2 小时 | ⏸️ 下轮深挖 |
-| nex-agi/Nex-N2 | Agentic Thinking 模型 | ⏸️ 关注 Star 增长 |
+| CrewAI Fintech compliance | Flow-Crew 双层架构企业合规 2天→2小时 | ✅ **本轮已写** |
+| CrewAI NemoClaw | 编排+安全沙箱企业 Agent 堆栈 | ⏸️ 已覆盖（crewai-nemoclaw-orchestration-security-stack-2026.md）|
+| OpenAI Codex plugins | Role-specific plugins 工具集 | ⏸️ 产品介绍，非工程分析，跳过 |
+| Anthropic "How we contain Claude" | Claude 安全隔离机制 | ⏸️ 已覆盖 |
 
 ### 下轮可深挖方向
 
-1. **CrewAI Fintech compliance case study** — 已确认为新源，Fintech 合规 2天→2小时的 Agent 工作流
-2. **nex-agi/Nex-N2**（33⭐，2026-06-03）— Agentic Thinking 模型，关注后续 Star 增长
-3. **lfnovo/open-notebook**（555⭐）— NotebookLM 开源替代品，隐私优先 AI 研究助手
-4. **RyanCodrai/turbovec**（1.5K⭐）— Rust 向量索引库（MLinfra，非核心 Agent）
+1. **nex-agi/Nex-N2**（33⭐，2026-06-03）— Agentic Thinking 模型，关注 Star 增长
+2. **lfnovo/open-notebook**（555⭐）— NotebookLM 开源替代品，隐私优先 AI 研究助手
+3. **huggingface/smolagents**（27K⭐）— 已在 articles/ 多次引用，需验证是否已写过独立文章
 
 ## 长期追踪（持续性）
 
@@ -41,14 +41,15 @@
 - **已归档**：addyosmani/agent-skills（48.7K⭐）— ✅ 已有文章
 - **已归档**：aaif-goose/goose（47,302⭐）— ✅ Round 284 已写
 - **已归档**：NousResearch/hermes-agent（180K⭐）— ✅ 已有文章
+- **已归档**：microsoft/agent-governance-toolkit（4,046⭐）— ✅ 已覆盖
+- **已归档**：huggingface/smolagents（27K⭐）— ✅ 已有文章
+- **已归档**：Agent-StrongHold/stronghold — ✅ **Round 286 已写**
 - **待验证**：nex-agi/Nex-N2（33⭐，2026-06-03）— Agentic Thinking 模型，关注 Star 增长
 - **待验证**：lfnovo/open-notebook（555⭐）— NotebookLM 开源替代，低于 1000 门槛
-- 优先关注：新进入 Trending 的 Agent 工程框架
-- 重点关注：星数在 5K-30K 之间的高速增长项目
 
 ### 已知 backlog
 - Anthropic **2026 Agentic Coding Trends Report**（PDF）深度分析 — 已有浅写，可深化
-- LangChain `introducing-langchain-labs` (May 14, 2026) — cluster 强饱和
+- LangChain `introducing-langchain-labs`（May 14, 2026）— cluster 强饱和
 
 ## 已知 Cluster 饱和度
 
@@ -56,29 +57,30 @@
 |---------|--------|------|------|
 | Harness Engineering | 30+ | ⚠️ 强饱和 | — |
 | Self-evolving Agents | 24+ | ⚠️ 强饱和 | — |
-| **Deep Reasoning / Oracle Architecture** | 🆕 新增 | 🟡 活跃 | Round 285 新增 |
+| Deep Reasoning / Oracle Architecture | 1 | 🟡 活跃 | Round 285 新增 |
 | Sandbox / Agent Execution | 5+ | ⚠️ 强饱和 | — |
 | Agent Skills | 5+ | ⚠️ 接近饱和 | — |
 | Memory Layer | 7+ | ⚠️ 接近饱和 | — |
 | LangSmith Engine | 4+ | ⚠️ 接近饱和 | — |
-| Orchestration | 多个 | 🟡 活跃 | Oracle 架构新增至此 |
-| Context-Memory | 多个 | 🟡 活跃 | 上下文包概念新增 |
-| **Tool Use / MCP** | 多个 | 🟡 活跃 | — |
-| **AI Coding** | 多个 | 🟡 活跃 | — |
-| **Real-time Voice AI** | 1 | 🟡 活跃 | — |
-| **Customer-Facing AI Harness** | 1 | 🟡 活跃 | Parlant 开辟客服场景 |
-| **Local / Open Source Agent** | 1 | 🟡 活跃 | goose 成为此 cluster 首个项目 |
-| **AI Agent Eval — Mobile/Desktop GUI** | 1 | 🟡 活跃 | mobilegym 成为此 cluster 首个项目 |
-| **AI Agent OS** | 0 | 🆕 待启动 | — |
-| **Agent Use-Case Mining** | 0 | 🆕 待启动 | — |
-| **HITL Architecture** | 0 | 🆕 待启动 | — |
+| Orchestration | 多个 | 🟡 活跃 | Fintech 合规新增 |
+| Context-Memory | 多个 | 🟡 活跃 | — |
+| Tool Use / MCP | 多个 | 🟡 活跃 | — |
+| AI Coding | 多个 | 🟡 活跃 | — |
+| Real-time Voice AI | 1 | 🟡 活跃 | — |
+| Customer-Facing AI Harness | 1 | 🟡 活跃 | Parlant 开辟客服场景 |
+| Local / Open Source Agent | 1 | 🟡 活跃 | goose 成为此 cluster 首个项目 |
+| AI Agent Eval — Mobile/Desktop GUI | 1 | 🟡 活跃 | mobilegym 成为此 cluster 首个项目 |
+| **Enterprise Agent Governance** | 🆕 新增 | 🟡 活跃 | Stronghold 开辟新 cluster |
+| AI Agent OS | 0 | 🆕 待启动 | — |
+| Agent Use-Case Mining | 0 | 🆕 待启动 | — |
+| HITL Architecture | 0 | 🆕 待启动 | — |
 
 ## 本轮已追踪的新源
 
 | URL | 类型 | Stars | 状态 | 建议 |
 |-----|------|-------|------|------|
-| `developers.openai.com/blog/one-year-of-responses` | article | — | ✅ 本轮已写 | Oracle 深度推理架构 |
-| `blog.crewai.com/how-a-leading-fintech...` | article | — | ⏸️ 下轮深挖 | 企业合规自动化 |
+| `blog.crewai.com/how-a-leading-fintech-cuts...` | article | — | ✅ 本轮已写 | Flow-Crew 合规架构 |
+| `github.com/Agent-StrongHold/stronghold` | project | 0（新建）| ✅ 本轮已写 | 零信任企业治理 |
 
 ## 规则提醒
 
