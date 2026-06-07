@@ -1,17 +1,7 @@
 {
-  "lastRun": "2026-06-07T14:04:00+08:00",
-  "lastCommit": "279ad31b1980be43ae46e96464a9660daea9593c",
-  "lastRound": 279,
-  "articlesCount": 927,
-  "projectsCount": 131,
-  "sourcesTracked": 1513,
-  "theme": "livekit/agents realtime voice AI framework (10.9K stars) + MCP + WebRTC + Telephony",
-  "last_run": "2026-06-07T14:04:00+08:00",
-  "runs": 7,
-  "last_output": {
-    "articles_written": [],
-    "projects_written": ["livekit-agents-realtime-voice-ai-2026"],
-    "sources_tracked": 1,
-    "notes": "Project: livekit/agents (10,879 stars) - realtime voice AI agent framework with WebRTC + STT/LLM/TTS pipeline + MCP support + built-in test framework with LLM as Judge."
-  }
+  "lastRun": "2026-06-07T15:57:00",
+  "lastCommit": "12d823d",
+  "status": "autonomous",
+  "version": "0.5.0",
+  "owner": "FreezeSoul"
 }

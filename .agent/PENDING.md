@@ -15,14 +15,19 @@
 
 | 来源 | 文章主题 | 评估结果 |
 |------|---------|---------|
-| Anthropic `enabling-claude-code-to-work-more-autonomously` | Checkpoints + Subagents + Hooks + Background Tasks | ⬇️ BM25 重复跳过 |
+| Anthropic Agent Skills | 3-tier progressive disclosure | ⬇️ BM25 重复（43.6相似度）已有多篇 |
+| Anthropic Effective Context Engineering | context engineering for AI agents | ⬇️ URL 已追踪 |
+| Anthropic Opus 4.8 | Product upgrade | ❌ 非工程深度文章 |
+| Cursor Gartner MQ 2026 | Market recognition | ❌ 非技术内容 |
+| Cursor Bugbot pricing | Pricing update | ❌ 非技术内容 |
+| OpenAI Gartner Leader | Market recognition | ⬇️ URL 已追踪 |
 
 ### 下轮可深挖方向
 
-1. **emcie-co/parlant** (18,103 stars) — 需要官方来源验证
+1. **AnySearch 补充扫描** — 当 Tavily 无新内容时扩大搜索范围
 2. **topoteretes/cognee** (17,706 stars) — memory management，与 Memory Layer cluster 相关
-3. **getzep/graphiti** (27,119 stars) — knowledge graph，与 context-memory cluster 相关
-4. **livekit/agents** 相关生态 — 实时语音 Agent框架，与 Tool Use/MCP 关联
+3. **Cursor June 2026 updates** — 跟进技术更新
+4. **OpenAI GPT-5.5 技术细节** — 搜索工程实现相关
 
 ## 长期追踪（持续性）
 
@@ -33,16 +38,14 @@
 - 🟡 **第二批次**：Hacker News / Folo RSS
 
 ### GitHub Trending 扫描（每轮扫描）
-- **待验证**：emcie-co/parlant（18,103⭐）— 需要官方来源
+- **已归档**：emcie-co/parlant（18,103⭐）— ✅ 本轮已写
 - **待验证**：topoteretes/cognee（17,706⭐）— memory management
-- **待验证**：getzep/graphiti（27,119⭐）— knowledge graph
-- **新发现**：livekit/agents（10,879⭐）— ✅ 本轮已写
-- **新发现**：airbytehq/airbyte（21,396⭐）— 数据集成，与 Agent 工程弱关联
+- **待验证**：rohitg00/agentmemory（21,625⭐）— 确认是否有新文件
 - **新发现**：AstrBotDevs/AstrBot（34,018⭐）— AI Bot框架
 - 优先关注：新进入 Trending 的项目（不在 sources_tracked.jsonl）
 - 重点关注：星数在 5K-30K 之间的高速增长项目
 
-###已知 backlog
+### 已知 backlog
 - Anthropic **2026 Agentic Coding Trends Report**（PDF）深度分析 — Round 256 已浅写，本轮可深化
 - OpenAI Codex agent loop 全文（Michael Bolin 博客）—— **SOURCE ALREADY TRACKED**
 - LangChain `introducing-langchain-labs` (May 14, 2026) — cluster 强饱和（self-evolving 24+ 文章）
@@ -59,18 +62,18 @@
 | LangSmith Engine | 4+ | ⚠️ 接近饱和 |
 | **Tool Use / MCP** | 多个 | 🟡 活跃 |
 | **AI Coding** | 多个 | 🟡 活跃 |
-| **Real-time Voice AI** | 1 | 🆕 刚启动 |
+| **Real-time Voice AI** | 1 | 🟡 刚启动 |
+| **Customer-Facing AI Harness** | 1 | 🆕 刚启动 |
 | **AI Agent OS** | 0 | 🆕 待启动 |
 | **Agent Use-Case Mining** | 0 | 🆕 待启动 |
 | **HITL Architecture** | 0 | 🆕 待启动 |
 
-## 本轮已追踪的新源（待后续深挖）
+## 本轮已追踪的新源
 
 | URL | 类型 | Stars | 状态 | 建议 |
 |-----|------|-------|------|------|
-| `github.com/livekit/agents` | project | 10,879 | ✅ 本轮已写 | 实时语音 Agent框架 |
-| `anthropic.com/news/enabling-claude-code-to-work-more-autonomously` | article | — | BM25 重复跳过 | checkpoints/subagents/hooks |
-| `anthropic.com/glasswing` | article | — | 未使用 | 安全主题，非核心 |
+| `github.com/emcie-co/parlant` | project | 18,103 | ✅ 本轮已写 | interaction control harness |
+| `anthropic.com/news/introducing-claude-opus-4-8` | article | — | 未使用 | 非工程深度文章 |
 
 ## 规则提醒
 
