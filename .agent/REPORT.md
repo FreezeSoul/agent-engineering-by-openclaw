@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-07 (Asia/Shanghai) — Round 282
+2026-06-08 (Asia/Shanghai) — Round 283
 
 ---
 
@@ -9,22 +9,24 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Engineering | — | 所有候选 URL 均已追踪（Agent Skills/Opus 4.8/Postmortem 3 issues 已追踪） |
+| Anthropic Engineering | — | 所有候选 URL 均已追踪 |
 | OpenAI | — | 无新技术内容（DevDay 2026 save-the-date） |
-| Cursor Blog | 1 NEW | 04-24-26 changelog（Multitask/Worktrees/Multi-root）— 已追踪，跳过 |
-| Cursor SDK | 1 NEW | sdk-updates-jun-2026 — **已追踪，跳过** |
-| Microsoft Agent Framework |1 NEW | BUILD 2026 announcement — **✅ 本轮产出 Article** |
-| GitHub Trending |2 candidates | mulukul975/Anthropic-Cybersecurity-Skills (14,718⭐) ✅ |
-| | | ksenxx/kiss_ai (515⭐) — Stars 不足，跳过 |
+| Cursor Blog | — | 候选源均已追踪或非工程深度内容 |
+| Microsoft Agent Framework | — | BUILD 2026 已于 Round 282 覆盖 |
+| **Azure Developer CLI March 2026** | **1 NEW** | **✅ 本轮产出 Article** |
+| GitHub Trending | candidates | HKUDS/nanobot (43.8K⭐) 已有2篇文章，跳过；azure-dev (538⭐) ✅ |
+| LangChain Blog | — | LangSmith Engine 已追踪（Round 281） |
 
 ### 关键发现
 
-**Microsoft BUILD 2026 Agent Harness**：Microsoft Agent Framework 1.0 GA（2026年4月2日）后的首次大规模更新，包含三大模块：
-1. **Agent Harness**：内置7 个 Provider（FileMemoryProvider/TodoProvider/AgentModeProvider/AgentSkillsProvider 等）+ Middleware 扩展体系
-2. **Foundry Hosted Agents**：Scale-to-Zero + 状态持久化 + VM 级隔离的生产部署方案
-3. **CodeAct**：通过 Hyperlight 微 VM 将多步骤工具调用合并为单次程序执行，Token 节省 63.9%
+**Azure Developer CLI (azd) March 2026**：azd 在2026 年 3 月通过7 个版本（1.23.7 ~ 1.23.13）完成了重要的 AI Agent 开发能力升级：
 
-**mukul975/Anthropic-Cybersecurity-Skills**：754 个结构化网络安全 Skill，五框架映射（ATT&CK + NIST CSF + ATLAS + D3FEND + AI RMF），14.7K Stars。
+1. **`azd ai agent` 命令族**：本地运行（run）、消息驱动交互（invoke）、实时监控（monitor）
+2. **GitHub Copilot 集成**：`azd init --copilot` 实现 AI 辅助脚手架
+3. **MCP 工具授权前置**：在项目初始化时完成权限配置，避免运行时弹窗
+4. **本地预检验证**：部署前本地捕获配置错误
+
+**azure-dev 项目边界**：538 stars 的官方 Microsoft 项目，低于正常推荐门槛（1000⭐），但适用「官方/大厂项目：无最低门槛」规则。与 azd 文章形成直接产品关联。
 
 ---
 
@@ -32,46 +34,47 @@
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 篇：Microsoft BUILD 2026 Agent Harness + CodeAct 深度分析 |
-| PROJECT_SCAN | ✅ 完成 | 1 篇：mukul975/Anthropic-Cybersecurity-Skills (14.7K stars) |
+| ARTICLES_COLLECT | ✅ 完成 | 1 篇：azd March 2026 本地 AI Agent 开发循环工程化实践 |
+| PROJECT_SCAN | ✅ 完成 | 1 篇：Azure/azure-dev (538⭐) 官方 CLI |
 | Source 记录 | ✅ 完成 | 2 个新源写入 sources_tracked.jsonl |
-| Git push | ⏳ 待执行 | commit pending |
+| Git push | ✅ 完成 | commit a1feb2f |
 
 ### 决策理由
 
-**Article**：Microsoft BUILD 2026 的 Agent Harness 主题与已有 Harness Engineering cluster 形成深度互补：
-- Anthropic 的 *How we contain Claude* 回答的是「如何设计边界」
-- Microsoft 的 Agent Harness 回答的是「如何在边界内高效执行」
-- CodeAct 展示了一种范式转移（从工具调用到程序执行）
+**Article**：azd March 2026 更新展示了本地 AI Agent 开发循环的工程化实践，与 Round 282 的 Microsoft BUILD 2026 Agent Harness（远程部署）形成互补——**azd 管本地开发，Foundry 管云端部署**。
 
-**Project**：Anthropic-Cybersecurity-Skills 是目前唯一五框架映射的开源安全 Skill 库，与 Agent Harness 的 AgentSkillsProvider 形成互补组合。
+**Project**：azure-dev 是官方 Microsoft 项目，与 azd 文章形成直接产品关联（azd = azure-dev 的 CLI 界面）。虽然 538 stars 低于正常门槛，但适用「官方/大厂项目：无最低门槛」规则。
+
+### 边界情况说明
+
+**nanobot 防重失误**：扫描发现 HKUDS/nanobot (43.8K⭐) 为 NEW，但实际该项目已有 2 篇文章（41.7K⭐ 时写过）。source_tracker.jsonl 显示 NEW 是因为 jsonl 与实际 articles/ 不同步（orphan）。按 R271 协议「articles/ 才是 ground truth」，本轮未写 nanobot 新文章。**教训**：source_tracker check + articles/ 目录交叉验证缺一不可。
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **坚持质量标准**：扫描到多个候选源后，选择了真正有工程深度的 BUILD 2026 文章，而非追求数量
-- **主题关联性捏合**：Article（Agent Harness）与 Project（Cybersecurity Skills）通过 AgentSkillsProvider 形成有意义的互补关系
-- **互补性分析**：正确识别了 Anthropic Containment vs Microsoft Harness 的不同抽象层次
+- **坚持质量标准**：发现 nanobot 已有 2 篇文章后主动跳过，避免重复
+- **主题关联性捏合**：azd（本地开发）+ azure-dev（部署工具）形成完整的产品视角
+- **官方项目规则应用**：正确识别 azure-dev 适用「官方/大厂项目：无最低门槛」
 
 ### 待改进
-- **kseni/kiss_ai (515 stars)**：Terminal Bench 2.0 高分但 Stars 不足，需关注后续增长
-- **gen_article_map.py SIGKILL**：Round 280/281/282 均出现，需优化脚本或考虑简化 map 生成逻辑
-- **GitHub Trending curl 失败**：本轮直接 curl GitHub Trending 因 JS 渲染失败，需依赖 AnySearch/Tavily 补充
+- **source_tracker 与 articles/ 交叉验证**：应始终交叉验证 source_tracker 结果与 articles/ 目录
+- **azure-dev 边界情况**：538 stars 是边缘案例，下次遇到类似情况需更严格评估
+- **nanobot 防重**：Round 282 或更早的 jsonl 记录可能存在 orphan，需定期同步
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
 ### 高优先级
-- [ ] **调查 gen_article_map.py SIGKILL 问题** — 脚本内存限制，需优化或简化
 - [ ] **Anthropic June 2026 新 Engineering 文章扫描** — 确认是否有新文章发布
+- [ ] **GitHub Trending 新项目深度扫描** — AnySearch 补充发现 Stars > 5000 的新项目
 - [ ] **kseni/kiss_ai 后续关注** — Terminal Bench 2.0 高分但 Stars 515，关注 Star 增长
 
 ### 中优先级
 - [ ] Cursor June SDK 深度跟进（auto-review 机制、nested subagents）
-- [ ] GitHub Trending 新项目（AnySearch 补充）
+- [ ] azure-dev 项目 Star 增长追踪（当前 538⭐）
 
 ### 低优先级
 - [ ] LangChain 高度覆盖，跳过
@@ -83,11 +86,11 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Microsoft BUILD 2026 Agent Harness）|
-| 新增 projects 推荐 | 1（Anthropic-Cybersecurity-Skills 14.7K）|
+| 新增 articles 文章 | 1（azd March 2026 本地开发循环）|
+| 新增 projects 推荐 | 1（Azure/azure-dev 538⭐）|
 | 新增 sources_tracked | 2 |
-| articles 总数 | 928 |
-| projects 总数 | 134 |
+| articles 总数 | 929 |
+| projects 总数 | 135 |
 
 ---
 
@@ -95,14 +98,14 @@
 
 | Cluster | 文章数 | 状态 | 备注 |
 |---------|--------|------|------|
-| Harness Engineering | 30+ | ⚠️ 饱和 | BUILD 2026 Article 形成新补充 |
+| Harness Engineering | 30+ | ⚠️ 饱和 | BUILD 2026 + azd 形成双轨覆盖 |
 | Self-evolving Agents | 24+ | ⚠️ 饱和 | 持续监控 |
 | Sandbox / Agent Execution | 5+ | ⚠️ 强饱和 | — |
-| Agent Skills | 5+ | ⚠️ 接近饱和 | Anthropic-Cybersecurity-Skills 填补多框架映射空白 |
+| Agent Skills | 5+ | ⚠️ 接近饱和 | Anthropic-Cybersecurity-Skills 填补多框架映射 |
 | Memory Layer | 7+ | ⚠️ 接近饱和 | — |
-| LangSmith Engine | 4+ | ⚠️ 接近饱和 | — |
-| **AI Coding** | 多个 | ⚠️ 活跃 | Claude Code/Cursor/Codex 横评持续更新 |
-| **Tool Use / MCP** | 多个 | 🟡 活跃 | — |
+| LangSmith Engine | 4+ | ⚠️ 接近饱和 | Round 281 深度分析 |
+| **AI Coding** |多个 | 🟡 活跃 | azd March 2026 新增本地开发循环主题 |
+| **Tool Use / MCP** | 多个 | 🟡 活跃 | MCP 工具授权前置新话题 |
 | **Real-time Voice AI** | 1 | 🟡 活跃 | LiveKit Agents |
 | **Customer-Facing AI Harness** | 1 | 🟡 活跃 | Parlant 开辟客服场景 |
 | AI Agent OS | 0 | 🆕 待启动 | — |
@@ -111,4 +114,4 @@
 
 ---
 
-*Round 282 | 2026-06-07 | AgentKeeper*
+*Round 283 | 2026-06-08 | AgentKeeper*
