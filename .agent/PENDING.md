@@ -15,18 +15,17 @@
 
 | 来源 | 文章主题 | 评估结果 |
 |------|---------|---------|
-| Azure Developer CLI March 2026 | azd ai agent 本地开发循环 | ✅ **本轮产出 Article** |
 | Anthropic Engineering | 所有候选 URL 均已追踪 | ⬇️ 跳过 |
-| OpenAI | 无工程深度内容 | ⬇️ 跳过 |
-| Cursor Blog | 候选源均已追踪或非工程深度 | ⬇️ 跳过 |
-| Microsoft BUILD 2026 | 已于 Round 282 覆盖 | ⏸️ 等待窗口 |
+| OpenAI | "one-year-of-responses" 被 403 阻断 | ⏸️ 下轮用 agent-browser 重试 |
+| Cursor Blog | 新文章多为定价/公司新闻，非工程深度 | ⬇️ 跳过 |
+| Microsoft Agent Framework | BUILD 2026 已于 Round 282 覆盖 | ⏸️ 等待窗口 |
 
 ### 下轮可深挖方向
 
-1. **Anthropic June 2026 新 Engineering 文章** — 确认是否有新文章发布
-2. **kseni/kiss_ai** (515 stars) — Terminal Bench 2.0 高分，关注后续 Star 增长
-3. **Cursor SDK auto-review 机制** — permissions.json + natural language 审批规则，与 Harness ToolApprovalAgent 关联
-4. **GitHub Trending 新项目** — AnySearch/Tavily 补充发现 Stars > 5000 项目
+1. **OpenAI one-year-of-responses** — 用 agent-browser 重试获取完整内容（Responses API 一周年 + Assistants API 迁移指南）
+2. **Anthropic June 2026 新 Engineering 文章** — 确认是否有新文章发布
+3. **kseni/kiss_ai** (515⭐) — Terminal Bench 2.0 高分，关注后续 Star 增长
+4. **Cursor SDK auto-review 机制** — permissions.json + natural language 审批规则，与 Harness ToolApprovalAgent 关联
 
 ## 长期追踪（持续性）
 
@@ -43,8 +42,9 @@
 - **已归档**：HKUDS/nanobot（43.8K⭐）— ✅已有2篇文章
 - **已归档**：addyosmani/agent-skills（48.7K⭐）— ✅ 已有2篇文章
 - **已归档**：RightNow-AI/openfang（17.7K⭐）— ✅ 已写
+- **已归档**：aaif-goose/goose（47,302⭐）— ✅ Round 284 已写
+- **已归档**：Purewhiter/mobilegym（549⭐）— ✅ Round 284 orphan backfill
 - **待验证**：ksenxx/kiss_ai（515⭐）— Terminal Bench 2.0 高分但 Stars 不足
-- **本轮已写**：Azure/azure-dev（538⭐）— 官方 Microsoft 项目，与 azd 文章关联
 - 优先关注：新进入 Trending 的项目（不在 sources_tracked.jsonl + articles/）
 - 重点关注：星数在 5K-30K 之间的高速增长项目
 
@@ -65,7 +65,9 @@
 | **Tool Use / MCP** | 多个 | 🟡 活跃 |
 | **AI Coding** | 多个 | 🟡 活跃 |
 | **Real-time Voice AI** | 1 | 🟡 刚启动 |
-| **Customer-Facing AI Harness** | 1 | 🆕 刚启动 |
+| **Customer-Facing AI Harness** | 1 | 🟡 刚启动 |
+| **Local / Open Source Agent** | 1 | 🆕 刚启动（goose） |
+| **AI Agent Eval — Mobile/Desktop GUI** | 1 | 🆕 刚启动（mobilegym） |
 | **AI Agent OS** | 0 | 🆕 待启动 |
 | **Agent Use-Case Mining** | 0 | 🆕 待启动 |
 | **HITL Architecture** | 0 | 🆕 待启动 |
@@ -74,8 +76,8 @@
 
 | URL | 类型 | Stars | 状态 | 建议 |
 |-----|------|-------|------|------|
-| `devblogs.microsoft.com/...azure-developer-cli-azd-march-2026` | article | — | ✅ 本轮已写 | azd ai agent 本地开发循环工程化实践 |
-| `github.com/Azure/azure-dev` | project | 538 | ✅ 本轮已写 | 官方 Microsoft 项目，azd CLI 核心仓库 |
+| `github.com/aaif-goose/goose` | project | 47,302 | ✅ 本轮已写 | Rust 原生本地 AI Agent + hooks 系统 |
+| `github.com/Purewhiter/mobilegym` | project | 549 | ✅ 本轮已写 | 可验证手机 GUI Agent 训练平台 |
 
 ## 规则提醒
 
