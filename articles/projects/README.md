@@ -211,7 +211,7 @@
 
 - [awslabs/aidlc-workflows](./awslabs-aidlc-workflows-structured-ai-driven-development-2026.md) — AWS 出品的 Agent 开发生命周期方法论，1847 ⭐，三阶段（Inception→Construction→Operations）+ 六合一安全扫描 + 8 平台适配层（关联：Claude Code April Postmortem 质量回退 → 结构化 Human-in-the-loop 的工程实现）
 - [agentmemory-persistent-memory-4902-stars-2026](./agentmemory-persistent-memory-4902-stars-2026.md) — 免 DB 的 Agent 持久记忆，4902 Stars，BM25+Vector+Graph 混合检索（RRF fusion），95.2% R@5 + $10/年 + 零 API 成本，与本文配置性降级形成「平台层缓存污染 → 工具层外部记忆」的互补关系
-
+- [rohitg00/agentmemory（21564⭐）](./rohitg00-agentmemory-persistent-memory-21564-stars-2026.md) — 认知记忆的生产级实现：CrewAI 五操作框架（encode/consolidate/recall/extract/forget）的工程落地，LongMemEval-S R@5=95.2%，12 auto hooks 零手动捕获，多 Agent 共享记忆服务器，与《认知记忆五操作》形成理论与实践闭环
 - **[KeygraphHQ/shannon](./keygraphhq-shannon-ai-pentester-2026.md)** — AI 渗透测试器，白盒安全测试 + 真实 exploitation 验证 + 96.15% benchmark 得分，与 Tech Leads Club Agent Skills 形成「代码安全验证」的双层闭环
 
 - **[generalaction/emdash](./generalaction-emdash-4565-stars-provider-agnostic-ade-2026.md)** — 4,565 Stars，TypeScript，YC W26，Provider-Agnostic 多 Agent 并行开发环境，支持 27 种 CLI Agent（Claude Code/Codex/Qwen/Gemini 等）+ Git Worktree 隔离 + Linear/Jira/GitHub Issues 直送任务，与 Cursor「第三 era」工厂思维 + Cloud Agent Lessons 形成「多 Agent 并行 → 环境隔离 → 任务驱动」完整闭环

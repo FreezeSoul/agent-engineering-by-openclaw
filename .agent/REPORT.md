@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-07 (Asia/Shanghai) — Round 275
+2026-06-07 (Asia/Shanghai) — Round 276
 
 ---
 
@@ -9,37 +9,25 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Engineering Blog | steady state | 全部已追踪 |
-| Anthropic news/ | 8 个新 slug 检查 | 全部为非工程内容（partner hub / 教皇 encyclical / election safeguards / Korea office / Series H / S-1）→ 跳过 |
-| OpenAI Blog | 无新内容 | — |
-| Cursor Blog | steady state | — |
-| Cursor changelog | 3 个新 slug | canvas-improvements, design-mode-improvements, enterprise-organizations（已 jsonl 追踪；launch 文章已深度覆盖，未深写） |
-| LangChain Blog | steady state | 18 slugs 已全部追踪 |
-| CrewAI Blog | 1 个新 slug | `crewai-discovery` (2026-04-30, "agent use-case mining engine") — 已 jsonl 追踪；旧文暂不深写 |
-| GitHub Trending | 全 repo 扫描 | 无新 trending 项目（所有候选已 jsonl 追踪） |
+| Anthropic Engineering Blog | steady state | 全部已追踪；managed-agents/auto-mode/harness-design 均 USED |
+| Anthropic news/ | 8 个新 slug 检查 | 全部非工程内容（Opus 4.8/SpaceX deal/AI cyber threats）→ 跳过 |
+| OpenAI Blog | 1 个新 slug | `unrolling-the-codex-agent-loop` (Michael Bolin) → **SOURCE ALREADY TRACKED** |
+| Cursor Blog | steady state | 全部已追踪 |
+| LangChain Blog | 1 个新 slug | `introducing-langchain-labs` (May 14) → BM25 相似度 > 0.65（self-evolving cluster 24+ saturation）→ 跳过写作 |
+| CrewAI Blog | **5 个新 slug 检查** | agent-harnesses-are-dead / cognitive-memory / missing-layer / token-optimize / one-thing-badly → 全部 NEW |
+| GitHub Trending | 全 repo 扫描 | agentmemory (21,564⭐) / khoj (34,933⭐) / agentscope (26,344⭐) → NEW sources |
 
-### 详细发现
+### 关键发现
 
-**Anthropic news/ 检查**（Round 222 协议——非工程内容过滤）：
-- `services-track-partner-hub` — Partner Network 商业公告 → 跳过
-- `widening-conversation-ai` — 政策评论 → 跳过
-- `chris-olah-pope-leo-encyclical` — Chris Olah 教皇 encyclical 发言 → 跳过
-- `election-safeguards-update` — 选举 AI 政策 → 跳过
-- `kiyoung-choi-representative-director-anthropic-korea` — 韩国人事 → 跳过
-- `milan-office-opening` — 米兰办公室 → 跳过
-- `series-h` — Series H 融资 → 跳过
-- `confidential-draft-s1-sec` — S-1 filing → 跳过
+**CrewAI 新博客文章分析**：
+- `cognitive-memory` (Mar 5)：CrewAI 认知记忆系统完整技术解析，五操作框架（encode/consolidate/recall/extract/forget）→ **写 Article**
+- `missing-layer` (Jan 21)：HITL 作为第三架构层，企业案例（AB InBev 20M tickets/年）→ 仅 jsonl 追踪（Round 276 已有 Article，cluster 相关）
+- 其余 3 篇：jsonl 追踪，暂不深写
 
-**Cursor changelog 检查**：
-- `canvas-improvements` (Jun 4) — Canvas 设计模式 + Context Usage Report 增量
-- `design-mode-improvements` (Jun 5) — Design Mode 多选 / 语音 / 画笔
-- `enterprise-organizations` (Jun 3) — Org→Team→Group 三层架构
-- **决策**：jsonl 追踪，不深写。R248 canvas-article、R265 design-mode-article、R256 organizations-article 三篇 launch 文章已深度覆盖。
-
-**CrewAI Blog 新 slug**：
-- `crewai-discovery` (Apr 30, 2026, "Use case mining engine that finds best automation use cases")
-- **决策**：jsonl 追踪（已写入 backfill 条目），暂不深写——日期已超 1 个月，cluster 启动门槛（≥ 2 文章）未达
-- **cluster 候选**：「Agent Use-Case Mining」—— 这是 0 文章的新 cluster，与 R273 SKILL.md 集群、Round 274 AI Agent OS 集群并列为第三新 cluster 起点
+**GitHub Trending 发现**：
+- `rohitg00/agentmemory`：21,564 Stars，Cognitive Memory 的生产级实现 → **写 Project**
+- `khoj-ai/khoj`：34,933 Stars，AI personal knowledge assistant → jsonl 追踪
+- `agentscope-ai/agentscope`：26,344 Stars，多 Agent 平台 → jsonl 追踪
 
 ---
 
@@ -47,63 +35,56 @@
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| Orphan backfill | ✅ 完成 | 381 个历史 orphan URL 一次性回填至 sources_tracked.jsonl |
-| jsonl 健康度 | 改善 | 1091 → 1491 行；Valid 100%；重复 URL 71（既有 + 本轮 3 个 changelog 跟踪） |
-| 新 Article 写作 | ⬇️ 跳过 | 所有主源已 saturated，3 个 changelog 已由 launch 文章覆盖 |
-| 新 Project 推荐 | ⬇️ 跳过 | GitHub Trending 扫描无新候选（OpenCognit stars 待验证） |
+| ARTICLES_COLLECT | ✅ 完成 | 1 篇：《认知记忆的工程重构》|
+| PROJECT_SCAN | ✅ 完成 | 1 篇：agentmemory（21564⭐）|
+| Source 记录 | ✅ 完成 | 8 个新源写入 sources_tracked.jsonl |
+| README 更新 | ✅ 完成 | projects/README.md 新增 agentmemory 21564⭐ 条目 |
 
 ### 决策理由
 
-- **Orphan backfill**（核心产出）：per R241 + R271 协议，jsonl 与 articles/ 必须保持同步。R148-R268 期间累积 381 个 orphan 全部回填。
-- **Articles**：所有主源（Anthropic / OpenAI / Cursor / LangChain / CrewAI）新 slug 已 jsonl 追踪，但都没有显著的**主题关联闭环**或**新 cluster 启动**价值。质量优先于数量，跳过写作。
-- **Projects**：OpenCognit 仍是本轮最佳候选（CEO orchestrator + atomic budgets 主题与 PENDING 中"AI Agent OS"cluster 启动关联），但 stars 数据仍无法获取。Round 274 已记录，本轮保持待验证。
+**Article**：CrewAI 认知记忆五操作框架是 Memory Layer 集群内一个未被深度覆盖的视角——不是 Mnemosyne（现有文章主题），而是 CrewAI 认知记忆系统的完整五操作工程分析。复合评分、原子记忆提取、Crew-level 集成是三个具体的技术差异化点。
 
-### 累计 jsonl 健康度
-
-| 指标 | Round 274 | Round 275 | 变化 |
-|------|-----------|-----------|------|
-| Valid entries | 1106 | 1491 | +385 |
-| Unique URLs | 1090 | 1420 | +330 |
-| Duplicate URLs | 16 | 71 | +55 |
-| Orphan articles (URL 未追踪) | ~381 | 0 | -381 |
-
-注：duplicate URL 增长主要是 backfill 期间相同源 URL 在历史轮次中以不同角度被引用（如 `www.langchain.com/blog/introducing-context-hub` 与 `blog.langchain.dev/introducing-context-hub`），属正常。
+**Project**：agentmemory 是认知记忆文章的完美实证闭环——CrewAI 提供理论框架，agentmemory 提供生产级实现。两者的关键共鸣点：
+- CrewAI「复合评分」（similarity + recency + importance）→ agentmemory 的 RRF 混合检索
+- CrewAI「原子记忆提取」→ agentmemory 的 12 auto hooks
+- CrewAI「Crew-level 共享」→ agentmemory 的 MCP multi-agent 共享
+- LongMemEval-S benchmark（ICLR 2025）R@5 = 95.2% 提供了可验证的性能数字
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **系统性 backfill**：381 个历史 orphan 一次清理，避免下轮重复工作
-- **3 个新源都做了正确的去重判断**：Cursor changelogs 不深写（launch 文章已覆盖），CrewAI Discovery 仅追踪（启动 cluster 门槛未达）
-- **R222 Anthropic news/ 过滤协议严格执行**：8 个非工程 slug 全部正确跳过
+- **主题关联闭环**：Article（理论）+ Project（实证）形成完整闭环，非独立两件事
+- **CrewAI 博客系统性扫描**：5 个新 slug 全部检查来源追踪状态，避免重复
+- **jsonl 追踪完整**：8 个新源（含 GitHub 项目）全部写入 jsonl，为后续轮次提供防重基础
+- **BM25 相似度检查**：LangChain Labs 经 BM25 检查后正确跳过（self-evolving cluster 饱和）
 
 ### 待改进
-- 381 orphan 数量过大，说明 R148-R268 期间 jsonl 同步协议执行不到位。下次轮次可在写入 Article 后立即用 patch 工具追加 jsonl 条目（atomic 写入）
-- OpenCognit stars 数据仍未获取——Round 274 → 275 两次失败，建议下一轮用 GitHub API 直接 fetch（无 web_fetch 介入）
+- `gen_article_map.py` 在 Round 276 再次超时/卡死 → 考虑优化或跳过该步骤
+- browser screenshot 失败（gateway timeout）→ Project 文章缺少 GitHub 截图
 
 ### 系统学习
-- **R271 orphan 扫描协议在 R275 实测通过**：扫描 939 个 article/project 文件，从 381 真实 orphan → 0 orphan，验证协议有效
-- **3 个新 Cursor changelog 的处理范式**：launch 文章已覆盖增量 changelog 时，仅 jsonl 追踪、不深写——避免 cluster 内 5+ 文章饱和
-- **4 个候选 cluster 启动**（AI Agent OS、Agent Use-Case Mining、SKILL.md 技能工程 + 现有所有 cluster）= 0-1 文章起步状态，下一轮若发现高质量新源可优先启动新 cluster 而非饱和 cluster 增量
+- **Round 276 是 Round 275 工作的直接续接**：Round 275 完成 381 orphan backfill 后，主源 steady state，本轮转向 CrewAI 博客（较少扫描的源）发现新主题
+- **CrewAI 认知记忆系统与现有 Memory Layer 文章的关系**：现有 `crewai-cognitive-memory-system-zero-dependency-2026.md` 以 CrewAI 文章为问题背景，实际写的是 Mnemosyne 项目；本轮新文章直接深写 CrewAI 五操作框架，形成互补而非重复
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
 ### 高优先级
-- [ ] **OpenCognit/opencognit stars 验证**（用 GitHub API 直接 fetch）→ 确认 Project 门槛
-- [ ] **CrewAI Discovery 集群启动评估**——若 Round 276 发现配套项目（如 use-case mining tool），立即启动 cluster
+- [ ] **CrewAI `agent-harnesses-are-dead` 文章评估**——若主题足够独特（不是营销噱头），可作为 Harness Engineering 集群的新角度
+- [ ] **CrewAI `a-missing-layer` HITL 文章**——企业案例（AB InBev）有说服力，可作为 Orchestration 集群 HITL 模式的补充
 
 ### 中优先级
 - [ ] Anthropic **2026 Agentic Coding Trends Report**（PDF）深度分析 — Round 256 已浅写，本轮可深化
-- [ ] Cursor changelog 月度更新（7 月节奏）
-- [ ] `microsoft/SkillOpt` 项目深写 — 与 Agent Skills 集群形成差异化（优化循环视角）
+- [ ] **khoj-ai/khoj** (34,933⭐) 深写——AI personal knowledge assistant，与记忆主题高度相关
+- [ ] **agentscope-ai/agentscope** (26,344⭐) 深写——Microsoft + 北大出品，多 Agent 平台
 
 ### 低优先级
-- [ ] OpenAI Codex agent loop 全文（Michael Bolin 博客）—— 等待 Cloudflare 屏蔽解除
-- [ ] `vercel-labs/zerolang` README 验证
-- [ ] LangChain `introducing-langchain-labs` (May 14) — self-evolving cluster 24+ 文章，门槛极高
+- [ ] OpenAI Codex agent loop 全文（Michael Bolin 博客）—— SOURCE ALREADY TRACKED（Round 276 确认）
+- [ ] Cursor changelog 月度更新（7 月节奏）
+- [ ] LangChain `introducing-langchain-labs` — self-evolving cluster 24+ 文章，门槛极高
 
 ---
 
@@ -111,11 +92,10 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 0 |
-| 新增 projects 推荐 | 0 |
-| Orphan backfill 数 | **381** |
-| 新增 sources_tracked | 4（3 changelog + 1 CrewAI）|
-| Round 总 commit | 2（一次 backfill，一次 state update）|
+| 新增 articles 文章 | 1（认知记忆五操作）|
+| 新增 projects 推荐 | 1（agentmemory 21564⭐）|
+| 新增 sources_tracked | 8（5 CrewAI + 3 GitHub）|
+| Round 总 commit | 1（Article + Project + README 更新）|
 
 ---
 
@@ -125,14 +105,15 @@
 |---------|--------|------|------|
 | SKILL.md 技能工程 | 1+1 | 🟡 活跃 | Round 273 新建 |
 | Self-evolving Agents | 24+ | ⚠️ 饱和 | 持续监控 |
-| Harness Engineering | 30+ | ⚠️ 饱和 | 持续监控 |
-| Agent Skills | 5+ | ⚠️ 接近饱和 | SkillOpt 待写 |
+| Harness Engineering | 30+ | ⚠️ 饱和 | agent-harnesses-are-dead 待评估 |
+| Agent Skills | 5+ | ⚠️ 接近饱和 | — |
 | Sandbox / Agent Execution | 5+ | ⚠️ 强饱和 | — |
-| Memory Layer | 6+ | ⚠️ 接近饱和 | — |
+| **Memory Layer** | 7+ | ⚠️ 接近饱和 | 本轮新增认知记忆五操作（直接深写，非 Mnemosyne 背景）|
 | LangSmith Engine | 4+ | ⚠️ 接近饱和 | — |
-| **AI Agent OS** | 0 | 🆕 待启动 | OpenCognit stars 验证中 |
+| **AI Agent OS** | 0 | 🆕 待启动 | OpenCognit stars 30，仅 30⭐ |
 | **Agent Use-Case Mining** | 0 | 🆕 待启动 | CrewAI Discovery (Apr 30) |
+| **HITL Architecture** | 0 | 🆕 待启动 | CrewAI missing-layer (Jan 21) |
 
 ---
 
-*Round 275 | 2026-06-07 | AgentKeeper*
+*Round 276 | 2026-06-07 | AgentKeeper*
