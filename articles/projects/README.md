@@ -27,6 +27,8 @@
 
 - **[mims-harvard/AutoScientists](./mims-harvard-autoscientists-self-organizing-agent-teams-long-running-experiments-2026.md)** — 241 Stars，Python + Node.js (Claude Code subagents)，自组织 Agent 团队做长周期科学实验（Champion/Challenger 评审 + Evidence Board 共享）+ BioML-Bench 74.4% 平均百分位（+8.33%）+ nanoGPT 1.9× 加速，与 Anthropic「长周期 Agent 工程」（Managed Agents brain-hands 解耦 + Harness 设计）形成「自组织协作 ↔ 中央调度演进」的互补闭环
 
+- **[Purewhiter/mobilegym](./purewhiter-mobilegym-verifiable-mobile-gui-agent-sim-549-stars-2026.md)** — 549 Stars，Python/JavaScript，浏览器托管 Android 模拟环境（28 个仿真 App + 416 个任务模板）+ 确定性 sub-millisecond 判分器（JSON 状态对比）+ 256 并行实例 + 95.1% Sim-to-Real 迁移率，与 UI-Venus（GUI grounding）形成「评测平台 ↔ 模型层」互补，填补手机 GUI Agent 研究中「评测噪声 + 训练不可逆」的双重诅咒（**Round 284 orphan backfill**）
+
 - **[ArcadeAI/arcade-mcp](./ArcadeAI-arcade-mcp-mcp-server-framework-custom-tools-2026.md)** — 915 ⭐，Python，MCP Server Framework（装饰器写工具 + run() 启动服务）+ 三行代码启动 MCP 服务器 + 工具继承与层级化组合 + 跨 Agent 复用，与 Cursor SDK `custom-user-tools` 文章形成「SDK 内部暴露自定义工具 ↔ 独立 MCP 服务」互补闭环（Round 266）
 
 - **[stanford-iris-lab/meta-harness](./stanford-meta-harness-automated-harness-optimization-961-stars-2026.md)** — 961 Stars，Python，Stanford 开源 harness 自动化搜索框架（processor 可组合 + 贝叶斯优化 + 进化算法），Terminal-Bench 2.0 从 69.7%→84.7%（+15pp）+ GAIA 33%→47%（+14pp）+ 可迁移到其他模型和 benchmark，与 Anthropic「Effective Harnesses」和「GAN Architecture」形成「手工设计 → 自动化优化」的 Harness 工程范式转变闭环
@@ -56,6 +58,8 @@
 - **[obra/superpowers](./obra-superpowers-complete-software-engineering-methodology-198k-stars-2026.md)** — 198K Stars，Shell，把 TDD、设计优先、任务分解、人级审查编码为强制执行的 Skills，让编码 Agent 从「想到哪写到哪」变成「按流程执行」，填补强模型容易突破约束的方法论护栏缺口
 - **[epiral/bb-browser](./epiral-bb-browser-mcp-browser-use-5376-stars-2026.md)** — 5,376 Stars，TypeScript，CLI + MCP server 让 AI Agent 控制 Chrome 带真实登录态，36 平台 103 命令覆盖 Twitter/GitHub/YouTube/知乎等，与 Claude Seeing Like an Agent 工具设计哲学形成「本地上下文 → 互联网登录上下文」完整闭环（关联：Anthropic 给工具让模型自建上下文 → bb-browser 让 Claude 用真实浏览器访问需要登录的互联网）
 - **[mksglu/context-mode](./mksglu-context-mode-mcp-context-window-optimization-15600-stars-2026.md)** — 15,616 Stars，TypeScript，MCP Context 优化四层解法（沙箱工具输出 98% 压缩 + SQLite+FTS5 会话记忆 + Think in Code 范式 + No Prose-Style 尊重模型输出）+ 15 平台覆盖（Claude Code/Gemini CLI/Cursor/Copilot/OpenCode/Zed）+ Hook 强制路由自动注入，与 Anthropic「Code Execution with MCP」Token reduction 98.7% 形成理论层 → 工程执行层完整闭环（关联：Anthropic 解释 WHY → context-mode 展示 HOW）
+- **[aaif-goose/goose](./aaif-goose-goose-47302-stars-2026.md)** — 47,302 Stars，Rust，Apache 2.0，本地运行的 Rust 原生 AI Agent（MCP 支持 + ACP 多 Agent 协作 + Hooks 系统权限控制），开源 Claude Code 挑战者，v1.35.0 刚发布（2026-06-07）+ hooks 系统支持 pre/post tool 执行拦截 + PreToolUse denial + 子 agent 召唤。与 Claude Code / Cursor 形成「闭源云端 Agent ↔ 开源本地 Agent」互补，Goose 的 hooks 系统填补了「开源 AI Agent 企业级权限控制」的空白（**Round 284 新增**）
+
 - **[MemPalace/mempalace](./MemPalace-mempalace-open-source-ai-memory-system-52700-stars-2026.md)** — 52,700 Stars，Python，逐字原文存储 + 结构化 Palace 记忆（wings/rooms/drawers）+ 96.6% R@5 raw 检索精度 + 零 API 依赖，本地优先隐私设计，与 Anthropic「上下文工程」Memory 演进路径形成「压缩摘要 vs 原文检索」的核心范式对峙（关联：当前主流记忆方案做摘要 → MemPalace 用数据证明原文检索更精准 → 96.6% R@5 的反直觉验证）
 - **[RightNow-AI/openfang](./rightnow-ai-openfang-rust-agent-operating-system-17578-stars-2026.md)** — 17,578 Stars，Rust，Agent 操作系统（14 crates，137K 行 Rust，180ms 冷启动 vs LangGraph 2500ms），7 个自主 Hands + 40 个平台通道 + 16 层安全 + Merkle 链审计 + Tauri 2.0 桌面应用，与 OpenClaw 形成「TypeScript 操作系统 ↔ Rust 操作系统」的双轨对标（关联：OpenClaw 是 TypeScript Agent OS → OpenFang 是 Rust 版 → 两者都是 Agent 操作系统理念的不同实现）
 
