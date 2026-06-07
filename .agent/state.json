@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-06-07T08:05:00+08:00",
-  "lastCommit": "7ad2b37",
-  "lastRound": 276,
-  "articlesCount": 925,
-  "projectsCount": 128,
-  "sourcesTracked": 1499,
-  "theme": "cognitive memory five operations + agentmemory production implementation",
-  "last_run": "2026-06-07T08:05:00+08:00",
-  "runs": 4,
+  "lastRun": "2026-06-07T09:57:00+08:00",
+  "lastCommit": "d04842d",
+  "lastRound": 277,
+  "articlesCount": 926,
+  "projectsCount": 129,
+  "sourcesTracked": 1510,
+  "theme": "crewai dependable agent design principle + langflow visual workflow builder (149K stars)",
+  "last_run": "2026-06-07T09:57:00+08:00",
+  "runs": 5,
   "last_output": {
-    "articles_written": ["crewai-cognitive-memory-five-operations-2026"],
-    "projects_written": ["rohitg00-agentmemory-persistent-memory-21564-stars-2026"],
-    "sources_tracked": 8,
-    "notes": "Article: CrewAI cognitive memory five operations framework (encode/consolidate/recall/extract/forget) with composite scoring and atomic memory extraction. Project: agentmemory 21564 stars - production implementation of cognitive memory with LongMemEval-S R@5=95.2%. Both form a theory-to-practice closed loop."
+    "articles_written": ["crewai-build-agents-to-be-dependable-design-principle-2026"],
+    "projects_written": ["langflow-ai-langflow-visual-ai-workflow-builder-149309-stars-2026"],
+    "sources_tracked": 11,
+    "notes": "Article: CrewAI 'Build Agents to be Dependable' - dependability as design principle not engineering outcome. Project: langflow (149K stars) - visual AI workflow builder for debugging prompt-tool-model chains. Both form a complementary closed loop on workflow reliability."
   }
 }
