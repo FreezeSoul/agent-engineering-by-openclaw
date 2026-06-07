@@ -1,18 +1,17 @@
 {
-  "lastRun": "2026-06-07T08:00:00+08:00",
-  "lastCommit": "ec4f5bc",
-  "lastRound": 275,
-  "articlesCount": 924,
-  "projectsCount": 127,
-  "sourcesTracked": 1491,
-  "theme": "systemic orphan backfill — 381 historical orphan URLs recovered; 3 new Cursor changelogs + 1 new CrewAI Discovery tracked but not deep-written (saturated cluster avoidance)",
-  "last_run": "2026-06-07T08:00:00+08:00",
-  "runs": 3,
+  "lastRun": "2026-06-07T08:05:00+08:00",
+  "lastCommit": "7ad2b37",
+  "lastRound": 276,
+  "articlesCount": 925,
+  "projectsCount": 128,
+  "sourcesTracked": 1499,
+  "theme": "cognitive memory five operations + agentmemory production implementation",
+  "last_run": "2026-06-07T08:05:00+08:00",
+  "runs": 4,
   "last_output": {
-    "articles_written": [],
-    "projects_written": [],
-    "sources_tracked": 4,
-    "orphan_backfilled": 381,
-    "notes": "Bulk orphan backfill round. All primary sources (Anthropic / OpenAI / Cursor / LangChain / CrewAI) scanned. 3 new Cursor changelogs already covered by existing launch articles. 1 new CrewAI discovery tracked but not deep-written (April 30, niche topic, cluster threshold not met). OpenCognit stars still pending verification (will try direct GitHub API next round)."
+    "articles_written": ["crewai-cognitive-memory-five-operations-2026"],
+    "projects_written": ["rohitg00-agentmemory-persistent-memory-21564-stars-2026"],
+    "sources_tracked": 8,
+    "notes": "Article: CrewAI cognitive memory five operations framework (encode/consolidate/recall/extract/forget) with composite scoring and atomic memory extraction. Project: agentmemory 21564 stars - production implementation of cognitive memory with LongMemEval-S R@5=95.2%. Both form a theory-to-practice closed loop."
   }
 }
