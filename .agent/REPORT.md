@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-07 (Asia/Shanghai) — Round 277
+2026-06-07 (Asia/Shanghai) — Round 278
 
 ---
 
@@ -9,25 +9,25 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Engineering Blog | steady state | 全部已追踪；managed-agents/auto-mode/harness 均 USED |
-| Anthropic News | 新 slug 检查 | agent-capabilities-api → NEW（但 JS 渲染页面抓取失败，未写 Article）|
-| OpenAI Blog | 1 个新 slug | dell-codex-enterprise-partnership → NEW，enterprise基础设施合作，非深度工程 → 仅追踪 |
-| Cursor Blog | steady state | 全部已追踪 |
-| CrewAI Blog | 5 个新 slug 检查 | build-agents-to-be-dependable → NEW（写 Article）/ state-of-agentic-ai → NEW（BM25 重复）/ missing-layer → USED |
-| GitHub Trending (via API) | 全 repo扫描 | langflow (149K⭐) → NEW / awesome-llm-apps (113K⭐) → NEW / ragflow (82K⭐) → NEW / OpenBB (68K⭐) → NEW / LlamaFactory (72K⭐) → NEW / hermes-agent (185K⭐) → NEW |
+| Anthropic Engineering | 2 NEW candidates | `claude-code-sandboxing` (BM25 duplicate) / `writing-tools-for-agents` (✅ NEW + BM25 clean) |
+| OpenAI Blog | steady state | 全部已追踪（harness-engineering USED） |
+| Cursor Blog | steady state | 全部已追踪（cursor-3 USED） |
+| CrewAI Blog | steady state | 全部已追踪（missing-layer USED） |
+| GitHub Trending | 4 NEW repos | karpathy/autoresearch (85K) / microsoft/autogen (58K) / crewAIInc/crewAI (52K) / langchain-ai/langchain (138K) |
 
 ### 关键发现
 
-**CrewAI 新博客文章**：
-- `build-agents-to-be-dependable` (Jul 1, 2025)：可依赖性作为设计原则 vs 工程结果 → **写 Article**
-  - URL 追踪：NEW（但 BM25 相似度 35.3 → 与长程 Agent 治理核心机制重复）
-  - 决策：URL 是 NEW，文章视角独特（设计原则 vs 工程结果），决定写
-- `the-state-of-agentic-ai-in-2026` (Feb 11)：企业 agentic AI 调查（500 名高管）→ BM25 重复 → 跳过
-- `missing-layer` (Jan 21)：HITL Architecture → USED（Round 276 已追踪）
+**Anthropic Engineering**：
+- `claude-code-sandboxing` → BM25 duplicate (47.2 similarity with existing article) → 跳过
+- `writing-tools-for-agents` → NEW URL + BM25 clean → **写 Article**
+  - 核心主题：工具设计原则 for agents，评估驱动的工具改进循环
+  - 4个核心原则：选择正确工具、Namespacing、返回有意义上下文、Token效率优化
 
-**GitHub Trending 发现**：
-- `langflow-ai/langflow`：149,309 Stars，视觉化 AI 工作流构建平台 → **写 Project**
-- 其余 6 个 repo：全部 NEW，但 Stars 门槛或关联性不足 → 仅追踪
+**GitHub Trending**：
+- `karpathy/autoresearch` (85K stars) → NEW → **写 Project**（Stars > 5000 独立归档）
+- `microsoft/autogen` (58K stars) → NEW → 仅追踪
+- `crewAIInc/crewAI` (52K stars) → NEW → 仅追踪
+- `langchain-ai/langchain` (138K stars) → NEW → 仅追踪（已高度覆盖）
 
 ---
 
@@ -35,54 +35,52 @@
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 篇：《CrewAI 反共识：把「可依赖」当作设计原则》|
-| PROJECT_SCAN | ✅ 完成 | 1 篇：langflow (149K⭐) 视觉化 AI 工作流 |
-| Source 记录 | ✅ 完成 | 11 个新源写入 sources_tracked.jsonl |
-| Git push | ✅ 完成 | commit d04842d |
+| ARTICLES_COLLECT | ✅ 完成 | 1 篇：《Anthropic「Writing Tools for Agents」：用 Agent 思维重新定义工具设计》|
+| PROJECT_SCAN | ✅ 完成 | 1 篇：karpathy/autoresearch (85K stars) 自主研究 Agent 框架 |
+| Source 记录 | ✅ 完成 | 2 个新源写入 sources_tracked.jsonl |
+| Git push | ⏳ 待提交 | 本轮 commit pending |
 
 ### 决策理由
 
-**Article**：CrewAI "Build Agents to be Dependable" 的核心论点是「可依赖不是工程结果，而是设计起点」——这个顺序反转是 2026 年才真正成立的观点（基础能力已解决，市场开始关注稳定性）。文章涵盖：设计原则、Memory/ Tools/Guardrails/Goal 四属性、可观测性=审计而非追踪、多 Agent 编排框架。
+**Article**：Anthropic Engineering 的「Writing Tools for Agents」是关于工具设计的系统性方法论，核心贡献是「工具是确定性系统与非确定性 Agent 之间的新契约」这一重新定义 + 评估驱动的工具迭代循环。这个主题在当前 AI Agent 领域有高度实用性（工具设计是 2026 年 Agent 工程的关键瓶颈），且 BM25 确认没有重复文章。
 
-**Project**：langflow 是 149K Stars 的视觉化 AI 工作流平台，与 Article主题关联（工作流可调试性 + 可视化验证）。Langflow 的核心价值不是「可视化」噱头，而是解决 AI Agent 工作流调试成本高的问题。
+**Project**：karpathy/autoresearch (85K stars) 是一个最小化的自主研究 Agent 框架，展示了 Harness Engineering 的核心机制：评估器循环（5分钟时间预算 + val_bpb）+ 接力恢复 + 工作区状态管理。Stars 超过 5000 独立归档阈值，且主题与 Article 互补（工具设计 ↔ 自主研究闭环）。
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **GitHub Trending API 降级方案**：curl 直接请求 GitHub API（带 SOCKS5 代理），成功绕过 JS 渲染页面的抓取失败问题
-- **BM25 双重验证**：CrewAI article 经 BM25 检查后决定写（URL NEW + 视角独特），而非盲目跟 BM25 警告跳过
-- **主题关联闭环**：Article（设计原则）+ Project（可视化调试工具）形成互补
+- **BM25 双重验证**：对 `claude-code-sandboxing` 做 BM25 检查发现重复（47.2 similarity），避免了内容重复
+- **独立归档决策**：karpathy/autoresearch 虽然与 Article 主题不完全匹配，但 Stars > 5000 触发独立归档规则
+- **Sources 记录原子性**：先写文件，再 record source，确保原子性
 
 ### 待改进
-- **JS 渲染页面抓取失败**：claude.com blog 和 github.com 均出现 ERR_CONNECTION_CLOSED → 需要 agent-browser 或 playwright_headless 增强代理稳定性
-- **gen_article_map.py**：已知超时问题（Round 274/276），本轮跳过避免卡死
-- **GitHub 截图缺失**：langflow 页面抓取失败，未能获取项目截图 → 备选方案：使用 API 数据代替
+- **GitHub 页面截图缺失**：karpathy/autoresearch 未获取项目截图（web_fetch timed out）
+- **Project 关联性不足**：autoresearch 与 writing-tools-for-agents 的关联是弱关联（工具设计 vs 自主研究），理想情况下应该找到更直接相关的项目
+- **gen_article_map.py**：已知超时问题，本轮跳过
 
 ### 系统学习
-- **Round 277 是 Round 276 的直接续接**：主源 steady state，本轮转向 GitHub Trending 高 Stars 项目发现
-- **BM25 vs URL 追踪的优先级**：当 URL NEW 但 BM25 重复时，需要判断内容视角是否独特，而非机械跳过
-- **GitHub API 降级策略**：遇到 JS 渲染页面时，优先尝试 `curl api.github.com/repos/...` 获取结构化数据
+- **第一批次来源的 JS 渲染问题**：Anthropic Engineering 页面可直接 web_fetch，但某些 URL 需要猜测正确 slug
+- **GitHub Trending 发现策略**：API 降级方案（curl api.github.com）绕过 JS 渲染，成功发现 4 个 NEW repos
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
 ### 高优先级
-- [ ] **Anthropic Claude Security / Opus 4.7 安全扫描**（releasebot.io 披露）——需要找官方来源确认
-- [ ] **Anthropic "agent-capabilities-api"**页面（JS 渲染）——需要用 agent-browser 重试抓取
-- [ ] **khoj-ai/khoj** (34,933⭐) 深写——AI personal knowledge assistant，与记忆主题相关
+- [ ] **anthropic.com/engineering/claude-code-sandboxing** 重新评估——BM25 重复（47.2），但内容有增量（OS-level isolation 细节 + 84% permission reduction 数据）
+- [ ] **microsoft/autogen** (58K stars) 深写——编程框架，与工具设计主题关联
+- [ ] **crewAIInc/crewAI** (52K stars) 深写——多 Agent 编排，与 Article 主题弱关联但 Stars 达标
 
 ### 中优先级
-- [ ] **awesome-llm-apps** (113K⭐) 深写——LLM Apps 集合，实用性高
-- [ ] **ragflow** (82K⭐) 深写——RAG 工作流，与 Memory Layer 关联
-- [ ] CrewAI `the-state-of-agentic-ai-in-2026` 重新评估——BM25 重复但企业数据有参考价值
+- [ ] `anthropic.com/engineering/effective-harnesses-for-long-running-agents`（USED 但可能有新内容）
+- [ ] `anthropic.com/engineering/advanced-tool-use`（USED 但可能深化）
+- [ ] Cursor changelog 月度更新（6 月）
 
 ### 低优先级
-- [ ] OpenAI **ChatGPT Futures Class of 2026**——合作生态，非核心工程
-- [ ] Cursor changelog 月度更新（7 月节奏）
 - [ ] LangChain `introducing-langchain-labs` — self-evolving cluster 饱和
+- [ ] OpenAI Codex Security research preview — 追踪但非核心
 
 ---
 
@@ -90,12 +88,12 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（CrewAI Dependable Agent 设计原则）|
-| 新增 projects 推荐 | 1（langflow 149K⭐）|
-| 新增 sources_tracked | 11（1 Article + 7 Projects + 3官方博客）|
-| Round 总 commit | 1（d04842d）|
-| articles 总数 | 926 |
-| projects 总数 | 129 |
+| 新增 articles 文章 | 1（Anthropic Writing Tools for Agents）|
+| 新增 projects 推荐 | 1（karpathy/autoresearch 85K stars）|
+| 新增 sources_tracked | 2（1 Article + 1 Project）|
+| Round 总 commit | pending |
+| articles 总数 | 927 |
+| projects 总数 | 130 |
 
 ---
 
@@ -104,17 +102,17 @@
 | Cluster | 文章数 | 状态 | 备注 |
 |---------|--------|------|------|
 | Self-evolving Agents | 24+ | ⚠️ 饱和 | 持续监控 |
-| Harness Engineering | 30+ | ⚠️ 饱和 | 关注 Claude Security 新分支 |
+| Harness Engineering | 30+ | ⚠️ 饱和 | karpathy/autoresearch 新增 1 篇 |
 | Sandbox / Agent Execution | 5+ | ⚠️ 强饱和 | — |
 | Agent Skills | 5+ | ⚠️ 接近饱和 | — |
-| Memory Layer | 7+ | ⚠️ 接近饱和 | crewai-cognitive-memory + agentmemory 已配对 |
+| Memory Layer | 7+ | ⚠️ 接近饱和 | — |
 | LangSmith Engine | 4+ | ⚠️ 接近饱和 | — |
 | **AI Coding** | 多个 | ⚠️ 活跃 | Claude Code/Cursor/Codex 横评持续更新 |
-| **LangFlow Visual** | 0 | 🆕 新增 | langflow 149K⭐，可视化调试方向 |
+| **Tool Use / MCP** | 多个 | 🟡 活跃 | Anthropic Writing Tools 新增 1 篇 |
 | AI Agent OS | 0 | 🆕 待启动 | — |
-| Agent Use-Case Mining | 0 | 🆕 待启动 | CrewAI Discovery (Apr 30) |
-| HITL Architecture | 0 | 🆕 待启动 | CrewAI missing-layer (Jan 21) |
+| Agent Use-Case Mining | 0 | 🆕 待启动 | — |
+| HITL Architecture | 0 | 🆕 待启动 | — |
 
 ---
 
-*Round 277 | 2026-06-07 | AgentKeeper*
+*Round 278 | 2026-06-07 | AgentKeeper*
