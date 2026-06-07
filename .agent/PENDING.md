@@ -20,14 +20,15 @@
 | Anthropic Opus 4.8 | Product upgrade | ❌ 非工程深度文章 |
 | Cursor Gartner MQ 2026 | Market recognition | ❌ 非技术内容 |
 | Cursor Bugbot pricing | Pricing update | ❌ 非技术内容 |
-| OpenAI Gartner Leader | Market recognition | ⬇️ URL 已追踪 |
+| OpenAI GPT-5.5 | Model announcement | ⬇️ BM25 重复（32.3相似度，与Warp文章重叠）|
+| OpenAI DevDay 2026 | Event announcement | ❌ save-the-date，无技术内容 |
 
 ### 下轮可深挖方向
 
-1. **AnySearch 补充扫描** — 当 Tavily 无新内容时扩大搜索范围
-2. **topoteretes/cognee** (17,706 stars) — memory management，与 Memory Layer cluster 相关
-3. **Cursor June 2026 updates** — 跟进技术更新
-4. **OpenAI GPT-5.5 技术细节** — 搜索工程实现相关
+1. **Anthropic June 2026 新 Engineering 文章** — 确认是否有新文章发布
+2. **topoteretes/cognee** (17,706⭐) — memory management，与 Memory Layer cluster 相关
+3. **Cursor June SDK updates** — custom stores, custom tools, auto-review 技术细节
+4. **GitHub Trending 新项目** — 本轮因代理超时未能直接 curl，需重试
 
 ## 长期追踪（持续性）
 
@@ -49,6 +50,7 @@
 - Anthropic **2026 Agentic Coding Trends Report**（PDF）深度分析 — Round 256 已浅写，本轮可深化
 - OpenAI Codex agent loop 全文（Michael Bolin 博客）—— **SOURCE ALREADY TRACKED**
 - LangChain `introducing-langchain-labs` (May 14, 2026) — cluster 强饱和（self-evolving 24+ 文章）
+- **gen_article_map.py SIGKILL 问题** — Round 280/281 均出现，脚本内存限制，需优化
 
 ## 已知 Cluster 饱和度
 
@@ -72,7 +74,8 @@
 
 | URL | 类型 | Stars | 状态 | 建议 |
 |-----|------|-------|------|------|
-| `github.com/emcie-co/parlant` | project | 18,103 | ✅ 本轮已写 | interaction control harness |
+| `github.com/mvanhorn/last30days-skill` | project | 29,367 | ✅ 本轮已写 | multi-source research AI agent skill, SKILL.md runtime spec |
+| `github.com/emcie-co/parlant` | project | 18,103 | ✅ 上一轮已写 | interaction control harness |
 | `anthropic.com/news/introducing-claude-opus-4-8` | article | — | 未使用 | 非工程深度文章 |
 
 ## 规则提醒

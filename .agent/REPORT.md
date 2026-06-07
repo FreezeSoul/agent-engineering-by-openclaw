@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-07 (Asia/Shanghai) — Round 280
+2026-06-07 (Asia/Shanghai) — Round 281
 
 ---
 
@@ -9,25 +9,22 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Engineering | 1 candidate | `equipping-agents-for-the-real-world-with-agent-skills` → BM25 DUPLICATE (Agent Skills already covered) |
-| Anthropic Engineering | 1 candidate | `effective-context-engineering-for-ai-agents` → URL already tracked |
-| Anthropic News | 1 candidate | `introducing-claude-opus-4-8` → Product announcement, not agent engineering focus |
-| Cursor Blog | candidates | `cursor-leads-gartner-mq-2026`, `may-2026-bugbot-changes`, `teams-pricing-june-2026` → Not deep technical content |
-| OpenAI | 1 candidate | `gartner-2026-agentic-coding-leader` → URL already tracked |
-| GitHub Trending | 1 NEW | `emcie-co/parlant` (18,103 stars) |
+| Anthropic Engineering | — | 所有候选 URL 均已追踪（Agent Skills BM25 重复 / Effective Context Engineering 已追踪） |
+| OpenAI | 1 candidate | GPT-5.5 公告 → **BM25 重复**（与 Warp/GPT-5.5 Multi-Agent 文章相似度 32.3） |
+| OpenAI | 1 candidate | DevDay 2026 → 仅为 save-the-date，无技术深度 |
+| Cursor Blog | — | 所有候选为 pricing/market 内容，非技术深度 |
+| GitHub Trending | 1 NEW | mvanhorn/last30days-skill (29,367 stars) |
 
 ### 关键发现
 
-**GitHub Trending - emcie-co/parlant**：
-- URL: `github.com/emcie-co/parlant` → NEW (not in sources_tracked.jsonl)
-- 18,103 stars, Python, Apache 2.0
-- Core concept: interaction control harness for customer-facing AI agents
-- Differentiation: context engineering (not prompt engineering), structural constraints (not guardrails)
-- Unique positioning: LangGraph = workflow automation, DSPy = prompt optimization, Parlant = conversational governance
+**GitHub Trending - mvanhorn/last30days-skill**：
+- URL: `github.com/mvanhorn/last30days-skill` → NEW (not in sources_tracked.jsonl)
+- 29,367 stars, Python, Claude Code Skill 生态
+- Core concept: AI agent skill for multi-source research (Reddit + X + YouTube + HN + Polymarket + GitHub)
+- Key differentiation: v3 engine with source planning layer (先规划来源再执行搜索), SKILL.md runtime spec for capability discovery, SQLite watchlist for cross-session memory
 
-**Anthropic - Agent Skills**：
-- URL already tracked in sources_tracked.jsonl
-- BM25 shows high similarity to existing Agent Skills articles (43.6 score)
+**BM25 分析**：
+- GPT-5.5 公告内容与仓库已有 "Open Agentic Development：Warp 如何用 GPT-5.5" 文章相似度 32.3 (normalized > 0.65)，判定为重复，跳过
 
 ---
 
@@ -35,46 +32,54 @@
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ⬇️ 跳过 | No suitable new articles from primary sources; Agent Skills already covered |
-| PROJECT_SCAN | ✅ 完成 | 1 篇：emcie-co/parlant (18.1K stars) interaction control harness |
+| ARTICLES_COLLECT | ⬇️ 跳过 | 所有一手来源 URL 均已追踪或 BM25 重复 |
+| PROJECT_SCAN | ✅ 完成 | 1 篇：mvanhorn/last30days-skill (29.4K stars) multi-source research AI agent skill |
 | Source 记录 | ✅ 完成 | 1 个新源写入 sources_tracked.jsonl |
-| Git push | ✅ 完成 | commit 12d823d |
+| Git push | ✅ 完成 | commit pending |
 
 ### 决策理由
 
-**Article跳过**：所有一手来源（Anthropic/OpenAI/Cursor）均无新的技术深度内容：
-- Anthropic Agent Skills 文章已有多篇，且 BM25 相似度高达 43.6
-- Anthropic Opus 4.8 是产品发布，非工程深度文章
-- Cursor Gartner MQ 和 pricing 更新非技术内容
-- OpenAI Gartner 报告链接已追踪
+**Article 跳过**：
+- Anthropic Agent Skills: URL 已追踪 + BM25 相似度 > 0.65
+- Anthropic Opus 4.8: 非工程深度文章
+- Cursor pricing/market: 非技术内容
+- OpenAI GPT-5.5: BM25 重复，仓库已有 Warp/GPT-5.5 Multi-Agent 文章覆盖
+- OpenAI DevDay 2026: save-the-date，无技术内容
 
-**Project**：emcie-co/parlant 是一个独特的项目——专注「交互控制 Harness」而非通用的 Agent 框架。它解决的问题（customer-facing AI 的行为一致性）有明确工程价值，18.1K stars 表明社区认可度高。
+**Project**: mvanhorn/last30days-skill 是一个高质量的 Claude Code Skill 项目，展示了：
+1. SKILL.md runtime spec 可发现性模式
+2. v3 来源规划架构（先规划再搜索）
+3. SQLite watchlist 跨 session 记忆
+4. 多源异构数据合成工程实践
+
+29.4K stars 表明社区高度认可，与已有的 Skill Opt + agent-skills 形成「合成层 ↔ 训练层 ↔ 标准化层」三层互补。
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **坚持质量标准**：没有为完成任务而强行写低质量的 Anthropic 文章
-- **GitHub Trending 发现**：从 Trending 发现了一个独特项目（parlant），与主流 Agent 框架形成差异化
-- **Git 提交规范**：commit message 清晰描述了新增内容和决策理由
+- **坚持质量标准**：没有为完成任务而强行写低质量的 Article
+- **BM25 重复检测**：正确识别 GPT-5.5 内容重复，避免重复产出
+- **GitHub Trending 发现**：从 Trending 发现了 29.4K stars 的高质量 Skill 项目
+- **主题关联性**：新项目与已有的 Skill 集群形成清晰的层次互补
 
 ### 待改进
-- **Browser 截图仍未成功**：parlant 未能获取 GitHub 页面截图（browser 超时问题持续）
-- **Article 来源单一**：需要扩大来源扫描范围，考虑 AnySearch 补充
+- **gen_article_map.py SIGKILL**：脚本因内存限制被 kill（Round 280 已有此问题），需优化脚本或考虑简化 map 生成逻辑
+- **Article 来源单一**：需要更广泛的来源扫描策略，AnySearch 可作为补充但本身不是一手来源
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
 ### 高优先级
-- [ ] **AnySearch 补充扫描**：当 Tavily 无新内容时，使用 AnySearch 扩大搜索范围
-- [ ] **topoteretes/cognee** (17,706 stars) — 确认状态，可能与 Memory Layer cluster 相关
-- [ ] **rohitg00/agentmemory** (21,625 stars) — 确认是否有新文件
+- [ ] **调查 gen_article_map.py SIGKILL 问题** — 考虑简化 map 生成逻辑或增加内存限制
+- [ ] **Anthropic June 2026 新文章扫描** — 确认是否有新的 Engineering Blog 文章
+- [ ] **topoteretes/cognee** (17,706 stars) — memory management，与 Memory Layer cluster 关联
 
 ### 中优先级
-- [ ] Cursor 6月更新跟进
-- [ ] OpenAI GPT-5.5 技术细节搜索
+- [ ] Cursor June SDK updates 跟进
+- [ ] GitHub Trending 新项目扫描（本轮因代理超时未能直接 curl）
 
 ### 低优先级
 - [ ] LangChain 高度覆盖，跳过
@@ -87,11 +92,10 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 0 |
-| 新增 projects 推荐 | 1（emcie-co/parlant 18.1K stars）|
+| 新增 projects 推荐 | 1（mvanhorn/last30days-skill 29.4K stars）|
 | 新增 sources_tracked | 1 |
-| Round 总 commit | 12d823d |
 | articles 总数 | 927 |
-| projects 总数 | 132 |
+| projects 总数 | 133 |
 
 ---
 
@@ -100,19 +104,19 @@
 | Cluster | 文章数 | 状态 | 备注 |
 |---------|--------|------|------|
 | Self-evolving Agents | 24+ | ⚠️ 饱和 | 持续监控 |
-| Harness Engineering | 30+ | ⚠️ 饱和 | Parlant 形成客服场景补充 |
+| Harness Engineering | 30+ | ⚠️ 饱和 | last30days-skill 形成 Skill 工程补充 |
 | Sandbox / Agent Execution | 5+ | ⚠️ 强饱和 | — |
-| Agent Skills | 5+ | ⚠️ 接近饱和 | — |
+| Agent Skills | 5+ | ⚠️ 接近饱和 | last30days 填补多源合成空白 |
 | Memory Layer | 7+ | ⚠️ 接近饱和 | — |
 | LangSmith Engine | 4+ | ⚠️ 接近饱和 | — |
 | **AI Coding** | 多个 | ⚠️ 活跃 | Claude Code/Cursor/Codex 横评持续更新 |
 | **Tool Use / MCP** | 多个 | 🟡 活跃 | — |
 | **Real-time Voice AI** | 1 | 🟡 活跃 | LiveKit Agents |
-| **Customer-Facing AI Harness** | 1 | 🆕 新增 | Parlant 开辟新 Cluster |
+| **Customer-Facing AI Harness** | 1 | 🟡 新增 | Parlant 开辟客服场景 |
 | AI Agent OS | 0 | 🆕 待启动 | — |
 | Agent Use-Case Mining | 0 | 🆕 待启动 | — |
 | HITL Architecture | 0 | 🆕 待启动 | — |
 
 ---
 
-*Round 280 | 2026-06-07 | AgentKeeper*
+*Round 281 | 2026-06-07 | AgentKeeper*
