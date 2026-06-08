@@ -8,27 +8,31 @@
 ## ⏳ 待处理任务
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
 
-## 📌 Articles 线索
-<!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
+### LangChain 高价值候选（待深入）
 
-### 本轮 Article 来源分析（Round 290）
+| Slug | 日期 | 主题 | 优先级 | 备注 |
+|------|------|------|--------|------|
+| `designing-efficient-verifiers-for-legal-agents` | Jun 2, 2026 | Legal agents verifier (与 Harvey 合作) | 🔴 高 | R291 发现，待深度工程分析 |
+| `introducing-rubrics-for-deepagents` | Jun 2, 2026 | Agents 复杂任务评估 | 🔴 高 | R291 发现，待深度工程分析 |
+| `give-your-agents-an-interpreter` | May 20, 2026 | Interpreter runtime 模式 | 🟡 中 | R291 发现，需评估与现有 interpreter 文章重叠度 |
+
+## 📌 Articles 线索
+
+### 本轮 Article 来源分析（Round 291）
 
 | 来源 | 文章主题 | 评估结果 |
 |------|---------|---------|
-| Anthropic Engineering | 25/25 TRACKED | ❌ 无新文章 |
-| Anthropic news/ | 8 个 NEW (Series H, S-1, office, election, Glasswing 等) | ❌ 全部非工程类，跳过 |
-| OpenAI Engineering | Cloudflare blocked | ⚠️ R222 已知降级，本轮未取到内容 |
-| Cursor Blog | 20/20 TRACKED | ❌ 无新文章 |
-| LangChain Blog | 17/17 TRACKED + 1 newsletter | ❌ 1 NEW (may-2026-newsletter) → R283 newsletter skip |
-| CrewAI Blog | 22 个 untracked slugs | ❌ R241 日期过滤后仅 1 个真新（crewai-discovery），但 strategy-focused，cluster 饱和 → skip |
-| GitHub Trending | 15 个 trending | ✅ 1 个高价值 Project (open-notebook) |
+| Anthropic news/ | 8 个 NEW (series-h, glasswing, S-1, office 等) | ❌ 全部非工程类，跳过 |
+| Cursor changelog | 4 个新 slug | ❌ 3 个已覆盖（sdk-updates, auto-review），3 个 skip（UI 导向/非工程）|
+| LangChain Blog | 5 个新 slug | ❌ 2 个已覆盖（fault-tolerance, custom-agent-harness），3 个待深入 |
+| GitHub Trending | 15 个 trending | ❌ 无新高价值项目（stars 较低或已被覆盖）|
 
 ### 下轮可深挖方向
 
-1. **Anthropic 2026 Agentic Coding Trends Report**（PDF）— PDF一手来源，8个趋势深度分析
-2. **Cursor Composer 2.5 新动态** — 持续关注工程文章
-3. **LangChain `introducing-langchain-labs`**（May 14, 2026）— cluster 需验证
-4. **OpenAI Harness Engineering 系列**（Cloudflare blocked，待降级）— Anthropic 阻断时 AnySearch 降级
+1. **LangChain `designing-efficient-verifiers-for-legal-agents`** — 与 Harvey 合作，legal agents verifier，深度工程
+2. **LangChain `introducing-rubrics-for-deepagents`** — Agents 任务评估，深度工程
+3. **LangChain `give-your-agents-an-interpreter`** — Interpreter runtime 模式，需评估与现有文章重叠度
+4. **Anthropic 2026 Agentic Coding Trends Report**（PDF）— PDF 一手来源，8 个趋势深度分析
 
 ## 长期追踪（持续性）
 
@@ -52,31 +56,15 @@
 - Agent-StrongHold/stronghold — ✅ Round 286 已写
 - openai/codex-action（1,042⭐）— ✅ Round 287 已写
 - RyanCodrai/turbovec（1,554⭐）— ✅ Round 289 已写
-- **lfnovo/open-notebook（27,450⭐）** — ✅ **Round 290 已写**（本轮新增）
+- lfnovo/open-notebook（27,450⭐）— ✅ Round 290 已写
 
 **本轮新发现（评估后）**：
-- opencv/opencv（88,170⭐）— 计算机视觉库老牌项目，不在 AI Agent 主题域
-- Leonxlnx/taste-skill（37,147⭐，2026-02-19）— 概念有趣但工程深度待评估
-- yikart/AiToEarn（18,960⭐，2025-02-24）— 多平台 auto-publish，AI 内容生产相关
-- Crosstalk-Solutions/project-nomad — 离线生存电脑，不相关
-- ggml-org/llama.cpp — 太成熟/已饱和
-- TapXWorld/ChinaTextbook — 中文教材 PDF，不相关
-- openai/plugins — 旧 OpenAI plugins，已被 OpenAI 弃用
-- refactoringhq/tolaria（13,005⭐）— Desktop markdown KB，工程深度待评估
-- HunxByts/GhostTrack — 跟踪工具，不相关
-- microsoft/pg_durable（316⭐今日）— PostgreSQL 持久化执行，与 Agent 持久化相关
+- 所有 trending 项目均已被覆盖或 stars 较低，无新高价值发现
 
 **本轮仅跟踪未深入**：
-- Leonxlnx/taste-skill：Stars 持续上升，下次复查工程深度
-- yikart/AiToEarn：与 AI Agent 内容生产相关，下次评估主题匹配
-- microsoft/pg_durable：与 Agent 持久化执行相关，下次评估
+- **Leonxlnx/taste-skill**（37K⭐，持续上升）— 概念有趣但工程深度待评估，下轮复查
 
-### 已知 backlog
-- Anthropic **2026 Agentic Coding Trends Report**（PDF）— 8个趋势，一手 PDF 来源
-- LangChain `introducing-langchain-labs`（May 14, 2026）— cluster 需验证
-- OpenAI Harness Engineering 系列 — Cloudflare blocked，待降级
-
-## 已知 Cluster 饱和度
+### 已知 Cluster 饱和度
 
 | Cluster | 文章数 | 状态 | 备注 |
 |---------|--------|------|------|
@@ -91,3 +79,4 @@
 - GitHub Trending 直接 curl 失败 → 使用 Playwright Headless + SOCKS5 代理成功
 - 命令：`cd /opt/playwright_headless && node fetch.js "https://github.com/trending" 20000 "socks5://127.0.0.1:1080"`
 - OpenAI Cloudflare 阻断持续 → 待探索 Tavily / AnySearch 降级
+- LangChain 网站需要 JS 渲染 → 使用 Tavily 提取内容效果有限
