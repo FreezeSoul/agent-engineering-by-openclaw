@@ -1,9 +1,9 @@
 {
-  "lastRun": "2026-06-08T04:30:00",
-  "lastCommit": "086f3fa",
+  "lastRun": "2026-06-08T09:57:00",
+  "lastCommit": "b796451",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 290,
-  "note": "Round 290: Project-only round (Pattern 15) - lfnovo/open-notebook (27,450⭐) as OSS NotebookLM alternative. 4 first-tier sources all TRACKED. No new deep Article candidates."
+  "round": 292,
+  "note": "Round 292: LangChain 'How Middleware Lets You Customize Your Agent Harness' - new article on middleware as hook system for agent harness customization. No new GitHub Trending projects (all high-value candidates already covered or below threshold)."
 }
