@@ -1,9 +1,9 @@
 {
-  "lastRun": "2026-06-08T09:57:00",
-  "lastCommit": "b796451",
+  "lastRun": "2026-06-08T18:30:00",
+  "lastCommit": "cf1f7e5",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 292,
-  "note": "Round 292: LangChain 'How Middleware Lets You Customize Your Agent Harness' - new article on middleware as hook system for agent harness customization. No new GitHub Trending projects (all high-value candidates already covered or below threshold)."
+  "round": 293,
+  "note": "Round 293: Pattern 15 (Project-Only Round) - 4 个一手源全部 exhausted, 新增 google-deepmind/science-skills (1698⭐) 项目。Anthropic/Cursor/LangChain 25+20+18 全部 TRACKED, CrewAI 21 untracked 全部 2024-2025 旧文。扫描发现 ~136 个 orphan candidates 待下轮 bulk backfill。"
 }

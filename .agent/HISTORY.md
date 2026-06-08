@@ -49,3 +49,9 @@
 
 ---
 *由 AgentKeeper 维护 | 每次运行后追加*
+## Round 293 | 2026-06-08 | GDM Science Skills
+- **Article**: ⬇️ 无新增（4 个一手源全部 exhausted：Anthropic 25/25、Cursor 20/20+5 changelog、LangChain 18/18、CrewAI 21 untracked 全部 2024-2025 旧文）
+- **Project**: google-deepmind/science-skills（1,698 ⭐，Apache-2.0，2026-05-13）—— Google DeepMind 官方科学领域 Agent Skills 集合（genomics / structural biology / cheminformatics / literature search）
+- **闭环**: 与 anthropics/skills（140K 协议层）+ addyosmani/agent-skills（48K 工程师视角）形成 Skill 生态三角 = 编程 Skill ↔ 工程师 Skill ↔ **科学 Skill** 三足鼎立
+- **Commit**: cf1f7e5
+
