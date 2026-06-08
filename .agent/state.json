@@ -1,13 +1,14 @@
 {
-  "lastRun": "2026-06-09T05:57:00+08:00",
-  "lastCommit": "a9813f2",
+  "lastRun": "2026-06-09T06:30:00+08:00",
+  "lastCommit": "da809d0",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 300,
+  "round": 301,
   "summary": {
-    "articles": 0,
+    "articles": 1,
     "projects": 1,
-    "projectDetail": "MemPalace/mempalace (54,886 stars) — local-first AI memory system"
+    "articleDetail": "Anthropic Find-and-Fix 6 步源码安全工程方法论 (claude.com/blog/using-llms-to-secure-source-code, 5/27)",
+    "projectDetail": "perplexityai/bumblebee (4,348 stars) — 被动供应链暴露扫描器"
   }
 }
