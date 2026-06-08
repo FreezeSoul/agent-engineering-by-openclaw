@@ -38,7 +38,7 @@
 
 - **[revfactory/harness](./revfactory-harness-team-architecture-factory-4202-stars-2026.md)** — 4,202 Stars，Claude Code Plugin，L3 Meta-Factory / Team-Architecture Factory，自动生成 Agent Team 架构（6 种预置模式：Pipeline/Fan-out-Fan-in/Expert Pool/Producer-Reviewer/Supervisor/Hierarchical Delegation）+ Progressive Disclosure Skills + 跨会话持久化 + Claude Code 原生格式输出，与 Compound Engineering（strategy-compound 工作流）形成「Team 架构自动生成 ↔ 项目知识跨 Agent 积累」的互补
 
-- **[microsoft/SkillOpt](./microsoft-SkillOpt-train-agent-skills-with-optimization-loops-2814-stars-2026.md)** — 2,814 Stars，Python，Microsoft Research 项目，用神经网络的范式训练 Agent 技能（epochs + batch size + learning rate + validation gates，但优化目标是技能文档而非模型权重）+ runtime_state.json 中断恢复 + WebUI 监控 + 6 个 Benchmark 支持（SearchQA/ALFWorld/DocVQA 等），与 Anthropic Containment 工程文章（环境层硬边界）形成「技能层软约束 ↔ 环境层硬边界」互补的 Harness 双轨闭环
+- **[microsoft/SkillOpt](./microsoft-skillopt-text-space-skill-optimization-5423-stars-2026.md)** — 5,423 Stars，Python，Microsoft Research 项目，用文本空间优化的范式训练 Agent 技能（epochs + batch size + learning rate + validation gates，但优化目标是技能文档而非模型权重）+ runtime_state.json 中断恢复 + WebUI 监控 + 6 个 Benchmark 支持（SearchQA/ALFWorld/DocVQA 等）+ 52 个评估 cell 全部最佳/并列最佳，与 Anthropic Containment 工程文章（环境层硬边界）形成「技能层软约束 ↔ 环境层硬边界」互补的 Harness 双轨闭环
 
 - **[peteromallet/desloppify](./peteromallet-desloppify-agent-harness-2875-stars-2026.md)** — 2,875 Stars，Python 3.11+，AI Coding Agent 质量改善 Harness（29 种语言支持）+ 机械检测 + LLM 主观评审双轨 + 状态跨会话持久化 + 防作弊评分 + 全主流 Agent 支持（Claude/Cursor/Codex/Copilot 等），与 Cursor 3 Multi-Agent 协作平台形成「工具层质量守护」的互补
 - **[nousresearch/hermes-agent](./nousresearch-hermes-agent-velocity-release-2026.md)** — 173K Stars，Python，The Velocity Release：run_agent.py 从 16K 行压到 3.8K 行（-76%）+ 五轮冷启动优化（Termux 2.9s→0.8s）+ 47% fewer per-turn 函数调用 + 4500× session_search 加速 + Kanban 演变为 real multi-agent platform（orchestrator auto-decomposition + swarm topology + worktree-per-task）+ xAI 深度集成 + Nous-approved MCP catalog，与 Anthropic「Coding agents in social sciences」实证研究形成「速度优化 → 更大规模采用 → 产出分布变化」的主题关联
@@ -49,7 +49,7 @@
 
 - **[langflow-ai/langflow](./langflow-ai-langflow-visual-multi-agent-148k-stars-2026.md)** — 148,851 Stars，Python/TypeScript，可视化 Multi-Agent 编排平台（React Flow 可视化引擎 + 源码可定制 + MCP Server 内置），LangChain 上层可视化入口，与 Cursor Agent Sandbox 形成「沙箱权限边界 ↔ Multi-Agent 协作结构」不同层次的工程互补
 
-- **[vercel-labs/zerolang](./vercel-labs-zerolang-agent-programming-language-4641-stars-2026.md)** — 4,641 Stars，C，专为 Agent 工作流设计的编程语言（Token 效率 + 零依赖 + 编译器即 API），结构化修复计划输出 + 版本绑定技能系统 + 内置安全隔离声明，与「Vercel Labs Zero」形成「同一项目不同阶段」的版本演进补充（Zero 2.1K Stars → ZeroLang 4.6K Stars）
+- **[vercel-labs/zerolang](./vercel-labs-zerolang-agent-programming-language-4916-stars-2026.md)** — 4,916 Stars，C，专为 Agent 工作流设计的编程语言（Token 效率 + 零依赖 + 编译器即 API），结构化修复计划输出 + 版本绑定技能系统 + 内置安全隔离声明，Vercel Labs 出品，与「Vercel Labs Zero」形成「同一项目不同阶段」的版本演进补充（Zero 2.1K Stars → ZeroLang 4.9K Stars）
 
 - **[github/copilot-sdk](./github-copilot-sdk-multi-language-agent-sdk-8735-stars-2026.md)** — 8,735 Stars，多语言 SDK（Python/TypeScript/Go/.NET/Java/Rust）+ JSON-RPC 与 Copilot CLI 通信 + BYOK 自有密钥 + 权限分层框架，与 OpenAI Agents SDK 形成「框架层 vs 能力集成层」的目标用户定位对比闭环
 
