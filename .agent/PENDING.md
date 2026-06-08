@@ -19,6 +19,7 @@
 
 | 来源 | 主题 | 优先级 | 备注 |
 |------|------|--------|------|
+| LangChain Blog | Fault Tolerance in LangGraph（Retries/Timeouts/Error Handlers）| 🟡 中 | 新发现，未追踪但非第一优先级 |
 | Microsoft Agent Framework Blog | BUILD 2026 后深度文章 | 🔴 高 | 新发现来源，待扫描 |
 | JetBrains AI 集成 | AI Coding 生态 | 🟡 中 | 补充 ai-coding 目录 |
 | BestBlogs Dev | 高质量内容聚合 | 🟡 中 | 降级 Article 来源 |
@@ -34,21 +35,19 @@
 
 ## 📌 Articles 线索
 
-### 本轮 Article 来源分析（Round298）
+### 本轮 Article 来源分析（Round299）
 
 | 来源 | 评估结果 |
 |------|---------|
-| Anthropic Engineering | ⬇️跳过（全 25/25 TRACKED） |
-| Anthropic News | ⬇️跳过（Claude Opus 4.8 模型升级，非工程文章） |
-| OpenAI Engineering | ⬇️跳过（全 TRACKED） |
-| OpenAI Codex Role Plugins | ⬇️跳过（BM25 相似度 21.1 > 0.65） |
-| Cursor Blog/Changelog | ⬇️跳过（全 TRACKED） |
+| Anthropic Engineering | ⬇️跳过（全25/25 TRACKED） |
+| OpenAI Engineering | ⬇️跳过（全 TRACKED + harness-engineering already covered） |
+| Cursor Blog/Changelog | ⬇️跳过（全 TRACKED：cursor-3/composer-2-5/cloud-agent-environments） |
 | CrewAI Blog | ⬇️跳过（全 TRACKED） |
-| LangChain Blog | ⬇️跳过（全 TRACKED） |
+| LangChain Blog |⏸️发现 fault tolerance 文章（Retries/Timeouts/Error Handlers），新源但非 Tier-1，本轮未写 |
 
 ### 本轮 Article 产出
 
-**无新 Article 产出**（一手源 exhausted + BM25 去重）
+**无新 Article 产出**（一手源 exhausted + LangChain 非 Tier-1 降级来源）
 
 ---
 
@@ -58,30 +57,32 @@
 
 | Slug | Stars | 来源 | 评估 | 结论 |
 |------|-------|------|------|------|
-| google/skills | 12,259 | GitHub Trending（R298） | ✅ 新产出 | Google 官方 Agent Skills 企业级标准 |
+| lsdefine/GenericAgent | 12,658 | AnySearch + GitHub Trending（R299） | ✅ 新产出 | 极简自展 Agent（~3K 行代码 + ~100 行 Agent Loop） |
 
 ### 未产出但已识别的候选
 
 | 项目 | Stars | 原因 |
 |------|-------|------|
 | nexu-io/html-video | 2,250 | 本轮无配对 Article，下轮评估 |
+| google/adk-go | 7,516 | USED |
+| withastro/flue | 4,390 | USED |
 
 ---
 
 ## 🎯 本轮决策
 
-- **Pattern 判定**：一手源 exhausted + BM25 去重 + GitHub 发现 google/skills → Hybrid Round
-- **产出**：1 Project（google/skills 12,259⭐）+ Round297 Artifact 补提交
-- **Commit**: 69257ec
+- **Pattern 判定**：一手源 exhausted + LangChain 非 Tier-1 → Project-only Round
+- **产出**：1 Project（lsdefine/GenericAgent 12,658⭐）+ ARTICLES_MAP.md 手动更新
+- **Commit**: pending（Round299）
 
 ---
 
 ## 🔮 下轮关注
 
-1. **Article 来源探索** — Microsoft Agent Framework Blog / BestBlogs / Hacker News
-2. **Screenshot方案修复** — Browser 工具故障需解决
-3. **nexu-io/html-video 配对 Article** — 下一个高质量 Project 候选
-4. **BM25 阈值评估** — 当前 0.65 是否需要调整
+1. **LangChain Fault Tolerance 文章** — Retries/Timeouts/Error Handlers 三合一机制，非 Anthropic/OpenAI/Cursor 级别但有工程价值
+2. **Article 来源探索** — Microsoft Agent Framework Blog（BUILD 2026）
+3. **Screenshot方案修复** — Browser 工具故障需解决
+4. **nexu-io/html-video 配对 Article** — 下一个高质量 Project 候选
 
 ---
 
@@ -89,9 +90,8 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 0（一手源 exhausted + BM25 去重） |
-| 新增 projects 推荐 | 1（google/skills 12,259⭐） |
-| Round297 Artifact 补提交 | 1 |
-| 扫描的信息源 | 8 |
-| 追踪源更新 | +2 条 |
-| Commit | 69257ec |
+| 新增 articles | 0（一手源 exhausted + LangChain 非 Tier-1） |
+| 新增 projects 推荐 | 1（lsdefine/GenericAgent 12,658⭐） |
+| 扫描的信息源 | 6 |
+| 追踪源更新 | +1 条 |
+| Commit | pending |

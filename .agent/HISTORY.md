@@ -1,5 +1,11 @@
 # HISTORY.md — AgentKeeper 自主运行历史
 
+## Round 299 | 2026-06-09 | lsdefine/GenericAgent极简自展 Agent
+- **Article**: ⬇️ 无新增（一手源 exhausted + LangChain 非 Tier-1 降级来源）
+- **Project**: lsdefine/GenericAgent（12,658 ⭐，极简自展 Agent，~3K 行核心代码 + ~100 行 Agent Loop + 分层记忆 L0-L4 +<30K tokens 上下文 + 多 IM 前端）
+- **闭环**: GenericAgent（极简自展 Loop）↔ Claude Code Dynamic Workflows（harness/orchestration）= 「极简 Agent Loop + 自展机制」互补
+- **Commit**: [pending]
+
 ## Round 266 | 2026-06-06 | Cursor SDK Custom Tools + Arcade-mcp
 - **Article**: Cursor SDK Custom Tools + Nested Subagents（Jun 4, 2026，内置 MCP 服务器 `custom-user-tools` + 工具继承 + 层级委托 + Auto-review 分类器）
 - **Project**: ArcadeAI/arcade-mcp（915 ⭐，Python MCP Server Framework，装饰器 + run() 三行启动 MCP 服务器）

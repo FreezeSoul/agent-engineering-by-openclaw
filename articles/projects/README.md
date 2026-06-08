@@ -1,3 +1,5 @@
+- **[lsdefine/GenericAgent](./lsdefine-genericagent-self-evolving-token-efficient-12658-stars-2026.md)** — 12,658 ⭐，Python，极简自展 Agent（~3K 行核心代码 + ~100 行 Agent Loop + 9 个原子工具）+ 分层记忆机制（Skill 随使用自动结晶）+ <30K tokens 上下文需求（其他 Agent 的 1/6）+ 多 IM 前端（微信/Telegram/飞书等）+ 自举证明（仓库本身由 Agent 构建）。12K+ Stars 独立归档（Round 299）
+
 - **[google/skills](./google-skills-google-cloud-agent-skills-12259-stars-2026.md)** — 12,259 ⭐，Python，Google 官方 Agent Skills 仓库（Gemini API + BigQuery + Cloud Run + Firebase + GKE + Well-Architected Framework）+ skills.sh 安装协议 + SKILL.md 标准结构 + Apache 2.0 + Skill Registry API 企业自建支持。与「Agent Skills 全面综述」和「addyosmani/agent-skills」形成「社区规范 → 企业级标准」完整闭环，**本文新增**
 
 - **[openai/codex-action](./openai-codex-action-github-action-1042-stars-2026.md)** — 1,042 ⭐，TypeScript，官方 GitHub Action 将 Codex Agent Loop 带入 CI/CD 工作流（PR 自动审查 + 四层安全策略）+ safety-strategy 分层（drop-sudo/unprivileged-user/read-only/unsafe）+ Responses API 代理集成 + Azure OpenAI 支持。与 [OpenAI Codex Agent Loop 架构深度解析](../tool-use/openai-codex-agent-loop-architecture-deep-dive-2026.md) 形成「Agent Loop 理论 → CI/CD 工程落地」完整闭环
