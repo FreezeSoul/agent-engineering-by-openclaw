@@ -55,3 +55,11 @@
 - **闭环**: 与 anthropics/skills（140K 协议层）+ addyosmani/agent-skills（48K 工程师视角）形成 Skill 生态三角 = 编程 Skill ↔ 工程师 Skill ↔ **科学 Skill** 三足鼎立
 - **Commit**: cf1f7e5
 
+## Round 294 | 2026-06-08 | Alibaba Open Code Review + Serenity Skill
+- **Article**: ⬇️ 无新增（4 个一手源继续 exhausted，Pattern 16 Project-Only Round）
+- **Project**: 2 个 Project（alibaba/open-code-review 5094⭐ + muxuuu/serenity-skill 1081⭐）
+  - alibaba/open-code-review：阿里 Deterministic + Agent 混合架构代码审查工具，内部两年验证，数百万缺陷发现
+  - muxuuu/serenity-skill：投研视角供应链瓶颈 Agent Skill，MIT 许可，Skill 模式从软件工程到专业投研的边界突破
+- **闭环**: alibaba/open-code-review ↔ ai-coding/deterministic backbone（代码审查的确定性工程约束）; serenity-skill ↔ google-deepmind/science-skills（Skill 模式跨领域泛化：工程 ↔ 投研）
+- **Commit**: 6347c3d
+
