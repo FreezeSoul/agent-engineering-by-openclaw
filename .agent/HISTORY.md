@@ -55,6 +55,12 @@
 - **闭环**: 与 anthropics/skills（140K 协议层）+ addyosmani/agent-skills（48K 工程师视角）形成 Skill 生态三角 = 编程 Skill ↔ 工程师 Skill ↔ **科学 Skill** 三足鼎立
 - **Commit**: cf1f7e5
 
+## Round 298 | 2026-06-09 | google/skills + Round297 补提交
+- **Article**: ⬇️ 补提交 Round297 Artifact（Claude Code Dynamic Workflows，2026-06-02，harness/ 目录）
+- **Project**: google/skills（12,259 ⭐，Apache-2.0，2026-06-09）—— Google 官方 Agent Skills 仓库（Gemini API + BigQuery + Cloud Run + Firebase + GKE + Well-Architected Framework）+ skills.sh 安装 + SKILL.md 标准结构
+- **闭环**: google/skills ↔ Agent Skills 全面综述 + addyosmani/agent-skills（社区规范 → 企业级标准）
+- **Commit**: 69257ec
+
 ## Round 294 | 2026-06-08 | Alibaba Open Code Review + Serenity Skill
 - **Article**: ⬇️ 无新增（4 个一手源继续 exhausted，Pattern 16 Project-Only Round）
 - **Project**: 2 个 Project（alibaba/open-code-review 5094⭐ + muxuuu/serenity-skill 1081⭐）
