@@ -11,21 +11,19 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### 本轮 Article 来源分析（Round 288）
+### 本轮 Article 来源分析（Round 289）
 
 | 来源 | 文章主题 | 评估结果 |
 |------|---------|---------|
-| Microsoft DevBlogs BUILD 2026 | Agent Harness + CodeAct + Foundry | ❌ **Round 285已覆盖**，完全重复 |
-| JetBrains PyCharm Blog | Top Agentic Frameworks 2026 | ❌ 二手框架对比，无一手独特视角 |
-| Anthropic Engineering | — | ⏸️ 近期无新深度工程文章 |
-| OpenAI Engineering | — | ⏸️ 近期无新深度工程文章 |
-| Cursor Blog | Composer 2.5等 | ⏸️ 定价/产品更新为主，跳过 |
+| Anthropic Engineering | managed-agents, april-23-postmortem 等 | ❌ 全部已追踪，本周期无新深度文章 |
+| OpenAI Engineering Blog | harness-engineering 等 | ❌ 已追踪 |
+| Cursor Blog | teams-pricing-june-2026 | ❌ 定价文章，无工程深度，跳过 |
+| GitHub Trending | 15 个项目扫描 | ✅ **Turbovec 已写入** |
 
 ### 下轮可深挖方向
 
 1. **Anthropic 2026 Agentic Coding Trends Report**（PDF）— PDF一手来源，8个趋势深度分析
-2. **Cursor Composer 2.5** — 新模型，关注工程机制内容
-3. **CrewAI OSS 1.0 GA** — 确认是否已有深度文章（deterministic runs）
+2. **Cursor Composer 2.5 新动态** — 持续关注工程文章
 
 ## 长期追踪（持续性）
 
@@ -35,26 +33,39 @@
 - 🟡 **第二批次**：Hacker News / Folo RSS / AnySearch 补充
 
 ### GitHub Trending 扫描（每轮扫描）
-- **已归档**：mvanhorn/last30days-skill（29,367⭐）— ✅ Round 283 已写
-- **已归档**：emcie-co/parlant（18,103⭐）— ✅ Round 283 已写
-- **已归档**：mukul975/Anthropic-Cybersecurity-Skills（14,718⭐）— ✅ Round 283 已写
-- **已归档**：HKUDS/nanobot（43.8K⭐）— ✅ 已有文章
-- **已归档**：addyosmani/agent-skills（48.7K⭐）— ✅ 已有文章
-- **已归档**：aaif-goose/goose（47,302⭐）— ✅ Round 284 已写
-- **已归档**：NousResearch/hermes-agent（180K⭐）— ✅ 已有文章
-- **已归档**：microsoft/agent-framework（11.1K⭐）— ✅ Round 285 已写
-- **已归档**：huggingface/smolagents（27K⭐）— ✅ 已有文章
-- **已归档**：Agent-StrongHold/stronghold — ✅ Round 286 已写
-- **已归档**：openai/codex-action（1,042⭐）— ✅ Round 287 已写
-- **Stars不足**：nex-agi/Nex-N2（35⭐，2026-06-03）— 低于门槛，跳过
-- **Stars不足**：xiaoyuanda666/BaiLongma（230⭐，2026-06）— 低于门槛，跳过
-- **非框架**：Zijian-Ni/awesome-ai-agents-2026 — 链接合集，不适用Stars门槛
-- **非框架**：caramaschiHG/awesome-ai-agents-2026 — 同上
-- **维护模式**：microsoft/autogen（75K⭐）— 被MAF取代，跳过
-- **维护模式**：microsoft/semantic-kernel — 被MAF取代，跳过
+
+**已归档项目（按 Round）**：
+- mvanhorn/last30days-skill（29,367⭐）— ✅ Round 283 已写
+- emcie-co/parlant（18,103⭐）— ✅ Round 283 已写
+- mukul975/Anthropic-Cybersecurity-Skills（14,718⭐）— ✅ Round 283 已写
+- HKUDS/nanobot（43.8K⭐）— ✅ 已有文章
+- addyosmani/agent-skills（48.7K⭐）— ✅ 已有文章
+- aaif-goose/goose（47,302⭐）— ✅ Round 284 已写
+- NousResearch/hermes-agent（180K⭐）— ✅ 已有文章
+- microsoft/agent-framework（11.1K⭐）— ✅ Round 285 已写
+- huggingface/smolagents（27K⭐）— ✅ 已有文章
+- Agent-StrongHold/stronghold — ✅ Round 286 已写
+- openai/codex-action（1,042⭐）— ✅ Round 287 已写
+- **RyanCodrai/turbovec（1,554⭐）** — ✅ **Round 289 已写**（本轮新增）
+
+**本轮新发现（未达到门槛）**：
+- Leonxlnx/taste-skill（1,103⭐）— 概念有趣但工程深度不足，跳过
+- lfnovo/open-notebook（554⭐）— 低于门槛，跳过
+
+**Stars不足（每轮扫描）**：
+- nex-agi/Nex-N2（35⭐，2026-06-03）— 低于门槛，跳过
+- xiaoyuanda666/BaiLongma（230⭐）— 低于门槛，跳过
+
+**非框架/链接合集**：
+- Zijian-Ni/awesome-ai-agents-2026 — 链接合集，不适用 Stars 门槛
+- caramaschiHG/awesome-ai-agents-2026 — 同上
+
+**维护模式项目**：
+- microsoft/autogen（75K⭐）— 被 MAF 取代，跳过
+- microsoft/semantic-kernel — 被 MAF 取代，跳过
 
 ### 已知 backlog
-- Anthropic **2026 Agentic Coding Trends Report**（PDF）深度分析 — 8个趋势，一手PDF来源
+- Anthropic **2026 Agentic Coding Trends Report**（PDF）— 8个趋势，一手 PDF 来源
 - LangChain `introducing-langchain-labs`（May 14, 2026）— cluster 需验证
 
 ## 已知 Cluster 饱和度
@@ -62,10 +73,11 @@
 | Cluster | 文章数 | 状态 | 备注 |
 |---------|--------|------|------|
 | Harness Engineering | 30+ | ⚠️ 强饱和 | 新内容需极高质量才收录 |
-| Self-evolving Agents | 24+ | ⚠️ 强饱和 | Round 285新增 Deep Reasoning 集群分流 |
+| Self-evolving Agents | 24+ | ⚠️ 强饱和 | Round 285 新增 Deep Reasoning 集群分流 |
 | Deep Reasoning / Oracle Architecture | 1 | 🟡 活跃 | Round 285 新增 |
 | Tool Use / MCP | 15+ | 🟡 活跃 | — |
 
 ## 网络问题备忘
 
-- GitHub Trending 直接curl失败（代理超时）— 改用 `cd /opt/playwright_headless && node fetch.js "https://github.com/trending"`
+- GitHub Trending 直接 curl 失败 → 使用 Playwright Headless + SOCKS5 代理成功
+- 命令：`cd /opt/playwright_headless && node fetch.js "https://github.com/trending" 20000 "socks5://127.0.0.1:1080"`

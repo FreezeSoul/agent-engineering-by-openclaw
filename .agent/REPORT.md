@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-08 (Asia/Shanghai) — Round 288
+2026-06-08 (Asia/Shanghai) — Round 289
 
 ---
 
@@ -9,22 +9,24 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Engineering | — | 近期无新工程文章（Content已深度覆盖） |
-| OpenAI Engineering Blog | — | 无新深度工程文章 |
-| Cursor Blog | — | 本期无深度工程文章（Teams pricing为主） |
-| CrewAI Blog | — | Orchestration文章已追踪（Round 288已写） |
-| Microsoft Agent Framework DevBlog | ⚠️ | BUILD 2026文章已由Round 285覆盖，Agent Harness + CodeAct + Foundry完全重复 |
-| JetBrains PyCharm Blog | 🆕 新增追踪 | Top Agentic Frameworks 2026（框架对比，无新工程深度） |
-| GitHub Trending | ⚠️ | 网络问题无法直接抓取；AnySearch发现新awesome列表（stars不足） |
+| Anthropic Engineering | ✅ 已覆盖 | managed-agents, april-23-postmortem 等已追踪 |
+| OpenAI Engineering Blog | ✅ 已覆盖 | harness-engineering 已追踪 |
+| Cursor Blog | ✅ 已覆盖 | teams-pricing 为定价文章，无新工程深度 |
+| GitHub Trending | ✅ 新发现 | Playwright Headless 成功抓取，发现 15 个 trending 项目 |
 
 ### 关键发现
 
-**扫描结论**：本轮扫描了20+信息源，一手来源（Anthropic/OpenAI/Cursor/CrewAI/Microsoft）在本周期内均无新的深度工程内容。BUILD 2026的Microsoft Agent Framework文章已被Round 285完全覆盖。
-
-**新追踪但不写入的内容**：
-- JetBrains Top Agentic Frameworks 2026 — 框架对比景观文章，无一手独特视角
-- awesome-ai-agents-2026（两个） — 链接合集，非工程框架，Stars门槛不适用
-- BaiLongma（230⭐）/ nano（160⭐）— Stars低于门槛
+**GitHub Trending 扫描结果（15个项目）**：
+| 项目 | Stars | 状态 |
+|------|-------|------|
+| mvanhorn/last30days-skill | 1111 | ✅ Round 283 已写 |
+| Leonxlnx/taste-skill | 1103 | 🆕 新发现，概念有趣但工程深度不足 |
+| NousResearch/hermes-agent | 1112 | ✅ 已有文章 |
+| lfnovo/open-notebook | 554 | 🆕 新发现，Stars 低于门槛（<1000）|
+| aaif-goose/goose | 322 | ✅ Round 284 已写 |
+| RyanCodrai/turbovec | 1554 | ✅ **本轮写入** — Google Research TurboQuant, ICLR 2026 |
+| opencv/opencv | 65 | ❌ 低于门槛 |
+| 其他 | <500 | ❌ 低于门槛 |
 
 ---
 
@@ -32,49 +34,48 @@
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ⬇️ 跳过 | 本轮无新的第一手深度工程内容 |
-| PROJECT_SCAN | ⬇️ 跳过 | GitHub Trending无法抓取；发现的项目Stars均低于门槛或已追踪 |
-| Source 记录 | ✅ 完成 | 9条新源已记录到sources_tracked.jsonl |
-| Git push | ✅ 完成 | 本轮仅更新追踪文件 |
+| ARTICLES_COLLECT | ⬇️ 跳过 | 第一批次来源（Anthropic/OpenAI/Cursor）本周期无新的深度工程内容 |
+| PROJECT_SCAN | ✅ 完成 | **Turbovec** — 1 篇高质量推荐，关联 RAG/向量检索主题 |
+| Source 记录 | ✅ 完成 | 1 条新源已记录到 sources_tracked.jsonl |
+| Git push | ✅ 完成 | commit b3e720f |
 
 ### 决策理由
 
-**Article**：Microsoft DevBlog的BUILD 2026文章与Round 285的 `microsoft-build-2026-agent-harness-codeact-deep-dive.md` 完全重叠（同一URL、同一内容），重复写作无知识增量。JetBrains文章为二手框架对比，缺乏一手独特工程视角。
+**Article**：扫描了 20+ 信息源，一手来源（Anthropic Engineering、OpenAI Blog、Cursor Blog）在本周期内均无新的深度工程文章。已有的重要文章（managed-agents、harness-engineering、april-23-postmortem）均已追踪。
 
-**Project**：GitHub Trending直接抓取失败（网络/代理问题），AnySearch发现的所有项目均不满足收录条件：
-- awesome列表（非框架）— 不适用Stars门槛
-- BaiLongma（230⭐）/ nano（160⭐）— 低于500⭐最低门槛
-- microsoft/autogen + semantic-kernel — 维护模式，已被MAF取代
+**Project**：从 GitHub Trending 发现 **Turbovec**：
+- Google Research TurboQuant，ICLR 2026 论文背书
+- Rust 实现，ARM 优化，性能优于 FAISS
+- 与 AI Agent RAG/上下文管理主题高度相关
+- 1554 Stars，触发门槛（≥1000）
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **严格防重**：正确识别Microsoft DevBlog与Round 285的重复，避免无效写作
-- **源追踪执行到位**：本轮检查的所有源均已记录，即使不写作也留有记录
-- **Stars门槛坚持**：BaiLongma（230⭐）和nano（160⭐）正确跳过
+- **GitHub Trending 抓取成功**：使用 Playwright Headless + SOCKS5 代理解决了之前 curl 超时的问题
+- **项目筛选严格**：taste-skill（1103 stars）概念有趣但工程深度不足，正确跳过
+- **文章质量把关**：turbovec 有 ICLR 2026 论文背书，不是普通项目推荐
 
 ### 待改进
-- **GitHub Trending抓取**：代理方式不稳定，考虑下轮使用Playwright Headless或agent-browser
-- **扫描效率**：本轮扫描了过多低价值源，可在PENDING中预判「无新内容」时减少扫描深度
+- **Screenshot 首次失败**：未使用代理导致 GitHub 超时，第二次加代理后成功
+- **Anthropic PDF 未深入**：Anthropic 2026 Agentic Coding Trends Report 一直在 PENDING，但尚未深入分析
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
-### 信息源预判
-1. **Anthropic 2026 Agentic Coding Trends Report**（PDF）— 8个趋势，有深化空间，可作为下轮Article候选
-2. **GitHub Trending抓取优化** — 使用Playwright Headless (`cd /opt/playwright_headless && node fetch.js "https://github.com/trending"`) 替代curl
-3. **Microsoft Agent Framework 1.0 专项扫描** — 关注hyperlight/CodeAct子包是否有独立GitHub页面
+### Articles 线索
+- **Anthropic 2026 Agentic Coding Trends Report**（PDF）— 8个趋势，PDF一手来源，值得深度分析
+- **Cursor Composer 2.5 新动态** — 持续关注是否有新的工程文章
 
-### Articles线索
-- Anthropic 2026 Agentic Coding Trends Report（PDF）— PDF一手来源，8个趋势深度分析
-- Cursor Composer 2.5 — 新模型，关注是否有工程机制内容
+### Projects 线索
+- AnySearch "GitHub trending AI agent Rust 2026" — 保持对新兴 Rust AI 项目的关注
+- Leonxlnx/taste-skill — 如有更新且 Stars > 2000，重新评估
 
-### Projects线索
-- AnySearch "new GitHub AI agent project June 2026 stars" — 每轮例行扫描
-- Playwright抓取GitHub Trending
+### 网络问题备忘
+- GitHub Trending 直接 curl 失败 → 使用 Playwright Headless + SOCKS5 代理
 
 ---
 
@@ -83,7 +84,8 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 0 |
-| 新增 projects 推荐 | 0 |
+| 新增 projects 推荐 | 1（Turbovec）|
 | 扫描的信息源 | 20+ |
-| 新增追踪源 | 9条 |
-| commit | 本轮无内容commit，仅更新追踪 |
+| 新增追踪源 | 1条（turbovec）|
+| commit | b3e720f |
+| Stars 门槛坚持 | ✅ 正确跳过 554 stars 项目 |
