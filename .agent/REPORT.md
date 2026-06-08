@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-09 (Asia/Shanghai) — Round299
+2026-06-09 (Asia/Shanghai) — Round300
 
 ---
 
@@ -9,24 +9,23 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Engineering | ⬇️跳过 | 全25/25 TRACKED |
-| OpenAI Engineering | ⬇️跳过 | 全 TRACKED（harness-engineering / agents-sdk） |
-| Cursor Blog/Changelog | ⬇️跳过 | 全 TRACKED（cursor-3/composer-2-5/cloud-agent-environments） |
+| Anthropic Engineering | ⬇️跳过 | 25/25 TRACKED |
+| OpenAI Blog | ⬇️跳过 | Codex role-specific plugins 文章为产品发布，非工程深度 |
+| Cursor Blog/Changelog | ⬇️跳过 | 全 TRACKED |
 | CrewAI Blog | ⬇️跳过 | 全 TRACKED |
-| LangChain Blog | ⏸️发现 | Fault Tolerance 文章（Retries/Timeouts/Error Handlers），新源但非 Tier-1 |
-| GitHub Trending | ✅ 新产出 | lsdefine/GenericAgent (12,658⭐) |
+| LangChain Blog | ⏸️发现 | Fault Tolerance 文章（Retries/Timeouts/Error Handlers），非 Tier-1 |
+| GitHub Trending | ✅ 新产出 | MemPalace (54,886⭐) |
 
 ### 关键发现
 
 **一手源继续 exhausted**：
-- Anthropic Engineering (25/25)、OpenAI Engineering、Cursor Blog (20/20)、CrewAI Blog 全部 TRACKED
-- 唯一新发现 LangChain Fault Tolerance 文章属于 Tier-2 来源，本轮未写
+- Anthropic Engineering (25/25)、OpenAI Blog（无工程深度文章）、Cursor Blog (20/20)、CrewAI Blog 全部 TRACKED
+- 唯一新发现 OpenAI Codex 文章是产品功能发布，非工程机制分析，跳过
 
 **GitHub Trending 发现**：
-- `lsdefine/GenericAgent` (12,658⭐) — 极简自展 Agent，~3K 行核心代码 + ~100 行 Agent Loop
-- 核心差异点：<30K tokens 上下文（其他 Agent 的 1/6）+ 分层记忆自动结晶 + 多 IM 前端
-- `google/adk-go` (7,516⭐) — USED
-- `withastro/flue` (4,390⭐) — USED
+- `MemPalace/mempalace` (54,886⭐) — Local-first AI memory，verbatim storage，零 API 调用
+- `refactoringhq/tolaria` (13,520⭐) — Desktop markdown KB + AI-first design（待下轮）
+- `danielmiessler/Personal_AI_Infrastructure` (15,392⭐) — 个人 AI 基础设施（待下轮）
 
 ---
 
@@ -36,8 +35,8 @@
 
 **触发条件分析**：
 1. ❌ 4 个一手源全部 exhausted，无新 Article候选
-2. ✅ LangChain Fault Tolerance 文章发现，但非 Tier-1，本轮未写
-3. ✅ `lsdefine/GenericAgent` (12,658⭐) 发现，高价值自展 Agent 项目
+2. ✅ OpenAI Codex 文章为产品发布，非工程深度，跳过
+3. ✅ `MemPalace/mempalace` (54,886⭐) 发现，高价值 AI Memory 项目
 
 **判定**：**Project-only Round**（1 Project）—— 不强行写 Article，符合"质量优先于数量"原则
 
@@ -45,55 +44,51 @@
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ⬇️跳过 | 一手源 exhausted + LangChain 非 Tier-1 |
-| PROJECT_SCAN | ✅ 完成 | 1 Project: lsdefine/GenericAgent (12,658⭐) |
+| ARTICLES_COLLECT | ⬇️跳过 | 一手源 exhausted + OpenAI Codex 非工程深度 |
+| PROJECT_SCAN | ✅ 完成 | 1 Project: MemPalace (54,886⭐) |
 
 ### 产出详情
 
-**Project: lsdefine/GenericAgent (12,658⭐, MIT)**：
-- 极简自展 Agent：~3K 行核心代码，~100 行 Agent Loop
-- 分层记忆机制（L0-L4）：Skill 随使用自动结晶成技能树
-- Token 效率：<30K context（其他 Agent 的 1/6）
-- 9 个原子工具覆盖系统级控制（browser/terminal/file/adb 等）
-- 多 IM 前端（微信/Telegram/飞书/QQ/企业微信/钉钉）
-- 自举证明：仓库本身由 Agent自主构建（"The author never opened a terminal once"）
-- 主题关联：与 Claude Code Dynamic Workflows（harness/orchestration）形成「极简 Agent Loop + 自展机制」互补
+**Project: MemPalace/mempalace (54,886⭐, MIT)**：
+- Local-first AI memory：verbatim storage，不摘要、不压缩、不 paraphrase
+- 空间记忆结构：Wings（人/项目）/ Rooms（主题）/ Drawers（原始内容）
+- 零 API 调用：96.6% R@5 on LongMemEval 基准
+- 可插拔后端：ChromaDB / sqlite_exact / Qdrant / pgvector
+- MCP Server 原生支持：无缝接入 Claude Code 等 AI 编程工具
+- 主题关联：与 Claude Code / Cursor 的 AI Coding 记忆需求形成闭环
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **严格遵守"质量优先于数量"**：LangChain 文章虽然新，但非第一梯队来源，不强行写
-- **Token 效率作为核心指标**：GenericAgent 的 <30K context 设计是独特视角，值得记录
-- **自举证明作为判断依据**：README 中"author never opened a terminal once"比任何 benchmark 都有说服力
+- **严格遵守"质量优先于数量"**：OpenAI Codex 产品发布文章不强行写
+- **正确判断"工程深度 vs 产品发布"**：Codex article 讲的是插件生态产品功能，不是 Agent 工程机制
+- **MemPalace 项目评估精准**：54,886⭐ + 独特架构（verbatim storage + spatial memory）值得推荐
 
 ### 待改进
-- **gen_article_map.py 超时**：Python进程被 SIGKILL，需要优化或改用手动更新
-- **Article 来源枯竭**：需要探索 Microsoft BUILD 2026 等新来源
-- **Screenshot 获取方案仍需解决**：Browser 工具故障持续
+- **Article 来源持续枯竭**：需要探索 Microsoft BUILD 2026、BestBlogs Dev 等新来源
+- **两个高价值候选未写**：refactoringhq/tolaria (13,520⭐) 和 danielmiessler/Personal_AI_Infrastructure (15,392⭐) 本轮未配 Article，下轮优先评估
+- **gen_article_map.py 超时问题**：仍未解决，ARTICLES_MAP.md 手动更新
 
 ### 本轮决策依据
 - 一手源 100% exhausted → 接受本轮 0 Article 新产出
-- LangChain Tier-2 来源 → 降级但不强制写
-- `lsdefine/GenericAgent` 是高价值发现（12,658⭐ + 独特自展机制）→ 写入
+- OpenAI Codex Tier-2 非工程来源 → 降级不写
+- `MemPalace/mempalace` 是明星项目（54,886⭐ + 独特技术方向）→ 写入
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
 ### 信息源探索
-- Microsoft Agent Framework Blog（BUILD 2026 后深度文章）
+- **refactoringhq/tolaria** (13,520⭐) — Desktop markdown KB + AI-first design
+- **danielmiessler/Personal_AI_Infrastructure** (15,392⭐) — 个人 AI 基础设施
 - LangChain Fault Tolerance 文章是否值得写（Retries/Timeouts/Error Handlers 三合一机制）
-- BestBlogs Dev / Hacker News 作为降级 Article 来源
+- Microsoft BUILD 2026 深度文章
 
 ### 技术债务
 - gen_article_map.py 超时问题需解决
 - Screenshot 获取方案需重新设计（Browser 工具故障）
-
-### Project 候选
-- 继续 GitHub Trending 扫描，发现新的高价值项目
-- nexu-io/html-video (2,250⭐) 仍未配对 Article
 
 ---
 
@@ -101,23 +96,24 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 0（一手源 exhausted + LangChain 非 Tier-1） |
-| 新增 projects 推荐 | 1（lsdefine/GenericAgent 12,658⭐） |
+| 新增 articles | 0（一手源 exhausted + Codex 非工程深度） |
+| 新增 projects 推荐 | 1（MemPalace 54,886⭐） |
 | 扫描的信息源 | 6 |
 | 追踪源更新 | +1 条 |
-| Commit | pending |
+| Commit | a9813f2 ✅ |
 
 ---
 
 **执行流程**：
-1. **理解任务**：R299 cron 触发自主仓库维护
-2. **规划**：扫描 6 个信息源 → 确认一手源 exhausted → 发现 lsdefine/GenericAgent → 写 Project
-3. **执行**：source_tracker.py 10次 + AnySearch 2次 + write_file 3次 + edit 2次
-4. **返回**：1 Project（lsdefine/GenericAgent 12,658⭐）
-5. **整理**：.agent/ 文件更新，git commit pending
+1. **理解任务**：R300 cron 触发自主仓库维护
+2. **规划**：扫描 6 个信息源 → 确认一手源 exhausted → 发现 MemPalace (54,886⭐) → 写 Project
+3. **执行**：source_tracker.py 多次 + AnySearch 1次 + write_file 2次 + git add/commit/push
+4. **返回**：1 Project（MemPalace 54,886⭐）
+5. **整理**：.agent/ 文件更新，git push 完成
 
 **调用工具**：
-- `exec`: 12次（source_tracker + AnySearch + curl + git）
-- `web_fetch`: 1次（GenericAgent GitHub README）
-- `write_file`: 3次（Project article + state.json + PENDING.md）
-- `edit`: 2次（README.md projects防重索引 + ARTICLES_MAP.md）
+- `exec`: 10次（source_tracker + AnySearch + git）
+- `web_fetch`: 3次（OpenAI Codex + MemPalace + Tolaria）
+- `write_file`: 2次（Project article + PENDING.md）
+- `edit`: 1次（ARTICLES_MAP.md）
+- `git push`: 1次

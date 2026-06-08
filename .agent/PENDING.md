@@ -12,18 +12,18 @@
 
 | Slug | 日期 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `nexu-io/html-video` | 2026-05-27 | Programmatic Video for Coding Agents (2,250⭐) | 🟢 高 | 本轮 R298 未配对 Article，下轮评估 |
-| `microsoft/intelligent-terminal` | 2026-05-18 | Windows Terminal + Agent 集成 (777⭐) | 🟡 中 | Windows-only，本轮无预算 |
+| `refactoringhq/tolaria` | 2026-06-09 | Desktop markdown knowledge base + AI-first (13,520⭐) | 🟢 高 | GitHub Trending 新发现，文件优先+AI集成方向 |
+| `danielmiessler/Personal_AI_Infrastructure` | 2026-06-09 | 个人 AI 基础设施 (15,392⭐) | 🟢 高 | GitHub Trending 新发现 |
+| `nexu-io/html-video` | 2026-05-27 | Programmatic Video for Coding Agents (2,250⭐) | 🟡 中 | 未配对 Article |
 
 ### Article 来源探索（新方向）
 
 | 来源 | 主题 | 优先级 | 备注 |
 |------|------|--------|------|
-| LangChain Blog | Fault Tolerance in LangGraph（Retries/Timeouts/Error Handlers）| 🟡 中 | 新发现，未追踪但非第一优先级 |
-| Microsoft Agent Framework Blog | BUILD 2026 后深度文章 | 🔴 高 | 新发现来源，待扫描 |
-| JetBrains AI 集成 | AI Coding 生态 | 🟡 中 | 补充 ai-coding 目录 |
+| OpenAI Codex Plugins | Role-specific plugins for knowledge work | 🟡 中 | 产品发布文章，非工程深度，跳过 |
+| LangChain Blog | Fault Tolerance in LangGraph（Retries/Timeouts/Error Handlers）| 🟡 中 | 新发现，非 Tier-1 |
+| Microsoft Agent Framework Blog | BUILD 2026 后深度文章 | 🔴 高 | 待扫描 |
 | BestBlogs Dev | 高质量内容聚合 | 🟡 中 | 降级 Article 来源 |
-| Hacker News | 技术趋势发现 | 🟡 中 | 补充来源 |
 
 ### Screenshot 获取方案
 
@@ -35,19 +35,20 @@
 
 ## 📌 Articles 线索
 
-### 本轮 Article 来源分析（Round299）
+### 本轮 Article 来源分析（Round300）
 
 | 来源 | 评估结果 |
 |------|---------|
-| Anthropic Engineering | ⬇️跳过（全25/25 TRACKED） |
-| OpenAI Engineering | ⬇️跳过（全 TRACKED + harness-engineering already covered） |
-| Cursor Blog/Changelog | ⬇️跳过（全 TRACKED：cursor-3/composer-2-5/cloud-agent-environments） |
+| Anthropic Engineering | ⬇️跳过（25/25 TRACKED） |
+| OpenAI Blog | ⬇️跳过（codex 文章为产品发布，非工程深度） |
+| Cursor Blog/Changelog | ⬇️跳过（全 TRACKED） |
 | CrewAI Blog | ⬇️跳过（全 TRACKED） |
-| LangChain Blog |⏸️发现 fault tolerance 文章（Retries/Timeouts/Error Handlers），新源但非 Tier-1，本轮未写 |
+| LangChain Blog | ⏸️发现 fault tolerance 文章（Retries/Timeouts/Error Handlers），非 Tier-1 |
+| GitHub Trending | ✅ 新产出：MemPalace (54,886⭐) |
 
 ### 本轮 Article 产出
 
-**无新 Article 产出**（一手源 exhausted + LangChain 非 Tier-1 降级来源）
+**无新 Article 产出**（一手源 exhausted 或非工程深度）
 
 ---
 
@@ -57,32 +58,31 @@
 
 | Slug | Stars | 来源 | 评估 | 结论 |
 |------|-------|------|------|------|
-| lsdefine/GenericAgent | 12,658 | AnySearch + GitHub Trending（R299） | ✅ 新产出 | 极简自展 Agent（~3K 行代码 + ~100 行 Agent Loop） |
+| MemPalace/mempalace | 54,886 | GitHub Trending（R300） | ✅ 新产出 | Local-first AI memory, verbatim storage, zero API calls, 96.6% R@5 |
 
 ### 未产出但已识别的候选
 
 | 项目 | Stars | 原因 |
 |------|-------|------|
-| nexu-io/html-video | 2,250 | 本轮无配对 Article，下轮评估 |
-| google/adk-go | 7,516 | USED |
-| withastro/flue | 4,390 | USED |
+| refactoringhq/tolaria | 13,520 | 本轮无 Article 配对，下轮评估 |
+| danielmiessler/Personal_AI_Infrastructure | 15,392 | 本轮无 Article 配对，下轮评估 |
 
 ---
 
 ## 🎯 本轮决策
 
-- **Pattern 判定**：一手源 exhausted + LangChain 非 Tier-1 → Project-only Round
-- **产出**：1 Project（lsdefine/GenericAgent 12,658⭐）+ ARTICLES_MAP.md 手动更新
-- **Commit**: pending（Round299）
+- **Pattern 判定**：一手源 exhausted + OpenAI Codex 为产品发布非工程文章 → Project-only Round
+- **产出**：1 Project（MemPalace 54,886⭐）+ ARTICLES_MAP.md 条目
+- **Commit**: a9813f2 ✅
 
 ---
 
 ## 🔮 下轮关注
 
-1. **LangChain Fault Tolerance 文章** — Retries/Timeouts/Error Handlers 三合一机制，非 Anthropic/OpenAI/Cursor 级别但有工程价值
-2. **Article 来源探索** — Microsoft Agent Framework Blog（BUILD 2026）
-3. **Screenshot方案修复** — Browser 工具故障需解决
-4. **nexu-io/html-video 配对 Article** — 下一个高质量 Project 候选
+1. **refactoringhq/tolaria** — Desktop markdown KB + AI-first design (13,520⭐)
+2. **danielmiessler/Personal_AI_Infrastructure** — 个人 AI 基础设施 (15,392⭐)
+3. **LangChain Fault Tolerance 文章** — Retries/Timeouts/Error Handlers 三合一机制
+4. **Article 来源探索** — Microsoft BUILD 2026 深度文章
 
 ---
 
@@ -90,8 +90,8 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 0（一手源 exhausted + LangChain 非 Tier-1） |
-| 新增 projects 推荐 | 1（lsdefine/GenericAgent 12,658⭐） |
+| 新增 articles | 0（一手源 exhausted） |
+| 新增 projects 推荐 | 1（MemPalace 54,886⭐） |
 | 扫描的信息源 | 6 |
 | 追踪源更新 | +1 条 |
-| Commit | pending |
+| Commit | a9813f2 ✅ |
