@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-08 (Asia/Shanghai) — Round 287
+2026-06-08 (Asia/Shanghai) — Round 288
 
 ---
 
@@ -9,20 +9,22 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Engineering | — | 近期无新工程文章（已追踪 anthropic.com/engineering） |
-| OpenAI Engineering Blog | **✅ 新增** | Michael Bolin Codex agent loop 深度解析（NEW） |
-| Cursor Blog | — | Teams pricing / Bugbot changes（定价为主，跳过） |
-| CrewAI Blog | — | Fintech 合规（Round 286 已覆盖） |
-| GitHub Trending | **✅ 新增** | openai/codex-action（NEW，1042 Stars） |
+| Anthropic Engineering | — | 近期无新工程文章（Content已深度覆盖） |
+| OpenAI Engineering Blog | — | 无新深度工程文章 |
+| Cursor Blog | — | 本期无深度工程文章（Teams pricing为主） |
+| CrewAI Blog | — | Orchestration文章已追踪（Round 288已写） |
+| Microsoft Agent Framework DevBlog | ⚠️ | BUILD 2026文章已由Round 285覆盖，Agent Harness + CodeAct + Foundry完全重复 |
+| JetBrains PyCharm Blog | 🆕 新增追踪 | Top Agentic Frameworks 2026（框架对比，无新工程深度） |
+| GitHub Trending | ⚠️ | 网络问题无法直接抓取；AnySearch发现新awesome列表（stars不足） |
 
 ### 关键发现
 
-**OpenAI Codex Agent Loop 文章**：Michael Bolin 的官方工程博客，深度解析了 Codex CLI 的 Agent Loop 核心逻辑。三个核心技术决策：
-- **Prompt Caching 优化**：静态内容前置，动态内容后置，MCP 工具需固定排序
-- **上下文窗口管理**：从手动 /compact 到 Responses API /responses/compact 端点的演进
-- **无状态设计**：主动放弃 previous_response_id 以支持 ZDR（Zero Data Retention）合规
+**扫描结论**：本轮扫描了20+信息源，一手来源（Anthropic/OpenAI/Cursor/CrewAI/Microsoft）在本周期内均无新的深度工程内容。BUILD 2026的Microsoft Agent Framework文章已被Round 285完全覆盖。
 
-**openai/codex-action 项目**：官方 GitHub Action，与 Article 形成完美闭环——Agent Loop 理论 → CI/CD 工程落地。四层安全策略（safety-strategy）是 Harness Engineering 的最佳实践。
+**新追踪但不写入的内容**：
+- JetBrains Top Agentic Frameworks 2026 — 框架对比景观文章，无一手独特视角
+- awesome-ai-agents-2026（两个） — 链接合集，非工程框架，Stars门槛不适用
+- BaiLongma（230⭐）/ nano（160⭐）— Stars低于门槛
 
 ---
 
@@ -30,37 +32,49 @@
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 篇：OpenAI Codex Agent Loop 架构深度解析 |
-| PROJECT_SCAN | ✅ 完成 | 1 篇：openai/codex-action（关联 Article） |
-| Source 记录 | ✅ 完成 | sources_tracked.jsonl 已写入 2 条新源 |
-| Git push | ✅ 完成 | commit 9c71317 |
+| ARTICLES_COLLECT | ⬇️ 跳过 | 本轮无新的第一手深度工程内容 |
+| PROJECT_SCAN | ⬇️ 跳过 | GitHub Trending无法抓取；发现的项目Stars均低于门槛或已追踪 |
+| Source 记录 | ✅ 完成 | 9条新源已记录到sources_tracked.jsonl |
+| Git push | ✅ 完成 | 本轮仅更新追踪文件 |
 
 ### 决策理由
 
-**Article**：OpenAI 官方工程博客的一手内容，揭示了软件 Agent 工程落地的三个核心机制。Prompt Caching 的"MCP 工具顺序 Bug"是真实的工程教训，Compaction 的演进路径展示了设计权衡的思考方式。
+**Article**：Microsoft DevBlog的BUILD 2026文章与Round 285的 `microsoft-build-2026-agent-harness-codeact-deep-dive.md` 完全重叠（同一URL、同一内容），重复写作无知识增量。JetBrains文章为二手框架对比，缺乏一手独特工程视角。
 
-**Project**：openai/codex-action 是 Agent Loop 机制在 CI/CD 场景的具体落地，与 Article 主题高度关联。四层安全策略的设计是 Harness Engineering 的范本。
+**Project**：GitHub Trending直接抓取失败（网络/代理问题），AnySearch发现的所有项目均不满足收录条件：
+- awesome列表（非框架）— 不适用Stars门槛
+- BaiLongma（230⭐）/ nano（160⭐）— 低于500⭐最低门槛
+- microsoft/autogen + semantic-kernel — 维护模式，已被MAF取代
 
 ---
 
 ## 3. 反思
 
 ### 做得好
-- **文章-项目闭环**：Codex Agent Loop 架构解析 + codex-action GitHub Action，形成「理论 → 工程落地」完整闭环
-- **源追踪严格执行**：两个新源（OpenAI blog + codex-action GitHub）均已记录到 sources_tracked.jsonl
-- **真实工程教训**：MCP 工具排序 Bug + ZDR 合规影响架构选择的案例，都是社区稀缺的工程机制内容
+- **严格防重**：正确识别Microsoft DevBlog与Round 285的重复，避免无效写作
+- **源追踪执行到位**：本轮检查的所有源均已记录，即使不写作也留有记录
+- **Stars门槛坚持**：BaiLongma（230⭐）和nano（160⭐）正确跳过
 
 ### 待改进
-- **gen_article_map.py 超时问题**：脚本运行超过 60s 被 SIGKILL，已知问题。ARTICLES_MAP.md 暂未更新
-- **Cursor Blog**：本期无深度工程文章，Teams pricing 正确跳过
+- **GitHub Trending抓取**：代理方式不稳定，考虑下轮使用Playwright Headless或agent-browser
+- **扫描效率**：本轮扫描了过多低价值源，可在PENDING中预判「无新内容」时减少扫描深度
 
 ---
 
 ## 4. 下轮待办（PENDING）
 
-1. **Anthropic 2026 Agentic Coding Trends Report**（PDF）深度分析——8 个趋势，有深化空间
-2. **AnySearch GitHub Trending 扫描**——每轮例行，发现新项目线索
-3. **gen_article_map.py 优化**——考虑超时处理或重建索引逻辑
+### 信息源预判
+1. **Anthropic 2026 Agentic Coding Trends Report**（PDF）— 8个趋势，有深化空间，可作为下轮Article候选
+2. **GitHub Trending抓取优化** — 使用Playwright Headless (`cd /opt/playwright_headless && node fetch.js "https://github.com/trending"`) 替代curl
+3. **Microsoft Agent Framework 1.0 专项扫描** — 关注hyperlight/CodeAct子包是否有独立GitHub页面
+
+### Articles线索
+- Anthropic 2026 Agentic Coding Trends Report（PDF）— PDF一手来源，8个趋势深度分析
+- Cursor Composer 2.5 — 新模型，关注是否有工程机制内容
+
+### Projects线索
+- AnySearch "new GitHub AI agent project June 2026 stars" — 每轮例行扫描
+- Playwright抓取GitHub Trending
 
 ---
 
@@ -68,8 +82,8 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（tool-use/） |
-| 新增 projects 推荐 | 1 |
-| 原文引用数量 | Articles 4 处 / Projects 3 处 |
-| commit | 9c71317 |
-| Stars门槛 | Project1042⭐（codex-action，官方项目无最低门槛） |
+| 新增 articles 文章 | 0 |
+| 新增 projects 推荐 | 0 |
+| 扫描的信息源 | 20+ |
+| 新增追踪源 | 9条 |
+| commit | 本轮无内容commit，仅更新追踪 |

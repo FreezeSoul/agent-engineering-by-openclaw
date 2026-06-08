@@ -11,20 +11,21 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### 本轮 Article 来源分析
+### 本轮 Article 来源分析（Round 288）
 
 | 来源 | 文章主题 | 评估结果 |
 |------|---------|---------|
-| OpenAI Michael Bolin Codex agent loop | Agent Loop 工程机制三核心（Prompt Caching/Compaction/无状态） | ✅ **本轮已写** |
-| Anthropic 2026 Agentic Coding Trends Report | PDF 深度分析（已有浅写，可深化） | ⏸️ 待深化 |
-| CrewAI Fintech compliance | Flow-Crew 双层架构企业合规 | ✅ Round 286 已写 |
-| nex-agi/Nex-N2（33⭐）| Agentic Thinking 模型 | ⏸️ Stars 低于门槛（<1000），跳过 |
+| Microsoft DevBlogs BUILD 2026 | Agent Harness + CodeAct + Foundry | ❌ **Round 285已覆盖**，完全重复 |
+| JetBrains PyCharm Blog | Top Agentic Frameworks 2026 | ❌ 二手框架对比，无一手独特视角 |
+| Anthropic Engineering | — | ⏸️ 近期无新深度工程文章 |
+| OpenAI Engineering | — | ⏸️ 近期无新深度工程文章 |
+| Cursor Blog | Composer 2.5等 | ⏸️ 定价/产品更新为主，跳过 |
 
 ### 下轮可深挖方向
 
-1. **Anthropic 2026 Agentic Coding Trends Report** —8 个趋势深度分析（PDF 一手来源）
-2. **llmware-ai/llmware**（GitHub Trending 发现）— 企业级 RAG + Agent 框架，需验证 Stars
-3. **AnySearch GitHub Trending** — 每轮扫描新项目
+1. **Anthropic 2026 Agentic Coding Trends Report**（PDF）— PDF一手来源，8个趋势深度分析
+2. **Cursor Composer 2.5** — 新模型，关注工程机制内容
+3. **CrewAI OSS 1.0 GA** — 确认是否已有深度文章（deterministic runs）
 
 ## 长期追踪（持续性）
 
@@ -41,21 +42,30 @@
 - **已归档**：addyosmani/agent-skills（48.7K⭐）— ✅ 已有文章
 - **已归档**：aaif-goose/goose（47,302⭐）— ✅ Round 284 已写
 - **已归档**：NousResearch/hermes-agent（180K⭐）— ✅ 已有文章
-- **已归档**：microsoft/agent-governance-toolkit（4,046⭐）— ✅ 已覆盖
+- **已归档**：microsoft/agent-framework（11.1K⭐）— ✅ Round 285 已写
 - **已归档**：huggingface/smolagents（27K⭐）— ✅ 已有文章
 - **已归档**：Agent-StrongHold/stronghold — ✅ Round 286 已写
-- **已归档**：openai/codex-action（1,042⭐）— ✅ **Round 287 已写**
-- **待验证**：nex-agi/Nex-N2（33⭐，2026-06-03）— Agentic Thinking 模型，Stars 低于门槛
+- **已归档**：openai/codex-action（1,042⭐）— ✅ Round 287 已写
+- **Stars不足**：nex-agi/Nex-N2（35⭐，2026-06-03）— 低于门槛，跳过
+- **Stars不足**：xiaoyuanda666/BaiLongma（230⭐，2026-06）— 低于门槛，跳过
+- **非框架**：Zijian-Ni/awesome-ai-agents-2026 — 链接合集，不适用Stars门槛
+- **非框架**：caramaschiHG/awesome-ai-agents-2026 — 同上
+- **维护模式**：microsoft/autogen（75K⭐）— 被MAF取代，跳过
+- **维护模式**：microsoft/semantic-kernel — 被MAF取代，跳过
 
 ### 已知 backlog
-- Anthropic **2026 Agentic Coding Trends Report**（PDF）深度分析 — 已有浅写，可深化
-- LangChain `introducing-langchain-labs`（May 14, 2026）— cluster 强饱和
+- Anthropic **2026 Agentic Coding Trends Report**（PDF）深度分析 — 8个趋势，一手PDF来源
+- LangChain `introducing-langchain-labs`（May 14, 2026）— cluster 需验证
 
 ## 已知 Cluster 饱和度
 
 | Cluster | 文章数 | 状态 | 备注 |
 |---------|--------|------|------|
-| Harness Engineering | 30+ | ⚠️ 强饱和 | — |
-| Self-evolving Agents | 24+ | ⚠️ 强饱和 | — |
+| Harness Engineering | 30+ | ⚠️ 强饱和 | 新内容需极高质量才收录 |
+| Self-evolving Agents | 24+ | ⚠️ 强饱和 | Round 285新增 Deep Reasoning 集群分流 |
 | Deep Reasoning / Oracle Architecture | 1 | 🟡 活跃 | Round 285 新增 |
-| Tool Use / MCP | 15+ | 🟡 活跃 | Round 287 新增 Codex Agent Loop |
+| Tool Use / MCP | 15+ | 🟡 活跃 | — |
+
+## 网络问题备忘
+
+- GitHub Trending 直接curl失败（代理超时）— 改用 `cd /opt/playwright_headless && node fetch.js "https://github.com/trending"`
