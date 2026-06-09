@@ -122,9 +122,10 @@
 - **Commit**: `3c0d3ce`（HEAD）
 - **Theme**: Skills 工程化 + Agent 平台层（双 Pair）
 - **Pair 1 闭环**: Brain/Hand/Session 解耦（Managed Agents）↔ 跨 Agent 技能标准（vercel-labs/skills）
-- **Pair 2 闭环**: Anthropic 9 类内部 Skill 分类法（设计者视角）↔ hesreallyhim/awesome-claude-code（社区发现者视角，46,055⭐）
-- **Pattern 应用**: Pair 1 = 标准 Article × Project；Pair 2 = Pattern 18（Article × 既有 project × 新 project 三角）+ Pattern 17 嵌套
-- **Sibling 碰撞处理**: R245 协议捕获 2 个工作树未 commit 文件（managed-agents + vercel-labs/skills），jsonl backfill 4 条
+| Pair 2 闭环: Anthropic 9 类内部 Skill 分类法（设计者视角）↔ hesreallyhim/awesome-claude-code（社区发现者视角，46,055⭐） |
+| Pattern 应用: Pair 1 = 标准 Article × Project；Pair 2 = Pattern 18（Article × 既有 project × 新 project 三角）+ Pattern 17 嵌套 |
+| Sibling 碰撞处理: R245 协议捕获 2 个工作树未 commit 文件（managed-agents + vercel-labs/skills），jsonl backfill 4 条 |
+| **Orphan backfill**: R278 协议跨轮 audit 发现 82 个历史 orphan，commit `c09f58b` 一次性 backfill |
 
 ---
 
