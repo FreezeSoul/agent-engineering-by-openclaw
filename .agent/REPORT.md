@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-09 23:57 (Asia/Shanghai) — Round310
+2026-06-10 02:12 (Asia/Shanghai) — Round311
 
 ---
 
@@ -9,106 +9,116 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| **Anthropic Engineering** | ⚠️ 部分已追踪 | demystifying-evals/writing-tools 已追踪 |
-| **Claude Blog** | ✅ 新发现 | introducing-dynamic-workflows-in-claude-code（NEW，未追踪）|
-| **GitHub Trending** | ✅ 新发现 | oh-my-claudecode（多 Provider 协作编排层）|
+| **Anthropic Engineering** | ✅ 新发现 | managed-agents（brain/hand decoupling，OS abstraction）|
+| **Claude Blog** | ⚠️ 部分失败 | routines 页面返回404；parallel-agents 页面 JS渲染 |
+| **GitHub Trending** | ✅ 新发现 | vercel-labs/skills（21.6K stars，CLI 跨Agent技能管理）|
 
 ### 关键发现
 
-**Claude Code Dynamic Workflows**（来自 claude.com/blog，May 28, 2026）：
-- 模型自主规划任务 → 分解为数百个并行 subagent →验证输出后回报用户
-- 三段式结构：计划-执行-验证（Generator-Evaluator Loop 内置）
-- 标志性案例：Bun Zig→Rust 迁移，75 万行 Rust，11 天完成，99.8% 测试通过
-- 范式转变：从「人在编排」到「模型在编排」，开发者角色转为「裁判员」
+**Anthropic Managed Agents**（来自 anthropic.com/engineering，June 2026）：
+- OS abstraction 思想引入 Agent 架构：Session（持久化日志）/ Brain（harness+Claude）/ Hands（sandbox）三层解耦
+- execute(name, input) → string 接口：Brain 调用 Hands 的极简方式
+- Pet vs. Cattle：容器从"宠物"变"牲口"，可按需替换
+- Credential isolation：Token 永远不可达 sandbox，结构上杜绝 prompt injection
+- TTFT 收益：p50 降低 60%，p95 降低 90%+
+- Meta-harness 设计：接口稳定，实现可替换
 
-**oh-my-claudecode**（Yeachan-Heo/oh-my-claudecode，MIT License）：
-- 6 种编排模式：Team / Autopilot / Ralph / UltraWork / DeepInterview / CCG
-- 多 Provider 协作：Claude + Codex + Gemini + Grok 在同一工作流
-- Ralph 持久化模式：`.omc/state/` 记录执行轨迹，支持跨 session 恢复
-- OpenClaw 集成：session events 转发到 gateway，触发自动化工作流
+**vercel-labs/skills**（vercel-labs/skills，21.6K stars）：
+- CLI 工具：`npx skills add <package>` 安装和管理 Agent 技能包
+- 跨 67+ Agent 工作：OpenCode / Claude Code / Codex / Cursor / Gemini CLI 等
+- 配套 skills.sh registry：技能包发现和排行榜
+- Agent Skills 规范：跨 Agent 的技能包标准
 
 ## 2. 决策与产出
 
 ### Pattern 判定
 
 **触发条件分析**：
-1. ✅ **Claude Code Dynamic Workflows** — 一手来源（Claude官方博客），May 28, 2026，Model-Driven Orchestration 核心主题
-2. ✅ `Yeachan-Heo/oh-my-claudecode` 发现 — 多 Agent编排控制台，与 Dynamic Workflows 主题高度关联
-3. ✅ **主题关联**：模型自驱编排（DynamicWorkflows）↔ 多 Agent 编排控制台（oh-my-claudecode）
+1. ✅ **Anthropic Managed Agents** — 一手来源（Anthropic Engineering），OS abstraction 核心主题，工程机制丰富
+2. ✅ `vercel-labs/skills` 发现 — 跨 Agent 技能管理 CLI，与 Article 主题关联（可组合性）
+3. ✅ **主题关联**：Agent 可组合性（Managed Agents 平台层 ↔ Skills 技能层）
 
-**判定**：**标准 Article + Project 闭环**（模型自驱编排 → 多 Agent 编排控制台）
+**判定**：**标准 Article + Project 闭环**（平台弹性架构 ↔ 技能可组合性）
 
 ### 闭环逻辑
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Article: Claude Code Dynamic Workflows                     │
-│  ——模型自主规划 → 数百并行 subagent → 验证后回报            │
-│  ——范式转变：人在编排 → 模型在编排                          │
-│  ——开发者角色：裁判员（定义规则，不写执行细节）             │
+│  Article: Managed Agents                                     │
+│  ——Brain/Hand/Session 三层解耦                               │
+│  ——execute() 接口，容器即 cattle                             │
+│  ——Credential isolation，TTFT 60-90% 改善                    │
+│  ——Meta-harness：接口稳定，实现可替换                        │
 └─────────────────────┬───────────────────────────────────────┘
                       │
          ┌────────────┴────────────┐
          │                         │
   ┌──────▼──────────────┐   ┌──────▼────────────────────────┐
-  │ Project             │   │ (隐含: 编排控制台                │
-  │ oh-my-claudecode    │   │  Ralph持久化·多Provider协作)   │
-  │ 6模式·多Provider    │   └─────────────────────────────┘
-  │ Ralph持久化状态 │
+  │ Project             │   │ (隐含: 技能层可组合性           │
+  │ vercel-labs/skills  │   │  npx skills add，跨67+Agent)   │
+  │ 跨Agent技能管理CLI   │   └─────────────────────────────┘
   └──────────────────────┘
 ```
 
 **主题统一性**：
-- Article：Dynamic Workflows 让模型能够自主编排数百个并行 Agent
-- Project：oh-my-claudecode 提供了模型自主运行时的「指挥台」——多模式编排 + 持久化 + OpenClaw 集成
-- 共同命题：**当模型开始主导编排时，如何在「自主性」和「可控性」之间找到平衡？Dynamic Workflows 给模型自主权，oh-my-claudecode 给人类保留介入点**
+- Article：Managed Agents 给 Agent 系统提供了弹性底层架构（解耦 Brain/Hands）
+- Project：vercel-labs/skills 给 Agent 生态提供了技能可组合的标准层
+- 共同命题：**Agent 的可组合性来自两个层次——平台架构层的接口解耦，和技能生态层的标准化封装**
 
 ### 本轮产出
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 Article: Claude Code Dynamic Workflows 模型自驱编排（May 28, 2026，Generator-Evaluator Loop 内置） |
-| PROJECT_SCAN | ✅ 完成 | 1 Project: oh-my-claudecode（6种编排模式 + 多Provider + Ralph持久化 + OpenClaw集成） |
+| ARTICLES_COLLECT | ✅ 完成 | 2 Articles: Managed Agents (brain/hand decoupling) + Anthropic 9-Category Skills Taxonomy（历史遗留文件） |
+| PROJECT_SCAN | ✅ 完成 | 1 Project: vercel-labs/skills（21.6K stars，CLI 跨Agent技能管理） |
 
 ### 产出详情
 
-**Article: `articles/orchestration/anthropic-claude-code-dynamic-workflows-self-orchestrating-agents-2026.md` (4,312 bytes)**：
-- 标题：Claude Code Dynamic Workflows：模型自驱编排时代的真正到来
-- 核心论点：Dynamic Workflows 宣告了 Model-Driven Orchestration 时代的到来，开发者从「执行者」变为「裁判员」
-- 三大机制：自主规划 / 数百并行 subagent / Generator-Evaluator Loop 验证
-- 标志性案例：Bun Zig→Rust（75万行 Rust，11天，99.8%测试通过）
+**Article 1: `articles/orchestration/anthropic-managed-agents-brain-hand-decoupling-2026.md` (5,107 bytes)**：
+- 标题：Anthropic Managed Agents：把操作系统思想引入 Agent 架构
+- 核心论点：OS abstraction 思想解耦 Brain（harness）/ Hands（sandbox）/ Session（三层接口），使 Agent 系统得以随模型能力演进而弹性扩展
+- 五大工程机制：Pet→Cattle 转换 / execute() 接口解耦 / Credential isolation / TTFT 60-90% 改善 / Meta-harness
+- 与上轮 Dynamic Workflows 闭环：平台架构弹性 ↔ 模型自主编排
 - 3处「笔者认为」判断性内容，2处官方原文引用
 
-**Project: `articles/projects/Yeachan-Heo-oh-my-claudecode-multi-agent-orchestration-2026.md` (3,313 bytes)**：
-- 标题：oh-my-claudecode：给 Claude Code 装上编排控制台
-- 核心定位：6种编排模式 + 多Provider协作 + Ralph持久化 + OpenClaw集成
-- Ralph 模式：`.omc/state/agent-replay-.jsonl` 持久化执行轨迹，跨 session 恢复
-- 与 Article 的闭环：Dynamic Workflows 给模型自主权 → oh-my-claudecode 给人类保留介入点
+**Article 2: `articles/tool-use/anthropic-9-categories-internal-skills-taxonomy-2026.md` (7,620 bytes)**：
+- 标题：Anthropic 内部 Skills 的九大分类
+- 来源：Lessons from building Claude Code: How we use skills（June 3, 2026）
+- 核心内容：9类 Skill 类型（Library/API参考 → Product verification → Data fetching → Business process → Scaffolding → Code quality → CI/CD → Runbooks → Infra ops）
+- 7条设计原则 + 3条运营策略
+- 遗留文件，本轮 commit
+
+**Project: `articles/projects/vercel-labs-skills-cross-agent-skills-cli-21600-stars-2026.md` (3,786 bytes)**：
+- 标题：vercel-labs/skills：给 AI Agent 安装技能包，像 npm 一样简单
+- 核心定位：跨 67+ Agent 的技能包管理 CLI + skills.sh registry
+- 与 Article 的闭环：Managed Agents（平台层弹性架构）↔ Skills（技能层可组合性）
 
 ## 3. 反思
 
 ### 做得好
 
-- **主题关联闭环**：Dynamic Workflows（模型自驱编排）与 oh-my-claudecode（编排控制台）形成完整闭环
-- **高质量来源发现**：从 Claude Blog 发现 May 28 发布的 Dynamic Workflows官方介绍
-- **发现 oh-my-claudecode 项目**：多 Provider 协作 + Ralph 持久化模式，工程价值突出
+- **发现 Managed Agents 这篇高质量文章**：OS abstraction 视角独特，工程机制丰富（pet/cattle、credential isolation、TTFT 收益）
+- **主题关联闭环**：Managed Agents（平台弹性）+ vercel-labs/skills（技能组合）形成完整的 Agent 可组合性图景
+- **历史遗留文件一并 commit**：9-Category Skills Taxonomy 避免了重复 work
 
 ### 待改进
 
-- **demystifying-evals-for-ai-agents** 未深入：本轮聚焦 Dynamic Workflows，评估器循环主题留待下轮
-- **GitHub Trending 直接扫描缺失**：本轮依赖搜索结果，未直接从 trending页面抓取
+- **Claude Blog JS 渲染页面未获取**：routines 和 parallel-agents 两个候选文章因 web_fetch 无法处理 JS 而跳过
+- **GitHub Trending 直接抓取缺失**：本轮依赖搜索结果，未直接从 trending 页面抓取
+- **gen_article_map.py 失败**：脚本执行卡住，可能需要环境检查
 
 ### 下轮优先级
 
-1. **Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness 核心
-2. **工具设计**：`writing-tools-for-agents` — 工具安全/权限分层
-3. **GitHub Trending 直接扫描**：尝试用 curl + proxy 直接抓取 trending页面
+1. **Claude Code Routines**：`introducing-routines-in-claude-code` — JS渲染，需 agent-browser 获取内容
+2. **Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness 核心
+3. **工具设计**：`writing-tools-for-agents` — 工具安全/权限分层
+4. **GitHub Trending 直接扫描**：用 curl + socks5 代理抓取 trending 页面
 
 ## 4. 状态摘要
 
-- **Round**: 310
+- **Round**: 311
 - **Author**: Hermes
 - **Commit**: 待提交
-- **Run count**: 310
-- **Theme**: Claude Code Dynamic Workflows（模型自驱编排）↔ oh-my-claudecode（多Agent编排控制台）
-- **闭环完成**: 模型自主编排（DynamicWorkflows）↔ 人类保留介入点（oh-my-claudecode）
+- **Run count**: 311
+- **Theme**: Managed Agents（平台弹性架构）↔ vercel-labs/skills（技能可组合性）
+- **闭环完成**: Brain/Hand/Session 解耦（Managed Agents）↔ 跨Agent技能标准（vercel-labs/skills）
