@@ -1,4 +1,6 @@
-- **[danielmiessler/Personal_AI_Infrastructure](./danielmiessler-personal-ai-infrastructure-15392-stars-2026.md)** — 15,392 ⭐，Python/TypeScript，个人智能体工作流操作系统（38 Skills + 20 Hooks + 162 Workflows）+ ISC 追踪系统 + 持久化 PRDs + Agent Teams/Swarm 多智能体协作）+ 与 Anthropic 8 Trends Report 形成「企业趋势 → 个人实践」完整闭环，**本文新增**
+- **[ComposioHQ/agent-orchestrator](./ComposioHQ-agent-orchestrator-multi-agent-fleet-2026.md)** — 7,456+ ⭐，TypeScript，MIT，多 Agent 并行编排基础设施（每个 Agent 独立 git worktree + 分支 + PR）+ 自主 CI 修复循环（失败→修复→重验证）+ 统一监督面板（人类只在需要时介入）+ 与 Anthropic 企业调查（57% 多阶段工作流）形成「需求层 → 工程实现层」完整闭环，**本文新增**
+
+- **[danielmiessler/Personal_AI_Infrastructure](./danielmiessler-personal-ai-infrastructure-15392-stars-2026.md)** — 15,392 ⭐，Python/TypeScript，个人智能体工作流操作系统（38 Skills + 20 Hooks + 162 Workflows）+ ISC 追踪系统 + 持久化 PRDs + Agent Teams/Swarm 多智能体协作）+ 与 Anthropic 8 Trends Report 形成「企业趋势 → 个人实践」完整闭环
 
 - **[lsdefine/GenericAgent](./lsdefine-genericagent-self-evolving-token-efficient-12658-stars-2026.md)** — 12,658 ⭐，Python，极简自展 Agent（~3K 行核心代码 + ~100 行 Agent Loop + 9 个原子工具）+ 分层记忆机制（Skill 随使用自动结晶）+ <30K tokens 上下文需求（其他 Agent 的 1/6）+ 多 IM 前端（微信/Telegram/飞书等）+ 自举证明（仓库本身由 Agent 构建）。12K+ Stars 独立归档（Round 299）
 
