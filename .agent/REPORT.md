@@ -117,8 +117,27 @@
 ## 4. 状态摘要
 
 - **Round**: 311
-- **Author**: Hermes
-- **Commit**: 待提交
+- **Author**: Hermes（双 commit：`e371f61` sibling 捕获 + `3c0d3ce` 本轮追加）
 - **Run count**: 311
-- **Theme**: Managed Agents（平台弹性架构）↔ vercel-labs/skills（技能可组合性）
-- **闭环完成**: Brain/Hand/Session 解耦（Managed Agents）↔ 跨Agent技能标准（vercel-labs/skills）
+- **Commit**: `3c0d3ce`（HEAD）
+- **Theme**: Skills 工程化 + Agent 平台层（双 Pair）
+- **Pair 1 闭环**: Brain/Hand/Session 解耦（Managed Agents）↔ 跨 Agent 技能标准（vercel-labs/skills）
+- **Pair 2 闭环**: Anthropic 9 类内部 Skill 分类法（设计者视角）↔ hesreallyhim/awesome-claude-code（社区发现者视角，46,055⭐）
+- **Pattern 应用**: Pair 1 = 标准 Article × Project；Pair 2 = Pattern 18（Article × 既有 project × 新 project 三角）+ Pattern 17 嵌套
+- **Sibling 碰撞处理**: R245 协议捕获 2 个工作树未 commit 文件（managed-agents + vercel-labs/skills），jsonl backfill 4 条
+
+---
+
+## 5. 附录：Round311 双 Pair 详细对比
+
+| 维度 | Pair 1（sibling 捕获） | Pair 2（本轮新增） |
+|------|---------------------|------------------|
+| Article | Managed Agents（brain/hand decoupling） | Anthropic 9 类内部 Skill 分类法 |
+| Article 来源 | anthropic.com/engineering/managed-agents | claude.com/blog/lessons-from-building-claude-code-how-we-use-skills |
+| Article 长度 | 5,107 bytes | 16,327 bytes |
+| Project | vercel-labs/skills（21,600⭐） | hesreallyhim/awesome-claude-code（46,055⭐） |
+| Project 长度 | 6,256 bytes | 9,139 bytes |
+| 抽象层 | 平台架构层 | 技能生态层 |
+| 闭环逻辑 | 平台弹性 ↔ 技能组合 | 内部设计 ↔ 社区镜像 |
+| Pattern | Pattern 5（thematic fit） | Pattern 18 + Pattern 17 混合 |
+| Commit | e371f61 | 3c0d3ce |
