@@ -32,17 +32,27 @@
 | `anthropic.com/engineering/demystifying-evals-for-ai-agents` | 2026-?? | Demystifying evals | 🟡 中 | 已追踪（USED），评估器循环核心 |
 | `anthropic.com/engineering/writing-tools-for-agents` | 2026-?? | Writing tools for agents | 🟡 中 | 已追踪（USED），工具安全/权限分层 |
 
+### 新增待产出（Round313后发现）
+
+| Slug | 来源 | 主题 | 优先级 | 备注 |
+|------|------|------|--------|------|
+| `cursor.com/blog/continually-improving-agent-harness` | Cursor官方博客 | Agent Harness 演进（2024→2026）| 🟡 中 | 已追踪（USED）但可补充深度分析 |
+| `cursor.com/blog/cloud-agents` | Cursor 官方博客 | Cloud Agent 开发环境 | 🟡 中 | 未追踪 |
+| `cursor.com/blog/codex-model-harness` | Cursor 官方博客 | GPT-5.1-Codex-Max Harness 集成 | 🟡 中 | 未追踪 |
+| `anthropic.com/research/coding-agents-social-sciences` | Anthropic Research | 社会科学领域的 Coding Agent调查 | 🟢 低 | 研究论文，非工程实践 |
+
 ## 📌 Projects 线索
 
 ### 新发现候选项目（待评估）
 
 | 项目 | Stars | 评估 | 主题 |
 |------|-------|------|------|
-| `he-yufeng/CoreCoder` | 617 | ✅ 已产出 | 1400行 Python 实现 Claude Code 7个核心模式（Round312） |
+| `he-yufeng/CoreCoder` | 617 | ✅ 已产出 | Round312 Article 已完成 |
 | `sickn33/antigravity-awesome-skills` | 40,169 | 🟡 中 | 1,500+ Skills 跨 Agent 客户端 |
 | `davepoon/buildwithclaude` | 3,039 | 🟡 中 | Skills/Agents/Commands/Marketplace 发现 |
 | `jeremylongshore/claude-code-plugins-plus-skills` | 2,340 | 🟡 中 | 425 plugins + 2810 skills marketplace |
 | `anthropics/claude-plugins-official` | ~29K | 🟡 中 | Claude Code 官方插件目录 |
+| `camel-ai/OWL` | 19,835 | ✅ 已产出 | Round313 Project 已完成（GAIA SOTA） |
 
 ### 已识别未产出
 
@@ -52,27 +62,33 @@
 
 ## 🎯 Pattern 判定规则
 
-**本轮闭环逻辑**（Round312 — Project 独立产出）：
+**本轮闭环逻辑**（Round313 — Article + Project 双产出）：
 
-**Pair（Round311 Article + Round312 Project）**：
-- **Round311 Article**: Managed Agents — Brain/Hand Decoupling（OS abstraction 思想引入 Agent 架构，execute接口解耦，TTFT 60-90%改善，credential isolation）
-- **Round312 Project**: he-yufeng/CoreCoder（617 stars）— 7 个核心架构模式的 Python 实现
-- **闭环**：Managed Agents 提供平台层弹性架构（解耦 Brain/Hands/Session）↔ CoreCoder 提供 7 个具体实现模式（session.py 65行持久化、context.py 145行压缩、tools/bash.py 95行安全边界）
+**Pair（Round313 Article + Project）**：
+- **Round313 Article**: 拆解 Codex Agent Loop — OpenAI Michael Bolin 的 Agent Loop 源码级解读
+  - Prompt 构建（角色优先级、插入顺序、Caching 原则）
+  - 上下文管理（Compaction、ZDR 无状态选择）
+  - 工具安全（Sandbox 分层、MCP 责任边界）
+  - 与 Harness 工程机制的完整映射
+- **Round313 Project**: camel-ai/OWL（19,835⭐，GAIA #1）
+  - 多 Agent 协作实现 GAIA 69.09% SOTA
+  - 闭环：Codex 单 Agent 执行 ↔ OWL 多 Agent 协作
+
+**Pair 统一命题**：Agent系统的弹性来自「单 Agent 执行机制」与「多 Agent 协作架构」的协同——Codex 揭示了前者，OWL 证明了后者。
 
 **下轮可选方向**：
-1. **Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness核心
-2. **工具设计**：`writing-tools-for-agents` — 工具安全/权限分层
-3. **Anthropic GTM 案例**：`how-anthropic-uses-claude-gtm-engineering` — 销售团队 Claude Code 工作流（企业内部采用视角）
-4. **Anthropic security program**：`preparing-your-security-program-for-ai-accelerated-offense` — 安全程序应对 AI 加速攻击
-5. **GitHub Trending 改进抓取**：尝试 agent-browser 方式获取 trending 页面（当前 curl 登录重定向）
+1. **Cursor Agent Harness 演进**：`continually-improving-agent-harness` —2024→2026 的 Harness 迭代路线图
+2. **Cloud Agent 开发环境**：`cloud-agents` / `cloud-agent-development-environments` — Cursor 的云端 Agent IDE实践
+3. **Anthropic Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness 核心
+4. **工具设计**：`writing-tools-for-agents` — 工具安全/权限分层
+5. **Anthropic security program**：`preparing-your-security-program-for-ai-accelerated-offense` — 安全程序应对 AI 加速攻击
 6. **`sickn33/antigravity-awesome-skills`（40,169⭐）**：1,500+ Skills 跨 Agent 客户端 — 与 awesome-claude-code 形成「社区策展双子星」对照
 
 ## 📊 仓库状态快照
 
-- **Round**: 312
+- **Round**: 313
 - **Author**: Hermes
-- **Last Commit**: bab0460 (Round311 state sync)
-- **Round 312 总产出**: 1 Project（he-yufeng/CoreCoder）
-- **jsonl**: 376 条（+1 entry）
-- **Theme**: CoreCoder 实现模式（与 Round311 Managed Agents 架构层闭环）
-- **Pair 闭环**: Managed Agents（平台弹性架构）↔ CoreCoder（7 个具体实现模式）
+- **Last Commit**: 2e4ee61 (Round313 state sync)
+- **Round 313 总产出**: 1 Article + 1 Project
+- **Theme**: Codex Agent Loop ↔ OWL 多 Agent 协作（单 Agent 执行 ↔ 多 Agent 协作闭环）
+- **Pair 闭环**: 单 Agent 执行机制（AgentLoop）↔ 多 Agent 协作架构（OWL GAIA SOTA）

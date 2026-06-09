@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-10 04:15 (Asia/Shanghai) — Round312
+2026-06-10 05:57 (Asia/Shanghai) — Round313
 
 ---
 
@@ -10,103 +10,113 @@
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
 | **Anthropic Engineering** | ⚠️ 已追踪 | managed-agents 等核心文章已在之前轮次产出 |
-| **Anthropic PDF 报告** | ⚠️ 已追踪 | 2026 Agentic Coding Trends Report，URL 已用于 multi-agent拐点文章（2026-05-22），无法重复产出 |
-| **GitHub Trending** | ⚠️ 登录重定向 | 直接 curl 返回登录页，改用 AnySearch |
-| **AnySearch** | ✅ 新发现 | he-yufeng/CoreCoder（617 stars）|
+| **OpenAI 官方博客** | ✅ 新发现 | Michael Bolin "Unrolling the Codex agent loop" — 源码级 Agent Loop 解读 |
+| **Cursor官方博客** | ⚠️ 已追踪（USED）| continually-improving-agent-harness 已追踪，无法重复产出 |
+| **GitHub Trending** | ✅ 新发现 | camel-ai/OWL（19,835⭐，GAIA #1）|
+| **AnySearch** | ✅ 新发现 | OWL 通过 AnySearch 发现，结合 GitHub API确认 Stars |
 
 ### 关键发现
 
-**he-yufeng/CoreCoder**（来自 GitHub，2026-06）：
-- 512,000 行 TypeScript → 1,400 行 Python 的极简实现
-- 7 个核心架构模式：搜索替换编辑 / 并行工具执行 / 3层上下文压缩 / 子Agent隔离上下文 / 危险命令阻止 / 会话持久化 / 动态System Prompt
-- "nanoGPT of coding agents" 定位——不是工具，是蓝图
-- 任意 LLM 兼容（Kimi/Claude/GPT/DeepSeek/Qwen/Ollama）
-- Moonshot AI（Kimi）研究员 Yufeng He 创建
+**Michael Bolin "Unrolling the Codex agent loop"**（来自 OpenAI 官方博客）：
+- 作者：Michael Bolin，Member of Technical Staff
+- 主题：Codex CLI 的 Agent Loop 源码级解读（工程机制核心）
+- 核心内容：Prompt 构建（角色优先级、插入顺序）、上下文管理（Compaction、ZDR 无状态）、工具 sandbox 分层、MCP 责任边界
+- 一手来源：community.openai.com 论坛帖子 + openai.com/index 原文
 
-**Anthropic PDF 报告**（已追踪，无法重复使用）：
-- 2026 Agentic Coding Trends Report 包含 8 个趋势
-- Trend 3（Long-running agents）已在 `anthropic-2026-trends-trend3-long-running-agents-complete-systems.md` 覆盖
-- Trend 4、Trend 6 也已有对应文章
-- 剩余 Trend 1、5、7、8 未覆盖，但源 URL 已用于 multi-agent拐点文章
+**camel-ai/OWL**（来自 GitHub Trending，2025-03 开源）：
+- 19,835 Stars，Python，Apache 2.0
+- GAIA benchmark 69.09%，开源框架排名第一
+- 多 Agent 协作（Browser + Terminal + Function Calls + MCP）
+-训练数据和模型权重已开源（HuggingFace）
+- 论文：arXiv:2505.23885（NeurIPS 2025）
 
 ## 2. 决策与产出
 
 ### Pattern 判定
 
 **触发条件分析**：
-1. ✅ **CoreCoder 是全新发现**：617 stars，NEW 状态，未追踪
-2. ✅ **与历史 Article 关联**：与 Round311 的 Managed Agents（brain/hand decoupling）形成「Platform 架构层 ↔ 实现模式层」闭环
-3. ✅ **主题关联性明确**：CoreCoder 的 session persistence、context compression 等 7 个模式，正是让 Managed Agents 平台架构得以落地的具体工程实现
+1. ✅ **Codex Agent Loop 是全新发现**：Michael Bolin 官方博客，一手来源，工程机制核心主题
+2. ✅ **OWL 是全新发现**：19,835 Stars，GAIA SOTA，NEW状态，未追踪
+3. ✅ **主题关联性明确**：Codex Agent Loop（单 Agent 执行机制）↔ OWL（多 Agent 协作架构）形成完整闭环
 
-**判定**：**Project 独立产出**（Article 因源追踪限制跳过）
+**判定**：**Article + Project 双产出**（主题关联性明确，形成闭环）
 
 ### 闭环逻辑
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Round311 Article: Managed Agents                            │
-│  ——Brain/Hand/Session 三层解耦                               │
-│  ——OS abstraction，平台弹性架构                              │
-│  ——Session 持久化日志，Meta-harness                         │
+│  Round313 Article: Codex Agent Loop                          │
+│  ——Prompt 构建（角色优先级、Caching 优化原则）               │
+│  ——上下文管理（Compaction、ZDR 无状态设计）                  │
+│  ——工具安全（Sandbox 分层、MCP 责任边界）                    │
+│  ——Harness 工程机制完整映射                                  │
 └─────────────────────┬───────────────────────────────────────┘
                       │
          ┌────────────┴────────────┐
          │                         │
   ┌──────▼──────────────────┐   ┌─▼──────────────────────────┐
-  │ Round312 Project        │   │ (隐含: 7个核心实现模式)        │
-  │ he-yufeng/CoreCoder    │   │ session.py 65行实现持久化     │
-  │ 1400行Python           │   │ context.py 145行实现压缩     │
-  │ 7个架构模式             │   │ tools/bash.py 95行安全边界   │
+  │ Round313 Project       │   │ (隐含: 多Agent协作SOTA)      │
+  │ camel-ai/OWL          │   │ GAIA 69.09% #1              │
+  │ 19,835⭐ │   │ 多Agent协作架构 │
   └────────────────────────┘   └─────────────────────────────┘
 ```
 
 **主题统一性**：
-- Managed Agents 提供宏观的平台架构设计（Session/Brain/Hands 三层）
-- CoreCoder 提供微观的具体实现细节（session persistence、context compression 等 7 个模式的 Python 实现）
-- 共同命题：**Agent 系统的弹性来自「架构层抽象」与「实现层模式」的协同**
+- Codex Agent Loop 提供单 Agent 的执行引擎设计（Prompt 构建、上下文压缩、工具 sandbox）
+- OWL 提供多 Agent 协作的架构实现（Browser/Terminal/MCP 工具集成、GAIA SOTA 验证）
+- 共同命题：**Agent 系统的弹性来自「单 Agent 执行机制」与「多 Agent 协作架构」的协同**
 
 ## 3. 本轮产出
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ⬇️ 跳过 | Anthropic PDF 源 URL 已追踪（multi-agent拐点文章，2026-05-22）；无法重复产出 |
-| PROJECT_SCAN | ✅ 完成 | 1 Project: he-yufeng/CoreCoder（617 stars）|
+| ARTICLES_COLLECT | ✅ 完成 | 1 Article: openai-codex-agent-loop-unrolled-2026.md（5,848 bytes）|
+| PROJECT_SCAN | ✅ 完成 | 1 Project: camel-ai-OWL-19835-stars-gaia-sota-2026.md（3,632 bytes）|
 
 ### 产出详情
 
-**Project: `articles/projects/he-yufeng-corecoder-nanogpt-of-coding-agents-617-stars-2026.md` (5,390 bytes)**：
-- 标题：he-yufeng/CoreCoder：把 Claude Code 的 512K 行 TypeScript 压缩成 1,400 行 Python
-- 核心定位：Coding agents 领域的 nanoGPT——不是又一个编程工具，而是一个可读的架构蓝图
-- 7 个核心模式详细解析：搜索替换编辑 / 并行工具执行 / 3层上下文压缩 / 子Agent隔离上下文 / 危险命令阻止 / 会话持久化 / 动态System Prompt
-- 与 Managed Agents 的闭环：Platform 层弹性架构 ↔ 具体 7 个实现模式
-- 3 处「笔者认为」判断性内容，2 处 GitHub README 原文引用
+**Article: `articles/deep-dives/openai-codex-agent-loop-unrolled-2026.md` (5,848 bytes)**：
+- 标题：拆解 Codex Agent Loop：OpenAI 的执行引擎是如何工作的
+- 核心命题：Harness（执行引擎）与模型之间的边界比大多数人理解的要模糊得多
+- 8 个章节：Agent Loop 结构、Prompt 构建、模型推理、上下文管理、工具 sandbox、终止条件、Harness 映射、工程启示录
+- 4 处「笔者认为」判断性内容，4 处官方原文引用（OpenAI 文档 + Codex 源码链接）
+
+**Project: `articles/projects/camel-ai-OWL-19835-stars-gaia-sota-2026.md` (3,632 bytes)**：
+- 标题：camel-ai/OWL：多 Agent 协作的 GAIA 排行榜状元
+- 核心定位：GAIA 69.09% #1，19,835 Stars，多 Agent 协作 SOTA
+- 核心亮点：GAIA SOTA（不是靠模型规模，靠协作设计）、多模态交互、训练资源开源、MCP 工具链
+- 与 Codex Agent Loop 的闭环：单 Agent 执行 ↔ 多 Agent 协作
+- 3 处「笔者认为」判断性内容，4 处 GitHub/README + arXiv 原文引用
 
 ## 4. 反思
 
 ### 做得好
 
-- **正确识别源追踪限制**：Anthropic PDF 源 URL 已在之前轮次用于 multi-agent拐点文章，严格遵守「同一源 URL 只允许产出一次」规则，选择跳过 Article 产出
-- **选择高质量 Project**：CoreCoder 是真正有工程教育价值的项目——不是 awesome list，而是可读的架构实现
-- **主题关联闭环**：CoreCoder 的 7 个实现模式（特别是 session persistence 和 context compression）与 Round311 的 Managed Agents 形成清晰的「架构层 → 实现层」闭环
+- **正确识别源追踪限制**：cursor.com/blog/continually-improving-agent-harness 已被追踪（USED），没有重复产出，聚焦新发现
+- **主题关联闭环质量高**：Codex Agent Loop（单 Agent 执行）+ OWL（多 Agent 协作）形成了从微观到宏观的完整闭环，而非强行关联
+- **Sources记录完整**：Article 和 Project 的源 URL 都已记录到 sources_tracked.jsonl
 
 ### 待改进
 
-- **gen_article_map.py 挂起**：脚本执行卡住未返回，可能需要环境检查或脚本优化
-- **GitHub Trending 抓取受限**：直接 curl 返回登录重定向，依赖 AnySearch 作为备选发现渠道
-- **PDF 源多文章问题**：Anthropic PDF 包含 8 个趋势，但 SKILL.md「同一源 URL 只能产出一篇」的规则意味着其余趋势即使内容全新也无法使用。是否应考虑「同一源的不同 section/URL」作为独立产出入口？
+- **gen_article_map.py 超时问题**：脚本在 Round312 和 Round313 都超时（30s），但 exit code 0，可能是挂起而非真正失败。需要检查脚本逻辑或增加超时阈值
+- **GitHub 页面访问不稳定**：curl 直接抓取 GitHub 页面偶尔超时，依赖 API 作为备选（api.github.com/repos）
+- **AnySearch 依赖 SOCKS5 代理**：当前环境 AnySearch 输出不稳定（urllib3 warning），需要确保代理可用
 
 ### 下轮优先级
 
-1. **Anthropic 新文章扫描**：检查 anthropic.com/engineering 是否有新的高质量工程文章
-2. **GitHub Trending 改进抓取**：尝试 agent-browser 方式获取 trending 页面
-3. **AnySearch 新发现项目**：继续扫描 GitHub trending AI agents 发现新的高价值项目
-4. **gen_article_map.py 修复**：检查脚本挂起原因
+1. **Cursor Agent Harness 演进**：`continually-improving-agent-harness` — 2024→2026 的 Harness 迭代路线图（guardrails → context engineering）
+2. **Cloud Agent 开发环境**：`cloud-agents` / `cloud-agent-development-environments` — Cursor 的云端 Agent IDE 实践
+3. **Anthropic Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness 核心（跳级批次）
+4. **工具设计**：`writing-tools-for-agents` — 工具安全/权限分层
+5. **Anthropic GTM 案例**：`how-anthropic-uses-claude-gtm-engineering` — 销售团队 Claude Code 工作流（企业内部采用视角）
+6. **`sickn33/antigravity-awesome-skills`（40,169⭐）**：1,500+ Skills 跨 Agent 客户端
 
 ## 5. 状态摘要
 
-- **Round**: 312
+- **Round**: 313
 - **Author**: Hermes（单次 commit）
-- **Run count**: 312
-- **Commit**: 待 commit（HEAD = bab0460）
-- **Theme**: CoreCoder 实现模式（与 Round311 Managed Agents 架构层闭环）
-- **Pair 闭环**: Managed Agents（平台弹性架构）↔ CoreCoder（7 个具体实现模式）
+- **Run count**: 313
+- **Commit**: 87664a9
+- **Theme**: Codex Agent Loop ↔ OWL 多 Agent 协作（单 Agent 执行 ↔ 多 Agent 协作闭环）
+- **Pair 闭环**: 单 Agent 执行机制（AgentLoop）↔ 多 Agent 协作架构（OWL GAIA SOTA）
+- **Sources tracked**: +2（Article1, Project 1）
