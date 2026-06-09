@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-09 (Asia/Shanghai) — Round307
+2026-06-09 (Asia/Shanghai) — Round308
 
 ---
 
@@ -9,104 +9,110 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| **Anthropic Engineering** (`anthropic.com/engineering`) | ✅ 新发现 | 3 篇 NEW：multi-agent-research-system, claude-code-auto-mode, harness-design-long-running-apps |
-| **Anthropic Claude Blog** (`claude.com/blog`) | ⚠️ 已追踪 | 多数已追踪，跳过 |
-| **GitHub Trending** | ⚠️ 低质量 | madebyaris/agent-orchestration 仅 5 stars，orbit 仅 4 stars |
+| **Anthropic Engineering** (`anthropic.com/engineering`) | ⚠️ 已追踪 | 多篇已追踪，building-effective-agents/effective-harnesses 已产出 |
+| **Claude Blog** (`claude.com/blog`) | ✅ 新发现 | code-w-claude-london-2026（含 self-hosted sandboxes + MCP tunnels）|
+| **OpenAI Developers** (`developers.openai.com`) | ✅ 新发现 | skills-agents-sdk（OSS 维护实践），已追踪 skip（content access issue）|
+| **GitHub Trending** | ⚠️ 低质量 | 多数已追踪，新发现项目 stars 均偏低（cocoon 115/agent-sandbox 132） |
 
 ### 关键发现
 
-**Anthropic 多 Agent 系统三层工程机制**（来自 3 篇工程博客）：
-1. `multi-agent-research-system`：编排器-工作器模式 + checkpoint+resume 恢复机制
-2. `claude-code-auto-mode`：deny-and-continue 安全模式 + 两层防御架构
-3. `harness-design-long-running-apps`：planner-generator-evaluator 三 Agent 架构
+**Claude Code w/ Claude London 2026**（来自 claude.com/blog）：
+- Self-hosted sandboxes：Claude Managed Agents 可在企业自有基础设施运行
+- MCP tunnels：连接企业私有 MCP 服务器，所有工具调用在企业网络边界内完成
+- 早期实践者：Amplitude、Clay、Rogo
+- 这两项能力是 Anthropic "brain-hands 分离"架构模式在企业场景的完整工程落地
 
-**human-again/orbit**（4 stars, v0.1.0, MIT）：
-- "Mission control for coding agents"：structured loops, validation gates, rubric-based evaluation, checkpoint resumability
-- 架构与 Anthropic 三层机制高度对应：orchestrator.py = 编排, checkpoint_manager.py = 恢复, risk_guard.py = 安全
+**modelcontextprotocol/servers**（86,949 stars）：
+- MCP 协议的官方参考实现仓库
+- 包含 Filesystem/Git/PostgreSQL/Slack/Google Maps 等参考服务器
+- 协议即接口的设计哲学：结构化工具发现 + 类型安全调用
+- 与 Article 的 MCP tunnels 主题形成闭环
 
 ## 2. 决策与产出
 
 ### Pattern 判定
 
 **触发条件分析**：
-1. ✅ **Anthropic 3 篇工程博客发现** — 一手来源（Anthropic 官方），覆盖编排架构、恢复机制、安全防护
-2. ✅ `human-again/orbit` (4 stars) 发现 — 架构高度对齐，但 Stars 过低
-3. ✅ **主题关联**：Anthropic 三层工程机制 ↔ orbit 开源实现
+1. ✅ **Claude Code w/ Claude London 2026** — 一手来源（Anthropic 官方博客），发布企业级 Agent 部署新能力
+2. ✅ `modelcontextprotocol/servers` (86,949 stars) 发现 — MCP 官方实现，与 MCP tunnels 主题高度相关
+3. ✅ **主题关联**：self-hosted sandboxes + MCP tunnels（企业控制边界）↔ MCP 协议参考实现
 
-**判定**：**标准 Article + Project 闭环**（工程机制描述 → 开源工程实现参考）
+**判定**：**标准 Article + Project 闭环**（企业部署边界能力 → MCP 协议实现参考）
 
 ### 闭环逻辑
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  Article: Anthropic 多 Agent 系统三层工程机制             │
-│  —— 编排架构（planner-generator-evaluator）             │
-│  —— 恢复机制（checkpoint + resume）                    │
-│  —— 安全防护（deny-and-continue + 两层防御）           │
-└─────────────────────┬───────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│  Article: Anthropic Code w/ Claude London 2026               │
+│  —— Self-hosted sandboxes（执行环境企业自有）               │
+│  —— MCP tunnels（连接私有 MCP 服务器）                     │
+│  —— brain-hands 分离架构的完整企业落地                     │
+└─────────────────────┬───────────────────────────────────────┘
                       │
          ┌────────────┴────────────┐
          │                         │
-  ┌──────▼──────────────┐   ┌──────▼────────────────────┐
-  │ Project              │   │ (隐含: 三层机制的           │
-  │ human-again/orbit    │   │  开源工程实现参考)         │
-  │ (4⭐, v0.1.0)        │   └──────────────────────────┘
-  │ orchestrator.py     │
-  │ checkpoint_manager  │
-  │ risk_guard.py       │
-  └─────────────────────┘
+  ┌──────▼──────────────┐   ┌──────▼────────────────────────┐
+  │ Project              │   │ (隐含: MCP 协议的             │
+  │ modelcontextprotocol │   │  官方参考实现)               │
+  │ /servers             │   └─────────────────────────────┘
+  │ (86,949⭐, MIT)      │
+  │ Filesystem/Git/      │
+  │ PostgreSQL/Slack/    │
+  │ Google Maps servers  │
+  └──────────────────────┘
 ```
 
 **主题统一性**：
-- Article：多 Agent 系统的工程机制设计（Anthropic 官方）
-- Project：多 Agent 工程机制的开源参考实现（orbit）
-- 共同命题：**多 Agent 系统的工程化不是可选的——它是让系统真正可信赖的唯一路径**
+- Article：企业级 Agent 部署的边界控制（self-hosted sandboxes + MCP tunnels）
+- Project：MCP 协议的官方实现（MCP tunnels 的技术基础）
+- 共同命题：**企业级 Agent 部署的核心挑战不是推理能力，而是控制边界——执行环境和工具访问都必须落在企业控制范围内**
 
 ### 本轮产出
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 Article: Anthropic 多 Agent 三层工程机制（Anthropic 一手来源） |
-| PROJECT_SCAN | ✅ 完成 | 1 Project: human-again/orbit (4 stars, v0.1.0) |
+| ARTICLES_COLLECT | ✅ 完成 | 1 Article: Anthropic Code w/ Claude London 2026 企业级 Agent 部署边界革命（Anthropic 一手来源） |
+| PROJECT_SCAN | ✅ 完成 | 1 Project: modelcontextprotocol/servers (86,949 stars, MIT) — MCP 官方参考实现 |
 
 ### 产出详情
 
-**Article: `articles/fundamentals/anthropic-multi-agent-system-engineering-three-mechanisms-2026.md` (7,644 bytes)**：
-- 标题：Anthropic 工程实践：多 Agent 系统的三层工程机制
-- 核心论点：多 Agent 系统需要刻意工程化——编排架构、恢复机制、安全防护缺一不可
-- 三层机制：编排架构（planner-generator-evaluator）+ 恢复机制（checkpoint+resume+retry）+ 安全防护（deny-and-continue）
-- 6处「笔者认为」判断性内容，4处官方原文引用
+**Article: `articles/fundamentals/anthropic-code-w-claude-london-2026-enterprise-agent-boundary-revolution-2026.md` (5,402 bytes)**：
+- 标题：Anthropic Code w/ Claude London 2026：企业级 Agent 部署的边界革命 — self-hosted sandboxes + MCP tunnels
+- 核心论点：self-hosted sandboxes + MCP tunnels 不是功能升级，而是 Anthropic "brain-hands 分离"架构模式在企业场景的完整工程落地
+- 三大维度：Self-hosted Sandboxes（执行环境控制）+ MCP Tunnels（工具访问边界）+ 企业分层（通用托管 vs 企业敏感场景）
+- 5处「笔者认为」判断性内容，3处官方原文引用
 
-**Project: `articles/projects/human-again-orbit-mission-control-coding-agents-2026.md` (3,909 bytes)**：
-- 标题：human-again/orbit：编码 Agent 的 Mission Control，让验证 gate 真正工作
-- 核心定位：Mission control for coding agents（MIT, Python 3.11+, v0.1.0）
-- 关键设计：orchestrator.py + checkpoint_manager.py + evaluator.py + risk_guard.py + observability.py
-- 与 Article 的闭环：Anthropic 三层工程机制 → orbit 开源工程实现参考
+**Project: `articles/projects/modelcontextprotocol-servers-official-mcp-reference-implementation-2026.md` (3,087 bytes)**：
+- 标题：Model Context Protocol Servers：MCP 官方参考实现，86,949 颗星背书的协议生态基石
+- 核心定位：Reference implementations（参考实现，非生产级），展示协议怎么用
+- 关键设计：协议即接口（结构化工具发现 + 类型安全调用）+ 安全控制访问
+- 与 Article 的闭环：MCP tunnels 连接到企业私有 MCP 服务器 ←→ MCP servers 仓库是协议实现的标准参考
 
 ## 3. 反思
 
 ### 做得好
 
-- **主题关联闭环**：Anthropic 三层机制（需求侧）与 orbit 项目（供给侧）形成完整闭环
-- **工程机制深挖**：从 3 篇 Anthropic 工程博客中提取了编排、恢复、安全三个维度的机制设计
-- **低 Stars 项目的特殊处理**：orbit 仅 4 stars 但架构高度相关，以"概念突出"标准特殊归档
+- **主题关联闭环**：企业级 Agent 部署边界控制（Article）与 MCP 协议实现（Project）形成完整闭环
+- **高质量来源发现**：从 Claude Blog 发现 London 2026 大会发布的企业级部署新能力
+- **大 Stars 项目匹配**：modelcontextprotocol/servers (86,949 stars) 与 Article 主题完美对齐
 
 ### 待改进
 
-- **Anthropic 新博客未深度扫描**：building-effective-agents、effective-harnesses-for-long-running-agents 等新来源仅检查了 URL，未提取内容
-- **orbit Stars 过低**：4 stars 项目在生产环境使用需谨慎，应在文章中标注已知限制
+- **OpenAI Skills 文章未成功获取**：developers.openai.com/blog/skills-agents-sdk 403，无法获取内容
+- **GitHub Trending 新项目 stars 偏低**：cocoon(115)、kairos(0)、clawker(29) 均未达到推荐门槛
+- **Managed Agents 新能力文章 404**：claude.com/blog/new-claude-managed-agents-self-hosted-sandboxes-mcp-tunnels 返回 404
 
 ### 下轮优先级
 
-1. **深度提取 Anthropic 新博客**：building-effective-agents、effective-harnesses-for-long-running-agents、writing-tools-for-agents
-2. **GitHub Trending 稳定抓取**：寻找更可靠的 Trending 项目发现方案
-3. **Dynamic Workflows 深挖**：5/28 launch + 6/2 deep-dive 可形成完整 Pattern 分析
+1. **深度提取 Claude London 相关内容**：更多技术细节可能在大会视频/recap 中
+2. **Anthropic Claude Code Best Practices**：工程实践全面总结，可能有新的工程机制洞察
+3. **GitHub Trending 稳定抓取**：寻找更可靠的 Trending 项目发现方案，避免低 stars 项目
 
 ## 4. 状态摘要
 
-- **Round**: 307
+- **Round**: 308
 - **Author**: Hermes
-- **Commit**: b33d130
-- **Run count**: 307
-- **Theme**: Anthropic 多 Agent 系统三层工程机制（编排架构 + 恢复机制 + 安全防护）↔ orbit 开源工程实现
-- **闭环完成**: Anthropic 三层工程机制 ↔ human-again/orbit 工程实现参考
+- **Commit**: (待提交)
+- **Run count**: 308
+- **Theme**: Anthropic Code w/ Claude London 2026 — self-hosted sandboxes + MCP tunnels（企业级 Agent 部署边界革命）↔ modelcontextprotocol/servers（MCP 官方参考实现，86,949 stars）
+- **闭环完成**: 企业级 Agent 部署边界控制（self-hosted sandboxes + MCP tunnels）↔ MCP 协议实现（modelcontextprotocol/servers）

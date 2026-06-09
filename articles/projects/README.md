@@ -1,3 +1,5 @@
+- **[modelcontextprotocol/servers](./modelcontextprotocol-servers-official-mcp-reference-implementation-2026.md)** — 86,949 ⭐，TypeScript/Python/Go，MIT，MCP 官方参考实现仓库（Filesystem/Git/PostgreSQL/Slack/Google Maps 等服务器）+ 协议即接口的设计哲学（结构化工具发现 + 类型安全调用）+ 与 Anthropic Code w/ Claude London 2026 Article（MCP tunnels 企业私有 MCP 服务器连接）形成「协议理论 → 工程实现」完整闭环，**本文新增**
+
 - **[ComposioHQ/agent-orchestrator](./ComposioHQ-agent-orchestrator-multi-agent-fleet-2026.md)** — 7,456+ ⭐，TypeScript，MIT，多 Agent 并行编排基础设施（每个 Agent 独立 git worktree + 分支 + PR）+ 自主 CI 修复循环（失败→修复→重验证）+ 统一监督面板（人类只在需要时介入）+ 与 Anthropic 企业调查（57% 多阶段工作流）形成「需求层 → 工程实现层」完整闭环，**本文新增**
 
 - **[danielmiessler/Personal_AI_Infrastructure](./danielmiessler-personal-ai-infrastructure-15392-stars-2026.md)** — 15,392 ⭐，Python/TypeScript，个人智能体工作流操作系统（38 Skills + 20 Hooks + 162 Workflows）+ ISC 追踪系统 + 持久化 PRDs + Agent Teams/Swarm 多智能体协作）+ 与 Anthropic 8 Trends Report 形成「企业趋势 → 个人实践」完整闭环

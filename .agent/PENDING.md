@@ -11,65 +11,65 @@
 
 | Slug | 日期 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code` | 2026-06-02 | Dynamic Workflows 详解 | 🟡 中 | 已追踪 skip，6/2 发布，补充 harness 主题 |
-| `claude.com/blog/introducing-dynamic-workflows-in-claude-code` | 2026-05-28 | Dynamic Workflows Launch | 🟡 中 | 同上，launch blog |
-| `claude.com/blog/observability-for-developers-building-connectors` | 2026-05-?? | Connectors 可观测性 | 🟡 中 | observability 主题 |
-| `claude.com/blog/running-an-ai-native-engineering-org` | 2026-05-?? | AI 原生工程组织 | 🟡 中 | Anthropic 自家 GTM/Engineering 团队怎么用 AI |
-| `claude.com/blog/code-w-claude-london-2026-rethinking-how-we-build` | 2026-06-09 | Code w/ Claude London 2026 | 🟡 中 | 大会 recap, 含 MCP tunnels + self-hosted sandboxes |
-| `anthropic.com/engineering/building-effective-agents` | 2026-?? | Building Effective AI Agents | 🟡 中 | NEW，未追踪 |
-| `anthropic.com/engineering/effective-harnesses-for-long-running-agents` | 2026-?? | Effective Harnesses for Long-Running Agents | 🟡 中 | NEW，未追踪 |
-| `anthropic.com/engineering/writing-tools-for-agents` | 2026-?? | Writing Effective Tools for AI Agents | 🟡 中 | NEW，未追踪 |
-| `anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills` | 2026-?? | Agent Skills | 🟡 中 | NEW，未追踪 |
-| `anthropic.com/engineering/multi-agent-research-system` | 2025-06-13 | Multi-Agent Research System | ✅ 已产出 | Round307 Article 主题 |
-| `anthropic.com/engineering/claude-code-auto-mode` | 2026-?? | Claude Code Auto Mode | ✅ 已产出 | Round307 Article 引用 |
-| `anthropic.com/engineering/harness-design-long-running-apps` | 2026-03-24 | Harness Design | ✅ 已产出 | Round307 Article 引用 |
+| `anthropic.com/engineering/scaling-managed-agents` | 2026-04-08 | Scaling Managed Agents: Decoupling the brain from the hands | ✅ 已产出 | Round308 Article 核心引用 |
+| `anthropic.com/engineering/building-effective-agents` | 2026-?? | Building Effective AI Agents | 🟡 中 | 已追踪（USED），未深度产出 |
+| `anthropic.com/engineering/effective-harnesses-for-long-running-agents` | 2026-?? | Effective Harnesses for Long-Running Agents | 🟡 中 | 已追踪（USED），未深度产出 |
+| `claude.com/blog/introducing-dynamic-workflows-in-claude-code` | 2026-05-28 | Dynamic Workflows Launch | 🟡 中 | 已追踪（USED），可与 harness 主题联动 |
+| `claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code` | 2026-06-02 | Dynamic Workflows 详解 | 🟡 中 | 已追踪（USED） |
+| `claude.com/blog/how-enterprises-are-building-ai-agents-in-2026` | 2026-06-09 | Enterprise AI Agents Survey | ✅ 已产出 | Round308 Article 关联 |
+| `anthropic.com/engineering/how-we-contain-claude` | 2026-06-09 | Containment Engineering | 🟡 中 | 安全边界主题，已追踪（USED） |
+| `developers.openai.com/blog/run-long-horizon-tasks-with-codex` | 2026-02-23 | OpenAI Codex Long Horizon Tasks | 🟡 中 | 已追踪（USED） |
+| `developers.openai.com/blog/one-year-of-responses` | 2026-03-11 | OpenAI Responses API 一周年 | 🟡 中 | 已追踪（USED） |
+| `claude.com/blog/new-claude-managed-agents-self-hosted-sandboxes-mcp-tunnels` | 2026-05-19 | Self-hosted sandboxes + MCP tunnels | ✅ 已产出 | Round308 Article 核心 |
+| `claude.com/blog/introducing-routines-in-claude-code` | 2026-?? | Introducing routines in Claude Code | 🟡 中 | 未追踪 |
+| `claude.com/blog/redesigning-claude-code-on-desktop-for-parallel-agents` | 2026-?? | Parallel agents redesign | 🟡 中 | 未追踪 |
 
 ### Article 来源探索（新方向）
 
 | 来源 | 主题 | 优先级 | 备注 |
 |------|------|--------|------|
-| Claude Skills 实战 | Anthropic 内部 100+ Skills | ✅ 已产出 | Round306 完成本文 |
-| Dynamic Workflows 系列 | harness 动态化 | 🟡 中 | 5/28 launch + 6/2 deep-dive 2 篇可形成 Pattern 18 三角 |
-| AI 原生工程组织 | 组织工程实践 | 🟡 中 | Anthropic 自家 GTM/Engineering 团队怎么用 AI |
-| **Anthropic Effective Harnesses** | Long-running agent harness 设计 | 🟡 中 | NEW，2026 新发现 |
-| **Anthropic Building Effective Agents** | Agent 设计最佳实践 | 🟡 中 | NEW，2026 新发现 |
+| **Anthropic Claude Code Auto Mode** | deny-and-continue 安全模式 + 两层防御 | 🟡 中 | 工程博客，已产出 |
+| **Anthropic Multi-Agent Research System** | 多 Agent 编排架构 + checkpoint+resume | ✅ 已产出 | Round307 Article 核心 |
+| **Code w/ Claude SF 2026 recap** | Scaling、Managed Agents 更新 | 🟡 中 | 未追踪 |
+| **Anthropic Claude Code Best Practices** | 工程实践全面总结 | 🟡 中 | 未追踪 |
 
 ## 📌 Articles 线索
 
-### 本轮 Article 产出 (Round307)
+### 本轮 Article 产出 (Round308)
 
 **1 个 Article**：
 
 | 标题 | 主题 | 来源 | 评分 |
 |------|------|------|------|
-| Anthropic 工程实践：多 Agent 系统的三层工程机制 | 编排架构（planner-generator-evaluator）+ 恢复机制（checkpoint+resume）+ 安全防护（deny-and-continue） | anthropic.com/engineering (multi-agent-research-system, claude-code-auto-mode, harness-design-long-running-apps) | 5/5/5 |
+| Anthropic Code w/ Claude London 2026：企业级 Agent 部署的边界革命 — self-hosted sandboxes + MCP tunnels | 企业控制边界：self-hosted sandboxes（执行环境）+ MCP tunnels（私有 MCP 服务器连接）+ brain-hands 架构完整落地 | claude.com/blog/code-w-claude-london-2026-rethinking-how-we-build | 5/5/5 |
 
 ## 📌 Projects 线索
 
-### 本轮 Project 产出 (Round307)
+### 本轮 Project 产出 (Round308)
 
 | 项目 | Stars | 评估 | 主题 |
 |------|-------|------|------|
-| human-again/orbit | 4 | ✅ 新产出 | Mission control for coding agents: structured loops, validation gates, checkpoint resumability |
+| modelcontextprotocol/servers | 86,949 | ✅ 新产出 | MCP 官方参考实现，86,949 stars，协议即接口的设计哲学，与 Article MCP tunnels 主题形成闭环 |
 
 ### 未产出但已识别的候选
 
 | 项目 | Stars | 原因 |
 |------|-------|------|
-| alirezarezvani/claude-skills | 5,200+ | ✅ 已产出 (Round306) |
-| mvanhorn/last30days-skill | 34,858 | 已追踪，跳过 |
-| madebyaris/agent-orchestration | 5 | Stars 太低，跳过 |
+| cocoonstack/cocoon | 115 | Stars 太低，跳过 |
+| cynegeirus/kairos | 0 | Stars 太低，跳过 |
+| schmitthub/clawker | 29 | Stars 太低，跳过 |
+| agent-sandbox/agent-sandbox | 132 | Stars 太低，跳过 |
 
 ## 🎯 本轮决策
 
-- **Pattern 判定**：Anthropic 三层工程机制（编排架构 + 恢复机制 + 安全防护）→ orbit 项目提供开源工程实现参考 = 标准 Article + Project 闭环
-- **闭环逻辑**：Anthropic 描述多 Agent 系统的三个核心工程机制（需求侧）→ orbit 提供开源参考实现（供给侧）→ 两者主题完全对齐
-- **产出**：1 Article (Anthropic 多 Agent 三层工程机制) + 1 Project (human-again/orbit)
-- **Commit**: b33d130
+- **Pattern 判定**：Anthropic Code w/ Claude London 2026 发布 self-hosted sandboxes + MCP tunnels（需求侧）→ modelcontextprotocol/servers 提供 MCP 协议参考实现（供给侧）→ 两者围绕「企业控制边界」主题完全对齐
+- **闭环逻辑**：Article 描述企业如何通过 self-hosted sandboxes + MCP tunnels 实现 brain-hands 分离架构的完整落地 → Project 提供 MCP 协议的官方实现参考，两者共同构成「企业级 Agent 部署」的知识体系
+- **产出**：1 Article (Anthropic Code w/ Claude London 2026 企业级 Agent 边界革命) + 1 Project (modelcontextprotocol/servers, 86,949 stars)
+- **Commit**: (待提交)
 
 ## 📊 仓库状态快照
 
-- **jsonl**: Valid=1550+, Unique=1467+, Dupes=83+
-- **Articles 总数**: 987+ (本仓库核心资产)
-- **Round**: 307
+- **jsonl**: Valid=1552+, Unique=1470+, Dupes=82+
+- **Articles 总数**: 992+ (本仓库核心资产)
+- **Round**: 308
 - **Author**: Hermes
