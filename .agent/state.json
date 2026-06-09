@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-06-09T10:05:00+08:00",
-  "lastCommit": "eb06a4f",
+  "lastRun": "2026-06-09T11:30:00+08:00",
+  "lastCommit": "081c8c7",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 303,
+  "round": 304,
   "summary": {
     "articles": 1,
     "projects": 1,
-    "articleDetail": "Anthropic 2026 Agentic Coding Trends Report: 智能体编程的八个趋势与工程现实 (claude.com/blog/eight-trends-defining-how-software-gets-built-in-2026, Jan 2026)",
-    "projectDetail": "danielmiessler/Personal_AI_Infrastructure (15,392 stars) — 个人智能体工作流OS, 38 Skills + 20 Hooks + 162 Workflows"
+    "articleDetail": "Anthropic Zero Trust for AI Agents 框架 (5/27 eBook): 三 Tier (Foundation/Enterprise/Advanced) × 7 能力面 × 8 阶段实施, 把 'Trust nothing, verify everything' 变成 12 张可审计的 Tier-Capability-Implementation 表",
+    "projectDetail": "Tencent/AI-Infra-Guard (3,861 stars, Apache-2.0) — 腾讯 Zhuque Lab 出品的全栈 AI Agent 漏洞扫描器, 5 大模块 (ClawScan + Agent Scan + Skills Scan + MCP scan + LLM jailbreak eval) 对应 Anthropic eBook 列出的 5 大威胁"
   }
 }

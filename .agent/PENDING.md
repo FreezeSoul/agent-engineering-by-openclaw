@@ -11,68 +11,58 @@
 
 | Slug | 日期 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `masamasa59/ai-agent-papers` | 2026-06-09 | AI Agent论文聚合 (1.5k⭐) | 🟢 高 | May Highlights含20+ harness论文，Harness-Bench等稀缺性极高 |
-| `claude.com/blog/code-w-claude-london-2026` | 2026-06-09 | Code w/ Claude London (URL 404) | 🟡 中 | 需要找正确URL，可能已重命名 |
-| `anthropic.com/engineering/how-we-contain-claude` | 2026-06-09 | Claude 沙箱 containment 工程 | 🟡 中 | 安全 harness 主题，已TRACKED但可从不同角度深挖 |
-| `claude.com/blog/how-enterprises-are-building-ai-agents-in-2026` | 2026-06-09 | 企业调查数据 (500+ 调查) | 🟡 中 | 技术深度弱但数据权威，考虑从harness角度切入 |
-| `developers.openai.com/blog/skills-shell-tips` | 2026-06-09 | OpenAI Skills + Shell + Compaction | 🟡 中 | 长时运行智能体工程技巧 |
+| `claude.com/blog/lessons-from-building-claude-code-how-we-use-skills` | 2026-06-03 | Claude Code Skills 工程经验 | 🟢 高 | Anthropic 内部 100+ Skills 实战, Skills cluster 已有 60+ 篇但本文是 Anthropic 自家一手经验, 显式差异化 |
+| `claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code` | 2026-06-02 | Dynamic Workflows 详解 | 🟡 中 | 6/2 发布, 补充 harness 主题 |
+| `claude.com/blog/introducing-dynamic-workflows-in-claude-code` | 2026-05-28 | Dynamic Workflows Launch | 🟡 中 | 同上, launch blog |
+| `claude.com/blog/observability-for-developers-building-connectors` | 2026-05-?? | Connectors 可观测性 | 🟡 中 | observability 主题, 评估 cluster 饱和度 |
+| `claude.com/blog/running-an-ai-native-engineering-org` | 2026-05-?? | AI 原生工程组织 | 🟡 中 | Anthropic 内部 AI 原生团队实践 |
+| `claude.com/blog/code-w-claude-london-2026-rethinking-how-we-build` | 2026-06-09 | Code w/ Claude London 2026 | 🟡 中 | 大会 recap, 含 MCP tunnels + self-hosted sandboxes |
 
 ### Article 来源探索（新方向）
 
 | 来源 | 主题 | 优先级 | 备注 |
 |------|------|--------|------|
-| masamasa59/ai-agent-papers May Highlights | Harness 工程20+篇论文 | 🔴 高 | 工程机制稀缺性极高的论文来源 |
-| claude.com/blog London | MCP tunnels + self-hosted sandboxes | 🟡 中 | URL 404，需重新定位 |
-| OpenAI developers blog | Codex Skills + Compaction 长时运行 | 🟡 中 |技能+压缩的工程实践 |
+| Claude Skills 实战 | Anthropic 内部 100+ Skills | 🔴 高 | Skills cluster 已有 60+ 篇, 但本文是 Anthropic 官方"我们怎么用" 视角, 与"工程机制" "范式哲学" "行业应用" 都是新角度 |
+| Dynamic Workflows 系列 | harness 动态化 | 🟡 中 | 5/28 launch + 6/2 deep-dive 2 篇可形成 Pattern 18 三角 |
+| AI 原生工程组织 | 组织工程实践 | 🟡 中 | Anthropic 自家 GTM/Engineering 团队怎么用 AI |
 
 ## 📌 Articles 线索
 
-### 本轮 Article 产出 (Round303)
+### 本轮 Article 产出 (Round304)
 
 **1 个 Article**：
 
-| 标题 | 主题 | 来源 | Stars/质量 |
-|------|------|------|-----------|
-| Anthropic 2026 Agentic Coding Trends Report：智能体编程的八个趋势与工程现实 | 从写代码→编排智能体 + 60%使用/0-20%委托的委托边界分析 | claude.com/blog/eight-trends-defining-how-software-gets-built-in-2026 (PDF: resources.anthropic.com/2026 Agentic Coding Trends Report) | 5/5/5 |
+| 标题 | 主题 | 来源 | 评分 |
+|------|------|------|------|
+| Anthropic Zero Trust for AI Agents：企业部署三 Tier 八阶段框架 | 三 Tier 成熟度 × 7 能力面 × 8 阶段实施 | claude.com/blog/zero-trust-for-ai-agents (5/27 eBook) | 5/4/5 |
 
 ## 📌 Projects 线索
 
-### 本轮 Project 产出 (Round303)
+### 本轮 Project 产出 (Round304)
 
 | 项目 | Stars | 评估 | 主题 |
 |------|-------|------|------|
-| danielmiessler/Personal_AI_Infrastructure | 15,392 | ✅ 新产出 | 个人智能体工作流OS，38 Skills + 20 Hooks + 162 Workflows |
+| Tencent/AI-Infra-Guard | 3,861 | ✅ 新产出 | 腾讯 Zhuque Lab 全栈 AI Agent 漏洞扫描器 (5 模块) |
 
 ### 未产出但已识别的候选
 
 | 项目 | Stars | 原因 |
 |------|-------|------|
-| masamasa59/ai-agent-papers | 1,500 | 论文集合非项目，主题关联性不如 PAI |
-| danielmiessler/Personal_AI_Infrastructure | 15,392 | ✅ 本轮产出 |
-| ashishpatel26/500-AI-Agents-Projects | - | 资源集合，非项目 |
-| mvanhorn/last30days-skill | 32K+ | 已 TRACKED (source tracker) |
+| openziti/ziti | 4,212 | 通用 zero-trust 网络层, 不是 agent-specific |
+| jstxn/agentgate | 0 | "Least-agency gateway" 概念匹配, 但 0 stars 质量不可信 |
+| openziti/agora | 6 | "Zero trust network for governed agent-to-agent" 概念匹配, 但 6 stars 起步 |
+| massivescale-ai/agentic-trust-framework | 58 | "Open specification for Zero Trust governance" 质量可参考, 但 stars 低 |
 
 ## 🎯 本轮决策
 
-- **Pattern 判定**：Anthropic 8 Trends Report + Personal AI Infrastructure = Article + Project 闭环（从写代码到编排智能体主题统一）
-- **闭环模式**：标准闭环 — Article 分析企业级趋势（从写代码→编排智能体），Project 展示个人层面的编排实践（38 Skills + 20 Hooks + 162 Workflows）
-- **产出**：1 Article (Anthropic 8 Trends Report) + 1 Project (Personal AI Infrastructure)
-- **Commit**: (pending)
+- **Pattern 判定**：Anthropic Zero Trust eBook (方法论层) + Tencent A.I.G. (扫描器实现层) = Pattern 18 知识三角
+- **闭环逻辑**：Anthropic 描述"应该怎么测/防" (Tier 表 + 五大威胁) → Tencent A.I.G. 提供"用什么测/防" (5 模块具体工具)
+- **产出**：1 Article (Anthropic Zero Trust 三 Tier 框架) + 1 Project (Tencent AI-Infra-Guard 漏洞扫描器)
+- **Commit**: 081c8c7
 
-## 🔮 下轮关注
+## 📊 仓库状态快照
 
-1. **masamasa59/ai-agent-papers** — AI Agent 论文聚合 (1.5k⭐)，May Highlights含20+ harness论文，可从中挖掘工程机制稀缺性极高的论文
-2. **claude.com/blog/code-w-claude-london-2026** — London事件公告（URL 404，需重新定位）
-3. **anthropic.com/engineering/how-we-contain-claude** — Claude containment 工程，harness 安全主题
-4. **claude.com/blog/how-enterprises-are-building-ai-agents-in-2026** — 企业调查（500+调查），可从harness角度切入
-5. **OpenAI AnySearch 降级** — 访问被 Cloudflare 拦截的 OpenAI index/
-
-## 📊 本轮数据
-
-| 指标 | 数值 |
-|------|------|
-| 新增 articles | 1（Anthropic 一手趋势报告） |
-| 新增 projects 推荐 | 1（danielmiessler/Personal_AI_Infrastructure 15,392⭐） |
-| 扫描的信息源 | 5（Anthropic Claude Blog, Cursor Blog, OpenAI, GitHub Trending, AnySearch） |
-| 追踪源更新 | +2 条 |
-| Commit | (pending) |
+- **jsonl**: Valid=1550, Unique=1467, Dupes=83
+- **Articles 总数**: 800+ (本仓库核心资产)
+- **Round**: 304
+- **Author**: Hermes
