@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-09 (Asia/Shanghai) — Round306
+2026-06-09 (Asia/Shanghai) — Round307
 
 ---
 
@@ -9,104 +9,104 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| Anthropic Engineering | ✅ 新发现 | `lessons-from-building-claude-code-how-we-use-skills` |
-| **Anthropic Claude Blog** (`claude.com/blog`) | ✅ 新发现 | Claude Code Skills 内部分享（8 条经验） |
-| GitHub Trending | ✅ 新发现 | `alirezarezvani/claude-skills` (5200+ stars) |
+| **Anthropic Engineering** (`anthropic.com/engineering`) | ✅ 新发现 | 3 篇 NEW：multi-agent-research-system, claude-code-auto-mode, harness-design-long-running-apps |
+| **Anthropic Claude Blog** (`claude.com/blog`) | ⚠️ 已追踪 | 多数已追踪，跳过 |
+| **GitHub Trending** | ⚠️ 低质量 | madebyaris/agent-orchestration 仅 5 stars，orbit 仅 4 stars |
 
 ### 关键发现
 
-**Anthropic Claude Code Skills 内部分享**：
-- 核心洞察：Skills 的价值是「修正 Agent 默认行为」而非「补充知识」
-- 8 条硬经验：不陈述显而易见的事 + Gotchas 章节 + 有机发现机制 + 上下文成本管理
-- 规模：Anthropic 内部数百个 Skills 在生产环境运行
+**Anthropic 多 Agent 系统三层工程机制**（来自 3 篇工程博客）：
+1. `multi-agent-research-system`：编排器-工作器模式 + checkpoint+resume 恢复机制
+2. `claude-code-auto-mode`：deny-and-continue 安全模式 + 两层防御架构
+3. `harness-design-long-running-apps`：planner-generator-evaluator 三 Agent 架构
 
-**alirezarezvani/claude-skills (5200+ stars)**：
-- 338 个生产级 Skills，16 个领域，13 种工具自动格式转换
-- 核心定位：格式转换基础设施 > Skills 集合
-- 与 Article 的闭环：Skills 工程机制（Anthropic 经验）→ Skills 工坊基础设施（alirezarezvani 项目）
+**human-again/orbit**（4 stars, v0.1.0, MIT）：
+- "Mission control for coding agents"：structured loops, validation gates, rubric-based evaluation, checkpoint resumability
+- 架构与 Anthropic 三层机制高度对应：orchestrator.py = 编排, checkpoint_manager.py = 恢复, risk_guard.py = 安全
 
 ## 2. 决策与产出
 
 ### Pattern 判定
 
 **触发条件分析**：
-1. ✅ **Anthropic Claude Code Skills 内部分享** — 一手来源（Anthropic 官方），内部数百个 Skills 实战经验
-2. ✅ `alirezarezvani/claude-skills` (5200+ stars) 发现
-3. ✅ **主题关联**：Anthropic 经验（如何做好 Skills） ↔ alirezarezvani 项目（如何工业化生产 Skills）
+1. ✅ **Anthropic 3 篇工程博客发现** — 一手来源（Anthropic 官方），覆盖编排架构、恢复机制、安全防护
+2. ✅ `human-again/orbit` (4 stars) 发现 — 架构高度对齐，但 Stars 过低
+3. ✅ **主题关联**：Anthropic 三层工程机制 ↔ orbit 开源实现
 
-**判定**：**标准 Article + Project 闭环**（工程经验 → 基础设施支撑）
+**判定**：**标准 Article + Project 闭环**（工程机制描述 → 开源工程实现参考）
 
 ### 闭环逻辑
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Article: Anthropic Claude Code Skills 内部分享         │
-│  —— Skills 的价值是「修正默认行为」而非「补充知识」    │
-│  —— 有机发现 > 中央审批，低摩擦分发是广泛采用关键     │
+│  Article: Anthropic 多 Agent 系统三层工程机制             │
+│  —— 编排架构（planner-generator-evaluator）             │
+│  —— 恢复机制（checkpoint + resume）                    │
+│  —— 安全防护（deny-and-continue + 两层防御）           │
 └─────────────────────┬───────────────────────────────────┘
                       │
          ┌────────────┴────────────┐
          │                         │
   ┌──────▼──────────────┐   ┌──────▼────────────────────┐
-  │ Project              │   │ (隐含: Skills 工坊基础)   │
-  │ alirezarezvani/      │   │ 设施让「有机发现」规模化  │
-  │ claude-skills        │   └──────────────────────────┘
-  │ (5200+⭐)            │
-  │ 338 Skills 工业化生产 │
-  │ = 有机发现的工程化    │
+  │ Project              │   │ (隐含: 三层机制的           │
+  │ human-again/orbit    │   │  开源工程实现参考)         │
+  │ (4⭐, v0.1.0)        │   └──────────────────────────┘
+  │ orchestrator.py     │
+  │ checkpoint_manager  │
+  │ risk_guard.py       │
   └─────────────────────┘
 ```
 
 **主题统一性**：
-- Article：Skills 的工程哲学（Anthropic 经验）
-- Project：Skills 的工业基础设施（alirezarezvani 实现）
-- 共同命题：**Skills 的成功需要工程机制支撑，而非单纯的内容堆砌**
+- Article：多 Agent 系统的工程机制设计（Anthropic 官方）
+- Project：多 Agent 工程机制的开源参考实现（orbit）
+- 共同命题：**多 Agent 系统的工程化不是可选的——它是让系统真正可信赖的唯一路径**
 
 ### 本轮产出
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 Article: Anthropic Skills 内部分享（Anthropic 一手来源） |
-| PROJECT_SCAN | ✅ 完成 | 1 Project: alirezarezvani/claude-skills (5200+ stars) |
+| ARTICLES_COLLECT | ✅ 完成 | 1 Article: Anthropic 多 Agent 三层工程机制（Anthropic 一手来源） |
+| PROJECT_SCAN | ✅ 完成 | 1 Project: human-again/orbit (4 stars, v0.1.0) |
 
 ### 产出详情
 
-**Article: `articles/fundamentals/anthropic-claude-code-skills-internal-lessons-2026.md` (3,862 bytes)**：
-- 标题：Anthropic 内部分享：Claude Code Skills 工程实践的 8 条硬经验
-- 核心论点：Skills 的价值是「修正 Agent 默认行为」而非「补充知识」
-- 8 条经验：不陈述显而易见的事、Gotchas 章节、有机发现机制、上下文成本管理、最常用扩展点、中央审批 vs. 有机发现、Skill 的核心价值是「推着 Agent 走出默认路径」、低摩擦分发
-- 6处「笔者认为」判断性内容，3处官方原文引用
+**Article: `articles/fundamentals/anthropic-multi-agent-system-engineering-three-mechanisms-2026.md` (7,644 bytes)**：
+- 标题：Anthropic 工程实践：多 Agent 系统的三层工程机制
+- 核心论点：多 Agent 系统需要刻意工程化——编排架构、恢复机制、安全防护缺一不可
+- 三层机制：编排架构（planner-generator-evaluator）+ 恢复机制（checkpoint+resume+retry）+ 安全防护（deny-and-continue）
+- 6处「笔者认为」判断性内容，4处官方原文引用
 
-**Project: `articles/projects/alirezarezvani-claude-skills-338-production-skills-5200-stars-2026.md` (4,035 bytes)**：
-- 标题：alirezarezvani/claude-skills：338 个 Skills 的全生态覆盖，5200+ Stars 的工业级 Skill 工坊
-- 核心定位：338 个 Skills，16 领域，13 工具自动格式转换（MIT, 5200+ stars）
-- 关键设计：每个 Skill 独立无依赖、结构化工作流+验证点、自动化格式转换基础设施
-- 与 Article 的闭环：Anthropic 经验（如何做好 Skills）→ alirezarezvani 项目（如何让有机发现规模化）
+**Project: `articles/projects/human-again-orbit-mission-control-coding-agents-2026.md` (3,909 bytes)**：
+- 标题：human-again/orbit：编码 Agent 的 Mission Control，让验证 gate 真正工作
+- 核心定位：Mission control for coding agents（MIT, Python 3.11+, v0.1.0）
+- 关键设计：orchestrator.py + checkpoint_manager.py + evaluator.py + risk_guard.py + observability.py
+- 与 Article 的闭环：Anthropic 三层工程机制 → orbit 开源工程实现参考
 
 ## 3. 反思
 
 ### 做得好
 
-- **闭环设计**：Anthropic 经验（需求侧）与 alirezarezvani 项目（供给侧）形成完整闭环
-- **主题深挖**：Skills 主题从「是什么」到「为什么有效」再到「如何规模化」，层层递进
-- **工程机制识别**：抓住了「格式转换基础设施」作为项目的核心价值，而非表面的「338 个 Skills」
+- **主题关联闭环**：Anthropic 三层机制（需求侧）与 orbit 项目（供给侧）形成完整闭环
+- **工程机制深挖**：从 3 篇 Anthropic 工程博客中提取了编排、恢复、安全三个维度的机制设计
+- **低 Stars 项目的特殊处理**：orbit 仅 4 stars 但架构高度相关，以"概念突出"标准特殊归档
 
 ### 待改进
 
-- **无法直接抓取 claude.com/blog 内容**：claude.com 是 JS 渲染页面，web_fetch 只拿到 HTML 框架，最终依赖 Tavily extraction 获取内容
-- **GitHub Trending 抓取不稳定**：curl 超时，改用 AnySearch + Tavily 组合发现
+- **Anthropic 新博客未深度扫描**：building-effective-agents、effective-harnesses-for-long-running-agents 等新来源仅检查了 URL，未提取内容
+- **orbit Stars 过低**：4 stars 项目在生产环境使用需谨慎，应在文章中标注已知限制
 
 ### 下轮优先级
 
-1. **继续扫描 claude.com/blog 新文章** — Skills 相关内容丰富，可继续深挖
-2. **GitHub Trending 稳定抓取方案** — 寻找更可靠的抓取方式
-3. **Anthropic Claude Blog 扫描** — 企业调查 + Skills + Dynamic Workflows 等多篇文章
+1. **深度提取 Anthropic 新博客**：building-effective-agents、effective-harnesses-for-long-running-agents、writing-tools-for-agents
+2. **GitHub Trending 稳定抓取**：寻找更可靠的 Trending 项目发现方案
+3. **Dynamic Workflows 深挖**：5/28 launch + 6/2 deep-dive 可形成完整 Pattern 分析
 
 ## 4. 状态摘要
 
-- **Round**: 306
+- **Round**: 307
 - **Author**: Hermes
-- **Commit**: (pending)
-- **Run count**: 306
-- **Theme**: Claude Code Skills 工程实践（Anthropic 经验 ↔ 工业基础设施）
-- **闭环完成**: Anthropic Skills 经验 ↔ alirezarezvani Skills 工坊
+- **Commit**: b33d130
+- **Run count**: 307
+- **Theme**: Anthropic 多 Agent 系统三层工程机制（编排架构 + 恢复机制 + 安全防护）↔ orbit 开源工程实现
+- **闭环完成**: Anthropic 三层工程机制 ↔ human-again/orbit 工程实现参考

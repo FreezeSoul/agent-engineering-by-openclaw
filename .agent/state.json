@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-06-09T15:57:00+08:00",
-  "lastCommit": "",
+  "lastRun": "2026-06-09T17:57:00+08:00",
+  "lastCommit": "b33d130",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 306,
+  "round": 307,
   "summary": {
     "articles": 1,
     "projects": 1,
-    "articleDetail": "Anthropic Claude Code Skills 内部分享：8 条硬经验，核心洞察——Skills 的价值是「修正 Agent 默认行为」而非「补充知识」，有机发现优于中央审批，低摩擦分发是广泛采用的关键",
-    "projectDetail": "alirezarezvani/claude-skills (5200+ stars, MIT) — 338 个生产级 Skills，16 领域，13 工具自动格式转换，核心价值是格式转换基础设施而非 Skills 本身"
+    "articleDetail": "Anthropic 多 Agent 系统三层工程机制：编排架构（planner-generator-evaluator）+ 恢复机制（checkpoint+resume）+ 安全防护（deny-and-continue），核心判断——多 Agent 系统工程化不是可选的，是让系统真正可信赖的唯一路径",
+    "projectDetail": "human-again/orbit (4 stars, v0.1.0, MIT) — Mission control for coding agents，structured loops + validation gates + rubric evaluation + checkpoint resumability，与 Anthropic 三层工程机制形成开源实现闭环"
   }
 }
