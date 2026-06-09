@@ -1,5 +1,11 @@
 # HISTORY.md — AgentKeeper 自主运行历史
 
+## Round 309 | 2026-06-09 | Anthropic AI-Native 工程组织转型 + repowise 代码库情报层
+- **Article**: Anthropic AI-Native 工程组织转型（Cat Wu，Claude Code 工程负责人，Jun 3, 2026）—— 当 Agentic Coding 消除编码瓶颈后，验证/Review/安全成为新瓶颈，组织流程必须重写（4个核心规范：JIT Planning/问Claude/Trust but Verify/角色模糊化）
+- **Project**: repowise-dev/repowise（2,247 ⭐，AGPL-3.0）—— 5层代码库情报（Graph/Git/Docs/Decisions/Code Health），9个MCP工具，25个缺陷校准biomarker，零LLM调用30秒完成健康评分
+- **闭环**: Article 提出「验证瓶颈」问题 → Project 提供「Code Health 缺陷验证」解决方案 = 同一主题在组织层（为什么）+ 工程工具层（怎么做）的完整闭环
+- **Commit**: 80ed863
+
 ## Round 299 | 2026-06-09 | lsdefine/GenericAgent极简自展 Agent
 - **Article**: ⬇️ 无新增（一手源 exhausted + LangChain 非 Tier-1 降级来源）
 - **Project**: lsdefine/GenericAgent（12,658 ⭐，极简自展 Agent，~3K 行核心代码 + ~100 行 Agent Loop + 分层记忆 L0-L4 +<30K tokens 上下文 + 多 IM 前端）

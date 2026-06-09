@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-06-09T19:58:00+08:00",
-  "lastCommit": "49c6995",
+  "lastRun": "2026-06-09T21:57:00+08:00",
+  "lastCommit": "80ed863",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 308,
+  "round": 309,
   "summary": {
     "articles": 1,
     "projects": 1,
-    "articleDetail": "Anthropic Code w/ Claude London 2026：企业级 Agent 部署的边界革命 — self-hosted sandboxes（执行环境企业自有）+ MCP tunnels（连接私有 MCP 服务器）+ brain-hands 架构完整落地，核心判断：这不是功能升级，是架构模式的完整落地",
-    "projectDetail": "modelcontextprotocol/servers (86,949 stars, MIT) — MCP 官方参考实现仓库（Filesystem/Git/PostgreSQL/Slack/Google Maps），协议即接口的设计哲学，与 Article MCP tunnels 主题形成「协议理论 → 工程实现」完整闭环"
+    "articleDetail": "Anthropic AI-Native 工程组织转型：Cat Wu 分享当 Agentic Coding 消除编码瓶颈后，验证/Review/安全成为新瓶颈，组织流程必须重写（4个核心规范：Planning/JIT、Context Gathering/问Claude、Code Review/Trust but Verify、Team Makeup/角色模糊化）",
+    "projectDetail": "repowise-dev/repowise (2,247 stars, AGPL-3.0) — 5层代码库情报（Graph/Git/Docs/Decisions/Code Health），9个MCP工具，25个缺陷校准biomarker，零LLM调用30秒完成健康评分，与Article「验证瓶颈」形成闭环"
   }
 }
