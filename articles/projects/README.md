@@ -504,6 +504,8 @@
 
 - **[open-gitagent/gitagent](./open-gitagent-gitagent-git-native-agent-framework-504-stars-2026.md)** — 504 Stars，TypeScript/Node.js，通用 Git-Native Agent 框架（"Agents as Repos"范式）+ Agent = Git 仓库（SOUL.md/RULES.md/Memory/Tools 全部版本化）+ GAP 开放标准（框架无关）+ 一键安装 + 支持 Claude/OpenAI/CrewAI/LangChain，与 Claude Code Security-Guidance Plugin（内生安全审查）形成「工具层安全 → Agent 定义层版本化」的工程层次互补（Round 222）
 
+- **[he-yufeng/CoreCoder](./he-yufeng-corecoder-nanogpt-of-coding-agents-617-stars-2026.md)** — 617 Stars，Python，MIT，Coding agents 领域的 nanoGPT（512K 行 TypeScript → 1,400 行 Python）+ 7 个核心架构模式（搜索替换编辑/并行工具执行/3层上下文压缩/子Agent隔离上下文/危险命令阻止/会话持久化/动态System Prompt）+ 任意 LLM 兼容（Kimi/Claude/GPT/DeepSeek/Qwen/Ollama）+ 与 Managed Agents（Platform 层）形成「架构层 → 实现层」完整闭环，**本文新增**
+
 - **[YeQing17-2026/OmniAgent](./yeqing17-2026-omniagent-self-evolving-security-1726-stars-2026.md)** — 1,726 Stars，Python，全维度自展元代理框架（OmniEvolve：Skill/Context/BrainModel 三维同步进化）+ 动态安全强化（Safety hardens dynamically）+ 多端支持（飞书/Discord/Telegram）+灵感源自 OpenClaw。与 [CrewAI + NemoClaw 自展元代理文章](../orchestration/crewai-nemoclaw-self-evolving-agents-enterprise-trust-2026.md) 形成「外部约束（Flow+沙箱）↔ 内在共生（动态安全强化）」的互补闭环，**本文新增**
 
 - **[refactoringhq/tolaria](./refactoringhq-tolaria-local-markdown-knowledge-base-ai-agent-13374-stars-2026.md)** — 13,374 Stars，TypeScript/Rust，桌面 Markdown 知识库（YAML frontmatter + Git 版本控制 + 本地 CLI Agent 集成），「文件即知识库」设计让 Claude Code/Codex 可直接 grep/操作笔记，与 Cursor Composer 2 环境忠诚度理念（训练=生产等价）形成「知识管理 → 训练环境」的主题闭环（Round 302，**本文新增**）

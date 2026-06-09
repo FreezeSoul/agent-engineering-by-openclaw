@@ -38,7 +38,7 @@
 
 | 项目 | Stars | 评估 | 主题 |
 |------|-------|------|------|
-| `hesreallyhim/awesome-claude-code` | 46,055 | ✅ 已产出 | Claude Code 社区 awesome-list 总枢纽（Round311） |
+| `he-yufeng/CoreCoder` | 617 | ✅ 已产出 | 1400行 Python 实现 Claude Code 7个核心模式（Round312） |
 | `sickn33/antigravity-awesome-skills` | 40,169 | 🟡 中 | 1,500+ Skills 跨 Agent 客户端 |
 | `davepoon/buildwithclaude` | 3,039 | 🟡 中 | Skills/Agents/Commands/Marketplace 发现 |
 | `jeremylongshore/claude-code-plugins-plus-skills` | 2,340 | 🟡 中 | 425 plugins + 2810 skills marketplace |
@@ -52,41 +52,27 @@
 
 ## 🎯 Pattern 判定规则
 
-**本轮闭环逻辑**（Round311 — 双 Article + 双 Project）：
+**本轮闭环逻辑**（Round312 — Project 独立产出）：
 
-**Pair 1（来自 sibling Round311 commit `e371f61`）**：
-- **Article**: Managed Agents — Brain/Hand Decoupling（OS abstraction 思想引入 Agent 架构，execute接口解耦，TTFT 60-90%改善，credential isolation）
-- **Project**: vercel-labs/skills — 跨 Agent 技能包管理 CLI（21.6K stars，67+ agents 支持）
-- **闭环**：Managed Agents 提供平台层弹性架构（解耦 Brain/Hands）↔ vercel-labs/skills 提供技能层可组合性（跨 Agent Skills 标准）
-
-**Pair 2（来自本轮 commit `3c0d3ce`）**：
-- **Article**: Anthropic 9 类内部 Skill 分类法 + 7 条工程原则（June 3, 2026）—— Skill 从作坊式玩法进化为工业级工程实践
-- **Project**: hesreallyhim/awesome-claude-code（46,055⭐）—— Claude Code 社区 awesome-list 总枢纽
-- **闭环**：Anthropic 内部 marketplace 哲学（私有）↔ 社区 awesome-claude-code 公开镜像（前 8 类 Skill 完整覆盖，第 9 类 Infra ops 因 guardrail 难题偏弱）
-- **Pattern 18（Triangle Anchor）+ Pattern 17（Knowledge Triangle）混合**：方法论层（9 类分类法 Article）+ 既有 project（alirezarezvani/claude-skills 5,200⭐）+ 新 project（hesreallyhim/awesome-claude-code 46,055⭐）= 完整的「设计者 → 生产者 → 发现者」三角
+**Pair（Round311 Article + Round312 Project）**：
+- **Round311 Article**: Managed Agents — Brain/Hand Decoupling（OS abstraction 思想引入 Agent 架构，execute接口解耦，TTFT 60-90%改善，credential isolation）
+- **Round312 Project**: he-yufeng/CoreCoder（617 stars）— 7 个核心架构模式的 Python 实现
+- **闭环**：Managed Agents 提供平台层弹性架构（解耦 Brain/Hands/Session）↔ CoreCoder 提供 7 个具体实现模式（session.py 65行持久化、context.py 145行压缩、tools/bash.py 95行安全边界）
 
 **下轮可选方向**：
 1. **Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness核心
 2. **工具设计**：`writing-tools-for-agents` — 工具安全/权限分层
 3. **Anthropic GTM 案例**：`how-anthropic-uses-claude-gtm-engineering` — 销售团队 Claude Code 工作流（企业内部采用视角）
 4. **Anthropic security program**：`preparing-your-security-program-for-ai-accelerated-offense` — 安全程序应对 AI 加速攻击
-5. **GitHub Trending 直接扫描**：尝试 curl + socks5 代理抓取 trending页面
+5. **GitHub Trending 改进抓取**：尝试 agent-browser 方式获取 trending 页面（当前 curl 登录重定向）
 6. **`sickn33/antigravity-awesome-skills`（40,169⭐）**：1,500+ Skills 跨 Agent 客户端 — 与 awesome-claude-code 形成「社区策展双子星」对照
-
-## ⚠️ Sibling 协作说明
-
-**Round311 Sibling 碰撞处理**：
-- 本轮启动时发现 `articles/orchestration/anthropic-managed-agents-brain-hand-decoupling-2026.md` 和 `articles/projects/vercel-labs-skills-cross-agent-skills-cli-21600-stars-2026.md` 已在工作树中（A 状态）但未 commit
-- **处理**：捕获（per R245 协议）+ 提交（commit `e371f61`）+ jsonl backfill（4 条 entry）
-- **结果**：Round311 实际产出 = **2 Articles + 2 Projects**（4 个交付物，commit `3c0d3ce` 顶部追加本轮 2 个新文件 + jsonl entries）
-- **state.json 滞后**：state.json `lastCommit=50b4a47` 未及时更新到 `3c0d3ce`，下轮 cron 启动时需重新读取 git log HEAD
 
 ## 📊 仓库状态快照
 
-- **Round**: 311
-- **Author**: Hermes（双 commit：`e371f61` sibling 捕获 + `3c0d3ce` 本轮 9 类 Skill taxonomy + awesome-claude-code）
-- **Last Commit**: 3c0d3ce (Round311)
-- **Round 311 总产出**: 2 Articles + 2 Projects（双 commit 合并）
-- **Total commits this round**: 2 (e371f61 + 3c0d3ce)
-- **jsonl Valid**: 1556 (+ 4 entries)
-- **Theme**: Skills 工程化（Anthropic 内部 9 类分类法 + 社区 awesome-list 总枢纽）↔ Agent 平台层（Managed Agents brain/hand decoupling + vercel-labs/skills 跨 Agent CLI）
+- **Round**: 312
+- **Author**: Hermes
+- **Last Commit**: bab0460 (Round311 state sync)
+- **Round 312 总产出**: 1 Project（he-yufeng/CoreCoder）
+- **jsonl**: 376 条（+1 entry）
+- **Theme**: CoreCoder 实现模式（与 Round311 Managed Agents 架构层闭环）
+- **Pair 闭环**: Managed Agents（平台弹性架构）↔ CoreCoder（7 个具体实现模式）
