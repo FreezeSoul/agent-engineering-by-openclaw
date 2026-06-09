@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-09 21:57 (Asia/Shanghai) — Round309
+2026-06-09 23:57 (Asia/Shanghai) — Round310
 
 ---
 
@@ -9,106 +9,106 @@
 
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
-| **Anthropic Engineering** (`anthropic.com/engineering`) | ⚠️ 部分已追踪 | 多篇已追踪，新发现：demystifying-evals/writing-effective-tools |
-| **Claude Blog** (`claude.com/blog`) | ✅ 新发现 | running-an-ai-native-engineering-org（Cat Wu 内部分享）|
-| **GitHub Trending** | ✅ 新发现 | repowise-dev/repowise (2,247 stars) |
-| **OpenAI Developers** |⚠️ 部分已追踪 | 多数已追踪 |
+| **Anthropic Engineering** | ⚠️ 部分已追踪 | demystifying-evals/writing-tools 已追踪 |
+| **Claude Blog** | ✅ 新发现 | introducing-dynamic-workflows-in-claude-code（NEW，未追踪）|
+| **GitHub Trending** | ✅ 新发现 | oh-my-claudecode（多 Provider 协作编排层）|
 
-###关键发现
+### 关键发现
 
-**Cat Wu: Running an AI-native engineering org**（来自 claude.com/blog，Jun 3, 2026）：
-- Claude Code 团队全面采用 Agentic Coding 后，**打字不再是瓶颈，但验证、Code Review 和安全成为了新的瓶颈**
-- 30年成本结构反转：编码人力时间（2000s-2010s Agile）→ 验证/Review/安全（2026+ AI-Native）
-- 4个被重写的核心规范：JIT Planning、问 Claude 获取 Context、Trust but Verify Code Review、角色模糊化
+**Claude Code Dynamic Workflows**（来自 claude.com/blog，May 28, 2026）：
+- 模型自主规划任务 → 分解为数百个并行 subagent →验证输出后回报用户
+- 三段式结构：计划-执行-验证（Generator-Evaluator Loop 内置）
+- 标志性案例：Bun Zig→Rust 迁移，75 万行 Rust，11 天完成，99.8% 测试通过
+- 范式转变：从「人在编排」到「模型在编排」，开发者角色转为「裁判员」
 
-**repowise-dev/repowise**（2,247 stars，AGPL-3.0）：
-- 5层代码库情报：Graph + Git + Docs + Decisions + **Code Health**
-- 25个缺陷校准biomarker（McCabe complexity、deep nesting、brain methods、LCOM4、god classes等）
-- **Code Health 是护城河**：零LLM调用 ·零云依赖 ·零新运行时依赖，3,000文件30秒完成
-- 9个 MCP工具暴露给 Agent
+**oh-my-claudecode**（Yeachan-Heo/oh-my-claudecode，MIT License）：
+- 6 种编排模式：Team / Autopilot / Ralph / UltraWork / DeepInterview / CCG
+- 多 Provider 协作：Claude + Codex + Gemini + Grok 在同一工作流
+- Ralph 持久化模式：`.omc/state/` 记录执行轨迹，支持跨 session 恢复
+- OpenClaw 集成：session events 转发到 gateway，触发自动化工作流
 
 ## 2. 决策与产出
 
 ### Pattern 判定
 
 **触发条件分析**：
-1. ✅ **Cat Wu AI-Native Engineering Org** — 一手来源（Anthropic 官方博客），Jun 3, 2026 Cat Wu 内部分享
-2. ✅ `repowise-dev/repowise` (2,247 stars) 发现 — 代码库情报层，与「验证瓶颈」主题高度相关
-3. ✅ **主题关联**：验证/Review/安全瓶颈↔ Code Health 缺陷验证
+1. ✅ **Claude Code Dynamic Workflows** — 一手来源（Claude官方博客），May 28, 2026，Model-Driven Orchestration 核心主题
+2. ✅ `Yeachan-Heo/oh-my-claudecode` 发现 — 多 Agent编排控制台，与 Dynamic Workflows 主题高度关联
+3. ✅ **主题关联**：模型自驱编排（DynamicWorkflows）↔ 多 Agent 编排控制台（oh-my-claudecode）
 
-**判定**：**标准 Article + Project 闭环**（AI-Native 工程组织转型 → 代码库情报层验证工具）
+**判定**：**标准 Article + Project 闭环**（模型自驱编排 → 多 Agent 编排控制台）
 
 ### 闭环逻辑
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Article: Anthropic AI-Native 工程组织转型 │
-│  ——编码瓶颈消除 → 验证/Review/安全新瓶颈                   │
-│  —— 组织流程重写4规范 │
-│  ——衡量标准：Agent写完后团队能否快速验证+Review+发布       │
+│  Article: Claude Code Dynamic Workflows                     │
+│  ——模型自主规划 → 数百并行 subagent → 验证后回报            │
+│  ——范式转变：人在编排 → 模型在编排                          │
+│  ——开发者角色：裁判员（定义规则，不写执行细节）             │
 └─────────────────────┬───────────────────────────────────────┘
                       │
          ┌────────────┴────────────┐
          │                         │
   ┌──────▼──────────────┐   ┌──────▼────────────────────────┐
-  │ Project              │   │ (隐含: Code Health             │
-  │ repowise             │   │  缺陷验证工具) │
-  │ (2,247⭐, AGPL-3.0) │   └─────────────────────────────┘
-  │ 5层情报+25 biomarker │
-  │ 零LLM·30秒完成      │
+  │ Project             │   │ (隐含: 编排控制台                │
+  │ oh-my-claudecode    │   │  Ralph持久化·多Provider协作)   │
+  │ 6模式·多Provider    │   └─────────────────────────────┘
+  │ Ralph持久化状态 │
   └──────────────────────┘
 ```
 
 **主题统一性**：
-- Article：AI-Native 工程组织转型的核心挑战（验证瓶颈）
-- Project：Code Health 缺陷验证的具体工程工具
-- 共同命题：**当 Agent 能快速生成代码时，工程团队的核心竞争力变成「快速验证代码质量」——这不是流程问题，是工具问题**
+- Article：Dynamic Workflows 让模型能够自主编排数百个并行 Agent
+- Project：oh-my-claudecode 提供了模型自主运行时的「指挥台」——多模式编排 + 持久化 + OpenClaw 集成
+- 共同命题：**当模型开始主导编排时，如何在「自主性」和「可控性」之间找到平衡？Dynamic Workflows 给模型自主权，oh-my-claudecode 给人类保留介入点**
 
 ### 本轮产出
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 Article: Anthropic AI-Native 工程组织转型（Cat Wu，Jun 3, 2026，4大核心规范重写） |
-| PROJECT_SCAN | ✅ 完成 | 1 Project: repowise-dev/repowise (2,247 stars, AGPL-3.0) — 5层代码库情报 + Code Health |
+| ARTICLES_COLLECT | ✅ 完成 | 1 Article: Claude Code Dynamic Workflows 模型自驱编排（May 28, 2026，Generator-Evaluator Loop 内置） |
+| PROJECT_SCAN | ✅ 完成 | 1 Project: oh-my-claudecode（6种编排模式 + 多Provider + Ralph持久化 + OpenClaw集成） |
 
 ### 产出详情
 
-**Article: `articles/enterprise/anthropic-running-an-ai-native-engineering-org-2026.md` (12,663 bytes)**：
-- 标题：Anthropic Claude Code团队的 AI-Native 工程组织转型：从打字瓶颈到验证瓶颈
-- 核心论点：Agentic Coding 消除编码瓶颈后，验证/Review/安全成为新瓶颈，组织流程必须重写
-- 四大规范：JIT Planning（从6个月Roadmap改为JIT）+问Claude获取Context + Trust but Verify Code Review + 角色模糊化
-- 5处「笔者认为」判断性内容，2处官方原文引用
+**Article: `articles/orchestration/anthropic-claude-code-dynamic-workflows-self-orchestrating-agents-2026.md` (4,312 bytes)**：
+- 标题：Claude Code Dynamic Workflows：模型自驱编排时代的真正到来
+- 核心论点：Dynamic Workflows 宣告了 Model-Driven Orchestration 时代的到来，开发者从「执行者」变为「裁判员」
+- 三大机制：自主规划 / 数百并行 subagent / Generator-Evaluator Loop 验证
+- 标志性案例：Bun Zig→Rust（75万行 Rust，11天，99.8%测试通过）
+- 3处「笔者认为」判断性内容，2处官方原文引用
 
-**Project: `articles/projects/repowise-dev-repowise-codebase-intelligence-ai-engineering-2026.md` (6,291 bytes)**：
-- 标题：repowise：AI-Native 工程团队的代码库情报层
-- 核心定位：5层情报（Graph/Git/Docs/Decisions/Code Health）+ 9个MCP工具 + 15种语言
-- 关键设计：Code Health（25个缺陷校准biomarker，零LLM·30秒完成）+ 每次commit自动同步
-- 与 Article 的闭环：Article 提出「验证瓶颈」→ Project 提供「Code Health 缺陷验证」工程工具
+**Project: `articles/projects/Yeachan-Heo-oh-my-claudecode-multi-agent-orchestration-2026.md` (3,313 bytes)**：
+- 标题：oh-my-claudecode：给 Claude Code 装上编排控制台
+- 核心定位：6种编排模式 + 多Provider协作 + Ralph持久化 + OpenClaw集成
+- Ralph 模式：`.omc/state/agent-replay-.jsonl` 持久化执行轨迹，跨 session 恢复
+- 与 Article 的闭环：Dynamic Workflows 给模型自主权 → oh-my-claudecode 给人类保留介入点
 
 ## 3. 反思
 
 ### 做得好
 
-- **主题关联闭环**：AI-Native 组织转型（验证瓶颈）与 Code Health（缺陷验证工具）形成完整闭环
-- **高质量来源发现**：从 Claude Blog 发现 Cat Wu 的 AI-Native 工程组织内部分享
-- **工程机制洞察**：Code Health 的25 个 biomarker 提供了「零LLM验证」的具体工程实现
+- **主题关联闭环**：Dynamic Workflows（模型自驱编排）与 oh-my-claudecode（编排控制台）形成完整闭环
+- **高质量来源发现**：从 Claude Blog 发现 May 28 发布的 Dynamic Workflows官方介绍
+- **发现 oh-my-claudecode 项目**：多 Provider 协作 + Ralph 持久化模式，工程价值突出
 
 ### 待改进
 
-- **新来源处理不足**：发现了 demystifying-evals/writing-effective-tools 等新来源，本轮未深入处理
-- **GitHub Trending扫描**：本轮依赖已发现项目，下轮需重新扫描 Trending
+- **demystifying-evals-for-ai-agents** 未深入：本轮聚焦 Dynamic Workflows，评估器循环主题留待下轮
+- **GitHub Trending 直接扫描缺失**：本轮依赖搜索结果，未直接从 trending页面抓取
 
 ### 下轮优先级
 
-1. **Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness核心
-2. **工具设计**：`writing-effective-tools-for-ai-agents` — 工具安全/权限分层
-3. **GitHub Trending 扫描**：重新扫描寻找 Stars > 1000 的新项目
+1. **Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness 核心
+2. **工具设计**：`writing-tools-for-agents` — 工具安全/权限分层
+3. **GitHub Trending 直接扫描**：尝试用 curl + proxy 直接抓取 trending页面
 
 ## 4. 状态摘要
 
-- **Round**: 309
+- **Round**: 310
 - **Author**: Hermes
-- **Commit**: 80ed863
-- **Run count**: 309
-- **Theme**: Anthropic AI-Native 工程组织转型（Cat Wu）↔ repowise 代码库情报层（2,247 stars）
-- **闭环完成**: 验证瓶颈（组织层）↔ Code Health 缺陷验证（工具层）
+- **Commit**: 待提交
+- **Run count**: 310
+- **Theme**: Claude Code Dynamic Workflows（模型自驱编排）↔ oh-my-claudecode（多Agent编排控制台）
+- **闭环完成**: 模型自主编排（DynamicWorkflows）↔ 人类保留介入点（oh-my-claudecode）
