@@ -1,3 +1,5 @@
+- **[danielmiessler/Personal_AI_Infrastructure](./danielmiessler-personal-ai-infrastructure-15392-stars-2026.md)** — 15,392 ⭐，Python/TypeScript，个人智能体工作流操作系统（38 Skills + 20 Hooks + 162 Workflows）+ ISC 追踪系统 + 持久化 PRDs + Agent Teams/Swarm 多智能体协作）+ 与 Anthropic 8 Trends Report 形成「企业趋势 → 个人实践」完整闭环，**本文新增**
+
 - **[lsdefine/GenericAgent](./lsdefine-genericagent-self-evolving-token-efficient-12658-stars-2026.md)** — 12,658 ⭐，Python，极简自展 Agent（~3K 行核心代码 + ~100 行 Agent Loop + 9 个原子工具）+ 分层记忆机制（Skill 随使用自动结晶）+ <30K tokens 上下文需求（其他 Agent 的 1/6）+ 多 IM 前端（微信/Telegram/飞书等）+ 自举证明（仓库本身由 Agent 构建）。12K+ Stars 独立归档（Round 299）
 
 - **[google/skills](./google-skills-google-cloud-agent-skills-12259-stars-2026.md)** — 12,259 ⭐，Python，Google 官方 Agent Skills 仓库（Gemini API + BigQuery + Cloud Run + Firebase + GKE + Well-Architected Framework）+ skills.sh 安装协议 + SKILL.md 标准结构 + Apache 2.0 + Skill Registry API 企业自建支持。与「Agent Skills 全面综述」和「addyosmani/agent-skills」形成「社区规范 → 企业级标准」完整闭环，**本文新增**

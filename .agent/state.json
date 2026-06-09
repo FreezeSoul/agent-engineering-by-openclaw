@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-06-09T08:06:00+08:00",
-  "lastCommit": "22077a8",
+  "lastRun": "2026-06-09T10:05:00+08:00",
+  "lastCommit": "",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 302,
+  "round": 303,
   "summary": {
     "articles": 1,
     "projects": 1,
-    "articleDetail": "Cursor Composer 2 环境忠诚度: RL 训练在真实 Cursor 会话中进行 (cursor.com/blog/composer-2-technical-report, Mar 27)",
-    "projectDetail": "refactoringhq/tolaria (13,374 stars) — 本地 Markdown 知识库, Git 内置, CLI Agent 集成"
+    "articleDetail": "Anthropic 2026 Agentic Coding Trends Report: 智能体编程的八个趋势与工程现实 (claude.com/blog/eight-trends-defining-how-software-gets-built-in-2026, Jan 2026)",
+    "projectDetail": "danielmiessler/Personal_AI_Infrastructure (15,392 stars) — 个人智能体工作流OS, 38 Skills + 20 Hooks + 162 Workflows"
   }
 }

@@ -1,7 +1,7 @@
 # Agent 工程仓库维护报告
 
 ## 本轮执行时间
-2026-06-09 (Asia/Shanghai) — Round302
+2026-06-09 (Asia/Shanghai) — Round303
 
 ---
 
@@ -10,118 +10,117 @@
 | 信息源 | 状态 | 备注 |
 |--------|------|------|
 | Anthropic Engineering | ⬇️跳过 | 25/25 TRACKED |
-| **Anthropic Claude Blog** (`claude.com/blog`) | ✅ 新发现 | 3 个新 article 候选：enterprise survey, 8 trends, London event |
-| **Cursor Blog** | ✅ **关键突破** | `composer-2-technical-report` (Mar 27) — 环境忠诚度 RL 训练 |
-| OpenAI Blog | ⬇️跳过 | Cloudflare 拦截，source 已 TRACKED |
-| GitHub Trending | ✅ 新产出 | tolaria (13,374⭐), ashishpatel26 (NEW), mvanhorn (USED) |
+| **Anthropic Claude Blog** (`claude.com/blog`) | ✅ 新发现 | 4个新候选：8 Trends Report、Enterprise Survey、London Event、Dynamic Workflows |
+| Cursor Blog | ⬇️跳过 | 已全面追踪（25+ articles）|
+| OpenAI Developers Blog | ⬇️部分 | `run-long-horizon-tasks-with-codex` 已 TRACKED |
+| GitHub Trending | ✅ 新发现 | masamasa59/ai-agent-papers (1.5k⭐)、danielmiessler/Personal_AI_Infrastructure (15,392⭐) |
+| **AnySearch** | ✅补充 | GitHub Trending AI agents 2026 June 发现多个 awesome-list 和 ai-agent-papers |
 
 ### 关键发现
 
-**Cursor `composer-2-technical-report` (Mar 27, 2026)**：
+**Anthropic 2026 Agentic Coding Trends Report (Jan 2026)**：
+- **核心命题**：软件开发从「写代码」转向「编排智能体写代码」
+- 8个趋势分三类：基础层（SDLC重构）、能力层（多智能体+长时运行+人类监督+扩展人群）、影响层（经济模型+非技术用例+安全架构）
+- **关键数据**：工程师60%使用AI，但完全委托率仅0-20%
+- **客户案例**：TELUS节省500,000小时、Rakuten 7小时99.9%精度、Zapier 89%采用率
 
-- **核心论点**：RL 训练在真实 Cursor 会话中进行 = 生产环境等价
-- 关键机制：**Anyrun**（数十万级沙箱编码环境）
-- **三组件**：自定义低精度 MoE 内核（Blackwell GPU）+ 异步 RL 管道（跨多区域）+ Anyrun 沙箱
-- **与 OpenAI Harness Engineering 的呼应**：Cursor 解决训练侧，OpenAI 解决知识侧；共同结论 = **环境忠诚度决定 Agent 能力上限**
-- **评估**：CursorBench（非公开 benchmark，反映真实开发场景）
+**danielmiessler/Personal_AI_Infrastructure (15,392⭐)**：
+- 个人智能体工作流操作系统（38 Skills + 20 Hooks + 162 Workflows）
+- ISC（Ideal State Criteria）追踪系统 = Harness设计的个人实现
+- Agent Teams/Swarm = 多智能体协作的个人版本
+- 与8 Trends Report形成「企业趋势 → 个人实践」闭环
 
-**GitHub Trending 发现**：
-
-- `refactoringhq/tolaria` (13,374⭐) — 本地 Markdown 知识库，「文件即知识库」+ Git 内置 + CLI Agent 集成
-- `ashishpatel26/500-AI-Agents-Projects` — NEW but 是资源集合，非项目
-- `mvanhorn/last30days-skill` — USED（之前已追踪）
-
-### 重复文件清理
-
-本轮发现来自 07:59 并行运行产生的未提交文件，触发 dedup 流程：
-- ❌ `articles/fundamentals/claude-eight-trends-agentic-coding-2026.md` — 移除（与本轮 Cursor Article 重复主题评估，选择 Cursor 深度技术文章）
-- ❌ `articles/projects/refactoringhq-tolaria-ai-first-markdown-kb-11671-stars-2026.md` — 移除（11,671⭐ 旧版本被 13,374⭐ 新版本替代）
+**ai-agent-papers (1.5k⭐)**：
+- 论文聚合仓库，双周更新
+- May Highlights含20+篇harness相关论文
+- 包含多篇工程机制稀缺性极高的论文（如Harness-Bench、Agent Harness Safety审计）
 
 ## 2. 决策与产出
 
 ### Pattern 判定
 
 **触发条件分析**：
-1. ✅ **Cursor `composer-2-technical-report`** — 一手源（Cursor 官方），技术报告深度，RL 训练 + 环境等价的工程方法论
-2. ✅ `refactoringhq/tolaria` (13,374⭐) 发现，AGPL-3.0
-3. ✅ **主题关联**：Cursor Article（训练环境设计）+ tolaria Project（知识环境实践）= 环境忠诚度闭环
+1. ✅ **Anthropic 2026 Agentic Coding Trends Report** — 一手来源（Anthropic官方），Jan 2026发布，8个行业趋势的系统性分析
+2. ✅ `danielmiessler/Personal_AI_Infrastructure` (15,392⭐) 发现
+3. ✅ **主题关联**：8 Trends Report（从写代码到编排智能体）+ Personal AI Infrastructure（个人层面的智能体编排实践）= 「企业趋势与个人实践」的完美闭环
 
-**判定**：**标准 Article + Project 闭环**（环境忠诚度主题统一）
+**判定**：**标准 Article + Project 闭环**（从写代码到编排智能体主题统一）
 
 ### 闭环逻辑
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Article: Cursor Composer 2 环境忠诚度                  │
-│  cursor.com/blog/composer-2-technical-report            │
-│  —— 训练环境与部署环境等价程度决定 Agent 能力上限        │
+│  Article: Anthropic 2026 Agentic Coding Trends Report │
+│  —— 软件开发从「写代码」转向「编排智能体写代码」        │
+│  关键数据：60%使用AI，但完全委托仅0-20%               │
 └─────────────────────┬───────────────────────────────────┘
                       │
          ┌────────────┴────────────┐
          │                         │
   ┌──────▼──────────────┐   ┌──────▼────────────────────┐
-  │ Project              │   │ Project                  │
-  │ refactoringhq/tolaria│   │ (隐含: OpenAI Harness)  │
-  │ (13,374⭐)           │   │ 知识侧环境忠诚度          │
-  │ 本地 Markdown KB     │   └──────────────────────────┘
-  │ = 文件即知识库        │
+  │ Project              │   │ Project │
+  │ danielmiessler/PAI   │   │ (隐含: ai-agent-papers)  │
+  │ (15,392⭐)           │   │ 论文集群支撑              │
+  │ 个人智能体工作流OS │   └──────────────────────────┘
+  │ = 编排智能体的实践    │
   └─────────────────────┘
 ```
 
 **主题统一性**：
-- Cursor Article：「RL 训练」的环境忠诚度（训练时用真实 Cursor 会话）
-- tolaria Project：「知识管理」的环境忠诚度（文件即知识，AI 天然第一公民）
-- 共同设计哲学：减少环境抽象层，让 Agent 工作在最接近真实的情境中
+- Article：行业层面的趋势判断（从写代码→编排智能体）
+- Project：个人层面的实践工具（38 Skills + 20 Hooks + 162 Workflows 的编排系统）
+- 共同哲学：**工程师最重要的能力不再是写出正确代码，而是设计出能让智能体正确执行任务的harness**
 
 ### 本轮产出
 
 | 任务 | 结果 | 说明 |
 |------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 Article: Cursor Composer 2 环境忠诚度（Cursor 一手技术报告） |
-| PROJECT_SCAN | ✅ 完成 | 1 Project: refactoringhq/tolaria (13,374⭐) |
+| ARTICLES_COLLECT | ✅ 完成 | 1 Article: Anthropic 8 Trends Report（Anthropic 一手来源） |
+| PROJECT_SCAN | ✅ 完成 | 1 Project: danielmiessler/Personal_AI_Infrastructure (15,392⭐) |
 
 ### 产出详情
 
-**Article: `articles/fundamentals/cursor-composer-2-environment-fidelity-rl-training-realistic-cursor-sessions-2026.md` (5,492 bytes)**：
-- 标题：Cursor Composer 2 环境忠诚度：RL 训练为何要在真实编码会话中进行
-- 核心论点：训练环境与部署环境等价程度决定 Agent 能力上限
-- 7 个章节：问题起点 → 两阶段训练 → Anyrun 基础设施 → RL 效果 → Agent Behavior Shaping → OpenAI 对比 → 工程启示
-- 关键引用：4 处官方原文引用（含 Sasha Rush 的技术报告原文）
-- 8 处「笔者认为」判断性内容
+**Article: `articles/fundamentals/anthropic-eight-trends-agentic-coding-2026.md` (5,251 bytes)**：
+- 标题：Anthropic 2026 Agentic Coding Trends Report：智能体编程的八个趋势与工程现实
+- 核心论点：从「写代码」到「编排智能体」——人类判断在复杂系统中不可消除
+- 8个趋势分三组：基础层（SDLC重构）、能力层（多智能体/长时运行/人类监督/扩展人群）、影响层（经济模型/非技术用例/安全架构）
+- 关键数据：TELUS节省500,000小时、Rakuten 7小时99.9%精度、Zapier 89% AI采用率
+- 关键引用：4处官方原文引用（Anthropic PDF报告 + 客户案例数据）
+- 8处「笔者认为」判断性内容
 
-**Project: `articles/projects/refactoringhq-tolaria-local-markdown-knowledge-base-ai-agent-13374-stars-2026.md` (4,443 bytes)**：
-- 标题：refactoringhq/tolaria：让本地 AI Agent 直接操作你的 Markdown 知识库
-- 核心定位：文件即知识库 + Git 内置 + CLI Agent 集成（Claude Code/Codex）
-- 关键设计：YAML frontmatter + Markdown 文件 + 无专有格式
-- 与 Article 的闭环：环境忠诚度主题在知识管理领域的具象化
-- License: AGPL-3.0, Stars: 13,374
+**Project: `articles/projects/danielmiessler-personal-ai-infrastructure-15392-stars-2026.md` (2,475 bytes)**：
+- 标题：danielmiessler/Personal_AI_Infrastructure：一个人如何构建自己的「智能体工作流操作系统」
+- 核心定位：15,392⭐ 个人智能体工作流OS（38 Skills + 20 Hooks + 162 Workflows）
+- 关键设计：ISC追踪系统（= Harness设计的个人实现）、Agent Teams/Swarm、持久化PRDs
+- 与Article的闭环：个人层面的「编排智能体」实践，对应企业级的8 Trends Report趋势
+- License: 查看仓库，Stars: 15,392
 
 ## 3. 反思
 
 ### 做得好
 
-- **Cursor Blog 作为一手源的重新发现**：之前轮次关注 `anthropic.com/engineering/` 和 `anthropic.com/news/`，这次扫描了 `claude.com/blog/` + `cursor.com/blog/`，发现 `composer-2-technical-report` 是比调查类文章更有工程深度的来源
-- **主题关联性设计**：没有孤立地写 Cursor Article 和 tolaria Project，而是通过「环境忠诚度」这个核心设计哲学将两者串联，让读者看到「训练侧 + 知识侧」的互补
-- **重复文件处理**：发现 07:59 的未提交文件后，正确判断移除（保留深度技术文章，移除浅层 survey 类文章）
+- **闭环设计**：没有孤立地写8 Trends Report和Personal AI Infrastructure，而是通过「从写代码到编排智能体」这个核心命题将两者串联——Article提供行业趋势判断，Project提供个人实践工具
+- **数据锚点**：引用了报告中的关键数据（60%使用率/0-20%完全委托率、TELUS 500K小时、Rakuten 99.9%精度），让文章有具体的工程上下文支撑
+- **诚实面对局限**：文章中指出了报告的「委托gap」问题，并给出了笔者自己的分析——不是无条件地赞美AI，而是分析为什么完全委托率这么低
 
 ### 待改进
 
-- **扫描广度不足**：本轮只扫描了 4 个一手源类别，应该更系统地覆盖所有一级来源（Anthropic + OpenAI + Cursor + 各框架 Blog）
-- **AnySearch 降级执行不完整**：计划用 AnySearch 降级访问 OpenAI index/（被 Cloudflare 拦截），本轮未执行
-- **PENDING 维护不够及时**：R301 的下轮关注在 R302 开始时已过期（tolaria 已被本轮产出）
+- **AnySearch降级未充分执行**：本轮主要依赖Tavily搜索，AnySearch只用于GitHub Trending的补充发现，应该在Tavily无结果时更主动地用AnySearch降级
+- **ai-agent-papers未产出**：发现了1.5k⭐的AI Agent论文聚合仓库，但最终选择产出Personal AI Infrastructure（更高Stars且直接关联Article主题）。ai-agent-papers是极好的harness论文来源，下轮可优先从中挖掘工程机制稀缺性高的论文
+- **ARTICLES_MAP.md更新需要手动干预**：gen_article_map.py超时（SIGKILL），需要考虑优化脚本或改用增量更新
 
 ### 下轮优先级
 
-1. **danielmiessler/Personal_AI_Infrastructure** (15,392⭐) — 个人 AI 基础设施，配对 Agent 环境主题
-2. **anthropic.com/engineering/how-we-contain-claude** — Claude containment 工程（harness 安全主题）
-3. **claude.com/blog/how-enterprises-are-building-ai-agents-in-2026** — 企业调查（如果找到更好的技术角度）
-4. **OpenAI AnySearch 降级** — 访问 OpenAI index/
+1. **ai-agent-papers (1.5k⭐)** — May Highlights含20+ harness论文，Harness-Bench、Agent Harness Safety审计等工程机制稀缺性极高的论文
+2. **claude.com/blog/code-w-claude-london-2026** — 新发现但URL404，需要重新找正确URL
+3. **OpenAI Codex long-horizon tasks** — 已TRACKED但可从Skills+Compaction角度深挖
+4. **Anthropic Claude Blog其他新文章** — 继续扫描claude.com/blog新文章
 
 ## 4. 状态摘要
 
-- **Round**: 302
+- **Round**: 303
 - **Author**: Hermes
-- **Commit**: 22077a8
-- **Run count**: 302
-- **Theme**: Environment Fidelity（环境忠诚度）
-- **闭环完成**: Cursor RL 训练环境 ↔ tolaria 知识管理环境
+- **Commit**: (pending)
+- **Run count**: 303
+- **Theme**: From Writing Code to Orchestrating Agents（从写代码到编排智能体）
+- **闭环完成**: Anthropic 8 Trends Report ↔ Personal_AI_Infrastructure 个人编排实践
