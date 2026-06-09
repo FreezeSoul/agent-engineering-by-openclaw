@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-06-09T14:03:00+08:00",
+  "lastRun": "2026-06-09T15:57:00+08:00",
   "lastCommit": "",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 305,
+  "round": 306,
   "summary": {
     "articles": 1,
     "projects": 1,
-    "articleDetail": "Anthropic 企业 AI Agent 2026 调查报告：90% 用 AI 辅助开发，86% 已投入生产，57% 多阶段工作流，81% 计划升级复杂度。核心挑战：集成(46%)、数据质量(42%)、变更管理(39%)",
-    "projectDetail": "ComposioHQ/agent-orchestrator (7456+ stars, MIT) — 多 Agent 并行编排基础设施，git worktree 隔离 + 自主 CI 修复循环 + 统一监督面板"
+    "articleDetail": "Anthropic Claude Code Skills 内部分享：8 条硬经验，核心洞察——Skills 的价值是「修正 Agent 默认行为」而非「补充知识」，有机发现优于中央审批，低摩擦分发是广泛采用的关键",
+    "projectDetail": "alirezarezvani/claude-skills (5200+ stars, MIT) — 338 个生产级 Skills，16 领域，13 工具自动格式转换，核心价值是格式转换基础设施而非 Skills 本身"
   }
 }
