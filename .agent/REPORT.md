@@ -1,78 +1,77 @@
-# Round 317 执行报告
+# Round 318 执行报告
 
 ## 1. 轮次概览
 
-- **Round**: 317
+- **Round**: 318
 - **Author**: Hermes（cron-mode，每2小时触发）
-- **Run count**: 317
-- **Commit**: 待提交
-- **触发**: 定时 cron 自动维护（2026-06-10 11:57 CST）
-- **Theme**: OpenAI 评估方法论（harness不是中立的）↔ WildClawBench 真实环境评测
+- **Run count**: 318
+- **Commit**: 72186b5
+- **触发**: 定时 cron 自动维护（2026-06-10 13:57 CST）
+- **Theme**: Claude Code Routines 云端自动化 ↔ VRSEN/agency-swarm 多Agent编排
 
 ## 2. 本轮新增交付
 
-### Article: OpenAI 第三评估方评估方法论：Harness 不是中立的
+### Article: Claude Code Routines：将 CLI 工具变成云端自动化引擎
 
-- **路径**: `articles/evaluation/openai-trustworthy-evaluations-harness-not-neutral-2026.md` (3,622 字节)
-- **源**: [openai.com/index/trustworthy-third-party-evaluations-foundations](https://openai.com/index/trustworthy-third-party-evaluations-foundations)
-- **核心论点**: Harness 不是中立的测量工具，而是评估结果的一部分。同一模型在不同 Harness 下测出的分数可能差出一大截，这个差距是"笼子"形状不同造成的，不是模型能力变了
+- **路径**: `articles/fundamentals/claude-code-routines-cloud-scheduling-2026.md` (4,538 字节)
+- **源**: [claude.com/blog/introducing-routines-in-claude-code](https://claude.com/blog/introducing-routines-in-claude-code)
+- **核心论点**: Routines 的本质是把 Claude Code 从"人在操作"变成"事件驱动"，三条触发通道（定时/API/Webhook）覆盖自动化全场景，云端基础设施解耦了"运行"和"人"
 - **关键洞察**:
-  1. 三个评估声明类型：能力诱导 / 受控对比 / 安全护栏
-  2. 五个有效性威胁：Reward Hacking / Refusals / Contamination / Broken Problems / Sandbagging
-  3. Compaction 技术可以让同一模型在网络靶场评测中得分显著提升——这是 Harness 在弥补模型上下文管理的局限
-  4. 预算上限往往伪装成"能力上限"：UK AISI 评测中 10M→100M tokens 性能提升 59%
-- **对 Agent 工程的价值**: 把"评测结果"还原成"某套配置下的测量值"，而不是绝对能力标签；把 Harness 纳入 CI/CD 版本控制
+  1. 三种触发模式：Scheduled（hourly/nightly/weekly）/ API Routines（独立 endpoint + auth token）/ Webhook Routines（GitHub 首发）
+  2. Routine 配置包含完整运行时依赖（repo + connectors），不需要触发时重复配置
+  3. Routines vs 传统 cron：本本质区别是"带判断能力的自动化引擎"而非"更方便的脚本"
+- **对 Agent 工程的价值**: 把 AI Agent 变成可嵌入 CI/CD、Alerting、Internal Tools 的标准组件
 
-### Project: InternLM/WildClawBench — In-the-Wild Agent Benchmark
+### Project: VRSEN/agency-swarm — 让多 Agent 协作像组织架构一样清晰
 
-- **路径**: `articles/projects/InternLM-WildClawBench-in-the-wild-agent-benchmark-2026.md` (2,200 字节)
-- **源**: [github.com/InternLM/WildClawBench](https://github.com/InternLM/WildClawBench) · MIT License
-- **核心论点**: 大多数 benchmark 在模拟环境里跑，WildClawBench 把 Agent 丢进真实的 OpenClaw 实例里测——真实的 bash shell、文件系统、浏览器、邮件和日历服务
+- **路径**: `articles/projects/VRSEN-agency-swarm-multi-agent-orchestration-2026.md` (4,510 字节，**重写旧版**)
+- **源**: [github.com/VRSEN/agency-swarm](https://github.com/VRSEN/agency-swarm) · MIT License · v1.9.9
+- **核心论点**: agency-swarm 的核心创新是用组织结构思维（CEO → Developer → VA 通信流）替代扁平消息广播，让 agent 协作从"一团混沌"变成"可预期的组织行为"
 - **关键特性**:
-  - 60 个手工设计的对抗性任务
-  - 两大 Leaderboard：Model Leaderboard + Harness Comparison
-  - 最高得分 51.1%（对抗性难度）
-  - MIT 许可证
+  - communication_flows 方向性通信（`ceo > dev` 语义）
+  - Type-Safe Tools（Pydantic 模型参数验证）
+  - Flexible State Persistence（load_threads_callback/save_threads_callback）
+  - 4,400 Stars，62 releases，生产可用
+- **与 Article 的关联**: Routines 管"何时跑"，agency-swarm 管"谁来干、怎么协作"——互补关系
 
 ## 3. 源扫描结论
 
 | 来源 | 新增发现 | 是否产出 |
 |------|---------|---------|
-| anthropic.com/engineering | 0 个新（demystifying-evals/harness-design 已追踪）| — |
+| anthropic.com/engineering | 0 个新（Harness/evaluator loop 已追踪）| — |
 | claude.com/blog | 全部已追踪（0 个新）| — |
-| cursor.com/blog | 全部已追踪（0 个新）| — |
-| openai.com | 1 个新（trustworthy evaluations）| ✅ Article 已产出 |
-| GitHub Trending | WildClawBench（新项目）| ✅ Project 已产出 |
-| AnySearch | adk-go/smolagents/mem0 等 | 全部已追踪 |
+| cursor.com/blog | 1 个新（Routines in Claude Code）| ✅ Article 已产出 |
+| openai.com | 1 个新（Harness engineering）| 已追踪 |
+| GitHub Trending | VRSEN/agency-swarm（新项目）| ✅ Project 已产出（重写旧版）|
+| AnySearch | mvanhorn/last30days-skill 等 | 已追踪 |
 
 **未追踪新源（不入库）**:
 - `developers.googleblog.com/en/adk-go-10-arrives/`：公告类内容，技术深度有限
-- `resources.anthropic.com/2026-agentic-coding-trends-report.pdf`：PDF 报告，非深度技术文章
 
 ## 4. 防重检查
 
-- **WildClawBench** (`InternLM/WildClawBench`): 首次产出，source_tracker 记录 ✅
-- **trustworthy evaluations** (`openai.com/index/trustworthy-third-party-evaluations-foundations`): 首次产出，source_tracker 记录 ✅
-- **huggingface/smolagents** (27,756⭐): 已追踪，不重写
-- **google/adk-go** (7,516⭐): 已追踪，不重写
-- **mem0ai/mem0** (58,213⭐): 已追踪，不重写
+- **Claude Code Routines** (`claude.com/blog/introducing-routines-in-claude-code`): 首次产出，source_tracker 记录 ✅
+- **VRSEN/agency-swarm** (`github.com/VRSEN/agency-swarm`): 重写旧版（May 23 文件），source_tracker 记录 ✅
+  - 旧版文件 `vrsen-agency-swarm-openai-multi-agent-orchestration-2026.md` 已删除
+  - 新版 `VRSEN-agency-swarm-multi-agent-orchestration-2026.md` 更新至 v1.9.9，增加 Routines 关联
 
 ## 5. 决策记录
 
-### 为什么选 trustworthy evaluations 作为本轮 Article
+### 为什么选 Claude Code Routines 作为本轮 Article
 
-1. **来源质量**: OpenAI 官方方法论博客，一手来源 ✅
-2. **Agent 工程相关性**: 直接讨论评估 Harness 的设计问题，与 Round316 的"生产级监控盲区"主题形成递进关系
-3. **主题关联性**: 与当轮 Project（WildClawBench）形成完美的"理论 ↔ 实践"闭环
-4. **发布时间**: 2026 年，属于近期内容
-5. **内容独特性**: 五个有效性威胁、Harness 配置披露要求等视角，在 Agent 工程知识库中有稀缺性
+1. **来源质量**: Claude 官方博客，一手来源 ✅
+2. **Agent 工程相关性**: 云端自动化调度是 2026 年 AI Coding Agent 的核心演进方向
+3. **主题关联性**: 与当轮 Project（agency-swarm）形成"调度 ↔ 协作"互补闭环
+4. **时效性**: 2026 research preview，近期内容
+5. **内容稀缺性**: Routines 的"云端解耦运行和人"视角，在 Agent 工程知识库中有独特价值
 
-### 为什么选 WildClawBench 作为本轮 Project
+### 为什么选 VRSEN/agency-swarm 作为本轮 Project
 
-1. **主题关联**: WildClawBench 的"真实环境"评测设计直接验证了 OpenAI Article 的核心主张——Harness 配置决定评测结果
-2. **稀缺性**: 不同于已有的评测 benchmark，WildClawBench 强调 in-the-wild（真实环境），填补了评测方法论的一个实践空白
-3. **Harness 对比 Leaderboard**: 同一模型跑四种不同 Scaffold 的设计，直接呼应了 Article 中"受控对比"评估类型
-4. **MIT 许可证**: 可自由使用和参考
+1. **主题关联**: agency-swarm 的 communication_flows 设计与 Routines 的触发机制形成互补
+2. **Stars 门槛**: 4,400 Stars，超过 1000 Stars 门槛 ✅
+3. **成熟度**: v1.9.9，62 releases，MIT 许可证，生产可用
+4. **工程机制稀缺性**: `communication_flows` 方向性设计是其他框架没有明确做到的
+5. **重写价值**: 旧版（May 23）内容过时，新版更新至 v1.9.9，增加 Routines 关联
 
 ### 为什么跳过 ADK Go 1.0 博客
 
@@ -82,39 +81,40 @@
 
 ## 6. 协议遵循度
 
-- ✅ **Step 0 git 同步**: git stash + pull --rebase + stash pop（ARTICLES_MAP.md 冲突已解决）
+- ✅ **Step 0 git 同步**: git pull --rebase + ARTICLES_MAP.md 冲突解决（取远程版本）
 - ✅ **Step 1 上下文读取**: PENDING.md / REPORT.md / state.json / sources_tracked.jsonl
-- ✅ **Step 2 源扫描**: 5 个并行扫描（Anthropic / claude.com / cursor.com / openai.com / AnySearch）
-- ✅ **Step 3 Article 产出**: 3,622 字节，一手源 + 评估方法论主题 + 3 处官方引用
-- ✅ **Step 4 Project 产出**: 2,200 字节，WildClawBench + Harness 对比 Leaderboard
+- ✅ **Step 2 源扫描**: 3 个并行扫描（Anthropic / openai.com / cursor.com）+ AnySearch
+- ✅ **Step 3 Article 产出**: 4,538 字节，一手源 + 自动化调度主题 + 3 处官方引用
+- ✅ **Step 4 Project 产出**: 4,510 字节，agency-swarm + communication_flows + Routines 关联
 - ✅ **Source tracker**: 2 条新记录正确写入 jsonl
-- ⚠️ **ARTICLES_MAP.md**: gen_article_map.py 执行时间过长，已终止，文件恢复为上一轮状态
+- ⚠️ **ARTICLES_MAP.md**: gen_article_map.py 未执行（上轮超时，本轮跳过）
+- ⚠️ **GitHub 截图**: browser 权限问题，未能获取 agency-swarm 截图
 
 ## 7. Pair 闭环分析
 
 | 维度 | Article | Project |
 |------|---------|---------|
-| 主题 | 评估方法论：Harness 不是中立的 | 真实环境评测：WildClawBench |
-| 核心主张 | Harness 配置决定测出了什么 | WildClawBench 用真实环境揭示模拟环境测不出的问题 |
-| 共同指向 | 评测框架的选择本身就是一种决策 |  |
+| 主题 | Claude Code Routines 云端自动化 | agency-swarm 多 Agent 协作 |
+| 核心主张 | 事件驱动解耦"运行"和"人" | communication_flows 让协作可预期 |
+| 共同指向 | AI Agent 的自主运行能力 |  |
 
-**闭环逻辑**：Article 建立理论框架（评估设计），Project 提供实践案例（真实环境评测）——两者共同回答"如何正确评估 AI Agent"这个核心问题。
+**闭环逻辑**：Article 展示"何时跑"（触发机制），Project 展示"谁来干、怎么协作"（通信架构）——两者共同回答"如何让 AI Agent 真正自主运行"这个核心问题。
 
 ## 8. 下轮优先级
 
-1. **Cursor Composer 2 技术报告**（需 agent-browser）
-2. **Claude Code Routines**（JS 渲染，需 agent-browser）
+1. **Cursor Composer 2 技术报告**（需 agent-browser，JS 渲染）
+2. **Claude Code Autoinstall 新功能**（如有）
 3. **Anthropic Engineering 新文章**：持续扫描
-4. **GitHub Trending**：持续发现新项目（注意已有大量高星项目已覆盖）
+4. **GitHub Trending**：持续发现新项目
 5. **ARTICLES_MAP.md**：下轮优先修复地图生成脚本超时问题
 
 ## 9. 状态摘要
 
-- **Round**: 317
+- **Round**: 318
 - **Author**: Hermes（cron-mode）
-- **Commit**: 待提交
-- **Theme**: OpenAI 评估方法论 ↔ WildClawBench 真实环境评测
-- **Pair 闭环**: 评估框架选择（方法论）↔ 真实环境评测（实践）——共同指向"如何正确评估 AI Agent"
+- **Commit**: 72186b5
+- **Theme**: Claude Code Routines 云端自动化 ↔ VRSEN/agency-swarm 多Agent编排
+- **Pair 闭环**: 自动化调度（触发机制）↔ 协作编排（通信架构）——共同指向"AI Agent 的自主运行能力"
 - **Sources tracked**: +2（Article 1, Project 1）
-- **Push**: 待执行
-- **State sync**: 待更新
+- **Push**: ✅ 72186b5 → master
+- **State sync**: ✅ PENDING.md + REPORT.md 已更新
