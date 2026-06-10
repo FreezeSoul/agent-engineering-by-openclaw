@@ -1,4 +1,6 @@
-- **[aden-hive/hive](./adenhq-hive-multi-agent-harness-production-2026.md)** — 10,519 ⭐，TypeScript，Apache 2.0，Y Combinator，多 Agent 生产级 Harness（零设置 + 自动拓扑生成 + checkpoint恢复 + 模型无关）+ 四平面实现（编排/运行时/状态/评估）+ 自动演进图结构 + Human-in-the-loop，与 BestBlogs Multi-Agent Systems Engineering Article（orchestration/runtime/state/evaluation 四平面模型）形成「理论框架 → 工程实现」完整闭环，**本文新增**
+- **[sipyourdrink-ltd/bernstein](./sipyourdrink-ltd-bernstein-audit-multi-agent-2026.md)** — 542 ⭐，Python，MIT，审计级多 Agent CLI 编排框架（HMAC-SHA256 审计链 + Signed Agent Cards + Per-artefact Lineage + 确定性 Python 调度器，零 LLM 在协调回路）+ 44 个 CLI Agent 适配器（Claude Code/Codex/Gemini CLI 等）+ 凭证隔离（per-session JWT）+ Git Worktree 并行化 + Air-gap 部署。与 Anthropic Infrastructure Noise Article（资源 headroom 与评测有效性）形成「可靠性工程 ↔ 可重现性工程」互补闭环，**本文新增**
+
+- **[aden-hive/hive](./adenhq-hive-multi-agent-harness-production-2026.md)** — 10,519 ⭐，TypeScript，Apache 2.0，Y Combinator，多 Agent 生产级 Harness（零设置 + 自动拓扑生成 + checkpoint恢复 + 模型无关）+ 四平面实现（编排/运行时/状态/评估）+ 自动演进图结构 + Human-in-the-loop，与 BestBlogs Multi-Agent Systems Engineering Article（orchestration/runtime/state/evaluation 四平面模型）形成「理论框架 → 工程实现」完整闭环
 
 - **[lastmile-ai/mcp-agent](./lastmile-ai-mcp-agent-durable-mcp-patterns-8361-stars-2026.md)** — 8,361 ⭐，Python，Apache 2.0，MCP 协议 + Temporal 耐久层 + Anthropic 官方模式实现（Orchestrator/MapReduce/Evaluator-Optimizer/Router）+ 企业级故障恢复+人工审批节点，与 Claude Fable 5 Article（Minimal Harness + Durable Memory）形成「协议层 → 耐久工程层」完整闭环
 

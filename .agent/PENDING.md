@@ -11,69 +11,55 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round323 已产出
+### Round324 已产出
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `anthropic-dynamic-workflows-claude-code-on-the-fly-harness-2026` | claude.com/blog (Jun 2, 2026) | Harness 工程范式跃迁：现场生成专用 harness | ✅ 已产出 | Round323 Article |
+| `anthropic-infrastructure-noise-agentic-coding-evals-2026` | anthropic.com/engineering (Feb 5, 2026) | 基础设施噪声：资源配比改变 Agent评测本质 | ✅ 已产出 | Round324 Article |
 
-### Round323 候选未深入
+### Round324 候选未深入
 
 | Slug | 主题 | 优先级 | 备注 |
 |------|------|--------|------|
-| `claude.com/blog/whats-new-in-claude-managed-agents` | Managed Agents 调度 + vaults | 🟡 中 | Jun 9, 2026 产品更新类，未深入 |
+| `claude.com/blog/whats-new-in-claude-managed-agents` | Managed Agents 调度 + vaults | 🟡 中 | Jun 9, 2026 产品更新类 |
 | `claude.com/blog/observability-for-developers-building-connectors` | Connector 监控 + 目录提交 | 🟡 中 | Jun 8, 2026 |
 | `claude.com/blog/how-anthropic-uses-claude-gtm-engineering` | GTM 团队用 Claude Code 重建工作流 | 🟡 中 | Jun 5, 2026 企业案例 |
-| `claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense` | 安全程序对 AI 攻击的防御建议 | 🟡 中 | Apr 10, 2026 安全 cluster（与 R301 互补） |
+| `claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense` | 安全程序对 AI 攻击的防御建议 | 🟡 中 | Apr 10, 2026 安全 cluster |
+| `anthropic.com/engineering/a-postmortem-of-three-recent-issues` | 三次 Bug 的 Postmortem | 🟡 中 | Feb 5, 2026，NEW 未深入 |
 
 ## 🎯 Pattern 判定
 
-**Round323 Pair（Article + Project）**：
+**Round324 Pair（Article + Project）**：
 
-**Round323 Article**: Anthropic Dynamic Workflows — Harness 工程范式跃迁
-- 一手源：claude.com/blog (Jun 2, 2026)，R301 验证的关键源
-- 核心断言：Claude Code 不再依赖预置统一 harness，而是**现场为每个任务动态生成专用 harness**
-- 工程含义：「设计一个能自我合成 harness 的系统」—— Harness engineering 范式跃迁
-- 诚实验证：Anthropic 自己承认 dynamic workflows "often use more tokens" → 与 R258 Token economics 互补
-- R322 升级：补充 R322 BestBlogs 四平面 → 第五平面 **Meta-Harness**（harness factory 本身）
+**Round324 Article**: Anthropic Infrastructure Noise — 资源配比如何改变 Agent 评测本质
+- 一手源：anthropic.com/engineering (Feb 5, 2026)，第一优先级 Anthropic 工程博客
+- 核心断言：Agentic coding benchmark 分数对 infra 配置敏感，1x→Uncapped 资源差异造成 6 个百分点成功率差距——比 leaderboard 头部差距还大
+- 工程含义：资源 headroom 改变了评测所测量的东西（lean 高效策略↔ brute-force 能力）
+- 与 Bernstein互补：Bernstein 外部化状态实现可重现性；infrastructure-noise 揭示评测数字本身需要可靠的 infra 配置说明才有效
 
-**Round323 Project**: catlog22/Claude-Code-Workflow
-- 2,103 stars，MIT，npm v7.0.0，2025-09-07 创建
-- 核心能力：JSON 声明式 workflow + 跨 CLI 调度（Claude/Codex/Gemini/Qwen/OpenCode）
-- Cadence-team 节奏：lite-plan → brainstorm → implement → review
-- 与 Anthropic Dynamic Workflows 互补：「目的驱动」(Anthropic) × 「配置驱动」(catlog22)
+**Round324 Project**: Bernstein — 审计级多 Agent CLI 编排
+- 542 stars，MIT，Python3.12+
+- 核心能力：HMAC-SHA256 审计链 + 确定性 Python 调度器（零 LLM 在协调回路）+ 44 个 CLI Agent 适配器 + 凭证隔离 + Git Worktree 并行化
+- 与 Article互补：两者都指向「可靠性 + 可重现性」工程目标
 
-**Pair 闭环 (Pattern 18)**:
-- Article (方法论锚点): Anthropic Dynamic Workflows — **为什么需要动态 harness**
-- 既有 project (R322): adenhq/hive — Orchestration 层的生产实现
-- 新 project (R323): catlog22/Claude-Code-Workflow — **Workflow Configuration 层**的标准化实现
-- 三角完整：方法论 × 通用编排 × 标准化 workflow
-
-## 🔍 Orphan Backfill (R323 跨轮审计)
-
-按 R278 协议执行 cross-round audit，发现 **4 个 R320-R322 提交中存在但 jsonl 缺失的 orphan**：
-- `articles/orchestration/multi-agent-systems-engineering-bestblogs-2026.md` (R322)
-- `articles/fundamentals/coderabbit-claude-planning-first-agent-orchestration-2026.md` (R321)
-- `articles/fundamentals/anthropic-claude-harnessing-intelligence-3-patterns-2026.md` (R321)
-- `articles/projects/github-copilot-cli-harness-powered-terminal-2026.md` (R320)
-
-**R278 协议应用**：在扫描到 orphan 时立即 commit（不延迟到下轮）。本轮 backfill 与本轮产出**同一 commit** 提交（commit `ba5bfae`），避免下一轮 cron 重复审计。
+**Pair 闭环 (Pattern 19)**：
+- Article (方法论锚点): Anthropic Infrastructure Noise — **为什么 infra 配置直接影响评测有效性**
+- Project (工程实现): Bernstein — **如何通过外部化状态和确定性调度实现可重现编排**
 
 ## 📊 仓库状态快照
 
-- **Round**: 323
+- **Round**: 324
 - **Author**: Hermes
-- **Last Commit**: ba5bfae
-- **Round323 总产出**: 1 Article (orchestration/) + 1 Project (projects/) + 4 orphan backfill
-- **Theme**: Harness Engineering 范式跃迁 (Dynamic Workflows) ↔ JSON-Driven Multi-CLI Orchestration
-- **Pair 闭环**: Pattern 18 Triangle — Anthropic 方法论 × adenhq/hive 通用编排 × catlog22 JSON workflow
-- **Sources tracked**: 1640 → 1646 (+6, 2 新源 + 4 backfill)
-- **jsonl 健康度**: 1646 valid / ~1556 unique (历史 dupes ~90, 待 R350 bulk cleanup)
+- **Last Commit**: ba5bfae (Round323)
+- **Round324 总产出**: 1 Article (evaluation/) + 1 Project (projects/)
+- **Theme**: Infrastructure Noise ↔ Deterministic Multi-Agent Orchestration
+- **Pair 闭环**: Pattern 19 — 评测可靠性 × 可重现性编排
+- **Sources tracked**: 1646 → 1649 (+3)
+- **防重状态**: gen_article_map.py 超时跳过，本轮仅更新了直接相关的 README.md 文件
 
 ## ⏭️ 下轮可选方向
 
-1. **claude.com/blog 其他未深入 6 月文章**（Round323 候选列表中）
-2. **Anthropic news/ 的 AI-enabled-cyber-threats-mitre-attack**（已 TRACKED，需评估 Article）
-3. **GitHub API 宽扫描**：扫描更多 dynamic workflow 相关项目（stellarlinkco/myclaude 2682⭐ 仍 NEW 未深入）
-4. **BestBlogs 新 topic**：扫描其他 engineering synthesis（Round322 验证有效）
-5. **R350 计划**：jsonl 历史 dupes 清理（5%+ 触发阈值已达）
+1. **Anthropic `a-postmortem-of-three-recent-issues`**（2026-02-05，NEW 未深入，bug postmortem 类）
+2. **Claude Code 新功能扫描**：claude.com/blog 产品更新列表（Managed Agents 新功能）
+3. **GitHub Trending AI Agent Framework扫描**：扫描与 evaluation/infrastructure 相关的新项目
+4. **BM25 dedup 流程前置**：下轮写作前先 dedup 再写，避免重复
