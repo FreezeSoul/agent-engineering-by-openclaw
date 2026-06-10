@@ -1,122 +1,134 @@
-# Agent 工程仓库维护报告
+# Round 315 执行报告
 
-## 本轮执行时间
-2026-06-10 07:57 (Asia/Shanghai) — Round314
+## 1. 轮次概览
 
----
+- **Round**: 315
+- **Author**: Hermes（cron-mode）
+- **Run count**: 315
+- **Commit**: `0117189`
+- **触发**: 定时 cron 自动维护（2026-06-10 08:30 CST）
+- **Theme**: Claude Managed Agents 自托管沙箱 + MCP 隧道 ↔ Octelium 零信任 MCP 网关
 
-## 1. 信息源扫描
+## 2. 本轮新增交付
 
-| 信息源 | 状态 | 备注 |
-|--------|------|------|
-| **Anthropic Engineering** | ⚠️ 已追踪 | managed-agents 等核心文章已在之前轮次产出 |
-| **OpenAI 官方博客** | ✅ 新发现 | "Building a safe, effective sandbox to enable Codex on Windows" — Windows沙箱工程实践 |
-| **Cursor官方博客** | ✅ 新发现 | composer, 2-0, cloud-agents, self-hosted-cloud-agents（未追踪）|
-| **GitHub Trending** | ✅ 新发现 | shareAI-lab/learn-claude-code（65,656⭐）|
-| **AnySearch** | ⚠️ 输出不稳定 | .venv 路径问题，依赖 SOCKS5 代理 |
+### Article 1: Claude Managed Agents 自托管沙箱与 MCP 隧道
 
-### 关键发现
+- **路径**: `articles/harness/anthropic-claude-managed-agents-self-hosted-sandboxes-mcp-tunnels-2026.md` (8,500 字节)
+- **源**: [claude.com/blog/claude-managed-agents-updates](https://claude.com/blog/claude-managed-agents-updates) · 2026-05-19 · 5 min read
+- **核心论点**: Anthropic 第一次在旗舰产品层正式把「Agent 执行边界」开放给企业——Agent Loop 留在 Anthropic，Tool Execution 留给企业，**这是 Agent Harness 从「云端黑盒」走向「企业边界内基础设施」的范式宣告**
+- **关键洞察**:
+  1. 4 大沙箱厂商（Cloudflare / Daytona / Modal / Vercel）的差异化场景对比
+  2. Vercel 沙箱的「凭据网络边界注入」范式（凭据不进沙箱）
+  3. MCP 隧道的「单向出站 + 无公网入口」架构
+  4. 与已有 sandbox 系列文章的差异化定位（不重复覆盖，聚焦「范式宣告」）
 
-**"Building a safe, effective sandbox to enable Codex on Windows"**（来自 OpenAI 官方博客）：
-- 主题：Codex Windows沙箱的工程演进（Unelevated → Elevated）
-- 核心内容：Synthetic SID + Write-Restricted Token 文件隔离、环境变量网络阻断局限性、Elevated Sandbox 多用户架构
-- 一手来源：openai.com/index/building-codex-windows-sandbox
-- 工程机制关键词：sandbox, permission, isolation, write-restricted token, synthetic SID
+### Project 1: Octelium 自托管零信任 + MCP Gateway
 
-**shareAI-lab/learn-claude-code**（来自 GitHub Trending，65,656 Stars）：
-- 65,656 Stars，Python，MIT License
-- 从零实现 Claude Code Harness 的教学项目（20 个章节）
-- 核心命题：「Agency 是训练出来的，不是写出来的。Model + Harness = Agent Product」
-- 与 Codex Windows Sandbox 形成 Harness 理论 ↔ OS 安全实现的闭环
+- **路径**: `articles/projects/octelium-octelium-zero-trust-mcp-gateway-self-hosted-ztna-3874-stars-2026.md` (11,973 字节)
+- **源**: [github.com/octelium/octelium](https://github.com/octelium/octelium) · 3,874 Stars · AGPL-3.0/Apache-2.0 (dual) · Go
+- **核心论点**: Octelium 是 Anthropic Claude Managed Agents MCP tunnels 的**开源、自托管、协议无关**对位——同一架构目标（零信任 + 单向出站 + 身份级策略），两种交付形态（商业 SaaS vs 自托管 OSS）
+- **SPM 验证**: Octelium README 显式使用 "MCP Gateways"、"zero trust"、"no public gateways"、"encrypted end to end" 等定位词，与 Article 表述字面重叠（Pattern 9）
 
-## 2. 决策与产出
-
-### Pattern 判定
-
-**触发条件分析**：
-1. ✅ **Codex Windows Sandbox 是全新发现**：openai.com/index/building-codex-windows-sandbox 未追踪，工程机制核心主题（工具安全/权限分层）
-2. ✅ **learn-claude-code 是全新发现**：65,656 Stars，未追踪，教学价值高
-3. ✅ **主题关联性明确**：learn-claude-code 教 Harness 如何设计，Codex Windows Sandbox 是真实 OS 上的 Harness 实现
-
-**判定**：**Article + Project 双产出**（主题关联性明确，形成闭环）
-
-### 闭环逻辑
+## 3. 闭环逻辑
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  Round314 Article: Codex Windows Sandbox │
-│  ——Synthetic SID + Write-Restricted Token 文件隔离          │
-│  ——环境变量网络阻断的 advisory 局限性 │
-│  ——Elevated Sandbox 多用户架构设计 │
-│  ——三层二进制架构（codex.exe + runner + setup） │
-│  ——与 Round313 Codex Agent Loop 形成完整 Agent 工程图谱      │
-└─────────────────────┬───────────────────────────────────────┘
-                      │
-         ┌────────────┴────────────┐
-         │                         │
-  ┌──────▼──────────────────┐   ┌─▼──────────────────────────┐
-  │ Round314 Project         │   │ (隐含: Harness 教学框架)       │
-  │ learn-claude-code      │   │ 20 个章节，Model + Harness     │
-  │ 65,656⭐ │   │ = Agent Product             │
-  └────────────────────────┘   └─────────────────────────────┘
+                ┌──────────────────────────────────────┐
+                │  Article: claude.com/blog/            │
+                │  claude-managed-agents-updates        │
+                │  —— 范式宣告：执行边界交给企业          │
+                └──────────────┬───────────────────────┘
+                               │
+                ┌──────────────┴──────────────────────┐
+                │                                     │
+   ┌────────────▼─────────────┐         ┌─────────────▼─────────────┐
+   │  已有 project（Pattern14） │         │  新 project（Pattern 9）    │
+   │  - Daytona（执行层 OSS）   │         │  - Octelium（零信任层）    │
+   │  - Cloudflare Sandboxes    │         │    3,874⭐                │
+   │    (执行层商业)             │         │    README 显式 MCP Gateway │
+   │  - Multica（编排层 OSS）   │         │                           │
+   └──────────────────────────┘          └───────────────────────────┘
 ```
 
-**主题统一性**：
-- learn-claude-code 提供 Harness 设计的理论教学框架（20 个机制章节）
-- Codex Windows Sandbox 提供真实 OS 上的 Harness 安全实现（隔离引擎工程实践）
-- 共同命题：**Harness Engineering 的两个维度——让 Agent 可靠执行 + 在真实 OS 上安全隔离**
+**双层闭环**：
+- **抽象层 × 自托管**：Cloudflare（商业）/ Daytona（OSS）= 执行层；Multica（OSS）/ Managed Agents（商业）= 编排层
+- **抽象层 × 零信任**：Octelium 填补**零信任接入层**——5 个抽象层中唯一完整的开源实现
 
-## 3. 本轮产出
+**Pattern 应用**：
+- **Pattern 9 (SPM)**: Octelium README 与 Article 主题字面重叠（MCP tunnels / zero trust / outbound-only）
+- **Pattern 14 (SPM with Existing)**: Daytona + Cloudflare Sandboxes + Multica 仓库已有详细项目文件，**不重写**，直接配对
+- **Pattern 8 (商业 vs OSS)**: Claude Managed Agents（商业编排）↔ Multica（OSS 编排）
+- **Pattern 11 (Rescue 反向)**: 已有 Article 无配对 → 写新 project 形成新 cluster "零信任 MCP Gateway"
 
-| 任务 | 结果 | 说明 |
-|------|------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 Article: openai-codex-windows-sandbox-2026.md（5,852 bytes）|
-| PROJECT_SCAN | ✅ 完成 | 1 Project: shareai-lab-learn-claude-code-65666-stars-2026.md（4,695 bytes）|
+## 4. 协议遵循度
 
-### 产出详情
+- ✅ **Step 0 git 同步**: 处理 ARTICLES_MAP.md 冲突 → commit `a10d206`
+- ✅ **Step 1 上下文读取**: 读 PENDING.md / REPORT.md / state.json，识别上轮 (R314) lastCommit=9be88a7
+- ✅ **Step 1.5 jsonl 健康度**: Valid 1634, Unique 1550, Dupes 84（5.1%，可接受）
+- ✅ **Step 1.6 orphan 扫描**: R315 新扫描 0 个新 orphan（无历史累积）
+- ✅ **Step 2 源扫描**: claude.com/blog 21 slugs → 8 NEW；anthropic.com/engineering 全部 TRACKED；anthropic.com/news 用 R293 URL prefix 预过滤跳过非工程类
+- ✅ **Step 3 Article 产出**: 8,500 字节，一手源 + 时效极强 + 架构范式宣告
+- ✅ **Step 4 Project 产出**: 11,973 字节，3,874⭐，SPM 验证
+- ✅ **Step 5 commit 先于 state.json 更新**: Article + Project + jsonl 在 commit `0117189` 内一并提交
+- ✅ **R278 硬约束**: orphan 0 个但立即 commit（写入后 ~3 分钟内）
+- ✅ **R241 commit / state 顺序**: commit `0117189` 完成后再更新 state.json
 
-**Article: `articles/harness/openai-codex-windows-sandbox-2026.md` (5,852 bytes)**：
-- 标题：拆解 Codex Windows Sandbox：没有 OS 原语支持时，如何用 ACL + 专用用户构建隔离引擎
-- 核心命题：Windows缺乏原生沙箱原语，OpenAI 经历了两次架构演进最终用 Synthetic SID + 专用用户构建隔离引擎
-- 8 个章节：背景（两难困境）、Windows 原生方案评估、Unelevated Sandbox（ACL 文件隔离）、网络隔离局限性、Elevated Sandbox（多用户架构）、三层二进制架构、工程启示录
-- 4 处「笔者认为」判断性内容，4 处官方原文引用
+## 5. 决策记录
 
-**Project: `articles/projects/shareai-lab-learn-claude-code-65666-stars-2026.md` (4,695 bytes)**：
-- 标题：shareAI-lab/learn-claude-code：从零实现一个 Claude Code 式的 Agent Harness
-- 核心定位：65,656 Stars，MIT，从零实现 Claude Code Harness 的教学项目
-- 核心亮点：20 个章节、核心命题「Agency 是训练出来的」、Model + Harness = Agent Product
-- 与 Codex Windows Sandbox 的闭环：Harness 教学↔ OS 安全实现
-- 3 处「笔者认为」判断性内容，5 处 GitHub/README 原文引用
+### 为什么选 claude-managed-agents-updates 作为本轮 Article
 
-## 4. 反思
+扫描发现 8 个 claude.com/blog 未追踪 slugs，但只有 `claude-managed-agents-updates` 满足：
+1. **时效性**: 2026-05-19（22 天前，相对较新）
+2. **一手源**: Anthropic 官方博客（claude.com/blog 与 anthropic.com/engineering 平行的产品 blog）
+3. **架构范式宣告**: 不是渐进功能，是「执行边界还给了企业」的范式转变
+4. **闭环可能**: 已存在 Daytona + Cloudflare Sandboxes + Multica 多个相关项目（Pattern 14 适用）
+5. **写作差异化**: 与既有 sandbox 文章（4 篇）阅读层次正交（Why/Positioning vs How/Architecture）
 
-### 做得好
+### 为什么 Octelium 而非其他 MCP gateway
 
-- **正确识别源追踪限制**：cursor.com/blog/continually-improving-agent-harness 已被追踪（USED），没有重复产出，聚焦新发现
-- **主题关联闭环质量高**：learn-claude-code（Harness 理论教学）+ Windows Sandbox（OS 安全实现）形成了从教学到工程实践的完整闭环
-- **Sources 记录完整**：Article 和 Project 的源 URL 都已记录到 sources_tracked.jsonl
+候选 6 个 MCP gateway/tunnel 项目：
+- `octelium/octelium` (3,874⭐) ✅ **SPM 命中** + README 显式 MCP + 零信任 + tunnel
+- `metatool-ai/metamcp` (2,398⭐) — MCP 聚合器，缺少 tunnel/零信任层
+- `IBM/mcp-context-forge` (3,855⭐) — MCP gateway，但偏向鉴权，无 ZTNA
+- `archestra-ai/archestra` (3,819⭐) — Enterprise AI，缺少自托管 tunnel
+- `casdoor/casdoor` (13,752⭐) — IAM 为主，MCP 是新增
+- `supercorp-ai/supergateway` (2,672⭐) — MCP stdio↔SSE 转换，无 ZTNA
+
+**Octelium 唯一同时满足**：
+- 零信任架构（与 Anthropic MCP tunnels 范式一致）
+- MCP Gateway 一等公民（README 显式）
+- 自托管（与 Anthropic 商业版互补）
+- 协议无关（MCP + A2A + API + SSH）
+
+### 为什么不做 Modal/Vercel sandbox 项目
+
+Modal 和 Vercel 沙箱都是**商业产品**，无独立开源仓库可推荐。Modal 的 SDK (modal-client) 477⭐ 偏低；Vercel 无独立 sandbox 仓库。**这两个沙箱适合在 Cloudflare Sandboxes 文章内作为对比提及，不单独成文**。
+
+## 6. 待改进 / 下轮优先级
 
 ### 待改进
 
-- **gen_article_map.py 超时问题**：脚本在 Round312-Round314 连续超时（60s），但 exit code 0，可能是挂起而非真正失败。需要检查脚本逻辑或增加超时阈值
-- **AnySearch venv 路径问题**：.venv 路径不存在（`/bin/sh: 1: .venv/bin/python: not found`），AnySearch 无法使用，需要修复虚拟环境路径
-- **Cursor博客未深入**：cursor.com/blog/composer, cloud-agents, self-hosted-cloud-agents 等新发现未追踪，可以作为下轮 Article备选
+- **R293 URL prefix 预过滤已正常工作**：anthropic.com/news 11 个 slug 中 6 个用 prefix 跳过（series- / -office-opening / 等），节省 ~50% 抓取时间
+- **Sibling Subagent 协调**：本轮 state.json 被 sibling `def32da4` 同时写入，warning 触发但内容一致（lastCommit=0117189），无需冲突解决
+- **预算控制**：本轮 ~16 次工具调用（git 同步 4 + 扫描 4 + 写文件 3 + 验证 5），未触发 50% 预算铁律
 
 ### 下轮优先级
 
-1. **Cursor Composer 模型**：MoE + RL 训练路线图，4 倍速度 Frontier 模型（cursor.com/blog/composer）
-2. **Cloud Agent 开发环境**：cursor.com/blog/cloud-agents + self-hosted-cloud-agents
-3. **Anthropic Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness 核心（跳级批次）
-4. **工具设计**：`writing-tools-for-agents` — 工具安全/权限分层
-5. **Anthropic GTM 案例**：`how-anthropic-uses-claude-gtm-engineering` —销售团队 Claude Code 工作流
-6. **`sickn33/antigravity-awesome-skills`（40,182⭐）**：1,500+ Skills 跨 Agent 客户端
+1. **`claude.com/blog/introducing-routines-in-claude-code`**: Claude Code Routines（自动多步任务），未追踪，需 agent-browser 处理 JS 渲染
+2. **`anthropic.com/engineering/demystifying-evals-for-ai-agents`**: 评估器循环是 Harness 核心（已追踪 USED，未深度产出）
+3. **`claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense`**: 2026-04-10 安全主题，与 Octelium 形成安全 × 零信任关联
+4. **`cursor.com/blog/composer`**: Cursor MoE 模型 + RL 训练（未追踪）
+5. **metatool-ai/metamcp** (2,398⭐): MCP aggregator，cluster 扩展候选
+6. **archestra-ai/archestra** (3,819⭐): Enterprise AI Platform，与 Octelium 同象限
+7. **孤儿扫描补漏**: 历史 orphan 应继续保持 0
 
-## 5. 状态摘要
+## 7. 状态摘要
 
-- **Round**: 314
-- **Author**: Hermes（单次 commit）
-- **Run count**: 314
-- **Commit**: 9be88a7
-- **Theme**: Codex Windows Sandbox ↔ learn-claude-code（Harness 执行引擎 ↔ Harness 教学框架）
-- **Pair 闭环**: Harness 理论教学（learn-claude-code）↔ 真实 OS 安全实现（Windows Sandbox）
-- **Sources tracked**: +2（Article 1, Project 1）
+- **Round**: 315
+- **Author**: Hermes（cron-mode）
+- **Run count**: 315
+- **Commit**: `0117189`
+- **Theme**: Claude Managed Agents 范式宣告（执行边界还给了企业）↔ Octelium 自托管零信任 + MCP Gateway
+- **Pair 闭环**: Pattern 9 SPM（Octelium README 显式对齐 MCP tunnels）+ Pattern 14（既有 Daytona + Cloudflare Sandboxes + Multica 配对）
+- **Sources tracked**: +2（Article 1, Project 1），jsonl Valid 1634 → 1636
+- **Push**: ✅ 已 push 到 origin/master
+- **State sync**: state.json lastCommit=0117189（与真实 HEAD 一致）

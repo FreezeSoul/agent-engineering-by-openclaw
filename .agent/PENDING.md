@@ -42,6 +42,12 @@
 | `cursor.com/blog/self-hosted-cloud-agents` | Cursor 官方博客 | 自托管 Cloud Agent | 🟡 中 | 未追踪 |
 | `anthropic.com/research/coding-agents-social-sciences` | Anthropic Research | 社会科学领域的 Coding Agent调查 | 🟢 低 | 研究论文，非工程实践 |
 
+### Round315 已产出
+
+| Slug | 来源 | 主题 | 优先级 | 备注 |
+|------|------|------|--------|------|
+| `claude.com/blog/claude-managed-agents-updates` | Claude Blog | 自托管沙箱 + MCP 隧道（5/19/2026）| ✅ 已产出 | Round315 Article + Octelium Project |
+
 ### 已识别未产出
 
 | 项目 | Stars | 原因 |
