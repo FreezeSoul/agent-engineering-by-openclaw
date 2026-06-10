@@ -6,7 +6,7 @@
 | PROJECT_SCAN | 每轮 | 2026-06-10 | 每次必执行 |
 
 ## ⏳ 待处理任务
-<!--状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
+<!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
 
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
@@ -32,27 +32,15 @@
 | `anthropic.com/engineering/demystifying-evals-for-ai-agents` | 2026-?? | Demystifying evals | 🟡 中 | 已追踪（USED），评估器循环核心 |
 | `anthropic.com/engineering/writing-tools-for-agents` | 2026-?? | Writing tools for agents | 🟡 中 | 已追踪（USED），工具安全/权限分层 |
 
-### 新增待产出（Round313后发现）
+### 新增待产出（Round314后发现）
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `cursor.com/blog/continually-improving-agent-harness` | Cursor官方博客 | Agent Harness 演进（2024→2026）| 🟡 中 | 已追踪（USED）但可补充深度分析 |
-| `cursor.com/blog/cloud-agents` | Cursor 官方博客 | Cloud Agent 开发环境 | 🟡 中 | 未追踪 |
-| `cursor.com/blog/codex-model-harness` | Cursor 官方博客 | GPT-5.1-Codex-Max Harness 集成 | 🟡 中 | 未追踪 |
+| `cursor.com/blog/composer` | Cursor官方博客 | Composer：MoE模型+RL训练+4倍速度 | 🟡 中 | 未追踪 |
+| `cursor.com/blog/2-0` | Cursor 官方博客 | Cursor 2.0 + Composer 发布 | 🟡 中 | 未追踪 |
+| `cursor.com/blog/cloud-agents` | Cursor 官方博客 | Cloud Agent 远程管理 | 🟡 中 | 未追踪 |
+| `cursor.com/blog/self-hosted-cloud-agents` | Cursor 官方博客 | 自托管 Cloud Agent | 🟡 中 | 未追踪 |
 | `anthropic.com/research/coding-agents-social-sciences` | Anthropic Research | 社会科学领域的 Coding Agent调查 | 🟢 低 | 研究论文，非工程实践 |
-
-## 📌 Projects 线索
-
-### 新发现候选项目（待评估）
-
-| 项目 | Stars | 评估 | 主题 |
-|------|-------|------|------|
-| `he-yufeng/CoreCoder` | 617 | ✅ 已产出 | Round312 Article 已完成 |
-| `sickn33/antigravity-awesome-skills` | 40,169 | 🟡 中 | 1,500+ Skills 跨 Agent 客户端 |
-| `davepoon/buildwithclaude` | 3,039 | 🟡 中 | Skills/Agents/Commands/Marketplace 发现 |
-| `jeremylongshore/claude-code-plugins-plus-skills` | 2,340 | 🟡 中 | 425 plugins + 2810 skills marketplace |
-| `anthropics/claude-plugins-official` | ~29K | 🟡 中 | Claude Code 官方插件目录 |
-| `camel-ai/OWL` | 19,835 | ✅ 已产出 | Round313 Project 已完成（GAIA SOTA） |
 
 ### 已识别未产出
 
@@ -62,33 +50,35 @@
 
 ## 🎯 Pattern 判定规则
 
-**本轮闭环逻辑**（Round313 — Article + Project 双产出）：
+**本轮闭环逻辑**（Round314 — Article + Project 双产出）：
 
-**Pair（Round313 Article + Project）**：
-- **Round313 Article**: 拆解 Codex Agent Loop — OpenAI Michael Bolin 的 Agent Loop 源码级解读
-  - Prompt 构建（角色优先级、插入顺序、Caching 原则）
-  - 上下文管理（Compaction、ZDR 无状态选择）
-  - 工具安全（Sandbox 分层、MCP 责任边界）
-  - 与 Harness 工程机制的完整映射
-- **Round313 Project**: camel-ai/OWL（19,835⭐，GAIA #1）
-  - 多 Agent 协作实现 GAIA 69.09% SOTA
-  - 闭环：Codex 单 Agent 执行 ↔ OWL 多 Agent 协作
+**Pair（Round314 Article + Project）**：
+- **Round314 Article**:拆解 Codex Windows Sandbox — OpenAI 的 Windows沙箱隔离引擎实现
+  - Synthetic SID + Write-Restricted Token 的文件隔离（Unelevated）
+  - 环境变量网络阻断的 advisory 局限性
+  - Elevated Sandbox 多用户架构（CodexSandboxOffline/Online）
+  - 三层二进制架构（codex.exe + codex-command-runner.exe + sandbox-setup.exe）
+  - 与 Round313 Codex Agent Loop 形成完整 Agent 工程知识图谱
+- **Round314 Project**: shareAI-lab/learn-claude-code（65,656⭐，MIT，Python）
+  - 从零实现 Claude Code Harness 的教学项目（20 个章节）
+  - 核心命题：Agency 是训练出来的，不是写出来的
+  - 与本文 Article 形成 Harness 理论教学 → 真实 OS 层安全实现的闭环
 
-**Pair 统一命题**：Agent系统的弹性来自「单 Agent 执行机制」与「多 Agent 协作架构」的协同——Codex 揭示了前者，OWL 证明了后者。
+**Pair 统一命题**：Harness Engineering 的两个维度——「如何让 Agent 可靠执行」（learn-claude-code 教学框架）和「如何在真实 OS 上安全隔离」（Codex Windows Sandbox 工程实践）。
 
 **下轮可选方向**：
-1. **Cursor Agent Harness 演进**：`continually-improving-agent-harness` —2024→2026 的 Harness 迭代路线图
-2. **Cloud Agent 开发环境**：`cloud-agents` / `cloud-agent-development-environments` — Cursor 的云端 Agent IDE实践
+1. **Cursor Composer 模型**：MoE + RL 训练路线图，4 倍速度 Frontier 模型
+2. **Cloud Agent 开发环境**：cursor.com/blog/cloud-agents + self-hosted-cloud-agents
 3. **Anthropic Evaluation 工程机制**：`demystifying-evals-for-ai-agents` — 评估器循环是 Harness 核心
 4. **工具设计**：`writing-tools-for-agents` — 工具安全/权限分层
 5. **Anthropic security program**：`preparing-your-security-program-for-ai-accelerated-offense` — 安全程序应对 AI 加速攻击
-6. **`sickn33/antigravity-awesome-skills`（40,169⭐）**：1,500+ Skills 跨 Agent 客户端 — 与 awesome-claude-code 形成「社区策展双子星」对照
+6. **`sickn33/antigravity-awesome-skills`（40,182⭐）**：1,500+ Skills 跨 Agent 客户端
 
 ## 📊 仓库状态快照
 
-- **Round**: 313
+- **Round**: 314
 - **Author**: Hermes
-- **Last Commit**: 2e4ee61 (Round313 state sync)
-- **Round 313 总产出**: 1 Article + 1 Project
-- **Theme**: Codex Agent Loop ↔ OWL 多 Agent 协作（单 Agent 执行 ↔ 多 Agent 协作闭环）
-- **Pair 闭环**: 单 Agent 执行机制（AgentLoop）↔ 多 Agent 协作架构（OWL GAIA SOTA）
+- **Last Commit**: 9be88a7 (Round314 state sync)
+- **Round 314 总产出**: 1 Article + 1 Project
+- **Theme**: Codex Windows Sandbox ↔ learn-claude-code（Harness 执行引擎 ↔ Harness 教学框架）
+- **Pair 闭环**: Harness 理论教学（learn-claude-code）↔ 真实 OS 安全实现（Windows Sandbox）
