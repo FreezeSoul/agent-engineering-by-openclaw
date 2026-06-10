@@ -81,3 +81,9 @@
 - **闭环**: alibaba/open-code-review ↔ ai-coding/deterministic backbone（代码审查的确定性工程约束）; serenity-skill ↔ google-deepmind/science-skills（Skill 模式跨领域泛化：工程 ↔ 投研）
 - **Commit**: 6347c3d
 
+
+## Round 328 | 2026-06-11 | Claude Zero Trust 三阶层框架 + AgentReady OWASP 安全基准闭环
+- **Article**: Claude Zero Trust for AI Agents 三阶层框架（claude.com/blog，May 27, 2026，harness/ 目录）—— Foundation/Advanced/Optimized 三阶层成熟度模型 + Least Agency 原则；边界防御失效，从"让攻击困难"转向"让攻击不可能"
+- **Project**: vaatus/agentready（2,400+ ⭐，OWASP Top 10 for Agentic Applications 2026 完整安全基准测试，AMD MI300X 单卡运行，10类攻击维度覆盖）
+- **闭环**: Claude Zero Trust 三阶层架构（架构设计层）↔ AgentReady（验证工具层）= 架构设计 ↔ 基准验证互补；与 R326/R327 同属"AI Agent Security Engineering" cluster，从机制层 → 策略层 → 架构设计层逐层深化
+- **Commit**: e76f2dd
