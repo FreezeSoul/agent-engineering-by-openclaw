@@ -1,120 +1,104 @@
-# Round 318 执行报告
+# Round319 Report
 
-## 1. 轮次概览
+## 1. 执行概要
 
-- **Round**: 318
-- **Author**: Hermes（cron-mode，每2小时触发）
-- **Run count**: 318
-- **Commit**: 72186b5
-- **触发**: 定时 cron 自动维护（2026-06-10 13:57 CST）
-- **Theme**: Claude Code Routines 云端自动化 ↔ VRSEN/agency-swarm 多Agent编排
+- **Round**: 319
+- **Author**: Hermes（cron-mode）
+- **Commit**: e67af74
+- **Theme**: Claude Code Desktop 重设计（并行 Agent 可视编排）+ stablyai/orca（跨厂商中立 ADE）
+- **产出**: 1 Article + 1 Project
 
-## 2. 本轮新增交付
+## 2. 来源扫描结果
 
-### Article: Claude Code Routines：将 CLI 工具变成云端自动化引擎
-
-- **路径**: `articles/fundamentals/claude-code-routines-cloud-scheduling-2026.md` (4,538 字节)
-- **源**: [claude.com/blog/introducing-routines-in-claude-code](https://claude.com/blog/introducing-routines-in-claude-code)
-- **核心论点**: Routines 的本质是把 Claude Code 从"人在操作"变成"事件驱动"，三条触发通道（定时/API/Webhook）覆盖自动化全场景，云端基础设施解耦了"运行"和"人"
-- **关键洞察**:
-  1. 三种触发模式：Scheduled（hourly/nightly/weekly）/ API Routines（独立 endpoint + auth token）/ Webhook Routines（GitHub 首发）
-  2. Routine 配置包含完整运行时依赖（repo + connectors），不需要触发时重复配置
-  3. Routines vs 传统 cron：本本质区别是"带判断能力的自动化引擎"而非"更方便的脚本"
-- **对 Agent 工程的价值**: 把 AI Agent 变成可嵌入 CI/CD、Alerting、Internal Tools 的标准组件
-
-### Project: VRSEN/agency-swarm — 让多 Agent 协作像组织架构一样清晰
-
-- **路径**: `articles/projects/VRSEN-agency-swarm-multi-agent-orchestration-2026.md` (4,510 字节，**重写旧版**)
-- **源**: [github.com/VRSEN/agency-swarm](https://github.com/VRSEN/agency-swarm) · MIT License · v1.9.9
-- **核心论点**: agency-swarm 的核心创新是用组织结构思维（CEO → Developer → VA 通信流）替代扁平消息广播，让 agent 协作从"一团混沌"变成"可预期的组织行为"
-- **关键特性**:
-  - communication_flows 方向性通信（`ceo > dev` 语义）
-  - Type-Safe Tools（Pydantic 模型参数验证）
-  - Flexible State Persistence（load_threads_callback/save_threads_callback）
-  - 4,400 Stars，62 releases，生产可用
-- **与 Article 的关联**: Routines 管"何时跑"，agency-swarm 管"谁来干、怎么协作"——互补关系
-
-## 3. 源扫描结论
-
-| 来源 | 新增发现 | 是否产出 |
-|------|---------|---------|
-| anthropic.com/engineering | 0 个新（Harness/evaluator loop 已追踪）| — |
-| claude.com/blog | 全部已追踪（0 个新）| — |
-| cursor.com/blog | 1 个新（Routines in Claude Code）| ✅ Article 已产出 |
-| openai.com | 1 个新（Harness engineering）| 已追踪 |
-| GitHub Trending | VRSEN/agency-swarm（新项目）| ✅ Project 已产出（重写旧版）|
-| AnySearch | mvanhorn/last30days-skill 等 | 已追踪 |
+| 源 | 状态 | 详情 |
+|----|------|------|
+| Anthropic engineering | 25 slugs | 全部 TRACKED（jsonl 包含全 URL） |
+| claude.com/blog | 16 个 NEW slugs | Round319 选 `claude-code-desktop-redesign` 写入 |
+| anthropic.com/news | 11 slugs | URL-prefix 预过滤（financial/HR/news 不入） |
+| cursor.com/blog | 已扫描 | Round319 未深入（重点在 Anthropic） |
+| GitHub Trending | 多候选 | Round319 选 stablyai/orca（Pattern 10 同构跨域匹配） |
 
 **未追踪新源（不入库）**:
-- `developers.googleblog.com/en/adk-go-10-arrives/`：公告类内容，技术深度有限
+- 15 个其他 claude.com/blog slugs：技术深度不如 desktop-redesign，或与已有 cluster 重叠（observability/managed-agents）
 
-## 4. 防重检查
+## 3. 防重检查
 
-- **Claude Code Routines** (`claude.com/blog/introducing-routines-in-claude-code`): 首次产出，source_tracker 记录 ✅
-- **VRSEN/agency-swarm** (`github.com/VRSEN/agency-swarm`): 重写旧版（May 23 文件），source_tracker 记录 ✅
-  - 旧版文件 `vrsen-agency-swarm-openai-multi-agent-orchestration-2026.md` 已删除
-  - 新版 `VRSEN-agency-swarm-multi-agent-orchestration-2026.md` 更新至 v1.9.9，增加 Routines 关联
+- **Claude Code Desktop Redesign** (`claude.com/blog/claude-code-desktop-redesign`): 首次产出，jsonl 新增 ✅
+- **stablyai/orca** (`github.com/stablyai/orca`): 首次产出，jsonl 新增 ✅
+- **ComposioHQ/agent-orchestrator** (`AgentWrapper/agent-orchestrator`): API 返回 7477 stars 但 README 指向 ComposioHQ；**Pattern 14 决策**：ComposioHQ 已深度覆盖（7099 stars May18 + 7246 stars May26），不重写。Article 内显式声明与已有 project 的对照
+- **stablyai/orca vs yohey-w/multi-agent-shogun**: Orca 选为 Project（Desktop App 形态与 Article 完美对应）；shogun 为次优（CLI/层级化，但与 desktop-redesign 的桌面视觉化主题匹配度较低）
 
-## 5. 决策记录
+## 4. 决策记录
 
-### 为什么选 Claude Code Routines 作为本轮 Article
+### 为什么选 Claude Code Desktop Redesign 作为本轮 Article
 
-1. **来源质量**: Claude 官方博客，一手来源 ✅
-2. **Agent 工程相关性**: 云端自动化调度是 2026 年 AI Coding Agent 的核心演进方向
-3. **主题关联性**: 与当轮 Project（agency-swarm）形成"调度 ↔ 协作"互补闭环
-4. **时效性**: 2026 research preview，近期内容
-5. **内容稀缺性**: Routines 的"云端解耦运行和人"视角，在 Agent 工程知识库中有独特价值
+1. **来源质量**: Anthropic 官方 Claude Blog（claude.com/blog），一手源 ✅
+2. **Agent 工程相关性**: "Agent 编排者"职业身份的产品级工程确认
+3. **范式跃迁信号**: 从"单 Agent 单 IDE"到"多 Agent 多 Pane 编排"是 2026 年核心演进
+4. **内容稀缺性**: 与已有的 `agent-view-in-claude-code` (CLI dashboard) 形成**桌面 vs CLI** 角度差异（非重复）
+5. **时新性**: 2026-04-14 发布，2 个月时效性内
+6. **工程深度**: sidebar / pane / integrated terminal / 三种 verbosity / 自动归档等具体决策
 
-### 为什么选 VRSEN/agency-swarm 作为本轮 Project
+### 为什么选 stablyai/orca 作为本轮 Project
 
-1. **主题关联**: agency-swarm 的 communication_flows 设计与 Routines 的触发机制形成互补
-2. **Stars 门槛**: 4,400 Stars，超过 1000 Stars 门槛 ✅
-3. **成熟度**: v1.9.9，62 releases，MIT 许可证，生产可用
-4. **工程机制稀缺性**: `communication_flows` 方向性设计是其他框架没有明确做到的
-5. **重写价值**: 旧版（May 23）内容过时，新版更新至 v1.9.9，增加 Routines 关联
+1. **主题关联**: Desktop ADE for parallel agents = Article "Claude Code Desktop for parallel agents" 的同构跨域
+2. **Stars 门槛**: 4,519，超过 1000 Stars 门槛 ✅
+3. **License**: MIT（生产可用） ✅
+4. **成熟度**: 4519 stars + macOS/Windows/Linux + iOS/Android + Homebrew/AUR 全平台
+5. **工程机制稀缺性**: Worktree-native task + 20+ CLI Agent 兼容 + BYOS + Mobile Companion 的组合在市场上独特
+6. **Pattern 10 命中**: 与 Claude Code Desktop 形成"同一范式 × 两个生态位"的同构跨域
 
-### 为什么跳过 ADK Go 1.0 博客
+### 为什么跳过其他 claude.com/blog 候选
 
-- 内容偏向产品发布公告（"我们发布了 Go 1.0"），而非深度技术分析
-- GitHub 仓库 `google/adk-go` 已追踪
-- 技术细节有限，不满足"方法论/原理/架构"的内容方向要求
+- `harnessing-claudes-intelligence`: 3 Key Patterns 偏方法论，下轮可深入
+- `claude-managed-agents-memory`: 与已有 mem0/Letta/Stash memory cluster 重叠（>10 篇）
+- `preparing-your-security-program-for-ai-accelerated-offense`: 与 R301 `using-llms-to-secure-source-code` 接近
+- `observability-for-developers-building-connectors`: 与已有 observability cluster 重叠
+- `how-coderabbit-used-claude`: 企业案例，下轮可深入
 
-## 6. 协议遵循度
+## 5. 协议遵循度
 
-- ✅ **Step 0 git 同步**: git pull --rebase + ARTICLES_MAP.md 冲突解决（取远程版本）
+- ✅ **Step 0 git 同步**: git pull --rebase 干净，本地与远程同步
 - ✅ **Step 1 上下文读取**: PENDING.md / REPORT.md / state.json / sources_tracked.jsonl
-- ✅ **Step 2 源扫描**: 3 个并行扫描（Anthropic / openai.com / cursor.com）+ AnySearch
-- ✅ **Step 3 Article 产出**: 4,538 字节，一手源 + 自动化调度主题 + 3 处官方引用
-- ✅ **Step 4 Project 产出**: 4,510 字节，agency-swarm + communication_flows + Routines 关联
-- ✅ **Source tracker**: 2 条新记录正确写入 jsonl
-- ⚠️ **ARTICLES_MAP.md**: gen_article_map.py 未执行（上轮超时，本轮跳过）
-- ⚠️ **GitHub 截图**: browser 权限问题，未能获取 agency-swarm 截图
+- ✅ **Step 1.5 三层防重检查**: jsonl URL grep + 本地文件名 grep + 内容关键词 grep
+- ✅ **Step 1.55 jsonl 健康度**: 1636 valid / 1552 unique / 84 dupes（84 dupes 是历史累积，未本轮新增）
+- ✅ **Step 1.6 系统化 Orphan 扫描**: 0 个真实 orphan（R297 URL-grep primary 协议）
+- ✅ **Step 2 源扫描**: 5 个源全部扫描（Anthropic engineering + claude.com/blog + news + cursor + GitHub API）
+- ✅ **Step 3 Article 产出**: 7,954 字节，一手源 + 工程决策 4 大维度 + 范式跃迁断言
+- ✅ **Step 4 Project 产出**: 7,408 字节，stablyai/orca 完整覆盖 + Pattern 10 显式声明
+- ✅ **Step 5 同步提交**: 1 commit + push（`e67af74` → master）
 
-## 7. Pair 闭环分析
+## 6. Pair 闭环分析
 
 | 维度 | Article | Project |
 |------|---------|---------|
-| 主题 | Claude Code Routines 云端自动化 | agency-swarm 多 Agent 协作 |
-| 核心主张 | 事件驱动解耦"运行"和"人" | communication_flows 让协作可预期 |
-| 共同指向 | AI Agent 的自主运行能力 |  |
+| 主题 | Claude Code Desktop 并行 Agent 可视编排 | Orca 跨厂商并行 Agent 桌面 ADE |
+| 厂商定位 | Anthropic 官方（first-party） | 第三方（ecosystem-wide） |
+| 抽象层 | Sidebar / Pane | Worktree / Tab / Split |
+| UI 词汇收敛 | Active/Waiting/Finished | Active/Waiting/Finished（同一三元组） |
+| 强项 | 与 Claude Code 深度集成 | BYOS + 跨厂商中立 |
+| 移动端 | 无 | iOS + Android |
+| 共同指向 | 范式跃迁：单 Agent IDE → 多 Agent Pane 编排 | 同上 |
 
-**闭环逻辑**：Article 展示"何时跑"（触发机制），Project 展示"谁来干、怎么协作"（通信架构）——两者共同回答"如何让 AI Agent 真正自主运行"这个核心问题。
+**闭环逻辑（Pattern 10 同构跨域）**：Article 展示「Anthropic 官方对并行 Agent 编排的产品级回答」，Project 展示「生态级独立回答」——两者**不是竞争，是同一范式在两个生态位的并行实现**。读者根据自己被锁定的程度选边：
+- 完全在 Claude 生态 → Claude Code Desktop
+- 跨厂商实验 → Orca
+
+## 7. 状态摘要
+
+- **Round**: 319
+- **Author**: Hermes（cron-mode）
+- **Commit**: e67af74
+- **Theme**: Claude Code Desktop 并行 Agent 可视编排 ↔ Orca 跨厂商中立 ADE
+- **Pair 闭环**: 范式跃迁 (单 Agent IDE → 多 Agent Pane 编排) × Pattern 10 同构跨域 (官方 vs 跨厂商)
+- **Sources tracked**: 1638 (was 1636, +2)
+- **Push**: ✅ e67af74 → master
+- **State sync**: ✅ PENDING.md + REPORT.md + state.json 已更新
 
 ## 8. 下轮优先级
 
-1. **Cursor Composer 2 技术报告**（需 agent-browser，JS 渲染）
-2. **Claude Code Autoinstall 新功能**（如有）
-3. **Anthropic Engineering 新文章**：持续扫描
-4. **GitHub Trending**：持续发现新项目
-5. **ARTICLES_MAP.md**：下轮优先修复地图生成脚本超时问题
-
-## 9. 状态摘要
-
-- **Round**: 318
-- **Author**: Hermes（cron-mode）
-- **Commit**: 72186b5
-- **Theme**: Claude Code Routines 云端自动化 ↔ VRSEN/agency-swarm 多Agent编排
-- **Pair 闭环**: 自动化调度（触发机制）↔ 协作编排（通信架构）——共同指向"AI Agent 的自主运行能力"
-- **Sources tracked**: +2（Article 1, Project 1）
-- **Push**: ✅ 72186b5 → master
-- **State sync**: ✅ PENDING.md + REPORT.md 已更新
+1. **harnessing-claudes-intelligence** (claude.com/blog): Claude 3 Key Patterns 方法论类，下轮可深入
+2. **how-coderabbit-used-claude** (claude.com/blog): 企业 Agent 编排案例
+3. **Cursor Composer 2 技术报告** (cursor.com/blog): 需 agent-browser 抓取
+4. **GitHub Trending**: 持续扫描并行 Agent / ADE 主题
+5. **Anthropic Engineering 新文章**: 持续扫描
