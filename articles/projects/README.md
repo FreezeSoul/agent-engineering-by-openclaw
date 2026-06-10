@@ -1,4 +1,6 @@
-- **[modelcontextprotocol/servers](./modelcontextprotocol-servers-official-mcp-reference-implementation-2026.md)** — 86,949 ⭐，TypeScript/Python/Go，MIT，MCP 官方参考实现仓库（Filesystem/Git/PostgreSQL/Slack/Google Maps 等服务器）+ 协议即接口的设计哲学（结构化工具发现 + 类型安全调用）+ 与 Anthropic Code w/ Claude London 2026 Article（MCP tunnels 企业私有 MCP 服务器连接）形成「协议理论 → 工程实现」完整闭环，**本文新增**
+- **[shareAI-lab/learn-claude-code](./shareai-lab-learn-claude-code-65666-stars-2026.md)** — 65,656 ⭐，Python，MIT，从零实现 Claude Code Harness 的教学项目（20 个章节：Agent Loop → Tools → Permission → Hooks → Subagent → Skill Loading → Context Compaction → Task System → Agent Teams → MCP 等）+ 核心命题「Agency 是训练出来的，不是写出来的」+ 与 Codex Windows Sandbox（工具安全/隔离引擎）形成「Harness 理论教学 → 真实 OS 层安全实现」完整闭环，**本文新增**
+
+- **[modelcontextprotocol/servers](./modelcontextprotocol-servers-official-mcp-reference-implementation-2026.md)** — 86,949 ⭐，TypeScript/Python/Go，MIT，MCP 官方参考实现仓库（Filesystem/Git/PostgreSQL/Slack/Google Maps 等服务器）+ 协议即接口的设计哲学（结构化工具发现 + 类型安全调用）+ 与 Anthropic Code w/ Claude London 2026 Article（MCP tunnels 企业私有 MCP 服务器连接）形成「协议理论 → 工程实现」完整闭环
 
 - **[ComposioHQ/agent-orchestrator](./ComposioHQ-agent-orchestrator-multi-agent-fleet-2026.md)** — 7,456+ ⭐，TypeScript，MIT，多 Agent 并行编排基础设施（每个 Agent 独立 git worktree + 分支 + PR）+ 自主 CI 修复循环（失败→修复→重验证）+ 统一监督面板（人类只在需要时介入）+ 与 Anthropic 企业调查（57% 多阶段工作流）形成「需求层 → 工程实现层」完整闭环，**本文新增**
 
