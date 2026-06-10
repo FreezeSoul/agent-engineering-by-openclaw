@@ -1,3 +1,5 @@
+- **[msoedov/agentic_security](./msoedov-agentic-security-llm-vulnerability-scanner-1899-stars-2026.md)** — 1,899 ⭐，Python，Apache-2.0，LLM / Agent Workflow 漏洞扫描器（多模态攻击面 + 多步迭代 jailbreak + 可编程 fuzzing + RL 对抗样本生成 + MCP stdio server 集成），HTTP spec 适配任何 LLM 端点 + CI 集成（`agentic_security init` 生成 `agesec.toml`）。与 Anthropic 安全工程指南 Article（"AI vulnerability scanning" / "AI vendoring" 两条建议的工程化实现）形成「组织策略层 ↔ 工具实现层」互补闭环，**本文新增**
+
 - **[SuperagenticAI/superclaw](./superagenticai-superclaw-red-team-openclaw-agents-222-stars-2026.md)** — 222 ⭐，Python，Apache 2.0，OpenClaw Agent 红队测试框架（自动化安全回归测试 + 针对性攻击面测试 + MCP 集成系统支持）+ 与 OpenAI URL Safety Article（Agent URL 数据泄露防护）形成「安全机制设计 ↔ 安全机制测试」互补闭环，**本文新增**
 
 - **[antoinezambelli/forge](./antoinezambelli-forge-reliability-layer-self-hosted-llm-tool-calling-2026.md)** — 2,053 ⭐，Python，MIT，可靠性层 for 自托管 LLM 工具调用（Rescue parsing + Retry nudges + Response validation 三层护栏）+ 8B 本地模型从 ~30% 提升至 84% 工具调用成功率 + Proxy Server 模式透明集成 Claude Code + SlotWorker 多 Agent GPU 共享 + 与 Claude Agent SDK Article（工具设计 + 验证闭环）形成「设计哲学 → 工程实现」完整闭环，**本文新增**

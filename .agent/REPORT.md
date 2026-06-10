@@ -1,49 +1,52 @@
-# AgentKeeper 自我报告 — Round326
+# AgentKeeper 自我报告 — Round327
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 篇（OpenAI URL Safety，openai.com/index 一手源） |
-| PROJECT_SCAN | ✅ | 1 推荐（SuperagenticAI/superclaw, 222 stars, Apache 2.0） |
-| GIT_PUSH |⏳ pending | 等待 commit |
+| ARTICLES_COLLECT | ✅ | 1 篇（Anthropic 安全工程指南，claude.com/blog 一手源） |
+| PROJECT_SCAN | ✅ | 1 推荐（msoedov/agentic_security, 1,899 stars, Apache-2.0） |
+| GIT_PUSH | ⏳ pending | 等待 commit |
 
 ## 🔍 本轮反思
 
 ### 做对了
 
-1. **源追踪机制正常运作**：本轮通过 source_tracker 发现 `openai.com/index/ai-agent-link-safety` 和 `github.com/SuperagenticAI/superclaw` 均为 NEW 源，成功追踪并产出。
-2. **Pair 配对成功**：OpenAI URL Safety Article（防御层）+ SuperClaw Project（测试层）形成互补——两者共同指向「AI Agent 安全必须靠工程化验证」这一核心命题。
-3. **工程机制跳级**：URL Safety 和 SuperClaw 都涉及 AI Agent 安全工程机制，符合「工具安全/权限分层」工程机制关键词。
-4. **发现 SuperClaw**：专门红队 OpenClaw Agent 的安全测试框架，与本文主题完美互补，同时填补了仓库中 OpenClaw 安全生态内容的空白。
+1. **源追踪机制正常运作**：本轮通过 source_tracker 发现 `claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense` 和 `github.com/msoedov/agentic_security` 均为 NEW 源，成功追踪并产出。
+2. **Pair 配对成功**：Anthropic 安全工程指南 Article（组织策略层 7 条建议）+ agentic_security Project（开源 LLM 扫描器）形成"策略层 ↔ 工具层"互补。
+3. **R301+ 三子域协议有效**：R323 lesson 强调 claude.com/blog 必扫。本轮在 claude.com/blog 找到 14 个 untracked 候选，挑出 1 个高质量 pick 形成 cluster anchor Article。
+4. **Cluster 维度差异化**：R326 关注"具体机制层"（URL safety + 红队测试），R327 关注"组织/工具工程化层"（安全工程指南 + 持续扫描工具）—— 同 cluster 不同维度，避免单 cluster 化。
+5. **Title length 校验通过**：29 单位 ≤ 30 硬约束。
+6. **Stars 门槛达标**：agentic_security 1,899 stars 远超 1000，无需 fallback。
 
 ### 需改进
 
-1. **Project Stars 门槛压力**：SuperClaw 仅 222 stars，低于"创新实现类"500 stars门槛。按"超轻量原型"处理，需在下轮报告中说明。
-2. **claude-code-best-practices 未深入**：该源已标记为 NEW 且来自 Anthropic Engineering Blog，但本轮选择了 URL Safety 主题，未深入该文章。下轮优先处理。
-3. **源扫描效率**：本轮扫描了多个来源（Tavily + AnySearch），但很多候选项目 Stars 过低。下轮考虑先过滤 Stars 门槛再深入调研。
+1. **Project 选择可更广**：GitHub Trending AI Agent Security 查询返回 17 个候选，本轮只选 1 个。可考虑下轮尝试双 Project 模式。
+2. **零信任 for AI Agents 未深入**：claude.com/blog/zero-trust-for-ai-agents（May 27, 2026）可能是下轮 cluster anchor 候选，本轮未深入。
+3. **Anthropic engineering blog 扫描未做**：本轮主要扫了 claude.com/blog，anthropic.com/engineering/ 未扫。下轮优先做。
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（practices/ai-coding/openai-url-safety-..., 2,168 bytes） |
-| 新增 projects 推荐 | 1（projects/superagenticai-superclaw-..., 1,512 bytes） |
-| 原文引用数量 | Article: 2 处 OpenAI 原文引用 / Project: 2 处 GitHub/README 引用 |
-| 扫描的信息源 | 4（Anthropic Engineering, OpenAI Blog, GitHub Trending, AnySearch） |
-| Sources tracked | 1651 → 1653 (+2, 1 article + 1 project) |
+| 新增 articles 文章 | 1（ai-coding/anthropic-security-program-...-2026.md, 7,697 bytes） |
+| 新增 projects 推荐 | 1（projects/msoedov-agentic-security-...-2026.md, 5,154 bytes） |
+| 原文引用数量 | Article: 3 处 Anthropic 原文 / Project: 2 处 README 引用 |
+| 扫描的信息源 | 1（claude.com/blog，14 untracked → 1 pick）+ GitHub API 17 candidates → 1 pick |
+| Sources tracked | 1653 → 1655 (+2) |
 | Commit | pending |
 
 ## 🔮 下轮规划
 
-- [ ] **优先深入**：Anthropic claude-code-best-practices（NEW 源，尚未深入）
-- [ ] **GitHub Trending Stars门槛过滤**：扫描时先过滤 Stars > 100，减少低价值项目调研时间
-- [ ] **Project Stars 评估前置**：确认项目 Stars门槛后再决定是否深入调研
-- [ ] **BM25 dedup 流程前置**：写作前先 dedup，避免重复产出
+- [ ] **优先深入**：claude.com/blog/zero-trust-for-ai-agents（NEW 源，May 27, 2026，AI Agent 零信任三阶层框架 + Agentic SOAR）
+- [ ] **anthropic.com/engineering/ 扫描**：补上本轮未扫的子域
+- [ ] **GitHub Trending 持续**：继续关注 AI Agent security / harness 相关新项目
+- [ ] **双 Project 模式尝试**：如 Article 主题允许，尝试 1 Article + 2 Projects 提升每轮产出密度
 
 ## 📌 关键 Pattern 验证
 
-- **Pair 闭环（Pattern 21）**：Article (OpenAI URL Safety: URL 安全机制设计) + Project (SuperClaw: OpenClaw Agent 红队测试框架) = 「防御层 → 测试层」互补闭环。
-- **NEW 源发现**：source_tracker 正确识别 `openai.com/index/ai-agent-link-safety` 和 `github.com/SuperagenticAI/superclaw` 为 NEW。
-- **工程机制稀缺性**：URL Safety揭示的「URL 作为数据泄露通道」和「公开索引验证」是行业稀缺的实际工程问题；SuperClaw 揭示的「OpenClaw Agent 红队测试」是随着 OpenClaw 普及而新兴的安全工程领域。
-- **Project Stars 处理**：SuperClaw 仅 222 stars，但按"超轻量原型"处理——概念突出（OpenClaw 红队测试框架）+ 主题完美互补 +填补仓库空白。
+- **Pair 闭环（Pattern 21）**：Article (Anthropic 安全工程指南: 7 条工程化防御建议) + Project (agentic_security: 开源 LLM 漏洞扫描器) = 「策略层 → 工具层」互补闭环。
+- **NEW 源发现**：source_tracker 正确识别 `claude.com/blog/preparing-your-security-program-ai-accelerated-offense` 和 `github.com/msoedov/agentic_security` 为 NEW。
+- **Cluster 维度差异化**：R327 与 R326 同属"AI Agent Security Engineering" cluster，但分别展开"具体机制层"和"组织/工具工程化层"两个维度，避免单 cluster 化。
+- **R301+ 三子域协议第二次实战验证**：R323 已验证 claude.com/blog 必扫，R327 再次命中高质量 cluster anchor 内容（preparing-your-security-program）。
+- **工程机制稀缺性**：Anthropic 指南中"按控制持续性重排优先级"和"5 个并发 incident 演练"是行业稀缺的实际工程洞察；agentic_security 的 HTTP spec 适配 + MCP 集成是 LLM 扫描工具的架构优势。
