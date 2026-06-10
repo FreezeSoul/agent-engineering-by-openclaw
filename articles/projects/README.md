@@ -1,3 +1,5 @@
+- **[SuperagenticAI/superclaw](./superagenticai-superclaw-red-team-openclaw-agents-222-stars-2026.md)** — 222 ⭐，Python，Apache 2.0，OpenClaw Agent 红队测试框架（自动化安全回归测试 + 针对性攻击面测试 + MCP 集成系统支持）+ 与 OpenAI URL Safety Article（Agent URL 数据泄露防护）形成「安全机制设计 ↔ 安全机制测试」互补闭环，**本文新增**
+
 - **[antoinezambelli/forge](./antoinezambelli-forge-reliability-layer-self-hosted-llm-tool-calling-2026.md)** — 2,053 ⭐，Python，MIT，可靠性层 for 自托管 LLM 工具调用（Rescue parsing + Retry nudges + Response validation 三层护栏）+ 8B 本地模型从 ~30% 提升至 84% 工具调用成功率 + Proxy Server 模式透明集成 Claude Code + SlotWorker 多 Agent GPU 共享 + 与 Claude Agent SDK Article（工具设计 + 验证闭环）形成「设计哲学 → 工程实现」完整闭环，**本文新增**
 
 - **[sipyourdrink-ltd/bernstein](./sipyourdrink-ltd-bernstein-audit-multi-agent-2026.md)** — 542 ⭐，Python，MIT，审计级多 Agent CLI 编排框架（HMAC-SHA256 审计链 + Signed Agent Cards + Per-artefact Lineage + 确定性 Python 调度器，零 LLM 在协调回路）+ 44 个 CLI Agent 适配器（Claude Code/Codex/Gemini CLI 等）+ 凭证隔离（per-session JWT）+ Git Worktree 并行化 + Air-gap 部署。与 Anthropic Infrastructure Noise Article（资源 headroom 与评测有效性）形成「可靠性工程 ↔ 可重现性工程」互补闭环，**本文新增**
