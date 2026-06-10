@@ -1,4 +1,6 @@
-- **[lastmile-ai/mcp-agent](./lastmile-ai-mcp-agent-durable-mcp-patterns-8361-stars-2026.md)** — 8,361 ⭐，Python，Apache 2.0，MCP 协议 + Temporal 耐久层 + Anthropic 官方模式实现（Orchestrator/MapReduce/Evaluator-Optimizer/Router）+ 企业级故障恢复+人工审批节点，与 Claude Fable 5 Article（Minimal Harness + Durable Memory）形成「协议层 → 耐久工程层」完整闭环，**本文新增**
+- **[aden-hive/hive](./adenhq-hive-multi-agent-harness-production-2026.md)** — 10,519 ⭐，TypeScript，Apache 2.0，Y Combinator，多 Agent 生产级 Harness（零设置 + 自动拓扑生成 + checkpoint恢复 + 模型无关）+ 四平面实现（编排/运行时/状态/评估）+ 自动演进图结构 + Human-in-the-loop，与 BestBlogs Multi-Agent Systems Engineering Article（orchestration/runtime/state/evaluation 四平面模型）形成「理论框架 → 工程实现」完整闭环，**本文新增**
+
+- **[lastmile-ai/mcp-agent](./lastmile-ai-mcp-agent-durable-mcp-patterns-8361-stars-2026.md)** — 8,361 ⭐，Python，Apache 2.0，MCP 协议 + Temporal 耐久层 + Anthropic 官方模式实现（Orchestrator/MapReduce/Evaluator-Optimizer/Router）+ 企业级故障恢复+人工审批节点，与 Claude Fable 5 Article（Minimal Harness + Durable Memory）形成「协议层 → 耐久工程层」完整闭环
 
 - **[shareAI-lab/learn-claude-code](./shareai-lab-learn-claude-code-65666-stars-2026.md)** — 65,656 ⭐，Python，MIT，从零实现 Claude Code Harness 的教学项目（20 个章节：Agent Loop → Tools → Permission → Hooks → Subagent → Skill Loading → Context Compaction → Task System → Agent Teams → MCP 等）+ 核心命题「Agency 是训练出来的，不是写出来的」+ 与 Codex Windows Sandbox（工具安全/隔离引擎）形成「Harness 理论教学 → 真实 OS 层安全实现」完整闭环，**本文新增**
 
