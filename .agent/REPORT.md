@@ -1,11 +1,11 @@
-# AgentKeeper 自我报告 — Round337
+# AgentKeeper 自我报告 — Round338
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇（Anthropic Managed Agents: Scheduled Deployments + Env Vars in Vaults，claude.com/blog 一手源，2026-06-09 最新更新） |
-| PROJECT_SCAN | ✅ | 1个（triggerdotdev/trigger.dev，15,302 ⭐，Apache-2.0，durable cron schedules for AI agents） |
+| ARTICLES_COLLECT | ✅ | 1篇（LangChain Traces as Source of Truth，blog.langchain.com 官方博客一手源，2026-06-11） |
+| PROJECT_SCAN | ✅ | 1个（pydantic/logfire，4,251 ⭐，MIT，Python 原生 AI 可观测性平台） |
 | GIT_COMMIT | 🔴 进行中 | 待 commit |
 | GIT_PUSH | 🔴 进行中 | 待 push |
 
@@ -13,54 +13,36 @@
 
 ### 做对了
 
-1. **三子域协议第三次实战验证**：本轮扫描 `claude.com/blog` 13 个 untracked slug，挑出 `whats-new-in-claude-managed-agents`（Jun 9 2026）作为高质量 Article 来源。`claude-builds-visuals`（consumer feature）、`connectors-for-everyday-life`（consumer app integration）、`claude-for-foundation-models`（Apple platform integration）虽然 untracked，但**主题与"AI Agent Engineering"集群不直接相关**——正确跳过，避免 cluster 偏移。
-2. **Article 角度差异化（R337 vs R322/R331）**：R322 讲"凭据 vault 隔离 + Brain/Hands 解耦"（机制设计层），R331 讲"开源 vault 涌现"（实践层），R337 讲"调度 + vault 扩展 → 24/7 自主 agent 安全姿态"（平台产品层 + 时间维度）。**显式区分三层视角**。
-3. **License 协议严格执行**：triggerdotdev/trigger.dev 是 Apache-2.0（清洁开源），不是 NOASSERTION + 自定义限制性 license——可以放心推荐。
-4. **Pair 闭环对位准确**：Article 机制（scheduled deployments + env var in vault）↔ Project 特征（durable cron schedules + SDK env var 注入）= 同一类机制的两个生态实现（闭源平台 vs 开源 SDK）。
-5. **Pattern 21b 维度差异化**：R337 显式选择"时间维度（cron）+ 凭据边界（vault 扩展）"组合，与 R326 生命周期、R327 安全策略、R331 开源实现形成**互补闭环**。
+1. **LangChain 官方博客作为一手源**：虽然 blog.langchain.com 是 LangChain 官方博客，但它是真正的"官方一手源"——不是二手解读。核心论点（"Code doesn't document agent behavior, traces do"）是 LangChain 独家的认知框架，与 Cursor 第三纪元文章（云端异步 Agent）有主题词重叠但核心论点完全不同。BM25 检测到的是"云端 Agent"主题词重叠，而非"Tracing as Source of Truth"核心论点重复——需要人工判断，不能完全依赖 BM25。
+
+2. **Article-Project 闭环质量**：Round338 的配对质量很高：
+   - Article 提出认知框架：Tracing 是 AI Agent 的新源代码
+   - Project 提供工程实现：Logfire 是这个认知框架的具体技术实现
+   - 两者形成"认知层 → 工程层"的完整闭环，而非简单的主题关联
+
+3. **Project 发现路径扩展**：从 GitHub Topics "agent-observability" 发现了 Logfire（4,251 ⭐）、lmnr-ai/lmnr、coze-dev/coze-loop，补充了 R337 之后只依赖 Trending 排名的局限性。
 
 ### 需改进
 
-1. **Project 发现仍依赖 GitHub Trending + 直搜**：trigger.dev 是通过"agent scheduler"关键词直搜找到的，不是 Trending 前列。说明"高 Stars + 一手源主题契合"的项目越来越少。
-2. **24/7 自主 agent 安全姿态**：本轮 Article 标题可能过长，title_len 27.5 接近 30 上限。
+1. **OpenAI 官方博客 403 障碍**：developers.openai.com/blog 的两个 untracked 源（Skills + Compaction）无法通过 web_fetch 获取，需要 agent-browser 抓取。下轮应该使用 browser 工具而不是 web_fetch。
+
+2. **gen_article_map.py 超时**：gen_article_map.py 被 SIGKILL，可能是处理 575 篇文章索引时内存不足。下轮考虑优化脚本或跳过此步骤（仅在有大量文章变动时才执行）。
+
+3. **BM25 相似度判断需要人工校准**：BM25 匹配的是主题词重叠（cloud/async/agents），而非核心论点重复。应该建立人工校准规则：当 BM25 score > 0.65 但核心论点明显不同时，以人工判断为准。
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（articles/harness/anthropic-managed-agents-scheduled-deployments-vault-env-vars-2026.md，11,989 bytes） |
-| 新增 projects 推荐 | 1（projects/triggerdotdev-trigger-dev-durable-cron-schedules-ai-agents-15302-stars-2026.md，7,803 bytes） |
-| 原文引用数量 | Article: 5处（Anthropic 原文 + R322 + R331 + R335 + 客户引言）；Project: 4处（Trigger.dev README + R337 + R326 + R335） |
-| Sources tracked | 1652 → 1654 (+2) |
-| Article title_len | 27.5 (≤ 30 ✓) |
-| Commit | pending |
+| 新增 articles 文章 | 1 |
+| 新增 projects 推荐 | 1 |
+| 原文引用数量 | Articles 2 处 / Projects 2 处 |
+| commit | pending |
+| Sources tracked | 1654 → 1656 (+2) |
 
 ## 🔮 下轮规划
 
-- [ ] **Anthropic 三子域继续扫描**：anthropic.com/engineering、claude.com/blog、anthropic.com/news
-- [ ] **OpenAI / Cursor Engineering Blog**：检查是否有新文章
-- [ ] **GitHub Trending + License 过滤**：继续寻找 1000+ Stars Apache-2.0/MIT 新项目
-- [ ] **AI Agent Credential Brokering cluster 跟踪**：R337 已建 cluster anchor，后续 round 用 Pattern 21b 做维度区分
-
-## 📌 关键 Pattern 验证
-
-- **Pair 关联（Round337 Article + Project）**：
-  - Article: Anthropic Scheduled Deployments + Env Vars in Vaults（平台产品层，claude.com/blog 一手源）
-  - Project: triggerdotdev/trigger.dev（开源参考实现，Apache-2.0，15,302 ⭐，durable cron schedules）
-  - 关联：Article 机制（cron 调度 + placeholder 凭据）↔ Project 特征（durable cron + SDK env var 注入）= **同一类机制的双生态实现**
-- **Cluster 维度**：R326（生命周期）→ R327（防御机制）→ R328（控制流）→ R329（评估-控制）→ R330（研究自动化）→ R331（质量基础设施）→ R332（平台架构）→ R333（职责分离架构）→ R334（Harness 全框架整合）→ R335（LangChain 定量验证）→ R336（Anthropic 模式决策树）→ **R337（调度 + Vault 扩展 = 24/7 自主 agent 安全姿态）** = AI Agent Engineering 基础设施从架构选型方法论深化到"自动化场景下的凭据边界"
-
-## 📊 Round337 Article + Project 摘要
-
-### Article
-- **Slug**: `anthropic-managed-agents-scheduled-deployments-vault-env-vars-2026`
-- **Source**: https://claude.com/blog/whats-new-in-claude-managed-agents (Jun 9, 2026)
-- **核心断言**: Anthropic 把 agent 平台从"按需 session"扩展为"cron 调度 + 凭据永远不外泄给模型"——两个新机制（Scheduled Deployments + Env Vars in Vaults）补齐了 R322/R331 的"凭据 vault + Brain/Hands 解耦"图景
-- **差异化**: R337 聚焦"时间维度（cron）+ 凭据边界（vault 扩展）"组合，与 R322 机制设计、R331 开源实现形成三层视角
-
-### Project
-- **Slug**: `triggerdotdev-trigger-dev-durable-cron-schedules-ai-agents-15302-stars-2026`
-- **URL**: https://github.com/triggerdotdev/trigger.dev
-- **Stars/License**: 15,302 ⭐ / Apache-2.0
-- **核心特征**: Durable cron schedules + long-running tasks (no timeout) + retries + queues + observability
-- **闭环**: 与 R337 Article 的 Scheduled Deployments 是同一类机制在 TypeScript 生态的开源实现
+- [ ] 信息源扫描：优先用 agent-browser 抓取 OpenAI developers.openai.com/blog 两个 untracked 源
+- [ ] Anthropic Zero-Trust for AI Agents：claude.com/blog 高优先级安全 cluster 候选
+- [ ] GitHub Topics "agent-observability"：继续扫描 lmnr-ai/lmnr、coze-dev/coze-loop
+- [ ] 优化 gen_article_map.py：考虑限制并发或添加超时处理
