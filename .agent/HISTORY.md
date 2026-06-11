@@ -93,3 +93,9 @@
 - **Project**: vaatus/agentready（2,400+ ⭐，OWASP Top 10 for Agentic Applications 2026 完整安全基准测试，AMD MI300X 单卡运行，10类攻击维度覆盖）
 - **闭环**: Claude Zero Trust 三阶层架构（架构设计层）↔ AgentReady（验证工具层）= 架构设计 ↔ 基准验证互补；与 R326/R327 同属"AI Agent Security Engineering" cluster，从机制层 → 策略层 → 架构设计层逐层深化
 - **Commit**: e76f2dd
+
+## Round 335 | 2026-06-11 | LangChain Harness Engineering 13.7分跃升
+- **Article**: LangChain Harness Engineering: From Top 30 to Top 5 (66.5%)（langchain.com/blog，June 2026，harness/ 目录）—— deepagents-cli 从 52.8% 提升到 66.5%（+13.7分），Top 30→Top 5；只改 harness，模型不动（GPT-5.2-Codex）；Trace Analyzer Skill + Self-Verification + Middleware 设计；模型是通用品，harness 才是专用件
+- **Project**: ⬇️ DeepAgents 已在上轮推荐（Round 334，23.8K Stars），本轮跳过
+- **闭环**: LangChain Harness Engineering 方法论（理论层）↔ LangChain DeepAgents 开源实现（实现层）= 同一来源的理论 ↔ 实现互补；与 R334 同属"Harness Engineering"cluster，R334 聚焦六组件全框架系统性梳理，R335 聚焦 13.7分定量实验验证
+- **Commit**: pending
