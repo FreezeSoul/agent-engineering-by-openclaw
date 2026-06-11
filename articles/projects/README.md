@@ -1,3 +1,5 @@
+- **[pydantic/logfire](./pydantic-logfire-ai-observability-4251-stars-2026.md)** — 4,251 ⭐，Python，MIT，Pydantic AI 可观测性平台（Rust 引擎 + 结构化 LLM Span + Python 原生 DX）+ 支持 LangGraph/OpenAI/Anthropic 自动 instrumentation + 10k+ spans/s 无明显 overhead，与 LangChain Traces Article（"Tracing 是新源代码"）形成「认知框架 → 工程实现」完整闭环，**本文新增**
+
 - **[msoedov/agentic_security](./msoedov-agentic-security-llm-vulnerability-scanner-1899-stars-2026.md)** — 1,899 ⭐，Python，Apache-2.0，LLM / Agent Workflow 漏洞扫描器（多模态攻击面 + 多步迭代 jailbreak + 可编程 fuzzing + RL 对抗样本生成 + MCP stdio server 集成），HTTP spec 适配任何 LLM 端点 + CI 集成（`agentic_security init` 生成 `agesec.toml`）。与 Anthropic 安全工程指南 Article（"AI vulnerability scanning" / "AI vendoring" 两条建议的工程化实现）形成「组织策略层 ↔ 工具实现层」互补闭环，**本文新增**
 
 - **[SuperagenticAI/superclaw](./superagenticai-superclaw-red-team-openclaw-agents-222-stars-2026.md)** — 222 ⭐，Python，Apache 2.0，OpenClaw Agent 红队测试框架（自动化安全回归测试 + 针对性攻击面测试 + MCP 集成系统支持）+ 与 OpenAI URL Safety Article（Agent URL 数据泄露防护）形成「安全机制设计 ↔ 安全机制测试」互补闭环，**本文新增**
