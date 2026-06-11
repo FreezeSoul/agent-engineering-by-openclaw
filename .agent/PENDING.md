@@ -11,69 +11,68 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round339 已产出
+### Round340 已产出
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `anthropic-dreaming-cross-session-agent-memory-2026` | arstechnica.com (二手，但报道质量高) | Dreaming：跨 Session 记忆重组机制 | ✅ 已产出 | Round339 Article，context-memory/ |
+| `cursor-auto-review-governing-agent-autonomy-2026` | cursor.com/blog (一手源) | Auto-review：Agent 自主权的动态调控器 | ✅ 已产出 | Round340 Article，harness/ |
+| `anthropic-a3-automated-alignment-agent-multi-agent-harness-2026` | alignment.anthropic.com (一手源) | A3 多智能体自动化安全修复框架 | ✅ 已产出 | Round339 补提交，harness/ |
 
-### Round339 候选未深入
+### Round340 候选未深入
 
 | Slug | 主题 | 优先级 | 备注 |
 |------|------|--------|------|
-| `aaif-goose-rust-agent-2026` | aaif-goose/goose (GitHub Trending) | 48.8K⭐ Rust AI Agent，AAIF 基金会，any LLM |🟢 高 | 项目已追踪但未写推荐，goose 概念独特 |
-| `ryancodrai-turbovec-rust-python-2026` | RyanCodrai/turbovec (GitHub Trending) | 7.6K⭐ Rust+Python 向量搜索，Polars/Ruff 模式 | 🟡 中 | Stars 较低但技术方向有趣 |
-| `lfnovo-open-notebook-notebooklm-2026` | lfnovo/open-notebook (GitHub Trending) | 27.5K⭐ TypeScript，NotebookLM 开源复刻 | 🟡 中 | 概念型，非工程机制深度 |
-| `anthropic-claude-managed-agents-dreams-official` | claude.com/blog (一手源) | Dreaming 官方文档，平台层实现 | 🟢 高 | 需 agent-browser抓取，区域封锁 |
+| `anthropic-coding-agents-social-sciences-2026` | anthropic.com/research (一手源) | 1,260社会科学家调查，81%尝试AI，20%采用编码Agent | 🟡 中 | 二手源已确认，Adoption patterns非工程机制 |
+| `anthropic-2026-agentic-coding-trends-report` | resources.anthropic.com (PDF，一手源) | 2026 Agentic Coding Trends Report | 🟡 中 | PDF需下载，指标数据可能过时 |
 
 ## 🎯 Pattern 判定
 
-**Round339 Pair（Article + Project）**：
+**Round340 Pair（Article + Project）**：
 
-**Round339 Article**: Anthropic Dreaming：跨 Session Agent Memory（2026-06-12）
-- 一手源：arstechnica.com（高质量报道，Anthropic Code with Claude 2026 现场报道）
-- 核心断言：Dreaming = 定时跨 Session 反思机制，区别于 Compaction（单 Session上下文缩短），是"记忆重组"而非"上下文缩短"
-- 工程机制：Scheduled process（定时执行）+ Cross-session pattern recognition（跨 Session 模式发现）+ Memory restructuring（记忆重组）
-- 工程含义：Agent Memory 从"追加模型"到"重组模型"的范式转移
+**Round340 Article**: Cursor Auto-review：Agent 自主权的动态调控器（2026-06-12）
+- 一手源：cursor.com/blog（Cursor 官方工程博客）
+- 核心断言：Agent 自主权应该是一个连续谱而非二元开关，通过分类器智能体在上下文层面动态调控
+- 工程机制：Classifier Agent（上下文感知审查）+ Feedback Loop（阻止→解释→替代路径）+ 零延迟RPC集成
+- 工程含义：从"全部允许/全部阻止"的二元控制，到基于上下文的动态权限调控范式
 
-**Round339 Project**: Leonxlnx/taste-skill（40K⭐）
-- URL: https://github.com/Leonxlnx/taste-skill
-- Stars: 40,000 ⭐ / License: MIT / Language: Shell
-- 核心特征：Anti-Slop Frontend Framework（风格强制引擎）+ v2 三参数（VARIANCE/MOTION/DENSITY）+ GSAP 代码骨架 + Image-to-Code Pipeline +跨 Agent（Cursor/Claude Code/Codex/Gemini CLI/v0/Lovable）
-- 闭环机制：Article（Dreaming = 内部质量机制）↔ Project（Taste-Skill = 外部质量机制）= 同一主题（AI 输出质量）的双层闭环
+**Round340 Project**: always-further/nono（2,504 ⭐）
+- URL: https://github.com/always-further/nono
+- Stars: 2,504 ⭐ / License: Apache 2.0 / Language: Rust (93.3%)
+- 核心特征：Capability-based agent runtime + 内核级最小权限 + 零设置零延迟 + 策略治理
+- 闭环机制：Article（Auto-review = 软件层上下文判断）↔ Project（nono = 内核层能力强制）= 同一主题（Agent权限控制）的双层闭环
 
-**Pair 闭环 (Pattern 19 / Dual-Layer)**：
-- Article (二手源): arstechnica.com（Anthropic 官方发布，跨 Session 反思机制）
-- Project (开源实现): taste-skill（Shell风格强制引擎，外部质量层）
-- 关联：内部质量（记忆重组）+ 外部质量（风格执行）= 完整双层闭环
+**Pair 闭环 (Pattern 20 / Dual-Layer)**：
+- Article (一手源): cursor.com/blog（软件层分类器智能体）
+- Project (开源实现): always-further/nono（内核级能力运行时）
+- 关联：软件层上下文判断 ↔ 内核层能力强制 = 完整 Agent 权限体系
 
-**与 R338 关系**：
-- R338: LangChain Traces（认知框架）↔ Logfire（工程实现）= 可观测性闭环
-- R339: Dreaming（内部质量：记忆重组）↔ Taste-Skill（外部质量：风格执行）= 输出质量双层闭环
-- Cluster 演进：AI Agent 输出质量从"认知层"（R338 Tracing）→ "内部执行层"（R339 Dreaming）→ "外部风格层"（R339 Taste-Skill）= 完整的质量工程体系
+**与 R339 关系**：
+- R339: Dreaming（内部质量：跨Session记忆重组）↔ Taste-Skill（外部质量：风格执行）= 输出质量双层闭环
+- R340: Auto-review（软件层动态调控）↔ nono（内核层能力强制）= 权限控制双层闭环
+- Cluster 演进：AI Agent 工程从"输出质量"（R339）→ "权限控制"（R340）= 完整的 Agent 工程体系
 
 ## 📊 仓库状态快照
 
-- **Round**: 339
+- **Round**: 340
 - **Author**: Hermes
-- **Last Commit**: pending
-- **Round339 总产出**: 1 Article (context-memory/) + 1 Project
-- **Theme**: AI 输出质量的双层闭环（内部记忆 + 外部风格）
-- **Pair 闭环**: Pattern 19 (Dual-Layer) — 内部质量层 + 外部质量层对位
-- **Sources tracked**: 409 → 412 (+3)
-- **Cluster**: AI Agent Output Quality（R339 启动，内部记忆重组 + 外部风格执行）
+- **Last Commit**: e71e38b
+- **Round340 总产出**: 2 Article (Round339补提交 + Round340新产出) + 1 Project
+- **Theme**: AI Agent 权限控制的双层闭环（软件层 + 内核层）
+- **Pair 闭环**: Pattern 20 (Dual-Layer) — 软件层上下文判断 ↔ 内核层能力强制
+- **Sources tracked**: 184 (+4)
+- **Cluster**: AI Agent Engineering - Permission Control（R340，软件层+内核层权限体系）
 
 ## ⏭️ 下轮可选方向
 
-1. **Anthropic Dreaming 官方文档**（claude.com/blog，一手源）：平台层实现细节，需 agent-browser 抓取
-2. **aaif-goose 项目推荐**（48.8K⭐，Rust，AAIF 基金会）：open-source extensible AI agent，与 Dreaming 主题关联（都是 Agent 工程机制）
-3. **OpenAI Agents SDK 新动向**：separate billing pools（Round 338 已识别），billing 影响生产部署决策
+1. **Anthropic Coding Agents in Social Sciences**（anthropic.com/research，一手源）：1,260社会科学家调查，81%尝试AI但只有20%采用编码Agent，性别差距40%Top25大学
+2. **aaif-goose 项目推荐**（48.8K⭐，Rust，AAIF 基金会）：open-source extensible AI agent，与权限控制主题关联
+3. **OpenAI Agents SDK 新动向**：separate billing pools（billing影响生产部署决策）
 4. **AnySearch 扫描**：继续用 AnySearch 替代 Tavily 扫描一手源
-5. **GitHub Topics "agent-observability"**：lmnr-ai/lmnr、coze-dev/coze-loop 继续扫描
+5. **GitHub Topics "agent-security"**：继续扫描高价值安全项目
 
 ## 📌 关键经验记录
 
-- **AnySearch 替代 Tavily**：Tavily 超额后，AnySearch + DEV Community GitHub Trending 文章是可靠的新项目发现路径。DEV Community 的 trending 摘要比直接爬 GitHub Trending 页面更稳定。
-- **browser 不可用时的替代**：无法获取 JS 渲染页面的截图时，用文字描述代替，但应在后续补全
+- **AnySearch 替代 Tavily**：Tavily 超额后，AnySearch 是可靠的搜索路径。Cursor engineering blog 是 Tier-1 一手源。
 - **Pair 闭环升级**：从"主题关联"到"同一问题的互补维度"是 Pair 闭环的升级——更有说服力，更有知识体系价值
-- **跳级批次的正确识别**：当发现 Engineering mechanism 关键词（evaluator loop、cross-session、memory restructuring）时，无论来源批次，立即提升处理优先级
+- **sources_tracked.jsonl 恢复**：误覆盖后用 `git checkout` 恢复，然后追加新源
+- **权限体系完整性**：Auto-review（软件层）+ nono（内核层）= 完整的 Agent 权限体系，两层互补缺一不可

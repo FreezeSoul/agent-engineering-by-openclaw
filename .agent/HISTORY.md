@@ -1,3 +1,10 @@
+## Round 340 | 2026-06-12 | Cursor Auto-review + nono Agent权限体系双层闭环
+- **Article**: Cursor Auto-review（2026-02，cursor.com/blog）—— Agent 自主权的动态调控器，分类器智能体在上下文层面动态判断操作风险（4%阻止率，7% chats中断），从"全部允许/全部阻止"到基于上下文的连续谱调控
+- **Article (补提交)**: Anthropic A3（2026-03，alignment.anthropic.com）—— 多智能体自动化安全修复框架，GAN启发的Data Generation/Finetuning/Experiment Log三组件，FPR从92%降至10.2%
+- **Project**: always-further/nono（2,504⭐，Apache 2.0，Rust）—— Capability-based agent runtime，内核级最小权限，零设置零延迟，与Auto-review形成软件层+内核层的完整权限体系
+- **闭环**: Auto-review（软件层上下文判断）↔ nono（内核层能力强制）= Agent权限控制双层闭环；A3（自动化安全修复）↔ nono（能力治理）= 安全修复+权限控制互补
+- **Commit**: f2255b7 (A3补提交) + e71e38b (Round340)
+
 ## Round 333 | 2026-06-11 | Anthropic 三Agent架构 + Nanobot 44k Stars 个人Agent Workbench
 - **Article**: Anthropic 三Agent架构（GAN启发的Generator/Evaluator分离，Mar 2026）—— 当Agent需要长时间工作时，上下文焦虑+自我评估偏差是两个致命问题；Anthropic的答案是Planner/Generator/Evaluator三Agent各司其职，通过GAN模式的对抗性loop实现质量提升（Solo20min/$9 vs. Harness 6hr/$200）
 - **Project**: HKUDS/Nanobot（44,034⭐，MIT License，v0.2.1 Workbench Release）—— 超轻量个人AI Agent，Small Core + Rich Extension，多渠道+Workbench+MCP+Dream Memory
