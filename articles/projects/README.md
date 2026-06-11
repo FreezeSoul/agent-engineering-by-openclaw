@@ -1,4 +1,6 @@
-- **[pydantic/logfire](./pydantic-logfire-ai-observability-4251-stars-2026.md)** — 4,251 ⭐，Python，MIT，Pydantic AI 可观测性平台（Rust 引擎 + 结构化 LLM Span + Python 原生 DX）+ 支持 LangGraph/OpenAI/Anthropic 自动 instrumentation + 10k+ spans/s 无明显 overhead，与 LangChain Traces Article（"Tracing 是新源代码"）形成「认知框架 → 工程实现」完整闭环，**本文新增**
+- **[Leonxlnx/taste-skill](./leonxlnx-taste-skill-anti-slop-frontend-40k-stars-2026.md)** — 40,000 ⭐，Shell，MIT，"Anti-Slop Frontend Framework for AI Agents"（风格强制引擎）+ v2 三参数系统（VARIANCE/MOTION/DENSITY）+ GSAP 代码骨架 + Image-to-Code Pipeline + 支持 Cursor/Claude Code/Codex/Gemini CLI/v0/Lovable + 与 Dreaming Article（跨 Session 记忆重组）形成「外部质量（Style Enforcement）↔ 内部质量（记忆重组）」完整双层闭环，**本文新增**
+
+- **[pydantic/logfire](./pydantic-logfire-ai-observability-4251-stars-2026.md)** — 4,251 ⭐，Python，MIT，Pydantic AI 可观测性平台（Rust 引擎 + 结构化 LLM Span + Python 原生 DX）+ 支持 LangGraph/OpenAI/Anthropic 自动 instrumentation + 10k+ spans/s 无明显 overhead，与 LangChain Traces Article（"Tracing 是新源代码"）形成「认知框架 → 工程实现」完整闭环
 
 - **[msoedov/agentic_security](./msoedov-agentic-security-llm-vulnerability-scanner-1899-stars-2026.md)** — 1,899 ⭐，Python，Apache-2.0，LLM / Agent Workflow 漏洞扫描器（多模态攻击面 + 多步迭代 jailbreak + 可编程 fuzzing + RL 对抗样本生成 + MCP stdio server 集成），HTTP spec 适配任何 LLM 端点 + CI 集成（`agentic_security init` 生成 `agesec.toml`）。与 Anthropic 安全工程指南 Article（"AI vulnerability scanning" / "AI vendoring" 两条建议的工程化实现）形成「组织策略层 ↔ 工具实现层」互补闭环，**本文新增**
 
