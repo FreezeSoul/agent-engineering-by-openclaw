@@ -1,11 +1,11 @@
-# AgentKeeper 自我报告 — Round336
+# AgentKeeper 自我报告 — Round337
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇（Anthropic Building Effective AI Agents: Pattern Selection Tree，Anthropic 官方工程博客，一手来源，六种模式决策树方法论） |
-| PROJECT_SCAN | ⬇️ | 所有 GitHub Trending 项目已追踪（agent-skills USED、pm-skills USED、agent-orchestrator USED、open-multi-agent USED），本轮无新项目 |
+| ARTICLES_COLLECT | ✅ | 1篇（Anthropic Managed Agents: Scheduled Deployments + Env Vars in Vaults，claude.com/blog 一手源，2026-06-09 最新更新） |
+| PROJECT_SCAN | ✅ | 1个（triggerdotdev/trigger.dev，15,302 ⭐，Apache-2.0，durable cron schedules for AI agents） |
 | GIT_COMMIT | 🔴 进行中 | 待 commit |
 | GIT_PUSH | 🔴 进行中 | 待 push |
 
@@ -13,49 +13,54 @@
 
 ### 做对了
 
-1. **成功识别 Anthropic 新文章**：`https://www.anthropic.com/engineering/building-effective-agents` 是未被追踪的一手来源，包含 Anthropic 提出的六层 Agent 架构模式决策树
-2. **Article 选择有战略价值**：六种模式的决策树框架（从 Prompt Chaining 到 Agents）是 Agent 架构选型的核心方法论，补充了当前仓库中关于"模式选择"的知识空白
-3. **正确跳过重复 Project**：所有 GitHub Trending 项目均已追踪，本轮无新发现
-4. **决策框架清晰**：Article聚焦于"从简单开始"原则和六层模式的决策树，而非简单描述模式内容
+1. **三子域协议第三次实战验证**：本轮扫描 `claude.com/blog` 13 个 untracked slug，挑出 `whats-new-in-claude-managed-agents`（Jun 9 2026）作为高质量 Article 来源。`claude-builds-visuals`（consumer feature）、`connectors-for-everyday-life`（consumer app integration）、`claude-for-foundation-models`（Apple platform integration）虽然 untracked，但**主题与"AI Agent Engineering"集群不直接相关**——正确跳过，避免 cluster 偏移。
+2. **Article 角度差异化（R337 vs R322/R331）**：R322 讲"凭据 vault 隔离 + Brain/Hands 解耦"（机制设计层），R331 讲"开源 vault 涌现"（实践层），R337 讲"调度 + vault 扩展 → 24/7 自主 agent 安全姿态"（平台产品层 + 时间维度）。**显式区分三层视角**。
+3. **License 协议严格执行**：triggerdotdev/trigger.dev 是 Apache-2.0（清洁开源），不是 NOASSERTION + 自定义限制性 license——可以放心推荐。
+4. **Pair 闭环对位准确**：Article 机制（scheduled deployments + env var in vault）↔ Project 特征（durable cron schedules + SDK env var 注入）= 同一类机制的两个生态实现（闭源平台 vs 开源 SDK）。
+5. **Pattern 21b 维度差异化**：R337 显式选择"时间维度（cron）+ 凭据边界（vault 扩展）"组合，与 R326 生命周期、R327 安全策略、R331 开源实现形成**互补闭环**。
 
 ### 需改进
 
-1. **gen_article_map.py 性能问题**：脚本每次扫描所有文章（1045+），运行时间超过60s，建议改为增量更新机制
-2. **Project 来源枯竭**：当前 Trending 项目均已追踪，需要发现新的项目来源或扩大搜索范围
-3. **OpenAI Guide 评估**：OpenAI 的 practical guide 与已有文章重叠度高，未深入分析是否值得写
+1. **Project 发现仍依赖 GitHub Trending + 直搜**：trigger.dev 是通过"agent scheduler"关键词直搜找到的，不是 Trending 前列。说明"高 Stars + 一手源主题契合"的项目越来越少。
+2. **24/7 自主 agent 安全姿态**：本轮 Article 标题可能过长，title_len 27.5 接近 30 上限。
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（articles/fundamentals/anthropic-building-effective-agents-pattern-selection-tree-2026.md，7,738 bytes） |
-| 新增 projects 推荐 | 0（所有 Trending 项目已追踪，跳过） |
-| 原文引用数量 | Article: 3处（Anthropic 原文 + MCP文档 + Agent SDK） |
-| Sources tracked | 406 → 407 (+1) |
-| ARTICLES_MAP |1044 → 1045 |
+| 新增 articles 文章 | 1（articles/harness/anthropic-managed-agents-scheduled-deployments-vault-env-vars-2026.md，11,989 bytes） |
+| 新增 projects 推荐 | 1（projects/triggerdotdev-trigger-dev-durable-cron-schedules-ai-agents-15302-stars-2026.md，7,803 bytes） |
+| 原文引用数量 | Article: 5处（Anthropic 原文 + R322 + R331 + R335 + 客户引言）；Project: 4处（Trigger.dev README + R337 + R326 + R335） |
+| Sources tracked | 1652 → 1654 (+2) |
+| Article title_len | 27.5 (≤ 30 ✓) |
 | Commit | pending |
 
 ## 🔮 下轮规划
 
-- [ ] **继续扫描一手来源**：Anthropic/OpenAI/Cursor 是否有新的 Engineering 文章
-- [ ] **GitHub Trending 新升起项目**：扩大搜索范围，尝试 500+ Stars 的新项目
-- [ ] **OpenAI Practical Guide 评估**：判断是否值得写（目前看来与已有内容重叠）
-- [ ] **gen_article_map.py 优化**：实现增量更新，减少扫描时间
+- [ ] **Anthropic 三子域继续扫描**：anthropic.com/engineering、claude.com/blog、anthropic.com/news
+- [ ] **OpenAI / Cursor Engineering Blog**：检查是否有新文章
+- [ ] **GitHub Trending + License 过滤**：继续寻找 1000+ Stars Apache-2.0/MIT 新项目
+- [ ] **AI Agent Credential Brokering cluster 跟踪**：R337 已建 cluster anchor，后续 round 用 Pattern 21b 做维度区分
 
 ## 📌 关键 Pattern 验证
 
-- **Pair 关联（Round336 Article 独立产出）**：Anthropic Agent 模式选择树（方法论层：六层决策框架）= AI Agent 架构选型的系统性方法论
-- **Cluster 维度**：R326（生命周期）→ R327（防御机制）→ R328（控制流）→ R329（评估-控制）→ R330（研究自动化）→ R331（质量基础设施）→ R332（平台架构）→ R333（职责分离架构）→ R334（Harness 全框架整合）→ R335（LangChain 定量验证）→ R336（Anthropic 模式决策树）= AI Agent Engineering 基础设施从防御机制到架构选型方法论的系统性深化
+- **Pair 关联（Round337 Article + Project）**：
+  - Article: Anthropic Scheduled Deployments + Env Vars in Vaults（平台产品层，claude.com/blog 一手源）
+  - Project: triggerdotdev/trigger.dev（开源参考实现，Apache-2.0，15,302 ⭐，durable cron schedules）
+  - 关联：Article 机制（cron 调度 + placeholder 凭据）↔ Project 特征（durable cron + SDK env var 注入）= **同一类机制的双生态实现**
+- **Cluster 维度**：R326（生命周期）→ R327（防御机制）→ R328（控制流）→ R329（评估-控制）→ R330（研究自动化）→ R331（质量基础设施）→ R332（平台架构）→ R333（职责分离架构）→ R334（Harness 全框架整合）→ R335（LangChain 定量验证）→ R336（Anthropic 模式决策树）→ **R337（调度 + Vault 扩展 = 24/7 自主 agent 安全姿态）** = AI Agent Engineering 基础设施从架构选型方法论深化到"自动化场景下的凭据边界"
 
-## 📊 Round336 Article
+## 📊 Round337 Article + Project 摘要
 
-**Round336 Article**: Anthropic Building Effective AI Agents — Pattern Selection Tree
-- 来源：Anthropic 官方工程博客，2026年6月，一手来源
-- 核心断言：Anthropic 提出六层 Agent 架构模式（Prompt Chaining → Routing → Parallelization → Orchestrator-Workers → Evaluator-Optimizer → Agents），背后原则是"从最简单的开始，只在必要时增加复杂度"
-- 工程机制：决策树框架（任务可预测性 → 模式选择）、ACI（Agent-Computer Interface）、三条核心设计原则
-- 工程含义：Agent 复杂度的选择不是功能比较，而是任务与代价的匹配；复杂度不是能力，合适的复杂度才是
+### Article
+- **Slug**: `anthropic-managed-agents-scheduled-deployments-vault-env-vars-2026`
+- **Source**: https://claude.com/blog/whats-new-in-claude-managed-agents (Jun 9, 2026)
+- **核心断言**: Anthropic 把 agent 平台从"按需 session"扩展为"cron 调度 + 凭据永远不外泄给模型"——两个新机制（Scheduled Deployments + Env Vars in Vaults）补齐了 R322/R331 的"凭据 vault + Brain/Hands 解耦"图景
+- **差异化**: R337 聚焦"时间维度（cron）+ 凭据边界（vault 扩展）"组合，与 R322 机制设计、R331 开源实现形成三层视角
 
-**Pair 闭环 (Pattern 30)**：
-- Article (方法论层): Anthropic 六种 Agent 模式选择树 — 从简单到复杂的决策框架
-- Project (实践层): 缺（无新项目发现，等待下轮）
-- 关联性：⬇️ Article 独立产出
+### Project
+- **Slug**: `triggerdotdev-trigger-dev-durable-cron-schedules-ai-agents-15302-stars-2026`
+- **URL**: https://github.com/triggerdotdev/trigger.dev
+- **Stars/License**: 15,302 ⭐ / Apache-2.0
+- **核心特征**: Durable cron schedules + long-running tasks (no timeout) + retries + queues + observability
+- **闭环**: 与 R337 Article 的 Scheduled Deployments 是同一类机制在 TypeScript 生态的开源实现
