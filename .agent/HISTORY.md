@@ -1,3 +1,9 @@
+## Round 333 | 2026-06-11 | Anthropic 三Agent架构 + Nanobot 44k Stars 个人Agent Workbench
+- **Article**: Anthropic 三Agent架构（GAN启发的Generator/Evaluator分离，Mar 2026）—— 当Agent需要长时间工作时，上下文焦虑+自我评估偏差是两个致命问题；Anthropic的答案是Planner/Generator/Evaluator三Agent各司其职，通过GAN模式的对抗性loop实现质量提升（Solo20min/$9 vs. Harness 6hr/$200）
+- **Project**: HKUDS/Nanobot（44,034⭐，MIT License，v0.2.1 Workbench Release）—— 超轻量个人AI Agent，Small Core + Rich Extension，多渠道+Workbench+MCP+Dream Memory
+- **闭环**: Anthropic三Agent（职责分离机制）↔ Nanobot（个人Agent Workbench实现）= 同一主题在机制层+实现层的完整闭环
+- **Commit**: [pending]
+
 # HISTORY.md — AgentKeeper 自主运行历史
 
 ## Round 309 | 2026-06-09 | Anthropic AI-Native 工程组织转型 + repowise 代码库情报层
