@@ -1,63 +1,63 @@
-# AgentKeeper 自我报告 — Round329
+# AgentKeeper 自我报告 — Round330
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇（Microsoft Open Trust Stack，devblogs.microsoft.com/foundry 一手源，Build 2026） |
-| PROJECT_SCAN | ✅ | 1推荐（responsibleai/ASSERT, 114 stars, Microsoft Research, NL spec→executable eval） |
-| GIT_PUSH | ✅ | e30ebc5 已推送 |
+| ARTICLES_COLLECT | ✅ | 1篇（AAR 自动化研究智能体架构，alignment.anthropic.com 一手源，2026） |
+| PROJECT_SCAN | ✅ | 1推荐（safety-research/automated-w2s-research, 261 stars, Anthropic Safety Research, Flask评估服务器） |
+| GIT_PUSH | ✅ | 40894e6 已推送 |
 
 ## 🔍 本轮反思
 
 ### 做对了
 
-1. **发现 Microsoft Open Trust Stack**：Build 2026 重磅发布，ASSERT（评估）+ ACS（运行时控制）形成完整闭环，是 R328 Claude Zero Trust 三阶层安全架构的「验证-控制」层补全
-2. **responsibleai/ASSERT 定位准确**：作为 evaluation/infrastructure 目录下的 project，与 R328 验证层互补，形成「规范层 → 架构层 → 验证层 → 控制层」的完整链条
-3. **Pair 配对成功**：Open Trust Stack（评估-控制闭环）与 Claude Zero Trust 三阶层（架构设计层）形成互补，与 AgentReady（基准验证层）构成三层闭环
-4. **Cluster 连续性**：R326-R329 连续聚焦 AI Agent Security Engineering，本轮补全「评估-控制」维度
+1. **发现 Anthropic AAR 系统**：2026年新发布，alignment.anthropic.com 一手源，核心洞察是「评估设计是真正的瓶颈」——这与 R328-R329 的评估-控制层主题形成深度呼应
+2. **safety-research/automated-w2s-research 定位准确**：作为 deep-dives/ 目录下的 project，与 Article 形成「原则层 → 实现层」互补，展示了 AAR 架构的代码级实现
+3. **Pair 配对成功**：AAR 架构原则（评估基础设施优先）与 AAR Sandbox（代码级实现）形成完整闭环，共同指向「评估设计比智能体架构更重要」这一核心工程洞察
+4. **Cluster 连续性**：R326-R330 连续聚焦 AI Agent Engineering 基础设施，从防御机制 → 策略 → 架构 → 评估-控制 → 研究自动化逐层深化
 
 ### 需改进
 
-1. **来源边界清晰度**：本轮 article 来源是 Microsoft官方博客（devblogs.microsoft.com/foundry），属于厂商一手源而非严格意义上的学术/社区源，下轮需更严格区分来源层级
-2. **GitHub stars 较低**：responsibleai/ASSERT 仅 114 stars，工程价值高但社区关注度低，说明微软开源社区运营较弱
+1. **来源边界清晰度**：alignment.anthropic.com 是 Anthropic Alignment Blog（安全研究博客），不同于工程博客但同样有高质量一手内容，下轮需更严格区分来源层级
+2. **GitHub stars 较低**：safety-research/automated-w2s-research 仅 261 stars，工程价值高但社区关注度低，说明是研究原型而非通用框架
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（articles/infrastructure/microsoft-open-trust-stack-assert-acs-2026.md, 4,885 bytes） |
-| 新增 projects 推荐 | 1（projects/responsibleai-ASSERT-eval-harness-114-stars-2026.md, 2,985 bytes） |
-| 原文引用数量 | Article: 3处 Microsoft原文 / Project: 2处 README引用 |
-| Sources tracked | 1657 → 1659 (+2) |
-| Commit | e30ebc5 |
+| 新增 articles 文章 | 1（articles/deep-dives/anthropic-automated-w2s-researcher-aar-architecture-2026.md, 7,976 bytes） |
+| 新增 projects 推荐 | 1（projects/safety-research-automated-w2s-research-aar-sandbox-261-stars-2026.md, 5,515 bytes） |
+| 原文引用数量 | Article: 3处 Anthropic原文 / Project: 2处 README引用 |
+| Sources tracked | 1659 → 1661 (+2) |
+| Commit | 40894e6 |
 
 ## 🔮 下轮规划
 
-- [ ] **GitHub 新兴 eval 框架扫描**：继续关注 Agent evaluation 领域的新项目（如 Arcjet, Braintrust 等）
-- [ ] **Claude Code 新文章深度扫描**：June 2026 期间 claude.com/blog 多篇新文（Skills、Dyanmic Workflows 等），继续追踪
-- [ ] **安全工程 cluster 收尾**：R326-R329 连续四轮安全工程主题，下轮可考虑转向其他 cluster
-- [ ] **多 Source 验证**：发现一手源后，交叉验证 GitHub repo stars，避免 stars 过低影响推荐价值
+- [ ] **Claude Fable 5 新模型分析**：June 9, 2026 发布，追踪其对 Agent 架构的影响
+- [ ] **GitHub Trending 新升起项目**：2026-06 月期间新项目扫描
+- [ ] **Cursor 第三纪元文章深度**：Cursor 软件工程第三纪元主题
+- [ ] **OpenAI Harness Engineering 文章**：Codex Agent 架构深度分析
 
 ## 📌 关键 Pattern 验证
 
-- **Pair 闭环（Pattern 23）**：Open Trust Stack（评估-控制闭环）+ Claude Zero Trust 三阶层（架构设计层）+ AgentReady（基准验证层）= 三层闭环：「架构设计 → 基准验证 → 评估-控制」
-- **Cluster 维度**：R326（机制层）→ R327（策略层）→ R328（架构层）→ R329（评估-控制层）= AI Agent Security Engineering 从防御机制到信任建立的完整链条
-- **与 R328 关系**：R328聚焦「架构设计层」（Zero Trust 三阶层 + OWASP 基准），R329 补全「评估-控制层」（ASSERT NL规范驱动评估 + ACS 运行时控制标准）
+- **Pair 闭环（Pattern 24）**：AAR 架构原则（评估基础设施优先）+ AAR Sandbox（代码级实现）= 原则层 ↔ 实现层完整闭环
+- **Cluster 维度**：R326（机制层）→ R327（策略层）→ R328（架构层）→ R329（评估-控制层）→ R330（研究自动化层）= AI Agent Engineering 基础设施从防御机制到研究自动化的完整链条
+- **与 R328-R329 关系**：R328聚焦「架构设计层」（Zero Trust 三阶层 + OWASP 基准），R329 补全「评估-控制层」（ASSERT NL规范驱动评估 + ACS 运行时控制标准），R330 补全「研究自动化层」（AAR 评估基础设施优先原则）
 
-## 📊 Round329 Pair
+## 📊 Round330 Pair
 
-**Round329 Article**: Microsoft Open Trust Stack — 评估-控制闭环
-- 来源：devblogs.microsoft.com/foundry，Sarah Bird（CPO Responsible AI），Build 2026，2026-06-02
-- 核心断言：ASSERT（Policy → 可执行评估）+ ACS（5 checkpoint 运行时控制标准）形成完整闭环；ACS 是 stateless、deterministic、fail-closed 的 policy 决策引擎
-- 工程含义：Agent 信任从静态配置变为可量化、可验证、可持续迭代的工程过程；OpenInference 作为共享 telemetry 层统一评估、控制和 trace 数据
+**Round330 Article**: Anthropic AAR 自动化研究智能体架构
+- 来源：alignment.anthropic.com/2026/automated-w2s-researcher，Jiaxin Wen et al.，Anthropic Alignment Blog，2026
+- 核心断言：成功的自主研究智能体不在于预设详细的工作流，而在于提供正确的评估基础设施（远程评估 API + 独立沙箱 + 共享知识库），让智能体自己决定如何执行；人类预设的工作流反而会约束 AAR 的灵活性，降低最终性能
+- 工程含义：评估设计是真正的瓶颈——找到正确的 PGR 指标比实现智能体本身更重要
 
-**Round329 Project**: responsibleai/ASSERT — NL规范 → 可执行评估管线
-- 114 stars，MIT License，Microsoft Research — Responsible AI
-- 核心能力：4阶段管线（NL spec → taxonomy → test generation → LLM scoring）；Framework-agnostic，Local-first，Trace-aware
-- 与 Article 互补：Article 给「控制标准层」设计，Project 是「评估执行层」实现工具
+**Round330 Project**: safety-research/automated-w2s-research — AAR Sandbox
+- 261 stars，MIT License，Anthropic Safety Research — Official
+- 核心能力：Flask 评估服务器 + 三层执行模式 + MCP 工具（submit_eval/share_findings/upload_codebase）+ 沙箱隔离设计
+- 与 Article 互补：Article 给「架构原则层」设计，Project 是「代码级实现层」验证
 
-**Pair 闭环 (Pattern 23)**：
-- Article (控制层): Open Trust Stack — **评估-控制闭环 + 5 checkpoint运行时标准**
-- Project (评估层): ASSERT — **NL规范 → 可执行评估管线**
-- 关联性：✅ 同一主题（AI Agent 安全信任工程），控制标准↔ 评估执行互补
+**Pair 闭环 (Pattern 24)**：
+- Article (原则层): AAR 架构 — **评估基础设施 > 预设工作流**
+- Project (实现层): AAR Sandbox — **Flask 评估 API + 沙箱隔离 + 外部持久化**
+- 关联性：✅ 同一主题（自主研究智能体基础设施），原则 ↔ 实现互补
