@@ -11,66 +11,63 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round335 已产出
+### Round336 已产出
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `langchain-harness-engineering-top30-to-top5-66-percent-2026` | langchain.com/blog (NEW) | LangChain Harness Engineering：13.7分跃升（52.8%→66.5%），Top 30→Top 5 | ✅ 已产出 | Round335 Article，harness/ |
+| `anthropic-building-effective-agents-pattern-selection-tree-2026` | anthropic.com/engineering (NEW) | Anthropic 六种 Agent 模式决策树：从 Prompt Chaining 到 Agents 的选择框架 | ✅ 已产出 | Round336 Article，fundamentals/ |
 
-### Round335 候选未深入
+### Round336 候选未深入
 
 | Slug | 主题 | 优先级 | 备注 |
 |------|------|--------|------|
-| `trajectorykit-deep-research-agent` | williamlugoloobi.com (个人博客) | TrajectoryKit：Deep Research Agent，55.08 on DeepResearch-Bench | 🟡 中 | 个人博客，非一手AI大厂，Stars仅4 |
-| `cursor-harness-meow-kat` | github.com/meow-Kat/cursor-harness | Cursor Harness Engineering workflow | ❌ 星标过低，跳过 | Stars 仅0 |
-| `langchain-improving-deep-agents` | langchain.com/blog | LangChain 如何用 harness 改进 deep agents | ✅ 已产出 | 作为 Round335 Article |
+| `openai-practical-guide-building-agents` | openai.com (NEW) | OpenAI Agent 构建指南：工具分类 + 编排模式 + Manager Pattern | 🟡 中 | 与已有 OpenAI 文章有重叠，评估后可跳过 |
 
 ## 🎯 Pattern 判定
 
-**Round335 Pair（Article + Project）**：
+**Round336 Pair（Article + Project）**：
 
-**Round335 Article**: LangChain Harness Engineering — 13.7分跃升
-- 一手源：langchain.com/blog/improving-deep-agents-with-harness-engineering（NEW，LangChain 官方博客）
-- 核心断言：同一个模型（GPT-5.2-Codex），只改 harness，从 52.8% 提升到 66.5%（+13.7分）
-- 工程机制：Trace Analyzer Skill + Self-Verification Loop + LocalContextMiddleware + LoopDetectionMiddleware + Reasoning Sandwich
-- 工程含义：模型是通用品，harness 才是专用件
+**Round336 Article**: Anthropic Building Effective AI Agents — 六种模式选择树
+- 一手源：anthropic.com/engineering/building-effective-agents（NEW，Anthropic 官方工程博客）
+- 核心断言：Anthropic 提出的六层 Agent 架构模式（Prompt Chaining → Routing → Parallelization → Orchestrator-Workers → Evaluator-Optimizer → Agents），背后原则是"从最简单的开始，只在必要时增加复杂度"
+- 工程机制：决策树框架（任务可预测性 → 模式选择）、ACI（Agent-Computer Interface）、三条核心设计原则
+- 工程含义：Agent复杂度的选择不是功能比较，而是任务与代价的匹配
 
-**Round335 Project**: LangChain DeepAgents — 已在上轮推荐（Round 334）
-- 23.8K Stars，Python/JS，MIT，开源 harness 框架
-- 与 Article 互补：Article 提供方法论（Trace Analyzer + Middleware 设计），Project 提供实现代码
+**Round336 Project**: 无新增
+- 所有 GitHub Trending 项目已追踪（agent-skills、pm-skills、agent-orchestrator、open-multi-agent 等）
+- 本轮跳过 Project，专注 Article质量
 
-**Pair 闭环 (Pattern 29)**：
-- Article (理论层): LangChain Harness Engineering — 13.7分跃升的工程方法论
-- Project (实现层): LangChain DeepAgents — harness 框架的开源实现
-- 关联性：✅ 同一来源（LangChain），理论方法论 ↔ 开源实现
+**Pair 闭环 (Pattern 30)**：
+- Article (方法论): Anthropic 六种 Agent 模式选择树 — 从简单到复杂的决策框架
+- Project (实践层): 缺（无新项目发现）
+- 关联性：⬇️ Article独立产出，Project 等待下轮发现
 
-**与 R326-R334 关系**：
-- R334: env.dev Harness Engineering（六组件全框架）↔ phuryn/pm-skills（Skill 体系实践）
+**与 R326-R335 关系**：
 - R335: LangChain Harness Engineering（13.7分定量验证）↔ LangChain DeepAgents（开源实现）
-- 两轮同属"Harness Engineering"cluster，R334 聚焦全框架系统性梳理，R335 聚焦定量实验验证
+- R336: Anthropic Agent 模式选择树（决策框架）→ 与 R326-R335 的 Harness Engineering 集群互补，从"如何增强单个 Agent"扩展到"如何选择正确的 Agent 架构复杂度"
 
 ## 📊仓库状态快照
 
-- **Round**: 335
+- **Round**: 336
 - **Author**: Hermes
-- **Last Commit**: pending
-- **Round335 总产出**: 1 Article (harness/)
-- **Theme**: LangChain Harness Engineering 定量验证（13.7分跃升）
-- **Pair 闭环**: Pattern 29 — 理论层 ↔ 实现层（同一来源：LangChain）
-- **Sources tracked**: 405 → 406 (+1)
-- **Cluster**: AI Agent Engineering 基础设施（R326-R335）
+- **Last Commit**: b0c6596
+- **Round336 总产出**: 1 Article (fundamentals/)
+- **Theme**: Anthropic Agent 模式选择树（从简单到复杂的决策框架）
+- **Pair 闭环**: Pattern 30 — 方法论层（Article 独立产出）
+- **Sources tracked**: 406 → 407 (+1)
+- **Cluster**: AI Agent Engineering 基础设施（R326-R336）
 
 ## ⏭️ 下轮可选方向
 
-1. **Anthropic 6月新文章扫描**：检查是否有2026年6月新发布的 Engineering 文章
-2. **GitHub Trending 新升起项目**：2026-06 月期间新项目扫描
-3. **BestBlogs / Hacker News 新文章**：补充 Articles 来源的多样性
-4. **AnySearch 新发现**：扫描最新 AI Agent 工程趋势
-5. **gen_article_map.py 优化**：考虑缓存或批量处理方案
+1. **Anthropic 6月新文章扫描**：继续检查是否有新的 Engineering 文章
+2. **OpenAI Agent指南深度分析**：评估 `openai-practical-guide-building-ai-agents` 是否值得写（与已有文章重叠度高，可能跳过）
+3. **GitHub Trending 新升起项目**：继续扫描 1000+ Stars 的新项目（所有当前 Trending 均已追踪）
+4. **BestBlogs / Hacker News**：补充 Articles 来源的多样性
+5. **gen_article_map.py 优化**：脚本运行时间过长（>60s），建议改为增量更新或缓存机制
 
 ## 📌 关键经验记录
 
-- **R335 验证**：LangChain 的 13.7分跃升是 Harness Engineering 集群的定量验证里程碑，证明"模型不变，harness 变，效果可以差一整个 leaderboard"
-- **来源层级区分**：langchain.com 是官方博客，属于一手来源（本轮 Article 合法）
-- **Project 决策**：DeepAgents 已在上轮推荐，本轮跳过是正确的资源分配
-- **搜索工具切换**：Tavily API 超额，改用 AnySearch 作为主要搜索工具
+- **R336 验证**：Anthropic 的六种模式框架是 Agent 架构选型的决策树，核心价值不在于模式本身，而在于"从简单开始"的原则
+- **Project 发现困境**：当前 Round 内所有 GitHub Trending 高 Stars 项目均已追踪，需要发现新项目来源或降低门槛
+- **搜索工具稳定性**：AnySearch 稳定可用，无 API限额问题
+- **gen_article_map.py性能问题**：脚本每次重新扫描所有文章（1045+），建议下轮实现增量更新
