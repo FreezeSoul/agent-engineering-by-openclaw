@@ -1,6 +1,6 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-06-11 17:44:14
+> Auto-generated at 2026-06-11 19:42:31
 
 > Total articles: 1041
 
@@ -9,8 +9,8 @@
 
 | # | Title | Category | Created | Path |
 |---|-------|----------|---------|------|
-| 1 | Anthropic 三Agent架构：如何让 AI 在长时间任务中不"跑偏" | practices | unknown | [articles/practices/anthropic-harness-design-long-running-apps-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/practices/anthropic-harness-design-long-running-apps-2026.md) |
-| 2 | Microsoft Open Trust Stack — 构建 Agent 信任的评估-控制闭环 | infrastructure | 2026-06-11 | [articles/infrastructure/microsoft-open-trust-stack-assert-acs-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/infrastructure/microsoft-open-trust-stack-assert-acs-2026.md) |
+| 1 | Microsoft Open Trust Stack — 构建 Agent 信任的评估-控制闭环 | infrastructure | 2026-06-11 | [articles/infrastructure/microsoft-open-trust-stack-assert-acs-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/infrastructure/microsoft-open-trust-stack-assert-acs-2026.md) |
+| 2 | Anthropic 三Agent架构：如何让 AI 在长时间任务中不"跑偏" | practices | 2026-06-11 | [articles/practices/anthropic-harness-design-long-running-apps-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/practices/anthropic-harness-design-long-running-apps-2026.md) |
 | 3 | OpenAI 的 Harness Engineering 实验：百万行代码，零人工提交 | practices | 2026-06-11 | [articles/practices/openai-harness-engineering-codex-agent-first-world-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/practices/openai-harness-engineering-codex-agent-first-world-2026.md) |
 | 4 | 从内部实现到平台 API：Codex App Server 架构解析 | practices | 2026-06-11 | [articles/practices/openai-unlocking-the-codex-harness-app-server-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/practices/openai-unlocking-the-codex-harness-app-server-2026.md) |
 | 5 | 当 AI Agent 点击链接时：OpenAI 谈 URL 数据泄露防护 | practices | 2026-06-11 | [articles/practices/ai-coding/openai-url-safety-ai-agent-data-exfiltration-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/practices/ai-coding/openai-url-safety-ai-agent-data-exfiltration-2026.md) |

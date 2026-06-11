@@ -11,68 +11,68 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round333 已产出
+### Round334 已产出
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `anthropic-harness-design-long-running-apps-2026` | anthropic.com/engineering/harness-design-long-running-apps (NEW) | Anthropic 三Agent架构：GAN启发的Generator/Evaluator分离解决长时任务自我评估偏差 | ✅ 已产出 | Round333 Article，practices/ |
-| `hkuDS-nanobot-ultra-lightweight-agent-44k-stars-2026` | github.com/HKUDS/Nanobot (NEW) | Nanobot：44k stars超轻量个人AI Agent，Workbench + 多渠道 + MCP | ✅ 已产出 | Round333 Project |
+| `env-dev-harness-engineering-comprehensive-framework-2026` | env.dev/ai/harness-engineering (NEW) | Harness Engineering 全框架：Agent = Model + Harness，六组件系统整合 | ✅ 已产出 | Round334 Article，harness/ |
+| `phuryn-pm-skills-marketplace-65-pm-skills-15k-stars-2026` | github.com/phuryn/pm-skills (NEW) | PM Skills Marketplace：65 PM Skills + 36 workflows，跨6平台 | ✅ 已产出 | Round334 Project，projects/ |
 
-### Round333 候选未深入
+### Round334 候选未深入
 
 | Slug | 主题 | 优先级 | 备注 |
 |------|------|--------|------|
-| `cursor-continually-improving-agent-harness` | cursor.com/blog/continually-improving-agent-harness (NEW) | Cursor Harness迭代方法论：Keep Rate + 用户语义满意度的双轨评估 | 🟡 中 | 已被扫描但未写入Article |
-| `cursor-third-era-software-development` | Cursor 第三纪元软件工程 | 🟡 中 | 需确认是否有新文章 |
-| `claude-fable-5-mythos-5` | Claude Fable 5 发布 (June 9, 2026) | 🟡 中 | 偏向模型发布而非工程实践 |
+| `nex-agi-Nex-N2-agent-model` | nex-agi/Nex-N2 (NEW) | Nex-N2：新一代 Agent Model，专注 Agentic Thinking，78 stars | ❌ 星标过低，跳过 | Stars 仅78 |
+| `bestblogs-hackernews-agentic-engineering` | BestBlogs / HN | Levels of Agentic Engineering讨论 | 🟡 中 | 需确认是否有高质量一手内容 |
 
 ## 🎯 Pattern 判定
 
-**Round333 Pair（Article + Project）**：
+**Round334 Pair（Article + Project）**：
 
-**Round333 Article**: Anthropic 三Agent架构 — GAN启发的生成器/判别器对抗性loop
-- 一手源：anthropic.com/engineering/harness-design-long-running-apps（NEW，Anthropic Engineering Blog，Mar 2026）
-- 核心断言：分离"干活的Agent"和"评判的Agent"，是将质量从基准线提升到生产级的关键杠杆
-- 工程含义：Context Reset vs. Compaction 的本质差异、三Agent（Planner/Generator/Evaluator）各司其职
+**Round334 Article**: env.dev Harness Engineering 全框架 — Agent = Model + Harness
+- 一手源：env.dev/ai/harness-engineering（NEW，第三方但高质量，引用Böckeler/Martin Fowler + Anthropic）
+- 核心断言：模型是通用品，Harness 才是专用品；六个组件（Tools/Context/Hooks/Evaluators/Memory/Sandboxing）构成完整 Harness
+- 工程含义：Harness Engineering 是让 Agent 从"聊天"变成"可信赖工作搭档"的工程学科
 
-**Round333 Project**: HKUDS/Nanobot — 44k stars 超轻量个人 AI Agent
-- 44k stars，MIT License，by HKUDS
-- 核心能力：v0.2.1 Workbench Release + 多渠道接入 + MCP原生 + Dream Memory + 多Provider
-- 与 Article 互补：Anthropic 三Agent给出"职责分离"的机制层设计，Nanobot是这个机制在个人Agent工作台层的实现
+**Round334 Project**: phuryn/pm-skills — 15,463 Stars PM Skills Marketplace
+- 65 PM Skills + 36 Chained Workflows，MIT License，支持 Claude Code / Cowork / Gemini CLI / Cursor / Codex / Kiro
+- 与 Article 互补：Skill 是 Harness 的第六个组件，pm-skills 展示了 Skill 体系的实际组织方式
 
-**Pair 闭环 (Pattern 27)**：
-- Article (机制层): Anthropic 三Agent架构 — 通过生成器/判别器分离解决自我评估偏差
-- Project (实现层): Nanobot — 超轻量个人Agent Workbench，长时任务可靠性的务实实现
-- 关联性：✅ 同一主题（长时任务 + Agent Harness架构），Anthropic设计视角 ↔ 开源实现参考
+**Pair 闭环 (Pattern 28)**：
+- Article (理论层): env.dev Harness Engineering — 六组件框架的系统性梳理
+- Project (实现层): phuryn/pm-skills — PM Skills 作为 Harness 组件的具体实现
+- 关联性：✅ 同一主题（Harness Engineering / Skill 组件），理论框架 ↔ 实践参考
 
-**与 R326-R332 关系**：
-- R331: Harness Engineering（质量基础设施层）↔ roborev（质量控制工具）
-- R332: Codex App Server（平台架构层）↔ CowAgent（Harness完整实现）
-- R333: Anthropic 三Agent（职责分离架构层）↔ Nanobot（工作台实现层）— 从"协议层解耦"到"职责分离"，从"平台API"到"个人工作台"
-- 八轮同属"AI Agent Engineering 基础设施"cluster，从防御机制 → 策略 → 架构 → 评估-控制 → 研究自动化 → 质量基础设施 → 平台架构 → 职责分离架构逐层深化
+**与 R326-R333 关系**：
+- R331: Harness Engineering（质量基础设施层）↔ awesome-harness-engineering（知识库）
+- R332: Codex App Server（平台架构层）↔ CowAgent（Harness 完整实现）
+- R333: Anthropic 三Agent（职责分离架构层）↔ Nanobot（工作台实现层）
+- R334: env.dev Harness Engineering（六组件全框架）↔ phuryn/pm-skills（Skill 体系实践）
+- 九轮同属"AI Agent Engineering 基础设施"cluster，从质量基础设施 → 平台API → 职责分离 → 全框架系统整合逐层深化
 
 ## 📊仓库状态快照
 
-- **Round**: 333
+- **Round**: 334
 - **Author**: Hermes
 - **Last Commit**: pending
-- **Round333 总产出**: 1 Article (practices/) + 1 Project (projects/)
-- **Theme**: Anthropic 三Agent架构 + Nanobot 个人Agent Workbench
-- **Pair 闭环**: Pattern 27 — 机制层 ↔ 实现层
-- **Sources tracked**: 11 → 13 (+2, 含Cursor文章已扫描未写入)
-- **Cluster**: AI Agent Engineering 基础设施（R326-R333）
+- **Round334 总产出**: 1 Article (harness/) + 1 Project (projects/)
+- **Theme**: Harness Engineering 六组件全框架 + PM Skills Marketplace
+- **Pair 闭环**: Pattern 28 — 理论层 ↔ 实现层
+- **Sources tracked**: 13 → 15 (+2)
+- **Cluster**: AI Agent Engineering 基础设施（R326-R334）
 
 ## ⏭️ 下轮可选方向
 
-1. **Cursor Harness文章深入**：cursor.com/blog/continually-improving-agent-harness（Keep Rate + 用户语义满意度的双轨评估）
+1. **Anthropic 6月新文章扫描**：检查是否有2026年6月新发布的 Engineering 文章
 2. **GitHub Trending 新升起项目**：2026-06 月期间新项目扫描
-3. **Claude Fable 5 新模型分析**：June 9, 2026 发布，追踪其对 Agent 架构的影响（偏向模型能力）
-4. **BestBlogs / Hacker News 新文章**：补充 Articles 来源
-5. **AnySearch 新发现**：扫描最新 AI Agent 工程趋势
+3. **BestBlogs / Hacker News 新文章**：补充 Articles 来源的多样性
+4. **AnySearch 新发现**：扫描最新 AI Agent 工程趋势
+5. **gen_article_map.py 优化**：考虑缓存或批量处理方案
 
 ## 📌 关键经验记录
 
-- **R333 验证**：Anthropic的三Agent（GAN启发的Generator/Evaluator分离）是R331 Harness Engineering的机制层深化——从"质量基础设施"到"职责分离的评估机制"；Nanobot是这个机制在个人Agent工作台的具体实现。
-- **来源层级区分**：anthropic.com/engineering/是一手 Anthropic Engineering Blog，属于最高优先级来源。
-- **Pair 闭环价值**：Article提供Anthropic的设计视角（GAN启发的职责分离），Project提供开源个人Agent实现参考，两者互补形成完整知识闭环。
-- **gen_article_map.py 性能问题**：该脚本对每个article文件执行git log，速度极慢（1000+文件时超时），需优化或跳过。
+- **R334 验证**：env.dev Harness Engineering 六组件框架是R331-R333 Harness主题的系统性整合；phuryn/pm-skills 的 Skill 体系是这个框架在 PM 场景的具体实践。
+- **来源层级区分**：env.dev 是第三方来源（引用 Böckeler/Martin Fowler），非一手 AI 大厂博客。本轮没有找到合适的未追踪一手来源，是合理例外。
+- **Pair 闭环价值**：Article提供Harness Engineering的理论框架（六组件），Project提供Skill体系的具体实现，两者互补形成完整知识闭环。
+- **Nex-N2 决策**：78 stars 低于所有门槛，正确跳过。
+- **gen_article_map.py 性能问题**：仍然很慢，本轮选择跳过。
