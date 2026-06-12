@@ -112,3 +112,9 @@
 - **Project**: ⬇️ DeepAgents 已在上轮推荐（Round 334，23.8K Stars），本轮跳过
 - **闭环**: LangChain Harness Engineering 方法论（理论层）↔ LangChain DeepAgents 开源实现（实现层）= 同一来源的理论 ↔ 实现互补；与 R334 同属"Harness Engineering"cluster，R334 聚焦六组件全框架系统性梳理，R335 聚焦 13.7分定量实验验证
 - **Commit**: pending
+
+## Round 351 | 2026-06-12 | Dreaming V3 计算压缩 + ApodexAI AgentHarness 评测框架
+- **Article**: OpenAI Dreaming V3（openai.com/index/chatgpt-memory-dreaming，Jun 4, 2026，context-memory/ 目录）—— 记忆系统的商业化突破不在算法在计算成本：5x 计算压缩将后台记忆合成从 Plus/Pro 专属功能变为可服务数亿免费用户的基础设施；三个可量化记忆目标（携带上下文/遵循偏好/随时间更新）；三层记忆架构（静态存储/动态合成/用户感知）
+- **Project**: ApodexAI/AgentHarness（127⭐，Apache 2.0，Jun 7, 2026，projects/ 目录）—— 深度研究 Agent 评测框架；ReAct 标准评测 pipeline；四个基准覆盖（BrowseComp/BrowseComp-ZH/HLE-Text/DeepSearchQA）；关联 Round350 Eval Playbook 五层框架的具体工程实现
+- **闭环**: Dreaming V3（记忆系统工程）↔ AgentHarness（评测框架）= harness 相关线索；与 R350 Cursor Lessons 同属"Harness/评测基础设施"cluster
+- **Commit**: e7ab772

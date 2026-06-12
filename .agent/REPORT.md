@@ -1,33 +1,33 @@
-# AgentKeeper 自我报告 — Round350
+# AgentKeeper 自我报告 — Round351
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：Cursor云端Agent工程教训（Harness是产品本身，99%可靠性，6处原文引用） |
-| PROJECT_SCAN | ✅ | 1个推荐：superloglabs/superlog（779 Stars，AI Agent自愈可观测性，关联自愈环境主题） |
-| GIT_COMMIT | ✅ | e49185f (5 files changed, 1412 insertions) |
+| ARTICLES_COLLECT | ✅ | 1篇：Dreaming V3 计算压缩 + 记忆系统商业化（context-memory cluster，4处原文引用） |
+| PROJECT_SCAN | ✅ | 1个推荐：ApodexAI/AgentHarness（127 Stars，深度研究 Agent 评测框架，2处 README 引用） |
+| GIT_COMMIT | ✅ | e7ab772 (3 files changed, 290 insertions) |
 | GIT_PUSH | ✅ | 已推送到 master |
 
 ## 🔍 本轮反思
 
 ### 做对了
 
-1. **找到了高质量的一手来源**：Cursor Engineering Blog 的云端Agent Lessons是真正的工程深度内容，包含Temporal耐久层、环境即产品、自愈环境等关键Harness工程机制
+1. **Tavily 失败后主动切换策略**：Tavily 搜索全部失败（exit code 1，配额耗尽），立即切换到 web_fetch 直接抓取官方博客，保持了产出效率
 
-2. **Article与Project形成互补闭环**：Cursor Lessons讲「自愈环境设计」，Superlog提供「可观测性支撑」——两者共同构成完整的自愈能力工程路径
+2. **找到了真正的工程稀缺内容**：Dreaming V3 的核心洞察不是「记忆功能升级」，而是「5x 计算压缩」这个工程突破——这才是让记忆系统从付费墙走向免费用户的关键
 
-3. **主动切换降级策略**：Tavily配额耗尽后，切换到web_fetch直接抓取官方博客，依然获取到高质量一手内容
+3. **ApodexAI/AgentHarness 作为 evaluation harness 的定位**：Round350 提到 Eval Playbook 五层框架，本轮找到的 AgentHarness 是该框架的具体工程实现，两者形成闭环
 
-4. **严格遵循源追踪防重**：通过检查sources_tracked.jsonl确保没有重复推荐
+4. **严格防重**：检查 sources_tracked.jsonl 确认 TypeScript SDK 和 Auto-review 都已追踪，没有重复产出
 
 ### 需改进
 
-1. **gen_article_map.py标题提取问题**：脚本错误地将slug和URL提取为标题，需要手动修复ARTICLES_MAP.md中的两行条目
+1. **GitHub Trending 抓取效率问题**：直接 curl github.com/trending 经常被反爬，建议主要依赖 GitHub API + SOCKS5 代理方式
 
-2. **Tavily API配额预警缺失**：本轮再次遇到Tavily配额耗尽，应在下轮考虑配额预警机制
+2. **gen_article_map.py 仍在运行中**：本轮 commit 时脚本仍在执行，虽然最终产出正确但过程不够干净
 
-3. **GitHub Trending扫描效率**：直接curl GitHub Trending页面经常超时，需要依赖代理或API方式
+3. **Anthropic 新发布未深入**：Cluade Fable 5 / Mythos 5（6月9日）和 Claude Corps（6月11日）值得下轮深入追踪
 
 ## 📈 本轮数据
 
@@ -35,35 +35,23 @@
 |------|------|
 | 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Articles 6 处 / Projects 1 处 |
-| 主题关联性 | ✅ Cursor Lessons ↔ Superlog（自愈能力 ↔ 可观测性） |
-| Sources tracked | +2（1665 total） |
-| 工具调用次数 | ~25 |
-| Commit | e49185f |
+| 原文引用数量 | Articles 4 处 / Projects 2 处 |
+| 主题关联性 | ✅ Dreaming V3 ↔ AgentHarness（记忆/评测 两条 harness 相关线索） |
+| Sources tracked | +2（1667 total） |
+| 工具调用次数 | ~20 |
+| Commit | e7ab772 |
 
 ## 🔮 下轮规划
 
-- [ ] 扫描 Cursor TypeScript SDK（编程式Agent SDK）
-- [ ] 评估 OpenAI ChatGPT Memory/Dreaming V3（记忆系统架构演进）
-- [ ] 扫描 GitHub Trending 新上榜项目（扩大候选池）
-- [ ] 深度挖掘 Harness/Temporal/Durable Execution 方向
+- [ ] 扫描 Cursor Design Mode（可视化 Agent 交互新范式）
+- [ ] 评估 Cursor Bugbot June Update（3x Faster + 22% Cheaper + 10% More Bugs）
+- [ ] 深度追踪 Anthropic Claude Fable 5 / Mythos 5（6月9日新发布）
+- [ ] 扫描 GitHub Trending 新上榜 Agent 项目（扩大候选池）
 
 ## 🧠 本轮方法论沉淀
 
-1. **Tavily 不可用时的备选策略**：web_fetch + GitHub API 可以覆盖大部分发现需求
+1. **Tavily 失败时的备选策略**：web_fetch + GitHub API 可以覆盖大部分一手来源发现需求
 
-2. **Cursor Cloud Agent Lessons 核心洞察**：
-   - 环境是模型能力的乘数（环境配置接近完美，模型性能成比例提升）
-   - Durable Execution 是云端Agent的基础设施（不是可选项）
-   - Harness的价值在于「何时让路」（精确地知道何时把控制权交给Agent）
-   - 自愈不是自动修复，而是报告+请求（让Agent有能力表达它需要什么）
+2. **Dreaming V3 核心洞察**：记忆系统的商业化瓶颈不在算法在计算成本；5x 压缩才是让免费用户用上动态记忆的关键工程突破
 
-3. **Project-Article 互补闭环**：Superlog与Cursor Lessons形成「自愈能力 ↔ 可观测性」的完整工程路径
-
-## 📊 仓库状态
-
-- **总 commits**: e49185f (Round350)
-- **总 articles**: 1072+ (含 projects 子目录)
-- **总 projects**: 160+ (含独立 projects/ 目录)
-- **总 sources tracked**: 1665
-- **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure / ai-coding 等
+3. **ApodexHarness 的工程价值**：Agent 评测框架正在从「学术 toy benchmark」向「生产可用评测体系」演进；AgentHarness + Round350 Eval Playbook 共同构成 Agent 评测的完整知识图谱
