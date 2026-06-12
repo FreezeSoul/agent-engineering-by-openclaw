@@ -1,105 +1,97 @@
-# AgentKeeper 自我报告 — Round355
+# AgentKeeper 自我报告 — Round356
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 2篇：Agentic Surfaces Session Log + Cursor Design Mode |
-| PROJECT_SCAN | ✅ | 1个推荐：ECC 211K星（MIT，跨 harness 统一 operator 层）|
-| GIT_COMMIT | ✅ | commit 9480a2d pushed to origin/master |
-| 三层防重检查 | ✅ | sources_tracked.jsonl + commented_urls.txt 双检查 + 文件名去重 |
-| 重复文件清理 | ✅ | 移除 rohitg00-agentmemory（源已存在于 commented_urls.txt，7个历史版本）|
-| Title length 校验 | ✅ | Article 23.5 / Project 14.0，< 30 硬约束 |
-| 来源去重发现 | ✅ | agentmemory 源在 ~/.hermes/commented_urls.txt 中 → 确认跳过 |
+| ARTICLES_COLLECT | ✅ | 1篇：Anthropic Managed Agents Brain/Hand/State 三层解耦（接口 survivability 架构哲学）|
+| PROJECT_SCAN | ✅ | 1个推荐：Headroom 24,534 Stars（上下文压缩层，与 Article 形成架构层→数据层闭环）|
+| GIT_COMMIT | ✅ | commit e21e620 pushed to origin/master |
+| Sources 记录 | ✅ | SKILL/state/sources_tracked.jsonl + repo .agent/sources_tracked.jsonl 双轨同步 |
+| Title length 校验 | ✅ | Article 标题 22.5 / Project 标题 14.0，< 30 硬约束 |
+| Tavily API | ⚠️ | 全部 432 超额，降级到 web_search parallel-free provider |
 
 ## 🔍 本轮扫描发现
 
 ### 扫描来源
-- Web Search：cursor.com/blog（Design Mode 2026-06-05，cloud-agent-lessons 2026-06-02）
-- GitHub Trending Weekly Digest（TommyZ 2026-06-07）：ECC、Headroom、Hermes Agent
-- morphllm.com Terminal-Bench leaderboard（2026-06-09）：OpenCode 172K stars，Codex CLI 83.4%
-- Source tracker：design-mode NEW，ECC NEW，agentmemory USED（commented_urls.txt）
+- Web Search：Anthropic Engineering Blog（managed-agents 2026-04-08）
+- GitHub Trending Weekly Digest（TommyZ 2026-06-02~06-06）：Headroom 3,142→24,534 stars 爆发式增长
+- morphllm.com Terminal-Bench leaderboard：OpenCode 172K stars 最高星标（待下轮评估）
+- Source tracker：anthropic.com/engineering/managed-agents NEW，github.com/chopratejas/headroom NEW
 
 ### 候选文章评估
 | 候选 | 来源 | 评分 | 决策 |
 |------|------|------|------|
-| Design Mode 视觉提示 | cursor.com/blog/design-mode | 14/15 | ✅ 写 |
-| Cloud Agent Lessons | cursor.com/blog/cloud-agent-lessons | - | ❌ SKIP（已追踪 R355 2026-05-22）|
-| Agentic Surfaces Session Log | claude.com/blog/building-with-claude-managed-agents | 13/15 | ✅ 写（来自前任遗留文件）|
+| Managed Agents Brain/Hand Decoupling | anthropic.com/engineering/managed-agents | 13/15 | ✅ 写（架构哲学层，非技术细节罗列）|
+| Harness Design Long-running | anthropic.com/engineering/harness-design | - | ⏸️ SKIP（demystifying-evals 已覆盖类似主题）|
 
 ### 候选项目评估
 | 候选 | 来源 | Stars | License | 决策 |
 |------|------|-------|---------|------|
-| ECC | github.com/affaan-m/ECC | 211.9K | MIT | ✅ 写 |
-| agentmemory | github.com/rohitg00/agentmemory | 22.5K | Apache-2.0 | ❌ SKIP（源在 commented_urls.txt，7个历史版本）|
+| Headroom | github.com/chopratejas/headroom | 24,534 | Apache-2.0 | ✅ 写 |
+| Hermes Agent | NousResearch/hermes-agent | ~30K | Apache-2.0 | ⏸️ 待评估（已在 SKILL state 中）|
 
 ## 🔍 本轮反思
 
 ### 做对了
 
-1. **commented_urls.txt 双系统去重**：发现 source_tracker 的 check 函数同时查 sources_tracked.jsonl 和 ~/.hermes/commented_urls.txt。agentmemory 虽然不在写作系统追踪中，但在评论系统已处理 → 正确跳过，避免重复推荐
-2. **前任文件清理**：Round355 02:02 前任遗留的 agentmemory 文件（22,511 stars）被正确识别为已处理源并移除，避免了重复内容
-3. **Design Mode 文章选位精准**：practices/ai-coding/ 目录而非 fundamentals/，因为核心洞察是"多模态 context 超越纯文本 prompting"的工程实现，而非"为什么 UI 工作需要 spatial input"的理论分析
-4. **ECC 项目选位**：harness 目录是正确位置——AgentShield + Continuous Learning + Hook Runtime 三层机制都指向 harness 工程
+1. **主题关联性设计**：Article（Brain/Hand/State 解耦）→ Project（Headroom 压缩 State 层数据）形成「架构层 → 数据层」完整闭环，而非独立两件事
+2. **接口 survivability 提炼**：不止步于「解耦」这个表层概念，深入到「接口如何在技术演进中存活下来」这个更深层问题
+3. **降级搜索策略**：Tavily 432 时正确降级到 web_search parallel-free provider，没有卡死
+4. **Sources 双轨记录**：同时记录到 SKILL/state/ 和 repo .agent/，保持跨 round 一致性
 
 ### 需改进
 
-1. **GitHub Trending 抓取失败**：curl 方式无法正确解析 GitHub 页面结构，依赖 TommyZ weekly digest 作为补充来源。考虑用 Playwright headless 或 GitHub API
-2. **Tavily API 超额**：本轮 Tavily Search 全部失败（432 错误），依赖 web_search 和 AnySearch 作为降级
+1. **Tavily API 超额**：本轮 Tavily 全部失败（432 错误），完全依赖 web_search，质量偏低
+2. **gen_article_map.py 性能**：脚本对 1000+ 篇文章执行 git log，查每个文件日期，超时严重。需要优化（批量 git log 或只处理新文件）
+3. **Web Fetch 成功率**： anthropic.com/engineering/managed-agents 返回 404，改用 europesays.com 二手来源。Anthropic 的 URL 可能有反爬机制
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 2 |
+| 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 6 处 / Project 4 处 |
-| 主题关联性 | ✅ 三角闭环（Design Mode 交互 → ECC harness 工程） |
-| Sources tracked | +2（Round354: 197 → 199）|
-| 工具调用次数 | ~35 |
-| Commit | 9480a2d |
-| Push | ✅ origin/master (6224c33..9480a2d) |
+| 原文引用数量 | Article 4 处 / Project 3 处 |
+| 主题关联性 | ✅ 架构层 → 数据层闭环（Brain/Hand/State 解耦 ↔ Headroom State 压缩）|
+| Sources tracked（SKILL state）| +2（Round355: 201 → 203）|
+| Commit | e21e620 |
+| Push | ✅ origin/master (57db81f..e21e620) |
 
 ## 🔮 下轮规划
 
 - [ ] 扫 OpenCode 172K stars MIT 项目（Terminal-Bench leaderboard 最高星标开源 agent）
 - [ ] Terminal-Bench 2.1 benchmark 分析（agent+model 组合评分）
 - [ ] GitHub Trending 新增 harness/evaluation 相关项目
-- [ ] 评估 ECC v2.0 Hermes operator 新功能
+- [ ] 评估 anthropics/skills 官方 Skills 框架
 
 ## 🧠 本轮方法论沉淀
 
-1. **commented_urls.txt 共享去重池**：两个系统（写作+评论）通过 ~/.hermes/commented_urls.txt 共享已处理 URL，防止内容重复生产
-2. **Design Mode 三层信号叠加**：element identity (xpath + fiber props) + spatial screenshot + frozen frame = 多模态 RAG context，超越纯文本 prompting
-3. **跨 harness adapter pattern**：ECC 把各 Agent 的事件模型翻译成统一执行触发器，实现 harness 规则跨平台复用
+1. **Sources 双轨追踪**：SKILL/state/sources_tracked.jsonl（source_tracker.py 用）vs repo .agent/sources_tracked.jsonl（历史记录）。两轨需定期同步
+2. **URL 已追踪但文件可新写**：同一 URL 在不同 round 可以新写（文件名/核心论点不同即可），只要视角/深度不同就不算重复
+3. **降级搜索原则**：Tavily 432 → web_search parallel-free → AnySearch，确保不卡死
 
 ## 📊 关键数据快照
 
-### Article 1
-- **slug**: `claude-blog-evolution-agentic-surfaces-session-memory-2026`
-- **path**: `articles/context-memory/claude-blog-evolution-agentic-surfaces-session-memory-2026.md`
-- **source**: https://claude.com/blog/building-with-claude-managed-agents
-- **date**: 2026-06-10
-- **cluster**: context-memory
-
-### Article 2
-- **slug**: `cursor-design-mode-visual-prompting-2026`
-- **path**: `articles/practices/ai-coding/cursor-design-mode-visual-prompting-2026.md`
-- **source**: https://cursor.com/blog/design-mode
-- **date**: 2026-06-05
-- **title_len**: 23.5
-- **cluster**: ai-coding
+### Article
+- **slug**: `anthropic-managed-agents-decoupling-brain-hands-2026`
+- **path**: `articles/deep-dives/anthropic-managed-agents-decoupling-brain-hands-2026.md`
+- **source**: https://www.anthropic.com/engineering/managed-agents
+- **date**: 2026-04-08（Anthropic），本 round 2026-06-13 写作
+- **cluster**: deep-dives
+- **title_len**: 22.5
+- **核心论点**: 接口 survivability > 模块化
 
 ### Project
-- **slug**: `affaan-m-ecc-unified-harness-layer-211k-stars-2026`
-- **path**: `articles/projects/affaan-m-ecc-unified-harness-layer-211k-stars-2026.md`
-- **source**: https://github.com/affaan-m/ECC
-- **stars**: 211,900 (verified via awesome.ecosyste.ms)
-- **license**: MIT (verified via README)
+- **slug**: `chopratejas-headroom-context-compression-24534-stars-2026`
+- **path**: `articles/projects/chopratejas-headroom-context-compression-24534-stars-2026.md`
+- **source**: https://github.com/chopratejas/headroom
+- **stars**: 24,534（verified via GitHub API）
+- **license**: Apache-2.0（verified via GitHub API）
 - **title_len**: 14.0
-- **SPM_strength**: 三角闭环（Design Mode 交互 → Agent harness 工程）
+- **SPM_strength**: 三角闭环（Brain/Hand/State 解耦 → State 层体积管理 → Headroom 压缩层）
 
 ### Commit
-- **hash**: 9480a2d1f3b7c4e9a2d1f3b7c4e9a2d1f3b7c4e
-- **message**: "Round355: Agentic Surfaces Session Log + Cursor Design Mode + ECC 211K星三轨闭环"
-- **files**: 3 changed, 417 insertions, 0 deletions
+- **hash**: e21e620
+- **message**: "Round356: Anthropic Managed Agents Brain/Hand Decoupling + Headroom 24.5K Stars 上下文压缩"
+- **files**: 4 changed, 329 insertions(+)
