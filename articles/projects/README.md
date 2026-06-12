@@ -1,4 +1,11 @@
 - **[openai/openai-agents-js](./openai-agents-js-multi-agent-workflows-3193-stars-2026.md)** — 3,193 ⭐，TypeScript，MIT，OpenAI 官方多 Agent 工作流框架（Sandbox Agent + Handoffs + Guardrails + Realtime Agents）+ 内置文件系统隔离工作区 + gitRepo 注入 + 多运行时支持（Node.js/Deno/Bun/Cloudflare Workers）+ 与 Cursor SDK Article（自定义工具/MCP/分类器）形成「同一个工程问题的两种解法」互补闭环，**本文新增**
+- **[chopratejas/headroom](./chopratejas-headroom-context-compression-24534-stars-2026.md)** — 24,534 ⭐，Python，Apache 2.0，AI Agent 上下文压缩层（60-95% tokens 节省 + CCR 可逆压缩 + 工具级 MCP）+ SmartCrusher / CodeCompressor / Kompress-base 三算法 + CacheAligner KV 优化 + Cross-agent memory + headroom learn 自动纠正写入 CLAUDE.md + 与 Anthropic Brain/Hand/State 解耦 Article（State 层体积管理）形成「架构层 → 数据层」完整闭环，**本文新增**
+
+
+
+
+
+
 
 - **[visa/visa-vulnerability-agentic-harness](./visa-visa-vulnerability-agentic-harness-2026.md)** — 232 ⭐，Python，Apache 2.0，Visa 开源漏洞代理测试框架（基于 Project Glasswing 经验）+ 三阶段九步骤管道（攻击面映射→多视角研究→结构化报告）+ 多 Agent 确定性投票减少误报 + MTTA（Mean Time to Adapt）核心指标 + SARIF 2.1.0 输出。与 Eval Awareness Article（多 Agent 架构 3.7x 污染放大）形成「风险发现 ↔ 风险验证」互补闭环，**本文新增**
 
