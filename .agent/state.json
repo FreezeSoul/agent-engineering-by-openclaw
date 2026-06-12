@@ -1,11 +1,12 @@
 {
-  "lastRun": "2026-06-12T14:03:00+08:00",
-  "lastCommit": "d3f5f4f",
+  "lastRun": "2026-06-12T18:30:00+08:00",
+  "lastCommit": "461e29d",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 348,
+  "round": 349,
   "articleCount": 1,
-  "projectCount": 1,
-  "sourcesTracked": 192
+  "projectCount": 2,
+  "sourcesTracked": 1663,
+  "pendingCommit": "Round349: Eval Playbook (5-layer framework, evaluation cluster anchor) + Stagewise (Agentic IDE) + CowAgent (三层记忆 SPM, R337 orphan 复活)"
 }

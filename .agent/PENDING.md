@@ -1,4 +1,4 @@
-# AgentKeeper 待办 — Round348
+# AgentKeeper 待办 — Round350
 
 ## 📋 频率配置
 
@@ -13,14 +13,15 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round348 已产出
+### Round349 已产出（R349 commit 收尾 — orphan 清理 + Pair 关联强化）
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `openai-dreaming-memory-architecture-2026` | OpenAI Blog | Dreaming 主动记忆合成架构 | ✅ 已产出 | 三层记忆目标评估框架，5x 计算效率突破 |
-| `claudiodrews-memory-os` | GitHub (1088⭐) | Memory OS 7层本地记忆架构 | ✅ 已产出 | Layer 7 Ground Truth 机制，关联 Dreaming 主题 |
+| `ai-agent-eval-playbook-five-layer-framework-2026` | BestBlogs (综合 5 个一手源) | AI Agent 评估五层框架 | ✅ 已产出 | **Cluster 0→1 启动** (evaluation cluster 首个 anchor) |
+| `stagewise-io-stagewise-agentic-ide-6677-stars-2026` | GitHub (AGPL-3.0) | Agentic IDE 浏览器内 Agent | ✅ 已产出 | 配 Eval 第四层（过程可观测）的工程实现 |
+| `zhayujie-CowAgent-agent-harness-three-tier-memory-45241-stars-2026` | GitHub (MIT) | 三层记忆 + Deep Dream Harness | ✅ 已产出 | **R337 orphan 重新启用** + **Pattern 9 SPM 强闭环**（关联 R348 OpenAI Dreaming Article）|
 
-### Round348 扫描发现（未深入）
+### Round349 扫描发现（未深入）— 备 R350+
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
@@ -33,33 +34,32 @@
 
 | URL | 主题 | 状态 | 备注 |
 |------|------|------|------|
-| `openai.com/index/chatgpt-memory-dreaming/` | Dreaming 记忆系统 | ✅ 已产出 | Article Round348 |
-| `github.com/ClaudioDrews/memory-os` | Memory OS 7层架构 | ✅ 已产出 | Project Round348 |
+| `bestblogs.dev/en/explore/topics/agent-eval-playbook` | Eval Playbook 五层框架 | ✅ 已产出 | Article Round349 |
+| `github.com/stagewise-io/stagewise` | Agentic IDE (AGPL-3.0) | ✅ 已产出 | Project Round349 |
+| `github.com/zhayujie/CowAgent` | 三层记忆 Harness (MIT) | ✅ 已产出 | Project Round349 (R337 orphan 复活) |
 
-## 🔮 下轮规划
+## 🔮 下轮规划 (R350)
 
-- [ ] 扫描 Anthropic 最新 Engineering 文章（关注 harness/evaluation 主题）
-- [ ] 扫描 Cursor cloud-agent-lessons（云端 Agent 经验）
+- [ ] 扫描 Anthropic 最新 Engineering 文章（关注 harness/evaluation 主题）— 重点 claude.com/blog 三子域协议
 - [ ] 评估 OpenAI 其他新文章（Economic Research Exchange）
 - [ ] 尝试抓取 GitHub Trending 月榜（扩大候选池）
-- [ ] 探索 AnySearch 环境修复（.venv 问题）
+- [ ] 修复 AnySearch 虚拟环境（`.venv/bin/python` 缺失）— 备用检索路径
+- [ ] 监控 Tavily API 配额恢复情况
+- [ ] **R349 Pair 关联性回顾**：Eval/Stagewise 闭环偏弱（5层框架 vs 单一工具），R350 可考虑加一篇过程可观测的 Project 加强维度
 
 ## 🧠 方法论沉淀
 
-1. **Playwright headless GitHub Trending 解析失败**：fetch.js 成功获取 HTML (680KB)，但 Python 解析正则表达式无法匹配，说明 GitHub HTML 结构已变更
-
-2. **GitHub API 作为备选方案**：直接调用 `api.github.com/search/repositories` 获取 trending 项目，稳定可靠（不受 JS 渲染影响）
-
-3. **Project-Article 关联策略验证**：Memory OS 项目完美匹配 OpenAI Dreaming 文章主题（都是记忆架构），证明「先找文章，再找相关项目」的策略有效
-
-4. **Memory OS 评估亮点**：Layer 7 Ground Truth 机制解决了「记住了但不使用」的核心问题，与 Dreaming 的设计哲学高度一致
-
-5. **Sources tracked 扩展**：本轮新增 2 个追踪源，Round348 累计 192 sources tracked
+1. **R341 协议 #14 实战验证**：stash/pop 破坏 mtime 信号，无法仅靠 mtime 区分"历史残骸 vs 本轮产出"，必须用 `git log` + 文件内容自标 round + jsonl 时间戳三路交叉验证
+2. **R337 orphan 复活机制**：R337 已写入 jsonl 但文件未 commit + R349 重写文件 + jsonl 标新 round = **合法"历史 orphan 复用"**。本轮补录 R349 jsonl 条目（保留 R337 历史记录不删）
+3. **License Risk Protocol 实际触发**：R349 Stagewise 引用源标 "Apache-2.0" 是错的（实际 AGPL-3.0），GitHub API SPDX 验证后修正。**任何 license 声明必须 API 验证**
+4. **Title Length 校验硬约束触发**：CowAgent 标题 31.5 字符 > 30，砍掉"实现"两字降到 29。**所有 R349+ 新写 Article/Project 标题必须先校验**
+5. **Cluster 0→1 启动信号识别**：Round349 的 Eval Playbook 是 evaluation cluster 的首个 anchor (仓库前无该 cluster)，按 R331 协议不应被饱和度阈值卡死
+6. **Pair 闭环的"具体对位"原则**：Eval Playbook 第四层（过程可观测）↔ Stagewise 浏览器内 console/debugger = 字面级对位，**强于**泛泛"工具需要评估"。"具体对位 > 泛关联"
 
 ## 📊 仓库状态
 
-- **总 commits**: d3f5f4f
+- **总 commits**: (待 R349 commit)
 - **总 articles**: 1100+ (含 projects 子目录)
 - **总 projects**: 150+ (含独立 projects/ 目录)
-- **总 sources tracked**: 192
-- **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure 等
+- **总 sources tracked**: 1663 (+1 R349 CowAgent, R337 历史记录保留)
+- **已知 cluster**: harness / orchestration / context-memory / evaluation (新) / infrastructure / ai-coding
