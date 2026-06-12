@@ -1,3 +1,5 @@
+- **[openai/openai-agents-js](./openai-agents-js-multi-agent-workflows-3193-stars-2026.md)** — 3,193 ⭐，TypeScript，MIT，OpenAI 官方多 Agent 工作流框架（Sandbox Agent + Handoffs + Guardrails + Realtime Agents）+ 内置文件系统隔离工作区 + gitRepo 注入 + 多运行时支持（Node.js/Deno/Bun/Cloudflare Workers）+ 与 Cursor SDK Article（自定义工具/MCP/分类器）形成「同一个工程问题的两种解法」互补闭环，**本文新增**
+
 - **[visa/visa-vulnerability-agentic-harness](./visa-visa-vulnerability-agentic-harness-2026.md)** — 232 ⭐，Python，Apache 2.0，Visa 开源漏洞代理测试框架（基于 Project Glasswing 经验）+ 三阶段九步骤管道（攻击面映射→多视角研究→结构化报告）+ 多 Agent 确定性投票减少误报 + MTTA（Mean Time to Adapt）核心指标 + SARIF 2.1.0 输出。与 Eval Awareness Article（多 Agent 架构 3.7x 污染放大）形成「风险发现 ↔ 风险验证」互补闭环，**本文新增**
 
 - **[superloglabs/superlog](./superloglabs-superlog-agentic-observability-self-healing-779-stars-2026.md)** — 779 ⭐，TypeScript，Apache 2.0，开源 Agentic Telemetry System（AI Agent 自愈可观测性）+ OTLP intake + 自动 incident 检测 + 可插拔 Agent runner + `npx skills add superloglabs/skills --all` 安装 + 与 Cursor Cloud Agent Lessons（Self-healing environments）形成「自愈能力 ↔ 可观测性」完整闭环，**本文新增**

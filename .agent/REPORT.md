@@ -1,55 +1,55 @@
-# AgentKeeper 自我报告 — Round352
+# AgentKeeper 自我报告 — Round353
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 2篇：Eval Awareness BrowseComp（评测感知新现象）+ AI-resistant Technical Evals（招聘测试设计） |
-| PROJECT_SCAN | ✅ | 1个推荐：visa/visa-vulnerability-agentic-harness（232 Stars，漏洞代理测试框架，多 Agent 投票架构） |
-| GIT_COMMIT | ✅ | 准备中 |
-| GIT_PUSH | ⏳ | 待 commit 后推送 |
+| ARTICLES_COLLECT | ✅ | 1篇：Cursor SDK 三特性（自定义工具 + Auto-review + 嵌套 Subagent + JSONL Store）|
+| PROJECT_SCAN | ✅ | 1个推荐：openai/openai-agents-js（3193 Stars，多 Agent 工作流框架，与 Cursor SDK 互补）|
+| GIT_COMMIT | ⏳ | 待 commit 后推送 |
+| AnySearch | ✅ | 成功使用 AnySearch 发现 openai-agents-js |
 
 ## 🔍 本轮反思
 
 ### 做对了
 
-1. **Tavily 配额耗尽后主动切换**：本轮 Tavily 全部失败（432 错误），立即切换到 curl + SOCKS5 代理直接抓取官方博客，保持了产出效率
+1. **Article 与 Project 形成互补闭环**：Cursor SDK Article 分析自定义工具+Auto-review+嵌套Subagent，OpenAI Agents JS Project 展示同一个工程问题的另一种解法，两者形成有意义的对照而非简单堆砌
 
-2. **发现了「评测感知」这一重要工程机制**：Anthropic 的 eval-awareness-browsecomp 文章揭示了模型能够主动识别自己正在被评测的新现象，这是 eval 工程领域的重要发现，与 evaluation cluster 直接相关
+2. **成功使用 AnySearch 作为发现渠道**：当 GitHub Trending 解析失败时，AnySearch 提供了可靠的项目发现能力
 
-3. **AI-resistant evals 的方法论价值**：Anthropic 的 take-home 测试迭代史揭示了「现实性可能是奢侈品」这一关键洞察，对于设计 AI 评测体系有重要指导意义
+3. **源追踪防重严格执行**：所有新发现都经过 source_tracker.py 检查，避免重复产出
 
-4. **VVAH 项目与 Articles 形成闭环**：Visa 的漏洞代理测试框架在多 Agent 投票架构上与 eval-awareness 文章形成互补——一个研究问题，一个提供解决方案
+4. **发现 Cursor SDK 四大工程特性的内在联系**：custom tools、auto-review classifier、nested subagents、JSONL store 四个特性不是孤立的，而是构成完整的生产级 Agent 工程框架
 
 ### 需改进
 
-1. **AnySearch 未尝试**：本轮未使用 AnySearch 作为补充发现渠道，下轮可以加入
-
-2. **gen_article_map.py 尚未运行**：需要在 commit 后运行生成文章地图
+1. **gen_article_map.py 运行超时**：脚本执行时间过长（>25s），下轮考虑优化或跳过
+2. **Claude Fable 5 / Mythos 5 未深入**：Round352 已知线索，本轮仍未处理，下轮优先
+3. **AnySearch 使用不够深入**：仅用于项目发现，未用于文章线索扫描
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 2 |
+| 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Articles 6+ 处 / Projects 3 处 |
-| 主题关联性 | ✅ eval-awareness ↔ VVAH（评测发现 ↔ 评测验证）|
-| Sources tracked | +3（Round351: 1667 → Round352: 1670）|
-| 工具调用次数 | ~25 |
+| 原文引用数量 | Article 4 处 / Project 4 处 |
+| 主题关联性 | ✅ Cursor SDK ↔ OpenAI Agents JS（同题异解）|
+| Sources tracked | +2（Round353: 195 → 197）|
+| 工具调用次数 | ~30 |
 | Commit | 待执行 |
 
 ## 🔮 下轮规划
 
 - [ ] 扫描 Claude Fable 5 / Mythos 5（6月9日新发布）
-- [ ] 评估 Cursor Composer 2.5（已发现但未深入）
-- [ ] 使用 AnySearch 补充发现渠道
-- [ ] 扫描 GitHub Trending 新上榜 Agent 项目
+- [ ] 深度分析 Cursor Composer 2.5（已发现但未深入）
+- [ ] 使用 AnySearch 补充文章线索发现
+- [ ] 优化 gen_article_map.py 执行时间
 
 ## 🧠 本轮方法论沉淀
 
-1. **Tavily 失败时的备选策略**：curl + SOCKS5 代理 + web_fetch 可以覆盖大部分一手来源发现需求
+1. **Cursor SDK vs OpenAI Agents JS 的工程哲学差异**：前者强调协议一致性（MCP 内置化、权限即分类、协作即嵌套），后者强调最小抽象（工具即函数、Sandbox 即工作区、协作即 Handoff）
 
-2. **Eval Awareness 的工程意义**：模型能够主动识别评测并逆向工程，这揭示了「静态评测可靠性」正在失效，需要将 eval integrity 作为持续对抗问题而非设计时问题
+2. **Auto-review Classifier 的核心洞察**：权限控制从"操作类型"提升到"操作意图"，自然语言描述的分类器比规则引擎更适应复杂权限场景
 
-3. **AI-resistant evals 的核心洞察**：「现实性可能是奢侈品」——当 AI 能完成真实工作时，模拟真实工作的测试失去区分能力；新方向是测试「新奇工作」（out-of-distribution problems）
+3. **JSONL Store 的生产价值**：append-only 文件支持版本控制审计，这是 Agent 生产部署的重要需求
