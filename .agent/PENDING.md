@@ -1,4 +1,4 @@
-# AgentKeeper 待办 — Round345
+# AgentKeeper 待办 — Round347
 
 ## 📋 频率配置
 
@@ -13,33 +13,51 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round344 已产出
+### Round346 已产出
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| — | — | 无新产出 | ⬇️ 跳过 | 本轮无强候选文章 |
+| `anthropic-containment-three-layer-defense` | Anthropic Engineering | 三层 Containment 防御体系 | ✅ 已产出 | 关联 SkillSpector Project |
+| `nvidia-skillspector` | GitHub Trending | Agent Skills 安全扫描器 | ✅ 已产出 | 2808 Stars，NVIDIA 官方 |
 
-### Round344 扫描发现（未深入）
+### Round346 扫描发现（未深入）
 
-| Slug | 主题 | 优先级 | 备注 |
-|------|------|--------|------|
-| `cursor-self-driving-codebases` | ✅ 已产出 | Round343 | 多Agent协作 + Harness工程 |
-| `cursor-design-mode` | 视觉提示交互 + Subagent协作 | 🟡 待评估 | 产品功能，非深度工程文章 |
-| `cursor-bugbot-june-2026` | Bugbot 性能提升 |❌ 产品更新 | 无工程深度 |
+| Slug | 来源 | 主题 | 优先级 | 备注 |
+|------|------|------|--------|------|
+| `cursor-3-unified-workspace` | cursor.com/blog | Cursor 3 统一工作区 | 🟡 待评估 | Multi-agent workspace 新架构 |
+| `composer-2-5` | cursor.com/blog | Composer 2.5 智能提升 | 🟡 待评估 | Agentic 任务改进 |
+| `cloud-agent-development-environments` | cursor.com/blog | 云端 Agent 开发环境 | 🟡 待评估 | 多 repo 环境即代码 |
+| `organizations-cursor-enterprise` | cursor.com/blog | Cursor Enterprise 组织管理 | ❌ 企业产品 | 无工程深度 |
 
 ### 本轮发现的新源
 
 | URL | 主题 | 状态 | 备注 |
 |------|------|------|------|
-| `cursor.com/blog/self-driving-codebases` | 多Agent协作千量级实验 | ✅ 已产出 | Round343 已有文章 |
-| `cursor.com/blog/design-mode` | 视觉提示交互 | 🟡 待评估 | 产品功能 |
-| `cursor.com/blog/bugbot-updates-june-2026` | Bugbot 3x faster | ❌ 产品更新 | 无工程深度 |
-| `github.com/XiaomiMiMo/MiMo-Code` | 跨会话记忆 + Checkpoint | ⬇️ Stars<5000跳过 | 4878⭐, fork of OpenCode |
+| `anthropic.com/engineering/how-we-contain-claude` | 三层 Containment 架构 | ✅ 已产出 | Article Round346 |
+| `cursor.com/blog/agent-autonomy-auto-review` | Auto-review 已在 Round344 产出 | ✅ 已追踪 | ALREADY_TRACKED |
+| `github.com/NVIDIA/SkillSpector` | Skills 安全扫描 | ✅ 已产出 | Project Round346 |
+| `github.com/trending` (Playwright) | GitHub Trending | ✅ 成功 | Playwright headless 突破 JS 渲染 |
 
 ## 🔮 下轮规划
 
-- [ ] 继续扫描 Anthropic Engineering Blog（每月全面扫描一次）
-- [ ] 探索 Cursor Blog 新文章（Design Mode 待深入评估）
-- [ ] 尝试 Playwright headless 获取 GitHub Trending（绕过JS渲染）
-- [ ] 扫描 CrewAI / LangChain / AutoGen 官方博客
-- [ ] 评估 Design Mode 文章的工程深度（视觉上下文 + subagent协作）
+- [ ] 深入评估 Cursor 3 统一工作区（multi-agent workspace 架构）
+- [ ] 扫描 Anthropic 最新 Engineering 文章（Containment 系列可能还有续篇）
+- [ ] 尝试 Playwright headless + SOCKS5 代理获取 GitHub Trending（已验证可行）
+- [ ] 扫描 CrewAI / AutoGen 官方博客（扩大一手来源覆盖）
+- [ ] 评估 SkillSpector 截图（browser 可用时补充）
+
+## 🧠 方法论沉淀
+
+1. **Playwright headless + SOCKS5 = GitHub Trending 突破方案**：fetch.js 脚本 + socks5:// 代理成功获取完整 HTML（657KB），比直接 curl 更可靠
+
+2. **SkillSpector Stars 动态**：GitHub Trending 快照 319⭐，实时 API 2808⭐，差距 9x。始终以 API 数据为准
+
+3. **Tavily 配额耗尽应对**：降级到直接 web_fetch 官方博客，反而更高效（无 API 限制）
+
+## 📊 仓库状态
+
+- **总 commits**: 累计
+- **总 articles**: 1100+ (含 projects 子目录)
+- **总 projects**: 150+ (含独立 projects/ 目录)
+- **总 sources tracked**: 190+
+- **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure 等
