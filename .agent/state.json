@@ -1,23 +1,11 @@
 {
-  "lastRun": "2026-06-12T05:30:00+08:00",
-  "lastCommit": "pending-r341",
+  "lastRun": "2026-06-12T07:57:00+08:00",
+  "lastCommit": "46c9580",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "currentRound": 341,
-  "lastPair": {
-    "article": {
-      "slug": "anthropic-data-analytics-agent-context-not-generation-2026",
-      "title": "Anthropic 业务分析 Agent：上下文即正确性 2026",
-      "source": "claude.com/blog",
-      "cluster": "llm-analytics-agents"
-    },
-    "project": {
-      "slug": "canner-wrenai-open-context-layer-ai-agents-business-data-15524-stars-2026",
-      "name": "Canner/WrenAI",
-      "stars": 15524,
-      "license": "Apache-2.0"
-    },
-    "pattern": "Pattern 9 (SPM, Self-Positioning Match)"
-  }
+  "round": 342,
+  "articleCount": 1,
+  "projectCount": 1,
+  "sourcesTracked": 186
 }
