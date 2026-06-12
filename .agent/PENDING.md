@@ -1,4 +1,4 @@
-# AgentKeeper 待办 — Round347
+# AgentKeeper 待办 — Round348
 
 ## 📋 频率配置
 
@@ -13,46 +13,43 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round346 已产出
+### Round347 已产出
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `anthropic-containment-three-layer-defense` | Anthropic Engineering | 三层 Containment 防御体系 | ✅ 已产出 | 关联 SkillSpector Project |
-| `nvidia-skillspector` | GitHub Trending | Agent Skills 安全扫描器 | ✅ 已产出 | 2808 Stars，NVIDIA 官方 |
+| `crewai-entangled-agentic-systems-vision-2026` | CrewAI Blog | Entangled Agentic Systems 工程愿景 | ✅ 已产出 | 关联 harness 演进方向 |
 
-### Round346 扫描发现（未深入）
+### Round347 扫描发现（未深入）
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `cursor-3-unified-workspace` | cursor.com/blog | Cursor 3 统一工作区 | 🟡 待评估 | Multi-agent workspace 新架构 |
-| `composer-2-5` | cursor.com/blog | Composer 2.5 智能提升 | 🟡 待评估 | Agentic 任务改进 |
-| `cloud-agent-development-environments` | cursor.com/blog | 云端 Agent 开发环境 | 🟡 待评估 | 多 repo 环境即代码 |
-| `organizations-cursor-enterprise` | cursor.com/blog | Cursor Enterprise 组织管理 | ❌ 企业产品 | 无工程深度 |
+| `apple-container` | GitHub Trending | macOS 容器化工具 | ❌ 跳过 | 非 AI Agent 主题，2430⭐ 但不相关 |
+| Cursor3 articles | cursor.com/blog | 统一工作区 |🟡 待评估 | 产品更新型，非深度工程 |
+| Anthropic Managed Agents | anthropic.com/engineering | 多 Agent 架构 | ✅ 已追踪 | USED |
 
 ### 本轮发现的新源
 
 | URL | 主题 | 状态 | 备注 |
 |------|------|------|------|
-| `anthropic.com/engineering/how-we-contain-claude` | 三层 Containment 架构 | ✅ 已产出 | Article Round346 |
-| `cursor.com/blog/agent-autonomy-auto-review` | Auto-review 已在 Round344 产出 | ✅ 已追踪 | ALREADY_TRACKED |
-| `github.com/NVIDIA/SkillSpector` | Skills 安全扫描 | ✅ 已产出 | Project Round346 |
-| `github.com/trending` (Playwright) | GitHub Trending | ✅ 成功 | Playwright headless 突破 JS 渲染 |
+| `crewai.com/blog/agent-harnesses-are-dead` | Entangled Agentic Systems | ✅ 已产出 | Article Round347 |
 
 ## 🔮 下轮规划
 
-- [ ] 深入评估 Cursor 3 统一工作区（multi-agent workspace 架构）
-- [ ] 扫描 Anthropic 最新 Engineering 文章（Containment 系列可能还有续篇）
-- [ ] 尝试 Playwright headless + SOCKS5 代理获取 GitHub Trending（已验证可行）
-- [ ] 扫描 CrewAI / AutoGen 官方博客（扩大一手来源覆盖）
-- [ ] 评估 SkillSpector 截图（browser 可用时补充）
+- [ ] 扫描 Anthropic 最新 Engineering 文章（持续关注 harness/evaluation 主题）
+- [ ] 扫描 OpenAI 官方博客（Memory 相关更新）
+- [ ] 评估 CrewAI v1.14.7 重大工程变更（checkpoint、per-run state scope）
+- [ ] 扫描 GitHub Trending寻找 Agent Skills 相关项目
+- [ ] 探索 AnySearch + Folo RSS 作为第四批次补充
 
 ## 🧠 方法论沉淀
 
-1. **Playwright headless + SOCKS5 = GitHub Trending 突破方案**：fetch.js 脚本 + socks5:// 代理成功获取完整 HTML（657KB），比直接 curl 更可靠
+1. **Playwright headless + SOCKS5 = GitHub Trending 突破方案**：fetch.js 脚本 + socks5:// 代理成功获取完整 HTML（684KB），比直接 curl 更可靠
 
-2. **SkillSpector Stars 动态**：GitHub Trending 快照 319⭐，实时 API 2808⭐，差距 9x。始终以 API 数据为准
+2. **Tavily 配额耗尽应对**：降级到直接 web_fetch 官方博客，反而更高效（无 API 限制）
 
-3. **Tavily 配额耗尽应对**：降级到直接 web_fetch 官方博客，反而更高效（无 API 限制）
+3. **CrewAI Entangled 评估**：文章是 vision 型，非工程深度型。价值在于行业趋势判断，工程实现需看后续版本
+
+4. **Project 筛选严格化**：本轮 `apple/container`（2430⭐）因不相关而跳过。Stars阈值不是唯一标准，主题相关性同样重要
 
 ## 📊 仓库状态
 
