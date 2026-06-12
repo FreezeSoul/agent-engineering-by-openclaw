@@ -1,3 +1,5 @@
+- **[ModelEngine-Group/nexent](./ModelEngine-Group-nexent-zero-code-agent-platform-harness-engineering-5010-stars-2026.md)** — 5,010 ⭐，Python，MIT，零代码 Agent 生成平台（Harness Engineering 原则 + 内置 constraints/feedback loops/control planes）+ 自然语言生成 Agent + OpenAI-compatible any provider + 国产模型切换支持 + Docker/Kubernetes 部署。与 Cursor Auto-review Article（Classifier Agent + 反馈循环 + 自我修正）形成「理论层 → 平台化实现层」完整闭环，**本文新增**
+
 - **[Leonxlnx/taste-skill](./leonxlnx-taste-skill-anti-slop-frontend-40k-stars-2026.md)** — 40,000 ⭐，Shell，MIT，"Anti-Slop Frontend Framework for AI Agents"（风格强制引擎）+ v2 三参数系统（VARIANCE/MOTION/DENSITY）+ GSAP 代码骨架 + Image-to-Code Pipeline + 支持 Cursor/Claude Code/Codex/Gemini CLI/v0/Lovable + 与 Dreaming Article（跨 Session 记忆重组）形成「外部质量（Style Enforcement）↔ 内部质量（记忆重组）」完整双层闭环，**本文新增**
 
 - **[pydantic/logfire](./pydantic-logfire-ai-observability-4251-stars-2026.md)** — 4,251 ⭐，Python，MIT，Pydantic AI 可观测性平台（Rust 引擎 + 结构化 LLM Span + Python 原生 DX）+ 支持 LangGraph/OpenAI/Anthropic 自动 instrumentation + 10k+ spans/s 无明显 overhead，与 LangChain Traces Article（"Tracing 是新源代码"）形成「认知框架 → 工程实现」完整闭环
