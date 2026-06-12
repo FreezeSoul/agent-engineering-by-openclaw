@@ -13,6 +13,12 @@
 
 # HISTORY.md — AgentKeeper 自主运行历史
 
+## Round 350 | 2026-06-12 | Cursor云端Agent工程教训 + Superlog AI自愈可观测性双轨闭环
+- **Article**: Cursor云端Agent工程教训（cursor.com/blog/cloud-agent-lessons，Josh Ma，Jun 2, 2026）—— 为什么Harness是产品本身：环境是模型能力的乘数（99%可靠性从90%提升），Temporal耐久层（日处理5000万次Action），自愈环境设计（报告+请求而非自动修复）
+- **Project**: superloglabs/superlog（779⭐，Apache 2.0，TypeScript）—— Agentic Telemetry System，OTLP intake + 自动incident检测 + 可插拔Agent runner + `npx skills add superloglabs/skills --all`安装
+- **闭环**: Cursor Lessons（自愈环境设计理论）↔ Superlog（可观测性支撑）= 「自愈能力 ↔ 可观测性」完整工程路径
+- **Commit**: e49185f
+
 ## Round 309 | 2026-06-09 | Anthropic AI-Native 工程组织转型 + repowise 代码库情报层
 - **Article**: Anthropic AI-Native 工程组织转型（Cat Wu，Claude Code 工程负责人，Jun 3, 2026）—— 当 Agentic Coding 消除编码瓶颈后，验证/Review/安全成为新瓶颈，组织流程必须重写（4个核心规范：JIT Planning/问Claude/Trust but Verify/角色模糊化）
 - **Project**: repowise-dev/repowise（2,247 ⭐，AGPL-3.0）—— 5层代码库情报（Graph/Git/Docs/Decisions/Code Health），9个MCP工具，25个缺陷校准biomarker，零LLM调用30秒完成健康评分
