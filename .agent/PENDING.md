@@ -13,48 +13,53 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round347 已产出
+### Round348 已产出
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `crewai-entangled-agentic-systems-vision-2026` | CrewAI Blog | Entangled Agentic Systems 工程愿景 | ✅ 已产出 | 关联 harness 演进方向 |
+| `openai-dreaming-memory-architecture-2026` | OpenAI Blog | Dreaming 主动记忆合成架构 | ✅ 已产出 | 三层记忆目标评估框架，5x 计算效率突破 |
+| `claudiodrews-memory-os` | GitHub (1088⭐) | Memory OS 7层本地记忆架构 | ✅ 已产出 | Layer 7 Ground Truth 机制，关联 Dreaming 主题 |
 
-### Round347 扫描发现（未深入）
+### Round348 扫描发现（未深入）
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `apple-container` | GitHub Trending | macOS 容器化工具 | ❌ 跳过 | 非 AI Agent 主题，2430⭐ 但不相关 |
-| Cursor3 articles | cursor.com/blog | 统一工作区 |🟡 待评估 | 产品更新型，非深度工程 |
-| Anthropic Managed Agents | anthropic.com/engineering | 多 Agent 架构 | ✅ 已追踪 | USED |
+| Cursor cloud-agent-lessons | cursor.com/blog | 云端 Agent 开发经验 | 🟡 待评估 | 产品经验型，非深度工程 |
+| Cursor agent-autonomy-auto-review | cursor.com/blog | Agent 自主性治理 | 🟡 待评估 | 与 harness 主题相关，已追踪 |
+| Anthropic how-we-contain-claude | anthropic.com/engineering | Claude containment 工程 | 🟡 待评估 | 已追踪 |
+| Anthropic managed-agents | anthropic.com/engineering | 多 Agent 架构 | 🟡 待评估 | 已追踪 |
 
 ### 本轮发现的新源
 
 | URL | 主题 | 状态 | 备注 |
 |------|------|------|------|
-| `crewai.com/blog/agent-harnesses-are-dead` | Entangled Agentic Systems | ✅ 已产出 | Article Round347 |
+| `openai.com/index/chatgpt-memory-dreaming/` | Dreaming 记忆系统 | ✅ 已产出 | Article Round348 |
+| `github.com/ClaudioDrews/memory-os` | Memory OS 7层架构 | ✅ 已产出 | Project Round348 |
 
 ## 🔮 下轮规划
 
-- [ ] 扫描 Anthropic 最新 Engineering 文章（持续关注 harness/evaluation 主题）
-- [ ] 扫描 OpenAI 官方博客（Memory 相关更新）
-- [ ] 评估 CrewAI v1.14.7 重大工程变更（checkpoint、per-run state scope）
-- [ ] 扫描 GitHub Trending寻找 Agent Skills 相关项目
-- [ ] 探索 AnySearch + Folo RSS 作为第四批次补充
+- [ ] 扫描 Anthropic 最新 Engineering 文章（关注 harness/evaluation 主题）
+- [ ] 扫描 Cursor cloud-agent-lessons（云端 Agent 经验）
+- [ ] 评估 OpenAI 其他新文章（Economic Research Exchange）
+- [ ] 尝试抓取 GitHub Trending 月榜（扩大候选池）
+- [ ] 探索 AnySearch 环境修复（.venv 问题）
 
 ## 🧠 方法论沉淀
 
-1. **Playwright headless + SOCKS5 = GitHub Trending 突破方案**：fetch.js 脚本 + socks5:// 代理成功获取完整 HTML（684KB），比直接 curl 更可靠
+1. **Playwright headless GitHub Trending 解析失败**：fetch.js 成功获取 HTML (680KB)，但 Python 解析正则表达式无法匹配，说明 GitHub HTML 结构已变更
 
-2. **Tavily 配额耗尽应对**：降级到直接 web_fetch 官方博客，反而更高效（无 API 限制）
+2. **GitHub API 作为备选方案**：直接调用 `api.github.com/search/repositories` 获取 trending 项目，稳定可靠（不受 JS 渲染影响）
 
-3. **CrewAI Entangled 评估**：文章是 vision 型，非工程深度型。价值在于行业趋势判断，工程实现需看后续版本
+3. **Project-Article 关联策略验证**：Memory OS 项目完美匹配 OpenAI Dreaming 文章主题（都是记忆架构），证明「先找文章，再找相关项目」的策略有效
 
-4. **Project 筛选严格化**：本轮 `apple/container`（2430⭐）因不相关而跳过。Stars阈值不是唯一标准，主题相关性同样重要
+4. **Memory OS 评估亮点**：Layer 7 Ground Truth 机制解决了「记住了但不使用」的核心问题，与 Dreaming 的设计哲学高度一致
+
+5. **Sources tracked 扩展**：本轮新增 2 个追踪源，Round348 累计 192 sources tracked
 
 ## 📊 仓库状态
 
-- **总 commits**: 累计
+- **总 commits**: d3f5f4f
 - **总 articles**: 1100+ (含 projects 子目录)
 - **总 projects**: 150+ (含独立 projects/ 目录)
-- **总 sources tracked**: 190+
+- **总 sources tracked**: 192
 - **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure 等
