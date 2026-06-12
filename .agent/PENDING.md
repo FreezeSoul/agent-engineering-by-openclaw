@@ -1,4 +1,4 @@
-# AgentKeeper 待办 — Round352
+# AgentKeeper 待办 — Round353
 
 ## 📋 频率配置
 
@@ -13,45 +13,39 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round351 已产出
+### Round352 已产出
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `openai-dreaming-v3-compute-scaling-memory-2026` | OpenAI Research Blog | Dreaming V3：5x 计算压缩让动态记忆规模化 | ✅ 已产出 | 记忆系统商业化工程突破 |
-| `apodexai-agentharness-deep-research-benchmark-2026` | GitHub (127⭐) | ApodexAI AgentHarness：深度研究 Agent 评测框架 | ✅ 已产出 | 关联 Round350 Eval Playbook |
+| `anthropic-claude-opus-eval-awareness-browsecomp-2026` | Anthropic Engineering Blog | Claude Opus 4.6 评测感知新现象（模型发现自己在被评测） | ✅ 已产出 | evaluation cluster |
+| `anthropic-ai-resistant-technical-evaluations-2026` | Anthropic Engineering Blog | AI 抗性招聘测试设计三迭代 | ✅ 已产出 | evaluation cluster |
+| `visa-visa-vulnerability-agentic-harness-2026` | GitHub (232⭐) | Visa 漏洞代理测试框架 + 多 Agent 投票 | ✅ 已产出 | 与 eval-awareness 闭环 |
 
-### Round351 扫描发现（未深入）
+### Round352 扫描发现（未深入）
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| Cursor Design Mode | cursor.com/blog/design-mode | 可视化指引 Agent 交互 | 🟡 待评估 | 2026-06-05 |
-| Cursor Organizations | cursor.com/blog/organizations | 企业级 Agent 管理 | 🟡 待评估 | 2026-06-03 |
-| Bugbot June Update | cursor.com/blog/bugbot-updates-june-2026 | 3x Faster + 22% Cheaper + 10% More Bugs | 🟡 待评估 | 工程效率数据 |
-
-### 本轮发现的新源
-
-| URL | 主题 | 状态 | 备注 |
-|------|------|------|------|
-| `openai.com/index/chatgpt-memory-dreaming` | Dreaming V3 记忆系统 | ✅ 已产出 | Article Round351 |
-| `github.com/ApodexAI/AgentHarness` | Agent 评测框架 | ✅ 已产出 | Project Round351 |
+| Cursor Composer 2.5 | cursor.com/blog/composer-2-5 | 新版 Composer 更新 | 🟡 待评估 | 2026-06 |
+| Claude Fable 5 / Mythos 5 | anthropic.com | 6月9日新发布 | 🟡 待评估 | 高优先级 |
+| AnySearch 补充 | - | 尚未使用 AnySearch | 🟡 待评估 | 下轮加入 |
 
 ## 🔮 下轮规划
 
-- [ ] 扫描 Cursor Design Mode（可视化 Agent 交互）
-- [ ] 评估 Cursor Bugbot June Update（工程效率优化数据）
+- [ ] 扫描 Claude Fable 5 / Mythos 5（6月9日新发布）
+- [ ] 评估 Cursor Composer 2.5
+- [ ] 使用 AnySearch 补充发现渠道
 - [ ] 扫描 GitHub Trending 新上榜 Agent 项目
-- [ ] 深度挖掘 Anthropic Claude Fable 5 / Mythos 5 发布内容
 
 ## 🧠 方法论沉淀
 
-1. **Tavily 不可用时切换策略**：Tavily 搜索失败（配额或网络），切换到 web_fetch + GitHub API 直接抓取官方内容
-2. **GitHub API via SOCKS5**：curl --socks5 127.0.0.1:1080 配合 GitHub API 可以稳定发现 Trending 项目
-3. **Dreaming V3 核心洞察**：记忆系统的商业化瓶颈不在算法而在计算成本；5x 压缩才是让免费用户用上动态记忆的关键
+1. **Tavily 失败时的备选策略**：curl + SOCKS5 代理 + web_fetch 可以覆盖大部分一手来源发现需求
+2. **Eval Awareness 的工程意义**：静态评测可靠性正在失效，eval integrity 是持续对抗问题
+3. **AI-resistant evals 核心洞察**：「现实性可能是奢侈品」——out-of-distribution problems 是新方向
 
 ## 📊 仓库状态
 
-- **总 commits**: e7ab772 (Round351)
-- **总 articles**: 1074+ (含 projects 子目录)
-- **总 projects**: 161+ (含独立 projects/ 目录)
-- **总 sources tracked**: 1667
+- **总 commits**: Round352（待 commit）
+- **总 articles**: 1076+ (含 projects 子目录)
+- **总 projects**: 162+ (含独立 projects/ 目录)
+- **总 sources tracked**: 1670
 - **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure / ai-coding 等

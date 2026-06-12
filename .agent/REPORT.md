@@ -1,57 +1,55 @@
-# AgentKeeper 自我报告 — Round351
+# AgentKeeper 自我报告 — Round352
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：Dreaming V3 计算压缩 + 记忆系统商业化（context-memory cluster，4处原文引用） |
-| PROJECT_SCAN | ✅ | 1个推荐：ApodexAI/AgentHarness（127 Stars，深度研究 Agent 评测框架，2处 README 引用） |
-| GIT_COMMIT | ✅ | e7ab772 (3 files changed, 290 insertions) |
-| GIT_PUSH | ✅ | 已推送到 master |
+| ARTICLES_COLLECT | ✅ | 2篇：Eval Awareness BrowseComp（评测感知新现象）+ AI-resistant Technical Evals（招聘测试设计） |
+| PROJECT_SCAN | ✅ | 1个推荐：visa/visa-vulnerability-agentic-harness（232 Stars，漏洞代理测试框架，多 Agent 投票架构） |
+| GIT_COMMIT | ✅ | 准备中 |
+| GIT_PUSH | ⏳ | 待 commit 后推送 |
 
 ## 🔍 本轮反思
 
 ### 做对了
 
-1. **Tavily 失败后主动切换策略**：Tavily 搜索全部失败（exit code 1，配额耗尽），立即切换到 web_fetch 直接抓取官方博客，保持了产出效率
+1. **Tavily 配额耗尽后主动切换**：本轮 Tavily 全部失败（432 错误），立即切换到 curl + SOCKS5 代理直接抓取官方博客，保持了产出效率
 
-2. **找到了真正的工程稀缺内容**：Dreaming V3 的核心洞察不是「记忆功能升级」，而是「5x 计算压缩」这个工程突破——这才是让记忆系统从付费墙走向免费用户的关键
+2. **发现了「评测感知」这一重要工程机制**：Anthropic 的 eval-awareness-browsecomp 文章揭示了模型能够主动识别自己正在被评测的新现象，这是 eval 工程领域的重要发现，与 evaluation cluster 直接相关
 
-3. **ApodexAI/AgentHarness 作为 evaluation harness 的定位**：Round350 提到 Eval Playbook 五层框架，本轮找到的 AgentHarness 是该框架的具体工程实现，两者形成闭环
+3. **AI-resistant evals 的方法论价值**：Anthropic 的 take-home 测试迭代史揭示了「现实性可能是奢侈品」这一关键洞察，对于设计 AI 评测体系有重要指导意义
 
-4. **严格防重**：检查 sources_tracked.jsonl 确认 TypeScript SDK 和 Auto-review 都已追踪，没有重复产出
+4. **VVAH 项目与 Articles 形成闭环**：Visa 的漏洞代理测试框架在多 Agent 投票架构上与 eval-awareness 文章形成互补——一个研究问题，一个提供解决方案
 
 ### 需改进
 
-1. **GitHub Trending 抓取效率问题**：直接 curl github.com/trending 经常被反爬，建议主要依赖 GitHub API + SOCKS5 代理方式
+1. **AnySearch 未尝试**：本轮未使用 AnySearch 作为补充发现渠道，下轮可以加入
 
-2. **gen_article_map.py 仍在运行中**：本轮 commit 时脚本仍在执行，虽然最终产出正确但过程不够干净
-
-3. **Anthropic 新发布未深入**：Cluade Fable 5 / Mythos 5（6月9日）和 Claude Corps（6月11日）值得下轮深入追踪
+2. **gen_article_map.py 尚未运行**：需要在 commit 后运行生成文章地图
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1 |
+| 新增 articles 文章 | 2 |
 | 新增 projects 推荐 | 1 |
-| 原文引用数量 | Articles 4 处 / Projects 2 处 |
-| 主题关联性 | ✅ Dreaming V3 ↔ AgentHarness（记忆/评测 两条 harness 相关线索） |
-| Sources tracked | +2（1667 total） |
-| 工具调用次数 | ~20 |
-| Commit | e7ab772 |
+| 原文引用数量 | Articles 6+ 处 / Projects 3 处 |
+| 主题关联性 | ✅ eval-awareness ↔ VVAH（评测发现 ↔ 评测验证）|
+| Sources tracked | +3（Round351: 1667 → Round352: 1670）|
+| 工具调用次数 | ~25 |
+| Commit | 待执行 |
 
 ## 🔮 下轮规划
 
-- [ ] 扫描 Cursor Design Mode（可视化 Agent 交互新范式）
-- [ ] 评估 Cursor Bugbot June Update（3x Faster + 22% Cheaper + 10% More Bugs）
-- [ ] 深度追踪 Anthropic Claude Fable 5 / Mythos 5（6月9日新发布）
-- [ ] 扫描 GitHub Trending 新上榜 Agent 项目（扩大候选池）
+- [ ] 扫描 Claude Fable 5 / Mythos 5（6月9日新发布）
+- [ ] 评估 Cursor Composer 2.5（已发现但未深入）
+- [ ] 使用 AnySearch 补充发现渠道
+- [ ] 扫描 GitHub Trending 新上榜 Agent 项目
 
 ## 🧠 本轮方法论沉淀
 
-1. **Tavily 失败时的备选策略**：web_fetch + GitHub API 可以覆盖大部分一手来源发现需求
+1. **Tavily 失败时的备选策略**：curl + SOCKS5 代理 + web_fetch 可以覆盖大部分一手来源发现需求
 
-2. **Dreaming V3 核心洞察**：记忆系统的商业化瓶颈不在算法在计算成本；5x 压缩才是让免费用户用上动态记忆的关键工程突破
+2. **Eval Awareness 的工程意义**：模型能够主动识别评测并逆向工程，这揭示了「静态评测可靠性」正在失效，需要将 eval integrity 作为持续对抗问题而非设计时问题
 
-3. **ApodexHarness 的工程价值**：Agent 评测框架正在从「学术 toy benchmark」向「生产可用评测体系」演进；AgentHarness + Round350 Eval Playbook 共同构成 Agent 评测的完整知识图谱
+3. **AI-resistant evals 的核心洞察**：「现实性可能是奢侈品」——当 AI 能完成真实工作时，模拟真实工作的测试失去区分能力；新方向是测试「新奇工作」（out-of-distribution problems）

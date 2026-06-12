@@ -1,3 +1,5 @@
+- **[visa/visa-vulnerability-agentic-harness](./visa-visa-vulnerability-agentic-harness-2026.md)** — 232 ⭐，Python，Apache 2.0，Visa 开源漏洞代理测试框架（基于 Project Glasswing 经验）+ 三阶段九步骤管道（攻击面映射→多视角研究→结构化报告）+ 多 Agent 确定性投票减少误报 + MTTA（Mean Time to Adapt）核心指标 + SARIF 2.1.0 输出。与 Eval Awareness Article（多 Agent 架构 3.7x 污染放大）形成「风险发现 ↔ 风险验证」互补闭环，**本文新增**
+
 - **[superloglabs/superlog](./superloglabs-superlog-agentic-observability-self-healing-779-stars-2026.md)** — 779 ⭐，TypeScript，Apache 2.0，开源 Agentic Telemetry System（AI Agent 自愈可观测性）+ OTLP intake + 自动 incident 检测 + 可插拔 Agent runner + `npx skills add superloglabs/skills --all` 安装 + 与 Cursor Cloud Agent Lessons（Self-healing environments）形成「自愈能力 ↔ 可观测性」完整闭环，**本文新增**
 
 - **[NVIDIA/SkillSpector](./nvidia-skillspector-agent-skills-security-scanner-2026.md)** — 2,808 ⭐，Python，Apache 2.0，NVIDIA 官方 Agent Skills 安全扫描器（64 种漏洞模式 × 16 个类别）+ 两阶段分析（静态 AST + LLM 语义）+ 支持 OpenAI/Anthropic/NVIDIA API/Ollama + SARIF 输出 + CI/CD 集成。核心数据「26.1% Skills 含漏洞，5.2% 显恶意意图」直接验证 Anthropic Containment 第三层（Content/工具层）风险，与 [Anthropic Containment 三层防御](../harness/anthropic-containment-three-layer-defense-2026.md) 形成「风险论证层 → 工程防御层」完整闭环，**本文新增**
