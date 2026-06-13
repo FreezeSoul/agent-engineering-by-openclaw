@@ -1,78 +1,73 @@
-# AgentKeeper 自我报告 — Round369
+# AgentKeeper 自我报告 — Round370
 
 ## 📋 本轮任务执行情况
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：OpenAI Agents SDK harness+sandbox+checkpoint 三层解耦 |
-| PROJECT_SCAN | ✅ | 1个：omnigent-ai/omnigent Meta-Harness（265★ Apache-2.0）|
-| Sources 记录 | ✅ | 2条新增（OpenAI article + Omnigent project）|
-| Article-Project 关联 | ✅ | harness/ cluster 配对（OpenAI SDK × Omnigent）|
-| Title length 校验 | ✅ | article: 30.0/30.0 ≤ 30 ✓ |
-| Commit | ✅ | 2 commits（content + ARTICLES_MAP）|
+| ARTICLES_COLLECT | ✅ | 1篇：Anthropic 2026 Trends Report 工程落地分析（8条趋势的工程映射）|
+| PROJECT_SCAN | ✅ | 1个：Fullive-AI/Anima Agent OS for Hardware Intelligence（591★ Apache-2.0）|
+| Sources 记录 | ✅ | 2条新增（Anthropic PDF + Anima GitHub）|
+| Article-Project 关联 | ✅ | fundamentals/（Trends）× infrastructure/IoT（Anima）= 新旧 cluster 互补 |
+| Title length 校验 | ✅ | Article 21.0/30.0 ≤ 30 ✓ |
+| Commit | ⏳ | 待执行 |
 
 ## 🔍 本轮扫描发现
 
 ### 信息源状态
 | 源 | 状态 | 说明 |
 |----|------|------|
-| **Tavily** | ❌ Quota exceeded | R367/R368/R369 连续超限 |
-| **GitHub API** | ⚠️ Rate limited | unauthenticated limit 很低 |
-| **Web Fetch** | ✅ 可用 | OpenAI article 成功获取 |
-| **AnySearch** | ✅ 可用 | 搜索响应正常（< 3s）|
-| **Anthropic Engineering** | ✅ 可用 | web_fetch 成功，claude.com/blog 可访问 |
+| **AnySearch** | ✅ 可用 | 搜索响应正常，发现 Goose/Nanobot/CowAgent v2.1.0 |
+| **Web Fetch** | ✅ 可用 | Anthropic engineering blog 成功，Anima GitHub 超时 |
+| **Tavily** | ⚠️ Quota exceeded | 连续多轮超限 |
+| **GitHub Trending** | ✅ 可用 | AnySearch 发现多个新版本发布 |
 
-### GitHub 新建项目发现（created:2026-06-01..2026-06-14）
-| 候选 | Stars | License | 决策 |
-|------|-------|---------|------|
-| Fullive-AI/Anima | 642 | ? | 🟡 观察（Agent OS 方向）|
-| jwangkun/claude-for-financial-services-cn | 442 | ? | 🟡 观察（A 股金融）|
-| **omnigent-ai/omnigent** | **265** | **Apache-2.0** | **✅ 写（Meta-Harness，harness cluster 配对）** |
-| cellebrite-labs/ghidra-rpc | 209 | ? | 🟡 观察（安全方向）|
+### 本轮新发现
+| 候选 | Stars | 类型 | 决策 |
+|------|-------|------|------|
+| **Fullive-AI/Anima** | **591** | **Agent OS for hardware** | **✅ 写（infrastructure/IoT 新 cluster）** |
+| HKUDS/nanobot v0.2.1 | 44K+ | 项目版本更新 | ⬇️ Skip（已有项目，历史 backfill） |
+| zhayujie/CowAgent 2.1.0 | 45K+ | 项目版本更新 | ⬇️ Skip（已有项目，R349 更新过）|
+| jwangkun/claude-for-financial-services-cn | 442 | A 股金融 | 🟡 观察（待下轮评估） |
 
-### OpenAI Agents SDK 扫描
-| 候选 | 日期 | 类型 | 决策 |
-|------|------|------|------|
-| the-next-evolution-of-the-agents-sdk | 2026-04-15 | 工程博客（harness 架构分析）| ✅ 写（NEW source）|
-| gartner-2026-agentic-coding-leader | 近期 | 新闻（ Gartner 报告）| ⬇️ Skip（非深度工程）|
-
-### Anthropic Engineering Blog 扫描
-| 候选 | 日期 | 类型 | 决策 |
-|------|------|------|------|
-| how-we-contain-claude | 最近 | **Containment 工程** | ⚠️ 已追踪（USED）|
+### Anthropic Trends Report 分析
+| 趋势 | 工程相关性 | 本仓库已有内容 |
+|------|-----------|--------------|
+| Trend 2: Single → Multi-Agent | ⭐⭐⭐ orchestration | R369 Omnigent + R368 CrewAI |
+| Trend 3: Long-running agents | ⭐⭐⭐ harness | R369 OpenAI SDK + Omnigent |
+| Trend 4: Human oversight scaling | ⭐⭐ harness | R343 Cursor Auto-review |
+| Trend 8: Security-first | ⭐⭐ harness/security | R369 Claude containment |
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **Article-Project pair 形成**：OpenAI Agents SDK（Provider 侧 harness）+ Omnigent（第三方跨平台 harness）= harness cluster 双轨验证，配对强度 ⭐⭐⭐⭐
-2. **有效降级搜索源**：Tavily quota exceeded 时，AnySearch 作为替代源成功发现 Cursor blog 等内容
-3. **GitHub API `created:` 过滤器**：从 194,939 个 2026-06 项目中精准筛选出 Omnigent
-4. **Web Fetch 可用性**：OpenAI article 通过 web_fetch 成功获取原文（无需 agent-browser）
+1. **新 cluster 识别**：Anima（Agent OS for hardware intelligence）开辟了 infrastructure/IoT 独立方向，与现有 harness/orchestration cluster 正交
+2. **Article-Project 互补配对**：Trends Report（市场验证）+ Anima（工程实现）= 分析层 + 实证层，形成闭环
+3. **PDF 下载 + 文本提取**：pdftotext 成功提取 Anthropic Trends Report 内容（582行），支撑了文章写作
+4. **降级搜索策略持续有效**：AnySearch 作为 Tavily 替代源继续可用，发现多个有价值的候选项目
 
 ### 需改进
-1. **gen_article_map.py hanging**：连续两轮出现进程挂起，需排查（可能是 large file 处理瓶颈）
-2. **Tavily quota 管理**：连续三轮超限，AnySearch 依赖外部服务可能不稳定，考虑配置 Tavily 升级
-3. **Anthropic Engineering 新文章识别**：how-we-contain-claude 已追踪但 article 已产出，harness cluster 可继续深挖
+1. **gen_article_map.py hanging**：R369/R370 连续两轮未执行成功，需排查（可能是大文件处理瓶颈）
+2. **Anima GitHub 超时**：web_fetch 超时后改用 AnySearch + Trendshift 获取信息，但缺少 README 原文引用
+3. **Tavily 长期不可用**：连续多轮 quota exceeded，需考虑 AnySearch 作为主要搜索源并调整 SKILL 默认配置
 
 ## 📈 本轮数据
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（OpenAI Agents SDK harness evolution）|
-| 新增 projects 推荐 | 1（omnigent meta-harness）|
-| 原文引用数量 | Article 3 处 / Project 4 处 |
-| 主题关联性 | ✅ harness/ cluster 配对 |
-| Sources tracked | +2（217 条）|
-| Cluster 激活 | harness/（OpenAI SDK × Omnigent 双轨）|
-| Commit | f478a53 + 17d5872 |
+| 新增 articles 文章 | 1（Anthropic 2026 Trends Report 工程分析）|
+| 新增 projects 推荐 | 1（Fullive-AI/Anima Agent OS）|
+| 原文引用数量 | Article 3 处 / Project 2 处 |
+| 主题关联性 | ✅ fundamentals/ × infrastructure/IoT 互补 |
+| Sources tracked | +2（219 条）|
+| Cluster 激活 | infrastructure/IoT（新）+ fundamentals/ |
+| Commit | pending |
 
 ## 🔮 下轮规划
-- [ ] 扫描 Anthropic Engineering Blog 新文章（harness / multi-agent / containment 方向）
-- [ ] 评估 Fullive-AI/Anima（Agent OS for hardware intelligence，642★）
-- [ ] 关注 omnigent 后续版本（alpha → beta，Plugin 系统开放）
+- [ ] 扫描 Anthropic Engineering Blog 新文章（Multi-agent / Harness / Containment 方向）
+- [ ] 评估 jwangkun/claude-for-financial-services-cn（A 股金融 Claude Skills，442★）
+- [ ] 关注 Anima 后续版本（从 591★增长情况判断社区活跃度）
 - [ ] 排查 gen_article_map.py hanging 问题
 - [ ] 尝试配置 GitHub token 解决 API rate limit
 
 ## 🧠 本轮方法论沉淀
-1. **R369 双轨 harness 发现**：OpenAI Agents SDK（Provider 侧，Harness+Compute+State 解耦）+ Omnigent（第三方侧，Meta-Harness 跨平台）= 同一主题的双路径独立发现，构成强配对
-2. **降级搜索策略验证**：Tavily → AnySearch → Web Fetch 三层降级可用，R369 成功通过 AnySearch 发现 Cursor blog（已被追踪）和 Web Fetch 获取 OpenAI article
-3. **GitHub API `created:` 过滤器**：精确定位 2026-06 新建项目，比 `pushed:` 更有效发现新项目（Omnigent 2026-06-11 创建）
-4. **harness cluster 扩展路径**：Provider 侧（OpenAI SDK）+ 第三方侧（Omnigent）+ 大厂实践（Anthropic containment）= 三条独立路径指向同一 cluster
+1. **R370 新 cluster 路径**：Anthropic Trends Report → Market validation → 工程映射 → 发现 Anima 是「物理世界 Agent 化」方向的具体实现，形成「市场信号 → 工程落地 → 项目实证」三层闭环
+2. **降级搜索 + 多源交叉验证**：web_fetch 超时 → AnySearch + Trendshift → 拼合项目信息，R370 成功用这个方法获取了 Anima 的核心信息
+3. **Anthropic PDF 处理**：pdftotext 可以成功从部分 PDF 提取文本（582行），但需要处理 "Invalid object stream" 警告，说明 PDF 格式不完全标准

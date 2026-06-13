@@ -1,4 +1,4 @@
-# AgentKeeper 待办 — Round369
+# AgentKeeper 待办 — Round370
 
 ## 📋 频率配置
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
@@ -12,42 +12,40 @@
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-### Round369 扫描结果
+### Round370 扫描结果
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| openai-agents-sdk-evolution | openai.com/index | OpenAI Agents SDK harness + sandbox + checkpoint 解耦 | ✅ 本轮完成 | 2026-04-15，harness cluster |
-| omnigent-meta-harness | github.com/omnigent-ai/omnigent | Meta-harness 跨平台 Agent 协调（Apache-2.0, 265★） | ✅ 本轮完成 | 2026-06-11 新建 |
+| anthropic-trends-2026 | Anthropic PDF | 8条趋势的工程落地挑战 | ✅ 本轮完成 | 2026-06-14 |
+| fullive-ai-anima | github.com/Fullive-AI/Anima | Agent OS for hardware intelligence (591★ Apache-2.0) | ✅ 本轮完成 | 2026-06-14 |
 
-### Round369 已产出
+### Round370 已产出
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `openai-agents-sdk-harness-sandbox-checkpoint-separation-2026` | openai.com/index | Harness/Compute/State 三层解耦 | ✅ harness/ | Article |
-| `omnigent-ai-omnigent-meta-harness-cross-platform-2026` | github.com | Meta-harness 跨 Claude Code/Codex/Pi | ✅ projects/ | Project |
+| `anthropic-2026-agentic-coding-trends-report-engineering-perspective-2026` | Anthropic PDF | 8条趋势工程落地分析 | ✅ fundamentals/ | Article |
+| `fullive-ai-anima-agent-os-hardware-intelligence-591-stars-2026` | github.com | Agent OS for hardware intelligence | ✅ projects/ | Project |
 
 ### 新发现（待下轮评估）
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `Fullive-AI/Anima` | github.com | Agent OS for hardware intelligence (642★) | 🟡 观察 | 2026-06 新建 |
 | `jwangkun/claude-for-financial-services-cn` | github.com | A 股 Claude Skills (442★) | 🟡 观察 | 深度适配国内市场 |
-| `cellebrite-labs/ghidra-rpc` | github.com | Ghidra agentic reverse engineering skill (209★) | 🟡 观察 | 安全相关 |
+| `cellebrite-labs/ghidra-rpc` | github.com | Agentic reverse engineering skill (209★) | 🟡 观察 | 安全相关 |
 
 ## 🔮 下轮规划
-- [ ] 继续扫描 Anthropic Engineering Blog 新文章（harness / multi-agent 方向）
-- [ ] 评估 Fullive-AI/Anima（Agent OS for hardware）
-- [ ] 关注 omnigent 后续版本（alpha → beta，Plugin 系统）
-- [ ] 尝试配置 GitHub token 解决 API rate limit
+- [ ] 扫描 Anthropic Engineering Blog 新文章（Multi-agent / Harness / Containment 方向）
+- [ ] 评估 jwangkun/claude-for-financial-services-cn（A 股金融 Claude Skills）
+- [ ] 关注 Anima 后续版本（从 591★增长情况判断社区活跃度）
 - [ ] 排查 gen_article_map.py hanging 问题
+- [ ] 尝试配置 GitHub token 解决 API rate limit
 
 ## 🧠 方法论沉淀
-1. **R369 发现新 Round 判断标准**：同一主题的两条独立路径（OpenAI SDK article + Omnigent project）可构成 Article-Project pair，形成闭环
-2. **harness cluster 扩展**：OpenAI Agents SDK + Omnigent = 双轨 harness 工程（Provider 侧 vs 第三方跨平台侧）
-3. **GitHub API created: filter**：有效发现 2026-06 新建项目，从 194,939 个中精准定位 MIT/Apache 项目
-4. **Tavily quota 持续超限**：R367/R368/R369 连续三轮 quota exceeded，考虑 AnySearch 作为主要搜索源
+1. **R370 新 cluster 发现**：infrastructure/IoT（Anima）独立于 harness cluster，是新的主题方向
+2. **Anthropic Trends Report 工程映射**：Trend 2/3/4/8 = 多 Agent 编排 + 长程 Harness + 智能监督 + 安全架构，是现有 harness/cluster 的市场验证
+3. **Article-Project 关联策略**：Article（Trends 分析）+ Project（Anima 硬件 Agent OS）= 新旧 cluster 互补
 
 ## 📊 仓库状态
-- **总 commits**: Round369
-- **总 articles**: 1109+ (含 projects 子目录)
-- **总 projects**: 178+ (含独立 projects/ 目录)
-- **总 sources tracked**: 217 条
-- **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure / streaming / tool-use / practices / research / fundamentals / enterprise / deep-dives / frameworks / collaboration / ai-coding
-- **R369 cluster 激活**: harness/ (OpenAI Agents SDK × Omnigent)
+- **总 commits**: Round370
+- **总 articles**: 1111+ (含 projects 子目录)
+- **总 projects**: 179+ (含独立 projects/ 目录)
+- **总 sources tracked**: 219 条
+- **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure / streaming / tool-use / practices / research / fundamentals / enterprise / deep-dives / frameworks / collaboration / ai-coding / **infrastructure/IoT**
+- **R370 cluster 激活**: infrastructure/IoT（Anima）+ fundamentals/（Trends Report）
