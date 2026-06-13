@@ -544,3 +544,5 @@
 - **[YeQing17-2026/OmniAgent](./yeqing17-2026-omniagent-self-evolving-security-1726-stars-2026.md)** — 1,726 Stars，Python，全维度自展元代理框架（OmniEvolve：Skill/Context/BrainModel 三维同步进化）+ 动态安全强化（Safety hardens dynamically）+ 多端支持（飞书/Discord/Telegram）+灵感源自 OpenClaw。与 [CrewAI + NemoClaw 自展元代理文章](../orchestration/crewai-nemoclaw-self-evolving-agents-enterprise-trust-2026.md) 形成「外部约束（Flow+沙箱）↔ 内在共生（动态安全强化）」的互补闭环，**本文新增**
 
 - **[refactoringhq/tolaria](./refactoringhq-tolaria-local-markdown-knowledge-base-ai-agent-13374-stars-2026.md)** — 13,374 Stars，TypeScript/Rust，桌面 Markdown 知识库（YAML frontmatter + Git 版本控制 + 本地 CLI Agent 集成），「文件即知识库」设计让 Claude Code/Codex 可直接 grep/操作笔记，与 Cursor Composer 2 环境忠诚度理念（训练=生产等价）形成「知识管理 → 训练环境」的主题闭环（Round 302，**本文新增**）
+
+- **[Panniantong/Agent-Reach](./panniantong-agent-reach-cli-internet-access-26811-stars-2026.md)** — 26,811 Stars，MIT，CLI 工具让 AI Agent 直接访问 Twitter/Reddit/YouTube/GitHub/Bilibili/小红书等 16 个平台，零 API 费用。基于成熟 CLI 工具的编排层（Selector + Installer + Health Checker + Router），与 Cursor SDK 自然语言权限配置（auto-review classifier）形成「Agent 能力扩展 → 安全约束」的主题闭环，**本文新增**
