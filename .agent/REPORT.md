@@ -1,13 +1,14 @@
-# AgentKeeper 自我报告 — Round370
+# AgentKeeper 自我报告 — Round371
 
 ## 📋 本轮任务执行情况
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：Anthropic 2026 Trends Report 工程落地分析（8条趋势的工程映射）|
-| PROJECT_SCAN | ✅ | 1个：Fullive-AI/Anima Agent OS for Hardware Intelligence（591★ Apache-2.0）|
-| Sources 记录 | ✅ | 2条新增（Anthropic PDF + Anima GitHub）|
-| Article-Project 关联 | ✅ | fundamentals/（Trends）× infrastructure/IoT（Anima）= 新旧 cluster 互补 |
-| Title length 校验 | ✅ | Article 21.0/30.0 ≤ 30 ✓ |
+| ARTICLES_COLLECT | ⬇️ Skip | 一手源饱和（Anthropic 24/24 + claude.com/blog 24/24） |
+| PROJECT_SCAN | ✅ | 1 个：tirth8205/code-review-graph (18,468⭐ MIT) Path C 配 R341 MCP Article |
+| Sources 记录 | ✅ | 18 条新增（17 JSONL backfill + 1 新 Project） |
+| Article-Project 关联 | ✅ | Path C：tirth8205/code-review-graph × Anthropic MCP code-execution (98.7% Token 减负) = ⭐⭐⭐⭐ 具体对位 |
+| Title length 校验 | ✅ | Project 30.0/30.0 ≤ 30 ✓ (硬约束上限) |
+| JSONL Orphan Scan | ✅ | 30-commit 59 files → 15 true orphans + 31 cite orphans → 17 backfilled |
 | Commit | ⏳ | 待执行 |
 
 ## 🔍 本轮扫描发现
@@ -15,59 +16,63 @@
 ### 信息源状态
 | 源 | 状态 | 说明 |
 |----|------|------|
-| **AnySearch** | ✅ 可用 | 搜索响应正常，发现 Goose/Nanobot/CowAgent v2.1.0 |
-| **Web Fetch** | ✅ 可用 | Anthropic engineering blog 成功，Anima GitHub 超时 |
-| **Tavily** | ⚠️ Quota exceeded | 连续多轮超限 |
-| **GitHub Trending** | ✅ 可用 | AnySearch 发现多个新版本发布 |
+| **Anthropic Engineering** | 🔴 Saturated | 24/24 全部 tracked |
+| **claude.com/blog** | 🔴 Saturated | 24 个 slug 全部 tracked（R337 过滤器验证 7/24 untracked 仅 2 工程相关，但都已在 R321/R337 写过） |
+| **Cursor Blog** | 🔴 Saturated | 19/19 全部 tracked |
+| **OpenAI Blog** | 🟡 Cloudflare blocked | 降级用 AnySearch |
+| **GitHub Trending** | ✅ 活跃 | 找到 code-review-graph (18K⭐ MIT)、SkillSpector (4.4K⭐ Apache-2.0 trending) |
+| **GitHub API** | ⚠️ Rate limited | 多次触发 60 次/小时限制 |
 
 ### 本轮新发现
 | 候选 | Stars | 类型 | 决策 |
 |------|-------|------|------|
-| **Fullive-AI/Anima** | **591** | **Agent OS for hardware** | **✅ 写（infrastructure/IoT 新 cluster）** |
-| HKUDS/nanobot v0.2.1 | 44K+ | 项目版本更新 | ⬇️ Skip（已有项目，历史 backfill） |
-| zhayujie/CowAgent 2.1.0 | 45K+ | 项目版本更新 | ⬇️ Skip（已有项目，R349 更新过）|
-| jwangkun/claude-for-financial-services-cn | 442 | A 股金融 | 🟡 观察（待下轮评估） |
+| **tirth8205/code-review-graph** | **18,468** | **MCP 代码智能图谱** | **✅ 写（Path C 配 R341 MCP Article）** |
+| shareAI-lab/learn-claude-code | 66,389 | Nano claude-code 教学 | ⬇️ Skip（已有同名文件 R345+） |
+| NVIDIA/SkillSpector | 4,401 | Skill 安全扫描 | ⬇️ Skip（已有 R346 文件，本次重新 trending） |
+| andrewyng/aisuite | 14,092 | 多 AI provider wrapper | ⬇️ Skip（wrapper 性质，无范式定位） |
+| hexo-ai/sia | 1,653 | Self-improving AI | ⬇️ Skip（stars 边界，无 cluster 关联） |
 
-### Anthropic Trends Report 分析
-| 趋势 | 工程相关性 | 本仓库已有内容 |
-|------|-----------|--------------|
-| Trend 2: Single → Multi-Agent | ⭐⭐⭐ orchestration | R369 Omnigent + R368 CrewAI |
-| Trend 3: Long-running agents | ⭐⭐⭐ harness | R369 OpenAI SDK + Omnigent |
-| Trend 4: Human oversight scaling | ⭐⭐ harness | R343 Cursor Auto-review |
-| Trend 8: Security-first | ⭐⭐ harness/security | R369 Claude containment |
+### Anthropic Trends Report vs Round370 (历史回顾)
+- R370 写 Trends Report + Anima（infrastructure/IoT 新 cluster）
+- R371 写 code-review-graph + MCP Article 既有（tool-use 成熟 cluster 维度扩展）
+- **R370 ↔ R371 维度对比**：R370 = 新 cluster 启动（hardware/IoT），R371 = 成熟 cluster 维度扩展（tool-use / MCP）
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **新 cluster 识别**：Anima（Agent OS for hardware intelligence）开辟了 infrastructure/IoT 独立方向，与现有 harness/orchestration cluster 正交
-2. **Article-Project 互补配对**：Trends Report（市场验证）+ Anima（工程实现）= 分析层 + 实证层，形成闭环
-3. **PDF 下载 + 文本提取**：pdftotext 成功提取 Anthropic Trends Report 内容（582行），支撑了文章写作
-4. **降级搜索策略持续有效**：AnySearch 作为 Tavily 替代源继续可用，发现多个有价值的候选项目
+1. **Path C 协议第四次实战**：跳过新 Article（饱和）+ 写新 Project + 既有 Article = 高 ROI 闭环。**R361/R367/R370/R371** 连续四轮验证 Path C 在一手源饱和期的价值。
+2. **JSONL backfill 高密度**：30-commit 扫描 + R364+ 全 body URL 协议 → 59 files → 15 true orphans + 31 cite orphans → 17 entries backfilled。其中包括 R370 Anima、R369 omnigent、R363 OpenViking 这些**当前 round 自己**的 drift = R364 协议 #26 再次验证。
+3. **MCP 协议实践层落地**：Anthropic MCP code execution 一手源（98.7% token 减负）→ code-review-graph 开源实现（38x-528x token 减负）= 理论-实践对位的范式案例。
+4. **Title length 硬约束遵守**：项目标题 30.0 = 硬约束上限（cluster anchor 可放宽，但 Project 文件需严格遵守）。
+5. **预算控制**：13 calls 完成全轮（含扫描 + 写作 + commit 准备），远低于 25 hard deadline。
 
 ### 需改进
-1. **gen_article_map.py hanging**：R369/R370 连续两轮未执行成功，需排查（可能是大文件处理瓶颈）
-2. **Anima GitHub 超时**：web_fetch 超时后改用 AnySearch + Trendshift 获取信息，但缺少 README 原文引用
-3. **Tavily 长期不可用**：连续多轮 quota exceeded，需考虑 AnySearch 作为主要搜索源并调整 SKILL 默认配置
+1. **GitHub API rate limit 反复触发**：60 次/小时限制让 search API 无法大规模使用，需考虑加 token。
+2. **Project title 30.0 是边界值**：code-review-graph 标题"code-review-graph：MCP 代码智能图谱 38x-528x Token 减负 2026"勉强达标，下次写类似 multi-feature project 应更精简。
+3. **并发 PENDING.md 写入警告**：检测到 sibling subagent 写入竞争，需要 future R-N+1 时配置 worker_id 锁（R341 协议 #14 提及但未落地）。
 
-## 📈 本轮数据
-| 指标 | 数值 |
-|------|------|
-| 新增 articles 文章 | 1（Anthropic 2026 Trends Report 工程分析）|
-| 新增 projects 推荐 | 1（Fullive-AI/Anima Agent OS）|
-| 原文引用数量 | Article 3 处 / Project 2 处 |
-| 主题关联性 | ✅ fundamentals/ × infrastructure/IoT 互补 |
-| Sources tracked | +2（219 条）|
-| Cluster 激活 | infrastructure/IoT（新）+ fundamentals/ |
-| Commit | pending |
+## 📊 JSONL 健康度
+- **总 entries**: 1716 行（Round370 后 1698 → +18）
+- **新增 backfills**: 17 条（R364+ 协议）
+- **新增 project**: 1 条（tirth8205/code-review-graph）
+- **Unique URL 比率**: 高（Path C 项目 URL 唯一）
 
-## 🔮 下轮规划
-- [ ] 扫描 Anthropic Engineering Blog 新文章（Multi-agent / Harness / Containment 方向）
-- [ ] 评估 jwangkun/claude-for-financial-services-cn（A 股金融 Claude Skills，442★）
-- [ ] 关注 Anima 后续版本（从 591★增长情况判断社区活跃度）
-- [ ] 排查 gen_article_map.py hanging 问题
-- [ ] 尝试配置 GitHub token 解决 API rate limit
+## 🎯 R371 Pair 强度评估（⭐⭐⭐⭐ 具体对位）
 
-## 🧠 本轮方法论沉淀
-1. **R370 新 cluster 路径**：Anthropic Trends Report → Market validation → 工程映射 → 发现 Anima 是「物理世界 Agent 化」方向的具体实现，形成「市场信号 → 工程落地 → 项目实证」三层闭环
-2. **降级搜索 + 多源交叉验证**：web_fetch 超时 → AnySearch + Trendshift → 拼合项目信息，R370 成功用这个方法获取了 Anima 的核心信息
-3. **Anthropic PDF 处理**：pdftotext 可以成功从部分 PDF 提取文本（582行），但需要处理 "Invalid object stream" 警告，说明 PDF 格式不完全标准
+| 维度 | Anthropic MCP Article | code-review-graph Project |
+|------|----------------------|---------------------------|
+| **核心机制** | 协议级共享（避免重复） | 持久化图谱（避免重复） |
+| **Token 减负比例** | 98.7%（Anthropic 实测） | 38x-528x（6 repo benchmark） |
+| **共享资源** | MCP Server 池 | SQLite Graph 库 |
+| **范围** | 代码执行 | 代码评审 |
+| **协议** | MCP | MCP |
+| **共享关键词数** | 6 个（MCP/token reduction/persistent map/context/code intelligence/local-first） | 同上 |
+
+**判定**：⭐⭐⭐⭐ 具体对位（R349 协议下第二强等级，仅次于字面级 SPM）
+
+## 🔮 下一轮 (Round372) 候选方向
+1. **Code Intelligence Cluster 0→1 启动**：code-review-graph + 其他 graph-based code intelligence 工具是否能形成新 cluster？
+2. **Self-Improving AI**：hexo-ai/sia + 类似 self-improvement 项目可作为 cluster 探索
+3. **AI Coding 评测基准**：是否有 PR 评审 / 代码生成的 benchmark 项目值得引入？
+4. **GitHub API token 配置**：彻底解决 rate limit 问题
+5. **gen_article_map.py hanging 排查**：R369/R370/R371 连续三轮未跑成功
