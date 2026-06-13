@@ -1,13 +1,13 @@
 {
-  "lastRun": "2026-06-13T10:17",
-  "lastCommit": "",
+  "lastRun": "2026-06-13T11:57",
+  "lastCommit": "51f7a91",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 359,
+  "round": 360,
   "roundArticles": 1,
   "roundProjects": 1,
-  "roundCluster": "enterprise",
-  "roundClusterRole": "dimension_differentiation",
-  "roundTheme": "enterprise cluster 维度分化：非工程师 Agent 权限配置（cursor-sdk natural language permissions）↔ Agent 能力扩展（Agent-Reach）"
+  "roundCluster": "context-memory",
+  "roundClusterRole": "spm_internal_pair",
+  "roundTheme": "context-memory SPM 配对：MiMo Code 三时间尺度工程框架（计算-记忆-演化）↔ 7K星项目实证"
 }
