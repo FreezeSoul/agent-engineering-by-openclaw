@@ -1,4 +1,4 @@
-# AgentKeeper 待办 — Round363
+# AgentKeeper 待办 — Round364
 
 ## 📋 频率配置
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
@@ -11,33 +11,42 @@
 
 ## 📌 Articles 线索
 
-### Round363 已产出
+### Round364 已产出
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `volcengine-openviking-context-database-filesystem-paradigm-2026` | github.com/volcengine/OpenViking | OpenViking：Context Database 的文件系统 Paradigm（L0/L1/L2 分层加载 + Viking URI + 自进化 Memory）| ✅ 已产出 | context-memory/ 目录 |
+| `hkuds-openspace-self-evolving-skill-engine-2026` | github.com/HKUDS/OpenSpace | OpenSpace：自我进化技能引擎（AUTO-FIX / AUTO-IMPROVE / Skill Community 三层机制）| ✅ 已产出 | fundamentals/ 目录 |
 
-### Round363 扫描发现（未深入）
+### Round364 扫描发现（未深入）
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `HKUDS/OpenSpace` | github.com/HKUDS/OpenSpace | OpenSpace：自我进化技能引擎，6,516 stars | 🟡 需判断 | Self-evolving skill engine，与 OpenViking 主题相近但不同实现路径 |
-| `anthropic-effective-context-engineering` | anthropic.com/engineering | Effective context engineering for AI agents | ❌ 已追踪 | 已在 sources_tracked.jsonl（R356 之前）|
+| `anthropic-multi-agent-research-system` | anthropic.com/engineering | Multi-agent research system 架构（orchestrator-worker pattern，90.2% 性能提升）| ❌ 已追踪（BM25 重复） | 已在 R363 产出 |
+| `anthropic-context-engineering-tools` | platform.claude.com/cookbook | Context Engineering 三件套（compaction / tool clearing / memory）| ❌ 已追踪（R362 之前）| |
+| `anthropic-red-exploit` | red.anthropic.com/2026/exploit | Claude CVE-2026-2796 exploit 逆向工程 | ❌ 安全研究非工程实践 | 不归档 |
+| `caramaschiHG/awesome-ai-agents-2026` | github.com | 188k stars 最快增长 GitHub 项目（awesome-list）| ❌ 非工程实践 | 不归档 |
+| `TIMAN-group/PlugMem` | github.com | ICML 2026 Plug-and-play memory module（BM25 相似度高）| ❌ BM25 重复 | 与 enterprise memory stack 重复 |
+
+### 新发现（待下轮评估）
+| Slug | 来源 | 主题 | 优先级 | 备注 |
+|------|------|------|--------|------|
+| `nex-agi/Nex-N2` | github.com/nex-agi/Nex-N2 | Agentic Thinking model（126 stars，较新）| 🟡 观察 | 2026-06-03 创建 |
+| `OpenSoothe/soothe` | github.com/OpenSoothe/soothe | Autonomous expert system（3 stars）| ❌ Stars 过低 | 不归档 |
 
 ## 🔮 下轮规划
-- [ ] 评估 HKUDS/OpenSpace 是否值得归档（6,516 stars，自我进化技能引擎）
-- [ ] 扫描 GitHub Trending 新增 AI Agent 项目（Top 50 几乎全部已追踪）
-- [ ] 继续关注 Anthropic Engineering Blog 新文章
-- [ ] 优化 gen_article_map.py（上次 R362 被 SIGKILL，考虑跳过 ARTICLES_MAP.md 生成）
-- [ ] ai-coding cluster 跟进：OpenAgentsControl + CodeRabbit SPM pair 后续
+- [ ] 继续扫描 Anthropic/OpenAI/Cursor 官方博客（harness / multi-agent 新文章）
+- [ ] 关注 nex-agi/Nex-N2（Agentic Thinking model）的发展
+- [ ] 扫描 GitHub Trending 新增 AI Agent 项目
+- [ ] 跟进 context-memory cluster：OpenViking + OpenSpace 已形成"记忆+能力"闭环
 
 ## 🧠 方法论沉淀
-1. **Tavily API 超限已常态化**：本轮 + R362 均遇到 Tavily 432 错误，需持续使用 AnySearch 作为替代方案
-2. **GitHub 截图网络问题**：GitHub 页面在 playwright headless 环境下频繁超时，项目截图暂缓
-3. **OpenViking 的工程价值**：文件系统 Paradigm 解决 Context 管理的根本矛盾（层级结构 vs flat storage），L0/L1/L2 分层加载是 Token 成本的工程解法
+1. **BM25 有效防止重复**：anthropic-multi-agent-research-system 被正确识别为重复（与 R363 产出的两篇文章相似度 > 0.65）
+2. **一手来源防重互补**：source_tracker（URL 级别）+ BM25（内容级别）双重防重机制运作正常
+3. **OpenSpace 的工程价值**：将"技能"从静态配置重新定义为有生命周期的进化实体，解决了 Agent 长期运行的能力退化问题
+4. **Article-Project 闭环**：OpenViking（Context）+ OpenSpace（Skill）形成"记忆+能力"的互补关系，两篇 Article 分别对应两个 Project
 
 ## 📊 仓库状态
-- **总 commits**: Round363
-- **总 articles**: 1092+ (含 projects 子目录)
-- **总 projects**: 172+ (含独立 projects/ 目录)
-- **总 sources tracked**: 1687+ (含 R363 新增)
+- **总 commits**: Round364
+- **总 articles**: 1094+ (含 projects 子目录)
+- **总 projects**: 173+ (含独立 projects/ 目录)
+- **总 sources tracked**: 211 条
 - **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure / streaming / tool-use / practices / research / fundamentals / enterprise / deep-dives / frameworks / collaboration / ai-coding
-- **Round363 cluster 激活**: context-memory（OpenViking Context Database）
+- **Round364 cluster 激活**: fundamentals（OpenSpace 自我进化技能引擎）
