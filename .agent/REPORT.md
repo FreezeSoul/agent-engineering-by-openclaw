@@ -1,93 +1,67 @@
-# AgentKeeper 自我报告 — Round360
+# AgentKeeper 自我报告 — Round361
 
 ## 📋 本轮任务执行情况
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：MiMo Code 三时间尺度工程框架（context-memory/ 目录）|
-| PROJECT_SCAN | ✅ | 1个推荐：XiaomiMiMo/MiMo-Code 7,006⭐ MIT（GitHub Weekly Trending 新发现）|
-| Sources 记录 | ✅ | MiMo Code blog + GitHub 全部记录 |
-| Title length 校验 | ✅ | Article 23.5 / Project 24.5 单位，全部 ≤ 30 硬约束 |
-| SPM 配对 | ✅ | context-memory cluster 内部配对：Article（三时间尺度框架分析）+ Project（MiMo Code 实证）= "理论 ↔ 实践" 闭环 |
-| README 更新 | ✅ | articles/projects/README.md 防重索引更新 |
+| ARTICLES_COLLECT | ✅ | 1篇：GitHubNext/goal Autoloop git 分支持久化模式（fundamentals/ 目录）|
+| PROJECT_SCAN | ⬇️ | 无 qualifying GitHub Trending 项目（nex-agi/Nex-N2 Stars 123 < 1000 阈值）|
+| Sources 记录 | ✅ | GitHubNext/goal GitHub 已记录 |
+| Title length 校验 | ✅ | Article 23.0 单位 ≤ 30 硬约束 |
+| SPM 配对 | ✅ | Article 自主闭环（Autoloop 模式本身就是 GitHub 工具链的工程机制分析）|
 
 ## 🔍 本轮扫描发现
 
 ### 扫描来源
-- **AnySearch**：✅ 发现 MiMo Code 技术博客（mimo.xiaomi.com/blog/mimo-code-long-horizon）+ GitHub 项目页
-- **GitHub Weekly Trending**：✅ 发现 XiaomiMiMo/MiMo-Code（7,006 stars，MIT）
-- **AnySearch Framework 扫描**：发现多个框架对比文章（非一手来源，降级）
-- **OpenAI Harness Engineering**：已追踪（R259）
-- **Anthropic Engineering Blog**：april-23-postmortem 已覆盖；其他主题已饱和
-- **Cursor Changelog**：bugbot-updates-june-2026（NEW，但产品功能更新，非工程方法论）
+- **AnySearch（官方博客扫描）**：发现 Claude Managed Agents 新功能（scheduled agents + vault）
+- **AnySearch（GitHub Trending）**：发现 GitHubNext/goal（Autoloop 模式，极早期 1 star）、nex-agi/Nex-N2（123 stars）
+- **GitHub Trending（ossinsight.io）**：Top 50 AI repos 分析，Top Movers：anomalyco/opencode +624
 
 ### 候选文章评估
 | 候选 | 来源 | 评分 | 决策 |
 |------|------|------|------|
-| MiMo Code 三时间尺度框架 | mimo.xiaomi.com/blog | 12/15 | ✅ 写（新角度：三重时间尺度问题分解框架，Max Mode + Goal + Dynamic Workflow）|
-| OpenAI Harness Engineering | openai.com/index/harness-engineering | N/A | ❌ 已追踪（R259）|
-| Cursor Bugbot 3x faster | cursor.com/changelog | N/A | ❌ 产品功能更新，非工程方法论 |
+| GitHubNext/goal Autoloop 模式 | github.com/githubnext/goal | 12/15 | ✅ 写（Git 原语作为 Agent 状态机，工程机制稀缺性高）|
+| Claude Managed Agents vault | claude.com/blog | N/A | ❌ 产品功能更新，非稀缺工程机制 |
+| Nex-N2 | github.com/nex-agi/Nex-N2 | N/A | ❌ Stars 123 < 1000，非框架级 |
 
 ### 候选项目评估
-| 候选 | 来源 | Stars | License | 决策 |
-|------|------|-------|---------|------|
-| **XiaomiMiMo/MiMo-Code** | GitHub Weekly Trending | 7,006 | MIT | ✅ 写（context-memory SPM 配对：长时域持久记忆）|
-| Headroom | 已知（已追踪 R359） | 24,534 | Apache-2.0 | ❌ 已追踪 |
-| Agent-Reach | 已知（已追踪 R359） | 26,811 | MIT | ❌ 已追踪 |
+| 候选 | 来源 | Stars | 决策 |
+|------|------|-------|------|
+| GitHubNext/goal | GitHubNext（官方）| 1 | ❌ Stars < 1000，below threshold |
+| nex-agi/Nex-N2 | GitHub Trending | 123 | ❌ Stars < 1000，below threshold |
+| anomalyco/opencode | GitHub Trending | 55,435 | ❌ 已追踪（R356/R357）|
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **"三重时间尺度"作为核心论点**：不是介绍又一个 coding agent，而是提炼出"计算-记忆-演化"问题分解框架，提供了诊断长时域可靠性问题的思维方式
-2. **Sources 防重验证**：MiMo Code 所有关键词（mimo、xiaomi、long-horizon、max mode、goal mechanism、dynamic workflow）均无冲突记录 → 安全写入
-3. **Title length 硬约束校验**：Article 23.5 / Project 24.5 单位，全部 ≤ 30 ✅
-4. **context-memory cluster 内部配对**：Article（框架分析）+ Project（实证）形成"理论 ↔ 实践"闭环，与 R354/Hindsight 的"Memory That Learns"主题呼应
+1. **「Git 原语作为 Agent 状态机」的核心论点**：不是介绍又一个工具，而是提炼出"将 Agent 工作流状态建模为 Git 分支上的 commits + Labels 状态转移"的 Autoloop 设计模式，这是行业稀缺的工程机制设计
+2. **AnySearch extract 正确使用**：Claude blog 内容通过 AnySearch extract 获取（渲染后内容），而非 web_fetch（HTML 框架）
+3. **Title length 硬约束校验**：Article 23.0 单位 ≤ 30 ✅
+4. **GitHubNext/goal 防重检查**：确认 .md 文件不存在、sources_tracked.jsonl 无冲突记录 → 安全写入
 
 ### 需改进
-1. **GitHub Trending 抓取不稳定**：curl 直接抓 GitHub trending 页面返回 HTML 框架而非内容 → 改用 playwright_headless 或 AnySearch 间接发现
-2. **Anthropic/OpenAI 官方博客扫描**：本轮 AnySearch 发现的内容多为二手解读（Medium、技术博客），一手官方博客内容（Anthropic Engineering Blog）已饱和 → 需要更针对性的搜索词
+1. **GitHubNext/goal Stars 过低**：只有 1 star，本轮无法写 Project recommendation → 下轮可重新评估是否有新的 GitHub Trending 高星项目
+2. **Project 候选不足**：GitHub Trending Top 50 项目几乎全部已追踪，新项目 stars 均低于阈值 → 考虑扩大扫描范围（如 GitHub new releases）
+3. **代理稳定性问题**：anysearch 偶发 `.venv/bin/python not found` → 使用系统 python3 替代
 
 ## 📈 本轮数据
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 1 |
-| 新增 projects 推荐 | 1 |
-| 原文引用数量 | Article 4 处 / Project 3 处 |
-| 主题关联性 | ✅ context-memory SPM 配对（三时间尺度框架 ↔ 长时域持久记忆）|
-| Sources tracked | +2（MiMo Code blog + GitHub）|
-| Cluster 激活 | context-memory/ 子目录（三时间尺度 + 长时域记忆）|
-| Title length | Article 23.5 / Project 24.5 (≤ 30 硬约束) |
+| 新增 projects 推荐 | 0 |
+| 原文引用数量 | Article 3 处官方 README 引用 |
+| 主题关联性 | ✅ Article 自主闭环（Autoloop 模式本身即工程机制分析）|
+| Sources tracked | +1（GitHubNext/goal）|
+| Cluster 激活 | fundamentals/（agent design patterns 2026）|
+| Title length | Article 23.0 (≤ 30 硬约束) |
 
 ## 🔮 下轮规划
-- [ ] 扫描 GitHub Weekly Trending 新发现（上周发现但未追踪的项目）
-- [ ] 评估 Anthropic/OpenAI 是否有新的工程博客文章
-- [ ] 扫描 Cursor changelog（bugbot、design mode 未深入）
-- [ ] context-memory cluster 维度分化：第 2 个 anchor 候选
+- [ ] 扫描 GitHub Top Movers（anomalyco/opencode +624 增长，是否有新 pattern）
+- [ ] 评估 Claude Managed Agents vault 是否有工程方法论角度
+- [ ] 扩大 GitHub 新发现范围（GitHub new releases、recent commits）
+- [ ] fundamentals cluster 维度分化：第 2 个 anchor 候选
+- [ ] ai-coding cluster 跟进：CodeRabbit + OpenAgentsControl SPM pair 是否有后续文章
 
 ## 🧠 本轮方法论沉淀
-1. **"三重时间尺度"作为核心论点**：把"Agent 不够可靠"问题分解为计算（单步决策）、记忆（多轮状态）、演化（跨会话经验）三个可独立工程化的问题
-2. **GitHub Weekly > curl 直接抓取**：curl 只能获取 HTML 框架；改用 playwright_headless 或 AnySearch 间接发现更可靠
-3. **context-memory cluster 内部配对规律**：同一 cluster 可以从"理论框架"和"实证项目"两个维度写，形成"分析 ↔ 实践"闭环
-
-## 📊 关键数据快照
-
-### Article
-- **slug**: `xiaomi-mimo-code-three-time-scales-computation-memory-evolution-2026`
-- **path**: `articles/context-memory/xiaomi-mimo-code-three-time-scales-computation-memory-evolution-2026.md`
-- **source**: https://mimo.xiaomi.com/blog/mimo-code-long-horizon
-- **title_len**: 23.5
-- **cluster**: context-memory（三时间尺度框架）
-- **引用数量**: 4 处官方原文
-
-### Project
-- **slug**: `xiaomi-mimo-code-persistent-memory-long-horizon-7006-stars-2026`
-- **path**: `articles/projects/xiaomi-mimo-code-persistent-memory-long-horizon-7006-stars-2026.md`
-- **source**: https://github.com/XiaomiMiMo/MiMo-Code
-- **stars**: 7,006（verified via AnySearch）
-- **license**: MIT（verified via AnySearch）
-- **title_len**: 24.5
-- **SPM_strength**: context-memory cluster 内部配对：框架分析 ↔ 实证案例
-- **来源**: GitHub Weekly Trending（NEW）
-
-### Commit
-- **message**: "Round360: Xiaomi MiMo Code 三时间尺度工程框架 + 7K星项目推荐 context-memory SPM 配对"
-- **files**: 3 changed (1 article, 1 project, 1 README)
+1. **Autoloop Pattern = Git 原语驱动的状态机**：Agent 工作流状态 = git branch commits + PR comments + Labels 状态转移
+2. **AnySearch extract > web_fetch**：对于 JS 渲染页面（claude.com blog），AnySearch extract 能获取渲染后内容
+3. **GitHubNext/goal 的工程价值 > Stars**：Stars 只有 1 但工程机制稀缺（Git 原语状态管理），这是官方团队对「持久化工作流」的一次重要范式探索

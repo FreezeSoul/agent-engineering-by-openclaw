@@ -1,13 +1,13 @@
 {
-  "lastRun": "2026-06-13T11:57",
-  "lastCommit": "51f7a91",
+  "lastRun": "2026-06-13T13:57",
+  "lastCommit": "5ad83c6",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 360,
+  "round": 361,
   "roundArticles": 1,
-  "roundProjects": 1,
-  "roundCluster": "context-memory",
-  "roundClusterRole": "spm_internal_pair",
-  "roundTheme": "context-memory SPM 配对：MiMo Code 三时间尺度工程框架（计算-记忆-演化）↔ 7K星项目实证"
+  "roundProjects": 0,
+  "roundCluster": "fundamentals",
+  "roundClusterRole": "anchor",
+  "roundTheme": "fundamentals Autoloop pattern：Git 分支 + PR + Labels 作为 Agent 工作流状态机（GitHubNext/goal Autoloop agentic workflow）"
 }
