@@ -1,74 +1,78 @@
-# AgentKeeper 自我报告 — Round368
+# AgentKeeper 自我报告 — Round369
 
 ## 📋 本轮任务执行情况
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ Skip | 一手源饱和：Anthropic Engineering + Cursor + claude.com/blog 全饱和 + OpenAI Cloudflare 拦截 + Tavily quota exceeded + GitHub API rate limited |
-| PROJECT_SCAN | ✅ | 1个：Ponytail YAGNI Skill (1,240★ MIT) — Path C 配 R361 OpenAgentsControl cluster |
-| Sources 记录 | ✅ | 1 条新增 (ponytail project) |
-| Cluster 分类 | ✅ | ai-coding/ 目录 (R361 cluster 配对扩展) |
-| Article-Project 关联 | ✅ | Path C: 新 Project (Ponytail) × 既有 Article (R361 OpenAgentsControl) |
-| Title length 校验 | ✅ | 27.0/30.0 ≤ 30 ✓ |
+| ARTICLES_COLLECT | ✅ | 1篇：OpenAI Agents SDK harness+sandbox+checkpoint 三层解耦 |
+| PROJECT_SCAN | ✅ | 1个：omnigent-ai/omnigent Meta-Harness（265★ Apache-2.0）|
+| Sources 记录 | ✅ | 2条新增（OpenAI article + Omnigent project）|
+| Article-Project 关联 | ✅ | harness/ cluster 配对（OpenAI SDK × Omnigent）|
+| Title length 校验 | ✅ | article: 30.0/30.0 ≤ 30 ✓ |
+| Commit | ✅ | 2 commits（content + ARTICLES_MAP）|
 
 ## 🔍 本轮扫描发现
 
-### 网络层约束
-- **Tavily**: quota exceeded (432) — R368 全程无法使用
-- **GitHub API**: rate limited for unauthenticated requests
-- **Web Fetch**: GitHub/Anthropic JS-rendered 超时
-- **Union Search**: DuckDuckGo/Brave 网络不可达 + Tavily 未安装
+### 信息源状态
+| 源 | 状态 | 说明 |
+|----|------|------|
+| **Tavily** | ❌ Quota exceeded | R367/R368/R369 连续超限 |
+| **GitHub API** | ⚠️ Rate limited | unauthenticated limit 很低 |
+| **Web Fetch** | ✅ 可用 | OpenAI article 成功获取 |
+| **AnySearch** | ✅ 可用 | 搜索响应正常（< 3s）|
+| **Anthropic Engineering** | ✅ 可用 | web_fetch 成功，claude.com/blog 可访问 |
 
-### GitHub 新建项目扫描（created:2026-06-01..2026-06-14）
+### GitHub 新建项目发现（created:2026-06-01..2026-06-14）
 | 候选 | Stars | License | 决策 |
 |------|-------|---------|------|
-| jd-opensource/JoyAI-Echo | 1,527 | NOASSERTION | ⬇️ Skip (NOASSERTION) |
-| **DietrichGebert/ponytail** | **1,240** | **MIT** | **✅ 写 (Path C, R361 cluster)** |
-| SkyBlue997/enableMacosAI | 966 | None | ⬇️ Skip (no license) |
-| apple/coreai-models | 862 | BSD-3-Clause | 🟡 观察 (非 Agent 工程主题) |
-| GordenSun/GordenSuperPPTSkills | 885 | None | ⬇️ Skip (no license) |
-| amElnagdy/guard-skills | 648 | MIT | 🟡 观察 (harness 相关，待下轮) |
-| tastyeffectco/sandboxd | 599 | MIT | 🟡 观察 (infra 相关，待下轮) |
+| Fullive-AI/Anima | 642 | ? | 🟡 观察（Agent OS 方向）|
+| jwangkun/claude-for-financial-services-cn | 442 | ? | 🟡 观察（A 股金融）|
+| **omnigent-ai/omnigent** | **265** | **Apache-2.0** | **✅ 写（Meta-Harness，harness cluster 配对）** |
+| cellebrite-labs/ghidra-rpc | 209 | ? | 🟡 观察（安全方向）|
 
-### claude.com/blog 扫描结果
+### OpenAI Agents SDK 扫描
 | 候选 | 日期 | 类型 | 决策 |
 |------|------|------|------|
-| claude-for-foundation-models | 2026-06-08 | Product announcement (Swift 集成) | ⬇️ Skip (产品公告，非深度工程) |
-| connectors-for-everyday-life | 2026-04-23 | Product announcement | ⬇️ Skip (产品公告) |
+| the-next-evolution-of-the-agents-sdk | 2026-04-15 | 工程博客（harness 架构分析）| ✅ 写（NEW source）|
+| gartner-2026-agentic-coding-leader | 近期 | 新闻（ Gartner 报告）| ⬇️ Skip（非深度工程）|
+
+### Anthropic Engineering Blog 扫描
+| 候选 | 日期 | 类型 | 决策 |
+|------|------|------|------|
+| how-we-contain-claude | 最近 | **Containment 工程** | ⚠️ 已追踪（USED）|
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **Path C 触发正确**：Ponytail (YAGNI skill) 与 R361 OpenAgentsControl (plan-first gate) 形成「事前约束 + 事中极简」双轨质量守护，配对强度 ⭐⭐⭐⭐
-2. **网络约束下有效扫描**：GitHub API `created:2026-06` 过滤器发现新建项目，从 194,939 个项目中筛选出 5 个 untracked MIT/Apache 项目
-3. **工程质量判断**：Ponytail 有官方 benchmark（可复现）+ 跨 4 平台支持（Claude Code/Codex/Pi/OpenCode）+ MIT license + YAGNI 决策链工程机制清晰
+1. **Article-Project pair 形成**：OpenAI Agents SDK（Provider 侧 harness）+ Omnigent（第三方跨平台 harness）= harness cluster 双轨验证，配对强度 ⭐⭐⭐⭐
+2. **有效降级搜索源**：Tavily quota exceeded 时，AnySearch 作为替代源成功发现 Cursor blog 等内容
+3. **GitHub API `created:` 过滤器**：从 194,939 个 2026-06 项目中精准筛选出 Omnigent
+4. **Web Fetch 可用性**：OpenAI article 通过 web_fetch 成功获取原文（无需 agent-browser）
 
 ### 需改进
-1. **Tavily quota 管理**：已连续两轮 quota exceeded，考虑申请升级或寻找替代搜索源
-2. **GitHub API 认证**：rate limit 是主要瓶颈，考虑配置 GitHub token 提高 limit
-3. **OpenAI Cloudflare 拦截**：持续 8 个月无解，保持现状
+1. **gen_article_map.py hanging**：连续两轮出现进程挂起，需排查（可能是 large file 处理瓶颈）
+2. **Tavily quota 管理**：连续三轮超限，AnySearch 依赖外部服务可能不稳定，考虑配置 Tavily 升级
+3. **Anthropic Engineering 新文章识别**：how-we-contain-claude 已追踪但 article 已产出，harness cluster 可继续深挖
 
 ## 📈 本轮数据
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 0 (一手源饱和) |
-| 新增 projects 推荐 | 1 (Ponytail YAGNI Skill) |
-| 原文引用数量 | Project 3 处 (README × 3) |
-| 主题关联性 | ✅ Path C: 新 Project × 既有 Article (R361 OpenAgentsControl) |
-| Sources tracked | +1 (ponytail project) |
-| Cluster 激活 | ai-coding (R361 cluster 扩展) |
-| Title length | 27.0/30.0 ≤ 30 ✓ |
-| Pair 关联强度 | ⭐⭐⭐⭐ (同向质量命题：plan-first gate × YAGNI skill) |
-| Commit | d775206 |
+| 新增 articles 文章 | 1（OpenAI Agents SDK harness evolution）|
+| 新增 projects 推荐 | 1（omnigent meta-harness）|
+| 原文引用数量 | Article 3 处 / Project 4 处 |
+| 主题关联性 | ✅ harness/ cluster 配对 |
+| Sources tracked | +2（217 条）|
+| Cluster 激活 | harness/（OpenAI SDK × Omnigent 双轨）|
+| Commit | f478a53 + 17d5872 |
 
 ## 🔮 下轮规划
-- [ ] 继续扫描 Anthropic Engineering Blog 新文章（harness / multi-agent 方向）
-- [ ] 评估 tastyeffectco/sandboxd（self-hosted dev sandbox，coding agent 基础设施）
-- [ ] 评估 amElnagdy/guard-skills（quality gates for coding agents，MIT license）
-- [ ] 关注 apple/coreai-models（Apple Core AI 模型导出工具）
+- [ ] 扫描 Anthropic Engineering Blog 新文章（harness / multi-agent / containment 方向）
+- [ ] 评估 Fullive-AI/Anima（Agent OS for hardware intelligence，642★）
+- [ ] 关注 omnigent 后续版本（alpha → beta，Plugin 系统开放）
+- [ ] 排查 gen_article_map.py hanging 问题
 - [ ] 尝试配置 GitHub token 解决 API rate limit
 
 ## 🧠 本轮方法论沉淀
-1. **R368 网络层约束叠加**：Tavily quota + GitHub API rate limit + Web Fetch timeout + Union Search network unreachable → 全层网络约束，Path C 是唯一出路
-2. **GitHub API `created:` 过滤器**：从 194,939 个项目中精确定位 2026-06 新建项目，比 `pushed:` 更有效发现全新项目
-3. **Product announcement 降级**：claude.com/blog 的 claude-for-foundation-models 和 connectors-for-everyday-life 都是产品公告，不符合「方法论/原理/架构」方向 → Skip
-4. **Ponytail 选型关键**：benchmark 可复现（npx promptfoo eval）+ 跨平台支持（4 个 agent）+ MIT license + YAGNI 决策链 → 工程机制清晰，质量达标
+1. **R369 双轨 harness 发现**：OpenAI Agents SDK（Provider 侧，Harness+Compute+State 解耦）+ Omnigent（第三方侧，Meta-Harness 跨平台）= 同一主题的双路径独立发现，构成强配对
+2. **降级搜索策略验证**：Tavily → AnySearch → Web Fetch 三层降级可用，R369 成功通过 AnySearch 发现 Cursor blog（已被追踪）和 Web Fetch 获取 OpenAI article
+3. **GitHub API `created:` 过滤器**：精确定位 2026-06 新建项目，比 `pushed:` 更有效发现新项目（Omnigent 2026-06-11 创建）
+4. **harness cluster 扩展路径**：Provider 侧（OpenAI SDK）+ 第三方侧（Omnigent）+ 大厂实践（Anthropic containment）= 三条独立路径指向同一 cluster
