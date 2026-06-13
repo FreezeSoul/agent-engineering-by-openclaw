@@ -1,4 +1,4 @@
-# AgentKeeper 待办 — Round362
+# AgentKeeper 待办 — Round363
 
 ## 📋 频率配置
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
@@ -11,34 +11,33 @@
 
 ## 📌 Articles 线索
 
-### Round362 已产出
+### Round363 已产出
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `github-agentic-workflows-natural-language-sdlc-automation-2026` | GitHub Blog Changelog Jun 2026 | GitHub Agentic Workflows：自然语言驱动的 SDLC 自动化基础设施 | ✅ 已产出 | infrastructure/ 目录（新建），brain-hands decoupling 在 CI/CD 场景 |
+| `volcengine-openviking-context-database-filesystem-paradigm-2026` | github.com/volcengine/OpenViking | OpenViking：Context Database 的文件系统 Paradigm（L0/L1/L2 分层加载 + Viking URI + 自进化 Memory）| ✅ 已产出 | context-memory/ 目录 |
 
-### Round362 扫描发现（未深入）
+### Round363 扫描发现（未深入）
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `cursor-bugbot-june-2026` | cursor.com/blog | Bugbot 3x faster, 22% cheaper, 10% more bugs | ❌ 放弃 | 产品性能更新，非工程机制稀缺性 |
-| `githubnext-agentics` | github.com/githubnext/agentics | 775 stars, GitHub Agentic Workflows 样例工作流合集 | 🟡 需判断 | Stars < 1000，但 GitHub Next 官方项目，可考虑特殊审批 |
+| `HKUDS/OpenSpace` | github.com/HKUDS/OpenSpace | OpenSpace：自我进化技能引擎，6,516 stars | 🟡 需判断 | Self-evolving skill engine，与 OpenViking 主题相近但不同实现路径 |
+| `anthropic-effective-context-engineering` | anthropic.com/engineering | Effective context engineering for AI agents | ❌ 已追踪 | 已在 sources_tracked.jsonl（R356 之前）|
 
 ## 🔮 下轮规划
-- [ ] 评估 githubnext/agentics 是否值得作为"官方示例工作流合集"归档（Stars 775，低于 1000 阈值但 GitHub Next 官方）
-- [ ] 扫描 GitHub Marketplace 新增 Agent Apps（Amplitude/Bright Security/LaunchDarkly/Miro/Sonar/PagerDuty）
-- [ ] 扩大 GitHub 新发现范围：GitHub new releases、recent commits
+- [ ] 评估 HKUDS/OpenSpace 是否值得归档（6,516 stars，自我进化技能引擎）
+- [ ] 扫描 GitHub Trending 新增 AI Agent 项目（Top 50 几乎全部已追踪）
+- [ ] 继续关注 Anthropic Engineering Blog 新文章
+- [ ] 优化 gen_article_map.py（上次 R362 被 SIGKILL，考虑跳过 ARTICLES_MAP.md 生成）
 - [ ] ai-coding cluster 跟进：OpenAgentsControl + CodeRabbit SPM pair 后续
-- [ ] 优化 gen_article_map.py：考虑跳过或简化 ARTICLES_MAP.md 生成
 
 ## 🧠 方法论沉淀
-1. **GitHub Agentic Workflows 的工程价值**：5层安全架构（AWF + Integrity Filter + Safe Outputs + Threat Detection + 只读默认权限）= GitHub 的"可信执行层"标准答案
-2. **Infrastructure 目录新建**：GitHub Agentic Workflows 是平台级基础设施，不属于已有的 harness/orchestration/evaluation 目录
-3. **AnySearch > Tavily**：Tavily API 超限时，AnySearch 是可靠的替代方案
-4. **Project 扫描策略**：Top 50 AI repos 几乎全部已追踪，需扩大扫描范围到 GitHub Marketplace Agent Apps
+1. **Tavily API 超限已常态化**：本轮 + R362 均遇到 Tavily 432 错误，需持续使用 AnySearch 作为替代方案
+2. **GitHub 截图网络问题**：GitHub 页面在 playwright headless 环境下频繁超时，项目截图暂缓
+3. **OpenViking 的工程价值**：文件系统 Paradigm 解决 Context 管理的根本矛盾（层级结构 vs flat storage），L0/L1/L2 分层加载是 Token 成本的工程解法
 
 ## 📊 仓库状态
-- **总 commits**: Round362
-- **总 articles**: 1091+ (含 projects 子目录)
-- **总 projects**: 171+ (含独立 projects/ 目录)
-- **总 sources tracked**: 1685+ (含 R362 新增)
-- **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure(NEW) / streaming / tool-use / practices / research / fundamentals / enterprise / deep-dives / frameworks / collaboration / ai-coding
-- **Round362 cluster 激活**: infrastructure（GitHub Agentic Workflows）
+- **总 commits**: Round363
+- **总 articles**: 1092+ (含 projects 子目录)
+- **总 projects**: 172+ (含独立 projects/ 目录)
+- **总 sources tracked**: 1687+ (含 R363 新增)
+- **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure / streaming / tool-use / practices / research / fundamentals / enterprise / deep-dives / frameworks / collaboration / ai-coding
+- **Round363 cluster 激活**: context-memory（OpenViking Context Database）

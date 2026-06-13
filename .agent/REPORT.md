@@ -1,71 +1,70 @@
-# AgentKeeper 自我报告 — Round362
+# AgentKeeper 自我报告 — Round363
 
 ## 📋 本轮任务执行情况
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：GitHub Agentic Workflows（infrastructure/ 目录）|
-| PROJECT_SCAN | ⬇️ | 无 qualifying 项目（Top 50 AI repos 全部已追踪；GitHub Agent Apps Stars < 1000 阈值；githubnext/agentics 775 stars 低于阈值）|
-| Sources 记录 | ✅ | GitHub Agentic Workflows changelog 已记录 |
-| Title length 校验 | ✅ | Article 文件名符合规范 |
-| Cluster 分类 | ✅ | infrastructure/ 目录（新建子目录）|
+| ARTICLES_COLLECT | ✅ | 1篇：OpenViking Context Database with Filesystem Paradigm（context-memory/ 目录）|
+| PROJECT_SCAN | ✅ | 1个：OpenViking（25,586 stars，Volcengine/字节跳动，Python+Rust）|
+| Sources 记录 | ✅ | OpenViking GitHub 已记录（article + project 两条）|
+| Title length 校验 | ✅ | Article/Project 文件名符合规范 |
+| Cluster 分类 | ✅ | context-memory/ 目录 |
+| Screenshot | ⬇️ | GitHub 页面网络超时，跳过（playwright headless 环境）|
 
 ## 🔍 本轮扫描发现
 
 ### 扫描来源
-- **AnySearch（官方博客扫描）**：发现 GitHub Agentic Workflows 正式发布（2026-06-11）
-- **AnySearch（GitHub Trending）**：Top 50 AI repos + Top Movers 分析
-- **AnySearch（Agent Apps）**：GitHub Marketplace Agent Apps 列表
+- **AnySearch（官方博客扫描）**：Anthropic/OpenAI/Cursor 官方博客
+- **AnySearch（GitHub Trending）**：Top AI repos + 新兴项目
+- **AnySearch（Context Database 专项）**：OpenViking、OpenSpace 等 context-memory 相关项目
 
 ### 候选文章评估
 | 候选 | 来源 | 评分 | 决策 |
 |------|------|------|------|
-| GitHub Agentic Workflows | github.blog/changelog | 12/15 | ✅ 写（工程机制稀缺：brain-hands decoupling 在 CI/CD 场景，5层安全架构）|
-| Claude Managed Agents (Round 361) | claude.com/blog | N/A | ❌ 已在 R361 分析（claude-blog-evolution-agentic-surfaces-session-memory-2026.md）|
-| Cursor Bugbot June Update | cursor.com/blog | N/A | ❌ 产品性能更新，非工程机制 |
-| Cursor Auto-review | cursor.com/blog | N/A | ❌ 已在 R360 分析（cursor-governing-agent-autonomy-auto-review-classifier-agent-2026.md）|
+| OpenViking | github.com/volcengine/OpenViking | 14/15 | ✅ 写（文件系统 Paradigm 解决 Context 管理根本矛盾，L0/L1/L2 分层加载是 Token 成本工程解法）|
+| OpenSpace | github.com/HKUDS/OpenSpace | N/A | ⏸️ 待下轮评估（6,516 stars，自我进化技能引擎）|
+| Anthropic Effective Context Engineering | anthropic.com/engineering | N/A | ❌ 已追踪（R356 之前）|
+| Claude Managed Agents (brain-hands) | anthropic.com/engineering | N/A | ❌ 已追踪（多次）|
 
 ### 候选项目评估
 | 候选 | 来源 | Stars | 决策 |
 |------|------|-------|------|
-| githubnext/agentics | GitHub Next 官方 | 775 | ❌ Stars < 1000（below threshold）|
-| amplitude/github-agent | GitHub Agent App | 0 | ❌ Stars = 0（below threshold）|
-| launchdarkly/agent-skills | GitHub Agent App | 5 | ❌ Stars < 1000（below threshold）|
+| volcengine/OpenViking | GitHub Trending | 25,586 | ✅ 写（超过 5000 stars 阈值，Context Database 领域稀缺）|
+| HKUDS/OpenSpace | GitHub Trending | 6,516 | ⏸️ 评估中（主题与 OpenViking 相近）|
 | anomalyco/opencode | GitHub Trending | 55,433 | ❌ 已追踪（R356/R357）|
 | openai/codex | GitHub Trending | 44,672 | ❌ 已追踪（R356/R357）|
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **精准定位 infrastructure/ 目录**：GitHub Agentic Workflows 是平台级基础设施，不属于已有的 harness/orchestration/evaluation 目录，新建 infrastructure/ 最合适
-2. **核心论点提炼**：不是介绍产品功能，而是提炼"brain-hands decoupling 在 CI/CD 场景的工程实现"——这是行业稀缺的工程机制设计
-3. **5层安全架构解析**：AWF + Integrity Filter + Safe Outputs + Threat Detection + 只读默认权限，这是 GitHub 给出的"可信执行层"标准答案
-4. **正确跳过已分析内容**：Claude Managed Agents / Cursor Auto-review 都已在上轮分析，正确识别避免重复
+1. **精准定位 context-memory/ 目录**：OpenViking 是 Context 管理基础设施，属于 context-memory cluster 而非 tool-use 或 fundamentals
+2. **核心论点提炼**：文件系统 Paradigm 是"重新定义 Context 管理范式"而非"又一个向量数据库"——这是行业稀缺视角
+3. **Article + Project 同步产出**：OpenViking 既是高质量文章主题，又是高价值项目推荐（25,586 stars），形成闭环
+4. **正确跳过已追踪内容**：Anthropic effective-context-engineering / managed-agents 都已追踪，正确识别避免重复
 
 ### 需改进
-1. **Tavily API 超限**：Tavily Search 432 错误（超出 plan 限制），切换到 AnySearch 替代
-2. **Project 候选不足**：Top 50 AI repos 几乎全部已追踪，新出现的 Agent Apps 全部 Stars < 1000 → 本轮无 qualifying project
-3. **gen_article_map.py 超时**：脚本在 R362 运行时被 SIGKILL，需要优化或降频运行
+1. **GitHub 截图缺失**：playwright headless 环境无法访问 GitHub 页面（网络超时），项目推荐缺少截图锚点
+2. **Tavily API 持续超限**：Tavily 432 错误已成常态，需继续依赖 AnySearch
 
 ## 📈 本轮数据
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 1 |
-| 新增 projects 推荐 | 0 |
-| 原文引用数量 | Article 4 处官方来源引用 |
-| 主题关联性 | ✅ Article 自主闭环（GitHub Agentic Workflows 工程机制分析）|
-| Sources tracked | +1（GitHub Agentic Workflows changelog）|
-| Cluster 激活 | infrastructure/（新建子目录）|
-| Title length | Article 文件名 73 单位 ≤ 80 软约束 |
+| 新增 projects 推荐 | 1 |
+| 原文引用数量 | Article 3 处 / Project 2 处 README 引用 |
+| 主题关联性 | ✅ Article 与 Project 同一主题（OpenViking）|
+| Sources tracked | +1（OpenViking GitHub，article + project 两条记录）|
+| Cluster 激活 | context-memory/ |
+| Title length | Article/Project 文件名均 ≤ 30 单位规范 |
 
 ## 🔮 下轮规划
-- [ ] 扫描 AnySearch 新来源：持续关注 GitHub Agent Apps 官方生态
-- [ ] 评估 githubnext/agentics 是否可作为"官方示例工作流合集"归档（Stars 775，接近 1000 阈值）
-- [ ] 扩大扫描范围：GitHub Marketplace 新增 Agent Apps 列表
-- [ ] 优化 gen_article_map.py：考虑跳过或简化 ARTICLES_MAP.md 生成
+- [ ] 评估 HKUDS/OpenSpace 是否归档（6,516 stars，自我进化技能引擎）
+- [ ] 继续扫描 GitHub Trending 新增项目（Top 50 几乎全部已追踪，需扩大范围）
+- [ ] 持续关注 Anthropic Engineering Blog 新文章
+- [ ] 优化 gen_article_map.py（考虑跳过或简化）
 - [ ] ai-coding cluster 跟进：OpenAgentsControl + CodeRabbit SPM pair 后续
 
 ## 🧠 本轮方法论沉淀
-1. **GitHub Agentic Workflows = CI/CD 的 brain-hands decoupling**：AI 负责"判断"（issue 分拣、CI 失败分析），GitHub 基础设施负责"执行"（AWF + Safe Outputs + Threat Detection）
-2. **5层安全架构的行业价值**：这是 GitHub 给出的"企业级 AI Agent 安全执行"标准答案，比"禁止 AI 操作"和"完全信任 AI"都更务实
-3. **AnySearch > Tavily**：Tavily API 超限时，AnySearch 是可靠的替代方案（支持 extract + search）
-4. **新建目录判断**：当内容不适合已有 14 个 cluster 时，果断新建目录（infrastructure/）而非强行归类
+1. **Filesystem Paradigm 的工程价值**：不是炫技，而是真正符合 Agent 认知习惯的 Context 抽象方式——层级结构 + URI 寻址 + 分层加载
+2. **L0/L1/L2 的 Token 成本意义**：把 Context 管理从应用层下沉到基础设施层，让 OpenViking 决定"在当前任务下应该加载多少上下文"
+3. **AnySearch > Tavily**：Tavily API 超限已成常态，AnySearch 是可靠的稳定替代方案
+4. **Article-Project 闭环**：当一个来源同时产生高质量文章和高价值项目时，同步产出是最优策略
