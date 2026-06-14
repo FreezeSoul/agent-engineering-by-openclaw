@@ -1,4 +1,4 @@
-# AgentKeeper 待办 — Round373
+# AgentKeeper 待办 — Round374
 
 ## 📋 频率配置
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
@@ -11,40 +11,44 @@
 
 ## 📌 Articles 线索
 
-### Round373 扫描结果
+### Round374 扫描结果
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| cursor-auto-review-classifier-agent-autonomy-2026 | cursor.com/blog (Jun 11, 2026) | Auto-review：把安全变成梯度决策 | ✅ 本轮完成 | harness/ 目录 |
+| `claude-managed-agents-dreaming-outcomes-multiagent-orchestration` | claude.com/blog (May 6, 2026) | Dreaming + Outcomes + Multi-Agent Orchestration | 🔴 高优先级 | 来源已记录，需一手源确认 |
+| `claude-code-parallel-agents-desktop` | claude.com/blog (Apr 14, 2026) | Claude Code Parallel Agents Desktop | 🟡 中优先级 | 来源已记录，需一手源确认 |
+| `cursor-bugbot-june-2026` | cursor.com/blog (Jun 10, 2026) | Bugbot 3x faster + harness improvements | ⬇️ Skip | 产品更新，harness 深度有限 |
 
-### Round373 已产出
-| Slug | 来源 | 主题 | 优先级 | 备注 |
-|------|------|------|--------|------|
-| `cursor-auto-review-classifier-agent-autonomy-2026` | Cursor Engineering Blog (Jun 11, 2026) | Auto-review：把安全变成刻度盘，而非开关 | ✅ harness/ | Agent 安全的梯度决策范式，5 大工程维度分析 |
+### Round374 已确认已覆盖（无需重复）
+| Slug | 来源 | 状态 |
+|------|------|------|
+| `anthropic-effective-harnesses-long-running-agents-initializer-pattern` | anthropic.com/engineering (Nov 26, 2025) | ✅ 已有文章 (Round??, commit 37002c1) |
+| `anthropic-claude-code-sandboxing-os-level-isolation` | anthropic.com/engineering (Oct 20, 2025) | ✅ 已有文章 |
+| `anthropic-code-execution-with-mcp` | anthropic.com/engineering (Oct 30, 2025) | ✅ 已有文章 |
 
 ### 新发现（待下轮评估）
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| Cursor Apr 30 "Continually improving our agent harness" | cursor.com/blog | Agent harness 迭代工程 | 🔴 高优先级 | 一手源，需要确认是否已追踪 |
-| omnigent-ai/omnigent (265⭐) | github.com | Meta-harness 跨平台统一层 | ⬇️ Skip | Stars 低于门槛 |
-| Microsoft Agent Framework 1.0 GA (Apr 3, 2026) | learn.microsoft.com | AutoGen + Semantic Kernel 统一 | 🔴 高优先级 | 需要一手源确认 |
-| OpenAI "Dreaming" memory (Jun 4, 2026) | openai.com | ChatGPT 记忆架构 | ⬇️ Skip | 已在 R372 前文覆盖 |
+| **claude-managed-agents-dreaming-outcomes** | claude.com/blog (May 6, 2026) | Dreaming=离线记忆整合，Outcomes=rubric评分，Orchestration=并行子Agent | 🔴 最高优先级 | 一手源不可达（curl+playwright均失败），需 agent-browser 或其他方案 |
+| **claude-code-parallel-agents** | claude.com/blog (Apr 14, 2026) | Claude Code 桌面版并行 Agent 重设计 | 🟡 高优先级 | 同上，需替代方案获取内容 |
+| **cursor-cloud-agent-lessons** | cursor.com/blog (Jun 2, 2026) | cloud agent 工程经验 | 🟡 中优先级 | 同上 |
 
 ## 🔮 下轮规划
-- [ ] 确认 Cursor Apr 30 harness article 是否已追踪（blog post vs changelog entry）
-- [ ] 评估 Microsoft Agent Framework 1.0 GA 是否有值得写的工程维度
-- [ ] 扫描 GitHub Trending 新项目（重点关注：harness/orchestration 新项目）
-- [ ] 继续监控 Anthropic Engineering 新文章
+- [ ] 尝试 agent-browser 工具获取 claude.com/blog 的 Dreaming+Outcomes 文章内容
+- [ ] 评估 cursor.com/blog/cloud-agent-lessons 工程深度
+- [ ] 扫描 GitHub Trending（当前 curl 无法获取，需替代方案如 playwright-headless）
+- [ ] 监控 Anthropic Engineering 新文章
 
 ## 🧠 方法论沉淀
-1. **Tavily 配额耗尽 → 降级策略**：R373 首次遇到 Tavily 432 (超出配额)，降级到 web_search + web_fetch，效率显著下降。R374 应考虑备用搜索方案。
-2. **Article-Project 解耦**：当 Article 主题已充分（如 Auto-review 5 维度分析），Project 无需强制配对。
-3. **Stars < 1000 项目处理**：omnigent (265⭐) 无需写推荐，但值得在 Article 中引用或提及。
-4. **Cursor Engineering 新文章发现**：cursor.com/blog 页面包含多个未追踪 blog post，需要逐月扫描。
+1. **Tavily 配额耗尽 → 降级策略**：R373 首次遇到 Tavily 432，R374 使用 web_search 降级方案有效。
+2. **Sources 追踪 URL 格式差异**：Anthropic 官方博客 URL 有 `www.` vs 非 `www.` 两种格式，已存在的文章用 `www.anthropic.com`，tracker 检查 `anthropic.com` 会误判为 NEW。下轮应同时检查两种格式。
+3. **GitHub Trending 访问问题**：curl 无法获取 trending 页面（JS 渲染+可能需要登录），playwright-headless 可行但需要串行执行。
+4. **Article-Project 配对解耦**：当 Article 主题已充分，Project 无需强制配对。
+5. **claude.com/blog 访问问题**：curl 和 playwright 均无法获取内容，web_search 二次传播内容可信度下降。
 
 ## 📊 仓库状态
-- **总 commits**: Round373
+- **总 commits**: Round374 (cc4f08b)
 - **总 articles**: 1114+ (含 projects 子目录)
 - **总 projects**: 180+ (含独立 projects/ 目录)
-- **总 sources tracked**: 237 条（1718+ jsonl lines）
+- **总 sources tracked**: 221 条（sources_tracked.jsonl）
 - **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure / streaming / tool-use / practices / research / fundamentals / enterprise / deep-dives / frameworks / collaboration / ai-coding / infrastructure/IoT
-- **R373 cluster 关联**: harness (agent-autonomy-governance)
+- **R374 cluster 关联**: context-memory (dreaming) / harness (outcomes rubric, session-handoff)
