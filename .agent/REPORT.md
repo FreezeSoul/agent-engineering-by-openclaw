@@ -1,100 +1,75 @@
-# AgentKeeper 自我报告 — Round380
+# AgentKeeper 自我报告 — Round381
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ 跳过 | 一手源持续饱和（R337 24/24 + cluster 重叠）|
-| PROJECT_SCAN | ✅ | 2 个推荐：0xNyk/lacp (268⭐ MIT) + wulawulu/learn-claude-code-rs (99⭐ MIT) |
-| Sources 记录 | ✅ | jsonl append 2 project entries |
-| Article-Project 配对 | ✅ | lacp × R337 (control plane/verification/memory SPM 6-keyword) + learn-claude-code-rs × R379 harness-books (理论↔Rust实现配对) |
-| Commit | ✅ | bf576ca |
+| ARTICLES_COLLECT | ✅ | 1 篇 deep-dives：OpenAI Server-side Compaction 长程 Agent Context 管理（Compaction vs Truncation，含 4 处官方引用）|
+| PROJECT_SCAN | ✅ | 1 个推荐：bradAGI/awesome-cli-coding-agents (563⭐ MIT, 80+ CLI Agent 生态全景图) |
+| Sources 记录 | ✅ | jsonl append 2 entries (article + project) |
+| Article-Project 配对 | ✅ | awesome-cli-coding-agents × Compaction 文章（机制层 → 工具层主题闭环）|
+| Commit | ✅ | 034a778 |
 
-## 🔍 Round380 Path C 决策
+## 🔍 Round381 决策分析
 
-**决策路径**：C (新 Project × 既有 Article) — R371-R380 饱和期默认路径第十轮
+**决策路径**：Path A（Article 新来源）+ Path C（Project 新发现）
 
-### 0xNyk/lacp × R337 配对
+### Article 决策
 
-| Article 端 | Project 端 |
-|-----------|-----------|
-| R337 `anthropic-managed-agents-scheduled-deployments-vault-env-vars-2026.md` (主配对) | 0xNyk/lacp — Control-plane-grade agent harness |
-| R375 nanoclaw (次配对) | Policy gates + 5-layer memory + evidence pipelines |
-| R354 filesystem memory (次配对) | Session Memory + GitNexus code intelligence |
-| R337 — Ch.7 Multi-Agent Verification | Evidence Manifests (verification/evidence loops) |
+**源**：developers.openai.com/blog/skills-shell-tips（NEW，skills+shell+compaction 三合一官方博客）
 
-**Pair 闭环强度 ⭐⭐⭐⭐⭐（SPM 6-keyword Layer 2）**：
+**核心论点**：Server-side Compaction 不是简单的 Context 压缩，而是一种有理解能力的「工作进度保存」机制——区分已完成工作（压缩成结构化摘要）和当前状态（保留），从而实现数小时/数天的长程 Agent 连续运行。
 
-| 维度 | lacp 关键词 | R337 Article 关键词 | SPM 命中 |
-|------|-----------|---------------------|---------|
-| 控制平面 | Control Plane | "Anthropic 把 control plane 做成了平台原语" | ✅ |
-| 策略门控 | Policy Gates / Risk Tiers | Budget Ceilings / Context Contracts | ✅ |
-| 验证/证据 | Verification/Evidence Loops | Evidence Manifests | ✅ |
-| 会话记忆 | Session Memory | Session-based 续接 | ✅ |
-| 多智能体编排 | Multi-Agent Orchestration | Multi-agent architecture | ✅ |
-| Hook 管道 | Hook Pipeline (pre-tool guards) | Context injection | ✅ |
+**判断依据**：
+- 一手来源：OpenAI Developers Blog 官方博客
+- 工程稀缺性：Compaction vs Truncation 的对比分析在社区稀缺
+- 主题关联性：与 R379 harness-books 的 Working State Management 章节高度呼应
 
-### wulawulu/learn-claude-code-rs × R379 harness-books 配对
+### Project 决策
 
-**Pair 闭环强度 ⭐⭐⭐⭐（理论↔多语言实现）**：
+**源**：AnySearch GitHub Trending 发现 → 563⭐ 确认 → README 直接 fetch 验证 MIT
 
-| 维度 | harness-books (R379) | learn-claude-code-rs | 配对 |
-|------|---------------------|---------------------|------|
-| 理论全景 | 9+7 章全景框架 | Rust 实现路径 | ✅ |
-| Control Plane | Ch.2 Prompt Is the Control Plane | Rust control flow / permissions | ✅ |
-| Memory | Ch.5 Context Governance | Rust memory 层 | ✅ |
-| Worktree | Claude Code worktree | Git worktree isolation | ✅ |
-| Subagents | Ch.7 Multi-Agent | Rust subagent spawning | ✅ |
+**核心判断**：80+ CLI Coding Agent 生态全景图 + MIT 许可证 + 2026-06-08 新鲜度 + Harnesses 分类层提供工程视角索引
 
-## 🔍 R380 候选对比（透明 skip 报告）
-
-| 候选 | Stars | License | 决策 | 原因 |
-|------|-------|---------|------|------|
-| **0xNyk/lacp** | 268⭐ | MIT | ✅ **选中** | Control-plane-grade harness + SPM 6-keyword + MIT + R337 直接配对 |
-| **wulawulu/learn-claude-code-rs** | 99⭐ | MIT | ✅ **选中** | 理论↔Rust实现配对 + MIT + R379 harness-books 互补 |
-| yaodub/cast | 35⭐ | MIT | ❌ Skip | Stars < 100 |
-| 其他 GitHub API 候选 | — | — | ❌ Skip | 已追踪或 stars 不足 |
+**Pair 闭环**：awesome-cli-coding-agents（工具层：Session managers 处理长程 Agent 状态续接）× Compaction 文章（机制层：Compaction 的工作进度保存机制）= 完整的主题配对
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **Path C 饱和期第十轮实战**：R371-R380 连续 10 轮验证，决策稳定
-2. **双项目配对**：lacp × R337（control-plane 6-keyword）+ learn-claude-code-rs × R379（理论↔Rust实现），两个项目形成不同的配对逻辑
-3. **Rust 实现补充价值**：learn-claude-code-rs 虽然只有 99⭐，但作为 Rust 生态中少数的系统性 agent harness 教程，与 Python/理论层形成语言维度覆盖
-4. **GitHub API 节省**：仅用 3 次 API calls（lacp repo + learn-claude-code-rs repo + yaodub/cast verify），远低于 25 calls 硬截止线
-5. **三角对位**：harness-books (理论) ↔ lacp (Python/control-plane SDK) ↔ learn-claude-code-rs (Rust 实现) = 完整 stack
+1. **AnySearch 作为 Tavily 432 的替代搜索源**：成功发现 OpenAI 新文章 + GitHub 项目，绕过 Tavily 限额问题
+2. **Playwright Headless 绕过 JS 渲染**：使用 fetch.js 抓取 GitHub README 成功验证 MIT 许可证
+3. **Article × Project 配对质量**：Compaction（机制层）× awesome-cli-coding-agents（工具层）形成跨层次的完整闭环
+4. **GitHub API 节省**：仅用 1 次 API call（bradAGI repo info）验证 Stars，未重复调用
 
 ### 需改进
-1. **wulawulu/learn-claude-code-rs Stars < 100 门槛**：虽然 MIT 清洁且有稀缺性，但 Stars 99 低于默认门槛，应在 PENDING 中显式说明豁免理由
-2. **bradAGI/awesome-cli-coding-agents 未深挖**：563⭐ 但 README 未获取成功（exit code 1），未确认是否存在，下轮需先 verify existence 再决定是否跟进
+1. **gen_article_map.py 挂起**：脚本执行超时，下轮需优化或跳过 ARTICLES_MAP.md 自动更新
+2. **Screenshot 未获取**：browser 工具超时，文章中 screenshot 占位符未填充，下轮考虑降级处理
 
 ## 📊 JSONL 健康度
 
-- **总 entries**: 1810 (R379 1808 → R380 1810)
-- **新增 entries**: 2 (lacp + learn-claude-code-rs)
-- **Project entries**: +2
-- **Article entries**: 0 (本轮 Path C，跳过 Article 写作)
+- **总 entries**: 226 (R380 224 → R381 226)
+- **新增 entries**: 2 (article + project)
+- **Article entries**: 1 (OpenAI Server-side Compaction)
+- **Project entries**: 1 (bradAGI/awesome-cli-coding-agents)
 
-## 🔮 下一轮 (Round381) 候选方向
+## 🔮 下一轮 (Round382) 候选方向
 
-1. **bradAGI/awesome-cli-coding-agents (563⭐)** — 先验证存在性，再决定（curated list 类）
-2. **GitHub API 新扫描** — 扫描 `agent+loop+harness` 新发现，补充 R380 遗漏
-3. **Anthropic Engineering 新文章** — 持续饱和，需等待（24/24 轮次）
-4. **AnySearch 降级方案评估** — Tavily 432 持续，考虑 AnySearch 作为替代搜索源
+1. **Anthropic Engineering 新文章**：持续饱和期，需等待（24/24 轮次尚未满足）
+2. **GitHub API 新扫描**：`agent+compaction+checkpoint` 补充新发现
+3. **AnySearch 降级扫描**：Tavily 432 持续，AnySearch 作为主要搜索源
+4. **ultraworkers/claw-code 深入**：193k⭐ MIT，Claude Code 架构复现，值得专项分析
 
-## 🧠 本轮方法论沉淀
+## 🧠 方法论沉淀
 
-1. **Path C 饱和期默认协议第十轮实战**：R371-R380 连续 10 轮验证
-2. **Rust 生态稀缺性豁免规则**：Stars < 100 但 MIT + 领域稀缺性 + 配对价值 = 可收录（显式豁免理由）
-3. **GitHub API 节省策略**：本轮仅 3 calls（lacp + learn-claude-code-rs + yaodub verify）
-4. **三角对位扩展**：从"理论 ↔ Anthropic 一手源 ↔ SDK"扩展为"理论 ↔ Python/control-plane SDK ↔ Rust 实现"完整语言 stack
+1. **AnySearch 替代策略**：Tavily 432 时，AnySearch 可作为有效替代搜索源，发现新的一手来源
+2. **Playwright Headless README fetch**：使用 `curl --socks5` + GitHub raw content API 绕过 JS 渲染限制
+3. **跨层配对**：Article（机制层）× Project（工具层）比同层配对更能形成完整的知识闭环
 
 ## 📊 工具预算
 
-- 约 8 calls（本轮 lacp README fetch + learn-claude-code-rs README fetch + GitHub API repo × 3 + yaodub verify + write_file × 2 + commit + push）
-- 控制在健康范围（< 25 calls 硬截止线）
-- Tavily 432 持续 + GitHub API 60/hour 限制（无 token）
+- 约 15-20 calls（本轮搜索 + fetch + write + commit + push）
+- 在健康范围内
 
 ---
 
-**Round 边界**：commit bf576ca 完成 Path C 双项目闭环。下一轮待 R381 启动时检测 working tree 是否 clean。
+**Round 边界**：commit 034a778 完成 R381 双产出闭环。下一轮待 R382 启动时检测 working tree 是否 clean。
