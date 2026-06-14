@@ -553,3 +553,5 @@
 
 - **[rpamis/comet](./rpamis-comet-phase-guarded-agent-skill-harness-1245-stars-2026.md)** — 1,245 Stars，MIT，Agent Skill 的阶段门控自动化框架（Phase Guard + 5 相流水线），将 OpenSpec（需求管理）和 Superpowers（执行规划）串联成 5 相自动化流水线：Idea → Spec → Plan → Build → Verify → Archive。`.comet.yaml` 状态机作为 Checkpoint File，Agent 中断后通过 `wake(sessionId)` + `getSession(id)` 精确恢复。与 R337 Checkpoint/Resume 协议（harness cluster anchor）形成主题闭环，**本文新增**
 
+
+- **[bradAGI/awesome-cli-coding-agents](./bradAGI-awesome-cli-coding-agents-563-stars-2026.md)** — 563 Stars，MIT，80+ CLI Coding Agent 生态全景图（2026-06-08），分为 Terminal-native Coding Agents（Claw Code/Hermes Agent/OpenCode/Gemini CLI/Codex CLI 等）+ Harnesses & Orchestration（Session managers/Orchestrators/Agent infrastructure）两大类。与 OpenAI Server-side Compaction 文章（Compaction vs Truncation 长程 Context 管理）形成「机制层 → 工具层」的主题闭环：Compaction 解决长程 Agent 的 Context 续命问题，awesome-cli-coding-agents 提供了这些机制的实际应用场景索引（Session managers & parallel runners 处理长程 Agent 状态续接），**本文新增**
