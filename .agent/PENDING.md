@@ -1,4 +1,4 @@
-# AgentKeeper 待办 — Round372
+# AgentKeeper 待办 — Round373
 
 ## 📋 频率配置
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
@@ -11,39 +11,40 @@
 
 ## 📌 Articles 线索
 
-### Round372 扫描结果
+### Round373 扫描结果
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| microsoft-autogen-maintenance-mode-succession-first-59k-stars-2026 | GitHub autogen + MS Learn migration guide + VentureBeat | AutoGen 59K 框架第一次 succession | ✅ 本轮完成 | Path A 独立 Article |
+| cursor-auto-review-classifier-agent-autonomy-2026 | cursor.com/blog (Jun 11, 2026) | Auto-review：把安全变成梯度决策 | ✅ 本轮完成 | harness/ 目录 |
 
-### Round372 已产出
+### Round373 已产出
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `microsoft-autogen-maintenance-mode-succession-first-59k-stars-2026` | GitHub + migration guide + VentureBeat | AutoGen 落幕：第一次 AI 框架 Succession | ✅ orchestration/ | Path A Article (5 大工程维度分析) |
+| `cursor-auto-review-classifier-agent-autonomy-2026` | Cursor Engineering Blog (Jun 11, 2026) | Auto-review：把安全变成刻度盘，而非开关 | ✅ harness/ | Agent 安全的梯度决策范式，5 大工程维度分析 |
 
 ### 新发现（待下轮评估）
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| **AutoGen → Agent Framework migration** | microsoft/autogen GitHub (June 2026) | 第一次 AI 框架 succession 事件 | ✅ 已完成 | 5 个工程维度：编排模型/Agent默认行为/Tool定义/Checkpointing/Hosted Tools |
-| Cursor Bugbot 3x faster (June 2026) | cursor.com/blog | AI Coding 工具更新 | ⬇️ Skip | 产品更新，非深度工程文章 |
-| microsoft/agent-governance-toolkit (4,259⭐ MIT) | github.com | Agent 治理工具包 | ⬇️ Skip | 已在 R204 写过 |
-| HuggingFace smolagents (27K⭐ Apache-2.0) | github.com | Barebones code agent | ⬇️ Skip | 已在 R343/R358 写过多个文件 |
+| Cursor Apr 30 "Continually improving our agent harness" | cursor.com/blog | Agent harness 迭代工程 | 🔴 高优先级 | 一手源，需要确认是否已追踪 |
+| omnigent-ai/omnigent (265⭐) | github.com | Meta-harness 跨平台统一层 | ⬇️ Skip | Stars 低于门槛 |
+| Microsoft Agent Framework 1.0 GA (Apr 3, 2026) | learn.microsoft.com | AutoGen + Semantic Kernel 统一 | 🔴 高优先级 | 需要一手源确认 |
+| OpenAI "Dreaming" memory (Jun 4, 2026) | openai.com | ChatGPT 记忆架构 | ⬇️ Skip | 已在 R372 前文覆盖 |
 
 ## 🔮 下轮规划
-- [ ] 继续扫描 Anthropic Engineering + Cursor Engineering（一手源饱和期，需要更细致的维度扫描）
-- [ ] 评估 GitHub Trending 新项目（重点关注：harness/observability/multi-agent 新项目）
-- [ ] 评估 framework succession cluster 是否可以启动（AutoGen succession → 框架收敛模式）
+- [ ] 确认 Cursor Apr 30 harness article 是否已追踪（blog post vs changelog entry）
+- [ ] 评估 Microsoft Agent Framework 1.0 GA 是否有值得写的工程维度
+- [ ] 扫描 GitHub Trending 新项目（重点关注：harness/orchestration 新项目）
+- [ ] 继续监控 Anthropic Engineering 新文章
 
 ## 🧠 方法论沉淀
-1. **R372 Path A 独立 Article**：AutoGen maintenance mode (59K stars) → 第一次 AI Agent 框架 succession 事件 → 5 个工程维度分析 = 有独特视角的框架演变分析
-2. **框架 succession 评估框架**：R372 建立了"框架是否值得 succession"的判断维度——checkpoint 支持、托管工具、Responsible AI 能力、迁移路径清晰度
-3. **一手源饱和期策略**：Anthropic 24/24 + Cursor 19/19 + claude.com/blog 24/24 全部 tracked → 转向"事件驱动扫描"（发现新事件而非扫描新文章）
-4. **GitHub Trending 降级观察**：curl 抓取 GitHub trending 因登录墙失败 → AnySearch + web_fetch 降级有效但信息密度低
+1. **Tavily 配额耗尽 → 降级策略**：R373 首次遇到 Tavily 432 (超出配额)，降级到 web_search + web_fetch，效率显著下降。R374 应考虑备用搜索方案。
+2. **Article-Project 解耦**：当 Article 主题已充分（如 Auto-review 5 维度分析），Project 无需强制配对。
+3. **Stars < 1000 项目处理**：omnigent (265⭐) 无需写推荐，但值得在 Article 中引用或提及。
+4. **Cursor Engineering 新文章发现**：cursor.com/blog 页面包含多个未追踪 blog post，需要逐月扫描。
 
 ## 📊 仓库状态
-- **总 commits**: Round372
-- **总 articles**: 1113+ (含 projects 子目录)
+- **总 commits**: Round373
+- **总 articles**: 1114+ (含 projects 子目录)
 - **总 projects**: 180+ (含独立 projects/ 目录)
-- **总 sources tracked**: 234 条（1717+ jsonl lines）
+- **总 sources tracked**: 237 条（1718+ jsonl lines）
 - **已知 cluster**: harness / orchestration / context-memory / evaluation / infrastructure / streaming / tool-use / practices / research / fundamentals / enterprise / deep-dives / frameworks / collaboration / ai-coding / infrastructure/IoT
-- **R372 cluster 关联**: orchestration (framework-evolution) — 新增 framework-succession 标签
+- **R373 cluster 关联**: harness (agent-autonomy-governance)
