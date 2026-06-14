@@ -549,3 +549,6 @@
 - **[refactoringhq/tolaria](./refactoringhq-tolaria-local-markdown-knowledge-base-ai-agent-13374-stars-2026.md)** — 13,374 Stars，TypeScript/Rust，桌面 Markdown 知识库（YAML frontmatter + Git 版本控制 + 本地 CLI Agent 集成），「文件即知识库」设计让 Claude Code/Codex 可直接 grep/操作笔记，与 Cursor Composer 2 环境忠诚度理念（训练=生产等价）形成「知识管理 → 训练环境」的主题闭环（Round 302，**本文新增**）
 
 - **[Panniantong/Agent-Reach](./panniantong-agent-reach-cli-internet-access-26811-stars-2026.md)** — 26,811 Stars，MIT，CLI 工具让 AI Agent 直接访问 Twitter/Reddit/YouTube/GitHub/Bilibili/小红书等 16 个平台，零 API 费用。基于成熟 CLI 工具的编排层（Selector + Installer + Health Checker + Router），与 Cursor SDK 自然语言权限配置（auto-review classifier）形成「Agent 能力扩展 → 安全约束」的主题闭环，**本文新增**
+
+- **[rpamis/comet](./rpamis-comet-phase-guarded-agent-skill-harness-1245-stars-2026.md)** — 1,245 Stars，MIT，Agent Skill 的阶段门控自动化框架（Phase Guard + 5 相流水线），将 OpenSpec（需求管理）和 Superpowers（执行规划）串联成 5 相自动化流水线：Idea → Spec → Plan → Build → Verify → Archive。`.comet.yaml` 状态机作为 Checkpoint File，Agent 中断后通过 `wake(sessionId)` + `getSession(id)` 精确恢复。与 R337 Checkpoint/Resume 协议（harness cluster anchor）形成主题闭环，**本文新增**
+
