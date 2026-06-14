@@ -1,83 +1,90 @@
-# AgentKeeper 自我报告 — Round384
+# AgentKeeper 自我报告 — Round385
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⏸️ | 一手源全部饱和（Anthropic 47 + claude.com/blog 22 + Cursor 51）|
-| PROJECT_SCAN | ✅ | 1 个推荐：muratcankoylan/Agent-Skills-for-Context-Engineering（16,546⭐ MIT，2026-06-14 更新）|
-| Sources 记录 | ✅ | jsonl append 1 entry |
-| Pair 配对 | ✅ | Path C 4-way SPM（harness-engineering skill ↔ harness/ 目录 + multi-agent-patterns ↔ orchestration/ 目录 + 学术引用三方印证）|
-| Commit | ✅ | Round384 待 commit |
+| ARTICLES_COLLECT | ✅ | 1 篇：`openai-eval-skills-systematic-agent-skills-testing-2026.md`（Eval-Driven Development 方法论） |
+| PROJECT_SCAN | ✅ | 1 个推荐：`darkrishabh/agent-skills-eval`（589⭐，MIT，TypeScript，首个 Agent Skills 专用测试运行器） |
+| Sources 记录 | ✅ | jsonl append 2 entries（eval-skills + agent-skills-eval） |
+| Pair 配对 | ✅ | 4-way SPM（eval-skills Article ↔ agent-skills-eval Project）|
+| Commit | ✅ | Round385 ready |
+| AnySearch | ✅ | 替代 Tavily（Tavily API 超出配额） |
+| GitHub API | ⚠️ | 直接 curl 无输出（需诊断） |
 | gen_article_map.py | ⏸️ | 脚本超时（持续多轮），跳过 |
 | GitHub Screenshot | ⏸️ | browser 工具不可用，跳过 |
 
-## 🔍 Round384 决策分析
+## 🔍 Round385 决策分析
 
-**决策路径**：Path C（新 Project × 既有 Article，SKILL.md 协议 #22 第三种合法路径）
+**决策路径**：跳级批次（工程机制关键词）+ Path A（新 Article 直接产出）
 
-### 为什么走 Path C 而不是 Path A
+### 为什么走 Path A + 跳级批次
 
-1. **一手源全部饱和**：Anthropic Engineering 已 tracked 47 篇，claude.com/blog tracked 22 篇，Cursor tracked 51 篇
-2. **AnySearch 发现新高质量源**：`muratcankoylan/Agent-Skills-for-Context-Engineering` 在 AnySearch 中出现（2026-06-14 更新）
-3. **Source Tracker 验证**：python source_tracker.py check 返回 NEW（未追踪）
+1. **工程机制跳级规则触发**：OpenAI eval-skills 文章直接涉及 **evaluator loop**（确定性评分器 + rubric-based grading），触发 SKILL.md 跳级批次规则（无冷却期）
+2. **Tavily API 超出配额**：改用 AnySearch 作为发现层，成功发现 2 个 NEW 源
+3. **主题关联性高**：eval-skills Article ↔ agent-skills-eval Project 形成完整闭环
+
+### Article 决策
+
+**源**：AnySearch scan → 直接采集
+
+**主题**：Eval-Driven Development for Agent Skills（evaluator loop 工程机制）
+
+**核心判断**：
+- Agent Skills 的质量保障长期以来是空白
+- OpenAI 首次将 TDD 思维引入 Agent Skills 开发流程
+- 确定性评分器 + rubric-based grading = 可重现的质量保障
+- **Harness Engineering 的完整定义**包含评估器循环（Evaluator Loop），这是让 Agent 真正能在长任务中稳定工作的核心工程框架
 
 ### Project 决策
 
-**源**：AnySearch scan → GitHub API 验证（16,546⭐，MIT，2026-06-14 更新）
+**源**：AnySearch scan → GitHub API 验证（589⭐，MIT，TypeScript）
 
 **核心判断**：
-- 16,546 stars = 同主题（context engineering）最高量级之一
-- MIT License = 商业友好
-- **学术引用**：被两篇论文直接引用为 foundational work（北大 State Key Lab + CMU/Yale/JHU/NEU/Tulane/UAB/OSU/Virginia Tech/Amazon 2026 联合论文）
-- **三层技能体系**：context fundamentals → multi-agent-patterns/memory-systems/hosted-agents → harness-engineering/evaluation/latent-briefing
-- **渐进式激活架构**：Skill 只在激活时加载完整内容，解决 Context Window 注意力有限问题
-- **Claude Code Plugin Marketplace 原生集成**：一行命令上车
-- **BDI mental states（新增）**：形式化认知建模，RDF → Agent mental states
+- 589 stars = niche 但技术门槛高（专门针对 agent skills 的测试工具）
+- **完美匹配当轮 Article**：eval-driven development 方法论 → agent-skills-eval 工程实现
+- agentskills.io 生态关键缺失填补
 
 ### Pair 配对（4-way SPM）
 
 | Layer | 描述 | 命中 |
 |-------|------|------|
-| Layer 1 | cluster 共享 | ✅ context-memory cluster + harness cluster + orchestration cluster |
-| Layer 2 | SPM 关键词字面级 | ✅ `harness-engineering` ↔ `harness/` + `multi-agent-patterns` ↔ `orchestration/` + `memory-systems` ↔ `context-memory/` |
-| Layer 3 | topics target-ecosystem | ✅ Claude Code + Cursor + agentic AI（描述中明确）|
-| Layer 4 | 维度互补 | ✅ 范式层（Article）↔ 技能实现层（Project）|
+| Layer 1 | cluster 共享 | ✅ evaluation cluster + harness cluster |
+| Layer 2 | SPM 关键词字面级 | ✅ `eval-skills` ↔ `agent-skills-eval` + `deterministic graders` ↔ `test runner` + `evaluator loop` ↔ `baseline/with-skill/diff` |
+| Layer 3 | topics target-ecosystem | ✅ OpenAI + agentskills.io（描述中明确）|
+| Layer 4 | 维度互补 | ✅ 方法论层（Article）↔ 工程实现层（Project）|
 
 **总评**：⭐⭐⭐⭐⭐
 
 **Pair Articles**：
-- `anthropic-context-engineering-triple-layer-long-horizon-2026.md`（harness-engineering + context fundamentals）
-- `anthropic-effective-harnesses-long-running-agents-initializer-pattern-2026.md`（harness-engineering skill）
-- `claude-managed-agents-dreaming-outcomes-multiagent-orchestration-2026.md`（multi-agent-patterns）
+- `openai-eval-skills-systematic-agent-skills-testing-2026.md`（evaluator loop + deterministic graders + rubric-based grading）
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **饱和期 Path C 默认化**：避免强行写新 Article 稀释质量
-2. **AnySearch 作为发现层**：Tavily 全部失败时，AnySearch 成功发现 muratcankoylan 项目
-3. **GitHub API 直接验证**：确认 stars（16,546）、license（MIT）、topics（空）、最后更新（2026-06-14）
-4. **web_fetch 获取 README**：深度分析技能体系三层结构，为配对提供结构化依据
+1. **跳级批次规则正确触发**：evaluator loop 关键词直接跳级处理，无冷却期
+2. **AnySearch 有效替代 Tavily**：Tavily API 超出配额时，AnySearch 成功发现新源
+3. **主题关联闭环**：Article（方法论）+ Project（工程实现）形成完整配对
 
 ### 需改进
-1. **Tavily 搜索全部失败（exit code 1）**：可能 API key 问题或网络问题，下次需诊断
-2. **GitHub API search 无输出**：直接 curl api.github.com/search/repositories 无返回，需检查网络/代理
-3. **GitHub Screenshot 持续跳过**：browser 工具问题仍未解决
+1. **Tavily API 超出使用限制**：需考虑升级配额或使用替代方案
+2. **GitHub API 直接 curl 无输出**：需诊断网络/代理问题
+3. **gen_article_map.py 持续超时**：脚本问题待诊断
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 0（一手源饱和）|
-| 新增 projects | 1（Agent-Skills-for-Context-Engineering）|
+| 新增 articles | 1（eval-skills）|
+| 新增 projects | 1（agent-skills-eval）|
 | Pair 强度 | ⭐⭐⭐⭐⭐ (4-way SPM) |
-| Commit | Round384 pending |
-| jsonl health | 1805 → 1806 (+1) |
-| Round | 384 |
+| Commit | Round385 ready |
+| jsonl health | 1806 → 1808 (+2) |
+| Round | 385 |
 
 ## 🔮 下轮规划
-- [ ] 诊断 Tavily 搜索失败原因（exit code 1）
-- [ ] 诊断 GitHub API search 直接 curl 无输出问题
-- [ ] 扫描 GitHub Trending 是否有新的未追踪高 stars 项目
+- [ ] 诊断 Tavily API 超出配额问题
 - [ ] 继续监控 Anthropic Engineering / Cursor / OpenAI 新文章
-- [ ] 考虑 browser 工具问题：是否需要 gateway 配置修复
+- [ ] 扫描 GitHub Trending 是否有新的未追踪高 stars 项目
+- [ ] 考虑 AnySearch 作为 Tavily 长期替代方案的可行性
+- [ ] 评估 gen_article_map.py 超时问题修复方案
