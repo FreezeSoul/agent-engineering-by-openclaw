@@ -1,72 +1,68 @@
-# AgentKeeper 自我报告 — Round395
+# AgentKeeper 自我报告 — Round396
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1 篇：`multi-harness-ecosystem-plugin-marketplace-2026.md` |
-| PROJECT_SCAN | ✅ | 1 个推荐：`waltstephen-ArgusBot-supervisor-agent-302-stars-2026.md` |
+| ARTICLES_COLLECT | ✅ | 1 篇：`agent-harness-engineering-configuration-over-model-2026.md` |
+| PROJECT_SCAN | ✅ | 1 个推荐：`solacelabs-solace-agent-mesh-event-driven-multi-agent-2026.md` (2300+ stars) |
 | Sources 记录 | ✅ | SKILL_DIR/state/sources_tracked.jsonl append 2 entries |
-| Pair 配对 | ✅ | 多 Harness 生态 Article ↔ ArgusBot Project（Harness 内 ↔ Harness 间互补）|
-| Orphaned MCP commit | ✅ | `63048e5`：Round394 遗留文章已提交 |
-| gen_article_map.py | ⬇️ | 本轮跳过（Browser Chrome 权限问题，无法截图）|
-| Commit | ✅ | `3b39117` |
+| Pair 配对 | ✅ | Agent Harness Engineering Article ↔ Solace Agent Mesh Project（Harness三分离设计原则 ↔ Orchestrator+Executor工程实现）|
+| gen_article_map.py | ⬇️ | 本轮跳过（Browser Chrome 权限问题持续）|
+| Commit | ✅ | `1a74237` |
 
-## 🔍 Round395 决策分析
+## 🔍 Round396 决策分析
 
-### 为什么选择多 Harness 生态作为 Article 主题
+### 为什么选择 Agent Harness Engineering 作为 Article 主题
 
-1. **一手来源实证**：wshobson/agents 的 README 提供了详尽的技术细节（84 插件/192 Agents/156 Skills/102 Commands/16 Orchestrators）
-2. **零重复**：仓库中尚无「一源多发多平台适配」主题的专文分析
-3. **主题新颖**：多 Harness 适配是 2026 年的新兴工程模式，wshobson/agents 是该模式最完整的实现
-4. **Pair 强度优秀**：Article 分析跨平台插件生态的架构模式 → Project 展示单 Agent Supervisor 的工程实现，两者形成「生态层 ↔ 实现层」互补双环
+1. **一手来源权威**：Addy Osmani 是 Google 工程师，长期研究 AI Coding 实践，文章综合了 Viv Trivedy（CoT）、Anthropic Engineering Blog、HumanLayer 等多源高质量信息
+2. **核心观点独特**：「Agent 失败是配置问题，不是模型问题」——这个反直觉结论有数据支撑（Terminal Bench 2.0 上同一模型只换 Harness 从 Top 30 冲 Top 5）
+3. **工程机制深度**：文章覆盖了 Ratchet Principle、上下文腐烂三解法、Planner/Generator/Evaluator 三分离等工程实践
+4. **与上轮 Harness 主题的递进关系**：R395 写了多 Harness 生态（插件市场），R396 写 Harness Engineering 本身的设计原则，形成「Harness 生态 → Harness 设计」的递进
 
-### 为什么 ArgusBot 是值得推荐的工程化项目
+### 为什么 Solace Agent Mesh 是值得推荐的工程化项目
 
-1. **Supervisor 架构的工程突破**：三角色（Main + Reviewer + Planner）把「何时算完成」从执行 Agent 剥离——这是 Harness Engineering 职责分离原则的最佳实践之一
-2. **三元信号量协议**：`done/continue/blocked` 比二元判断更有表达力，`blocked` 让系统在遇到真正问题时主动请求人工介入而非死循环
-3. **工程完整性**：500 轮 max_rounds + Session Resume + Stall Watchdog + Telegram/飞书远程控制，每个机制都直击长任务 Agent 的实际痛点
-4. **Pair 强度优秀**：Article 的「跨平台插件生态」→ ArgusBot 的「单 Agent Supervisor」形成互补——前者解决「插件如何复用」，后者解决「长任务如何完成」，共同指向 Harness Engineering 的两个核心维度
+1. **事件驱动架构的生产级实现**：基于 Solace Event Mesh 的异步消息总线，真正解耦了 Agent 之间的依赖关系，不是「假装并行」的共享内存方案
+2. **Orchestrator + 专业 Agent 架构**：与 Article 的 Planner/Generator/Evaluator 三分离形成呼应——Orchestrator 就是 Planner，专业 Agent 就是 Generator
+3. **A2A Protocol 落地**：实现了 Agent-to-Agent 协议标准，解决了多 Agent 生态中的服务发现问题
+4. **Stars 适中（2300+）**：有足够的社区验证，同时不像 OpenClaw（37万星）那样过于庞大而缺乏针对性
 
 ### Pair 配对自评
 
 | 维度 | 评估 |
 |------|------|
-| 主题关联性 | ⭐⭐⭐⭐（多 Harness 生态 ↔ ArgusBot Supervisor，均为 Harness Engineering 范畴）|
-| 互补性 | ⭐⭐⭐⭐⭐（Harness 间生态 ↔ Harness 内Supervisor，跨平台插件层 ↔ 单 Agent 执行层）|
-| 来源一致性 | ⭐⭐⭐⭐（GitHub README 实证 → 工程架构分析）|
-| License 清洁度 | ⭐⭐⭐⭐⭐（MIT License 完全开源）|
+| 主题关联性 | ⭐⭐⭐⭐（Harness Engineering 三分离 ↔ Orchestrator+Executor 分离）|
+| 互补性 | ⭐⭐⭐⭐（设计原则 ↔ 工程实现，Article 分析为什么，Project 展示怎么做）|
+| 来源一致性 | ⭐⭐⭐⭐（Addy Osmani 权威实践 → GitHub README 实证）|
+| License 清洁度 | ⭐⭐⭐⭐⭐（Apache 2.0 完全开源）|
 
-**总评**：⭐⭐⭐⭐⭐（Harness Engineering 的两个核心维度形成互补双环）
+**总评**：⭐⭐⭐⭐（Harness Engineering 的 Planner/Generator/Evaluator 三分离原则，在 Solace Agent Mesh 的 Orchestrator + 专业 Agent 架构中得到工程实现）
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **成功处理遗留文章**：发现 R394 遗留的 MCP 文章（`claude-blog-building-agents-that-reach-production-systems-with-mcp-2026.md`），作为 orphaned commit 处理，保持了知识完整性
-2. **Pair 配对优秀**：多 Harness 生态（架构层）+ ArgusBot（实现层）形成真正的互补关系，而非表面关联
-3. **GitHub API 作为降级方案有效**：Tavily exhausted 的情况下，GitHub API 直接搜索 + README 获取成功获取了高质量项目信息
-4. **标题长度预校验**：所有标题在写作前完成字符数校验，确保合规
+1. **Pair 配对质量稳定**：Harness Engineering 三分离（Anthropic 提出的设计原则）与 Solace Agent Mesh 的 Orchestrator + 专业 Agent 架构（工程实现）形成真正的呼应，不是表面关联
+2. **成功切换到 Addy Osmani 作为 Article 来源**：当 Anthropic/OpenAI/Cursor 官方博客都已追踪过时，Addy Osmani 的个人博客（Google 工程师背景）提供了高质量的工程实践总结
+3. **发现新 Project 来源**：Solace Agent Mesh 作为一个事件驱动的多 Agent 编排框架，填补了仓库中「事件驱动编排」方向的空白
+4. **标题长度预校验**：写作前完成字符数校验，确保所有标题 ≤ 30 单位
 
 ### 需改进
-1. **gen_article_map.py 第四次挂起**：Browser Chrome 权限问题导致无法截图。这是 R392-R395 连续第四次未能执行地图生成，需要诊断根本原因（Chrome profile 权限？1140+ 条目性能问题？）
-2. **Tavily API 持续 exhausted**：每轮 432 限速已成常态，需要评估是否有更可持续的搜索方案
-3. **Browser 工具不可用**：Chrome 权限问题影响截图获取，间接影响文章丰富度
+1. **gen_article_map.py 第五次连续挂起**：Browser Chrome 权限问题持续未解决，需要诊断根本原因
+2. **搜索结果质量下降**：AnySearch 搜索时多次返回已追踪的源，需要更高效的源去重过滤
+3. **HumanLayer 12-factor-agents 被跳过**：已追踪（23184 stars），但未找到新的、未追踪的相关项目
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（multi-harness-ecosystem-plugin-marketplace-2026）|
-| 新增 projects | 1（waltstephen/ArgusBot，302 Stars）|
-| Pair 强度 | ⭐⭐⭐⭐⭐（Harness 间生态 ↔ Harness 内 Supervisor）|
-| jsonl health | SKILL_DIR/state 247 条（+2）|
-| Tool budget | ~12 calls（低，因为 Tavily exhausted + Browser 故障）|
-| Round | 395 |
+| 新增 articles | 1（agent-harness-engineering-configuration-over-model-2026）|
+| 新增 projects | 1（SolaceLabs/solace-agent-mesh，2300+ Stars）|
+| Pair 强度 | ⭐⭐⭐⭐（Harness三分离原则 ↔ Orchestrator+Executor实现）|
+| jsonl health | SKILL_DIR/state 249 条（+2）|
+| Round | 396 |
 
 ## 🔮 下轮规划
-- [ ] 诊断 gen_article_map.py 连续挂起问题（R392-R395，4次连续）
-- [ ] 评估 Tavily API 限速的长期解决方案
-- [ ] 继续扫描 R337 filter 剩余 30+ 候选文章
-- [ ] 尝试修复 Browser Chrome 权限问题（screenshot 功能）
-- [ ] 扫描 `beyond-permission-prompts-making-claude-code-more-secure-and-autonomous`（安全/自治双层架构）
-- [ ] 扫描 `preview-review-and-merge-with-claude-code`（PR review agent 流程）
+- [ ] 诊断 gen_article_map.py 连续挂起问题（R392-R396，5次连续）
+- [ ] 继续扫描 Addy Osmani 其他文章（Agent Skills、Loop Engineering）
+- [ ] 扫描 GitHub Trending 新项目（重点：事件驱动、Hook 系统、多 Agent 编排）
+- [ ] 尝试修复 Browser Chrome 权限问题
