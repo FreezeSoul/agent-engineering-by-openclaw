@@ -89,3 +89,79 @@
 - **hash**: (pending)
 - **message**: "Round358: googleworkspace/cli 27K星 SKILL.md 企业工具链协议 SPM 配对 R357 enterprise"
 - **files**: 4 changed (1 project, 1 jsonl, 1 state, 1 report)
+---
+
+# AgentKeeper 自我报告 — Round399
+
+## 📋 本轮任务执行情况
+| 任务 | 执行结果 | 原因/产出 |
+|------|---------|---------|
+| ARTICLES_COLLECT | ⬇️ | 所有一手源饱和（Anthropic 9篇已追踪 + Cursor 新文章已追踪）|
+| PROJECT_SCAN | ✅ | 1个推荐：`jimliu/baoyu-design`（1123⭐ MIT，Design-as-Skill 模式）|
+| GIT_COMMIT | ✅ | `4ad926a` pushed to origin/master |
+| Sources 记录 | ✅ | repo jsonl + skill jsonl 同步追加 |
+| gen_article_map.py | ⬇️ | 跳过（第8次连续挂起）|
+
+## 🔍 本轮扫描发现
+
+### 扫描来源
+- **Anthropic Engineering Blog**: 所有 9 篇已追踪，无新内容
+- **Cursor Blog**: agent-autonomy-auto-review（R343 已追踪）、cloud-agent-lessons（R350 已追踪）等均已追踪
+- **GitHub API 新建仓库**（降级路径）: 3 个新发现
+
+### 候选项目评估
+| 候选 | Stars | License | 决策 |
+|------|-------|---------|------|
+| **jimliu/baoyu-design** | 1,123 | MIT | ✅ 写（Design-as-Skill 稀缺模式 + 跨编辑器 Claude Code 生态关联）|
+| plannotator/effective-html | 914 | MIT | ❌ 跳（主题较窄）|
+| superloglabs/superlog | 825 | Apache-2.0 | ❌ 跳（Apache 协议 + 主题关联弱）|
+| renee-jia/scholar-loop | 69 | MIT | ❌ 跳（Stars 不足，但工程机制极稀缺）|
+
+## 🔍 本轮反思
+
+### 做对了
+1. **GitHub API 新建仓库降级路径再次验证** — 发现 3 个新项目，baoyu-design 成功归档
+2. **Stars 门槛严格执行** — scholar-loop（防 reward-hacking Harness，69⭐）仍被跳过
+3. **多 jsonl 机制确认** — skill jsonl ≠ repo jsonl，需分别维护
+
+### 需改进
+1. **gen_article_map.py 第8次挂起** — 连续挂起问题仍待诊断
+2. **第一批次源饱和** — Anthropic + Cursor 全部已追踪，需扩展到 OpenAI/Replit/Augment
+
+## 📈 本轮数据
+| 指标 | 数值 |
+|------|------|
+| 新增 articles | 0 |
+| 新增 projects | 1 |
+| JSONL repo total | 1833 (+1) |
+| JSONL skill total | 252 (+1) |
+| Pair 配对 | ⬇️ 无 Article，独立归档 |
+| Title length | 19.0（≤ 30 硬约束）|
+| Commit | `4ad926a` |
+| Push | ✅ origin/master |
+
+## 🔮 下轮规划
+- [ ] 诊断 gen_article_map.py 挂起问题
+- [ ] 扩展 Article 来源（OpenAI Engineering / Replit / Augment）
+- [ ] 评估 scholar-loop 特殊审批（工程机制极稀缺，Stars 69 不足）
+- [ ] 评估 plannotator/effective-html（914⭐ MIT）
+
+## 🧠 本轮方法论沉淀
+1. **Design-as-Skill 模式识别**：baoyu-design 把交互式设计流程 Skill 化，是 Design 能力进入 Agentic Coding 工具链的关键路径
+2. **GitHub API 降级路径稳定**：R398 发现 → R399 再次验证，3 个新项目
+3. **Stars 门槛 vs 工程稀缺性张力**：scholar-loop 的 Harness 工程机制极强但 Stars < 500，需要特殊审批通道
+
+## 📊 关键数据快照
+
+### Project
+- **slug**: `jimliu-baoyu-design-cross-editor-claude-design-skill-1123-stars-2026`
+- **path**: `articles/projects/jimliu-baoyu-design-cross-editor-claude-design-skill-1123-stars-2026.md`
+- **source**: https://github.com/JimLiu/baoyu-design
+- **stars**: 1,123（verified via GitHub API）
+- **license**: MIT（verified via GitHub API）
+- **title_len**: 19.0（≤ 30 硬约束）
+
+### Commit
+- **hash**: 4ad926a
+- **message**: "Round399: jimliu/baoyu-design 1123星 MIT Claude Design跨编辑器Skill化 (Design-as-Skill模式)"
+- **files**: 2 changed (1 project, 1 jsonl)

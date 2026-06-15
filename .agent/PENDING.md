@@ -2,50 +2,39 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-16 (R398) | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-16 (R398) | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-16 (R399) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-16 (R399) | 每次必执行 |
 
 ## ⏳ 待处理任务
 
-## 📌 Round399 候选
+## 📌 Round400 候选
 
 ### 高优先级
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| claude.com/blog/multi-agent-coordination-patterns | claude.com | Multi-agent coordination patterns: 5 approaches | 🟡 中 | 待评估内容深度 |
-| claude.com/blog/context-management | claude.com | Claude context management + memory tool | 🟡 中 | 需评估是否值得独立成文 |
-| Anthropic New Engineering Post | anthropic.com/engineering | Any new post | 🔴 高 | 所有现有 9 篇已追踪，需找新增 |
-| Cursor New Blog Post | cursor.com/blog | Any new post | 🔴 高 | JS 渲染，需 browser 或 RSS |
+| OpenAI Engineering Blog | openai.com/blog | Any new post | 🔴 高 | 第一批次降级来源，需 browser |
+| Replit Blog | blog.replit.com | Any new post | 🟡 中 | 降级 Article 来源 |
+| Augment Blog | augment.com/blog | Any new post | 🟡 中 | 降级 Article 来源 |
+| scholar-loop (69⭐ MIT) | github.com/renee-jia/scholar-loop | 防 reward-hacking Harness + 8 Agent 循环 | 🟡 中 | Stars 不足但工程机制极稀缺，可申请特殊审批 |
+| plannotator/effective-html (914⭐ MIT) | github.com/plannotator/effective-html | HTML plan agent skill | 🟡 中 | 待深度评估 |
 
 ### 待验证
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| gen_article_map.py | 本地脚本 | 脚本挂起问题 | 🔴 高 | R392-R398 连续7次挂起，需优先诊断 |
+| gen_article_map.py | 本地脚本 | 脚本挂起问题 | 🔴 高 | R392-R399 连续8次挂起，需优先诊断 |
 | Browser Chrome | 外部 | Permission denied，screenshot 功能失效 | 🔴 高 | agent-browser snapshot 受限 |
-| 806 primary-URL placeholder orphans | jsonl | 历史遗留 placeholder | 🟡 中 | 大量 `local://articles/...` 占位 URL |
-| Ponytail 增长追踪 | GitHub | 1240→15154⭐ (12x)，需更新推荐 | 🟡 中 | R368 推荐后大幅增长，可做更新推荐 |
+| AnySearch 降级 | 搜索 | 扩展 Article 来源 | 🟡 中 | 第四批次，冷却6h |
+| Ponytail 增长追踪 | GitHub | 1240→15723⭐ (12.7x)，已追踪文章 | 🟢 低 | 15K+⭐，无需更新推荐 |
 
 ## 🔮 下轮规划
-- [ ] 诊断 gen_article_map.py 挂起问题（连续7次）
-- [ ] 扫描 Cursor 博客 RSS（cursor.com/rss.xml）找新文章
-- [ ] 扫描 Anthropic 新工程文章（所有现有9篇已追踪）
-- [ ] 评估 Claude blog 新候选（multi-agent / context management）
-- [ ] 若 Anthropic 饱和，考虑 Addy Osmani Loop Engineering 后续
+- [ ] 诊断 gen_article_map.py 挂起问题（连续8次）
+- [ ] 扩展 Article 来源（OpenAI Engineering / Replit / Augment）
+- [ ] 评估 scholar-loop 特殊审批（工程机制极稀缺但 Stars 69 不足）
+- [ ] 评估 plannotator/effective-html（914⭐ MIT）
+- [ ] 尝试 browser 工具获取 claude.com/blog 截图
 
 ## 🧠 方法论沉淀
-1. **R398 第一批次源饱和应对**：Tavily 配额耗尽 + Anthropic 9篇全部追踪 + GitHub Trending API 需登录 → 转向 GitHub API 新建仓库搜索，发现 `guard-skills`（755⭐ MIT，未追踪）
-2. **Cite-as-Primary 的边界**：R367 中 `claude-code-auto-mode` 以 cite 形式进入 jsonl，R398 将其升级为 primary article 是合法的——同一 URL 可以既是 cite 又是 primary，只要 round 不同
-3. **Path C 补缺适用场景**：当第一批次源饱和时，Path C（Article A + Project B 互补配对）成为唯一可行的产出路径，关键在于找到真正互补的主题
-4. **双层防御体系的 R398 实证**：Auto Mode（权限双层）↔ guard-skills（质量双层）= 完整的 Agent Coding Harness，双层互补不是巧合而是系统性设计
-5. **Tavily 配额耗尽是常态化风险**：需在下轮前评估是否有替代搜索方案（browser 工具、RSS feed、直接 API 等）
-
-## 📊 仓库状态
-- **总 commits**: Round398（8d5d2ca）
-- **总 articles**: 1146 (R398 +1: anthropic-claude-code-auto-mode-dual-layer-permission-harness-2026)
-- **总 projects**: 66 (R398 +1: amelnagdy-guard-skills)
-- **总 sources tracked**: 1832 (+3 in jsonl)
-- **R398 Article**: anthropic-claude-code-auto-mode-dual-layer-permission-harness-2026（Anthropic Claude Code Auto Mode 双层权限判断 Harness）
-- **R398 Project**: amelnagdy-guard-skills（755⭐ MIT，coding agent 质量门控）
-- **Pair 强度**: ⭐⭐⭐⭐⭐（权限双层 ↔ 质量双层，双层防御体系完整配对）
-- **JSONL backfill**: 0（R398 自身无 self-drift）
-- **待 push commits**: 0
+1. **R399 降级路径确认**：GitHub API 新建仓库搜索（created:2026-06）→ 发现 3 个新项目（baoyu-design 1123⭐、effective-html 914⭐、superlog 825⭐）→ 降级路径稳定可用
+2. **Stars 门槛 vs 工程稀缺性的张力**：scholar-loop（69⭐ MIT）的防 reward-hacking Harness + 8 Agent 循环工程机制极强，但 Stars < 500 门槛 → 需要特殊审批通道
+3. **多 jsonl 机制确认**：skill jsonl（251 entries，check 命令来源）≠ repo jsonl（1833 entries，完整追踪）→ 需要分别维护
+4. **Design-as-Skill 模式识别**：baoyu-design 把交互式设计流程（clarify → context → prototype → preview → iterate）Skill 化，是 Design 能力进入 Agentic Coding 工具链的关键路径

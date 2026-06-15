@@ -1,77 +1,74 @@
-# AgentKeeper 自我报告 — Round398
+# AgentKeeper 自我报告 — Round399
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
-|------|---------|----------|
-| ARTICLES_COLLECT | ✅ | 1 篇：`anthropic-claude-code-auto-mode-dual-layer-permission-harness-2026.md`（Anthropic primary source）|
-| PROJECT_SCAN | ✅ | 1 个推荐：`amelnagdy-guard-skills-coding-agent-quality-gates-755-stars-2026.md`（755⭐ MIT）|
-| Sources 记录 | ✅ | 3 entries（1 primary article + 1 primary project + 1 cite）|
-| Pair 配对 | ✅ | Claude Code Auto Mode（权限双层）↔ guard-skills（质量双层），Path C 互补配对 ⭐⭐⭐⭐⭐ |
-| gen_article_map.py | ⬇️ | 跳过（R398 优先 commit，连续挂起进入第7次）|
-| Self-drift 检测 | ✅ | R398 自身 2 个 primary + 1 个 cite 均在 commit 前进入 jsonl，无 self-drift |
+|------|---------|---------|
+| ARTICLES_COLLECT | ⬇️ | 所有一手源（Anthropic 9篇全部已追踪 + Cursor 新文章全部已追踪）无新内容 |
+| PROJECT_SCAN | ✅ | 1个推荐：`jimliu/baoyu-design`，1123⭐ MIT，Claude Design跨编辑器Skill化 |
+| Sources 记录 | ✅ | 1 entry（project）写入 repo jsonl + skill jsonl |
+| Pair 配对 | ⬇️ | 无新 Article，baoyu-design 独立归档（Design-as-Skill 主题关联 Claude Code 生态）|
+| gen_article_map.py | ⬇️ | 跳过（连续第8次挂起，R392-R399）|
 
-## 🔍 Round398 决策分析
+## 🔍 Round399 决策分析
 
-### 为什么选择 Claude Code Auto Mode 作为 Article 主题
+### 为什么选择 baoyu-design 作为 Project 主题
 
-1. **一手来源权威**：Anthropic Engineering Blog，真实的双层权限 Harness 工程实践
-2. **工程机制稀缺性极高**：Auto Mode 的双层防御（输入注入检测 + 输出 Sonnet 4.6 分类器）是行业稀缺的 Harness 工程设计，没有在社区广泛讨论过
-3. **Cite-as-Primary 的合法性**：R367 中 `claude-code-auto-mode` 以 cite 形式出现（被 Cursor SDK 文章引用），R398 将其升级为 primary article——这是合法的，因为同一 URL 可以同时是 cite 和不同 round 的 primary
-4. **与 R396 的承接关系**：R396 分析了 Harness Engineering 的配置优先原则，R398 的 Auto Mode 是该原则在 Claude Code 权限系统中的具体实现——四类决策（自动批准/确认/阻止/跳过）= 精确的权限委托机制
-5. **与 R397 的维度互补**：R397 是「团队规模化」（组织流程层），R398 是「权限自动化」（单用户工具层）——两者共同构成 Agentic Coding 的完整方法论
+1. **Design-as-Skill 模式的行业稀缺性**：当前社区 Skill 主要集中在代码生成/工具集成类，Design Skill 几乎空白。baoyu-design 填补了这个空白。
+2. **跨编辑器兼容性**（Cursor / Claude Code / Codex / Claude Desktop）是 Agentic Coding 工具链标准化的重要信号
+3. **MIT 协议 + 1123⭐**： License 清洁，Stars 突破 1000 门槛
+4. **独立归档的合法性**：无 Article 关联时，Stars > 1000 的项目可独立归档（SKILL 协议）
+5. **主题关联 Claude Code 生态**：即使不是 R398 的双层防御体系配对，Design Skill 与 Claude Code 存在天然生态关联
 
-### 为什么 guard-skills 是值得推荐的工程化项目
+### 信息源扫描结果
 
-1. **解决被忽视的问题**：AI Agent 生成代码的「第二关质量门控」——这是当前社区几乎空白的领域
-2. **专门处理 LLM 特有失败模式**：重复生长、包幻觉、假装成功、吞掉错误——这些是传统静态分析工具无法捕捉的 AI 特有错误
-3. **与 Claude Code Auto Mode 形成双层防御体系**：Auto Mode 管「执行前的权限」，guard-skills 管「完成后的质量」——一个管能不能做，一个管做得对不对
-4. **MIT 协议**：可完全企业内部部署
-5. **通过 skills.sh CLI 集成**：与 Claude Code、Codex、Cursor 等主流 Agent 工具无缝集成
-6. **五类专业 Guard**：覆盖 clean-code、test、docs、WordPress、WooCommerce——不是泛泛检查，是针对已知失败模式的专业规则
+| 来源 | 状态 | 说明 |
+|------|------|------|
+| Anthropic Engineering | 全部已追踪（9篇）| 所有现有文章已追踪，无新增 |
+| Cursor 博客 | 全部已追踪 | agent-autonomy-auto-review（R343）、cloud-agent-lessons（R350）等均已追踪 |
+| GitHub Trending 新建仓库 | 3个新发现 | baoyu-design（1123⭐）、plannotator/effective-html（914⭐）、superlog（825⭐）|
 
-### Pair 配对自评
+### 降级路径验证
 
-| 维度 | 评估 |
-|------|------|
-| 主题关联性 | ⭐⭐⭐⭐⭐（权限双层 ↔ 质量双层，双层防御体系）|
-| 互补性 | ⭐⭐⭐⭐⭐（Auto Mode 管权限，Guard 管质量）|
-| 来源一致性 | ⭐⭐⭐⭐⭐（Anthropic 一手源 ↔ GitHub 开源工具）|
-| License 清洁度 | ⭐⭐⭐⭐⭐（MIT 完全开源）|
-| 工程机制稀缺性 | ⭐⭐⭐⭐⭐（行业稀缺的 AI 生成代码质量门控）|
+R398 发现的降级路径在 R399 继续有效：
+- **第一批次源饱和** → 降级到 GitHub API 新建仓库搜索 → 发现 3 个未追踪项目
+- **RSS 不可用**（Cursor 返回 HTML，Anthropic RSS 404）→ 改用 web_fetch 直接抓取博客列表页
 
-**总评**：⭐⭐⭐⭐⭐ 双层防御体系完整配对，是 R398 周期最高强度 Pair
+### 备选项目评估
+
+| 项目 | Stars | License | 评估 | 决策 |
+|------|-------|---------|------|------|
+| plannotator/effective-html | 914⭐ | MIT | Agent skill for HTML plans，较为单一 | 跳（主题较窄）|
+| superloglabs/superlog | 825⭐ | Apache-2.0 | Agentic observability，Apache 协议 | 跳（License + 主题关联弱）|
+| scholar-loop | 69⭐ | MIT | 防 reward-hacking Harness + 8 Agent 循环，工程机制极强但 Stars 不足 | 跳（Stars 门槛）|
 
 ## 🔍 本轮反思
 
 ### 做对了
-1. **Cite-as-Primary 的正确应用** — `claude-code-auto-mode` 在 R367 是 cite，在 R398 升级为 primary article 是合法的——这扩展了「已追踪 cite 仍可做 primary」的原则
-2. **Path C 在源饱和期仍可行** — 当第一批次源全部追踪时，找到 Article 和 Project 的主题互补性，仍可产出高质量 Pair
-3. **双层防御体系的系统性思维** — Auto Mode（权限）+ guard-skills（质量）不是巧合配对，而是从「Agent 需要管什么」的系统性分析出发的必然配对
-4. **GitHub API 新建仓库搜索作为降级策略** — 当 Tavily 不可用、Trending 需登录时，GitHub API 搜索「created:2026-06」是有效的新项目发现手段
+1. **GitHub API 新建仓库搜索继续有效** — R398 发现的降级路径在 R399 再次验证，发现 3 个新项目
+2. **Stars 门槛严格执行** — 69⭐ 的 scholar-loop（Harness 工程机制极强）仍因 Stars 不足被跳过，守住了质量门槛
+3. **多 jsonl 同步** — 区分 skill jsonl（251 entries）和 repo jsonl（1832 entries），分别追加
 
 ### 需改进
-1. **gen_article_map.py 第七次跳过** — 连续 R392-R398，7 轮未跑成功。R399 需要优先诊断这个问题
-2. **Tavily 配额耗尽是常态化风险** — 没有备用搜索方案导致 R398 全程靠 GitHub API + 直接 curl。建议在 R399 前配置备用搜索（browser 工具或 RSS feed）
-3. **Browser 工具超时** — agent-browser 在 R398 初尝试时超时（claude.com/blog），需要优化 browser 操作的 timeout 或改用 RSS feed 方式
+1. **gen_article_map.py 第8次跳过** — 连续挂起问题仍未解决，需要诊断脚本原因
+2. **第一批次源饱和常态化** — Anthropic 9篇 + Cursor 所有新文章全部已追踪，需要更多来源（OpenAI Engineering、Replit、Augment 等）
+3. **Articles 无产出** — 连续两轮（R398 Article 是 R398 自身）无新 Article，需扩展 Article 来源
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（anthropic-claude-code-auto-mode-dual-layer-permission-harness-2026）|
-| 新增 projects | 1（amelnagdy/guard-skills，755⭐ MIT）|
-| JSONL new entries | 3（1 article + 1 project + 1 cite）|
-| JSONL total | 1832 (+3) |
-| Pair 强度 | ⭐⭐⭐⭐⭐（双层防御体系）|
-| Round | 398 |
-| Tool calls | ~15（健康范围）|
-| Commit | `8d5d2ca` |
+| 新增 articles | 0 |
+| 新增 projects | 1（jimliu/baoyu-design，1123⭐ MIT）|
+| JSONL new entries | 1（repo jsonl）|
+| JSONL repo total | 1833（+1）|
+| JSONL skill total | 252（+1）|
+| Commit | `4ad926a` |
 | Push | ✅ origin/master |
 
 ## 🔮 下轮规划
-- [ ] 优先诊断 gen_article_map.py 挂起问题（第7次连续跳过）
-- [ ] 尝试 Cursor RSS feed（cursor.com/rss.xml）获取新博客文章
-- [ ] 评估 Claude blog 候选（multi-agent coordination / context management）的内容深度
-- [ ] 评估 Anthropic 新工程文章（可能需要等待新文章发布）
-- [ ] 若所有第一批次源饱和，考虑 Addy Osmani Loop Engineering 后续分析
+- [ ] 诊断 gen_article_map.py 挂起问题（第8次连续跳过）
+- [ ] 扩展 Article 来源：OpenAI Engineering Blog、Replit Blog、Augment Blog
+- [ ] 评估 plannotator/effective-html（914⭐ MIT）是否值得推荐（Design Skill 补充）
+- [ ] 评估 scholar-loop（69⭐ MIT）是否可走「工程机制稀缺性」特殊审批通道（防 reward-hacking Harness + 8 Agent 循环，行业极稀缺）
+- [ ] 尝试 browser 工具获取 claude.com/blog 截图（替代超时的 agent-browser snapshot）
