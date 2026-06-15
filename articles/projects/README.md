@@ -559,3 +559,5 @@
 
 
 - **[bradAGI/awesome-cli-coding-agents](./bradAGI-awesome-cli-coding-agents-563-stars-2026.md)** — 563 Stars，MIT，80+ CLI Coding Agent 生态全景图（2026-06-08），分为 Terminal-native Coding Agents（Claw Code/Hermes Agent/OpenCode/Gemini CLI/Codex CLI 等）+ Harnesses & Orchestration（Session managers/Orchestrators/Agent infrastructure）两大类。与 OpenAI Server-side Compaction 文章（Compaction vs Truncation 长程 Context 管理）形成「机制层 → 工具层」的主题闭环：Compaction 解决长程 Agent 的 Context 续命问题，awesome-cli-coding-agents 提供了这些机制的实际应用场景索引（Session managers & parallel runners 处理长程 Agent 状态续接），**本文新增**
+
+- **[framerslab/agentos](./framerslab-agentos-cognitive-memory-574-stars-2026.md)** — 574 ⭐，TypeScript，2026-06-05 新发布，认知记忆 AI Agent 框架（8 种神经科学-backed 机制：Ebbinghaus 遗忘/检索诱导遗忘/再巩固/来源置信度衰减）+ Runtime Tool Forging（Agent 自写工具 + LLM Judge 审核 + node:vm sandbox 执行）+ HEXACO 个性系统 + Soul Files 身份容器 + 6 种编排策略。与 Anthropic AI Organizations Article（../orchestration/anthropic-ai-organizations-alignment-risks-2026.md）形成「风险揭示（论文）↔ 工程实现参考（框架）」完整闭环，**本文新增**
