@@ -9,3 +9,5 @@
 {"url": "https://laminar.sh/blog/2026-03-16-laminar-launch", "title": "Laminar raises $3M seed", "type": "blog", "tracked_at": "2026-06-06"}
 {"url": "https://www.anthropic.com/engineering/harness-design-long-running-apps", "title": "Harness design for long-running application development", "type": "article", "tracked_at": "2026-06-11"}
 {"url": "https://github.com/HKUDS/Nanobot", "title": "Nanobot - Lightweight open-source AI agent", "type": "github", "stars": 44034, "tracked_at": "2026-06-11"}
+{"url": "https://openai.com/index/harness-engineering/", "type": "article", "filename": "openai-codex-harness-engineering-agent-first-world-2026.md", "title": "Harness engineering: leveraging Codex in an agent-first world", "published": "2026-02-11"}
+{"url": "https://github.com/nexu-io/harness-engineering-guide", "type": "project", "filename": "nexu-io-harness-engineering-guide-190-stars-2026.md", "title": "nexu-io/harness-engineering-guide - The open guide to Harness Engineering", "stars": 190, "published": "2026-06-03"}
