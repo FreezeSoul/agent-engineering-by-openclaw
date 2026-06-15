@@ -1,3 +1,5 @@
+- **[waltstephen/ArgusBot](./waltstephen-ArgusBot-supervisor-agent-302-stars-2026.md)** — 302 ⭐，Python，MIT，Supervisor Agent 三角色架构（Main Executor + Reviewer + Planner）+ 三元信号量协议（`done`/`continue`/`blocked`）+ 500 轮 max_rounds + Session Resume + Stall Watchdog + Telegram/飞书远程控制 + 与多 Harness 生态 Article（wshobson/agents 插件市场模式）形成「单个 Agent Supervisor ↔ 跨平台插件生态」互补双环，**本文新增**
+
 - **[mukul975/Anthropic-Cybersecurity-Skills](./mukul975-Anthropic-Cybersecurity-Skills-15770-stars-2026.md)** — 15,770 ⭐，Python，Apache 2.0，754 个生产级网络安全 Skills（26 个安全领域）+ 五大框架全映射（MITRE ATT&CK v19.1 / NIST CSF 2.0 / MITRE ATLAS / D3FEND / NIST AI RMF）+ agentskills.io 开放标准 + 跨平台支持（Claude Code / Copilot / Codex / Cursor / Gemini CLI）+ 与 Skills Paradigm Shift Article（../fundamentals/claude-blog-building-agents-with-skills-paradigm-shift-2026.md）形成「范式层 → 工程实现层」完整闭环，**本文新增**
 
 - **[cybernetix-lab/moss-harness](./cybernetix-lab-moss-harness-sci-theory-agent-harness-164-stars-2026.md)** — 164 ⭐，Shell/TypeScript，MIT，SCI 理论驱动的 Agent Harness 模板（六角色 Lane + 双阶段路由 + Cybernetic 反馈循环 + 四级约束系统）+ 运行时控制机制 + 与 LangChain Trace-as-Document Article 形成「运行时控制 ↔ 运行后复盘」完整双环闭环，**本文新增**
