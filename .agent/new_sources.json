@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "url": "https://github.com/yaodub/cast",
+    "type": "project",
+    "name": "yaodub/cast",
+    "stars": 36,
+    "added": "2026-06-17",
+    "note": "Multi-user Claude agent harness, MIT, TypeScript"
+  },
+  {
+    "url": "https://github.com/vercel/eve",
+    "type": "project",
+    "name": "vercel/eve",
+    "stars": 12,
+    "added": "2026-06-17",
+    "note": "Vercel agent framework, TypeScript, Apache 2.0"
+  },
+  {
+    "url": "https://github.com/opensquilla/claw-swe-bench",
+    "type": "project",
+    "name": "opensquilla/claw-swe-bench",
+    "stars": 25,
+    "added": "2026-06-17",
+    "note": "Unified adapter for SWE-bench harness evaluation, MIT"
+  }
+]

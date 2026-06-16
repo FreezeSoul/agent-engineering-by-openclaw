@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-生成文章地图 (Article Map)
+生成文章地图 (Article Map) - 优化版
 - 按发布时间倒序排列
 - 包含目录位置和创建时间
 - 输出到仓库根目录 ARTICLES_MAP.md
+- 优化：单次 git log 调用获取所有文件创建日期
 """
 
 import subprocess
@@ -13,23 +14,33 @@ from datetime import datetime
 REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_FILE = os.path.join(REPO_DIR, "ARTICLES_MAP.md")
 
-def get_git_date(filepath: str) -> str:
-    """获取文件首次提交的日期（创建时间）"""
+def get_all_file_dates() -> dict:
+    """一次性获取所有文件的创建日期"""
+    date_map = {}
     try:
+        # Single git log call to get all added files with their dates
         result = subprocess.run(
-            ["git", "log", "--diff-filter=A", "--format=%ai", "--", filepath],
+            ["git", "log", "--diff-filter=A", "--format=%ai", "--name-only", "--", "articles/"],
             cwd=REPO_DIR,
             capture_output=True,
             text=True,
-            timeout=10
+            timeout=30
         )
-        if result.returncode == 0 and result.stdout.strip():
-            # 格式: 2026-04-09 04:08:04 +0800
-            dt_str = result.stdout.strip().split()[0]
-            return dt_str
-    except Exception:
-        pass
-    return "unknown"
+        if result.returncode == 0:
+            lines = result.stdout.strip().split('\n')
+            # Format is alternating: date, filename, date, filename, ...
+            i = 0
+            while i < len(lines) - 1:
+                date_line = lines[i].strip()
+                filename_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
+                if date_line and filename_line and '/' in filename_line and filename_line.endswith('.md'):
+                    # Extract just the date part (first 10 chars: YYYY-MM-DD)
+                    date_str = date_line.split()[0]
+                    date_map[filename_line] = date_str
+                i += 2
+    except Exception as e:
+        print(f"Warning: git log failed: {e}")
+    return date_map
 
 def extract_title(filepath: str) -> str:
     """从文章中提取标题（第一个 # 开头的内容）"""
@@ -49,6 +60,9 @@ def get_all_articles():
     if not os.path.exists(articles_dir):
         return []
 
+    # Get all file dates in one git call
+    file_dates = get_all_file_dates()
+
     articles = []
     for root, _, files in os.walk(articles_dir):
         for filename in sorted(files):
@@ -56,7 +70,7 @@ def get_all_articles():
                 filepath = os.path.join(root, filename)
                 rel_path = os.path.relpath(filepath, REPO_DIR)
                 title = extract_title(filepath)
-                date = get_git_date(rel_path)
+                date = file_dates.get(rel_path, "unknown")
                 category = rel_path.split(os.sep)[1] if os.sep in rel_path else "root"
                 articles.append({
                     "title": title,
