@@ -1,117 +1,69 @@
-# R415 报告：Cursor Agent Best Practices × repository-harness
+# R416 报告：Anthropic Claude Code Expertise — 领域专业知识 > 编程能力
 
-**Round**: 415
+**Round**: 416
 **Date**: 2026-06-17
-**Commit**: TBD
+**Commit**: 59d6486 + f9bd55e
 
 ---
 
 ## 🎯 本轮产出
 
-### Article: Cursor Agent 编程最佳实践指南
+### Article: Anthropic Claude Code Expertise 报告解读
 
-- **文件名**: `articles/practices/ai-coding/cursor-agent-best-practices-harness-engineering-2026.md`
-- **Cluster**: `practices/ai-coding/`
-- **核心命题**: Cursor Agent 不只是更好的 IDE 插件——它是一套可工程化的开发范式。掌握这套范式的关键在于理解 Agent Harness 的三层架构（指令系统 / 工具系统 / 模型调度），以及在此基础上建立的工作流设计能力。
-- **关键数据**: 约 5800 词深度实践指南
-- **来源**: https://cursor.com/blog/agent-best-practices（2026-06，Cursor Blog）
-- **质量评估**: ⭐⭐⭐⭐⭐（系统化 Harness Engineering 指南 + 工程机制稀缺性极高 + 完整配对 Project）
+- **文件名**: `articles/deep-dives/anthropic-claude-code-expertise-domain-knowledge-2026.md`
+- **Cluster**: `deep-dives/`
+- **核心命题**: Anthropic 40万 Claude Code Sessions (2025.10-2026.04) 实证研究揭示：领域专业知识（而非编程能力）决定了 Agent 协作的成功率；人类负责 WHAT (70% planning decisions)，Agent 负责 HOW (80% execution decisions)。
+- **关键数据**:
+  - Expert 用户触发 Agent actions 是 novice 的 2.4x，文字输出 5.3x
+  - Coding task 上每种职业成功率几乎相同
+  - 调试 session 从 33% 降至 19%
+  - 任务经济价值 +27%
+- **来源**: https://www.anthropic.com/research/claude-code-expertise
+- **质量评估**: ⭐⭐⭐⭐⭐（一手研究 + 大规模实证 + 工程机制稀缺性极高）
+- **Pair 闭环**: 方法论层（实证分工法则）↔ 工程实现待配对
 
-### Project: hoangnb24/repository-harness
+### Project: 跳过（无合适候选）
 
-- **文件名**: `articles/projects/hoangnb24-repository-harness-agent-workspace-790-stars-2026.md`
-- **Stars**: 790（2026-06）
-- **License**: MIT ✅
-- **语言**: Rust（82.6%）
-- **核心价值**: 让任何代码仓库变成 Agent-ready 工作区，多 Agent 统一操作层（Claude Code / Codex / Cursor）
-- **Pair 闭环**:
-  - Cursor Best Practices (Article) = 方法论（Harness 三层架构 / Rules & Skills / Hooks / Stop Condition）
-  - repository-harness (Project) = 工程实现（AGENTS.md shim / Feature Intake / Story Packet / 验证矩阵 / 决策记录）
-- **关联性**: 4-way SPM 满中（cluster ✅ + 6 SPM keywords ✅ + topics ✅ + 维度互补 ✅）
-- **质量评估**: ⭐⭐⭐⭐（790 stars > 500 threshold + MIT + 多 Agent 支持 + 与 Cursor 文章形成完美配对）
+- 扫描了 Omnigent（已追踪）、addyosmani/agent-skills（已追踪）、vudovn/ag-kit（已追踪）、santifer/career-ops（新发现但 Stars ~1000，不满足独立归档阈值）
+- 决定：Stars < 5000 且无强关联 Article 时，跳过 Project 产出
 
 ---
 
 ## 🔍 执行流程
 
-### Step 1：Tavily Rate Limit 处理
+### Step 1：源扫描（AnySearch）
 
-- Tavily API 连续触发 432 错误（超出计划限额）
-- 降级到 AnySearch 作为主要搜索工具
-- AnySearch 响应正常（~2000ms），稳定可用
+**搜索词**: `site:anthropic.com OR site:openai.com OR site:cursor.com agent engineering 2026`
 
-### Step 2：AnySearch 源扫描
+**发现**:
+1. `openai.com/index/harness-engineering/` → USED（已追踪）
+2. `anthropic.com/research/claude-code-expertise` → **NEW** ✅（最终产出 Article）
+3. `cursor.com/blog/automations` → USED
+4. `cursor.com/blog/cursor-leads-gartner-mq-2026` → USED
 
-**扫描批次**：
-- Cursor blog → 发现 `agent-best-practices` untracked ✅
-- Anthropic engineering → managed-agents USED + infrastructure-noise USED
+### Step 2：GitHub 项目扫描（AnySearch）
 
-**新发现**：
-1. `cursor.com/blog/agent-best-practices` — NEW ✅（最终产出 Article）
-2. `cursor.com/blog/cloud-agent-lessons` — USED（R413）
-3. `cursor.com/blog/agent-autonomy-auto-review` — USED（R413）
-4. `cursor.com/blog/scaling-agents` — USED（R414）
-5. `www.anthropic.com/engineering/managed-agents` — USED（R412）
+**搜索词**: `GitHub trending AI agent stars 500 programming 2026`
 
-### Step 3：AnySearch GitHub 项目扫描
+**发现**:
+1. `huggingface/smolagents` (27,881 stars) → USED
+2. `obra/superpowers` (173k stars) → USED
+3. `hoangnb24/repository-harness` → USED（R415）
 
-**发现路径**：
-- 搜索 "agent harness" → `tuanle96/agent-harness-kit`（3 stars，过低）
-- 搜索 "GitHub trending AI coding agent" → `enmanuelmag/agent-harness-kit`（150 stars，接近阈值）
-- 搜索 "harness engineering 2026 stars 500" → `hoangnb24/repository-harness`（790 stars，MIT）✅
+**新发现**:
+- `databricks/omnigent` → NEW but 文件已存在（`omnigent-ai-omnigent-meta-harness-cross-platform-2026.md`）
+- `santifer/career-ops` → NEW（1000 stars，增长 +7.85%）
 
-**候选评估**：
-| Project | Stars | License | Decision |
-|---------|-------|---------|---------|
-| `tuanle96/agent-harness-kit` | 3 | MIT | 跳过（Stars 过低）|
-| `enmanuelmag/agent-harness-kit` | 150 | NOASSERTION | 跳过（低于 500 threshold）|
-| `hoangnb24/repository-harness` | 790 | MIT ✅ | **采纳**（> 500 + MIT + 多 Agent 支持）|
+**评估**: career-ops Stars ~1000，低于 5000 独立归档阈值，跳过。
 
-### Step 4：Pair 闭环验证（4-way SPM）
+### Step 3：源追踪记录
 
-| Layer | Cursor Article | repository-harness | Match |
-|-------|---------------|-------------------|-------|
-| Layer 1 cluster | `practices/ai-coding/` | `projects/` | ✅ |
-| Layer 2 SPM keywords | harness, agent, rules, skills, hooks, stop condition | harness, agent, workspace, validation, story | ✅ 6 keywords |
-| Layer 3 topics | — | agents, claude-code, workspace | ✅ |
-| Layer 4 dimension | 方法论（怎么设计）| 工程实现（怎么落地）| ✅ 互补 |
+- `anthropic.com/research/claude-code-expertise` → USED ✅
 
-### Step 5：Article 写作
-
-- 标题迭代: 12.0 单位（≤ 30 ✓）
-- 文件大小: 7426 bytes（< 12KB ✓）
-- 核心结构:
-  1. Agent Harness 三层架构（Instructions/Tools/Model）
-  2. Plan Mode：最被低估的工程化手段
-  3. 上下文管理：Agent 工程的真正难点
-  4. Hooks 系统：让 Harness 可编程的核心机制
-  5. 并行 Agent：规模化 Agent 工作的工程路径
-  6. 云端 Agent：从工具到异步工作力的转变
-  7. TDD + Agent：最强大的工程组合
-  8. 与本仓库其他文章的关联
-  9. 三层含义（基础设/角色重新定位/范式确立）
-
-### Step 6：Project 写作
-
-- 标题迭代: 16.0 单位（≤ 30 ✓）
-- 文件大小: 4545 bytes（< 9KB ✓）
-- 核心结构:
-  1. 核心命题（Agent 需要更好的仓库）
-  2. 关键特性（安装/多 Agent/Feature Intake/Rust CLI/文档体系）
-  3. 为什么与 Cursor Best Practices 是完美配对
-  4. 技术亮点
-  5. 适用场景
-  6. 笔者判断
-
-### Step 7：Source Tracking
-
-- `cursor.com/blog/agent-best-practices` → USED ✅
-- `github.com/hoangnb24/repository-harness` → USED ✅
-
-### Step 8：gen_article_map.py
+### Step 4：gen_article_map.py
 
 - 成功执行，无超时
-- ai-coding: 20 articles
+- deep-dives: 63 articles
 
 ---
 
@@ -119,12 +71,10 @@
 
 | 候选 | 跳过原因 |
 |------|---------|
-| `tuanle96/agent-harness-kit`（3 stars）| Stars 远低于 threshold |
-| `enmanuelmag/agent-harness-kit`（150 stars）| 低于 500 stars threshold |
-| `cursor.com/blog/cloud-agent-lessons` | USED（R413）|
-| `cursor.com/blog/agent-autonomy-auto-review` | USED（R413）|
-| `cursor.com/blog/scaling-agents` | USED（R414）|
-| `anthropic.com/engineering/managed-agents` | USED（R412）|
+| `santifer/career-ops`（~1000 stars）| Stars 低于 5000 独立归档阈值，主题关联度一般 |
+| `databricks/omnigent`（新发现）| 文件已存在于 projects/ |
+| `addyosmani/agent-skills`（61K stars）| USED（R413 之前）|
+| `vudovn/ag-kit`（7729 stars）| USED |
 
 ---
 
@@ -133,25 +83,26 @@
 | 指标 | 数值 |
 |------|------|
 | 新增 articles | 1 |
-| 新增 projects | 1 |
-| Sources tracked 新增 | 2 |
-| 扫描源 | AnySearch（Cursor blog + GitHub trending）|
-| Tool calls | ~12 |
-| Working tree | 待提交 |
+| 新增 projects | 0 |
+| Sources tracked 新增 | 1 |
+| 扫描源 | AnySearch（Anthropic research + GitHub trending）|
+| Tool calls | ~14 |
+| commits | 2（59d6486 + f9bd55e）|
+| gen_article_map.py | ✅ 无超时 |
 
 ---
 
-## 🔮 下轮规划（R416）
+## 🔮 下轮规划（R417）
 
-- [ ] 继续 AnySearch 扫描（ Tavily 不可用的情况下 AnySearch 稳定）
-- [ ] 监控 Cursor blog 新文章（R413-R415 连续发现）
-- [ ] OpenAI blog 扫描（较低频率，R414 未覆盖）
-- [ ] CrewAI / LangChain 第二梯队源评估
-- [ ] 浏览器截图工具修复（Permission denied 导致无法截图）
+- [ ] 继续扫描 Anthropic / OpenAI / Cursor 官方博客（AnySearch 主扫描）
+- [ ] 寻找 Stars > 5000 且与现有 Articles 有关联的新 GitHub 项目
+- [ ] 特别关注：multi-agent orchestration、workspace state management 方向
+- [ ] 监控 Cursor blog 新文章（R413-R416 连续发现）
+- [ ] 浏览器截图工具修复（Permission denied，R415 发现）
 
 ## 🧠 方法论沉淀
 
-1. **AnySearch 是 Tavily 降级路径的稳定替代**：R411-R415 连续 5 轮 Tavily 出现问题，AnySearch 响应正常（~2000ms），可作为主要搜索工具
-2. **repository-harness 是 Harness Engineering 的「仓库层面」实现**：Cursor 文章描述方法论，repository-harness 提供工程模板，两者形成完美闭环
-3. **Stars 500 threshold 的实际执行**：低于 500 stars 的项目需特殊审批，R415 连续跳过 2 个候选（3 stars + 150 stars）
-4. **Cursor blog 持续高产**：R413（2 个新发现）→ R414（2 个新发现）→ R415（1 个新发现），建议保持 Cursor blog 扫描优先级
+1. **AnySearch 稳定可用**：Tavily rate limit 问题持续，AnySearch 作为主扫描工具稳定工作
+2. **Project 质量门槛有效**：Stars < 5000 且无强关联 Article 时，跳过是正确的质量控制决策
+3. **gen_article_map.py R416 无超时**：R415 首次成功后，R416 再次确认（23次超时后连续2次成功）
+4. **Omnigent 已存在文件**：说明之前某轮已写过，需要在扫描时提前检查文件内容避免重复研究
