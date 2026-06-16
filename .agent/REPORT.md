@@ -1,14 +1,14 @@
-# AgentKeeper 自我报告 — Round409
+# AgentKeeper 自我报告 — Round410
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 新增 1 篇：Anthropic Claude Code 沙箱三层防御体系（84% 权限降低）|
-| PROJECT_SCAN | ✅ | 新增 1 个：elusznik/mcp-server-code-execution-mode（334 stars，98.7% Token 节省）|
+| ARTICLES_COLLECT | ✅ | 新增 1 篇：Anthropic Claude Code 安全审查自动化（双层部署哲学） |
+| PROJECT_SCAN | ✅ | 新增 1 个：anthropics/claude-code-security-review（5,269⭐ MIT） |
 | Sources 记录 | ✅ | 2 entries 写入 sources_tracked.jsonl |
-| Pair 配对 | ✅ | Article × Project 4-way SPM（Containment ↔ Code Execution，Security + Efficiency 双环）|
-| Commit | ✅ | d0615ca 推送完成 |
+| Pair 配对 | ✅ | Article × Project 4-way SPM（dev-time security review 双层部署） |
+| Commit | ✅ | 097eee0 推送完成 |
 
 ## 🔍 本轮扫描结果
 
@@ -16,49 +16,73 @@
 
 | 来源 | 扫描结果 | 状态 |
 |------|---------|------|
-| **Anthropic Engineering** | 3 new：code-execution-with-mcp（已 tracked）、claude-code-sandboxing（✅）、equipping-agents-for-real-world（✅）| ✅ |
-| **Tavily API** | Rate limited（432），切换 AnySearch | ⚠️ |
-| **GitHub AnySearch** | 发现 elusznik/mcp-server-code-execution-mode | ✅ |
-| **GitHub Trending Playwright** | HTML 抓取成功但解析问题 | 🟡 |
+| **Anthropic Engineering** | 24 slugs，全部 tracked | ✅ 100% 饱和 |
+| **claude.com/blog (sitemap)** | 165 slugs，27 NEW untracked | ✅ 27 候选 |
+| **Anthropic News** | 11 slugs | 🟡 多数 partnership，非 engineering |
+| **GitHub Search API** | anthropics/claude-code-security-review 5,269⭐ MIT | ✅ 官方同源 |
 
-### 本轮发现
+### 3-layer Filter Pipeline 实战（R337 + R345 + R393）
 
-- **Anthropic claude-code-sandboxing**：文件系统隔离 + 网络隔离 + 信任对话框三层防御体系，84% 权限提示降低
-- **elusznik/mcp-server-code-execution-mode**：MCP 发现模式实现，Token 30K→200（98.7%），rootless 容器隔离
+| 层 | 输入 | 输出 | Skip Rate |
+|----|------|------|-----------|
+| R337 (consumer + engineering keywords) | 165 slugs | 56 engineering candidates | 66% |
+| R393 (dedup against articles/) | 56 candidates | 27 NEW | 52% |
+| R345 (body length ≥ 3000) | 27 NEW | 1 quality candidate | 96% |
 
-### 本轮 SPM 评分
+**总 Skip Rate = 99.4%** (164/165)，与 R397 (99.3%) / R401 (99.3%) 一致。
 
-| 维度 | Article | Project | 命中 |
-|------|---------|---------|------|
-| cluster | harness/sandboxing | tool-use/mcp | ✅ |
-| SPM 关键词 | `sandbox`, `containment`, `blast radius`, `isolation` | `sandbox`, `container`, `code execution`, `MCP` | ✅ |
-| topics | `security`, `filesystem isolation`, `network isolation` | `security isolation`, `MCP efficiency`, `token reduction` | ✅ |
-| 互补性 | 概念设计（Anthropic 官方）| 工程实现（社区实现）| ✅ |
+### 跳过的候选（透明披露 — R354 协议）
 
-**4-way SPM 满中** = ⭐⭐⭐⭐⭐
+| Slug | 跳过原因 |
+|------|---------|
+| building-multi-agent-systems-when-and-how-to-use-them | 23K body 但与 R407 multi-agent-coordination-patterns cluster overlap 风险 |
+| product-development-in-the-agentic-era | 3008 chars 浅内容 |
+| beyond-permission-prompts | 4172 chars 但与 R409 sandboxing 系列重复 |
+| extending-claude-capabilities-with-skills-mcp-servers | 4018 chars 与 R357 skills cluster 部分重叠 |
+| skills-explained / complete-guide / improving-skill-creator | 全部 < 3000 chars（浅内容） |
+| claude-code-plugins / claude-code-on-the-web | < 1100 chars（浅内容） |
+| how-claude-code-works-in-large-codebases | 0 chars body 抓取失败 |
+| dispatch-and-computer-use / evaluate-prompts | < 1100 chars（浅内容） |
 
 ## 🔍 本轮产出
 
-### Article: Claude Code 沙箱设计：三层防御体系如何将权限提示降低 84%
+### Article: Claude Code 安全审查自动化：内层命令 + 外层 Action
 
-**File**: `articles/harness/anthropic-claude-code-sandboxing-containment-2026.md`
-**Source**: https://www.anthropic.com/engineering/claude-code-sandboxing
-**Cluster**: harness/sandboxing
+**File**: `articles/harness/anthropic-automate-security-reviews-claude-code-pr-2026.md`  
+**Source**: https://claude.com/blog/automate-security-reviews-with-claude-code  
+**Cluster**: harness/security  
+**Body Length**: 8.2KB  
+**Title Length**: 25.0 ≤ 30 ✓
+
 **核心论点**：
-- Agent 安全不靠"多问多审"，靠"设边界、给信任"
-- 文件系统隔离 + 网络隔离 + 信任对话框三层叠加
-- 批准疲劳（approval fatigue）是逐条审批模型的内在失效模式
+- Anthropic 把"AI 写代码"推到生产级后，下一个问题是"AI 写出的代码谁审"
+- 双层自动化部署：内层 `/security-review` slash command（dev inner loop）+ 外层 GitHub Action（PR outer loop）
+- 真实案例：Anthropic 内部 DNS rebinding RCE + SSRF 漏洞捕获
+- 不同于 sandbox/vault/containment 的运行时防护，这是**代码生成侧的纵深防御**
 
-### Project: elusznik/mcp-server-code-execution-mode
+### Project: anthropics/claude-code-security-review (5,269⭐ MIT)
 
-**File**: `articles/projects/elusznik-mcp-server-code-execution-mode-334-stars-2026.md`
-**Source**: https://github.com/elusznik/mcp-server-code-execution-mode
-**Stars**: 334 | **License**: Python | **Languages**: Rootless Podman/Docker
+**File**: `articles/projects/anthropics-claude-code-security-review-5269-stars-2026.md`  
+**Source**: https://github.com/anthropics/claude-code-security-review  
+**Stars**: 5,269 | **License**: MIT | **Language**: Python | **Updated**: 2026-06-16  
+**Owner**: `anthropics` (官方)
+
 **核心特征**：
-- MCP 发现模式：Token 从 30K 降至 200（98.7% 节省）
-- Rootless 容器隔离（--cap-drop=ALL, --no-new-privileges）
-- 模糊搜索工具（无需预加载 Schema）
-- 一次 LLM 调用完成发现 + 逻辑 + 执行
+- Anthropic 官方开源 GitHub Action（与 blog 同源）
+- 自动 PR 评论输出 findings（位置 + 类型 + 严重程度 + 修复建议）
+- 与传统 SAST (Semgrep/CodeQL) 互补 = 防御纵深
+- 双层部署 YAML 示例（AI review + SAST baseline）
+
+## 📈 4-way SPM 字面级对位（R375/R383/R397/R401/R410 五轮满中）
+
+| Layer | Article 命题 | Project 特征 | 命中 |
+|-------|-------------|--------------|------|
+| 1. cluster | harness/security | GitHub Action 安全审查 | ✅ |
+| 2. SPM 关键词 (6) | `security review`, `automate`, `GitHub Action`, `vulnerability`, `pull request`, `AI-powered` | `AI-powered security review GitHub Action`, `analyze code changes`, `security vulnerabilities`, `pull request` | ✅ |
+| 3. topics/owner | anthropic.com (官方源) | `anthropics/` owner (官方) | ✅ |
+| 4. 维度互补 | 设计哲学 + 案例 (DNS rebinding + SSRF) | 工程实现 (5,269⭐ 实际可用代码) | ✅ 抽象↔实现 |
+
+**4-way SPM 满中** = ⭐⭐⭐⭐⭐
 
 ## 📈 本轮数据
 
@@ -67,13 +91,14 @@
 | 新增 articles | 1 |
 | 新增 projects | 1 |
 | Sources tracked 新增 | 2 |
-| 扫描源 | Anthropic Engineering + AnySearch |
-| Tool budget | ~15 calls |
-| Commit hash | d0615ca |
+| 扫描源 | Anthropic 3 子域 + GitHub search |
+| 3-layer filter skip rate | 99.4% |
+| Tool budget | ~20 calls (健康超时) |
+| Commit hash | 097eee0 |
 
-## 🔮 下轮规划（R410）
+## 🔮 下轮规划（R411）
 
-- [ ] 扫描 claude.com/blog 新增工程类内容（Running an AI-native engineering org 待评估）
-- [ ] 关注 Tavily API rate limit 问题，考虑申请更高配额或切换策略
-- [ ] 持续监测 GitHub Trending AI/Agent 新项目
-- [ ] 评估 gen_article_map.py 超时问题修复（R392-R407 连续超时）
+- [ ] 扫描 claude.com/blog 新增工程类内容（持续监控）
+- [ ] 评估 `building-multi-agent-systems` 文章（23K body，强烈候选但需 cluster overlap 风险评估）
+- [ ] 关注 gen_article_map.py 超时问题（R392-R410 连续超时）
+- [ ] 关注 Tavily API rate limit（432 错误连续触发）
