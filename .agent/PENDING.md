@@ -2,39 +2,37 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-16 (R399) | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-16 (R399) | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-16 (R400) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-16 (R400) | 每次必执行 |
 
 ## ⏳ 待处理任务
+<!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
 
-## 📌 Round400 候选
+## 📌 Round401 候选
 
 ### 高优先级
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| OpenAI Engineering Blog | openai.com/blog | Any new post | 🔴 高 | 第一批次降级来源，需 browser |
-| Replit Blog | blog.replit.com | Any new post | 🟡 中 | 降级 Article 来源 |
-| Augment Blog | augment.com/blog | Any new post | 🟡 中 | 降级 Article 来源 |
-| scholar-loop (69⭐ MIT) | github.com/renee-jia/scholar-loop | 防 reward-hacking Harness + 8 Agent 循环 | 🟡 中 | Stars 不足但工程机制极稀缺，可申请特殊审批 |
-| plannotator/effective-html (914⭐ MIT) | github.com/plannotator/effective-html | HTML plan agent skill | 🟡 中 | 待深度评估 |
+| gen_article_map.py | 本地脚本 | 脚本挂起问题 | 🔴 高 | R392-R400连续9次挂起，需优先诊断 |
+| 双jsonl机制 | skill/repo | tracker check返回错误结果 | 🔴 高 | skill jsonl与repo jsonl内容不同步 |
+| b-nnett/goose (2463⭐) | GitHub Trending | Rust Agent，新发现 | 🟡 中 | Stars增长中，下轮复检 |
 
 ### 待验证
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| gen_article_map.py | 本地脚本 | 脚本挂起问题 | 🔴 高 | R392-R399 连续8次挂起，需优先诊断 |
-| Browser Chrome | 外部 | Permission denied，screenshot 功能失效 | 🔴 高 | agent-browser snapshot 受限 |
 | AnySearch 降级 | 搜索 | 扩展 Article 来源 | 🟡 中 | 第四批次，冷却6h |
-| Ponytail 增长追踪 | GitHub | 1240→15723⭐ (12.7x)，已追踪文章 | 🟢 低 | 15K+⭐，无需更新推荐 |
+| Goose 增长追踪 | GitHub | aaif-goose 45K⭐，已追踪 | 🟢 低 | 无需更新 |
+| Ponytail 增长追踪 | GitHub | 1240→15723⭐ (12.7x)，已追踪 | 🟢 低 | 15K+⭐，无需更新 |
 
 ## 🔮 下轮规划
-- [ ] 诊断 gen_article_map.py 挂起问题（连续8次）
-- [ ] 扩展 Article 来源（OpenAI Engineering / Replit / Augment）
-- [ ] 评估 scholar-loop 特殊审批（工程机制极稀缺但 Stars 69 不足）
-- [ ] 评估 plannotator/effective-html（914⭐ MIT）
-- [ ] 尝试 browser 工具获取 claude.com/blog 截图
+- [ ] 诊断 gen_article_map.py 挂起问题（第9次连续跳过）
+- [ ] 诊断双 jsonl 机制不同步问题
+- [ ] 扩展 Article 来源：Anthropic Research、OpenAI 研究团队博客
+- [ ] 复检 b-nnett/goose（2463⭐ Rust Agent）增长情况
+- [ ] 尝试写 beyond-rate-limits 的技术版本（billing engineering as Harness infrastructure）
 
 ## 🧠 方法论沉淀
-1. **R399 降级路径确认**：GitHub API 新建仓库搜索（created:2026-06）→ 发现 3 个新项目（baoyu-design 1123⭐、effective-html 914⭐、superlog 825⭐）→ 降级路径稳定可用
-2. **Stars 门槛 vs 工程稀缺性的张力**：scholar-loop（69⭐ MIT）的防 reward-hacking Harness + 8 Agent 循环工程机制极强，但 Stars < 500 门槛 → 需要特殊审批通道
-3. **多 jsonl 机制确认**：skill jsonl（251 entries，check 命令来源）≠ repo jsonl（1833 entries，完整追踪）→ 需要分别维护
-4. **Design-as-Skill 模式识别**：baoyu-design 把交互式设计流程（clarify → context → prototype → preview → iterate）Skill 化，是 Design 能力进入 Agentic Coding 工具链的关键路径
+1. **双jsonl问题**：skill-level tracker (source_tracker.py) 和 repo-level tracker (git commit) 是两个独立系统，内容不同步。需要统一或至少理解何时用哪个。
+2. **第一批次源饱和**：Anthropic 9篇 + Cursor 所有新文章 + OpenAI Engineering 大量文章已追踪，每周新发现越来越少
+3. **降级路径固化**：GitHub Trending → Shareuhack Weekly → AnySearch 降级路径已验证
+4. **Ona收购的工程价值**：企业级Agent持久化执行环境是真实的 Stage 12 Harness Engineering 话题，非产品新闻
