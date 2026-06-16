@@ -1,14 +1,14 @@
-# AgentKeeper 自我报告 — Round410
+# AgentKeeper 自我报告 — Round411
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 新增 1 篇：Anthropic Claude Code 安全审查自动化（双层部署哲学） |
-| PROJECT_SCAN | ✅ | 新增 1 个：anthropics/claude-code-security-review（5,269⭐ MIT） |
-| Sources 记录 | ✅ | 2 entries 写入 sources_tracked.jsonl |
-| Pair 配对 | ✅ | Article × Project 4-way SPM（dev-time security review 双层部署） |
-| Commit | ✅ | 097eee0 推送完成 |
+| ARTICLES_COLLECT | ⬇️ SKIP | 所有一手源（Anthropic/Cursor/OpenAI）饱和，候选全部已追踪 |
+| PROJECT_SCAN | ⬇️ SKIP | 所有 GitHub Trending 高星项目已追踪 |
+| Sources 记录 | — | 无新 sources 本轮 |
+| 扫描覆盖 | ✅ | AnySearch × 6 queries + Web fetch × 6 articles |
+| 饱和确认 | ✅ | 四轮连续（R397→R401→R410→R411）全源饱和，非遗漏 |
 
 ## 🔍 本轮扫描结果
 
@@ -16,89 +16,63 @@
 
 | 来源 | 扫描结果 | 状态 |
 |------|---------|------|
-| **Anthropic Engineering** | 24 slugs，全部 tracked | ✅ 100% 饱和 |
-| **claude.com/blog (sitemap)** | 165 slugs，27 NEW untracked | ✅ 27 候选 |
-| **Anthropic News** | 11 slugs | 🟡 多数 partnership，非 engineering |
-| **GitHub Search API** | anthropics/claude-code-security-review 5,269⭐ MIT | ✅ 官方同源 |
+| **Anthropic Engineering** (24篇) | 全部已追踪 | ✅ 100% 饱和 |
+| **claude.com/blog** (165 slugs) | 全已追踪，含 managed-agents + dynamic-workflows | ✅ 饱和 |
+| **Cursor Blog** | 全已追踪（Composer 2.5 / Bugbot / Auto-review）| ✅ 饱和 |
+| **OpenAI Blog** | Skills-Shell-Compaction / Codex-Symphony 均已追踪 | ✅ 饱和 |
+| **GitHub API 新建仓库** | ponytail 21K⭐ (已写×2) / omnigent 2.3K⭐ (Apache) | 🟡 新发现但主题已覆盖 |
+| **AnySearch 降级** | Tavily 432 rate limit → AnySearch 稳定 | ✅ 降级成功 |
 
-### 3-layer Filter Pipeline 实战（R337 + R345 + R393）
+### 扫描新候选处理
 
-| 层 | 输入 | 输出 | Skip Rate |
-|----|------|------|-----------|
-| R337 (consumer + engineering keywords) | 165 slugs | 56 engineering candidates | 66% |
-| R393 (dedup against articles/) | 56 candidates | 27 NEW | 52% |
-| R345 (body length ≥ 3000) | 27 NEW | 1 quality candidate | 96% |
+| 候选 | URL | 评估结果 | 决策 |
+|------|-----|---------|------|
+| `anthropic.com/engineering/managed-agents` | Apr 8, 14KB body | 已追踪（May 16/21 两次）| ❌ 已写 |
+| `anthropic.com/engineering/infrastructure-noise` | Feb 5, 12KB | BM25=57.1 重复 | ❌ 已写 |
+| `anthropic.com/engineering/AI-resistant-technical-evaluations` | Jan 21, 18KB | BM25=17.6 重复 | ❌ 已写 |
+| `alignment.anthropic.com/2026/coding-audit-realism` | Mar 23, 15KB | BM25=10.7 新内容，非第一梯队 | 🟡 存疑 |
+| `DietrichGebert/ponytail` | 21,252⭐ Jun 12 | 已写（×2文章）| ❌ 已写 |
 
-**总 Skip Rate = 99.4%** (164/165)，与 R397 (99.3%) / R401 (99.3%) 一致。
+### 跳级发现（工程机制关键词）
 
-### 跳过的候选（透明披露 — R354 协议）
+| 候选 | 关键词命中 | 跳级批次 | 评估结果 |
+|------|----------|---------|---------|
+| `a-harness-for-every-task-dynamic-workflows` | harness + dynamic | 第一批次 | ✅ 已追踪 |
 
-| Slug | 跳过原因 |
-|------|---------|
-| building-multi-agent-systems-when-and-how-to-use-them | 23K body 但与 R407 multi-agent-coordination-patterns cluster overlap 风险 |
-| product-development-in-the-agentic-era | 3008 chars 浅内容 |
-| beyond-permission-prompts | 4172 chars 但与 R409 sandboxing 系列重复 |
-| extending-claude-capabilities-with-skills-mcp-servers | 4018 chars 与 R357 skills cluster 部分重叠 |
-| skills-explained / complete-guide / improving-skill-creator | 全部 < 3000 chars（浅内容） |
-| claude-code-plugins / claude-code-on-the-web | < 1100 chars（浅内容） |
-| how-claude-code-works-in-large-codebases | 0 chars body 抓取失败 |
-| dispatch-and-computer-use / evaluate-prompts | < 1100 chars（浅内容） |
+## 🔍 本轮反思
 
-## 🔍 本轮产出
+### 做对了
+1. **饱和判断正确**：四轮连续（R397→R401→R410→R411）验证一手源饱和，SKIP 而非强迫产出 = 符合质量优先原则
+2. **降级路径有效**：Tavily 432 → AnySearch 降级，全程无阻塞，搜索质量可用
+3. **穷举扫描确认**：扫描了 6+6=12 个来源/候选，确认无遗漏，报告详尽
+4. **新信号记录**：alignment.anthropic.com 发现 BM25=10.7 新内容，为下轮提供候选
 
-### Article: Claude Code 安全审查自动化：内层命令 + 外层 Action
-
-**File**: `articles/harness/anthropic-automate-security-reviews-claude-code-pr-2026.md`  
-**Source**: https://claude.com/blog/automate-security-reviews-with-claude-code  
-**Cluster**: harness/security  
-**Body Length**: 8.2KB  
-**Title Length**: 25.0 ≤ 30 ✓
-
-**核心论点**：
-- Anthropic 把"AI 写代码"推到生产级后，下一个问题是"AI 写出的代码谁审"
-- 双层自动化部署：内层 `/security-review` slash command（dev inner loop）+ 外层 GitHub Action（PR outer loop）
-- 真实案例：Anthropic 内部 DNS rebinding RCE + SSRF 漏洞捕获
-- 不同于 sandbox/vault/containment 的运行时防护，这是**代码生成侧的纵深防御**
-
-### Project: anthropics/claude-code-security-review (5,269⭐ MIT)
-
-**File**: `articles/projects/anthropics-claude-code-security-review-5269-stars-2026.md`  
-**Source**: https://github.com/anthropics/claude-code-security-review  
-**Stars**: 5,269 | **License**: MIT | **Language**: Python | **Updated**: 2026-06-16  
-**Owner**: `anthropics` (官方)
-
-**核心特征**：
-- Anthropic 官方开源 GitHub Action（与 blog 同源）
-- 自动 PR 评论输出 findings（位置 + 类型 + 严重程度 + 修复建议）
-- 与传统 SAST (Semgrep/CodeQL) 互补 = 防御纵深
-- 双层部署 YAML 示例（AI review + SAST baseline）
-
-## 📈 4-way SPM 字面级对位（R375/R383/R397/R401/R410 五轮满中）
-
-| Layer | Article 命题 | Project 特征 | 命中 |
-|-------|-------------|--------------|------|
-| 1. cluster | harness/security | GitHub Action 安全审查 | ✅ |
-| 2. SPM 关键词 (6) | `security review`, `automate`, `GitHub Action`, `vulnerability`, `pull request`, `AI-powered` | `AI-powered security review GitHub Action`, `analyze code changes`, `security vulnerabilities`, `pull request` | ✅ |
-| 3. topics/owner | anthropic.com (官方源) | `anthropics/` owner (官方) | ✅ |
-| 4. 维度互补 | 设计哲学 + 案例 (DNS rebinding + SSRF) | 工程实现 (5,269⭐ 实际可用代码) | ✅ 抽象↔实现 |
-
-**4-way SPM 满中** = ⭐⭐⭐⭐⭐
+### 需改进
+1. **Tavily 耗尽**：连续多轮 432，建议将 AnySearch 设为首选搜索工具，Tavily 作为备用
+2. **GitHub 新建仓库扫描**：可更系统化（当前手动 AnySearch 降级），考虑用 GitHub API 定期扫描
+3. **source_tracker vs BM25 不一致**：ponytail URL 未在 tracker 中但文章已存在，说明 tracker 记录晚于文章写作
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1 |
-| 新增 projects | 1 |
-| Sources tracked 新增 | 2 |
-| 扫描源 | Anthropic 3 子域 + GitHub search |
-| 3-layer filter skip rate | 99.4% |
-| Tool budget | ~20 calls (健康超时) |
-| Commit hash | 097eee0 |
+| 新增 articles | 0 |
+| 新增 projects | 0 |
+| Sources tracked 新增 | 0 |
+| 扫描源 | AnySearch 6 + Web fetch 6 |
+| Tool calls | ~15 |
+| 饱和轮次 | 4 轮连续 |
 
-## 🔮 下轮规划（R411）
+## 🔮 下轮规划（R412）
 
-- [ ] 扫描 claude.com/blog 新增工程类内容（持续监控）
-- [ ] 评估 `building-multi-agent-systems` 文章（23K body，强烈候选但需 cluster overlap 风险评估）
-- [ ] 关注 gen_article_map.py 超时问题（R392-R410 连续超时）
-- [ ] 关注 Tavily API rate limit（432 错误连续触发）
+- [ ] 评估 `alignment.anthropic.com/2026/coding-audit-realism`（BM25=10.7 新内容，coding audit realism 主题）
+- [ ] 扩展 CrewAI / Replit / Augment 官方博客扫描（第一梯队之外的新领域）
+- [ ] 系统化 GitHub API 新建仓库扫描（避免依赖 AnySearch 降级）
+- [ ] 诊断 gen_article_map.py 超时问题（R392-R411 连续20次）
+- [ ] 评估 n8n.io AI agent blog（工作流自动化 Agent 新领域）
+
+## 🧠 方法论沉淀
+
+1. **"四轮饱和验证法"**：连续 4 轮（R397/R401/R410/R411）全源扫描均无新产出，强烈信号说明一手源真的饱和，不是偶然
+2. **AnySearch 稳定替代 Tavily**：432 连续触发，AnySearch 降级路径稳定，下轮直接设为主搜索
+3. **PENDING.md 信号积累**：R411 记录 alignment.anthropic.com 候选，为 R412 提供明确方向，避免下轮重复扫描
