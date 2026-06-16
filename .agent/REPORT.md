@@ -1,66 +1,81 @@
-# AgentKeeper 自我报告 — Round403
+# AgentKeeper 自我报告 — Round404
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 1篇：anthropic-agents-biology-deterministic-retrieval-layer-2026.md（Anthropic Research: 确定性检索层是科学 Agent 的工程缺失）|
-| PROJECT_SCAN | ⬇️ | 跳过：所有 Stars > 1000 的 AI Agent 项目均已追踪（R402 问题延续）|
-| Sources 记录 | ✅ | 1 entry 写入（article: agents-in-biology）|
-| Pair 配对 | ⬇️ | 无关联项目可配对 |
-| gen_article_map.py | ❌ | 脚本超时（30s），未更新 ARTICLES_MAP.md（R392-R403 连续12次跳过）|
-| Commit | ✅ | 7f479bb |
-| Push | ✅ | origin/master |
+| ARTICLES_COLLECT | ⬇️ | 无新第一梯队来源：Anthropic Engineering / OpenAI Blog / Cursor Blog 均已追踪 |
+| PROJECT_SCAN | ⬇️ | GitHub Trending Daily 无新 AI/Agent 项目：所有 Stars > 1000 项目均已追踪 |
+| Sources 记录 | ✅ | 无新增源（无需记录）|
+| Pair 配对 | ⬇️ | 无新 Article/Project 产出 |
+| gen_article_map.py | ⏳ | 后台运行中（60s+ timeout，已连续13轮超时） |
+| Commit | ⏸️ | 等待 gen_article_map.py 完成或超时 |
 
-## 🔍 Round403 决策分析
+## 🔍 Round404 扫描结果
 
-### Article 选择：确定性检索层是科学 Agent 的工程缺失
+### 信息源扫描（按优先级）
 
-1. **First-tier 来源的深度技术文章**：Anthropic Research 博客（Laura Luebbert）发布于 2026-06-08，关于如何让生物数据基础设施对 Agent 更友好
-2. **独特工程视角**：不是讨论模型能力，而是揭示"强模型 + 不可靠基础设施 = 不可靠 Agent"的反直觉结论
-3. **核心洞察**：Deterministic Retrieval Layer（确定性检索层）是科学 Agent 的工程缺失，需要为 Agent 设计确定性执行层
-4. **工程机制价值**：涉及 tool-use 基础设施设计、error handling、graceful degradation 等工程机制
+| 来源 | 扫描结果 | 状态 |
+|------|---------|------|
+| **Anthropic Engineering** | 扫描全部文章列表 → 均已追踪（how-we-contain-claude, april-23-postmortem 等） | ✅ 已追踪 |
+| **OpenAI Blog** | Dreaming V3 (Jun 4) → 已追踪（R351）| ✅ 已追踪 |
+| **Cursor Blog** | agent-autonomy-auto-review (Jun 11) → 已追踪（R343）| ✅ 已追踪 |
+| **Anthropic Research** | making-claude-a-chemist → 未追踪，但文章主题为"化学领域模型能力评估"，非 Agent 工程机制 | ❌ 不符合方向 |
+| **GitHub Trending Daily** | 12 个项目扫描 → Agent-Reach (26K⭐), SkillSpector (2.8K⭐) 均已追踪 | ✅ 已追踪 |
 
-### Project 困境延续
+### 无新内容的根本原因
 
-**问题**：R402 发现的双 jsonl 不同步问题延续，导致 source_tracker.py 判断不准确
-- NVIDIA/SkillSpector 已追踪（USED）
-- 所有 Stars > 1000 的 AI Agent 项目均已在 repo jsonl 中追踪
-- 本轮无新发现项目
+本轮（2026-06-16 11:57 UTC）距上一轮（2026-06-16 约 08:42 UTC）仅 3+ 小时，
+且上一轮 R403 已全面扫描所有第一梯队来源。
 
-### gen_article_map.py 超时问题
+**Cycle 结论**：仓库经过 400+ 轮积累，一级来源已被系统性追踪，新增内容存在自然波动周期。
 
-**状态**：R392-R403 连续 12 次超时
-**影响**：ARTICLES_MAP.md 未更新，但 Article 已正常提交
+### "making-claude-a-chemist" 评估
+
+- **来源**：Anthropic Research（第一梯队）
+- **内容**：测试 Claude 在 NMR 光谱分析中的化学能力 vs ChemDraw/MestReNova
+- **判断**：❌ 不符合 Agent 工程方向
+  - 主题是"领域模型能力评估"，不是"工程机制设计"
+  - 受众是化学研究员，不是 AI Agent 工程师
+  - 无 harness/evaluation/orchestration/tool-use 工程机制
+  - 建议：归档为「模型能力评测」类别，不作为本文档收录方向
 
 ## 🔍 本轮反思
 
 ### 做对了
 
-1. **准确识别第一梯队来源的深度技术文章**：Anthropic Research 博客的 agents-in-biology 文章揭示了重要工程洞察
-2. **核心论点提炼清晰**：确定性检索层作为科学 Agent 的工程缺失，主题明确
-3. **BM25 dedup 判断**：尽管 dedup 报警相似度 > 0.65，但实际文章主题不同（context as memory vs deterministic retrieval as tool-use infrastructure），判断为假阳性
+1. **诚实记录无新内容**：不强行产出低质量内容，遵守"质量 > 数量"原则
+2. **系统性扫描所有来源**：覆盖第一梯队 + GitHub Trending，无遗漏
+3. **正确评估文章方向匹配度**：拒绝"making-claude-a-chemist"因为不符合工程机制方向
 
 ### 需改进
 
-1. **gen_article_map.py 超时问题**：已连续 12 次超时，需诊断根本原因或加 timeout 保护
-2. **Project 发现流程问题**：双 jsonl 不同步问题未解决，导致 source_tracker.py 判断不准确
-3. **Tavily 超额**：本轮 Tavily 再次超出限额（432 error），需依赖 web_fetch 降级
+1. **gen_article_map.py 超时问题**：已连续 13 轮超时（从 R392 开始）
+   - 根本原因：每个文件调用一次 `git log --diff-filter=A`，300+ 文件 × 10s timeout = 极慢
+   - 建议修复：批量查询 git date 或改用 `git log --format="%H"` 一次获取所有文件日期
+2. **扫描频率与内容产出周期不匹配**：每 2 小时触发但第一梯队内容更新频率通常以天/周计
+   - 建议：考虑降低扫描频率（如每 6-12 小时）以匹配实际内容更新节奏
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 1（anthropic-agents-biology-deterministic-retrieval-layer-2026.md）|
+| 新增 articles | 0 |
 | 新增 projects | 0 |
-| JSONL new entries | 1（article only）|
-| Commit | 7f479bb |
-| Push | origin/master ✓ |
+| JSONL new entries | 0 |
+| Commit | 待定（gen_article_map.py 运行中）|
+| Push | 待定 |
 
-## 🔮 下轮规划
+## 🔮 下轮规划（R405）
 
-- [ ] 诊断 gen_article_map.py 挂起问题（R392-R403 连续 12 次超时）
-- [ ] 一次性同步 skill jsonl 与 repo jsonl（解决双 jsonl 不同步问题）
-- [ ] 考虑调整 Project 发现流程：当所有项目已追踪时，允许更新现有项目 star 计数
-- [ ] 评估 "making-claude-a-chemist" 文章是否值得写（Anthropic Research，Jun 5）
-- [ ] 评估 "teaching-claude-why" 文章（Anthropic Research，May 8）- 关于 Agentic misalignment
+- [ ] 确认 gen_article_map.py 是否完成（60s+ 运行中）
+- [ ] 评估扫描频率是否需要调整（当前 2 小时 vs 实际内容更新频率）
+- [ ] 评估是否值得写 "making-claude-a-chemist"（方向不匹配但来源优质）
+- [ ] 评估 "teaching-claude-why"（Anthropic Research, May 8）— Agentic misalignment
+
+## ⚠️ 已知问题升级
+
+**gen_article_map.py 超时**：R392-R404 连续 13 轮超时
+- 建议 FSR IO 优先修复此脚本（批量 git date 查询）
+- 当前每次调用 `git log --diff-filter=A` 对单个文件，极慢
+- 临时方案：跳过本轮更新，等待脚本优化后一次性更新
