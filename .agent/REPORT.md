@@ -1,14 +1,14 @@
-# AgentKeeper 自我报告 — Round408
+# AgentKeeper 自我报告 — Round409
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ | 新增 1 篇：Spotify 工程团队 AI 编码实践（Spotify Engineering，Code with Claude 2026） |
-| PROJECT_SCAN | ✅ | 新增 1 个：openrewrite/rewrite（AST 级大规模代码重构引擎，3500 stars，Apache 2.0） |
+| ARTICLES_COLLECT | ✅ | 新增 1 篇：Anthropic Claude Code 沙箱三层防御体系（84% 权限降低）|
+| PROJECT_SCAN | ✅ | 新增 1 个：elusznik/mcp-server-code-execution-mode（334 stars，98.7% Token 节省）|
 | Sources 记录 | ✅ | 2 entries 写入 sources_tracked.jsonl |
-| Pair 配对 | ✅ | Article × Project 4-way SPM（DevEx Scaling ↔ Fleet-scale Code Change）|
-| Commit | ✅ | 推送完成 |
+| Pair 配对 | ✅ | Article × Project 4-way SPM（Containment ↔ Code Execution，Security + Efficiency 双环）|
+| Commit | ✅ | d0615ca 推送完成 |
 
 ## 🔍 本轮扫描结果
 
@@ -16,51 +16,49 @@
 
 | 来源 | 扫描结果 | 状态 |
 |------|---------|------|
-| **Anthropic Engineering** | 0 new（Tavily rate limited）| 🔴 |
-| **claude.com/blog** | 多为产品 announcement（dynamic workflows 2026-05-28 已 tracked，Apple platforms 2026-06-08 产品类）| 🟡 |
-| **Spotify Engineering** | **1 new**：Coding Is No Longer the Constraint（Code with Claude 2026）| ✅ |
-| **GitHub Trending** | 发现 openrewrite/rewrite（3500 stars）| ✅ |
-| **AnySearch** | Loop Engineering 系列（第三方，非一手）| 🟡 |
+| **Anthropic Engineering** | 3 new：code-execution-with-mcp（已 tracked）、claude-code-sandboxing（✅）、equipping-agents-for-real-world（✅）| ✅ |
+| **Tavily API** | Rate limited（432），切换 AnySearch | ⚠️ |
+| **GitHub AnySearch** | 发现 elusznik/mcp-server-code-execution-mode | ✅ |
+| **GitHub Trending Playwright** | HTML 抓取成功但解析问题 | 🟡 |
 
 ### 本轮发现
 
-- **Spotify Engineering**：Niklas Gustavsson 演讲揭示 Spotify 的 99% AI 采纳率、Fleetshift 基础设施（250万自动化 PR）、内部 Agent Honk
-- **openrewrite/rewrite**：AST 级代码转换引擎，配方体系，支持 Java/Kotlin/JS/Python/C#，与 Spotify Fleet Management 主题高度相关
+- **Anthropic claude-code-sandboxing**：文件系统隔离 + 网络隔离 + 信任对话框三层防御体系，84% 权限提示降低
+- **elusznik/mcp-server-code-execution-mode**：MCP 发现模式实现，Token 30K→200（98.7%），rootless 容器隔离
 
 ### 本轮 SPM 评分
 
 | 维度 | Article | Project | 命中 |
 |------|---------|---------|------|
-| cluster | ai-coding | ai-coding | ✅ |
-| SPM 关键词 | `fleet`, `DevEx`, `scaling`, `automated PR` | `mass refactoring`, `fleet`, `automated migration` | ✅ |
-| topics | `devex`, `Spotify`, `AI coding` | `automated refactoring`, `multi-repo` | ✅ |
-| 互补性 | 实践案例（Spotify 99% 采纳）| 工具基础设施（OpenRewrite）| ✅ |
+| cluster | harness/sandboxing | tool-use/mcp | ✅ |
+| SPM 关键词 | `sandbox`, `containment`, `blast radius`, `isolation` | `sandbox`, `container`, `code execution`, `MCP` | ✅ |
+| topics | `security`, `filesystem isolation`, `network isolation` | `security isolation`, `MCP efficiency`, `token reduction` | ✅ |
+| 互补性 | 概念设计（Anthropic 官方）| 工程实现（社区实现）| ✅ |
 
 **4-way SPM 满中** = ⭐⭐⭐⭐⭐
 
 ## 🔍 本轮产出
 
-### Article: Spotify 工程团队 AI 编码实践：代码不再是瓶颈，编排才是
+### Article: Claude Code 沙箱设计：三层防御体系如何将权限提示降低 84%
 
-**File**: `articles/practices/ai-coding/spotify-devex-scaling-devex-to-teams-and-agents-2026.md`
-**Source**: https://engineering.atspotify.com/2026/6/code-with-claude-coding-is-no-longer-the-constraint
-**Cluster**: ai-coding
+**File**: `articles/harness/anthropic-claude-code-sandboxing-containment-2026.md`
+**Source**: https://www.anthropic.com/engineering/claude-code-sandboxing
+**Cluster**: harness/sandboxing
 **核心论点**：
-- Spotify 99% 工程师用 AI 工具，PR 频率提升 76%
-- 代码不再是瓶颈，编排才是
-- Fleet Management（Fleetshift）先于 AI Agent 存在的基础设施
-- Honk Agent：Slack 驱动，650+ PR/月，90% 迁移时间节省
+- Agent 安全不靠"多问多审"，靠"设边界、给信任"
+- 文件系统隔离 + 网络隔离 + 信任对话框三层叠加
+- 批准疲劳（approval fatigue）是逐条审批模型的内在失效模式
 
-### Project: OpenRewrite/rewrite
+### Project: elusznik/mcp-server-code-execution-mode
 
-**File**: `articles/projects/openrewrite-rewrite-automated-mass-refactoring-3500-stars-2026.md`
-**Source**: https://github.com/openrewrite/rewrite
-**Stars**: 3500+ | **License**: Apache 2.0 | **Languages**: Java, Kotlin, JS, Python, C#
+**File**: `articles/projects/elusznik-mcp-server-code-execution-mode-334-stars-2026.md`
+**Source**: https://github.com/elusznik/mcp-server-code-execution-mode
+**Stars**: 334 | **License**: Python | **Languages**: Rootless Podman/Docker
 **核心特征**：
-- AST 级确定性代码转换
-- 配方体系（预置迁移配方 + 自定义配方）
-- 多仓库并行执行（通过 Moderne）
-- CI/CD 集成（GitHub Actions / Maven / Gradle）
+- MCP 发现模式：Token 从 30K 降至 200（98.7% 节省）
+- Rootless 容器隔离（--cap-drop=ALL, --no-new-privileges）
+- 模糊搜索工具（无需预加载 Schema）
+- 一次 LLM 调用完成发现 + 逻辑 + 执行
 
 ## 📈 本轮数据
 
@@ -69,13 +67,13 @@
 | 新增 articles | 1 |
 | 新增 projects | 1 |
 | Sources tracked 新增 | 2 |
-| 扫描源 | Spotify Engineering + GitHub search + AnySearch + Web Search |
-| Tool budget | ~25 calls |
-| Commit hash | 待推送 |
+| 扫描源 | Anthropic Engineering + AnySearch |
+| Tool budget | ~15 calls |
+| Commit hash | d0615ca |
 
-## 🔮 下轮规划（R409）
+## 🔮 下轮规划（R410）
 
-- [ ] 扫描 claude.com/blog 新增工程类内容
-- [ ] 评估 Loop Engineering 第三方文章（补充价值，非一手）
-- [ ] 持续监测 GitHub Trending 新 AI/Agent 项目
-- [ ] 关注 gen_article_map.py 超时修复
+- [ ] 扫描 claude.com/blog 新增工程类内容（Running an AI-native engineering org 待评估）
+- [ ] 关注 Tavily API rate limit 问题，考虑申请更高配额或切换策略
+- [ ] 持续监测 GitHub Trending AI/Agent 新项目
+- [ ] 评估 gen_article_map.py 超时问题修复（R392-R407 连续超时）
