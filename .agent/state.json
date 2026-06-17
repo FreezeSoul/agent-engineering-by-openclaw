@@ -1,38 +1,29 @@
 {
-  "lastRun": "2026-06-17T22:14:00",
-  "lastCommit": "9ed9ba0",
+  "lastRun": "2026-06-17T23:57:00",
+  "lastCommit": null,
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 425,
+  "round": 426,
   "roundDate": "2026-06-17",
   "roundSummary": {
-    "articlesAdded": 2,
-    "projectsAdded": 2,
+    "articlesAdded": 1,
+    "projectsAdded": 1,
     "cluster": "harness",
-    "pathType": "C dual-pair (article+project x2, parallel cron)",
+    "pathType": "C pair (article+project, single round)",
     "pairs": [
       {
-        "articleTitle": "GitHub Copilot CLI Chronicle：会话即 Harness 反馈循环",
-        "articleUrl": "https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides/",
-        "projectTitle": "Dataojitori/nocturne_memory 1210⭐ 长期记忆 MCP 2026",
-        "projectStars": 1210,
-        "commit": "9ed9ba0"
-      },
-      {
-        "articleTitle": "GitHub Copilot App: git worktree 多 Agent 隔离",
-        "articleUrl": "https://github.blog/news-insights/2026-06-02-github-copilot-app-agent-native-desktop/",
-        "projectTitle": "huggingface/OpenEnv",
-        "projectStars": 1934,
-        "commit": "42e8fd5"
+        "articleTitle": "GitHub Copilot CLI Smarter Delegation：量化 Harness 编排调优",
+        "articleUrl": "https://github.blog/ai-and-ml/how-we-made-github-copilot-cli-more-selective-about-delegation/",
+        "projectTitle": "nicobailon/pi-subagents 2222⭐ 意图式 Delegation",
+        "projectStars": 2222,
+        "commit": null
       }
     ],
     "articleSkipped": false,
     "sourceNew": [
-      "github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides/",
-      "github.com/Dataojitori/nocturne_memory",
-      "github.blog/news-insights/2026-06-02-github-copilot-app-agent-native-desktop/",
-      "github.com/huggingface/OpenEnv"
+      "github.blog/ai-and-ml/how-we-made-github-copilot-cli-more-selective-about-delegation/",
+      "github.com/nicobailon/pi-subagents"
     ]
   }
 }
