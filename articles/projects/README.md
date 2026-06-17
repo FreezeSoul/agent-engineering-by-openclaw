@@ -1,5 +1,7 @@
 - **[JuliusBrussee/caveman](./juliusbrussee-caveman-token-compression-skill-72k-stars-2026.md)** — 72,000+ ⭐，JavaScript，MIT，Claude Code Token 压缩技能（65% output tokens 节省 + 100% 技术准确性）+ Brain/Mouth 分离原则（thinking vs output tokens）+ 四档压缩级别（lite/full/ultra/wenyan）+ caveman-shrink MCP 中间件（工具描述压缩）+ cavecrew 子 Agent（60% fewer tokens）+ 学术支撑（arXiv:2604.00025）+ 与 Token Efficiency 工程实践形成「方法论 → 开源实现」闭环，**R420 本文新增**
 
+- **[pewdiepie-archdaemon/Odysseus](./pewdiepie-archdaemon-odysseus-72k-stars-self-hosted-ai-workspace-2026.md)** — 72,000+ ⭐，Python + JavaScript，自托管 AI 工作区（数据完全本地）+ 任意 AI 端点支持（Ollama/API/自建）+ 19 天冲到 72K 星标的增长奇迹 + Bytebase 团队维护 + 与 Agent 数据主权实践形成「隐私优先 ↔ 本地运行」完整闭环，**R421 本文新增**
+
 - **[TencentCloud/CubeSandbox](./tencentcloud-cubesandbox-tired-sandbox-ai-agents-6343-stars-2026.md)** — 6,343 ⭐，Rust，Apache 2.0，**CNCF Landscape**，三层隔离架构（Process / gVisor / Firecracker）+ 60ms 冷启动 + <5MB 内存开销 + E2B SDK 兼容 + CubeCoW 快照引擎（事件级快照/即时克隆/任意回滚）+ CubeEgress 出口网关（凭据注入/域名过滤/访问审计）+ 与 Wayfair ML Research Article（../infrastructure/wayfair-ml-research-agentic-experimentation-loop-2026.md）形成「委托式实验循环 ↔ 硬件级安全执行」完整闭环，**R419 本文新增**
 
 - **[hoangnb24/repository-harness](./hoangnb24-repository-harness-agent-workspace-790-stars-2026.md)** — 790 ⭐，Rust，MIT，多 Agent 工作区 Harness（Claude Code / Codex / Cursor 统一操作层）+ AGENTS.md shim + Feature Intake 流程 + Rust CLI 工具注册 + Story Packet + 验证矩阵 + 决策记录 + 与 Cursor Agent Best Practices Article（..//practices/ai-coding/cursor-agent-best-practices-harness-engineering-2026.md）形成「方法论 → 工程实现」完整闭环，**本文新增**

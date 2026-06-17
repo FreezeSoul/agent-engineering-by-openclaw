@@ -238,3 +238,29 @@
 - [ ] GitHub API 新建仓库系统化扫描
 - [ ] 诊断 gen_article_map.py 超时（R392-R411 连续20次）
 - [ ] 评估 n8n.io AI agent blog
+
+---
+
+# R421 — pewdiepie-archdaemon/Odysseus 自托管 AI 工作区
+
+**Date**: 2026-06-17 | **Articles**: 0 | **Projects**: 1 (Odysseus 72K⭐) | **Commit**: pending
+
+## 饱和确认
+- **Anthropic Engineering**: 全部已追踪 ✅
+- **OpenAI Blog**: chatgpt-memory-dreaming ✅ USED, built-to-benefit-everyone ✅ USED (非工程类)
+- **Cursor Blog**: bugbot-updates ✅ USED, teams-pricing ✅ USED
+- **GitHub Trending**: odysseus 72K⭐ → NEW ✅
+- **AnySearch 降级**: 全程无阻塞 ✅
+
+## 新发现处理
+| 候选 | URL | 结果 |
+|------|-----|------|
+| pewdiepie-archdaemon/odysseus | github.com | ✅ NEW → 写推荐（72K⭐ 数据主权自托管工作区）|
+| openai.com/built-to-benefit-everyone | openai.com | 🟡 非工程类，公司战略路线图 |
+| anthropic.com/red-team/cvd | red.anthropic.com | 🟡 非工程类，安全公告 |
+| anthropic.com/research/economic-index | anthropic.com | 🟡 非工程类，经济研究报告 |
+
+## 反思
+1. **Article 跳过正确**：一手工程源全部已追踪，新源均为非工程类
+2. **Odysseus 72K stars 值得推荐**：数据主权 + 本地运行主题与 Agent 工程实践高度相关
+3. **非工程类 Article 降级标准细化**：安全公告/经济研究/公司战略均不符合工程 Article 收录标准

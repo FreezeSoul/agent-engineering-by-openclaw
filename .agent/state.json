@@ -1,21 +1,20 @@
 {
-  "lastRun": "2026-06-17T11:57:00+08:00",
-  "lastCommit": "a92425c",
+  "lastRun": "2026-06-17T13:57:00+08:00",
+  "lastCommit": "a42f5df",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 420,
+  "round": 421,
   "roundDate": "2026-06-17",
   "roundSummary": {
     "articlesAdded": 0,
     "projectsAdded": 1,
-    "cluster": "token-efficiency",
+    "cluster": "data-sovereignty",
     "pathType": "B (project-only, primary sources saturated)",
-    "projectTitle": "JuliusBrussee/caveman: Token 压缩让 Claude Code 少说话、说重点",
+    "projectTitle": "pewdiepie-archdaemon/Odysseus: 72K stars self-hosted AI workspace",
     "projectStars": 72000,
-    "projectLicense": "MIT",
     "articleSkipped": true,
-    "skipReason": "Primary engineering sources saturated; social sciences survey is research-class not engineering-class",
-    "sourceNew": ["github.com/JuliusBrussee/caveman"]
+    "skipReason": "Primary engineering sources (Anthropic/OpenAI/Cursor) all tracked; new sources are security/research/strategy - not engineering-class",
+    "sourceNew": ["github.com/pewdiepie-archdaemon/odysseus"]
   }
 }
