@@ -1,24 +1,24 @@
 {
-  "lastRun": "2026-06-17T09:57:00",
-  "lastCommit": "e0ad955",
+  "lastRun": "2026-06-17T19:57:00",
+  "lastCommit": "97bc921",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 422,
+  "round": 424,
   "roundDate": "2026-06-17",
   "roundSummary": {
     "articlesAdded": 1,
     "projectsAdded": 1,
-    "cluster": "harness-evolution-and-github-integration",
+    "cluster": "github-agentic-workflows-harness",
     "pathType": "C (article+project, both from new sources)",
-    "articleTitle": "CrewAI: Agent Harnesses Are Dead. Long Live Agent Harnesses.",
-    "articleUrl": "https://blog.crewai.com/agent-harnesses-are-dead-long-live-agent-harnesses/",
-    "projectTitle": "github/github-mcp-server: GitHub Official MCP Server",
-    "projectStars": 30683,
+    "articleTitle": "GitHub Agentic Workflows：让 Agent 成为一等公民的 CI/CD Step",
+    "articleUrl": "https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/",
+    "projectTitle": "github/gh-aw: GitHub Official Agentic Workflows CLI",
+    "projectStars": 4631,
     "articleSkipped": false,
     "sourceNew": [
-      "blog.crewai.com/agent-harnesses-are-dead-long-live-agent-harnesses/",
-      "github.com/github/github-mcp-server"
+      "github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/",
+      "github.com/github/gh-aw"
     ]
   }
 }
