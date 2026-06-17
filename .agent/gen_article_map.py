@@ -28,16 +28,30 @@ def get_all_file_dates() -> dict:
         )
         if result.returncode == 0:
             lines = result.stdout.strip().split('\n')
-            # Format is alternating: date, filename, date, filename, ...
+            # Format from `git log --diff-filter=A --format=%ai --name-only`:
+            #   date_line (e.g. "2026-06-17 10:07:14 +0800")
+            #   blank line
+            #   filename_line(s) (one or more .md files, each on own line)
+            #   ... repeats for each commit
             i = 0
-            while i < len(lines) - 1:
+            while i < len(lines):
                 date_line = lines[i].strip()
-                filename_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
-                if date_line and filename_line and '/' in filename_line and filename_line.endswith('.md'):
-                    # Extract just the date part (first 10 chars: YYYY-MM-DD)
-                    date_str = date_line.split()[0]
-                    date_map[filename_line] = date_str
-                i += 2
+                # Date lines start with a digit (year)
+                if date_line and date_line[0].isdigit():
+                    date_str = date_line.split()[0]  # "YYYY-MM-DD"
+                    i += 1
+                    while i < len(lines):
+                        filename_line = lines[i].strip()
+                        if not filename_line:  # skip blank lines
+                            i += 1
+                            continue
+                        if filename_line[0].isdigit():  # next date line
+                            break
+                        if '/' in filename_line and filename_line.endswith('.md'):
+                            date_map[filename_line] = date_str
+                        i += 1
+                else:
+                    i += 1
     except Exception as e:
         print(f"Warning: git log failed: {e}")
     return date_map
