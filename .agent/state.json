@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-06-18T04:30:00",
-  "lastCommit": "e6e835e7b58d4ddb9d3f5e8f5a8c6b1d4e3a5b9c",
+  "lastRun": "2026-06-18T05:57:00",
+  "lastCommit": "b5a1301",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
@@ -13,7 +13,7 @@
     "pathType": "Path A (3-condition validation: filter output + cluster 0->1 + 4-way SPM)",
     "pairs": [
       {
-        "articleTitle": "Anthropic 内部 CLUE 平台：把 Bitter Lesson 应用到 SOC",
+        "articleTitle": "Anthropic \u5185\u90e8 CLUE \u5e73\u53f0\uff1a\u628a Bitter Lesson \u5e94\u7528\u5230 SOC",
         "articleUrl": "https://claude.com/blog/how-anthropic-uses-claude-cybersecurity",
         "projectTitle": "mukul975/Anthropic-Cybersecurity-Skills",
         "projectStars": 16125,
