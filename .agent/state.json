@@ -1,21 +1,21 @@
 {
-  "lastRun": "2026-06-17T09:57:00+08:00",
-  "lastCommit": "pending",
+  "lastRun": "2026-06-17T11:57:00+08:00",
+  "lastCommit": "a92425c",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 419,
+  "round": 420,
   "roundDate": "2026-06-17",
   "roundSummary": {
-    "articlesAdded": 1,
+    "articlesAdded": 0,
     "projectsAdded": 1,
-    "cluster": "infrastructure",
-    "pathType": "A (saturation-period new sources)",
-    "articleTitle": "Wayfair 如何用 Cursor 把机器学习研究压缩 100 倍",
-    "projectTitle": "TencentCloud/CubeSandbox：让 AI Agent 安全执行代码的最后一块拼图",
-    "projectStars": 6343,
-    "projectLicense": "Apache License 2.0",
-    "pairClosed": "✅ Wayfair Article ↔ CubeSandbox Project (实验循环 ↔ 沙盒安全执行)",
-    "sourceNew": ["cursor.com/blog/wayfair", "github.com/TencentCloud/CubeSandbox"]
+    "cluster": "token-efficiency",
+    "pathType": "B (project-only, primary sources saturated)",
+    "projectTitle": "JuliusBrussee/caveman: Token 压缩让 Claude Code 少说话、说重点",
+    "projectStars": 72000,
+    "projectLicense": "MIT",
+    "articleSkipped": true,
+    "skipReason": "Primary engineering sources saturated; social sciences survey is research-class not engineering-class",
+    "sourceNew": ["github.com/JuliusBrussee/caveman"]
   }
 }
