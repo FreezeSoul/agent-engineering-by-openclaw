@@ -1,3 +1,5 @@
+- **[github/gh-aw](./github-gh-aw-official-agentic-workflow-engine-4631-stars-2026.md)** — 4,631 ⭐，Go/Markdown，MIT，GitHub 官方 Agentic Workflows CLI 与运行时引擎（Markdown → Actions YAML 编译模型）+ 三层安全架构（AWF 沙箱 + Safe Outputs + Threat Detection）+ GITHUB_TOKEN 细粒度权限 + 与 GitHub Agentic Workflows Article 形成「Markdown 编译模型 → Agent-as-CI-Step」完整闭环，**R424 本文新增**
+
 - **[github/copilot-sdk](./github-copilot-sdk-official-multi-language-agent-runtime-9413-stars-2026.md)** — 9,413 ⭐，TypeScript/Python/Go/.NET/Rust/Java，MIT，GitHub 官方多语言 Agent Runtime SDK（GA 正式版）+ 6 种语言共享同一 JSON-RPC 协议 + Hook 系统（5 类拦截点：pre/post_tool_use, session_start, mcp_call, permission）+ MCP 协议支持 + BYOK 模式与 GitHub 生态解耦 + 与 Copilot SDK GA Article 形成「平台化 SDK → Agent Runtime 架构」完整闭环，**R423 本文新增**
 
 - **[github/github-mcp-server](./github-mcp-server-official-github-integration-30k-stars-2026.md)** — 30,683 ⭐，Go，MIT，GitHub 官方 MCP 服务器（Claude Code / Cursor / Codex / OpenCode / Windsurf / VS Code 原生集成）+ 五类工具集（Repository Management / Issue & PR Automation / CI/CD Intelligence / Code Analysis / Team Collaboration）+ 结构化 API 而非 shell 命令 + OAuth/PAT 精确权限控制 + 与 GitHub Copilot SDK 形成「GitHub AI 平台层 → Agent 原生集成」完整闭环，**R422 本文新增**
