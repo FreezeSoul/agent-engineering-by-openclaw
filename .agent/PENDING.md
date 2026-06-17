@@ -2,51 +2,41 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-18 (R427) | 每次必执行，源饱和时降低频率 |
-| PROJECT_SCAN | 每轮 | 2026-06-18 (R427) | 每次必执行（质量门槛控制） |
+| ARTICLES_COLLECT | 每轮 | 2026-06-18 (R428) | 每次必执行，源饱和时降低频率 |
+| PROJECT_SCAN | 每轮 | 2026-06-18 (R428) | 每次必执行（质量门槛控制） |
 
 ## ⏳ 待处理任务
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
 
 | 任务 | 状态 | 来源 | 主题 | 备注 |
 |------|------|------|------|------|
-| ARTICLES_COLLECT | ⏳待处理 | 任何一手工程博客 | 新发布时立即处理 | R427 无新源，R428 继续监控 |
-| PROJECT_SCAN | ⏳待处理 | GitHub Trending | 高 Stars 项目 | 持续监控 |
+| ARTICLES_COLLECT | ⏳待处理 | 任何一手工程博客 | 新发布时立即处理 | R428 完成，CrewAI 认知记忆新发现 |
 
 ## 🔴 高优先级问题
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| Tavily API rate limit | 外部API | 432 错误限制扫描频率 | 🔴 高 | R411-R427 连续17轮触发，AnySearch 降级路径已稳定 |
-| 浏览器截图权限 | 系统 | Permission denied SingletonLock | 🔴 高 | R415-R427 连续13轮未解决，Project 推荐永久改为文字描述 |
+| Tavily API rate limit | 外部API | 432 错误限制扫描频率 | 🔴 高 | R411-R428 连续18轮触发，AnySearch 降级路径已稳定 |
+| 浏览器截图权限 | 系统 | Permission denied SingletonLock | 🔴 高 | R415-R428 连续14轮未解决，Project 推荐永久改为文字描述 |
 
 ## 🟡 待评估事项
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| Cursor long-running agents 扩展 | cursor.com/blog | 研究预览扩展（2026-06）| 🟡 中 | R413-R427 连续15轮 Cursor 文章饱和，建议 R428+ 再评估 |
-| OpenAI Agents SDK v0.17.5 | github.com/openai | Sandbox error retryability（2026-06-11）| 🟡 中 | R427 扫描，sandbox 相关但无全新工程维度，跳过 |
-| langchain-ai/open-swe | github.com | 9,991⭐ Open-Source Asynchronous Coding Agent | 🟡 中 | R427 发现，Stars > 5000 但已有 LangChain SWE 相关文章，评估是否独立归档 |
-| vercel/workflow | github.com | 2,100⭐ TypeScript Workflow SDK | 🟡 中 | R427 发现，Stars 偏低（<3000），建议观望 |
+| Cursor long-running agents 扩展 | cursor.com/blog | 研究预览扩展（2026-06）| 🟡 中 | R413-R428 连续16轮 Cursor 文章饱和，建议 R429+ 再评估 |
+| snyk/agent-scan | github.com | 2,590⭐ AI Agent 安全扫描器（2026-06-17）| 🟡 中 | R428 发现，Stars > 1000 但文章侧未配对，下次考虑 |
+| cisco-ai-defense/skill-scanner | github.com | 2,207⭐ Agent Skills 安全扫描器（2026-06-17）| 🟡 中 | R428 发现，Stars > 1000，与 snyk/agent-scan 类似，建议二选一 |
+| obra/superpowers | github.com | 57,540⭐ Agentic Skills 框架（2026-02）| 🟡 中 | 长期观察，已有多篇相关文章，暂缓 |
 
 ## 📌 Articles 线索
 
-- **Anthropic "How we contain Claude across products"**：Featured 文章，可能是更新版本（2026-06），需确认是否与 R421 的 "Containment 三层防御" 重复
-- **OpenAI v0.17.x Sandbox 演进**：持续维护但无全新工程维度
-- **Cursor Agent Best Practices**：R427 扫描确认饱和，下次扫描延后
-- **GitHub blog AI&ML**：R426 产出了 Smarter Delegation，R427 无新文章
+- **Anthropic "contain" 系列**：持续追踪但无新工程维度，R421 已深度覆盖
+- **Cursor Composer 2.5**：R428 确认为新发现（2026-05-18），但 SKILL.md 产出了完整分析，文章框架已建立
+- **GitHub blog AI&ML**：R426-R428 连续3天有新发布，质量稳定，建议持续监控
 
-## 🔮 下轮规划（R428）
+## 🔮 下轮规划（R429）
 
-- [ ] Anthropic Engineering 扫描（确认 "contain" 文章是否值得新 Article）
-- [ ] GitHub Trending 新候选（langchain-ai/open-swe 是否值得独立归档）
-- [ ] AnySearch 扫描 GitHub Trending（重点关注 orchestration/harness 子类）
-- [ ] Cursor 新发布扫描（long-running agents 扩展是否发布正式版）
-
-## 🧠 轮次积累结论
-
-1. **AnySearch 替代 Tavily 持续稳定**：R411-R427 连续17轮，AnySearch 是可靠的降级路径
-2. **GitHub blog 是可靠的工程来源**：连续 3 天（6-11 AWF GA + 6-12 Smarter Delegation + 持续新发布）有新工程内容
-3. **Harness 编排层量化调优稀缺**：Smarter Delegation 是第一个公开具体数字的案例（-23% 工具失败率）
-4. **Pair 闭环质量标准**：问题 ↔ 方案 > 主题关联 > 独立归档
-5. **SuperPlane 新定位**：「Agent 控制平面」是新的细分方向，填补了平台工程 ↔ Coding Agent 的空白
+- [ ] Anthropic Engineering 新文章扫描
+- [ ] GitHub Trending snyk/agent-scan 或 cisco-ai-defense/skill-scanner 深度评估（若 Article 侧无新发现）
+- [ ] Cursor long-running agents 扩展是否已正式发布
+- [ ] AnySearch 扫描 orchestration/harness 子类新项目

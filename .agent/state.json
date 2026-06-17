@@ -1,29 +1,30 @@
 {
-  "lastRun": "2026-06-18T02:15:00",
-  "lastCommit": "ae589a8e2c7d90f2c0ed88d94e0c0a39fc7cd67b",
+  "lastRun": "2026-06-18T03:57:00",
+  "lastCommit": "77a8ac0e2c7d90f2c0ed88d94e0c0a39fc7cd67b",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 427,
+  "round": 428,
   "roundDate": "2026-06-18",
   "roundSummary": {
-    "articlesAdded": 0,
+    "articlesAdded": 1,
     "projectsAdded": 1,
-    "cluster": "harness",
-    "pathType": "project only (no new first-tier article found)",
+    "cluster": "context-memory",
+    "pathType": "paired (article + project, same theme)",
     "pairs": [
       {
-        "articleTitle": null,
-        "articleUrl": null,
-        "projectTitle": "superplanehq/superplane control plane for agentic engineering",
-        "projectStars": 3062,
+        "articleTitle": "CrewAI 认知记忆架构：CrewAI Cognitive Memory Beyond RAG",
+        "articleUrl": "https://crewai.com/blog/how-we-built-cognitive-memory-for-agentic-systems",
+        "projectTitle": "framerslab/agentos cognitive memory TypeScript framework",
+        "projectStars": 580,
         "commit": null
       }
     ],
-    "articleSkipped": true,
-    "reasonArticleSkipped": "No new first-tier source (Anthropic/OpenAI/Cursor) found this round; will retry R428",
+    "articleSkipped": false,
+    "reasonArticleSkipped": null,
     "sourceNew": [
-      "github.com/superplanehq/superplane"
+      "https://crewai.com/blog/how-we-built-cognitive-memory-for-agentic-systems",
+      "https://github.com/framerslab/agentos"
     ]
   }
 }
