@@ -1,6 +1,6 @@
-# R421 报告：pewdiepie-archdaemon/Odysseus 自托管 AI 工作区
+# R422 报告：Harness 进化论 + GitHub MCP Server
 
-**Round**: 421
+**Round**: 422
 **Date**: 2026-06-17
 **Commit**: pending
 
@@ -10,64 +10,76 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ 跳过 | 第一优先级源（Anthropic/OpenAI/Cursor）全部已追踪；新发现（Anthropic CVD Dashboard / Economic Index）为安全/研究类，非工程类 Article 收录范围 |
-| PROJECT_SCAN | ✅ 完成 | 发现 Odysseus 72K stars GitHub Trending 项目（NEW source），完整推荐文章已产出 |
+| ARTICLES_COLLECT | ✅ 完成 | CrewAI "Agent Harnesses Are Dead" Article，来源：blog.crewai.com（第一梯队），主题：Harness 工程进化 + Entangled Software 概念 |
+| PROJECT_SCAN | ✅ 完成 | github/github-mcp-server 推荐，30,683 Stars，GitHub 官方 MCP 服务器 |
 
 ---
 
 ## 🎯 本轮产出
 
-### Project: pewdiepie-archdaemon/Odysseus — 自托管 AI 工作区
+### Article: CrewAI — Agent Harnesses Are Dead. Long Live Agent Harnesses.
 
-- **文件**: `articles/projects/pewdiepie-archdaemon-odysseus-72k-stars-self-hosted-ai-workspace-2026.md`
-- **Stars**: 72,000+ ⭐（2026-05-31 发布，19 天达到 72K stars）
-- **License**: 未明确标注（Bytebase 团队维护）
-- **核心定位**: 自托管 AI 工作区，数据完全本地 + 任意 AI 端点支持
+- **文件**: `articles/fundamentals/crewai-agent-harnesses-dead-entangled-software-2026.md`
+- **来源**: blog.crewai.com（第一梯队）
+- **核心观点**: 
+  1. Harness 正在走 Frameworks 的老路——商品化只是时间问题
+  2. Model Providers 每个季度吸收更多技术栈
+  3. 真正的护城河在数据积累和产品-用户反馈飞轮
+  4. **Entangled Software** 概念：产品与用户双向适应，软件不再要求人适应工具，而是工具适应人
+- **Pair 闭环**: 与 github-mcp-server 形成「GitHub 平台层 → Agent 原生集成」主题关联
+
+### Project: github/github-mcp-server — GitHub 官方 MCP 服务器
+
+- **文件**: `articles/projects/github-mcp-server-official-github-integration-30k-stars-2026.md`
+- **Stars**: 30,683（2026-06-17）
+- **License**: MIT
+- **核心定位**: GitHub 官方 MCP 服务器，AI Agent 原生操作 GitHub（PR/Issues/Actions/Code）
 - **关键工程创新**:
-  - **数据主权架构**：SQLite 本地存储，数据不经过任何第三方服务器
-  - **端点无关设计**：支持 Ollama / OpenAI 兼容 API / Anthropic / 自建模型混用
-  - **隐私优先定位**：戳中 2026 年开发者对「代码不应该被平台学习」的集体诉求
-  - **快速增长验证**：72K stars / 9,237 forks，Bytebase 专业团队维护，进入生产可用状态
-- **Pair 闭环**: 与 Agent 数据主权工程实践（本地运行 + 隐私保护）形成「需求层 → 基础设施层」闭环
-- **独立归档理由**: Stars > 5000，无关联 Article，直接独立归档
+  - **官方维护**: GitHub 团队直接维护，不是社区项目
+  - **MCP 协议**: 开放标准，支持 Claude Code/Cursor/Codex/OpenCode/Windsurf 等所有主流 AI Coding 工具
+  - **结构化 API**: 替代 gh CLI shell 命令，AI 原生返回 JSON 而非解析 stdout
+  - **五大工具集**: Repository Management / Issue & PR Automation / CI/CD Intelligence / Code Analysis / Team Collaboration
+- **Pair 闭环**: 与 CrewAI Article 形成「Harness 进化论 → 平台层 MCP 实现」主题关联
 
 ---
 
 ## 🔍 执行流程
 
-### STEP 1: 信息源扫描
+### 信息源扫描
 
-**AnySearch 批量扫描**:
-- `site:anthropic.com/engineering 2026` → managed-agents ✅ USED (R419)
-- `site:cursor.com/blog 2026` → bugbot-updates ✅ USED (R420), teams-pricing ✅ USED (R420)
-- `site:openai.com/blog 2026` → chatgpt-memory-dreaming ✅ USED (R420), built-to-benefit-everyone ✅ USED (R421 本次发现)
-- AnySearch batch → opencode ✅ USED (历史), odysseus ✅ NEW (R421)
+**第一批次（Anthropic/OpenAI/Cursor）**:
+- Anthropic Engineering → 无新工程文章（managed-agents 已追踪）
+- OpenAI Blog → skills-agents-sdk 已写（2026-05-25），skills-shell-tips 已追踪
+- Cursor Blog → bugbot-updates / cursor-3 已追踪
 
-**GitHub Trending 新发现**:
-- `pewdiepie-archdaemon/odysseus` → 72K stars，NEW source，未追踪
+**第二批次（CrewAI/Replit）**:
+- `blog.crewai.com/agent-harnesses-are-dead-long-live-agent-harnesses/` → ✅ NEW（R422）
+- `replit.com/blog/introducing-agent-4-built-for-creativity` → NEW但产品向，非工程深度
+
+**GitHub Trending**:
+- github/github-mcp-server → ✅ NEW（R422），30,683 Stars
 
 ### 防重检查
 
 | 源 | 检查结果 |
 |---|---------|
-| github.com/pewdiepie-archdaemon/odysseus | ✅ NEW，首次追踪 |
-| github.com/anomalyco/opencode | ❌ USED (历史，已推荐两次) |
-| anthropic.com/red-team/cvd | ✅ NEW，但安全公告类非工程类 Article |
-| anthropic.com/research/economic-index | ✅ NEW，但研究调查类非工程类 Article |
+| blog.crewai.com/agent-harnesses-are-dead | ✅ NEW，首次追踪 |
+| github.com/github/github-mcp-server | ✅ NEW，首次追踪 |
+| anthropic.com/engineering/managed-agents | ❌ USED (历史) |
+| developers.openai.com/blog/skills-agents-sdk | ❌ USED (2026-05-25 Article) |
 
 ### 决策逻辑
 
-**Article 跳过原因**:
-1. 所有一手工程来源（Anthropic Engineering / OpenAI Blog / Cursor Blog）均已追踪
-2. 新发现的 Anthropic CVD Dashboard 是安全公告类，不符合工程 Article 收录范围
-3. Economic Index 是研究调查类（survey），不符合 SKILL 收录标准
-4. built-to-benefit-everyone-our-plan 是公司战略/研究路线图，非工程实践
+**Article 产出**:
+1. CrewAI 是第一梯队来源
+2. Harness 进化主题与仓库的 harness 工程重点高度相关
+3. Entangled Software 是行业内新兴概念，值得深度分析
+4. 与 github-mcp-server 形成主题关联
 
-**Project 产出逻辑**:
-1. Odysseus 72K stars >> Stars > 5000 独立归档门槛
-2. 数据主权 + 本地运行主题与 Agent 工程实践高度相关
-3. 72K stars 的快速增长有充分社区验证
-4. 为 Agent 开发者提供本地运行环境的基础设施参考
+**Project 产出**:
+1. 30,683 Stars >> 5000 独立归档门槛
+2. GitHub 官方 MCP 服务器，生态意义重大
+3. 与 CrewAI Article 的"GitHub 平台 AI 集成"主题形成闭环
 
 ---
 
@@ -75,28 +87,28 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 0（Article 跳过）|
-| 新增 projects | 1（Odysseus 72K⭐）|
-| Sources tracked 新增 | 1（odysseus GitHub） |
-| 扫描源批次 | AnySearch batch 1 → GitHub Trending batch 2 |
-| Tool calls | ~18 |
-| commits | 1（pending）|
-| Title length | Project: 18 单位 ≤ 30 ✅ |
-| gen_article_map.py | skip（R401+ 协议）|
+| 新增 articles | 1（CrewAI Harness Evolution）|
+| 新增 projects | 1（github-mcp-server）|
+| Sources tracked 新增 | 2 |
+| 扫描源批次 | 第一批次（饱和）→ CrewAI 第二批次（NEW）→ GitHub Trending（NEW） |
+| Tool calls | ~35 |
+| commits | pending |
+| Article title length | 23 单位 ≤ 30 ✅ |
+| Project title length | 18 单位 ≤ 30 ✅ |
 
 ---
 
-## 🔮 下轮规划（R422）
+## 🔮 下轮规划（R423）
 
 - [ ] Anthropic/OpenAI/Cursor 官方博客持续监控（新文章发布后优先处理）
 - [ ] GitHub Trending 新候选扫描（重点关注 >5000⭐ 无关联项目）
-- [ ] 监控 Odysseus 项目后续发展（Bytebase 接手后是否有重大更新）
-- [ ] 评估「数据主权」主题是否可以延伸出 Article（隐私合规的 Agent 工程实践）
+- [ ] 评估 Replit Agent 4 的 Design Canvas 创新是否值得 Article
+- [ ] 监控 GitHub Copilot SDK 正式版动态（可能产出 Article）
 
 ---
 
 ## 🧠 方法论沉淀
 
-1. **Article 降级标准细化**：安全公告（CVD）+ 经济研究（Economic Index）+ 公司战略（Built to Benefit Everyone）均为非工程类来源，应在 PENDING 中标注
-2. **Odysseus 作为「数据主权」类项目**：不是典型的 Agent 框架，但提供了本地 Agent 运行的基础设施，是 2026 年隐私优先趋势的代表
-3. **饱和期产出协议**：Article 跳过但 Project 仍可产出的情况——当发现 Stars > 5000 的高价值项目时，优先推荐
+1. **第二梯队来源激活条件**：当第一梯队无新工程文章时，主动扫描 CrewAI/Replit 等第一梯队来源
+2. **Pair 闭环质量**：Article + Project 需形成「主题关联」而非简单共现
+3. **Entangled Software 作为新维度**：CrewAI 文章引入的概念，可能成为 Agent 工程的新研究方向

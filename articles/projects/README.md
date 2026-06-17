@@ -1,3 +1,5 @@
+- **[github/github-mcp-server](./github-mcp-server-official-github-integration-30k-stars-2026.md)** — 30,683 ⭐，Go，MIT，GitHub 官方 MCP 服务器（Claude Code / Cursor / Codex / OpenCode / Windsurf / VS Code 原生集成）+ 五类工具集（Repository Management / Issue & PR Automation / CI/CD Intelligence / Code Analysis / Team Collaboration）+ 结构化 API 而非 shell 命令 + OAuth/PAT 精确权限控制 + 与 GitHub Copilot SDK 形成「GitHub AI 平台层 → Agent 原生集成」完整闭环，**R422 本文新增**
+
 - **[JuliusBrussee/caveman](./juliusbrussee-caveman-token-compression-skill-72k-stars-2026.md)** — 72,000+ ⭐，JavaScript，MIT，Claude Code Token 压缩技能（65% output tokens 节省 + 100% 技术准确性）+ Brain/Mouth 分离原则（thinking vs output tokens）+ 四档压缩级别（lite/full/ultra/wenyan）+ caveman-shrink MCP 中间件（工具描述压缩）+ cavecrew 子 Agent（60% fewer tokens）+ 学术支撑（arXiv:2604.00025）+ 与 Token Efficiency 工程实践形成「方法论 → 开源实现」闭环，**R420 本文新增**
 
 - **[pewdiepie-archdaemon/Odysseus](./pewdiepie-archdaemon-odysseus-72k-stars-self-hosted-ai-workspace-2026.md)** — 72,000+ ⭐，Python + JavaScript，自托管 AI 工作区（数据完全本地）+ 任意 AI 端点支持（Ollama/API/自建）+ 19 天冲到 72K 星标的增长奇迹 + Bytebase 团队维护 + 与 Agent 数据主权实践形成「隐私优先 ↔ 本地运行」完整闭环，**R421 本文新增**

@@ -1,20 +1,24 @@
 {
-  "lastRun": "2026-06-17T13:57:00+08:00",
-  "lastCommit": "a42f5df",
+  "lastRun": "2026-06-17T16:03:00+08:00",
+  "lastCommit": "74aeebb",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 421,
+  "round": 422,
   "roundDate": "2026-06-17",
   "roundSummary": {
-    "articlesAdded": 0,
+    "articlesAdded": 1,
     "projectsAdded": 1,
-    "cluster": "data-sovereignty",
-    "pathType": "B (project-only, primary sources saturated)",
-    "projectTitle": "pewdiepie-archdaemon/Odysseus: 72K stars self-hosted AI workspace",
-    "projectStars": 72000,
-    "articleSkipped": true,
-    "skipReason": "Primary engineering sources (Anthropic/OpenAI/Cursor) all tracked; new sources are security/research/strategy - not engineering-class",
-    "sourceNew": ["github.com/pewdiepie-archdaemon/odysseus"]
+    "cluster": "harness-evolution-and-github-integration",
+    "pathType": "C (article+project, both from new sources)",
+    "articleTitle": "CrewAI: Agent Harnesses Are Dead. Long Live Agent Harnesses.",
+    "articleUrl": "https://blog.crewai.com/agent-harnesses-are-dead-long-live-agent-harnesses/",
+    "projectTitle": "github/github-mcp-server: GitHub Official MCP Server",
+    "projectStars": 30683,
+    "articleSkipped": false,
+    "sourceNew": [
+      "blog.crewai.com/agent-harnesses-are-dead-long-live-agent-harnesses/",
+      "github.com/github/github-mcp-server"
+    ]
   }
 }
