@@ -1,43 +1,35 @@
 {
-  "lastRun": "2026-06-18T10:42:00",
-  "lastCommit": "1218c2c",
+  "lastRun": "2026-06-18T12:17:00",
+  "lastCommit": "e86f82a",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 432,
+  "round": 433,
   "roundDate": "2026-06-18",
   "roundSummary": {
     "articlesAdded": 1,
     "projectsAdded": 1,
-    "cluster": "practices",
+    "cluster": "enterprise",
     "skipReason": null,
     "pairs": [
       {
-        "articleTitle": "Anthropic 大代码库 Claude Code 五大扩展点 2026",
-        "articleSlug": "how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
-        "articleSource": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
-        "projectTitle": "jeremylongshore claude-code-plugins-skills marketplace 2026",
-        "projectRepo": "jeremylongshore/claude-code-plugins-plus-skills",
-        "projectStars": 2390,
+        "articleTitle": "Anthropic 财务团队 Claude 叙事完整性 2026",
+        "articleSlug": "how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers",
+        "articleSource": "https://claude.com/blog/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers",
+        "projectTitle": "ai-analyst-lab/ai-analyst Claude Code 数据分析工具包",
+        "projectRepo": "ai-analyst-lab/ai-analyst",
+        "projectStars": 252,
         "projectLicense": "MIT",
-        "pairLogic": "Article = Anthropic Applied AI 团队 5 扩展点框架 (CLAUDE.md/hooks/skills/plugins/MCP) + agent manager 角色 + DRI 最小可行版本 + 3-6 个月 harness review 周期 ↔ Project = 425 plugins + 2,810 skills + 200 agents 开源 marketplace 工程化身 + ccpi CLI package manager. 4-way SPM 满中 (Layer 1 cluster practices + Layer 2 5 关键词字面级 + Layer 3 claude-code/anthropic/mcp/plugin-marketplace topics 命中 + Layer 4 抽象↔实现强互补).",
+        "pairLogic": "Article = Anthropic 财务团队 Claude Cowork 工作流（board deck validation + monthly review + Excel/Sheets 分析 + narrative integrity）↔ Project = 18-agent pipeline 数据分析工具包（DAG-based parallel execution + 39 skills + 20 slash commands + PDF/HTML export）。两者互补：方法论层（叙事完整性框架）↔ 实现层（18-agent pipeline）。",
         "spmRating": "⭐⭐⭐⭐⭐"
       }
     ],
     "sourceNew": [
-      "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
-      "https://github.com/jeremylongshore/claude-code-plugins-plus-skills"
+      "https://claude.com/blog/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers",
+      "https://github.com/ai-analyst-lab/ai-analyst"
     ],
     "sourcesSkipped": [
-      "https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them (cluster overlap with R407 subagents framework, 23K body but cluster saturated)",
-      "https://claude.com/blog/cowork-plugins (785 chars body, too shallow for Article - R345 protocol)",
-      "https://claude.com/blog/evaluate-prompts (962 chars body, product announcement)",
-      "https://claude.com/blog/dispatch-and-computer-use (512 chars body, product announcement)",
-      "https://claude.com/blog/claude-for-enterprise (1966 chars, product launch announcement, no engineering depth)",
-      "https://claude.com/blog/building-ai-agents-for-the-enterprise (1781 chars, customer story broad, no specific mechanism)",
-      "https://claude.com/blog/cowork-plugins-across-enterprise (587 chars, product update)",
-      "https://claude.com/blog/cowork-plugins-finance (1474 chars, product update)",
-      "https://claude.com/blog/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork (1929 chars, guide launch)"
+      "https://claude.com/blog/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks (cluster overlap with R357/R401 non-technical adoption series, 17K body but cluster overlap > body length per R410 protocol)"
     ]
   }
 }
