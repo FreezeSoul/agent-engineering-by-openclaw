@@ -1,56 +1,55 @@
 {
-  "lastRun": "2026-06-18T22:30:00",
-  "lastCommit": "688ba95",
-  "status": "autonomous",
-  "version": "0.5.0",
-  "owner": "FreezeSoul",
-  "round": 439,
-  "roundDate": "2026-06-18",
-  "roundSummary": {
-    "articlesAdded": 1,
-    "projectsAdded": 1,
-    "cluster": "orchestration",
-    "pairPath": "Path A: New Article + New Project (4-way SPM ⭐⭐⭐⭐⭐)",
-    "pairs": [
-      {
-        "article": "Anthropic 多 Agent 决策框架 单 vs 多 2026",
-        "articleFile": "articles/orchestration/anthropic-multi-agent-decision-framework-when-not-2026.md",
-        "project": "jnMetaCode/agency-agents-zh 266 专家角色库 2026",
-        "projectFile": "articles/projects/jnmetacode-agency-agents-zh-266-roles-dag-orchestrator-15195-stars-2026.md",
-        "spmRating": "5-star (4-way SPM full hit)",
-        "layer1_cluster": "orchestration shared",
-        "layer2_keywords": "multi-agent / orchestrator / verification / decision / parallel",
-        "layer3_topics": "hermes-agent direct + claude-code/claude/cursor-rules indirect",
-        "layer4_complementarity": "Article=decision framework (when NOT); Project=implementation (266 roles + DAG)"
-      }
-    ],
-    "sourceNew": [
-      "claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them (Jan 23 2026, 21KB body)",
-      "github.com/jnMetaCode/agency-agents-zh (15,195⭐ MIT, hermes-agent topic)"
-    ],
-    "sourcesSkipped": [
-      "best-practices-for-computer-and-browser-use-with-claude (1.4KB body, R345 < 3000 chars threshold)",
-      "best-practices-for-getting-started-with-claude-cowork (low body content)",
-      "introducing-routines-in-claude-code (0.7KB body)",
-      "complete-guide-to-building-skills-for-claude (1.7KB body)",
-      "preview-review-and-merge-with-claude-code (0.7KB body)",
-      "anthropic.com/news/* (8 untracked, none engineering-relevant - partnerships/announcements)",
-      "cursor.com/blog/* (60 untracked, ~58 dedup hit existing articles, only 'increased-agent-usage' novel)",
-      "XiaomiMiMo/MiMo-Code (9716⭐) - README quality not yet evaluated"
-    ],
-    "externalConstraints": {
-      "anthropic_engineering": "24/24 articles tracked - still saturated",
-      "claude_com_blog_sitemap": "168 slugs / 135 untracked - R337 filter applied",
-      "anthropic_news": "8 untracked, none engineering-relevant",
-      "cursor_blog": "93 slugs / 60 untracked, most dedup-hits existing articles"
-    },
-    "keyFindings": [
-      "R337 filter pipeline (consumer + engineering keywords) applied to 135 untracked claude.com/blog slugs",
-      "R337 → R393 dedup → R345 body length triple-filter produced 1 candidate: building-multi-agent-systems-when-and-how-to-use-them (21KB body)",
-      "Article fills cluster sub-dimension: 'when NOT to use multi-agent' (philosophy layer, complements R407 tactical subagent decision framework)",
-      "Project discovered via GitHub API search: q=multi-agent+verification+OR+agent+orchestrator+stars:>=1000",
-      "Project 4-way SPM: hermes-agent topic direct hit (R367 #27) + cluster shared + 5 keywords match + dimension complementarity",
-      "jnMetaCode/agency-agents-zh is 'agency-agents upstream Chinese community version' - 266 roles + DAG orchestrator + 18 AI tools compat"
-    ]
-  }
+    "lastRun": "2026-06-19T00:10:00",
+    "lastCommit": "863027f",
+    "status": "autonomous",
+    "version": "0.5.0",
+    "owner": "FreezeSoul",
+    "round": 440,
+    "roundDate": "2026-06-19",
+    "roundSummary": {
+        "articlesAdded": 1,
+        "projectsAdded": 1,
+        "cluster": "harness/evaluation",
+        "pairPath": "Path A: New Article + New Project (4-way SPM ⭐⭐⭐⭐)",
+        "pairs": [
+            {
+                "article": "MiMo-Code Goal/Stop + Judge Model 自主 Agent 停止条件",
+                "articleFile": "articles/harness/mimo-code-goal-stop-judge-model-autonomous-harness-2026.md",
+                "project": "walkinglabs/learn-harness-engineering 8,807⭐ 课程",
+                "projectFile": "articles/projects/walkinglabs-learn-harness-engineering-course-8807-stars-2026.md",
+                "spmRating": "4-star (4-way SPM)",
+                "layer1_cluster": "harness/evaluation shared",
+                "layer2_keywords": "evaluator loop / checkpoint / stop condition / judge model / verification",
+                "layer3_topics": "harness engineering direct (both from same ecosystem)",
+                "layer4_complementarity": "Article=judge model mechanism deep-dive; Project=evaluator loop course resources + scaffold skill"
+            }
+        ],
+        "sourceNew": [
+            "github.com/XiaomiMiMo/MiMo-Code (9,736⭐ MIT) - judge model + checkpoint + goal/stop architecture",
+            "github.com/walkinglabs/learn-harness-engineering (8,807⭐ MIT) - 12 lectures + 6 projects harness engineering course"
+        ],
+        "sourcesSkipped": [
+            "addyosmani/agent-skills (62k⭐) - USED",
+            "karpathy/autoresearch (87k⭐) - USED",
+            "obra/superpowers (173k⭐) - USED",
+            "volcengine/OpenViking (25k⭐) - USED",
+            "esengine/DeepSeek-Reasonix (23k⭐) - USED",
+            "h4ckf0r0day/obscura (18k⭐) - USED",
+            "anthropic engineering - 24/24 tracked, still saturated",
+            "XiaomiMiMo/MiMo-Code - existing article from R360 (context-memory/three-time-scales-2026), new features (judge model, compose, dream/distill) warranted new article in harness cluster"
+        ],
+        "externalConstraints": {
+            "tavily_api": "432 rate limit - persistent across rounds, AnySearch as primary search path",
+            "anthropic_engineering": "24/24 articles tracked - still saturated",
+            "claude_com_blog_sitemap": "168 slugs / 135 untracked - R337 filter applied, still 1 high-quality candidate per round"
+        },
+        "keyFindings": [
+            "MiMo-Code Judge Model = Independent evaluator preventing optimistic stops - distinct from Anthropic GAN evaluator agent (judge is separate model instance, not another agent)",
+            "MiMo-Code checkpoint + context reconstruction = cross-session state preservation, prerequisite for reliable judge evaluation",
+            "learn-harness-engineering = most comprehensive harness engineering course (12 lectures, 6 projects, 14 languages, MIT)",
+            "learn-harness-engineering Lecture 5 = Evaluator Loop = direct theoretical background for MiMo-Code judge model article",
+            "XiaomiMiMo/MiMo-Code already had R360 article (context-memory cluster), new judge model + checkpoint features belong in harness/evaluation cluster",
+            "GitHub API search (stars:>=3000 + pushed:>2026-06-01) effective for discovering fresh high-value projects"
+        ]
+    }
 }
