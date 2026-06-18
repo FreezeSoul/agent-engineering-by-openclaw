@@ -1,52 +1,38 @@
 {
-  "lastRun": "2026-06-18T14:30:00",
+  "lastRun": "2026-06-18T17:57:00",
   "lastCommit": "pending",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 435,
+  "round": 436,
   "roundDate": "2026-06-18",
   "roundSummary": {
-    "articlesAdded": 1,
+    "articlesAdded": 0,
     "projectsAdded": 1,
-    "cluster": "tool-use",
-    "pairPath": "Path A (双新)",
+    "cluster": "context-memory",
+    "pairPath": "Path B (Project only)",
     "pairs": [
       {
-        "articleTitle": "Anthropic 扩展 Claude 能力：Skills 与 MCP 的协同机制 2026",
-        "articleSlug": "extending-claude-capabilities-with-skills-mcp-servers",
-        "articleSource": "https://claude.com/blog/extending-claude-capabilities-with-skills-mcp-servers",
-        "projectTitle": "Skill_Seekers：Claude Skills 自动化生成工具（14147⭐ MIT）",
-        "projectRepo": "yusufkaraaslan/Skill_Seekers",
-        "projectStars": 14147,
-        "projectLicense": "MIT",
-        "pairLogic": "Article = 协议分工理论层（MCP 是 connectivity layer + Skills 是 expertise layer + 双向可组合性）↔ Project = Skill 生成 pipeline 实现层（数据源 → Skill 自动化 + 40 MCP 工具 + 冲突检测 + 跨生态部署）。两者共同回答：'Skills 和 MCP 怎么协作？'理论 ↔ 实现，闭源 ↔ 开源，抽象 ↔ 工程。",
-        "spmRating": "5-way 五星满中（R375/R383/R397/R401/R406/R410/R432 后的第八次连续满中）"
+        "articleTitle": null,
+        "articleSlug": null,
+        "articleSource": null,
+        "projectTitle": "EverMind-AI/EverOS: Portable Memory Agent Layer (7727⭐ Apache-2.0)",
+        "projectRepo": "EverMind-AI/EverOS",
+        "projectStars": 7727,
+        "projectLicense": "Apache-2.0",
+        "pairLogic": "Project only: Stars > 5000 threshold met, OpenClaw official integration, MCP topics, skills directory, dual-track memory architecture. Forms 'Skills + MCP memory engineering' cluster with R435 Article: Skills/ (expertise layer) + EverMemos-MCP (connectivity layer) = 工程实现 of Anthropic 协议分工理论。",
+        "spmRating": "4-way 四星（Layer 1: context-memory cluster共享 ⭐⭐ + Layer 2: memory/MCP/skills/OpenClaw 关键词共享 ⭐⭐⭐⭐ + Layer 3: topics 直接命中 mcp + skills + agent-memory ⭐⭐⭐⭐ + Layer 4: 理论层 ↔ 工程实现层互补 ⭐⭐⭐⭐）"
       }
     ],
     "sourceNew": [
-      "https://claude.com/blog/extending-claude-capabilities-with-skills-mcp-servers",
-      "https://github.com/yusufkaraaslan/Skill_Seekers"
+      "https://github.com/EverMind-AI/EverOS"
     ],
-    "sourcesSkipped": [
-      "https://github.com/deanpeters/Product-Manager-Skills (CC BY-NC-SA 4.0 NonCommercial 限制，per R364 #8 skip)",
-      "https://github.com/lastmile-ai/mcp-agent (8,375⭐ Apache-2.0, 已有 2 个项目文件)",
-      "https://claude.com/blog/product-development-in-the-agentic-era (cluster 与 R357 GTM 相邻但 PM 视角不同, body 3,008 chars 略低)",
-      "https://claude.com/blog/beyond-permission-prompts-making-claude-code-more-secure-and-autonomous (cluster 与 R410/R421/R425 containment 重叠)",
-      "https://claude.com/blog/building-agents-with-the-claude-agent-sdk (cluster overlap with R436 articles)",
-      "https://github.com/mukul975/Anthropic-Cybersecurity-Skills (cluster 与 R410/R421/R425 containment/security 重叠)",
-      "https://github.com/iOfficeAI/AionUi (28,464⭐, topics 无 Claude Skills/MCP 直接命中)",
-      "https://github.com/different-ai/openwork (16,154⭐, topics 空)",
-      "https://github.com/eigent-ai/eigent (14,321⭐, cluster 与 R435 Skills + MCP 角度不同)"
-    ],
-    "filterPipelineStats": {
-      "claude_blog_total": 168,
-      "tracked": 33,
-      "untracked": 136,
-      "after_consumer_filter": 48,
-      "after_body_length_filter": 14,
-      "after_dedup": 1,
-      "skipRate": "99.3%"
+    "sourcesSkipped": [],
+    "externalConstraints": {
+      "tavily_api": "432 rate limit exhausted",
+      "claude_blog_js_rendered": "Playwright无法提取JS渲染内容",
+      "anysearch": "返回空结果",
+      "github_trending": "正则解析失败但通过GitHub API获取EverOS元数据成功"
     }
   }
 }
