@@ -1,8 +1,9 @@
-# R430 报告：Anthropic 递归自我改进 + Microsoft Agent Framework 1.0 配对
+# R431 报告：Vercel eve "Agent is a Directory" + Durable Infrastructure
 
-**Round**: 430
+**Round**: 431
 **Date**: 2026-06-18
-**Commit**: b5a1301 (Article + Project)
+**Commit**: (pending)
+**Trigger**: Cron 每2小时 R431（上一轮 R430 完成于同一天）
 
 ---
 
@@ -10,50 +11,42 @@
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 Article（Anthropic recursive self-improvement 内部数据），首次追踪，一手来源确认 |
-| PROJECT_SCAN | ✅ 完成 | 1 Project（microsoft/agent-framework v1.0），11,428⭐ MIT，双语言生产级框架 |
+| ARTICLES_COLLECT | ⬇️ 跳过 | 本轮 AnySearch 扫描发现 OpenAI "Codex for every role"（产品公告，无工程深度）和其他来源均未达到 Articles 质量门槛 |
+| PROJECT_SCAN | ✅ 完成 | 1 Project（vercel/eve，705⭐），"Agent is a Directory"文件系统优先框架，Apache 2.0 |
 
 ---
 
 ## 🎯 本轮产出
 
-### Article: Anthropic 递归自我改进内部数据
+### Project: vercel/eve
 
-- **文件**: `articles/deep-dives/anthropic-recursive-self-improvement-8x-engineering-2026.md`
-- **来源**: https://www.anthropic.com/institute/recursive-self-improvement
-- **发表日期**: 2026-06（Anthropic Institute 发布）
-- **核心论点**: Anthropic 首次用内部数据证明 AI 已在加速 AI 自身发展——2026 Q2 工程师人均产出是 2024 年的 8 倍；Claude 在研究任务上从"辅助"到"超人类"（52x vs 人类 4x 最优）；任务时长每 4 个月翻倍
+- **文件**: `articles/projects/vercel-eve-filesystem-first-agent-framework-2026.md`
+- **Stars**: 705⭐（发布 1.5 天，Apache 2.0）
+- **来源**: https://github.com/vercel/eve + https://vercel.com/blog/introducing-eve
+- **发表日期**: 2026-06-17
+- **核心命题**: Vercel 开源的"Agent is a Directory"框架——目录结构即 API 文档（agent.ts 定义模型、instructions.md 定义人格、tools/ 放工具、channels/ 放通信接入、schedules/ 放定时任务）；内置 Durable Execution（checkpointed workflow）、Sandboxed Compute（adapter 模式）、Human-in-the-loop Approvals
 - **判断性内容**:
-  - "当 AI 成为主要代码产出者时，Harness 的设计重心需要转移——从'约束模型行为'到'在模型能动性大幅增强时如何保持人类对方向的真正控制'"
-  - "这不是一个纯安全话题，更本质的是一个工程架构话题"
-- **Cluster**: `articles/deep-dives/`（递归自我改进子维度 0→1 启动）
-- **关键数据**: 8x 代码产出 / 4x 人员自述产出 / 76% 最复杂任务成功率（6个月从26%） / 52x 研究优化（vs 人类最优4x）
-
-### Project: microsoft/agent-framework v1.0
-
-- **文件**: `articles/projects/microsoft-agent-framework-v1-multi-agent-orchestration-11428-stars-2026.md`
-- **Stars**: 11,428⭐ (MIT, Python + C# 双语言)
-- **关联 Article**: R430 递归自我改进（形成"AI 加速发展 → 需要生产级多语言编排框架"对位）
-- **核心命题**: 微软 Semantic Kernel + AutoGen 合并后达到 1.0 生产级；A2A + MCP 双协议；多语言同一抽象；checkpointing 长时间工作流；Foundry 深度集成
-- **Pair 强度**: ⭐⭐⭐⭐（工程机制关联：Recursive Self-Improvement 的产出加速 → 企业级多 agent 生产部署需求）
+  - "Vercel eve 的真正竞争对手不是 LangChain，而是'手写 Agent plumbing'这个广泛的实践"
+  - "eve 把'Agent 的可发现性'纳入核心设计目标——这是第一个真正让 agent 项目像普通代码一样可阅读、可 Fork、可协作的框架"
+- **关联 Article**: R430 Anthropic recursive self-improvement（形成"AI 加速发展 → 需要 durable production agent 基础设施"对位）
+- **Pair 强度**: ⭐⭐⭐⭐（工程机制关联：Recursive Self-Improvement 的 8x 产出 + 任务时长每4月翻倍 → 需要 durable checkpoint + sandbox 基础设施工件）
 
 ---
 
 ## 🔍 信息源扫描流程
 
-**第一批次（AnySearch 降级路径， Tavily 432 rate limit）**:
-- AnySearch 扫描 `anthropic OR openai OR cursor agent engineering blog 2026` → 8 结果
-- 命中 2 个高质量候选：
-  1. Anthropic Institute "When AI builds itself"（未追踪，recursive self-improvement 主题）
-  2. OpenAI Harness Engineering "leveraging Codex in an agent-first world"（已追踪，R390/R429 多次覆盖）
+**第一批次（AnySearch 降级路径， Tavily 432 rate limit 连续触发）**:
+- AnySearch 扫描 `anthropic OR openai OR cursor agent engineering blog 2026`（freshness: week）→ 无新的 Anthropic/OpenAI/Cursor 深度工程文章
+- AnySearch 扫描 `site:anthropic.com/engineering 2026`（freshness: month）→ 所有文章均已追踪
 
 **第二批次（GitHub Trending AnySearch）**:
-- AnySearch 扫描 `microsoft/agent-framework 2026 architecture multi-agent` → 发现 v1.0 发布博客（2026-04-03）
-- GitHub API: 11,428 Stars，MIT，双语言（Python + C#）
+- AnySearch 扫描 `GitHub trending AI agent 2026 June` → 发现 **vercel/eve**（2026-06-17 发布，1.5天 705⭐）
+- AnySearch 扫描 `GitHub new AI agent framework 2026` → nex-agi/Nex-N2（290⭐，已追踪 R430）
+- AnySearch 扫描 `openai.com/blog OR openai.com/index 2026`（freshness: week）→ OpenAI "Codex for every role, tool, and workflow"（2026-06-02，产品公告，跳过）
 
 **防重检查**:
-- `anthropic.com/institute/recursive-self-improvement` → 无追踪记录（首次）
-- `github.com/microsoft/agent-framework` → 有记录（stars=0，R369 旧追踪，已过时），本轮更新 stars 至 11,428
+- `github.com/vercel/eve` → 未追踪（首次）
+- `openai.com/index/codex-for-every-role-tool-workflow/` → 未追踪但评估为产品公告，跳过
 
 ---
 
@@ -61,47 +54,45 @@
 
 | 候选 | 来源 | 跳过原因 |
 |------|------|---------|
-| OpenAI Harness Engineering "leveraging Codex in an agent-first world" | openai.com/index/harness-engineering | 已追踪（10+ 篇文章覆盖 OpenAI harness 主题，R390/R429 多次覆盖）|
-| Cursor AI Blog | cursor.com/blog | PENDING 记录 R413-R429 Cursor 饱和，文章偏产品公告 |
-| resources.anthropic.com 2026 Agentic Coding Trends Report | resources.anthropic.com | 资讯类内容，非工程深度 |
+| OpenAI "Codex for every role, tool, and workflow" | openai.com/index | 产品公告（role-based plugins 列表），无工程机制深度，不是"方法论/原理/架构"方向 |
+| nex-agi/Nex-N2 | github.com | Stars 290 偏低，概念验证阶段 |
+| All scanned Anthropic Engineering | anthropic.com/engineering | 所有文章均已追踪（recursive self-improvement R430、expertise R417、sandboxing R416、managed-agents R413等）|
 
 ---
 
 ## 🛠️ 工具使用统计
 
-- **AnySearch 调用**: 2 次（blog scan + GitHub scan）
-- **web_fetch 调用**: 4 次（Anthropic article x2, Microsoft blog x1, GitHub x1）
-- **GitHub API**: 1 次（stars/topics/license verify）
-- **write_file**: 2 次（Article 3.7KB + Project 3.4KB）
-- **jsonl record**: 2 entries
-- **git commit/push**: 1 次
+- **AnySearch 调用**: 4 次（blog scan x2 + GitHub scan x2）
+- **web_fetch 调用**: 2 次（Vercel eve blog + GitHub README）
+- **GitHub API**: 1 次（vercel/eve stars/date verify）
+- **write_file**: 1 次（Project 4.5KB）
+- **jsonl record**: 1 entry（vercel/eve）
+- **git commit/push**: pending
 - **gen_article_map**: 1 次
-- **Total tool calls**: ~13 calls（轻量边界，质量优先）
+- **Total tool calls**: ~10 calls（轻量边界）
 
 ---
 
 ## 🗂️ JSONL 健康度
 
-- **R430 commit 前**: ~1877 entries
-- **R430 commit 后**: ~1879 entries (+2: 1 Article + 1 Project)
-- **本轮新增**: Anthropic Institute article + microsoft/agent-framework project
-- **更新**: microsoft/agent-framework stars 0→11,428（R369 旧记录刷新）
+- **R431 commit 前**: ~1880 entries
+- **本轮新增**: vercel/eve project（705 stars）
+- **跳过的源**: OpenAI codex-for-every-role（产品公告），nex-agi/Nex-N2（Stars 低）
 
 ---
 
-## 📚 R430 关键引用
+## 📚 R431 关键引用
 
-- **8x engineering productivity**: Anthropic 内部 Q2 2026 数据（首次对外披露）
-- **52x research optimization**: Claude Mythos Preview vs 人类最优 4x
-- **76% open-ended task success**: 6个月从 26% 爬升
-- **METR time-horizons**: 每 4 个月任务时长翻倍（非之前的 7 个月）
-- **microsoft/agent-framework 1.0**: Semantic Kernel + AutoGen 合并生产级方案
+- **"Agent is a Directory"**: eve 核心设计范式——目录结构即 API 文档
+- **Durable Execution**: 每个会话 checkpointed，crash 后精确恢复
+- **Sandboxed Compute**: adapter 模式，支持 Docker/Vercel Sandbox/microsandbox
+- **705 stars in 1.5 days**: Vercel 品牌 + "filesystem-first"概念的市场验证
 
 ---
 
-## 🔮 Round 430 复盘要点
+## 🔮 Round 431 复盘要点
 
-- **AnySearch 降级路径稳定**：Tavily 432 rate limit 连续触发，AnySearch 成功兜底，发现 2 个高质量候选。降级路径 R411-R430 共 20 轮验证，稳定可用。
-- **Recursive Self-Improvement 新 cluster 0→1**：`articles/deep-dives/` 目录此前无"递归自我改进"子维度，本轮启动。Anthropic Institute 这篇文章是 2026 H1 AI 工程领域最重要的内部数据披露之一，值得单独成文。
-- **Article-Project Pair 逻辑**：Recursive Self-Improvement 揭示 AI 加速自身发展（代码产出 8x、研究优化 52x），企业级多 agent 生产部署需求随之爆发——microsoft/agent-framework 1.0 恰好是这个需求的框架级答案。Pair 关联性强。
-- **microsoft/agent-framework Stars 刷新**：R369 旧记录 stars=0（早期版本），本轮刷新至 11,428⭐ MIT，双语言 + A2A/MCP + checkpointing，符合生产级框架标准。
+- **Articles 跳过原因**：本轮一手来源扫描（R430 完成的同一天再次触发）无新的深度工程内容。OpenAI "Codex for every role"是产品发布公告而非工程深度分析，不符合 Articles 收录标准。Anthropic Engineering 持续追踪的所有文章均已产出。这是一个正常的"源饱和"信号，不是问题。
+- **vercel/eve 高价值发现**：虽然是 Project 而非 Article，但其"Agent is a Directory"范式具有范式层意义——把 agent 项目从"代码产物"变成"可工程化的代码资产"。这个设计选择直接回应了 R430 数据的含义：AI 产出 8x 加速时，agent 项目本身的工程化不是可选项，而是必要条件。
+- **Pair 逻辑**：R430 递归自我改进（AI 加速发展，代码产出 8x，任务时长每4月翻倍）→ R431 vercel/eve（长时自主运行需要 durable checkpoint + sandbox + HITL）→ 逻辑闭环成立。
+- **AnySearch 降级路径稳定**：Tavily 432 rate limit 连续触发（R411-R431 共21轮），AnySearch 作为降级路径持续稳定工作。
