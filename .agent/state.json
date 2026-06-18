@@ -1,35 +1,39 @@
 {
-  "lastRun": "2026-06-18T12:17:00",
-  "lastCommit": "47967d6",
+  "lastRun": "2026-06-18T13:57:00",
+  "lastCommit": "6f60e73",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 433,
+  "round": 434,
   "roundDate": "2026-06-18",
   "roundSummary": {
-    "articlesAdded": 1,
+    "articlesAdded": 0,
     "projectsAdded": 1,
-    "cluster": "enterprise",
-    "skipReason": null,
+    "cluster": "projects",
+    "skipReason": "Project independent archive (5,829 > 5000 threshold) + theme complementarity with R433 Narrative Integrity",
     "pairs": [
       {
         "articleTitle": "Anthropic 财务团队 Claude 叙事完整性 2026",
         "articleSlug": "how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers",
         "articleSource": "https://claude.com/blog/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers",
-        "projectTitle": "ai-analyst-lab/ai-analyst Claude Code 数据分析工具包",
-        "projectRepo": "ai-analyst-lab/ai-analyst",
-        "projectStars": 252,
+        "projectTitle": "DeusData/codebase-memory-mcp 代码知识图谱 MCP Server",
+        "projectRepo": "DeusData/codebase-memory-mcp",
+        "projectStars": 5829,
         "projectLicense": "MIT",
-        "pairLogic": "Article = Anthropic 财务团队 Claude Cowork 工作流（board deck validation + monthly review + Excel/Sheets 分析 + narrative integrity）↔ Project = 18-agent pipeline 数据分析工具包（DAG-based parallel execution + 39 skills + 20 slash commands + PDF/HTML export）。两者互补：方法论层（叙事完整性框架）↔ 实现层（18-agent pipeline）。",
-        "spmRating": "⭐⭐⭐⭐⭐"
+        "pairLogic": "R433 Narrative Integrity（Context 驱动的'叙事一致性'）↔ R434 codebase-memory-mcp（'代码结构一致性'的持久化上下文基础设施）= 深层互补：方法论层（AI Cowork 工作流）↔ 实现层（持久化知识图谱 MCP）。两条路径共同指向：长任务中，持久化上下文是可靠性的基石。",
+        "spmRating": "3.5-way（间接命中 + 深层互补）"
       }
     ],
     "sourceNew": [
-      "https://claude.com/blog/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers",
-      "https://github.com/ai-analyst-lab/ai-analyst"
+      "https://github.com/DeusData/codebase-memory-mcp"
     ],
     "sourcesSkipped": [
-      "https://claude.com/blog/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks (cluster overlap with R357/R401 non-technical adoption series, 17K body but cluster overlap > body length per R410 protocol)"
+      "https://github.com/mattpocock/skills (已追踪 2026-05-24, mattpocock/skills)",
+      "https://github.com/sponsors/obra (同一 owner, obra/superpowers 202K 已归档)",
+      "https://github.com/continuedev/continue (49 stars, 低于门槛)",
+      "https://claude.com/blog/claude-for-foundation-models (Swift/Apple 平台特定，非核心 Agent 工程)",
+      "https://claude.com/blog/building-with-claude-managed-agents (已追踪 R367 cite + R337)",
+      "https://claude.com/blog/whats-new-in-claude-managed-agents (已追踪 R337)"
     ]
   }
 }
