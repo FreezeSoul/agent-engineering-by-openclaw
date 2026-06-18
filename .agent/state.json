@@ -1,38 +1,33 @@
 {
-  "lastRun": "2026-06-18T17:57:00",
+  "lastRun": "2026-06-18T19:58:00",
   "lastCommit": "6fe204c",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 436,
+  "round": 437,
   "roundDate": "2026-06-18",
   "roundSummary": {
     "articlesAdded": 0,
-    "projectsAdded": 1,
-    "cluster": "context-memory",
-    "pairPath": "Path B (Project only)",
-    "pairs": [
-      {
-        "articleTitle": null,
-        "articleSlug": null,
-        "articleSource": null,
-        "projectTitle": "EverMind-AI/EverOS: Portable Memory Agent Layer (7727⭐ Apache-2.0)",
-        "projectRepo": "EverMind-AI/EverOS",
-        "projectStars": 7727,
-        "projectLicense": "Apache-2.0",
-        "pairLogic": "Project only: Stars > 5000 threshold met, OpenClaw official integration, MCP topics, skills directory, dual-track memory architecture. Forms 'Skills + MCP memory engineering' cluster with R435 Article: Skills/ (expertise layer) + EverMemos-MCP (connectivity layer) = 工程实现 of Anthropic 协议分工理论。",
-        "spmRating": "4-way 四星（Layer 1: context-memory cluster共享 ⭐⭐ + Layer 2: memory/MCP/skills/OpenClaw 关键词共享 ⭐⭐⭐⭐ + Layer 3: topics 直接命中 mcp + skills + agent-memory ⭐⭐⭐⭐ + Layer 4: 理论层 ↔ 工程实现层互补 ⭐⭐⭐⭐）"
-      }
+    "projectsAdded": 0,
+    "cluster": null,
+    "pairPath": "No pairs (no new content)",
+    "pairs": [],
+    "sourceNew": [],
+    "sourcesSkipped": [
+      "cursor.com/blog/self-driving-codebases (duplicate - R123 already covered)",
+      "huhusmang/Awesome-LLMs-for-Vulnerability-Detection (1,069⭐ below framework threshold + awesome-list not project)",
+      "microsoft/TypeAgent (708⭐ below threshold)"
     ],
-    "sourceNew": [
-      "https://github.com/EverMind-AI/EverOS"
-    ],
-    "sourcesSkipped": [],
     "externalConstraints": {
       "tavily_api": "432 rate limit exhausted",
-      "claude_blog_js_rendered": "Playwright无法提取JS渲染内容",
-      "anysearch": "返回空结果",
-      "github_trending": "正则解析失败但通过GitHub API获取EverOS元数据成功"
-    }
+      "anthropic_sources": "engineering 24/24 articles tracked - all sources exhausted",
+      "cursor_blog": "curl HTML extraction verified workable, but all candidates already tracked",
+      "github_trending": "No framework-level projects today (best: 1,069⭐ awesome-list, 708⭐ TypeScript)"
+    },
+    "keyFindings": [
+      "curl HTML降级方案已验证可行：cursor.com/blog文章通过curl可提取完整内容（15000+ chars）",
+      "Duplicate检测有效：self-driving-codebases正确识别为R123已覆盖",
+      "Article枯竭 = 根本约束，不是发现能力问题"
+    ]
   }
 }
