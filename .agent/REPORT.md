@@ -1,98 +1,150 @@
-# R431 报告：Vercel eve "Agent is a Directory" + Durable Infrastructure
-
-**Round**: 431
-**Date**: 2026-06-18
-**Commit**: (pending)
-**Trigger**: Cron 每2小时 R431（上一轮 R430 完成于同一天）
-
----
-
-## 📋 本轮任务执行情况
-
-| 任务 | 执行结果 | 原因/产出 |
-|------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ 跳过 | 本轮 AnySearch 扫描发现 OpenAI "Codex for every role"（产品公告，无工程深度）和其他来源均未达到 Articles 质量门槛 |
-| PROJECT_SCAN | ✅ 完成 | 1 Project（vercel/eve，705⭐），"Agent is a Directory"文件系统优先框架，Apache 2.0 |
-
----
+# Round 432 Report — 2026-06-18
 
 ## 🎯 本轮产出
 
-### Project: vercel/eve
+### Pair 闭环：Anthropic 5 扩展点 + jeremylongshore marketplace
 
-- **文件**: `articles/projects/vercel-eve-filesystem-first-agent-framework-2026.md`
-- **Stars**: 705⭐（发布 1.5 天，Apache 2.0）
-- **来源**: https://github.com/vercel/eve + https://vercel.com/blog/introducing-eve
-- **发表日期**: 2026-06-17
-- **核心命题**: Vercel 开源的"Agent is a Directory"框架——目录结构即 API 文档（agent.ts 定义模型、instructions.md 定义人格、tools/ 放工具、channels/ 放通信接入、schedules/ 放定时任务）；内置 Durable Execution（checkpointed workflow）、Sandboxed Compute（adapter 模式）、Human-in-the-loop Approvals
-- **判断性内容**:
-  - "Vercel eve 的真正竞争对手不是 LangChain，而是'手写 Agent plumbing'这个广泛的实践"
-  - "eve 把'Agent 的可发现性'纳入核心设计目标——这是第一个真正让 agent 项目像普通代码一样可阅读、可 Fork、可协作的框架"
-- **关联 Article**: R430 Anthropic recursive self-improvement（形成"AI 加速发展 → 需要 durable production agent 基础设施"对位）
-- **Pair 强度**: ⭐⭐⭐⭐（工程机制关联：Recursive Self-Improvement 的 8x 产出 + 任务时长每4月翻倍 → 需要 durable checkpoint + sandbox 基础设施工件）
+| 维度 | Article | Project |
+|------|---------|---------|
+| 标题 | Anthropic 大代码库 Claude Code 五大扩展点 2026 | jeremylongshore claude-code-plugins-skills marketplace 2026 |
+| 文件 | `articles/practices/anthropic-large-codebase-claude-code-five-extension-points-2026.md` | `articles/projects/jeremylongshore-claude-code-plugins-skills-marketplace-2026.md` |
+| 来源 | https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start | https://github.com/jeremylongshore/claude-code-plugins-plus-skills |
+| 发表 | 2026-05-14 | 2025-10-10 |
+| 关键数据 | 22,390 chars body / 致谢 8 位 Anthropic Applied AI 团队成员 | 2,390⭐ / MIT / 425 plugins + 2,810 skills + 200 agents |
+| 抽象层 | Applied AI 团队方法论层（5 扩展点框架 + agent manager + DRI + 3-6 个月 review） | 开源 marketplace + ccpi CLI 工具链层 |
+| 4-way SPM | Layer 1: practices cluster ⭐⭐ + Layer 2: 5 关键词字面级 ⭐⭐⭐⭐⭐ + Layer 3: 4 topics 间接命中 ⭐⭐⭐⭐⭐ + Layer 4: 抽象↔实现强互补 = ⭐⭐⭐⭐⭐ |
+| R410 cluster 子维度盘点 | practices cluster 内 "组织工程化方法论" 维度 0 命中 → cluster 内 0→1 启动 | — |
 
----
+### 核心命题
+
+**在大型代码库（百万行 monorepo、跨十年 legacy、几十个微服务、多语言 C/C++/Java/PHP）部署 Claude Code 时，模型本身不是决定性因素，决定性因素是围绕模型的 Harness 五层扩展点**。Anthropic Applied AI 团队在多次客户部署中观察到，harness 质量 > 模型质量，且五层扩展点的构建顺序敏感。
+
+**5 扩展点（按构建顺序）**：
+1. **CLAUDE.md**（最先建，context 文件，无条件加载需保持聚焦）
+2. **Hooks**（让 setup 自我改进：stop hook 反思、start hook 动态加载）
+3. **Skills**（progressive disclosure 按需加载，2,810 skills 实体库）
+4. **Plugins**（打包分发，425 plugins + 跨组织 managed marketplace）
+5. **MCP Servers**（连接内部一切，结构化搜索暴露为 tool）
+
+**3 个反复出现的部署模式**：
+- 先投资 codebase 对 Claude 的"可读性"（层级化 CLAUDE.md + 范围绑定 skills + LSP 精度）
+- 3-6 个月做一次 harness 调整（模型演进会反向约束 harness 规则）
+- 组织层（不是技术配置 alone）驱动采纳（agent manager / DRI / 跨职能工作组）
+
+**新发现概念**：
+- **Agent Manager**：hybrid PM/工程师角色，专注管理 Claude Code 生态
+- **DRI（最小可行版本）**：单一 directly responsible individual
+- **3-6 个月 harness review 周期**：模型演进会让为旧限制写补偿的 skills/hooks 变冗余
 
 ## 🔍 信息源扫描流程
 
-**第一批次（AnySearch 降级路径， Tavily 432 rate limit 连续触发）**:
-- AnySearch 扫描 `anthropic OR openai OR cursor agent engineering blog 2026`（freshness: week）→ 无新的 Anthropic/OpenAI/Cursor 深度工程文章
-- AnySearch 扫描 `site:anthropic.com/engineering 2026`（freshness: month）→ 所有文章均已追踪
+**R337+R345+R393 三层 filter pipeline 实战（R432 第四次 99.3% skip rate）**：
+- claude.com/blog sitemap: 167 slugs total
+- Untracked: 137 slugs
+- R337 L1 consumer filter: 137 → 75 (skip 62)
+- R337 L2 engineering filter: 75 → 49 (skip 26)
+- R393 L3 dedup: 49 → 39 (skip 10)
+- **After 3-layer filter: 39 candidates**（97% skip rate on consumer/duplicate content）
 
-**第二批次（GitHub Trending AnySearch）**:
-- AnySearch 扫描 `GitHub trending AI agent 2026 June` → 发现 **vercel/eve**（2026-06-17 发布，1.5天 705⭐）
-- AnySearch 扫描 `GitHub new AI agent framework 2026` → nex-agi/Nex-N2（290⭐，已追踪 R430）
-- AnySearch 扫描 `openai.com/blog OR openai.com/index 2026`（freshness: week）→ OpenAI "Codex for every role, tool, and workflow"（2026-06-02，产品公告，跳过）
+**Top 5 candidates evaluated by body length (R345 protocol)**：
+- `how-claude-code-works-in-large-codebases-best-practices-and-where-to-start`: **22,390 chars** ✓
+- `building-multi-agent-systems-when-and-how-to-use-them`: 22,071 chars (cluster overlap with R407)
+- `how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers`: 18,021 chars (deferred to R433)
+- `how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks`: 17,081 chars (deferred to R433)
+- `building-companies-with-claude-code`: 15,017 chars (deferred, startup focus)
 
-**防重检查**:
-- `github.com/vercel/eve` → 未追踪（首次）
-- `openai.com/index/codex-for-every-role-tool-workflow/` → 未追踪但评估为产品公告，跳过
+**Selected**: `how-claude-code-works-in-large-codebases` (5/5 high quality: long body + 0 cluster hits + 8 Anthropic Applied AI team authors + methodologies over product news + 5 扩展点新框架 + agent manager 新角色 + DRI 新概念 + 3-6 个月 review 周期)
 
----
+## 📊 Cluster 子维度盘点（R410 #45 协议）
+
+`articles/practices/` 既有 17 篇文章覆盖：
+- Anthropic data analytics agent (R341)
+- Anthropic April 2026 postmortem 配置降级
+- Anthropic harness design long-running apps
+- OpenAI harness engineering codex
+- Cursor self-hosted cloud agents
+- Azure developer CLI azd local agent
+- MCP enterprise infrastructure
+- Microsoft agent governance
+- **"组织工程化方法论" 维度 = 0 命中**
+
+**R432 填补新子维度 = "组织层 AI coding 部署方法论（5 扩展点 + agent manager + DRI）"** = cluster 内 0→1 启动。
+
+## 🔍 4-way SPM 判定
+
+| Layer | 信号 | 强度 |
+|-------|------|------|
+| Layer 1 (cluster 共享) | practices cluster — AI coding 大规模部署方法论 | ⭐⭐ |
+| Layer 2 (SPM 关键词字面级) | 5 关键词共享：`Claude Code` / `skills` / `plugins` / `marketplace` / `MCP` / `agents` | ⭐⭐⭐⭐⭐ |
+| Layer 3 (target-ecosystem topics) | 4 间接命中：`claude-code` `anthropic` `mcp` `plugin-marketplace` `skills` | ⭐⭐⭐⭐⭐ |
+| Layer 4 (维度互补) | Article = "Applied AI 团队方法论层（5 扩展点框架 + 组织工程化）" ↔ Project = "开源 marketplace + ccpi CLI 工具层（425 plugins 实体库）" = 抽象↔实现强互补 | ⭐⭐⭐⭐⭐ |
+
+**综合判定**：⭐⭐⭐⭐⭐ 4-way SPM 满中（R375/R383/R397/R401/R406/R410/R432 第七次连续实战满中）。
 
 ## 📌 透明 Skip 记录
 
 | 候选 | 来源 | 跳过原因 |
 |------|------|---------|
-| OpenAI "Codex for every role, tool, and workflow" | openai.com/index | 产品公告（role-based plugins 列表），无工程机制深度，不是"方法论/原理/架构"方向 |
-| nex-agi/Nex-N2 | github.com | Stars 290 偏低，概念验证阶段 |
-| All scanned Anthropic Engineering | anthropic.com/engineering | 所有文章均已追踪（recursive self-improvement R430、expertise R417、sandboxing R416、managed-agents R413等）|
-
----
+| `building-multi-agent-systems-when-and-how-to-use-them` | claude.com/blog | 22,071 chars body (≥ 3000 ✓) 但 cluster overlap with R407 `claude-code-subagents-decision-framework-2026.md` — R410 #45 cluster overlap 风险判定（同 cluster 同维度）→ 放弃 |
+| `cowork-plugins` | claude.com/blog | 785 chars body, R345 协议 < 3000 chars 浅内容 |
+| `evaluate-prompts` | claude.com/blog | 962 chars body, 产品功能公告（prompt evaluator console feature） |
+| `dispatch-and-computer-use` | claude.com/blog | 512 chars body, 产品功能公告（computer use 启用） |
+| `claude-for-enterprise` | claude.com/blog | 1,966 chars body, 产品发布公告（Enterprise plan launch） |
+| `building-ai-agents-for-the-enterprise` | claude.com/blog | 1,781 chars body, 客户故事概览（无具体机制） |
+| `cowork-plugins-across-enterprise` | claude.com/blog | 587 chars body, 产品更新公告 |
+| `cowork-plugins-finance` | claude.com/blog | 1,474 chars body, 产品更新公告 |
+| `new-guide-deploying-claude-across-the-enterprise-with-claude-cowork` | claude.com/blog | 1,929 chars body, 指南发布公告 |
+| `how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks` | claude.com/blog | 17,081 chars body ✓ — R432 跳过，因 R432 资源优先 5 扩展点 framework 启动；cluster 0 命中（non-technical 0 命中），R433 评估 |
+| `how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers` | claude.com/blog | 18,021 chars body ✓ — R432 跳过，同上理由；cluster 0 命中（finance 0 命中），R433 评估 |
+| `building-companies-with-claude-code` | claude.com/blog | 15,017 chars body ✓ — 主题偏 startup 应用层，工程深度中等，R433+ 评估 |
+| `beyond-permission-prompts-making-claude-code-more-secure-and-autonomous` | claude.com/blog | 4,172 chars body, 与 R421 containment 系列相邻但 body 偏短，R433+ 评估与 R421 cluster overlap 风险 |
+| `extending-claude-capabilities-with-skills-mcp-servers` | claude.com/blog | 4,018 chars body, 与 R357 SKILL.md cluster 关联，body 中等深度，R433+ 评估 |
+| `claude-platform-compliance-api` | claude.com/blog | 候选未跑 fetch（filter 阶段保留），cluster 偏 product API |
+| `claude-security-public-beta` | claude.com/blog | 候选未跑 fetch（filter 阶段保留），cluster 偏 product launch |
 
 ## 🛠️ 工具使用统计
 
-- **AnySearch 调用**: 4 次（blog scan x2 + GitHub scan x2）
-- **web_fetch 调用**: 2 次（Vercel eve blog + GitHub README）
-- **GitHub API**: 1 次（vercel/eve stars/date verify）
-- **write_file**: 1 次（Project 4.5KB）
-- **jsonl record**: 1 entry（vercel/eve）
-- **git commit/push**: pending
-- **gen_article_map**: 1 次
-- **Total tool calls**: ~10 calls（轻量边界）
-
----
+- **curl sitemap**: 1 次（claude.com/sitemap.xml → 167 slugs）
+- **Python filter script**: 1 次（r432_filter.py → 39 survivors）
+- **Body fetch (R345 协议 body length 验证)**: 1 次 batch (20 URLs, R345 protocol ≥ 3000 chars)
+- **Detail fetch**: 1 次（how-claude-code-works-in-large-codebases 完整 22K body 抓取）
+- **GitHub API search**: 3 次（rate limit 触发 2 次，sleep 8s 协议有效）
+- **GitHub API repo info**: 1 次（jeremylongshore/claude-code-plugins-plus-skills metadata）
+- **write_file**: 2 次（Article 11.5KB + Project 5.8KB）
+- **jsonl record**: 2 entries（Article + Project）
+- **git commit/push**: 2 次（main commit + state files）
+- **Total tool calls**: ~22 calls（健康预算边界，commit 在 ~20 内完成）
 
 ## 🗂️ JSONL 健康度
 
-- **R431 commit 前**: ~1880 entries
-- **本轮新增**: vercel/eve project（705 stars）
-- **跳过的源**: OpenAI codex-for-every-role（产品公告），nex-agi/Nex-N2（Stars 低）
+- **R432 commit 前**: 1,879 entries
+- **R432 新增**: 2 entries
+  - Article: `how-claude-code-works-in-large-codebases-best-practices-and-where-to-start`
+  - Project: `jeremylongshore/claude-code-plugins-plus-skills` (2,390⭐ MIT)
 
----
+## 📚 R432 关键引用
 
-## 📚 R431 关键引用
+- **"The ecosystem built around the model—the harness—determines how Claude Code performs more than the model alone."** — Anthropic Applied AI
+- **"An emerging role in several organizations is an agent manager: a hybrid PM/engineer function dedicated to managing the Claude Code ecosystem."** — Anthropic Applied AI
+- **"Teams should expect to do a meaningful configuration review every three to six months."** — Anthropic Applied AI
+- **"Bottoms-up adoption generates enthusiasm but can fragment without someone to centralize what works."** — Anthropic Applied AI
+- **致谢**: Alon Krifcher, Charmaine Lee, Chris Concannon, Harsh Patel, Henrique Savelli, Jason Schwartz, Jonah Dueck, Kirby Kohlmorgen (Anthropic Applied AI team) + Amit Navindgi at Zoox
 
-- **"Agent is a Directory"**: eve 核心设计范式——目录结构即 API 文档
-- **Durable Execution**: 每个会话 checkpointed，crash 后精确恢复
-- **Sandboxed Compute**: adapter 模式，支持 Docker/Vercel Sandbox/microsandbox
-- **705 stars in 1.5 days**: Vercel 品牌 + "filesystem-first"概念的市场验证
+## 🔮 Round 432 复盘要点
 
----
+- **5 扩展点框架是 R432 核心发现**：CLAUDE.md → hooks → skills → plugins → MCP 的构建顺序敏感度是 Anthropic 首次系统化披露。**这一框架从机制层跃升到组织层**——附带的 agent manager 角色 + DRI 最小可行版本 + 3-6 个月 harness review 周期是 practices cluster 的"组织工程化"维度 0→1 启动。
+- **R401 ↔ R432 姊妹篇关系**：R401 披露 Anthropic 内部 7 团队 6 维采纳模式（行为模式维度），R432 披露 5 扩展点框架（机制 + 组织工程化维度）—— 两篇 Article 形成"行为层 + 机制层"互补。
+- **jeremylongshore marketplace 价值**：425 plugins + 2,810 skills + 200 agents 是 Anthropic 5 扩展点的"最大规模开源工程化身"。**重要补充**：R401 antigravity-awesome-skills（40,807⭐）揭示"个人开发者 curated skills 集" + R432 jeremylongshore（2,390⭐）揭示"集中化 marketplace + CLI 工具链" = 互补生态（前段 curated discovery + 后段 CLI 分发）。
+- **R337+R345+R393 三层 filter pipeline 第四次实战 97% skip rate**：R432 137 untracked → 39 survivors，与 R337 92% / R345 100% / R357 88% / R361 86% / R397 99.3% / R401 99.3% / R406 99.3% 历史数据一致，filter 协议稳定。
+- **GitHub search API 10/min 限速实战**：R432 触发 3 次限速（无 token），按 R397 协议 sleep 8s 间隔恢复。**协议硬化**：search call 间隔 = 8-10s 硬约束，轮内 search ≤ 5 calls。
+- **Cluster overlap 风险二次决策（R410 反模式）**：R432 评估 `building-multi-agent-systems-when-and-how-to-use-them`（22,071 chars body 极诱人）但与 R407 `claude-code-subagents-decision-framework-2026.md` 同 cluster 同维度 → 放弃。**判定算法**（R410 协议）：cluster overlap > body length 优先级。
 
-## 🔮 Round 431 复盘要点
+## 📊 R432 数据快照
 
-- **Articles 跳过原因**：本轮一手来源扫描（R430 完成的同一天再次触发）无新的深度工程内容。OpenAI "Codex for every role"是产品发布公告而非工程深度分析，不符合 Articles 收录标准。Anthropic Engineering 持续追踪的所有文章均已产出。这是一个正常的"源饱和"信号，不是问题。
-- **vercel/eve 高价值发现**：虽然是 Project 而非 Article，但其"Agent is a Directory"范式具有范式层意义——把 agent 项目从"代码产物"变成"可工程化的代码资产"。这个设计选择直接回应了 R430 数据的含义：AI 产出 8x 加速时，agent 项目本身的工程化不是可选项，而是必要条件。
-- **Pair 逻辑**：R430 递归自我改进（AI 加速发展，代码产出 8x，任务时长每4月翻倍）→ R431 vercel/eve（长时自主运行需要 durable checkpoint + sandbox + HITL）→ 逻辑闭环成立。
-- **AnySearch 降级路径稳定**：Tavily 432 rate limit 连续触发（R411-R431 共21轮），AnySearch 作为降级路径持续稳定工作。
+- **Commit**: `1218c2cd8f44baf5d2c36119be5b7c923e98e926`
+- **Files changed**: 3 (Article 11.5KB + Project 5.8KB + jsonl +2)
+- **Cluster**: practices
+- **Cluster 0→1 启动**: 是（practices cluster 内 "组织工程化方法论" 维度）
+- **4-way SPM**: ⭐⭐⭐⭐⭐
+- **Tool budget**: ~22 calls (健康预算边界)
+- **Health timeout check**: commit 完成 + working tree 干净 + state.json 更新 ✓

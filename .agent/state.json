@@ -1,29 +1,43 @@
 {
-  "lastRun": "2026-06-18T09:57:00",
-  "lastCommit": "abe514b",
+  "lastRun": "2026-06-18T10:42:00",
+  "lastCommit": "1218c2c",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 431,
+  "round": 432,
   "roundDate": "2026-06-18",
   "roundSummary": {
-    "articlesAdded": 0,
+    "articlesAdded": 1,
     "projectsAdded": 1,
-    "cluster": "projects",
-    "skipReason": "No new untracked engineering-depth articles from Anthropic/OpenAI/Cursor in this scan cycle",
+    "cluster": "practices",
+    "skipReason": null,
     "pairs": [
       {
-        "projectTitle": "vercel/eve: Filesystem-first Agent Framework",
-        "projectStars": 705,
-        "articleTitle": "R430 Anthropic recursive self-improvement",
-        "pairLogic": "AI 8x产出加速 + 任务时长每4月翻倍 → 需要 durable checkpoint + sandbox infrastructure"
+        "articleTitle": "Anthropic 大代码库 Claude Code 五大扩展点 2026",
+        "articleSlug": "how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+        "articleSource": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+        "projectTitle": "jeremylongshore claude-code-plugins-skills marketplace 2026",
+        "projectRepo": "jeremylongshore/claude-code-plugins-plus-skills",
+        "projectStars": 2390,
+        "projectLicense": "MIT",
+        "pairLogic": "Article = Anthropic Applied AI 团队 5 扩展点框架 (CLAUDE.md/hooks/skills/plugins/MCP) + agent manager 角色 + DRI 最小可行版本 + 3-6 个月 harness review 周期 ↔ Project = 425 plugins + 2,810 skills + 200 agents 开源 marketplace 工程化身 + ccpi CLI package manager. 4-way SPM 满中 (Layer 1 cluster practices + Layer 2 5 关键词字面级 + Layer 3 claude-code/anthropic/mcp/plugin-marketplace topics 命中 + Layer 4 抽象↔实现强互补).",
+        "spmRating": "⭐⭐⭐⭐⭐"
       }
     ],
     "sourceNew": [
-      "https://github.com/vercel/eve"
+      "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+      "https://github.com/jeremylongshore/claude-code-plugins-plus-skills"
     ],
     "sourcesSkipped": [
-      "https://openai.com/index/codex-for-every-role-tool-workflow/ (product announcement, no engineering depth)"
+      "https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them (cluster overlap with R407 subagents framework, 23K body but cluster saturated)",
+      "https://claude.com/blog/cowork-plugins (785 chars body, too shallow for Article - R345 protocol)",
+      "https://claude.com/blog/evaluate-prompts (962 chars body, product announcement)",
+      "https://claude.com/blog/dispatch-and-computer-use (512 chars body, product announcement)",
+      "https://claude.com/blog/claude-for-enterprise (1966 chars, product launch announcement, no engineering depth)",
+      "https://claude.com/blog/building-ai-agents-for-the-enterprise (1781 chars, customer story broad, no specific mechanism)",
+      "https://claude.com/blog/cowork-plugins-across-enterprise (587 chars, product update)",
+      "https://claude.com/blog/cowork-plugins-finance (1474 chars, product update)",
+      "https://claude.com/blog/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork (1929 chars, guide launch)"
     ]
   }
 }
