@@ -1,38 +1,56 @@
 {
-  "lastRun": "2026-06-18T21:57:00",
-  "lastCommit": "50a2b0d",
+  "lastRun": "2026-06-18T22:30:00",
+  "lastCommit": "688ba95",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 438,
+  "round": 439,
   "roundDate": "2026-06-18",
   "roundSummary": {
-    "articlesAdded": 0,
+    "articlesAdded": 1,
     "projectsAdded": 1,
-    "cluster": null,
-    "pairPath": "No pairs (1 project only, no new articles)",
-    "pairs": [],
+    "cluster": "orchestration",
+    "pairPath": "Path A: New Article + New Project (4-way SPM ⭐⭐⭐⭐⭐)",
+    "pairs": [
+      {
+        "article": "Anthropic 多 Agent 决策框架 单 vs 多 2026",
+        "articleFile": "articles/orchestration/anthropic-multi-agent-decision-framework-when-not-2026.md",
+        "project": "jnMetaCode/agency-agents-zh 266 专家角色库 2026",
+        "projectFile": "articles/projects/jnmetacode-agency-agents-zh-266-roles-dag-orchestrator-15195-stars-2026.md",
+        "spmRating": "5-star (4-way SPM full hit)",
+        "layer1_cluster": "orchestration shared",
+        "layer2_keywords": "multi-agent / orchestrator / verification / decision / parallel",
+        "layer3_topics": "hermes-agent direct + claude-code/claude/cursor-rules indirect",
+        "layer4_complementarity": "Article=decision framework (when NOT); Project=implementation (266 roles + DAG)"
+      }
+    ],
     "sourceNew": [
-      "BuilderIO/skills (1,133 stars, MIT, 8-day old)"
+      "claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them (Jan 23 2026, 21KB body)",
+      "github.com/jnMetaCode/agency-agents-zh (15,195⭐ MIT, hermes-agent topic)"
     ],
     "sourcesSkipped": [
-      "anthropics/financial-services (31,775 stars) - already covered in anthropic-claude-for-financial-services-skill-bundling-deployment-2026.md",
-      "DietrichGebert/ponytail (34,766 stars) - already covered in 2 existing articles",
-      "XiaomiMiMo/MiMo-Code (9,716 stars) - NEW, but need more content before write",
-      "omnigent-ai/omnigent (3,709 stars) - already tracked"
+      "best-practices-for-computer-and-browser-use-with-claude (1.4KB body, R345 < 3000 chars threshold)",
+      "best-practices-for-getting-started-with-claude-cowork (low body content)",
+      "introducing-routines-in-claude-code (0.7KB body)",
+      "complete-guide-to-building-skills-for-claude (1.7KB body)",
+      "preview-review-and-merge-with-claude-code (0.7KB body)",
+      "anthropic.com/news/* (8 untracked, none engineering-relevant - partnerships/announcements)",
+      "cursor.com/blog/* (60 untracked, ~58 dedup hit existing articles, only 'increased-agent-usage' novel)",
+      "XiaomiMiMo/MiMo-Code (9716⭐) - README quality not yet evaluated"
     ],
     "externalConstraints": {
-      "tavily_api": "432 rate limit - still exhausted",
-      "anthropic_sources": "engineering 24/24 articles tracked - primary source exhaustion continues",
-      "cursor_blog": "JS-rendered, curl HTML extraction partially workable but candidates exhausted",
-      "github_trending": "No new framework-level projects; BuilderIO/skills (1,133 stars) qualifies as new project"
+      "anthropic_engineering": "24/24 articles tracked - still saturated",
+      "claude_com_blog_sitemap": "168 slugs / 135 untracked - R337 filter applied",
+      "anthropic_news": "8 untracked, none engineering-relevant",
+      "cursor_blog": "93 slugs / 60 untracked, most dedup-hits existing articles"
     },
     "keyFindings": [
-      "GitHub API search: DietrichGebert/ponytail (34,766 stars, MIT) - already has 2 articles, stars grew 5x",
-      "anthropics/financial-services (31,775 stars, Apache-2.0) - already covered in existing article",
-      "BuilderIO/skills (1,133 stars, 8-day old, MIT) - NEW, distinct from addyosmani/agent-skills",
-      "Ponytail BM25 dedup triggered: article about SDK rename vs existing content show normalized similarity > 0.65",
-      "anthropics/financial-services dedup: already tracked via orchestration/article"
+      "R337 filter pipeline (consumer + engineering keywords) applied to 135 untracked claude.com/blog slugs",
+      "R337 → R393 dedup → R345 body length triple-filter produced 1 candidate: building-multi-agent-systems-when-and-how-to-use-them (21KB body)",
+      "Article fills cluster sub-dimension: 'when NOT to use multi-agent' (philosophy layer, complements R407 tactical subagent decision framework)",
+      "Project discovered via GitHub API search: q=multi-agent+verification+OR+agent+orchestrator+stars:>=1000",
+      "Project 4-way SPM: hermes-agent topic direct hit (R367 #27) + cluster shared + 5 keywords match + dimension complementarity",
+      "jnMetaCode/agency-agents-zh is 'agency-agents upstream Chinese community version' - 266 roles + DAG orchestrator + 18 AI tools compat"
     ]
   }
 }
