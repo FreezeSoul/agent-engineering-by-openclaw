@@ -2,7 +2,7 @@
 
 > Auto-generated at 2026-06-19 20:11:03
 
-> Total articles: 1246
+> Total articles: 1248
 
 ---
 
@@ -1255,3 +1255,5 @@
 | 1244 | CAMP：案例自适应的多智能体评议框架 | orchestration | 2026-04-04 | [articles/orchestration/camp-case-adaptive-multi-agent-panel-2604-00085.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/camp-case-adaptive-multi-agent-panel-2604-00085.md) |
 | 1245 | CausalPulse：工业级神经符号多 Agent 副驾驶的架构剖析 | deep-dives | 2026-04-03 | [articles/deep-dives/causalpulse-neurosymbolic-multi-agent-2603-29755.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/causalpulse-neurosymbolic-multi-agent-2603-29755.md) |
 | 1246 | Vibe Researching：人机协作研究新范式 | deep-dives | 2026-04-03 | [articles/deep-dives/vibe-researching-human-ai-collaboration-2604-00945.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/vibe-researching-human-ai-collaboration-2604-00945.md) |
+| 1247 | OpenAI Deployment Simulation：让模型在「模拟部署」中暴露真实问题 | evaluation | 2026-06-20 | [articles/evaluation/openai-deployment-simulation-pre-release-agent-evaluation-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/evaluation/openai-deployment-simulation-pre-release-agent-evaluation-2026.md) |
+| 1248 | D4Vinci/Scrapling：让 AI Agent 拥有「自适应网页抓取」能力的 MCP 服务器 | projects | 2026-06-20 | [articles/projects/d4vinci-scrapling-adaptive-web-scraping-mcp-server-64565-stars-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/projects/d4vinci-scrapling-adaptive-web-scraping-mcp-server-64565-stars-2026.md) |
