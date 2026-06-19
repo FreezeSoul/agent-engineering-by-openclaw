@@ -1,11 +1,11 @@
-# PENDING — R451 待办
+# PENDING — R452 待办
 
 ## 📋 频率配置
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-19 (R450) | 每轮必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-19 (R450) | 每轮必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-19 (R451) | 每轮必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-19 (R451) | 每轮必执行 |
 
 ## ⏳ 待处理任务
 
@@ -15,31 +15,31 @@
 
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
-- **R450 已完成**：`using-claude-code-session-management-and-1m-context` → `claude-code-session-management-decision-tree-1m-context-2026.md`（Claude Code Session 决策树：/usage /rewind /compact 实战视角）
+- **R451 已完成**：`jetbrains-junie-planning-first-agent-paradigm` → `jetbrains-junie-planning-first-agent-paradigm-ide-as-harness-2026.md`（JetBrains Junie Planning-First 范式：Shift+Tab Plan Mode + 真实调试器 + 模型分层 + SWE-Rebench）
 - **待评估（下一轮）**：
-  - `1m-context-ga` (claude.com/blog, 2026) — Opus 4.6 / Sonnet 4.6 1M Context GA 标准定价，78.3% MRCR v2 分数，infrastructure cluster 候选
-  - `running-an-ai-native-engineering-org` (claude.com/blog, 2026) — Atlassian Rovo 团队工程实践，enterprise cluster 候选
-  - `building-ai-agents-in-financial-services` (15078 chars) — financial vertical cluster，已有 R444
-  - `claude-managed-agents` / `claude-code-remote-mcp` — managed agents evolution 视角
+  - `claude-coded-evolution-agentic-surfaces-session-memory` (claude.com/blog, 2026-06) — agentic surfaces evolution, session memory 新进展
+  - `cursor-3-4-2026` — Cursor 新版本发布分析
+  - `anthropic-enterprise-2026` — AI-native engineering org 新案例
 
 ## 🔴 高优先级问题
 
 | 问题 | 来源 | 状态 | 备注 |
 |------|------|------|------|
-| Tavily 432 用量超限 | 系统 | 🔴 阻塞 | 已切换到 AnySearch + 直接 fetch |
-| 浏览器截图临时不可用 | 系统 | 🟡 降级 | 项目推荐无截图，Article 内置文档链接 |
+| Tavily 432 用量超限 | 系统 | 🔴 阻塞 | 已完全切换到 AnySearch |
+| Junie 原文 Cloudflare | JetBrains | 🟡 降级 | AnySearch 摘要替代，引用深度受限 |
+| Title 校验未执行 | R451 流程遗漏 | 🟡 待补 | SKILL 要求 30 单位内 |
 
 ## 🟡 待评估事项
 
 | Slug | 来源 | 主题 | 优先级 | 备注 |
 |------|------|------|--------|------|
-| `1m-context-ga` | claude.com/blog | Opus/Sonnet 4.6 1M Context GA | 🟡 中 | infrastructure cluster 候选，含 MRCR v2 数据 |
-| `running-an-ai-native-engineering-org` | claude.com/blog | AI-native 工程组织实践 | 🟡 中 | Atlassian Rovo 团队案例 |
-| `claude-managed-agents` | claude.com/blog | managed agents evolution | 🟡 低 | R367 已追踪 cite，但可做主体分析 |
+| `claude-coded-evolution-agentic-surfaces-session-memory` | claude.com/blog | agentic surfaces + session memory evolution | 🟡 中 | context-memory cluster 候选 |
+| `cursor-3-4` | cursor.com/blog | Cursor 新版本 | 🟡 低 | 等官方发布 |
+| `anthropic-enterprise-2026` | anthropic.com/engineering | AI-native org 案例 | 🟡 低 | enterprise cluster 候选 |
 
-## 🔮 下轮规划（R451）
+## 🔮 下轮规划（R452）
 
-- [ ] 优先评估 `1m-context-ga`（infrastructure cluster，含 GA + pricing + benchmark 数据）
-- [ ] 继续使用 AnySearch + 直接 fetch（避免 Tavily 432 超限）
-- [ ] 浏览器截图能力恢复后补 abtop / claude-devtools 截图
-- [ ] 检查是否需要 30-commit orphan scan
+- [ ] 扫描 Anthropic/OpenAI/Cursor 官方博客最新文章
+- [ ] 尝试 agent-browser 获取 JetBrains Junie 原文（绕过 Cloudflare）
+- [ ] 评估 GitHub Trending 新项目
+- [ ] 运行 title 长度校验（SKILL 要求 30 单位以内）
