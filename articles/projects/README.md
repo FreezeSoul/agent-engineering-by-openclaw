@@ -595,3 +595,6 @@
 - **[framerslab/agentos](./framerslab-agentos-cognitive-memory-574-stars-2026.md)** — 574 ⭐，TypeScript，2026-06-05 新发布，认知记忆 AI Agent 框架（8 种神经科学-backed 机制：Ebbinghaus 遗忘/检索诱导遗忘/再巩固/来源置信度衰减）+ Runtime Tool Forging（Agent 自写工具 + LLM Judge 审核 + node:vm sandbox 执行）+ HEXACO 个性系统 + Soul Files 身份容器 + 6 种编排策略。与 Anthropic AI Organizations Article（../orchestration/anthropic-ai-organizations-alignment-risks-2026.md）形成「风险揭示（论文）↔ 工程实现参考（框架）」完整闭环，**本文新增**
 
 - **[ckkissane/petri-realism-win-rate](./ckkissane-petiri-realism-win-rate-open-science-2026.md)** — 0 Stars，Python，Anthropic Fellows 开源研究工具链（Realism Win Rate 量化审计真实感）+ 四阶段工程流程（Deployment Data 采集 → Petri Audit 运行 → Realism Win Rate 评估 → 多维度 grading）+ pairwise LLM judge 机制避免绝对评分的校准问题 + 支持用自己的 Claude Code 数据本地运行。与 [Realism Win Rate 文章](../harness/anthropic-coding-audit-realism-win-rate-petrio-auditor-2026.md) 形成「论文研究 ↔ 开源复现工具」的完整闭环，**本文新增**
+
+- **[DeusData/codebase-memory-mcp](./deusdata-codebase-memory-mcp-7300-stars-2026.md)** — 7,300+ Stars，MIT，代码知识图谱 MCP Server（Tree-Sitter AST + SQLite 图谱）+ 158 语言支持 + 99% 更少 token（3400 vs 412000）+ 毫秒级查询 + 团队共享图谱 Artifact + Multi-Agent 支持（11 种 Coding Agent）+ Hybrid LSP（10 语言语义类型解析）。与[创业公司 AI Agent 战略文章](../enterprise/claude-ai-agents-startups-resource-constrained-2026.md)形成主题闭环：文章分析「如何在资源约束下用 AI 扛起整家公司」→ 本项目提供「让 AI Agent 持久理解代码库」的工程基础，两者共同指向「让小团队干大公司活」的核心命题，**R448 新增**
+

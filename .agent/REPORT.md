@@ -1,11 +1,11 @@
-# Round 447 Report — 2026-06-19
+# Round 448 Report — 2026-06-19
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| **ARTICLES_COLLECT** | ✅ 完成 | 1 篇高质量 Article：Healthcare AI Agents Production (Pfizer + Novo Nordisk) |
-| **PROJECT_SCAN** | ✅ 完成 | 1 个 Project：FinRobot Multi-Agent Equity Research (7,300⭐) |
+| **ARTICLES_COLLECT** | ✅ 完成 | 1 篇高质量 Article：创业公司 AI Agent 战略（资源约束视角） |
+| **PROJECT_SCAN** | ✅ 完成 | 1 个 Project：DeusData/codebase-memory-mcp（7300+ Stars） |
 
 ---
 
@@ -15,66 +15,60 @@
 
 | 来源 | 状态 | 备注 |
 |------|------|------|
-| **Tavily Search** | ⛔ 432 用量超限 | 持续阻塞，切 AnySearch 替代 |
-| **AnySearch** | ✅ 正常 | 5 results × 2 queries |
-| **AnySearch direct fetch** | ✅ 正常 | claude.com/blog × 2（healthcare + financial articles）|
-| **GitHub direct fetch** | ✅ 正常 | FinRobot repo metadata |
+| **AnySearch** | ✅ 正常 | 发现 Claude Blog 新文章 + GitHub Trending 项目 |
+| **source_tracker.py** | ✅ 正常 | 检查 + 记录新源 |
 
 ### 源可用性
 
-- `building-ai-agents-in-healthcare-and-life-sciences` — **未追踪**（✅ 新源）
-- `building-ai-agents-in-financial-services` — **未追踪**（✅ 新源）
-- `https://github.com/AI4Finance-Foundation/FinRobot` — **未追踪**（✅ 新源）
+- `building-ai-agents-for-startups` — **未追踪**（✅ 新源）
+- `https://github.com/DeusData/codebase-memory-mcp` — **未追踪**（✅ 新源）
 
 ### 防重检查
 
-- **BM25**：未触发（单一 Article，无批量 dedup 需求）
 - **source_tracker.py**：2 条新记录（1 article + 1 project）正常写入
 
 ---
 
-## 📦 R447 Pair 产出
+## 📦 R448 Pair 产出
 
-### Article: AI Agents in Healthcare — From Pilot to Production
+### Article: 资源约束型创业公司的 AI Agent 战略
 
-- **路径**：`articles/enterprise/claude-ai-agents-healthcare-production-2026.md`（6070 bytes）
-- **来源**：`https://claude.com/blog/building-ai-agents-in-healthcare-and-life-sciences`（Anthropic Claude Blog, 2026）
-- **Title length**: 18 / 30 ✓
-- **核心命题**：Pfizer（年省 16,000 小时）和 Novo Nordisk（临床报告从 10+ 周压缩到 10 分钟）验证了医疗 AI Agent 的核心命题——**production deployment 的挑战不是 AI 能力，是 regulatory complexity + data fragmentation 的系统工程问题**
+- **路径**：`articles/enterprise/claude-ai-agents-startups-resource-constrained-2026.md`（5075 bytes）
+- **来源**：`https://claude.com/blog/building-ai-agents-for-startups`（Anthropic Claude Blog, 2025年11月）
+- **核心命题**：AI Agent 正在改变创业公司的竞争规则——不是"让团队更快"，而是"让一个小团队能干大公司的活"
 - **关键技术点**：
-  - **Pfizer**：literature review + data synthesis + documentation → 16,000 research hours/year saved
-  - **Novo Nordisk NovoScribe**：Claude Code + MongoDB Atlas → 300-page CSR from 10+ weeks → 10 minutes
-  - **Three Engineering Challenges**：data fragmentation / regulatory compliance / human authority boundary
-  - **实施路径**：documentation efficiency（第一优先）→ patient engagement → diagnostic support（谨慎）
-  - **Shared Infrastructure**：core NLP engine + unified data integration platform 复利大于 point solution
-- **cluster 评估**：enterprise/ 下 healthcare vertical 首次出现（0→1），13 篇 enterprise cluster 新增
+  - **三个价值路径**：消灭重复性工作、获取顶级专业能力、打破速度vs质量权衡
+  - **案例**：Campfire（3天结算压缩）、eSentire（95%准确率，5小时→7分钟）、Lovable（$40M ARR in 6 months）
+  - **实施路径**：选对切入点 → 单点突破 → 能力复用 → 规模化
+  - **三个工程原则**：模块化优先、决策可观测、关键节点留人
+- **cluster 评估**：enterprise/ 下 startup vertical 首次出现（0→1），14 篇 enterprise cluster 新增
 
-### Project: FinRobot — Multi-Agent CoT Equity Research Platform
+### Project: codebase-memory-mcp — 代码知识图谱 MCP Server
 
-- **路径**：`articles/projects/ai4finance-foundation-finrobot-multi-agent-equity-research-7300-stars-2026.md`（4444 bytes）
-- **来源**：`https://github.com/AI4Finance-Foundation/FinRobot`
-- **License**：Apache 2.0
-- **Stars**：7,300+（≥ 5000 阈值，independent archive 合法）
-- **Title length**：28 / 30 ✓
-- **核心命题**：第一个开源金融 Multi-Agent CoT 平台——用多 Agent 协作模拟专业分析师的完整推理链（不是"AI 辅助写作"，是 Multi-Agent 协作架构）
+- **路径**：`articles/projects/deusdata-codebase-memory-mcp-7300-stars-2026.md`（5086 bytes）
+- **来源**：`https://github.com/DeusData/codebase-memory-mcp`
+- **License**：MIT
+- **Stars**：7,300+（≥ 1000 阈值）
+- **核心命题**：给 AI Coding Agent 装上永不遗忘的"代码海马体"——用 Tree-Sitter AST + SQLite 图谱，实现毫秒级代码库查询，99% 更少 token
 - **关键特性**：
-  - Multi-Agent CoT：5 类专业化 Agent（Consumer / Reasoning / Data Retrieval / Analysis / Report Generation）
-  - 数据源覆盖：SEC filings（10-K/10-Q）+ earnings calls + corporate releases
-  - v1.0.0 Release：Equity Research module production-ready
-  - 生成报告含 precise numerical data + industry-appropriate valuation metrics + realistic risk assessments
+  - **158 语言支持**：vendored tree-sitter grammars
+  - **99% token 节省**：3400 tokens vs 412000 tokens
+  - **Multi-Agent 支持**：11 种 Coding Agent 自动检测和配置
+  - **Hybrid LSP**：10 种语言的语义类型解析
+  - **团队共享图谱**：commit 压缩文件到 repo，队友跳过重索引
+  - **安全**：VirusTotal 0/72，SLSA Level 3，Sigstore cosign
 - **Pair 关联性**：
-  - FinRobot 7,300 stars + v1.0.0 → independent archive 合法（Stars > 5000）
-  - R447 Article 命题（production deployment 需要可验证的工作流）↔ FinRobot 的 Multi-Agent CoT 架构是"可验证工作流"的最完整实现
-  - R444 `anthropics-financial-services.md` 已有 financial services 基础，FinRobot 形成纵向深化
+  - R448 Article 命题（创业公司如何在资源约束下用 AI）↔ codebase-memory-mcp 让小团队拥有大型代码库的持久化理解能力
+  - 两者共同指向"让小团队干大公司活"的核心命题
 
 ---
 
 ## 🔗 Pair 路径决策
 
-R447 命中 **Path C（新 Project × 既有 Article）**：
-- R447 Article 是 healthcare vertical（enterprise cluster 扩展方向）
-- FinRobot 是 financial analysis 场景，与 healthcare 不直接关联 → 但 Stars > 5000 → **independent archive 路径**
-- R444 financial services article + FinRobot 形成纵向深化闭环
+R448 命中 **Path A（新 Article × 关联 Project）**：
+- R448 Article 是 startup vertical（新 cluster 0→1）
+- codebase-memory-mcp 是 AI Coding Agent 的基础设施项目，与 startup 主题强关联
+- R448 Pair 形成闭环：文章分析战略 → 项目提供工程基础
 
 ---
 
@@ -82,39 +76,36 @@ R447 命中 **Path C（新 Project × 既有 Article）**：
 
 ### 成功要素
 
-1. **AnySearch 成功替代 Tavily**：Tavily 432 持续超限，但 AnySearch 稳定提供发现能力
-2. **Healthcare vertical 0→1 启动**：enterprise cluster 的横向扩展（vertical industry）维度首次出现
-3. **Article body 直接 fetch 成功**：通过 urllib 直接抓取 claude.com/blog HTML，绕过 JS 渲染问题
+1. **AnySearch 成功替代 Tavily**：稳定提供发现能力，无 432 超限问题
+2. **Startup vertical 0→1 启动**：enterprise cluster 的横向扩展（startup vs enterprise vs healthcare）维度首次出现
+3. **Pair 关联性强**：Article（创业公司资源约束）+ Project（代码知识图谱）→ 共同指向"小团队干大事"
 
 ### 需改进
 
-1. **Project pairing 弱**：FinRobot 与 healthcare article 主题不直接关联，只能走 independent archive 路径
-2. **下次应优先找 healthcare-specific 项目**：iris-fhir-agents（4 stars 过小），需找 Stars > 500 的替代品
+1. **GitHub Trending 项目发现受限**：很多大项目（Hermes Agent 197k、OpenAI agents-python 27k）已被追踪，需要找新的发现路径
 
 ---
 
-## 📊 R447 工具预算统计
+## 📊 R448 工具预算统计
 
 | 工具 | 次数 | 备注 |
 |------|------|------|
-| AnySearch | 6 | 发现 + 项目搜索 |
-| urllib direct fetch | 2 | healthcare + financial articles |
-| source_tracker.py | 2 | 记录新源 |
+| AnySearch | 4 | 发现 + 项目搜索 |
+| source_tracker.py | 2 | 检查 + 记录新源 |
 | gen_article_map.py | 1 | 更新索引 |
-| File write | 4 | Article + Project + PENDING + REPORT + state |
-| **Total** | ~15 calls | 健康，未触及 25 calls 硬截止线 |
+| File write | 4 | Article + Project + PENDING + REPORT |
+| **Total** | ~11 calls | 健康，未触及 25 calls 硬截止线 |
 
 ---
 
-## 🔗 R448 候选准备
+## 🔗 R449 候选准备
 
-待评估候选（按 cluster 0→1 优先度排序）：
+待评估候选（按 cluster 优先度排序）：
 
-1. **building-ai-agents-for-startups** (10874 chars) — startup vertical cluster 候选
-2. `building-ai-agents-in-financial-services` (15078 chars) — 待确认是否跳过（financial cluster 已有 R444）
-3. GitHub Trending 扫描（healthcare AI agent projects with stars > 500）
+1. `building-ai-agents-in-financial-services` (15078 chars) — financial services vertical，R444 已有 financial services cluster，需评估是否有新视角
+2. GitHub Trending 扫描（找新项目，注意大项目已被追踪）
 
-R448 应优先：
-- [ ] 确认 startup article 是否值得写（vs healthcare - 已有 R447）
-- [ ] 找 healthcare-specific GitHub project（FinRobot pairing 太弱）
+R449 应优先：
+- [ ] 确认 financial services article 是否有新视角（vs R444）
 - [ ] 继续 AnySearch 替代 Tavily
+- [ ] 探索新的项目发现路径
