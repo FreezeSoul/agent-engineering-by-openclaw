@@ -1,52 +1,83 @@
-# PENDING — R455 待办
+# PENDING.md - 待处理事项
 
-## 📋 频率配置
+> 上次更新: R454 (2026-06-20)
 
-| 任务类型 | 频率 | 上次执行 | 建议下次 |
-|----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-19 (R454) | 每轮必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-19 (R454) | 每轮必执行 |
+---
 
-## ⏳ 待处理任务
+## 持续性待办
 
-<!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
+### 🔴 高优先级
 
-## 📌 Articles 线索
+#### gen_article_map.py 挂起问题
+- **问题**: 自 R392 起，脚本持续挂起（当前 62 次连续挂起）
+- **症状**: gen_article_map.py 运行后不退出，不生成输出
+- **影响**: 无法执行 "30-commit scan" 和 "New repositories since R_" 扫描
+- **计划修复**:
+  1. 调查挂起原因（可能与 git log 输出格式/管道处理有关）
+  2. 考虑用 Python 直接调用 git 而非管道
+  3. 或使用 headless-browser 方式替代
+- **状态**: 未处理
 
-<!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
+#### 源饱和应对策略
+- **问题**: 所有一级源（Anthropic/OpenAI/Cursor/CrewAI/Replit/Augment）已饱和
+- **影响**: 连续 R453、R454 均为 SKIP
+- **计划**:
+  1. 用 browser 工具扫描 Cursor/Replit/Augment 博客（JS 渲染）
+  2. 评估是否需要扩展一级源列表
+  3. 考虑工具类项目的纳入标准
+- **状态**: 未处理
 
-- **R454 已产出**：`enterprise-managed-auth` → `articles/tool-use/anthropic-enterprise-mcp-authorization-idp-governance-2026.md`
-- **R454 跳过的低 body 候选**：
-  - `claude-platform-compliance-api` (2197 chars)
-  - `claude-security-public-beta` (2487 chars)
-  - 下轮可重评（如有新版本 / body 补充）
-- **待评估（下轮）**：
-  - AddyOSmani O'Reilly "Long-Running Agents" (Jun 8, 2026)
-  - AnySearch 扫描 CrewAI / Replit / Augment 官方博客
-  - GitHub API 新建仓库扫描（created>2026-06-15）
-  - Anthropic Enterprise-Managed Auth 公告的"additional identity providers"
+---
 
-## 🔴 高优先级问题
+## 本轮评估后的决策
 
-| 问题 | 来源 | 状态 | 备注 |
-|------|------|------|------|
-| Tavily 432 用量超限 | 系统 | 🔴 阻塞 | 已完全切换到 AnySearch |
-| gen_article_map.py 连续挂起 | R392-R454 | 🔴 待诊断 | 连续63次挂起 |
+### ✅ 可关闭
 
-## 🟡 待评估事项
+- **heygen-com/hyperframes 评估**: 28.5K stars，但视频渲染工具，非 Agent Engineering 核心方向 → **关闭，不纳入**
 
-| Slug | 来源 | 主题 | 优先级 | 备注 |
-|------|------|------|--------|------|
-| AddyOSmani Long-Running Agents | adddyosmani.com (O'Reilly) | Long-running agent 工程机制 | 🟡 中 | 6月8日发布 |
-| CrewAI 官方博客 | crewai.com/blog | Agent 编排 | 🟡 低 | 定期扫描 |
-| Replit 官方博客 | blog.replit.com | AI Coding | 🟡 低 | 定期扫描 |
-| Augment 官方博客 | augment.com/blog | AI Coding | 🟡 低 | 定期扫描 |
-| archestra-ai/archestra | GitHub | MCP gateway | 🟡 中 | AGPL-3.0 风险，但 stars 3864 持续观察 |
+### ❌ 本轮关闭但需重新审视
 
-## 🔮 下轮规划（R455）
+- **Addy Osmani "Long-running Agents"**: 不在 SKILL 一级源列表 → **关闭，但 SKILL 规则可能需要审视**（Addy Osmani 是 Google 前工程师，独立工程视角，内容深度超过大多数企业博客）
+- **CrewAI "How to build Agents Where Data Already Lives"**: 评估为浅（企业定位）→ **关闭，但可重新评估**
 
-- [ ] 扫描第一梯队最新文章（每6小时触发）
-- [ ] 监控 Anthropic Enterprise-Managed Auth 扩展（其他 IdP 支持）
-- [ ] 追踪 Slack MCP 接入 Enterprise-Managed Auth 后的"human-agent 协作"治理
-- [ ] GitHub Trending 新建仓库扫描（created>2026-06-15）
-- [ ] 评估 AddyOSmani O'Reilly "Long-Running Agents" 工程文章
+---
+
+## 探索性想法
+
+### 源扩展可能性
+当前一级源列表：
+- Anthropic ✅
+- OpenAI ✅
+- Cursor ✅ (需 browser)
+- CrewAI ✅
+- Replit ✅ (需 browser)
+- Augment ✅ (需 browser)
+- GitHub (trending) ✅
+
+可能扩展方向：
+- Microsoft (Azure AI, Semantic Kernel)
+- Google (Agent Development Kit, Gemini for Developers)
+- Meta (Llama 相关生态)
+- Hugging Face (SmolAgents)
+- LangChain (langgraph)
+- Multi-agent 相关框架（AutoGen, Mastra, PydanticAI）
+
+**注意**: 扩展需符合 SKILL 的工程视角和质量门槛
+
+### hyperframes 重新考虑
+- 28.5K stars，Apache 2.0，活跃维护（每周更新）
+- Claude Code skill 集成
+- Deterministic rendering pipeline
+- **反对纳入**: 非 Agent Engineering 核心问题
+- **支持纳入**: 28.5K stars 说明被广泛使用，且 Claude Code skill 是真实的 Agent 集成案例
+- **建议**: 等待 FSIO 决策
+
+---
+
+## 下次触发时检查清单
+
+- [ ] 检查 R454 REPORT.md
+- [ ] 检查一级源是否有新文章
+- [ ] 尝试用 browser 工具扫描 Cursor 博客
+- [ ] gen_article_map.py 问题状态
+- [ ] hyperframes 决策状态

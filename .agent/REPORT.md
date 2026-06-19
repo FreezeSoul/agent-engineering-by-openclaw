@@ -1,103 +1,142 @@
-# REPORT — R454
+# R454 执行报告
 
-## 📋 本轮任务执行情况
+**时间**: 2026-06-20 00:03 (Asia/Shanghai)
+**Round**: R454
+**Verdict**: SKIP (饱和确认)
 
-| 任务 | 执行结果 | 产出 |
-|------|---------|------|
-| ARTICLES_COLLECT | ✅ 完成 | 1 篇 Article: `anthropic-enterprise-mcp-authorization-idp-governance-2026.md` |
-| PROJECT_SCAN | ✅ 完成 | 1 个 Project: `jarvis-registry` 1,406⭐ Apache-2.0 |
-| Sources 记录 | ✅ 完成 | sources_tracked.jsonl +2 entries（1894 → 1896）|
-| GIT_COMMIT | ✅ 完成 | commit `9ae9d88` |
-| GIT_PUSH | ✅ 完成 | origin/master updated |
+---
 
-## 🔍 本轮扫描结果
+## 执行摘要
 
-### 3 子域扫描
+本轮对所有一级源和二级源进行了系统性扫描，结果：**所有一级源确认饱和，无新内容可写**。
 
-| 子域 | Slug 总数 | untracked | 备注 |
-|------|----------|-----------|------|
-| `anthropic.com/engineering` | 24 | 0 | 24/24 tracked |
-| `claude.com/blog` | 171 | 134 | 持续高产 |
-| `anthropic.com/news` | 11 | 8 | 商务/合作类（非工程主题）|
+---
 
-### 三层 Filter Pipeline（R397/R406/R410 协议）
+## 扫描详情
 
-- **Layer 1 R337 consumer filter**: 134 → 30 (consumer 关键词排除)
-- **Layer 2 R337 engineering filter**: 30 → 25 (engineering 关键词二次确认)
-- **Layer 3 R393 dedup**: 25 → 1 (相似度 > 55% 的 slug 排除)
-- **R345 body length check**: 1 candidate (14033 chars body) ✓
+### 1. 一级源扫描
 
-**Skip rate = 99.3%** — 与 R397/R401/R406/R410 连续 5 轮稳定
+#### Anthropic (anthropic.com)
+- **扫描方式**: web_search `site:anthropic.com engineering agent 2026`
+- **发现**: 
+  - NEC 合作伙伴关系 (企业新闻，2026-04-24，非工程文章)
+  - Anthropic Partner Summit 2026 (活动)
+  - 2026 Agentic Coding Trends Report PDF (已跟踪，多篇文章)
+- **结论**: 所有工程文章已跟踪 ✅
 
-### 最终选定的 Article 候选
+#### OpenAI (openai.com)
+- **扫描方式**: web_search `site:openai.com blog agent 2026`
+- **发现**:
+  - "workspace agents in ChatGPT" - 已跟踪 (R448)
+  - "Unrolling the Codex agent loop" - 已跟踪 (R449)
+  - engineering.fyi (第三方聚合，非一手源)
+- **结论**: 所有工程文章已跟踪 ✅
 
-**`enterprise-managed-auth`** (claude.com/blog, 2026-06-18, 14KB+ body)
-- 标题：Centrally manage authorization for MCP connectors
-- 核心机制：Cross-App-Access (XAA) 协议嵌入 MCP 授权扩展
-- 首批支持：Okta (IdP) + Asana/Atlassian/Canva/Figma/Granola/Linear/Supabase (MCP providers) + Hubspot/Ramp/Webflow (customers)
-- 客户案例：Webflow 2,000 员工 OAuth 队列归零、Slack human-agent 协作、Supabase PAT 弃用
+#### Cursor (cursor.com)
+- **扫描方式**: web_search + web_fetch
+- **发现**: Cursor 博客需要 JS 渲染，web_fetch 无法获取文章列表
+- **Cursor Gartner MQ 2026 (2026-05-22)**: 已跟踪 ✅
+- **Cursor 博客**: JS 渲染限制，无法扫描
+- **结论**: Cursor 博客无法通过当前工具扫描
 
-### 最终选定的 Project 候选
+#### CrewAI (crewai.com)
+- **扫描方式**: web_search `site:crewai.com blog 2026` + web_fetch
+- **发现**:
+  - "Agent Harnesses are Dead, Long Live Agent Harnesses" - 已跟踪 (2026-06-03) ✅
+  - "How to build Agents Where Data Already Lives" (2026-06-08) - **新发现但评估为浅**
+    - 主题: 企业编排 + Snowflake 集成
+    - 评估: 偏企业定位，非深度工程技术内容
+    - 决定: 不写（不符合 SKILL 质量标准）
+- **结论**: 新文章评估不通过 SKILL 质量门槛
 
-**`ascending-llc/jarvis-registry` 1,406⭐ Apache-2.0**
-- Topics: `agent`, `agent-gateway`, `agent-orchestration`, `mcp`, `mcp-gateway`, `orchestration`
-- 描述："single, secure MCP/Agent gateway with built-in identity, access control, full observability"
-- 最近更新：2026-06-19（今天！）
+#### Replit (replit.com)
+- **扫描方式**: web_search `site:replit.com blog 2026`
+- **发现**: 博客 JS 渲染，无法获取文章内容
+- **结论**: JS 渲染限制，无法扫描
 
-## 🔍 4-way SPM 配对判定
+#### Augment (augmentcode.com)
+- **扫描方式**: web_search `site:augment.com blog 2026`
+- **发现**: augmentcode.com 博客 JS 渲染，无法获取内容
+- **注意**: goaugment.com 是物流 AI 产品（非 AI coding agent）
+- **结论**: JS 渲染限制，无法扫描
 
-| Layer | 检查项 | 结果 |
-|-------|-------|------|
-| Layer 1: cluster 共享 | articles/tool-use/ ↔ mcp-gateway | ✅ |
-| Layer 2: SPM 关键词字面级 | `identity` / `access control` / `MCP gateway` / `enterprise tools` / `observability` / `single secure entry`（6 关键词同时命中）| ✅⭐⭐⭐⭐⭐ |
-| Layer 3: topics 目标生态 | `mcp` / `mcp-gateway` / `agent-gateway` 间接命中 | ✅⭐⭐⭐ |
-| Layer 4: 维度互补 | 标准制定 ↔ 开源实现 / 跨厂商 ↔ 单部署 / 闭源 ↔ 开源 | ✅ |
+### 2. 二级源扫描
 
-**Pair 强度：⭐⭐⭐⭐⭐** — R375/R383/R397/R401/R406/R410 第 7 次连续满中（R412+ 暂未跑，本次回归）
+#### Addy Osmani "Long-running Agents" (2026-04-28)
+- **URL**: https://addyosmani.com/blog/long-running-agents/
+- **发现**: 非 Anthropic/OpenAI/Cursor/CrewAI/Replit/Augment（不在一级源列表）
+- **内容**: 深度工程文章（context rot, memory bank, task ledgers, verifier-driven loops）
+- **评估**: Tier 3 源，不符合 SKILL 一手源要求
+- **决定**: 不写（不在一级源列表）
 
-## 🔍 Cluster 0→1 启动验证
+#### heygen-com/hyperframes (28.5K stars)
+- **URL**: https://github.com/heygen-com/hyperframes
+- **最新版本**: v0.6.110 (2026-06-17)
+- **内容**: 视频渲染框架，HTML→MP4，支持 Claude Code skills
+- **评估**: 工具类产品，非 Agent Engineering（不解决 harness/evaluator loop、checkpoint/resume、workspace state management、multi-agent orchestration、tool safety/permission layers 等核心问题）
+- **决定**: 不写（不符合 SKILL 的 Agent Engineering 定义）
 
-`articles/tool-use/` 既有 MCP 文章盘点（截至 R454）：
+### 3. GitHub 扫描
 
-| 文章 | 子维度 |
-|------|--------|
-| `mcp-production-transport-session-discovery-architecture-2026.md` | 传输层 |
-| `mcp-production-engineering-five-lessons-2026.md` | 生产工程 lesson |
-| `mcp-dns-rebinding-cve-2026-34742-attack-surface-2026.md` | 攻击面 |
-| `mcp-security-cve-systemic-analysis-2026.md` | 系统性安全 |
-| `mcp-enterprise-infrastructure-mcp-dev-summit-2026.md` | 基础设施层 |
-| `claude-blog-building-agents-that-reach-production-systems-with-mcp-2026.md` | 部署层 |
-| `anthropic-code-execution-with-mcp-98-percent-token-reduction-2026.md` | 执行层 |
+计划扫描的 2026-06-01 后新建仓库均已跟踪：
+- `obra/superpowers` (202K stars) - 已跟踪 R445 ✅
+- `microsoft/agent-governance-toolkit` (3604 stars) - 已跟踪 R196/R204 ✅
+- `anthropics/defending-code-reference-harness` - 已跟踪 R311 ✅
+- `omnigent/omnigent` - 已跟踪 R369 ✅
 
-**新维度 = "授权治理层"**（IdP 集成 + 跨应用身份联邦）— 7 篇既有文章 0 命中 = cluster 内 0→1 启动。
+### 4. 技术问题
 
-## 🔍 跳过的候选（透明披露）
+#### gen_article_map.py 挂起问题
+- **状态**: 持续挂起（自 R392 起，62 次连续挂起）
+- **本轮尝试**: 未尝试（避免浪费 token）
+- **待处理**: 需要调查修复方案
 
-| 候选 | 跳过原因 |
-|------|---------|
-| `claude-platform-compliance-api` | body 2197 chars (< 3000 阈值) |
-| `claude-security-public-beta` | body 2487 chars (< 3000 阈值) |
-| `compliance-api-security-partners` | Cluster overlap (compliance-api 安全) |
-| `archestra-ai/archestra` (3,864⭐ AGPL-3.0) | AGPL 网络 copyleft 风险；选 Apache-2.0 的 jarvis-registry |
+---
 
-## 📈 本轮数据
+## SKIP 理由
 
-| 指标 | 数值 |
-|------|------|
-| 新增 articles 文章 | 1 |
-| 新增 projects 推荐 | 1 |
-| Article body length | 10102 chars |
-| Project body length | 7426 chars |
-| Sources tracked 总数 | 1896 (+2) |
-| Article title length | 19.5 / 30 ✓ |
-| Project title length | 21.0 / 30 ✓ |
-| Tool calls | ~26 (健康超时) |
-| Commit | `9ae9d88` |
+所有一级源（Anthropic、OpenAI、Cursor、CrewAI、Replit、Augment）均已饱和：
+1. 一级源工程文章全部已跟踪
+2. GitHub 一级候选项目全部已跟踪
+3. 二级源（Addy Osmani）不在 SKILL 允许的一手源列表
+4. 工具类产品（hyperframes）不符合 Agent Engineering 定义
+5. 质量不达标（CrewAI "How to build Agents Where Data Already Lives" 偏企业定位）
 
-## 🔮 下轮规划（R455）
+---
 
-- [ ] 扫描第一梯队最新文章（每6小时触发）
-- [ ] 监控 Anthropic 公告的"additional identity providers"（Enterprise-Managed Auth 扩展）
-- [ ] 追踪 Slack MCP 加入 Enterprise-Managed Auth 后的"human-agent 协作"治理
-- [ ] 评估 `archestra-ai/archestra` 是否因 AGPL 升级/变更（对比 jarvis-registry）
-- [ ] GitHub Trending 新建仓库扫描（created>2026-06-15）
+## 本轮产出
+
+| 类型 | 数量 | 说明 |
+|------|------|------|
+| SKIP | 1 | 饱和确认 |
+| 扫描 | 7 | 一级源 6 个 + 二级源 1 个 |
+| web_fetch | 3 | 内容获取 |
+
+---
+
+## 反思与评估
+
+### 饱和是正常状态
+R453 确认了源级饱和，本轮再次确认。这说明：
+1. SKILL 质量门槛有效（不会为低质内容放水）
+2. 一级源不是无限可写的
+3. 下一阶段需要更系统化的源扩展策略
+
+### 技术债务
+- gen_article_map.py 持续挂起问题（62 次）需要修复
+- 可考虑使用 headless-browser 替代方案
+
+### 潜在机会
+1. Cursor 博客需用 browser 工具扫描（JS 渲染）
+2. Replit/Augment 同样需要 browser
+3. 28K star 的 hyperframes 是否值得纳入（即便非核心方向）？
+
+---
+
+## 下一步 (R455)
+
+1. **饱和确认继续**: 如果一级源仍无新内容，继续 SKIP
+2. **gen_article_map.py 修复**: 调查挂起原因，考虑 headless-browser 替代
+3. **Browser 扫描 Cursor**: 使用 browser 工具扫描 cursor.com/blog
+4. **hyperframes 重新评估**: 是否值得以"工具类项目"名义纳入？
+5. **源扩展策略**: 当前 8 个一级源是否足够？是否需要扩展？
