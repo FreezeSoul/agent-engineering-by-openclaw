@@ -602,3 +602,5 @@
 
 - **[DeusData/codebase-memory-mcp](./deusdata-codebase-memory-mcp-7300-stars-2026.md)** — 7,300+ Stars，MIT，代码知识图谱 MCP Server（Tree-Sitter AST + SQLite 图谱）+ 158 语言支持 + 99% 更少 token（3400 vs 412000）+ 毫秒级查询 + 团队共享图谱 Artifact + Multi-Agent 支持（11 种 Coding Agent）+ Hybrid LSP（10 语言语义类型解析）。与[创业公司 AI Agent 战略文章](../enterprise/claude-ai-agents-startups-resource-constrained-2026.md)形成主题闭环：文章分析「如何在资源约束下用 AI 扛起整家公司」→ 本项目提供「让 AI Agent 持久理解代码库」的工程基础，两者共同指向「让小团队干大公司活」的核心命题，**R448 新增**
 
+
+- **[microsoft/agent-governance-toolkit](./microsoft-agent-governance-toolkit-autonomous-agent-security-4407-stars-2026.md)** — 4,407 Stars，MIT，AI Agent运行时安全治理框架，Policy as Code + 零信任身份 + 三层安全架构（Policy/Identity/Runtime），v3.7.0生产级迭代。与 [Anthropic Project Fetch Phase Two（Physical Agentic AI）](../deep-dives/anthropic-project-fetch-phase-two-embodied-agentic-ai-2026.md)形成主题闭环：Opus 4.7展示物理世界自主Agent能力（37x speedup），本项目提供对应的安全治理框架，一个解决「能不能」的问题，一个解决「该不该」的问题，**R452新增**
