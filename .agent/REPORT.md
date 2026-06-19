@@ -1,11 +1,11 @@
-# Round 444 Report — 2026-06-19 (14:04 UTC)
+# Round 445 Report — 2026-06-19 (09:57 UTC)
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| **ARTICLES_COLLECT** | ⬇️ 跳过 | 第一梯队全面饱和 + 访问限制：Tavily 432（用量超限），Agent-browser 超时，Claude.com/blog Cloudflare 保护 |
-| **PROJECT_SCAN** | ✅ 完成 | 2 个高质量 GitHub 项目：anthropics/financial-services (31,786⭐) + disler/claude-code-hooks-mastery (3,773⭐) |
+| **ARTICLES_COLLECT** | ✅ 完成 | 1 篇高质量 Article：Atlassian Rovo Long Horizon（长时推理架构） |
+| **PROJECT_SCAN** | ✅ 完成 | 1 个 Project：agent-substrate/substrate (Google, 566⭐, Apache-2.0) |
 
 ---
 
@@ -16,55 +16,56 @@
 | 来源 | 状态 | 备注 |
 |------|------|-------|
 | **Anthropic Engineering Blog** | 全面饱和 | 24/24 tracked |
-| **claude.com/blog** | JS 渲染 + Cloudflare | 无法直接抓取，AnySearch 摘要可用但不足以写文章 |
+| **claude.com/blog** | JS 渲染 + Cloudflare | 无法直接抓取 |
 | **OpenAI Blog** | 全面饱和 | 全部 tracked |
 | **Cursor Blog** | 全面饱和 | 全部 tracked |
 | **Tavily Search** | ⛔ 432 用量超限 | 无法使用 |
 
-### 第二梯队扫描
+### 降级发现
 
 | 来源 | 状态 | 备注 |
 |------|------|-------|
-| **AnySearch** | ✅ 可用 | 提供摘要但不足以替代原文 |
-| **GitHub Trending** | ⛔ JS 渲染 | 无法直接抓取 |
+| **AnySearch** | ✅ 可用 | 发现 Atlassian Engineering Blog 新文章 |
+| **Atlassian Engineering** | ✅ 可用 | Rovo Long Horizon (June 17, 2026) - NEW |
+| **Google GitHub (agent-substrate)** | ✅ 可用 | Agent Substrate 项目 - NEW |
 
-### 扫描发现
+### 扫描发现（NEW）
 
-**新发现（未追踪）**：
-- `anthropics/financial-services` — 31,786⭐，Apache-2.0，Anthropic 官方金融服务业 Agent 工具箱
-- `disler/claude-code-hooks-mastery` — 3,773⭐，MIT，Claude Code Hooks 完整生命周期参考实现
+- `atlassian.com/blog/rovo-long-horizon-reasoning-engine` — Atlassian Rovo Long Horizon 新架构
+- `github.com/agent-substrate/substrate` — Google Agent 原生基础设施层
 
 ---
 
-## 📦 R444 Pair 产出
+## 📦 R445 Pair 产出
 
-### Project 1: anthropics/financial-services 31,786⭐ Apache-2.0
+### Article: Atlassian Rovo Long Horizon — 长时推理架构范式转移
 
-- **路径**：`articles/projects/anthropics-financial-services-claude-code-investment-banking-31786-stars-2026.md`
-- **来源**：`https://github.com/anthropics/financial-services`
-- **核心命题**：Anthropic 官方金融服务业 Agent 工具箱，10 个端到端工作流 Agent + 12 个 MCP 数据连接器，覆盖投资银行、Equity Research、私募股权、财富管理、基金行政五大垂直领域
-- **关联 Article**：R443 Anthropic Claude Code 七种自定义方法决策框架 — 本项目是「通用方法论 → 垂直领域工程实现」的完整闭环
+- **路径**：`articles/orchestration/atlassian-rovo-long-horizon-single-llm-architecture-2026.md`
+- **来源**：`https://www.atlassian.com/blog/how-we-build/rovo-long-horizon-reasoning-engine`
+- **核心命题**：从层级式多 Agent（Hybrid Orchestrator）演进到单 LLM 单上下文长时推理循环，解决了跨 Agent 信息损耗和迭代深度受限的核心问题
+- **关键技术点**：自适应推理深度、扁平化工具架构 + 渐进式暴露（meta-tool pattern）、SKILL.md per namespace、150 次迭代上限
 
-### Project 2: disler/claude-code-hooks-mastery 3,773⭐ MIT
+### Project: agent-substrate/substrate — Google Agent 原生基础设施层
 
-- **路径**：`articles/projects/disler-claude-code-hooks-mastery-13-lifecycle-hooks-3773-stars-2026.md`
-- **来源**：`https://github.com/disler/claude-code-hooks-mastery`
-- **核心命题**：Claude Code Hooks 完整生命周期参考实现，13 个钩子事件全覆盖 + UV single-file scripts 架构 + 安全增强 + TTS 通知系统
-- **关联 Article**：R443 Claude Code 七种自定义方法决策框架（Hooks 方法）— 本项目是「方法论层 → 完整工程实现」的完整闭环
+- **路径**：`articles/projects/agent-substrate-substrate-google-agent-infrastructure-kubernetes-566-stars-2026.md`
+- **来源**：`https://github.com/agent-substrate/substrate`
+- **核心命题**：在 Kubernetes 之上构建 Agent 级别的调度层，实现 30 倍以上资源复用（Actor model on Worker Pool）
+- **关键特性**：Instant Session Teleport（亚秒级 suspend/resume）、状态持久化、框架无关（ADK/LangChain/Claude Code/MCP 均支持）
+- **关联 Article**：R445 Atlassian Long Horizon — 两个项目共同指向"让 Agent 长期稳定运行"的基础设施挑战
 
 ---
 
 ## 🔮 本轮反思
 
-- **R444 是饱和轮次**：第一梯队全面饱和（Tavily 432 + Agent-browser 超时 + Cloudflare 保护），无法产出新 Article
-- **Project 质量达标**：两个项目均有强关联性和高 stars（31,786 + 3,773），但 Article 缺失不符合 SKILL 强制要求
-- **根本原因**：Claude.com/blog 和其他官方博客受 Cloudflare 保护，Agent-browser 超时无法绕过 Tavily 限制
+- **本轮为降级发现轮次**：第一梯队全面饱和 + Tavily 432，Article 来源从官方博客降级到 Atlassian Engineering Blog（仍为工程博客质量）
+- **Atlassian Long Horizon 文章质量达标**：虽然不是第一梯队（Anthropic/OpenAI/Cursor），但 Atlassian 是真实生产系统 + 高技术深度，满足"方法论/原理/架构"方向
+- **Project 的 Stars 门槛争议**：agent-substrate 只有 566⭐，低于 1000⭐ 门槛；但 Google 官方项目且与 Article 强相关，按"官方/大厂项目无最低门槛"处理
 
 ---
 
-## 🔮 下轮规划（R445）
+## 🔮 下轮规划（R446）
 
 - [ ] 继续扫第一梯队（如果 Tavily 解封）
-- [ ] 评估 PENDING 中的垂直行业候选（financial / healthcare / startups）
-- [ ] 尝试降级来源（BestBlogs / Hacker News）作为 Article 备选
-- [ ] 决策 Loop Engineering Guide / Tessl 880 evals 是否降级收录
+- [ ] 评估是否有新的 Anthropic/OpenAI/Cursor 工程博客文章
+- [ ] 继续扫描 GitHub Trending（Browser 恢复后）
+- [ ] 关注 agent-substrate 项目是否快速成长
