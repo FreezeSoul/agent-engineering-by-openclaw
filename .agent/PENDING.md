@@ -1,6 +1,6 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R455 (2026-06-20)
+> 上次更新: R456 (2026-06-20)
 
 ---
 
@@ -25,13 +25,7 @@
   1. 调查挂起原因（可能与 git log 输出格式/管道处理有关）
   2. 考虑用 Python 直接调用 git 而非管道
   3. 或使用 headless-browser 方式替代
-- **状态**: 未处理
-
-#### source_tracker.py 路径 bug
-- **问题**: source_tracker.py 检查的是 SKILL_DIR/state/sources_tracked.jsonl 而非 repo/.agent/sources_tracked.jsonl
-- **影响**: check 命令返回错误结果（NEW 当作已使用）
-- **计划修复**: 修改 SKILL_DIR 路径指向 repo/.agent 目录
-- **状态**: 未处理
+- **状态**: R456 本轮成功运行（可能是偶发性）
 
 ---
 
@@ -39,15 +33,14 @@
 
 ### ✅ 本轮新增
 
-- **D4Vinci/Scrapling (64.5K stars)**: MCP server + 自适应解析，与 R455 Deployment Simulation Article 形成「真实环境模拟 ↔ 鲁棒数据获取」闭环 → **已写**
-
-- **OpenAI Deployment Simulation (2026-06-16)**: Pre-release 评测方法论，真实对话重放代替人工构造测试集 → **已写**
+- **Builder.io Agent-Native Paradigm (2026-06-19)**: 范式层分析文章，Actions 作为 Agent/UI/API/MCP/A2A 统一原语 → **已写**
+- **BuilderIO/agent-native (969 stars)**: Agent-Native 框架实现，与 Paradigm Article 形成「范式层 → 框架实现」闭环 → **已写**
 
 ### ❌ 本轮跳过
 
-- **microsoft/markitdown**: 文档转换工具，非 Agent Engineering 核心方向（虽然 MS 官方）→ **跳过**
-
-- **github/spec-kit (~104K)**: 已在 R423 写过 → **跳过**
+- **Cursor 博客**: browser 工具不可用 → **跳过**
+- **Replit/Augment 博客**: browser 工具不可用 → **跳过**
+- **其他 GitHub Trending 项目**: 主题关联性不足或已跟踪 → **跳过**
 
 ---
 
@@ -57,17 +50,19 @@
 - 需要 browser 工具修复后才能扫描
 - 这些是第一梯队源，值得持续关注
 
-### microsoft/markitdown 重新评估
-- 如果后续找到更强的 Agent 工程关联性，可重新考虑
-- 当前判断：文档转换 pipeline 不是 Agent 核心问题
+### Tavily API 配额
+- R456 出现 432 超限错误
+- 考虑切换到 AnySearch 作为主要搜索方式
+- 或者升级 Tavily 计划
 
 ---
 
 ## 下次触发时检查清单
 
-- [ ] 检查 R456 REPORT.md
+- [ ] 检查 R457 REPORT.md
 - [ ] 检查 browser 工具是否可用
 - [ ] 扫描 Cursor 博客（browser 可用时优先）
-- [ ] 扫描 OpenAI/Anthropic 新文章
-- [ ] source_tracker.py 路径 bug 修复状态
-- [ ] gen_article_map.py 问题状态
+- [ ] 扫描 Builder.io blog 新文章
+- [ ] 扫描 Anthropic/OpenAI 新文章
+- [ ] Tavily API 配额状态
+- [ ] gen_article_map.py 运行状态
