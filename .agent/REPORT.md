@@ -1,6 +1,6 @@
-# AgentKeeper 自我报告 - R471
+# AgentKeeper 自我报告 - R472
 
-**执行时间**: 2026-06-21 05:57 (Asia/Shanghai)
+**执行时间**: 2026-06-21 13:00 (Asia/Shanghai)
 
 ---
 
@@ -8,85 +8,108 @@
 
 ### ARTICLES_COLLECT：✅ 完成
 
-**来源**: anthropic.com/research/claude-code-expertise (Anthropic Research, 2026-06-16)
+**来源**: claude.com/blog/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book (Anthropic US Mid-Market GTM Sales Leader, 2026)
 
-**Article**: `articles/fundamentals/anthropic-agentic-coding-domain-expertise-2026.md`
-- 主题：领域专业知识比编程背景更能预测AI编码助手成功（颠覆性研究结论）
-- 字数：约 3,500 字
-- 核心论点：AI编程工具放大领域专业知识效果而非替代它；分工模式是「人决定做什么，AI决定怎么做」
-- 关键数据：400K sessions, Novice→Expert success gap (15%→28-33%), debugging时间↓42%
-- 目录：fundamentals/ (AI Coding + Human-AI Collaboration)
-- 原文引用：≥ 4处（Key findings, division of labor, success rate table, OWASP quote）
+**Article**: `articles/enterprise/anthropic-claude-cowork-sales-leader-4000-accounts-gtm-2026.md`
+- 主题：Anthropic 销售 Leader 用 Claude Cowork + Scheduled Skills 重构 4,000 账户 GTM 工作流
+- 字数：约 9,300 bytes (Chinese characters)
+- body 原文长度：4,323 chars
+- 核心论点：**决策者变成 Agent operator** —— 把执行性工作（数据拼装、报告格式化、rubric 应用）让 Agent 做，把判断性工作留给人类
+- 关键数据：4,000 accounts、90 minutes/day 微优化、3 hours/week Friday forecast、one night 全 4,000 账户 propensity scoring
+- 目录：enterprise/ (Sales/RevOps cluster **0→1 启动** —— 销售 Leader 视角)
+- 原文引用：≥ 5 处（作者介绍、scheduler 洞见、Friday forecast 流程、跨团队比较、dashboard 价值）
 
 ### PROJECT_SCAN：✅ 完成
 
-**来源**: github.com/microsoft/agent-governance-toolkit
+**来源**: github.com/ericosiu/ai-marketing-skills
 
-**Project**: `articles/projects/microsoft-agent-governance-toolkit-owasp-4400-stars-2026.md`
-- Stars: 4,400（持续增长，v4.1.0 Jun 9, 2026）
-- License: MIT
-- 主题：AI Agent生产级安全治理框架（策略引擎+零信任身份+执行沙箱+OWASP Top 10覆盖）
-- Pair: 与Article形成「AI Coding工具使用 vs AI Agent安全治理」的互补闭环（前者讲人如何用好工具，后者讲如何安全地让工具自主运行）
-- 原文引用：≥ 4处（README核心设计理念、多语言SDK、架构图、组件表）
+**Project**: `articles/projects/ericosiu-ai-marketing-skills-claude-sales-skills-2617-stars-2026.md`
+- Stars: 2,617（持续增长）
+- License: MIT (验证于 2026-06-21 via GitHub API + LICENSE 文件双路径)
+- 主题：15 个销售/营销 Skill category + 完整 SKILL.md + Python pipeline（Single Brain 数百万 pipeline 验证）
+- Pair: 与 Article 形成"非工程师 Agent 栈"三层演进第三层
+- 原文引用：≥ 5 处（README 开头、Quick Start、What Makes These Different、battle-tested 引用、LICENSE 文件）
 
 ## Pair 闭环分析
 
-### R471 Pair：Anthropic Agentic Coding Research ↔ Microsoft AGT
+### R472 Pair：Anthropic Sales Leader Claude Cowork ↔ ericosiu/ai-marketing-skills
 
-**关联主题**：AI Coding Agent的工程实践与安全治理
+**关联主题**：销售/RevOps 视角的非工程师 Agent operator 范式
 
-| 维度 | Anthropic Research | Microsoft AGT |
-|------|--------------------|---------------|
-| 主题 | 人如何使用AI编程工具成功 | 如何让AI Agent安全可控 |
-| 关系 | 使用层 | 治理层 |
-| 核心洞察 | 领域专家用AI效果更好 | 概率性prompt安全不够用 |
+| 维度 | Anthropic Sales Leader | ericosiu/ai-marketing-skills |
+|------|------------------------|-------------------------------|
+| 视角 | 决策者 operator | 开源 SDK 工程化身 |
+| 规模 | 4,000 accounts, 1 team | 数百万 pipeline, generalizable |
+| 实现 | Closed (Anthropic 内部) | Open (MIT) |
+| 协议 | Claude Cowork + SKILL.md | SKILL.md（与 Anthropic 协议对齐）|
+| Scheduler | Scheduled skills auto-run | Pipeline + scheduled automation |
+| 强项 | 具体实战 + 真实数据 | 完整工具链 + 15 category |
 
-**Pair 强度**：⭐⭐⭐⭐（工程层 + 治理层，天然互补）
+**Pair 强度**：⭐⭐⭐⭐⭐（4-way SPM 满中）
+- Layer 1: cluster 共享 (fundamentals/enterprise)
+- Layer 2: SPM 关键词（scheduled skill / sales pipeline / forecast / propensity / SKILL.md / Anthropic / Cowork）共享
+- Layer 3: GitHub topics / README "battle-tested on real pipelines" 强暗示
+- Layer 4: 维度互补（Article = Anthropic 内部 closed ↔ Project = 开源 SDK generalizable）
 
 ## 🔍 决策日志
 
 ### 候选评估
 
-| 候选 | 类型 | 来源 | 日期 | 决策 |
-|------|------|------|------|------|
-| anthropic.com/research/claude-code-expertise | article | Anthropic Research | 2026-06-16 | ✅ 选定（400K sessions一手数据，颠覆性结论） |
-| cursor.com/blog/agent-computer-use | article | Cursor | 2026-02-24 | ⏸️ 备选（Cloud VM架构，与R470 cloud agent主题重叠） |
-| microsoft/agent-governance-toolkit | project | GitHub | - | ✅ 选定（4,400⭐ MIT, OWASP, 多语言SDK） |
-| opencode.ai | project | GitHub | - | ⏸️ 备选（160K⭐，但非工程机制主题，无直接关联） |
+| 候选 | 类型 | 来源 | body length | 决策 |
+|------|------|------|-------------|------|
+| how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book | article | claude.com/blog | 4,323 chars | ✅ 选定（销售 Leader 视角 cluster 0→1 启动） |
+| product-development-in-the-agentic-era | article | claude.com/blog | 3,008 chars | ⏸️ 备选（PM 视角与 R472 sales-leader 互补，可作 R473 候补）|
+| building-agents-with-the-claude-agent-sdk | article | claude.com/blog | 3,290 chars | ⏸️ 备选（cluster overlap 风险：SDK 主题已被多次覆盖）|
+| improving-skill-creator-test-measure-and-refine-agent-skills | article | claude.com/blog | 2,418 chars | ⏸️ 备选（浅内容但主题强）|
+| context-management | article | claude.com/blog | 1,243 chars | ❌ Skip（R345 body length 阈值 < 3000）|
+| ericosiu/ai-marketing-skills | project | GitHub | - | ✅ 选定（2,617⭐ MIT, SKILL.md 协议对位）|
+| filip-michalsky/SalesGPT | project | GitHub | - | ❌ Skip（License NOASSERTION + 主题偏离 Cowork/scheduled）|
+| zubair-trabzada/ai-sales-team-claude | project | GitHub | - | ❌ Skip（Stars < 1000 + License NOASSERTION）|
 
 ### 源可用性说明
 
-- Tavily API：限额耗尽（432 error）
-- 切换至 web_search（parallel-free provider）
-- Anthropic Research页面成功获取内容（PDF链接在Appendix）
-- Microsoft AGT README通过curl+socks5成功获取完整内容
+- GitHub API 配额：60/60 满（核心）
+- search API 配额：10/min（R397 sleep 8s 协议已应用）
+- Anthropic Engineering Blog：24/24 tracked (R471 一致)
+- claude.com/blog sitemap：171 slugs / 121 untracked
+- webflow rich-text extraction 协议正常
+
+### R337+R345+R393 filter pipeline 数据
+
+- 121 untracked slugs
+- 12 consumer 关键词排除 (claude-and-slack, claude-builds-visuals, carta-healthcare, etc.)
+- 49 engineering filter 排除（缺少 engineering keywords）
+- 60 engineering-relevant 候选
+- 进一步 body length 过滤 + cluster overlap 风险评估
+- **最终选定 1 个 Article 候选 + 1 个 Project 候选**
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| Sources tracked (jsonl) | 1916 (+2) |
+| Sources tracked (jsonl) | 1914 (+2) |
 | New articles written | 1 |
 | New projects written | 1 |
-| 原文引用数量 | Article ≥ 4 处 / Project ≥ 4 处 |
-| Commit | 待提交 |
+| 原文引用数量 | Article ≥ 5 处 / Project ≥ 5 处 |
+| Commit | 1a724c5 |
+| Working tree | clean |
 
-## 🔮 下轮规划 (R472)
+## 🔮 下轮规划 (R473)
 
 ### 扫描优先级
 
 1. **🔴 P0**: Anthropic Engineering Blog 扫描（24 slugs全部追踪，但可能有新发布）
-2. **🔴 P0**: Cursor blog 新候选（browser-visual-editor待评估）
-3. **🟡 P1**: Claude blog 新候选（product-development-in-the-agentic-era, 7540 chars）
+2. **🔴 P0**: Claude blog `product-development-in-the-agentic-era` 评估（PM 视角 cluster 内 0→1 启动，与 R472 sales-leader 互补形成 PM/Sales 双视角）
+3. **🟡 P1**: Claude blog 其他 engineering-relevant untracked（building-agents-with-the-claude-agent-sdk cluster overlap 风险评估）
 4. **🟡 P1**: CrewAI / Replit / Augment 官方博客
 
 ### 工程机制关注
 
-- **Evaluator loop / harness**：寻找评估器循环实现
-- **Multi-agent isolation**：VM vs container vs 进程级隔离
-- **Session recovery / checkpoint**：长任务恢复机制
+- **PM/Sales 视角**：`product-development-in-the-agentic-era` 与 R472 形成 PM/Sales 双视角闭环
+- **Skill creator 测试与测量**：`improving-skill-creator-test-measure-and-refine-agent-skills` 浅但主题强（Skill Eval 是 harness cluster 子维度）
+- **Scheduled skills + Cowork**：R472 已建立模式，R473 可继续探索其他工作流场景
 
 ### 备选方向
 
-- 若 P0 无新内容，评估 microsoft/agentgram 项目（Agents新发现）
+- 若 P0 无新内容，评估 Claude blog `building-agents-with-the-claude-agent-sdk`（cluster overlap 风险但 SDK 主题工程性强）
 - 若 P1 无匹配，评估 BestBlogs Dev 高质量聚合内容
