@@ -1,6 +1,6 @@
-# R463 REPORT — Cursor Security Agent Fleet + MCP Backbone
+# R464 REPORT — OpenAI Workspace Agents + OpenMontage
 
-> **执行时间**: 2026-06-20 16:10 (UTC+8)
+> **执行时间**: 2026-06-20 17:03 (UTC+8)
 > **Commit**: 待提交
 > **新增**: 1 Article + 1 Project
 
@@ -11,22 +11,22 @@
 ### Article
 | 字段 | 内容 |
 |------|------|
-| 文件 | `articles/orchestration/cursor-security-agents-fleet-multi-agent-automation-pattern-2026.md` |
-| 来源 | https://cursor.com/blog/security-agents |
-| 字数 | ~7,200 chars |
-| 核心观点 | **Cursor 安全 Agent Fleet 不是多个 Agent 堆在一起，而是精心设计的事件驱动多 Agent 协作系统**：4 个专业 Agent（Review/Hunt/Patch/Monitor）+ 共享 MCP backbone + Webhook 触发引擎 + 精确的人类在环控制，最终实现 5x PR 吞吐量和 200+ 漏洞自动化捕获 |
-| Cluster 状态 | **orchestration cluster 补充**：首次系统化覆盖"多 Agent 安全自动化"子维度 |
-| 引用源 | 4 处（Cursor Engineering Blog × 2 + Snyk 分析 × 1 + MCP 源码 × 1）|
+| 文件 | `articles/orchestration/openai-workspace-agents-organizational-ai-infrastructure-2026.md` |
+| 来源 | https://openai.com/index/introducing-workspace-agents-in-chatgpt/ |
+| 字数 | ~5,500 chars |
+| 核心观点 | **Workspace Agents 的本质是 AI 从个人工具到组织基础设施的范式跃迁**：共享 Workspace 记忆 + 审批门控（Approval Gates）+ Slack/Schedule 触发 + Compliance API 企业治理，解决了「知识散落 + 流程不一致 + 跨团队协作」的组织级问题 |
+| Cluster 状态 | **orchestration cluster 新增**：组织级多 Agent 协作模式（Workspace as shared context + Handoffs） |
+| 引用源 | 4 处（OpenAI Engineering Blog × 3 + Rippling Case Study × 1）|
 
 ### Project
 | 字段 | 内容 |
 |------|------|
-| 文件 | `articles/projects/mcpeak-cursor-security-automation-mcp-backbone-15-stars-2026.md` |
-| 来源 | github.com/mcpeak/cursor-security-automation |
-| Stars | 15（官方参考实现豁免）|
-| License | No assertion |
-| 核心亮点 | Cursor 安全 Agent 的 MCP Backbone 源码实现：持久化数据存储 + Gemini Flash 2.5 去重分类器 + 统一 Slack 输出路由 + Lambda Just-in-Time 部署 |
-| 关联 Article | R463 Article（同一主题，Article 偏架构分析，Project 偏源码实现）|
+| 文件 | `articles/projects/calesthio-openmontage-agentic-video-production-6514-stars-2026.md` |
+| 来源 | github.com/calesthio/OpenMontage |
+| Stars | 6,514 |
+| License | 开源 |
+| 核心亮点 | 全球首个开源 Agentic 视频生产系统：12 条生产管线 + 52 种工具 + 500+ Agent 技能，把 Claude Code/Cursor/Copilot 变成完整视频制作团队；$0.69 生成一条广告；Multi-Agent Orchestration 在创意生产领域的首次大规模实践 |
+| 关联 Article | R464 Article（同一主题：Agentic Workflow 全流程自动化）|
 
 ---
 
@@ -34,7 +34,7 @@
 
 | Article | Project | 关联强度 | 关联方式 |
 |---------|---------|---------|---------|
-| Cursor Security Agent Fleet 架构 | mcpeak/cursor-security-automation MCP 源码 | **⭐⭐⭐⭐⭐ 完整闭环** | Article 分析架构设计，Project 提供源码实现；两者互为表里 |
+| OpenAI Workspace Agents 架构（组织级工作流自动化）| OpenMontage（视频制作全流程 Agent 化）| **⭐⭐⭐⭐ 强关联** | 同一核心命题：Multi-Agent Pipeline 驱动的全流程自动化；Workspace Agents 偏组织协作层，OpenMontage 偏创意生产执行层 |
 
 ---
 
@@ -42,19 +42,23 @@
 
 | 来源 | 状态 | 原因 |
 |------|------|------|
-| Anthropic / OpenAI 官方博客 | 核心主题已被历史 R-N 覆盖 | Managed Agents（USED）、Agentic Coding Trends（USED）|
-| GitHub Trending | 无新增高价值未覆盖项目 | 572 个 projects 已建立防重索引 |
-| **Cursor blog security-agents** | **本轮 R463 主战场** | 未被任何 R-N 追踪；Cursor 安全团队官方工程博客；4 Agent Fleet + MCP backbone 工程机制稀缺 |
-| **mcpeak/cursor-security-automation** | **本轮 Project** | 官方开源 MCP 参考实现；与 Article 形成完整闭环 |
+| **OpenAI Workspace Agents** | **本轮 Article** | 全新一手来源（OpenAI 官方博客）；组织级 AI 基础设施主题；Workspace memory + Approval Gates + Compliance API 工程机制稀缺 |
+| **calesthio/OpenMontage** | **本轮 Project** | GitHub Trending 新发现（6514 Stars）；首个开源 Agentic 视频制作系统；12 管线 500+ 技能与 Article 形成闭环 |
+| **BuilderIO/agent-native** | 未写 | 1161 Stars，较低；主题与已有 R456 agent-native 文章重叠 |
+| **DeusData/codebase-memory-mcp** | 已追踪（USED）| — |
+| **withastro/flue** | 已追踪（USED）| — |
+| **microsoft/agent-framework** | 已追踪（USED）| — |
+| **openai-agents-python** | 已追踪（USED）| — |
+| **huggingface/smolagents** | 已追踪（USED）| — |
 
 ### 跳过的候选（透明披露）
 
 | 候选 | 跳过原因 |
 |------|---------|
-| Anthropic Managed Agents | 已追踪（source_tracker 返回 USED）|
-| Anthropic 2026 Agentic Coding Trends Report | 已追踪（source_tracker 返回 USED）|
-| obra/superpowers | 已追踪（source_tracker 返回 USED）|
-| Cursor Developer Habits Report | 非工程深度文章（趋势数据类，无工程机制）|
+| BuilderIO/agent-native (1161 Stars) | Stars 较低；主题与已有 R456 agent-native 文章高度重叠 |
+| obra/superpowers | 已追踪（USED）|
+| Anthropic Managed Agents | 已追踪（USED）|
+| Cursor scaling-agents / long-running-agents / cloud-agent-lessons | 已追踪（USED）|
 
 ---
 
@@ -62,8 +66,8 @@
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1 (Cursor Security Agent Fleet, orchestration cluster) |
-| 新增 projects 推荐 | 1 (mcpeak cursor-security-automation, 15⭐ 官方参考实现) |
+| 新增 articles 文章 | 1 (OpenAI Workspace Agents, orchestration cluster) |
+| 新增 projects 推荐 | 1 (OpenMontage, 6514 Stars) |
 | 原文引用数量 | Article: 4 / Project: 3 |
 | source_tracker 记录 | 2 条 |
 | ARTICLES_MAP 更新 | ✅ |
@@ -75,37 +79,37 @@
 
 ### 做对了
 
-1. **果断跳过已被追踪的源（Managed Agents、superpowers）** — source_tracker 检查确保不重复产出
-2. **抓住 Cursor security-agents 这个真正的新主题** — 4 Agent Fleet + MCP backbone 的工程机制非常稀缺，适合 orchestration cluster
-3. **Project 选择 mcpeak/cursor-security-automation** — 官方参考实现，与 Article 形成完整闭环（方法论 + 源码）
-4. **准确应用 Stars 豁免规则** — 15 Stars 但官方参考实现，合理豁免
+1. **抓住 Workspace Agents 这个真正的新主题** — 这是 OpenAI 官方首次系统阐述「组织级 AI Agent」工程设计，Approval Gates + Compliance API 是稀缺内容
+2. **选择 OpenMontage 而非 BuilderIO agent-native** — 6514 Stars >> 1161 Stars；视频制作 Agent 化是全新领域，而非重复已有内容
+3. **主题关联性强** — Workspace Agents（组织协作）+ OpenMontage（创意生产）都围绕「Multi-Agent Pipeline 全流程自动化」，形成横向关联
+4. **准确应用 Stars 门槛** — 6514 Stars 远超 1000 Stars 门槛
 
 ### 需改进
 
-1. **扫描效率** — 花时间确认多个"已覆盖"状态，防重索引需要更高效的批量查询
-2. **Project Stars 过低** — 15 Stars 虽然豁免，但下次应尽量找 Stars 更高的项目
+1. **BuilderIO agent-native 未深度评估** — 1161 Stars 在门槛上，但可能值得写；需在 PENDING 中标记以便后续评估
+2. **扫描效率** — 多个已知来源重复检查耗时间；考虑批量检查而非逐个检查
 
 ### 遗留问题
 
 1. **Tavily API 配额**: 持续不可用，维持 AnySearch
 2. **browser 工具不可用**: 影响 JS 渲染页面
-3. **Cursor blog 还有多个未覆盖工程类文章**: codex-model-harness、building-bugbot、self-hosted-cloud-agents
-4. **572 个 projects 防重索引** — 越来越庞大
+3. **572+ 个 projects 防重索引** — 持续庞大
+4. **BuilderIO agent-native (1161 Stars)**: 待评估是否值得写
 
 ---
 
 ## 协议连接
 
-- **R462 (ARD Protocol)**: 工具发现机制 → 本轮 MCP 作为 Agent 间通信协议（工具发现 vs 状态共享，两个不同维度）
-- **R461 (Cursor Bugbot)**: 自改进 Agent → 本轮安全 Agent Fleet（从自改进到多 Agent 协作）
-- **R349 (AI Agent Eval Playbook)**: 5 层评估框架 → Cursor 安全 Agent 的人类在环控制设计
+- **R463 (Cursor Security Agent Fleet)**: 多 Agent 协作 → 本轮 OpenAI Workspace Agents（从安全场景到组织协作场景）
+- **R462 (ARD Protocol)**: 工具发现机制 → Workspace Agents 的工具编排（跨工具 Handoffs）
+- **R461 (Cursor Bugbot)**: 自改进 Agent → OpenMontage 的 Pipeline Agent（从代码到创意生产）
 
 ---
 
-## 下一步 (R464)
+## 下一步 (R465)
 
 1. 扫描 Cursor blog 未覆盖工程类文章（codex-model-harness / building-bugbot / self-hosted-cloud-agents）
-2. GitHub Trending 新项目（572 个已有，需要关注增量）
-3. 监控 ARD 规范正式版发布
-4. 监控 gen_article_map.py 运行状态
+2. GitHub Trending 新项目发现（持续关注增量）
+3. 评估 BuilderIO agent-native 是否值得写（1161 Stars）
+4. 监控 ARD 规范正式版发布
 5. Tavily 配额状态
