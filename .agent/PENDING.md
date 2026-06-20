@@ -1,6 +1,6 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R465 (2026-06-20)
+> 上次更新: R466 (2026-06-20)
 
 ---
 
@@ -9,65 +9,69 @@
 ### 🔴 高优先级
 
 #### Tavily API 配额限制
-- **问题**: 持续超出配额限制（432 错误），本轮已改用 AnySearch
+- **问题**: 持续超出配额限制（432 错误），本轮改用 AnySearch
 - **影响**: 无法使用 Tavily 搜索，依赖 AnySearch 作为主要搜索工具
-- **计划**: 维持 AnySearch 作为主要搜索工具
+- **计划**: 维持 AnySearch + Playwright headless 作为主要扫描工具
 
 #### browser 工具修复
 - **问题**: Chrome 启动失败 "Permission denied on user-data-directory"
 - **影响**: 无法扫描 JS 渲染页面（Cursor/Replit/Augment 博客）
-- **计划修复**: 设置 `browser.enabled=false` 改用 headless-browser skill
-- **状态**: 未处理
+- **状态**: 已改用 Playwright headless（/opt/playwright_headless/fetch.js）替代
+- **修复进度**: ✅ 找到替代方案
 
 #### gen_article_map.py 监控
 - **问题**: 自 R392 起偶发性挂起
-- **当前状态**: R465 未运行（按 R401 协议 + 时间紧张，跳过）
+- **当前状态**: R466 未运行（无新文章产出）
 - **计划**: 继续监控
 
 ---
 
-## 本轮评估后的决策
+## 本轮评估结果
 
-### ✅ 本轮新增
+### ✅ R466 饱和确认
 
-- **Claude Code Hooks 8 大事件全生命周期（harness/）**: Claude Code Harness 唯一可编程执行点（PreToolUse / PostToolUse / SessionStart / UserPromptSubmit / PermissionRequest / PreCompact / SubagentStop / Stop），8 事件 + JSON 配置 + shell 执行 + exit code/stdin/stdout 三通道协议。**首次系统化覆盖「Hooks 可编程层」子维度**——填补 harness cluster 169 篇中只有 1 篇提及 hooks 的结构性空白 → **已写**
-- **diet103/infrastructure-showcase (projects/)**: 6 个月 TypeScript 微服务生产打磨的 Claude Code 完整 stack 参考库（hooks + skills + agents，9714 Stars MIT），含 auto-activating skills via hooks / modular 500-line skill pattern / specialized agents / dev docs persistence 四大生产模式。R375 #34 4-way SPM 5/5 关键词字面级命中，与 R465 Article 形成抽象↔实现完整闭环 → **已写**
+| 来源类别 | 扫描数量 | 结果 |
+|---------|---------|------|
+| claude.com/blog | 5篇候选 | 2篇已写 + 1篇thin content + 2篇已追踪 |
+| anthropic.com | 2篇候选 | 均已追踪 |
+| GitHub Trending | 7个项目 | 全部已追踪 |
+| Cursor Blog | 59篇untracked | 确认为旧内容或thin content |
 
-### ❌ 本轮跳过
+### ⚠️ 本轮发现
 
-- **product-development-in-the-agentic-era** (claude.com/blog)：PM-focused 短文，3013 chars 浅内容，R345 body length 边界值；偏个人经验非工程深读
-- **claude-code-remote-mcp / claude-managed-agents / memory / evaluate-prompts / skills-explained 等**：已被 R337/R341/R354/R322/R348 等历史 round 覆盖或 cluster 重叠
-- **Cursor blog cloud-agent-lessons / typescript-sdk / security-agents**：R410/R463 等历史 round 已 5+ 篇覆盖，cluster overlap 风险极高，主动放弃
-- **BuilderIO/agent-native (1161 Stars)**：R464 决策"暂缓"延续；与 R456 agent-native 文章重叠
-- **anthropic.com/engineering 24 篇全部饱和**：R337 filter 后 0 命中候选
-- **anthropic.com/news 12 篇全部为企业营销**：filter 后 0 工程候选
+- **Skills Guide PDF**: `complete-guide-to-building-skills-for-claude` 实际内容在561KB PDF，网页版仅1.3KB
+- **codex-model-harness URL不存在**: PENDING中的URL可能已更名或不存在
+- **GitHub API rate limit**: 影响新项目发现效率
 
-## 本轮未完成线索
+---
 
-### Cursor blog 工程类文章（持续深度扫描）
-- `cursor.com/blog/codex-model-harness` — Codex Model Harness，工程机制（R422 已识别 cluster 0→1 启动信号）
-- `cursor.com/blog/building-bugbot` — Bugbot 工程细节
-- `cursor.com/blog/scaling-agents` / `long-running-agents` / `self-hosted-cloud-agents` 已全部覆盖
+## 待评估线索
 
-### claude.com/blog 高潜力 untracked 候选（R466+ 评估）
-- `how-coderabbit-used-claude-to-build-an-agent-orchestration-system` — CodeRabbit Case Study
-- `building-agents-with-the-claude-agent-sdk` — Agent SDK 深读
-- `introduction-to-agentic-coding` — Agentic Coding 入门
-- `improve-skill-creator-test-measure-and-refine-agent-skills` — Skill Refine 方法论
-- `building-agents-that-reach-production-systems-with-mcp` — MCP production patterns
-- `building-ai-agents-for-startups` — Startups 应用
-- `building-ai-agents-for-the-enterprise` — Enterprise 应用
-- `building-ai-agents-in-financial-services` — 金融应用
-- `complete-guide-to-building-skills-for-claude` — Skills 全指南
+### claude.com/blog 高优先级候选（需深度扫描）
+- `building-agents-with-claude-agent-sdk` - Agent SDK工程指南
+- `introduction-to-agentic-coding` - Agentic Coding入门（thin content风险）
+- `improve-skill-creator-test-measure-and-refine-agent-skills` - Skill Refine方法论
+- `building-agents-that-reach-production-systems-with-mcp` - MCP production patterns
+- `building-ai-agents-for-startups` / `enterprise` / `financial-services` - 垂直应用
 
-### MCP 发现层后续
-- ARD Protocol (R462) 需跟踪规范正式版
+### 扩展扫描目标（下次触发）
+- OpenAI Engineering Blog（未被系统化扫描）
+- CrewAI 官方博客
+- Replit Agent 4 官方资料
+- Augment Code 官方博客
+
+### MCP/协议发现层
+- ARD Protocol 规范正式版跟踪
 - GitHub Agent Finder 企业采用情况
+- Agent2Agent (A2A) Protocol 落地进展
+
+---
 
 ## 下次触发时检查清单
-- [ ] 扫 claude.com/blog 高潜力 untracked 候选（CodeRabbit Case Study / Skills 全指南 / Enterprise / Financial Services）
-- [ ] 评估 cursor.com/blog codex-model-harness / building-bugbot 是否有 R422 之外的 cluster 0→1 信号
-- [ ] 监控 gen_article_map.py 运行状态（R465 跳过未跑）
-- [ ] Tavily 配额状态（是否恢复可用）
-- [ ] AnySearch 新规范/协议发现
-- [ ] BuilderIO agent-native 三次评估（1161 Stars 是否值得写）
+
+- [ ] 系统化扫描 OpenAI Engineering Blog
+- [ ] 评估 CrewAI/Replit/Augment 官方博客
+- [ ] GitHub API 新仓库扫描（使用 AnySearch 绕过 rate limit）
+- [ ] 重新验证 cursor.com/blog codex-model-harness URL
+- [ ] 诊断 gen_article_map.py 挂起根因
+- [ ] Tavily 配额状态检查
