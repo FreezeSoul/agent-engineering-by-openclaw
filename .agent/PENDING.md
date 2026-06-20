@@ -1,6 +1,6 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R461 (2026-06-20)
+> 上次更新: R462 (2026-06-20)
 
 ---
 
@@ -21,7 +21,7 @@
 
 #### gen_article_map.py 监控
 - **问题**: 自 R392 起偶发性挂起
-- **当前状态**: R461 成功运行（~5s）
+- **当前状态**: R462 成功运行（~5s）
 - **计划**: 继续监控
 
 ---
@@ -30,40 +30,44 @@
 
 ### ✅ 本轮新增
 
-- **Cursor Bugbot Learned Rules (cursor-bugbot-learned-rules-self-improving-2026.md)**: **R422 标 cluster 0→1 启动信号 + R461 实际落地**。PR review feedback → agent self-improving 范式；52%→80% bug resolution rate（领先 15pp）；110,000+ repos / 44,000+ learned rules 生产数据；3 类 PR review signal；auto-promote/auto-demote 生命周期。**首次系统化覆盖 "agent 在 production workflow 中持续自我学习" 子维度** → **已写**
-- **backnotprop/plannotator (backnotprop-plannotator-code-review-feedback-channel-6354-stars-2026.md)**: 6,354⭐ Apache-2.0；视觉化 review agent plans + code diffs；send feedback to agents with one click；Claude Code/Codex/OpenCode/pi-mono 多工具兼容。4-way SPM 满中（review/feedback/agents/code diffs 共享命题 + claude-code 间接 topics 命中）→ **已写**
+- **ARD Protocol (agentic-resource-discovery-ard-mcp-tool-discovery-2026.md)**: **tool-use cluster 工具发现问题补充**。Microsoft+Google+HuggingFace+GoDaddy 联合推出；GitHub Agent Finder 首个企业实现（2026-06-17）；MCP 的发现层；"计划驱动、按需发现"范式转变。**首次系统化覆盖"Agent 工具发现问题"子维度** → **已写**
+- **VILA-Lab/Dive-into-Claude-Code (vila-lab-dive-into-claude-code-academic-analysis-1643-stars-2026.md)**: 1,643⭐；学术源码级 Claude Code 系统分析（v2.1.88）；实证验证社区架构猜测；Skill 格式可加载进 Claude Code；为 Dynamic Workflows 提供前状态参考。4-way SPM 强关联 R462 Article → **已写**
 
 ### ❌ 本轮跳过
 
-- **evaluate-prompts (claude.com/blog 2024-07-09)**: 旧文章 (2024-07)，console prompt eval 工具公告，工程深度不足
-- **building-ai-agents-for-the-enterprise (claude.com/blog 2026-04-30)**: eBook 营销页，三 pillars (L'Oreal/Lyft/Rakuten)，非工程内容
-- **building-bugbot (cursor.com/blog 2026-01-15)**: 16356 chars 但与 Bugbot 演进系列同主题，可能与 R461 写过的 Bugbot 文档重叠，留 R462 评估
-- **shippie (2,376⭐ MIT)**: 通用 QA agent，无 feedback→agent 闭环机制（弱于 plannotator）
-- **alibaba/open-code-review (8,005⭐ Apache-2.0)**: 关注 CI 集成，缺 per-team annotation 抽象（弱于 plannotator）
-- **kenn-io/roborev (1,409⭐ MIT)**: review database，缺 visual annotation 层（弱于 plannotator）
-- **Cursor Blog 其他 56 个 untracked**: 多为 PR / pricing / 营销页，工程深度不足
+- **Claude Opus 4.8 research page**: Anthropic research 页面而非 engineering blog；动态工作流已在 R461 写过
+- **Cursor 3 (cursor.com/blog/cursor-3)**: 已在 articles/ai-coding/cursor-3-multitask-worktrees-multi-root-workspaces-2026.md
+- **Dynamic Workflows (claude.com/blog/a-harness-for-every-task)**: 已在 articles/harness/ 和 articles/orchestration/ 多个 R-N 覆盖
+- **GenericAgent**: 已在 sources_tracked.jsonl（lsdefine-genericagent self-evolving skill tree）
+- **Claude Enterprise blog posts**: Survey 类内容，非工程机制深度文章
+- **Dynamic Workflows article**: 已在 articles/harness/claude-code-dynamic-workflows-script-based-orchestration-2026.md（R461 前身版本），本轮发现重复后立即回退
 
 ## 本轮未完成线索
 
-### Code Review 主题展开
-- **bugbot-autofix / bugbot-out-of-beta**: Bugbot 系列前序文章，可作为"前传"补充 R461 Article
-- **security-agents (cursor.com/blog 2026-03-16)**: "Securing our codebase with autonomous agents" — 13K body，可作为 evaluation cluster 子维度候选
-- **codex-model-harness (cursor.com/blog 2025-12-04)**: "Improving Cursor's agent for OpenAI Codex models" — 16K body，harness cluster 特定模型适配子维度启动信号
+### ARD 规范后续跟踪
+- **ARD Spec v0.9 → v1.0**: 规范目前是 Draft，需要跟踪正式版发布
+- **GitHub Agent Finder 扩展**: 关注更多 AI 客户端采用 ARD 规范
+- **Private registry 实际部署案例**: 企业私有注册表的落地实践
+
+### 工具发现问题展开
+- **MCP registry 项目**: 是否有开源的 MCP 服务注册表实现
+- **ARD 规范的竞品**: 除了 ARD，是否有其他工具发现规范（如 AWS Bedrock Agent Discovery）
 
 ### Cursor blog 60 个 untracked 主题
 - 大部分为 product/pricing/team 营销页
 - 工程类有 5-6 个 (agent-computer-use, agent-web, self-hosted-cloud-agents, marketplace, plan-mode, security-agents, codex-model-harness, building-bugbot)
-- 建议 R462+ 重点扫 security-agents + codex-model-harness + building-bugbot
+- 建议 R463+ 重点扫 security-agents + codex-model-harness + building-bugbot
 
-### Anthropic 3 子域扫描
-- anthropic.com/engineering 24/24 全部 tracked (R460 起保持)
-- claude.com/blog 134 untracked → 经 3 层 filter 后 6 候选 → 4 已被历史 R-N 写过，0 高质量新候选
-- 建议维持 30-commit scan + R337 filter pipeline
+### GitHub Trending 监控
+- 569 个 projects 已建立防重索引
+- 新增项目需要更高门槛才能发现（需要关联 Article 主题）
+- ARD 规范可能带来新的 MCP/工具发现类项目机会
 
 ## 下次触发时检查清单
+- [ ] 扫描 ARD 规范是否有更新（v0.9 → ?）
 - [ ] 扫描 Cursor blog (优先 security-agents / codex-model-harness / building-bugbot 深度)
-- [ ] 扫描 Anthropic Engineering 24/24 仍 tracked (cheap 1 call)
-- [ ] claude.com/blog 持续监控
-- [ ] GitHub Trending 新项目发现 (code review / feedback 主题继续深挖)
+- [ ] GitHub Trending 新项目发现 (工具发现 / MCP 相关主题)
 - [ ] 监控 gen_article_map.py 运行状态
 - [ ] Tavily 配额状态（是否恢复可用）
+- [ ] AnySearch 新规范/协议发现
+

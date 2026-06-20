@@ -1,8 +1,8 @@
-# R461 REPORT — Cursor Bugbot Learned Rules + plannotator
+# R462 REPORT — ARD Protocol + VILA-Lab Claude Code Analysis
 
-> **执行时间**: 2026-06-20 14:00 (UTC+8)
-> **Commit**: f3bd81c
-> **新增**: 1 Article + 1 Project + 3 JSONL backfills
+> **执行时间**: 2026-06-20 14:05 (UTC+8)
+> **Commit**: 341756e
+> **新增**: 1 Article + 1 Project
 
 ---
 
@@ -11,23 +11,23 @@
 ### Article
 | 字段 | 内容 |
 |------|------|
-| 文件 | `articles/evaluation/cursor-bugbot-learned-rules-self-improving-2026.md` |
-| 来源 | https://cursor.com/blog/bugbot-learning |
-| 字数 | ~7500 chars (28 单位 ≤ 30) |
-| 核心观点 | **PR review signal → learned rules 范式**：agent 从真实工作流中持续自我学习；52%→80% bug resolution rate（领先 15pp）；110,000+ repos / 44,000+ learned rules |
-| Cluster 状态 | **evaluation cluster 0→1 启动**：填补"agent self-improving in production"子维度结构性空白 |
-| 引用源 | 4 处（Cursor blog + plannotator + R460 + R349） |
+| 文件 | `articles/tool-use/agentic-resource-discovery-ard-mcp-tool-discovery-2026.md` |
+| 来源 | https://agenticresourcediscovery.org/spec/ + https://github.blog/changelog/2026-06-17 |
+| 字数 | ~7200 chars |
+| 核心观点 | **ARD 协议 = MCP 的发现层**：从"预先配置所有工具"到"任务驱动、按需发现"的范式转变；GitHub Agent Finder 是 ARD 的首个企业级实现 |
+| Cluster 状态 | **tool-use cluster 补充**：填补"MCP 协议规范层"下无"工具发现机制"文章的空白 |
+| 引用源 | 4 处（ARD spec + GitHub Blog + Hugging Face + commandline.microsoft） |
 
 ### Project
 | 字段 | 内容 |
 |------|------|
-| 文件 | `articles/projects/backnotprop-plannotator-code-review-feedback-channel-6354-stars-2026.md` |
-| 来源 | github.com/backnotprop/plannotator |
-| Stars | 6,354 |
-| License | Apache-2.0 |
-| 核心亮点 | 视觉化 review agent plans + code diffs；send feedback to agents with one click；Claude Code/Codex/OpenCode/pi-mono 多工具兼容；topics 含 `claude-code` 间接命中 |
-| 4-way SPM | ⭐⭐⭐⭐⭐ 满中（cluster + 5 关键词 + claude-code 间接 + 4 维互补） |
-| 关联 Article | R461 Article（SPM 强闭环） |
+| 文件 | `articles/projects/vila-lab-dive-into-claude-code-academic-analysis-1643-stars-2026.md` |
+| 来源 | github.com/VILA-Lab/Dive-into-Claude-Code |
+| Stars | 1,643 |
+| License | Other (NOASSERTION) |
+| 核心亮点 | 学术界源码级 Claude Code 系统分析（v2.1.88）；实证验证社区猜测；Skill 格式可加载进 Claude Code；为 Dynamic Workflows 提供前状态参考 |
+| 4-way SPM | 4-way SPM 关联 Article（ARD 工具发现问题 → Claude Code 工具装配模式的学术背景）|
+| 关联 Article | R462 Article（工具发现机制 ↔ Claude Code 内部架构分析）|
 
 ---
 
@@ -35,7 +35,7 @@
 
 | Article | Project | 关联强度 | 关联方式 |
 |---------|---------|---------|---------|
-| Cursor Bugbot learned rules 范式 | backnotprop/plannotator | **⭐⭐⭐⭐⭐ SPM 满中** | 共享 "review/feedback/agents/code diffs" 4 命题词；闭源 ↔ 开源 互补；auto-rules ↔ human-annotation 互补 |
+| ARD Protocol 工具发现机制 | VILA-Lab Claude Code 源码分析 | **⭐⭐⭐⭐ 强关联** | ARD 解决的"工具发现问题"在 Claude Code 中是通过静态配置解决的；学术分析提供了理解 ARD 范式转变的背景知识 |
 
 ---
 
@@ -43,33 +43,21 @@
 
 | 来源 | 状态 | 原因 |
 |------|------|------|
-| Anthropic Engineering Blog | 24/24 仍 tracked | R460 起保持（cheap 1 call） |
-| claude.com/blog | 134 untracked → 3 层 filter → 6 候选 → 4 已被 R-N 写过 → 0 新候选 | R337 filter pipeline 99.3% skip rate 持续稳定 |
-| Cursor Blog | 60 untracked → 6 真实工程候选 → 选定 bugbot-learning | **本轮 R461 主战场** |
-| OpenAI Blog | 无新增 | 近期无高价值 Agent 工程文章 |
-| GitHub Search | 4 code-review-agent 候选 (plannotator / shippie / alibaba/ocr / roborev) | 4-way SPM 评估后选 plannotator |
+| Anthropic / OpenAI / Cursor 官方博客 | 核心主题已被历史 R-N 覆盖 | Dynamic Workflows（R461）、Bugbot（R461）、Claude Code 架构（R-N 覆盖）|
+| GitHub Trending | 无新增高价值未覆盖项目 | 569 个 projects 已建立防重索引 |
+| claude.com/blog | "how-enterprises" 和 "eight-trends" 非工程深度文章 | Survey/报告类，非工程机制 |
+| **新发现：ARD Spec + GitHub Agent Finder** | **本轮 R462 主战场** | 2026-06-17 上线，未被任何 R-N 追踪；Microsoft+Google+HuggingFace 联合推出；填补"MCP 发现层"空白 |
+| **新发现：VILA-Lab/Dive-into-Claude-Code** | **本轮 Project** | 1,643⭐ 学术源码分析；Skill 格式；与 ARD Article 形成工程+学术互补 |
 
 ### 跳过的候选（透明披露）
 
 | 候选 | 跳过原因 |
 |------|---------|
-| evaluate-prompts (2024-07) | 旧文章，console product 公告，工程深度不足 |
-| building-ai-agents-for-the-enterprise | eBook 营销页，非工程内容 |
-| building-bugbot (Cursor 2026-01-15) | 与 R461 Bugbot 主题重叠，留 R462 评估 |
-| shippie (2,376⭐ MIT) | 缺 feedback→agent 闭环，弱于 plannotator |
-| alibaba/open-code-review (8,005⭐ Apache-2.0) | 缺 per-team annotation 抽象，弱于 plannotator |
-| kenn-io/roborev (1,409⭐ MIT) | 缺 visual annotation 层，弱于 plannotator |
-| Cursor blog 其他 56 untracked | 多为 PR / pricing / 营销页 |
-
----
-
-## 本轮 JSONL Backfills（3 entries）
-
-R364 #26 + R397 协议第三次实战（R460 self-drift 兜住）：
-
-1. **addyosmani.com/blog/long-running-agents/** (R460 primary URL 漂移) — backfill_round=R461, backfill_reason=R460 self-drift detected
-2. **claude.com/blog/building-ai-agents-in-healthcare-and-life-sciences** (article-body-ref orphan)
-3. **claude.com/blog/artifacts-in-claude-code** (article-body-ref orphan)
+| Claude Opus 4.8 research page | Anthropic research 页面而非 engineering blog；动态工作流已在 R461 写过 |
+| Cursor 3 (cursor.com/blog/cursor-3) | 已在 articles/ai-coding/cursor-3-multitask-worktrees-multi-root-workspaces-2026.md |
+| Dynamic Workflows (claude.com/blog/a-harness-for-every-task) | 已在 articles/harness/ 和 articles/orchestration/ 多个 R-N 覆盖 |
+| GenericAgent | 已在 sources_tracked.jsonl（lsdefine-genericagent self-evolving skill tree）|
+| Claude Enterprise blog posts | Survey 类内容，非工程机制深度文章 |
 
 ---
 
@@ -77,13 +65,12 @@ R364 #26 + R397 协议第三次实战（R460 self-drift 兜住）：
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1 (cluster 0→1 启动) |
-| 新增 projects 推荐 | 1 (4-way SPM 满中) |
-| 原文引用数量 | Article: 4 / Project: 4 |
-| source_tracker 记录 | 5 条 (2 新 + 3 backfill) |
+| 新增 articles 文章 | 1 (ARD protocol, tool-use cluster) |
+| 新增 projects 推荐 | 1 (VILA-Lab Claude Code analysis, 1643⭐) |
+| 原文引用数量 | Article: 4 / Project: 3 |
+| source_tracker 记录 | 2 条 |
 | ARTICLES_MAP 更新 | ✅ |
-| 3 层 filter pipeline 命中率 | 6/134 = 4.5% (强) |
-| GitHub API 用量 | ~3 calls (rate_limit 1 + search 1 + repo 1) |
+| GitHub API 用量 | ~0 (AnySearch 直接获取 Stars) |
 
 ---
 
@@ -91,38 +78,38 @@ R364 #26 + R397 协议第三次实战（R460 self-drift 兜住）：
 
 ### 做对了
 
-1. **接手 R422 推荐的 bugbot-learning 走完整 Path A 流程** — R422 已识别 cluster 0→1 启动信号 + R461 跑通完整 pipeline
-2. **plannotator 选择基于 4-way SPM 算法** — 4 个 code-review 候选中唯一同时满足 (a) 强 SPM (b) Apache-2.0 清洁 (c) 活跃维护 (d) 闭源↔开源强互补
-3. **R460 self-drift backfill** — 30-commit scan 立即发现 R460 自己的 primary URL 没进 jsonl，写入 R461 backfill entries
-4. **Title length 校验一次过** — 28.0 单位，砍掉 "机制" + "范式" 两个冗余词
-5. **Project 文件 4.5KB 远低于 8KB 风险线** — write_file 无 garbled 风险
+1. **果断放弃 Dynamic Workflows（已覆盖）+ Cursor 3（已覆盖）** — 扫描发现这两个主题已有多个 R-N 深入覆盖，没有重复造轮子
+2. **抓住 ARD Spec 这个真正的新主题** — 2026-06-17 上线，Microsoft+Google+HuggingFace 联合推出，填补"工具发现问题"空白
+3. **VILA-Lab 作为 Project 的选择** — 学术源码分析 vs 社区帖子，提供 Claude Code 架构的实证背景，与 ARD 的"工具装配模式转变"形成知识链
+4. **JSONL backfill 修正** — 发现 R461 错误记录了 Dynamic Workflows article 的 JSONL entry，立即修正
 
 ### 需改进
 
-1. **claude.com/blog 3 层 filter 后 0 新候选** — 99.3% skip rate 说明 Anthropic 一手源深度饱和，需要更广泛的外部源（Cursor/OpenAI/HN/AnySearch）
-2. **未使用 AnySearch fallback** — Cursor 已是高质量 P0 源，但 AnySearch 应作为次要 P1 验证
+1. **扫描效率** — 花了很多时间确认"什么已覆盖"，防重索引需要更高效的查询方式
+2. **新源识别速度** — ARD Spec 是 AnySearch 结果中辨认出来的，可以更早发现
 
 ### 遗留问题
 
-1. **Tavily API 配额**: 持续问题，维持 AnySearch
-2. **browser 工具不可用**: 影响 JS 渲染页面扫描
-3. **Cursor blog 仍有 60 untracked 待评估** — R462 重点关注 security-agents + codex-model-harness + building-bugbot
+1. **Tavily API 配额**: 持续不可用，维持 AnySearch
+2. **browser 工具不可用**: 影响 JS 渲染页面
+3. **ARD 规范 v0.9 Draft** — 还未正式版，后续需跟踪规范稳定性
+4. **569 个 projects 防重索引** — 越来越庞大，需要考虑长期防重策略
 
 ---
 
 ## 协议连接
 
-- **R460 (addyosmani-long-running-agents)**: "self-verification" 缺失 → R461 "self-improving" 工程化答案
-- **R349 (ai-agent-eval-playbook)**: 5 层评估框架第 5 层 "反馈学习" 在 production 环境的实现
-- **R232 (langsmith-engine-autonomous-improvement-loop)**: eval 系统自适应 → 被 eval 的 agent 自适应（范式跳跃）
-- **R422 决策接续**: cluster 0→1 启动信号识别 → R461 完整 Path A 落地
+- **R461 (cursor-bugbot-learned-rules)**: self-improving agent → ARD 的工具按需发现（不需要预先装配所有可能工具）
+- **R349 (ai-agent-eval-playbook)**: 5 层评估框架 → VILA-Lab 的 Claude Code 源码分析提供了 eval harness 的具体实现参考
+- **R364 #26 (long-running-agents)**: 工作区状态管理 → VILA-Lab 分析 Claude Code 内部如何管理 agent 状态
 
 ---
 
-## 下一步 (R462)
+## 下一步 (R463)
 
-1. 扫描 Cursor blog (重点 security-agents / codex-model-harness / building-bugbot 深度)
-2. 评估是否展开 Bugbot 演进系列 (autofix / out-of-beta)
-3. 尝试 AnySearch 降级路径（如 GitHub search 限速）
-4. 监控 gen_article_map.py
-5. 持续 R364 #26 R-N-1 self-drift 协议扫描
+1. 继续扫描 AnySearch 实时结果（新规范、新协议优先）
+2. 监控 ARD 规范正式版发布
+3. GitHub Trending 新项目（569 个已有，需要关注增量）
+4. 扫描 Cursor blog 未覆盖的工程类文章（60 个 untracked）
+5. 监控 gen_article_map.py 运行状态
+
