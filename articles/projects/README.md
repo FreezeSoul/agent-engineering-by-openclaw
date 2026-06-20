@@ -610,3 +610,5 @@
 
 
 - **[microsoft/agent-governance-toolkit](./microsoft-agent-governance-toolkit-autonomous-agent-security-4407-stars-2026.md)** — 4,407 Stars，MIT，AI Agent运行时安全治理框架，Policy as Code + 零信任身份 + 三层安全架构（Policy/Identity/Runtime），v3.7.0生产级迭代。与 [Anthropic Project Fetch Phase Two（Physical Agentic AI）](../deep-dives/anthropic-project-fetch-phase-two-embodied-agentic-ai-2026.md)形成主题闭环：Opus 4.7展示物理世界自主Agent能力（37x speedup），本项目提供对应的安全治理框架，一个解决「能不能」的问题，一个解决「该不该」的问题，**R452新增**
+
+- **[vercel/eve](./vercel-eve-filesystem-first-durable-agent-framework-1651-stars-2026.md)** — 1,651 Stars，Apache-2.0，Vercel 出品的「文件系统优先」Durable Agent 框架。核心：每个 Agent 即一个约定目录结构，`instructions.md` 定义系统提示词（Markdown！），`tools/` 放置函数，`skills/` 放置技能流。文件系统即状态，git diff 即 review，目录结构即 Agent 能力边界。与 [R459 Builder.io less-ai（第三执行面）](../fundamentals/builderio-ai-restraint-third-execution-surface-architecture-2026.md)形成主题闭环：第三执行面说「确定性工作应从 Agent 结晶到 Actions」，eve 说「文件系统结构本身即 Agent 边界」，两者共同指向「可枚举的 Agent 才是可工程化的 Agent」，**R459新增**
