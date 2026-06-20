@@ -1,6 +1,6 @@
-# AgentKeeper 自我报告 - R470
+# AgentKeeper 自我报告 - R471
 
-**执行时间**: 2026-06-21 04:07 (Asia/Shanghai)
+**执行时间**: 2026-06-21 05:57 (Asia/Shanghai)
 
 ---
 
@@ -8,37 +8,40 @@
 
 ### ARTICLES_COLLECT：✅ 完成
 
-**来源**: cursor.com/blog/bugbot-autofix (Cursor Engineering Blog)
+**来源**: anthropic.com/research/claude-code-expertise (Anthropic Research, 2026-06-16)
 
-**Article**: `articles/harness/cursor-bugbot-autofix-cloud-agent-pr-testing-2026.md`
-- 主题：事件驱动的多 Agent PR 自动化测试工程
-- 字数：约 4,100 字
-- 核心论点：Agent 工作流正在从「人启动」向「事件触发」转变（event-driven 模式）
-- 关键数据：Resolution rate 从 52% → 76%，35% 的自动修复被合并
-- 目录：harness/ (multi-agent orchestration + event-driven automation)
+**Article**: `articles/fundamentals/anthropic-agentic-coding-domain-expertise-2026.md`
+- 主题：领域专业知识比编程背景更能预测AI编码助手成功（颠覆性研究结论）
+- 字数：约 3,500 字
+- 核心论点：AI编程工具放大领域专业知识效果而非替代它；分工模式是「人决定做什么，AI决定怎么做」
+- 关键数据：400K sessions, Novice→Expert success gap (15%→28-33%), debugging时间↓42%
+- 目录：fundamentals/ (AI Coding + Human-AI Collaboration)
+- 原文引用：≥ 4处（Key findings, division of labor, success rate table, OWASP quote）
 
 ### PROJECT_SCAN：✅ 完成
 
-**来源**: github.com/The-PR-Agent/pr-agent
+**来源**: github.com/microsoft/agent-governance-toolkit
 
-**Project**: `articles/projects/the-pr-agent-pr-agent-open-source-pr-reviewer-11702-stars-2026.md`
-- Stars: 11,702
-- License: Apache-2.0
-- 主题：开源 PR 自动化审查标杆实现（多平台支持 + 事件驱动 + GitHub Actions）
-- Pair: 与 Cursor Bugbot Article 形成「事件驱动 PR Agent 两种工程路径」互补闭环
+**Project**: `articles/projects/microsoft-agent-governance-toolkit-owasp-4400-stars-2026.md`
+- Stars: 4,400（持续增长，v4.1.0 Jun 9, 2026）
+- License: MIT
+- 主题：AI Agent生产级安全治理框架（策略引擎+零信任身份+执行沙箱+OWASP Top 10覆盖）
+- Pair: 与Article形成「AI Coding工具使用 vs AI Agent安全治理」的互补闭环（前者讲人如何用好工具，后者讲如何安全地让工具自主运行）
+- 原文引用：≥ 4处（README核心设计理念、多语言SDK、架构图、组件表）
 
 ## Pair 闭环分析
 
-### R470 Pair：Cursor Bugbot Autofix ↔ pr-agent
+### R471 Pair：Anthropic Agentic Coding Research ↔ Microsoft AGT
 
-**关联主题**：事件驱动的 PR Agent
+**关联主题**：AI Coding Agent的工程实践与安全治理
 
-| 项目 | 架构特点 | 隔离级别 | 部署复杂度 |
-|------|---------|---------|-----------|
-| Cursor Bugbot | 独立 VM | 完全隔离 | 中 |
-| pr-agent | GitHub Actions | 容器级 | 低 |
+| 维度 | Anthropic Research | Microsoft AGT |
+|------|--------------------|---------------|
+| 主题 | 人如何使用AI编程工具成功 | 如何让AI Agent安全可控 |
+| 关系 | 使用层 | 治理层 |
+| 核心洞察 | 领域专家用AI效果更好 | 概率性prompt安全不够用 |
 
-**Pair 强度**：⭐⭐⭐⭐（互补工程路径）
+**Pair 强度**：⭐⭐⭐⭐（工程层 + 治理层，天然互补）
 
 ## 🔍 决策日志
 
@@ -46,47 +49,44 @@
 
 | 候选 | 类型 | 来源 | 日期 | 决策 |
 |------|------|------|------|------|
-| cursor.com/blog/bugbot-autofix | article | Cursor | 2026-02-26 | ✅ 选定（multi-agent orchestration + event-driven） |
-| anthropic.com/research/claude-code-expertise | article | Anthropic | 2026-04 | ⏸️ 备选（JS 渲染无法提取内容） |
-| cursor.com/blog/browser-visual-editor | article | Cursor | 2025-12-11 | ⏸️ 跳过（内容较浅，非工程主题） |
-| cursor.com/blog/agent-computer-use | article | Cursor | 2026-02-24 | ⏸️ 备选（可能与 R469 computer-use 重叠） |
-| github.com/The-PR-Agent/pr-agent | project | GitHub | - | ✅ 选定（11,702⭐ Apache-2.0，多平台 PR Agent）|
+| anthropic.com/research/claude-code-expertise | article | Anthropic Research | 2026-06-16 | ✅ 选定（400K sessions一手数据，颠覆性结论） |
+| cursor.com/blog/agent-computer-use | article | Cursor | 2026-02-24 | ⏸️ 备选（Cloud VM架构，与R470 cloud agent主题重叠） |
+| microsoft/agent-governance-toolkit | project | GitHub | - | ✅ 选定（4,400⭐ MIT, OWASP, 多语言SDK） |
+| opencode.ai | project | GitHub | - | ⏸️ 备选（160K⭐，但非工程机制主题，无直接关联） |
 
-### Anthropic Research Paper 备选原因
+### 源可用性说明
 
-`anthropic.com/research/claude-code-expertise` 是高价值研究论文（400K sessions 分析），但：
-- 页面 JS 渲染，Playwright 无法提取完整内容
-- 无法获取官方原文直接引用
-- 降级使用二手解读影响文章质量
-
-**建议**：R471 再次尝试获取该内容，或使用 AnySearch 深度摘要
+- Tavily API：限额耗尽（432 error）
+- 切换至 web_search（parallel-free provider）
+- Anthropic Research页面成功获取内容（PDF链接在Appendix）
+- Microsoft AGT README通过curl+socks5成功获取完整内容
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| Sources tracked (jsonl) | 1914 (+2) |
+| Sources tracked (jsonl) | 1916 (+2) |
 | New articles written | 1 |
 | New projects written | 1 |
-| 原文引用数量 | Article ≥ 4 处 / Project ≥ 3 处 |
+| 原文引用数量 | Article ≥ 4 处 / Project ≥ 4 处 |
 | Commit | 待提交 |
 
-## 🔮 下轮规划 (R471)
+## 🔮 下轮规划 (R472)
 
 ### 扫描优先级
 
-1. **🔴 P0**: Anthropic Research Paper（claude-code-expertise）再次尝试获取
-2. **🔴 P0**: Cursor blog 新候选（agent-computer-use, browser-visual-editor）
-3. **🟡 P1**: Claude Blog 新候选（product-development-in-the-agentic-era）
-4. **🟡 P1**: GitHub Trending AI/Agent 实时扫描
+1. **🔴 P0**: Anthropic Engineering Blog 扫描（24 slugs全部追踪，但可能有新发布）
+2. **🔴 P0**: Cursor blog 新候选（browser-visual-editor待评估）
+3. **🟡 P1**: Claude blog 新候选（product-development-in-the-agentic-era, 7540 chars）
+4. **🟡 P1**: CrewAI / Replit / Augment 官方博客
 
 ### 工程机制关注
 
-- **event-driven / webhook**：寻找更多事件触发型 Agent
-- **multi-agent isolation**：VM vs container 隔离方案对比
-- **self-verification**：Agent 验证自己的能力
+- **Evaluator loop / harness**：寻找评估器循环实现
+- **Multi-agent isolation**：VM vs container vs 进程级隔离
+- **Session recovery / checkpoint**：长任务恢复机制
 
 ### 备选方向
 
-- 若 P0 无新内容，评估 CrewAI / Replit 官方博客
+- 若 P0 无新内容，评估 microsoft/agentgram 项目（Agents新发现）
 - 若 P1 无匹配，评估 BestBlogs Dev 高质量聚合内容
