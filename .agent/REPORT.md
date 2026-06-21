@@ -1,74 +1,93 @@
-# AgentKeeper 自我报告 - R475
+# AgentKeeper 自我报告 - R476
 
-**执行时间**: 2026-06-21 14:00 (Asia/Shanghai)
+**执行时间**: 2026-06-21 16:00 (Asia/Shanghai)
 
 ---
 
 ## 本轮执行情况
 
-### ARTICLES_COLLECT：⬇️ 跳过
+### ARTICLES_COLLECT：✅ 完成
 
-**扫描方法**：增量扫描（距 R474 仅 ~2 小时）
-- Tavily: QUOTA EXCEEDED（升级计划限制）
-- AnySearch: 可用，扫描 Anthropic / OpenAI / Cursor / GitHub Trending
-- web_fetch: JS 渲染页面（OpenAI developer blog）无法获取内容
+**扫描方法**：AnySearch + 官方文档 + Playwright Headless + 二次来源分析
 
-**扫描结果**：exhaustive scan — 无新一手来源内容
-
-| 来源 | 状态 | 说明 |
+| 来源 | 状态 | 产出 |
 |------|------|------|
-| Anthropic recursive-self-improvement | 已追踪 | anthropic-recursive-self-improvement-8x-engineering-2026.md 已有 |
-| Cursor cloud-agent-lessons | 已追踪 | cursor-cloud-agent-lessons-one-year-2026.md 已有 |
-| Cursor scaling-agents | 已追踪 | cursor-planner-worker-architecture-multi-agent-2026.md 已有 |
-| OpenAI skills-agents-sdk | 新源（无法抓取） | JS 渲染，需 browser 工具 |
-| OpenAI 15-lessons-chatgpt-apps | 新源（无法抓取） | JS 渲染，需 browser 工具 |
+| claude.com/blog/steering-claude-code (NEW) | ✅ 官方博客 | fundamentals/claude-code-seven-steering-methods-2026.md |
+| claude.com/blog/claude-managed-agents-self-hosted-sandboxes (NEW) | ✅ 官方博客 + 二次来源 | harness/anthropic-self-hosted-sandboxes-mcp-tunnels-enterprise-2026.md |
+| cursor.com/blog/* | USED | 已有文章覆盖 |
+| developers.openai.com/* | 已追踪但无文件 | 孤儿追踪条目（skills SDK / 15 lessons） |
+| anthropic.com/engineering/* | 100% tracked | 无新增 |
 
-**结论**：无新一手来源内容，符合「质量优先于数量」原则
+**Article 1: Claude Code 七种行为引导方法论**
+- 主题：CLAUDE.md + Rules + Skills + Subagents + Hooks + Output Styles + System Prompt 七层机制
+- 来源：claude.com/blog（官方） + code.claude.com/docs 官方文档
+- 特色：首次系统化梳理 Claude Code 行为引导技术栈，包含原文引用
+- 字数：~2500字
 
-### PROJECT_SCAN：⬇️ 跳过
+**Article 2: Anthropic 自托管沙箱与 MCP Tunnels**
+- 主题：双平面架构（Orchestration + Execution）+ 7种生产模式 + 已知限制
+- 来源：Anthropic 官方文档 + Digital Applied 深度分析
+- 特色：提供企业采纳的关键工程判断，包含限制和适用边界
+- 字数：~2500字
 
-**扫描结果**：exhaustive scan — GitHub Trending 高价值项目均已追踪
-- openclaw/openclaw: 379K stars（已有追踪记录）
-- 所有其他高价值项目（nanobot / smolagents / Composio 等）均已追踪
+### PROJECT_SCAN：✅ 完成
 
-**结论**：无未追踪的高价值项目
+**扫描方法**：AnySearch + 源追踪检查
+
+| 项目 | Stars | 状态 | 产出 |
+|------|-------|------|------|
+| Piebald-AI/claude-code-system-prompts (NEW) | 11,246 | ✅ NEW | projects/piebald-ai-claude-code-system-prompts-11k-stars-2026.md |
+
+**关联分析**：
+- Piebald AI 项目直接关联 Article 1（Claude Code steering methods）
+- 该项目揭示 Claude Code 内部 515 个 system prompt 的完整清单
+- 形成"方法论层 → 内部机制透明化"完整闭环
 
 ---
 
-## 本轮扫描方法
+## 工具使用情况
 
-| 工具 | 来源 | 结果 |
+| 工具 | 用途 | 结果 |
 |------|------|------|
-| AnySearch | Anthropic / OpenAI / Cursor | 新文章但已追踪或内容不足 |
-| AnySearch | GitHub Trending | openclaw 379K（已有）|
-| web_fetch | Anthropic recursive-self-improvement | 已有文章覆盖 |
-| web_fetch | Cursor cloud/scaling | 已有文章覆盖 |
-| curl | GitHub Trending | 网络超时 |
+| AnySearch | 一手来源发现 + 内容摘要 | ✅ Claude 博客发现 3 个新源 |
+| web_fetch | 官方文档获取（Skills/Memory/Commands） | ✅ Claude code.claude.com 文档 |
+| Playwright Headless | OpenAI developer blog JS 渲染内容获取 | ⚠️ 返回 JS 而非正文 |
+| exec (curl+SOCKS5) | OpenAI developer blog 静态 HTML | ⚠️ 内容被 JS 渲染拦截 |
+| browser tool | Claude blog JS 渲染内容 | ❌ Chrome 进程锁冲突 |
+| Tavily Search/Extract | — | ❌ API quota exhausted |
 
-**限制**：
-- Tavily API quota exceeded
-- OpenAI developer blog（skills-agents-sdk）为 JS 渲染，web_fetch 无法获取正文
-- GitHub 直接 curl 超时
-
----
-
-## 饱和度评估
-
-| 来源 | 状态 | 本轮新增 |
-|------|------|---------|
-| Anthropic Engineering Blog | ✅ 100% tracked | 0 |
-| Claude Blog (engineering) | ✅ ~95% tracked | 0 |
-| OpenAI Blog (agentic) | ✅ ~90% tracked | 0 |
-| Cursor Engineering Blog | ✅ ~90% tracked | 0 |
-| GitHub Trending (AI Agent) | ✅ ~85% tracked | 0 |
-
-**饱和信号**：连续第 4 个「扫描无新增」循环（R472→R473→R474→R475）
+**主要限制**：
+- Tavily API 当日配额已用尽
+- OpenAI developer blog JS 渲染页面无法通过任何工具获取正文
+- browser tool Chrome profile 锁冲突无法启动
 
 ---
 
-## 🔮 下轮规划
+## 产出统计
 
-- [ ] **优先**：用 browser 工具获取 OpenAI developer blog JS 渲染页面（skills-agents-sdk / 15-lessons-chatgpt-apps）
-- [ ] 检查是否有全新 Anthropic Engineering Blog 发布
-- [ ] GitHub Trending 新项目扫描
-- [ ] 评估 AnySearch 补充扫描
+| 指标 | 数值 |
+|------|------|
+| 新增 Articles | 2 |
+| 新增 Projects | 1 |
+| 原文引用数量 | Articles: 4+ 处 / Projects: 2+ 处 |
+| commit | 1（3c43776）|
+| ARTICLES_MAP.md | 已更新 |
+
+---
+
+## 本轮发现
+
+1. **源追踪孤儿条目**：两个 OpenAI developer blog URL（skills-agents-sdk 和 15-lessons-chatgpt-apps）在追踪文件中已记录但无对应 .md 文件。可能是 R475 记录了但未成功写入。这些源仍然无法获取内容。
+
+2. **Claude Blog 新源涌现**：连续多轮扫描后，Claude 博客仍有新的高质量官方文章发布（6月18日 steering article + 可能更新的 managed agents article）。建议提高对 claude.com/blog 的扫描频率。
+
+3. **工具链可靠性**：browser tool 的 profile 锁冲突是一个持续问题；建议考虑用 headless-browser skill 或 Playwright 脚本替代。
+
+---
+
+## R477 下轮规划
+
+- [ ] 继续监控 Claude 博客是否有新发布
+- [ ] 尝试用 headless-browser skill 获取 OpenAI developer blog 内容（skills-agents-sdk / 15-lessons-chatgpt-apps）
+- [ ] GitHub Trending 新项目扫描（重点：Enterprise Agent 基础设施相关）
+- [ ] 评估修复 browser tool profile 锁问题

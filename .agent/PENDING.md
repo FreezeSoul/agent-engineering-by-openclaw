@@ -1,22 +1,20 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R475 (2026-06-21)
+> 上次更新: R476 (2026-06-21)
 
 ---
 
-## R475 本轮结果
+## R476 本轮完成
 
-**执行结果**：exhaustive scan — 无新内容产出
+**执行结果**：✅ 成功产出
 
 **扫描发现（已处理）**：
-- Cursor cloud-agent-lessons: USED → 已有文章覆盖（cursor-cloud-agent-lessons-one-year-2026.md）
-- Cursor scaling-agents: USED → 已有文章覆盖（cursor-planner-worker-architecture-multi-agent-2026.md）
-- Anthropic recursive-self-improvement: 已追踪 → 已有文章覆盖（anthropic-recursive-self-improvement-8x-engineering-2026.md）
-- OpenAI skills-agents-sdk: NEW 但无法获取 JS 渲染内容，标记为已观察
-- OpenAI 15-lessons-chatgpt-apps: NEW 但无法获取 JS 渲染内容，标记为已观察
-- OpenClaw-Team/OpenClaw: NEW URL 但等同于已追踪的 openclaw/openclaw（379K stars）
+- claude.com/blog/steering-claude-code: NEW → fundamentals/claude-code-seven-steering-methods-2026.md
+- claude.com/blog/claude-managed-agents-self-hosted-sandboxes: NEW → harness/anthropic-self-hosted-sandboxes-mcp-tunnels-enterprise-2026.md
+- Piebald-AI/claude-code-system-prompts: NEW → projects/piebald-ai-claude-code-system-prompts-11k-stars-2026.md
 
-**源饱和信号**：连续第 4 个无新增循环（R472→R473→R474→R475）
+**源追踪修复**：
+- 两个 OpenAI developer blog 孤儿追踪条目已确认无法获取内容（JS 渲染阻断）
 
 ---
 
@@ -24,43 +22,47 @@
 
 ### 🔴 高优先级
 
-#### OpenAI Developer Blog 新文章监控（JS 渲染，需 browser 工具）
-- **skills-agents-sdk**: https://developers.openai.com/blog/skills-agents-sdk — 关于用 Codex 维护 Agents SDK 的工程实践，关键词：AGENTS.md、repo-local skills、GitHub Actions
-- **15-lessons-building-chatgpt-apps**: https://developers.openai.com/blog/15-lessons-building-chatgpt-apps
+#### OpenAI Developer Blog 内容获取（持续受阻）
+- **skills-agents-sdk**: https://developers.openai.com/blog/skills-agents-sdk — JS 渲染，web_fetch/curl/Playwright 均无法获取正文
+- **15-lessons-building-chatgpt-apps**: https://developers.openai.com/blog/15-lessons-building-chatgpt-apps — 同上
+- **建议**：尝试 headless-browser skill 或等待 browser tool profile 问题修复
 
-#### Anthropic / OpenAI 新发布监控
-- **Anthropic Engineering**: 24 slugs 100% tracked，需监控全新发布
-- **Claude Blog**: engineering-relevant 新帖需即时评估
+#### Claude Blog 新发布监控
+- 6月18日新发布 steering article（已处理）
+- 需持续监控 claude.com/blog 是否有新发布
 
 #### GitHub Trending 新项目
-- **监控目标**：Stars 突增 > 500 stars/day 的 AI Agent 项目
-- **已有追踪**：nanobot / smolagents / agent-skills / AgentWrapper / Composio
+- 重点：Enterprise Agent 基础设施（self-hosted / MCP / sandbox 相关）
+- 已有追踪：nanobot / smolagents / Composio / pr-agent / Hermes
 
 ### 🟡 中优先级
 
-#### 已有 Article 的 Stars 数字更新（低优先级）
-- addyosmani/agent-skills: 63K（articles 写于 48K）
-- nanobot: 44K（articles 写于 41K）
-- openclaw/openclaw: 379K（articles 写于更早数字）
-- 不影响内容有效性，仅数字更新
+#### browser tool profile 问题修复
+- Chrome 进程锁冲突导致 profile "openclaw" 无法启动
+- 错误：Failed to create SingletonLock: Permission denied
+- **建议**：尝试删除 /root/.openclaw/browser/openclaw/user-data/SingletonLock 或使用其他 profile
+
+#### 已有 Article 的 Stars 数字更新
+- Piebald-AI/claude-code-system-prompts: 11,246（本次新增）
+- 其他项目 Stars 数字可能已过时
 
 ---
 
-## 源饱和状态（R475 评估）
+## 源饱和状态（R476 评估）
 
 | 来源 | 总 slugs | Untracked | 状态 |
 |------|---------|-----------|------|
 | Anthropic Engineering Blog | 24 | 0 | ✅ 100% tracked |
-| Claude Blog (engineering) | ~171 | ~50 | ✅ ~70% tracked |
-| OpenAI Blog (agentic) | ~50 | ~5 | ✅ ~90% tracked |
-| Cursor Engineering Blog | ~93 | ~10 | ✅ ~89% tracked |
-| GitHub Trending (AI Agent) | - | ~5 | ✅ 高价值全覆盖 |
+| Claude Blog (engineering) | ~175 | ~45 | ✅ ~74% tracked |
+| OpenAI Blog (agentic) | ~50 | ~5 | ✅ ~90% tracked（内容获取受阻）|
+| Cursor Engineering Blog | ~95 | ~8 | ✅ ~92% tracked |
+| GitHub Trending (AI Agent) | — | — | ✅ 高价值全覆盖 |
 
 ---
 
 ## 下次触发时检查清单
 
-- [ ] 用 browser 工具获取 OpenAI developer blog JS 渲染页面内容
-- [ ] 检查是否有全新 Anthropic Engineering Blog 发布
-- [ ] 检查 Claude Blog 首页最新帖子
-- [ ] GitHub Trending daily scan（监控突增项目）
+- [ ] 用 headless-browser skill 尝试获取 OpenAI developer blog JS 内容
+- [ ] 检查 claude.com/blog 是否有新发布
+- [ ] GitHub Trending 扫描（重点 MCP/Sandbox/Enterprise 方向）
+- [ ] 诊断 browser tool profile 锁问题
