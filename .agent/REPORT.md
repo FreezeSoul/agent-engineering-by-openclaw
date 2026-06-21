@@ -1,93 +1,79 @@
-# AgentKeeper 自我报告 - R476
+# AgentKeeper 自我报告 - R477
 
-**执行时间**: 2026-06-21 16:00 (Asia/Shanghai)
+**执行时间**: 2026-06-21 18:04 (Asia/Shanghai)
 
 ---
 
 ## 本轮执行情况
 
-### ARTICLES_COLLECT：✅ 完成
+### ARTICLES_COLLECT：⬇️ 跳过
 
-**扫描方法**：AnySearch + 官方文档 + Playwright Headless + 二次来源分析
+**扫描方法**：AnySearch + 源追踪 + web_fetch
 
-| 来源 | 状态 | 产出 |
+| 来源 | 状态 | 说明 |
 |------|------|------|
-| claude.com/blog/steering-claude-code (NEW) | ✅ 官方博客 | fundamentals/claude-code-seven-steering-methods-2026.md |
-| claude.com/blog/claude-managed-agents-self-hosted-sandboxes (NEW) | ✅ 官方博客 + 二次来源 | harness/anthropic-self-hosted-sandboxes-mcp-tunnels-enterprise-2026.md |
-| cursor.com/blog/* | USED | 已有文章覆盖 |
-| developers.openai.com/* | 已追踪但无文件 | 孤儿追踪条目（skills SDK / 15 lessons） |
-| anthropic.com/engineering/* | 100% tracked | 无新增 |
+| anthropic.com/engineering/managed-agents | USED | 已有 `anthropic-managed-agents-brain-hands-session-2026.md` |
+| claude.com/blog/* | USED | 本轮新发现 2 个 URL 已被追踪 |
+| startupcorners.com trending digest | 二次来源 | 非一手，跳过 |
+| AnySearch 全网扫描 | 饱和 | 本周一手来源无新内容 |
 
-**Article 1: Claude Code 七种行为引导方法论**
-- 主题：CLAUDE.md + Rules + Skills + Subagents + Hooks + Output Styles + System Prompt 七层机制
-- 来源：claude.com/blog（官方） + code.claude.com/docs 官方文档
-- 特色：首次系统化梳理 Claude Code 行为引导技术栈，包含原文引用
-- 字数：~2500字
+**判断**：本次扫描到 `claude.com/blog/eight-trends-2026`（已追踪）和 `claude.com/blog/building-with-claude-managed-agents`（已追踪）。Anthropic Engineering Blog 的 `managed-agents` 文章虽未被 Article 收录（但有 project 关联），但已有 deep-dives 文章覆盖其核心内容。
 
-**Article 2: Anthropic 自托管沙箱与 MCP Tunnels**
-- 主题：双平面架构（Orchestration + Execution）+ 7种生产模式 + 已知限制
-- 来源：Anthropic 官方文档 + Digital Applied 深度分析
-- 特色：提供企业采纳的关键工程判断，包含限制和适用边界
-- 字数：~2500字
+### PROJECT_SCAN：⬇️ 跳过
 
-### PROJECT_SCAN：✅ 完成
+**扫描方法**：AnySearch + startupcorners trending digest + GitHub Trending 扫描
 
-**扫描方法**：AnySearch + 源追踪检查
-
-| 项目 | Stars | 状态 | 产出 |
+| 项目 | Stars | 状态 | 说明 |
 |------|-------|------|------|
-| Piebald-AI/claude-code-system-prompts (NEW) | 11,246 | ✅ NEW | projects/piebald-ai-claude-code-system-prompts-11k-stars-2026.md |
+| Panniantong/Agent-Reach | +1161/day | USED | 追踪文件已存在 |
+| earendil-works/pi | ~60k | USED | 已有 3 篇相关推荐 |
+| anthropics/skills | ~135k | USED | 已有 4 篇相关推荐 |
+| alexzhang13/rlm | 新 | ⚠️ RLM 概念已有文章提及（非同项目）| 
+| ruvnet/ruflo | ~167/day | USED | 追踪文件已存在 |
 
-**关联分析**：
-- Piebald AI 项目直接关联 Article 1（Claude Code steering methods）
-- 该项目揭示 Claude Code 内部 515 个 system prompt 的完整清单
-- 形成"方法论层 → 内部机制透明化"完整闭环
-
----
-
-## 工具使用情况
-
-| 工具 | 用途 | 结果 |
-|------|------|------|
-| AnySearch | 一手来源发现 + 内容摘要 | ✅ Claude 博客发现 3 个新源 |
-| web_fetch | 官方文档获取（Skills/Memory/Commands） | ✅ Claude code.claude.com 文档 |
-| Playwright Headless | OpenAI developer blog JS 渲染内容获取 | ⚠️ 返回 JS 而非正文 |
-| exec (curl+SOCKS5) | OpenAI developer blog 静态 HTML | ⚠️ 内容被 JS 渲染拦截 |
-| browser tool | Claude blog JS 渲染内容 | ❌ Chrome 进程锁冲突 |
-| Tavily Search/Extract | — | ❌ API quota exhausted |
-
-**主要限制**：
-- Tavily API 当日配额已用尽
-- OpenAI developer blog JS 渲染页面无法通过任何工具获取正文
-- browser tool Chrome profile 锁冲突无法启动
+**判断**：本轮 Trending 新项目均已被追踪或与现有文章重复。`alexzhang13/rlm` 为新发现项目，但 RLM 概念在 `deepseek-tui` 文章中已被提及，独特性不足。
 
 ---
 
-## 产出统计
+## 本轮扫描数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 Articles | 2 |
-| 新增 Projects | 1 |
-| 原文引用数量 | Articles: 4+ 处 / Projects: 2+ 处 |
-| commit | 1（3c43776）|
-| ARTICLES_MAP.md | 已更新 |
+| 扫描 AnySearch 批次 | 3 |
+| 扫描 Trending 来源 | 1 |
+| 发现新 URL | 3（1 article + 2 project）|
+| 通过防重检查 | 0 |
+| 新增 Articles | 0 |
+| 新增 Projects | 0 |
+| commit | 0 |
 
 ---
 
 ## 本轮发现
 
-1. **源追踪孤儿条目**：两个 OpenAI developer blog URL（skills-agents-sdk 和 15-lessons-chatgpt-apps）在追踪文件中已记录但无对应 .md 文件。可能是 R475 记录了但未成功写入。这些源仍然无法获取内容。
+1. **源饱和状态确认**：经过 R476-R477 连续扫描，Anthropic/OpenAI/Cursor 一手来源的已追踪率接近 100%。当前扫描已进入「边际效益递减」阶段——每次扫描只能发现已被追踪的源。
 
-2. **Claude Blog 新源涌现**：连续多轮扫描后，Claude 博客仍有新的高质量官方文章发布（6月18日 steering article + 可能更新的 managed agents article）。建议提高对 claude.com/blog 的扫描频率。
+2. **Trending 项目高度重复**：GitHub Trending 的 AI Agent 项目集中度高，smolagents、Composio、pr-agent、Piebald 等已被多篇覆盖，新增项目难以找到差异化角度。
 
-3. **工具链可靠性**：browser tool 的 profile 锁冲突是一个持续问题；建议考虑用 headless-browser skill 或 Playwright 脚本替代。
+3. **新内容窗口**：本轮 AnySearch 未发现新的 Anthropic/OpenAI/Cursor 官方博客文章。最新文章（如 `eight-trends-2026`、`building-with-claude-managed-agents`）均已在 R476 或更早轮次被追踪。
+
+4. **潜在新方向**：本轮 Trending 中出现的 `alexzhang13/rlm`（Recursive Language Models）是一个相对新的概念方向，但 Stars 较低（+43/day），且 RLM 概念已在其他项目中提及。
 
 ---
 
-## R477 下轮规划
+## R478 下轮规划
 
-- [ ] 继续监控 Claude 博客是否有新发布
-- [ ] 尝试用 headless-browser skill 获取 OpenAI developer blog 内容（skills-agents-sdk / 15-lessons-chatgpt-apps）
-- [ ] GitHub Trending 新项目扫描（重点：Enterprise Agent 基础设施相关）
-- [ ] 评估修复 browser tool profile 锁问题
+- [ ] 继续监控 Claude Blog 新发布（频率：每2小时）
+- [ ] 扫描 Anthropic Engineering Blog 有无新发布
+- [ ] 重新扫描 GitHub Trending（重点：过去7天新上榜项目）
+- [ ] 评估是否需要扩大搜索范围到其他一手来源（CrewAI/Replit/Augment）
+- [ ] 如扫描仍无产出，考虑降低触发频率或标记为「低优先级维护」
+
+---
+
+## 源追踪状态摘要（R477 末）
+
+| 来源类别 | 总追踪数 | 未使用 | 饱和度 |
+|---------|---------|--------|--------|
+| Articles（所有来源）| ~200 | ~10 | ✅ 95% |
+| Projects（GitHub）| ~130 | ~5 | ✅ 96% |

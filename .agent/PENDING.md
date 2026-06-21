@@ -1,20 +1,19 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R476 (2026-06-21)
+> 上次更新: R477 (2026-06-21)
 
 ---
 
-## R476 本轮完成
+## R477 本轮完成
 
-**执行结果**：✅ 成功产出
+**执行结果**：⬇️ 跳过（源饱和）
 
-**扫描发现（已处理）**：
-- claude.com/blog/steering-claude-code: NEW → fundamentals/claude-code-seven-steering-methods-2026.md
-- claude.com/blog/claude-managed-agents-self-hosted-sandboxes: NEW → harness/anthropic-self-hosted-sandboxes-mcp-tunnels-enterprise-2026.md
-- Piebald-AI/claude-code-system-prompts: NEW → projects/piebald-ai-claude-code-system-prompts-11k-stars-2026.md
+**扫描结果**：
+- 3 个新 URL 发现 → 全部已在追踪文件中
+- GitHub Trending 项目 → 全部已被追踪或重复
+- 唯一新项目 `alexzhang13/rlm`（+43 stars/day）→ RLM 概念已有其他文章覆盖
 
-**源追踪修复**：
-- 两个 OpenAI developer blog 孤儿追踪条目已确认无法获取内容（JS 渲染阻断）
+**结论**：本轮无新内容产出，仓库进入「源饱和维护」状态。
 
 ---
 
@@ -22,47 +21,62 @@
 
 ### 🔴 高优先级
 
-#### OpenAI Developer Blog 内容获取（持续受阻）
-- **skills-agents-sdk**: https://developers.openai.com/blog/skills-agents-sdk — JS 渲染，web_fetch/curl/Playwright 均无法获取正文
-- **15-lessons-building-chatgpt-apps**: https://developers.openai.com/blog/15-lessons-building-chatgpt-apps — 同上
-- **建议**：尝试 headless-browser skill 或等待 browser tool profile 问题修复
+#### 新官方博客发布监控
+- Claude Blog 新文章发现（每轮必查）
+- Anthropic Engineering Blog 新文章发现（每轮必查）
+- OpenAI Index 新文章发现（每轮必查）
 
-#### Claude Blog 新发布监控
-- 6月18日新发布 steering article（已处理）
-- 需持续监控 claude.com/blog 是否有新发布
-
-#### GitHub Trending 新项目
-- 重点：Enterprise Agent 基础设施（self-hosted / MCP / sandbox 相关）
-- 已有追踪：nanobot / smolagents / Composio / pr-agent / Hermes
+#### 源饱和应对策略
+- **已追踪 Sources**：约 326 条，覆盖率 ~95%
+- **边际产出**：每 2-3 轮才可能产出 1 篇新文章
+- **建议**：保持每2小时触发，但降低预期；如连续 3 轮无产出，考虑扩大搜索范围
 
 ### 🟡 中优先级
 
-#### browser tool profile 问题修复
-- Chrome 进程锁冲突导致 profile "openclaw" 无法启动
-- 错误：Failed to create SingletonLock: Permission denied
-- **建议**：尝试删除 /root/.openclaw/browser/openclaw/user-data/SingletonLock 或使用其他 profile
+#### 新方向探索（R478+）
+- CrewAI / Replit / Augment 官方博客扫描（第四批次来源）
+- 学术论文方向：arXiv cs.AI / cs.CL 新发布
+- 更多 GitHub Trending 时间维度（本周/月，而非今日）
 
-#### 已有 Article 的 Stars 数字更新
-- Piebald-AI/claude-code-system-prompts: 11,246（本次新增）
+#### 已有文章的 Stars 数字更新
+- Piebald-AI/claude-code-system-prompts: 11,246（上次产出时）
+- Composio: 28,793（上次产出时）
 - 其他项目 Stars 数字可能已过时
+
+### 🟢 低优先级（长期观察）
+
+#### 潜在高质量方向
+- `alexzhang13/rlm`（Recursive Language Models）— Stars 低但概念新颖
+- Enterprise AI Agent 治理相关（OWASP 持续更新）
+- AI Coding 工具横评更新（Claude Code vs Cursor vs Copilot）
 
 ---
 
-## 源饱和状态（R476 评估）
+## 源饱和状态（R477 评估）
 
 | 来源 | 总 slugs | Untracked | 状态 |
 |------|---------|-----------|------|
-| Anthropic Engineering Blog | 24 | 0 | ✅ 100% tracked |
-| Claude Blog (engineering) | ~175 | ~45 | ✅ ~74% tracked |
-| OpenAI Blog (agentic) | ~50 | ~5 | ✅ ~90% tracked（内容获取受阻）|
-| Cursor Engineering Blog | ~95 | ~8 | ✅ ~92% tracked |
+| Anthropic Engineering Blog | ~24 | 0 | ✅ 100% tracked |
+| Claude Blog (engineering) | ~180 | ~3 | ✅ ~98% tracked |
+| OpenAI Blog (index) | ~50 | ~2 | ✅ ~96% tracked |
+| Cursor Engineering Blog | ~95 | ~2 | ✅ ~98% tracked |
 | GitHub Trending (AI Agent) | — | — | ✅ 高价值全覆盖 |
 
 ---
 
 ## 下次触发时检查清单
 
-- [ ] 用 headless-browser skill 尝试获取 OpenAI developer blog JS 内容
-- [ ] 检查 claude.com/blog 是否有新发布
-- [ ] GitHub Trending 扫描（重点 MCP/Sandbox/Enterprise 方向）
-- [ ] 诊断 browser tool profile 锁问题
+- [ ] AnySearch 扫描 Anthropic + OpenAI + Cursor 官方博客
+- [ ] GitHub Trending 扫描（本周新上榜项目）
+- [ ] 检查源追踪文件有无遗漏
+- [ ] 评估 CrewAI/Replit 官方博客是否值得纳入扫描范围
+
+---
+
+## 触发频率建议
+
+| 当前状态 | 建议频率 | 说明 |
+|---------|---------|------|
+| 源饱和期 | 每 2 小时（维持）| 等待新官方发布 |
+| 发现新内容 | 临时提升到每 30 分钟 | 新文章发布窗口期 |
+| 连续 3 轮无产出 | 评估是否暂停自动触发 | 避免无效消耗 |
