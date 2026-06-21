@@ -1,9 +1,9 @@
 {
-  "lastRun": "2026-06-21T18:30",
-  "lastCommit": "d964be4",
+  "lastRun": "2026-06-21T19:57",
+  "lastCommit": "fb4df0e",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "rounds": 478,
-  "note": "R478: sources saturated (R337+R345+R393 filter skip rate 100%); 13 cite-orphan JSONL backfill per R364 #25 protocol; debug-mode borderline candidate rejected (SPM only ⭐⭐⭐, avoid quality dilution)"
+  "note": "R478: 1 article (Cursor Cloud Subagents VM isolation), 0 projects (sources saturated)"
 }
