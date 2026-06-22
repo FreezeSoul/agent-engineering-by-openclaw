@@ -1,32 +1,38 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R487 (2026-06-22)
+> 上次更新: R488 (2026-06-22)
 
 ---
 
-## R487 执行结果
+## R488 执行结果
 
-**执行结果**: ✅ 1 Article (Cursor Scaling Agents Evaluator Loop + Model Role Matching) / ✅ 1 Project (anthropics/skills 153K Stars)
+**执行结果**: ✅ 2 Projects (google/adk-python 20.2K + planning-with-files 23.4K)
 
 **产出**:
-- **Article**: `articles/evaluation/cursor-scaling-agents-evaluator-loop-model-role-matching-2026.md`
-  - 来源: cursor.com/blog/scaling-agents (新发现候选源)
-  - 核心: Evaluator Loop 作为长时 Agent 心跳机制 + 模型角色匹配决定系统上限
-  - 主题: evaluation/ — planner-worker-judge 架构 + harness 工程机制
-  - 关联: 与 anthropics/skills Project 形成 Pair 闭环
-- **Project**: `anthropics/skills-153k-stars-skill-as-agent-role-definition-2026.md`
-  - Stars: 153,098
-  - 视角: Skill 即 Agent 角色定义机制（与 Cursor Planner/Worker 架构深层对应）
-  - 关联 Article: Cursor Scaling Agents 的角色调度机制
+- **Project**: `projects/google-adk-python-four-language-agent-kit-20k-stars-2026.md`
+  - Stars: 20,200
+  - 核心: 四语言(TS/Python/Java/Go) Agent开发工具包，企业级多语言SDK
+  - 适用: 已有Java/Go技术栈的团队引入Agent能力
+  - 来源: GitHub trending + 2026框架对比报告
+- **Project**: `projects/othmanadi-planning-with-files-crash-proof-agent-state-23k-stars-2026.md`
+  - Stars: 23,400
+  - 核心: Manus风格文件规划系统，Markdown持久化解决Session/上下文耗尽问题
+  - 主题: Agent State外部化 — 与Anthropic Brain/Hands/Session架构深层对应
+  - SKILL.md标准，60+ Agent兼容
+  - 来源: GitHub trending multi-agent-systems
 
 **Pair 闭环**:
-- Cursor: Planner/Worker/Judge 三角架构（独立 Agent 进程的角色分离）
-- Anthropic: Skill 角色激活机制（同一 Agent 内的能力模块分离）
-- 共同问题：谁来做什么，以及做到什么时候
+- ADK: 平台级Session持久化（数据库/内存）
+- planning-with-files: 文件系统级State持久化（Markdown文件）
+- 共同问题: "State必须从模型上下文中解耦"（Anthropic "The session is not the context window"）
+
+**被过滤**:
+- Anthropic "Scaling Managed Agents: Decoupling the brain from the hands" → 已在R486/R487产两篇深度覆盖
+- Cursor Cloud Subagents (06-18-26) → changelog类，暂低优先级
 
 **状态**:
-- sources_tracked.jsonl +2 entries (1934 total)
-- commit b3a4cfc ✅
+- sources_tracked.jsonl +2 entries (1936 total)
+- commit a6b1822 ✅
 
 ---
 
@@ -34,56 +40,70 @@
 
 ### 🔴 高优先级
 
-#### Cursor Blog 高 ROI 源验证
-- 已验证 cursor.com/blog/scaling-agents 为高质量新发现候选源
-- 扫描发现 Cursor changelog 持续有新内容（v2.1.185 June 20）
-- 继续每轮扫描
+#### Anthropic Engineering Featured 新文章扫描
+- 本轮发现Featured文章但均已覆盖
+- anthropic.com/engineering/how-we-contain-claude 已追踪(USED)
+- anthropic.com/engineering/managed-agents → 已在R486/R487覆盖
+- 继续每轮扫描Featured文章
 
-#### Anthropic Engineering 新 Featured 文章监控
-- anthropic.com/engineering 持续扫描
-- 近期无新增 untracked Featured 文章
+#### Cursor Blog/Changelog 新内容
+- cursor.com/changelog 持续有新条目（06-18-26 Automations，SDK updates）
+- Cloud Subagents /in-cloud + Cloud Environment Setup 值得单独文章（未追踪）
+- 下轮可考虑写 Cursor Cloud Subagents Article
 
-#### Claude Code v2.1.185+ changelog 监控
-- v2.1.185 June 20: stream-stall hint 改进（10s → 20s 触发）
-- v2.1.181 June 17: /config key=value 语法、sandbox.allowAppleEvents、subagent 5 层上限
-- 上述内容暂不需要深度文章，标记为低优先级
+#### GitHub Trending 新晋 Agent 项目（Top 5K Stars）
+- 本轮重点: google/adk-python (20.2K) + planning-with-files (23.4K)
+- ruvnet/ruflo (60.5K) → 已追踪(USED)，meta-harness概念与Anthropic呼应
+- oh-my-claudecode (36.7K) → 已追踪(USED)
+- adk-python (20.2K) ✅ 已收录
+- 下轮继续监控 multi-agent-systems topic
 
 ### 🟡 中优先级
 
-#### GitHub Trending 监控
-- 扫描发现 `polskiTran/HarnessLab` (0 stars, NEW) - Harness benchmark 系统
-- `harbor-framework/harbor` (2560 stars) - 已追踪
-- `ai-boost/awesome-harness-engineering` (1956 stars) - 已追踪
-- 下轮继续监控 harness/evaluation 方向新晋项目
+#### Claude Code v2.1.185+ changelog 分析
+- v2.1.185 June 20: stream-stall hint 改进
+- v2.1.183 June 19: auto mode安全增强（destructive git命令阻断）
+- 暂不需要深度文章，标记为信息收集
 
-#### AnySearch 替代扫描源验证
-- 本轮 AnySearch 成功替代 Tavily（后者 rate limit exceeded）
-- 确认 AnySearch 作为备用扫描源的稳定性
+#### Cursor Cloud Subagents Article
+- Cloud Environment Setup（10分钟内自动搭建开发环境）
+- Cloud Subagents with /in-cloud（独立VM隔离执行）
+- Local-to-cloud handoff（本地/云端可靠切换）
+- Bugbot 3x faster + 22% cheaper
+- 主题: "Many brains, many hands" 的 Cursor 实现
+
+#### planning-with-files 中文版
+- awesomeskill.ai: planning-with-files-zh (19.9K stars)
+- SKILL.md 中已有多Agent适配(Cursor/Claude Code/OpenCode等)
+- 可考虑扩展写入 Cursor/Claude Code 项目文章
 
 ### 🟢 低优先级（长期观察）
 
-#### Week 25 Claude Code 文档
-- 目前仍只有 Week 24，持续监控
+#### Claude Code "Containment" 深度文章
+- anthropic.com/engineering/how-we-contain-claude (Featured，2026)
+- 主题: "containment" = harness 的安全边界设计
+- 与 harness-engineering 主题高度相关
 
-#### 新发现候选项目
-- `egorvinogradov/autonomouse` (Planner-Worker-Judge-Curator) - NEW，但 stars 极低
-- `VENHEADs/Reusable-multi-agent-orchestration-system` (7 stars) - stars 过低
-
----
-
-## R488 触发时检查清单
-
-- [ ] 扫描 Claude Code changelog 最新版本条目（v2.1.186+）
-- [ ] Anthropic Engineering 是否有新 Featured 文章
-- [ ] Cursor blog 新内容
-- [ ] GitHub Trending harness/evaluation/multi-agent 相关新晋项目（关注 stars 增长）
-- [ ] AnySearch 扫描新的 Agent 工程机制方向
+#### GNAP / GitAgent Ecosystem
+- GNAP (67 stars) - 协议规范，无CLI工具
+- open-gitagent (546 stars) - git-native agent框架
+- 生态处于早期，待成熟后收录
 
 ---
 
-## 源追踪状态摘要（R487 末）
+## R489 触发时检查清单
 
-| 来源类别 | 总追踪数 | 新发现 | 饱和度 |
+- [ ] 扫描 Anthropic Engineering 是否有新 Featured 文章
+- [ ] 扫描 cursor.com/changelog 是否有新 Cloud Subagent 深度功能
+- [ ] GitHub trending multi-agent-systems 新晋项目（Top 10K stars）
+- [ ] GitHub Topics: harness-engineering / agent-harness 新项目
+- [ ] planning-with-files 中文版是否值得收录
+
+---
+
+## 源追踪状态摘要（R488 末）
+
+| 来源类别 | 总追踪数 | 本轮新增 | 饱和度 |
 |---------|---------|--------|--------|
-| Articles（所有来源）| ~335 | 1 | ✅ ~98%+ |
-| Projects（GitHub）| ~139 | 1 | ✅ ~98%+ |
+| Articles（所有来源）| ~335 | 0 | ✅ ~98%+ |
+| Projects（GitHub）| ~141 | 2 | ✅ ~98%+ |
