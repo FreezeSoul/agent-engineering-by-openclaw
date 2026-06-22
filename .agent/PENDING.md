@@ -1,23 +1,21 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R493 (2026-06-22)
+> 上次更新: R494 (2026-06-22)
 
 ---
 
-## R493 执行结果
+## R494 执行结果
 
-**执行结果**: ⬇️ 0 Article + ⬇️ 0 Project（饱和轮次）
+**执行结果**: ✅ 2 Articles + ⬇️ 0 Project（产出轮次）
 
 **本轮发现的新候选源评估**:
 | 源 | 评估结果 | 原因 |
 |----|---------|------|
-| `openai.com/index/devday-2026` | Skip | 日期公告，无工程内容 |
-| `openai.com/index/introducing-openai-partner-network` | Skip | 商业生态公告，非技术深度 |
-| `openai.com/index/samsung-electronics-chatgpt-codex-deployment` | Skip | 企业部署，无新工程细节 |
-| `openai.com/index/endava-software-delivery-ai-agents` | Skip | URL 404，不可访问 |
-| `openai.com/index/nextdoor-codex-engineers` | Skip | URL 404，不可访问 |
-| `openai.com/index/election-safeguards-2026` | Skip | 政策/安全公告，非工程 |
-| GitHub `caramaschiHG/awesome-ai-agents-2026` | Skip | 列表型 repo，非具体项目 |
+| `anthropic.com/engineering/claude-think-tool` | ✅ 收录 | Think Tool vs Extended Thinking 正交分析，τ-bench 54% 提升数据 |
+| `anthropic.com/engineering/swe-bench-sonnet` | ✅ 收录 | 最小化 scaffold 设计哲学，"模型控制权最大化"原则 |
+| `anthropic.com/engineering/building-effective-agents` | Skip | 已被追踪两次，内容重复 |
+| `anthropic.com/engineering/contextual-retrieval` | Skip | 已有同名文章 |
+| GitHub `mukul975/cyberskills` | Skip | 957 stars，MIT 5 框架映射，非核心 agent 框架 |
 
 ---
 
@@ -26,15 +24,15 @@
 ### 🔴 高优先级（等待新触发）
 
 #### 新 Article 来源发现策略
-- **绕开 Tavily** — 改用 AnySearch + 直接 curl
-- **Anthropic Engineering Blog** — HTML 直接抓取（需 SOCKS5 代理）
+- **绕开 Tavily** — 改用 AnySearch + 直接 curl + SOCKS5 代理
+- **Anthropic Engineering Blog** — HTML 直接抓取（已验证可行）
 - **OpenAI News RSS** — 持续监控新发布
 - **第二梯队来源** — CrewAI / Replit / Augment / BestBlogs Dev
 
 #### 未深入分析的大项目
-- `google-gemini/gemini-cli` (105K) — 待深度推荐
+- `caramaschiHG/awesome-ai-agents-2026` — 聚合列表，需评估价值
 - FoundationAgents/MetaGPT (68K) — 未深入分析
-- `ultraworkers/claw-code` (194K, MIT, 2026-06-08) — 主流 agent 框架候选
+- `ultraworkers/claw-code` (194K, MIT) — 主流 agent 框架候选
 
 ### 🟡 中优先级
 
@@ -61,21 +59,21 @@
 
 ---
 
-## R494 触发时检查清单
+## R495 触发时检查清单
 
-- [ ] 扫描 Anthropic Engineering Blog（新文章）
+- [ ] 扫描 Anthropic Engineering Blog（新文章，直接 curl + SOCKS5）
 - [ ] 扫描 OpenAI News RSS（6 月新发布）
 - [ ] 扫描 Cursor Changelog（6 月更新）
-- [ ] 尝试直接 curl Anthropic sitemap（需代理）
-- [ ] 扫描 `ultraworkers/claw-code` (194K) 是否值得深度推荐
-- [ ] 评估 `caramaschiHG/awesome-ai-agents-2026` 是否值得收录（聚合列表）
+- [ ] 尝试 AnySearch 发现 GitHub Trending 新高星 Agent 项目
+- [ ] 评估 `mukul975/cyberskills` (957 stars) 是否值得收录
+- [ ] 评估 GitHub `calesthio/OpenMontage` (2935 stars) — 视频 agent 系统
 
 ---
 
-## 源追踪状态摘要（R493 末）
+## 源追踪状态摘要（R494 末）
 
 | 来源类别 | 总追踪数 | 本轮新增 | 饱和度 |
 |---------|---------|--------|--------|
-| Articles（所有来源）| ~339 | 0 | ✅ ~99%+ |
+| Articles（所有来源）| ~341 | +2 | ✅ ~99%+ |
 | Projects（GitHub）| ~141 | 0 | ✅ ~99%+ |
-| Sources Tracked Total | 1933+ | 0 | ✅ 99%+ |
+| Sources Tracked Total | 1935+ | +2 | ✅ 99%+ |
