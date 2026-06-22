@@ -1,91 +1,86 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R490 (2026-06-22)
+> 上次更新: R491 (2026-06-22)
 
 ---
 
-## R490 执行结果
+## R491 执行结果
 
-**执行结果**: ✅ 0 Article + 1 Project (agency-agents 115K Stars)
+**执行结果**: ⬇️ 0 Article + ⬇️ 0 Project（饱和轮次）
 
-**产出**:
-- **Project**: `msitarzewski-agency-agents-persona-driven-multi-agent-teams-115k-stars-2026.md`
-  - Stars: 115,027
-  - 核心: 角色化 Agent 团队，Division 结构，Markdown 即协议，零依赖 Shell
-  - 主题: "Skill Authoring 消费层" — 角色化 Agent 分工
-  - Pair: R488 Skill-Creator(生产) + R489 hermes-agent(改进) + R490 The Agency(消费) = Skill Authoring 完整生命周期
+**扫描摘要**:
+- **Tavily**: 432 Rate Limit — 全部批次受限
+- **AnySearch**: 可用，发现若干线索
+- **GitHub API**: 部分返回空（可能限流）
+- **源追踪**: 339 条记录，饱和度 ~99%
 
-**被过滤**:
-- 所有第一批次源（Anthropic/OpenAI/Cursor）全部已追踪，无新 Article
-- google-gemini/gemini-cli (105K) — 已追踪(USED) ✅
-- langflow-ai/langflow (149K) — 已追踪(USED) ✅
-- OpenHands/OpenHands (77K) — 已追踪(USED) ✅
-- bytedance/deer-flow (72K) — 已追踪(USED) ✅
+**已验证为 NEW 但放弃的原因**:
+| 源 | 原因 |
+|----|------|
+| `blog.fsck.com/Superpowers-6` | Superpowers 已覆盖 4+ 文件，主题重复 |
+| `modelcontextprotocol.io/enterprise-managed-auth` | `anthropic-enterprise-mcp-authorization-idp-governance-2026.md` 已收录 |
+| `anthropic.com/engineering/demystifying-evals` | 已追踪 |
+| huggingface/smolagents (27K) | 已追踪 |
+| affaan-m/ECC (19K) | 已追踪 |
 
-**状态**:
-- sources_tracked.jsonl +1 entry (339 total in SKILL_DIR)
-- commit pending
+**被过滤的 GitHub Trending（均已追踪）**:
+- NousResearch/hermes-agent (199K) ✅
+-obra/superpowers (232K) ✅
+- langflow-ai/langflow (149K) ✅
+- Shubhamsaboo/awesome-llm-apps (115K) ✅
+- browser-use/browser-use (100K) ✅
 
 ---
 
 ## 持续性待办
 
-### 🔴 高优先级
+### 🔴 高优先级（等待新触发）
 
-#### GitHub Trending 新晋 Agent 项目（Top 50K Stars）
-- NousResearch/hermes-agent (199K) ✅ 已收录 R489
-- langflow-ai/langflow (149K) ✅ 已追踪多次
-- **google-gemini/gemini-cli (105K)** → 未深入分析，下轮优先
-- msitarzewski/agency-agents (115K) ✅ 已收录 R490
-- OpenHands/OpenHands (77K) ✅ 已追踪多次
+#### 新 Article 来源发现策略
+- **第一批次连续饱和**：Anthropic/OpenAI/Cursor 官方博客本轮无法访问（Tavily 432）
+- 下轮优先：直接 web_fetch 官方博客URL（绕过 Tavily）
+- 备选：arxiv.org cs.AI 新论文扫描
+
+#### 未深入分析的大项目
+- `google-gemini/gemini-cli` (105K) → R490 建议优先，**本轮未扫描**
 - FoundationAgents/MetaGPT (68K) → 未深入分析
-- wshobson/agents (37K) → 已追踪 ✅
-
-#### Article 来源扩展
-- 第一批次（Anthropic/OpenAI/Cursor）连续饱和
-- 下轮优先扫描：CrewAI Blog、Replit Blog、Augment Blog
-- AnySearch 降级：arxiv.org multi-agent systems 新论文
+- huggingface/smolagents (27K) → 已追踪但可能缺深度分析
 
 ### 🟡 中优先级
 
-#### Skill Authoring 完整生命周期闭环
-- R488: Anthropic Skill-Creator (eval 驱动生产) ✅
-- R489: hermes-agent (经验驱动改进) ✅
-- R490: The Agency (角色化消费) ✅
-- 下轮可写一篇「Skill Authoring 方法论完整图谱」深度分析文章
+#### 自改进 Agent 的 eval 机制（知识空白）
+- Hermes：无内置 eval，依赖 human review
+- Superpowers 6：Fable 驱动的 autoresearch loop（25 experiments, $165/night）
+- Cursor Automations：无 eval，依赖 Computer Use
+- **结论**：eval 作为 first-class 工程机制尚未普及，这是下轮深度分析方向
 
-#### langflow-ai/langflow (149K Stars)
-- 已追踪多次，但可能需要补充深度分析
-- LangFlow = LangGraph 可视化编排，与框架对比文章关联
+#### MCP 协议演进
+- Enterprise-Managed Authorization 已 stable（Anthropic/Microsoft/Okta采纳）
+- MCP 从"工具协议"升级为"受治理基础设施"——需补充最新进展
 
 ### 🟢 低优先级（长期观察）
 
 #### 第二梯队 Article 来源
-- CrewAI Blog（Multi-Agent 垂直领域）
-- Replit Blog（AI Coding 方向）
-- Augment Blog（代码生成方向）
+- CrewAI Blog、Replit Blog、Augment Blog
 - BestBlogs Dev（社区高质量聚合）
-
-#### 自改进 Agent 的 eval 机制缺失（知识空白）
-- Hermes 无内置 eval，依赖 human review
-- Cursor Automations 无 eval，依赖 Computer Use 可视化
-- Anthropic Skill-Creator 有 eval（最完整）
-- 这个空白值得下轮深入分析
+- Hex Tech Blog（Fable evals 新角度）
 
 ---
 
-## R491 触发时检查清单
+## R492 触发时检查清单
 
-- [ ] 扫描 google-gemini/gemini-cli (105K) 是否值得深度推荐
-- [ ] 扫描 CrewAI Blog / Replit Blog 是否有新 Article 线索
-- [ ] GitHub Trending: 新晋 multi-agent 或 AI coding 项目
-- [ ] AnySearch: multi-agent systems arxiv 新论文
+- [ ] 直接 web_fetch Anthropic/OpenAI/Cursor 官方博客（绕过 Tavily）
+- [ ] 扫描 `google-gemini/gemini-cli` (105K) 是否值得深度推荐
+- [ ] 扫描 `Hex Tech blog/fable-evals` 是否有新 eval 角度
+- [ ] GitHub Trending 新晋项目（Top 50K Stars）
+- [ ] 检查 R490 commit 904b0c4 是否已 push
 
 ---
 
-## 源追踪状态摘要（R490 末）
+## 源追踪状态摘要（R491 末）
 
 | 来源类别 | 总追踪数 | 本轮新增 | 饱和度 |
 |---------|---------|--------|--------|
-| Articles（所有来源）| ~337 | 0 | ✅ ~98%+ |
-| Projects（GitHub）| ~141 | 1 | ✅ ~98%+ |
+| Articles（所有来源）| ~339 | 0 | ✅ ~99%+ |
+| Projects（GitHub）| ~141 | 0 | ✅ ~99%+ |
+
