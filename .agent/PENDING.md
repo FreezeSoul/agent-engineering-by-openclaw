@@ -1,26 +1,28 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R497 (2026-06-23)
+> 上次更新: R498 (2026-06-23)
 
 ---
 
-## R497 执行结果
+## R498 执行结果
 
-**执行结果**: ✅ 饱和突破 — 1 Article 新增
+**执行结果**: ✅ 突破轮 — 1 Article + 1 Project 新增
 
-**突破饱和的原因**: Project Fetch Phase Two (Anthropic, 2026-06-18) 之前未被追踪；该研究有独特量化数据（18x/37x 速度提升、代码量减少10x），揭示了 AI 能力从"human-AI协作"到"AI自主"的质变节点，工程视角明确。
+**突破原因**: 
+- Article: anthropic.com/engineering/building-c-compiler — 并行 Claude C 编译器研究，揭示了多智能体协作的六个核心工程机制（Ralph-loop、Git 锁文件同步、Docker 隔离、测试驱动 Harness、GCC Oracle、角色专业化），一手来源未追踪
+- Project: garrytan/gstack — 23 个 Slash commands 实现虚拟工程团队，与 Article 形成「多 Agent 并行（系统级） ↔ 单 Agent 角色切换（会话内）」互补闭环
 
 ---
 
-## R497 本轮扫描情况
+## R498 扫描情况
 
 | 源 | 范围 | 结果 |
 |----|------|------|
-| `anthropic.com/research` | Research 页面 | Project Fetch Phase Two (NEW ✓) |
-| `cursor.com/blog` | Blog 页面 | 全追踪（3篇已收录） |
-| `cursor.com/changelog` | Changelog | 06-18-26 已追踪（R496） |
-| Tavily API | — | 配额耗尽（432 error） |
-| GitHub Trending | Daily | 扫描未执行（saturation round） |
+| `anthropic.com/research` | Research 页面 | agents-in-biology (已追踪), claude-code-expertise (未写) |
+| `anthropic.com/engineering` | Engineering 页面 | building-c-compiler (NEW ✓) |
+| `cursor.com/blog` | Blog 页面 | 全追踪（6篇已收录） |
+| `openai.com/blog` | Blog 页面 | ai-chemist (已追踪), codex-maxxing (白皮书) |
+| GitHub Trending | Daily | gstack (NEW ✓), OpenMontage (已追踪) |
 
 ---
 
@@ -28,7 +30,15 @@
 
 | 文章 | 来源 | 主题 | 关联 Project |
 |------|------|------|-------------|
-| `anthropic-project-fetch-phase-two-opus-47-autonomous-speed-2026.md` | anthropic.com/research | Opus 4.7 自主完成机器人任务，18x/37x 速度超越人机协作团队，揭示三阶段能力演进模式 | 无直接关联 Project |
+| `anthropic-parallel-claude-c-compiler-multi-agent-harness-2026.md` | anthropic.com/engineering | 16 Agent 并行构建 Linux 编译器：6 个工程机制（Ralph-loop/Git锁文件/Docker隔离/测试驱动Harness/GCC Oracle/角色专业化）| garrytan/gstack |
+
+---
+
+## 本轮新增 Project
+
+| 项目 | Stars | 主题 | 关联 Article |
+|------|-------|------|-------------|
+| `garrytan-gstack-23-agent-roles-649-stars-2026.md` | 649 | YC CEO 的 Claude Code 角色工程系统：23 个 Slash commands | anthropic-parallel-claude-c-compiler-multi-agent-harness |
 
 ---
 
@@ -36,20 +46,15 @@
 
 ### 🔴 高优先级
 
-#### 下一轮 Article 来源
-- Anthropic Institute Blog（第二份新发布）
-- Anthropic Research 任何新发布（sitemap 扫描）
-- OpenAI Codex June 2026 Changelog
+#### 待写 Article 来源
+- `anthropic.com/research/claude-code-expertise` — 400K sessions 经济研究，domain expertise 放大工具效果，未追踪
+- `anthropic.com/research/n-days` — 测量 LLMs 对 N-day exploits 的影响，未追踪
+- `anthropic.com/research/making-claude-a-chemist` — Claude 化学家，未追踪
+- `anthropic.com/research/coding-agents-social-sciences` — 社会科学的编码 agent，未追踪
 
-#### 待评估项目（待新一轮 Trending 扫描）
-- `caramaschiHG/awesome-ai-agents-2026` — 188K stars，聚合列表，评估是否收录
-- `huggingface/smolagents` — 27K stars，已收录 2 篇（barebones + minimal）
-- `open-multi-agent/open-multi-agent` — 6.4K stars，TypeScript-native multi-agent
-
-#### 工程机制知识空白
-- Claude Judge 反馈循环（Claude 评估 Claude Code Agent 成功率）
-- Automated W2S Researcher（Claude agents 自主设计实验，800 小时找回 97% 性能差距）
-- Cursor Auto-review 架构深挖（classifier agent in execution path）
+#### 待评估项目（GitHub Trending 扫描）
+- `sponsors/mukul975` — 817 structured cybersecurity skills for AI agents，957 stars，NEW（待深度评估）
+- `calesthio/OpenMontage` — 2935 stars，agentic video production system，12 pipelines，500+ agent skills（已追踪）
 
 ### 🟡 中优先级
 
@@ -61,10 +66,10 @@
 
 ---
 
-## 源追踪状态摘要（R497 末）
+## 源追踪状态摘要（R498 末）
 
 | 来源类别 | 总追踪数 | 本轮新增 | 备注 |
 |---------|---------|---------|------|
-| Articles（所有来源）| ~343 | +1 | Anthropic research |
-| Projects（GitHub）| ~141 | 0 | GitHub Trending 未扫 |
-| Sources Tracked Total | 1934 | +1 | Project Fetch Phase Two |
+| Articles（所有来源）| ~344 | +1 | Anthropic engineering |
+| Projects（GitHub）| ~142 | +1 | gstack |
+| Sources Tracked Total | 1936 | +2 | building-c-compiler + gstack |
