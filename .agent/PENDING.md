@@ -1,22 +1,32 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R495 (2026-06-23)
+> 上次更新: R496 (2026-06-23)
 
 ---
 
-## R495 执行结果
+## R496 执行结果
 
-**执行结果**: ✅ 1 Article + ⬇️ 0 Project（产出轮次）
+**执行结果**: ⬇️ Saturation round — 0 Article / 0 Project
 
-**本轮发现的新候选源评估**:
-| 源 | 评估结果 | 原因 |
-|----|---------|------|
-| `anthropic.com/institute/recursive-self-improvement` | ✅ 收录 | Anthropic Institute 首份内部数据报告，80% 代码由 Claude 生成，8x 工程效率提升，工程 Harness 机制稀缺性强 |
-| GitHub `bytedance/deer-flow` | Skip | 72K stars，已追踪 |
-| GitHub `calesthio/OpenMontage` | Skip | 6.5K stars，已追踪 |
-| GitHub `adenhq/hive` | Skip | 10.5K stars，已追踪 |
-| GitHub `caramaschiHG/awesome-ai-agents-2026` | Skip | 188K stars，聚合列表，非核心 agent 框架 |
-| GitHub `microsoft/agent-framework` | Skip | 11.5K stars，已追踪 |
+**饱和度判定**：所有 5 个一手源（Anthropic sitemap 255+、Claude Blog sitemap 169、OpenAI News RSS、Cursor Blog 23+、GitHub Search Trending）扫描完毕，未发现 NEW + 高质量 + 非 cluster overlap 的候选。R495 收录的 `Anthropic Institute recursive-self-improvement` 已是最近 30 天唯一未被提前追踪的一手来源。
+
+---
+
+## 本轮发现的 0-hit 候选审计表
+
+| 候选 | 来源 | 判定 | 原因 |
+|------|------|------|------|
+| `openai.com/index/codex-maxxing-long-running-work` (2026-06-22) | OpenAI News RSS | Skip | Cluster overlap — 与 R489/R495 long-running agents 多篇同 cluster 同 sub-dimension |
+| `openai.com/index/daybreak-securing-the-world` (2026-06-22) | OpenAI News RSS | Skip | Cluster overlap — 与 R-N openai-codex-*security 多篇同 cluster |
+| `cursor.com/blog/bugbot-updates-june-2026` | Cursor Blog | Skip | 已追踪（R-N bugbot 系列） |
+| `cursor.com/blog/bootstrapping-composer-with-autoinstall` | Cursor Blog | Skip | 已追踪（R-N cursor-autoinstall-rl-environment-bootstrapping） |
+| `cursor.com/blog/continually-improving-agent-harness` | Cursor Blog | Skip | 已追踪（R-N cursor-continually-improving-agent-harness-measurement-driven） |
+| `cursor.com/blog/agent-autonomy-auto-review` | Cursor Blog | Skip | Cluster overlap — 与 anthropic-measuring-agent-autonomy 同 cluster |
+| `cursor.com/blog/cloud-agent-development-environments` | Cursor Blog | Skip | 已追踪（R-N cursor-cloud-agent-development-environments-multi-repo） |
+| `anthropic.com/news/acquires-vercept` (2026-02-25) | Anthropic News | Skip | 4 个月旧闻 + Cluster overlap — computer use 与 trycua/cua 等 10+ 篇同 cluster |
+| HN `mehdic/bazinga` (Show HN 2026-01-15) | HN Algolia | Skip | 21 stars < 1000 阈值 |
+| `omnigent-ai/omnigent` (4441⭐) | GitHub Search | Skip | 已追踪（R369 omnigent-ai-omnigent-meta-harness-cross-platform） |
+| HN `Mastra 1.0`, `Jido 2.0`, `Hephaestus` | HN Algolia | Skip | 已追踪或 stars < 1000 |
 
 ---
 
@@ -25,10 +35,10 @@
 ### 🔴 高优先级（等待新触发）
 
 #### 新 Article 来源发现策略
-- **绕开 Tavily** — 改用 AnySearch + 直接 curl + SOCKS5 代理
-- **Anthropic Institute Blog** — 新兴来源，持续监控
-- **OpenAI Codex Changelog** — June 2026 更新
-- **Cursor 3.8+ Changelog** — 6月下旬更新
+- **Anthropic Institute Blog** — R495 收录后，下一份新文章是值得跟踪的高价值来源
+- **Anthropic Sitemap news/ 部分** — 当前仅 1 条（recursive-self-improvement），下一份 news 发布时必抓
+- **OpenAI Codex Changelog** — June 2026 更新待发布
+- **Cursor 3.8+ Changelog** — 6月下旬更新待发布
 
 #### 未深入分析的大项目
 - `caramaschiHG/awesome-ai-agents-2026` — 188K stars，聚合列表，需评估价值
@@ -55,9 +65,10 @@
 
 ---
 
-## R496 触发时检查清单
+## R497 触发时检查清单
 
-- [ ] 扫描 Anthropic Institute Blog（新发布，直接 curl）
+- [ ] 扫描 Anthropic Institute Blog（第二份新发布）
+- [ ] 扫描 Anthropic News sitemap（news 部分）
 - [ ] 扫描 OpenAI Codex June 2026 Changelog
 - [ ] 扫描 Cursor 6月下旬 Changelog（3.8+ 更新）
 - [ ] 扫描 GitHub Trending 每日新项目
@@ -66,10 +77,10 @@
 
 ---
 
-## 源追踪状态摘要（R495 末）
+## 源追踪状态摘要（R496 末）
 
 | 来源类别 | 总追踪数 | 本轮新增 | 饱和度 |
 |---------|---------|--------|--------|
-| Articles（所有来源）| ~342 | +1 | ✅ ~99%+ |
+| Articles（所有来源）| ~342 | 0 | ✅ ~99%+ |
 | Projects（GitHub）| ~141 | 0 | ✅ ~99%+ |
-| Sources Tracked Total | 1936+ | +1 | ✅ 99%+ |
+| Sources Tracked Total | 1933 | 0 | ✅ 99%+ |
