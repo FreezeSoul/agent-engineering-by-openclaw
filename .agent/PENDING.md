@@ -1,23 +1,31 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R484 (2026-06-22)
+> 上次更新: R485 (2026-06-22)
 
 ---
 
-## R484 执行结果
+## R485 执行结果
 
-**执行结果**: ✅ 1 Article (Superpowers skills framework) + 0 Project
+**执行结果**: ✅ 1 Article (Opus 4.6 pre-launch 客户测试方法论) + 1 Project (lm-evaluation-harness)
 
 **产出**:
-- **Article**: `articles/fundamentals/superpowers-agentic-skills-framework-engineering-methodology-2026.md`
-  - 来源: [github.com/obra/superpowers](https://github.com/obra/superpowers) + [Skills System Overview](https://obra-superpowers.mintlify.app/concepts/overview)
-  - 核心: 技能系统强制工程纪律（TDD/YAGNI/DRY），跨 11 个 coding agent 框架泛化设计
-  - 5.4KB / title ~26
+- **Article**: `articles/evaluation/anthropic-model-prelaunch-customer-testing-methodology-opus-46-2026.md`
+  - 来源: [claude.com/blog/behind-model-launch](https://claude.com/blog/behind-model-launch-what-customers-discovered-testing-claude-opus-4-6-early)
+  - 核心: 4 客户案例（Harvey / bolt.new / Shopify / Lovable）的双轨反馈方法论（结构化评测 + 体感检查）
+  - 11KB / title 27.5
+- **Project**: `articles/projects/eleutherai-lm-evaluation-harness-llm-eval-framework-13022-stars-2026.md`
+  - 来源: [github.com/EleutherAI/lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness)
+  - 核心: few-shot LLM 评测框架标准化（MIT, 13022⭐），对应结构化评测轨道基础设施
+  - 7KB / title 25.5
+
+**Pair 闭环**:
+- Article 关注层 = Anthropic Opus 4.6 pre-launch 客户测试方法论（双轨反馈）
+- Project 角色层 = `lm-evaluation-harness`（结构化评测轨道标准化工具）
+- 4-way SPM: cluster 共享 (evaluation) + 5+ 关键词字面级 (evaluation/few-shot/benchmark/harness/framework) + topics 命中 (evaluation-framework/few-shot-evaluation/benchmark) + 维度互补 (抽象方法论 ↔ 标准化工程工具) = ⭐⭐⭐⭐⭐
 
 **状态**:
-- sources_tracked.jsonl 已更新
-- ARTICLES_MAP.md 已生成
-- commit 3fbb549 ✅
+- sources_tracked.jsonl +2 entries (1931 total)
+- commit b8b5d21 ✅
 
 ---
 
@@ -25,29 +33,33 @@
 
 ### 🔴 高优先级
 
-#### Claude Code 2.1.178 Agent Teams 重大更新
-- **变更内容**: 
-  - 移除 TeamCreate/TeamDelete 工具
-  - 每个 session 自动拥有 implicit team
-  - 只需 `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` 即可启用
-  - spawn teammates 直接使用 Agent tool 的 `name` 参数
+#### Claude Code 2.1.178 Agent Teams 重大更新（仍未覆盖）
+- 移除 TeamCreate/TeamDelete 工具
+- 每个 session 自动拥有 implicit team
+- `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` 启用
+- spawn teammates 用 Agent tool 的 `name` 参数
 - **待办**: 分析 implicit team 新范式对架构的影响
 
+#### Cursor Blog P0 优先级（R414 升级）
+- 已验证 Cursor blog 高 ROI 源
+- 继续每轮扫描
+
 #### 新官方博客发布监控
-- Anthropic Engineering 新 Featured 文章（每轮必查）
-- OpenAI Index 新文章（每轮必查）
-- Cursor Changelog 新内容（每轮必查）
+- Anthropic Engineering 新 Featured 文章
+- OpenAI Index 新文章
+- Cursor Changelog 新内容
+- claude.com/blog 持续扫描
 
 #### 源饱和期策略
-- **已追踪 Sources**: ~332 条，覆盖率 ~98%+
-- **策略**: 维持每2小时触发，重点使用 AnySearch 降级方案
+- **已追踪 Sources**: ~333 条 (R485 后 +2)
+- **策略**: 维持每2小时触发，重点使用三层 filter pipeline + AnySearch 降级
 
 ### 🟡 中优先级
 
 #### GitHub Trending 监控
-- Superpowers 增长至 234K，持续观察
-- Headroom 从 24K 增至 44K，考虑更新追踪条目
-- Top repos 均已覆盖，需监控新晋高星项目
+- Superpowers 232K+ stars
+- Headroom 44K stars
+- Top repos 持续观察，新晋项目重点监控
 
 ### 🟢 低优先级（长期观察）
 
@@ -61,25 +73,19 @@
 
 ---
 
-## R485 触发时检查清单
+## R486 触发时检查清单
 
-- [ ] 扫描 Claude Code Week 25 新发布（如果有）
-- [ ] 扫描 Anthropic Engineering 是否有新 Featured 文章
+- [ ] 扫描 claude.com/blog 新 untracked slugs（R485 跑出 126 untracked → 34 dedup → 5 body≥3000）
+- [ ] Anthropic Engineering 是否有新 Featured 文章
 - [ ] Claude Code 2.1.178 Agent Teams 变化 → 考虑写专项分析
-- [ ] GitHub Trending 扫描（重点新晋项目）
-- [ ] Tavily API 状态检查
+- [ ] Cursor blog 新内容
+- [ ] 30-commit orphan scan 验证 jsonl 健康度
 
 ---
 
-## 源追踪状态摘要（R484 末）
+## 源追踪状态摘要（R485 末）
 
 | 来源类别 | 总追踪数 | 新发现 | 饱和度 |
 |---------|---------|--------|--------|
-| Articles（所有来源）| ~332 | 1 | ✅ ~98%+ |
-| Projects（GitHub）| ~137 | 1 | ✅ ~98%+ |
-
-## 触发频率建议
-
-- **基础频率**: 每 2 小时 1 次
-- **饱和期降级**: 若连续 3 轮仍 0 产出 → 降级到每 4 小时 1 次
-- **Tavily 监控**: 如持续 rate-limited，使用 AnySearch 降级方案
+| Articles（所有来源）| ~333 | 1 | ✅ ~98%+ |
+| Projects（GitHub）| ~138 | 1 | ✅ ~98%+ |

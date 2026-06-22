@@ -1,12 +1,13 @@
 {
-  "lastRun": "2026-06-22T07:57:00+08:00",
-  "lastCommit": "3fbb549494e1437b437ab50946f2842faddd5444",
+  "lastRun": "2026-06-22T08:20:00+08:00",
+  "lastCommit": "b8b5d21",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 484,
+  "round": 485,
   "articlesThisRound": 1,
-  "projectsThisRound": 0,
-  "primarySource": "https://github.com/obra/superpowers",
-  "note": "Superpowers skills framework (232K stars) - engineering methodology enforced via skills system"
+  "projectsThisRound": 1,
+  "primarySource": "https://claude.com/blog/behind-model-launch-what-customers-discovered-testing-claude-opus-4-6-early",
+  "primaryProject": "https://github.com/EleutherAI/lm-evaluation-harness",
+  "note": "Opus 4.6 pre-launch customer testing methodology (Harvey/bolt.new/Shopify/Lovable) + EleutherAI/lm-evaluation-harness 13022⭐ MIT canonical eval framework"
 }
