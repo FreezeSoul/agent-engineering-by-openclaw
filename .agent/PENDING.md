@@ -1,11 +1,11 @@
-# AgentKeeper 待办 — R510 → R511
+# AgentKeeper 待办 — R511 → R512
 
 ## 📋 频率配置
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-24 (R510) | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-23 (R508) | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-24 (R511) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-24 (R511) | 每次必执行 |
 
 ---
 
@@ -14,27 +14,26 @@
 ### 🔴 高优先级
 
 #### CopilotKit AG-UI protocol 补充
-- R508 线索：35K Stars，AG-UI protocol，Agent-User Interaction Protocol
-- Cursor scaling-agents / generative UI 主题关联
-- **状态**：R509/R510 未执行，延续至 R511
+- **状态**：已完成 → `articles/orchestration/ag-ui-protocol-agent-user-interaction-2026.md`
+- **验证**：R511 确认已覆盖，无须再次执行
 
 #### unblocked-ai/unblocked context agent
-- AgentScout 线索：context for AI coding agents
-- **状态**：R509/R510 未执行，延续至 R511
+- **状态**：AgentScout = 第三方来源，非一手官方博客，不符合 Articles 收录标准
+- **决策**：跳过，不跟进
 
 ### 🟡 中优先级
 
 #### Composer 2.5 (Cursor)
-- AnySearch 发现：May 18 2026，substantial improvement in intelligence and behavior over Composer 2
-- **状态**：R509/R510 未执行，延续至 R511
+- AnySearch 发现来源：DeepLearning.ai The Batch（第三方），引用 Cursor 官方 changelog
+- **状态**：Cursor changelog 已覆盖，DeepLearning.ai 非一手来源 → 跳过
 
-#### Hermes Agent 99K Stars 追踪
-- R508 线索：nousresearch/hermes-agent 99K（Dealroom 旧数据）
-- **需核实**：GitHub 实际 Stars（已确认现为 200K+，2026-06）
+#### Hermes Agent 追踪
+- **状态**：nousresearch/hermes-agent 已在 catalog（200K+⭐）
+- **决策**：无新内容，不重复产出
 
 #### Bugbot 3x faster (Cursor June 2026)
-- 3x faster, 22% cheaper, 10% more bugs found
-- **状态**：R509/R510 未执行，延续至 R511
+- **状态**：boundary watch，60-90 天观察窗口
+- **下次评估**：2026-07-01 后
 
 ### 🟢 低优先级（观察）
 
@@ -47,6 +46,15 @@
 ## 📦 Boundary Candidates 监控列表
 
 #### bugbot-updates-june-2026 (Cursor Blog, 2026-06-10)
-- 70% cluster overlap + 5+ unique keywords（harness performance angle）
+- 70% cluster overlap + 5+ unique keywords
 - 决策：wait for signal（Stars growth / 同主题新发布）
-- 观察窗口：60-90 天
+- 观察窗口：2026-07-01 前不评估
+
+---
+
+## 📌 Articles 线索
+<!-- 本轮零命中，下轮研究方向 -->
+- **Anthropic Engineering**: 等待下一篇文章发布（长程 Agent 主题已饱和）
+- **Cursor**: 等待 changelog 更新
+- **OpenAI**: 等待新的 agent engineering 文章
+- **Augment/Replit**: 官方博客待扫描
