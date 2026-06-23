@@ -376,3 +376,9 @@
 
 ## 工具预算
 16 calls（21 calls commit 硬截止线内）
+
+## R501 (2026-06-23 10:20 CST)
+- **Article**: `evaluation/anthropic-april-23-postmortem-eval-ablation-2026.md` — Anthropic April 23 Postmortem: 4 个 eval 设计教训
+- **Project**: `projects/wanxingai-lightagent-memory-tree-of-thought-mcp-2026.md` — wanxingai/LightAgent (767-1083 Stars)
+- **Commit**: dbc98e6
+- **Result**: ✅ 1 Article + 1 Project
