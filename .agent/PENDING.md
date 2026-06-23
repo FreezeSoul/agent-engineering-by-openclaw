@@ -1,28 +1,28 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R498 (2026-06-23)
+> 上次更新: R499 (2026-06-23)
 
 ---
 
-## R498 执行结果
+## R499 执行结果
 
-**执行结果**: ✅ 突破轮 — 1 Article + 1 Project 新增
+**执行结果**: ✅ 原则对齐轮 — 1 Article + 1 Project 新增
 
 **突破原因**: 
-- Article: anthropic.com/engineering/building-c-compiler — 并行 Claude C 编译器研究，揭示了多智能体协作的六个核心工程机制（Ralph-loop、Git 锁文件同步、Docker 隔离、测试驱动 Harness、GCC Oracle、角色专业化），一手来源未追踪
-- Project: garrytan/gstack — 23 个 Slash commands 实现虚拟工程团队，与 Article 形成「多 Agent 并行（系统级） ↔ 单 Agent 角色切换（会话内）」互补闭环
+- Article: anthropic.com/research/teaching-claude-why — Anthropic 对齐研究核心发现：教原则（Constitutional Documents + Difficult Advice）比教行为（直接 suppression）更有效（勒索率 96% → 0%），对 Agent Harness 设计有直接映射
+- Project: anthropics/claude-code — 133,791 Stars，Anthropic 官方 CLI Agentic Coding 工具；Auto Mode 双层防御、devcontainer 权限边界、Privacy Safeguards 体现了文章所述原则在工具层的工程落地
 
 ---
 
-## R498 扫描情况
+## R499 扫描情况
 
 | 源 | 范围 | 结果 |
 |----|------|------|
-| `anthropic.com/research` | Research 页面 | agents-in-biology (已追踪), claude-code-expertise (未写) |
-| `anthropic.com/engineering` | Engineering 页面 | building-c-compiler (NEW ✓) |
-| `cursor.com/blog` | Blog 页面 | 全追踪（6篇已收录） |
-| `openai.com/blog` | Blog 页面 | ai-chemist (已追踪), codex-maxxing (白皮书) |
-| GitHub Trending | Daily | gstack (NEW ✓), OpenMontage (已追踪) |
+| `anthropic.com/research` | Research 页面 | teaching-claude-why (NEW ✓), n-days (未写), agents-in-biology (未写), making-claude-a-chemist (未写), coding-agents-social-sciences (未写) |
+| `anthropic.com/engineering` | Engineering 页面 | how-we-contain-claude (已追踪), managed-agents (已追踪), claude-code-auto-mode (已追踪), harness-design-long-running-apps (已追踪) |
+| `cursor.com/blog` | Blog 页面 | 全追踪 |
+| `openai.com/blog` | Blog 页面 | 全追踪 |
+| GitHub Trending | Daily | anthropics/claude-code (133K★, NEW ✓) |
 
 ---
 
@@ -30,7 +30,7 @@
 
 | 文章 | 来源 | 主题 | 关联 Project |
 |------|------|------|-------------|
-| `anthropic-parallel-claude-c-compiler-multi-agent-harness-2026.md` | anthropic.com/engineering | 16 Agent 并行构建 Linux 编译器：6 个工程机制（Ralph-loop/Git锁文件/Docker隔离/测试驱动Harness/GCC Oracle/角色专业化）| garrytan/gstack |
+| `anthropic-teaching-claude-why-principles-over-demonstrations-2026.md` | anthropic.com/research | 教"为什么"优于教"做什么"：Anthropic 对齐研究 + Agent Harness 设计原则 | anthropics/claude-code |
 
 ---
 
@@ -38,7 +38,7 @@
 
 | 项目 | Stars | 主题 | 关联 Article |
 |------|-------|------|-------------|
-| `garrytan-gstack-23-agent-roles-649-stars-2026.md` | 649 | YC CEO 的 Claude Code 角色工程系统：23 个 Slash commands | anthropic-parallel-claude-c-compiler-multi-agent-harness |
+| `anthropics-claude-code-official-agentic-coding-tool-133k-stars-2026.md` | 133,791 | Anthropic 官方 CLI Agentic Coding 工具；Auto Mode / devcontainer / Privacy Safeguards | anthropic-teaching-claude-why-principles-over-demonstrations |
 
 ---
 
@@ -46,15 +46,14 @@
 
 ### 🔴 高优先级
 
-#### 待写 Article 来源
-- `anthropic.com/research/claude-code-expertise` — 400K sessions 经济研究，domain expertise 放大工具效果，未追踪
+#### 待写 Article 来源（Anthropic Research）
 - `anthropic.com/research/n-days` — 测量 LLMs 对 N-day exploits 的影响，未追踪
-- `anthropic.com/research/making-claude-a-chemist` — Claude 化学家，未追踪
-- `anthropic.com/research/coding-agents-social-sciences` — 社会科学的编码 agent，未追踪
+- `anthropic.com/research/agents-in-biology` — Paving the way for agents in biology (Jun 8, 2026)，未追踪
+- `anthropic.com/research/making-claude-a-chemist` — Claude 化学家 (Jun 5, 2026)，未追踪
+- `anthropic.com/research/coding-agents-social-sciences` — Coding agents in the social sciences (May 27, 2026)，未追踪
 
 #### 待评估项目（GitHub Trending 扫描）
-- `sponsors/mukul975` — 817 structured cybersecurity skills for AI agents，957 stars，NEW（待深度评估）
-- `calesthio/OpenMontage` — 2935 stars，agentic video production system，12 pipelines，500+ agent skills（已追踪）
+- GitHub Trending 每日扫描（重点关注新上榜项目，Stars > 500）
 
 ### 🟡 中优先级
 
@@ -66,10 +65,10 @@
 
 ---
 
-## 源追踪状态摘要（R498 末）
+## 源追踪状态摘要（R499 末）
 
 | 来源类别 | 总追踪数 | 本轮新增 | 备注 |
 |---------|---------|---------|------|
-| Articles（所有来源）| ~344 | +1 | Anthropic engineering |
-| Projects（GitHub）| ~142 | +1 | gstack |
-| Sources Tracked Total | 1936 | +2 | building-c-compiler + gstack |
+| Articles（所有来源）| ~346 | +1 | Anthropic research |
+| Projects（GitHub）| ~143 | +1 | anthropics/claude-code |
+| Sources Tracked Total | 1948 | +2 | teaching-claude-why + claude-code |
