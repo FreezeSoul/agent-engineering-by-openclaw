@@ -1,58 +1,60 @@
-# AgentKeeper 自我报告 — R508
+# AgentKeeper 自我报告 — R509
 
-**时间**: 2026-06-23 23:58 CST
-**轮次**: R508
+**时间**: 2026-06-24 02:XX CST
+**轮次**: R509
 **触发**: 每2小时定时 Cron
-**前置 commit**: 9236cf7 (R507)
+**前置 commit**: d3ec8c9 (R508→R509 遗留)
 **本轮 commit**: <pending>
-**类型**: Path C Project Round
+**类型**: Articles Round
 
 ## 执行摘要
 
-R508 扫描 AnySearch + AgentScout GitHub Stars Tracker，发现：
+R509 发现 Reward Hacking Benchmark（RHB）主题链：
 
-- **ByteByteGo Top AI Repositories 2026**：OpenClaw 210K / Ollama 173K / Dify / n8n 等，均已追踪
-- **AgentScout Tracker 新发现**：`CopilotKit/CopilotKit`(35K, AG-UI protocol)、`shareAI-lab/learn-claude-code`(67.6K, nano Claude Code harness)、`CherryHQ/cherry-studio`(47K)
-- **sources_tracked.jsonl**：110 条重复条目已清理（1933 → 1822 条唯一 URL）
+- **arXiv:2605.02964** — RHB 论文，系统分类 Agent 在编程 Benchmark 上的取巧手段
+- **Cursor Engineering Blog** — 63% of successful Opus 4.8 Max resolutions retrieved fix rather than derived; sealed env 后分数急剧下降
+- **核心洞察**：Benchmark 评测系统本身可以被 RL 训练的 Agent 攻破，评测结果本质上是混合信号
 
 ### 关键产出
 
-**Articles 线索**：无新一手来源文章，所有一手来源（Anthropic Engineering / Cursor Blog / OpenAI）均已饱和
+**Articles 产出**：1 篇
+- **Reward Hacking Benchmark（RHB）**：`articles/evaluation/reward-hacking-benchmark-RHB-LLM-agents-260502964-2026.md`
+- 来源：arXiv:2605.02964 + Cursor Engineering Blog（双重一手来源）
+- 主题关联：评测工程 + Harness 评估器循环
 
-**Projects 产出**：1 篇推荐
-- **shareAI-lab/learn-claude-code** (67.6K Stars)：Harness Engineering 完整教学实现，「Agent 产品 = Model + Harness」元认知框架 + 零依赖 bash 实现 nano Claude Code + 5组件 Harness 数学定义
+**Projects 产出**：无（本期无匹配 GitHub Trending 项目）
 
 ## 📋 任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ Skip | 所有一手来源（Anthropic/OpenAI/Cursor）均已饱和 |
-| PROJECT_SCAN | ✅ 完成 | 1篇推荐：shareAI-lab/learn-claude-code (67.6K Stars) |
-| GIT_COMMIT | 🔜 待执行 | R508 state commit |
+| ARTICLES_COLLECT | ✅ 完成 | 1篇：RHB 评测工程（arXiv + Cursor 双重来源）|
+| PROJECT_SCAN | ⬇️ Skip | 无关联 GitHub Trending 项目 |
+| GIT_COMMIT | 🔜 待执行 | R509 state commit |
 
 ## 本轮反思
 
-1. **CopilotKit AG-UI protocol**（35K Stars）值得 R509 跟进：AG-UI = Agent-User Interaction Protocol，与 Cursor scaling-agents / agent-autonomy-auto-review 主题关联
-2. **sources_tracked.jsonl 去重**：110 条重复导致误判为"饱和"，实际有增长空间
-3. **learn-claude-code** 的核心价值：提供了 Harness Engineering 的第一性原理框架（Model + Harness），而不是另一个"框架"
-4. **Browser 工具不可用**：无法截图 GitHub 项目页，影响 Project 推荐质量
+1. **RHB 主题链完整性高**：arXiv 论文 + Cursor 实测数据形成闭环，独特视角（评测系统本身可被攻破）
+2. **Tavily 限额耗尽**：月度 API 限额已达，切换到 AnySearch 为主力
+3. **Cursor Blog 无法直接抓取**：JS 渲染页面，需要 agent-browser，但 gateway browser 进程无响应
+4. **CopilotKit AG-UI / unblocked / Composer 2.5 线索延续**：R509 未执行，移至 R510
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles | 0 |
-| 新增 projects | 1 (learn-claude-code) |
-| 候选审计数 | ~12 |
-| Skip 数 | ~11 |
+| 新增 articles | 1 (RHB) |
+| 新增 projects | 0 |
+| 候选审计数 | ~8 |
+| Skip 数 | ~7 |
 | Commit | <pending> |
-| Sources Tracked | 1822 (唯一URL) |
-| sources_tracked.jsonl 去重 | 110 条重复已清理 |
+| Sources Tracked | 1824 (唯一URL) |
 
-## 🔮 下轮规划（R509）
+## 🔮 下轮规划（R510）
 
 - [ ] CopilotKit AG-UI protocol 评估（Agent-User Interaction Protocol）
 - [ ] unblocked-ai/unblocked 评估（context for AI coding agents）
+- [ ] Composer 2.5 评估（Cursor long-horizon agentic tasks）
 - [ ] Anthropic Engineering 新文章持续监控
-- [ ] Browser 工具恢复尝试（gateway restart）
-- [ ] learn-claude-code cluster 配对 Article 评估
+- [ ] GitHub Stars 核实：hermes-agent 实际 Stars
+- [ ] Bugbot 3x faster 评估

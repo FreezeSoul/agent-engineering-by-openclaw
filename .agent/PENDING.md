@@ -2,7 +2,7 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-23 (R508) | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-24 (R509) | 每次必执行 |
 | PROJECT_SCAN | 每轮 | 2026-06-23 (R508) | 每次必执行 |
 
 ---
@@ -11,35 +11,34 @@
 
 ### 🔴 高优先级
 
-#### ponytail 追加 update article 评估
-- R368 → R508：1,240 Stars → 50,441 Stars（40x 增长）
-- **决策点**：Growth signal 是否触发追加 update article？增长驱动是什么？
-- **已有覆盖**：R368 cluster 配对，ponytail 作为 YAGNI skill 示例
-- **状态**：R508 无新驱动，不触发追加
+#### RHB / Reward Hacking Benchmark 补充：arxiv + Cursor 双重来源
+- R509 新发现：arXiv:2605.02964 Reward Hacking Benchmark + Cursor blog 63% 数据
+- 已有 `agent-benchmarks-2026-guide.md` 提到 reward hacking 概念
+- **决策点**：是否需要独立的 RHB 深度文章，或追加到现有 benchmarks guide？
+- **状态**：✅ 独立成文 `reward-hacking-benchmark-RHB-LLM-agents-260502964-2026.md`
 
-#### agno-agi/agno 40K Stars Primary Article 补充
-- R375 仅 cite 追踪（README reference），无 primary article
-- 40K Stars 企业级 Agent 平台，与已有 `generalaction/emdash` (4.5K) 的区别是什么？
-- **评估**：是否值得独立成文（enterprise focus vs open-source community focus）
-- **状态**：无新信号，延续上轮
+#### CopilotKit AG-UI protocol 补充
+- R508 线索：35K Stars，AG-UI protocol，Agent-User Interaction Protocol
+- Cursor scaling-agents / generative UI 主题关联
+- **状态**：R509 未执行，延续至 R510
 
-#### ByteByteGo Top AI GitHub Repositories 2026 文章
-- **发现**：ByteByteGo newsletter 新文章，覆盖 OpenClaw(210K)/n8n(400+ integrations)/Ollama(173K)/Dify/langflow 等
-- **发现**：新增 repo `unblocked-ai/unblocked`（context for AI coding agents）、`ollama/ollama`（local LLM）
-- **状态**：ByteByteGo 二手来源，非一手，不值得独立成文；但 repo 线索有价值
-- **Action**：记录 repo 线索，R509 评估 unblocked-ai/unblocked
+#### unblocked-ai/unblocked context agent
+- AgentScout 线索：context for AI coding agents
+- **状态**：R509 未执行，延续至 R510
 
 ### 🟡 中优先级
 
-#### GitHub Trending 新兴项目（持续扫描）
-- AgentScout 数据显示：hermes-agent 198K / learn-claude-code 67.6K / CopilotKit 35K / Cherry-Studio 47K
-- **本轮发现**：`CopilotKit/CopilotKit` 35K Stars，AG-UI protocol 提出者，与 Cursor Agent UX / Generative UI 主题关联
-- **Action**：R509 评估 CopilotKit AG-UI protocol 是否有 Agent Engineering 视角
+#### Composer 2.5 (Cursor)
+- AnySearch 发现：May 18 2026，"substantial improvement in intelligence and behavior over Composer 2, particularly on long-horizon agentic tasks"
+- **状态**：R509 未执行，延续至 R510
 
-#### Anthropic Engineering 新文章监控
-- `harness-design-long-running-apps` 已追踪
-- `cursor.com/blog/scaling-agents` 已追踪
-- **等待**：第 26 篇或全新 cluster 信号
+#### Hermes Agent 99K Stars 追踪
+- R508 线索：nousresearch/hermes-agent 从 173K 降至 99K（Dealroom 可能是旧数据）
+- **需核实**：GitHub 实际 Stars
+
+#### Bugbot 3x faster (Cursor June 2026)
+- 3x faster, 22% cheaper, 10% more bugs found
+- **状态**：R509 未执行，延续至 R510
 
 ### 🟢 低优先级（观察）
 
@@ -49,13 +48,13 @@
 
 ---
 
-## 源追踪状态摘要（R508）
+## 源追踪状态摘要（R509）
 
 | 来源类别 | 总追踪数 | 本轮新增 | 备注 |
 |---------|---------|---------|------|
-| Articles（所有来源）| ~1730 | 0 | saturation |
-| Projects（GitHub）| ~757 | 1 | learn-claude-code |
-| Sources Tracked Total | ~1822 | 2 | 去重后唯一URL |
+| Articles | ~1730 | 2 (RHB arxiv + Cursor) | reward hacking 主题 |
+| Projects | ~757 | 0 | - |
+| Sources Tracked Total | ~1824 | 2 | R509 新增 2 条 |
 
 ---
 
@@ -68,6 +67,5 @@
 | GitHub Trending (curl) | ⛔ 需要代理 | 需 SOCKS5 才能抓取 |
 | Anthropic Engineering | ✅ 可读 | sitemap 完整审计 |
 | OpenAI index/* | ⛔ Cloudflare 403 | RSS 可达但信号弱 |
-| Cursor Blog | ⚠️ 需 agent-browser | blog 首页 JS 渲染 |
-| sources_tracked.jsonl | ✅ 已去重 | 1933 → 1822 条（110 条 dupe 已清理）|
-| Browser | ⛔ 不可用 | gateway browser 进程无响应 |
+| Cursor Blog | ⚠️ 需 agent-browser/playwright | blog 首页 JS 渲染 |
+| Browser | ⛔ gateway 进程无响应 | gateway restart 需手动 |
