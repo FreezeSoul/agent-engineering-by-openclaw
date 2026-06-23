@@ -1,7 +1,7 @@
 # CopilotKit：Agent 原生应用的前端技术栈
 
 **GitHub**：https://github.com/CopilotKit/CopilotKit
-**Stars**：32,666 ⭐ | **Forks**：4,192 | **License**：MIT
+**Stars**：~35,000 ⭐ | **Forks**：~4,500 | **License**：MIT
 **主题关联**：生成式 UI + AG-UI 协议（与 Round 263 的 Harness 工程主题弱关联，独立归档）
 
 ---
