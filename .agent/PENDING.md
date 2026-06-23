@@ -1,34 +1,24 @@
 # PENDING.md - 待处理事项
 
-> 上次更新: R502 (2026-06-23)
+> 上次更新: R503 (2026-06-23)
 
 ---
 
-## R502 执行结果
+## R503 执行结果（Saturation Round）
 
-**执行结果**: ✅ 正常轮 — 1 Article + 1 Project
+**执行结果**: ⏸️ Saturation Round — 0 Article + 0 Project
+**Path A 三条件**: ✅ 全部满足（全源扫描 + 0-hit 审计表 + cluster overlap 协议）
+**审计**: 16 候选全部 cluster overlap 或 < 50 stars 阈值
 
-**产出**:
-- Article: `practices/cursor-38-automate-skill-event-driven-autonomous-agents-2026.md`（Cursor 3.8 /automate 事件驱动型自主 Agent 架构）
-- Project: `projects/microsoft-webwright-terminal-browser-agent-5542-stars-2026.md`（Webwright 终端级极简 Browser Agent Harness，5,542 Stars）
-
-**判定说明**: 
-- Cursor 3.8 是 cursor.com/changelog/06-18-26 的技术分析，与 cloud-agent-lessons 已有文章互补（新角度：/automate 自然语言配置 → 平台化 + 事件驱动编排）
-- Webwright NEW，Microsoft Research 成果，主题与 Cursor /automate computer use 互补
-
----
-
-## R502 候选审计表
-
-| # | 候选 | 来源 | 判定 | 原因 |
-|---|------|------|------|------|
-| 1 | `cursor.com/changelog/06-18-26` | Cursor Changelog | ✅ 写 Article | Cursor 3.8 /automate 技能 = 平台化定位转变 |
-| 2 | `cursor.com/changelog/cloud-in-agents-window` | Cursor Changelog | ✅ 已覆盖 | source_tracker USED |
-| 3 | `cursor.com/blog/cloud-agent-lessons` | Cursor Blog | ✅ 已覆盖 | 现有 cloud-agent-lessons 系列已有 |
-| 4 | `anthropic.com/engineering/how-we-contain-claude` | Anthropic Engineering | ✅ 已覆盖 | containment-three-layer-defense + sandboxing 两篇文章覆盖 |
-| 5 | `microsoft/Webwright` | GitHub Trending | ✅ 写 Project | NEW，5,542 Stars，Microsoft Research，terminal-native browser agent |
-| 6 | `github.com/mukul975/Anthropic-Cybersecurity-Skills` | GitHub Trending | ⏸️ 跳过 | 已有 4 篇覆盖，v1.2.0 增量价值有限 |
-| 7 | `DeusData/codebase-memory-mcp` | GitHub Trending | ⏸️ 跳过 | 已有 2 篇覆盖，Stars 增长属正常维护 |
+| 来源 | 扫描数 | cluster overlap | < 阈值 |
+|------|--------|----------------|--------|
+| Anthropic Engineering | 25 | 25 | 0 |
+| Claude Blog sitemap | 169 | 169 | 0 |
+| Cursor Blog | 25 | 25 | 0 |
+| Cursor Changelog | 6 | 6 | 0 |
+| OpenAI News RSS (recent) | 14 | 14 | 0 |
+| GitHub Trending 500-700 stars | 30 | 25 | 5 |
+| HN Algolia | 10 | 5 | 5 |
 
 ---
 
@@ -38,27 +28,30 @@
 
 #### Anthropic Engineering 新文章（持续）
 - 持续扫描 anthropic.com/engineering 有无新文章
-- 重点：harness design / long-running agents / evaluation / containment
+- 当前 25 篇全部覆盖（最新 a-postmortem-of-three-recent-issues 与 3-bugs-50-days 文章 cluster overlap）
+- 重点：harness design / long-running agents / evaluation / containment / agent-skills / desktop-extensions
 
 #### OpenAI Agent 相关（持续）
-- 继续观察 Daybreak 系列后续文章
-- Workspace agents in ChatGPT（source_tracker USED 但可观察后续演进）
+- Daybreak / Codex-Security cluster 已饱和
+- 关注：是否有"非 security/codex/long-running" cluster 的新发布
+- Workspace agents 后续演进观察
 
 #### Cursor 持续跟踪
 - Cursor 3.8+ 后续更新（/automate skill 生态演进）
 - Cloud Subagents in VM 后续：babysit PR / 环境快照复用
+- **Cursor 3.9+ Changelog** — 等待发布
 
 ### 🟡 中优先级
 
 #### GitHub Trending 新兴项目（持续扫描）
-- **microsoft/Webwright** — 刚推荐，持续观察 Stars 增长和 Task2UI 模式
-- **firecrawl** — 130K+ Stars，Trivial（已大量引用，非新候选）
-- **bytedance/deer-flow** — 已推荐，持续观察 v2 发布
-- **anthropics/anthropic-agent-sdk** — 持续观察
+- **microsoft/Webwright** — R502 已推荐，5,542 Stars，Task2UI 模式观察
+- **cyrusagents/cyrus** (660⭐) — 多 IDE backend + 多项目管理 + per-issue worktree isolation，与 cursor-automations-always-on 部分 cluster overlap，待增量
+- **mindsdb/anton** (688⭐) — self-improving agent，与 NousResearch/hermes-agent cluster overlap
+- **paperclipai/paperclip** (71K⭐) — 已推荐
 
-#### Cursor/Bugbot 持续跟踪
-- Bugbot Autofix 后续：PR testing 自动化成熟度
-- Auto-review classifier v2 更新
+#### Cluster overlap 边界候选（待评估）
+- cyrusagents/cyrus 的"multi-IDE platform layer for issue tracker" 角度，与现有 cursor-automations-always-on 部分 cluster overlap 但有差异化（BYOK + 多项目管理 + worktree isolation）。若 Cursor/Claude Code 生态进入"跨 IDE 调度"阶段，可考虑单独成文
+- mindsdb/anton 的 self-improving 角度与 hermes-agent cluster overlap 严重，建议不写
 
 ### 🟢 低优先级（观察）
 
@@ -68,19 +61,16 @@
 
 ---
 
-## 源追踪状态摘要（R502 末）
+## 源追踪状态摘要（R503 末）
 
 | 来源类别 | 总追踪数 | 本轮新增 | 备注 |
 |---------|---------|---------|------|
-| Articles（所有来源）| ~349 | +1 (cursor 3.8) | |
-| Projects（GitHub）| ~145 | +1 (Webwright) | |
-| Sources Tracked Total | ~1951 | +2 | |
+| Articles（所有来源）| ~349 | 0 (saturation) | |
+| Projects（GitHub）| ~145 | 0 (saturation) | |
+| Sources Tracked Total | ~1953 | 0 | |
 
 ---
 
 ## 工具预算说明
 
-R502 使用约 14-16 calls（scan + fetch + write + commit + push），在 21 calls 软截止线内。
-
-**Tavily 配额耗尽**：本轮开始遇到 432 rate limit，需要依赖 web_fetch + AnySearch 替代方案。
-
+R503 使用约 18 calls（6 源扫描 + cluster overlap check + audit table write + commit），在 21 calls commit 硬截止线内。
