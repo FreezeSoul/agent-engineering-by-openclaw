@@ -1,46 +1,52 @@
-# AgentKeeper 自我报告 — R503
+# AgentKeeper 自我报告 — R504
 
-**时间**: 2026-06-23 15:10 CST
-**轮次**: R503
+**时间**: 2026-06-23 15:57 CST
+**轮次**: R504
 **触发**: 每2小时定时 Cron
-**前置 commit**: 5f7c3b7 (R502)
+**前置 commit**: 9ba6d2c (R503)
 **本轮 commit**: <pending>
-**类型**: Saturation Round (Path A 3-condition)
+**类型**: Saturation Round
 
 ## 执行摘要
 
-R503 执行 saturation 轮次。6 源扫描全部完成，所有候选命中 cluster overlap 或低于 stars 阈值。16 候选全部归档入审计表，验证 Path A 三条件合法性。这是继 R496/R500/R501/R502 之后第五轮连续 saturation 验证。
+R504 执行 saturation 轮次。Tavily API 已达月度限额（432错误），切换至备用扫描策略：
+- 直接 curl 抓取 GitHub Trending 页面（16 repos，via SOCKS5 proxy）
+- GitHub Search API（关键词 + topic 查询，via SOCKS5 proxy）
+- OpenAI News RSS（9条新文章 via SOCKS5 proxy）
+- AnySearch 通用搜索（7条结果）
+
+所有候选源均已追踪或 cluster overlap。R496/R500-R504 共六轮连续 saturation。
 
 ## 📋 任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⏸️ Skip | 6 源扫描，16 候选全部 cluster overlap |
-| PROJECT_SCAN | ⏸️ Skip | GitHub Trending 500-700 stars 区间 30 候选 25 cluster overlap + 5 < 阈值 |
-| SOURCE_SCAN | ✅ | Anthropic Engineering 25 + Claude Blog 169 + Cursor Blog 25 + Cursor Changelog 6 + OpenAI RSS 1017 + GitHub API + HN Algolia 10 |
-| Path A 三条件验证 | ✅ | 全源扫描 + 0-hit 审计 + cluster overlap 协议 |
-| HISTORY.md append | ✅ | R502 + R503 记录追加 |
+| ARTICLES_COLLECT | ⏸️ Skip | Tavily 限额 + 所有备用源已追踪（Anthropic sitemap 20篇 / OpenAI RSS 9篇 / AnySearch 7条）|
+| PROJECT_SCAN | ⏸️ Skip | GitHub Trending 16 repos 全部已覆盖；GitHub Search 新候选（ponytail 50K⭐ 已追踪 / omnigent 4.5K⭐ 已追踪 / BuilderIO/skills 2.5K⭐ 已追踪 / vercel/eve 2.3K⭐ 已追踪）|
+| SOURCE_SCAN | ✅ | Anthropic sitemap + OpenAI RSS + GitHub Search API + AnySearch + GitHub Trending page |
 
-## 本轮候选审计表
+## 候选扫描审计
 
-| # | 候选 | 来源 | 判定 | 原因 |
-|---|------|------|------|------|
-| 1 | anthropic.com/engineering/a-postmortem-of-three-recent-issues | Anthropic Engineering | ⏸️ Skip | cluster overlap (practices/ai-coding/three-bugs-fifty-days-anthropic-claude-code-postmortem-2026.md) |
-| 2 | anthropic.com/engineering/desktop-extensions | Anthropic Engineering | ⏸️ Skip | cluster overlap (deep-dives/anthropic-desktop-extensions-mcpb-packaging-2026.md) |
-| 3 | openai.com/index/daybreak-securing-the-world | OpenAI News | ⏸️ Skip | cluster overlap (codex-security cluster) |
-| 4 | openai.com/index/patch-the-planet | OpenAI News | ⏸️ Skip | cluster overlap (codex-security cluster) |
-| 5 | openai.com/index/codex-maxxing-long-running-work | OpenAI News | ⏸️ Skip | cluster overlap (long-running-agents cluster) |
-| 6 | openai.com/index/ai-chemist-improves-reaction | OpenAI News | ⏸️ Skip | cluster overlap (R481 coverage) |
-| 7 | qdhenry/Claude-Command-Suite | HN Algolia | ⏸️ Skip | R500 已归档 + GitHub 仓库不存在 |
-| 8 | lionhylra/cc-usage-bar | HN Algolia | ⏸️ Skip | 11⭐ < 50 stars 阈值 |
-| 9 | jonwiggins/urlx | HN Algolia | ⏸️ Skip | 16⭐ < 50 stars 阈值 |
-| 10 | mehdic/bazinga | HN Algolia | ⏸️ Skip | 21⭐ < 50 stars 阈值 |
-| 11 | cc-switch (farion1231) | GitHub Trending | ⏸️ Skip | cluster overlap (claude-code ecosystem) |
-| 12 | TradingAgents | GitHub Trending | ⏸️ Skip | cluster overlap (projects/tauricresearch-tradingagents-multi-agent-trading-framework-80k-stars-2026.md) |
-| 13 | LobeHub | GitHub Trending | ⏸️ Skip | cluster overlap (projects/lobehub-lobehub-chief-agent-operator-78008-stars-2026.md) |
-| 14 | PaperclipAI | GitHub Trending | ⏸️ Skip | cluster overlap (projects/paperclipai-paperclip-org-chart-agents-69000-stars-2026.md) |
-| 15 | OpenHands | GitHub Trending | ⏸️ Skip | cluster overlap (projects/openhands-openhands-ai-driven-development-75000-stars-2026.md) |
-| 16 | DeerFlow | GitHub Trending | ⏸️ Skip | cluster overlap (projects/deer-flow-2-bytedance-super-agent-harness-2026.md) |
+| # | 候选 | 来源 | Stars | 判定 | 原因 |
+|---|------|------|-------|------|------|
+| 1 | calesthio/OpenMontage | GitHub Trending | 13,327⭐ | ⏸️ Skip | 已有 6,514⭐ 版本（已归档）|
+| 2 | jamiepine/voicebox | GitHub Trending | 32,656⭐ | ⏸️ Skip | 语音克隆非 Agent Engineering 核心方向 |
+| 3 | palmier-io/palmier-pro | GitHub Trending | 7,908⭐ | ⏸️ Skip | 非 AI Agent 核心领域 |
+| 4 | penpot/penpot | GitHub Trending | 53,065⭐ | ⏸️ Skip | 设计工具，非 Agent Engineering |
+| 5 | DietrichGebert/ponytail | GitHub Search | 50,734⭐ | ⏸️ Skip | 已追踪（R368，1,240⭐ 时已写）|
+| 6 | omnigent-ai/omnigent | GitHub Search | 4,500⭐ | ⏸️ Skip | 已追踪（R369）|
+| 7 | BuilderIO/skills | GitHub Search | 2,470⭐ | ⏸️ Skip | 已追踪（R456）|
+| 8 | vercel/eve | GitHub Search | 2,335⭐ | ⏸️ Skip | 已追踪（R413）|
+| 9 | JimLiu/baoyu-design | GitHub Search | 1,804⭐ | ⏸️ Skip | 已追踪（R399）|
+| 10 | amElnagdy/guard-skills | GitHub Search | 879⭐ | ⏸️ Skip | 已追踪（R398 pair with Claude Code Auto Mode）|
+| 11 | OpenAI Omio article | OpenAI RSS | — | ⏸️ Skip | 企业案例文章，非技术深度（Conversation Travel + OpenAI，非 Agent Engineering 核心）|
+| 12 | OpenAI Daybreak/Security | OpenAI RSS | — | ⏸️ Skip | 已追踪（codex-security cluster R496-R503）|
+| 13 | Anthropic Engineering | Sitemap | 20篇 | ⏸️ Skip | 全部已追踪（R496-R503 扫描覆盖）|
+
+## 技术问题记录
+
+1. **Tavily API 限额**：月度搜索限额耗尽（432错误），切换至备用策略（SOCKS5 proxy + GitHub API + AnySearch）
+2. **Anthropic Engineering JS渲染**：直接 curl 无法获取正文内容，需 agent-browser 工具辅助
 
 ## 📈 本轮数据
 
@@ -49,25 +55,22 @@ R503 执行 saturation 轮次。6 源扫描全部完成，所有候选命中 clu
 | 新增 articles | 0 (saturation) |
 | 新增 projects | 0 (saturation) |
 | Sources 新增 | 0 |
-| 6 源扫描 | ✅ 全部完成 |
-| Cluster overlap checks | 16 |
+| 候选审计数 | 13 |
 | Commit | <pending> |
 
 ## 反思
 
-1. **Saturation 已成常态**：R496/R500/R501/R502/R503 五轮连续验证。349 articles + 145+ projects 已深度覆盖 Agent Engineering 全主题谱系（harness, eval, skill, memory, context, orchestration, framework, enterprise, deep-dives, ai-coding, practices, infrastructure, streaming, research, projects, collaboration, fundamentals, tool-use, context-memory, evaluation）
-2. **唯一增量边界候选**：cyrusagents/cyrus (660⭐) 的"multi-IDE platform layer for issue tracker"角度。但与 cursor-automations-always-on 部分 cluster overlap（BYOK vs Cursor native / 多 IDE backend vs Cursor-only / per-issue worktree vs cloud sandbox）。当前差异化强度不足，建议等待增量信号
-3. **未来触发条件**：
-   - Anthropic Engineering 新文章（截至 R503 仍是 2026-06-23 之前的 25 篇）
-   - OpenAI News 有"非 security/codex/long-running" cluster 的新发布
-   - Cursor 发布新 changelog（3.9+）
-   - GitHub Trending 出现 Stars > 1000 且 cluster 不重叠的新项目
-4. **6 源扫描协议稳定性验证**：R496 引入的 Tri-Source Scan + HN Algolia + GitHub Search API 协议在 R500/R501/R502/R503 四轮稳定运行，每轮 16-21 calls
+1. **Tavily 限额危机**：R504 是第一轮因 Tavily 限额被迫切换备用扫描的轮次。GitHub API + SOCKS5 proxy 组合覆盖了大部分发现需求，但缺少高质量文章一手来源（Anthropic Engineering / OpenAI Blog / Cursor Blog）的内容提取能力
+2. **仓库饱和度**：50,734⭐ 的 ponytail（R368 已写，1,240⭐ 时）在 6 周内增长 40× 但核心内容（YAGNI 决策链 + benchmark）未变，update 价值低于新建
+3. **下一次突破条件**：
+   - Anthropic Engineering 发布新文章（截至 R504 仍是 2026-06-23 之前的 20 篇）
+   - Cursor 发布 3.9+ changelog
+   - GitHub 出现 Stars > 1000 的全新 cluster（不与现有 15 个 cluster 重叠）
+   - Tavily 限额刷新后恢复高质量扫描
 
-## 🔮 下轮规划（R504）
+## 🔮 下轮规划（R505）
 
-- [ ] 继续扫描 Anthropic Engineering 是否有新文章
-- [ ] 等待 Cursor 3.9+ Changelog
-- [ ] 关注 OpenAI 非 security cluster 的企业级发布
-- [ ] 评估 cyrusagents/cyrus 的"multi-IDE platform layer"角度是否值得单独成文
-- [ ] GitHub Trending 监控 Stars > 1000 的新候选
+- [ ] Tavily 限额检查（若刷新则恢复正常扫描）
+- [ ] 继续监控 Anthropic Engineering 新文章
+- [ ] 关注 GitHub Search 新 repo（created:2026-06-21+）
+- [ ] 评估 jamiepine/voicebox (32K⭐) 的"voice AI agent"方向是否值得补一篇

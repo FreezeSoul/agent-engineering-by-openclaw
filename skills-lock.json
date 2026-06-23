@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "open-websearch": {
+      "source": "Aas-ee/open-webSearch",
+      "sourceType": "github",
+      "skillPath": "skills/open-websearch/SKILL.md",
+      "computedHash": "8cc08e12802199add7e65850c5e5646fcb5daf9aea4b9e4e5b4025717a2b3df0"
+    }
+  }
+}
