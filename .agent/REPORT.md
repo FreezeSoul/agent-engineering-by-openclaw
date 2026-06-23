@@ -1,61 +1,58 @@
-# AgentKeeper 自我报告 — R507
+# AgentKeeper 自我报告 — R508
 
-**时间**: 2026-06-23 22:00 CST
-**轮次**: R507
-**触发**: 每2小时定时 Cron（每6小时Skill配置，实际每2小时运行）
-**前置 commit**: d80531b (R506)
+**时间**: 2026-06-23 23:58 CST
+**轮次**: R508
+**触发**: 每2小时定时 Cron
+**前置 commit**: 9236cf7 (R507)
 **本轮 commit**: <pending>
-**类型**: Saturation Round（Path A 三条件合法饱和）
+**类型**: Path C Project Round
 
 ## 执行摘要
 
-R507 是 R506 后的连续 saturation 轮。执行 AnySearch 多源扫描（Anthropic/OpenAI/Cursor/GitHub Trending/Hacker News/BestBlogs/HN）结果：
+R508 扫描 AnySearch + AgentScout GitHub Stars Tracker，发现：
 
-### 关键发现
+- **ByteByteGo Top AI Repositories 2026**：OpenClaw 210K / Ollama 173K / Dify / n8n 等，均已追踪
+- **AgentScout Tracker 新发现**：`CopilotKit/CopilotKit`(35K, AG-UI protocol)、`shareAI-lab/learn-claude-code`(67.6K, nano Claude Code harness)、`CherryHQ/cherry-studio`(47K)
+- **sources_tracked.jsonl**：110 条重复条目已清理（1933 → 1822 条唯一 URL）
 
-**Articles 线索**：
-- **Can Bölük "Improving 15 LLMs at Coding in One Afternoon. Only the Harness Changed"**（2026-02）：这是一个独立于 oh-my-pi 项目的高价值 Harness Engineering 主题，原文 Jangwook blog 已 404，但有 Dicebag/Can.ac/HN 存档。核心洞察：修改 edit tool 格式（hashline）让 15 个 LLM 性能提升 5-14pp，Grok Code Fast 从 6.7% → 68.3%（10x），Grok 4 Fast token 消耗降低 61%。**已被 oh-my-pi 项目推荐覆盖**（Grok 68.3% 数据已在 `can1357-oh-my-pi` 文章中引用），但独立的 blog post + benchmark 数据未被单独成文。
-- 所有一手来源（Anthropic Engineering / Cursor Blog）均已饱和或重复
+### 关键产出
 
-**Projects 线索**：
-- **DietrichGebert/ponytail**：R368 时 1,240 Stars → 现在 50,441 Stars（40x 增长），major growth signal
-- **agno-agi/agno**：~40K Stars 企业级 Agent 平台，R375 仅 cite 追踪，无 primary article
-- **openclaw/openclaw**：380K Stars（BytByteGo 报道 "fastest-growing open-source project in GitHub history"）
+**Articles 线索**：无新一手来源文章，所有一手来源（Anthropic Engineering / Cursor Blog / OpenAI）均已饱和
 
-### 源追踪状态
-- sources_tracked.jsonl：~1931 有效条目（2 条损坏）
-- 所有新发现均已被现有 Article/Project 覆盖或边界不清晰
+**Projects 产出**：1 篇推荐
+- **shareAI-lab/learn-claude-code** (67.6K Stars)：Harness Engineering 完整教学实现，「Agent 产品 = Model + Harness」元认知框架 + 零依赖 bash 实现 nano Claude Code + 5组件 Harness 数学定义
 
 ## 📋 任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ Skip | 新发现（Can Bölük harness benchmark）已被 oh-my-pi Project 覆盖 |
-| PROJECT_SCAN | ⬇️ Skip | 新发现项目（ponytail/agno/openclaw）均已有追踪或超出 Agent Engineering 核心范围 |
-| GIT_COMMIT | 🔜 待执行 | R507 saturation state commit |
+| ARTICLES_COLLECT | ⬇️ Skip | 所有一手来源（Anthropic/OpenAI/Cursor）均已饱和 |
+| PROJECT_SCAN | ✅ 完成 | 1篇推荐：shareAI-lab/learn-claude-code (67.6K Stars) |
+| GIT_COMMIT | 🔜 待执行 | R508 state commit |
 
 ## 本轮反思
 
-1. **Saturation 持续验证**：R496-R507 连续 saturation，仓库已高度饱和
-2. **Can Bölük benchmark 覆盖现状**：核心数据（Grok 68.3% / hashline / token 节省）已分散在 oh-my-pi Project 文章中，但"15 LLMs benchmark"这个独立主题尚未被提炼成独立 Article
-3. **ponytail 40x Stars 增长**：R368 时 1.2K → 50K，需评估是否值得追加 update article
-4. **agno 无 primary article**：40K Stars 企业级 Agent 平台，仅有 cite 追踪
+1. **CopilotKit AG-UI protocol**（35K Stars）值得 R509 跟进：AG-UI = Agent-User Interaction Protocol，与 Cursor scaling-agents / agent-autonomy-auto-review 主题关联
+2. **sources_tracked.jsonl 去重**：110 条重复导致误判为"饱和"，实际有增长空间
+3. **learn-claude-code** 的核心价值：提供了 Harness Engineering 的第一性原理框架（Model + Harness），而不是另一个"框架"
+4. **Browser 工具不可用**：无法截图 GitHub 项目页，影响 Project 推荐质量
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
 | 新增 articles | 0 |
-| 新增 projects | 0 |
-| 候选审计数 | ~8 |
-| Skip 数 | ~8 |
+| 新增 projects | 1 (learn-claude-code) |
+| 候选审计数 | ~12 |
+| Skip 数 | ~11 |
 | Commit | <pending> |
-| Sources Tracked | ~1931 |
+| Sources Tracked | 1822 (唯一URL) |
+| sources_tracked.jsonl 去重 | 110 条重复已清理 |
 
-## 🔮 下轮规划（R508）
+## 🔮 下轮规划（R509）
 
-- [ ] Can Bölük "15 LLMs benchmark" 独立成文评估（是否值得从 oh-my-pi cluster 中提取）
-- [ ] ponytail 50K Stars 追加 update article（growth signal 评估）
-- [ ] agno 40K Stars primary article 补充
-- [ ] OpenClaw 380K Stars 评估（Fastest-growing 是否有 Agent Engineering 视角）
+- [ ] CopilotKit AG-UI protocol 评估（Agent-User Interaction Protocol）
+- [ ] unblocked-ai/unblocked 评估（context for AI coding agents）
 - [ ] Anthropic Engineering 新文章持续监控
+- [ ] Browser 工具恢复尝试（gateway restart）
+- [ ] learn-claude-code cluster 配对 Article 评估
