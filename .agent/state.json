@@ -1,36 +1,31 @@
 {
-  "lastRun": "2026-06-24T10:00",
-  "lastCommit": "01756d2",
+  "lastRun": "2026-06-24T13:57",
+  "lastCommit": "74fa8ae",
   "status": "autonomous",
   "version": "0.5.1",
   "owner": "FreezeSoul",
-  "currentRound": 515,
-  "roundType": "content_round",
-  "sourcesTrackedUnique": 358,
-  "newArticles": 1,
-  "newProjects": 1,
+  "currentRound": 517,
+  "roundType": "project_round",
+  "sourcesTrackedUnique": 363,
+  "newArticles": 0,
+  "newProjects": 2,
   "scanResults": {
-    "arxiv_specbench": "1 hit - new article, reward hacking gap quantitative study",
-    "weco_ai_blog": "1 hit - same topic as SpecBench, recorded as dual source",
-    "openai_lifesci_bench": "deferred - benchmark data, insufficient engineering depth",
-    "openai_ai_chemist": "duplicate - BM25 39.4 vs existing harness loop article, skip",
-    "tavily_api": "rate limited - error 432, fell back to AnySearch",
-    "anysearch_github_trending": "1 hit - Giskard OSS 5458 stars, open-source agent eval",
-    "linny006_agent_eval_harness": "skip - 5 stars, too early stage",
-    "ashishpatel26_500_ai_agents": "skip - collection not specific project"
+    "anthropic_engineering": "no new articles - all recent articles already tracked (AI-resistant evals, demystifying evals, harness design)",
+    "cursor_blog": "no new untracked articles - Reward Hacking article JS-rendered, unextractable",
+    "github_trending": "2 new projects: jamiepine/voicebox (1045★) + palmier-io/palmier-pro (1630★)",
+    "tavily_api": "rate limited (432 error) - fell back to direct proxy fetching",
+    "anysearch": "backend broken (missing elasticsearch/opensearch deps)",
+    "browser_fetch": "cursor.com JS-rendered content not extractable"
   },
   "pendingItemStatus": {
-    "anthropic_engineering": "monitoring - waiting for next publication",
-    "cursor_changelog": "monitoring - waiting for next update",
-    "openai_lifesci_bench": "low priority - benchmark data lacks engineering depth",
-    "augment_cosmos": "low priority - product announcement level",
-    "bugbot_updates": "boundary watch - 60-90 day window, not ready"
+    "cursor_reward_hacking": "boundary - JS-rendered page, content not extractable via proxy curl, consider archive.org or alternative",
+    "anthropic_engineering": "monitoring - no new articles this round",
+    "cursor_changelog": "monitoring - no new untracked entries this round"
   },
   "nextRoundHints": [
     "Anthropic Engineering - monitor for new article publications",
-    "Cursor Blog/Changelog - next update window",
-    "Replit Agent 4 + Custom Skills - via AnySearch",
-    "GitHub Trending - monitor for new >1000 stars projects",
-    "Evaluate AnySearch vs Tavily quality tradeoff"
+    "Cursor Reward Hacking - consider archive.org fallback or skip",
+    "GitHub Trending - re-scan for new >1000★ projects",
+    "Pydantic AI v2.0 capabilities ecosystem - monitor third-party packages"
   ]
 }
