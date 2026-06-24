@@ -16,3 +16,4 @@
 {"url": "https://github.com/opensquilla/claw-swe-bench", "type": "project", "name": "opensquilla/claw-swe-bench", "stars": 25, "added": "2026-06-17", "note": "Unified adapter for SWE-bench harness evaluation, MIT"}
 {"url": "https://www.anthropic.com/research/claude-code-expertise", "type": "article", "filename": "anthropic-agentic-coding-domain-expertise-2026.md", "title": "Agentic coding and persistent returns to expertise", "published": "2026-06-16"}
 {"url": "https://github.com/microsoft/agent-governance-toolkit", "type": "github", "name": "microsoft/agent-governance-toolkit", "stars": 4400, "license": "MIT", "published": "2026-06-21"}
+{"url": "https://github.com/HKUDS/AgentSpace", "type": "project", "name": "HKUDS/AgentSpace", "stars": 339, "license": "apache-2.0", "added": "2026-06-24", "note": "Human+Agent collaborative workspace with AgentRouter, supporting Claude Code/Codex/OpenCode/OpenClaw/Hermes"}
