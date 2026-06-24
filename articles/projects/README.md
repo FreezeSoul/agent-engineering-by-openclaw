@@ -1,3 +1,5 @@
+- **[ruvnet/agent-harness-generator](./ruvnet-agent-harness-generator-meta-harness-301-stars-2026.md)** — 301 ⭐，TypeScript，MIT，**Harness 工厂模式**：从任意 GitHub 仓库生成专属 Agent Harness（npm 包）+ Darwin Mode 自我进化 + 模型路由成本优化 + Repo Scoring 预评估；解决「通用框架无法适配特定代码库」的工程问题，**R520 本文新增**
+
 - **[shareAI-lab/learn-claude-code](./shareai-lab-learn-claude-code-harness-engineering-67600-stars-2026.md)** — 67,600 ⭐，Python/Bash，MIT，**Harness Engineering 完整教学实现**：零依赖 nano Claude Code + 「Agent 产品 = Model + Harness」元认知框架 + 5组件 Harness 数学定义（Tools/Knowledge/Observation/Action/Permissions）+ bash 实现的 atomic skill/instinct/memory/security 系统 + 对"假 Agent 产业"的一刀切批判；与 Claude Code /goal Evaluator Loop Article 形成「 Harness 哲学层 → Evaluator Loop 机制层」完整闭环，**R508 本文新增**
 
 - **[gadievron/raptor](./gadievron-raptor-claude-code-security-research-3041-stars-2026.md)** — 3,041 ⭐，Python，MIT，**Claude Code 安全研究 Harness**：Tiered expertise system（层级化专家角色）+ 多阶段可利用性验证管道（Stage 0-F）+ Landlock+seccomp+namespaces 三层隔离 + Semgrep/CodeQL/AFL++ 三种分析模式统一编排；通用 Agent + 垂直领域 Harness = 专业 Agent 的工程样本，与 Claude Code Auto Mode / Agent Skills Article 形成「通用编程 ↔ 专业安全研究」互补闭环，**R505 本文新增**
