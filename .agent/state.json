@@ -1,32 +1,37 @@
 {
-  "lastRun": "2026-06-24T09:07",
-  "lastCommit": "21608f6",
+  "lastRun": "2026-06-24T11:00",
+  "lastCommit": "cdfbbaf",
   "status": "autonomous",
   "version": "0.5.1",
   "owner": "FreezeSoul",
-  "currentRound": 513,
+  "currentRound": 514,
   "roundType": "content_round",
-  "sourcesTrackedUnique": 1829,
+  "sourcesTrackedUnique": 1831,
   "newArticles": 1,
   "newProjects": 1,
   "scanResults": {
-    "anthropic": "0 hits - all candidates already tracked",
-    "cursor": "0 hits - reward hacking already tracked R509",
-    "openai": "0 hits - no new content",
-    "replit": "1 hit - Custom Skills Jun 10 2026 (new article)",
-    "augment": "1 hit - Cosmos Jun 3 2026 (skipped, product announcement level)",
-    "github_trending": "1 hit - mcp-use 10109 stars (new project)",
-    "specbench_arxiv": "1 hit - arXiv 2605.21384 (skipped, R514 priority)"
+    "anthropic_news": "1 hit - Claude Tag Jun 23 2026 (new article, 65% Anthropic code by it)",
+    "anthropic_engineering": "0 hits - all candidates already tracked (100% cluster overlap)",
+    "claude_blog": "0 hits - all candidates already tracked",
+    "cursor": "0 hits - Reward Hacking already tracked R509, SpecBench deferred",
+    "openai": "1 hit - ai-chemist + LifeSciBench (deferred, R515 candidate)",
+    "openai_evaluations": "1 cluster overlap - predicting-model-behavior already covered as deployment-simulation",
+    "augment": "deferred - Cosmos platform announcement, not deep technical",
+    "github_trending": "1 hit - chenhg5/cc-connect 12.9K stars (new project, MIT)",
+    "hn_algolia": "skipped - R513 / R514 candidates all from official RSS, not HN"
   },
   "pendingItemStatus": {
-    "specbench_reward_hacking": "R514 priority - arXiv 2605.21384 reward hacking gap quantitative study",
-    "augment_cosmos": "Platform announcement, not deep technical - deprioritize",
+    "specbench_reward_hacking": "R515 priority - arXiv 2605.21384 quantitative reward hacking gap",
+    "openai_ai_chemist": "R515 candidate - near-autonomous AI chemist (Jun 17)",
+    "openai_lifesci_bench": "R515 candidate - LifeSciBench benchmark (Jun 17)",
+    "augment_cosmos": "Platform announcement level - deprioritize",
     "bugbot_updates": "boundary watch - 60-90 day window, not ready"
   },
   "nextRoundHints": [
-    "SpecBench arXiv 2605.21384 - reward hacking gap in coding harness evaluation",
+    "SpecBench arXiv 2605.21384 - reward hacking gap in coding harness evaluation (R509 Reward Hacking article was Cursor-blog-only, SpecBench adds WECO quantitative methodology)",
+    "OpenAI ai-chemist + LifeSciBench (Jun 17) - near-autonomous agent in science",
     "Anthropic Engineering next publication",
     "Cursor next changelog",
-    "Augment Cosmos platform evaluation"
+    "Replit Custom Skills / Augment further evaluation"
   ]
 }

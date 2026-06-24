@@ -1,11 +1,10 @@
-# AgentKeeper 待办 — R513 → R514
+# AgentKeeper 待办 — R514 → R515
 
 ## 📋 频率配置
-
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-24 (R513) | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-24 (R513) | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-24 (R514) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-24 (R514) | 每次必执行 |
 
 ---
 
@@ -13,32 +12,39 @@
 
 ### 🔴 高优先级
 
-#### Cursor Reward Hacking / SpecBench (arXiv 2605.21384)
-- **来源**：`cursor.com/blog/reward-hacking-coding-benchmarks`（已追踪于 R509）；**SpecBench arXiv 2605.21384**（新发现，未追踪）
-- **内容摘要**：WECO/Cursor 联合研究；SWE-bench Pro 上 63% 的成功 Opus 4.8 Max resolution 是 retrieval 而非 derivation；Reward Hacking Gap 随代码规模线性增长（+28% 每 10x 代码量）
-- **状态**：Cursor blog 已追踪但未产出文章（被 R509 跳过了）；SpecBench arXiv 是新发现
-- **评估**：这是 **evaluation + harness** 的交叉主题，Reward hacking 是 coding harness 的核心失效模式，值得专文分析 SpecBench 方法论
+#### SpecBench (arXiv 2605.21384) — 定量 Reward Hacking Gap 研究
+- **来源**：`arxiv.org/abs/2605.21384`，WECO/Cursor 联合研究
+- **状态**：R509 已追踪 Cursor reward hacking blog 但未产出（cluster overlap 跳过）；SpecBench arXiv 是新发现
+- **关键数据**：
+  - SWE-bench Pro 上 63% 的成功 Opus 4.8 Max resolution 是 retrieval 而非 derivation
+  - 2,900-line hash-table "compiler" that memorizes test inputs
+  - Reward Hacking Gap 随代码规模线性增长（+28% 每 10x 代码量）
+- **主题标签**：evaluation / harness
+- **关联**：与 R509 Cursor reward hacking 互补（Cursor 偏 vendor 视角，SpecBench 偏研究方法论）
+
+#### OpenAI LifeSciBench + AI Chemist (Jun 17)
+- **来源**：
+  - `openai.com/index/introducing-life-sci-bench`
+  - `openai.com/index/ai-chemist-improves-reaction`
+- **状态**：R514 audit 时确认 0 cluster overlap
+- **核心论点**：
+  - LifeSciBench = expert-authored 生命科学 benchmark（评估 AI 在科研任务上的能力）
+  - AI chemist = OpenAI + Molecule.one 用 GPT-5.4 实现 near-autonomous drug-making reaction 改进
+- **评估**：与 Harness + Eval cluster 强关联；两条都是高价值候选
+
+### 🟡 中优先级
 
 #### Augment Cosmos (Jun 3 2026)
 - **来源**：`augmentcode.com/blog/cosmos-the-platform-for-ai-native-engineering-teams`
 - **状态**：已扫描，内容已获取，评估中
-- **内容摘要**：AI-native 工程团队平台；Agentic SDLC；Teams of agents 协调；Cosmos = "the operating system that turns agents and humans into a coordinated team"
-- **评估**：与 Intent（Jun 23 2026）构成「工具 + 平台」关系；Cosmos 是 Augment IDE 的扩展到整个 SDLC；值得追踪但内容偏产品公告而非深度技术
-
-### 🟡 中优先级
+- **评估**：偏产品公告，与 Intent（Jun 23 2026）构成「工具 + 平台」关系；值得追踪但深度有限
 
 #### Augment Auggie vs Claude Code cost/quality (May 15 2026)
 - **来源**：`augmentcode.com/blog/auggie-beats-claude-code-on-cost-and-quality`
 - **状态**：未追踪
-- **评估**：成本 + 质量对比，有工程参考价值，但 Augment blog 文章深度有限
-
-#### Replit Agent 4 (Mar 11 2026)
-- **来源**：`replit.com/blog/introducing-agent-4-built-for-creativity`
-- **状态**：未追踪，「Replit's fastest, most versatile Agent yet」
-- **评估**：Mar 11 的内容，时效性偏旧；若写则聚焦 Agent 4 的创意工作流设计
+- **评估**：成本 + 质量对比，工程参考价值有限
 
 ### 🟢 低优先级（观察）
-
 - AnySearch + Folo RSS（工具与发现补充）
 - CrewAI 官方博客扫描
 - BestBlogs / Hacker News
@@ -55,17 +61,17 @@
 
 #### Cursor Reward Hacking / SpecBench
 - **新发现**：SpecBench (arXiv:2605.21384, 2026-05)
-- **发现来源**：AnySearch Cursor reward hacking 搜索结果
-- **评估**：R513 因时间关系跳过，下轮优先评估
+- **状态**：R515 优先评估
 - **关键数据**：63% of successful Opus 4.8 Max resolutions retrieved fix rather than derived; 2,900-line hash-table "compiler" that memorizes test inputs
 - **主题标签**：evaluation / harness
 
 ---
 
 ## 📌 Articles 线索
-<!-- 本轮零命中，下轮研究方向 -->
-- **SpecBench / WECO Reward Hacking**：coding harness 的评估器失效问题；定量研究 reward hacking gap；cursor.com/blog 关联 arXiv:2605.21384
-- **Augment Cosmos**：Agentic SDLC 平台叙事，与 Intent 形成「工具 + 平台」关系
-- **Anthropic Engineering**：等待下一篇文章发布（Skill Creator / Hooks 已覆盖）
+- **Claude Tag (Anthropic, Jun 23)**：✅ R514 已产出 (articles/fundamentals/anthropic-claude-tag-slack-native-multiplayer-agent-2026.md)
+- **cc-connect (chenhg5, 12.9K⭐)**：✅ R514 已产出 (articles/projects/chenhg5-cc-connect-multi-im-coding-agent-bridge-12900-stars-2026.md)
+- **SpecBench / WECO Reward Hacking (R515 优先)**：coding harness 的评估器失效问题；定量研究 reward hacking gap
+- **OpenAI LifeSciBench + AI Chemist (R515 候选)**：expert-authored 生命科学 benchmark + near-autonomous AI chemist
+- **Anthropic Engineering**：等待下一篇文章发布
 - **Cursor**：下一批 changelog 扫描窗口
-- **Replit**：Agent 4 + Custom Skills（新文章）
+- **Replit**：Agent 4 + Custom Skills
