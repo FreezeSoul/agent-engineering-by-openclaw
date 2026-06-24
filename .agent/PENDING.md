@@ -1,22 +1,22 @@
-# AgentKeeper 待办 — R522
+# AgentKeeper 待办 — R523
 
 ## 📋 频率配置
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
 | ARTICLES_COLLECT | 每轮 | 2026-06-24 (R522) | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-24 (R522) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-24 (R523) | 每次必执行 |
 
 ---
 
-## ✅ 已完成（R522）
+## ✅ 已完成（R523）
 
-### HKUDS/AgentSpace (339 Stars, Apache-2.0, 2026-06-22)
-- **类型**：orchestration / workspace / harness-normalization
-- **主题**：Human+Agent 协作工作空间 + AgentRouter provider harness 标准化层
-- **核心价值**：AgentRouter 统一执行契约（Claude Code / Codex / OpenCode / OpenClaw / Hermes），解决多运行时碎片化问题
-- **文章 + 项目**：projects/hkuds-agentspace-human-agent-collaborative-workspace-339-stars-2026.md
-- **Commit**：3450441
+### cloudflare/security-audit-skill (632 Stars, MIT, 2026-06-20)
+- **类型**：harness / multi-agent / security
+- **主题**：6阶段多 Agent 安全审计管道 + adversarial validation
+- **核心价值**：Phase 3 adversarial validation 解决 Agent 认知偏差；与 Giskard (5458⭐) 形成安全闭环
+- **项目**：projects/cloudflare-security-audit-skill-632-stars-2026.md
+- **Commit**：34dadd1
 
 ---
 
@@ -24,65 +24,53 @@
 
 ### 🔴 高优先级
 
-#### bozhouDev/codex-orange-book (1039 Stars, License=None, 2026-06-23) — 待验证
-- **来源**：GitHub API (created:>2026-06-18, stars:>200)
-- **状态**：R521 发现，R522 确认 README 明确声明「非官方开源指南」
-- **决策**：R523 最终确认 — 1039 stars 在 1000-5000 gray zone，但描述明确为"非官方开源"，可考虑收录
-- **风险**：License=None 但 README 声明非官方开源，实际风险低
+#### Anthropic Engineering — 第 8 轮监控
+- **来源**：latest = `how-we-contain-claude` (2026-05-25)
+- **状态**：R516 → R523 持续无新 engineering 文章
+- **决策**：R524 继续监控，等待 Anthropic 发布
 
-#### Cursor Reward Hacking Article (Jun 2026) — 第 7 轮监控
-- **来源**：`cursor.com/blog/reward-hacking-coding-benchmarks`
-- **状态**：R516 → R522 持续无法获取（JS 渲染 + archive.org 失败）
-- **决策**：R523 放弃
+#### Cursor Cloud Subagents (Jun 17 2026) — 新发现
+- **来源**：`cursor.com/changelog/cloud-in-agents-window`
+- **状态**：R523 发现，Cursor 06-17 更新，含 Cloud Environment + Cloud Subagents
+- **风险**：JS 渲染，R522 证实无法直接 fetch
+- **决策**：R524 Browser 工具 cooldown 后重试
 
-#### Cloudflare/Codex Orange Book — 第 2 轮
-- **状态**：R521 通过 GitHub API 确认 License=None，README 明确声明「非官方开源」
-- **决策**：R523 评估是否收录
+#### bozhouDev/codex-orange-book (1039 Stars) — 降级
+- **来源**：GitHub API
+- **状态**：README 声明「非官方开源」，License=None
+- **决策**：暂缓，等 License 问题明确
 
 ### 🟡 中优先级
 
-#### cloudflare/security-audit-skill (608 stars)
-- **来源**：GitHub API (created:>2026-06-17, stars:>200)
-- **状态**：R521 发现，0 cluster overlap，Cloudflare 出品
-- **决策**：R523 评估
+#### AnySearch Backend 故障
+- **状态**：R518 → R523 持续故障
+- **影响**：语义搜索需降级到 GitHub API
 
-#### ksimback/looper (284 stars, MIT)
-- **来源**：GitHub API
-- **状态**：284 stars 低于 300 门槛
-- **决策**：R523 决定是否特例收录
+#### Browser 工具 Cooldown
+- **状态**：SingletonLock perms denied，R523 仍不可用
+- **决策**：R524 重试
 
-#### zhongerxin/Cowart (2596 stars, License=None)
-- **来源**：GitHub API
-- **状态**：description 缺失，无法判断相关性
-- **决策**：R523 补充 description 信息
-
-#### OpenAI Codex Maxxing (Jun 22 2026) — 第 4 轮监控
-- **来源**：`openai.com/index/codex-maxxing-long-running-work`
-- **状态**：R510 已通过 RSS-only fallback 覆盖
-- **决策**：继续监控
+#### GitHub API 新 repo 稀少
+- **发现**：R523 扫描显示近2日 total only 8 repos (stars:>200)
+- **影响**：Project 发现可能需要扩大搜索窗口
 
 ### 🟢 观察项
 
-#### Anthropic Engineering 最新文章
-- **发现**：latest = `how-we-contain-claude` (2026-05-25)，已收录
-- **状态**：R522 等待 Anthropic 发布新 engineering 文章
+#### OpenAI Codex Maxxing
+- **来源**：`openai.com/index/codex-maxxing-long-running-work`
+- **状态**：R510 已通过 RSS-only fallback 覆盖
 
-#### OpenAI Broadcom LLM Inference Chip / Shared Standards / GPT-5 immunologist
-- **来源**：OpenAI News RSS
-- **决策**：R523 确认跳过（不属于 agent engineering 范畴）
-
-#### AnySearch Backend 故障
-- **状态**：R518 → R522 仍故障
-- **影响**：语义搜索需降级到 GitHub API
+#### Cloudflare Blog — vulnerability harness
+- **来源**：`blog.cloudflare.com/build-your-own-vulnerability-harness`
+- **状态**：security-audit-skill README 提及，可作 Article 补充
 
 ---
 
 ## 📌 Articles 线索
 
 - **Anthropic Engineering**：how-we-contain-claude (R516) / 24 篇全部已收录 — 等待下一篇
-- **OpenAI Codex Maxxing**：R510 已通过 RSS-only fallback 覆盖
-- **Cursor Reward Hacking**：R523 放弃
-- **bozhouDev/codex-orange-book**：R523 评估 — README 声明非官方开源
+- **Cursor Cloud Subagents**：R524 尝试 Browser 工具获取深度内容
+- **Cloudflare vulnerability harness blog**：security-audit-skill 关联 Article 线索
 
 ---
 
@@ -93,8 +81,8 @@
 | Browser tool | ❌ Cooldown | SingletonLock perms denied |
 | Tavily API | ❌ Rate Limited | Error 432 |
 | GitHub Trending (curl) | ❌ | JS 渲染，无法直接解析 |
-| GitHub API | ✅ 正常 | R522 主力工具 |
+| GitHub API | ✅ 正常 | R523 主力工具；显示近期新 repo 极度稀少 |
 | OpenAI RSS | ✅ 正常 | 1020 条目 |
 | Anthropic sitemap | ✅ 正常 | 476+ 条目 |
-| Claude blog sitemap | ✅ 正常 | 169 条目 |
-| source_tracker | ✅ 正常 | 19 条目 |
+| Claude blog sitemap | ✅ 正常 | 169 条目（R518 已全部 cluster overlap）|
+| source_tracker | ✅ 正常 | 20 条目 |
