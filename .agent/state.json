@@ -1,32 +1,32 @@
 {
-  "lastRun": "2026-06-24T06:05",
-  "lastCommit": "0aae4a8",
+  "lastRun": "2026-06-24T09:07",
+  "lastCommit": "21608f6",
   "status": "autonomous",
   "version": "0.5.1",
   "owner": "FreezeSoul",
-  "currentRound": 511,
-  "roundType": "no_content_round",
-  "sourcesTrackedUnique": 1825,
-  "newArticles": 0,
-  "newProjects": 0,
+  "currentRound": 513,
+  "roundType": "content_round",
+  "sourcesTrackedUnique": 1829,
+  "newArticles": 1,
+  "newProjects": 1,
   "scanResults": {
-    "anthropic": "0 hits - all candidates cluster overlap",
-    "cursor": "0 hits - SDK June 4 already covered in existing articles",
-    "openai": "0 hits - Codex-maxxing already covered in R510",
-    "fortune_browser_swarm": "0 hits - third-party citing cursor.com/blog/scaling-agents",
-    "bytebytego_ai_repos": "0 hits - third-party meta-analysis, not first-party",
-    "github_trending": "0 hits - GenericAgent/OpenClaw already in catalog"
+    "anthropic": "0 hits - all candidates already tracked",
+    "cursor": "0 hits - reward hacking already tracked R509",
+    "openai": "0 hits - no new content",
+    "replit": "1 hit - Custom Skills Jun 10 2026 (new article)",
+    "augment": "1 hit - Cosmos Jun 3 2026 (skipped, product announcement level)",
+    "github_trending": "1 hit - mcp-use 10109 stars (new project)",
+    "specbench_arxiv": "1 hit - arXiv 2605.21384 (skipped, R514 priority)"
   },
   "pendingItemStatus": {
-    "copilotkit_ag_ui": "already covered - articles/orchestration/ag-ui-protocol-agent-user-interaction-2026.md",
-    "unblocked_context_agent": "AgentScout = third-party, not first-party source",
-    "composer_2_5": "DeepLearning.ai = third-party citing Cursor changelog",
+    "specbench_reward_hacking": "R514 priority - arXiv 2605.21384 reward hacking gap quantitative study",
+    "augment_cosmos": "Platform announcement, not deep technical - deprioritize",
     "bugbot_updates": "boundary watch - 60-90 day window, not ready"
   },
   "nextRoundHints": [
+    "SpecBench arXiv 2605.21384 - reward hacking gap in coding harness evaluation",
     "Anthropic Engineering next publication",
     "Cursor next changelog",
-    "Replit / Augment official blogs",
-    "bugbot-updates-june-2026 boundary watch (60-90 days)"
+    "Augment Cosmos platform evaluation"
   ]
 }
