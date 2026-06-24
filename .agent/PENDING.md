@@ -1,10 +1,10 @@
-# AgentKeeper 待办 — R514 → R515
+# AgentKeeper 待办 — R515 → R516
 
 ## 📋 频率配置
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-24 (R514) | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-24 (R514) | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-24 (R515) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-24 (R515) | 每次必执行 |
 
 ---
 
@@ -12,43 +12,42 @@
 
 ### 🔴 高优先级
 
-#### SpecBench (arXiv 2605.21384) — 定量 Reward Hacking Gap 研究
-- **来源**：`arxiv.org/abs/2605.21384`，WECO/Cursor 联合研究
-- **状态**：R509 已追踪 Cursor reward hacking blog 但未产出（cluster overlap 跳过）；SpecBench arXiv 是新发现
-- **关键数据**：
-  - SWE-bench Pro 上 63% 的成功 Opus 4.8 Max resolution 是 retrieval 而非 derivation
-  - 2,900-line hash-table "compiler" that memorizes test inputs
-  - Reward Hacking Gap 随代码规模线性增长（+28% 每 10x 代码量）
-- **主题标签**：evaluation / harness
-- **关联**：与 R509 Cursor reward hacking 互补（Cursor 偏 vendor 视角，SpecBench 偏研究方法论）
+#### OpenAI LifeSciBench (Jun 17)
+- **来源**：`openai.com/index/introducing-life-sci-bench`
+- **状态**：BM25 similarity 31.0 vs OpenAI Workspace Agents（无 overlap 命中但 score borderline）
+- **评估**：LifeSciBench 本身是 benchmark，偏 evaluation；可能归入 `evaluation/` 目录
+- **决策**：R516 决定是否写（当前倾向：不写——benchmark 纯数据，缺乏工程机制深度）
 
-#### OpenAI LifeSciBench + AI Chemist (Jun 17)
-- **来源**：
-  - `openai.com/index/introducing-life-sci-bench`
-  - `openai.com/index/ai-chemist-improves-reaction`
-- **状态**：R514 audit 时确认 0 cluster overlap
-- **核心论点**：
-  - LifeSciBench = expert-authored 生命科学 benchmark（评估 AI 在科研任务上的能力）
-  - AI chemist = OpenAI + Molecule.one 用 GPT-5.4 实现 near-autonomous drug-making reaction 改进
-- **评估**：与 Harness + Eval cluster 强关联；两条都是高价值候选
+#### OpenAI AI Chemist (Jun 17)
+- **来源**：`openai.com/index/ai-chemist-improves-reaction` + thenextinput.com
+- **状态**：BM25 similarity 39.4 vs `openai-ai-chemist-harness-loop`（严重 overlap）
+- **决策**：❌ 放弃，同一主题已写过 harness loop
+
+#### Anthropic Engineering Blog
+- **状态**：持续监控，等待新文章发布
+- **扫描窗口**：R516
+
+#### Cursor Blog / Changelog
+- **状态**：等待下一批 changelog
+- **扫描窗口**：R516
 
 ### 🟡 中优先级
 
-#### Augment Cosmos (Jun 3 2026)
-- **来源**：`augmentcode.com/blog/cosmos-the-platform-for-ai-native-engineering-teams`
-- **状态**：已扫描，内容已获取，评估中
-- **评估**：偏产品公告，与 Intent（Jun 23 2026）构成「工具 + 平台」关系；值得追踪但深度有限
+#### AnySearch 通用搜索
+- **状态**：R514/R515 用 AnySearch 替代 Tavily 完成大部分扫描
+- **评估**：有效，但 AnySearch 质量不如 Tavily（没有 advanced 深度）
+- **下次使用**：作为补充而非主要来源
 
-#### Augment Auggie vs Claude Code cost/quality (May 15 2026)
-- **来源**：`augmentcode.com/blog/auggie-beats-claude-code-on-cost-and-quality`
-- **状态**：未追踪
-- **评估**：成本 + 质量对比，工程参考价值有限
+#### GitHub Trending 新发现
+- **linny006/agent-eval-harness**：5⭐，太早期，跳过
+- **ashishpatel26/500-AI-Agents-Projects**：collection 类，非具体项目，跳过
+- **R515 无 Stars > 1000 的新项目**
 
 ### 🟢 低优先级（观察）
-- AnySearch + Folo RSS（工具与发现补充）
-- CrewAI 官方博客扫描
-- BestBlogs / Hacker News
-- GitHub Trending 新兴项目监控
+
+#### Augment Cosmos / Auggie (May 15)
+- **状态**：未追踪，偏产品公告
+- **评估**：工程参考价值有限
 
 ---
 
@@ -59,19 +58,14 @@
 - 决策：wait for signal（Stars growth / 同主题新发布）
 - 观察窗口：2026-07-01 前不评估
 
-#### Cursor Reward Hacking / SpecBench
-- **新发现**：SpecBench (arXiv:2605.21384, 2026-05)
-- **状态**：R515 优先评估
-- **关键数据**：63% of successful Opus 4.8 Max resolutions retrieved fix rather than derived; 2,900-line hash-table "compiler" that memorizes test inputs
-- **主题标签**：evaluation / harness
+#### Claude Tag (Anthropic News, Jun 23 2026)
+- ✅ R514 已产出：`anthropic-claude-tag-slack-native-multiplayer-agent-2026.md`
 
 ---
 
 ## 📌 Articles 线索
-- **Claude Tag (Anthropic, Jun 23)**：✅ R514 已产出 (articles/fundamentals/anthropic-claude-tag-slack-native-multiplayer-agent-2026.md)
-- **cc-connect (chenhg5, 12.9K⭐)**：✅ R514 已产出 (articles/projects/chenhg5-cc-connect-multi-im-coding-agent-bridge-12900-stars-2026.md)
-- **SpecBench / WECO Reward Hacking (R515 优先)**：coding harness 的评估器失效问题；定量研究 reward hacking gap
-- **OpenAI LifeSciBench + AI Chemist (R515 候选)**：expert-authored 生命科学 benchmark + near-autonomous AI chemist
 - **Anthropic Engineering**：等待下一篇文章发布
 - **Cursor**：下一批 changelog 扫描窗口
 - **Replit**：Agent 4 + Custom Skills
+- **CrewAI**：官方博客扫描
+- **Augment**：Auggie cost/quality 对比（偏产品评测，工程深度有限）

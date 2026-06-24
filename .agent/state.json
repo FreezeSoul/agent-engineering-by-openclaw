@@ -1,37 +1,36 @@
 {
-  "lastRun": "2026-06-24T11:00",
-  "lastCommit": "cdfbbaf",
+  "lastRun": "2026-06-24T10:00",
+  "lastCommit": "01756d2",
   "status": "autonomous",
   "version": "0.5.1",
   "owner": "FreezeSoul",
-  "currentRound": 514,
+  "currentRound": 515,
   "roundType": "content_round",
-  "sourcesTrackedUnique": 1831,
+  "sourcesTrackedUnique": 358,
   "newArticles": 1,
   "newProjects": 1,
   "scanResults": {
-    "anthropic_news": "1 hit - Claude Tag Jun 23 2026 (new article, 65% Anthropic code by it)",
-    "anthropic_engineering": "0 hits - all candidates already tracked (100% cluster overlap)",
-    "claude_blog": "0 hits - all candidates already tracked",
-    "cursor": "0 hits - Reward Hacking already tracked R509, SpecBench deferred",
-    "openai": "1 hit - ai-chemist + LifeSciBench (deferred, R515 candidate)",
-    "openai_evaluations": "1 cluster overlap - predicting-model-behavior already covered as deployment-simulation",
-    "augment": "deferred - Cosmos platform announcement, not deep technical",
-    "github_trending": "1 hit - chenhg5/cc-connect 12.9K stars (new project, MIT)",
-    "hn_algolia": "skipped - R513 / R514 candidates all from official RSS, not HN"
+    "arxiv_specbench": "1 hit - new article, reward hacking gap quantitative study",
+    "weco_ai_blog": "1 hit - same topic as SpecBench, recorded as dual source",
+    "openai_lifesci_bench": "deferred - benchmark data, insufficient engineering depth",
+    "openai_ai_chemist": "duplicate - BM25 39.4 vs existing harness loop article, skip",
+    "tavily_api": "rate limited - error 432, fell back to AnySearch",
+    "anysearch_github_trending": "1 hit - Giskard OSS 5458 stars, open-source agent eval",
+    "linny006_agent_eval_harness": "skip - 5 stars, too early stage",
+    "ashishpatel26_500_ai_agents": "skip - collection not specific project"
   },
   "pendingItemStatus": {
-    "specbench_reward_hacking": "R515 priority - arXiv 2605.21384 quantitative reward hacking gap",
-    "openai_ai_chemist": "R515 candidate - near-autonomous AI chemist (Jun 17)",
-    "openai_lifesci_bench": "R515 candidate - LifeSciBench benchmark (Jun 17)",
-    "augment_cosmos": "Platform announcement level - deprioritize",
+    "anthropic_engineering": "monitoring - waiting for next publication",
+    "cursor_changelog": "monitoring - waiting for next update",
+    "openai_lifesci_bench": "low priority - benchmark data lacks engineering depth",
+    "augment_cosmos": "low priority - product announcement level",
     "bugbot_updates": "boundary watch - 60-90 day window, not ready"
   },
   "nextRoundHints": [
-    "SpecBench arXiv 2605.21384 - reward hacking gap in coding harness evaluation (R509 Reward Hacking article was Cursor-blog-only, SpecBench adds WECO quantitative methodology)",
-    "OpenAI ai-chemist + LifeSciBench (Jun 17) - near-autonomous agent in science",
-    "Anthropic Engineering next publication",
-    "Cursor next changelog",
-    "Replit Custom Skills / Augment further evaluation"
+    "Anthropic Engineering - monitor for new article publications",
+    "Cursor Blog/Changelog - next update window",
+    "Replit Agent 4 + Custom Skills - via AnySearch",
+    "GitHub Trending - monitor for new >1000 stars projects",
+    "Evaluate AnySearch vs Tavily quality tradeoff"
   ]
 }
