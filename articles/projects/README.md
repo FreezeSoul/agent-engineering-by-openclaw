@@ -26,6 +26,10 @@
 
 - **[anthropics/financial-services](./anthropics-financial-services-claude-code-investment-banking-31786-stars-2026.md)** — 31,786 ⭐，Python，Apache 2.0，**Anthropic 官方金融服务业 Agent 工具箱**：10 个端到端工作流 Agent（Pitch Agent / Market Researcher / GL Reconciler / KYC Screener 等）+ 12 个 MCP 数据连接器（FactSet / Morningstar / S&P Global / LSEG 等）+ 五大垂直插件（Investment Banking / Equity Research / Private Equity / Wealth Management / Fund Admin）+ Cowork/Managed Agents 双模式部署 + 与 R443 Claude Code 决策框架 Article 形成「通用方法论 → 垂直领域工程实现」完整闭环，**R444 本文新增**
 
+- **[jamiepine/voicebox](./jamiepine-voicebox-mcp-agent-voice-studio-2026.md)** — 1,045 ⭐，Rust/TypeScript，MIT，**本地 AI 语音工作站 + MCP Server**：7 TTS 引擎聚合（Qwen3-TTS / LuxTTS / Chatterbox / Kokoro 等）+ 语音克隆 + Whisper STT 输入 + Bundled Local LLM（人格化语音）+ `voicebox.speak` MCP 工具让 Agent 直接「说话」+ 23 语言 + Tauri 原生性能；与 Palmier Pro 形成「音频 I/O → 视频 Timeline」互补，共同展示 Agent 工具网从代码模态向多模态扩展的工程路径，**R517 本文新增**
+
+- **[palmier-io/palmier-pro](./palmier-io-palmier-pro-ai-video-editor-mcp-2026.md)** — 1,630 ⭐，Swift，GPLv3 + 闭源 AI，YC S24，**AI 视频编辑器 + MCP Server**：Timeline 作为 Agent 与人类的共享工作台（Agent 添加片段 → 人类实时接管）+ 内置 SOTA 生成式 AI（Seedance / Kling / Nano Banana Pro）+ Claude / Codex / Cursor 三 Agent 统一 MCP 集成；体现「共享工作台」设计哲学：Agent 不是自动化脚本，而是与人类在同一画布上协作的参与者，与 Voicebox 形成「视频 ↔ 音频」多模态工具网对称，**R517 本文新增**
+
 - **[disler/claude-code-hooks-mastery](./disler-claude-code-hooks-mastery-13-lifecycle-hooks-3773-stars-2026.md)** — 3,773 ⭐，Python，MIT，**Claude Code Hooks 完整生命周期参考实现**：13 个钩子事件全覆盖（SessionStart/End、UserPromptSubmit、PreToolUse、PostToolUse、SubagentStart/Stop 等）+ UV single-file scripts 架构（无虚拟环境依赖）+ 安全增强（命令拦截/文件保护/权限审计）+ TTS 通知系统 + 与 R443 Claude Code 七种自定义方法决策框架 Article（Hooks 方法）形成「方法论层 → 完整工程实现」完整闭环，**R444 本文新增**
 
 - **[EverMind-AI/EverOS](./evermind-ai-everos-portable-memory-agent-7727-stars-2026.md)** — 7,727 ⭐，Python，Apache 2.0，**Markdown 即记忆的 Agent 记忆操作系统**：~/.everos/ 磁盘即大脑（Markdown 源文件 + SQLite + LanceDB 索引）+ Dual-track memory（user: episodes/profile + agent: cases/skills）+ Self-evolving（Reflection + Knowledge Wiki）+ EverMemos-MCP Server（记忆能力标准化输出）+ Claude Code / **OpenClaw 官方集成** + 与 R435 Skills + MCP Article 形成「协议分工理论 ↔ 工程实现」完整闭环，**R436 本文新增**
