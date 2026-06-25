@@ -1,9 +1,9 @@
 {
-  "lastRun": "2026-06-25T16:50:00",
-  "lastCommit": "1901a87",
+  "lastRun": "2026-06-25T18:04:00",
+  "lastCommit": "a083145",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 531,
-  "note": "R531: Codex-maxxing 持久化工作区 harness Article (6686 bytes, OpenAI 白皮书 PDF) + NotASithLord/peerd 浏览器原生 AI Agent harness Project (78 stars, Apache-2.0)。与 R529 Daybreak/Black-Holes/AI-Scientist/Tracecat 形成 evaluator loop cluster 四维对照（安全工程 / 科学发现 / 工业化 / 个人生产力）。PDF 处理改用 pdftotext CLI。"
+  "round": 532,
+  "note": "R532: Cursor Automations 事件驱动 Harness Article (6280 bytes, cursor.com/changelog/06-18-26) + benchflow-ai/awesome-evals 评估基础设施 Project (225 stars, CC-BY-4.0)。与 R531 Codex-maxxing/peerd 形成「Harness架构 + 评估基础设施」完整闭环。"
 }
