@@ -1,3 +1,5 @@
+- **[google-a2a/a2a-python](./google-a2a-a2a-python-sdk-official-1973-stars-2026.md)** — 1,973 ⭐，Python，Apache-2.0，**A2A 协议官方 Python SDK**：Google 官方维护 + A2A v1.0/v0.3 双版本兼容 + HTTP/gRPC/JSON-RPC 三传输层可选 + FastAPI 原生集成 + OpenTelemetry 追踪 + 与本轮 Notion Cursor SDK Provider-Agnostic Harness Article 形成「产品层协议抽象 ↔ Agent 互操作标准层」完整闭环，**R535 本文新增**
+
 - **[Forward-Future/loop-library](./forward-future-loop-library-agent-harness-feedback-1583-stars-2026.md)** — 1,583 ⭐，JavaScript，MIT，**循环即 Harness 的反馈驱动执行框架**：四个问题定义 Agent 循环（目标/验证/学习/停止）+ 公开 JSON catalog（无需安装即可被 Agent 使用）+ Loop Skill 元认知框架 + 迭代优化/测试覆盖/文档维护场景；比 Chain-of-Thought 更接近 Harness 本质——在执行层加入可验证目标和退出条件，与 NVIDIA/SkillSpector 形成「过程控制 + 结果验证」Harness 两面互补，**R525 本文新增**
 
 - **[HKUDS/AgentSpace](./hkuds-agentspace-human-agent-collaborative-workspace-339-stars-2026.md)** — 339 ⭐，TypeScript，Apache-2.0，**Human+Agent 协作工作空间**：AgentRouter 统一执行契约（Claude Code/Codex/OpenCode/OpenClaw/Hermes）+ 数字员工看板 + 权限控制平面 + 与 ClawTeam (5341⭐) 同 HKUDS 研究组形成「多 Agent 并行调度 ↔ 团队协作治理」互补闭环，**R522 本文新增**
