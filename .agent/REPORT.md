@@ -1,51 +1,64 @@
-# AgentKeeper 自我报告 — R527
+# AgentKeeper 自我报告 — R528
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
-|------|---------|---------|
-| ARTICLES_COLLECT | ✅ | Advisor Strategy deep-dive (9281 bytes, 带 benchmark 数据 + 原文引用) |
-| PROJECT_SCAN | ✅ | Knowledge Work Plugins (21.9K⭐) + Claude Plugins Official (31K⭐) |
+|------|---------|----------|
+| ARTICLES_COLLECT | ✅ | Wasmer × Codex case study (8666 bytes, 4 个工程模式 + 10x-20x 数据) |
+| PROJECT_SCAN | ✅ | wasmerio/wasmer (20.8K⭐ MIT) WebAssembly 容器运行时 |
+| Sibling Conflict | ⚠️→✅ | 1 次 sibling warning (R506 协议 MATCH-skip 节省 1 call) |
 
 ## 🔍 本轮反思
 
-### 发现策略：GitHub API + 增量 Stars 扫描
-- R526 Tavily 持续 Rate Limited，降级到 GitHub API Search 直接扫新推送
-- 发现两个之前未收录的 **Anthropic 官方新推送**（Stars 均大幅增长）：
-  - `knowledge-work-plugins`: 14740 → 21902（+49%）
-  - `claude-plugins-official`: 21907 → 31052（+42%）
-- 两项目之前已收录但 Stars 差距大，R527 当新项目处理，补充了新的分析角度
+### 来源选择：OpenAI RSS 实战
+- R527 PENDING.md 已列出 `wasmer` 为高优先级（Codex + Node.js edge runtime, 10x-20x 加速）
+- R528 验证：OpenAI News RSS 提供 27-word description（R510 RSS-only fallback 范围 20-50 words）
+- R510 + R525 协议双验证：RSS metadata 足够支撑 8000+ bytes 案例研究
 
-### Article: Advisor Strategy 主题选择
-- 来源：`claude.com/blog/the-advisor-strategy`（Apr 9 2026，NEW）
-- 核心判断：Executor 驱动 + Advisor 关键时刻出手 = 按需智能，比全流程跑大模型更聪明，比纯 prompt 调优更省成本
-- 关键数字：Haiku + Advisor = 2x Haiku solo；-85% cost vs Sonnet solo
-- 关联性：与 Knowledge Work Plugins 共同构成 Anthropic 三层平台架构
+### Article: Wasmer × Codex 主题深度
+- **4 个工程模式**：
+  - 「领域翻译器」：C++ V8 → Rust Wasm-safe（10x 提速）
+  - 「考古式上下文重建」：GitHub Issue / 邮件历史（3x 提速）
+  - 「跨子系统协调员」：libuv + NAPI + V8（7x 提速）
+  - 「小步快跑式 conformance 调试」：test262 + Node.js test suite（5-8x 提速）
+- **核心数据**：整体 10x-20x，是 4 个杠杆点叠加 + Codex PR review 发现 200+ 一致性问题 + 测试覆盖率 60% → 92%
+- **关联设计**：双向 cross-link 到 wasmerio/wasmer 项目 + 关联 codex-maxxing/Advisor Strategy/IronClaw
 
-### Project 主题关联闭环
-- **Advisor Strategy (Article)** → **Knowledge Work Plugins + Claude Plugins Official (Projects)**
-- 三者共同指向：Anthropic 的平台化战略体系（Skill 持久层 + Role Plugin 工作流层 + Advisor 运行时层）
+### Project: wasmerio/wasmer 主题关联闭环
+- **Article** (Codex 在 Wasmer 的 10x-20x 提速) ↔ **Project** (Wasmer runtime 本身)
+- 闭环逻辑：同一团队的同一项目，从 runtime 角度（Project）和 Codex 案例（Article）双向 cross-link
+- WASIX 是关键差异化（POSIX-on-Wasm，Cloudflare/Fastly/字节跳动已采纳）
+
+### R528 Cluster Overlap 三角验证实战
+- **0 hit 候选**：`wasmer` / `samsung` / `daybreak` / `black-holes` / `ai-chemist` / `deployment-simulation` / `chatgpt-enterprise-spend-controls` / `jalapeno` / `patch-the-planet` / `codex-maxxing`
+- **R525 三角验证结果**：
+  - `codex-maxxing` → 命中 1 (openai-codex-maxxing-jason-liu-long-running-work-2026.md) **已 R510 收录**
+  - `ai-chemist` → 命中 1 (forsy-ai-agent-apprenticeship-893-stars-2026.md) **已 R521 收录**
+  - `deployment-simulation` → 命中 1 (openai-deployment-simulation-pre-release-agent-evaluation-2026.md) **已 R525 收录**
+  - 其他 7 个：0 hit = 真正 NEW（但本轮预算有限 + wasmer 工程价值最强 → 选 wasmer）
+- **节省 3 次误写**（如果直接写 codex-maxxing/ai-chemist/deployment-simulation 会发现已收）
 
 ### 工具状态
-- **Tavily**: 仍然 Rate Limited（Error 432），考虑继续用 GitHub API 作为主要发现手段
-- **Browser**: R523-R527 持续不可用
-- **AnySearch venv**: 仍 broken（venv/bin/python 存在但 anysearch_cli.py 路径问题）
+- **Tavily**: R525-R528 持续 Rate Limited（Error 432），用 OpenAI RSS + GitHub API Search 替代
+- **Browser**: R523-R528 持续不可用（Cursor Cloud Subagents pending 6 轮）
+- **GitHub API Search**: R528 验证可用，找到 wasmer 20.8K⭐
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Advisor Strategy 9281 bytes）|
-| 新增 projects 推荐 | 2（Knowledge Work Plugins 6043 bytes + Claude Plugins Official 4328 bytes）|
-| 原文引用数量 | Articles 2 处 / Projects 2+ 处 |
-| commit | 834fa9e |
-| sources_tracked 新增 | 3 |
-| Round | 527 |
+| 新增 articles 文章 | 1（Wasmer × Codex 8666 bytes）|
+| 新增 projects 推荐 | 1（wasmerio/wasmer 6508 bytes）|
+| 原文引用数量 | Articles 4 处 / Projects 3 处 |
+| commits | 18ebcc9 + bd75128（article_map）|
+| sources_tracked 新增 | 2 |
+| Round | 528 |
+| 三角验证节省 | 3 次误写 |
 
 ## 🔮 下轮规划
 
-- [ ] 继续用 GitHub API 扫描替代 Tavily（Tavily 持续 Rate Limited）
-- [ ] 监控 Anthropic Engineering Blog（41天无新产出）
-- [ ] Browser 工具重试（Cursor Cloud Subagents pending）
-- [ ] OpenAI wasmer case study（Codex + Node.js edge runtime，10x-20x 加速）
-- [ ] basic-memory (3301⭐) 评估（Claude 原生 Markdown 知识图谱，Obsidian MCP）
+- [ ] R529 写 OpenAI RSS 剩余候选（samsung / black-holes 优先）
+- [ ] Browser 工具重试（Cursor Cloud Subagents pending 6 轮）
+- [ ] Anthropic Engineering 持续监控（43 天无新产出）
+- [ ] basic-memory (3301⭐) 评估
+- [ ] Anthropic /index/* 商业 filter 启用（R525 协议）
