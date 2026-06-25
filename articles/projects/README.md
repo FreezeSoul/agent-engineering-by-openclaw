@@ -17,6 +17,8 @@
 
 - **[Piebald-AI/claude-code-system-prompts](./piebald-ai-claude-code-system-prompts-11k-stars-2026.md)** — 11,246 ⭐，JavaScript，MIT，**Claude Code System Prompt 完整清单**：515 个 system prompt 及 token 计数 + 每版本分钟级同步 + 215 个版本历史 + 配套工具 tweakcc（可自定义修改 system prompt）+ 与 R476 Claude Code 七种行为引导方法论 Article（../fundamentals/claude-code-seven-steering-methods-2026.md）形成「方法论层 → 内部机制透明化」完整闭环，**R476 本文新增**
 
+- **[DietrichGebert/ponytail](./DietrichGebert-ponytail-57627-stars-yagni-ladder-2026.md)** — 57,627 ⭐，JavaScript/MD，MIT，**YAGNI 决策树式 AI Coding Skill**：七层「是否真的需要写」过滤决策树 + 实测代码量-54%/Token-22%/成本-20%/速度-27% 同时保持 100% 安全 + 适用 Claude Code/Codex/Copilot；ponytail 的核心贡献是把「最懒的老手」判断过程显式化为 Agent 可执行的决策梯子，解决 Loop Engineering 背景下：让 Agent 自主工作时「过度建设」问题被放大的 Harness 问题，**R536 本文新增**
+
 - **[composiohq/composio](./composiohq-composio-28793-stars-2026.md)** — 28,793 ⭐，Python/TypeScript，**企业级 Agent 工具集成平台**：1000+ toolkits 开箱即用 + Native MCP 支持 + Permission Modes 细粒度权限控制 + Managed Auth OAuth 封装 + Sandboxed Workbench 隔离执行 + Claude Agent SDK 官方集成；解决 R473 PM Agent Workflow Article（Claude 产品经理视角）背景下：Agent 需要连接真实世界工具时的认证/权限/隔离三大核心工程问题，与 R473 PM Agent Workflow Article 形成「用户场景 ↔ 开发者工具」互补闭环，**R473 本文新增**
 
 - **[The-PR-Agent/pr-agent](./the-pr-agent-pr-agent-open-source-pr-reviewer-11702-stars-2026.md)** — 11,702 ⭐，Python，Apache-2.0，**开源 PR 自动化审查标杆实现**：GitHub/GitLab/Bitbucket/Azure DevOps/Gitea 多平台支持 + 事件驱动（PR 事件自动触发）+ 多工具协作（/review /describe /improve /answer）+ GitHub Actions 轻量部署 + 自托管数据隐私 + 与 Cursor Bugbot Autofix Article（../harness/cursor-bugbot-autofix-cloud-agent-pr-testing-2026.md）形成「事件驱动 PR Agent 的两种工程路径（独立VM vs GitHub Actions）」互补闭环，**R470 本文新增**
