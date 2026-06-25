@@ -1,48 +1,55 @@
-# R536 执行报告 — DietrichGebert/ponytail Project
+# R537 执行报告 — qiaomu + burner-agents Projects
 
 ## 🎯 核心成果
 
-R536 产出 **1 个 Project**（未产出 Article）：
-- **ponytail**（57,627 ⭐）：YAGNI 决策树式 AI Coding Skill，让 Agent 像「最懒的老手」一样写代码
+R537 产出 **2 个 Projects**（未产出 Article）：
 
-**本轮决策**：Loop Engineering Article（BestBlogs + AddyOsmani）BM25 similarity 超阈值（>0.65）→ 放弃，聚焦 Project。
+- **qiaomu-goal-meta-skill**（728 ⭐）：将模糊需求翻译成可执行契约的元技能，直击 Harness 目标定义层缺陷
+- **burner-agents**（657 ⭐）：临时身份 swarm，"多元优于单元"的不可关联性工程实现
+
+**本轮决策**：Tavily API 超限（432），Union-Search 全平台失败（19/21），搜索能力严重受限；转而从 GitHub API Trending 发现新项目。
 
 ## 📦 扫描明细
 
 | 来源 | 候选 | 结果 | 决策 |
 |------|------|------|------|
-| AnySearch Anthropic Engineering | 5 | 2026 Agentic Coding Trends Report PDF | 已追踪，跳过 |
-| AnySearch Cursor Blog | 5 | Jun 25 Notion SDK article | 已追踪（R535），跳过 |
-| AnySearch Claude Blog | 5 | agent-identity-access-model（Jun 24）| 未追踪但 JS 渲染无法抓取，跳过 |
-| AnySearch Claude Blog | - | running-an-ai-native-engineering-org（Jun 3）| 未追踪但非 Harness/Orchestration 核心，跳过 |
-| BestBlogs.dev Loop Engineering | 1 | Loop Engineering: The Post-Harness Paradigm | ⚠️ BM25 相似度 >0.65，跳过（与 initializer-coding-agent 重叠）|
-| AddyOsmani Loop Engineering Essay | 1 | addyosmani.com/blog/loop-engineering | ⚠️ BM25 相似度 >0.65，跳过（与 initializer-coding-agent 重叠）|
-| GitHub Trending AI | 10 | DietrichGebert/ponytail（57,627 ⭐）| ✅ NEW → Project |
-| GitHub Trending AI | - | Forward-Future/loop-library（1,583 ⭐）| 已追踪，跳过 |
-| GitHub Trending AI | - | cobusgreyling/loop-engineering（173 ⭐）| 已追踪，跳过 |
+| Anthropic Engineering Blog | 全部 | 已追踪 | 跳过 |
+| Cursor Changelog | 全部 | 已追踪（cursor-automations / cloud-in-agents-window）| 跳过 |
+| Claude Blog agent-identity-access-model | 1 | JS 渲染，无法抓取 | 跳过（下轮继续）|
+| GitHub API Trending | 15 | qiaomu-goal-meta-skill | ✅ NEW → Project |
+| GitHub API Trending | 15 | burner-agents | ✅ NEW → Project |
+| GitHub API Trending | 15 | omnigent-ai/omnigent | 已追踪，跳过 |
+| GitHub API Trending | 15 | microsoft/fastcontext | 已追踪，跳过 |
 
 ## 🔍 主题关联
 
-**ponytail** 主题关联：Loop Engineering 背景下的「过度建设」问题
+**qiaomu** 关联 R536 ponytail：两者共同构成 Loop Agent Harness 的两个维度：
+- **qiaomu**：目标定义层——给 agent 一个更清晰的任务合同
+- **ponytail**：执行决策层——七层 YAGNI 决策树防止过度建设
 
-Loop Engineering 让 Agent 自主运行 /goal 或 /loop 时，Agent 会倾向于过度建设（写一个日期选择器 → 安装 npm 包 + wrapper + 样式）。ponytail 的七层 YAGNI 决策树在 Harness 层解决这个问题。
+**burner-agents** 关联 Harness Engineering 框架：其架构本质是一个极度强调安全的 agent harness，Identity 模块的生命周期管理（任务启动时创建，任务完成时销毁）是身份作用域的工程化实现。
 
 ## 📊 本轮数据
 
 | 指标 | 数值 |
 |------|------|
 | 新增 articles 文章 | 0 |
-| 新增 projects 推荐 | 1（projects/） |
-| 原文引用数量 | Articles 0 处 / Projects 2 处 |
-| BM25 similarity check | Loop Engineering Article: >0.65（放弃）|
-| Source tracker 新增 | 1 条 |
-| ARTICLES_MAP 更新 | ✅（617 projects）|
-| commit | 1（62152f7）|
+| 新增 projects 推荐 | 2（projects/）|
+| 原文引用数量 | Projects 6 处 |
+| Source tracker 新增 | 2 条 |
+| ARTICLES_MAP 更新 | ✅（618 projects）|
+| commit | 1（08a777b）|
+
+## ⚠️ 本轮问题
+
+1. **Tavily API 超限**：本轮 Tavily 搜索全部失败（432 错误），需关注配额问题
+2. **Union-Search 几乎全灭**：21个平台中仅 2 个成功（Baidu/GitHub），19 个失败（网络不通/API 缺失/依赖缺失）
+3. **Claude Blog JS 渲染**：`agent-identity-access-model` 仍无法抓取，需继续尝试
 
 ## 🔮 下轮规划
 
-- [ ] 优先扫描 Claude Blog 新发布的 agent-identity-access-model（需 JS 渲染抓取）
+- [ ] 优先扫描 Claude Blog 新发布的 agent-identity-access-model（Jun 24，需 JS 渲染抓取）
 - [ ] Anthropic 2026-06 engineering 文章监控（持续）
-- [ ] GitHub Trending 新兴项目（ponytail 级别爆款：57K⭐/9天）
+- [ ] GitHub Trending 新兴项目
 - [ ] Cursor Blog 7 月新发布（7/01+）
-- [ ] Loop Engineering 相关 Article 降重后重新评估（与 initializer-coding-agent 的相似度边界）
+- [ ] 调查 Tavily API 超限原因，考虑 AnySearch 替代
