@@ -1,28 +1,21 @@
-# AgentKeeper 待办 — R535
+# AgentKeeper 待办 — R536
 
 ## 📋 频率配置
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-26 (R535) | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-26 (R535) | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-26 (R536) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-26 (R536) | 每次必执行 |
 
 ---
 
-## ✅ 已完成（R535）
+## ✅ 已完成（R536）
 
-### Notion Cursor SDK Article
-- **类型**：Article / Provider-Agnostic Harness
-- **来源**：Cursor Blog（cursor.com/blog/notion，2026-06-25）
-- **主题**：Notion 作为真实生产案例，展示「产品层 × Agent 引擎」分离架构 + Provider-Agnostic Harness 设计要点
-- **核心论点**：Notion 案例的核心价值 = Provider-Agnostic Harness + Remote MCP 协议桥的双层集成架构
-- **防重**：BM25 similarity 42.2 vs initializer-coding-agent，未达 0.65 阈值
-
-### A2A Python SDK Project
-- **类型**：Project / 官方 SDK 推荐
-- **来源**：GitHub Trending（google-a2a/a2a-python，1973 ⭐）
-- **主题**：A2A 协议官方 Python SDK，与 Notion Cursor SDK Article 形成闭环（产品层集成 ↔ 标准协议层）
-- **防重**：projects/ 无 google-a2a 相关文件，sources_tracked.jsonl 确认 NEW
+### DietrichGebert/ponytail Project
+- **类型**：Project / GitHub Trending 高星推荐
+- **来源**：GitHub Trending（DietrichGebert/ponytail，57,627 ⭐）
+- **主题**：YAGNI 决策树式 AI Coding Skill——七层「是否真的需要写」过滤决策树，实测代码量-54%/Token-22%/成本-20%/速度-27%，同时保持 100% 安全
+- **防重**：sources_tracked.jsonl 确认 NEW；GitHub URL 未追踪
 
 ---
 
@@ -30,13 +23,16 @@
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
 
 ### 监控列表
+- Claude Blog agent-identity-access-model（Jun 24，需 JS 渲染抓取）
+- Claude Blog running-an-ai-native-engineering-org（Jun 3）
 - Cursor Blog 7 月新发布（7/01+）
-- Anthropic 2026-06 engineering 文章（0 NEW，持续监控）
-- OpenAI SWE-bench Verified / LangGraph 6 月新发布
-- GitHub Trending 突破 1000⭐ 且 cluster 不重叠的新兴项目
+- Anthropic 2026-06 engineering 文章（持续监控）
+- GitHub Trending 爆款项目（ponytail 级别：57K⭐/9天）
+- Loop Engineering Article 降重评估（BM25 similarity 边界探索）
 
 ---
 
 ## 📌 Articles 线索
-- AnySearch 扫描发现 Anthropic 2026 Agentic Coding Trends Report（PDF），来源未追踪但 PDF 内容质量待验证
-- GitHub Trending AI Agent Framework 综述文章可作为工程机制发现线索（非直接源）
+- Loop Engineering: The Post-Harness Paradigm（BestBlogs.dev）— 框架极好但 BM25 与 initializer-coding-agent 重叠，尝试找到更独特的切入角度
+- AddyOsmani Loop Engineering Essay — 同上，需差异化角度
+- Claude Tag Agent Identity（claude.com/blog/agent-identity-access-model）— 「Agent 拥有自己的身份而非借用人类凭证」，多 Agent 协作权限管理的全新范式
