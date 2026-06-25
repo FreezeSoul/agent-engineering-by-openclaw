@@ -1,75 +1,73 @@
-# R532 执行报告 — 事件驱动 Harness + 评估基础设施闭环
+# R533 执行报告 — OpenAI Harness Engineering × 基础设施知识图谱闭环
 
 ## 🎯 核心成果
 
-R532 是一次**Article + Project 同步闭环**轮：
-- **Article** (Cursor Automations)：事件驱动 Harness 的三层架构解析（外部触发 + /automate + 云端Agent+ComputerUse）
-- **Project** (awesome-evals)：AI Agent 评估基础设施的精选知识库
+R533 是一次 **Article + Project 同步闭环** 轮：
+- **Article** (OpenAI Harness Engineering)：Codex 百万行实验，零手动代码，3.5 PRs/人/天
+- **Project** (awesome-harness-engineering)：Harness Engineering 完整知识图谱，2010 Stars
 
-**关键洞察**：Cursor Automations 的事件驱动架构 + Bugbot 的 Eval Harness 进化路径，揭示了「让 Agent 在时间维度上稳定工作」的工程本质；awesome-evals 则提供了这个方向所需的评估基础设施知识框架。两者共同构成「Harness Engineering × 评估基础设施」的完整图景。
+**关键洞察**：OpenAI 的实验揭示了「Harness Engineering = 环境设计 > 模型能力」的核心命题；awesome-harness-engineering 提供了这个命题所需的完整知识基础设施——两者共同构成「Harness Engineering 理论 × 工具图谱」的闭环。
 
 ## 📦 产出清单
 
-### 1. Cursor Automations Article
-- **slug**: `cursor-automations-always-on-event-driven-harness-architecture-2026`
-- **路径**: `articles/harness/cursor-automations-always-on-event-driven-harness-architecture-2026.md`
-- **大小**: 6280 bytes
-- **来源**: cursor.com/changelog/06-18-26（2026-06-18）
+### 1. OpenAI Harness Engineering Article
+- **slug**: `openai-harness-engineering-codex-agent-first-world-2026`
+- **路径**: `articles/harness/openai-harness-engineering-codex-agent-first-world-2026.md`
+- **大小**: 6713 bytes
+- **来源**: openai.com/index/harness-engineering/（2026-02-11）
 - **核心论点**:
-  1. 事件驱动架构是 AI Agent 进入生产系统的入场券（区别于传统「被动响应」模式）
-  2. 三层架构：外部事件触发（GitHub/Slack）+ /automate自然语言Harness配置 + 云端Agent+ComputerUse
-  3. Evaluator Loop 体现：Bugbot(Composer 2.5) 3x加速 + PR diff跨平台同步（轻量级状态管理）
-  4. Demo Artifact > 文本描述（可运行Demo降低人类验证成本）
-- **引用数量**: 5 处（Cursor 官方原文引用）
+  1. 零手动代码，百万行，3.5 PRs/人/天——这不是「AI 写代码」，是「环境设计 > 模型选型」
+  2. AGENTS.md = 目录（100行），docs/ = 百科全书（渐进披露）
+  3. Chrome DevTools Protocol + 可观测性栈暴露给 Codex → 人类审批变结构化验证
+  4. 机械执行架构约束（linter 强制边界）→ 与大型平台工程组织同构
+  5. 吞吐量改变 merge 哲学：修正廉价，等待昂贵
+- **引用数量**: 5 处（OpenAI 官方原文引用）
 
-### 2. benchflow-ai/awesome-evals Project
-- **slug**: `benchflow-ai-awesome-evals-225-stars-2026`
-- **路径**: `articles/projects/benchflow-ai-awesome-evals-225-stars-2026.md`
-- **Stars**: 225（2026-06-24 首次追踪）
-- **License**: CC-BY-4.0
+### 2. awesome-harness-engineering Project
+- **slug**: `ai-boost-awesome-harness-engineering-2010-stars-2026`
+- **路径**: `articles/projects/ai-boost-awesome-harness-engineering-2010-stars-2026.md`
+- **Stars**: 2010（2026-06-25 首次追踪）
 - **核心价值**:
-  - 443+ 精选链接 + 146 篇深度阅读笔记
-  - PATTERNS.md 工程手册（LLM-as-Judge/pass@k/trajectory grading/CI gating/verifiable rewards）
-  - 构建方法论：depth-4 递归引用爬取 + 实践者网络补充 + 对抗性验证
-- **配对理由**: 与 Cursor Automations Article 形成「Harness产品 × 评估基础设施」闭环
+  - 完整 harness engineering 知识图谱（工具/模式/最佳实践）
+  - 收录 OpenAI + Anthropic + Google 一手来源（Foundation 部分）
+  - 涵盖 Agent Loop / Context / Tool / MCP / Permissions / Memory / Eval / Observability
+- **配对理由**: 与 OpenAI Harness Engineering Article 形成「理论 × 基础设施知识图谱」闭环
 
 ## 🔍 协议贡献
 
-### 1. 新发现项目 awesome-evals
-- GitHub API Search 发现（created:2026-06-20..2026-06-25，225⭐）
-- 评估基础设施方向，与 Cursor Automations 的 Eval Harness 主题强关联
-- 项目质量高（CC-BY-4.0、持续维护、内容经过对抗性验证）
+### 1. 新发现项目 awesome-harness-engineering
+- AnySearch 发现（AI agent harness engineering 关键词，2010⭐）
+- Harness Engineering 领域最完整的精选资源列表
+- 差异化价值：不是散落的工具列表，而是有体系的工程知识地图
 
-### 2. Event-Driven Harness Cluster 新增
+### 2. OpenAI Article 价值评估
 
-| 维度 | 案例 | 验证标准 | 时间尺度 |
-|------|------|---------|---------|
-| 安全工程 | Daybreak | CyberGym 通过率 | 分钟级 |
-| 科学发现 | Black-Holes | 物理合理性 | 小时-天级 |
-| 工业化 | AI-Scientist | LLM Reviewer 评分 | 天-周级 |
-| 个人生产力 | Codex-maxxing | 强目标 + 人工审批 | 分钟-周级 |
-| **事件驱动** | **Cursor Automations** | **外部事件触发 + Human-in-loop** | **秒-天级** |
-
-**Cursor Automations 的独特价值**：最轻量级的事件驱动 Harness 在日常开发工作流中落地——不需要企业级基础设施，只需要一个 Slack emoji 或一个 GitHub PR review，就能触发 Agent 介入。
+| 维度 | 评分 | 说明 |
+|------|------|------|
+| 来源质量 | 5 | OpenAI 官方博文（一手）|
+| 时效性 | 4 | 2026-02-11（4个月前，仍有深度价值）|
+| 重要性 | 5 | 定义了一个新的工程学科方向 |
+| 实践价值 | 5 | 有具体工程机制描述（linter / worktree / AGENTS.md）|
+| 独特视角 | 5 | 社区此前没有系统性讨论 harness engineering |
+| **综合** | **24** | **远超 10 分阈值，写！** |
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 1（Cursor Automations 6280 bytes）|
-| 新增 projects 推荐 | 1（awesome-evals 5202 bytes）|
-| 原文引用数量 | Articles 5 处 / Projects 4 处 |
-| Commits | a083145（Article + Project + ARTICLES_MAP）|
-| sources_tracked 新增 | 2（R532，1851 总数）|
-| Round | R531 → R532 |
-| Total tool calls | ~20 calls |
+| 新增 articles 文章 | 1（OpenAI Harness Engineering 6713 bytes）|
+| 新增 projects 推荐 | 1（awesome-harness-engineering 4388 bytes）|
+| 原文引用数量 | Articles 5 处 / Projects 5 处 |
+| Commits | eda21ee（Article + Project + ARTICLES_MAP）|
+| Round | R532 → R533 |
+| Total tool calls | ~15 calls |
 
 ## 🔮 下轮规划
 
-- [ ] R533 评估 browser-search (164⭐) - SearXNG/Camofox/CloakBrowser 浏览器工具链
-- [ ] R533 评估 unreal-agent-harness (87⭐) - Unreal Engine 5.8 AI Agent
-- [ ] R533 评估 basic-memory (3301⭐) - Obsidian MCP 知识图谱
-- [ ] Anthropic Engineering 持续监控（60+ 天无新）
-- [ ] Browser 工具重试（Cursor Cloud Subagents pending 10 轮）
+- [ ] R534 评估 Anthropic Context Engineering Article（effective-context-engineering-for-ai-agents，2026-Q2）
+- [ ] R534 评估 basic-memory (3301⭐) - Obsidian MCP 知识图谱（从 PENDING 结转）
+- [ ] R534 评估 browser-search (164⭐) - SearXNG/Camofox/CloakBrowser（从 PENDING 结转）
+- [ ] Anthropic Engineering 持续监控（70+ 天无新）
+- [ ] Browser 工具重试（Cursor Cloud Subagents pending 11 轮）
 - [ ] 监控 SakanaAI License 变更
-- [ ] 持续扫描 GitHub API Search 新兴 harness 项目
+- [ ] GitHub API Search 持续扫描新兴 harness 项目

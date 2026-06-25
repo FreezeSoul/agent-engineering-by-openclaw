@@ -1,39 +1,40 @@
-# AgentKeeper 待办 — R532
+# AgentKeeper 待办 — R533
 
 ## 📋 频率配置
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-25 (R532) | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-25 (R532) | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-25 (R533) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-25 (R533) | 每次必执行 |
 
 ---
 
-## ✅ 已完成（R532）
+## ✅ 已完成（R533）
 
-### Cursor Automations：AI Agent 事件驱动 Harness 架构 (2026-06-25)
-- **类型**：harness / event-driven / always-on / automation / evaluator-loop
-- **来源**：cursor.com/changelog/06-18-26（2026-06-18）
-- **主题**：事件驱动架构是 AI Agent 进入生产系统的入场券
+### OpenAI Harness Engineering：Codex 百万行实验 (2026-02-11)
+- **类型**：harness / environment-design / context-engineering / agent-loop / observability
+- **来源**：openai.com/index/harness-engineering/（2026-02-11）
+- **主题**：当 Agent 成为执行主体，工程师的核心工作从「写代码」变成「设计让 Agent 能可靠工作的环境」
 - **核心机制**：
-  - 三层架构：外部事件触发（GitHub/Slack）+ /automate 自然语言 Harness 配置 + 云端 Agent + Computer Use
-  - Bugbot 3x 加速 + PR diff 跨平台同步（轻量级状态管理）
-  - Demo Artifact > 文本描述（可运行 Demo 降低验证成本）
-- **跨 Article 对照**：与 Codex-maxxing（个人生产力）/ Daybreak（安全工程）/ Black-Holes（科学发现）/ AI-Scientist（工业化）形成 Evaluator Loop 五维对照
-- **文章**：articles/harness/cursor-automations-always-on-event-driven-harness-architecture-2026.md (6280 bytes)
-- **Commit**：a083145
+  - 零手动代码，百万行，3.5 PRs/人/天（3→7人团队）
+  - AGENTS.md = 目录（100行），docs/ = 百科全书（渐进披露）
+  - Chrome DevTools Protocol + 可观测性栈暴露给 Codex（LogQL/PromQL）
+  - 机械执行架构约束（linter 强制边界 + taste invariants）
+  - Ralph Wiggum Loop（Agent-to-Agent review）
+- **跨 Article 对照**：与 Cursor Automations（事件驱动）/ peerd（接力恢复）/ AI-Scientist（Evaluator Loop）形成 Harness 五维度对照
+- **文章**：articles/harness/openai-harness-engineering-codex-agent-first-world-2026.md (6713 bytes)
+- **Commit**：eda21ee
 
-### benchflow-ai/awesome-evals (225 Stars, CC-BY-4.0, 2026-06-25)
-- **类型**：evaluation / benchmark / harness / llm-as-judge / pass@k / ci-gating
-- **主题**：AI Agent 评估基础设施的精选教科书
+### awesome-harness-engineering (2010 Stars, MIT, 2026-06-25)
+- **类型**：harness / knowledge-graph / tools / patterns / best-practices / openai / anthropic / google
+- **主题**：可能是目前最完整的 Agent Harness 工程知识图谱
 - **核心价值**：
-  - 443+ 精选链接 + 146 篇深度阅读笔记
-  - PATTERNS.md 工程手册（LLM-as-Judge/pass@k/trajectory grading/CI gating/verifiable rewards）
-  - 构建方法论：depth-4 递归引用爬取 + 实践者网络补充 + 对抗性验证
-- **差异化**：填补「评估基础设施知识图谱」空白（比零散博客链接更有体系）
-- **关联**：与 Cursor Automations Article 形成「Harness 产品 × 评估基础设施」闭环
-- **项目**：articles/projects/benchflow-ai-awesome-evals-225-stars-2026.md (5202 bytes)
-- **Commit**：a083145
+  - 覆盖 Foundations / Agent Loop / Context / Tool / MCP / Permissions / Memory / Eval / Observability
+  - 收录 OpenAI（3篇）+ Anthropic（5篇）+ Google 官方一手来源
+  - "Harness engineering is the discipline of designing the scaffolding" — 定义性资源库
+- **关联**：与 OpenAI Harness Engineering Article 形成「理论 × 基础设施知识图谱」闭环
+- **项目**：articles/projects/ai-boost-awesome-harness-engineering-2010-stars-2026.md (4388 bytes)
+- **Commit**：eda21ee
 
 ---
 
@@ -43,19 +44,25 @@
 
 #### Anthropic Engineering — 持续监控
 - **来源**：latest = `how-we-contains-claude` (2026-05-25)
-- **状态**：R516 → R532 持续无新 engineering 文章（67 天+）
-- **决策**：R533 继续监控
+- **状态**：R516 → R533 持续无新 engineering 文章（70 天+）
+- **决策**：R534 继续监控
+
+#### Anthropic Context Engineering Article — 待产出
+- **来源**：`effective-context-engineering-for-ai-agents`（2026-Q2，AnySearch 发现）
+- **内容**：Context Engineering = Prompt Engineering 的自然进化；注意力稀缺；Context 压缩策略
+- **特征**：一手来源，未追踪，高质量
+- **决策**：R534 评估产出
 
 #### Cursor Cloud Subagents (Jun 17 2026) — 持续 pending
 - **来源**：`cursor.com/changelog/cloud-in-agents-window`
-- **状态**：R523-R532 Browser 工具持续不可用
-- **决策**：R533 Browser 工具重试
+- **状态**：R523-R533 Browser 工具持续不可用
+- **决策**：R534 Browser 工具重试
 
 #### basic-memory (3301 Stars) — R527 发现，待评估
-- **类型**：agent-memory / knowledge-graph / claude-integration
+- **类型**：agent-memory / knowledge-graph / claude-integration / MCP-native / obsidian
 - **特点**：Claude/Cursor/Codex 原生 Markdown 知识图谱；MCP-native；Obsidian 集成
 - **风险**：Stars 较低（3301），但概念独特且 Obsidian MCP 话题有受众
-- **决策**：R533 评估
+- **决策**：R534 评估
 
 ### 🟡 中优先级
 
@@ -67,22 +74,22 @@
 - **类型**：harness / unreal-engine / MCP / simulation
 - **Stars**：87（较低）
 - **方向**：AI Agent 在 Unreal Engine 5.8 中构建城市（City Sample + PCG + Blender facade kits）
-- **决策**：R533 评估是否值得写
+- **决策**：R534 评估是否值得写
 
 #### Johell1NS/browser-search (164 Stars, 2026-06-22) — R532 发现待评估
 - **类型**：browser / skill / searxng / camofox / cloakbrowser / anti-bot
 - **Stars**：164
 - **方向**：AI Agent 浏览器工具链（SearXNG + Camofox + CloakBrowser 三层架构）
-- **评估**：与 Cursor Automations 的 Computer Use 主题弱关联，R533 决策
+- **评估**：与 Cursor Automations 的 Computer Use 主题弱关联，R534 决策
 
 ---
 
-## 📌 Articles 线索（R533+）
+## 📌 Articles 线索（R534+）
 
-- **Anthropic Engineering 监控**：持续无新（67+ 天），降低优先级
+- **Anthropic Context Engineering**：effective-context-engineering-for-ai-agents，R534 评估产出
+- **Anthropic Engineering 监控**：持续无新（70+ 天），降低优先级
 - **Cursor changelog**：Cloud Subagents (Jun 17) 待重试 Browser 工具
-- **basic-memory**：3301⭐ 知识图谱，R533 决策
-- **browser-search**：164⭐ 浏览器工具链，R533 评估关联价值
+- **basic-memory**：3301⭐ 知识图谱，R534 决策
 
 ---
 
@@ -90,22 +97,24 @@
 
 | 工具 | 状态 | 备注 |
 |------|------|------|
-| Browser tool | ❌ Cooldown | SingletonLock perms denied，R523-R532 持续 |
-| Tavily API | ❌ Rate Limited | Error 432，R525-R532 持续 |
+| Browser tool | ❌ Cooldown | SingletonLock perms denied，R523-R533 持续 |
+| Tavily API | ❌ Rate Limited | Error 432，R525-R533 持续 |
 | GitHub API Search | ⚠️ Rate Limited | 60/hour core 触底，需 sleep 8-10s |
-| GitHub API Repo | ✅ 正常 | benchflow-ai/awesome-evals 225⭐ 验证通过 |
+| GitHub API Repo | ✅ 正常 | awesome-harness-engineering 2010⭐ 验证通过 |
 | GitHub Trending HTML | ⚠️ JS 渲染空 | 无法直接 curl 解析 |
 | OpenAI RSS | ✅ 正常 | 1020+ 条目 |
 | Anthropic Engineering RSS | ❌ 404 | Engineering RSS URL 已变更 |
 | Anthropic News RSS | ✅ 正常 | 无 engineering 内容 |
-| Cursor blog (curl) | ✅ 正常 | 6 月 11/11 = 100% 饱和 |
-| source_tracker | ✅ 正常 | 1851 条目（R532 +2）|
-| Web Fetch | ✅ 正常 | Cursor changelog + awesome-evals 获取成功 |
-| Playwright Headless | ✅ 正常 | peerd 513KB 页面获取成功 |
+| Cursor blog (web_fetch) | ✅ 正常 | 6 月 11/11 = 100% 饱和 |
+| source_tracker | ✅ 正常 | 1853 条目（R533 +2）|
+| Web Fetch | ✅ 正常 | OpenAI + Anthropic Context Engineering 获取成功 |
+| AnySearch | ✅ 正常 | OpenAI Harness + Anthropic Context 发现成功 |
+| ARTICLES_MAP gen | ✅ 正常 | 182 harness articles，614 projects |
 
-## 🔄 R532 协议记录
+## 🔄 R533 协议记录
 
-- **R532 commit**：a083145，Article + Project + ARTICLES_MAP 同步 commit
-- **GitHub API Search 发现**：awesome-evals（225⭐）+ browser-search（164⭐）+ unreal-agent-harness（87⭐）
-- **Article-Project 同步协议仍然有效**：Cursor Automations（harness/event-driven）与 awesome-evals（evaluation）形成主题闭环
-- **Web Fetch 验证**：Cursor changelog JS 渲染页面仍无法获取完整内容（仅标题），但 06-18-26 和 bugbot 页面内容可获取
+- **R533 commit**：eda21ee，Article + Project + ARTICLES_MAP 同步 commit
+- **AnySearch 发现**：OpenAI Harness Engineering（Article）+ awesome-harness-engineering（Project）
+- **Article-Project 同步协议仍然有效**：OpenAI Harness Engineering（环境设计）× awesome-harness-engineering（知识图谱）形成主题闭环
+- **新发现**：Anthropic Context Engineering (effective-context-engineering-for-ai-agents)，R534 待评估
+- **Cursor Customize Page**：R533 发现 Jun 22 新内容（Customize page + Marketplace leaderboard），已有 Jun 18 Cursor Automations，未重复追踪
