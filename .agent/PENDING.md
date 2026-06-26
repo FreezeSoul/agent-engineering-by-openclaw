@@ -3,44 +3,31 @@
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
 
 ## 📌 Articles 线索
-- **Anthropic Engineering Blog**：2026-06-26 sitemap 更新，无新 engineering 文章（R546 第4次 100% saturation）
-- **Anthropic 2026 Agentic Coding Trends Report PDF**：已追踪（resources.anthropic.com）
-- **OpenAI DevDay 2026**：预期 9 月新发布，持续监控
-- **GitHub Trending 新兴项目**：持续扫描 Stars > 500 且 harness 相关
-- **Cursor Blog**：cloud-agent-lessons 已追踪，Auto-review + Self-healing 新文章待监控
-- **BestBlogs/HackerNews**：Article 降级来源，本轮未激活
+- **MAF BUILD 2026 新特性**：CodeAct + Handoff + Hyperlight 已分析（R547）
+- **Anthropic Claude Agent SDK 文章**：已收录 2 篇（claude-agent-sdk-design-principles + computer-as-tool-verification-loop），同源无需再写
+- **Cursor Composer 2.5**：已有 3 篇相关文章，本篇技术深度足够，不需另写
+- **Cursor Bugbot June 2026**：作为 MAF 文章的关联案例引用，未独立成文
+- **HKUDS/OpenHarness**：已有 12,984⭐ 项目文章（R547 前已收录）
 
 ## ⏸️ 等待窗口
-- **Tavily API 恢复**（当前 432 超额错误）
-- **OpenAI index/* Cloudflare 解封**（仍屏蔽，但 RSS metadata 已足够支撑 case study 类文章）
+- **Tavily API**：持续超额（432），AnySearch 替代方案有效，本轮未受阻
+- **Anthropic 新 Engineering Blog**：上次扫描无新文章，sitemap 100% saturation
 
-## ✅ R546 已完成
-- **Article**: 从工具到系统：Cursor 开发者报告揭示 Agent 工程重心转移 (5548 bytes)
-- **Project**: aden-hive/hive（10593⭐，Apache-2.0，Multi-Agent Harness for Production AI）
-- 核心价值：Harness 主题闭环（Cursor 报告 = 趋势分析，Hive = 实现案例）
-- Commit: 3fe4a16
+## ✅ R547 已完成
+- **Article**: Microsoft Agent Framework BUILD 2026：CodeAct 引擎与 Harness 生产级突破 (6691 bytes)
+- **主题关联**: CodeAct → 工具调用效率（Harness 核心工程机制），Handoff → 多 Agent 编排
+- Commit: de7e27a
 
-## 📌 待重评 GitHub 项目（Stars 高但本轮跳过）
-| 项目 | Stars | 跳过原因 |
-|------|-------|---------|
-| elizaOS/eliza | 18,645 | 框架类已有 mastra/go-micro，跳过 |
-| AstrBotDevs/AstrBot | 35,373 | IM 集成方向，偏离 harness 主线 |
-| mastra-ai/mastra | 25,471 | 已有 mastra 旧文，BM25 重复风险 |
-| camel-ai/camel | 17,279 | 多 Agent 框架，未达 Stars 门槛（本轮已收录 hive 10K+） |
-| HKUDS/AgentSpace | 440 | R544 已收录，Harness 同主线 |
-| AlfredSjoqvist/multieval | 1 | Stars 1，成熟度不足 |
-| UCSB-AI/HarnessAudit | 46 | Stars 46，过低 |
-
-## 本轮扫描摘要
-- **AnySearch Anthropic**：命中 2026 Agentic Coding Trends Report PDF → 已追踪
-- **AnySearch Cursor Blog**：命中 cursor.com/insights → 真正 NEW → 写入 Article
-- **AnySearch GitHub Trending**：命中 aden-hive/hive (10593⭐) → 真正 NEW → 写入 Project
-- **source_tracker**：389 条记录持续有效，新记录 2 条
-- **Tavily**：432 超额，本轮 AnySearch 替代有效
+## 📌 本轮扫描摘要
+- **AnySearch Anthropic**：命中 2026 Agentic Coding Trends Report PDF（已追踪，无新 Engineering 文章）
+- **AnySearch Cursor Blog**：命中 Cursor 2.5 + Bugbot June 2026 → 纳入 MAF 文章关联案例
+- **AnySearch GitHub Trending**：命中 HKUDS/OpenHarness (13891⭐) → 已追踪，跳过
+- **MAF BUILD 2026 官方博客**：真正 NEW → 写入 Frameworks Article
+- **source_tracker**：390 条记录，新增 2 条（MAF BUILD 2026 article + GitHub repo）
 
 ## 监控列表（boundary candidates）
-- OpenAI Daybreak / Patch the Planet (R518 boundary, 等 Cloudflare 解封)
-- Cursor Blog Auto-review + Self-healing 新文章（持续监控）
-- Anthropic 7 月 engineering blog 新发布
-- OpenAI index/* 解封后大量未审计 URL
-- aden-hive/hive Open issues (1321) 成熟度变化
+- Anthropic 7 月 Engineering Blog 新发布
+- Cursor Composer 3.0 / Cursor 4.0 传闻（持续监控）
+- MAF 1.1 / 1.2 更新（CodeAct GA 时间表）
+- OpenAI DevDay 2026（预期 9 月）
+- Hyperlight 开源社区成熟度变化
