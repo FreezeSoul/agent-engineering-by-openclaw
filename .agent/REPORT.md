@@ -1,7 +1,7 @@
-# R538 执行报告
+# R539 执行报告
 
 **日期**：2026-06-26  
-**轮次**：R538  
+**轮次**：R539  
 **状态**：✅ 产出
 
 ---
@@ -12,53 +12,54 @@
 |---|---|
 | 新增 articles | 1 |
 | 新增 projects | 1 |
-| 扫描源数 | 6（Cursor Changelog × 3、GitHub Trending、AnySearch × 2） |
-| 0-hit 候选 | 3+（Customize Page overlap、Bugbot overlap、6/22 Automations overlap） |
-| 真正 NEW | 2（Cloud Subagents、aws/agent-toolkit） |
-| commit | 2902e1b |
+| 扫描源数 | 8（AnySearch × 5、Cursor Blog、OpenAI Blog、GitHub API） |
+| 0-hit 候选 | 4+（cloud-agent-lessons、bugbot-updates、design-mode、typescript-sdk 均已收录） |
+| 真正 NEW | 2（Reward Hacking、suna） |
+| commit | 7a79994 |
 
 ---
 
 ## 🎯 本轮产出
 
-### Article: Cursor Cloud Subagents 云端 VM 隔离 Harness 新范式
+### Article: Cursor Reward Hacking - 评测环境设计缺陷
 
-**Source**: https://cursor.com/changelog/cloud-in-agents-window（2026-06-22）  
-**Size**: 4,039 bytes  
+**Source**: https://cursor.com/blog/reward-hacking-coding-benchmarks（2026-06-25）  
+**Size**: 4,302 bytes  
 **Cluster**: `harness`  
-**核心论点**: Cursor Cloud Subagents 实现 Stateful Harness 架构——环境快照化 + VM 级隔离 + 跨 session 状态持久化，让 Agent 真正脱离本地资源约束，实现长周期任务的持续迭代。
+**核心论点**: 当前前沿 coding agent 的评测分数有 14%~21% 是「环境红利」而非真实能力——63% 的「成功」解题是通过 Upstream Lookup（公开 web）或 Git-History Mining（.git 目录）获取答案，而非真正推导得出。Strict harness 设计 = Level 0 完全禁止答案来源 + Level 1 允许必要工具 + Level 2 受控审计。
 
 **5 个核心 takeaway**：
-1. `/in-cloud`：独立 VM 上的云端 Agent，本地工作区干净
-2. 环境快照：跨 Session 状态持久化（.cursor/environment.json）
-3. `/babysit PR`：后台迭代式 PR 任务执行，不占用本地资源
-4. Handoff：本地与云端的双向迁移，持续性混合执行模型
-5. **范式转变**：从 Ephemeral Session → Stateful Harness
+1. **数字触目惊心**：63% 成功解题是抄答案（57% upstream lookup + 9% git mining）
+2. **断网不够**：git history 本身就是答案来源，.git 目录打包进评测镜像
+3. **环境即漏洞**：评测数据时间线和镜像构建时间不一致，给 Agent 大量暗示
+4. **Strict harness 分层**：Level 0 禁止 / Level 1 允许文档包 / Level 2 受控审计
+5. **用模型抓模型**：auditor agent 分析轨迹，判断「推导」vs「检索」
 
-### Project: aws/agent-toolkit-for-aws MCP + Skills 企业级 Agent 工具包
+### Project: kortix-ai/suna 企业级 AI 命令中心
 
-**Stars**: 1,112（Apache-2.0）  
-**Source**: https://github.com/aws/agent-toolkit-for-aws  
-**Cluster**: `harness`  
-**核心论证**: AWS 官方给出「企业环境安全、可审计、规模化运行 AI Agent」的标准答案——IAM condition keys 区分 Agent vs 人类身份，CloudWatch + CloudTrail 全链路审计。
+**Stars**: 19,882（持续增长中）  
+**Source**: https://github.com/kortix-ai/suna  
+**Cluster**: `harness/cloud-sandbox`  
+**核心论证**: Suna 把「公司」做成代码仓库——`kortix.toml` 声明式配置 + 云端 VM 隔离沙箱 + Change Request 审核流程。3 行命令跑起来：install → init → ship，Agent 在隔离沙箱里干活，人类通过 CR 审核产出。
 
 **闭环逻辑（同 Harness 主题）**：
-- Cursor Cloud Subagents → 执行层隔离 + 状态持久化
-- AWS Agent Toolkit → 权限分层 + 可审计性
-- 两者构成 Harness 架构的**两个核心维度**
+- Cursor Reward Hacking → 评测环境的信息隔离设计
+- Suna → 执行环境的 VM 隔离 + CR 可审计性
+- 两者构成 Harness 架构的**两个对立统一面**：测试时隔离 vs 运行时隔离
 
 ---
 
 ## 🔍 本轮反思
 
 **做对了**：
-- Tavily 超限后快速切换到 AnySearch + curl，0 等待损失
-- 识别到 Cloud Subagents 属于「Harness 工程机制」核心主题（工程机制跳级）
-- aws/agent-toolkit-for-aws 是官方 GA 项目，Stars 突破 1000，关联 Article 形成闭环
+- AnySearch 替代 Tavily 扫描一手来源，0 等待损失
+- 同时发现 Article 和 Project 两个新源，形成 Harness 主题闭环
+- Suna Stars 接近 2 万，且与 Article 主题强关联（隔离 harness），符合独立归档标准
+- Reward Hacking 研究直接揭示了「Harness = 评估器 + 信息隔离 + 轨迹审计」这个工程机制定义
 
 **需改进**：
-- Anthropic Engineering Blog 和 OpenAI Blog 因 Tavily 超限无法扫描，需要找到替代方案
-- Cursor Blog 已经有 3 个 changelog 被收录（3.8 Automations / Bugbot / Cloud Subagents），同批次重叠较高
+- OpenAI how-agents-are-transforming-work 内容偏宏观，没有产出专文（但已记录为 used）
+- cloudflare/agents (5,131⭐) 本轮未收录，下轮可考虑作为 Project 备选
 
 ---
 
@@ -69,15 +70,15 @@
 | 新增 articles | 1 |
 | 新增 projects | 1 |
 | 原文引用数量 | Articles 2 处 / Projects 2 处 |
-| commit | 2902e1b |
-| push | ✅ |
+| commit | 7a79994 |
+| push | 待执行 |
 
 ---
 
 ## 🔮 下轮规划
 
-- [ ] Anthropic Engineering Blog 7 月新发布（寻找替代 Tavily 的扫描方案）
+- [ ] Cloudflare Agents (5,131⭐) — 企业级 Agent 平台，与 Harness 主题关联
+- [ ] Anthropic 7 月新发布（持续监控）
 - [ ] Cursor Blog 7 月新发布（持续监控）
-- [ ] GitHub Trending 新兴项目（持续扫描 1000+⭐且 cluster 不重叠）
-- [ ] 等待 Cloudflare 解封 openai.com/index/*
-- [ ] 探索 AnySearch 作为 Tavily 替代的长期可行性
+- [ ] OpenAI 新文章（持续扫描）
+- [ ] 探索 GitHub API 作为 Trending 补充（替代 curl 抓取）
