@@ -3,27 +3,32 @@
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
 
 ## 📌 Articles 线索
-- **Anthropic Engineering Blog**（7月新发布监控，6月高饱和已大量产出）
-- **OpenAI 新文章**：how-agents-are-transforming-work 已收录（R539）
-- **GitHub Trending 新兴项目**（持续扫描 Stars > 5000 且 cluster 不重叠）
+- **Anthropic Engineering Blog**（Tavily 超额，需 API 恢复）
+- **OpenAI 新文章**：DevDay 2026 预期 9 月新发布
+- **GitHub Trending 新兴项目**（持续扫描 Stars > 5000 且 harness 相关）
 - **Cursor Blog 7月**：持续监控新发布
-- **Cloudflare Agents 新动向**（Stars 5,131，企业级 Agent 平台）
-- **Anthropic 7月新发布**：持续监控 engineering blog
-- **OpenAI DevDay 2026**（9月，关注新发布）
+- **BestBlogs/HackerNews**：Article 降级来源，本轮未激活
 
 ## ⏸️ 等待窗口
-- Tavily API 恢复（当前 100% 失败）
-- Cloudflare 解封 openai.com/index/*
-- Anthropic 新文章（7月预期有新发布）
+- **Tavily API 恢复**（当前 432 超额错误）
+- **Union Search 平台可用**（jina/metaso 等备选）
+- **Anthropic 7月新发布**（engineering blog 持续监控）
 
-## ✅ R540 已完成
-- **Article**: OpenAI Nextdoor Outcome Engineering（3,306 bytes，工程师角色从实现者到定义者）
-- **Project**: heygen-com/hyperframes（31,341⭐，AI Agent HTML视频渲染框架）
-- 闭环：Outcome Engineering（定义结果）↔ HyperFrames（声明式产物交付）
-- Commit: 76925ea
+## ✅ R544 已完成
+- **Project**: micro/go-micro（22,834⭐，Go Agent Harness + Service Framework）
+- 核心价值："Build an agent and it gets everything"——Harness 全组件内置 + MCP/A2A 双协议出口 + AI 生成服务
+- Commit: b76b54c
+
+## 📌 待重评 GitHub 项目（Stars 高但本轮跳过）
+| 项目 | Stars | 跳过原因 |
+|------|-------|---------|
+| elizaOS/eliza | 18,645 | 框架类已有 mastra/go-micro，跳过（可重评） |
+| AstrBotDevs/AstrBot | 35,373 | IM 集成方向，偏离 harness 主线 |
+| mastra-ai/mastra | 25,471 | 已有 mastra 旧文，BM25 重复风险 |
+| camel-ai/camel | 17,279 | 多 Agent 框架，未达 Stars 门槛 |
 
 ## 本轮扫描摘要
-- **新发现候选**: 2（Nextdoor, HyperFrames）
-- **已追踪重复**: 20+（Anthropic/OpenAI/Cursor 全面饱和）
-- **BM25 重复命中**: OpenAI Codex 非开发者采用（已有3篇）、Lemma（已有 Workspace Agents）、Tupper（已有 Sandboxes）、A2A（已有 3 篇）
-- **本轮结论**: 6 月下旬一手来源高度饱和，7 月预期有新产出
+- **搜索基础设施问题**：Tavily 432 超额 + Union Search Google API 缺失 + Brave rate limited
+- **GitHub API 兜底成功**：发现 4 个新候选，1 个写入
+- **Source Tracker 防重有效**：避免了 mastra/eliza 的重复写入
+- **截图流程不稳定**：browser/playwright 均有问题，需备用方案
