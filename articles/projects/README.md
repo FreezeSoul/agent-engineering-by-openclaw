@@ -1,3 +1,5 @@
+- **[micro/go-micro](./micro-go-micro-go-agent-harness-service-framework-2026.md)** — 22,834 ⭐，Go，**Go 原生 Agent Harness + Service Framework**：Harness 完整定义（Model+Memory+Tools+Planning+Delegation+Guardrails+Service Discovery 全内置）+ AI 直接生成+编译服务（`micro run --prompt`）+ MCP + A2A 双协议原生出口 + Anthropic/OpenAI 官方 Sponsor；"Build an agent and it gets everything"哲学——让 Agent 直接成为分布式系统，与本仓库 Harness Engineering 体系形成「概念层 → Go 工程实现层」闭环，**R544 本文新增**
+
 - **[aws/agent-toolkit-for-aws](./aws-agent-toolkit-for-aws-mcp-skills-2026.md)** — 1,112 ⭐，Python，Apache-2.0，**AWS 官方企业级 Agent Harness**：IAM condition keys 区分 Agent vs 人类身份 + CloudWatch + CloudTrail 全链路审计 + MCP Server 统一 AWS API + aws-core/aws-agents/aws-data-analytics/aws-devsecops 四插件覆盖 + Claude/Codex/Cursor/Kiro 四平台通用；与 R538 Cursor Cloud Subagents Article 形成「执行层隔离 ↔ 权限分层」Harness 双维度闭环，**R538 本文新增**
 
 
