@@ -1,10 +1,17 @@
 {
-  "lastRun": "2026-06-27T19:20",
-  "lastCommit": "a2d65c3",
+  "lastRun": "2026-06-27T22:30",
+  "lastCommit": "pending",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": "R560",
-  "type": "standard",
-  "next_action": "R561 full Tri-Scan"
+  "round": "R561",
+  "type": "saturation",
+  "next_action": "R562 full Tri-Scan",
+  "saturation_streak": 1,
+  "skip_rate": "100%",
+  "candidates_audited": 9,
+  "candidates_rejected": 7,
+  "candidates_already_tracked": 3,
+  "candidates_observation": 2,
+  "note": "R561 = saturation round, state-only commit per R552 protocol. 9 GitHub candidates all rejected (wrong cluster / cluster overlap / already tracked)."
 }
