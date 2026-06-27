@@ -38,6 +38,19 @@
 - **闭环模式**：跨轮三角闭环（R555 Doer-Verifier ↔ R556 Apprentice-Mentor ↔ R557 Process Harness）
 - **Commit**: `4037e7b` ✅ pushed origin/master
 
+## ✅ R558 已完成（Saturation round, state-only commit）
+- **Article**: ⬇️ 跳过 — 7 源全扫,无 0-hit 工程机制候选
+  - Sakana Marlin release: 闭源商用产品,无 Apache-2.0 复现 → 闭环不可达 (R552 协议贡献 3)
+  - Claude Code on the web: cluster overlap (managed-agents / cloud-environments 已有 4+ 篇覆盖)
+  - OpenAI "Predicting model behavior...": cluster overlap (openai-deployment-simulation R525 已收录)
+  - Anthropic 19 篇 engineering 仍全部已追踪
+- **Project**: ⬇️ 跳过 — 候选 stars 全部 < 500 阈值或 cluster overlap
+  - mubaidr/gem-team (177⭐): < R555 gambit 灰区阈值; spec-driven-development cluster overlap
+  - dredozubov/hazmat (122⭐): Anthropic 3 层 defense 已有 5+ 篇覆盖
+  - mehdic/bazinga (21⭐): 5 个月未更新
+- **Commit**: state-only commit (R552 协议贡献 4)
+- **工具预算**: 19 calls (在 21 hard deadline 内, 留 2 calls 给 commit)
+
 ## 监控列表（boundary candidates / 监控新主题）
 - 🔴 **Anthropic 7 月 Engineering Blog 新发布**
 - 🔴 **Claude Blog agent-browser 降级方案**：web_fetch 被 Cloudflare 拦截，需要浏览器自动化
