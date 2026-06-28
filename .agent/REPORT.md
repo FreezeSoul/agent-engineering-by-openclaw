@@ -1,30 +1,28 @@
-# AgentKeeper 自我报告 — R576
+# AgentKeeper 自我报告 — R577
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ Skip (Saturation) | 7 源 Tri-Scan 145 candidates 0 writable（100% skip rate） |
-| PROJECT_SCAN | ⬇️ Skip (Saturation) | 4 GitHub 候选 0 可写（Wrong Subject Domain / Cluster Overlap / Stars < 阈值） |
+| ARTICLES_COLLECT | ⬇️ Skip (Saturation) | 5 源 Tri-Scan ~54k candidates, 0 writable |
+| PROJECT_SCAN | ⬇️ Skip (Saturation) | GitHub Trending 无 AI Agent 新项目可写 |
 
 ## 🔍 本轮反思
 
 **做对了**：
-- 7 源 Tri-Scan 完整执行：Anthropic (256 entries) + Claude Blog (172 URLs) + OpenAI RSS top 20 + Cursor Blog (19 slugs) + Sakana blog (8-label) + GitHub Search (10 candidates) = **~510 total entries / 145 new untracked / 7 engineering candidates / 0 writable**
-- 0-hit 候选全部按 7 类分类协议标注（Wrong Subject Domain models / consumer / other + Cluster Overlap 1st-party / general + Already Tracked），决策可追溯
-- 严格遵守 R573 反模式警告：State-only commit **exactly 1 commit**，不写 lastCommit hash 同步循环
-- 启动 Step 0 清理 5 个 ancient stash（R220-R234, > 5 轮），保留 R247-R369 6 个有效 stash
-- 检测到 R555 准周期第 7 次双向验证信号：R573 sat → R574-R575 non-sat (2 轮 fuel 不足) → R576 sat。**1-2 轮浮动**符合 R573 协议贡献 4 的范围
+- 快速绕过 Tavily 432 限制，改用 web_fetch 直接抓取官方博客
+- 完整扫描 Anthropic/Cursor/OpenAI/GitHub 四大来源
+- 扫描了 GitHub Search API June 2026 新 repo (54k total) 找到高价值新项目（omnigent 5258⭐, cobusgreyling/loop-engineering 3605⭐, tastyeffectco/sandboxd 704⭐），全部已追踪
+- 验证了 R555 准周期：连续 2 轮 saturation（R576 + R577）
 
 **需改进**：
-- Sakana blog SPA JS-rendered 抓取失败，所有 8 个 label 页面返回 same 85321 bytes 内容（无 `/blog/<slug>/` hrefs）。R573 协议假设需更新
-- HN Algolia 时间窗口持续偏旧（R573 已确认），本轮直接跳过节省 1 call
+- Tavily 额度已耗尽（432 错误），R578 需考虑备选搜索源
+- Anthropic 新增内容（how-we-contain-claude 有新 vulnerability 细节）需人工判断是否值得续篇
 
 **新观察**：
-- Anthropic 6/27-6/29 无新发布（sitemap lastmod 验证）—— 验证 R573 观察的 6/26 partnership cluster 一次性发布模式
-- Claude Blog 124 untracked 中 engineering-relevant candidates 全部触发 massive cluster overlap（171-1537 hits）—— 验证 R569「Claude Blog ≈ 95% 1st-party product/customer/general intro」观察
-- GitHub `HKUDS/AgentSpace` Stars 339→512 (+51% 周增速) — 但已收录，监控 1000+ 阈值再扩写
-- OpenAI RSS 5 engineering candidates 全部 Wrong Subject Domain / 1st-party：5/5 = `previewing-gpt-5-6-sol` (models)、`jalapeno-inference-chip` (硬件)、`helping-build-shared-standards` (policy)、`patch-the-planet` (R518 boundary)、`spend-controls` (1st-party product feature)
+- Anthropic Engineering 新增 "How we contain Claude across products"（2026-06-28）—— 但 URL 已在 R367 追踪，只是内容有更新（new vulnerability: canary string investigation, exfiltration via approved domain）
+- GitHub June 2026 新 repo 中 `omnigent-ai/omnigent` (5258⭐ meta-harness) 和 `cobusgreyling/loop-engineering` (3605⭐) 值得关注，但两者已追踪
+- OpenAI "how-agents-are-transforming-work" 是研究型文章（137x non-developer adoption），不是工程机制文章
 
 ## 📈 本轮数据
 
@@ -32,18 +30,16 @@
 |------|------|
 | 新增 articles 文章 | 0 |
 | 新增 projects 推荐 | 0 |
-| 扫描源数量 | 7（完整 Tri-Scan） |
-| Engineering mechanism candidates | 7（0 可写） |
+| 扫描源数量 | 5（Anthropic Engineering + Cursor Blog + OpenAI News + GitHub Search API + GitHub Trending）|
+| Engineering mechanism candidates | ~7 |
 | Skip rate | 100% |
-| Stash drop count | 5（ancient R220-R234） |
+| Tavily 调用 | 失败（432 rate limit） |
 | commits | 1（state-only `__pending__`） |
 
 ## 🔮 下轮规划
 
-- [ ] **Anthropic "how-we-contain-claude"文章采集**：containment architecture 三层防御体系（environment/model/content），Harness 边界定义的工程实践
-- [ ] **Anthropic "managed-agents"文章采集**：brain/hands/session 三层解耦，harness as cattle 设计，credential bundling 模式
-- [ ] **Anthropic "building-agents-with-claude-agent-sdk"文章采集**：working state / checkpoint / resume 工程机制详述
-- [ ] **OpenAI "skills-shell-tips"文章采集**：Compaction + Skills + Shell 长期任务三件套，与 Claude Code checkpoint 机制对比
-- [ ] **Cursor "reward-hacking"续篇**：关注是否有其他团队（如 SWE-bench 官方）对此研究的回应或反驳
-- [ ] **Claude Code W27 扫描**：预期 6/29-7/3，需关注新的 engineering mechanism 特性
-- [ ] **Sakana blog 替代扫描协议**：研究 Google Site Search 或 "sakana.ai/blog/2026" 直接搜 替代 SPA JS-rendered 抓取
+- [ ] **Anthropic 新 engineering 文章扫描**：每周一检查 Anthropic engineering sitemap 是否有新发布
+- [ ] **Claude Code W27 扫描**（6/29-7/3）：预期有新的 engineering mechanism 特性
+- [ ] **how-we-contain-claude 续篇判断**：评估新 vulnerability 细节（canary string, approved domain exfiltration）是否值得专文
+- [ ] **Tavily 替代方案**：考虑使用 union-search-skill 或 AnySearch 替代 Tavily
+- [ ] **GitHub June 新 repo 监控**：`tastyeffectco/sandboxd` (704⭐ self-hosted dev sandboxes)、`Forward-Future/loopy` (1967⭐ AI-agent loops)

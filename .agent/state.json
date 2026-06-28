@@ -1,59 +1,48 @@
 {
-  "lastRun": "2026-06-29T00:00:00",
-  "lastCommit": "ecb95c6",
+  "lastRun": "2026-06-29T01:57:00",
+  "lastCommit": "b1c3a9f",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 576,
+  "round": 577,
   "type": "saturation",
   "scan_summary": {
-    "anthropic_sitemap": {
-      "total": 256,
-      "recent_2026_06": 20,
-      "new_untracked": 0,
-      "engineering_candidates": 0,
+    "anthropic_engineering": {
+      "total": 24,
+      "new": 1,
       "writable": 0,
-      "note": "6/27-6/29 无新发布；6/26 partnership cluster 全部 cluster overlap / business / 1st-party"
-    },
-    "claude_blog_sitemap": {
-      "total": 172,
-      "tracked": 48,
-      "untracked": 124,
-      "engineering_candidates": 18,
-      "writable": 0,
-      "note": "所有 engineering candidates 触发 massive cluster overlap (171-1537 hits)"
-    },
-    "openai_rss": {
-      "top_20": 20,
-      "tracked": 5,
-      "new": 15,
-      "engineering_candidates": 5,
-      "writable": 0,
-      "note": "5 engineering: gpt-5-6-sol (models WSD), jalapeno (hardware WSD), shared-standards (policy WSD), patch-the-planet (R518 boundary), spend-controls (1st-party product)"
+      "note": "how-we-contain-claude URL already tracked R367"
     },
     "cursor_blog": {
-      "total_slugs": 19,
-      "tracked": 17,
+      "total": 15,
+      "new": 5,
+      "writable": 0,
+      "note": "all already tracked"
+    },
+    "openai_news": {
+      "total": 9,
       "new": 2,
       "writable": 0,
-      "note": "notion (R559 covered) + bugbot-updates-june-2026 (R506 covered)"
+      "note": "how-agents-transforming-work + codex-maxxing already tracked"
     },
-    "sakana_blog_8label": {
-      "total": 0,
+    "github_search_api": {
+      "total": 54608,
+      "new": 15,
       "writable": 0,
-      "note": "SPA JS-rendered 抓取失败；8 个 label 页面返回 same 85321 bytes（无 /blog/<slug>/ hrefs）"
+      "note": "June 2026 new repos - all already tracked or below threshold"
     },
-    "github_search": {
-      "total": 10,
-      "new": 4,
+    "github_trending": {
+      "total": 20,
+      "new": 0,
       "writable": 0,
-      "note": "AgentSpace (已收录 512⭐ growth), Qwen-AgentWorld (R545), OpenFugu (R548), benchflow-ai/awesome-evals (已收录)"
+      "note": "no new AI agent projects"
     },
-    "hn_algolia": {
-      "total": 0,
-      "note": "R573 确认时间窗口偏旧（1748000000 = 2025-05-22），本轮跳过节省 1 call"
+    "tavily": {
+      "calls": 3,
+      "result": "rate_limit_432"
     }
   },
   "skip_rate": 1.0,
-  "quasi_period_observation": "R573 sat → R574-R575 non-sat (2 轮 fuel 不足) → R576 sat ✅；R555 准周期 1-2 轮浮动规律验证"
+  "quasi_period_observation": "R573 sat \u2192 R574-R575 non-sat (2 \u8f6e fuel \u4e0d\u8db3) \u2192 R576 sat \u2705\uff1bR555 \u51c6\u5468\u671f 1-2 \u8f6e\u6d6e\u52a8\u89c4\u5f8b\u9a8c\u8bc1",
+  "quasi_period_note": "R573 sat + R574-575 non-sat + R576 sat + R577 sat = \u8fde\u7eed 2 \u8f6e saturation"
 }
