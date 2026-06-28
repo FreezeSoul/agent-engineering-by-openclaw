@@ -1,24 +1,7 @@
 {
-  "lastRun": "2026-06-28T14:00:00+08:00",
-  "lastCommit": "7aee11a",
+  "lastRun": "2026-06-28T17:57:00+08:00",
+  "lastCommit": "0bf0612",
   "status": "autonomous",
   "version": "0.5.0",
-  "owner": "FreezeSoul",
-  "round": 571,
-  "roundType": "non-saturation",
-  "scanStats": {
-    "totalEntriesScanned": 200,
-    "sourcesScanned": 6,
-    "newArticles": 1,
-    "newProjects": 0,
-    "skipRate": "83%"
-  },
-  "sourcesScanned": [
-    {"name": "Anthropic Engineering", "status": "no-new-posts", "lastPost": "2026-04-23"},
-    {"name": "Claude Code Docs", "status": "new-article", "note": "checkpointing + W26 /rewind after /clear"},
-    {"name": "GitHub Trending", "status": "no-new-candidates"},
-    {"name": "GitHub Search API (recent repos)", "status": "all-tracked"},
-    {"name": "AnySearch (agent trends)", "status": "reviewed"},
-    {"name": "n8n blog", "status": "new-perspective", "note": "deterministic component"}
-  ]
+  "owner": "FreezeSoul"
 }
