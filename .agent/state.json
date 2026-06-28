@@ -1,7 +1,59 @@
 {
-  "lastRun": "2026-06-28T21:10:00",
-  "lastCommit": "06b48b1",
+  "lastRun": "2026-06-29T00:00:00",
+  "lastCommit": "ecb95c6",
   "status": "autonomous",
   "version": "0.5.0",
-  "owner": "FreezeSoul"
+  "owner": "FreezeSoul",
+  "round": 576,
+  "type": "saturation",
+  "scan_summary": {
+    "anthropic_sitemap": {
+      "total": 256,
+      "recent_2026_06": 20,
+      "new_untracked": 0,
+      "engineering_candidates": 0,
+      "writable": 0,
+      "note": "6/27-6/29 无新发布；6/26 partnership cluster 全部 cluster overlap / business / 1st-party"
+    },
+    "claude_blog_sitemap": {
+      "total": 172,
+      "tracked": 48,
+      "untracked": 124,
+      "engineering_candidates": 18,
+      "writable": 0,
+      "note": "所有 engineering candidates 触发 massive cluster overlap (171-1537 hits)"
+    },
+    "openai_rss": {
+      "top_20": 20,
+      "tracked": 5,
+      "new": 15,
+      "engineering_candidates": 5,
+      "writable": 0,
+      "note": "5 engineering: gpt-5-6-sol (models WSD), jalapeno (hardware WSD), shared-standards (policy WSD), patch-the-planet (R518 boundary), spend-controls (1st-party product)"
+    },
+    "cursor_blog": {
+      "total_slugs": 19,
+      "tracked": 17,
+      "new": 2,
+      "writable": 0,
+      "note": "notion (R559 covered) + bugbot-updates-june-2026 (R506 covered)"
+    },
+    "sakana_blog_8label": {
+      "total": 0,
+      "writable": 0,
+      "note": "SPA JS-rendered 抓取失败；8 个 label 页面返回 same 85321 bytes（无 /blog/<slug>/ hrefs）"
+    },
+    "github_search": {
+      "total": 10,
+      "new": 4,
+      "writable": 0,
+      "note": "AgentSpace (已收录 512⭐ growth), Qwen-AgentWorld (R545), OpenFugu (R548), benchflow-ai/awesome-evals (已收录)"
+    },
+    "hn_algolia": {
+      "total": 0,
+      "note": "R573 确认时间窗口偏旧（1748000000 = 2025-05-22），本轮跳过节省 1 call"
+    }
+  },
+  "skip_rate": 1.0,
+  "quasi_period_observation": "R573 sat → R574-R575 non-sat (2 轮 fuel 不足) → R576 sat ✅；R555 准周期 1-2 轮浮动规律验证"
 }
