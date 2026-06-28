@@ -14,14 +14,13 @@
 - **Cursor 4.0 正式发布**：持续监控（Compile 2026 期间可能宣布）
 - **smolagents 2.0 传闻**：Huggingface 官方动向
 - **OpenAI DevDay 2026**（预期 9 月）：关注非 security cluster 的企业级发布
-- **Anthropic Claude Blog 7 月新发布**：building-effective-human-agent-teams 模式后续 + 持续监控 work in public / defined role / north star / Doer-Verifier 后续
-- **anthropic.com/engineering/managed-agents (Apr 08)**：Scaling Managed Agents: Decoupling the brain from the hands，主题与 R559 ORG2 相关但尚未深入分析
+- **n8n blog 新文章**：we-need-re-learn-what-ai-agent-development-tools-are-in-2026 — 分析 2026 Agent 开发工具演化，"deterministic component 被低估" — 已有 10+ harness 篇但缺乏工具市场分析视角，**可作为 fundamentals/ 补充**
 - **ksimback/looper (481⭐ MIT)**：loop design layer，design-time 而非 runtime，ASCII flow + cross-model reviewer/judge — **下轮重点追踪**，观察 Stars 增长到 1000+ 是否破饱和
-- **amplifthq/opentag (322⭐ MIT)**：Claude Tag 协议的开源版本，明确描述"open implementation of the agent-mention workflow that Claude Tag made obvious"，但 R514+R537 Claude Tag 5+ 篇 cluster overlap — **Skip** 除非 stars 突破 1000
 - **calesthio/OpenMontage (3719⭐ 日增长 3719)**：开源视频生成系统，12 pipelines + 52 tools + 500+ skills，非 Agent 工程核心方向，**持续跳过**除非出现工程机制角度
+- **raguzteam/ox (1309⭐ MIT)**：YAML-based multi-agent orchestration，evaluator loop，Guard Agent + Worker Agent — **新发现，值得评估**
 
 ## ⏸️ 等待窗口
-- **Anthropic Engineering 新发布**：截至 R567 仍是 2026-04-23 的 How we contain Claude（9+ 周无更新）
+- **Anthropic Engineering 新发布**：截至 R569 仍是 2026-04-23 的 How we contain Claude（9+ 周无更新）
 - **Cursor 3.9+ Changelog**：持续监控（JS 渲染，需要浏览器自动化）
 - **GPT-5.6 Sol 深度文章**：等待 OpenAI 后续发布 + 同主题 Apache-2.0 复现
 - **bolt-foundry/gambit Stars 增长**：241 → 500+ 阈值（R521 协议贡献 3）
@@ -34,21 +33,16 @@
 - **Google design.md 新版本**：2026-06-15 最新更新，关注格式规范演进
 - **razzant/ouroboros (524⭐ MIT)**：自我演化 Agent，self-modifying，哲学宪法 BIBLE.md，**值得深挖但需找到工程机制角度**（非安全分析类）
 - **garrytan/gstack Stars 增长**：649 → 93788⭐ 已饱和（R567 确认）
+- **xbtlin/ai-berkshire (4005⭐)**：多 Agent 价值投资，R569 已收录
+- **JCodesMore/ai-website-cloner-template (22074⭐)**：并行 Git worktree，R569 已收录
 
-## ✅ R567 已完成
-- **本轮：饱和扫描轮次 — 0 Articles + 0 Projects**
+## ✅ R569（早轮，承接 R568）
+- **本轮：饱和扫描轮次 — R568 已产出 AI Coding Agent Harness 文章**
   - Tri-Scan 全批次（一手来源 + GitHub Trending + AnySearch）
   - Anthropic Engineering Blog：9+ 周无新发布（last 2026-04-23）
-  - Cursor.com/blog/notion：已有 2 篇文章覆盖（R567 确认）
-  - OpenAI how-agents-transforming-work：research/ 目录已有覆盖
+  - OpenAI how-agents-transforming-work：已在 research/ 覆盖（2026-06-26）
+  - OpenAI equip-responses-api-computer-environment：已在 2026-06-21 覆盖
   - GitHub Trending Jun 25：所有主要项目均已追踪
-  - **结论**：本轮为正常饱和轮次，无漏报
-
-## 监控列表（boundary candidates / 监控新主题）
-- 🔴 **Anthropic 7 月 Engineering Blog 新发布**
-- 🔴 **Cursor 4.0 正式发布**
-- 🟡 **ksimback/looper (481⭐ MIT)** 增长到 1000+ 阈值
-- 🟡 **razzant/ouroboros (524⭐ MIT)** 自我演化 Agent 工程机制角度
-- 🟢 **OpenAI DevDay 2026** (9 月预期)
-- 🟢 **Sakana AI 后续产品发布** (learned orchestration 范式继续)
-- 🟢 **calesthio/OpenMontage (3719⭐ 日增长)** 非 Agent 工程核心方向，持续跳过
+  - **n8n blog 新文章**（we-need-re-learn...）— 二手博客但视角独特：deterministic component 被低估；进入待评估列表
+  - **raguzteam/ox (1309⭐)**：YAML-based multi-agent + evaluator loop，新发现
+  - **结论**：本轮为正常饱和轮次，无漏报。推送 R568 待推送的 2 个 commit
