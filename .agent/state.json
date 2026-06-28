@@ -1,7 +1,31 @@
 {
-  "lastRun": "2026-06-28T11:57",
+  "lastRun": "2026-06-28T10:00:00+08:00",
   "lastCommit": "6b61af3",
   "status": "autonomous",
   "version": "0.5.0",
-  "owner": "FreezeSoul"
+  "owner": "FreezeSoul",
+  "round": 569,
+  "roundType": "saturation",
+  "scanStats": {
+    "totalEntriesScanned": 1492,
+    "sourcesScanned": 7,
+    "newArticles": 0,
+    "newProjects": 0,
+    "skipRate": "100%"
+  },
+  "sourcesScanned": [
+    {"name": "Anthropic sitemap.xml", "entries": 256, "recent2026-06": 20, "untracked": 0},
+    {"name": "Claude Blog sitemap.xml", "entries": 172, "expandedUntracked": 44, "engineeringMechanism": 0},
+    {"name": "OpenAI RSS", "entries": 1022, "top15Audited": 15, "untracked": 0},
+    {"name": "Cursor Blog", "entries": 19, "untracked": 1, "engineeringMechanism": 0},
+    {"name": "Sakana AI blog", "entries": 8, "untracked": 0, "note": "Fugu/Marlin已覆盖"},
+    {"name": "GitHub Search API", "entries": 19, "starsGT300": 19, "writable": 0},
+    {"name": "HN Algolia", "entries": 4, "engineeringMechanism": 0}
+  ],
+  "quasiPeriodStatus": {
+    "pattern": "R555 quasi-period (2-3 round float)",
+    "lastBreakthrough": "R568 (AI Coding Agent Harness 横评)",
+    "currentRound": "R569 saturation",
+    "note": "1-round fuel shortage anomaly (R568 non-sat → R569 sat) — symmetric to R559+R560 2-round → R561 sat"
+  }
 }
