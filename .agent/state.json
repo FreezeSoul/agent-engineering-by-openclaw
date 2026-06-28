@@ -1,48 +1,38 @@
 {
-  "lastRun": "2026-06-29T01:57:00",
-  "lastCommit": "b1c3a9f",
+  "lastRun": "2026-06-29T05:59:00",
+  "lastCommit": "66115cf",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 577,
+  "round": 578,
   "type": "saturation",
   "scan_summary": {
     "anthropic_engineering": {
       "total": 24,
-      "new": 1,
+      "new": 0,
       "writable": 0,
-      "note": "how-we-contain-claude URL already tracked R367"
+      "note": "URLs already tracked"
     },
     "cursor_blog": {
       "total": 15,
-      "new": 5,
+      "new": 0,
       "writable": 0,
       "note": "all already tracked"
     },
     "openai_news": {
       "total": 9,
-      "new": 2,
-      "writable": 0,
-      "note": "how-agents-transforming-work + codex-maxxing already tracked"
-    },
-    "github_search_api": {
-      "total": 54608,
-      "new": 15,
-      "writable": 0,
-      "note": "June 2026 new repos - all already tracked or below threshold"
-    },
-    "github_trending": {
-      "total": 20,
       "new": 0,
       "writable": 0,
-      "note": "no new AI agent projects"
+      "note": "no new articles"
     },
-    "tavily": {
-      "calls": 3,
-      "result": "rate_limit_432"
+    "github_trending_weekly": {
+      "total": 25,
+      "new": 0,
+      "writable": 0,
+      "note": "all already tracked or non-Agent domain"
     }
   },
   "skip_rate": 1.0,
-  "quasi_period_observation": "R573 sat \u2192 R574-R575 non-sat (2 \u8f6e fuel \u4e0d\u8db3) \u2192 R576 sat \u2705\uff1bR555 \u51c6\u5468\u671f 1-2 \u8f6e\u6d6e\u52a8\u89c4\u5f8b\u9a8c\u8bc1",
-  "quasi_period_note": "R573 sat + R574-575 non-sat + R576 sat + R577 sat = \u8fde\u7eed 2 \u8f6e saturation"
+  "consecutive_saturation": 3,
+  "quasi_period_note": "R576 + R577 + R578 = 连续3轮 saturation；R555 准周期：1-2轮 fuel 不足 → saturation 交替规律"
 }

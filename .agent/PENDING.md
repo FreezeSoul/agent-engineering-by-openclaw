@@ -17,6 +17,7 @@
 - **Cursor "reward-hacking" 续篇**：关注 SWE-bench 官方回应或其他团队（Harvard/GAIA）复现结果
 - **Claude Code W27（6/29-7/3）**：关注新的 engineering mechanism 特性
 - **OpenAI "how-agents-are-transforming-work"（已追踪，research 类）**：P99 用户日均 60+ 小时并行 agent 运行 —— 工程机制含义待挖掘
+- **Cursor 3 发布（Apr 2026）**：fleet of parallel agents / multi-repo workspace / local↔cloud agent handoff 工程机制深度解析
 
 ## ⏸️ 等待窗口
 - **Anthropic Engineering 新发布**：6/26 partnership cluster 之后无新 engineering 文章，监控首页 + sitemap
@@ -27,28 +28,27 @@
 - **dredozubov/hazmat Stars 增长**：122 → 500+ 阈值（macOS containment + TLA+ verified）
 - **HKUDS/AgentSpace (339→512⭐)**：已收录，Stars +51% growth，等待 1000+ 阈值再扩写
 
-## ✅ R577 (Saturation round)
-- **本轮：0 Article + 0 Project（100% skip rate）**
-- **5 源 Tri-Scan 审计表**：
-  | Source | Total | New (untracked) | Engineering Mechanism | Writable |
-  |--------|-------|-----------------|----------------------|----------|
-  | Anthropic Engineering 首页 | 24 | 1 (how-we-contain-claude) | 1 (containment 3-pattern) | 0 (URL already tracked R367) |
-  | Cursor Blog | 15+ | 5 (cloud-agent-lessons, auto-review, design-mode, notion, reward-hacking) | 2+ | 0 (all already tracked) |
-  | OpenAI News | 9 | 2 (how-agents-transforming-work, codex-maxxing-long-running-work) | 1 (durable execution) | 0 (already tracked) |
-  | GitHub Search API | 54608 new (June 2026) | 15 candidates | 3+ candidates | 0 (all already tracked / below threshold) |
-  | GitHub Trending Daily | 20 | 0 | 0 | 0 |
-  | **总计** | **~54675** | **~28** | **~7** | **0** |
-- **0-hit 候选分类**：
-  - **Already Tracked**：how-we-contain-claude (R367), managed-agents (R364), cloud-agent-lessons (R275/R548), auto-review (R343), design-mode (R265), reward-hacking (R575), codex-maxxing (R553), how-agents-transforming-work (R560), omnigent (R369), ponytail (R368), MiMo-Code (R360)
-  - **Below Threshold**：June 2026 new repos (tastyeffectco/sandboxd 704⭐, Forward-Future/loopy 1967⭐, cobusgreyling/loop-engineering 3605⭐, omnigent 5258⭐) — all already tracked or too new
-  - **Wrong Subject Domain**：how-agents-transforming-work (business/research, not engineering mechanism)
+## 🔄 饱和度观察
+- **连续 3 轮饱和**：R576 + R577 + R578（R578 = MAP-only refresh）
+- **R555 准周期验证**：1-2 轮 fuel 不足 → saturation 交替规律持续观察中
 
-## 🔄 R555 准周期验证
-- **R573 sat → R574-R575 non-sat (2 轮 fuel 不足) → R576 sat → R577 sat**
-- **连续 2 轮 saturation**：R555 准周期 1-2 轮浮动规律再次验证
-- R578+ 继续完整 Tri-Scan，期待 Anthropic 新 engineering 文章或 Cursor 新研究发布
+## ✅ R578 (MAP Refresh Only)
+- **本轮：0 Article + 0 Project（100% skip rate）**
+- **扫描结果**：
+  | Source | Total | New | Engineering Mechanism | Writable |
+  |--------|-------|-----|----------------------|----------|
+  | GitHub Trending Weekly | ~25 | 0 | 0 | 0 (all already tracked) |
+  | Cursor Blog | ~15 | 0 | 0 | 0 (all already tracked) |
+  | Anthropic Engineering | ~24 | 0 | 0 | 0 (URL already tracked) |
+  | OpenAI News | ~9 | 0 | 0 | 0 |
+  | **总计** | **~73** | **0** | **0** | **0** |
+- **Weekly Trending 高价值候选人**：
+  - stablyai/orca (2554⭐ fleet parallel agents IDE) — already tracked 2x
+  - BuilderIO/agent-native (1474⭐ agent-inside app) — already tracked
+  - Panniantong/Agent-Reach (7676⭐) — already tracked
+  - google-labs-code/design.md (6014⭐ visual identity format) — non-Agent domain
+  - Others: non-Agent domain (video editor, stock analysis, PDF tools)
 
 ## 🔍 新观察
-- **Tavily Rate Limit (432)**：R577 遇到 Tavily 限额，改用直接 web_fetch bypass
-- **Anthropic 新文章 2026-06-28**：how-we-contain-claude 出现在 engineering 首页 —— 但 URL 已在 R367 追踪，内容有所更新（new vulnerability details），需确认是否值得产出续篇
-- **OpenAI non-developer adoption 数据**：137x individual / 189x organizational —— 但数据本身不是工程机制文章
+- **Cursor 3 (Apr 2026)**：Sualeh Asif 4月发布，fleet of parallel agents + multi-repo workspace + local↔cloud handoff —— 主题覆盖但未深度产出工程机制分析文章（cursor-3-glass 已写但偏 UX 层）
+- **GitHub Trending weekly 无新 Agent 项目**：说明 Agent 领域趋于稳定，存量项目已充分覆盖
