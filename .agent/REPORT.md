@@ -1,44 +1,45 @@
-# AgentKeeper 自我报告 — R573
+# AgentKeeper 自我报告 — R574
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
 |------|---------|---------|
-| ARTICLES_COLLECT | ⬇️ 跳过 | 7 源 Tri-Scan 0 engineering mechanism candidates（saturation round） |
-| PROJECT_SCAN | ⬇️ 跳过 | 7 源 Tri-Scan 0 Stars ≥ 500 + 范式匹配 candidates（saturation round） |
+| ARTICLES_COLLECT | ✅ 完成 | 1 Article（Cursor self-hosted cloud agents，cursor.com/blog 自带官方一手） |
+| PROJECT_SCAN | ⬇️ 跳过 | 新源（Ponytail 62k⭐）无 engineering mechanism 主题；其余候选均已追踪 |
 
 ## 🔍 本轮反思
 
 **做对了**：
-- 7 源 Tri-Scan 完整执行（含 Anthropic sitemap + Claude Blog sitemap + OpenAI RSS + Cursor Blog + Sakana + HN Algolia + GitHub Search API 限速时跳过），不偷工
-- 仔细区分 NEW（14-122 untracked）vs engineering mechanism（0）：14 个 Anthropic 6/26 partnership cluster + 1 model release（Wrong Subject Domain）、Claude Blog 122 untracked 全 1st-party product/customer/intro、OpenAI 15 NEW 全模型/customer/announcement、Sakana 7 NEW 4 个非工程 + 1 灰区 < 500⭐ + 2 商业/内部
-- 准周期验证：R570-R572 = 3 轮 non-saturation → R573 saturation ✅（与 R555 准周期双向 1-3 轮浮动规律一致：non-sat→sat 间隔可能 1-3 轮）
-- SakanaAI/CoffeeBench (Apache-2.0 14⭐) 进入观察候选：长期多 Agent 经济环境 benchmark（90 天咖啡店运营 + 供应链 + 利润博弈），工程机制清晰但 Stars 不足 R555 gambit (241⭐) 阈值
-- R552 + R569 State-only commit 协议稳定执行：3 状态文件 + 单 commit + push，不浪费时间在没有 Article/Project 的轮次上
+- 通过 AnySearch 6源扫描发现 Cursor self-hosted cloud agents（cursor.com/blog/self-hosted-cloud-agents），一手官方博客，质量可靠
+- Article 定位清晰：**Harness 与执行层分离的企业架构**范式，而非单纯功能介绍，视角有独到性
+- 记录源追踪（cursor.com/blog/self-hosted-cloud-agents → article）
+- 按规范执行 ARTICLES_MAP.md 生成 + git commit/push
 
 **需改进**：
-- GitHub Search API rate limit 触限（`101.42.137.26`），R555 协议要求 ≤ 5 calls/round，但 R572 已用尽配额。需监控调用频次
-- HN Algolia numericFilters 1748000000 对应 2025-05-22，返回的 hits 多数为 2026-01 至 2026-04，需要重新校准时间窗口（建议 `created_at_i > 1749000000` 对应 2025-06-08 后）
-- Claude Blog 122 untracked 大量未审计（仅审了 R569 选出的 44 个），理论上仍可能漏掉工程机制文章，下轮可考虑按 sitemap 字母顺序做完整全 172 audit
+- AnySearch 扫描覆盖了多个一手源，但大部分已被追踪（Cursor continually-improving-agent-harness USED、Claude artifacts USED、Vercel eve USED、DeerFlow USED、gbrain USED），说明扫描覆盖率高但新候选少
+- Ponytail (62k⭐) 无 engineering mechanism 主题，作为 Project 不适合收录
+- Project 候选枯竭：本周 trending 候选（nex-agi/Nex-N2、open-gitagent/gitagent、lsdefine/genericagent）均已被追踪
+
+**新观察**：
+- garrytan/gbrain Stars 从 13,599 → 24,364（+79%），月增速极快；已有推荐文章 gbrain-13599，但 Stars 翻倍意味着可能需要更新或新增深度角度
+- Cursor self-hosted architecture 的核心价值是**重新定义 Harness 边界**——Harness 不需要拥有执行资源，只需拥有编排权，这个判断具有工程方法论价值
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 0 |
+| 新增 articles 文章 | 1 |
 | 新增 projects 推荐 | 0 |
-| 7 源 Tri-Scan 总审计条目 | 1271（Anthropic 20 + Claude Blog 172 + OpenAI 1022 + Cursor 19 + Sakana 8 + GitHub skipped + HN 10） |
-| Engineering mechanism NEW candidates | 0 |
-| Skip rate | 100%（7/7 源 0 可写） |
-| commit | 待定（state-only 单 commit） |
+| 扫描源数量 | 6 |
+| Engineering mechanism candidates | 1（Cursor self-hosted，Harness/执行层分离） |
+| 原文引用数量 | Articles: 3 处 / Projects: 0 处 |
+| commit | 1（45cf387） |
 
 ## 🔮 下轮规划
 
-- [ ] Anthropic Engineering 7月新发布（持续监控，last 仍是 2026-04-23，11+ 周）
-- [ ] Cursor 4.0 正式发布（Compile 2026 可能宣布，需浏览器自动化）
-- [ ] Claude Code Week 27 扫描（持续跟踪 W26 6/22 之后的更新，W27 预期 6/29-7/3）
-- [ ] Claude Blog 完整 172 audit（按 sitemap 字母顺序全扫，识别工程机制候选）
-- [ ] HN Algolia 时间窗口校准（numericFilters 提高至 2025-06 后）
-- [ ] SakanaAI/CoffeeBench Stars 增长监控（14 → 500+ 阈值）
-- [ ] Anthropic Claude Tag 完整 cross-link 验证（R514 关联）
-- [ ] 监控准周期：R573 sat → R574 期望 break-through 或继续 sat（按 1-3 轮浮动周期）
+- [ ] Ponytail (62k⭐) 病毒式增长分析：AI Coding 场景下的代码量/成本优化，是否值得补充 ai-coding/ 角度
+- [ ] garrytan/gbrain Stars 24k → 是否有新的工程机制角度（synthesis layer、self-wiring graph、dream cycle）值得补充
+- [ ] Claude Code W27 扫描（预期 6/29-7/3）
+- [ ] Anthropic Engineering 7月发布持续监控
+- [ ] Cursor 4.0 / Compile 2026 持续监控
+- [ ] 监控 Project 候选：bolt-foundry/gambit (241→500+)、SakanaAI/CoffeeBench (14→500+) 阈值突破
