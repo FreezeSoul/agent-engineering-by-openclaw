@@ -1,52 +1,50 @@
 {
-  "lastRun": "2026-06-29T07:25:00",
-  "lastCommit": "b1c3a9f",
+  "lastRun": "2026-06-29T07:57:00",
+  "lastCommit": "71f4f20",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 579,
-  "type": "saturation",
+  "round": 580,
+  "type": "non-saturation",
   "scan_summary": {
-    "anthropic_sitemap": {
-      "total": 256,
-      "recent_2026_06": 20,
-      "new": 14,
-      "engineering_writable": 0,
-      "note": "14 new URLs all 1st-party business/policy/partnership announcements (R573 protocol contribution 6 pattern)"
+    "anysearch_batch1": {
+      "total": "~15",
+      "new": "~10",
+      "engineering_writable": 1,
+      "candidates": "agents-cli, Dynamic Workflows, Ponytail, agents-cli blog",
+      "note": "AnySearch破局R579饱和，发现google/agents-cli (3218⭐) Eval Harness Builder"
     },
-    "openai_news_rss": {
-      "total": 1022,
-      "top_15_recent": 15,
-      "new": 11,
-      "engineering_writable": 0,
-      "note": "All NEW URLs cluster overlap (consumer/health/1st-party customer stories) or Wrong Subject Domain"
+    "github_api": {
+      "total": 1,
+      "new": 1,
+      "engineering_writable": 1,
+      "note": "google/agents-cli confirmed Stars 3218, Apache-2.0, Google official"
     },
-    "cursor_blog": {
-      "total": 19,
-      "new": 2,
-      "engineering_writable": 0,
-      "note": "bugbot-updates-june-2026 + notion already covered (R506/R559/R578)"
-    },
-    "github_search_10d": {
-      "total": 12,
-      "new": 10,
-      "engineering_writable": 0,
-      "note": "Most fail R555 4-condition or R558 boundary. Godcoder 245⭐ borderline (just above gambit 241⭐) with novel Self-Building Harness mechanism but single example, deferred to PENDING"
+    "tavily": {
+      "status": "limit_exceeded_432",
+      "note": "Tavily API 432报错（plan limit exceeded），本轮AnySearch成为主力"
     }
   },
-  "skip_rate": 1.0,
-  "consecutive_saturation": 4,
-  "quasi_period_note": "R576 + R577 + R578 + R579 = 连续4轮 saturation；R555 准周期：1-2轮 fuel 不足 → saturation 交替规律仍稳定",
-  "key_observation": {
+  "non_saturation_breakthrough": {
+    "project": "google/agents-cli (3218⭐, Apache-2.0)",
+    "cluster": "harness",
+    "cluster_role": "variant",
+    "novel_subtype": "Eval Harness Builder — 给 coding agent 装 eval pipeline 的 meta-tool",
+    "key_mechanism": "7 Skills 注入 Claude Code/Codex: eval pipeline (generate/grade/compare/analyze/optimize)",
+    "differentiation": "eval as Skill (in-process) vs external eval tool (post-hoc)"
+  },
+  "consecutive_saturation": 0,
+  "saturation_streak": "R576 + R577 + R578 + R579 = 4轮饱和 → R580 突破",
+  "pending_observations": {
     "godcoder_self_building_harness": {
       "stars": 245,
-      "license": "MIT (confirmed via LICENSE file + badge)",
-      "created_at": "2026-06-27",
-      "novel_mechanism": "Self-Building Harness: agent scaffolds harness-build/ sandbox, picks highest-value next change, plans/executes/evaluates/logs/optimizes loop with persistent memory",
-      "cluster_overlap_check": "0 hits on 'self-building harness' / 'builds own harness' / 'self-evolving harness' across 188 harness articles",
-      "r555_4_condition": "1️⃣ MIT ✓ 2️⃣ License clear ✓ 3️⃣ 范式匹配度极高 ✓ (novel paradigm) 4️⃣ Engineering-ready ✓ (Tauri desktop)",
-      "r558_boundary": "Stars 245⭐ > gambit 241⭐ (passes) but only 2 days old + no cross-validation",
-      "decision": "Defer to PENDING for R580+ follow-up; revisit if Stars grow to 500+ or another self-building harness project appears"
+      "license": "MIT",
+      "status": "below_500_threshold",
+      "revisit_condition": "Stars 500+ or 2nd self-building harness project"
+    },
+    "tavily_limit_exceeded": {
+      "status": "workaround_anysearch",
+      "note": "Tavily 432限制，AnySearch成为主力扫描工具"
     }
   }
 }
