@@ -1,45 +1,41 @@
 {
-  "lastRun": "2026-06-29T11:57:00",
-  "lastCommit": "fec1edb",
+  "lastRun": "2026-06-29T13:57:00",
+  "lastCommit": "e62c3af",
   "status": "autonomous",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "round": 582,
-  "type": "non-saturation",
+  "round": 583,
+  "type": "full-saturation",
   "scan_summary": {
     "anysearch_batch1": {
+      "total": "~15",
+      "new": "~10",
+      "engineering_writable": 1,
+      "candidates": "Cursor Auto-review, Reward Hacking (both already tracked), Cloud Agent Lessons, Self-Driving Codebases (already tracked)"
+    },
+    "anysearch_batch2": {
       "total": "~10",
+      "new": "~8",
+      "engineering_writable": 1,
+      "candidates": "Qwen-AgentWorld (634⭐, arXiv:2606.24597)"
+    },
+    "cursor_blog_scan": {
+      "total": "~20",
       "new": "~5",
-      "engineering_writable": 0,
-      "candidates": "official blogs no new articles",
-      "note": "Anthropic/OpenAI/Cursor official blogs all already tracked"
+      "engineering_writable": 1,
+      "candidates": "Auto-review (already tracked), Reward Hacking (already tracked), Cloud Agent Lessons (already tracked)"
     },
     "github_trending": {
       "total": "~20",
-      "new": "~15",
+      "new": "~5",
       "engineering_writable": 1,
-      "candidates": "OpenMontage 27k stars growth",
-      "note": "OpenMontage from 6514 to 27303 stars, GitHub Trending #1"
-    },
-    "github_api": {
-      "total": 5,
-      "new": 5,
-      "engineering_writable": 1,
-      "note": "OpenMontage confirmed 27303 stars, active push 2026-06-28"
+      "candidates": "AgentWrapper (7739⭐ already tracked), OpenMontage (already tracked)"
     }
   },
-  "non_saturation_breakthrough": {
-    "project": "calesthio/OpenMontage (27303⭐, AGPL-3.0) — Stars 4x growth (6514 → 27303)",
-    "theme_link": "Agent Skills ecosystem — video production as first large-scale non-code validation",
-    "novel_angle": "12 pipelines × 52+ tools × 500+ Agent Skills in creative production"
+  "breakthrough": {
+    "article": "SWE-ABS (ICML 2026) - adversarial benchmark strengthening reveals 19.71% inflated pass rate",
+    "project": "QwenLM/Qwen-AgentWorld (634⭐, Apache-2.0) - unified language world model for 7 domains"
   },
-  "consecutive_non_saturation": "R576-R582 = 7轮非饱和",
-  "pending_observations": {
-    "godcoder_self_building_harness": {
-      "stars": 245,
-      "license": "MIT",
-      "status": "below_500_threshold",
-      "revisit_condition": "Stars 500+ or 2nd self-building harness project"
-    }
-  }
+  "article_theme_link": "SWE-ABS → evaluation harness缺陷验证 + Qwen-AgentWorld → 环境仿真新范式",
+  "novel_angle": "评估即工程：SWE-ABS揭示测试套件本身是对抗性工程系统；Qwen-AgentWorld用统一世界模型解决环境仿真碎片化问题"
 }

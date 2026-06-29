@@ -10,40 +10,45 @@
 
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
-- **Anthropic "how-we-contain-claude" 续篇（待确认）**：全文有 new vulnerability 案例（canary string investigation, exfiltration via approved domain）—— 需确认是否已产出续篇
-- **Anthropic "managed-agents"（已追踪待采集）**：brain/hands/session 三层解耦，harness as cattle 设计，credential bundling 模式
-- **Anthropic "building-agents-with-claude-agent-sdk"（已追踪待采集）**：working state / checkpoint / resume 工程机制详述
-- **Cursor "reward-hacking" 续篇**：关注 SWE-bench 官方回应或其他团队（Harvard/GAIA）复现结果
-- **Claude Code W27（6/29-7/3）**：关注新的 engineering mechanism 特性
+- **HAL Holistic Agent Leaderboard（已扫描待采集）**：Princeton PLI，ICLR 2026，标准化评估框架 + cost-aware + 第三方 leaderboard，304 Stars，需确认是否有新的 HAL 相关文章产出
+- **SWE-ABS 后续跟踪**：关注社区复现结果和 SWE-bench 生态响应
+- **Cursor "what we've learned building cloud agents"（已追踪）**：开发环境即产品论、Long-running agents 需要持久化执行（Temporal）、自愈式 agent 环境
+- **Cursor "self-driving codebases"（已追踪）**：root planner + subplanner + worker 三层架构 + handoff 机制 + 1000 commits/hour
+- **Anthropic "how-we-contain-claude" 续篇**：全文有 new vulnerability 案例（canary string investigation, exfiltration via approved domain）
 - **Cursor 4.0 / Compile 2026**：持续监控 fleet of parallel agents / multi-repo workspace / local↔cloud agent handoff 工程机制
 
-### 🆕 Godcoder Self-Building Harness 续观察（deferred to R583+）
-- **eli-labz/Godcoder (245⭐, MIT, Tauri desktop, Rust + MCP)** — 继续监控 Stars 增长或第二个 self-building harness 项目
-- **revisit 条件**：Stars 增长至 500+ (community validation) 或出现第二个 self-building harness 项目
-- **注**：Anthropic Dynamic Workflows（Claude Code 自写 harness）已收录，self-building harness 概念已有官方确认，但 Godcoder 尚未突破阈值
+### 🆕 R583 新增观察
+- **SWE-ABS (ICML 2026)**：19.71% "通过"补丁实为语义错误，揭示测试套件作为对抗性工程系统的重要性
+- **Qwen-AgentWorld (634⭐, Apache-2.0)**：七领域统一世界模型，CPT+SFT+RL pipeline，与 Cursor Self-Driving Codebases 形成正交互补（环境表示层 ↔ 多Agent协作层）
 
-### 🆕 R582 观察
-- **OpenMontage Stars 4x 增长**：6,514 → 27,303，GitHub Trending #1 Repository of the Day，2026-06-28 推送活跃
-- **Agent Skills 跨界验证**：视频制作是 Skill 标准化在非代码领域的首次大规模实践
+### 🆕 R583 观察
+- **HAL Holistic Agent Leaderboard (304⭐)**：ICLR 2026，Princeton PLI，cost-aware + 标准化评估框架，与 SWE-ABS 形成"评估基础设施"双支柱
+- **OpenMontage Stars 增长**：6,514 → 27,303，GitHub Trending #1
 
 ## ⏸️ 等待窗口
 - **Anthropic Engineering 新发布**：监控首页 + sitemap
 - **garrytan/gbrain Stars 24k → 50k+ 阈值**：synthesis layer / self-wiring graph / dream cycle 新工程机制角度
-- **SakanaAI/CoffeeBench (14→500+)**：multi-agent economic benchmark，Apache-2.0 + 真实工程机制
 - **dredozubov/hazmat Stars 增长**：122 → 500+ 阈值（macOS containment + TLA+ verified）
-- **HKUDS/AgentSpace (339→512⭐)**：已收录，Stars +51% growth，等待 1000+ 阈值再扩写
+- **SakanaAI/CoffeeBench (14→500+)**：multi-agent economic benchmark
 
 ## 🔄 饱和度观察
 - **R576-R582 = 连续 7 轮非饱和或突破**
-- **R582 非饱和**：OpenMontage Stars 增长监控破局，无新 Article 来源
+- **R583 = 饱和**：1 Article (SWE-ABS) + 1 Project (Qwen-AgentWorld)，主题关联性强
 
-## ✅ R582 (Non-Saturation — OpenMontage Stars 4x Growth)
-- **本轮：0 Article + 1 Project（更新）**
-- **Project：calesthio/OpenMontage Stars 6,514 → 27,303（+318%）**
+## ✅ R583 (Full Saturation — SWE-ABS + Qwen-AgentWorld)
+- **本轮：1 Article + 1 Project，主题互补**
+- **Article：SWE-ABS adversarial benchmark strengthening (ICML 2026)**
+  - 19.71% 的 SWE-bench "通过"补丁实为语义错误
+  - 顶级 Agent 分数从 78.80% 跌至 62.20%
+  - 揭示评估本身是需要工程设计的系统
+- **Project：QwenLM/Qwen-AgentWorld (634⭐)**
+  - 统一 7 领域语言世界模型（MCP/搜索/终端/SE/Android/Web/OS）
+  - CPT+SFT+RL 三阶段训练 + Decouple+Unify 双应用范式
+  - 与 Cursor Self-Driving Codebases 正交互补
 - **扫描结果**：
   | Source | Total | New | Engineering Mechanism | Writable |
   |--------|-------|-----|----------------------|----------|
-  | AnySearch batch 1 | ~10 | ~5 | 0 | 0 |
-  | GitHub Trending | ~20 | ~15 | 1 (OpenMontage Stars growth) | 1 |
-  | GitHub API | 5 | 5 | 1 (OpenMontage Stars verified) | 1 |
-- **关键发现**：OpenMontage 从 6,514 到 27,303 Stars 仅约 2 个月，GitHub Trending #1，2026-06-28 推送活跃——是 Agent Skills 在创意生产领域的首次大规模验证
+  | Cursor Blog | ~20 | ~5 | 0 | 0 (already tracked) |
+  | AnySearch batch 1 | ~15 | ~10 | 1 (SWE-ABS ICML 2026) | 1 |
+  | AnySearch batch 2 | ~10 | ~8 | 1 (Qwen-AgentWorld) | 1 |
+  | GitHub Trending | ~20 | ~5 | 0 | 0 (already tracked) |
