@@ -1,59 +1,73 @@
 {
-  "lastRun": "2026-06-29T20:10:00+08:00",
-  "lastCommit": "3912660",
-  "round": 586,
-  "status": "non-saturation",
+  "lastRun": "2026-06-30T01:09:35+08:00",
+  "lastCommit": "ba13c3a",
+  "round": 587,
+  "status": "saturation",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "type": "full",
   "scan_summary": {
     "anthropic_sitemap": {
-      "total": 256,
-      "new": 0,
+      "total": 248,
+      "new": 7,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "All 33 engineering posts already tracked"
-    },
-    "cursor_blog_recent": {
-      "total": 3,
-      "new": 0,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "All already tracked (R585)"
+      "skip_reason": "All 7 = 6/26 partnership cluster (R558 1st-party commercial) + All 24 engineering posts already tracked"
     },
     "openai_news": {
-      "total": 6,
-      "new": 3,
-      "engineering": 1,
-      "writable": 1,
-      "article_source": "openai.com/index/codex-maxxing-long-running-work/"
+      "total": 15,
+      "new": 13,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "1st-party commercial (HP/Samsung/standards) + Wrong Subject (workforce/health/rare diseases/customer stories) + Cluster overlap (patch-the-planet=daybreak R518, GPT-5.6=closed-loop-unreachable R552, codex-maxxing=R586 tracked)"
     },
-    "github_api_june": {
-      "total": 10,
-      "new": 2,
-      "engineering": 1,
-      "writable": 1,
-      "project": "STiFLeR7/Cairn"
+    "cursor_blog": {
+      "total": 19,
+      "new": 4,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "All 4 NEW = 1st-party product (ios-mobile-app, bugbot-june-2026, teams-pricing-june-2026) or massive cluster overlap (notion=44 hits)"
+    },
+    "claude_blog_sitemap": {
+      "total": 172,
+      "tracked": 48,
+      "untracked": 124,
+      "engineering": 2,
+      "writable": 0,
+      "skip_reason": "2 engineering candidates BOTH have existing articles covering same content (prompt-caching-lessons vs R5xx articles covering April postmortem + sandboxing; html-over-markdown vs nexu-io-html-anything already covered)"
+    },
+    "github_search": {
+      "total": 7,
+      "new": 7,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "4 Wrong Subject (consumer sports/media/Hermes-specific) + 2 Already Tracked (Qwen-AgentWorld R584, AgentSpace R555) + 1 Cluster overlap (opentag deferred R583)"
     }
   },
-  "skip_rate": 0.6,
+  "skip_rate": 1.0,
   "quasi_period": {
-    "pattern": "R555 1-3 round floating",
-    "validation_round": 10,
+    "pattern": "R555 1-3 round floating, period extended to 1-5",
+    "validation_round": 11,
     "previous_runs": [
-      {"from": "R580-R584", "to": "R585", "fuel_rounds": 1, "result": "saturation"}
+      {"from": "R585", "to": "R586", "fuel_rounds": 1, "result": "non-saturation"},
+      {"from": "R586", "to": "R587", "fuel_rounds": 1, "result": "saturation"}
     ]
   },
   "deferred_candidates": [
-    {"name": "amplifthq/opentag", "stars": 359, "license": "MIT", "round": 583, "reason": "Articleless Project defer, waiting for Article source"},
+    {"name": "amplifthq/opentag", "stars": 365, "license": "MIT", "round": 587, "reason": "Articleless Project defer R583, still waiting for Slack/IM-routing Article source"},
     {"name": "uphiago/recon-skills", "stars": 262, "license": "MIT", "round": 583, "reason": "Articleless Project defer, waiting for offensive-security Article source"},
     {"name": "eli-labz/Godcoder", "stars": 245, "license": "MIT", "round": 579, "reason": "Self-Building Harness borderline, waiting for 2nd project or 1st-party acknowledgment"},
     {"name": "SakanaAI/CoffeeBench", "stars": 14, "license": "Apache-2.0", "round": 573, "reason": "multi-agent economic benchmark, monitoring Stars growth to 500+"},
-    {"name": "HKUDS/AgentSpace", "stars": 512, "license": "Apache-2.0", "round": 555, "reason": "Already tracked R555, Stars 339→512 (+51%) growth only, monitoring to 1000⭐"}
+    {"name": "HKUDS/AgentSpace", "stars": 554, "license": "Apache-2.0", "round": 555, "reason": "Already tracked R555, Stars 339→554 (+63%) growth only, monitoring to 1000⭐"}
   ],
   "technical_debt": [
     {"issue": "Tavily API 432 Monthly Limit", "since": "R586", "impact": "Cannot use Tavily search for primary sources"},
     {"issue": "Agent Browser CDP Permission Denied", "since": "R586", "impact": "Cannot screenshot GitHub pages"},
     {"issue": "GitHub Trending HTML Changed", "since": "R586", "impact": "curl scraping fails, relying on GitHub API"}
-  ]
+  ],
+  "audit_notes": {
+    "claude_blog_124_untracked": "Found 2 engineering candidates (prompt-caching-lessons, html-over-markdown), both have existing detailed articles covering same engineering content",
+    "anthropic_6_26_partnership_cluster": "Anthropic 6/26 batch (7 URLs) = all 1st-party commercial/policy/partnership (Claude Corps/TCS/DXC/Gates/Seoul/Core Views/Nuclear Safeguards). R558 1st-party Cluster Overlap skip path verified again.",
+    "r587_quasi_period_check": "R586 non-saturation (Codex-maxxing + Cairn) → R587 saturation = 1 round fuel不足, matching R585/R569/R584 pattern. R555 quasi-period continues 1-5 round floating."
+  }
 }
