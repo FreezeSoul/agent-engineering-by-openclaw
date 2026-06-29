@@ -17,13 +17,15 @@
 - **Anthropic "how-we-contain-claude" 续篇**：全文有 new vulnerability 案例（canary string investigation, exfiltration via approved domain）
 - **Cursor 4.0 / Compile 2026**：持续监控 fleet of parallel agents / multi-repo workspace / local↔cloud agent handoff 工程机制
 
-### 🆕 R583 新增观察
-- **SWE-ABS (ICML 2026)**：19.71% "通过"补丁实为语义错误，揭示测试套件作为对抗性工程系统的重要性
-- **Qwen-AgentWorld (634⭐, Apache-2.0)**：七领域统一世界模型，CPT+SFT+RL pipeline，与 Cursor Self-Driving Codebases 形成正交互补（环境表示层 ↔ 多Agent协作层）
+### 🆕 R584 新增观察
+- **SWE-rebench V2 (ICML 2026)**：arXiv:2602.23866，32,079 tasks / 20 languages / 3,617 repos，RL训练数据稀缺问题，自动化安装脚本合成 + LLM Judge 过滤 + 人类标注校准
+- **Harness-Bench (Qihoo360, 5⭐)**：arXiv:2605.27922，106 sandboxed tasks，model-harness configuration level 评估框架，支持 OpenClaw/PicoClaw/NanoBot/FairyClaw 等多适配器
+- **Qihoo360/harness-bench 项目**：Stars 5（研究原型），但与 SWE-rebench V2 形成评测基础设施双支柱
 
-### 🆕 R583 观察
-- **HAL Holistic Agent Leaderboard (304⭐)**：ICLR 2026，Princeton PLI，cost-aware + 标准化评估框架，与 SWE-ABS 形成"评估基础设施"双支柱
-- **OpenMontage Stars 增长**：6,514 → 27,303，GitHub Trending #1
+### 🆕 R584 扫描未通过
+- **obra/superpowers**：已追踪（202k stars），本轮跳过
+- **Harness-Bench 文章**：BM25 similarity > 0.65，与 Martin Fowler harness 文章重复
+- **SWE-rebench V2 article**：BM25 确认无重复，但项目 Stars 仅 5，不足写 Project 推荐
 
 ## ⏸️ 等待窗口
 - **Anthropic Engineering 新发布**：监控首页 + sitemap
@@ -32,23 +34,23 @@
 - **SakanaAI/CoffeeBench (14→500+)**：multi-agent economic benchmark
 
 ## 🔄 饱和度观察
-- **R576-R582 = 连续 7 轮非饱和或突破**
-- **R583 = 饱和**：1 Article (SWE-ABS) + 1 Project (Qwen-AgentWorld)，主题关联性强
+- **R576-R583 = 连续 8 轮非饱和或突破**
+- **R584 = 非饱和**：仅 1 Article（SWE-rebench V2），无合格 Project
 
-## ✅ R583 (Full Saturation — SWE-ABS + Qwen-AgentWorld)
-- **本轮：1 Article + 1 Project，主题互补**
-- **Article：SWE-ABS adversarial benchmark strengthening (ICML 2026)**
-  - 19.71% 的 SWE-bench "通过"补丁实为语义错误
-  - 顶级 Agent 分数从 78.80% 跌至 62.20%
-  - 揭示评估本身是需要工程设计的系统
-- **Project：QwenLM/Qwen-AgentWorld (634⭐)**
-  - 统一 7 领域语言世界模型（MCP/搜索/终端/SE/Android/Web/OS）
-  - CPT+SFT+RL 三阶段训练 + Decouple+Unify 双应用范式
-  - 与 Cursor Self-Driving Codebases 正交互补
+## ✅ R584 (Non-Saturation — SWE-rebench V2 only)
+- **本轮：1 Article，0 Project**
+- **Article：SWE-rebench V2 (ICML 2026)**
+  - 32,079 executable tasks, 20 languages, 3,617 repos
+  - Three-layer pipeline: install agent + LLM judge filtering + human annotation calibration
+  - Core argument: RL training constrained by task data scarcity, not model capability
+- **Project：无合格候选**
+  - Harness-Bench (Qihoo360, 5⭐) 研究原型，Stars 不足
+  - Superpowers 已追踪（202k stars）
 - **扫描结果**：
   | Source | Total | New | Engineering Mechanism | Writable |
   |--------|-------|-----|----------------------|----------|
-  | Cursor Blog | ~20 | ~5 | 0 | 0 (already tracked) |
-  | AnySearch batch 1 | ~15 | ~10 | 1 (SWE-ABS ICML 2026) | 1 |
-  | AnySearch batch 2 | ~10 | ~8 | 1 (Qwen-AgentWorld) | 1 |
-  | GitHub Trending | ~20 | ~5 | 0 | 0 (already tracked) |
+  | AnySearch (Anthropic/OpenAI/Cursor) | ~15 | ~3 | 0 | 0 (already tracked) |
+  | AnySearch (GitHub Trending) | ~20 | ~8 | 0 | 0 (already tracked) |
+  | AnySearch (evaluation benchmark) | ~10 | ~5 | 2 (SWE-rebench V2, Harness-Bench) | 1 |
+  | Source tracker check | 5 | 2 | 0 | 1 |
+  | BM25 dedup | 3 | 1 | 0 | 1 (SWE-rebench V2) |

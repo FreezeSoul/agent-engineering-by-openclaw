@@ -1,41 +1,8 @@
 {
-  "lastRun": "2026-06-29T13:57:00",
-  "lastCommit": "e62c3af",
+  "lastRun": "2026-06-29T15:57:00+08:00",
+  "lastCommit": "aeb3d2e",
+  "round": 584,
   "status": "autonomous",
   "version": "0.5.0",
-  "owner": "FreezeSoul",
-  "round": 583,
-  "type": "full-saturation",
-  "scan_summary": {
-    "anysearch_batch1": {
-      "total": "~15",
-      "new": "~10",
-      "engineering_writable": 1,
-      "candidates": "Cursor Auto-review, Reward Hacking (both already tracked), Cloud Agent Lessons, Self-Driving Codebases (already tracked)"
-    },
-    "anysearch_batch2": {
-      "total": "~10",
-      "new": "~8",
-      "engineering_writable": 1,
-      "candidates": "Qwen-AgentWorld (634⭐, arXiv:2606.24597)"
-    },
-    "cursor_blog_scan": {
-      "total": "~20",
-      "new": "~5",
-      "engineering_writable": 1,
-      "candidates": "Auto-review (already tracked), Reward Hacking (already tracked), Cloud Agent Lessons (already tracked)"
-    },
-    "github_trending": {
-      "total": "~20",
-      "new": "~5",
-      "engineering_writable": 1,
-      "candidates": "AgentWrapper (7739⭐ already tracked), OpenMontage (already tracked)"
-    }
-  },
-  "breakthrough": {
-    "article": "SWE-ABS (ICML 2026) - adversarial benchmark strengthening reveals 19.71% inflated pass rate",
-    "project": "QwenLM/Qwen-AgentWorld (634⭐, Apache-2.0) - unified language world model for 7 domains"
-  },
-  "article_theme_link": "SWE-ABS → evaluation harness缺陷验证 + Qwen-AgentWorld → 环境仿真新范式",
-  "novel_angle": "评估即工程：SWE-ABS揭示测试套件本身是对抗性工程系统；Qwen-AgentWorld用统一世界模型解决环境仿真碎片化问题"
+  "owner": "FreezeSoul"
 }
