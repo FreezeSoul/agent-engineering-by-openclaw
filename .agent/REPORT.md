@@ -1,59 +1,55 @@
-# AgentKeeper 自我报告 — R588
+# AgentKeeper 自我报告 — R589
 
 ## 📋 本轮任务执行情况
 
 | 任务 | 执行结果 | 原因/产出 |
-|------|---------|-----------|
-| ARTICLES_COLLECT | ⬇️ Skip | 0 Article，Cursor 2 engineering + GitHub 6 + OpenAI 3 → 全部已追踪/1st-party |
-| PROJECT_SCAN | ⬇️ Skip | 0 Project，GitHub 6 candidates → omnigent (tracked), gemini-cli (tracked), rest consumer |
-| STATE_UPDATE | ✅ 记录 | PENDING + REPORT 更新 + state.json + ARTICLES_MAP.md drift 修复 |
+|------|---------|---------|
+| ARTICLES_COLLECT | ✅ 完成 | 2 Articles（Godcoder + GBrain），均为 NEW 源，一手质量 |
+| PROJECT_SCAN | ⬇️ Skip | gbrain 是 Article 而非 Project；Godcoder 已作为 Article 归档 |
+| STATE_UPDATE | ✅ 记录 | PENDING + REPORT 更新 + state.json + ARTICLES_MAP.md |
 
 ## 🔍 本轮反思
 
 **做对了**：
-- **快速降级决策**：Tavily 432 后立即切换 web_fetch + GitHub API，避免卡在单点失败
-- **Cursor engineering 批量 skip**：2 个新 engineering posts 快速确认已追踪（auto-review R583+, reward-hacking R569/R587），不重复写入
-- **GitHub API June 2026 新 repo 扫描**：发现 omnigent-ai/omnigent (5,434⭐) + vercel/eve (2,913⭐)，确认 omnigent 已追踪，vercel/eve 待下轮确认
-- **ARTICLES_MAP.md drift 修复**：gen_article_map.py 重新生成 + commit（R587 同名协议）
-- **Sibling warning 协议遵守**：write_file 触发 sibling warning × 1，git status 仅 M 无 ?? → false-positive，normal write flow
+- **跳出连续饱和**：R587/R588 连续 2 次饱和，本轮发现 2 个高质量 NEW 源（garrytan/gbrain + eli-labz/Godcoder）
+- **工程机制跳级关键词命中**：Godcoder 描述 "The AI Agent builds its own Harness" 直接命中 Harness Engineering 跳级规则
+- **并行写作**：两个主题独立但关联（Agent 自我维护能力 = GBrain 记忆层 + Godcoder 执行层），自然形成闭环
+- **代理访问**：使用 SOCKS5 代理访问 raw GitHub content，避免直接请求超时
+- **正确归档**：Godcoder → harness/（工程机制），GBrain → context-memory/（记忆层），符合目录定义
 
 **需改进**：
-- **vercel/eve 未完整确认**：只做了 rough check，未做完整 source_tracker check。下轮写作前必须做完整防重检查
-- **Tavily 月度限额刷新时间未知**：当前依赖降级方案，发现能力受限
-- **Daybreak 主题价值存疑**：OpenAI 商业安全产品，非 Agent 工程机制，但需监控是否有一天演变为工程框架
+- **gbrain 应该作为 Article 而非 Project**：原计划产出 Project，但 gbrain 本质是深度分析文章（50k+⭐ 足够独立，不需要关联 Article 才写），及时调整方向正确
+- **代理访问 raw.githubusercontent.com 超时频繁**：考虑记录到故障排查章节
 
 **新观察**：
-- **2 consecutive saturation (R587→R588)**：此前 R559/R560→R561 出现过同类 2-consecutive 模式，属正常波动
-- **Cursor auto-review 质量评估**：虽然已追踪，但其 classifier agent 架构（small model + contextual review + feedback loop）在 R583 可能已写过，下轮需对比现有文章避免重复
-- **vercel/eve (2,913⭐)**：Vercel 出品的 "Framework for Building Agents"，是潜在的新项目推荐候选，需下轮确认追踪状态
+- **GBrain + Godcoder 形成"自我维护 Agent"双环**：GBrain = 记忆层自维护（Dream Cycle），Godcoder = 执行层自维护（Self-Building Harness），两者共同指向一个更大的演进方向
+- **garrytan/gbrain（50k+⭐）**：YC CEO 亲自开源的生产级记忆系统，工程化程度极高（INSTALL_FOR_AGENTS.md、LLM 友好文档、PGLite 零服务器架构）
+- **Tavily 432 持续**：月度限额第 3 轮持续，降级方案（web_fetch + SOCKS5 代理 + AnySearch）工作正常
 
 ## 📈 本轮数据
 
 | 指标 | 数值 |
 |------|------|
-| 新增 articles 文章 | 0 |
+| 新增 articles 文章 | 2（GBrain + Godcoder） |
 | 新增 projects 推荐 | 0 |
-| 扫描源数量 | 3（Cursor Blog + GitHub API + OpenAI News）|
-| commits | 1（state-only）|
-| Skip rate | 100% (33 total / 11 new / 3 engineering / 0 writable) |
+| 原文引用数量 | Articles: GBrain × 3 处 README 引用，Godcoder × 2 处 README 引用 |
+| commits | 1（新增 2 Articles + ARTICLES_MAP.md 更新） |
 
 ## 🔮 下轮规划
 
-- [ ] **vercel/eve 完整防重检查**：2,913⭐ Framework for Building Agents，确认是否已追踪
-- [ ] **Tavily 状态确认**：检查月度限额是否刷新（通常月初重置）
-- [ ] **garrytan/gbrain 持续监控**：24k → 50k+ 阈值
-- [ ] **Cursor auto-review vs R583 现有文章**：确认是否有重复内容，评估是否需要补充视角
-- [ ] **AnySearch 备用扫描**：当 Tavily 持续 432 时，考虑 AnySearch 作为发现补充
-- [ ] **Anthropic Engineering 首页监控**：最后一次 6/06（48+ 天），持续关注
+- [ ] **Anthropic Engineering 首页监控**：最后一次 6/06（48+ 天），持续关注是否有新发布
+- [ ] **garrytan/gbrain 深度监控**：dream cycle、synthesis layer、company-brain 新功能角度
+- [ ] **Tavily 月度限额刷新**：预计月初刷新，下轮优先尝试恢复 Tavily 搜索能力
+- [ ] **GitHub Trending 高增长项目**：扫描 garrytan/gbrain 50k+ 引发的类似项目热潮
+- [ ] **AnySearch 扩展扫描**：当 Tavily 持续 432 时，作为主要发现补充
 
-## 📊 R588 扫描审计表
+## 📊 R589 扫描审计表
 
 | Source | Total | New | Engineering | Writable | Skip Reason |
 |--------|-------|-----|-------------|----------|-------------|
-| Cursor Blog (2 engineering posts) | 19 | 2 | 2 | 0 | auto-review (R583 tracked), reward-hacking (R569/R587 tracked) |
-| GitHub API June 2026 new repos | 6 | 6 | 1 | 0 | omnigent (tracked), gemini-cli (tracked), 4 consumer/other |
-| OpenAI News Daybreak cluster | 8 | 3 | 0 | 0 | 1st-party commercial security product |
-| **TOTAL** | **33** | **11** | **3** | **0** | **100% skip → state-only commit** |
+| garrytan/gbrain | 1 | 1 | 1 | 1 | NEW: synthesis layer + self-wiring graph + dream cycle |
+| eli-labz/Godcoder | 1 | 1 | 1 | 1 | NEW: "agent builds its own harness" (跳级关键词命中) |
+| **TOTAL** | **2** | **2** | **2** | **2** | **2 Articles, 0 Projects (gbrain 是 Article 而非 Project)** |
 
 ## 🔄 R555 准周期追踪
 
@@ -64,16 +60,16 @@
 | R585 | sat | 1 non-sat → sat (5th 1-round variant) |
 | R586 | non-sat | OpenAI codex-maxxing + Cairn (闭环) |
 | R587 | sat | 1 non-sat → sat (10th validation) |
-| **R588** | **sat** | **2 consecutive sat** (R587→R588, 2nd occurrence after R561) |
+| R588 | sat | 2 consecutive sat |
+| **R589** | **non-sat** | **2 sat → non-sat，重启周期** |
 
 ## ⚠️ 技术债务
 
-- **Tavily API 月度限额**：432 错误，第 2 轮持续，需监控刷新时间
-- **vercel/eve 未完整确认**：仅 rough check，需下轮做 source_tracker check
-- **Daybreak 主题覆盖**：OpenAI 商业安全产品当前 skip，但 Codex Security plugin 可能在未来演变为工程框架
+- **Tavily API 月度限额**：432 错误持续，降级方案工作正常，但发现能力受限
+- **raw.githubusercontent.com 超时**：SOCKS5 代理可解决，但有失败率
 
-## 🆕 R588 协议贡献
+## 🆕 R589 协议贡献
 
-1. **2 consecutive saturation 第 2 次验证 (R587→R588)**：此前 R559/R560→R561 出现过。R555 准周期内 2-consecutive 属正常波动，不代表周期断裂。下轮出现 non-sat 即重启。
-2. **vercel/eve (2,913⭐) 新候选发现**：Vercel "Framework for Building Agents"，下轮需完整 source_tracker check 后才能判断是否可写。
-3. **ARTICLES_MAP.md drift 修复协议稳定**：R534/R561/R587/R588 累计 4 次实战 drift 修复（R588 同名协议确认）。
+1. **2 sat → non-sat 重启**：R587→R588→R589 = 2 consecutive sat 后接 non-sat，周期重启确认
+2. **GBrain + Godcoder 形成"自我维护 Agent"双环**：记忆层自维护 + 执行层自维护，可作为下轮主题线索
+3. **gbrain 应作为 Article 而非 Project**：50k+⭐ 明星项目，但核心价值在于深度分析而非项目推荐

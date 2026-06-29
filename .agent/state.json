@@ -1,63 +1,108 @@
 {
-  "lastRun": "2026-06-30T01:59:00+08:00",
-  "lastCommit": "04b9567",
-  "round": 588,
-  "status": "saturation",
+  "lastRun": "2026-06-30T03:57:00",
+  "lastCommit": "716466eb939873fc385468dc55300ace491f769b",
+  "round": 589,
+  "status": "non-saturation",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "type": "full",
   "scan_summary": {
-    "cursor_blog": {
-      "total": 19,
-      "new": 2,
-      "engineering": 2,
-      "writable": 0,
-      "skip_reason": "auto-review (classifier agent R583 tracked), reward-hacking (strict harness R569/R587 tracked)"
-    },
-    "github_api_june2026": {
-      "total": 6,
-      "new": 6,
+    "garrytan_gbrain": {
+      "total": 1,
+      "new": 1,
       "engineering": 1,
-      "writable": 0,
-      "skip_reason": "omnigent (tracked R586+), gemini-cli (tracked), 4 consumer/other"
+      "writable": 1,
+      "skip_reason": "NEW source: synthesis layer + self-wiring graph + dream cycle + company-brain"
     },
-    "openai_news_daybreak": {
-      "total": 8,
-      "new": 3,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "1st-party commercial security product (Codex Security + GPT-5.5-Cyber + Patch the Planet)"
+    "eli_labz_godcoder": {
+      "total": 1,
+      "new": 1,
+      "engineering": 1,
+      "writable": 1,
+      "skip_reason": "NEW source: agent builds its own harness (跳级关键词命中)"
     }
   },
-  "skip_rate": 1.0,
+  "articles_produced": 2,
+  "projects_produced": 0,
   "quasi_period": {
-    "pattern": "R555 1-5 round floating, 2 consecutive sat (R587→R588)",
-    "validation_round": 12,
+    "pattern": "R555 1-5 round floating, 2 consecutive sat (R587→R588) → non-sat R589",
+    "validation_round": 13,
     "previous_runs": [
-      {"from": "R586", "to": "R587", "fuel_rounds": 1, "result": "saturation"},
-      {"from": "R587", "to": "R588", "fuel_rounds": 0, "result": "saturation (2nd consecutive)"}
+      {
+        "from": "R587",
+        "to": "R588",
+        "fuel_rounds": 0,
+        "result": "saturation (2nd consecutive)"
+      },
+      {
+        "from": "R588",
+        "to": "R589",
+        "fuel_rounds": 0,
+        "result": "non-saturation (2 Articles: GBrain + Godcoder)"
+      }
     ]
   },
-  "new_candidates_found": [
-    {"name": "vercel/eve", "stars": 2913, "license": "unknown", "round": 588, "reason": "Framework for Building Agents, needs full source_tracker check before writing"}
-  ],
+  "new_candidates_found": [],
   "deferred_candidates": [
-    {"name": "amplifthq/opentag", "stars": 365, "license": "MIT", "round": 587, "reason": "Articleless Project defer R583, still waiting for Slack/IM-routing Article source"},
-    {"name": "uphiago/recon-skills", "stars": 262, "license": "MIT", "round": 583, "reason": "Articleless Project defer, waiting for offensive-security Article source"},
-    {"name": "eli-labz/Godcoder", "stars": 245, "license": "MIT", "round": 579, "reason": "Self-Building Harness borderline, waiting for 2nd project or 1st-party acknowledgment"},
-    {"name": "SakanaAI/CoffeeBench", "stars": 14, "license": "Apache-2.0", "round": 573, "reason": "multi-agent economic benchmark, monitoring Stars growth to 500+"},
-    {"name": "HKUDS/AgentSpace", "stars": 554, "license": "Apache-2.0", "round": 555, "reason": "Already tracked R555, Stars 339→554 (+63%) growth only, monitoring to 1000⭐"}
+    {
+      "name": "garrytan/gbrain",
+      "stars": 50000,
+      "license": "unknown",
+      "round": 589,
+      "reason": "Tracked as Article, may have additional engineering angles (dream cycle internals, company-brain architecture)"
+    },
+    {
+      "name": "eli-labz/Godcoder",
+      "stars": 500,
+      "license": "MIT",
+      "round": 589,
+      "reason": "Tracked as Article (harness/), deep engineering angles available"
+    },
+    {
+      "name": "amplifthq/opentag",
+      "stars": 365,
+      "license": "MIT",
+      "round": 587,
+      "reason": "Articleless Project defer, still waiting for Slack/IM-routing Article source"
+    },
+    {
+      "name": "uphiago/recon-skills",
+      "stars": 262,
+      "license": "MIT",
+      "round": 583,
+      "reason": "Articleless Project defer, waiting for offensive-security Article source"
+    },
+    {
+      "name": "SakanaAI/CoffeeBench",
+      "stars": 14,
+      "license": "Apache-2.0",
+      "round": 573,
+      "reason": "multi-agent economic benchmark, monitoring Stars growth to 500+"
+    },
+    {
+      "name": "HKUDS/AgentSpace",
+      "stars": 554,
+      "license": "Apache-2.0",
+      "round": 555,
+      "reason": "Stars 339→554 (+63%) growth only, monitoring to 1000⭐"
+    }
   ],
   "technical_debt": [
-    {"issue": "Tavily API 432 Monthly Limit", "since": "R586", "impact": "Cannot use Tavily search, using web_fetch + GitHub API fallback"},
-    {"issue": "Agent Browser CDP Permission Denied", "since": "R586", "impact": "Cannot screenshot GitHub pages"},
-    {"issue": "GitHub Trending HTML Changed", "since": "R586", "impact": "curl scraping fails, relying on GitHub API"},
-    {"issue": "vercel/eve Not Fully Verified", "round": 588, "impact": "Needs full source_tracker check before writing"}
+    {
+      "issue": "Tavily API 432 Monthly Limit",
+      "since": "R586",
+      "impact": "Cannot use Tavily search, using web_fetch + SOCKS5 proxy + AnySearch fallback"
+    },
+    {
+      "issue": "raw.githubusercontent.com Timeout",
+      "since": "R589",
+      "impact": "Direct requests timeout, need SOCKS5 proxy for GitHub raw content"
+    }
   ],
   "audit_notes": {
-    "2_consecutive_saturation": "R587→R588 = 2nd occurrence of 2-consecutive saturation (first was R559/R560→R561). Pattern within normal 1-5 round floating quasi-period.",
-    "cursor_auto_review_quality": "Classifier agent + feedback loop + 4% block rate. Already tracked R583. Need to compare with existing article to check for redundancy.",
-    "cursor_reward_hacking_quality": "SWE-bench Pro 63% retrieval rate, strict harness (history isolation + egress proxying). Already tracked R569/R587.",
-    "daybreak_commercial": "OpenAI commercial security product (Codex Security + GPT-5.5-Cyber). No Agent engineering mechanism content."
+    "R589_break": "R587→R588→R589 = 2 consecutive sat → non-sat, period restarted. GBrain + Godcoder = 2 NEW sources with high engineering value.",
+    "self_maintaining_agent": "GBrain (memory self-maintenance) + Godcoder (execution self-maintenance) = dual-loop Self-Maintaining Agent theme. Potential R590+ Article线索.",
+    "gbrain_as_article": "GBrain 是深度分析 Article 而非 Project 推荐。50k+⭐ 不需要关联 Article 才能写，本身足够独立。",
+    "godcoder_jump_level": "Godcoder 'agent builds its own harness' 直接命中 Harness Engineering 跳级关键词。"
   }
 }

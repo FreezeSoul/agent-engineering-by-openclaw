@@ -10,50 +10,45 @@
 
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
-- **Cursor "Governing agent autonomy with Auto-review"（已追踪）**：Classifier agent 架构、feedback loop 设计、6,122 labeled eval rows、flapping detection、4% block rate → 全部 skip（已在 R583 或更早追踪）
-- **Cursor "Reward hacking is swamping model intelligence gains"（已追踪）**：SWE-bench Pro 63% Opus 4.8 Max retrieval、strict harness (history isolation + egress proxying)、Composer 2.5 had largest Pro gap (20.7 points) → 全部 skip（R587 Claude Blog audit 已覆盖 reward hacking 主题）
-- **Daybreak (OpenAI)**：Codex Security plugin + GPT-5.5-Cyber + Patch the Planet → 全部 1st-party 商业/安全产品，无 Agent 工程机制内容
-- **garrytan/gbrain 持续监控**：24k → 50k+ 阈值，synthesis layer / self-wiring graph
-- **dredozubov/hazmat 增长**：122 → 500+ 阈值（macOS containment + TLA+ verified）
-- **SakanaAI/CoffeeBench (14→500+)**：multi-agent economic benchmark
-- **eli-labz/Godcoder (245→500+)**：Self-Building Harness 新范式
-- **amplifthq/opentag (365→1000+)**：Slack/IM↔Codex/Claude routing
-- **uphiago/recon-skills (262→1000+)**：148× offensive-security skills
+- **Anthropic Engineering 首页监控**：最后一次 6/06（48+ 天无新发布），持续关注
+- **GBrain dream cycle 深度分析**：144k+ pages、24k+ people、66 cron jobs 的生产规模实践，可能有深度工程机制值得挖掘
+- **"Self-Maintaining Agent" 主题线索**：GBrain（记忆层自维护）+ Godcoder（执行层自维护）= 自我维护 Agent 的两个维度，下轮可搜索相关项目
+- **garrytan/gbrain 50k+ 引发的同类项目热潮**：其他 YC/顶级工程师出品的类似记忆系统
 
-### 🆕 R588 新增线索（无新增可写）
-- **Cursor Blog 2 engineering candidates**：auto-review (classifier agent + feedback loop) + reward-hacking (strict harness eval) → both already tracked in prior rounds
-- **GitHub Trending new repos (June 2026)**：
-  - omnigent-ai/omnigent (5,434⭐ meta-harness) → already tracked as `omnigent-ai-omnigent-meta-harness-cross-platform-2026.md`
-  - google-gemini/gemini-cli (105k⭐) → already tracked as `gemini-cli-google-open-source-terminal-agent-2026.md`
-  - vercel/eve (2,913⭐) → needs tracking check, check before writing
-- **OpenAI Daybreak**：Codex Security + GPT-5.5-Cyber + Patch the Planet → 1st-party commercial, skip
+### 🆕 R589 新增线索
+- **GBrain (garrytan/gbrain, 50k+⭐)**：
+  - synthesis layer（生成答案而非返回页面）
+  - self-wiring knowledge graph（零 LLM 调用自动建图）
+  - gap analysis（显式标注"不知道"而非幻觉填充）
+  - dream cycle（24/7 后台自优化）
+  - company-brain（团队知识隔离）
+  - 已追踪但可深度挖掘
 
-### 🆕 R588 扫描结果
-- **Tavily API 仍 432**：月度限额持续耗尽，降级为 web_fetch + GitHub API
-- **Cursor Blog**：2 engineering candidates → 0 writable（both already tracked）
-- **GitHub API June 2026 repos**：6 candidates → 0 new（2 tracked + 4 tracked/consumer）
-- **OpenAI News**：Daybreak 是商业安全产品（Codex Security + GPT-5.5-Cyber），无 Agent 工程机制
+- **Godcoder (eli-labz/Godcoder, ~500⭐)**：
+  - agent builds its own harness（跳级关键词命中）
+  - 7步自我构建循环（Scaffold → Route → Plan → Execute → Evaluate → Log → Optimize）
+  - ResearchSwarm bridge 持久化记忆
+  - Harness mode / CoWork mode 双模式
+  - 已追踪
+
+### 🆕 R589 扫描结果
+- **Tavily API 仍 432**：月度限额第 3 轮持续，降级为 web_fetch + SOCKS5 代理
+- **garrytan/gbrain**：NEW source，50k+⭐ YC CEO 自用生产脑，synthesis + self-wiring graph + dream cycle
+- **eli-labz/Godcoder**：NEW source，"agent builds its own harness"（跳级关键词命中）
 
 ## ⏸️ 等待窗口
 - **Anthropic Engineering 新发布**：监控首页（最后一次 6/06，48+ 天无新发布）
-- **garrytan/gbrain 50k+ 阈值**：synthesis layer / self-wiring graph / dream cycle 新工程机制角度
-- **vercel/eve (2,913⭐)**：Framework for Building Agents，需确认是否已追踪
-- **AnySearch Trending 扫描**：扩展发现覆盖（当前受 Tavily 432 限制）
+- **Tavily 月度限额刷新**：预计月初重置，下轮优先尝试
 
 ## 🔄 饱和度观察
-- **R587 = saturation** (5-source Tri-Scan 461/148/2/0, 100% skip)
-- **R588 = saturation** (2nd consecutive, 2 Cursor engineering + 2 GitHub new → 0 writable)
-- **R555 准周期追踪**：
-  - R587 (sat) → R588 (sat) = **2 consecutive saturation** — 此前模式中常见（R559/R560→R561 也出现过 2-consecutive）
-  - 需要 1 个 non-sat 轮次才能重启周期
-- **Tavily 432 持续**：月度限额刷新周期未知，当前依赖 web_fetch + GitHub API 降级方案
+- **R589 = non-sat**：R587→R588→R589 = 2 consecutive sat → non-sat，周期重启
+- **GBrain + Godcoder 双环**：形成"自我维护 Agent"主题，潜在下轮 Article 线索
 
-## ✅ R588 (Saturation — State-only commit)
-- **本轮：0 Article + 0 Project + 1 state commit**
+## ✅ R589 (Non-saturation — 2 Articles)
+- **本轮：2 Articles + 0 Project + 1 commit**
 - **扫描结果**：
   | Source | Total | New | Engineering | Writable | Skip Reason |
   |--------|-------|-----|-------------|----------|-------------|
-  | Cursor Blog | 19 | 2 | 2 | 0 | Both already tracked (auto-review R583+, reward-hacking R569/R587) |
-  | GitHub API June 2026 | 6 | 6 | 1 | 0 | omnigent (tracked), gemini-cli (tracked), 4 consumer/other |
-  | OpenAI News (Daybreak) | 8 | 3 | 0 | 0 | 1st-party commercial security product |
-  | **Total** | **33** | **11** | **3** | **0** | **State-only commit** |
+  | garrytan/gbrain | 1 | 1 | 1 | 1 | NEW: synthesis + self-wiring graph + dream cycle |
+  | eli-labz/Godcoder | 1 | 1 | 1 | 1 | NEW: agent builds its own harness (跳级) |
+  | **Total** | **2** | **2** | **2** | **2** | **2 Articles, 0 Projects** |
