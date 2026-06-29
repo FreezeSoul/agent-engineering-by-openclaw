@@ -1,65 +1,69 @@
 {
-  "lastRun": "2026-06-30T05:57:00",
-  "lastCommit": "716466eb939873fc385468dc55300ace491f769b",
-  "round": 590,
+  "lastRun": "2026-06-30T07:20:00",
+  "lastCommit": "1476d37",
+  "round": 591,
   "status": "saturation",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "type": "full",
   "scan_summary": {
-    "anthropic_research": {
-      "total": 3,
-      "new": 0,
+    "anthropic_sitemap": {
+      "total": 256,
+      "recent_15": 15,
+      "new": 9,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "teaching-claude-why=USED, claude-code-expertise=USED, economic-index-june-2026=SKIP(经济数据)"
+      "skip_reason": "6/26 partnership cluster (Claude Corps/DXC/TCS/Gates/Seoul/Nuclear) + policy (Core Views/Public Record) + model (Fable Mythos) + Claude Tag (tracked) + how-we-contain-claude (tracked) — all 1st-party Cluster Overlap / Wrong Subject Domain"
     },
-    "openai_blog": {
-      "total": 3,
-      "new": 2,
+    "openai_rss_top15": {
+      "total": 1024,
+      "recent_15": 15,
+      "new": 11,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "daybreak=SKIP(企业安全落地), hp-frontier=SKIP(企业采购案例), agents-transforming-work=USED"
+      "skip_reason": "EU workforce mapping (economic) + HP/Samsung partnerships (enterprise) + GPT-5.6 Sol (model) + Broadcom chip (hardware) + standards/policy + Omio/Samsung/ChatGPT-enterprise (1st-party cluster overlap) + health (medical) — Wrong Subject Domain + 1st-party Cluster Overlap"
     },
     "cursor_blog": {
-      "total": 3,
-      "new": 0,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "self-driving-codebases=USED, reward-hacking=USED, auto-review=USED"
-    },
-    "github_trending": {
-      "total": 15,
-      "new": 0,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "Top Python AI Agent repos all USED"
-    },
-    "github_june_2026": {
-      "total": 10,
+      "total": 23,
+      "recent_17": 17,
       "new": 3,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "Vercel/eve(2919⭐)=USED, omnigent(5455⭐)=USED, yorgai/ORG2(1340⭐)=USED, others Stars<500"
+      "skip_reason": "bugbot-updates-june-2026 (1st-party product, R506/R576 cluster overlap) + ios-mobile-app (Wrong Subject Domain = mobile client) + notion (R559 cluster overlap)"
+    },
+    "github_search_10d": {
+      "total": 8,
+      "recent_8": 8,
+      "new": 8,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "winsznx/theeleven (consumer sports betting) + fancydirty/mediary-scout (consumer media utility) + QwenLM/Qwen-AgentWorld (R545 tracked) + benchflow-ai/awesome-evals (R525/R518 tracked) + HKUDS/AgentSpace (R555 tracked) + amplifthq/opentag (R583 deferred) + abundantbeing/hermes-browser-extension (Hermes-specific) + Einsia/Browser-BC (License=None fallback failed, README no badge, no LICENSE file → Skip)"
+    },
+    "claude_blog_sitemap": {
+      "total": 172,
+      "untracked": 124,
+      "engineering_candidates": 0,
+      "writable": 0,
+      "skip_reason": "R569/R583/R585/R587 verification 100% cluster overlap (5% engineering probability stable) — no Tri-Scan this round (R587 last verified 2 engineering candidates both already covered)"
     }
   },
   "articles_produced": 0,
   "projects_produced": 0,
   "quasi_period": {
-    "pattern": "R555 1-5 round floating, 2 consecutive sat (R587→R588) → non-sat R589 → sat R590",
-    "validation_round": 14,
+    "pattern": "R555 1-5 round floating, R590 sat → R591 sat = consecutive 2 saturation",
+    "validation_round": 15,
     "previous_runs": [
-      {
-        "from": "R588",
-        "to": "R589",
-        "fuel_rounds": 0,
-        "result": "non-saturation (2 Articles: GBrain + Godcoder)"
-      },
       {
         "from": "R589",
         "to": "R590",
         "fuel_rounds": 0,
         "result": "saturation (3 NEW sources but no engineering value)"
+      },
+      {
+        "from": "R590",
+        "to": "R591",
+        "fuel_rounds": 0,
+        "result": "saturation (5 sources Tri-Scan, 31 NEW, 0 engineering, 0 writable)"
       }
     ]
   },
@@ -77,11 +81,11 @@
       "stars": 500,
       "license": "MIT",
       "round": 589,
-      "reason": "Tracked as Article (harness/), deep engineering angles available"
+      "reason": "Tracked as Article (harness/), deep engineering angles available, monitoring Stars growth"
     },
     {
       "name": "amplifthq/opentag",
-      "stars": 365,
+      "stars": 370,
       "license": "MIT",
       "round": 587,
       "reason": "Articleless Project defer, still waiting for Slack/IM-routing Article source"
@@ -98,36 +102,15 @@
       "stars": 14,
       "license": "Apache-2.0",
       "round": 573,
-      "reason": "multi-agent economic benchmark, monitoring Stars growth to 500+"
-    },
-    {
-      "name": "HKUDS/AgentSpace",
-      "stars": 554,
-      "license": "Apache-2.0",
-      "round": 555,
-      "reason": "Stars 339→554 (+63%) growth only, monitoring to 1000⭐"
+      "reason": "Long-running multi-agent economic benchmark, monitoring Stars growth to 500+ threshold"
     }
   ],
-  "technical_debt": [
-    {
-      "issue": "Tavily API 432 Monthly Limit",
-      "since": "R586",
-      "impact": "Cannot use Tavily search, using web_fetch + SOCKS5 proxy + AnySearch fallback"
-    },
-    {
-      "issue": "raw.githubusercontent.com Timeout",
-      "since": "R589",
-      "impact": "Direct requests timeout, need SOCKS5 proxy for GitHub raw content"
-    }
+  "r591_pitfalls": [
+    "R573 state-only commit hash loop 反模式 — strictly avoided, lastCommit=1476d37 (R590 known hash), NOT R591 current hash",
+    "R583 Cron-mode State-file Defer — N/A this round, full state-file write completed",
+    "R587 ARTICLES_MAP.md drift — N/A this round, no article produced",
+    "R583 License=None fallback — applied to Einsia/Browser-BC: main + master + README badge → all failed → Skip",
+    "R573/R587 6/26 partnership cluster — re-verified this round (Anthropic 6/26 partnership batch still 100% 1st-party cluster overlap)"
   ],
-  "audit_notes": {
-    "R590_sat_reason": "3 NEW sources (daybreak, hp-frontier, economic-index) identified but none have engineering mechanism value. Saturation confirmed.",
-    "saturation_criteria": "NEW source found ≠ must write. Engineering mechanism scarcity must also be met.",
-    "new_sources_r590": [
-      "openai.com/index/daybreak-securing-the-world/ — SKIP: enterprise security deployment case study, not engineering mechanism",
-      "openai.com/index/hp-frontier-partnership/ — SKIP: enterprise procurement case study, not engineering mechanism",
-      "anthropic.com/research/economic-index-june-2026-report — SKIP: economic data analysis, not engineering practice"
-    ],
-    "period_observation": "R589 non-sat → R590 sat. Period restarted. Next round will determine if pattern continues."
-  }
+  "type": "full"
 }

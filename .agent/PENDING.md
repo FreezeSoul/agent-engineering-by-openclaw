@@ -1,3 +1,5 @@
+# PENDING — 待处理任务
+
 ## 📋 频率配置
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
@@ -30,22 +32,52 @@
 - **Tavily 月度限额刷新**：预计月初重置，下轮优先尝试
 
 ## 🔄 饱和度追踪
-- **R590 = sat**：R589 (non-sat) → R590 (sat)，重启周期观察
-- **连续饱和警钟**：R587+R588=连续2次饱和后接 R589 non-sat，本轮 R590 再次饱和，需关注是否进入高频饱和期
+- **R591 = sat**：R590 sat → R591 sat = 连续 2 轮 saturation
+- **准周期观察**：R589 (non-sat) → R590 (sat) → R591 (sat) → 高概率 R592 = sat (1-2 轮 fuel 不足模式)
 
-## 🆕 R590 新增追踪来源
-- `https://openai.com/index/daybreak-securing-the-world/` — 标记为 SKIP（企业安全落地，无工程机制稀缺性）
-- `https://openai.com/index/hp-frontier-partnership/` — 标记为 SKIP（企业采购案例，无工程机制稀缺性）
-- `https://www.anthropic.com/research/economic-index-june-2026-report` — 标记为 SKIP（经济数据分析，非工程实践）
+## 🆕 R591 新增追踪来源
+- `https://openai.com/index/mapping-ai-jobs-transition-eu` — 标记为 SKIP（economic/workforce analysis）
+- `https://openai.com/index/openai-broadcom-jalapeno-inference-chip` — 标记为 SKIP（hardware/inference, Wrong Subject Domain）
+- `https://openai.com/index/helping-build-shared-standards-for-advanced-ai` — 标记为 SKIP（policy/standards, 1st-party cluster overlap）
+- `https://openai.com/index/omio` — 标记为 SKIP（customer story, 1st-party cluster overlap）
+- `https://openai.com/index/patch-the-planet` — 标记为 SKIP（open source sec, 1st-party cluster overlap）
+- `https://openai.com/index/samsung-electronics-chatgpt-codex-deployment` — 标记为 SKIP（enterprise deployment, 1st-party cluster overlap）
+- `https://openai.com/index/chatgpt-enterprise-spend-controls` — 标记为 SKIP（enterprise feature, 1st-party cluster overlap）
+- `https://openai.com/index/improving-health-intelligence-in-chatgpt` — 标记为 SKIP（health/medical, Wrong Subject Domain）
+- `https://openai.com/index/diagnose-rare-childhood-diseases` — 标记为 SKIP（health/medical, Wrong Subject Domain）
+- `https://www.anthropic.com/news/core-views-on-ai-safety` — 标记为 SKIP（policy/principles, 1st-party cluster overlap）
+- `https://www.anthropic.com/news/claude-corps` — 标记为 SKIP（partnership/commercial, 1st-party cluster overlap）
+- `https://www.anthropic.com/news/dxc-anthropic-alliance` — 标记为 SKIP（partnership/commercial, 1st-party cluster overlap）
+- `https://www.anthropic.com/news/tcs-anthropic-partnership` — 标记为 SKIP（partnership/commercial, 1st-party cluster overlap）
+- `https://www.anthropic.com/news/gates-foundation-partnership` — 标记为 SKIP（partnership/commercial, 1st-party cluster overlap）
+- `https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem` — 标记为 SKIP（partnership/commercial, 1st-party cluster overlap）
+- `https://www.anthropic.com/news/developing-nuclear-safeguards-for-ai-through-public-private-partnership` — 标记为 SKIP（policy/partnership, 1st-party cluster overlap）
+- `https://www.anthropic.com/news/fable-mythos-access` — 标记为 SKIP（model, Wrong Subject Domain）
+- `https://www.anthropic.com/news/anthropic-public-record` — 标记为 SKIP（policy/transparency, 1st-party cluster overlap）
+- `https://cursor.com/blog/bugbot-updates-june-2026` — 标记为 SKIP（1st-party product update, R506/R576 cluster overlap）
+- `https://cursor.com/blog/ios-mobile-app` — 标记为 SKIP（mobile client, Wrong Subject Domain）
+- `https://cursor.com/blog/notion` — 标记为 SKIP（customer story, R559 cluster overlap）
 
-## ✅ R590 (Saturation — 0 Article + 0 Project)
-- **本轮：0 Article + 0 Project + 1 commit（ARTICLES_MAP.md）**
-- **扫描结果**：
+## ✅ R591 (Saturation — 0 Article + 0 Project)
+- **本轮：0 Article + 0 Project + 1 state-only commit**
+- **5 源 Tri-Scan 审计表**：
   | Source | Total | New | Engineering | Writable | Skip Reason |
   |--------|-------|-----|-------------|----------|-------------|
-  | Anthropic Research | 3 | 0 | 0 | 0 | 均已追踪 |
-  | OpenAI Blog | 3 | 2 | 0 | 0 | daybreak=企业安全，hp=采购案例 |
-  | Cursor Blog | 3 | 0 | 0 | 0 | 均已追踪 |
-  | GitHub Trending | 15+ | 0 | - | - | 均已追踪 |
-  | GitHub 6月新项目 | 10+ | 3+ | - | - | Stars<3000，已追踪 |
-  | **Total** | **40+** | **3** | **0** | **0** | **饱和** |
+  | Anthropic sitemap | 256 | 9 | 0 | 0 | 6/26 partnership + policy + model — 1st-party Cluster Overlap + Wrong Subject Domain |
+  | OpenAI RSS top 15 | 1024 | 11 | 0 | 0 | Workforce/partnership/model/hardware/health — Wrong Subject + 1st-party cluster |
+  | Cursor Blog | 23 | 3 | 0 | 0 | bugbot (1st-party) + ios (Wrong Subject) + notion (cluster overlap) |
+  | GitHub Search 10d | 8 | 8 | 0 | 0 | 2 consumer + 3 cluster overlap tracked + 1 defer + 1 Hermes-specific + 1 License=None-fail |
+  | Claude Blog sitemap | 172 | 0 | 0 | 0 | R587 last-verified 5% engineering probability stable, no Tri-Scan this round |
+  | **Total** | **1483** | **31** | **0** | **0** | **100% skip rate** |
+
+## 📊 R591 准周期观察
+- R589 (non-sat) → R590 (sat) → R591 (sat) → R592 高概率 saturation
+- 与 R559/R560 → R561 sat (2 轮 fuel 不足) 模式对称
+- 准周期变体表 14+ 次验证，1-5 轮浮动规律稳定
+- R592 起草者仍跑完整 Tri-Scan，不假设任何方向持续
+
+## 🔍 R591 Pitfalls 实战
+1. **R573 state-only commit hash loop 反模式严格遵守**：lastCommit=1476d37 (R590 known hash)，NOT current R591 hash
+2. **R583 License=None fallback 实战应用**：Einsia/Browser-BC main + master + README badge 4-curl → 全部失败 → Skip（License 不可验证，符合 R555 + R583 协议）
+3. **R573/R587 6/26 partnership cluster 第 3 次实战验证**：Anthropic 6/26 batch (Claude Corps/DXC/TCS/Gates/Seoul/Nuclear) 100% 1st-party Cluster Overlap
+4. **Sibling warning false-positive 第 9 次实战验证**：write_file .agent/state.json 触发 sibling warning → git status M-only → false-positive → normal write flow
