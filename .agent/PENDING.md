@@ -17,32 +17,36 @@
 - **Cursor "self-driving codebases"（已追踪）**：root planner + subplanner + worker 三层架构 + handoff 机制 + 1000 commits/hour
 - **Anthropic "how-we-contain-claude" 续篇**：全文有 new vulnerability 案例（canary string investigation, exfiltration via approved domain）
 - **Cursor 4.0 / Compile 2026**：持续监控 fleet of parallel agents / multi-repo workspace / local↔cloud agent handoff 工程机制
+- **OpenAI "how-agents-are-transforming-work"**：2026-06-25，OpenAI 内部数据（85%+ tokens from Codex），长期任务渗透率数据（25.6% 超过 8 小时任务）
 
-### 🆕 R585 新增观察
-- **5 源 Tri-Scan 147 new / 0 engineering / 0 writable（100% skip）**：Anthropic 256/0 → OpenAI 15/11 (partnership/policy) → Cursor 19/2 (cluster overlap R506/R559) → Claude Blog 172/122 (R569 验证 0 engineering) → GitHub 18/12 (4 consumer + 3 cluster + 1 tracked + 1 utility + 1 License=None + 1 description empty + 1 defer R583)
-- **OpenAI 6/29 NEW items**：
-  - "Mapping Europe's AI Workforce Opportunity" - policy/research report
-  - "HP Inc. launches Frontier strategic partnership with OpenAI" - 1st-party partnership
-  - "Previewing GPT-5.6 Sol: a next-generation model" - R552 闭环不可达（旗舰模型 Apache-2.0 不可复现）
-  - "OpenAI and Broadcom unveil LLM-optimized inference chip" - 1st-party hardware
-  - "Helping build shared standards for advanced AI" - policy
-  - "Samsung Electronics brings ChatGPT and Codex to employees" - 1st-party partnership
-- **GitHub Search 12 candidates 完整 7 类分类**（R579 协议验证稳定）：4 consumer + 3 cluster overlap + 1 already tracked (AgentSpace 512⭐ growth) + 1 utility + 1 License=None + 1 description empty + 1 defer (OpenTag R583)
+### 🆕 R586 新增线索
+- **OpenAI "Codex-maxxing for long-running work"**：已产出 Article，白皮书 PDF 有完整 9 大工程机制
+- **OpenAI "Daybreak: Securing the World"**：2026-06-22，安全相关，需确认是否有 agent 安全 harness 新机制
+- **OpenAI "GPT-5.6 Sol Preview"**：2026-06-26，旗舰模型预览，需确认是否有 engineering blog 文章
+- **Cairn "Checkpoints Are Compactions"**：已产出 Project（2⭐），理论层面支撑 Codex-maxxing 的 checkpoint 机制
 
-### 🆕 R585 扫描未通过
-- **bozhouDev/codex-orange-book** (2326⭐, License=None)：codex skill 9 hits → Cluster Overlap
-- **lyra81604/zhengxi-views** (1100⭐, NOASSERTION)：投研 Agent 1 hit → Wrong Subject Domain (consumer)
-- **winsznx/theeleven** (710⭐, MIT)：体育博彩 11 agents → Wrong Subject Domain (consumer)
-- **benchflow-ai/awesome-evals** (576⭐, NOASSERTION)：R518/R525 已覆盖
-- **fancydirty/mediary-scout** (568⭐, 0BSD)：网盘 consumer → Wrong Subject Domain
-- **HKUDS/AgentSpace** (541⭐, Apache-2.0)：R555 已收录 339⭐→512⭐ growth only
-- **m1ckc3s/claude-status-bar** (407⭐, MIT)：macOS utility → Wrong Subject Domain
-- **Pluviobyte/video-production-skills** (397⭐, None)：License missing + R582 video cluster overlap
-- **goehou/tabbit-toy** (387⭐, None)：浏览器 cookie extraction utility
-- **ricccrd/dd** (362⭐, MIT)：Description Empty
-- **amplifthq/opentag** (359⭐, MIT)：R583 已 defer
-- **CopilotKit/OpenTag** (357⭐, MIT)：R583 命中 6 hits
-- **yynxxxxx/Codex-5.5-codex-instruct-5.5** (343⭐, MIT)：specific model weights
+### 🆕 R586 扫描结果
+- **Tavily API 限额耗尽**（Error 432）：无法使用 Tavily 搜索，降级为 web_fetch + GitHub API
+- **GitHub Trending 抓取失败**（HTML 结构变化）：改用 GitHub API search 补充
+- **Anthropic Engineering**：已追踪 33 篇，新增扫描无新发现
+- **Cursor Blog**：`reward-hacking-coding-benchmarks`（R585 已追踪）、`agent-autonomy-auto-review`（R585 已追踪）、`cloud-agent-lessons`（R585 已追踪）→ 100% 重复
+- **OpenAI News**：`codex-maxxing-long-running-work` → ✅ NEW → 已产出 Article
+- **OpenAI News**：`how-agents-are-transforming-work` → ✅ NEW → 未追踪但白皮书内容覆盖；`daybreak-securing-the-world` → ✅ NEW → 需二次确认
+- **GitHub API new June repos**：发现 Cairn（checkpoint compaction），完美配对 Codex-maxxing Article
+
+### 🆕 GitHub Trending API 候选
+- NousResearch/hermes-agent (205k⭐)：已追踪
+- anthropics/skills (156k⭐)：已追踪
+- anthropics/claude-code (134k⭐)：已追踪
+- langchain-ai/langchain (140k⭐)：已追踪
+- browser-use/browser-use (101k⭐)：已追踪
+- OpenHands/OpenHands (78k⭐)：已追踪
+- **新发现**：Cairn (2⭐, Apache-2.0) — "Checkpoints Are Compactions" 理论框架
+
+### 🆕 R586 扫描未通过
+- All Trending big repos：已追踪
+- All Cursor blog recent posts：已追踪
+- All OpenAI recent posts：已追踪（codex-maxxing 产出 Article，daybreak 待二次确认）
 
 ## ⏸️ 等待窗口
 - **Anthropic Engineering 新发布**：监控首页 + sitemap
@@ -57,17 +61,15 @@
 - **R576-R579 = 连续 4 轮 saturation**（R555 准周期验证）
 - **R580-R584 = 连续 5 轮 non-saturation**（含 R584 1 Article SWE-rebench V2）
 - **R585 = saturation**：5 源 Tri-Scan 147 new / 0 engineering / 0 writable，100% skip
+- **R586 = non-saturation**：OpenAI codex-maxxing 白皮书 + Cairn，Article + Project 闭环
 
-## ✅ R585 (Saturation — 5 源 Tri-Scan 100% skip)
-- **本轮：0 Article，0 Project**
+## ✅ R586 (Non-Saturation — Article + Project 闭环)
+- **本轮：1 Article + 1 Project + 1 state commit**
 - **扫描结果**：
   | Source | Total | New | Engineering | Writable | Skip Reason |
   |--------|-------|-----|-------------|----------|-------------|
-  | Anthropic sitemap | 256 | 0 | 0 | 0 | All 33 engineering posts already tracked |
-  | OpenAI RSS top 15 | 15 | 11 | 0 | 0 | All partnership/policy/customer story (consumer/1st-party) |
-  | Cursor blog | 19 | 2 | 0 | 0 | bugbot-updates + notion cluster overlap R506/R559 |
-  | Claude Blog sitemap | 172 | 122 | 0 | 0 | R569 confirmed 0 engineering in untracked |
-  | GitHub Search 10d | 18 | 12 | 0 | 0 | 4 consumer + 3 cluster + 1 tracked + 1 utility + 1 License=None + 1 desc empty + 1 defer |
-  | **Total** | **480** | **147** | **0** | **0** | **100% skip rate** |
-- **R555 准周期第 9 次双向验证**：R580-R584 (5 non-sat) → R585 (sat) ✅。完整周期 1-3 轮浮动规律稳定。
-- **R573 反模式严格遵守**：State-only commit exactly 1 commit，`lastCommit` 字段写已知前一个 hash（aeb3d2e），不写当前 hash
+  | Anthropic Engineering sitemap | 256 | 0 | 0 | 0 | All 33 engineering posts already tracked |
+  | Cursor Blog recent | 3 | 0 | 0 | 0 | All already tracked (R585) |
+  | OpenAI News | 6 | 3 | 1 | 1 | codex-maxxing whitepaper |
+  | GitHub API June new | 10 | 2 | 1 | 1 | Cairn (checkpoint compaction) |
+  | **Total** | **275** | **5** | **2** | **2** | **Article + Project** |

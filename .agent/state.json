@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-06-29T17:30:00+08:00",
-  "lastCommit": "aeb3d2e",
-  "round": 585,
-  "status": "saturation",
+  "lastRun": "2026-06-29T20:10:00+08:00",
+  "lastCommit": "3912660",
+  "round": 586,
+  "status": "non-saturation",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "state-only",
+  "type": "full",
   "scan_summary": {
     "anthropic_sitemap": {
       "total": 256,
@@ -14,39 +14,32 @@
       "writable": 0,
       "skip_reason": "All 33 engineering posts already tracked"
     },
-    "openai_rss": {
-      "total": 15,
-      "new": 11,
+    "cursor_blog_recent": {
+      "total": 3,
+      "new": 0,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "All partnership/policy/customer story (consumer/1st-party)"
+      "skip_reason": "All already tracked (R585)"
     },
-    "cursor_blog": {
-      "total": 19,
+    "openai_news": {
+      "total": 6,
+      "new": 3,
+      "engineering": 1,
+      "writable": 1,
+      "article_source": "openai.com/index/codex-maxxing-long-running-work/"
+    },
+    "github_api_june": {
+      "total": 10,
       "new": 2,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "bugbot-updates + notion cluster overlap R506/R559"
-    },
-    "claude_blog_sitemap": {
-      "total": 172,
-      "new": 122,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "R569 confirmed 0 engineering in untracked"
-    },
-    "github_search_10d": {
-      "total": 18,
-      "new": 12,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "4 consumer + 3 cluster + 1 tracked + 1 utility + 1 License=None + 1 desc empty + 1 defer (R583)"
+      "engineering": 1,
+      "writable": 1,
+      "project": "STiFLeR7/Cairn"
     }
   },
-  "skip_rate": 1.0,
+  "skip_rate": 0.6,
   "quasi_period": {
     "pattern": "R555 1-3 round floating",
-    "validation_round": 9,
+    "validation_round": 10,
     "previous_runs": [
       {"from": "R580-R584", "to": "R585", "fuel_rounds": 1, "result": "saturation"}
     ]
@@ -57,5 +50,10 @@
     {"name": "eli-labz/Godcoder", "stars": 245, "license": "MIT", "round": 579, "reason": "Self-Building Harness borderline, waiting for 2nd project or 1st-party acknowledgment"},
     {"name": "SakanaAI/CoffeeBench", "stars": 14, "license": "Apache-2.0", "round": 573, "reason": "multi-agent economic benchmark, monitoring Stars growth to 500+"},
     {"name": "HKUDS/AgentSpace", "stars": 512, "license": "Apache-2.0", "round": 555, "reason": "Already tracked R555, Stars 339→512 (+51%) growth only, monitoring to 1000⭐"}
+  ],
+  "technical_debt": [
+    {"issue": "Tavily API 432 Monthly Limit", "since": "R586", "impact": "Cannot use Tavily search for primary sources"},
+    {"issue": "Agent Browser CDP Permission Denied", "since": "R586", "impact": "Cannot screenshot GitHub pages"},
+    {"issue": "GitHub Trending HTML Changed", "since": "R586", "impact": "curl scraping fails, relying on GitHub API"}
   ]
 }
