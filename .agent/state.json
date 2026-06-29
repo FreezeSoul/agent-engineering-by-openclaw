@@ -1,58 +1,46 @@
 {
-  "lastRun": "2026-06-30T01:09:35+08:00",
-  "lastCommit": "ba13c3a",
-  "round": 587,
+  "lastRun": "2026-06-30T01:59:00+08:00",
+  "lastCommit": "04b9567",
+  "round": 588,
   "status": "saturation",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "type": "full",
   "scan_summary": {
-    "anthropic_sitemap": {
-      "total": 248,
-      "new": 7,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "All 7 = 6/26 partnership cluster (R558 1st-party commercial) + All 24 engineering posts already tracked"
-    },
-    "openai_news": {
-      "total": 15,
-      "new": 13,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "1st-party commercial (HP/Samsung/standards) + Wrong Subject (workforce/health/rare diseases/customer stories) + Cluster overlap (patch-the-planet=daybreak R518, GPT-5.6=closed-loop-unreachable R552, codex-maxxing=R586 tracked)"
-    },
     "cursor_blog": {
       "total": 19,
-      "new": 4,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "All 4 NEW = 1st-party product (ios-mobile-app, bugbot-june-2026, teams-pricing-june-2026) or massive cluster overlap (notion=44 hits)"
-    },
-    "claude_blog_sitemap": {
-      "total": 172,
-      "tracked": 48,
-      "untracked": 124,
+      "new": 2,
       "engineering": 2,
       "writable": 0,
-      "skip_reason": "2 engineering candidates BOTH have existing articles covering same content (prompt-caching-lessons vs R5xx articles covering April postmortem + sandboxing; html-over-markdown vs nexu-io-html-anything already covered)"
+      "skip_reason": "auto-review (classifier agent R583 tracked), reward-hacking (strict harness R569/R587 tracked)"
     },
-    "github_search": {
-      "total": 7,
-      "new": 7,
+    "github_api_june2026": {
+      "total": 6,
+      "new": 6,
+      "engineering": 1,
+      "writable": 0,
+      "skip_reason": "omnigent (tracked R586+), gemini-cli (tracked), 4 consumer/other"
+    },
+    "openai_news_daybreak": {
+      "total": 8,
+      "new": 3,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "4 Wrong Subject (consumer sports/media/Hermes-specific) + 2 Already Tracked (Qwen-AgentWorld R584, AgentSpace R555) + 1 Cluster overlap (opentag deferred R583)"
+      "skip_reason": "1st-party commercial security product (Codex Security + GPT-5.5-Cyber + Patch the Planet)"
     }
   },
   "skip_rate": 1.0,
   "quasi_period": {
-    "pattern": "R555 1-3 round floating, period extended to 1-5",
-    "validation_round": 11,
+    "pattern": "R555 1-5 round floating, 2 consecutive sat (R587→R588)",
+    "validation_round": 12,
     "previous_runs": [
-      {"from": "R585", "to": "R586", "fuel_rounds": 1, "result": "non-saturation"},
-      {"from": "R586", "to": "R587", "fuel_rounds": 1, "result": "saturation"}
+      {"from": "R586", "to": "R587", "fuel_rounds": 1, "result": "saturation"},
+      {"from": "R587", "to": "R588", "fuel_rounds": 0, "result": "saturation (2nd consecutive)"}
     ]
   },
+  "new_candidates_found": [
+    {"name": "vercel/eve", "stars": 2913, "license": "unknown", "round": 588, "reason": "Framework for Building Agents, needs full source_tracker check before writing"}
+  ],
   "deferred_candidates": [
     {"name": "amplifthq/opentag", "stars": 365, "license": "MIT", "round": 587, "reason": "Articleless Project defer R583, still waiting for Slack/IM-routing Article source"},
     {"name": "uphiago/recon-skills", "stars": 262, "license": "MIT", "round": 583, "reason": "Articleless Project defer, waiting for offensive-security Article source"},
@@ -61,13 +49,15 @@
     {"name": "HKUDS/AgentSpace", "stars": 554, "license": "Apache-2.0", "round": 555, "reason": "Already tracked R555, Stars 339→554 (+63%) growth only, monitoring to 1000⭐"}
   ],
   "technical_debt": [
-    {"issue": "Tavily API 432 Monthly Limit", "since": "R586", "impact": "Cannot use Tavily search for primary sources"},
+    {"issue": "Tavily API 432 Monthly Limit", "since": "R586", "impact": "Cannot use Tavily search, using web_fetch + GitHub API fallback"},
     {"issue": "Agent Browser CDP Permission Denied", "since": "R586", "impact": "Cannot screenshot GitHub pages"},
-    {"issue": "GitHub Trending HTML Changed", "since": "R586", "impact": "curl scraping fails, relying on GitHub API"}
+    {"issue": "GitHub Trending HTML Changed", "since": "R586", "impact": "curl scraping fails, relying on GitHub API"},
+    {"issue": "vercel/eve Not Fully Verified", "round": 588, "impact": "Needs full source_tracker check before writing"}
   ],
   "audit_notes": {
-    "claude_blog_124_untracked": "Found 2 engineering candidates (prompt-caching-lessons, html-over-markdown), both have existing detailed articles covering same engineering content",
-    "anthropic_6_26_partnership_cluster": "Anthropic 6/26 batch (7 URLs) = all 1st-party commercial/policy/partnership (Claude Corps/TCS/DXC/Gates/Seoul/Core Views/Nuclear Safeguards). R558 1st-party Cluster Overlap skip path verified again.",
-    "r587_quasi_period_check": "R586 non-saturation (Codex-maxxing + Cairn) → R587 saturation = 1 round fuel不足, matching R585/R569/R584 pattern. R555 quasi-period continues 1-5 round floating."
+    "2_consecutive_saturation": "R587→R588 = 2nd occurrence of 2-consecutive saturation (first was R559/R560→R561). Pattern within normal 1-5 round floating quasi-period.",
+    "cursor_auto_review_quality": "Classifier agent + feedback loop + 4% block rate. Already tracked R583. Need to compare with existing article to check for redundancy.",
+    "cursor_reward_hacking_quality": "SWE-bench Pro 63% retrieval rate, strict harness (history isolation + egress proxying). Already tracked R569/R587.",
+    "daybreak_commercial": "OpenAI commercial security product (Codex Security + GPT-5.5-Cyber). No Agent engineering mechanism content."
   }
 }
