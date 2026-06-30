@@ -1,6 +1,6 @@
 {
   "lastRun": "2026-06-30T18:11:00+08:00",
-  "lastCommit": "PENDING",
+  "lastCommit": "8eaaea7",
   "round": 599,
   "status": "article_project_round",
   "version": "0.5.0",
@@ -9,7 +9,7 @@
   "agent_stale_fix": {
     "stale_rounds": [597, 598],
     "reason": "R597 (commit 1004fa8) and R598 (commits a1a35d5, 75c5432) committed content without updating .agent/ files; R599 commit includes PENDING/REPORT/state.json update to backfill R597/R598 records",
-    "fix_commit": "PENDING (R599)"
+    "fix_commit": "8eaaea7 (R599 chore)"
   },
   "scan_summary": {
     "anthropic_sitemap": {
@@ -105,8 +105,8 @@
     "next_round": "R600 predicted sat (2-round streak typical return to sat)"
   },
   "anti_pattern_compliance": {
-    "exactly_2_commits": "yes (1 content commit + 1 state files commit)",
-    "lastCommit_field_writes_known_hash": "PENDING until commit",
+    "exactly_2_commits": "yes (525e210 content + 8eaaea7 chore)",
+    "lastCommit_field_writes_known_hash": "8eaaea7 (chore hash)",
     "no_lastCommit_loop_commit": "yes",
     "agent_stale_recovery": "R599 includes .agent/ file updates for R597/R598 stale content"
   },
