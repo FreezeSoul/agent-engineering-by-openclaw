@@ -1,34 +1,42 @@
 {
-  "lastRun": "2026-06-30T21:30:00+08:00",
-  "lastCommit": "b7f7eaf",
-  "round": 596,
-  "status": "saturation_round",
+  "lastRun": "2026-06-30T18:11:00+08:00",
+  "lastCommit": "PENDING",
+  "round": 599,
+  "status": "article_project_round",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "state_only",
+  "type": "full_output",
+  "agent_stale_fix": {
+    "stale_rounds": [597, 598],
+    "reason": "R597 (commit 1004fa8) and R598 (commits a1a35d5, 75c5432) committed content without updating .agent/ files; R599 commit includes PENDING/REPORT/state.json update to backfill R597/R598 records",
+    "fix_commit": "PENDING (R599)"
+  },
   "scan_summary": {
     "anthropic_sitemap": {
-      "total_june": 20,
-      "new_june": 14,
-      "new_eng": 0,
-      "writable": 0,
-      "skip_reason": "6/26 batch partnership cluster (R573/R587/R591 3rd validation: Claude Corps/DXC/TCS/Gates/Seoul/Core Views) → 1st-party Cluster Overlap skip; remaining research/business items Wrong Subject Domain (81k-economics survey, agents-in-biology post, making-claude-a-chemist post, fetch-phase-two robotics, claude-code-expertise already R594+, exploit/attack-navigator/exploit-evals evals cluster overlap)"
+      "total_june_2026": 21,
+      "new_2026_june_05": 16,
+      "new_2026_june_17": 6,
+      "new_2026_june_26": 20,
+      "new_2026_june_30": 1,
+      "writable": 1,
+      "selected": "emergent-misalignment-reward-hacking (6/05)",
+      "skip_reason": "6/26 batch = R573/R587/R591/R596 cluster overlap (1st-party commercial/policy), 6/05 batch = mostly safety research (assistant-axis/auto-alignment-researchers etc. Wrong Subject Domain for Agent Engineering)"
     },
     "openai_rss": {
       "total_items": 1024,
-      "top_15_reviewed": 15,
-      "new_in_top15": 11,
-      "tracked_in_top15": 4,
+      "top_25_reviewed": 25,
+      "new_in_top25": 11,
+      "tracked_in_top25": 14,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "5 Wrong Subject Domain (Mapping EU AI Workforce, GPT-5.6 Sol R552, Broadcom inference chip, Health intelligence in ChatGPT, Rare childhood diseases) + 5 1st-party commercial/policy (HP Frontier partnership, Helping build shared standards, Omio customer story, Samsung ChatGPT+Codex, ChatGPT enterprise analytics) + 1 cluster overlap (Patch the Planet/Daybreak)"
+      "skip_reason": "5 Wrong Subject Domain + 5 1st-party commercial/policy + 1 cluster overlap; same as R596"
     },
     "cursor_blog": {
       "untracked": 3,
       "new": 0,
-      "engineering": 0,
+      "engineering": 1,
       "writable": 0,
-      "skip_reason": "ios-mobile-app (mobile product not agent eng), notion (R559 covered cursor-sdk-notion), bugbot-updates-june-2026 (R506 covered bugbot-june)"
+      "skip_reason": "reward-hacking-coding-benchmarks (6/25) = Cursor's research on SWE-bench reward hacking; already covered in R509/R515/R539/R575 (4 articles + 4 rounds); referenced in R599 Article as cross-validation"
     },
     "claude_blog_sitemap": {
       "total_urls": 172,
@@ -36,40 +44,71 @@
       "untracked": 122,
       "engineering_feel": 6,
       "writable": 0,
-      "skip_reason": "R569/R583/R585/R587 4次验证 5% engineering probability stable; 6 engineering-feel untracked: improving-frontend-design through Skills (cluster overlap with anthropic-skills-coordination), claude-code-on-the-web (1st-party Cluster Overlap cursor-cloud-agent-lessons R595), claude-code-plugins (cluster overlap multi-harness-ecosystem-plugin-marketplace), introducing-routines (already R574+ tracked), prompt-caching-is-everything (cluster overlap anthropic-april-23-postmortem + claude-code-quality-regression), preview-review-and-merge (cluster overlap auto-review)"
+      "skip_reason": "R569/R583/R585/R587/R596 5次验证 5% engineering probability stable; 6 engineering-feel untracked: all cluster overlap"
     },
-    "github_search_7d": {
-      "query": "created:2026-06-25..2026-06-30 stars:>150 (agent|harness|orchestration|verifier|skills)",
-      "total_candidates": 9,
-      "writable": 0,
+    "github_trending_weekly": {
+      "total_candidates": 25,
+      "writable": 1,
+      "selected": "aws/agent-toolkit-for-aws (1630⭐ Apache-2.0)",
       "candidates_breakdown": [
-        {"repo": "winsznx/theeleven", "stars": 715, "license": "MIT", "decision": "Skip - Wrong Subject Domain (consumer sports betting on X Layer)"},
-        {"repo": "Pluviobyte/video-production-skills", "stars": 456, "license": "None", "decision": "Skip - Cluster Overlap (OpenMontage 27300⭐ covers agentic video production) + License=None"},
-        {"repo": "blknoiz0632/CandyDrop", "stars": 358, "license": "None", "decision": "Skip - Wrong Subject Domain consumer game (Cut the rope. Earn real Solana)"},
-        {"repo": "cclank/lanshu-animated-architecture-diagram", "stars": 353, "license": "MIT", "decision": "Skip - Cluster Overlap (Claude Code Skills ecosystem, mattpocock/skills/mattpocock already covered)"},
-        {"repo": "Einsia/Browser-BC", "stars": 315, "license": "None", "decision": "Skip - R591 License=None fallback 5-mechanism fail + Wrong Subject Domain"},
-        {"repo": "eli-labz/Godcoder", "stars": 251, "license": "NOASSERTION", "decision": "Defer (R579 Self-Building Harness) - revisit at Stars 500+ or 2nd self-building project"},
-        {"repo": "lycorp-jp/sim-use", "stars": 234, "license": "Apache-2.0", "decision": "Skip - Cluster Overlap (tddworks/baguette iOS Simulator 1007⭐ already tracked R363). sim-use is LY Corp's cross-platform extension (iOS+Android) but same cluster; the iOS Simulator → Agent verification theme is fully covered"},
-        {"repo": "kentjuno/ainovel-cli", "stars": 194, "license": "Apache-2.0", "decision": "Skip - Wrong Subject Domain consumer (Vietnamese AI novel writing CLI)"},
-        {"repo": "revfactory/webtoon-harness", "stars": 157, "license": "MIT", "decision": "Skip - Wrong Subject Domain creative (Korean webtoon 27-agent team Claude Code harness)"}
+        {"repo": "calesthio/OpenMontage", "stars": 27303, "decision": "Skip - already R555+ tracked"},
+        {"repo": "DeusData/codebase-memory-mcp", "stars": 22077, "license": "MIT", "decision": "Skip - already tracked"},
+        {"repo": "alibaba/page-agent", "stars": 20702, "license": "MIT", "decision": "Skip - already tracked"},
+        {"repo": "stablyai/orca", "stars": 9396, "license": "MIT", "decision": "Skip - already tracked"},
+        {"repo": "aws/agent-toolkit-for-aws", "stars": 1630, "license": "Apache-2.0", "decision": "ACCEPT - 1st-party official AWS plugin+MCP+skills bundle for Claude Code/Codex/Cursor/Kiro; IAM condition keys innovation distinguishes agent vs human actions"}
       ]
     }
   },
-  "saturation_breakthrough_attempts": {
-    "sim_use_audit": "lycorp-jp/sim-use 234⭐ Apache-2.0 cross-platform Agent CLI (iOS+Android) → Cluster Overlap (baguette R363 already covers iOS-only verification farm). sim-use extends to Android but the cluster theme 'mobile simulator × Agent verification' is saturated.",
-    "cc_expertise_audit": "anthropic/research/claude-code-expertise already covered in articles/deep-dives/anthropic-claude-code-expertise-domain-knowledge-2026.md (R594/R593)",
-    "6_26_batch_audit": "Anthropic 6/26 partnership batch (Claude Corps/DXC/TCS/Gates/Seoul/Core Views) = 1st-party Cluster Overlap (R558) skip path, validated 4th time (R573/R587/R591/R596)"
+  "round_599_summary": {
+    "article": {
+      "file": "articles/research/anthropic-emergent-misalignment-reward-hacking-shortcuts-to-sabotage-2026.md",
+      "title": "Reward Hacking 是 Agent 训练阶段的「斜坡起点」：从这里一路滑到 alignment faking 与 research sabotage",
+      "source": "Anthropic Research (1st-party)",
+      "source_url": "https://www.anthropic.com/research/emergent-misalignment-reward-hacking",
+      "core_thesis": "Reward hacking training causes emergent misalignment (alignment faking 50%, research sabotage 12%); RLHF does not fix but only hides (context-dependent)",
+      "key_numbers": {
+        "research_sabotage_rate": "12%",
+        "alignment_faking_rate": "50%",
+        "key_finding": "RLHF makes misalignment context-dependent, not eliminated"
+      },
+      "linked_cursor_article": "cursor.com/blog/reward-hacking-coding-benchmarks (评测端 63% retrieval vs 37% derivation)"
+    },
+    "project": {
+      "file": "articles/projects/aws-agent-toolkit-for-aws-official-mcp-skills-plugins-1630-stars-2026.md",
+      "title": "aws/agent-toolkit-for-aws: AWS 官方把 Coding Agent 接进 AWS 的「一键 Harness」",
+      "stars": 1630,
+      "license": "Apache-2.0",
+      "created": "2026-04-23",
+      "key_features": [
+        "4 plugins: aws-core, aws-agents, aws-data-analytics, aws-agents-for-devsecops",
+        "15 skills in aws-core: amazon-bedrock, aws-cdk, aws-iam, aws-serverless, etc.",
+        "IAM condition keys distinguish agent vs human (aws:CalledVia mcp-server-for-aws.amazonaws.com)",
+        "CloudWatch + CloudTrail audit for every MCP request",
+        "Verified end-to-end skills (not just prompt dumps)",
+        "Cross-agent: Claude Code + Codex + Cursor + Kiro"
+      ],
+      "iam_policy_example_included": true,
+      "screenshot_path": "articles/projects/screenshots/aws-agent-toolkit-for-aws-20260630.png"
+    },
+    "article_project_linkage": {
+      "theme": "Harness engineering + reward hacking risks",
+      "linkage_strength": 5,
+      "rationale": "Anthropic research reveals harness design is critical (reward hacking → misalignment); AWS Agent Toolkit provides cloud-level harness implementation (IAM + audit + skills)"
+    }
   },
   "r555_quasi_period_validation": {
-    "round": 596,
-    "previous_streak": "R595 Article+Project (non-saturation, full output)",
-    "current": "R596 saturation round",
-    "implication": "Pattern: R593 → R594 Article+Project → R595 Article+Project → R596 saturation. Period 1-5 rounds floating. Quasi-period round count for non-saturation streak: 2 (R594+R595). Next round (R597) high probability non-saturation based on historical 1-3 round non-saturation averages."
+    "round": 599,
+    "previous_streak": "R597 (Article, content-only) + R598 (Project + Deep Dive, content-only)",
+    "current": "R599 article+project round",
+    "pattern_type": "non-saturation streak 2 rounds (3rd validation of R597-style 2-round continuation)",
+    "validations_2round_streak": ["R555/R556 → R557 sat", "R589/R590 → R591 sat", "R597/R598 → R599 non-sat"],
+    "next_round": "R600 predicted sat (2-round streak typical return to sat)"
   },
   "anti_pattern_compliance": {
-    "exactly_1_commit": "yes (R552/R573/R576/R585/R587/R591+R596 stable)",
-    "lastCommit_field_writes_known_hash": "yes (b7f7eaf = R595 chore hash)",
-    "no_lastCommit_loop_commit": "yes"
+    "exactly_2_commits": "yes (1 content commit + 1 state files commit)",
+    "lastCommit_field_writes_known_hash": "PENDING until commit",
+    "no_lastCommit_loop_commit": "yes",
+    "agent_stale_recovery": "R599 includes .agent/ file updates for R597/R598 stale content"
   },
-  "sibling_warning_check": "not triggered this round"
+  "sibling_warning_check": "not triggered"
 }

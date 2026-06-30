@@ -524,3 +524,73 @@
 - [ ] Claude Blog agent-browser 降级方案
 - [ ] AnySearch 虚拟环境路径修复
 - [ ] hazmat (122⭐) 特殊审批（macOS containment + TLA+ verified）
+
+---
+
+# R597 — Anthropic Measuring Agent Autonomy (deployment overhang) — content-only commit
+
+**Date**: 2026-06-30 15:21 CST | **Articles**: 1 | **Projects**: 0 | **Commit**: `1004fa8` ⚠️ content-only (no .agent/ update)
+
+## 扫描来源
+- Anthropic Research 6/05 batch: `measuring-agent-autonomy` accepted
+- 其他 6/05 batch candidates: Wrong Subject Domain (alignment research, not agent engineering)
+
+## 新发现处理
+| 候选 | 类型 | 结果 |
+|------|------|------|
+| **measuring-agent-autonomy** | Article | ✅ NEW → 写（Anthropic deployment overhang 研究）|
+
+## 反思
+- ⚠️ **Commit 协议违反**: R597 commit 1004fa8 仅提交 Article 内容，未更新 PENDING.md/REPORT.md/state.json
+- 此问题在 R599 commit 中修复（同步追加 R597/R598 记录）
+
+---
+
+# R598 — microsoft/SkillOpt 10082⭐ + Agent Skill 三岔路口 Deep Dive — content-only commits
+
+**Date**: 2026-06-30 15:21 + 16:48 CST | **Articles**: 0 | **Projects**: 1 + Deep Dive | **Commits**: `a1a35d5`, `75c5432` ⚠️ content-only (no .agent/ update)
+
+## 扫描来源
+- FSIO 显式请求: microsoft/SkillOpt 推荐（text-space skill optimizer）
+- 关联 Deep Dive: agency-agents vs SkillOpt vs agents-cli 三项目对比
+
+## 新发现处理
+| 候选 | 类型 | 结果 |
+|------|------|------|
+| **microsoft/SkillOpt** | Project | ✅ NEW → 写（FSIO 显式请求，10,082⭐ Apache-2.0）|
+| **agency-agents vs SkillOpt vs agents-cli** | Deep Dive | ✅ NEW → 写（agent skill 平台注入对比）|
+
+## 反思
+- ⚠️ **Commit 协议违反**: R598 两个 commit 均为 content-only，未更新 .agent/ 文件
+- 此问题在 R599 commit 中修复
+
+---
+
+# R599 — Anthropic emergent-misalignment-reward-hacking (shortcuts to sabotage) + aws/agent-toolkit-for-aws + .agent stale 修复
+
+**Date**: 2026-06-30 18:11 CST | **Articles**: 1 | **Projects**: 1 | **Commits**: TBD ✅ includes .agent/ state fix
+
+## 扫描来源
+- Anthropic Research 6/05 batch: `emergent-misalignment-reward-hacking` accepted (与 Cursor 6/25 reward hacking 形成评测+训练闭环)
+- GitHub Trending weekly: `aws/agent-toolkit-for-aws` (1630⭐ Apache-2.0) accepted
+
+## 新发现处理
+| 候选 | 类型 | 结果 |
+|------|------|------|
+| **emergent-misalignment-reward-hacking** | Article | ✅ NEW → 写（reward hacking → emergent misalignment；alignment faking 50%, research sabotage 12%, RLHF makes it context-dependent）|
+| **aws/agent-toolkit-for-aws** | Project | ✅ NEW → 写（AWS 官方 plugin+MCP+skills bundle；IAM condition keys 创新；CloudWatch/CloudTrail audit）|
+
+## Article-Project 关联
+- 主题：Harness engineering + reward hacking risks
+- 关联强度：5/5
+- 论证：Anthropic 研究揭示 harness 设计是必要防线 → AWS Agent Toolkit 提供 cloud-level harness 实现
+
+## 反思
+- ✅ **修复 .agent stale**: R599 commit 同步追补 R597/R598 状态记录
+- ✅ **R555 准周期 2-3 轮浮动验证**: R597+R598 = 2 轮 non-sat → R599 持续 non-saturation（第 3 实例）
+
+## 🔮 R600 优先
+- [ ] Anthropic Research 6/05 batch 剩余 candidates（assistant-axis / automated-alignment-researchers / cyber-toolkits 等）
+- [ ] AWS Agent Toolkit 后续 plugin 增量监控
+- [ ] Tavily 月度限额刷新（下月初）
+
