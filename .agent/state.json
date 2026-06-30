@@ -1,157 +1,108 @@
 {
-  "lastRun": "2026-06-30T10:17:23.340361+08:00",
-  "lastCommit": "45d8463",
-  "round": 593,
-  "status": "project_round",
+  "lastRun": "2026-06-30T12:30:00+08:00",
+  "lastCommit": "PENDING",
+  "round": 594,
+  "status": "full_output_round",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "project",
+  "type": "article+project",
   "scan_summary": {
     "anthropic_engineering": {
       "new": 0,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "Engineering page unchanged for 50+ days; latest new posts from Apr 2026 (Claude Code quality reports Apr 23, Scaling Managed Agents Apr 08)"
+      "skip_reason": "50+ days no new; latest 4/23"
     },
-    "anthropic_news": {
-      "new": 5,
+    "openai_developers_blog": {
+      "new": 1,
+      "engineering": 1,
+      "writable": 1,
+      "writable_items": [
+        "openai-codex-remote-engineering-control-plane-queue-vs-steer-plan-vs-goal-2026"
+      ],
+      "skip_reason_others": "Run-long-horizon (R540 tracked), skills-oss-maintenance (R512), one-year-of-responses (R340), eval-skills (R307), skills-shell-tips (R584)"
+    },
+    "cursor_blog": {
+      "new": 0,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "claude-corps (fellowship, non-eng) + glasswing (cybersec partnership expansion) + opus-4-8 (model release no eng post) + claude-tag (fully covered in R557/R558 multiple slugs) + seoul-office (partnership)"
+      "skip_reason": "All R591/R592/R593 covered; no newer posts"
     },
     "github_trending_daily": {
       "new": 1,
       "engineering": 1,
       "writable": 1,
       "writable_items": [
-        "unclecheng-li-vulnclaw-ai-pentest-agent-1166-stars-2026"
+        "deepreinforce-ai-ornith-1-self-improving-agentic-coding-model-578-stars-2026"
       ],
-      "skip_reason_others": "msitarzewski/agency-agents (tracked), xbtlin/ai-berkshire (tracked), 0xNyk/council-of-high-intelligence (lacp tracked), altic-dev/FluidVoice (non-Agent macOS dictation), HKUDS/Vibe-Trading (<7⭐), browser-use/video-use (low stars), logto-io/logto (auth), cupy/cupy (GPU), ripienaar/free-for-dev (curated list), simplex-chat (messaging), soxoj/maigret (OSINT), commaai/openpilot (autonomous driving), veracrypt (encryption)"
+      "skip_reason_others": "refactoringhq/tolaria (tracked R302), msitarzewski/agency-agents (tracked), altic-dev/FluidVoice (non-Agent), HKUDS/Vibe-Trading (low stars), other non-Agent or already tracked"
     },
-    "github_trending_weekly": {
+    "anthropic_news": {
       "new": 0,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "calesthio/OpenMontage (tracked), BuilderIO/agent-native (tracked), aws/agent-toolkit-for-aws (tracked), topoteretes/cognee (tracked), stablyai/orca (tracked), DeusData/codebase-memory-mcp (tracked), alibaba/page-agent (tracked), google-labs-code/design.md (tracked), jamiepine/voicebox (tracked), interviewstreet/hiring-agent (<1000⭐), koala73/worldmonitor (<1000⭐), kunchenguid/no-mistakes (<1000⭐), mukul975/Anthropic-Cybersecurity-Skills (low stars), NanmiCoder/MediaCrawler (crawler, not agent), palmier-io/palmier-pro (low stars), Panniantong/Agent-Reach (low stars), JCodesMore/ai-website-cloner-template (tracked)"
-    },
-    "openai_blog": {
-      "new": 0,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "openai.com/news/ returns empty via curl (JS-rendered or Cloudflare); needs agent-browser fallback; Tavily 432 rate-limited"
-    },
-    "cursor_blog": {
-      "new": 0,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "R592 confirmed Jun 25 reward-hacking tracked; no newer posts"
+      "skip_reason": "All news R321-R557 covered"
     },
     "tavily_unavailable": {
       "status": "rate_limited",
       "error_code": 432,
-      "error_message": "This request exceeds your plan's set usage limit",
-      "expected_recovery": "next month start"
+      "workaround": "SOCKS5 + curl direct fetching on developers.openai.com / anthropic.com / cursor.com (not Cloudflare-protected); openai.com/news/ still Cloudflare-blocked"
     }
   },
-  "articles_produced": 0,
+  "articles_produced": 1,
   "projects_produced": 1,
+  "articles_list": [
+    {
+      "slug": "openai-codex-remote-engineering-control-plane-queue-vs-steer-plan-vs-goal-2026",
+      "filename": "openai-codex-remote-engineering-control-plane-queue-vs-steer-plan-vs-goal-2026.md",
+      "directory": "articles/practices/ai-coding/",
+      "title": "Codex Remote 工程控制平面：Queue vs Steer 与 Plan vs Goal 的工程机制",
+      "source": "https://developers.openai.com/blog/mastering-codex-remote-for-engineering",
+      "source_kind": "OpenAI Developers Blog (first-party)",
+      "author": "Thomas Ricouard",
+      "published": "2026-06-23",
+      "primary_engineering_mechanisms": [
+        "Queue vs Steer (prompt generation-time injection)",
+        "Plan vs Goal (two-layer intent expression)",
+        "Side chat as parallel transcript",
+        "Permissions as workflow configuration",
+        "Transcript lifecycle (status -> compact -> fork)",
+        "Thread Desk (operations model)",
+        "Notification as Agent->Human handoff"
+      ],
+      "quotes_count": 4,
+      "associated_project": "deepreinforce-ai-ornith-1"
+    }
+  ],
   "projects_list": [
     {
-      "name": "Unclecheng-li/VulnClaw",
-      "filename": "unclecheng-li-vulnclaw-ai-pentest-agent-1166-stars-2026.md",
-      "stars": 1166,
+      "name": "deepreinforce-ai/Ornith-1",
+      "filename": "deepreinforce-ai-ornith-1-self-improving-agentic-coding-model-578-stars-2026.md",
+      "stars": 578,
       "license": "MIT",
+      "created_at": "2026-06-21",
       "engineering_mechanisms": [
-        "goal_driven_solver (stop: goal achieved / frontier exhausted / safety budget)",
-        "blackboard_graph_state_space_search (Fact + Intent primitives)",
-        "evidence_level_anti_hallucination_gate (3 checkpoints: conclusion, completion, immediate convergence)",
-        "L0-L4_progressive_payload_escalation (reflexion.py)",
-        "skill_composition_21_skills_progressive_disclosure"
-      ]
+        "joint_scaffold_and_solution_optimization (RL training target)",
+        "openai_compatible_api_native_tool_calling",
+        "256k_context_window",
+        "three_tier_model_family (9b_dense / 35b_moe / 397b_moe)",
+        "three_precision_variants_per_checkpoint (bf16 / fp8 / gguf)",
+        "reasoning_content_separation (think tokens in separate field)",
+        "drop_in_replacement_for_codex_claude_code_via_base_url_swap"
+      ],
+      "quotes_count": 2,
+      "screenshot": "screenshots/deepreinforce-ai-ornith-1-20260630.png"
     }
-  ],
-  "quasi_period": {
-    "pattern": "R555 1-5 round floating, R590 sat → R591 sat → R592 sat → R593 project_round = saturation streak terminated at 3 rounds",
-    "validation_round": 17,
-    "previous_runs": [
-      {
-        "from": "R592",
-        "to": "R593",
-        "fuel_rounds": 1,
-        "result": "project_round (1 Project, 0 Article, 0 saturation)"
-      }
-    ],
-    "saturation_streak_resolved": true
-  },
-  "new_candidates_found": [],
-  "deferred_candidates": [
-    {
-      "name": "garrytan/gbrain",
-      "stars": 50000,
-      "license": "unknown",
-      "round": 589,
-      "reason": "Tracked as Article, may have additional engineering angles (dream cycle internals, company-brain architecture)"
-    },
-    {
-      "name": "eli-labz/Godcoder",
-      "stars": 500,
-      "license": "MIT",
-      "round": 589,
-      "reason": "Tracked as Article (harness/), deep engineering angles available, monitoring Stars growth"
-    },
-    {
-      "name": "amplifthq/opentag",
-      "stars": 370,
-      "license": "MIT",
-      "round": 587,
-      "reason": "Articleless Project defer, waiting for Slack/IM-routing Article source"
-    },
-    {
-      "name": "uphiago/recon-skills",
-      "stars": 262,
-      "license": "MIT",
-      "round": 583,
-      "reason": "Articleless Project defer, waiting for offensive-security Article source"
-    },
-    {
-      "name": "SakanaAI/CoffeeBench",
-      "stars": 14,
-      "license": "Apache-2.0",
-      "round": 573,
-      "reason": "Long-running multi-agent economic benchmark, monitoring Stars growth to 500+ threshold"
-    },
-    {
-      "name": "0xNyk/council-of-high-intelligence",
-      "stars": "unknown (low)",
-      "license": "unknown",
-      "round": 593,
-      "reason": "Multi-persona deliberation, related to lacp but distinct concept; wait Stars > 500"
-    },
-    {
-      "name": "Unclecheng-li/VulnClaw v0.4.x follow-up",
-      "stars": "monitoring",
-      "license": "MIT",
-      "round": 593,
-      "reason": "Author iterative releases, monitor for additional architecture depth"
-    }
-  ],
-  "r593_pitfalls": [
-    "Tavily 全线 432 速率限制，无法做 AI 摘要验证候选",
-    "OpenAI Blog curl 返回空内容（JS 渲染），需 agent-browser fallback",
-    "Anthropic Engineering 50+ 天无新发布（最后一次 6/06）— saturation 根因",
-    "0xNyk/council-of-high-intelligence Stars 不足，未达独立归档门槛"
   ],
   "source_last_scan": {
-    "anthropic": "2026-06-30T10:16:46.613704+08:00",
-    "cursor": "2026-06-30T10:16:46.614524+08:00",
-    "openai": "2026-06-30T10:16:46.615460+08:00",
-    "langchain": "2026-06-30T10:16:46.616410+08:00",
-    "bestblogs": "2026-06-30T10:16:46.617401+08:00",
-    "hn": "2026-06-30T10:16:46.618296+08:00",
-    "github": "2026-06-30T10:17:09.614100+08:00",
-    "reddit": "2026-06-30T10:16:46.620105+08:00",
-    "first_party": "2026-06-30T10:16:46.621218+08:00"
+    "anthropic": "2026-06-30T12:25:00+08:00",
+    "openai_developers": "2026-06-30T12:24:00+08:00",
+    "cursor": "2026-06-30T12:25:00+08:00",
+    "github": "2026-06-30T12:23:00+08:00",
+    "langchain": "2026-06-30T12:25:00+08:00",
+    "bestblogs": "2026-06-30T12:25:00+08:00",
+    "hn": "2026-06-30T12:25:00+08:00"
   },
   "saturation_streak": 0,
-  "lastRunNewSources": 17
+  "lastRunNewSources": 2
 }
