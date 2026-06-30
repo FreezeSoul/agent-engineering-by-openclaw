@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-06-30T12:32:00+08:00",
-  "lastCommit": "0c8d046",
-  "round": 594,
+  "lastRun": "2026-06-30T12:43:00+08:00",
+  "lastCommit": "pending",
+  "round": 595,
   "status": "full_output_round",
   "version": "0.5.0",
   "owner": "FreezeSoul",
@@ -14,28 +14,29 @@
       "skip_reason": "50+ days no new; latest 4/23"
     },
     "openai_developers_blog": {
+      "new": 0,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "skills-agents-sdk duplicate (R547 deep-dives/openai-skills-oss-maintenance-codex-workflow-2026.md already covered same URL); all other new tracked by R594/R512/R584/R307/R340",
+      "dedup_caught": 1
+    },
+    "cursor_blog": {
       "new": 1,
       "engineering": 1,
       "writable": 1,
       "writable_items": [
-        "openai-codex-remote-engineering-control-plane-queue-vs-steer-plan-vs-goal-2026"
+        "cursor-cloud-agents-durable-execution-three-layer-state-decoupling-2026"
       ],
-      "skip_reason_others": "Run-long-horizon (R540 tracked), skills-oss-maintenance (R512), one-year-of-responses (R340), eval-skills (R307), skills-shell-tips (R584)"
-    },
-    "cursor_blog": {
-      "new": 0,
-      "engineering": 0,
-      "writable": 0,
-      "skip_reason": "All R591/R592/R593 covered; no newer posts"
+      "skip_reason_others": "reward-hacking (R584), bugbot-updates-june-2026 (engineering-improvements), ios-mobile-app (mobile product not agent engineering), auto-review (overlaps with cloud-agent-lessons theme)"
     },
     "github_trending_daily": {
       "new": 1,
       "engineering": 1,
       "writable": 1,
       "writable_items": [
-        "deepreinforce-ai-ornith-1-self-improving-agentic-coding-model-578-stars-2026"
+        "hkuds-vibe-trading-mandate-gated-trading-agent-15213-stars-2026"
       ],
-      "skip_reason_others": "refactoringhq/tolaria (tracked R302), msitarzewski/agency-agents (tracked), altic-dev/FluidVoice (non-Agent), HKUDS/Vibe-Trading (low stars), other non-Agent or already tracked"
+      "skip_reason_others": "All other trending projects already tracked"
     },
     "anthropic_news": {
       "new": 0,
@@ -46,63 +47,64 @@
     "tavily_unavailable": {
       "status": "rate_limited",
       "error_code": 432,
-      "workaround": "SOCKS5 + curl direct fetching on developers.openai.com / anthropic.com / cursor.com (not Cloudflare-protected); openai.com/news/ still Cloudflare-blocked"
+      "workaround": "SOCKS5 + curl direct on Cursor / OpenAI developers / Anthropic (Cursor: no Cloudflare, OpenAI developers: static HTML, Anthropic: limited)"
     }
   },
   "articles_produced": 1,
   "projects_produced": 1,
   "articles_list": [
     {
-      "slug": "openai-codex-remote-engineering-control-plane-queue-vs-steer-plan-vs-goal-2026",
-      "filename": "openai-codex-remote-engineering-control-plane-queue-vs-steer-plan-vs-goal-2026.md",
-      "directory": "articles/practices/ai-coding/",
-      "title": "Codex Remote 工程控制平面：Queue vs Steer 与 Plan vs Goal 的工程机制",
-      "source": "https://developers.openai.com/blog/mastering-codex-remote-for-engineering",
-      "source_kind": "OpenAI Developers Blog (first-party)",
-      "author": "Thomas Ricouard",
-      "published": "2026-06-23",
+      "slug": "cursor-cloud-agents-durable-execution-three-layer-state-decoupling",
+      "filename": "cursor-cloud-agents-durable-execution-three-layer-state-decoupling-2026.md",
+      "directory": "articles/deep-dives/",
+      "title": "Cursor 云 Agent 的工程转身：从 work-stealing 到 Temporal 与三层状态解耦",
+      "source": "https://cursor.com/blog/cloud-agent-lessons",
+      "source_kind": "Cursor Blog (first-party)",
+      "author": "Josh Ma",
+      "published": "2026-06-02",
       "primary_engineering_mechanisms": [
-        "Queue vs Steer (prompt generation-time injection)",
-        "Plan vs Goal (two-layer intent expression)",
-        "Side chat as parallel transcript",
-        "Permissions as workflow configuration",
-        "Transcript lifecycle (status -> compact -> fork)",
-        "Thread Desk (operations model)",
-        "Notification as Agent->Human handoff"
+        "durable_execution_via_temporal (1 nine to 2 nines)",
+        "three_layer_state_decoupling (agent loop / machine / conversation state)",
+        "autonomy_inversion (harness-as-fallback moving to tools)",
+        "self_healing_environment_via_autoinstall",
+        "env_as_product (dev environment is the product)",
+        "append_only_conversation_storage_with_retry_aware_rewind"
       ],
       "quotes_count": 4,
-      "associated_project": "deepreinforce-ai-ornith-1"
+      "associated_project": "HKUDS/Vibe-Trading"
     }
   ],
   "projects_list": [
     {
-      "name": "deepreinforce-ai/Ornith-1",
-      "filename": "deepreinforce-ai-ornith-1-self-improving-agentic-coding-model-578-stars-2026.md",
-      "stars": 578,
+      "name": "HKUDS/Vibe-Trading",
+      "filename": "hkuds-vibe-trading-mandate-gated-trading-agent-15213-stars-2026.md",
+      "stars": 15213,
       "license": "MIT",
-      "created_at": "2026-06-21",
+      "created_at": "ongoing",
       "engineering_mechanisms": [
-        "joint_scaffold_and_solution_optimization (RL training target)",
-        "openai_compatible_api_native_tool_calling",
-        "256k_context_window",
-        "three_tier_model_family (9b_dense / 35b_moe / 397b_moe)",
-        "three_precision_variants_per_checkpoint (bf16 / fp8 / gguf)",
-        "reasoning_content_separation (think tokens in separate field)",
-        "drop_in_replacement_for_codex_claude_code_via_base_url_swap"
+        "broker_level_structural_discriminator (paper vs live as broker property, not env var)",
+        "mandate_gated_order_placement (user-committed symbol_universe / max_order_size / max_exposure / daily_cap)",
+        "filesystem_kill_switch (write a file to stop all orders)",
+        "fail_closed_pre_trade_gate (mandate check before any order)",
+        "audit_ledger_jsonl (every order/reason/mandate-check/broker-response)",
+        "provider_reliability_layer (DeepSeek / Kimi / Gemini / OpenRouter capability layers)",
+        "research_goal_runtime (claims / acceptance_criteria / evidence_rows / completion_policy)"
       ],
-      "quotes_count": 2,
-      "screenshot": "screenshots/deepreinforce-ai-ornith-1-20260630.png"
+      "quotes_count": 5,
+      "screenshot": "screenshots/hkuds-vibe-trading-20260630.png"
     }
   ],
   "source_last_scan": {
-    "anthropic": "2026-06-30T12:25:00+08:00",
-    "openai_developers": "2026-06-30T12:24:00+08:00",
-    "cursor": "2026-06-30T12:25:00+08:00",
-    "github": "2026-06-30T12:23:00+08:00",
-    "langchain": "2026-06-30T12:25:00+08:00",
-    "bestblogs": "2026-06-30T12:25:00+08:00",
-    "hn": "2026-06-30T12:25:00+08:00"
+    "anthropic": "2026-06-30T12:35:00+08:00",
+    "openai_developers": "2026-06-30T12:38:00+08:00",
+    "cursor": "2026-06-30T12:42:00+08:00",
+    "github": "2026-06-30T12:43:00+08:00",
+    "langchain": "2026-06-30T12:35:00+08:00",
+    "bestblogs": "2026-06-30T12:35:00+08:00",
+    "hn": "2026-06-30T12:35:00+08:00"
   },
   "saturation_streak": 0,
-  "lastRunNewSources": 2
+  "lastRunNewSources": 2,
+  "momentum_streak": 3,
+  "dedup_correctly_caught": 1
 }
