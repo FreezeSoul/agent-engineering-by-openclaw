@@ -1,0 +1,157 @@
+{
+  "lastRun": "2026-06-30T10:17:23.340361+08:00",
+  "lastCommit": "45d8463",
+  "round": 593,
+  "status": "project_round",
+  "version": "0.5.0",
+  "owner": "FreezeSoul",
+  "type": "project",
+  "scan_summary": {
+    "anthropic_engineering": {
+      "new": 0,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "Engineering page unchanged for 50+ days; latest new posts from Apr 2026 (Claude Code quality reports Apr 23, Scaling Managed Agents Apr 08)"
+    },
+    "anthropic_news": {
+      "new": 5,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "claude-corps (fellowship, non-eng) + glasswing (cybersec partnership expansion) + opus-4-8 (model release no eng post) + claude-tag (fully covered in R557/R558 multiple slugs) + seoul-office (partnership)"
+    },
+    "github_trending_daily": {
+      "new": 1,
+      "engineering": 1,
+      "writable": 1,
+      "writable_items": [
+        "unclecheng-li-vulnclaw-ai-pentest-agent-1166-stars-2026"
+      ],
+      "skip_reason_others": "msitarzewski/agency-agents (tracked), xbtlin/ai-berkshire (tracked), 0xNyk/council-of-high-intelligence (lacp tracked), altic-dev/FluidVoice (non-Agent macOS dictation), HKUDS/Vibe-Trading (<7⭐), browser-use/video-use (low stars), logto-io/logto (auth), cupy/cupy (GPU), ripienaar/free-for-dev (curated list), simplex-chat (messaging), soxoj/maigret (OSINT), commaai/openpilot (autonomous driving), veracrypt (encryption)"
+    },
+    "github_trending_weekly": {
+      "new": 0,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "calesthio/OpenMontage (tracked), BuilderIO/agent-native (tracked), aws/agent-toolkit-for-aws (tracked), topoteretes/cognee (tracked), stablyai/orca (tracked), DeusData/codebase-memory-mcp (tracked), alibaba/page-agent (tracked), google-labs-code/design.md (tracked), jamiepine/voicebox (tracked), interviewstreet/hiring-agent (<1000⭐), koala73/worldmonitor (<1000⭐), kunchenguid/no-mistakes (<1000⭐), mukul975/Anthropic-Cybersecurity-Skills (low stars), NanmiCoder/MediaCrawler (crawler, not agent), palmier-io/palmier-pro (low stars), Panniantong/Agent-Reach (low stars), JCodesMore/ai-website-cloner-template (tracked)"
+    },
+    "openai_blog": {
+      "new": 0,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "openai.com/news/ returns empty via curl (JS-rendered or Cloudflare); needs agent-browser fallback; Tavily 432 rate-limited"
+    },
+    "cursor_blog": {
+      "new": 0,
+      "engineering": 0,
+      "writable": 0,
+      "skip_reason": "R592 confirmed Jun 25 reward-hacking tracked; no newer posts"
+    },
+    "tavily_unavailable": {
+      "status": "rate_limited",
+      "error_code": 432,
+      "error_message": "This request exceeds your plan's set usage limit",
+      "expected_recovery": "next month start"
+    }
+  },
+  "articles_produced": 0,
+  "projects_produced": 1,
+  "projects_list": [
+    {
+      "name": "Unclecheng-li/VulnClaw",
+      "filename": "unclecheng-li-vulnclaw-ai-pentest-agent-1166-stars-2026.md",
+      "stars": 1166,
+      "license": "MIT",
+      "engineering_mechanisms": [
+        "goal_driven_solver (stop: goal achieved / frontier exhausted / safety budget)",
+        "blackboard_graph_state_space_search (Fact + Intent primitives)",
+        "evidence_level_anti_hallucination_gate (3 checkpoints: conclusion, completion, immediate convergence)",
+        "L0-L4_progressive_payload_escalation (reflexion.py)",
+        "skill_composition_21_skills_progressive_disclosure"
+      ]
+    }
+  ],
+  "quasi_period": {
+    "pattern": "R555 1-5 round floating, R590 sat → R591 sat → R592 sat → R593 project_round = saturation streak terminated at 3 rounds",
+    "validation_round": 17,
+    "previous_runs": [
+      {
+        "from": "R592",
+        "to": "R593",
+        "fuel_rounds": 1,
+        "result": "project_round (1 Project, 0 Article, 0 saturation)"
+      }
+    ],
+    "saturation_streak_resolved": true
+  },
+  "new_candidates_found": [],
+  "deferred_candidates": [
+    {
+      "name": "garrytan/gbrain",
+      "stars": 50000,
+      "license": "unknown",
+      "round": 589,
+      "reason": "Tracked as Article, may have additional engineering angles (dream cycle internals, company-brain architecture)"
+    },
+    {
+      "name": "eli-labz/Godcoder",
+      "stars": 500,
+      "license": "MIT",
+      "round": 589,
+      "reason": "Tracked as Article (harness/), deep engineering angles available, monitoring Stars growth"
+    },
+    {
+      "name": "amplifthq/opentag",
+      "stars": 370,
+      "license": "MIT",
+      "round": 587,
+      "reason": "Articleless Project defer, waiting for Slack/IM-routing Article source"
+    },
+    {
+      "name": "uphiago/recon-skills",
+      "stars": 262,
+      "license": "MIT",
+      "round": 583,
+      "reason": "Articleless Project defer, waiting for offensive-security Article source"
+    },
+    {
+      "name": "SakanaAI/CoffeeBench",
+      "stars": 14,
+      "license": "Apache-2.0",
+      "round": 573,
+      "reason": "Long-running multi-agent economic benchmark, monitoring Stars growth to 500+ threshold"
+    },
+    {
+      "name": "0xNyk/council-of-high-intelligence",
+      "stars": "unknown (low)",
+      "license": "unknown",
+      "round": 593,
+      "reason": "Multi-persona deliberation, related to lacp but distinct concept; wait Stars > 500"
+    },
+    {
+      "name": "Unclecheng-li/VulnClaw v0.4.x follow-up",
+      "stars": "monitoring",
+      "license": "MIT",
+      "round": 593,
+      "reason": "Author iterative releases, monitor for additional architecture depth"
+    }
+  ],
+  "r593_pitfalls": [
+    "Tavily 全线 432 速率限制，无法做 AI 摘要验证候选",
+    "OpenAI Blog curl 返回空内容（JS 渲染），需 agent-browser fallback",
+    "Anthropic Engineering 50+ 天无新发布（最后一次 6/06）— saturation 根因",
+    "0xNyk/council-of-high-intelligence Stars 不足，未达独立归档门槛"
+  ],
+  "source_last_scan": {
+    "anthropic": "2026-06-30T10:16:46.613704+08:00",
+    "cursor": "2026-06-30T10:16:46.614524+08:00",
+    "openai": "2026-06-30T10:16:46.615460+08:00",
+    "langchain": "2026-06-30T10:16:46.616410+08:00",
+    "bestblogs": "2026-06-30T10:16:46.617401+08:00",
+    "hn": "2026-06-30T10:16:46.618296+08:00",
+    "github": "2026-06-30T10:17:09.614100+08:00",
+    "reddit": "2026-06-30T10:16:46.620105+08:00",
+    "first_party": "2026-06-30T10:16:46.621218+08:00"
+  },
+  "saturation_streak": 0,
+  "lastRunNewSources": 17
+}
