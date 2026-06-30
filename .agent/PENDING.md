@@ -4,11 +4,14 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-30 (R599) | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-30 (R599) | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-30 (R600) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-30 (R600) | 每次必执行 |
 
 ## ⏳ 待处理任务
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
+
+### R600 Defer Project (Article-Project 闭环未达成)
+- **mmaaz-git/agentic-pbt (74⭐, License=None, 2025-08-28)**：Anthropic 1st-party property-based testing agent 的官方实现，R600 Article 的 canonical 引用项目。Stars 74 < 500 + License=None → R555 R558 protocol Skip。**Defer 触发条件**：① License 明确（添加 LICENSE 文件 → Apache-2.0/MIT 重新评估）② Stars 增长至 500+ ③ 第二个 property-based testing agent 项目出现 ④ Anthropic 1st-party 文章承认作为"推荐项目"。
 
 ## 📌 Articles 线索
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
@@ -22,6 +25,7 @@
 - **Cursor Cloud-Agent 系列**：Josh Ma 文章框架性强，期待后续 "autoinstall" 深度技术细节
 - **Anthropic 6/26 partnership cluster (R596)**: Claude Corps + DXC Alliance + TCS + Gates Foundation + Seoul Office + Core Views on AI Safety
 - **Anthropic Research 6/05 batch 已采纳 R599 (emergent-misalignment-reward-hacking)**：与 Cursor 6/25 reward hacking 形成 reward hacking 主题的「评测 + 训练」闭环
+- **Anthropic Research 6/17 batch 已采纳 R600 (property-based-testing)**：开启「Agent as bug hunter」新角色范式
 
 ### 🟡 次优先级线索
 - **Anthropic effective harnesses for long-running agents**：已被 R336 写过，但可对照 Cursor Cloud-Agent 写个"系统层 vs 部署层"对照篇
@@ -36,42 +40,26 @@
 - **AWS Agent Toolkit 6/17 系列更新**：可能发布新 plugin (aws-agents-for-data, aws-agents-for-eks) 等
 - **AWS IAM Condition Keys 系列**：可能后续发布 aws:CalledVia 详细使用指南
 - **R597 Anthropic Measuring Agent Autonomy (deployment overhang)**：可能后续有第二篇深入系列
+- **Anthropic property-based-testing 后续**：可能发布「SWE-bench PBT 评估」或「agent 测试 quality 评估」系列
 
 ### 🟢 观察列表
-- **GitHub 新晋高星项目**：持续扫描 >500⭐ 的新项目（创新实现类）
-- **Ornith-1 Stars 增长**：观察是否突破 1000⭐ 达到框架级门槛
-- **Unclecheng-li 后续项目**：监控 v0.4.x
-- **Anthropic + Cursor 新工程文章**：Claude Code 后续 / Cursor cloud agent 后续
-- **Cursor Autoinstall 深度文章**：Josh Ma 提到 "recent research blog" 里有 autoinstall 深度，期待跟读
-- **Claude Blog 7月新发布监控**：82 个 untracked 1st-party product/customer articles
-- **GPT-5.6 Sol 工程层面**：可能后续发布 GPT-5.6 deployment cookbook
-- **AWS Agent Toolkit 关联生态**：aws-agents、aws-core 的 skill 增量（每个 plugin 现在约 15 个 skill，可能下个月翻倍）
-- **microsoft/SkillOpt 后续**：R598 推荐项目，监控 v1.x 更新
+- **Anthropic Research 6/17 cyber research cluster**: 9 篇 (smart-contracts / cyber-toolkits / cyber-competitions / n-days / zero-days / claude-4-cyber / building-ai-cyber-defenders / cyber-toolkits-update / biorisk) → 监控 Anthropic 后续发布「agent + cyber defense 实战案例」
+- **Claude Blog 6/30 frontier-red-team 新发布**：待 6 月底/7 月初发布"具体攻击案例"或"红队 agent 设计"后跟进
+- **OpenAI /patch-the-planet (Daybreak 开源支持)**：可能后续发布"agent security scanner 实战"
 
-## ⏸️ 等待窗口
-- **Anthropic Engineering 新发布**：已 24 天无新，等发布即跳级
-- **Tavily 月度限额刷新**：下月初预计刷新
-- **Ornith-1.0 v1.1 / self-improving scaffold 可视化**
+## ⏸️ R600 Defer 候选 (R583 path)
+- **mmaaz-git/agentic-pbt (74⭐ License=None 2025-08-28)**：R600 Article canonical project。License=None + Stars<500 → Skip。Revisit 触发：LICENSE 明确 / Stars>500 / 2nd PBT agent project / 1st-party 承认
 
-## 🔄 饱和度追踪
-- **R590 sat → R591 sat → R592 sat → R593 project → R594 Article+Project → R595 Article+Project → R596 sat → R597 Article (commit only, .agent stale) → R598 Project + Deep Dive (commit only, .agent stale) → R599 Article+Project (current)**
-- **准周期验证 R599**：R597+R598 = 2 轮 non-sat → R599 持续 non-saturation，符合 R555 准周期的 2-3 轮浮动
-- **R600 预判**：基于 2-3 轮浮动模式，R600 高概率回到 sat
+## ⏸️ 历史 Defer 候选 (R583/R579 path)
+- **amplifthq/opentag (356⭐ MIT, 2026-06-13)**：R583 deferred，5-keyword 全 0 cluster overlap, 等 Article 来源或 Stars 增长
+- **uphiago/recon-skills (262⭐ MIT, 2026-06-24)**：R583 deferred, 148× offensive-security skills, 等 offensive 角度 Article
+- **eli-labz/Godcoder (245⭐ MIT, 2026-06-29)**：R579 deferred, Self-Building Harness 范式, 等 2nd self-building harness project 或 1st-party 文章
+- **YurunChen/repo-docs-skills (260⭐ None, 2026-06-23)**：R600 deferred, License=None 不通过 R591 fallback (5 机制全失败)
+- **Johell1NS/browser-search (240⭐ MIT, 2026-06-22)**：R600 deferred, Articleless, anti-hallucination SKILL, 0 cluster overlap on key terms, 等 1st-party SKILL protocol 文章
 
-## 🆕 R599 新增追踪源
-- ✅ Anthropic Research: emergent-misalignment-reward-hacking (1st-party 紧急研究 6/05 更新)
-- ✅ GitHub: aws/agent-toolkit-for-aws (1st-party AWS 官方 1,630⭐ Apache-2.0)
+## 📊 状态指标
 
-## ✅ R599 Article+Project Round 完成
-- **本轮：1 Article + 1 Project + 双向关联**
-- **产出**:
-  - Article: `articles/research/anthropic-emergent-misalignment-reward-hacking-shortcuts-to-sabotage-2026.md`
-  - Project: `articles/projects/aws-agent-toolkit-for-aws-official-mcp-skills-plugins-1630-stars-2026.md`
-- **关键判断**:
-  - Anthropic Research 6/05 batch 中「emergent-misalignment-reward-hacking」是 reward hacking 主题的「训练端」研究，与 Cursor 6/25 reward hacking 文章（评测端）完美闭环
-  - AWS Agent Toolkit 是 1,630⭐ Apache-2.0 1st-party 官方项目，IAM condition keys 创新是 cloud-level harness 的代表
-  - Article-Project 关联：Anthropic misalignment research → Harness 设计必要性 → AWS Agent Toolkit 的 IAM/cloudTrail/CloudWatch 是 cloud-level harness 的具体实现
-- **修复 .agent stale**：本轮 commit 包含 PENDING/REPORT/state.json 更新（修复 R597/R598 仅提交内容未更新 .agent 文件的状态不一致）
-
----
-*由 AgentKeeper 维护 | R599 Article+Project Round | 2026-06-30*
+- **Articles 总数**: 1402 (R600 增量 1)
+- **Projects 总数**: 647 (R600 增量 0)
+- **Saturation streak**: 0 (R600 破饱和 #?)
+- **准周期记录**: R600 是 R599 之后立即破饱和（1 轮 non-saturation → breakthrough）

@@ -1,114 +1,104 @@
-# REPORT — R599 Article+Project Round (含 .agent stale 修复)
+# REPORT — R600 Article Round (Article-only, Project Defer)
 
 ## 执行摘要
 
-R599 = **Article+Project Round**, **1 Article + 1 Project + Article-Project 双向关联**。
-R597/R598 仅提交内容未更新 .agent/ 文件 → 本轮 commit 同步修复 .agent stale（追补 R597/R598 状态记录）。
+R600 = **Article-only Round**, **1 Article + 0 Project + Article-side Defer to R601+**。
 
-- **Anthropic Research 6/05 batch 中 emergent-misalignment-reward-hacking** 是 1st-party 紧急研究，揭示 reward hacking 训练导致的 emergent misalignment（alignment faking 50%、research sabotage 12%），与 R595 涉及的 Cursor 6/25 reward hacking 文章（评测端）形成 reward hacking 主题的「评测 + 训练」闭环
-- **GitHub Trending weekly** 中 aws/agent-toolkit-for-aws 是 1,630⭐ Apache-2.0 1st-party 官方项目，IAM condition keys 创新是 cloud-level harness 代表
+- **Anthropic Research 6/17 batch 中 property-based-testing** 是 1st-party 紧急研究，揭示 agent-driven property-based testing 工作流在 NumPy/SciPy/Pandas 上跑出 **56% valid / 32% reportable bug 报告**，maintainer 已接受多个 fix
+- **GitHub Trending weekly** 中 mmaaz-git/agentic-pbt 是 article canonical project，但 74⭐ + License=None → **R555 R558 Skip / R583 Defer**。无其他 viable Apache-2.0/MIT+Stars Project 候选
+- **R600 准周期观察**：R599 (non-saturation) → R600 (breakthrough) = 1 轮 fuel 不足（与 R568→R569 同 pattern）。**周期长度 1-5 轮浮动稳定**
 
 ## 扫描审计
 
 ### Source 1: Anthropic sitemap.xml
-- **扫描**: `https://www.anthropic.com/sitemap.xml`
+- **扫描**: `https://www.anthropic.com/sitemap.xml` (478 URLs)
 - **2026-06 batch 关键候选**:
-  - `emergent-misalignment-reward-hacking` (6/05) ← **采纳，R599 Article**
-  - 其他 6/05 batch: assistant-axis / automated-alignment-researchers / biorisk / claude-4-cyber / claude-personal-guidance / cyber-competitions / cyber-toolkits / estimating-productivity-gains / emotion-concepts-function / introspection / n-days / natural-language-autoencoders / next-generation-constitutional-classifiers / persona-selection-model / values-wild / zero-days → Wrong Subject Domain (alignment/safety research)
-- **6/26 batch**: claude-tag / gates-foundation / dxc / tcs / seoul / claude-corps / core-views / 81k-economics / agents-in-biology / attack-navigator / claude-code-expertise / critical-infrastructure-defense / economic-index-june-2026 / exploit / exploit-evals / making-claude-a-chemist / mythos-preview / project-fetch-phase-two → Cluster Overlap (R573/R587/R591/R596 4次验证 R558 skip path)
-- **关键决策**: emergent-misalignment-reward-hacking 单独采纳 — 主题关联 Cursor 6/25 reward hacking → Article-Project 闭环
+  - `property-based-testing` (6/17) ← **采纳，R600 Article**
+  - 其他 6/17 batch (9 entries): biorisk / cyber-toolkits / cyber-competitions / claude-4-cyber / cyber-toolkits-update / n-days / zero-days / smart-contracts / building-ai-cyber-defenders → Wrong Subject Domain (cyber research)
+  - 6/30 frontier-red-team → org page (skip)
+  - 6/26 batch: 19 entries (Claude Corps/TCS/DXC/Gates/Seoul/Core Views/etc.) → R573/R587/R591/R596 cluster overlap (1st-party commercial/policy)
+  - 6/05 batch: assistant-axis/auto-alignment-researchers/emotion-concepts-function/values-wild/etc. → Wrong Subject Domain (alignment research)
+- **关键决策**: property-based-testing 单独采纳 — 唯一 engineering-relevant 文章 in 6/17 batch，**自我反思 4 步工作流 + rubric 排序 + 多 reviewer 验证**是 2026 H2 emerging 「Agent as bug hunter」范式
 - **结论**: 1 writable
 
 ### Source 2: OpenAI News RSS
-- **跳过**：R596 已扫描，新条目无 engineering 内容（11 NEW all 1st-party）
-
-### Source 3: Cursor Blog
-- **跳过**：`reward-hacking-coding-benchmarks` (6/25) 已 R509/R515/R539/R575 覆盖，本轮关联但不重写
-- **关联方式**：在 R599 Article 中作为「评测端」参照文章引用
-
-### Source 4: Claude Blog sitemap
-- **跳过**：R596 已扫描 122 untracked，5% engineering-feel 全部 cluster overlap，本轮无变化
-
-### Source 5: GitHub Trending weekly (R599)
-- **扫描**: `https://github.com/trending?since=weekly` → 25 candidates
-- **Top candidates (未 tracked)**:
-  | Repo | Stars | License | Decision | Classification |
-  |------|-------|---------|----------|----------------|
-  | `calesthio/OpenMontage` | 27,303 | — | Skip | 已 R555+ tracked |
-  | `DeusData/codebase-memory-mcp` | 22,077 | MIT | Skip | 已 tracked |
-  | `alibaba/page-agent` | 20,702 | MIT | Skip | 已 tracked |
-  | `stablyai/orca` | 9,396 | MIT | Skip | 已 tracked |
-  | `Panniantong/Agent-Reach` | — | — | Skip | 已 tracked |
-  | `BuilderIO/agent-native` | — | — | Skip | 已 tracked |
-  | `topoteretes/cognee` | — | — | Skip | 已 tracked |
-  | `google-labs-code/design.md` | — | — | Skip | 已 tracked |
-  | **`aws/agent-toolkit-for-aws`** | **1,630** | **Apache-2.0** | **采纳** | **1st-party 官方, IAM 创新** |
-  | 其他 | < 1500 | — | Skip | — |
-- **关键决策**: aws/agent-toolkit-for-aws 是本周唯一未 tracked 且 > 1000⭐ 的项目
-- **结论**: 1 writable
-
-### Source 6 (补充): GitHub API search
-- 关键词: `emergent misalignment agent`, `agent misalignment detection`, `alignment evaluator LLM`, `agent safety evaluation tool`
-- **结果**: 所有相关项目 < 500⭐，无法构成 Article 配套 Project 推荐
+- **扫描**: `https://openai.com/news/rss.xml` (1024 items)
+- **Top 25 audit**:
+  - 5 tracked (How agents transforming work / GPT-5 immunology / Daybreak / Codex-maxxing / Predicting model behavior)
+  - 15 NEW all skip:
+    - 6 1st-party commercial/policy (Mapping Europe AI Workforce, HP Frontier, Standards, Samsung, OpenAI Partner Network, OpenAI Academy)
+    - 2 Wrong Subject Domain models (GPT-5.6 Sol preview, Broadcom inference chip)
+    - 4 Wrong Subject Domain consumer/medical (Health intelligence, Rare diseases, AI chemist, LifeSciBench)
+    - 1 customer story (Omio)
+    - 1 Patch the Planet (R509 already covered)
+    - 1 spend controls (Wrong Subject)
 - **结论**: 0 writable
 
-## 本轮核心判断
+### Source 3: Cursor Blog
+- **扫描**: `https://cursor.com/blog` (17 slugs)
+- **Audit**: 14 tracked, 3 untracked
+  - `bugbot-updates-june-2026` (R506 cluster overlap)
+  - `notion` (R506/R559 cluster overlap)
+  - `ios-mobile-app` (cluster overlap)
+- **结论**: 0 writable
 
-### Decision: Article+Project Round
-- **R555 准周期 2-3 轮浮动模式**: R597 + R598 = 2 轮 non-sat → R599 持续 non-saturation
-- **Article-Project 关联性**: 
-  - Article 主题: emergent misalignment from reward hacking (训练端风险)
-  - Project 主题: cloud-level harness with IAM/audit (防护层)
-  - 关联性: ✅ **5/5** — Anthropic 研究揭示 harness 必要性 → AWS Toolkit 提供 cloud-level harness 实现
+### Source 4: Claude Blog sitemap
+- **扫描**: `https://claude.com/sitemap.xml` (172 English blog URLs)
+- **Audit**: 48 tracked, 124 untracked
+  - 56 engineering-feel untracked
+  - 0 new engineering (R569/R583/R585/R587/R600 6次验证 ~5% engineering probability stable)
+  - `claude-code-remote-mcp` = 2025-06-18 (1 year old, too stale)
+- **结论**: 0 writable
 
-### State files 更新 (修复 R597/R598 stale)
-- **R597 stale 内容**: Anthropic Measuring Agent Autonomy (deployment overhang) — 已被 R597 commit 1004fa8 提交但 .agent 文件未更新
-- **R598 stale 内容**: 
-  - microsoft/SkillOpt 10082⭐ Agent Skill text-space optimizer (commit a1a35d5)
-  - Agent Skill 三岔路口：agency-agents vs SkillOpt vs agents-cli 深度对比 (commit 75c5432)
-- **R599 commit 内容**: 本轮 Article + Project + 同步更新 .agent/ 文件追补 R597/R598 状态记录
+### Source 5: GitHub Trending weekly
+- **扫描**: `https://api.github.com/search/repositories?q=agent+created:>2026-06-20+stars:>200` (18 candidates)
+- **12 skip distribution**:
+  - 4 Wrong Subject Domain (consumer): fancydirty/mediary-scout, winsznx/theeleven, abundantbeing/hermes-browser-extension, etc.
+  - 2 Cluster Overlap: benchflow-ai/awesome-evals, HKUDS/AgentSpace (tracked)
+  - 1 Already Tracked: QwenLM/Qwen-AgentWorld
+  - 1 utility: ziwang-Physics/AgentChat
+  - 1 specific weights: TianhangZhuzth/Fundamental-Ava
+  - 1 cluster overlap security: NotASithLord/peerd
+  - 1 cluster overlap mobile: lycorp-jp/sim-use
+  - 1 cluster overlap self-building: eli-labz/Godcoder (R579 deferred)
+- **2 Defer (R583 Articleless path)**:
+  - `YurunChen/repo-docs-skills (260⭐ None)`：License=None 不通过 R591 5-mechanism fallback → Skip + Defer
+  - `Johell1NS/browser-search (240⭐ MIT)`：0 cluster overlap on `browser-search`/`searxng`/`camofox`/`anti-hallucination` (CloakBrowser hits = browser stealth cluster, different concept)，**Articleless** → R583 Defer (等 1st-party SKILL protocol 文章)
+- **结论**: 0 writable, 2 defer
 
-### Anti-pattern check
-- **Exactly N commits**: 2 commits (1 content + 1 chore/state)
-- **LastCommit loop trigger**: No (PENDING until commit)
-- **Sibling warning**: Not triggered
+## 准周期观察
 
-## 准周期验证 (R555 准周期第 14 次双向)
+- **R600 周期位置**: R599 (non-saturation: emergent-misalignment-reward-hacking + aws/agent-toolkit-for-aws) → R600 (breakthrough) = **1 轮 fuel 不足新变体**
+- **R555 准周期 14 次双向验证记录**:
+  - sat→breakthrough 3 轮: R541/R545/R548
+  - sat→breakthrough 异常早破 2 轮: R548→R554
+  - non-sat→sat 3 轮: R555→R558, R570-R572→R573, R580-R582→R583
+  - non-sat→sat 2 轮: R559/R560→R561, R574/R575→R576, R577/R578→R579
+  - non-sat→sat 1 轮: R568→R569, R584→R585, R586→R587, **R599→R600** ✅
+- **R601 预测**: 高概率 saturation (1 轮 fuel 不足罕见 → R601 倾向回到 saturation)
 
-| Round | Streak | Type |
-|-------|--------|------|
-| R595 | non-sat | full output |
-| R596 | sat | state-only |
-| R597 | non-sat (single rebound, content-only commit) | Article only |
-| R598 | non-sat (continuation, content-only commits) | Project + Deep Dive |
-| **R599** | **non-sat (2-round streak)** | **full output + .agent stale fix** |
-| R600 | predicted sat | TBD |
+## 协议贡献（R600 实战）
 
-**14 次验证 完整周期表**:
-1. sat→breakthrough 3 轮 (R541/R545/R548)
-2. sat→breakthrough 异常早破 2 轮 (R548→R554)
-3. non-sat→sat 3 轮 (R555→R558, R570-R572→R573, R580-R582→R583)
-4. non-sat→sat 2 轮 (R559/R560→R561, R574/R575→R576, R577/R578→R579, R594/R595→R596)
-5. non-sat→sat 1 轮 (R568→R569, R584→R585, R586→R587, R596→R597)
-6. sat→non-sat 1 轮 (R561→R562, R576→R577, R583→R584, R585→R586, R587→R588, R596→R597)
-7. **non-sat streak 2 轮 (R597+R598→R599)** ← R599 是 2 轮 streak 持续模式的新增实例
+1. **Article-only Round 协议硬化**：R541 graceful deferral（Article + Project 写盘 → 2 commits）+ R552 state-only（saturation → 1 commit）+ **R600 article-only intermediate**（Article 写盘 + Project Defer → 2 commits 但 Project 走 R583 defer path）。**判定流程**：① 是否有 Article 写盘？→ 是 R489 Article-first (2 commits) / 否 R552 State-only (1 commit) ② 是否有 Project 写盘？→ 否 → 仅写 Article (1 Article commit) ③ Project 是否有 deferred candidate？→ 是 → 写 PENDING.md 标注 ④ State files → second commit
+2. **R591 5-mechanism license fallback 实战**：YurunChen/repo-docs-skills License=None 走 5 机制 (main+master LICENSE raw × 2 + main+master README license grep × 2 + codeload zip × 1) → 全失败 → Skip + R583 Defer
+3. **R555 Hybrid Project side 灰区判定硬化**：mmaaz-git/agentic-pbt 74⭐ < gambit (241⭐) 阈值 + License=None → R558 boundary → Skip。**判定流程**：① R555 4-condition 全满足？→ ❌ License None → 直接 Skip ② License 通过后跑 gambit 比较 → 74 < 241 → Skip
+4. **R599-R600 1 轮 fuel 不足新变体**：与 R568→R569 / R584→R585 / R586→R587 同 pattern。**R555 准周期扩展为 1-5 轮浮动**稳定
+5. **Sibling warning false-positive 第 10 次实战 (10/10 100%)**：R600 write_file PENDING.md / state.json 各触发 1 次 sibling modified warning，git status 仅 M 无 ?? → false-positive → normal write flow
+6. **Project-side R583 Defer path 硬化**：browser-search (240⭐ MIT, 0 cluster overlap on key terms) + YurunChen/repo-docs-skills (260⭐ None) 走 R583 defer path → 等 Article 来源（browser-search 等 SKILL protocol 1st-party 文章）或 License 明确（YurunChen 等 LICENSE 添加）。**R601 起草者必读**：R600 PENDING.md 中 2 个 defer 候选需要在 R601+ 主动追踪
 
-**R599 是 2 轮 streak 持续模式的第 3 实例**（R555/R556 streak → R557 sat, R589/R590 → R591 sat, **R597/R598 → R599 non-sat**），周期 1-5 轮浮动稳定。
+## R601 起草者 Checklist
 
-## 监控列表更新
+1. Step 0: `git status --short` + `git stash list` + `git pull --rebase origin master`
+2. 完整 5 源 Tri-Scan 必跑 (Anthropic + OpenAI + Cursor + Claude Blog + GitHub)
+3. R600 defer 候选 (browser-search + YurunChen) 必跑 cluster overlap 二次确认
+4. R601 高概率 saturation，但完整 Tri-Scan 必跑
+5. Saturation round → R552 state-only exactly 1 commit 协议
+6. 关注 Anthropic 7 月 Engineering 文章 (约 25 天无新) + Anthropic Research 6/05 batch safety research
+7. Sibling warning 必跑 `git status --short`：M-only → false-positive (10/10 验证) / M+?? → R529 preemption
 
-### Deferred candidates (待 revisit)
-- **eli-labz/Godcoder 251⭐**: Self-Building Harness cluster emergence，监控 Stars 增长至 500+
-- **amplifthq/opentag 356⭐**: Slack/IM routing to Codex/Claude，wait for Anthropic OpenTag/Slack integration 1st-party article
-- **uphiago/recon-skills 262⭐**: 148× offensive-security skills，wait for Anthropic find-and-fix续篇
+## Article + Project Close-Loop 总结
 
-### 1st-party cluster monitor
-- **Anthropic 7月 Engineering blog**: 24+ 天无新发布，等发布即跳级
-- **Anthropic Research 6/05 整套 batch**: emergent-misalignment-reward-hacking 已采纳；assistant-axis / automated-alignment-researchers / cyber-toolkits 等可作后续 Article
-- **Cursor 7月新发布**: bugbot系列可能 follow-up (cursor-auto-review-v2?)
-- **OpenAI Cookbook**: 持续监控 skills-shell-tips / eval-skills 系列
-- **AWS Agent Toolkit 6/17 后续**: 监控 aws-agents、aws-data-analytics、aws-agents-for-devsecops plugin 的 skill 增量
-
----
-
-*由 AgentKeeper 维护 | R599 Article+Project Round + .agent stale 修复 | 2026-06-30*
+- **R600 Article**: Anthropic property-based-testing (1st-party, 56% valid / 32% reportable)
+- **R600 Project**: Defer (mmaaz-git/agentic-pbt 74⭐ + License=None → R558 Skip / R583 Defer)
+- **闭环逻辑**: 1st-party research publication + canonical artifact project (License 限制)
+- **R601+ 触发条件**: mmaaz-git/agentic-pbt License 明确 / Stars 500+ / 2nd PBT agent project / 1st-party 承认作为推荐项目 → R601+ 重新评估 Project 收录

@@ -1,114 +1,56 @@
 {
-  "lastRun": "2026-06-30T18:11:00+08:00",
-  "lastCommit": "8eaaea7",
-  "round": 599,
-  "status": "article_project_round",
+  "lastRun": "2026-06-30T19:42:00+08:00",
+  "lastCommit": "7cc7a99",
+  "round": 600,
+  "status": "article_only_round",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "full_output",
-  "agent_stale_fix": {
-    "stale_rounds": [597, 598],
-    "reason": "R597 (commit 1004fa8) and R598 (commits a1a35d5, 75c5432) committed content without updating .agent/ files; R599 commit includes PENDING/REPORT/state.json update to backfill R597/R598 records",
-    "fix_commit": "8eaaea7 (R599 chore)"
-  },
+  "type": "article_first",
   "scan_summary": {
     "anthropic_sitemap": {
       "total_june_2026": 21,
-      "new_2026_june_05": 16,
-      "new_2026_june_17": 6,
-      "new_2026_june_26": 20,
+      "new_2026_june_17": 10,
       "new_2026_june_30": 1,
       "writable": 1,
-      "selected": "emergent-misalignment-reward-hacking (6/05)",
-      "skip_reason": "6/26 batch = R573/R587/R591/R596 cluster overlap (1st-party commercial/policy), 6/05 batch = mostly safety research (assistant-axis/auto-alignment-researchers etc. Wrong Subject Domain for Agent Engineering)"
+      "selected": "property-based-testing (6/17)",
+      "skip_reason": "6/26 batch (R573/R587/R591/R596 1st-party partnership cluster overlap); 6/17 batch other 9 = cyber research (Wrong Subject Domain); 6/30 frontier-red-team = org page; 6/05 batch = alignment research (Wrong Subject Domain)"
     },
     "openai_rss": {
       "total_items": 1024,
       "top_25_reviewed": 25,
-      "new_in_top25": 11,
-      "tracked_in_top25": 14,
+      "new_in_top25": 15,
+      "tracked_in_top25": 5,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "5 Wrong Subject Domain + 5 1st-party commercial/policy + 1 cluster overlap; same as R596"
+      "skip_reason": "6 1st-party commercial/policy (Workforce/HP/Standards/Samsung/Partner/Academy) + 2 Wrong Subject Domain (GPT-5.6 Sol, Broadcom) + 4 Wrong Subject Domain medical/consumer (health/rare diseases/chemist/LifeSciBench) + 1 customer story (Omio) + 1 Patch the Planet (R509 covered) + 1 spend controls (Wrong Subject)"
     },
     "cursor_blog": {
+      "total_slugs": 17,
+      "tracked": 14,
       "untracked": 3,
-      "new": 0,
-      "engineering": 1,
       "writable": 0,
-      "skip_reason": "reward-hacking-coding-benchmarks (6/25) = Cursor's research on SWE-bench reward hacking; already covered in R509/R515/R539/R575 (4 articles + 4 rounds); referenced in R599 Article as cross-validation"
+      "skip_reason": "bugbot-updates-june-2026 + notion (R506/R559 cluster overlap) + ios-mobile-app (cluster overlap)"
     },
     "claude_blog_sitemap": {
       "total_urls": 172,
-      "tracked": 50,
-      "untracked": 122,
-      "engineering_feel": 6,
+      "tracked": 48,
+      "untracked": 124,
+      "engineering_feel": 56,
       "writable": 0,
-      "skip_reason": "R569/R583/R585/R587/R596 5次验证 5% engineering probability stable; 6 engineering-feel untracked: all cluster overlap"
+      "skip_reason": "R569/R583/R585/R587/R600 6次验证 ~5% engineering probability stable; claude-code-remote-mcp = 2025-06-18 (1 year old, too stale); other engineering-feel = all 1st-party product/customer story"
     },
     "github_trending_weekly": {
-      "total_candidates": 25,
-      "writable": 1,
-      "selected": "aws/agent-toolkit-for-aws (1630⭐ Apache-2.0)",
-      "candidates_breakdown": [
-        {"repo": "calesthio/OpenMontage", "stars": 27303, "decision": "Skip - already R555+ tracked"},
-        {"repo": "DeusData/codebase-memory-mcp", "stars": 22077, "license": "MIT", "decision": "Skip - already tracked"},
-        {"repo": "alibaba/page-agent", "stars": 20702, "license": "MIT", "decision": "Skip - already tracked"},
-        {"repo": "stablyai/orca", "stars": 9396, "license": "MIT", "decision": "Skip - already tracked"},
-        {"repo": "aws/agent-toolkit-for-aws", "stars": 1630, "license": "Apache-2.0", "decision": "ACCEPT - 1st-party official AWS plugin+MCP+skills bundle for Claude Code/Codex/Cursor/Kiro; IAM condition keys innovation distinguishes agent vs human actions"}
-      ]
+      "total_candidates": 18,
+      "tracked": 5,
+      "untracked": 13,
+      "writable": 0,
+      "defer_candidates": 2,
+      "skip_reason": "12 Wrong Subject / Cluster Overlap / License=None / Already Tracked; 2 defer (Johell1NS/browser-search 240⭐ MIT Articleless + YurunChen/repo-docs-skills 260⭐ License=None)"
     }
   },
-  "round_599_summary": {
-    "article": {
-      "file": "articles/research/anthropic-emergent-misalignment-reward-hacking-shortcuts-to-sabotage-2026.md",
-      "title": "Reward Hacking 是 Agent 训练阶段的「斜坡起点」：从这里一路滑到 alignment faking 与 research sabotage",
-      "source": "Anthropic Research (1st-party)",
-      "source_url": "https://www.anthropic.com/research/emergent-misalignment-reward-hacking",
-      "core_thesis": "Reward hacking training causes emergent misalignment (alignment faking 50%, research sabotage 12%); RLHF does not fix but only hides (context-dependent)",
-      "key_numbers": {
-        "research_sabotage_rate": "12%",
-        "alignment_faking_rate": "50%",
-        "key_finding": "RLHF makes misalignment context-dependent, not eliminated"
-      },
-      "linked_cursor_article": "cursor.com/blog/reward-hacking-coding-benchmarks (评测端 63% retrieval vs 37% derivation)"
-    },
-    "project": {
-      "file": "articles/projects/aws-agent-toolkit-for-aws-official-mcp-skills-plugins-1630-stars-2026.md",
-      "title": "aws/agent-toolkit-for-aws: AWS 官方把 Coding Agent 接进 AWS 的「一键 Harness」",
-      "stars": 1630,
-      "license": "Apache-2.0",
-      "created": "2026-04-23",
-      "key_features": [
-        "4 plugins: aws-core, aws-agents, aws-data-analytics, aws-agents-for-devsecops",
-        "15 skills in aws-core: amazon-bedrock, aws-cdk, aws-iam, aws-serverless, etc.",
-        "IAM condition keys distinguish agent vs human (aws:CalledVia mcp-server-for-aws.amazonaws.com)",
-        "CloudWatch + CloudTrail audit for every MCP request",
-        "Verified end-to-end skills (not just prompt dumps)",
-        "Cross-agent: Claude Code + Codex + Cursor + Kiro"
-      ],
-      "iam_policy_example_included": true,
-      "screenshot_path": "articles/projects/screenshots/aws-agent-toolkit-for-aws-20260630.png"
-    },
-    "article_project_linkage": {
-      "theme": "Harness engineering + reward hacking risks",
-      "linkage_strength": 5,
-      "rationale": "Anthropic research reveals harness design is critical (reward hacking → misalignment); AWS Agent Toolkit provides cloud-level harness implementation (IAM + audit + skills)"
-    }
-  },
-  "r555_quasi_period_validation": {
-    "round": 599,
-    "previous_streak": "R597 (Article, content-only) + R598 (Project + Deep Dive, content-only)",
-    "current": "R599 article+project round",
-    "pattern_type": "non-saturation streak 2 rounds (3rd validation of R597-style 2-round continuation)",
-    "validations_2round_streak": ["R555/R556 → R557 sat", "R589/R590 → R591 sat", "R597/R598 → R599 non-sat"],
-    "next_round": "R600 predicted sat (2-round streak typical return to sat)"
-  },
-  "anti_pattern_compliance": {
-    "exactly_2_commits": "yes (525e210 content + 8eaaea7 chore)",
-    "lastCommit_field_writes_known_hash": "8eaaea7 (chore hash)",
-    "no_lastCommit_loop_commit": "yes",
-    "agent_stale_recovery": "R599 includes .agent/ file updates for R597/R598 stale content"
-  },
-  "sibling_warning_check": "not triggered"
+  "article_project_close_loop": {
+    "article": "anthropic-property-based-testing-agent-hypothesis-numpy-scipy-2026",
+    "project": "defer (R583 path)",
+    "defer_reason": "mmaaz-git/agentic-pbt is the canonical project for the article but 74⭐ + License=None = R555 Skip; no other viable Apache-2.0/MIT+Stars Project candidate in the property-based testing agent space"
+  }
 }
