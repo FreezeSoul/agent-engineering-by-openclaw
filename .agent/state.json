@@ -1,56 +1,68 @@
 {
-  "lastRun": "2026-06-30T19:42:00+08:00",
-  "lastCommit": "7cc7a99",
-  "round": 600,
-  "status": "article_only_round",
+  "lastRun": "2026-06-30T19:57:00+08:00",
+  "lastCommit": "7c69abb",
+  "round": 601,
+  "status": "saturation_round",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "article_first",
+  "type": "state_only",
   "scan_summary": {
     "anthropic_sitemap": {
-      "total_june_2026": 21,
-      "new_2026_june_17": 10,
-      "new_2026_june_30": 1,
-      "writable": 1,
-      "selected": "property-based-testing (6/17)",
-      "skip_reason": "6/26 batch (R573/R587/R591/R596 1st-party partnership cluster overlap); 6/17 batch other 9 = cyber research (Wrong Subject Domain); 6/30 frontier-red-team = org page; 6/05 batch = alignment research (Wrong Subject Domain)"
+      "total_urls": 478,
+      "engineering_latest": "2026-06-06 how-we-contain-claude (24+ days without new)",
+      "research_6_26_batch": 11,
+      "research_6_30_batch": 1,
+      "writable": 0,
+      "skip_reason": "Engineering plateau 24+ days (R555/R591 same pattern); Research 6/26 batch all Wrong Subject Domain (biology/chemistry/cyber/economics/model preview/physical robot); Research 6/30 = org page"
     },
     "openai_rss": {
       "total_items": 1024,
       "top_25_reviewed": 25,
-      "new_in_top25": 15,
+      "new_in_top25": 0,
       "tracked_in_top25": 5,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "6 1st-party commercial/policy (Workforce/HP/Standards/Samsung/Partner/Academy) + 2 Wrong Subject Domain (GPT-5.6 Sol, Broadcom) + 4 Wrong Subject Domain medical/consumer (health/rare diseases/chemist/LifeSciBench) + 1 customer story (Omio) + 1 Patch the Planet (R509 covered) + 1 spend controls (Wrong Subject)"
+      "skip_reason": "Top 25 与 R600 扫描结果 100% 一致 (无 6/30 后新 item)"
     },
     "cursor_blog": {
-      "total_slugs": 17,
+      "total_slugs": 91,
       "tracked": 14,
-      "untracked": 3,
+      "untracked": 77,
       "writable": 0,
-      "skip_reason": "bugbot-updates-june-2026 + notion (R506/R559 cluster overlap) + ios-mobile-app (cluster overlap)"
+      "skip_reason": "全部 1st-party product/customer story + R506/R559 cluster overlap"
     },
     "claude_blog_sitemap": {
-      "total_urls": 172,
-      "tracked": 48,
-      "untracked": 124,
-      "engineering_feel": 56,
+      "total_urls_english": 23,
+      "tracked": 0,
+      "untracked": 23,
       "writable": 0,
-      "skip_reason": "R569/R583/R585/R587/R600 6次验证 ~5% engineering probability stable; claude-code-remote-mcp = 2025-06-18 (1 year old, too stale); other engineering-feel = all 1st-party product/customer story"
+      "skip_reason": "全部 1st-party product/customer/hackathon announcement; steering-claude-code (R584 cluster overlap) + agent-identity-access-model (R585) + harnessing-claudes-intelligence (R580) 已 covered"
     },
     "github_trending_weekly": {
-      "total_candidates": 18,
-      "tracked": 5,
-      "untracked": 13,
+      "total_candidates": 19,
+      "tracked": 0,
+      "viable_above_1000_stars": 8,
+      "already_covered_by_owner_repo": 6,
+      "license_none_skip": 2,
       "writable": 0,
-      "defer_candidates": 2,
-      "skip_reason": "12 Wrong Subject / Cluster Overlap / License=None / Already Tracked; 2 defer (Johell1NS/browser-search 240⭐ MIT Articleless + YurunChen/repo-docs-skills 260⭐ License=None)"
+      "defer_candidates": 0,
+      "skip_reason": "6 个 owner/repo-already-covered (alibaba/page-agent 20727⭐ / topoteretes/cognee 25899⭐ / stablyai/orca 9439⭐ / DeusData/codebase-memory-mcp 22205⭐ / Panniantong/Agent-Reach 46535⭐ / mukul975/Anthropic-Cybersecurity-Skills 23296⭐ cluster overlap); 1 License=None (BuilderIO/agent-native 3144⭐ R591 fallback skip); 1 Wrong Subject Domain (interviewstreet/hiring-agent 3901⭐ HR domain)"
+    },
+    "anthropic_research_6_05_batch_followup": {
+      "items": 16,
+      "all_wrong_subject_domain": 16,
+      "writable": 0,
+      "skip_reason": "全部 alignment research / cyber research, R600 PENDING 已监控"
     }
   },
   "article_project_close_loop": {
-    "article": "anthropic-property-based-testing-agent-hypothesis-numpy-scipy-2026",
-    "project": "defer (R583 path)",
-    "defer_reason": "mmaaz-git/agentic-pbt is the canonical project for the article but 74⭐ + License=None = R555 Skip; no other viable Apache-2.0/MIT+Stars Project candidate in the property-based testing agent space"
+    "article": "none (saturation)",
+    "project": "none (saturation)",
+    "defer_path": "R583/R600/R601 6 个 defer candidate 全部无显著移动 (Stars +1~+20 / License 无变化 / Pushed 6/28-6/30)"
+  },
+  "quasi_period_observation": {
+    "r555_quasi_period_validations": 15,
+    "new_validation": "R600→R601 (R600 prediction hit: 1 轮 fuel 不足 breakthrough → 立即 saturation)",
+    "r602_prediction": "高概率 saturation 持续 (Anthropic Engineering 24+ 天无新是历史第 3 次长 plateau, R555/R591 同 pattern); 7 月窗口 7/1-7/7 高概率 breakthrough"
   }
 }
