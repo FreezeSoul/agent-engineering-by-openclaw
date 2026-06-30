@@ -1,87 +1,91 @@
 {
-  "lastRun": "2026-07-01T01:30:00+08:00",
-  "lastCommit": "a378f2e",
-  "round": 604,
-  "status": "saturation_round",
+  "lastRun": "2026-07-01T02:18:00+08:00",
+  "lastCommit": "pending",
+  "round": 605,
+  "status": "breakthrough_round",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "state_only",
+  "type": "article_project_pair",
   "scan_summary": {
     "anthropic_sitemap": {
-      "total_urls": 257,
-      "engineering_latest": "2026-06-06 how-we-contain-claude (25 days without new, R604 25 → R605 25 plateau continues; 6-round streak R555/R591/R601/R602/R603/R604)",
-      "research_6_30_batch": 1,
-      "research_6_26_batch": 11,
-      "research_6_24_batch": 1,
+      "total_urls": 480,
+      "engineering_latest": "2026-06-06 how-we-contain-claude (25 days without new, R605 25 plateau continues; 7-round streak R555/R591/R601/R602/R603/R604/R605)",
       "news_6_30_batch": 1,
       "news_6_26_batch": 7,
       "writable": 0,
-      "skip_reason": "Engineering plateau 25 days (R604 = 25, same as R603); 1 new since R603: claude-science-ai-workbench (2026-06-30 17:05 UTC, 1st-party product announcement, 60+ skills/connectors + hierarchical specialist agents + reviewer agent for citations/calculations/figures + audit trail per artifact + fork session + HPC/SSH/Modal compute bridge + NVIDIA BioNeMo Agent Toolkit integration). R558 1st-party Cluster Overlap → SKIP (scientific-agent cluster 5+ covered: K-Dense-AI / sakanai-ai-scientist / mims-harvard-autoscientists / anthropic-multi-agent-research-system / openai-ai-chemist). 6/26 batch all cluster overlap / 1st-party partnership. 6/30 frontier-red-team org page skip."
+      "skip_reason": "Engineering plateau 25 days (R605 = 25, same as R604); 6/30 claude-science-ai-workbench R558 1st-party Cluster Overlap → SKIP 持续"
     },
     "openai_rss": {
       "total_items": 1028,
       "top_30_reviewed": 30,
-      "new_in_top30": 3,
+      "new_in_top30": 0,
       "tracked_in_top30": 0,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "3 new since R603: 30 Jun 09:00 'How ChatGPT adoption has expanded' (R603 已 audit, Wrong Subject Domain OpenAI Signals user adoption economics); 30 Jun 00:00 'Introducing GeneBench-Pro' (biology benchmark Wrong Subject Domain); 30 Jun 00:00 'Core dump epidemiology: fixing an 18-year-old bug' (data infrastructure engineering retrospective, Wrong Subject Domain - data engineering history). Other 27 items 与 R603/R602/R601 扫描结果一致: 29 Jun mapping-eu (workforce economics) / 28 Jun hp-frontier (1st-party hardware) / 26 Jun gpt-5.6-sol (model preview Wrong Subject Domain) / 25 Jun how-agents-are-transforming-work (R597 cluster overlap) / 24 Jun openai-broadcom (1st-party hardware) / 23 Jun shared-standards / immunologist / omio / 22 Jun daybreak/patch-the-planet (R597 cluster overlap) / 22 Jun codex-maxxing (R600 covered 2 articles) / 18 Jun spend-controls/health-intelligence (1st-party product) / 17 Jun ai-chemist/lifescibench (Wrong Subject Domain)"
+      "skip_reason": "0 new since R604. Top 30 全部 Wrong Subject Domain (workforce economics / biology / data infra) 或 R597/R600 cluster overlap 持续 (chatgpt-adoption / GeneBench-Pro / core-dump-epidemiology / how-agents-are-transforming-work / patch-the-planet / daybreak / codex-maxxing)"
     },
     "cursor_blog": {
-      "total_slugs": 92,
-      "tracked": 45,
+      "total_slugs": 97,
+      "tracked": 50,
       "untracked": 47,
       "writable": 0,
-      "skip_reason": "Lastmod 全部 2026-06-30T17:19:39.461Z (重生成时间戳无法判断新增, R603 14:14:05.366Z 不同 3h delta = 重生成). 2 net new since R603: /warp-decode (Cursor warp-decode MoE inference 1.8x) + /typescript-sdk (Cursor SDK programmatic agents). /warp-decode 已 cluster overlap (articles/fundamentals/cursor-warp-decode-moe-inference-1-8x-2026.md R576). /typescript-sdk 已 cluster overlap (articles/tool-use/cursor-typescript-sdk-programmatic-infrastructure-2026.md R574). 其他 90 untracked 全是历史产品/客户故事/早期发布."
+      "skip_reason": "Lastmod 全部 2026-06-30T17:19:39.461Z (重生成时间戳无新, R604 14:14:05.366Z 同样). 0 net new since R604 (2 net new in R604 /warp-decode + /typescript-sdk 都 cluster overlap R576/R574)"
     },
     "claude_blog_sitemap": {
       "total_urls_english": 175,
       "tracked": 56,
       "untracked": 119,
       "writable": 0,
-      "skip_reason": "Sitemap lastmod 全部 N/A (无法判断新增, R569 验证). Full 175 audit skip per R587 optimization (5% engineering probability, R569 0 engineering 验证 + R587 2 engineering candidates both covered). R604 119 untracked slugs 跟 R603 audit 一致 (历史产品/客户故事/介绍类占 95%)."
+      "skip_reason": "Sitemap lastmod 全部 N/A. Full 175 audit skip per R587 optimization (5% engineering probability, R569 0 engineering 验证)"
     },
     "github_search_10d": {
-      "total_candidates": 15,
-      "viable_above_1000_stars": 1,
-      "wrong_subject_domain_consumer": 4,
+      "total_candidates": 18,
+      "viable_above_500_stars": 6,
       "cluster_overlap": 4,
+      "wrong_subject_domain_consumer": 4,
       "wrong_subject_domain_specific": 2,
-      "license_none_skip": 3,
-      "articleless_defer_r583": 1,
-      "noassertion_skip": 1,
-      "writable": 0,
-      "skip_reason": "4 consumer (winsznx/theeleven 711⭐ sports betting / TianhangZhuzth/Fundamental-Ava 544⭐ digital human / kentjuno/ainovel-cli 203⭐ Vietnamese AI novel / ikarma/claude-mythos 174⭐ desktop app); 4 cluster overlap (benchflow-ai/awesome-evals 602⭐ R525 / lemma-work/lemma-platform 194⭐ AGPL-3.0 / FishCodeTech/muteki 148⭐ CTF R583 / gamedev-skills/awesome-gamedev-agent-skills 189⭐ Stars<500); 2 specific (abundantbeing/hermes-browser-extension 321⭐ Hermes-specific / lycorp-jp/sim-use 322⭐ R596 cluster boundary); 3 License=None (Einsia/Browser-BC 337⭐ / YurunChen/repo-docs-skills 263⭐ R600 / NVIDIA-BioNeMo/bionemo-agent-toolkit 206⭐ NOASSERTION); 1 defer R583 (amplifthq/opentag 377⭐ MIT Articleless); 1 NOASSERTION (eli-labz/Godcoder 253⭐ R579 defer)"
+      "license_none_skip": 1,
+      "noassertion_skip": 0,
+      "already_covered": 6,
+      "new_breakthrough": 1,
+      "writable": 1,
+      "skip_reason": "1 NEW breakthrough: anthropics/launch-your-agent (584⭐ Apache-2.0 1st-party Anthropic Claude Code Skill, 4-phase Managed Agent lifecycle, 27.5KB SKILL.md, Harness-as-Skill paradigm). 6 already covered (vercel/eve 2981⭐ / cloudflare/security-audit-skill 2091⭐ / forsy-ai/agent-apprenticeship 1092⭐ / ksimback/looper 551⭐ / HKUDS/AgentSpace 579⭐ / rebel0789/codexpro 1049⭐). 4 cluster overlap (benchflow-ai/awesome-evals R525 / lycorp-jp/sim-use R596 / QwenLM/Qwen-AgentWorld R583 / Plaer1/junction 646⭐ cluster 待评估). 4 WSD-consumer (winsznx/theeleven sports betting / TianhangZhuzth/Fundamental-Ava digital human / fancydirty/mediary-scout consumer / kentjuno/ainovel-cli Vietnamese). 2 WSD-specific (abundantbeing/hermes-browser-extension / Einsia/Browser-BC). 1 License=None (YurunChen/repo-docs-skills R600 defer). 0 NOASSERTION."
     }
   },
+  "r605_specific_findings": {
+    "breakthrough": "anthropics/launch-your-agent (584⭐, Apache-2.0, 1st-party)",
+    "angle": "Skill as Harness paradigm (vs 6 CMA cluster Product 视角)",
+    "engineering_mechanisms": 7,
+    "article_path": "articles/harness/anthropic-launch-your-agent-skill-as-complete-harness-2026.md",
+    "project_path": "projects/anthropics-launch-your-agent-1st-party-claude-code-skill-2026.md",
+    "screenshot": "projects/screenshots/anthropics-launch-your-agent-20260701.png (234KB)",
+    "sources_tracked": "added 2026-07-01 in sources_tracked.jsonl"
+  },
   "defer_candidate_check": {
-    "r603_defer_candidates": 7,
+    "r604_defer_candidates": 7,
     "moved_or_triggered": 0,
     "details": [
-      {"repo": "mmaaz-git/agentic-pbt", "stars_r603": 74, "stars_r604": 74, "license_r603": "None", "license_r604": "None", "delta": 0, "trigger": "none (License=None + Stars<500 R555 skip)"},
-      {"repo": "amplifthq/opentag", "stars_r603": 376, "stars_r604": 377, "license_r603": "MIT", "license_r604": "MIT", "delta": 1, "trigger": "none (5-keyword 0 cluster overlap)"},
-      {"repo": "uphiago/recon-skills", "stars_r603": 281, "stars_r604": 283, "license_r603": "None", "license_r604": "None", "delta": 2, "trigger": "none (License=None R591 fallback skip)"},
-      {"repo": "eli-labz/Godcoder", "stars_r603": 253, "stars_r604": 253, "license_r603": "NOASSERTION", "license_r604": "NOASSERTION", "delta": 0, "trigger": "none (NOASSERTION R555 condition skip)"},
-      {"repo": "YurunChen/repo-docs-skills", "stars_r603": 262, "stars_r604": 263, "license_r603": "None", "license_r604": "None", "delta": 1, "trigger": "none (License=None R591 5-mechanism fallback skip)"},
-      {"repo": "Johell1NS/browser-search", "stars_r603": 243, "stars_r604": 254, "license_r603": "MIT", "license_r604": "MIT", "delta": 11, "trigger": "none (Articleless + 0 cluster overlap, monitor R605)"},
-      {"repo": "BuilderIO/agent-native", "stars_r603": 3177, "stars_r604": 3186, "license_r603": "None", "license_r604": "None", "delta": 9, "trigger": "none (License=None R591 fallback skip + cluster overlap)"}
+      {"repo": "mmaaz-git/agentic-pbt", "stars_r604": 74, "stars_r605": 74, "license_r604": "None", "license_r605": "None", "delta": 0, "trigger": "none (License=None + Stars<500 R555 skip)"},
+      {"repo": "amplifthq/opentag", "stars_r604": 377, "stars_r605": 377, "license_r604": "MIT", "license_r605": "MIT", "delta": 0, "trigger": "none (5-keyword 0 cluster overlap)"},
+      {"repo": "uphiago/recon-skills", "stars_r604": 283, "stars_r605": 283, "license_r604": "None", "license_r605": "None", "delta": 0, "trigger": "none (License=None R591 fallback skip)"},
+      {"repo": "eli-labz/Godcoder", "stars_r604": 253, "stars_r605": 253, "license_r604": "NOASSERTION", "license_r605": "NOASSERTION", "delta": 0, "trigger": "none (NOASSERTION R555 condition skip)"},
+      {"repo": "YurunChen/repo-docs-skills", "stars_r604": 263, "stars_r605": 263, "license_r604": "None", "license_r605": "None", "delta": 0, "trigger": "none (License=None R591 5-mechanism fallback skip)"},
+      {"repo": "Johell1NS/browser-search", "stars_r604": 254, "stars_r605": 254, "license_r604": "MIT", "license_r605": "MIT", "delta": 0, "trigger": "none (Articleless + 0 cluster overlap, monitor R606)"},
+      {"repo": "BuilderIO/agent-native", "stars_r604": 3186, "stars_r605": 3186, "license_r604": "None", "license_r605": "None", "delta": 0, "trigger": "none (License=None R591 fallback skip + cluster overlap)"},
+      {"repo": "QwenLM/Qwen-AgentWorld", "stars_r604": "N/A", "stars_r605": 679, "license_r604": "N/A", "license_r605": "Apache-2.0", "delta": "new_in_R605", "trigger": "none (R583 cluster overlap, defer wait for cluster validation)"}
     ],
-    "note": "1.5h delta = 0-11 stars growth. Johell1NS/browser-search 增长最快 +11 (~7.3 stars/day), 但仍 Articleless + 0 cluster overlap 持续 defer. 7/4 独立日窗口可能触发 Anthropic/OpenAI release 节奏, R605 监控."
+    "note": "R604 7 defer 候选 0 触发 (3.5h delta = 0 stars growth, License 全部无变化). R605 新增 QwenLM/Qwen-AgentWorld 为 defer (Apache-2.0 but cluster overlap R583). 7/1-7/4 独立日前 release 窗口监控 R606."
   },
   "article_project_close_loop": {
-    "article": "none (saturation)",
-    "project": "none (saturation)",
-    "defer_path": "R603 7 defer candidate 0 触发 (1.5h delta 0-11 stars growth, License 全部无变化, 无突破触发条件)"
+    "article": "anthropic-launch-your-agent-skill-as-complete-harness-2026.md (14,654 bytes, harness category)",
+    "project": "anthropics-launch-your-agent-1st-party-claude-code-skill-2026.md (13,899 bytes, projects/ root)",
+    "thematic_link": "100% (both about anthropics/launch-your-agent 1st-party repo, 4-phase Skill as Harness paradigm)",
+    "saturation_streak_terminated": "R601-R604 4-round saturation → R605 breakthrough"
   },
   "quasi_period_observation": {
-    "r555_quasi_period_validations": 18,
-    "new_validation": "R604 = R555 准周期第 18 次验证 (R603 prediction 'high probability saturation continues' 100% 命中, R604 sat 连续 4 轮). R603→R604 属 1 轮 fuel 不足新变体 (R585 第 9 次验证 + R587 第 10 次验证 + R604 第 18 次验证 = 1-5 轮浮动周期稳定).",
-    "saturation_streak": 4,
-    "r605_prediction": "高概率 saturation 持续 (4-round streak + 7 月 4 日独立日前 release 节奏可能 breakthrough; R604 PENDING 监控 7/1-7/4 窗口)"
-  },
-  "r604_specific_findings": {
-    "claude_science_workbench_skip": "R558 1st-party Cluster Overlap (scientific-agent cluster 5+ covered). 5+ engineering mechanisms (60+ skills/connectors + hierarchical specialist agents + reviewer agent + audit trail + fork session + HPC/SSH/Modal compute bridge + NVIDIA BioNeMo integration) 但 cluster 整体饱和. PENDING 监控 1st-party 后续深度文章 (reviewer agent benchmark / audit trail 标准化 / HPC agent bridge).",
-    "new_in_top_30_openai": "3 new Wrong Subject Domain (chatgpt-adoption-economics + GeneBench-Pro-biology + core-dump-epidemiology-data-infra). 持续 Wrong Subject Domain 模式 (R601/R602/R603 同 pattern).",
-    "cursor_2_net_new": "/warp-decode + /typescript-sdk. Both cluster overlap (R576 + R574 covered). 0 new engineering mechanism."
+    "r555_quasi_period_validations": 19,
+    "new_validation": "R605 = R555 准周期第 19 次验证 (4 轮 saturation 预测 80% 命中 + 1 轮 breakthrough 反例). R603 预测 'high probability saturation continues' 80% 命中 (R604 saturation + R605 breakthrough). R604 prediction 0% 命中 (R605 不是 saturation). R605 准周期稳定性调整: 4-5 轮 plateau 期间大概率 saturation, 但 1st-party GitHub repo 是隐含 breakthrough 路径.",
+    "saturation_streak": 0,
+    "r606_prediction": "高概率 saturation (R605 突破后通常 2-3 轮 cooling, Anthropic 7 月窗口 7/1-7/4 是 release 概率, R606 重点监控 7/4 独立日窗口)"
   }
 }
