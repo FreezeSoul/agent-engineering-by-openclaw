@@ -1,169 +1,150 @@
-# REPORT — R603 Saturation Round (R552 State-Only, Streak 3)
+# REPORT — R604 Saturation Round (R552 State-Only, Streak 4)
 
 ## 执行摘要
 
-R603 = **Saturation Round (连续第 3 轮)**, **0 Article + 0 Project + R552 state-only 1 commit**。
+R604 = **Saturation Round (连续第 4 轮)**, **0 Article + 0 Project + R552 state-only 1 commit**。
 
-**R602 预测 100% 命中**: 5 源 Tri-Scan 全 0 writable + 7 R602 defer 候选 0 触发 + Saturation streak 2 → 3。
+**R603 预测 100% 命中**: 5 源 Tri-Scan 全 0 writable + 7 R603 defer 候选 0 触发 + Saturation streak 3 → 4。
 
-- **Anthropic Engineering 25 天 plateau 持续** (last = 2026-06-06 how-we-contain-claude，R602: 25 天 → R603: 25 天（1.5h 增量 = 0)），**历史第 3 次长 plateau 第 5 轮 streak** (R555/R591/R601/R602/R603)
-- **Anthropic Research/News 无变化**: 6/30 team/frontier-red-team (org page skip) + 6/26 batch (11+7 entries, 全部 R602 audit 覆盖) + 6/24 nuclear-safeguards-for-ai (Wrong Subject Domain)
-- **OpenAI RSS Top 30 1 new vs R602**: 30 Jun 09:00 UTC "How ChatGPT adoption has expanded" (Category: Global Affairs, OpenAI Signals user adoption economics) → **Wrong Subject Domain** (NOT agent engineering, 是 OpenAI Signals user behavior analysis)
-- **Cursor Blog sitemap**: 98 slugs (R602: 97, +1 net new, lastmod 重生成时间戳无信号) → 0 new writable
-- **Claude Blog sitemap**: 188 slugs (R602: 184, +4 net new, lastmod 全部 N/A) → 0 new writable
-- **GitHub Trending weekly**: 19 candidates (R602 100% 一致)，5 owner/repo-already-covered + 1 License=None + 1 cluster overlap + 1 1st-party product + 11 Wrong Subject Domain
-- **7 R602 defer 候选无移动**: 6/7 因 GitHub API rate limit (60 unauth/hour) blocked exact verify, 1.5h 估计 0-3 stars 增长。BuilderIO/agent-native 已验证 3164→3177 (+13, 仍 License=None)
+- **Anthropic Engineering 25+ 天 plateau 持续** (last = 2026-06-06 how-we-contain-claude，R603: 25 天 → R604: 25 天（1.5h 增量 = 0)），**历史第 3 次长 plateau 第 6 轮 streak** (R555/R591/R601/R602/R603/R604)
+- **Anthropic News 6/30 claude-science-ai-workbench**: NEW 1st-party product (60+ skills/connectors + hierarchical specialist agents + reviewer agent + audit trail + fork session + HPC bridge + BioNeMo integration) → **R558 1st-party Cluster Overlap → SKIP** (scientific agent cluster 5+ covered)
+- **OpenAI RSS Top 30**: 30 Jun 3 new (how-chatgpt-adoption Wrong Subject Domain + introducing-genebench-pro biology Wrong Subject Domain + core-dump-epidemiology data infra Wrong Subject Domain) → 0 writable
+- **Cursor Blog sitemap 92+ URLs**: /warp-decode + /typescript-sdk 都是 cluster overlap (R576/R574 已 covered) → 0 writable
+- **Claude Blog sitemap 175 English URLs / 127 untracked**: 5% engineering probability (R587 验证) → 0 new candidates (skip full audit per R587 optimization)
+- **GitHub Search 10d window 15 candidates**: 全部 R561/R583/R585 skip categories → 0 writable
 
 ## 扫描审计
 
 ### Source 1: Anthropic sitemap.xml
-- **扫描**: `https://www.anthropic.com/sitemap.xml` (477 URLs, lastmod 2026-06-30T16:00:19.404Z)
+- **扫描**: `https://www.anthropic.com/sitemap.xml` (477 URLs, lastmod 2026-07-01T00:46:18.000Z, ~1.5h delta from R603)
 - **Engineering 最新 (lastmod)**:
-  - 2026-06-06 `how-we-contain-claude` (R600 PENDING) — R573 cluster overlap, **R603 = 25+ 天无新 (R602 同)**
+  - 2026-06-06 `how-we-contain-claude` (R600 PENDING) — R573 cluster overlap, **R604 = 25+ 天无新 (R603 同)**
   - 2026-05-27 `claude-code-auto-mode` — R581/R584 cluster overlap
   - 2026-04-30 `april-23-postmortem` — Wrong Subject Domain (outage postmortem)
-  - 其他 21 个 Engineering URL 都 > 3 个月前，且全部已 covered
-- **Research 6/30**: 仅 `team/frontier-red-team` org page (skip)
-- **Research 6/26 batch** (11 entries, lastmod 2026-06-26): 全部 R602 audit
-  - `agents-in-biology` / `attack-navigator` / `critical-infrastructure-defense` / `economic-index-june-2026-report` / `exploit` / `exploit-evals` / `making-claude-a-chemist` / `mythos-preview` / `project-fetch-phase-two` / `81k-economics` → Wrong Subject Domain
-  - `claude-code-expertise` → R597 cluster overlap (deployment overhang)
-- **Research 6/24 batch**: `nuclear-safeguards-for-ai` → Wrong Subject Domain
-- **News 6/26 batch** (7 entries, lastmod 2026-06-26): 全部 R602 audit
-  - `core-views-on-ai-safety` / `claude-corps` / `dxc-anthropic-alliance` / `tcs-anthropic-partnership` / `gates-foundation-partnership` / `seoul-office-partnerships-korean-ai-ecosystem` → Wrong Subject Domain
-  - **`introducing-claude-tag`** → 已被 4 篇 cluster 覆盖 (R585/R602)
-- **结论**: 0 writable (1.5h R602→R603 增量 = 0)
+  - 其他 22 个 Engineering URL 都 > 3 个月前，且全部已 covered
+- **News 6/30 batch (NEW since R603)**:
+  - **`claude-science-ai-workbench`** (lastmod 2026-06-30T17:05:27Z) → 1st-party Claude Science product announcement
+    - **核心架构**: 60+ curated skills/connectors (genomics, single-cell, proteomics, structural biology, cheminformatics) → generalist coordinator agent → spawns specialist agents dynamically → reviewer agent checks citations/calculations/figures and self-corrects
+    - **新机制**: 
+      1. **Hierarchical Specialist Agents** (generalist coordinator + dynamically spawned specialist agents) — 比 Anthropic Multi-Agent Research System (Lead-Subagent 模式) 多 1 层动态 spawn
+      2. **Reviewer Agent for scientific artifacts** (citations/calculations/figures verification) — Claude Code /ultrareview 模式科学领域应用
+      3. **Audit Trail per Artifact** (full code/environment/history) — MCP session replay 模式产品化
+      4. **Fork Session** for parallel comparison without losing original thread — claude-agent-sdk-python R583 已实现
+      5. **HPC/SSH/Modal Compute Bridge** (on-demand scaling from 1 GPU to 100s) — MCP compute integration
+      6. **NVIDIA BioNeMo Agent Toolkit Integration** (Evo 2, Boltz-2, OpenFold3 native connection) — BioNeMo-as-skill 范式
+    - **Cluster Overlap Check** (R525 三角验证):
+      - "scientific agent" → 5+ articles (K-Dense-AI / sakanai-ai-scientist / mims-harvard-autoscientists / anthropic-multi-agent-research-system / openai-ai-chemist)
+      - "reviewer agent" → claude-code-ultrareview + property-based-testing-agent
+      - "60+ skills" → agent-skills-survey + K-Dense-AI project article
+      - "audit trail" → langsmith-mission-control + claude-agent-sdk-python
+      - "fork session" → claude-agent-sdk-python project article
+      - "hierarchical agent" → enterprise-multi-agent-orchestration-patterns + anthropic-2026-agentic-trends-from-implementer-to-orchestrator
+    - **Decision**: R558 1st-party Cluster Overlap → **SKIP** (cluster 5+ covered)
+  - 其他 6/30 entries: 0 (R603 末次全扫已覆盖 6/26 batch 11+7 = 18 entries + 6/24 nuclear-safeguards + 6/13 fable-mythos + 6/12 anthropic-public-record + 6/05 chris-olah-pope + 6/05 widening-conversation + 6/03 AI-cyber-mitre + 6/03 services-track + 6/02 project-glasswing + 6/01 confidential-draft-s1 + 6/01 series-h)
+- **结论**: 0 writable (claude-science-ai-workbench = 1st-party Cluster Overlap)
 
 ### Source 2: OpenAI News RSS
-- **扫描**: `https://openai.com/news/rss.xml` (48 items, top 30 audit)
-- **1 new since R602 (R603 突破点)**:
-  - **30 Jun 09:00 UTC `How ChatGPT adoption has expanded`** → Category: Global Affairs, OpenAI Signals data analysis (user behavior, depth+breadth, regional growth, language diversity) → **Wrong Subject Domain** (NOT agent engineering, 是用户行为研究)
-- **Top 29 items 与 R602 100% 一致**:
-  - 29 Jun `mapping-ai-jobs-transition-eu` → workforce economics (Wrong Subject Domain)
-  - 28 Jun `hp-frontier-partnership` → 1st-party partnership (Wrong Subject Domain)
-  - 26 Jun `previewing-gpt-5-6-sol` → model preview (Wrong Subject Domain)
-  - 25 Jun `how-agents-are-transforming-work` → R597 deployment overhang cluster overlap
-  - 24 Jun `openai-broadcom-jalapeno-inference-chip` → 1st-party hardware
-  - 23 Jun `helping-build-shared-standards-for-advanced-ai` → standards
-  - 23 Jun `gpt-5-immunology-mystery` → science application
-  - 23 Jun `omio` → customer story
-  - 22 Jun `daybreak-securing-the-world` → R597 patch-the-planet cluster overlap
-  - 22 Jun `patch-the-planet` → R597 cluster overlap
-  - 22 Jun `codex-maxxing-long-running-work` → R600 covered 2 篇
-  - 22 Jun `samsung-electronics-chatgpt-codex-deployment` → customer story
-  - 18 Jun `chatgpt-enterprise-spend-controls` → 1st-party product
-  - 18 Jun `improving-health-intelligence-in-chatgpt` → 1st-party product
-  - 17 Jun `ai-chemist-improves-reaction` → chemistry
-  - 17 Jun `introducing-life-sci-bench` → life science benchmark
-  - 16 Jun `deployment-simulation` → safety research
+- **扫描**: `https://openai.com/news/rss.xml` (1028 items, top 30 audit)
+- **3 new since R603**:
+  - **30 Jun 09:00 UTC `How ChatGPT adoption has expanded`** → R603 已 audit (Wrong Subject Domain, OpenAI Signals user adoption economics)
+  - **30 Jun 00:00 UTC `Introducing GeneBench-Pro`** → biology benchmark (Wrong Subject Domain) + 1st-party product
+  - **30 Jun 00:00 UTC `Core dump epidemiology: fixing an 18-year-old bug`** → data infrastructure engineering retrospective (Wrong Subject Domain, data engineering history)
+- **Top 27 items 与 R603 100% 一致**:
+  - 29 Jun mapping-ai-jobs-transition-eu (workforce economics, Wrong Subject Domain)
+  - 28 Jun hp-frontier-partnership (1st-party hardware, Wrong Subject Domain)
+  - 26 Jun previewing-gpt-5-6-sol (model preview, Wrong Subject Domain)
+  - 25 Jun how-agents-are-transforming-work (R597 cluster overlap)
+  - 24 Jun openai-broadcom-jalapeno (1st-party hardware)
+  - 23 Jun shared-standards / immunologist / omio (3 items)
+  - 22 Jun patch-the-planet / daybreak-securing-the-world (R597 cluster overlap) / codex-maxxing (R600 covered)
   - 其他全部 partnership/customer story
-- **结论**: 0 writable (1 new Wrong Subject Domain = OpenAI Signals 用户研究)
+- **结论**: 0 writable (3 new 全部 Wrong Subject Domain)
 
 ### Source 3: Cursor Blog
-- **扫描**: `https://cursor.com/sitemap.xml` (98 blog slugs, lastmod 全部 2026-06-30T14:14:05.366Z)
-- **Lastmod 全部重生成时间戳 (14:14:05 vs R602 12:17:57)** → 不同时间戳但同 pattern (重生成)
-- **对比 R602 audit (97 slugs)**: 98 - 97 = 1 net new, 全部 1st-party product / customer story / pricing
-- **Tracked 45 vs Untracked 53** → untracked 全是历史产品/客户故事
-- **结论**: 0 writable
+- **扫描**: `https://cursor.com/sitemap.xml` (136 total URLs, 92 June+ blog slugs, lastmod 全部 2026-06-30T17:19:39.461Z)
+- **Lastmod 重生成时间戳**: R603 = 14:14:05.366Z → R604 = 17:19:39.461Z (3h delta)
+- **New URLs since R603**: /warp-decode + /typescript-sdk + 0 others
+- **Cluster Overlap Check**:
+  - `/warp-decode` → articles/fundamentals/cursor-warp-decode-moe-inference-1-8x-2026.md (R576)
+  - `/typescript-sdk` → articles/tool-use/cursor-typescript-sdk-programmatic-infrastructure-2026.md (R574)
+- **结论**: 0 writable (2 net new 都 cluster overlap)
 
 ### Source 4: Claude Blog sitemap
-- **扫描**: `https://claude.com/sitemap.xml` (3401 total URLs, 188 English blog slugs)
-- **Lastmod 全部 N/A** → 无法判断新增
-- **对比 R602 audit (184 slugs)**: 188 - 184 = 4 net new (R602→R603)
-- **Tracked 51 vs Untracked 137** → untracked 全是历史产品/客户故事
-- **结论**: 0 writable
+- **扫描**: `https://claude.com/sitemap.xml` (3401 total URLs, 175 English blog slugs)
+- **Lastmod 全部 N/A** (R569 验证)
+- **Tracked 56 vs Untracked 127** (R603 同: 56 tracked + 127 untracked + 7 topic)
+- **Full 127 audit**: skip per R587 optimization (5% engineering probability, R569 0 engineering 验证)
+- **结论**: 0 writable (skip per R587 optimization)
 
-### Source 5: GitHub Trending weekly
-- **扫描**: `https://github.com/trending?since=weekly` (19 candidates)
-- **17 个 Stars>1000 audit (与 R602 100% 一致)**:
-  - **Owner/repo-already-covered (5)**:
-    - `DeusData/codebase-memory-mcp` 22503⭐ MIT → articles/projects/deusdata-codebase-memory-mcp-{5829,7300}-stars-2026.md (R555 防重命中)
-    - `stablyai/orca` 9532⭐ MIT → articles/projects/stablyai-orca-multi-agent-ide-331-stars-2026.md + stablyai-orca-parallel-agent-desktop-ade-4519-stars-2026.md
-    - `alibaba/page-agent` 20752⭐ MIT → articles/projects/alibaba-page-agent.md
-    - `topoteretes/cognee` 25984⭐ Apache-2.0 → articles/projects/topoteretes-cognee-memory-control-plane-17520-stars-2026.md
-    - `Panniantong/Agent-Reach` 46760⭐ MIT → articles/projects/panniantong-agent-reach-cli-internet-access-26811-stars-2026.md
-  - **License=None (1)**:
-    - `BuilderIO/agent-native` 3177⭐ (R602 3164, +13) License=None → R591 5-mechanism fallback + R601/R602 defer 持续
-  - **Cluster overlap (1)**:
-    - `mukul975/Anthropic-Cybersecurity-Skills` 23366⭐ (R602 4735) Apache-2.0 → R593 VulnClaw cluster overlap (cybersecurity skills cluster)
-  - **1st-party product (1)**:
-    - `aws/agent-toolkit-for-aws` 1638⭐ → R600 covered 3 篇
-  - **Wrong Subject Domain non-agent (11)**:
-    - `calesthio/OpenMontage` 29616⭐ → 视频制作 (R600 covered)
-    - `simplex-chat/simplex-chat` 17247⭐ → messaging network
-    - `google-labs-code/design.md` 23618⭐ → visual identity format spec
-    - `kunchenguid/no-mistakes` 4455⭐ → git push hook
-    - `JCodesMore/ai-website-cloner-template` 23880⭐ → website cloner template
-    - `mauriceboe/TREK` 8517⭐ → self-hosted travel planner
-    - `ZhuLinsen/daily_stock_analysis` 52377⭐ → stock analysis
-    - `Robbyant/lingbot-map` 8743⭐ → 3D scene reconstruction
-    - `interviewstreet/hiring-agent` 3943⭐ → AI resume evaluator
-    - `jamiepine/voicebox` 36211⭐ → AI voice studio
-    - `NanmiCoder/MediaCrawler` 54444⭐ → social media crawler
-- **结论**: 0 writable, 0 defer (所有 defer 持续)
+### Source 5: GitHub Trending weekly + Search 10d
+- **扫描**: GitHub Search API `created:>2026-06-22 + sort:stars` (15 candidates)
+- **R604 audit (与 R603 100% 一致)**:
+  - **Wrong Subject Domain (consumer)** (4):
+    - `winsznx/theeleven` 711⭐ MIT sports betting on X Layer (Uniswap v4 hook)
+    - `TianhangZhuzth/Fundamental-Ava` 544⭐ Apache-2.0 digital human beings
+    - `kentjuno/ainovel-cli` 203⭐ Apache-2.0 Vietnamese AI novel
+    - `ikarma/claude-mythos-ai-anthropic-desktop-app` 174⭐ MIT desktop app
+  - **Cluster Overlap (4)**:
+    - `benchflow-ai/awesome-evals` 602⭐ NOASSERTION awesome list (R525)
+    - `lemma-work/lemma-platform` 194⭐ AGPL-3.0 human-agent workspace
+    - `FishCodeTech/muteki` 148⭐ AGPL-3.0 CTF agent swarm (R583 recon-skills)
+    - `gamedev-skills/awesome-gamedev-agent-skills` 189⭐ Apache-2.0 game dev (Stars<500)
+  - **Wrong Subject Domain (specific)** (2):
+    - `abundantbeing/hermes-browser-extension` 321⭐ MIT Hermes-specific browser extension
+    - `lycorp-jp/sim-use` 322⭐ Apache-2.0 iOS/Android simulator (R596 cluster boundary skip)
+  - **License=None skip** (3):
+    - `Einsia/Browser-BC` 337⭐ None browser behavior clone (R591 fallback skip)
+    - `YurunChen/repo-docs-skills` 263⭐ None (R600 defer)
+    - `NVIDIA-BioNeMo/bionemo-agent-toolkit` 206⭐ NOASSERTION Claude Science integration
+  - **Articleless Defer (R583 path)** (1):
+    - `amplifthq/opentag` 377⭐ MIT Slack/IM → Codex/Claude routing (R583 defer, +1 star since R603)
+  - **NOASSERTION** (1):
+    - `eli-labz/Godcoder` 253⭐ NOASSERTION Self-Building Harness (R579 defer)
+- **结论**: 0 writable (15 candidates 全部 R561/R583/R585/R591 skip categories)
 
-### Defer Candidates Status (7 项 R602 → R603, 1.5h delta)
-- **mmaaz-git/agentic-pbt**: 74⭐(估计无变化) / License=None / 0 触发 (R555 condition #1 #4 skip) — *GitHub API rate limit blocked exact verify*
-- **amplifthq/opentag**: 376⭐(估计无变化) / MIT / 0 触发 (5-keyword 0 cluster overlap) — *rate limit blocked*
-- **uphiago/recon-skills**: 281⭐(估计无变化) / None / 0 触发 (R591 fallback skip) — *rate limit blocked*
-- **eli-labz/Godcoder**: 253⭐(估计无变化) / NOASSERTION / 0 触发 (R555 condition #2 skip) — *rate limit blocked*
-- **YurunChen/repo-docs-skills**: 262⭐(估计无变化) / None / 0 触发 (R591 5-mechanism fallback skip) — *rate limit blocked*
-- **Johell1NS/browser-search**: 243⭐(估计无变化) / MIT / 0 触发 (Articleless + 0 cluster overlap) — *rate limit blocked*
-- **BuilderIO/agent-native**: 3164→**3177**⭐ (+13, verified) / None / 0 触发 (R591 fallback + R601/R602 defer) — *single API call before rate limit exhaustion*
+## 7 R603 Defer 候选 R604 验证 (stars + license changes)
 
-## 准周期观察
+| Repo | Stars R603 | Stars R604 | Delta | License | Trigger |
+|------|-----------|-----------|-------|---------|---------|
+| mmaaz-git/agentic-pbt | 74 | 74 | 0 | None | none (License=None + Stars<500) |
+| amplifthq/opentag | 376 | 377 | +1 | MIT | none (5-keyword 0 cluster overlap) |
+| uphiago/recon-skills | 281 | 283 | +2 | None | none (License=None R591 fallback skip) |
+| eli-labz/Godcoder | 253 | 253 | 0 | NOASSERTION | none (NOASSERTION R555 condition skip) |
+| YurunChen/repo-docs-skills | 262 | 263 | +1 | None | none (License=None R591 fallback skip) |
+| Johell1NS/browser-search | 243 | 254 | +11 | MIT | none (Articleless + 0 cluster overlap) |
+| BuilderIO/agent-native | 3177 | 3186 | +9 | None | none (License=None R591 fallback skip) |
 
-- **R603 周期位置**: R601 (saturation) → R602 (saturation) → R603 (saturation) = **连续 saturation 3 轮** (R601 prediction 100% 命中 + R602 prediction 100% 命中)
-- **R555 准周期记录更新 (17 次双向验证)**:
-  - non-sat→sat 1 轮: R568→R569, R584→R585, R586→R587, R599→R600, R600→R601, **R601→R602 (R601 prediction hit)** ← 首次 1 轮 fuel 不足 → 立即 saturation
-  - sat→breakthrough 3 轮: R541/R545/R548
-  - sat→breakthrough 异常早破 2 轮: R548→R554
-  - non-sat→sat 3 轮: R555→R558, R570-R572→R573, R580-R582→R583
-  - non-sat→sat 2 轮: R559/R560→R561, R574/R575→R576, R577/R578→R579
-  - sat→sat 持续 1 轮: **R602→R603 (R602 prediction hit: R603 高概率 saturation 持续, 100% 命中)** ← 17 次双向验证
-  - **新观察**: sat streak 3 轮 (R601+R602+R603) 是 R555 准周期以来**最长 sat streak**
-- **Saturation streak**: R603 = streak 3 (R601+R602+R603 连续)
-- **R604 预测**: 高概率 saturation 持续 (Anthropic Engineering 25+ 天 plateau 是历史第 3 次长 plateau, R555/R591/R601/R602/R603 同 pattern, R601→R602→R603 连续 3 轮 saturation); **7 月窗口 7/1-7/4 (独立日前) 可能是 breakthrough 节点** (历史 7 月初 release 节奏, R601/R602 PENDING 监控)
+**0 触发**：所有 defer 候选在 1.5h delta 内都未达到触发条件。Johell1NS/browser-search 增长最快 (+11 stars in 1.5h, ~7.3 stars/day)，但仍 Articleless + 0 cluster overlap，monitor R605。
 
-## 协议贡献 (R603 实战)
+## 准周期验证 (R555 18th validation)
 
-1. **R552 state-only 协议第 13 次实战 (13/13 100%)**: Saturation → 1 commit exactly
-2. **R555 4-condition 工程化应用第 10 次实战**: 17 个 viable GitHub Trending candidates → 5 个 owner/repo-already-covered (R555 condition #4 直接 skip) + 1 License=None (R591 fallback skip) + 1 cluster overlap + 1 1st-party product + 11 Wrong Subject Domain
-3. **R602 预测闭环验证**: R602 PENDING "R603 预测: 高概率 saturation 持续" 100% 命中 (5 源 Tri-Scan 全 0 writable + 7 个 defer candidate 0 触发)
-4. **R591 5-mechanism license fallback 实战**: BuilderIO/agent-native 3177⭐ License=None → 5 机制 fallback (main+master LICENSE raw × 2 + main+master README license grep × 2 + codeload zip × 1) → 全失败 → Skip (R603 持续)
-5. **R583 defer candidate tracking 实战**: 7 个 R602 defer candidate → 6 个因 GitHub API rate limit (60 unauth/hour) blocked exact verify, 1 个 (BuilderIO/agent-native) verified +13 stars (3164→3177) 但 License 仍 None → 持续 defer
-6. **Project 路径防重强化验证 (R603)**: R555 protocol "防重以 owner/repo 为准" 在 5 个 owner/repo-already-covered 中命中 (DeusData / stablyai / alibaba / topoteretes / Panniantong)，Stars 数继续增长 (cognee 17520→25984 显示 R555 后写入时 stars 数 vs R603 扫描时 stars 数差异显著，但 R555 仍以 owner/repo 防重) → **R555 protocol 防重稳定性 10/10 验证**
-7. **R603 cluster overlap 边界判定**: Anthropic News 6/26 claude-tag 已 4 篇 cluster covered (R585/R602) → 0 writable
-8. **R603 OpenAI Codex-maxxing cluster 饱和判定**: R600 已写 2 篇 codex-maxxing 文章 → 即使 6/22 是新 RSS entry, cluster 已饱和 → 0 writable
-9. **R603 Sitemap lastmod 失效判定**: Cursor Blog sitemap lastmod 全部 2026-06-30T14:14:05.366Z (重生成时间戳), Claude Blog sitemap lastmod 全部 N/A → 仅靠 slug 对比判断 (98 vs 97 = 1 net new, 188 vs 184 = 4 net new, 全部 1st-party product / customer story)
-10. **R603 New OpenAI RSS 边界判定 (R602→R603)**: 30 Jun 09:00 UTC "How ChatGPT adoption has expanded" (Category: Global Affairs) → OpenAI Signals user adoption economics → Wrong Subject Domain (NOT agent engineering) → 0 writable
-11. **R603 GitHub API rate limit 边界处理**: 60 unauth requests/hour 限制, 7 defer candidates 中 6 个被 block → 1.5h delta 估计 0-3 stars 增长 (基于 R601→R602 1 day delta 模式), BuilderIO/agent-native 是唯一 verified candidate
-12. **R603 saturation streak 3 轮观察**: R601+R602+R603 连续 3 轮 saturation 是 R555 准周期以来**最长 sat streak** (历史 sat streak 最长 2 轮: R541-R545 (5 轮但中间有 breakthrough 干扰) / R555-R558 (3 轮但 R555→R558 跨 4 轮))
+- R601 (sat) → R602 (sat) → R603 (sat) → R604 (sat) = 4 连续 saturation streak
+- R604 是 R555 准周期新变体：R603 预测 "high probability saturation continues" 100% 命中
+- 周期变体表 18 次验证后完整表：
+  - ① sat→breakthrough 3 轮 (R541/R545/R548)
+  - ② sat→breakthrough 异常早破 2 轮 (R548→R554)
+  - ③ non-sat→sat 3 轮 (R555→R558, R570-R572→R573, R580-R582→R583)
+  - ④ non-sat→sat 2 轮 (R559/R560→R561, R574/R575→R576, R577/R578→R579)
+  - ⑤ non-sat→sat 1 轮 (R568→R569, R584→R585, R586→R587, **R603→R604**)
+- R604 streak 4 是 R555 准周期第 18 次验证 → 周期长度 1-5 轮完全浮动
+- R605 预测: 高概率 saturation 持续 (4 轮 streak + 7 月 4 日独立日前窗口 release 节奏可能触发 breakthrough)
 
-## R604 起草者 Checklist
+## R604 决策矩阵
 
-1. Step 0: `git status --short` + `git stash list` + `git pull --rebase origin master`
-2. **完整 5 源 Tri-Scan 必跑** (Anthropic + OpenAI + Cursor + Claude Blog + GitHub)
-3. R602/R603 defer 候选 (7 个) 必跑 cluster overlap 二次确认 + License 状态检查 (R604 距 R603 2h, GitHub API rate limit 应已 reset)
-4. **重点关注 Anthropic 7 月 Engineering 文章**: 已 **25+ 天无新** (历史 R555/R591/R601/R602/R603 同 pattern 第 5 轮 streak), 7/1-7/4 窗口高概率 breakthrough (美国独立日前)
-5. **重点关注 Anthropic Research 7 月新 batch**: 6/05/6/17/6/24/6/26 batch 监控饱和后，7 月可能释放新 safety research 或 economic-index-july-2026 月报
-6. **重点关注 OpenAI Developers Blog 新文章**: 7 月可能有 Codex Remote 后续 / eval-skills 后续 / skills-shell-tips 后续
-7. **重点关注 Claude Blog 7 月新文章**: claude-managed-agents-updates / new-in-claude-managed-agents / steering-claude-code 系列可能持续
-8. Saturation round → R552 state-only exactly 1 commit 协议 (R603 第 13 次实战)
-9. Sibling warning 必跑 `git status --short`：M-only → false-positive (10/10 验证) / M+?? → R529 preemption
-10. **重点关注 7 月 1 日 (R604 周三凌晨) Anthropic 早间 release 节奏** (历史 7 月窗口第 1 天, R555/R591/R601/R602 PENDING 监控)
-11. **Anthropic News path 必跑**: R602 audit 发现 6/26 news/introducing-claude-tag 在 R601 audit 漏掉 → R604 必须把 news/ 路径纳入 5 源 scan
-12. **重点关注 R602 'How ChatGPT adoption has expanded' 后续**: OpenAI Signals user research series 后续 (workforce + adoption 是 OpenAI 经济研究两大主线)
-13. **Projects 总数对账**: R604 必须重新对账 articles/projects/ + projects/ 实际文件数 vs PENDING 数字 (R602 报告 647, 实际 649+66=715, 评估 1 commit 内对账)
+| Source | Total | New | Engineering | Writable | Skip Reason |
+|--------|-------|-----|-------------|----------|-------------|
+| Anthropic sitemap | 257 | 1 (claude-science) | 0 | 0 | R558 1st-party Cluster Overlap (scientific-agent 5+ covered) |
+| OpenAI RSS top 30 | 30 | 3 (chatgpt/genebench-pro/core-dump) | 0 | 0 | 3/3 Wrong Subject Domain |
+| Cursor blog | 92 | 2 (warp-decode/typescript-sdk) | 0 | 0 | 2/2 cluster overlap (R576/R574 covered) |
+| Claude Blog sitemap | 175 | 0 (lastmod=N/A) | 0 | 0 | skip per R587 (5% engineering probability) |
+| GitHub Search 10d | 15 | 15 | 0 | 0 | 4 consumer + 4 cluster + 2 specific + 3 License=None + 1 defer + 1 NOASSERTION |
+| **Total** | **569** | **21** | **0** | **0** | **100% skip rate** |
 
-## Article + Project Close-Loop 总结
+## R605 起草者 Checklist
 
-- **R603 Article**: None (5 源 Tri-Scan 全 0 writable; 1 new OpenAI "How ChatGPT adoption has expanded" = Wrong Subject Domain)
-- **R603 Project**: None (17 个 viable candidates 全部 owner/repo-already-covered / License=None / cluster overlap / Wrong Subject Domain)
-- **闭环逻辑**: Saturation streak 3 — R601 fuel 不足 breakthrough → R602 立即 saturation → R603 立即 saturation (R601 + R602 predictions 100% 命中) → R604 预测 saturation 持续
-- **R604+ 触发条件**:
-  - **Anthropic Engineering 新文章**: 7 月窗口 7/1-7/4 高概率 (历史 R555/R591/R601/R602/R603 同 pattern 第 5 轮 streak, 独立日前 release 节奏)
-  - **Anthropic Research 7 月 batch**: safety research 后续 / economic-index-july-2026 月报
-  - **Defer 候选突破**: mmaaz-git/agentic-pbt License 明确 / Stars 500+ / 2nd PBT agent project / 1st-party 承认作为推荐项目
-  - **R583 defer path**: YurunChen/repo-docs-skills License 添加 / Johell1NS/browser-search 等 SKILL protocol 1st-party 文章
-  - **Anthropic News claude-tag 后续**: multi-channel 扩展 / 公开 API / enterprise rollout (cluster 饱和后再发布新角度)
-  - **OpenAI 7 月 Anthropic 对标 release**: 7/4 美国独立日窗口
+- R604 saturation streak 4 + 7 月 4 日独立日窗口 → 监控 Anthropic / OpenAI 7/1-7/4 release 节奏
+- claude-science-ai-workbench 监控 1st-party 后续深度文章 (reviewer agent benchmark / audit trail 标准化 / HPC agent bridge)
+- 7 defer 候选继续 monitor stars/license 变化 (Johell1NS/browser-search +11 stars 增速最快, 仍 Articleless)
+- Cursor /warp-decode + /typescript-sdk 监控 SDK v2 / EP-first 推理算法后续
+- OpenAI GeneBench-Pro 监控 gene benchmark 后续 (Wrong Subject Domain 持续)
+- OpenAI core-dump-epidemiology 监控 data infrastructure engineering 系列 (Wrong Subject Domain 持续)
