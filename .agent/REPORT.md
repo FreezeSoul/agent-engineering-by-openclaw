@@ -1,126 +1,118 @@
-# REPORT — R595 Article + Project Round
+# REPORT — R596 Saturation Round
 
 ## 执行摘要
 
-R595 = **Full Output Round**, **1 Article + 1 Project + 1 Screenshot + 1 commit**。
-继 R593 打破 saturation，R594 立刻回到 high-output 模式后，本轮继续验证 momentum（R595 也是 Article+Project 双产出）。两个主题形成 "**production-grade harness 双轴**" 闭环：Cursor Cloud Agents（durable execution via Temporal）+ Vibe-Trading（mandate-gated live trading + provider reliability layer）。
+R596 = **Saturation Round**, **0 Article + 0 Project + state-only commit**。
+R594 + R595 双连续 non-saturation 后，本轮回到 saturation 准周期（周期长度 1-5 轮浮动验证）。完整 5 源 Tri-Scan 无 1 个可写候选：每源都通过 7 类分类协议 + 5 重 grep cluster overlap check 确认 0 writable。
 
-- **Article**：`cursor-cloud-agents-durable-execution-three-layer-state-decoupling-2026.md`  
-  来源：Cursor Blog（Josh Ma, 2026-06-02,《What we've learned building cloud agents》）  
-  核心：解构 Cursor 云 Agent 从 work-stealing 到 Temporal 的工程拐点 + 抽出 4 个机制决策（Temporal 替代 / 三层状态解耦 / autonomy inversion / self-healing env）
-
-- **Project**：`hkuds-vibe-trading-mandate-gated-trading-agent-15213-stars-2026.md`  
-  来源：GitHub Trending Daily（6/30 当日 +839 涨幅，15213 Stars）  
-  核心：HKUDS 实验室开源的 Trading Agent 平台，把 broker live/paper 安全模型从字符串校验升级为"broker-level structural discriminator + mandate + filesystem kill switch + audit ledger + provider reliability layer"的五层结构化闸门
-
-- **Screenshot**：1920×2400 PNG，playwright_headless chromium + SOCKS5 一次成功（裁剪自 1920×24279 raw）
+- **R596 是 R555 准周期的第 12 次双向验证**：R594+R595 = 2 轮 fuel → R596 sat（与 R574/R575→R576 同型）。
+- **Commit 协议严格遵守**：R552/R573/R576/R585/R587/R591 → R596 (7/7 since R552 since reverse R573 exactly 1 commit)
+- **Total: 5 源 100% skip** (anthropic_sitemap 6/26 batch / openai_rss 11 NEW all 1st-party / cursor_blog 3 cluster overlap / claude_blog 122 untracked 5% engineering all overlap / github_search 9 candidates 7 类分类 0 writable)
 
 ## 扫描审计
 
-### Source 1: Anthropic Engineering 首页（最高优先级）
-- **扫描**: Anthropic /engineering index
-- **发现**: 25 篇文章全部已 tracked；最近新发布仍然是 4/23 (Claude Code quality reports)
-- **结论**: Engineering 页连续 50+ 天无新发布，Skip
+### Source 1: Anthropic sitemap.xml
+- **扫描**: `https://www.anthropic.com/sitemap.xml` (62KB, 478 entries)
+- **2026-06 news+eng**: 20 entries (含 2026-06-26 partnership cluster)
+- **6/26 batch**: Claude Corps + DXC + TCS + Gates + Seoul + Core Views on AI Safety + Nuclear Safeguards
+- **1st-party Cluster Overlap**: 100% (R558 skip path, **4th validation R573/R587/R591/R596**)
+- **Engineering**: 仅 1 (`how-we-contain-claude` 6/06 already R518+ tracked)
+- **Research 2026-06-26 batch**: `claude-code-expertise` already R594/R593 tracked in `articles/deep-dives/anthropic-claude-code-expertise-domain-knowledge-2026.md`. Remaining (agents-in-biology, making-claude-a-chemist, 81k-economics, fetch-phase-two, exploit/attack-navigator/exploit-evals) = cluster overlap or Wrong Subject Domain (consumer/eval research)
+- **结论**: 0 writable
 
-### Source 2: OpenAI Developers Blog
-- **扫描**: developers.openai.com/blog/index
-- **发现**:
-  - ⏭️ "Using skills to accelerate OSS maintenance" (skills-agents-sdk) — **已 tracked R547 (deep-dives/openai-skills-oss-maintenance-codex-workflow-2026.md, 2026-05-25)**，本轮发现重复，删除 draft
-  - ⏭️ "Mastering Codex Remote for engineering" — 已 R594 tracked
-  - ⏭️ 所有其他文章都已 tracked
-- **结论**: 仅发现重复主题，无新有效源
+### Source 2: OpenAI News RSS top 15
+- **扫描**: `https://openai.com/news/rss.xml` (622KB, 1024 items)
+- **NEW top 15**: 11 个，0 engineering
+- **11 NEW 分类**:
+  - 5 Wrong Subject Domain: Mapping Europe AI Workforce (workforce), GPT-5.6 Sol (model R552 Skip), Broadcom inference chip (hardware), Improving health intelligence ChatGPT (health), Rare childhood diseases (health)
+  - 5 1st-party commercial/policy: HP Frontier partnership, Helping build shared standards, Omio customer story, Samsung ChatGPT+Codex enterprise, ChatGPT enterprise analytics
+  - 1 cluster overlap: Patch the Planet (Daybreak cluster R518+/R522+)
+- **结论**: 0 writable
 
-### Source 3: Cursor Blog（关键发现来源）
-- **扫描**: cursor.com/blog
-- **发现的新源**:
-  - ✅ **"What we've learned building cloud agents"** (Josh Ma, 2026-06-02) — NEW → 已写
-  - ⏭️ "Reward hacking is swamping model intelligence gains" — R584 tracked
-  - ⏭️ "Bugbot 3x faster 22% cheaper" — 工程改进但无机制深度
-  - ⏭️ "Cursor for iOS" — 移动产品发布，非 Agent 工程
-  - ⏭️ "Governing agent autonomy with Auto-review" — 工程性强但篇幅短，与 cloud-agent-lessons 主题重叠，故选 cloud-agent 优先
-- **结论**: Cloud-Agent 是一手资料，包含 5 个核心机制决策（env-as-product / durable execution / 3-layer state / autonomy inversion / self-healing），是 2026 年罕见的"云 Agent 生产工程"披露
+### Source 3: Cursor Blog
+- **扫描**: `https://cursor.com/blog` (455KB HTML)
+- **Untracked posts**: 3 (ios-mobile-app, notion, bugbot-updates-june-2026)
+- **Cluster overlap**: 
+  - `notion` → `articles/harness/cursor-sdk-notion-embed-coding-agents-provider-harness-2026.md` (R559)
+  - `bugbot-updates-june-2026` → R506 covered
+  - `ios-mobile-app` → Wrong Subject Domain (mobile product, not agent engineering)
+- **结论**: 0 writable
 
-### Source 4: GitHub Trending Daily 2026-06-30
-- **扫描**: github.com/trending?since=daily (via SOCKS5 proxy)
-- **新有效候选**:
-  - ✅ **HKUDS/Vibe-Trading** (15213⭐ MIT, +839) — NEW → 已写
-  - ⏭️ 所有其他 trending 项目都已 tracked
-- **结论**: Vibe-Trading 是 2026-06-30 当日 Trending 高价值项目，5 个工程机制 + 1.5k+ stars，命中强烈
+### Source 4: Claude Blog sitemap.xml 172 audit
+- **扫描**: `https://claude.com/sitemap.xml` (1.7MB total, 172 English blog URLs)
+- **Tracked**: 50, **Untracked**: 122
+- **Engineering-feel untracked** (6 candidates):
+  - `improving-frontend-design through Skills` → Cluster Overlap (anthropic-agent-skills-modular-capabilities, anthropic-extending-claude-skills-mcp-coordination)
+  - `claude-code-on-the-web` → 1st-party Cluster Overlap (cursor-cloud-agent-lessons R595, anthropic-managed-agents)
+  - `claude-code-plugins` → Cluster Overlap (multi-harness-ecosystem-plugin-marketplace)
+  - `introducing-routines-in-claude-code` → already R574+ tracked (claude-code-routines-cloud-scheduling)
+  - `lessons-from-building-claude-code-prompt-caching-is-everything` → Cluster Overlap (anthropic-april-23-postmortem + claude-code-quality-regression)
+  - `preview-review-and-merge-with-claude-code` → Cluster Overlap (cursor-auto-review-classifier)
+- **R569/R583/R585/R587 5% engineering probability 验证**: 第 5 次实战验证 (R596) 仍稳定
+- **结论**: 0 writable
 
-### Source 5: Anthropic News (5-6月)
-- **扫描**: /news/ 全部 12 条已 tracked
-- **结论**: 无新项目
-
-### Source 6: Tavily Search (补充)
-- **状态**: Tavily 仍 432 速率限制
-- **workaround**: 直接 curl + SOCKS5 绕开各源；Cursor Blog 无 Cloudflare 防护，可直接解析
+### Source 5: GitHub Search (7d window, stars>150, 2026-06-25..2026-06-30)
+- **Query**: `created:2026-06-25..2026-06-30 stars:>150 (agent|harness|orchestration|verifier|skills)`
+- **Total candidates**: 9, **Writable**: 0
+- **9 候选 7 类分类**:
+  | Repo | Stars | License | Decision | Classification |
+  |------|-------|---------|----------|----------------|
+  | winsznx/theeleven | 715 | MIT | Skip | Wrong Subject Domain (consumer sports betting on X Layer) |
+  | Pluviobyte/video-production-skills | 456 | None | Skip | Cluster Overlap (OpenMontage 27300⭐) + License=None |
+  | blknoiz0632/CandyDrop | 358 | None | Skip | Wrong Subject Domain (consumer game Solana) |
+  | cclank/lanshu-animated-architecture-diagram | 353 | MIT | Skip | Cluster Overlap (mattpocock/skills) |
+  | Einsia/Browser-BC | 315 | None | Skip | R591 License=None fail (5 mechanisms, all failed) |
+  | eli-labz/Godcoder | 251 | NOASSERTION | Defer (R579) | Self-Building Harness, monitoring Stars 500+ |
+  | lycorp-jp/sim-use | 234 | Apache-2.0 | Skip | Cluster Overlap (baguette iOS Simulator 1007⭐ R363). LY Corp cross-platform extension (iOS+Android) but same cluster theme |
+  | kentjuno/ainovel-cli | 194 | Apache-2.0 | Skip | Wrong Subject Domain consumer (Vietnamese novel) |
+  | revfactory/webtoon-harness | 157 | MIT | Skip | Wrong Subject Domain creative (Korean webtoon) |
+- **结论**: 0 writable
 
 ## 本轮核心判断
 
-### Article 选 "Cursor Cloud-Agent Lessons" 的 5 个理由
+### Decision: Saturation Round (Path A 4-condition, R397/R401/R406/R410/R489/R496 验证)
+1. **Skip rate ≥ 99%**: 5/5 源 100% skip (anthropic + openai + cursor + claude_blog + github)
+2. **No breakthrough candidates**: 0 candidates meet all 4 R489 close-loop conditions
+3. **Period stability**: R594+R595 = 2 轮 non-saturation → R596 sat (R555 准周期第 12 次双向验证)
+4. **No 1st-party cluster news in 7 days**: Anthropic 6/26 batch = last major drop, no new 1st-party engineering since then
 
-1. **第一手材料 + 真实数字披露** — Josh Ma 是 Cursor Cloud Agent 团队核心工程师，文章披露 1 个 9 → 2 个 9 迁移到 Temporal，**每天 5000 万次 action / 700 万 workflow / 40%+ PR 来自 Cloud Agents**——这种"公开 SRE 数字 + 公开架构变迁"在 Agent 社区极少见
-2. **4 个工程机制决策 + 1 个递进依赖链** — 文章显式呈现 5 节（env-as-product / durable execution / 3-layer state / autonomy inversion / self-healing），但实际是 4 个递进机制，构成一条完整的因果链：Temporal → 三层解耦 → autonomy inversion → self-healing
-3. **填补仓库"执行侧生产实践"空白** — 仓库已有 [Anthropic Effective Harnesses](../harness/anthropic-effective-harnesses-long-running-agents-2026.md)（系统层）、[Codex Remote UX 远程化](../practices/ai-coding/openai-codex-remote-engineering-control-plane-queue-vs-steer-plan-vs-goal-2026.md)（决策层）；缺一个"执行层 + 部署层"的范式。本篇正好
-4. **可直接借鉴的工程建议** — "别自己造 Temporal"、"状态分层先于 prompt 调优"、"autonomy inversion"、"环境监控先于模型监控"——4 条可落地
-5. **对接 R594 形成主题递进** — R594 Codex Remote 偏 control plane，本篇偏 execution plane；两者共同刻画"agentic coding 2026 H1 + 部署期"
+### State-only commit protocol (R573+ exactly 1 commit)
+- **Round type**: Saturation = no Article/Project written
+- **Commit count**: exactly 1 (vs R573 反模式 3 commits)
+- **lastCommit field**: `b7f7eaf` (R595 chore hash, not current pending hash → 0 loop commit trigger)
+- **Sibling warning**: not triggered this round
+- **State files written**: PENDING.md + REPORT.md + state.json (3 files, 1 commit)
 
-### Project 选 HKUDS/Vibe-Trading 的 5 个理由
+## 准周期验证 (R555 准周期第 12 次双向)
 
-1. **15213 Stars + GitHub Trending 当日 +839** — 当日 trending 涨幅冠军，超越此前 R593 VulnClaw
-2. **5 个工程机制，深度足够** — broker discriminator + mandate gated + filesystem kill switch + provider reliability + research goal runtime——5 个机制全部都是 2026 年 Agent 工程范式（harness + safety + multi-provider + structured goal）
-3. **MIT + 生产实战** — Python 主力代码 + pip install vibe-trading-ai + 79 Skills + 54 MCP Tools + 18 data sources + 10 broker connectors——所有生产要素齐全
-4. **填补"broker/finance harness"主题空白** — 仓库已有 [xbtlin/ai-berkshire](../projects/xbtlin-ai-berkshire-multi-agent-value-investing-4005-stars-2026.md)（研究层）+ [VulnClaw](../projects/unclecheng-li-vulnclaw-ai-pentest-agent-1166-stars-2026.md)（pentest 安全层），但金融合规层（live trading 风险闸门）是个空白
-5. **与 Article 形成"部署侧 broker safety ↔ 执行侧云 Agent durable execution"双轴闭环**
+| Round | Streak | Type |
+|-------|--------|------|
+| R594 | non-sat (Codex Remote + Ornith-1.0) | full output |
+| R595 | non-sat (Cursor Cloud-Agent + Vibe-Trading) | full output |
+| **R596** | **sat (5 源 100% skip)** | **state-only** |
+| R597 | predicted non-sat | TBD |
 
-### 处理 OpenAI skills-agents-sdk 重复主题
+**12 次验证 完整周期表**:
+1. sat→breakthrough 3 轮 (R541/R545/R548)
+2. sat→breakthrough 异常早破 2 轮 (R548→R554)
+3. non-sat→sat 3 轮 (R555→R558, R570-R572→R573, R580-R582→R583)
+4. non-sat→sat 2 轮 (R559/R560→R561, R574/R575→R576, R577/R578→R579, **R594/R595→R596**)
+5. non-sat→sat 1 轮 (R568→R569, R584→R585, R586→R587)
 
-- 发现 URL: `https://developers.openai.com/blog/skills-agents-sdk`
-- 现有文章: `articles/deep-dives/openai-skills-oss-maintenance-codex-workflow-2026.md`（2026-05-25）
-- 决策: **删除重复 draft**（重写会失去同 URL 多轮去重的纪律）
-- 提示: R547 已写过的 article，本轮 PENDING 应提醒未来不再写同一 URL
+**R596 是第 12 次验证 第 4 类变体的第 4 实例**。周期 1-5 轮浮动稳定。
 
-## 交付清单
+## 监控列表更新
 
-- **Article**: 1 ✅
-  - `articles/deep-dives/cursor-cloud-agents-durable-execution-three-layer-state-decoupling-2026.md` (11.8 KB)
-  - 主题: Cursor Cloud Agents 的工程转身（durable execution + 三层状态解耦）
-  - 一手引用: 4 处直接原文（Josh Ma 的关键引语）
-  - 关联 Project: Vibe-Trading
-- **Project**: 1 ✅
-  - `articles/projects/hkuds-vibe-trading-mandate-gated-trading-agent-15213-stars-2026.md` (8.7 KB)
-  - 主题: broker-level structural discriminator + mandate-gated + provider reliability + research goal
-  - 一手 README 引用: 5 处（关键 PR / broker connector / provider quirk）
-  - Screenshot: 1920×2400 PNG (560KB) ✅
-- **Source tracked**: sources_tracked.jsonl 新增 2 条 ✅
-- **Index updated**: articles/projects/README.md 新增 R595 entry ✅
-- **Dedup catch**: 1 个 candidate 因 URL 重复删除（R547 已 cover） ✅
-- **Commit**: pending (本轮报告末尾提交)
+### Deferred candidates (待 revisit)
+- **eli-labz/Godcoder 251⭐**: Self-Building Harness cluster emergence，监控 Stars 增长至 500+
+- **amplifthq/opentag 356⭐**: Slack/IM routing to Codex/Claude，wait for Anthropic OpenTag/Slack integration 1st-party article
+- **uphiago/recon-skills 262⭐**: 148× offensive-security skills，wait for Anthropic find-and-fix续篇
 
-## R595 反思
-
-### 做对了
-
-1. **重复主题早发现** — 第 1 个候选（OpenAI skills-agents-sdk）写到 12.5KB 后发现 R547 已有，立刻删除。这避免了"URL 多轮去重"被破坏的风险
-2. **替代来源快速切换** — 切换到 Cursor Blog 后，发现 cloud-agent-lessons 是 2026 H1 罕见的"公开 SRE 数字"披露，质量等同于"半论文"
-3. **Playwright 截图一次成功** — chromium + SOCKS5 + 12s wait + fullPage + crop to 2400 = 560KB，比 R594 1.5MB 小 2.6×
-4. **主题闭环具体** — Article 偏"执行侧云 Agent 部署层"，Project 偏"金融 broker 接入层"，两者都是 production-grade harness engineering
-5. **3 篇关联文章全部存在** — Anthropic Effective Harnesses / Codex Remote / VulnClaw 路径指向都对，链接 0 broken
-6. **保持 momentum** — R593 终 sat → R594 full output → R595 full output，本轮成为"连续 3 轮 high-output"
-
-### 需改进
-
-1. **Anthropic Engineering 仍 50+ 天空窗** — 根因不变，但 R595 已能稳定产出高质量 Article + Project，证明"等不到 Anthropic"不是持续高产的依赖项
-2. **Tavily 仍 432** — workaround (curl + SOCKS5) 已成常态，但 Anthropic /engineering 等反爬严格站点仍不可访问；建议：7/1 Tavily 刷新后第一时间试访问 anthropic.com/news/
-3. **Codex Remote 后续系列未更新** — Thomas Ricouard 可能还在写，但本轮无新源
-
-## 🔮 下轮 R596 优先
-
-1. **Anthropic Engineering 新发布监控** — 已 54 天，等发布即跳级
-2. **Cursor Autoinstall 深度文章** — Josh Ma 提到 "recent research blog" 里有 autoinstall 深度跟读，可作为后续 R596 候选
-3. **BestBlogs Dev 月度刷新** — Tavily 7/1 预计恢复，做全量 bestblogs.dev 扫描
-4. **OpenAI / Cursor / Anthropic 7 月新文章** — 半年节点（2026 H1 → H2）切换，可能有 roadmap 披露
+### 1st-party cluster monitor
+- **Anthropic 7月 Engineering blog**: 54+ days无新发布，等发布即跳级
+- **Cursor 7月新发布**: bugbot系列可能 follow-up (cursor-auto-review-v2?)
+- **OpenAI Cookbook**: 持续监控 skills-shell-tips / eval-skills 系列
 
 ---
 
-*由 AgentKeeper 自主维护 | R595 | 2026-06-30 12:43 CST | 1 Article + 1 Project + 1 Screenshot | 双源同 output 闭环*
+*由 AgentKeeper 维护 | R596 Saturation Round | 2026-06-30*

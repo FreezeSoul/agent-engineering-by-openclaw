@@ -1,110 +1,75 @@
 {
-  "lastRun": "2026-06-30T12:43:00+08:00",
-  "lastCommit": "24b17a3",
-  "round": 595,
-  "status": "full_output_round",
+  "lastRun": "2026-06-30T21:30:00+08:00",
+  "lastCommit": "b7f7eaf",
+  "round": 596,
+  "status": "saturation_round",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "article+project",
+  "type": "state_only",
   "scan_summary": {
-    "anthropic_engineering": {
-      "new": 0,
-      "engineering": 0,
+    "anthropic_sitemap": {
+      "total_june": 20,
+      "new_june": 14,
+      "new_eng": 0,
       "writable": 0,
-      "skip_reason": "50+ days no new; latest 4/23"
+      "skip_reason": "6/26 batch partnership cluster (R573/R587/R591 3rd validation: Claude Corps/DXC/TCS/Gates/Seoul/Core Views) → 1st-party Cluster Overlap skip; remaining research/business items Wrong Subject Domain (81k-economics survey, agents-in-biology post, making-claude-a-chemist post, fetch-phase-two robotics, claude-code-expertise already R594+, exploit/attack-navigator/exploit-evals evals cluster overlap)"
     },
-    "openai_developers_blog": {
-      "new": 0,
-      "engineering": 0,
+    "openai_rss": {
+      "total_items": 1024,
+      "top_15_reviewed": 15,
+      "new_in_top15": 11,
+      "tracked_in_top15": 4,
+      "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "skills-agents-sdk duplicate (R547 deep-dives/openai-skills-oss-maintenance-codex-workflow-2026.md already covered same URL); all other new tracked by R594/R512/R584/R307/R340",
-      "dedup_caught": 1
+      "skip_reason": "5 Wrong Subject Domain (Mapping EU AI Workforce, GPT-5.6 Sol R552, Broadcom inference chip, Health intelligence in ChatGPT, Rare childhood diseases) + 5 1st-party commercial/policy (HP Frontier partnership, Helping build shared standards, Omio customer story, Samsung ChatGPT+Codex, ChatGPT enterprise analytics) + 1 cluster overlap (Patch the Planet/Daybreak)"
     },
     "cursor_blog": {
-      "new": 1,
-      "engineering": 1,
-      "writable": 1,
-      "writable_items": [
-        "cursor-cloud-agents-durable-execution-three-layer-state-decoupling-2026"
-      ],
-      "skip_reason_others": "reward-hacking (R584), bugbot-updates-june-2026 (engineering-improvements), ios-mobile-app (mobile product not agent engineering), auto-review (overlaps with cloud-agent-lessons theme)"
-    },
-    "github_trending_daily": {
-      "new": 1,
-      "engineering": 1,
-      "writable": 1,
-      "writable_items": [
-        "hkuds-vibe-trading-mandate-gated-trading-agent-15213-stars-2026"
-      ],
-      "skip_reason_others": "All other trending projects already tracked"
-    },
-    "anthropic_news": {
+      "untracked": 3,
       "new": 0,
       "engineering": 0,
       "writable": 0,
-      "skip_reason": "All news R321-R557 covered"
+      "skip_reason": "ios-mobile-app (mobile product not agent eng), notion (R559 covered cursor-sdk-notion), bugbot-updates-june-2026 (R506 covered bugbot-june)"
     },
-    "tavily_unavailable": {
-      "status": "rate_limited",
-      "error_code": 432,
-      "workaround": "SOCKS5 + curl direct on Cursor / OpenAI developers / Anthropic (Cursor: no Cloudflare, OpenAI developers: static HTML, Anthropic: limited)"
+    "claude_blog_sitemap": {
+      "total_urls": 172,
+      "tracked": 50,
+      "untracked": 122,
+      "engineering_feel": 6,
+      "writable": 0,
+      "skip_reason": "R569/R583/R585/R587 4次验证 5% engineering probability stable; 6 engineering-feel untracked: improving-frontend-design through Skills (cluster overlap with anthropic-skills-coordination), claude-code-on-the-web (1st-party Cluster Overlap cursor-cloud-agent-lessons R595), claude-code-plugins (cluster overlap multi-harness-ecosystem-plugin-marketplace), introducing-routines (already R574+ tracked), prompt-caching-is-everything (cluster overlap anthropic-april-23-postmortem + claude-code-quality-regression), preview-review-and-merge (cluster overlap auto-review)"
+    },
+    "github_search_7d": {
+      "query": "created:2026-06-25..2026-06-30 stars:>150 (agent|harness|orchestration|verifier|skills)",
+      "total_candidates": 9,
+      "writable": 0,
+      "candidates_breakdown": [
+        {"repo": "winsznx/theeleven", "stars": 715, "license": "MIT", "decision": "Skip - Wrong Subject Domain (consumer sports betting on X Layer)"},
+        {"repo": "Pluviobyte/video-production-skills", "stars": 456, "license": "None", "decision": "Skip - Cluster Overlap (OpenMontage 27300⭐ covers agentic video production) + License=None"},
+        {"repo": "blknoiz0632/CandyDrop", "stars": 358, "license": "None", "decision": "Skip - Wrong Subject Domain consumer game (Cut the rope. Earn real Solana)"},
+        {"repo": "cclank/lanshu-animated-architecture-diagram", "stars": 353, "license": "MIT", "decision": "Skip - Cluster Overlap (Claude Code Skills ecosystem, mattpocock/skills/mattpocock already covered)"},
+        {"repo": "Einsia/Browser-BC", "stars": 315, "license": "None", "decision": "Skip - R591 License=None fallback 5-mechanism fail + Wrong Subject Domain"},
+        {"repo": "eli-labz/Godcoder", "stars": 251, "license": "NOASSERTION", "decision": "Defer (R579 Self-Building Harness) - revisit at Stars 500+ or 2nd self-building project"},
+        {"repo": "lycorp-jp/sim-use", "stars": 234, "license": "Apache-2.0", "decision": "Skip - Cluster Overlap (tddworks/baguette iOS Simulator 1007⭐ already tracked R363). sim-use is LY Corp's cross-platform extension (iOS+Android) but same cluster; the iOS Simulator → Agent verification theme is fully covered"},
+        {"repo": "kentjuno/ainovel-cli", "stars": 194, "license": "Apache-2.0", "decision": "Skip - Wrong Subject Domain consumer (Vietnamese AI novel writing CLI)"},
+        {"repo": "revfactory/webtoon-harness", "stars": 157, "license": "MIT", "decision": "Skip - Wrong Subject Domain creative (Korean webtoon 27-agent team Claude Code harness)"}
+      ]
     }
   },
-  "articles_produced": 1,
-  "projects_produced": 1,
-  "articles_list": [
-    {
-      "slug": "cursor-cloud-agents-durable-execution-three-layer-state-decoupling",
-      "filename": "cursor-cloud-agents-durable-execution-three-layer-state-decoupling-2026.md",
-      "directory": "articles/deep-dives/",
-      "title": "Cursor 云 Agent 的工程转身：从 work-stealing 到 Temporal 与三层状态解耦",
-      "source": "https://cursor.com/blog/cloud-agent-lessons",
-      "source_kind": "Cursor Blog (first-party)",
-      "author": "Josh Ma",
-      "published": "2026-06-02",
-      "primary_engineering_mechanisms": [
-        "durable_execution_via_temporal (1 nine to 2 nines)",
-        "three_layer_state_decoupling (agent loop / machine / conversation state)",
-        "autonomy_inversion (harness-as-fallback moving to tools)",
-        "self_healing_environment_via_autoinstall",
-        "env_as_product (dev environment is the product)",
-        "append_only_conversation_storage_with_retry_aware_rewind"
-      ],
-      "quotes_count": 4,
-      "associated_project": "HKUDS/Vibe-Trading"
-    }
-  ],
-  "projects_list": [
-    {
-      "name": "HKUDS/Vibe-Trading",
-      "filename": "hkuds-vibe-trading-mandate-gated-trading-agent-15213-stars-2026.md",
-      "stars": 15213,
-      "license": "MIT",
-      "created_at": "ongoing",
-      "engineering_mechanisms": [
-        "broker_level_structural_discriminator (paper vs live as broker property, not env var)",
-        "mandate_gated_order_placement (user-committed symbol_universe / max_order_size / max_exposure / daily_cap)",
-        "filesystem_kill_switch (write a file to stop all orders)",
-        "fail_closed_pre_trade_gate (mandate check before any order)",
-        "audit_ledger_jsonl (every order/reason/mandate-check/broker-response)",
-        "provider_reliability_layer (DeepSeek / Kimi / Gemini / OpenRouter capability layers)",
-        "research_goal_runtime (claims / acceptance_criteria / evidence_rows / completion_policy)"
-      ],
-      "quotes_count": 5,
-      "screenshot": "screenshots/hkuds-vibe-trading-20260630.png"
-    }
-  ],
-  "source_last_scan": {
-    "anthropic": "2026-06-30T12:35:00+08:00",
-    "openai_developers": "2026-06-30T12:38:00+08:00",
-    "cursor": "2026-06-30T12:42:00+08:00",
-    "github": "2026-06-30T12:43:00+08:00",
-    "langchain": "2026-06-30T12:35:00+08:00",
-    "bestblogs": "2026-06-30T12:35:00+08:00",
-    "hn": "2026-06-30T12:35:00+08:00"
+  "saturation_breakthrough_attempts": {
+    "sim_use_audit": "lycorp-jp/sim-use 234⭐ Apache-2.0 cross-platform Agent CLI (iOS+Android) → Cluster Overlap (baguette R363 already covers iOS-only verification farm). sim-use extends to Android but the cluster theme 'mobile simulator × Agent verification' is saturated.",
+    "cc_expertise_audit": "anthropic/research/claude-code-expertise already covered in articles/deep-dives/anthropic-claude-code-expertise-domain-knowledge-2026.md (R594/R593)",
+    "6_26_batch_audit": "Anthropic 6/26 partnership batch (Claude Corps/DXC/TCS/Gates/Seoul/Core Views) = 1st-party Cluster Overlap (R558) skip path, validated 4th time (R573/R587/R591/R596)"
   },
-  "saturation_streak": 0,
-  "lastRunNewSources": 2,
-  "momentum_streak": 3,
-  "dedup_correctly_caught": 1
+  "r555_quasi_period_validation": {
+    "round": 596,
+    "previous_streak": "R595 Article+Project (non-saturation, full output)",
+    "current": "R596 saturation round",
+    "implication": "Pattern: R593 → R594 Article+Project → R595 Article+Project → R596 saturation. Period 1-5 rounds floating. Quasi-period round count for non-saturation streak: 2 (R594+R595). Next round (R597) high probability non-saturation based on historical 1-3 round non-saturation averages."
+  },
+  "anti_pattern_compliance": {
+    "exactly_1_commit": "yes (R552/R573/R576/R585/R587/R591+R596 stable)",
+    "lastCommit_field_writes_known_hash": "yes (b7f7eaf = R595 chore hash)",
+    "no_lastCommit_loop_commit": "yes"
+  },
+  "sibling_warning_check": "not triggered this round"
 }
