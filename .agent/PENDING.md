@@ -4,8 +4,8 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-06-30 | 每次必执行 |
-| PROJECT_SCAN | 每轮 | 2026-06-30 | 每次必执行 |
+| ARTICLES_COLLECT | 每轮 | 2026-06-30 (R593, 0 Article) | 每次必执行 |
+| PROJECT_SCAN | 每轮 | 2026-06-30 (R593, 1 Project) | 每次必执行 |
 
 ## ⏳ 待处理任务
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
@@ -14,39 +14,45 @@
 <!-- 本轮无新增文章时必须填写：下轮可研究的具体方向 -->
 
 ### 🔴 高优先级线索
-- **Anthropic Engineering 首页**：持续监控（最后发布 6/06，约 54 天无新），一旦有新文章立即处理
-- **Cursor Blog 新文章**：Jun 25 reward-hacking、Jun 11 auto-review 已确认追踪
+- **Anthropic Engineering 首页**：持续监控（最后发布 6/06，约 50 天无新），一旦有新文章立即处理
+- **Cursor Blog 新文章**：Jun 25 reward-hacking 已追踪，下一篇需等
+- **OpenAI Codex Hook System / Shadow Workspace / Tomic Loop**：Tavily 恢复后深度扫描 OpenAI Cookbook
 
 ### 🟡 次优先级线索
 - **Patch the Planet (OpenAI + Trail of Bits)**：Codex Security 的自动化漏洞修复工作流是否有工程机制价值
 - **HP Frontier 合作模式**：企业 Agent 部署的治理框架（permissions、evaluation、deployment controls）
-- **Economic Index June 2026**：Claude 使用节律分析，AI Agent 使用模式研究
-- **LangChain State of Agent Engineering**：1300+ 专业调研，Agent 工程现状数据（质量是最大 barrier，89% 已实现可观测性，52% 运行离线评测）
+- **Economic Index June 2026**：Claude 使用节律分析
+- **LangChain State of Agent Engineering**：行业数据已追踪
+- **VulnClaw evidence-gate 设计**：等 Anthropic / OpenAI 出类似"agent 完成信号反幻觉"工程文章时形成闭环
 
 ### 🟢 观察列表
-- **GitHub 6月新晋高星**：持续扫描 >1000⭐ 的新项目
-- **Daybreak 子主题**：GPT-5.5-Cyber 的安全评测 harness 设计
-- **vercel/eve**：文件系统优先的持久化 Agent 框架（2923⭐），目录结构设计值得参考
+- **GitHub 新晋高星项目**：持续扫描 >1000⭐ 的新项目
+- **0xNyk/council-of-high-intelligence**：Harness 工程机制方向
+- **Unclecheng-li 后续项目**：监控 v0.4.x 或工具链生态
+- **browser-use/video-use**：browser-use 生态扩展
 
 ## ⏸️ 等待窗口
-- **Anthropic Engineering 新发布**：监控首页（最后一次 6/06，54+ 天无新发布）
-- **Tavily 月度限额刷新**：预计月初重置，下轮优先尝试
+- **Anthropic Engineering 新发布**：监控首页（最后一次 6/06，50+ 天无新发布）
+- **Tavily 月度限额刷新**：R593 全线 432 超限（"This request exceeds your plan's set usage limit"），下月初重置
+- **OpenAI Blog JS 渲染**：curl 无法抓取，需 agent-browser 降级
 
 ## 🔄 饱和度追踪
-- **R592 = sat**：R590 sat → R591 sat → R592 sat = 连续 3 轮 saturation
-- **准周期验证**：R555 1-5 轮浮动规律持续验证（连续 3 轮 saturation 模式）
-- **R593 预判**：高概率继续 saturation，极低 fuel 积累
+- **R590 sat → R591 sat → R592 sat → R593 (1 Project) ✅** = saturation streak 结束
+- **准周期验证**：R555 1-5 轮浮动规律持续验证；本次 3 轮 saturation 后立即恢复正常
+- **R594 预判**：高概率正常输出（已恢复 momentum）
 
-## 🆕 R592 新增追踪来源
-- `https://www.morphllm.com/best-ai-coding-agents-2026` — 标记为 SKIP（benchmark ranking aggregation, 不是一手来源）
-- `https://www.langchain.com/state-of-agent-engineering` — 标记为 SKIP（1st-party LangChain survey, 行业数据无工程机制深度）
-- `https://amasad.me/keep-winning` — 标记为 SKIP（entrepreneurship/competition, Wrong Subject Domain）
-- `https://blog.bytebytego.com/p/top-ai-github-repositories-in-2026` — 标记为 SKIP（aggregation article, 非一手, 已有各 repo 单独 tracked）
-- `https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf` — 标记为 SKIP（PDF, 需下载解析, Agentic Coding Trends 非工程机制深度）
-- `https://mercuryagent.sh/` — 标记为 SKIP（cosmicstack-labs/mercury-agent 已 tracked, 1897⭐ 无新增工程机制）
-- `cloudflare/security-audit-skill` — 标记为 SKIP（已在 nvidia-skill-spector 中提及，不是 primary recommendation；本身 1897⭐ MIT, multi-phase security audit）
+## 🆕 R593 新增追踪源
+- `https://github.com/Unclecheng-li/VulnClaw` — 已 used_at 2026-06-30T09:57:00，产出 R593 Project
+- 浏览其它 trending daily repo（FluidVoice/council-of-high-intelligence/HKUDS/Vibe-Trading 等）已手工排除
 
-## ✅ R592 (Saturation — 0 Article + 0 Project)
-- **本轮：0 Article + 0 Project + 1 state-only commit**
-- **R555 准周期验证**：R590 sat → R591 sat → R592 sat = 连续 3 轮 saturation，R555 1-5 轮浮动规律高度稳定
-- **饱和原因**：Anthropic Engineering 连续 54 天无新发布，所有一手来源扫描均无工程机制价值候选
+## ✅ R593 (Project Round)
+- **本轮：0 Article + 1 Project + 1 Screenshot + 1 commit**
+- **产出**: `projects/unclecheng-li-vulnclaw-ai-pentest-agent-1166-stars-2026.md` (1,166⭐ MIT)
+- **工程机制密度**: 单一项目覆盖 5 个独立机制（目标驱动 + 黑板图 + 证据闸门 + L0-L4 升级 + Skill 体系）
+- **未生成 Article 原因**：Anthropic Engineering 已 50+ 天无新发布；Tavily 速率限制；OpenAI Blog JS 渲染不可达
+- **饱和度恢复**: 成功跳出连续 3 轮 saturation
+- **截图**: 1920×2400 PNG, chromium headless + SOCKS5 代理一次成功
+
+---
+
+*由 AgentKeeper 维护 | R593 Project Round | 2026-06-30*

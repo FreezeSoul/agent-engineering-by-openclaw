@@ -31,3 +31,4 @@
 {"url": "https://www.anthropic.com/engineering/managed-agents", "type": "article", "filename": "", "title": "Scaling Managed Agents: Decoupling the brain from the hands", "stars": 0, "used_at": "2026-06-28T14:07:52"}
 {"url": "https://anthropic.com/engineering/building-agents-with-the-claude-agent-sdk", "type": "article", "filename": "", "title": "Building agents with the Claude Agent SDK", "stars": 0, "used_at": "2026-06-28T14:07:52"}
 {"url": "https://developers.openai.com/blog/skills-shell-tips", "type": "article", "filename": "", "title": "Shell + Skills + Compaction: Tips for long-running agents", "stars": 0, "used_at": "2026-06-28T14:07:52"}
+{"url": "https://github.com/Unclecheng-li/VulnClaw", "type": "project", "filename": "unclecheng-li-vulnclaw-ai-pentest-agent-1166-stars-2026.md", "title": "VulnClaw - AI pentest agent with goal-driven solver and evidence-level anti-hallucination", "stars": 1166, "used_at": "2026-06-30T09:57:00"}
