@@ -1,19 +1,24 @@
 {
-  "lastRun": "2026-07-01T21:59:00+08:00",
-  "lastCommit": "eb0f931",
+  "lastRun": "2026-07-01T21:57:00+08:00",
+  "lastCommit": "cebd620",
   "round": 613,
-  "status": "USER_RECOMMENDATION_THL_MAIC_OpenMAIC",
+  "status": "BREAKTHROUGH_ROUND_github_blog_copilot_harness",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "type": "breakthrough_round_article_plus_project",
   "scan_summary": {
     "anthropic_sitemap": {
       "total_urls": 60,
-      "engineering_latest": "2026-06-06 how-we-contain-claude (25 days without new as of R612, 13-round streak R555/R591/R601-R611/R612-but-PLATEAU-BROKEN-BY-NEWSROOM)",
-      "research_latest": "2026-06-30 frontier-red-team + 2026-06-26 economic-index + 6/26 batch (10 research URLs)",
-      "news_latest": "2026-07-01 redeploying-fable-5 (WSD model) + 2026-06-30 claude-sonnet-5 (WSD) + **2026-06-30 claude-science-ai-workbench (R612 BREAKTHROUGH)**",
-      "writable": 1,
-      "skip_reason": "R612 BREAKTHROUGH via Anthropic Newsroom (not Engineering): Claude Science AI workbench (2026-06-30) is a 1st-party Anthropic announcement with 6 explicit Harness Engineering principles applied to scientific research. Engineering blog remains plateau but Newsroom突破. Anthropic 13-round plateau broken via Newsroom branch."
+      "engineering_latest": "2026-06-06 how-we-contain-claude (25 days without new as of R613, 14-round streak R555/R591/R601-R613)",
+      "research_latest": "2026-06-30 frontier-red-team + 2026-06-26 economic-index + 6/26 batch",
+      "news_latest": "2026-07-01 redeploying-fable-5 + 2026-06-30 claude-sonnet-5 + 2026-06-30 claude-science-ai-workbench (R612 BREAKTHROUGH)",
+      "new_in_sitemap_7_1": [
+        "claude-for-financial-services (R518 boundary: actually 5/5 旧闻, only sitemap lastmod 7/1, 10 finance agents originally announced by Anthropic 5/5, Reuters/Forbes confirmed — R518 TRAP)",
+        "events/aws-summit-{dc, london, nyc, tokyo} (event pages, not articles)",
+        "claude-corps (claude-corps community update)"
+      ],
+      "writable": 0,
+      "skip_reason": "R613 = R612 突破后 1.7h 间隔. Anthropic sitemap 14-round plateau 持续. claude-for-financial-services = R518 boundary trap (5/5 旧闻, only sitemap lastmod 7/1 refresh, NOT new content). Skip per R518 protocol."
     },
     "openai_rss": {
       "total_items": 1028,
@@ -22,14 +27,14 @@
       "new_in_top15": 11,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "OpenAI 11 NEW = 全部 WSD/1st-party commercial/consumer/customer story/R518 boundary/R552 WSD models. Codex-maxxing 已在 R510/R531/R567 覆盖. No breakthrough candidate."
+      "skip_reason": "OpenAI 11 NEW = 全部 WSD/1st-party commercial/consumer/customer story/R518 boundary/R552 WSD models. NEW 6/30 GenBench-Pro (benchmark, no harness) + 6/30 core-dump-epidemiology (infra debugging, low relevance) + 6/29 mapping-ai-jobs-transition-eu (policy). No engineering breakthrough."
     },
     "cursor_blog": {
       "total_slugs": 17,
       "tracked_via_articles": 14,
       "uncovered_engineering_slugs": 0,
       "writable": 0,
-      "skip_reason": "17 slugs stable. 3 NEW (bugbot-updates-june-2026 / ios-mobile-app / notion) 全部 R558 cluster overlap. Top 2 engineering slugs (warp-decode + typescript-sdk) R558 cluster overlap 持续."
+      "skip_reason": "17 slugs stable. No new 7月 slugs. Last engineering is 2026-06-25 reward-hacking. No breakthrough."
     },
     "claude_blog_sitemap": {
       "total_urls_english": 175,
@@ -37,65 +42,85 @@
       "untracked": 127,
       "engineering_keyword_untracked": 60,
       "writable": 0,
-      "skip_reason": "R612 = R587 验证 5% engineering probability 完整 cycle 持续. All R558 1st-party cluster overlap (5+ cluster hits each). Skip per R587 protocol."
+      "skip_reason": "R613 = R587 验证 5% engineering probability cycle 持续. All R558 1st-party cluster overlap (5+ cluster hits each). Skip per R587 protocol."
+    },
+    "github_blog": {
+      "total_urls_reviewed": 5,
+      "new_breakthrough": 2,
+      "writable": 1,
+      "articles_found": [
+        "Getting more from each token: How Copilot improves context handling and model routing (2026-06-17, Joe Binder, VP Product) — 3 大机制 (prompt caching 94% / deferred tool loading / HyDRA routing)",
+        "Evaluating performance and efficiency of the GitHub Copilot agentic harness (2026-06-25, Shibani Basava + Carlos Castro) — TerminalBench 2.0 量化对比 vs Claude Code native + Codex CLI native"
+      ],
+      "rationale": "R613 突破路径: GitHub Blog 1st-party. 第一篇 (6/17) 详细描述 3 大机制 (94% cache / tool search / HyDRA routing) + cache-aware routing 设计哲学. 第二篇 (6/25) 提供量化对比 (18% token reduction, 94% cache hit, 3.3x cost savings). 两篇构成完整 1st-party harness engineering 方法论."
     },
     "github_search_14d": {
       "total_candidates_checked": 12,
-      "viable_above_500_stars": 12,
+      "viable_above_500_stars": 0,
+      "viable_under_500_stars_companion": 1,
       "rate_limited": false,
       "new_breakthrough": 1,
       "writable": 1,
-      "tracked_growth_observation": "**NVIDIA-BioNeMo/bionemo-agent-toolkit (R612 BREAKTHROUGH PROJECT)**: 237⭐ (8 days since 2026-06-23 release) = NVIDIA 1st-party + Apache-2.0/CC-BY-4.0 dual-license + 14 NIM skills + 3 meta-skills + Anthropic Claude Science 官方协同 (skill CLI 一键安装到 Claude Code / Codex / Cursor). cloudflare/security-audit-skill 632⭐ (R591) → 2145⭐ (R612) = +1513⭐ monitoring only."
+      "tracked_growth_observation": "**OnlyTerp/prompt-cache-skills (R613 BREAKTHROUGH PROJECT)**: 107⭐ Python (34 days since 2026-05-28 release) = NOASSERTION license + 13 skills + 13 audits + 10x savings + Skill-as-Harness 范式. 与 R605 anthropics/launch-your-agent 同范式, 是 GitHub 94% cache insight 的 OSS 民主化最佳实例. cloudflare/security-audit-skill R612=2145⭐ 持续 monitoring."
     },
     "hacker_news_top15": {
       "entries_reviewed": 4,
       "new_in_top15": 0,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "R612 HN Algolia time window 1751000000 still returns pre-2026-07 hits (R573 pitfall 确认). Skip per R573 protocol."
+      "skip_reason": "R613 HN Algolia time window 1751000000 still returns pre-2026-07 hits (R573 pitfall 确认). Skip per R573 protocol."
     }
   },
-  "r612_specific_findings": {
+  "r613_specific_findings": {
     "decision": "BREAKTHROUGH_ROUND_article_plus_project",
-    "reason": "R612 BREAKTHROUGH via Anthropic Newsroom claude-science-ai-workbench (2026-06-30, 1st-party Anthropic, 6 explicit Harness Engineering principles) + NVIDIA BioNeMo Agent Toolkit (2026-06-23, NVIDIA 1st-party, 14 NIM skills + 3 meta-skills, Anthropic 官方协同). SPM pair 形成「多 1st-party Harness Ecosystem」完整闭环.",
-    "quasi_period_validation": "R612 = R555 准周期第 27 次验证. R607+R608+R609+R610+R611 = streak 5 (历史最长之一) → R612 = streak BREAKTHROUGH via Newsroom (not Engineering). 准周期在 Newsroom branch 提前打破. Engineering 13-round plateau 在 R613-R614 持续预测.",
-    "anthropic_7_4_window_proximity": "R612 = 7/1 20:13 = 7/4 独立日前 2.5 天 = 突破提前于 7/4. R612 Newsroom claude-science 早于预期 = R555 准周期预测 「7/4 前 0-1 天窗口突破」实际提前到 7/4 前 2.5 天. R613 = 7/3 = 独立日前 1 天仍有突破概率 (Sonnet 5 / Fable 5 等 WSD 之外).",
-    "claude_science_6_harness_principles": [
-      "auditable-artifacts (figure + code + env + description + message history)",
-      "reproducible-compute (local + SSH/HPC + Modal GPU + draft-then-authorize)",
-      "skill-as-harness (60+ curated skills + connectors)",
-      "reviewer-agent / actor-critic (citations/numbers/figures self-check)",
-      "in-session-persistent-context (massive datasets loaded once + session fork)",
-      "local-first-sensitive-data (HPC login node + data minimization protocol)"
+    "reason": "R613 BREAKTHROUGH via GitHub Blog (2026-06-17 Joe Binder 'Getting more from each token' + 2026-06-25 Shibani Basava + Carlos Castro 'Evaluating performance and efficiency') + OnlyTerp/prompt-cache-skills (2026-05-28, 107⭐ Python, 13 skills / 13 audits / 10x savings, Skill-as-Harness 范式). 1st-party 突破第三路径开启（继 R605 Anthropic Engineering + R612 Anthropic Newsroom 后）. SPM pair 形成 GitHub 1st-party 突破 + OSS 民主化 完整闭环.",
+    "quasi_period_validation": "R613 = R555 准周期第 28 次验证. R612 = streak BREAKTHROUGH #1 via Anthropic Newsroom. R613 = streak BREAKTHROUGH #2 via GitHub Blog (5h 间隔). 1st-party 突破不再依赖 Anthropic Engineering blog — Newsroom / GitHub Blog / Cursor Research 都是活跃路径.",
+    "anthropic_engineering_plateau_status": "R613 Anthropic Engineering plateau 持续 (25 天 / 14-round streak R555/R591/R601-R613). 但 Newsroom + GitHub Blog 突破已独立存在. Engineering plateau 不再是仓库产出瓶颈.",
+    "anthropic_7_4_window_proximity": "R613 = 7/1 21:57 = 7/4 独立日前 2.5 天. 1.7h delta R612→R613 = back-to-back 突破 (历史第 2 次, 第 1 次为 R605+R606). 突破速率异常 high.",
+    "github_blog_3_mechanisms": [
+      "extended-prompt-caching (94% cache hit rate for Anthropic models in VS Code + cache-control breakpoints + provider-specific optimization)",
+      "deferred-tool-loading (tool search mechanism, on-demand schema loading, broad toolset + narrow schema)",
+      "hydra-routing (cross-lingual LLM router, 16 language families, 3 operating points Peak/Agg/Cons, 3.3x cost savings, cache-aware routing design)"
     ],
-    "anthropic_newsroom_as_breakthrough_path": "R612 首次确认：Anthropic Newsroom branch (而非 Engineering) 可作为突破路径. claude-science-ai-workbench + claude-tag + claude-science-ai-workbench 体现 Anthropic 把 Harness Engineering 推广到 vertical product line 的趋势. R613-R614 持续监控 Anthropic Newsroom 1st-party announcements.",
-    "nvidia_bionemo_1st_party_partner": "R612 首次确认：NVIDIA-BioNeMo/bionemo-agent-toolkit (237⭐, 8 days, NOASSERTION but Apache-2.0 + CC-BY-4.0 dual-license file) 是 NVIDIA 1st-party 生命科学 Agent skill 生态. 与 Anthropic Claude Science 形成 「多 1st-party Harness Ecosystem」. 这是 Harness Engineering 的去中心化架构范例.",
-    "cloudflare_security_audit_skill_growth": "cloudflare/security-audit-skill 632⭐ (R591 2026-06-29) → 2145⭐ (R612 2026-07-02) = +1513⭐ = +240% 增长率 8 rounds. R576 Tracked Project Stars Growth Monitoring 实战: 已收录无需重写, 仅记录到 PENDING.md monitoring list.",
-    "fundamental_ava_stability": "R612 Fundamental-Ava 677⭐ Apache-2.0 (R611 651⭐, +26 stars = +4.0%, R583 Articleless Project defer path 持续).",
-    "defer_candidates_5h_delta": "R612 defer candidates 5h delta R611→R612: Fundamental-Ava +26 stars (+4.0%, 8 rounds 累计). 其余 8 defer 依旧 minor (无 +30% threshold 触发). cloudflare/security-audit-skill +1513⭐ already tracked, 仅 monitoring."
+    "github_blog_quantified_results": {
+      "token_reduction": "18%",
+      "cache_hit_rate": "94% (Anthropic models in VS Code)",
+      "cost_savings": "3.3x (at equal SWE-bench accuracy)",
+      "cross_lingual_accuracy_gap": "within 4 points of English baseline (16 language families)",
+      "operating_points": {
+        "Peak": "exceeds Sonnet at 12.9% savings",
+        "Agg": "balances quality for 72.5% savings",
+        "Cons": "ties OpenRouter Auto (70.8% resolution) at 3.3x savings"
+      }
+    },
+    "github_blog_benchmark_methodology": "TerminalBench 2.0 (89 tasks, 5 independent runs, pass@1) + SWE-bench + 自有 benchmarks. 标准化: context window / prompt token limit / reasoning effort (medium) / no tool search / no MCP servers / default built-in tools / pass@1 报告. 排除 infrastructure anomalies. 与 Claude Code native (Claude Sonnet 4.6 + Opus 4.7) + Codex CLI native (GPT-5.4 + GPT-5.5) 公平对比.",
+    "r518_boundary_trap_validation": "R613 claude-for-financial-services URL = R518 boundary trap 实战验证. URL lastmod 7/1 实际是 5/5 旧闻 (10 finance agents originally announced by Anthropic 5/5, Reuters/Forbes/Yahoo Finance confirmed). sitemap lastmod ≠ 内容新度. 跳过 per R518 protocol.",
+    "cross_model_harness_as_product_paradigm": "R613 首次命名 Cross-Model-Harness as Product 范式: 不依赖自研模型, 通过 cache + routing + tool search 把 harness 做成独立产品. 与 Anthropic '模型即产品' + OpenAI '模型即平台' 形成第三种 harness 哲学.",
+    "anthropic_claude_for_finance_r518_boundary": "Anthropic claude-for-financial-services URL (sitemap lastmod 7/1) 实际是 5/5 旧闻. Anthropic 5/5 发布 10 个金融 agents (Reuters/Forbes 报道). 7/1 仅是 sitemap refresh. Skip per R518 protocol. 与 R605/R612 cluster 无 cluster overlap (R518 boundary content has its own cluster)."
   },
   "defer_candidate_check": {
     "historical_defer_candidates": 9,
     "moved_or_triggered": 0,
-    "details": "R612 audit 9 historical defer candidates: amplifthq/opentag (398⭐ MIT, +0) / TianhangZhuzth/Fundamental-Ava (677⭐ Apache-2.0, +26 stars 8-round growth) / QwenLM/Qwen-AgentWorld (688⭐ Apache-2.0, +0) / Plaer1/junction (646⭐ MIT, +0) / BuilderIO/agent-native (3233⭐ License=None, +0) / uphiago/recon-skills (286⭐ None) / eli-labz/Godcoder (258⭐ NOASSERTION) / YurunChen/repo-docs-skills (270⭐ None) / Johell1NS/browser-search (266⭐ MIT). Only Fundamental-Ava minor Stars growth. 0 defer trigger 命中. NVIDIA-BioNeMo/bionemo-agent-toolkit NOT in defer list (NEW from R612 Newsroom scan)."
+    "details": "R613 audit 9 historical defer candidates: amplifthq/opentag (398⭐ MIT, +0) / TianhangZhuzth/Fundamental-Ava (~700⭐ Apache-2.0, minor growth) / QwenLM/Qwen-AgentWorld (688⭐ Apache-2.0, +0) / Plaer1/junction (646⭐ MIT, +0) / BuilderIO/agent-native (3233⭐ License=None, +0) / uphiago/recon-skills (286⭐ None) / eli-labz/Godcoder (258⭐ NOASSERTION) / YurunChen/repo-docs-skills (270⭐ None) / Johell1NS/browser-search (266⭐ MIT). Only Fundamental-Ava minor Stars growth. 0 defer trigger 命中. OnlyTerp/prompt-cache-skills NOT in defer list (NEW from R613 GitHub Blog scan)."
   },
   "tracked_stars_growth_monitoring": {
     "r576_protocol_active": true,
     "monitoring_list": [
       {"name": "cloudflare/security-audit-skill", "stars_r591": 632, "stars_r612": 2145, "growth_pct": 239, "rounds": 8, "threshold_triggered": true, "action": "monitoring only (already tracked R591)"},
       {"name": "HKUDS/AgentSpace", "stars_r555": 339, "stars_r612": 592, "growth_pct": 74, "rounds": 9, "threshold_triggered": true, "action": "monitoring only (already tracked R555)"},
-      {"name": "NVIDIA-BioNeMo/bionemo-agent-toolkit", "stars_r612": 237, "growth_pct": 0, "rounds": 1, "threshold_triggered": false, "action": "JUST TRACKED R612 as breakthrough project"}
+      {"name": "NVIDIA-BioNeMo/bionemo-agent-toolkit", "stars_r612": 237, "stars_r613": "monitoring", "growth_pct": "TBD", "rounds": 2, "threshold_triggered": false, "action": "JUST TRACKED R612 as breakthrough project"},
+      {"name": "OnlyTerp/prompt-cache-skills", "stars_r613": 107, "growth_pct": 0, "rounds": 1, "threshold_triggered": false, "action": "JUST TRACKED R613 as breakthrough project"}
     ]
   },
   "quasi_period_observation": {
-    "r555_quasi_period_validations": 27,
-    "new_validation": "R612 = R555 准周期第 27 次验证. R607+R608+R609+R610+R611 = streak 5 (历史最长之一) → R612 = streak BREAKTHROUGH via Anthropic Newsroom. 准周期在 Newsroom branch 提前打破. R613 预测: 50% 突破继续 (Engineering 13-round plateau 或其他 Newsroom 1st-party) / 30% saturation streak 6 重建 / 20% cluster validation.",
+    "r555_quasi_period_validations": 28,
+    "new_validation": "R613 = R555 准周期第 28 次验证. R612 = streak BREAKTHROUGH #1 via Anthropic Newsroom. R613 = streak BREAKTHROUGH #2 via GitHub Blog (5h 间隔). 1st-party 突破不再依赖 Anthropic Engineering blog. Engineering 14-round plateau 持续, 但其他 1st-party 路径活跃.",
     "saturation_streak": 0,
-    "r613_prediction": "R613 prediction: 7/3 = 7/4 独立日前 1 天 = 凌晨/上午 release 最高概率窗口. Anthropic Engineering 13-round plateau (25 天) 可能被打破. Anthropic Newsroom 突破模式可能继续 (Sonnet 5.5? New Claude product line?). 预测: 50% breakthrough / 30% saturation streak 6 重建 / 20% cluster validation."
+    "r614_prediction": "R614 prediction: 7/2 后半 window / 7/3 = 7/4 独立日前 1-2 天. 50% back-to-back breakthrough #3 (持续 1st-party 突破) / 30% saturation streak 重建 / 20% cluster validation. Anthropic Engineering 14-round plateau 可能在 7/2-7/3 窗口被打破 (R555 准周期预测). R614 重点监控: Anthropic Newsroom 续篇 (claude-finance/chips?) + GitHub Copilot Harness 续篇 (HyDRA 开源? cache benchmark?) + Cursor Blog 新 slug (post-7/1)."
   },
   "spm_pair": {
-    "article": "articles/harness/anthropic-claude-science-vertical-harness-scientific-discovery-2026.md",
-    "project": "projects/nvidia-bionemo-agent-toolkit-vertical-life-sciences-skills-237-stars-2026.md",
-    "rationale": "Claude Science (60+ curated skills + reviewer agent + auditable artifacts) + BioNeMo Agent Toolkit (14 NIM skills + 3 meta-skills) = '多 1st-party Harness Ecosystem' first instance. 两者互补：Anthropic 提供协议层, NVIDIA 提供领域能力层. SPM 形成完整 vertical harness ecosystem 闭环."
+    "article": "articles/harness/github-copilot-agentic-harness-94-percent-cache-hydra-routing-2026.md",
+    "project": "projects/onlyterp-prompt-cache-skills-drop-in-cache-hits-audit-2026.md",
+    "rationale": "GitHub Blog (1st-party Copilot Harness Eval) + OnlyTerp/prompt-cache-skills (OSS Skill-as-Harness democratization) = '1st-party 突破 + OSS 民主化' 良性循环完整实例. GitHub 给出理论上限 (94% cache), prompt-cache-skills 提供实操路径 (13 skills audit + 5-15 行 diff fix). SPM pair 形成 R613 Cross-Model-Harness as Product 范式的完整闭环."
   }
 }

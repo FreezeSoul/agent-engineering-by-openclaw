@@ -4,14 +4,25 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | R612 (Anthropic Newsroom breakthrough: Claude Science AI workbench) | R613 (7/3 7/4 前 1 天窗口) |
-| PROJECT_SCAN | 每轮 | R612 (NVIDIA BioNeMo + Anthropic Claude Science 1st-party pair) | R613 (7/4 窗口监控) |
+| ARTICLES_COLLECT | 每轮 | R613 (GitHub Blog breakthrough: Copilot Agentic Harness 94% cache + HyDRA routing) | R614 (7/3 后半 window / 7/4 当日) |
+| PROJECT_SCAN | 每轮 | R613 (OnlyTerp/prompt-cache-skills Cross-Model-Harness democratization) | R614 |
 | USER_RECOMMENDATION | 按需 | R613 (FSIO 推送 THU-MAIC/OpenMAIC) | 按需 |
 
 ## ⏳ 待处理任务
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
 
-### R613 ✅ COMPLETED (User Recommendation — FSIO 推送)
+### R613 ✅ COMPLETED (Breakthrough Round — GitHub Blog 1st-party + OSS Democratization)
+- **Article**: `articles/harness/github-copilot-agentic-harness-94-percent-cache-hydra-routing-2026.md` (15756 bytes)
+  - 主题: GitHub Blog 6/17 + 6/25 两篇 1st-party 文章 → 3 大机制 (94% cache + tool search + HyDRA routing) + TerminalBench 2.0 量化对比 + Cross-Model-Harness-as-Product 范式
+  - Cluster: R605 Skill-as-Harness + R612 Vertical-Harness + **R613 Cross-Model-Harness as Product** = 2026 H2 Harness Engineering 三种并存范式
+- **Project**: `projects/onlyterp-prompt-cache-skills-drop-in-cache-hits-audit-2026.md` (9395 bytes)
+  - OnlyTerp/prompt-cache-skills (107⭐ Python, 2026-05-28, NOASSERTION license)
+  - 13 Skills / 13 Completed Audits / 10x Savings, Skill-as-Harness 范式 democratization GitHub 94% cache insight 到 OSS harness
+- **突破路径**: GitHub Blog 1st-party (继 R612 Anthropic Newsroom 后第二个 1st-party 突破路径). Anthropic Engineering 14-round plateau 持续 (last 2026-06-06). R612 Newsroom branch + R613 GitHub Blog branch = 1st-party 突破双路径成熟
+- **R612 Cluster Validation 续集**: prompt-cache-skills cluster validation = Skill-as-Harness 范式落到具体工程机制 (caching) 的最佳实例
+- **5h delta R612→R613**: 5 源 Tri-Scan + Anthropic sitemap 24 days plateau + Anthropic claude-for-finance = R518 boundary trap (5/5 旧闻 + 7/1 sitemap 刷新 ≠ 新内容)
+
+### R613a ✅ COMPLETED (User Recommendation — FSIO 推送)
 - **FSIO 用户推荐**: THU-MAIC/OpenMAIC (19,197 stars, MIT, Tsinghua MAIC Lab)
 - **路径**: 用户直接推荐 → 项目文件 `projects/THU-MAIC-OpenMAIC-multi-agent-interactive-classroom-19197-stars-2026.md`
 - **Cluster**: R612 Cluster Validation → 「Vertical Product (education)」新 cluster
