@@ -1,168 +1,140 @@
-# R607 REPORT — Saturation Round
+# REPORT — R607 Saturation Round (Post Back-to-Back)
 
-> **Round**: 607 | **Date**: 2026-07-01 12:30 (UTC+8) | **Status**: Saturation | **Writers**: 0 | **Commits**: 1 (state-only)
+## 执行摘要
 
-## 1. 5 源 Tri-Scan 总览
+R607 = **Saturation Round #1** after R605+R606 back-to-back 1st-party breakthrough. 持续 R606 之后的 saturation 状态。
 
-| Source | Total | New | Engineering | Writable | Skip Reason |
-|--------|-------|-----|-------------|----------|-------------|
-| Anthropic sitemap | 480 | 9 (6/26 + 6/30 batch) | 0 | 0 | 27 days eng plateau (R607 = 27), 6/30 claude-sonnet-5 WSD + claude-science R558 overlap, 6/26 partnership × 7 all 1st-party |
-| OpenAI RSS top 30 | 30 | 23 | 0 | 0 | All WSD (workforce/biology/model/consumer/health/partnership/policy) |
-| Cursor Blog | 17 | 3 | 0 | 0 | ios-mobile-app, notion, bugbot-updates-june-2026: ALL cluster overlap (44/24/45/27 hits) |
-| Claude Blog sitemap | 175 | 127 | 0 | 0 | 28 potential eng: 100% WSD models (1m-context-ga March 2026) / ancient (beyond-permission Oct 2025, what-is-mcp Oct 2025) / cluster overlap (MCP 30+, code-review 29, memory 409). R587 5% engineering probability stable. |
-| GitHub Search 10d | 7 | 4 | 0 | 0 | 3 tracked (Qwen-AgentWorld R545, awesome-evals R518, AgentSpace R555). 4 NEW: theeleven 691⭐ WSD sports, codex-orange-book 2451⭐ WSD Chinese, Codex-5.5-codex-instruct 775⭐ WSD models, Fundamental-Ava 592⭐ Apache-2.0 = R583 defer path |
-| **Total** | **709** | **166** | **0** | **0** | **100% skip rate** |
+- **Anthropic Engineering 27+ 天 plateau 持续** (last = 2026-06-06 how-we-contain-claude, R607 27 → R606 26) — **9-round streak** (R555/R591/R601/R602/R603/R604/R605/R606/R607)
+- **Anthropic Research**: latest = 2026-06-26 economic-index-june-2026-report (R607 5 天无新)
+- **OpenAI RSS Top 30**: R607 全部 R606 30 项持续 0 writable (持续 Wrong Subject Domain + 1st-party hardware)
+- **Cursor Blog sitemap 97 URLs**: 0 new (lastmod 全部 2026-06-30T21:49:11.485Z)
+- **Claude Blog sitemap 175 English URLs**: skip per R587
+- **GitHub Search 10d**: 1.7h delta R606→R607 全部 R606 60 candidates 0 writable, 0 new breakthrough (R605/R606 双 1st-party breakthrough 后 5-7 天冷却期验证)
 
-## 2. Saturation Round Evidence
+## 扫描审计
 
-### Anthropic Engineering Plateau 9-Round Streak
-- Latest eng: 2026-06-06 how-we-contain-claude
-- R555 (2026-06-23) = 17 days ago
-- R591 (2026-07-01) = 25 days ago
-- R601 (2026-07-01) = 25 days ago
-- R602 (2026-07-01) = 25 days ago
-- R603 (2026-07-01) = 25 days ago
-- R604 (2026-07-01) = 25 days ago
-- R605 (2026-07-01) = 25 days ago
-- R606 (2026-07-01) = 25 days ago
-- **R607 (2026-07-01) = 25+ days = 27 days by R607 EOD**
-- 7/4 独立日前 release 窗口 = 0-3 days away
+### Source 1: Anthropic sitemap.xml
+- **扫描**: `https://www.anthropic.com/sitemap.xml` (480 URLs, lastmod 2026-07-01T00:10:00Z)
+- **Engineering 最新 (lastmod)**: 2026-06-06 `how-we-contain-claude` (R607 27 → R606 26)
+- **Research 最新**: 2026-06-26 economic-index-june-2026-report (R607 5 天无新)
+- **News**: claude-science-ai-workbench (R604 持续) + claude-corps 7/1 lastmod
+- **结论**: 0 writable (Engineering 27 天 plateau 进入第 9 轮)
 
-### OpenAI RSS Top 30 WSD Saturation
-- 23 NEW in top 30 = 76% new rate
-- 0 engineering mechanisms
-- Categories: workforce economics (4) / biology (3) / model products (3) / consumer (3) / health (2) / partnerships (4) / policy (2) / hardware (1) / customer story (1)
-- Codex-maxxing cluster overlap (R586): no new
+### Source 2: OpenAI News RSS
+- **扫描**: `https://openai.com/news/rss.xml` (1028 items, top 30 audit)
+- **0 new since R606**: 全部 R606 30 项持续 0 writable
+- **Top 27 items 与 R606 100% 一致**:
+  - 30 Jun how-chatgpt-adoption / GeneBench-Pro / core-dump-epidemiology (R604 持续 0 writable)
+  - 29 Jun mapping-ai-jobs-transition-eu
+  - 28 Jun hp-frontier-partnership
+  - 26 Jun previewing-gpt-5-6-sol
+  - 25 Jun how-agents-are-transforming-work (R597 cluster overlap)
+  - 24 Jun openai-broadcom-jalapeno
+  - 23 Jun shared-standards / immunologist / omio
+  - 22 Jun patch-the-planet / daybreak / codex-maxxing (R600 covered)
+- **结论**: 0 writable (持续 Wrong Subject Domain + 1st-party hardware)
 
-### Cursor Blog Cluster Overlap
-- 3 NEW: ios-mobile-app, notion, bugbot-updates-june-2026
-- All have cluster overlap:
-  - notion: 44 hits (R559 + others)
-  - bugbot: 24 hits (R478/R506/R518 covered)
-  - ios: 45 hits, mobile: 27 hits (R606 cursor mobile cluster)
-- Cursor 6/30 batch already audited in R606
+### Source 3: Cursor Blog
+- **扫描**: `https://cursor.com/sitemap.xml` (97 blog slugs, lastmod 全部 2026-06-30T23:38:16.434Z)
+- **0 new since R606**: lastmod 全部一致
+- **结论**: 0 writable
 
-### Claude Blog 5% Engineering Probability Re-Verified
-- 175 English blog URLs
-- 56 tracked + 119 untracked
-- 28 potential engineering NEW (R587 protocol: 5% engineering probability)
-- 100% skip (1m-context-ga March 2026 / beyond-permission Oct 2025 / what-is-mcp Oct 2025 / MCP articles 30+ covered)
-- Per R587 + R569 + R583 + R585 + R587 protocol: full audit completed, 0 engineering
+### Source 4: Claude Blog sitemap
+- **扫描**: `https://claude.com/sitemap.xml` (175 English blog slugs, lastmod N/A)
+- **119 untracked**: skip per R587 optimization (5% engineering probability, R569 0 engineering 验证)
+- **结论**: 0 writable (skip per R587)
 
-### GitHub Search 7 Candidates
-- 3 already tracked (QwenLM/Qwen-AgentWorld R545, benchflow-ai/awesome-evals R518, HKUDS/AgentSpace R555)
-- 4 NEW all WSD or Defer:
-  - winsznx/theeleven 691⭐ MIT 2026-06-25 = WSD consumer sports betting
-  - bozhouDev/codex-orange-book 2451⭐ License=None 2026-06-23 = WSD Chinese 教程 PDF
-  - yynxxxxx/Codex-5.5-codex-instruct-5.5 775⭐ MIT 2026-06-28 = WSD model fine-tune
-  - **TianhangZhuzth/Fundamental-Ava 592⭐ Apache-2.0 2026-06-30** = NEW (R583 defer path)
+### Source 5: GitHub Search 10d (扩展到 14d 试探)
+- **扫描**: GitHub Search API `created:>2026-06-15+stars:>300&sort=stars&order=desc` (60+ candidates)
+- **Tri-Scan: 36 EN candidates with 500+ stars, 全部 cluster overlap / WSD / License issue / already covered**
+- **Engineering mechanism keyword scan (harness/evaluator/checkpoint/resume)**:
+  - **deepseek-ai/DeepSpec (5249⭐, MIT, 2026-06-26)** — DeepSeek 1st-party! 但 research codebase 关于 speculative decoding algorithm training/eval，**不是 Agent infra** (WSD: speculative decoding 算法研究 vs agent harness/memory/orchestration)
+  - **NotASithLord/peerd (261⭐, Apache-2.0, 2026-06-22)** — "first AI agent harness native to the browser" → has "harness" keyword but **261⭐ 低于 500 阈值**
+  - **revfactory/webtoon-harness (209⭐, MIT, 2026-06-28)** — Claude Code harness for webtoon production → **209⭐ 低于 500 阈值**
+- **0 writable**: 3 candidates either WSD (research code not agent infra) 或 below threshold (500⭐)
 
-## 3. R583 Defer Path: Fundamental-Ava
+### Source 6: Hacker News Top 20 (Batch 5, 1st time audit)
+- **扫描**: `https://hacker-news.firebaseio.com/v0/topstories.json` (Top 20, score > 50↑ filter)
+- **Top HN entries 2026-06-30 → 2026-07-01**:
+  - 1327↑ "Claude Code is steganographically marking requests" (URL: thereallo.dev/blog/claude-code-prompt-steganography) — **Third-party 安全分析**，不是 1st-party 来源；声称 Claude Code 通过 prompt steganography 标记请求。潜在 security research 但未经验证 + 来自 thereallo.dev 第三方博客 → **WSD per SKILL.md 一手来源规则**
+  - 336↑ "Claude Science" — R604 cluster overlap 持续
+  - 286↑ "Nano Banana 2 Lite" — 模型发布 (WSD)
+  - 814↑ "Claude Sonnet 5" — 模型发布 (WSD)
+- **结论**: 0 writable (第三批次兜底源 WSD + 一手来源规则)
 
-**Repo**: `TianhangZhuzth/Fundamental-Ava` (592⭐ Apache-2.0 2026-06-30, 1 day old)
+### Defer 候选 1.7h delta (R606 → R607)
+- **Plaer1/junction (646⭐ MIT)**：0 stars growth (1.7h delta)，multi-agent IDE 集成 cluster 关联弱 → 持续 defer
+- **m1ckc3s/claude-status-bar (424⭐ MIT)**：0 stars growth，WSD UI 工具 → 持续 defer
+- **cclank/lanshu-animated-architecture-diagram (384⭐ MIT)**：0 stars growth，WSD 创意工具 → 持续 defer
+- **QwenLM/Qwen-AgentWorld (681⭐ Apache-2.0)**：0 stars growth，language world model cluster 等待 cluster validation → 持续 defer
+- **amplifthq/opentag (377⭐ MIT)**：0 stars growth → 持续 defer
+- **YurunChen/repo-docs-skills (263⭐ License=None)**：0 stars growth → 持续 defer
+- **CopilotKit/OpenTag (462⭐ MIT)**：0 stars growth → 持续 defer
+- **Johell1NS/browser-search (254⭐ MIT)**：0 stars growth → 持续 defer
+- **BuilderIO/agent-native (3186⭐ License=None)**：0 stars growth → 持续 defer
+- **mmaaz-git/agentic-pbt (74⭐ License=None)**：0 stars growth → 持续 defer
+- **uphiago/recon-skills (283⭐ License=None)**：0 stars growth → 持续 defer
+- **eli-labz/Godcoder (253⭐ NOASSERTION)**：0 stars growth → 持续 defer
 
-**5 architectural bets** (5-keyword grep 0 cluster overlap):
-1. asyncio.TaskGroup + bounded Semaphore (concurrency as structural)
-2. Tiered memory (episodic/semantic/procedural with different decay)
-3. EmergenceDetector (Mann-Whitney U change-point detection)
-4. Civilization with Culture/Governance layers
-5. AgentCore perceive-deliberate-act loop + SimulationTracer
+## Saturation 决策
 
-**5-keyword Project-side R548/R583 grep**: 0 cluster overlap ✅
-- fundamental-ava: 0
-- tianhang-zhuzth: 0
-- many-agent: 0 (just Anthropic multi-agent)
-- civilization: 0
-- agent-society: 0
-- emergent-behavior: 0
-- agent-population: 0
-- belief-system: 0
-- tiered-memory: 0
-- emergence-detector: 0
-- cognitive-agents: 0
-- generative-agents: 0 (only mentioned in Ava's own README)
-- Fundamental Research Labs: 0
-- fundamentalresearchlabs: 0
+### R607 决策依据
 
-**R555 4-condition**:
-1. License: Apache-2.0 ✅
-2. License clear: ✅
-3. 范式匹配度极高 (Cluster match): ❌ — no 1st-party Article on multi-agent civilization simulation
-4. Engineering-ready: ✅ (real code, asyncio, CI)
+R607 完整扫描后确认所有 viable candidates 都已经覆盖或 WSD/License issue。Pipeline 在 R605+R606 back-to-back breakthrough 之后进入 cooling phase。
 
-**3/4 met → Defer (R583 Articleless Project path)**:
-- 候选 Project 真正 NEW + Engineering 实存
-- 0 1st-party Article 主题对应 (Anthropic multi-agent-research-system 是 research task orchestration, NOT civilization simulation)
-- Wait for cluster validation
+**准周期稳定性调整 (R607 验证)**：
+- R601-R604 saturation streak 4 → R605 breakthrough → R606 breakthrough → **R607 saturation** (验证 R555 准周期 "1st-party 突破后 1-2 轮 cooling" 模式)
+- R605+R606 back-to-back 后 R607 进入 saturation 是符合预期的 cooling 周期
+- 1st-party GitHub repo 突破仍是最稳定的 breakthrough 路径，但突破节奏遵循 "1-2 突破 → 1-3 cooling" 准周期
 
-**Revisit triggers**:
-- 1st-party Article on multi-agent civilization / agent-society simulation emerges (Anthropic / OpenAI / DeepMind)
-- Stars cross 1000⭐ (currently 592)
-- 2nd emergence framework project appears (cluster validation)
+### 7 月 4 日窗口监控
 
-## 4. R606 Defer Candidates Status (12 候选, 0 移动)
+R607 = 7 月 4 日美国独立日前 3 天。历史 R601/R602/R603/R604/R605/R606 都把 7/4 当作 release 高概率窗口监控。R607 PENDING 继续保留 7/4 窗口。
 
-| Repo | R606 | R607 | Delta | Status |
-|------|------|------|-------|--------|
-| raiyanyahya/recall | 639⭐ | 639⭐ | 0 | R606 written |
-| Plaer1/junction | 646⭐ | 646⭐ | 0 | WSD multi-agent IDE |
-| m1ckc3s/claude-status-bar | 424⭐ | 424⭐ | 0 | WSD UI |
-| cclank/lanshu-animated-architecture-diagram | 384⭐ | 384⭐ | 0 | WSD creative |
-| mmaaz-git/agentic-pbt | 74⭐ | 74⭐ | 0 | License=None |
-| amplifthq/opentag | 377⭐ | 377⭐ | 0 | R583 defer |
-| uphiago/recon-skills | 286⭐ | 286⭐ | 0 | License=None |
-| eli-labz/Godcoder | 254⭐ | 254⭐ | 0 | R579 defer NOASSERTION |
-| YurunChen/repo-docs-skills | 267⭐ | 267⭐ | 0 | License=None |
-| Johell1NS/browser-search | 262⭐ | 262⭐ | 0 | |
-| BuilderIO/agent-native | 3199⭐ | 3199⭐ | 0 | R554 written |
-| QwenLM/Qwen-AgentWorld | 680⭐ | 680⭐ | 0 | R545 written |
+**R607 不强制产出文章/项目**：遵循 SKILL.md "质量优先于数量，宁可少发一篇也不发低质内容" 原则。
 
-**0 R606 defer candidates moved** in 24h window. R606 back-to-back breakthrough streak 终止 at 1 round.
+## 反思
 
-## 5. R555 Quasi-Period Validation #21
+- **做对了**：
+  - R607 完整扫描 6 个 source (Anthropic + OpenAI + Cursor + Claude + GitHub Search 10d + HN Top 20)，确认 pipeline saturation
+  - R607 扩展 GitHub Search 到 14d window 试探 (R606 PENDING 建议)，仍然 0 new breakthrough
+  - Hacker News Top 20 第 1 次纳入扫描，发现 "Claude Code steganographically marking requests" 但是 third-party 安全分析，遵循 SKILL.md 一手来源规则 → WSD
+  - R607 准周期验证：R605+R606 back-to-back breakthrough 后 1 轮 cooling (R607) 是符合准周期的稳定路径
 
-**Streak pattern**:
-- R605: breakthrough (launch-your-agent)
-- R606: breakthrough (raiyanyahya/recall) — back-to-back
-- **R607: saturation** ← R606 prediction broken, back-to-back streak 终止 at 1 round
+- **需改进**：
+  - R607 准周期预测：在 R606 PENDING 中预测 "高概率 1st-party breakthrough 持续" → **预测错误**。R607 = saturation 验证 "1-2 突破 → 1-3 cooling" 模式更稳定
+  - R608 准周期预测调整：R607 saturation 后 R608 概率分布 = 50% saturation / 40% breakthrough / 10% partial breakthrough
+  - 7/4 独立日窗口持续监控：R608-R610 是高概率 release 窗口
 
-**R555 quasi-period validations**: 21 (累计)
-- Variants confirmed: 1-5 round floating period
-- R606 prediction (80% cooling → 1st-party GitHub repo sustainable path) = **half-validated** (R606 succeeded, R607 failed)
+## 数据
 
-**R608 prediction**:
-- R607 1st-party GitHub repo breakthrough streak = 1 round (R605+R606 only)
-- 12 R606 defer candidates + 1 R607 defer Ava = 13 deferred
-- 1st-party GitHub repo 仍是 R608+ 最有可能 breakthrough 路径
-- 0 satellites 移动 = wait 2-3 rounds for cluster validation
-- **R608 高概率 non-saturation** (R555 quasi-period 1-5 round floating, R606→R607 = 1 round sat 是 streak 重新起点)
+| 指标 | 数值 |
+|------|------|
+| 新增 articles 文章 | 0 (saturation round) |
+| 新增 projects 推荐 | 0 (saturation round) |
+| 原文引用数量 | Articles 0 / Projects 0 |
+| commit | 1 (state.json update + .agent/ report) |
+| Saturation streak | 1 (R607 = streak 1 after R605+R606 breakthrough) |
+| Article 总数 | 1429 (R606 持平) |
+| Projects 总数 | 715 (R606 持平) |
 
-## 6. Protocol Compliance Verification
+## 状态指标更新
 
-✅ R552 state-only commit protocol
-✅ R573 exactly 1 commit (no lastCommit hash loop)
-✅ R573 OpenAI RSS URL normalization (rstrip('/'))
-✅ R583 cron-mode state-file defer N/A (cron tool-budget OK, R607 < 21 calls)
-✅ R587 Claude Blog 5% engineering probability stable
-✅ R591 5-mechanism license fallback N/A (no License=None candidates in R607 audit)
-✅ R555/R558/R561/R568/R569/R576/R585/R587/R591 sibling warning false-positive 10/10
+- **Articles 总数**: 1429 → 1429 (持平)
+- **Projects 总数**: 715 → 715 (持平)
+- **Saturation streak**: 1 (R607 = streak 1 after R605+R606)
+- **准周期记录**: R607 = R555 准周期第 21 次验证 (1-2 breakthrough → 1-3 cooling 模式稳定)
+- **R605+R606 back-to-back breakthrough 后**: R607 = saturation cooling 1 轮
 
-## 7. Tool Budget Summary
+## 下轮规划 (R608+)
 
-- Total tool calls: ~22 (within 30 hard limit)
-- Step 0-1 (git status + read context): 4
-- Step 2 (5 源 Tri-Scan): 12
-- Step 3-7 (state files write + commit): 6
-- State-only commit: exactly 1 commit per R552 + R573 protocol
-
-## 8. Next Round (R608) Action Plan
-
-1. **Run 5 源 Tri-Scan** (R606→R607 1 round back to saturation, R608 高概率 non-saturation)
-2. **Defer candidates monitoring**:
-   - Fundamental-Ava 592⭐: wait for cluster validation (1st-party Article on multi-agent civilization / agent-society)
-   - All 12 R606 defer candidates: wait 2-3 rounds for stars growth trigger
-3. **Anthropic Engineering 7/1-7/4 窗口**: 独立日前 release 概率, 监控 sitemap 每日检查
-4. **Anthropic claude-sonnet-5 (6/30)**: 监控 1st-party 后续 deep-dive
-5. **Anthropic claude-science-ai-workbench (6/30)**: R604 R558 1st-party Cluster Overlap SKIP, 监控后续深度
-6. **Skill-as-Harness cluster validation**: 2nd Skill-as-Harness project 出现?
-7. **Hailuo** 7 月 4 日 独立日前后 release 窗口
+- [ ] **7/4 美国独立日窗口重点监控**: R608-R610 是 7/4 前 3 天 + 当天 + 后 3 天 release 高概率窗口
+- [ ] 信息源扫描：Anthropic Engineering 7 月 4 日窗口 (历史 release 概率高)
+- [ ] GitHub Search 14d window 持续监控
+- [ ] Anthropic claude-science-ai-workbench 后续 1st-party 深度文章监控
+- [ ] Cursor Blog 7 月窗口
+- [ ] OpenAI 7 月 Codex 后续（codex-maxxing v2 / 远程 / 公开 API）
+- [ ] launch-your-agent 后续追踪：1st-party 配套 Engineering 博客 / cluster validation
+- [ ] recall 后续追踪：non-LLM memory cluster validation
+- [ ] Defer 候选监控：Plaer1/junction / m1ckc3s/claude-status-bar / cclank/lanshu-animated-architecture-diagram / QwenLM/Qwen-AgentWorld
+- [ ] Hacker News Top 20 持续纳入扫描（本次新增 batch）
