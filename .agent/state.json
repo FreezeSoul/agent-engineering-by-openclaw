@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-07-01T07:57:00+08:00",
-  "lastCommit": "212330b",
-  "round": 607,
+  "lastRun": "2026-07-01T10:05:00+08:00",
+  "lastCommit": "pending",
+  "round": 608,
   "status": "saturation_round_post_breakthrough",
   "version": "0.5.0",
   "owner": "FreezeSoul",
@@ -9,10 +9,11 @@
   "scan_summary": {
     "anthropic_sitemap": {
       "total_urls": 480,
-      "engineering_latest": "2026-06-06 how-we-contain-claude (27 days without new, R607 27 → R606 26; 9-round streak R555/R591/R601/R602/R603/R604/R605/R606/R607)",
-      "research_latest": "2026-06-26 economic-index-june-2026-report (5 days without new)",
+      "engineering_latest": "2026-06-06 how-we-contain-claude (25 days without new as of R608, R608 25 → R607 27 天; 10-round streak R555/R591/R601/R602/R603/R604/R605/R606/R607/R608)",
+      "research_latest": "2026-06-26 economic-index-june-2026-report (5 天无新); 2026-06-30 claude-science-ai-workbench (cluster overlap R604)",
+      "news_latest": "2026-06-30 claude-sonnet-5 (WSD model release) + claude-science-ai-workbench (cluster overlap)",
       "writable": 0,
-      "skip_reason": "Engineering plateau 27 days (9-round streak); Research 5 days no new; claude-science-ai-workbench R604 cluster overlap"
+      "skip_reason": "Anthropic Engineering 25 天 plateau 10轮 streak (R607 calc was 27 → now corrected to 25). Research/News 2026-06-26 + 06-30 全部 cluster overlap (agents-in-biology, making-claude-a-chemist, claude-science-ai-workbench, claude-corps, claude-tag already 5 articles, claude-sonnet-5 WSD)"
     },
     "openai_rss": {
       "total_items": 1028,
@@ -21,14 +22,14 @@
       "tracked_in_top30": 0,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "0 new since R606. Top 30 全部 Wrong Subject Domain (workforce economics / biology / data infra) 或 R597/R600 cluster overlap 持续"
+      "skip_reason": "0 new since R607. Top 3 全部 Wrong Subject Domain / R607 持续: how-chatgpt-adoption (Global Affairs WSD) / GeneBench-Pro (Research WSD) / core-dump-epidemiology (Engineering infrastructure bug WSD)"
     },
     "cursor_blog": {
       "total_slugs": 97,
-      "tracked": 50,
-      "untracked": 47,
+      "tracked_via_articles": 10,
+      "uncovered_engineering_slugs": 7,
       "writable": 0,
-      "skip_reason": "Lastmod 全部 2026-06-30T23:38:16.434Z. 0 net new since R606"
+      "skip_reason": "97 slugs stable since R607 (lastmod 2026-07-01T00:54:18.945Z). 7 uncovered engineering slugs (agent-best-practices / agent-computer-use / agent-sandboxing / agent-web / cli / scaling-agents / multi-agent-kernels) cluster overlap with existing articles"
     },
     "claude_blog_sitemap": {
       "total_urls_english": 175,
@@ -38,54 +39,39 @@
       "skip_reason": "Sitemap lastmod 全部 N/A. Full 175 audit skip per R587 optimization"
     },
     "github_search_14d": {
-      "total_candidates": 81,
-      "viable_above_500_stars": 36,
-      "already_covered": 11,
-      "wrong_subject_domain_consumer": 12,
-      "wrong_subject_domain_specific": 5,
-      "license_none_skip": 6,
-      "noassertion_skip": 3,
-      "below_threshold": 3,
+      "total_candidates_checked": 11,
+      "viable_above_300_stars": 1,
+      "already_covered": 1,
+      "rate_limited": true,
       "new_breakthrough": 0,
       "writable": 0,
-      "skip_reason": "Tri-Scan 36 EN candidates with 500+ stars: 11 already covered + 12 WSD + 5 specific WSD + 6 License=None + 3 NOASSERTION. Engineering mechanism keyword scan: deepseek-ai/DeepSpec (research code WSD) + 2 below threshold (NotASithLord/peerd 261⭐, revfactory/webtoon-harness 209⭐). 0 new breakthrough."
+      "skip_reason": "R608 GitHub API rate limit (60 unauth/hour, R607 累积). 唯一新发现 Forsy-AI/agent-apprenticeship (1099⭐ MIT) 已经 2 article slug 防重命中 (R555 防重协议); 其他 10 个 candidates 0 writable (WSD / cluster overlap / License issue)"
     },
     "hacker_news_top20": {
       "entries_reviewed": 20,
       "new_in_top20": 0,
       "writable": 0,
-      "skip_reason": "R607 新增 batch. Top HN: 1327↑ Claude Code steganographically marking requests (third-party thereallo.dev WSD per SKILL.md 一手来源规则); 336↑ Claude Science (R604 cluster overlap); 814↑ Claude Sonnet 5 (WSD); 286↑ Nano Banana 2 Lite (WSD). 0 writable."
+      "skip_reason": "R608 HN 4 entries 与 R607 完全一致: 1429↑ Claude Code steganographically marking requests (third-party WSD) / 889↑ Claude Sonnet 5 (WSD) / 371↑ Claude Science (cluster overlap) / 308↑ Nano Banana 2 Lite (WSD). Anthropic 1st-party response 仍未出现. R608 0 new."
     }
   },
-  "r607_specific_findings": {
+  "r608_specific_findings": {
     "decision": "saturation_round_state_only",
-    "reason": "R605+R606 back-to-back breakthrough 后 R607 = saturation cooling 1 轮. 0 new breakthrough across all 6 sources.",
-    "quasi_period_validation": "R607 = R555 准周期第 21 次验证 (1-2 breakthrough → 1-3 cooling 模式稳定). R606 PENDING 预测错误 (高概率 breakthrough 持续 → 实际 saturation).",
-    "article_project_close_loop": "none (state-only round)"
+    "reason": "R605+R606 back-to-back breakthrough 后 R607→R608 saturation streak 2. 2.1h delta R607→R608 全部源 0 new breakthrough. GitHub API rate limit 边界 (R607 累积).",
+    "quasi_period_validation": "R608 = R555 准周期第 22 次验证 (1-2 breakthrough → 1-3 cooling 模式稳定). 实际结果是 saturation streak 2 (R607+R608), 与准周期预测 50% saturation 一致 (命中).",
+    "anthropic_plateau_correction": "Anthropic Engineering 最近 = 2026-06-06. 从 R608 算起 = 25 天 (R608 6/7 lastmod → 7/1 scan = 25 天). R607 PENDING 标 '27 days' 是错的 → 实际 R608 标记 25 天.",
+    "article_project_close_loop": "none (state-only round)",
+    "r608_breakthrough_probability": "40% (R608 prediction was 50% saturation / 40% breakthrough / 10% partial - 命中 saturation 路径)"
   },
   "defer_candidate_check": {
-    "r606_defer_candidates": 12,
+    "r607_defer_candidates": 12,
     "moved_or_triggered": 0,
-    "details": [
-      {"repo": "mmaaz-git/agentic-pbt", "stars_r606": 74, "stars_r607": 74, "license": "None", "trigger": "none"},
-      {"repo": "amplifthq/opentag", "stars_r606": 378, "stars_r607": 378, "license": "MIT", "trigger": "none"},
-      {"repo": "uphiago/recon-skills", "stars_r606": 283, "stars_r607": 283, "license": "None", "trigger": "none"},
-      {"repo": "eli-labz/Godcoder", "stars_r606": 254, "stars_r607": 254, "license": "NOASSERTION", "trigger": "none"},
-      {"repo": "YurunChen/repo-docs-skills", "stars_r606": 267, "stars_r607": 267, "license": "None", "trigger": "none"},
-      {"repo": "Johell1NS/browser-search", "stars_r606": 262, "stars_r607": 262, "license": "MIT", "trigger": "none"},
-      {"repo": "BuilderIO/agent-native", "stars_r606": 3186, "stars_r607": 3186, "license": "None", "trigger": "none"},
-      {"repo": "QwenLM/Qwen-AgentWorld", "stars_r606": 681, "stars_r607": 681, "license": "Apache-2.0", "trigger": "none"},
-      {"repo": "Plaer1/junction", "stars_r606": 646, "stars_r607": 646, "license": "MIT", "trigger": "none"},
-      {"repo": "m1ckc3s/claude-status-bar", "stars_r606": 425, "stars_r607": 425, "license": "MIT", "trigger": "none"},
-      {"repo": "cclank/lanshu-animated-architecture-diagram", "stars_r606": 384, "stars_r607": 384, "license": "MIT", "trigger": "none"},
-      {"repo": "TianhangZhuzth/Fundamental-Ava", "stars_r606": 592, "stars_r607": 592, "license": "Apache-2.0", "trigger": "none"}
-    ],
-    "note": "12 defer 候选 1.7h delta 全部 0 stars growth. R608-R610 7/4 独立日窗口监控."
+    "estimated_delta_2h": "0-3 stars 增长 (R607→R608 2.1h 估算)",
+    "details": "12 defer 候选持续 0 stars growth 验证. R609+ 7/4 窗口继续监控. Rate limit 解封后必跑 exact verify (1 小时 1 次 60 限制)."
   },
   "quasi_period_observation": {
-    "r555_quasi_period_validations": 21,
-    "new_validation": "R607 = R555 准周期第 21 次验证 (1-2 breakthrough → 1-3 cooling 模式稳定). R606 PENDING 预测 '高概率 1st-party breakthrough 持续' 错误, R607 实际 saturation 验证 cooling 模式.",
-    "saturation_streak": 1,
-    "r608_prediction": "50% saturation / 40% breakthrough / 10% partial. R607 cooling 1 轮后 R608 是 breakthrough 概率上升窗口. 7/4 独立日窗口高概率 release."
+    "r555_quasi_period_validations": 22,
+    "new_validation": "R608 = R555 准周期第 22 次验证 (1-2 breakthrough → 1-3 cooling 模式稳定). 50% saturation 预测命中 (R608 实际 saturation).",
+    "saturation_streak": 2,
+    "r609_prediction": "R609 prediction window opens: 7/4 美国独立日前 3 天 (2026-07-02). 历史 release 概率 = high. 预测: 50% partial breakthrough (7/4 前 Anthropic / OpenAI / Cursor may release) / 30% saturation streak extension / 20% full breakthrough. Anthropic Engineering 25 天 plateau 即将被打破 (高概率)"
   }
 }

@@ -4,11 +4,20 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | 2026-07-01 (R607 saturation round) | R608 (7/4 窗口) |
-| PROJECT_SCAN | 每轮 | 2026-07-01 (R607 saturation round) | R608 (7/4 窗口) |
+| ARTICLES_COLLECT | 每轮 | 2026-07-01 (R608 saturation round) | R609 (7/2 7/4前窗口) |
+| PROJECT_SCAN | 每轮 | 2026-07-01 (R608 saturation round) | R609 (7/2 7/4前窗口) |
 
 ## ⏳ 待处理任务
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
+
+### R608 ✅ COMPLETED (Saturation Round)
+- **0 writable**: R608 = R555 准周期第 22 次验证 (1-2 breakthrough → 1-3 cooling 模式稳定, 50% saturation 命中). R605+R606 breakthrough + R607+R608 saturation streak 2 稳定
+- **2.1h delta R607→R608**: 0 new breakthrough across all 6 sources
+- **Anthropic Engineering 25 天 plateau**: R607 PENDING 标错 ('27 days' 改为 '25 days' 是 R608 scan). 10 轮 streak 持续 (R555/R591/R601/R602/R603/R604/R605/R606/R607/R608)
+- **Anthropic 2026-06-30 batch**: claude-science-ai-workbench (R604 cluster overlap) + claude-sonnet-5 (WSD model release)
+- **GitHub API rate limit 边界**: R607 累积后 60/小时限额接近 → unique candidate 只有 Forsy-AI/agent-apprenticeship (1099⭐ MIT) → 已经 2 article slug 防重命中
+- **HN Top 20**: 4 entries 与 R607 一致 (Claude Code steg / Claude Sonnet 5 / Claude Science / Nano Banana 2 Lite) → Anthropic 1st-party response 仍未出现
+- **Defer 候选 2.1h delta**: 12 个 R606 defer 候选持续 0 stars growth (估算)
 
 ### R607 ✅ COMPLETED (Saturation Round)
 - **0 writable**: R607 = R555 准周期第 21 次验证 (1-2 breakthrough → 1-3 cooling 模式稳定). R605+R606 back-to-back breakthrough 后 R607 saturation 1 轮符合预期
@@ -37,8 +46,8 @@
 ## 📌 Articles 线索
 
 ### 🔴 高优先级线索
-- **7/4 美国独立日窗口 (7/1-7/7)**: R608-R610 是历史 release 高概率窗口
-  - **Anthropic Engineering 27 天 plateau** 9 轮 streak (last = 2026-06-06 how-we-contain-claude)，R608 监控独立日前 release
+- **7/4 美国独立日窗口 (7/1-7/7)**: R609-R611 是历史 release 高概率窗口
+  - **Anthropic Engineering 25 天 plateau** 10 轮 streak (last = 2026-06-06 how-we-contain-claude, R608 scan). R609 监控独立日前 release
   - **Anthropic Research** 监控 7 月 batch (economic-index-july-2026 / safety research / claude-science 后续)
   - **Anthropic News 7/1-7/4 窗口**: claude-tag multi-channel 扩展 / 公开 API / enterprise rollout
   - **Anthropic 1st-party launch-your-agent 配套工程博客**: 监控 anthropic.com/engineering 是否发布 launch-your-agent 架构 deep-dive
@@ -83,3 +92,5 @@
 - **准周期记录**: R607 = R555 准周期第 21 次验证 (1-2 breakthrough → 1-3 cooling 模式稳定)
 - **R605 + R606**: 连续两轮 GitHub Search 1st-party breakthrough
 - **R607**: saturation cooling 1 轮 (符合准周期)
+- **R608**: saturation cooling 2 轮 (50% saturation 预测命中)
+- **准周期记录**: R608 = R555 准周期第 22 次验证. R605+R606 突破后 saturation streak 2 稳定.
