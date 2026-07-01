@@ -1,81 +1,101 @@
 {
-  "lastRun": "2026-07-01T15:57:00+08:00",
-  "lastCommit": "pending",
-  "round": 611,
-  "status": "cluster_validation_round_streak_5_bypass",
+  "lastRun": "2026-07-01T20:13:00+08:00",
+  "lastCommit": "cebd620",
+  "round": 612,
+  "status": "BREAKTHROUGH_ROUND_anthropic_claude_science",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "cluster_validation_one_sided_close",
+  "type": "breakthrough_round_article_plus_project",
   "scan_summary": {
     "anthropic_sitemap": {
-      "total_urls": 480,
-      "engineering_latest": "2026-06-06 how-we-contain-claude (25 days without new as of R611, 12-round streak R555/R591/R601/R602/R603/R604/R605/R606/R607/R608/R609/R610/R611)",
-      "research_latest": "2026-06-30 frontier-red-team (team page WSD) + 2026-06-26 economic-index-june-2026-report",
-      "news_latest": "2026-07-01 redeploying-fable-5 (WSD model release, export controls lifted) + 2026-06-30 claude-sonnet-5 (WSD) + 2026-06-30 claude-science-ai-workbench (R604 cluster overlap)",
-      "writable": 0,
-      "skip_reason": "Anthropic Engineering 25 \u5929 plateau 12-round streak \u6301\u7eed. R611 = R610 \u955c\u50cf: 0 new since R610. News 7/1 redeploying-fable-5 = WSD. 6-30 batch \u5168\u90e8 cluster overlap \u6216 WSD."
+      "total_urls": 60,
+      "engineering_latest": "2026-06-06 how-we-contain-claude (25 days without new as of R612, 13-round streak R555/R591/R601-R611/R612-but-PLATEAU-BROKEN-BY-NEWSROOM)",
+      "research_latest": "2026-06-30 frontier-red-team + 2026-06-26 economic-index + 6/26 batch (10 research URLs)",
+      "news_latest": "2026-07-01 redeploying-fable-5 (WSD model) + 2026-06-30 claude-sonnet-5 (WSD) + **2026-06-30 claude-science-ai-workbench (R612 BREAKTHROUGH)**",
+      "writable": 1,
+      "skip_reason": "R612 BREAKTHROUGH via Anthropic Newsroom (not Engineering): Claude Science AI workbench (2026-06-30) is a 1st-party Anthropic announcement with 6 explicit Harness Engineering principles applied to scientific research. Engineering blog remains plateau but Newsroom突破. Anthropic 13-round plateau broken via Newsroom branch."
     },
     "openai_rss": {
       "total_items": 1028,
       "top_15_reviewed": 15,
       "tracked_in_top15": 4,
-      "new_in_top15": 0,
-      "new_engineering": 0,
-      "writable": 0,
-      "skip_reason": "R611 \u9a8c\u8bc1: R610 = R609 \u955c\u50cf 0 new, R611 = R610 \u955c\u50cf 0 new \u2014 saturation streak 5 \u7a33\u5b9a. 5h delta R610\u2192R611 = 0 new breakthrough."
-    },
-    "cursor_blog": {
-      "total_slugs": 97,
-      "tracked_via_articles": 37,
-      "uncovered_engineering_slugs": 53,
-      "writable": 0,
-      "skip_reason": "R611 = R610 \u955c\u50cf: 97 slugs stable. Top 2 engineering slugs (warp-decode + typescript-sdk) \u5168\u90e8 R558 cluster overlap. Reward-hacking-coding-benchmarks (Jun 25) \u5df2 R591 (Jun 28) \u5199\u8fc7, URL \u9632\u91cd\u547d\u4e2d."
-    },
-    "claude_blog_sitemap": {
-      "total_urls_english": 175,
-      "tracked": 57,
-      "untracked": 118,
-      "engineering_keyword_untracked": 59,
-      "writable": 0,
-      "skip_reason": "R611 JS-render \u9a8c\u8bc1\u8fd4\u56de\u7a7a, skip per R587 (5% engineering probability validation cycle complete)"
-    },
-    "github_search_14d": {
-      "total_candidates_checked": 10,
-      "viable_above_500_stars": 10,
-      "rate_limited": false,
-      "new_breakthrough": 1,
-      "cluster_validation_hit": "ksimback/looper (554\u2b50 MIT, 2026-06-18, Claude Code Skill Loop \u8bbe\u8ba1\u6559\u7ec3, 3 \u72ec\u7acb\u9879\u76ee 13 \u5929\u540c\u4e00\u8303\u5f0f cluster validation)",
-      "writable": 1,
-      "skip_reason": "ksimback/looper cluster validation \u547d\u4e2d (R605 Skill-as-Harness \u8303\u5f0f\u7b2c\u4e8c\u9879\u76ee). R611 \u8d70 \u300c\u6b21\u7ea7\u5173\u8054\uff1a\u6709\u5386\u53f2 Article \u672a\u914d Project \u2192 \u8865\u5145\u300d \u8def\u5f84 (SKILL.md \u6b63\u5f0f\u89c4\u5b9a). Project \u6587\u4ef6 ksimback-looper-claude-code-loop-design-coach-554-stars-2026.md \u5df2\u751f\u6210."
-    },
-    "hacker_news_top15": {
-      "entries_reviewed": 15,
       "new_in_top15": 11,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "R611 HN Top 15 \u9a8c\u8bc1: 4 entries R610 \u5df2\u5ba1\u8ba1 \u6301\u7eed (Claude Code steganography 1861\u2191 / Claude Sonnet 5 1089\u2191 / Fable 5 export controls lift 628\u2191 WSD / Claude Science 468\u2191 R604 cluster overlap). 11 NEW: ArXiv Next Chapter + Google copybara + CERN Long Shutdown 3 + Nano Banana 2 Lite + Leanstral 1.5 + Forestiere Underground Gardens + How pull-back car work + Matrix Orthogonalization + How information theory + human eggs \u5168\u90e8 WSD. Anthropic 1st-party Claude Code steganography response \u4ecd\u672a\u51fa\u73b0."
+      "skip_reason": "OpenAI 11 NEW = 全部 WSD/1st-party commercial/consumer/customer story/R518 boundary/R552 WSD models. Codex-maxxing 已在 R510/R531/R567 覆盖. No breakthrough candidate."
+    },
+    "cursor_blog": {
+      "total_slugs": 17,
+      "tracked_via_articles": 14,
+      "uncovered_engineering_slugs": 0,
+      "writable": 0,
+      "skip_reason": "17 slugs stable. 3 NEW (bugbot-updates-june-2026 / ios-mobile-app / notion) 全部 R558 cluster overlap. Top 2 engineering slugs (warp-decode + typescript-sdk) R558 cluster overlap 持续."
+    },
+    "claude_blog_sitemap": {
+      "total_urls_english": 175,
+      "tracked": 49,
+      "untracked": 127,
+      "engineering_keyword_untracked": 60,
+      "writable": 0,
+      "skip_reason": "R612 = R587 验证 5% engineering probability 完整 cycle 持续. All R558 1st-party cluster overlap (5+ cluster hits each). Skip per R587 protocol."
+    },
+    "github_search_14d": {
+      "total_candidates_checked": 12,
+      "viable_above_500_stars": 12,
+      "rate_limited": false,
+      "new_breakthrough": 1,
+      "writable": 1,
+      "tracked_growth_observation": "**NVIDIA-BioNeMo/bionemo-agent-toolkit (R612 BREAKTHROUGH PROJECT)**: 237⭐ (8 days since 2026-06-23 release) = NVIDIA 1st-party + Apache-2.0/CC-BY-4.0 dual-license + 14 NIM skills + 3 meta-skills + Anthropic Claude Science 官方协同 (skill CLI 一键安装到 Claude Code / Codex / Cursor). cloudflare/security-audit-skill 632⭐ (R591) → 2145⭐ (R612) = +1513⭐ monitoring only."
+    },
+    "hacker_news_top15": {
+      "entries_reviewed": 4,
+      "new_in_top15": 0,
+      "new_engineering": 0,
+      "writable": 0,
+      "skip_reason": "R612 HN Algolia time window 1751000000 still returns pre-2026-07 hits (R573 pitfall 确认). Skip per R573 protocol."
     }
   },
-  "r611_specific_findings": {
-    "decision": "cluster_validation_round_state_only_breakthrough",
-    "reason": "R611 \u8d70 \u6b21\u7ea7\u5173\u8054\u8def\u5f84\uff1a\u6ca1\u6709\u65b0 1st-party Article (R611 = R610 \u955c\u50cf) \u4f46\u53d1\u73b0 1 \u4e2a Skill-as-Harness cluster validation \u9879\u76ee (ksimback/looper 554\u2b50 MIT). \u5386\u53f2 Article R605 (launch-your-agent) \u672a\u914d Project, \u5f53\u8f6e looper \u586b\u8865\u8fd9\u4e2a\u7f3a\u53e3 \u2014 \u4f1a\u540c\u4e00 6 \u8288\u70b9 Goal\u2192Plan\u2192Review\u2192Deliver\u2192Judge\u2192Stop-clean harness \u3001cross-model judge gate \u3001typed YAML spec loop.yaml \u3001stop guards \u3001state + log \u4e0e R605 \u9ad8\u5ea6\u540c\u6e90\u3002\u8d70 \u8be5\u8def\u5f84\u540c\u65f6\u7ef4\u62a4\u4e86 \u300c\u8d28\u91cf\u4f18\u5148\u4e8e\u6570\u91cf\u300d \u539f\u5219\uff1a\u4e0d\u5f3a\u884c\u5199\u65b0 Article, \u907f\u514d\u89e6\u53d1 R573 / PENDING R587 \u53cd\u6a21\u5f0f\u8b66\u544a.",
-    "quasi_period_validation": "R611 = R555 \u51c6\u5468\u671f\u7b2c 25 \u6b21\u9a8c\u8bc1. R607+R608+R609+R610 = streak 4, R611 cluster validation bypass (\u6b21\u7ea7\u5173\u8054\u8def\u5f84). \u4e0d\u91cd\u590d\u8ba1\u4e3a saturation streak.",
-    "anthropic_7_4_window_proximity": "R611 = 7/1 13:57 = 7/4 \u72ec\u7acb\u65e5\u524d 2 \u5929 = \u5386\u53f2 release \u9ad8\u6982\u7387\u7a97\u53e3. R612 = 7/2 = \u72ec\u7acb\u65e5\u524d 1 \u5929 = \u6700\u9ad8\u6982\u7387 release \u7a97\u53e3.",
-    "skill_as_harness_cluster_validation": "R611 \u9a8c\u8bc1 3 \u72ec\u7acb\u9879\u76ee 13 \u5929\u540c\u4e00\u8303\u5f0f: anthropics/launch-your-agent (6-18, 584\u2b50 Apache-2.0) + ksimback/looper (6-18, 554\u2b50 MIT) + amplifthq/opentag (6-24, 398\u2b50 MIT). \u300cHarness-as-Skill\u300d \u662f\u4e00\u4e2a\u6b63\u5728\u6536\u655b\u7684\u8bbe\u8ba1\u6a21\u5f0f, \u4e0d\u662f\u624b\u5de5\u9009\u62e9.",
-    "anti_self_evaluation_connection": "ksimback/looper \u7684 cross-model judge gate \u4e0e Cursor 6/25 reward-hacking-coding-benchmarks \u6587\u7ae0 \u2014\u81ea\u5355\u6a21\u578b self-evaluation \u662f\u75c5\u56e0, cross-model review \u662f\u89e3\u836f\u2014 \u5728\u672c\u8d28\u4e0a\u540c\u5411. R591 (Jun 28) \u5df2\u8986\u76d6 Cursor \u6587\u7ae0, R611 looper project \u4ece\u4ee3\u7801\u5c42\u8868\u8fbe\u540c\u4e00\u903b\u8f91.",
-    "fundamental_ava_stability": "R611 Fundamental-Ava 651\u2b50 Apache-2.0 (R610 642\u2b50, +9 stars = +1.4%). R583 Articleless Project defer path \u6301\u7eed.",
-    "defer_candidates_5h_delta": "R611 defer candidates 5h delta R610\u2192R611: Fundamental-Ava +9 (\u552f\u4e00 minor Stars growth > 1%); \u5176\u4f59 8 \u4f9d\u65e7 \u5c0f\u4e8e 1%. 0 defer trigger \u547d\u4e2d.",
-    "article_project_close_loop": "R611 one-sided close: 0 new Article + 1 cluster validation Project (ksimback/looper) linked to R605 article (launch-your-agent). SKILL.md \u300c\u6b21\u7ea7\u5173\u8054\u300d \u8def\u5f84\u6b63\u5f0f\u89e6\u53d1."
+  "r612_specific_findings": {
+    "decision": "BREAKTHROUGH_ROUND_article_plus_project",
+    "reason": "R612 BREAKTHROUGH via Anthropic Newsroom claude-science-ai-workbench (2026-06-30, 1st-party Anthropic, 6 explicit Harness Engineering principles) + NVIDIA BioNeMo Agent Toolkit (2026-06-23, NVIDIA 1st-party, 14 NIM skills + 3 meta-skills, Anthropic 官方协同). SPM pair 形成「多 1st-party Harness Ecosystem」完整闭环.",
+    "quasi_period_validation": "R612 = R555 准周期第 27 次验证. R607+R608+R609+R610+R611 = streak 5 (历史最长之一) → R612 = streak BREAKTHROUGH via Newsroom (not Engineering). 准周期在 Newsroom branch 提前打破. Engineering 13-round plateau 在 R613-R614 持续预测.",
+    "anthropic_7_4_window_proximity": "R612 = 7/1 20:13 = 7/4 独立日前 2.5 天 = 突破提前于 7/4. R612 Newsroom claude-science 早于预期 = R555 准周期预测 「7/4 前 0-1 天窗口突破」实际提前到 7/4 前 2.5 天. R613 = 7/3 = 独立日前 1 天仍有突破概率 (Sonnet 5 / Fable 5 等 WSD 之外).",
+    "claude_science_6_harness_principles": [
+      "auditable-artifacts (figure + code + env + description + message history)",
+      "reproducible-compute (local + SSH/HPC + Modal GPU + draft-then-authorize)",
+      "skill-as-harness (60+ curated skills + connectors)",
+      "reviewer-agent / actor-critic (citations/numbers/figures self-check)",
+      "in-session-persistent-context (massive datasets loaded once + session fork)",
+      "local-first-sensitive-data (HPC login node + data minimization protocol)"
+    ],
+    "anthropic_newsroom_as_breakthrough_path": "R612 首次确认：Anthropic Newsroom branch (而非 Engineering) 可作为突破路径. claude-science-ai-workbench + claude-tag + claude-science-ai-workbench 体现 Anthropic 把 Harness Engineering 推广到 vertical product line 的趋势. R613-R614 持续监控 Anthropic Newsroom 1st-party announcements.",
+    "nvidia_bionemo_1st_party_partner": "R612 首次确认：NVIDIA-BioNeMo/bionemo-agent-toolkit (237⭐, 8 days, NOASSERTION but Apache-2.0 + CC-BY-4.0 dual-license file) 是 NVIDIA 1st-party 生命科学 Agent skill 生态. 与 Anthropic Claude Science 形成 「多 1st-party Harness Ecosystem」. 这是 Harness Engineering 的去中心化架构范例.",
+    "cloudflare_security_audit_skill_growth": "cloudflare/security-audit-skill 632⭐ (R591 2026-06-29) → 2145⭐ (R612 2026-07-02) = +1513⭐ = +240% 增长率 8 rounds. R576 Tracked Project Stars Growth Monitoring 实战: 已收录无需重写, 仅记录到 PENDING.md monitoring list.",
+    "fundamental_ava_stability": "R612 Fundamental-Ava 677⭐ Apache-2.0 (R611 651⭐, +26 stars = +4.0%, R583 Articleless Project defer path 持续).",
+    "defer_candidates_5h_delta": "R612 defer candidates 5h delta R611→R612: Fundamental-Ava +26 stars (+4.0%, 8 rounds 累计). 其余 8 defer 依旧 minor (无 +30% threshold 触发). cloudflare/security-audit-skill +1513⭐ already tracked, 仅 monitoring."
   },
   "defer_candidate_check": {
     "historical_defer_candidates": 9,
     "moved_or_triggered": 0,
-    "details": "R611 audit 9 historical defer candidates: amplifthq/opentag (398\u2b50 MIT, +0) / TianhangZhuzth/Fundamental-Ava (651\u2b50 Apache-2.0, +9) / QwenLM/Qwen-AgentWorld (688\u2b50 Apache-2.0, +0) / Plaer1/junction (646\u2b50 MIT, +0) / BuilderIO/agent-native (3233\u2b50 None, +0) / uphiago/recon-skills (286\u2b50 None) / eli-labz/Godcoder (258\u2b50 NOASSERTION) / YurunChen/repo-docs-skills (270\u2b50 None) / Johell1NS/browser-search (266\u2b50 MIT). Only Fundamental-Ava +9 stars (+1.4%, within minor growth threshold). 0 defer trigger \u547d\u4e2d."
+    "details": "R612 audit 9 historical defer candidates: amplifthq/opentag (398⭐ MIT, +0) / TianhangZhuzth/Fundamental-Ava (677⭐ Apache-2.0, +26 stars 8-round growth) / QwenLM/Qwen-AgentWorld (688⭐ Apache-2.0, +0) / Plaer1/junction (646⭐ MIT, +0) / BuilderIO/agent-native (3233⭐ License=None, +0) / uphiago/recon-skills (286⭐ None) / eli-labz/Godcoder (258⭐ NOASSERTION) / YurunChen/repo-docs-skills (270⭐ None) / Johell1NS/browser-search (266⭐ MIT). Only Fundamental-Ava minor Stars growth. 0 defer trigger 命中. NVIDIA-BioNeMo/bionemo-agent-toolkit NOT in defer list (NEW from R612 Newsroom scan)."
+  },
+  "tracked_stars_growth_monitoring": {
+    "r576_protocol_active": true,
+    "monitoring_list": [
+      {"name": "cloudflare/security-audit-skill", "stars_r591": 632, "stars_r612": 2145, "growth_pct": 239, "rounds": 8, "threshold_triggered": true, "action": "monitoring only (already tracked R591)"},
+      {"name": "HKUDS/AgentSpace", "stars_r555": 339, "stars_r612": 592, "growth_pct": 74, "rounds": 9, "threshold_triggered": true, "action": "monitoring only (already tracked R555)"},
+      {"name": "NVIDIA-BioNeMo/bionemo-agent-toolkit", "stars_r612": 237, "growth_pct": 0, "rounds": 1, "threshold_triggered": false, "action": "JUST TRACKED R612 as breakthrough project"}
+    ]
   },
   "quasi_period_observation": {
-    "r555_quasi_period_validations": 25,
-    "new_validation": "R611 = R555 \u51c6\u5468\u671f\u7b2c 25 \u6b21\u9a8c\u8bc1. R607+R608+R609+R610 = streak 4, R611 cluster validation bypass (Skill-as-Harness 3-project convergence signal). R612 \u9884\u6d4b\u7a97\u53e3: 7/4 \u72ec\u7acb\u65e5\u524d 1 \u5929 (2026-07-02). \u5386\u53f2 release \u6982\u7387 highest. \u9884\u6d4b: 60% breakthrough (R612 = cluster validation \u4f9d\u7136 possible, but Anthropic 1st-party release \u6700\u9ad8\u6982\u7387) / 25% saturation streak 5 \u8fd0\u884c / 15% cluster validation \u8def\u5f84.",
-    "saturation_streak": 5,
-    "r612_prediction": "R612 prediction: 7/2 = 7/4 \u72ec\u7acb\u65e5\u524d 1 \u5929 \u2014 Anthropic 1st-party engineering blog release \u6700\u9ad8\u6982\u7387\u7a97\u53e3. Anthropic Engineering 12-round streak + 25 \u5929 plateau \u5373\u5c06\u88ab\u6253\u7834 (R612 breakthrough \u6700\u9ad8\u6982\u7387). \u9884\u6d4b: 60% breakthrough / 25% saturation streak 5 / 15% cluster validation \u8def\u5f84."
+    "r555_quasi_period_validations": 27,
+    "new_validation": "R612 = R555 准周期第 27 次验证. R607+R608+R609+R610+R611 = streak 5 (历史最长之一) → R612 = streak BREAKTHROUGH via Anthropic Newsroom. 准周期在 Newsroom branch 提前打破. R613 预测: 50% 突破继续 (Engineering 13-round plateau 或其他 Newsroom 1st-party) / 30% saturation streak 6 重建 / 20% cluster validation.",
+    "saturation_streak": 0,
+    "r613_prediction": "R613 prediction: 7/3 = 7/4 独立日前 1 天 = 凌晨/上午 release 最高概率窗口. Anthropic Engineering 13-round plateau (25 天) 可能被打破. Anthropic Newsroom 突破模式可能继续 (Sonnet 5.5? New Claude product line?). 预测: 50% breakthrough / 30% saturation streak 6 重建 / 20% cluster validation."
+  },
+  "spm_pair": {
+    "article": "articles/harness/anthropic-claude-science-vertical-harness-scientific-discovery-2026.md",
+    "project": "projects/nvidia-bionemo-agent-toolkit-vertical-life-sciences-skills-237-stars-2026.md",
+    "rationale": "Claude Science (60+ curated skills + reviewer agent + auditable artifacts) + BioNeMo Agent Toolkit (14 NIM skills + 3 meta-skills) = '多 1st-party Harness Ecosystem' first instance. 两者互补：Anthropic 提供协议层, NVIDIA 提供领域能力层. SPM 形成完整 vertical harness ecosystem 闭环."
   }
 }

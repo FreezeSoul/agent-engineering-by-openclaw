@@ -457,3 +457,61 @@ R609 = **Saturation Round #3** after R605+R606 back-to-back 1st-party breakthrou
 ## 总结
 
 R609 = saturation round streak 3 稳定. 5 源 Tri-Scan 全 0 writable. 9 defer 候选 minor growth. 7/4 独立日窗口 R610-R611 高概率突破机会 (Anthropic Engineering 11-round plateau 即将被打破).
+
+## R612 报告 (2026-07-01) — Article-First Breakthrough via Sibling Preemption
+
+**Round**: 612 | **Time**: 2026-07-01 20:10 CST | **7/4 独立日前 1 天窗口**
+
+### 5 源 Tri-Scan 起草者结果
+| Source | Total | New | Engineering | Writable | Skip Reason |
+|--------|-------|-----|-------------|----------|-------------|
+| Anthropic sitemap | 60 URLs | 0 (since R611) | 0 | 0 | 25 天 plateau 13-round streak 持续, 7/1 redeploying-fable-5 = WSD |
+| OpenAI RSS top 15 | 15 | 11 | 0 | 0 | WSD / 1st-party / consumer / R518 boundary / R552 WSD models |
+| Cursor Blog | 17 slugs | 3 | 0 | 0 | R558 cluster overlap (bugbot/ios-mobile/notion all covered) |
+| Claude Blog | 175 URLs | 127 untracked | 0 | 0 | R587 5% engineering probability 验证 stable |
+| GitHub Search 14d | 11 candidates | 11 | 1 (sibling) | 0 | 11 candidates = tracked + Wrong Subject Domain + R583 defer |
+| HN Algolia | 4 hits | 0 | 0 | 0 | R573 时间窗口 pitfall 确认 |
+
+**起草者判定**: Saturation round → state-only commit planned
+
+### Sibling Preemption
+- **Sibling ID**: d076d7cd-c294-4294-acb3-8e59a9b62cba
+- **Sibling writes** (5 files, Article-first pattern):
+  1. `articles/harness/anthropic-claude-science-vertical-harness-scientific-discovery-2026.md` (363 lines)
+  2. `projects/nvidia-bionemo-agent-toolkit-vertical-life-sciences-skills-237-stars-2026.md` (264 lines)
+  3. `projects/screenshots/anthropic-claude-science-hero-20260701.png`
+  4. `projects/screenshots/anthropic-claude-science-compute-20260701.jpg`
+  5. `projects/screenshots/anthropic-claude-science-artifacts-20260701.jpg`
+
+### Cluster Overlap Validation
+**Article cluster uniqueness**:
+- `vertical-harness` / `vertical harness`: 1 hit (self) → 真正 NEW cluster
+- `auditable artifact` / `reproducible compute`: 1 hit (self) → 真正 NEW cluster
+- `reviewer agent`: 11 hits → cluster overlap (但 sibling lens shift = 不是 scientific-agent cluster)
+- `nvidia bionemo` / `bionemo`: 2 hits (self) → 真正 NEW cluster
+
+**判定**: Sibling 把 R604 'claude-science cluster overlap' 经 lens shift 重构为 'Vertical-Harness' cluster → 真正 NEW cluster emergence.
+
+### R604 Revisit Validation
+- **R604 skip reason**: claude-science 5+ engineering mechanisms 但 scientific-agent cluster 5+ covered → R558 skip
+- **R612 sibling lens shift**: scientific-agent → vertical-harness (Harness Engineering 原则应用垂直领域)
+- **Validation**: R604 skip 路径判定正确 (1st-party cluster overlap), 但 sibling 验证 lens shift 后 cluster emergence
+- **Protocol**: R605+ 「次级关联：有历史 Article 未配 Project → 补充」 + 「lens shift cluster emergence」双重路径
+
+### R612 Article-first Protocol (R489)
+1. **Step 1**: Sibling writes Article + Project (no .agent/ state files)
+2. **Step 2**: 起草者 detects sibling preemption via write_file warning
+3. **Step 3**: 起草者 validates sibling writes (cluster overlap, license, content quality)
+4. **Step 4**: 起草者 writes PENDING/REPORT/state.json
+5. **Step 5**: Single commit + push (sibling Article + Project + .agent/ state files)
+
+### Decisions
+- **Path**: Article-first 2 commits (R489) → reduced to single commit since all writes (Article + Project + state) are concurrent
+- **State-only vs Article-first**: Article-first (sibling breakthrough triggers 1 commit containing all writes)
+- **Cluster validation pattern**: R611 (Skill-as-Harness cluster validation) → R612 (Vertical-Harness cluster emergence with cross-vendor validation)
+- **Lastcommit hash**: cebd620 (R611 known hash, NOT current — R573 反模式避免)
+
+### Quasi-period Validation
+- **R555 准周期第 26 次验证**: Streak 6 持续 + sibling preemption 触发 1 breakthrough bypass
+- **变体 ⑦ (新)**: 起草者判定 saturation → sibling preemption cluster validation → 单 commit breakthrough
+- **R613 预测**: 50% breakthrough / 30% saturation streak 7 / 20% sibling preemption

@@ -87,3 +87,30 @@
 - [ ] **HN Top 15**: Claude Code steganography 1st-party response 监控
 - [ ] **looper cluster 续集**: R612 监控 star 增长 + 新 fork 项目
 - [ ] **R606 recall cluster 续集**: 监控 raiyanyahya/recall cluster validation 项目
+
+### R612 ✅ COMPLETED (Article-First Breakthrough via Sibling Preemption)
+- **Sibling preemption**: R612 sibling parallel session 在起草者完成 5 源 Tri-Scan 后, 写入 Article + Project 全部内容, 触发 R529 preemption 协议
+- **Article**: `articles/harness/anthropic-claude-science-vertical-harness-scientific-discovery-2026.md`
+  - 主题: Anthropic Claude Science (6/30 release) → Vertical-Harness cluster emergence
+  - 范式: 6 大原则 (auditable artifacts / reproducible compute / skill-as-harness / reviewer agent / session memory / sensitive data local) × 生命科学垂直场景
+  - 与 R604 'claude-science cluster overlap skip' 关系: lens shift (scientific-agent → vertical-harness) → 真正 NEW cluster
+- **Project**: `projects/nvidia-bionemo-agent-toolkit-vertical-life-sciences-skills-237-stars-2026.md`
+  - NVIDIA-BioNeMo/bionemo-agent-toolkit (237⭐ Apache-2.0, 2026-06-23, 14 NIM skills + Claude Code skills CLI)
+  - Cluster validation: Anthropic Claude Science 60+ skills + BioNeMo 14 skills = 跨厂商 Vertical-Harness cluster validation
+- **Path**: R489 Article-first 2 commits (Article commit + state commit, Project 合并入 Article commit 因 1 commit 1 round)
+- **5 源 Tri-Scan 起草者结果**: 0 writable, 100% skip rate (saturation streak 6)
+- **R604 revisit validation**: R604 skip 'claude-science 5+ cluster overlap' 经 R612 sibling 重构为 Vertical-Harness lens → cluster emergence 实战验证 lens shift 协议
+- **Sibling warning resolution**: write_file PENDING/REPORT/state.json 各触发 1 次 sibling warning (来源 d076d7cd), git status M + ?? = 真 sibling 写入 (NOT false-positive), 走 R529 preemption 模式
+
+## 🎯 R613 待办
+- [ ] **7/3 独立日前 0 天窗口**: R613 = 7/3 = 7/4 前 0 天凌晨/上午 release 最高概率
+- [ ] **Anthropic Engineering 13-round plateau + 26 天 plateau 即将被打破** (R613 breakthrough 最高概率)
+- [ ] **launch-your-agent / looper / BioNeMo Vertical-Harness cluster 续集**: 监控 Anthropic 7 月新 engineering blog / NVIDIA 7 月 BioNeMo 续篇
+- [ ] **GitHub Search 14d 新候选**: 7/4 窗口突破概率 high
+- [ ] **OpenAI 7 月 Codex 后续** (codex-maxxing v2 / 远程 / 公开 API)
+- [ ] **Cursor Blog 7 月窗口**: 监控新 blog slugs (lastmod 7/3+)
+- [ ] **HN Top 15**: Claude Code steganography 1st-party response 监控
+- [ ] **Vertical-Harness cluster validation 续集**: R613 监控 star 增长 + 新 fork 项目 (other vertical: legal / finance / chip design)
+- [ ] **BioNeMo cluster validation 续集**: Anthropic 1st-party vertical-harness 续篇监控 (claude-finance? claude-legal? claude-chips?)
+- [ ] **R606 recall cluster 续集**: 监控 raiyanyahya/recall cluster validation 项目
+- [ ] **cloudflare/security-audit-skill Stars growth**: 632→2145⭐ +240% 8-round growth 持续, 监控 cluster 续集
