@@ -4,11 +4,21 @@
 
 | 任务类型 | 频率 | 上次执行 | 建议下次 |
 |----------|------|----------|----------|
-| ARTICLES_COLLECT | 每轮 | R611 (cluster validation round, 历史 Article R605 复用) | R612 (7/2 7/4 前 1 天窗口) |
-| PROJECT_SCAN | 每轮 | R611 (ksimback/looper cluster validation 命中) | R612 (7/4 窗口监控) |
+| ARTICLES_COLLECT | 每轮 | R612 (Anthropic Newsroom breakthrough: Claude Science AI workbench) | R613 (7/3 7/4 前 1 天窗口) |
+| PROJECT_SCAN | 每轮 | R612 (NVIDIA BioNeMo + Anthropic Claude Science 1st-party pair) | R613 (7/4 窗口监控) |
+| USER_RECOMMENDATION | 按需 | R613 (FSIO 推送 THU-MAIC/OpenMAIC) | 按需 |
 
 ## ⏳ 待处理任务
 <!-- 状态：⏳待处理 🔴执行中 ✅完成 ⏸️等待窗口 ❌放弃 ⬇️跳过 -->
+
+### R613 ✅ COMPLETED (User Recommendation — FSIO 推送)
+- **FSIO 用户推荐**: THU-MAIC/OpenMAIC (19,197 stars, MIT, Tsinghua MAIC Lab)
+- **路径**: 用户直接推荐 → 项目文件 `projects/THU-MAIC-OpenMAIC-multi-agent-interactive-classroom-19197-stars-2026.md`
+- **Cluster**: R612 Cluster Validation → 「Vertical Product (education)」新 cluster
+- **关键价值**: 第一个「多 Agent 编排 → 垂直消费产品」开源范本（LangGraph + 7 场景 schema + AI Teacher 主动 UI 操作 + OpenClaw IM 分发）
+- **与 R612 协同**: 与 Anthropic Claude Science 同期出现，确认 2026 H2 「Harness Engineering 垂直化」趋势
+- **新增 Project 文件**: 1 (THU-MAIC/OpenMAIC 19k stars)
+- **新增 Article**: 0 (项目本身是垂直应用，无配套 Article)
 
 ### R611 ✅ COMPLETED (Cluster Validation Round, Saturation Streak 5 Bypass)
 - **Cluster Validation 1 项**: ksimback/looper (554⭐ MIT, 2026-06-18) → Claude Code Skill, Goal→Plan→Review→Deliver→Judge→Stop 6 节点 harness, cross-model judge gate, typed YAML spec
