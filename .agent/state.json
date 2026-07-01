@@ -1,24 +1,22 @@
 {
-  "lastRun": "2026-07-01T21:57:00+08:00",
-  "lastCommit": "fca0626",
-  "round": 613,
-  "status": "BREAKTHROUGH_ROUND_github_blog_copilot_harness",
+  "lastRun": "2026-07-02T02:23:39+08:00",
+  "lastCommit": "7208b43",
+  "round": 614,
+  "status": "SATURATION_ROUND_5_source_triscan",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "breakthrough_round_article_plus_project",
+  "type": "saturation_round_state_only",
   "scan_summary": {
     "anthropic_sitemap": {
-      "total_urls": 60,
-      "engineering_latest": "2026-06-06 how-we-contain-claude (25 days without new as of R613, 14-round streak R555/R591/R601-R613)",
-      "research_latest": "2026-06-30 frontier-red-team + 2026-06-26 economic-index + 6/26 batch",
-      "news_latest": "2026-07-01 redeploying-fable-5 + 2026-06-30 claude-sonnet-5 + 2026-06-30 claude-science-ai-workbench (R612 BREAKTHROUGH)",
-      "new_in_sitemap_7_1": [
-        "claude-for-financial-services (R518 boundary: actually 5/5 旧闻, only sitemap lastmod 7/1, 10 finance agents originally announced by Anthropic 5/5, Reuters/Forbes confirmed — R518 TRAP)",
-        "events/aws-summit-{dc, london, nyc, tokyo} (event pages, not articles)",
-        "claude-corps (claude-corps community update)"
-      ],
+      "total_urls_with_lastmod": 402,
+      "engineering_urls": 25,
+      "news_urls": 234,
+      "research_urls": 143,
+      "recent_2026_06_30_plus": 4,
+      "new_in_recent": 0,
+      "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R613 = R612 突破后 1.7h 间隔. Anthropic sitemap 14-round plateau 持续. claude-for-financial-services = R518 boundary trap (5/5 旧闻, only sitemap lastmod 7/1 refresh, NOT new content). Skip per R518 protocol."
+      "skip_reason": "R614 = R613 15-round Anthropic Engineering plateau 持续 (last 2026-06-06). 4 recent (>=2026-06-30) 全部已 covered: redeploying-fable-5 (R552 WSD models), claude-science-ai-workbench (R612 BREAKTHROUGH), claude-sonnet-5 (R612 covered), frontier-red-team (R5xx covered). 0 engineering new."
     },
     "openai_rss": {
       "total_items": 1028,
@@ -27,100 +25,72 @@
       "new_in_top15": 11,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "OpenAI 11 NEW = 全部 WSD/1st-party commercial/consumer/customer story/R518 boundary/R552 WSD models. NEW 6/30 GenBench-Pro (benchmark, no harness) + 6/30 core-dump-epidemiology (infra debugging, low relevance) + 6/29 mapping-ai-jobs-transition-eu (policy). No engineering breakthrough."
+      "skip_reason": "R614 OpenAI 11 NEW = 全部 WSD/cluster overlap. 7-class distribution: 5 WSD (chatgpt-adoption metrics / core-dump debugging / mapping-ai-jobs policy / gpt-5-6-sol models R552 / broadcom-jalapeno hardware / helping-build-shared-standards policy) + 3 Cluster Overlap 1st-party commercial (hp-frontier partnership R573/R587 pattern / omio customer story / patch-the-planet R518 Daybreak) + 1 Cluster Overlap (genebench-pro evaluation R525/R510/R584 SWE-rebench). 0 engineering breakthrough."
     },
     "cursor_blog": {
       "total_slugs": 17,
-      "tracked_via_articles": 14,
+      "tracked_via_articles": 17,
       "uncovered_engineering_slugs": 0,
       "writable": 0,
-      "skip_reason": "17 slugs stable. No new 7月 slugs. Last engineering is 2026-06-25 reward-hacking. No breakthrough."
+      "skip_reason": "R614 Cursor 17 slugs 全部 covered. 0 new 7月 slug. Last engineering 2026-06-25 reward-hacking. 4 detailed-checked: bugbot-updates-june-2026 (covered R591), ios-mobile-app (R518 product announcement), teams-pricing-june-2026 (R518 product announcement), notion (covered R506/R559). All 0 new."
     },
     "claude_blog_sitemap": {
       "total_urls_english": 175,
       "tracked": 49,
       "untracked": 127,
-      "engineering_keyword_untracked": 60,
+      "engineering_keyword_untracked": 27,
+      "engineering_candidates_actually_NEW": 0,
       "writable": 0,
-      "skip_reason": "R613 = R587 验证 5% engineering probability cycle 持续. All R558 1st-party cluster overlap (5+ cluster hits each). Skip per R587 protocol."
+      "skip_reason": "R614 Claude Blog 127 untracked = R587 5% engineering probability cycle 持续. 27 engineering-keyword URLs 全部 1st-party product announcement (auto-mode, slack, mcp, managed-agents, ios, excel, m365). 0 个真正 engineering deep-dive. Skip per R587 protocol."
     },
-    "github_blog": {
-      "total_urls_reviewed": 5,
-      "new_breakthrough": 2,
-      "writable": 1,
-      "articles_found": [
-        "Getting more from each token: How Copilot improves context handling and model routing (2026-06-17, Joe Binder, VP Product) — 3 大机制 (prompt caching 94% / deferred tool loading / HyDRA routing)",
-        "Evaluating performance and efficiency of the GitHub Copilot agentic harness (2026-06-25, Shibani Basava + Carlos Castro) — TerminalBench 2.0 量化对比 vs Claude Code native + Codex CLI native"
-      ],
-      "rationale": "R613 突破路径: GitHub Blog 1st-party. 第一篇 (6/17) 详细描述 3 大机制 (94% cache / tool search / HyDRA routing) + cache-aware routing 设计哲学. 第二篇 (6/25) 提供量化对比 (18% token reduction, 94% cache hit, 3.3x cost savings). 两篇构成完整 1st-party harness engineering 方法论."
-    },
-    "github_search_14d": {
-      "total_candidates_checked": 12,
-      "viable_above_500_stars": 0,
-      "viable_under_500_stars_companion": 1,
+    "github_search_10d": {
+      "total_candidates_checked": 10,
+      "tracked_or_covered": 7,
+      "writable": 0,
+      "borderline_assessed": 2,
+      "new_breakthrough": 0,
       "rate_limited": false,
-      "new_breakthrough": 1,
-      "writable": 1,
-      "tracked_growth_observation": "**OnlyTerp/prompt-cache-skills (R613 BREAKTHROUGH PROJECT)**: 107⭐ Python (34 days since 2026-05-28 release) = NOASSERTION license + 13 skills + 13 audits + 10x savings + Skill-as-Harness 范式. 与 R605 anthropics/launch-your-agent 同范式, 是 GitHub 94% cache insight 的 OSS 民主化最佳实例. cloudflare/security-audit-skill R612=2145⭐ 持续 monitoring."
-    },
-    "hacker_news_top15": {
-      "entries_reviewed": 4,
-      "new_in_top15": 0,
-      "new_engineering": 0,
-      "writable": 0,
-      "skip_reason": "R613 HN Algolia time window 1751000000 still returns pre-2026-07 hits (R573 pitfall 确认). Skip per R573 protocol."
+      "borderline_details": [
+        {"name": "Kulaxyz/self-learning-skills", "stars": 672, "license": "MIT", "date": "2026-06-28", "classification": "Cluster Validation (R591 cursor-bugbot-learned-rules-self-improving + R5xx openai-self-improving-tax-agents + R5xx langchain-rubricmiddleware all covered). Unique angle: auto-promotion rule (3-condition gate) + vercel-labs/skills CLI 70+ agent support. Decent but R591 Self-Improving Skill cluster already saturated.", "decision": "Skip (cluster validation not breakthrough)"},
+        {"name": "LING71671/open-reverselab", "stars": 281, "license": "GPL-3.0", "date": "2026-06-17", "classification": "Wrong Subject Domain (vertical RE/security, MCP cluster overlap R573/R587, but specific RE angle not agent-engineering focus) + License GPL-3.0 (viral, not ideal) + Stars 281 < gambit 241⭐ threshold borderline + description has 'AI jailbreak bug' warning. Skip.", "decision": "Skip (WSD + GPL + Stars + bug warning)"}
+      ],
+      "skip_reason": "R614 GitHub 10 candidates 全部 accounted for. 7 already tracked (cloudflare/security-audit-skill 2168⭐ R591, Forsy-AI/agent-apprenticeship 1125⭐ R521, raiyanyahya/recall 644⭐ R606, anthropics/launch-your-agent 595⭐ R605, ksimback/looper 556⭐ R611, amplifthq/opentag 506⭐ R583 deferred, lyra81604/zhengxi-views 1137⭐ WSD consumer Chinese finance) + 1 utility (m1ckc3s/claude-status-bar 430⭐ WSD utility). 2 borderline both Skip."
     }
   },
-  "r613_specific_findings": {
-    "decision": "BREAKTHROUGH_ROUND_article_plus_project",
-    "reason": "R613 BREAKTHROUGH via GitHub Blog (2026-06-17 Joe Binder 'Getting more from each token' + 2026-06-25 Shibani Basava + Carlos Castro 'Evaluating performance and efficiency') + OnlyTerp/prompt-cache-skills (2026-05-28, 107⭐ Python, 13 skills / 13 audits / 10x savings, Skill-as-Harness 范式). 1st-party 突破第三路径开启（继 R605 Anthropic Engineering + R612 Anthropic Newsroom 后）. SPM pair 形成 GitHub 1st-party 突破 + OSS 民主化 完整闭环.",
-    "quasi_period_validation": "R613 = R555 准周期第 28 次验证. R612 = streak BREAKTHROUGH #1 via Anthropic Newsroom. R613 = streak BREAKTHROUGH #2 via GitHub Blog (5h 间隔). 1st-party 突破不再依赖 Anthropic Engineering blog — Newsroom / GitHub Blog / Cursor Research 都是活跃路径.",
-    "anthropic_engineering_plateau_status": "R613 Anthropic Engineering plateau 持续 (25 天 / 14-round streak R555/R591/R601-R613). 但 Newsroom + GitHub Blog 突破已独立存在. Engineering plateau 不再是仓库产出瓶颈.",
-    "anthropic_7_4_window_proximity": "R613 = 7/1 21:57 = 7/4 独立日前 2.5 天. 1.7h delta R612→R613 = back-to-back 突破 (历史第 2 次, 第 1 次为 R605+R606). 突破速率异常 high.",
-    "github_blog_3_mechanisms": [
-      "extended-prompt-caching (94% cache hit rate for Anthropic models in VS Code + cache-control breakpoints + provider-specific optimization)",
-      "deferred-tool-loading (tool search mechanism, on-demand schema loading, broad toolset + narrow schema)",
-      "hydra-routing (cross-lingual LLM router, 16 language families, 3 operating points Peak/Agg/Cons, 3.3x cost savings, cache-aware routing design)"
-    ],
-    "github_blog_quantified_results": {
-      "token_reduction": "18%",
-      "cache_hit_rate": "94% (Anthropic models in VS Code)",
-      "cost_savings": "3.3x (at equal SWE-bench accuracy)",
-      "cross_lingual_accuracy_gap": "within 4 points of English baseline (16 language families)",
-      "operating_points": {
-        "Peak": "exceeds Sonnet at 12.9% savings",
-        "Agg": "balances quality for 72.5% savings",
-        "Cons": "ties OpenRouter Auto (70.8% resolution) at 3.3x savings"
-      }
-    },
-    "github_blog_benchmark_methodology": "TerminalBench 2.0 (89 tasks, 5 independent runs, pass@1) + SWE-bench + 自有 benchmarks. 标准化: context window / prompt token limit / reasoning effort (medium) / no tool search / no MCP servers / default built-in tools / pass@1 报告. 排除 infrastructure anomalies. 与 Claude Code native (Claude Sonnet 4.6 + Opus 4.7) + Codex CLI native (GPT-5.4 + GPT-5.5) 公平对比.",
-    "r518_boundary_trap_validation": "R613 claude-for-financial-services URL = R518 boundary trap 实战验证. URL lastmod 7/1 实际是 5/5 旧闻 (10 finance agents originally announced by Anthropic 5/5, Reuters/Forbes/Yahoo Finance confirmed). sitemap lastmod ≠ 内容新度. 跳过 per R518 protocol.",
-    "cross_model_harness_as_product_paradigm": "R613 首次命名 Cross-Model-Harness as Product 范式: 不依赖自研模型, 通过 cache + routing + tool search 把 harness 做成独立产品. 与 Anthropic '模型即产品' + OpenAI '模型即平台' 形成第三种 harness 哲学.",
-    "anthropic_claude_for_finance_r518_boundary": "Anthropic claude-for-financial-services URL (sitemap lastmod 7/1) 实际是 5/5 旧闻. Anthropic 5/5 发布 10 个金融 agents (Reuters/Forbes 报道). 7/1 仅是 sitemap refresh. Skip per R518 protocol. 与 R605/R612 cluster 无 cluster overlap (R518 boundary content has its own cluster)."
+  "r614_specific_findings": {
+    "decision": "SATURATION_ROUND_5_source_triscan",
+    "reason": "R614 = 5-source Tri-Scan 全 0 writable. 4 recent Anthropic URLs 全部 covered. 11 OpenAI NEW 全部 WSD/cluster overlap. 17 Cursor slugs 全部 covered. 127 Claude Blog untracked = R587 5% engineering pattern 持续 (0 engineering candidates). 10 GitHub candidates 全部 classified (7 tracked + 1 WSD utility + 2 borderline cluster-validation/WSD-skip). 10.4h delta R613→R614 (夜间)。",
+    "quasi_period_validation": "R614 = R555 准周期第 29 次验证. R612 (突破 #1) + R613 (突破 #2 back-to-back) → R614 (saturation) = 2-round breakthrough → 1-round saturation cooling. 完整周期变体: ⑦ back-to-back breakthroughs (R612-R613 5h 间隔, 历史第 2 次). R614 1-round cooling 后 R615 prediction: 30% breakthrough #3 / 50% saturation streak 2 / 20% partial.",
+    "anthropic_engineering_plateau_status": "R614 Anthropic Engineering plateau = 15 rounds streak R555/R591/R601-R614. 完整周期内突破路径已完全转移到 1st-party Newsroom (R612) + 1st-party GitHub Blog (R613). R615 预期: 7/4 独立日 window 1.5 天 = Anthropic 可能发 engineering post (历史 7/4 release 模式).",
+    "anthropic_7_4_window_proximity": "R614 = 2026-07-02 02:23 +0800 = 7/4 美国独立日前 1.5 天. Anthropic Engineering 15-round plateau 可能在 7/2-7/3 窗口被打破 (历史 7/4 release 模式). R615 重点监控.",
+    "kulaxyz_self_learning_skills_borderline_assessment": "Kulaxyz/self-learning-skills (672⭐ MIT 2026-06-28) = 4 days old + 1.5x Stars growth in 4 days + unique 3-condition promotion rule (passing check + named failure + ruled-out dead-end) + vercel-labs/skills CLI 70+ agent support. BUT: cluster overlap R591 cursor-bugbot-learned-rules-self-improving + R5xx openai-self-improving-tax-agents-codex-eval-loop + R5xx langchain-rubricmiddleware-evaluator-loop-self-improving-agents = self-improving-skill cluster 6+ 篇已 saturated. Skip per cluster validation rule.",
+    "ling71671_open_reverselab_borderline_assessment": "LING71671/open-reverselab (281⭐ GPL-3.0 2026-06-17) = MCP tools + 197-article knowledge base + CTF/APK/PE automation toolchain + Agent-native. BUT: license GPL-3.0 (viral, not ideal for integration) + Stars 281 below gambit 241⭐ borderline + description has 'AI jailbreak bug' warning (R573 type skip) + cluster MCP overlap. Skip per WSD + License + Stars + bug warning.",
+    "openai_6_30_genebench_pro_assessment": "OpenAI GeneBench-Pro 2026-06-30 = 1st-party evaluation benchmark for genomics/biology. 0 engineering mechanism detail. Cluster Overlap (R525 ai-chemist / R510 SWE-rebench / R584 SWE-rebench V2 already saturated). Skip.",
+    "openai_6_29_hp_partnership_assessment": "OpenAI HP Inc. partnership 2026-06-29 = 1st-party commercial customer story. Pattern matches R573/R587 Anthropic 6/26 partnership cluster (100% cluster overlap). Skip.",
+    "openai_6_30_core_dump_assessment": "OpenAI Core dump epidemiology 2026-06-30 = OpenAI internal infra debugging case study (large-scale core dump analysis found 18-year-old bug + hardware fault). Interesting engineering content but Wrong Subject Domain (OpenAI internal SRE, not agent engineering harness). Skip.",
+    "openai_6_30_chatgpt_adoption_assessment": "OpenAI ChatGPT adoption metrics 2026-06-30 = consumer/global usage metrics (no agent engineering mechanism). Wrong Subject Domain (consumer analytics). Skip.",
+    "openai_6_29_mapping_ai_jobs_assessment": "OpenAI Mapping Europe's AI Workforce 2026-06-29 = labor economics / policy report. Wrong Subject Domain (policy, not engineering). Skip."
   },
   "defer_candidate_check": {
     "historical_defer_candidates": 9,
     "moved_or_triggered": 0,
-    "details": "R613 audit 9 historical defer candidates: amplifthq/opentag (398⭐ MIT, +0) / TianhangZhuzth/Fundamental-Ava (~700⭐ Apache-2.0, minor growth) / QwenLM/Qwen-AgentWorld (688⭐ Apache-2.0, +0) / Plaer1/junction (646⭐ MIT, +0) / BuilderIO/agent-native (3233⭐ License=None, +0) / uphiago/recon-skills (286⭐ None) / eli-labz/Godcoder (258⭐ NOASSERTION) / YurunChen/repo-docs-skills (270⭐ None) / Johell1NS/browser-search (266⭐ MIT). Only Fundamental-Ava minor Stars growth. 0 defer trigger 命中. OnlyTerp/prompt-cache-skills NOT in defer list (NEW from R613 GitHub Blog scan)."
+    "details": "R614 audit 9 historical defer candidates: amplifthq/opentag (506⭐ R614, was 398⭐ R583, +27% growth but still < 1000⭐ threshold for re-eval) / TianhangZhuzth/Fundamental-Ava (~750⭐ Apache-2.0 R614, was ~700⭐ R583, +7% minor growth) / QwenLM/Qwen-AgentWorld (~700⭐ R614, was 688⭐ R583, +2% minor) / Plaer1/junction (~650⭐ R614, was 646⭐ R583, +1% minor) / BuilderIO/agent-native (~3250⭐ License=None R614, was 3233⭐ R583, +1% minor) / uphiago/recon-skills (~290⭐ None R614) / eli-labz/Godcoder (~265⭐ NOASSERTION R614) / YurunChen/repo-docs-skills (~280⭐ None R614) / Johell1NS/browser-search (~275⭐ MIT R614). 0 defer trigger 命中. New borderline Kulaxyz (672⭐ MIT) + LING71671 (281⭐ GPL-3.0) both Skip (not added to defer list)."
   },
   "tracked_stars_growth_monitoring": {
     "r576_protocol_active": true,
     "monitoring_list": [
-      {"name": "cloudflare/security-audit-skill", "stars_r591": 632, "stars_r612": 2145, "growth_pct": 239, "rounds": 8, "threshold_triggered": true, "action": "monitoring only (already tracked R591)"},
-      {"name": "HKUDS/AgentSpace", "stars_r555": 339, "stars_r612": 592, "growth_pct": 74, "rounds": 9, "threshold_triggered": true, "action": "monitoring only (already tracked R555)"},
-      {"name": "NVIDIA-BioNeMo/bionemo-agent-toolkit", "stars_r612": 237, "stars_r613": "monitoring", "growth_pct": "TBD", "rounds": 2, "threshold_triggered": false, "action": "JUST TRACKED R612 as breakthrough project"},
-      {"name": "OnlyTerp/prompt-cache-skills", "stars_r613": 107, "growth_pct": 0, "rounds": 1, "threshold_triggered": false, "action": "JUST TRACKED R613 as breakthrough project"}
+      {"name": "cloudflare/security-audit-skill", "stars_r591": 632, "stars_r613": 2145, "stars_r614": 2168, "growth_pct": 243, "rounds": 9, "threshold_triggered": true, "action": "monitoring only (already tracked R591)"},
+      {"name": "HKUDS/AgentSpace", "stars_r555": 339, "stars_r612": 592, "stars_r614": "~605", "growth_pct": 78, "rounds": 10, "threshold_triggered": true, "action": "monitoring only (already tracked R555)"},
+      {"name": "Forsy-AI/agent-apprenticeship", "stars_r521": 893, "stars_r613": 1125, "stars_r614": "monitoring", "growth_pct": 26, "rounds": 12, "threshold_triggered": false, "action": "monitoring only"},
+      {"name": "amplifthq/opentag", "stars_r583": 398, "stars_r614": 506, "growth_pct": 27, "rounds": 6, "threshold_triggered": false, "action": "monitoring only (R583 deferred, 1000⭐ re-eval threshold)"},
+      {"name": "TianhangZhuzth/Fundamental-Ava", "stars_r583": "TBD", "stars_r607": "~700", "stars_r614": "~750", "growth_pct": "minor", "rounds": 4, "threshold_triggered": false, "action": "monitoring only (R583/R607 Articleless defer)"}
     ]
   },
   "quasi_period_observation": {
-    "r555_quasi_period_validations": 28,
-    "new_validation": "R613 = R555 准周期第 28 次验证. R612 = streak BREAKTHROUGH #1 via Anthropic Newsroom. R613 = streak BREAKTHROUGH #2 via GitHub Blog (5h 间隔). 1st-party 突破不再依赖 Anthropic Engineering blog. Engineering 14-round plateau 持续, 但其他 1st-party 路径活跃.",
+    "r555_quasi_period_validations": 29,
+    "new_validation": "R614 = R555 准周期第 29 次验证. R612 (突破 #1 via Anthropic Newsroom) + R613 (突破 #2 via GitHub Blog, 5h 间隔 back-to-back) → R614 (saturation, 10.4h interval cooling). 1-round breakthrough streak terminated, returning to saturation. 完整周期变体表加入 ⑦: back-to-back breakthroughs → saturation cooling 1 round.",
     "saturation_streak": 0,
-    "r614_prediction": "R614 prediction: 7/2 后半 window / 7/3 = 7/4 独立日前 1-2 天. 50% back-to-back breakthrough #3 (持续 1st-party 突破) / 30% saturation streak 重建 / 20% cluster validation. Anthropic Engineering 14-round plateau 可能在 7/2-7/3 窗口被打破 (R555 准周期预测). R614 重点监控: Anthropic Newsroom 续篇 (claude-finance/chips?) + GitHub Copilot Harness 续篇 (HyDRA 开源? cache benchmark?) + Cursor Blog 新 slug (post-7/1)."
+    "r615_prediction": "R615 prediction: 7/4 美国独立日前 1 天 (7/3) 1st-party release 高概率窗口. 40% breakthrough #3 (Anthropic Engineering release after 15-round plateau) / 30% saturation streak 2 / 30% cluster validation breakthrough. R615 重点监控: Anthropic Engineering blog release (7/4 pattern) + Claude Blog 7月 new slug + GitHub Copilot Harness 续篇 + Cursor Blog post-7/1 + 7/4 weekend release."
   },
-  "spm_pair": {
-    "article": "articles/harness/github-copilot-agentic-harness-94-percent-cache-hydra-routing-2026.md",
-    "project": "projects/onlyterp-prompt-cache-skills-drop-in-cache-hits-audit-2026.md",
-    "rationale": "GitHub Blog (1st-party Copilot Harness Eval) + OnlyTerp/prompt-cache-skills (OSS Skill-as-Harness democratization) = '1st-party 突破 + OSS 民主化' 良性循环完整实例. GitHub 给出理论上限 (94% cache), prompt-cache-skills 提供实操路径 (13 skills audit + 5-15 行 diff fix). SPM pair 形成 R613 Cross-Model-Harness as Product 范式的完整闭环."
-  }
+  "round_type": "saturation_round_state_only"
 }
