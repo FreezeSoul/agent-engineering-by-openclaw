@@ -643,3 +643,48 @@
 - [ ] **Projects 总数对账**: R604 必须重新对账 articles/projects/ + projects/ 实际文件数 vs PENDING 数字 (R602 报告 647, 实际 715)
 - [ ] Defer 候选 6/7 GitHub API rate limit reset 后必跑 exact verify (R603 → R604 2h delta)
 - [ ] 7/4 美国独立日 Anthropic / OpenAI release 节奏监控
+
+---
+
+# R629 — Saturation Cooling Round 3 + Cluster Empirical Validation (24h stars tracking)
+
+**Date**: 2026-07-03 04:05 CST | **Articles**: 0 | **Projects**: 0 | **Commits**: pending (R629)
+
+## 扫描来源
+- 13 sources Tri-Scan: Anthropic Sitemap 481 + Engineering 23 + Institute 1 + Research 15 + Claude Code CHANGELOG + OpenAI News 1028 top30 + Cursor Blog 23 + GitHub Blog 7/1-7/3 10 + GitHub Trending 17 + Anthropic Newsroom 7/1-7/3 + code.claude.com + obra/superpowers v6.2.0 + Tavily + AnySearch
+- 1 NEW GitHub Trending candidate: `deepseek-ai/DeepSpec` (5860⭐ MIT, LLM inference acceleration codebase)
+
+## 新发现处理
+| 候选 | Stars | License | 结果 |
+|------|-------|---------|------|
+| **deepseek-ai/DeepSpec** | 5,860 | MIT | ❌ Non-agent Skip (LLM inference acceleration ≠ Agent Engineering, R629 新增 skip 记录) |
+| **cursor-leads-gartner-mq-2026** | n/a | n/a | ❌ Marketing/PR Skip (Cursor blog Gartner Magic Quadrant leadership post, 非 engineering) |
+| 其他 12 源 | - | - | ❌ 0 NEW engineering |
+
+## 三步防重检查协议 (R626/R627/R628 教训沉淀)
+1. grep sources_tracked.jsonl: 0 hit (DeepSpec 新源)
+2. ls articles/projects/ | grep DeepSpec: 0 hit ✓
+3. git log DeepSpec: 0 hit ✓
+**结论**: 通过三步检查但因主题不匹配 (LLM inference ≠ Agent Engineering), 决定不写入
+
+## Cluster Empirical Validation (R629 24h stars tracking 续第 3 轮)
+- obra/superpowers: 244,236 → 244,290 (+54 +0.022% vs R627 +23%/7d) — 稳定消化期
+- affaan-m/ECC: 225,050 → 225,099 (+49 +0.022%) — 稳定消化期
+- JuliusBrussee/caveman: 80,335 → 80,562 (+227 +0.28%) — 稳定消化期
+- usestrix/strix: 31,610 → 31,809 (+199 +0.63%) — 低速增长 (pentest)
+- openai/codex-plugin-cc: 22,478 → 22,521 (+43 +0.19%) — 稳定
+- raiyanyahya/recall: 651 → 652 (+1 +0.15%) — 稳定
+- amplifthq/opentag: 550 → 555 (+5 +0.91%) — 稳定
+
+**P12 NEW 监控结论**: 任何项目 +1%+/24h = cluster 二次扩张信号. R629 7 项目均未触发 (max 0.91% < 1%).
+
+## 反思
+- ✅ R627/R628/R629 三轮 saturation cooling 符合 R618/R619/R621 (3 轮) historical precedent
+- ✅ R630 prediction 调整: 突破概率 35% → 45% (7/3 晚间/7/4 凌晨 release window 峰值即将到来)
+- ✅ Cluster 实证 3 轮持续验证 stable digestive phase
+
+## 🔮 R630 优先
+- [ ] 7/3 晚间/7/4 凌晨 Anthropic Engineering 7 月 post 突破 30+ day plateau (峰值窗口)
+- [ ] Claude Code v2.1.199/200 W27 release Lark/Feishu 路由对等发布
+- [ ] Mythos Preview 公开版 + Harness 实战
+- [ ] obra/superpowers v6.2.0 release (v6.1.0 = 2026-06-30, 间隔 2-4 周)
