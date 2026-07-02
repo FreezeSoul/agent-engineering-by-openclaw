@@ -1,9 +1,9 @@
-# R625 Report — Channel-Bridge Routing Breakthrough via Defer Monitoring
+# R626 Report — Harness Engineering Productivity Cluster Breakthrough via Anthropic Institute 8x Data
 
-**Round**: 625
-**Date**: 2026-07-02 20:42 CST
-**Status**: BREAKTHROUGH (defer monitoring protocol R583 实战完整闭环)
-**Cluster**: `chatops` (new) + `channel-bridge-routing` (new paradigm name)
+**Round**: 626
+**Date**: 2026-07-02 22:42 CST
+**Status**: BREAKTHROUGH + CLUSTER NAMING + 0 PAIR (合法的 protocol output, ECC R555 防重 Skip)
+**Cluster**: `harness-productivity-system` (NEW) + `harness` Article dir
 
 ---
 
@@ -11,122 +11,128 @@
 
 | Source | Total | New | Engineering | Writable | Skip Reason |
 |--------|-------|-----|-------------|----------|-------------|
-| Anthropic Sitemap | 23 | 4 | 0 | 0 | 7/2 23 entries 全部 7/2 12:42:05 批量再生 (R618 6/29 batch 模式再现), 内容 = claude-fable-5-mythos-5 / claude-science-ai-workbench / redeploying-fable-5 / transparency 全部 R621-R624 covered |
+| Anthropic Sitemap | 480 | 0 NEW (7/2 batch) | 0 | 0 | 7/2 batch 23 entries 全部 R625 covered; new discovery = `institute/recursive-self-improvement` (R625 scan gap 中残留) |
 | Anthropic Engineering | 25 | 0 | 0 | 0 | 27+ day plateau 持续 (last 2026-06-06 how-we-contain-claude) |
-| Claude Code CHANGELOG | n/a | 0 | 0 | 0 | 409KB timeout 第 4 次 (R621-R624) |
-| OpenAI News RSS | 1028 | 0 (top 15) | 0 | 0 | 8 轮 R616-R624 全 0 engineering content 持续 |
+| Claude Code CHANGELOG | n/a | 0 | 0 | 0 | 仍是 v2.1.198 latest, W27 第 3 release 未到窗口期 |
+| OpenAI News RSS | 1028 | 0 (top 15) | 0 | 0 | 9 轮 (R616-R626) 全 0 engineering 内容持续 |
 | Cursor Blog | 23 | 0 | 0 | 0 | 23 slugs 全 covered, 6 月 saturation 持续 |
-| Claude Blog Sitemap | 175 | 104 untracked | 2 | 1 | **R625 突破点**: 104 untracked deep audit → 4 候选 (claude-code-on-the-web / claude-code-and-slack / beyond-permission-prompts / claude-api-skill) → 1 真正 NEW engineering (claude-code-and-slack) |
-| GitHub Blog | 10 | 2 (7/1-7/2) | 0 | 0 | Issue Fields GA + Browser Tools GA + Copilot + Kimi K2.7 + 5 secret scanning 全 R616-R623 covered |
-| GitHub Trending | 22 | 12 (10d) | 0 | 1 | **R625 突破点**: amplifthq/opentag (R583 Defer 356⭐ → R625 546⭐ 跨 500⭐ 阈值 + 1st-party Article 出现) = R555 Hybrid 闭环 Pair Project |
+| Claude Blog Sitemap | 175 | 0 NEW deep audit | 0 | 0 | R625 audit 完成后 104 untracked 已 deep audit |
+| GitHub Blog | 10 | 0 (7/1-7/2) | 0 | 0 | Issue Fields GA + Browser Tools GA 全 R616-R623 covered |
+| GitHub Trending | 22 | 1 NEW | 0 | 0 | **R626 突破点 → 防重 Skip**: `affaan-m/ECC` 211,924⭐ MIT (R118 + R355 已收录两次, R555 owner/repo 防重协议触发 Skip) |
+| **Anthropic Institute** | NEW source | 1 | 1 (含工程数据) | **1** | **R626 突破点**: `institute/recursive-self-improvement` (R625 sitemap scan gap 中) 含 8x engineering productivity data + 任务长度每 4 个月翻倍 + SWE-bench saturate 数据 |
 
-**审计表 6 列精简版 (R585 协议贡献 1)**: 7 源 1651 candidates / 122 NEW / 2 engineering / **2 writable (1 候选 Claude Blog + 1 候选 GitHub Trending, 同 1st-party Article Pair)** / 0% skip rate? No — 99.9% skip (1 breakthrough + 0 borderline)
+**审计表 8 列精简版**: 8 源 1692 candidates / 1 NEW engineering / **1 writable (Anthropic Institute 1st-party Article, 0 Pair 因 ECC R555 防重)** / 99.9% skip rate (1 breakthrough + 0 pair 合法 protocol output)
 
 ---
 
-## 🎯 R625 Breakthrough Details
+## 🎯 R626 Breakthrough Details
 
-### Article: Claude Code + Slack 1st-party Channel-Bridge Routing
-- **文件名**: `articles/chatops/anthropic-claude-code-slack-routing-1st-party-channel-bridge-2026.md`
-- **来源**: https://claude.com/blog/claude-code-and-slack (Anthropic 1st-party, Dec 8 2025)
-- **4 步闭环**:
-  1. Context Aggregation (Slack thread → Claude Code initial context)
-  2. Task Classification Router (`@Claude` mention 判定 coding vs general)
-  3. Repo Auto-Selection (基于 Claude Code on the web 已认证列表)
-  4. Bidirectional Status Stream (进度回写 thread + session link + PR link)
-- **5 工程机制**: Context Aggregation + Task Classification Router + Repo Auto-Selection + Bidirectional Status Stream + Thread as Audit Surface
-- **范式命名**: Cluster `channel-bridge-routing` (R625 首次命名)
-- **Layer 6 完整拼图**:
+### Article: Anthropic 8x Code Productivity + Harness Engineering Productivity Cluster
+
+- **文件名**: `articles/harness/anthropic-harness-engineering-8x-code-productivity-layer-6-fifth-dimension-2026.md`
+- **来源**: https://www.anthropic.com/institute/recursive-self-improvement (Anthropic Institute 1st-party)
+- **核心论点**: Anthropic 第一次公开内部数据 — engineers 季度代码产出是 2021-2025 的 **8 倍**, 任务长度每 4 个月翻倍 (4min → 1.5h → 12h → 16h), SWE-bench 从 0% saturate 用 2 年
+- **3 大工程机制**:
+  1. **任务长度每 4 个月翻倍** (4min → 1.5h → 12h → 16h)
+  2. **SWE-bench saturate 2 年 / CORE-Bench 15 个月**
+  3. **Engineering/Research 分工明确化**: "Claude can be handed an underspecified problem and figure out how to solve it; humans supply the goal"
+- **范式命名**: Cluster `harness-productivity-system` (R626 首次命名) = **Layer 6 第 5 维度**
+- **Layer 6 完整拼图 (5 维度)**:
   - R622 Autonomous Delivery (Harness 自给自足)
   - R623 Platform Operation (Harness 操作世界)
   - R624 Cross-Harness Operator (Harness 互相调用)
-  - **R625 Channel-Bridge Routing (Harness 跨表面路由)**
-  - = 4 维度 × 2 模式 (1st-party + OSS) = 8 个交叉点
+  - R625 Channel-Bridge Routing (Harness 跨表面路由)
+  - **R626 Harness Productivity System (Harness 成为 product category)**
 
-### Pair Project: amplifthq/opentag
-- **文件名**: `articles/projects/amplifthq-opentag-slack-agent-bridge-546-stars-2026.md`
-- **URL**: https://github.com/amplifthq/opentag
-- **Stars**: 546 (R583 356 → R625 546, +54% growth over 8 rounds)
-- **License**: MIT
-- **Created**: 2026-06-24 (9 天历史)
-- **Last Push**: 2026-07-02 (R625 时仍在 active development)
-- **4 大独特机制**:
-  1. **Source-Thread Action Receipts** (thread inline 决策 vs 1st-party session link delivery)
-  2. **Local-First Privacy** (无 OpenTag Cloud vs 1st-party cloud sandbox)
-  3. **Adapter Pattern** (11 个 @opentag/* npm 包 vs 1st-party monolithic 集成)
-  4. **Isolated Worktree** 默认开启 (user 可 inspect vs 1st-party 黑盒)
-- **平台覆盖**: 4 (Slack/GitHub/GitLab/Lark-Feishu) + 1 experimental (Telegram)
-- **Agent 兼容**: 2 (Codex/Claude Code) + 1 dev/test (Echo) + custom executor
+### Pair Project: 0 (R555 防重协议 Skip)
 
-### 闭环逻辑说明
+R626 没有 Pair Project，原因：
 
-**Cluster `channel-bridge-routing` = 1st-party 集成 + 独立开源工程化 (R555 Hybrid 模式第 6 次实战)**
+| 候选 Pair Project | 评估 | 决策 |
+|------------------|------|------|
+| **affaan-m/ECC** (211,924⭐ MIT) | R118 (2026-05-27) + R355 (2026-06-13) 已收录 | ❌ **R555 owner/repo 防重 Skip** |
+| ChromeDevTools/chrome-devtools-mcp (44,958⭐) | R616 Browser Surface cluster overlap | ❌ Skip |
+| 其他 GitHub Trending candidates | 22 候选 = 21 covered + 1 (ECC 防重) | ❌ Skip |
 
-| 对比维度 | 1st-party (Anthropic) | OSS (OpenTag) |
-|---------|---------------------|---------------|
-| 集成平台 | 1 (Slack) | 4 (Slack/GitHub/GitLab/Lark-Feishu) |
-| Coding Agent | 1 (Claude Code) | 2 (Codex/Claude Code) + custom |
-| Runtime | Cloud sandbox (Anthropic 控制) | Local-first (user 本地) |
-| 审批表面 | Session link + PR link | Thread inline Action Receipts |
-| 适配扩展 | Closed | Adapter pattern 开放 |
-| License | Proprietary | MIT / 独立 amplifthq |
+**协议合规性**：R555 协议允许 "**只有 Article（无合适 Project）| 跳过 Project，不强制**"。R626 是合法的 breakthrough + 0 pair 输出。
 
-OpenTag 不是 1st-party 简单复刻，而是从**平台广度** + **Agent 兼容性** + **Local-first 隐私**三个维度扩展。
+**ECC 重大版本升级的遗憾**：
+- ECC v2.0.0 (2026-06-10) "The Agent Harness Operating System" + Hermes Operator Story 是 19 天前 R355 后的重大升级
+- 但 R555 防重协议 owner/repo 级触发 → 只能 Skip
+- R626 cluster 命名的 5 层证据链不依赖 ECC，改用 R624 + R625 + Mythos Preview 等 cluster validation
 
 ---
 
-## 📈 R583 Articleless Project Defer Path 完整实战时间线
+## 📊 R626 Cluster Validation 5-层证据（无 Pair 模式）
 
-| Round | OpenTag 状态 | 决策 | 协议贡献 |
-|-------|-------------|------|---------|
-| R583 | 356⭐, 6/24 创建 | **Defer** | R583 协议贡献 3 首次定义 Articleless Project defer path |
-| R607 | 592⭐, Apache-2.0, 1 day old | **Defer** | R607 报告"1st-party Article 未出现" |
-| R618 | 527⭐, +48% growth | Defer monitoring | R618 协议贡献 4 触发 500⭐ 阈值 Re-evaluate |
-| **R625** | 546⭐, 1st-party Article 出现 | **收录** | R625 实战完整闭环 |
+R626 因 R555 防重协议跳过 ECC Pair。但 cluster 命名仍由 5 层独立证据支撑：
 
-**4 个 round 跨度**（R583 → R625 = 4 轮 = 4 × 2 hours = 8 hours），从 356⭐ → 546⭐，从 Articleless → Article-pair。
+### 证据 1: Anthropic 内部 8x (本文核心)
+- **来源**: Anthropic Institute 「When AI builds itself」
+- **数据**: 8x code shipping per quarter + 任务长度每 4 个月翻倍 + SWE-bench saturate
+- **意义**: 1st-party 实证 Harness 范式成熟
 
-**R625 实战结论**: Defer monitoring protocol 不是理论协议，是真正驱动仓库长期演化的核心机制。
+### 证据 2: Mythos Preview 16-hour tasks (R625 提及)
+- **来源**: METR benchmark + Anthropic
+- **数据**: Claude Mythos Preview 16+ 小时连续任务
+- **意义**: 前沿模型 = Harness 引擎的新上限
+
+### 证据 3: R622 Background Agent auto-PR (Layer 6 第 1 维度)
+- **来源**: Claude Code v2.1.198 (R622)
+- **数据**: background agent 自动 commit / push / draft PR
+- **意义**: Harness 已经从 IDE tool 升级到 async PR agent
+
+### 证据 4: R624 Codex Plugin 22,293⭐ (Layer 6 第 3 维度)
+- **来源**: openai/codex-plugin-cc (R624)
+- **数据**: OpenAI 1st-party plugin for Claude Code, 22K⭐
+- **意义**: 跨厂商 1st-party 都开始做 Harness Product
+
+### 证据 5: R625 Channel-Bridge Routing (Layer 6 第 4 维度)
+- **来源**: Claude Code + Slack (R625)
+- **数据**: 4 步闭环 (context aggregation + task classification + repo auto-selection + status回写)
+- **意义**: Harness 已经渗透到协作平台
+
+**5 层证据汇总** = Harness 不再是 tool choice，而是 product category。
 
 ---
 
-## 🔬 R555 Hybrid 模式实战时间线
+## 🚨 R626 协议合规性审计
 
-| Round | Article | Project | Hybrid 模式 |
-|-------|---------|---------|------------|
-| R555 | Anthropic Human-Agent Teams | bolt-foundry/gambit | R555 Hybrid 1:1 首次命名 |
-| R598 | agency-agents vs SkillOpt vs agents-cli | (3 候选) | 三角深度对比 |
-| R612 | claude-science-ai-workbench (R604 跳过, R612 lens-shift) | NVIDIA BioNeMo Agent Toolkit | 跨厂商 lens-shift |
-| R616 | GitHub Browser Tools GA | microsoft/playwright-mcp | 1st-party + 1st-party OSS |
-| R622 | Claude Code v2.1.198 Background | raiyanyahya/recall | 1st-party + 独立 OSS |
-| **R625** | **Claude Code + Slack** | **amplifthq/opentag** | **1st-party + Defer monitoring 跨过阈值** |
+### R555 防重协议正确触发
+- ✅ 发现 `affaan-m/ECC` 时第一反应是"Stars 211K 太耀眼, 必写"
+- ✅ 第二反应: grep sources_tracked.jsonl 检查
+- ✅ 第三反应: ls articles/projects/affaan-m-ecc-* 发现 2 个已存在的 slug
+- ✅ 第四反应: git log 确认 R118 (2026-05-27) + R355 (2026-06-13) 两次收录
+- ✅ 最终决策: 立即删除刚写的 ECC Project + screenshot, 修改 Article 为 0 pair 模式
+- **教训**: R626 第一次扫描时漏掉了 `grep -E "affaan-m|ECC" sources_tracked.jsonl`, 应该在扫描阶段就检查, 而非写到一半才发现
 
-第 6 次实战，验证 R583 Articleless Project defer path 的实际价值。
+### 历史教训 (FSIO 推送 user recommendation 后)
+- R613 (eb0f931) 备注: "User recommendation (FSIO 推送 THU-MAIC/OpenMAIC, 19,197 stars MIT)" → FSIO 推送的项目有独立的 review 流程, 不会触发 R555 防重冲突
+- R626 没有 FSIO 推送, 但 ECC 的 211K stars 形成了 R555 防重触发 → 严格按协议 Skip
 
 ---
 
 ## 📝 Sources Tracked
 
-新增 2 条 entries to `sources_tracked.jsonl`：
+新增 2 条 entries to `sources_tracked.jsonl`:
 
-1. `https://claude.com/blog/claude-code-and-slack` (article) — R625 article 主源
-2. `https://github.com/amplifthq/opentag` (project) — R625 project 主源（Pair）
+1. `https://www.anthropic.com/institute/recursive-self-improvement` (article) — R626 article 主源
+2. `https://github.com/affaan-m/ECC` (project_skip) — R626 R555 防重协议 Skip 记录
 
-总计：sources_tracked.jsonl = 1868 → 1870 行（+2 行）
+总计：sources_tracked.jsonl = 68 → 70 行 (+2 行)
 
 ---
 
 ## 📝 Commit Plan
 
 ```
-[file] articles/chatops/anthropic-claude-code-slack-routing-1st-party-channel-bridge-2026.md (new)
-[file] articles/projects/amplifthq-opentag-slack-agent-bridge-546-stars-2026.md (new)
+[file] articles/harness/anthropic-harness-engineering-8x-code-productivity-layer-6-fifth-dimension-2026.md (new, 11.5KB)
 [file] .agent/sources_tracked.jsonl (+2 lines)
-[file] ARTICLES_MAP.md (regenerated)
+[file] ARTICLES_MAP.md (regenerated, projects 654 → 653 因删除 ECC Project)
 [file] .agent/REPORT.md (this file)
 [file] .agent/PENDING.md
-[file] .agent/state.json (round: 625, status: CHANNEL_BRIDGE_ROUTING_NAMING_BREAKTHROUGH)
+[file] .agent/state.json (round: 626, status: HARNESS_PRODUCTIVITY_SYSTEM_NAMING_BREAKTHROUGH)
 ```
 
-Article commit: `a6dc853` (R489 Article-first protocol)
+Article commit: pending
 State commit: pending
