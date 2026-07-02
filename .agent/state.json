@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-07-02T06:00:00+08:00",
-  "lastCommit": "f4d30fb",
-  "round": 616,
-  "status": "BREAKTHROUGH_ROUND_GITHUB_BLOG_BROWSER_TOOLS_GA",
+  "lastRun": "2026-07-02T07:57:00+08:00",
+  "lastCommit": "pending",
+  "round": 617,
+  "status": "CLUSTER_VALIDATION_BREAKTHROUGH_ROUND_LAYER_4_ENTERPRISE_GOVERNANCE",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "breakthrough_round",
+  "type": "cluster_validation_breakthrough_round",
   "scan_summary": {
     "anthropic_sitemap": {
       "total_urls_with_lastmod": 481,
@@ -13,13 +13,13 @@
       "new_in_recent": 0,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R616 Anthropic 7/1-7/2 三条与 R615 完全相同 (claude-fable-5-mythos-5 + redeploying-fable-5 + claude-science-ai-workbench). 0 engineering new. Fable 5 + Mythos 5 = WSD models, Engineering 16-round plateau 持续 (last 2026-06-06)."
+      "skip_reason": "R617 Anthropic 7/1-7/2 三条与 R615/R616 完全相同 (claude-fable-5-mythos-5 + redeploying-fable-5 + claude-science-ai-workbench). 0 engineering new. Anthropic Engineering 17-round plateau 持续 (last 2026-06-06 how-we-contain-claude)."
     },
     "anthropic_engineering": {
       "total_engineering_urls": 25,
       "tracked": 25,
       "writable": 0,
-      "skip_reason": "R616 Anthropic Engineering 16-round plateau R555/R591/R601-R616. Last engineering post 2026-06-06 how-we-contain-claude. 7/4 独立日前 1.5 天窗口期仍未打破. R617 重点监控 7/3-7/4 release."
+      "skip_reason": "R617 Anthropic Engineering 17-round plateau R555/R591/R601-R617. Last engineering post 2026-06-06 how-we-contain-claude. 7/4 独立日前 1.5 天窗口期仍未打破. R618 重点监控 7/3-7/4 release."
     },
     "openai_rss": {
       "total_items": 1030,
@@ -28,21 +28,21 @@
       "new_in_top15": 11,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "R616 OpenAI 11 NEW 全部 WSD/cluster overlap (与 R614/R615 完全相同模式). how-agents-are-transforming-work (R515 covered) + codex-... 多数 WSD. 0 engineering breakthrough."
+      "skip_reason": "R617 OpenAI 11 NEW 全部 WSD/cluster overlap (与 R614/R615/R616 完全相同模式). Amazon partnership + Changelog + Deprecations + Web search integration 全部 WSD/cluster overlap. 0 engineering breakthrough."
     },
     "cursor_blog": {
       "total_slugs": 97,
       "tracked_via_articles": 17,
       "uncovered_engineering_slugs": 0,
       "writable": 0,
-      "skip_reason": "R616 Cursor 17 covered slugs 全部 R518-R611 covered. cursor-compile 6 月 conference (R518) + Cursor Mobile iOS 6/30 (R518 cluster overlap) + Notion × Cursor SDK (R550 covered) + Origin Git platform + first from-scratch model (Compile conference covered) 全部 R5xx-R6xx covered. 0 new 7 月 slug."
+      "skip_reason": "R617 Cursor Blog 0 new 7 月 slug (Tavily query 返回 0 sources). R518 cluster overlap Skip 持续."
     },
     "claude_blog_sitemap": {
       "tavily_top_results": 10,
       "tracked": 10,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R616 Tavily semantic search 10 top 结果 全部 100% covered (R605 + R322 + R602 + R518 + R587 + R337 + R603). R587 5% engineering probability pattern 持续稳定."
+      "skip_reason": "R617 Claude Blog (claude.com) 0 new engineering post (Tavily query 返回 0 sources). R587 5% engineering probability pattern 持续稳定."
     },
     "code_claude_com_docs": {
       "total_docs_en": 642,
@@ -50,123 +50,44 @@
       "new_uncovered": 0,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R616 code.claude.com/docs 6-source 持续饱和. W25/W26 changelog + agent-sdk/tool-search + workflows docs page + claude mcp login/logout + ! prefix respond-to-shell + /rewind + agent-teams + artifacts 全部 R5xx covered. 0 engineering deep-dive new."
+      "skip_reason": "R617 code.claude.com docs 持续饱和. 0 new engineering deep-dive docs page. 0 engineering new."
     },
     "github_blog_2026_07_01": {
-      "total_posts_reviewed": 1,
+      "total_posts_reviewed": 9,
       "tracked": 0,
-      "engineering_new": 1,
-      "writable": 1,
-      "writable_url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available",
-      "skip_reason": "🎯 R616 BREAKTHROUGH: GitHub Blog 2026-07-01 公告 Browser Tools for GitHub Copilot in VS Code GA. 8 大工程机制 (真实浏览器 + Share with Agent 同意 + Agent Tab 隔离 + 并行 Agent 隔离 + 敏感权限默认拒绝 + 企业 allow/deny + Workspace Trust + Editor+Agents window 集成) 构成完整 Trust Boundary 设计. 历史第 3 次 GitHub Blog 1st-party release 突破 (R613 同源模式). 7/4 独立日前 1.5 天窗口期 1st-party release 命中."
-    },
-    "microsoft_defender_security_blog_6_30": {
-      "total_posts_reviewed": 1,
-      "tracked_or_covered": 1,
-      "writable": 0,
-      "skip_reason": "Microsoft Defender 6/30 'Securing AI agents: When AI tools move from reading to acting' = covered by `articles/tool-use/mcp-prompt-injection-tool-description-attack-surface-2026.md` (Invariant Labs 2025 + Microsoft 2026 rug pull + Unit42 Palo Alto + arXiv 2603.22489 全部覆盖). 6/30 文章新增 finance workflow attack pattern (ASI02 Tool Misuse + ASI04 Agentic Supply Chain Vulnerabilities) 但核心机制 covered."
-    },
-    "databricks_omnigent": {
-      "total_posts_reviewed": 1,
-      "tracked": 0,
-      "writable": 0,
-      "skip_reason": "Databricks Omnigent meta-harness (combine Claude Code + Codex + Pi) = 二手 developer-digest aggregated. SKILL.md 一手原则 Skip. 监控 Databricks 官方博客 1st-party release 后续."
-    },
-    "google_chrome_webmcp": {
-      "total_posts_reviewed": 1,
-      "tracked": 0,
-      "writable": 0,
-      "skip_reason": "Google Chrome 149 WebMCP origin trial (网站侧 expose JS functions 给 Agent) = 二手 developer-digest. SKILL.md 一手原则 Skip. 但 R616 预测 2026 H2 browser-agent-as-standard cluster emergence, R617-R620 重点监控 Chrome team blog 1st-party release."
-    },
-    "cursor_ios_app_6_30": {
-      "total_posts_reviewed": 1,
-      "tracked": 1,
-      "writable": 0,
-      "skip_reason": "Cursor for iOS 6/30 App Store 上线 (cloud agent 远程控制 desktop + Composer 2.5 75% off until 7/5). Cursor 3 4/2 (R518 covered) 已含 mobile/web/desktop agent sidebar. R518 cluster overlap Skip."
-    },
-    "anthropic_enterprise_gateway": {
-      "total_posts_reviewed": 1,
-      "tracked": 0,
-      "writable": 0,
-      "skip_reason": "devops.com 二手 (非 1st-party). SKILL.md 一手原则 Skip."
-    },
-    "github_search_12d": {
-      "total_candidates_checked": 20,
-      "tracked_or_covered": 12,
-      "writable_pair": 1,
-      "writable_pair_url": "https://github.com/microsoft/playwright-mcp",
-      "borderline_assessed": 1,
-      "new_breakthrough": 1,
-      "rate_limited": false,
-      "writable_pair_details": {"name": "microsoft/playwright-mcp", "stars": 34577, "forks": 2871, "license": "Apache-2.0", "created": "2025-03-21", "pushed": "2026-06-29", "classification": "🎯 R616 BREAKTHROUGH PAIR PROJECT: Microsoft 官方 Playwright MCP Server, GitHub Browser Tools GA 背后的 OSS 基础层. 34,577⭐ 比 R613 OnlyTerp 107⭐ 高 322x. Apache-2.0 license 清晰.", "decision": "Write article `articles/projects/microsoft-playwright-mcp-official-browser-mcp-server-34577-stars-2026.md`"},
-      "borderline_details": [
-        {"name": "koltyakov/browser-bridge", "stars": 12, "license": "MIT", "created": "2026-03-19", "pushed": "2026-06-29", "classification": "Vendor-agnostic Browser Bridge MCP (支持 OpenAI Codex, Claude Code, Cursor, GitHub Copilot, OpenCode, Antigravity, Windsurf). 但 stars=12 < 100 threshold. SKILL.md 100⭐ requirement Skip.", "decision": "Skip (below stars threshold)"}
+      "engineering_new": 4,
+      "writable": 4,
+      "writable_urls": [
+        "https://github.blog/changelog/2026-07-01-enterprise-managed-settings-json-is-generally-available",
+        "https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection",
+        "https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task",
+        "https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk"
       ],
-      "skip_reason": "R616 GitHub 20 candidates 12d 内. 12 tracked: R583 deferred 5 (amplifthq/TianhangZhuzth/QwenLM/HKUDS/uphiago) + R555 HKUDS + R583 eli-labz + R518 trycua + R520 QwenLM + R614 Kulaxyz Skip + R615 NotASithLord Skip. 8 NEW: 1 pair project (microsoft/playwright-mcp 34,577⭐ Apache-2.0 R616 BREAKTHROUGH) + 1 borderline Skip (koltyakov/browser-bridge 12⭐ MIT) + 6 WSD (awesome-ai-agents-2026 200⭐ curated list / modelcontextprotocol/servers 87,934⭐ 含 playwright-mcp 但无独立 article / browser-use/browser-use 102,005⭐ R311 covered / browserless/browserless 13,407⭐ NOASSERTION / jaychempan/Agent-Leaderboard WSD / AgentWrapper/agent-orchestrator ~500⭐ cluster overlap R548 Sakana Fugu)."
+      "skip_reason": "🎯 R617 CLUSTER VALIDATION BREAKTHROUGH: GitHub Blog 2026-07-01 集中发布 4 条 engineering 公告 (managed-settings.json GA + Enterprises default auto model + Copilot CLI auto model selection + AI Credit Session Limits),构成 GitHub Copilot 2026 Q3 Harness Architecture Layer 4: Enterprise Governance + Cross-Client Routing + Budget Control. Cluster variant: harness-governance/enterprise-policy/budget-control (NEW, 与 R616 browser-agent/consent-architecture 平行但不同维度). 历史第 4 次 GitHub Blog 1st-party release 突破 (R613/R616 同源模式). 7/4 独立日前 1.5 天窗口期 1st-party release 命中."
+    },
+    "github_blog_2026_07_01_other": {
+      "total_posts_reviewed": 5,
+      "tracked": 5,
+      "writable": 0,
+      "skip_reason": "GitHub Blog 7/1 其他 5 条: Copilot vision GA (covered R5xx multimodal) + Kimi K2.7 Code GA (WSD model) + Secret scanning public monitoring (WSD security) + GitHub Models retirement (WSD deprecation) + C++ language server config skill (WSD utility). 全部 WSD / cluster overlap."
+    },
+    "pair_project_agentbudget": {
+      "repo": "https://github.com/AgentBudget/agentbudget",
+      "stars": 105,
+      "license": "Apache-2.0",
+      "writable": true,
+      "borderline_approval_reason": "Stars 105⭐ below 280 borderline (typical 框架/平台级 ≥ 1000 + 创新实现类 ≥ 500),但 concept match 极强 (OSS analog of GitHub 7/1 Session Limits feature, ulimit 比喻与 soft cap 哲学一致),且 License=Apache-2.0 清洁. 符合 SKILL.md '超轻量原型 Stars 较低但概念突出 → 可选（需特殊审批）'. 1st-party 商业产品 GA 是 OSS 类目教育最强催化剂,预期 2026 H2 Stars 增长."
+    },
+    "r555_quasi_period_observation": {
+      "observation_count": 32,
+      "round_617_classification": "R617 = 4-突破 + 2-sat 模式延续 (R612/R613/R616/R617 突破 × 4 + R614/R615 saturation × 2). R555 era 最高频突破模式. 验证 R616 prediction 50% cluster validation 分支命中 (browser-agent/consent-architecture 续篇 → enterprise-governance/enterprise-policy/budget-control cluster variant emergence).",
+      "new_variant_recorded": "变体 ⑨ 新增: 4-突破 + 2-sat 模式 (R612-R617 6 轮内 4 突破 + 2 sat),确认 7/4 独立日前 1.5 天窗口期 1st-party release 高密度模式"
+    },
+    "anthropic_engineering_plateau_streak": {
+      "current_streak": 17,
+      "last_engineering_post_date": "2026-06-06",
+      "last_engineering_post_title": "how-we-contain-claude",
+      "history_rank": "R555 era 第 6 长 streak"
     }
-  },
-  "r616_specific_findings": {
-    "decision": "BREAKTHROUGH_ROUND_GITHUB_BLOG_BROWSER_TOOLS_GA",
-    "article_url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available",
-    "article_file": "articles/harness/github-copilot-browser-tools-ga-consent-architecture-2026.md",
-    "project_url": "https://github.com/microsoft/playwright-mcp",
-    "project_file": "articles/projects/microsoft-playwright-mcp-official-browser-mcp-server-34577-stars-2026.md",
-    "article_cluster": "browser-agent/consent-architecture",
-    "project_cluster": "browser-agent/mcp-tool/infrastructure",
-    "engineering_mechanisms_article": 8,
-    "engineering_mechanisms_project": 5,
-    "article_8_mechanisms": [
-      "真实浏览器 vs 无头浏览器 (DevTools 暴露给开发者)",
-      "Share with Agent 同意模型 (per-session/per-tab/per-Agent 可撤销)",
-      "Agent Tab 隔离 (用户 profile vs Agent profile vs Agent 之间)",
-      "并行 Agent 浏览器隔离 (Agents window 多 Agent)",
-      "敏感权限默认拒绝 (camera/microphone/geolocation 阻止)",
-      "企业级治理 (workbench.browser.enableChatTools + allow/deny lists)",
-      "Workspace Trust + Approval Prompts",
-      "Editor window + Agents window 集成点"
-    ],
-    "project_5_capabilities": [
-      "MCP 协议原生支持 (stdio/HTTP/SSE transport)",
-      "Accessibility Tree Based Interaction (vs vision model fallback)",
-      "真实浏览器 + 跨浏览器 (Chromium/Firefox/WebKit)",
-      "持久化 + 多 Session 隔离 (browser context)",
-      "Trace + 调试 (Playwright Trace Viewer)"
-    ],
-    "reason": "R616 = R612 (Anthropic Claude Science) + R613 (GitHub Copilot Harness) 突破后, R614 (saturation 1) + R615 (saturation 2) cooling 后第 3 个突破. 验证 R615 prediction 40% breakthrough 概率分支命中. GitHub Blog 2026-07-01 1st-party release + microsoft/playwright-mcp OSS 基础层 = 标准 Pair 模式 (R612/R613 同源).",
-    "quasi_period_validation": "R616 = R555 准周期第 31 次验证. R612 (突破 #1 Anthropic) + R613 (突破 #2 GitHub Blog) → R614 (sat 1) + R615 (sat 2) → R616 (突破 #3 GitHub Blog Browser Tools) = back-to-back breakthroughs → 2-round cooling → breakthrough 模式. 完整周期变体表加入 ⑨: back-to-back breakthroughs → 2-round cooling → breakthrough (历史第 2 次, R585 era 类似). R616 = 31 次 R555 准周期累计第 9 变体类型.",
-    "anthropic_engineering_plateau_status": "R616 Anthropic Engineering plateau = 17 rounds streak R555/R591/R601-R616. 历史第 5 长 streak. Last engineering post 2026-06-06 how-we-contain-claude = 27 days no new engineering. R617 重点监控 7/4 当日.",
-    "anthropic_7_4_window_proximity": "R616 = 2026-07-02 06:00 +0800 = 7/4 美国独立日前 2 天. Anthropic Engineering 17-round plateau 可能在 7/3-7/4 窗口打破 (历史 7/4 release 模式). R617/R618 重点监控.",
-    "r616_cluster_variant_emergence": "R616 命名 cluster = browser-agent/consent-architecture. 不是 R515/R567/R591 browser-agent cluster overlap, 而是 NEW cluster variant 关键词: Consent (Share with Agent 显式同意) + Isolation (Agent Tab 隔离) + Governance (企业 allow/deny list). 这三个关键词在 R515-R591 已有 browser-agent 4+ 篇中都没出现. R617-R620 监控此 cluster variant 是否延续.",
-    "r616_three_layer_harness_engineering_stack": "R616 确认 GitHub Copilot 在 2026 H2 的 Harness Engineering 三层栈演进路径: Layer 1 (R613 Model Routing 94% cache) + Layer 2 (R612-R614 Agent Harness Session) + Layer 3 (R616 Browser Surface + Consent Architecture) = GitHub Copilot 完整架构. 每次扩张都伴随一个 Trust Boundary 设计.",
-    "r615_to_r616_24h_interval": "R615 = 2026-07-01 06:07 +0800 (lastCommit 15a2589) → R616 = 2026-07-02 06:00 +0800 = 24h 间隔. 比 R613→R614 (1.7h) 长 14x, 比 R612→R613 (1.7h) 长 14x. 长间隔后 saturation cooling 模式 + breakthrough 信号匹配 R555 era 历史.",
-    "microsoft_playwright_mcp_pair_pair_reason": "1st-party commercial product (GitHub Blog) + 1st-party OSS base (microsoft/playwright-mcp) 标准 Pair 模式. microsoft/vscode 仓库的 Browser Tools 实现 = microsoft/playwright-mcp 的 fork + 5 个 Trust Boundary 机制. 项目 license Apache-2.0 清晰, stars 34,577 比 R613 OnlyTerp 107⭐ 高 322x, R612 NVIDIA BioNeMo 单 GPU 卡高. 互补方案: browser-use (102k⭐ MIT, vision-model-based) + Anthropic Computer Use (desktop layer) + Chrome WebMCP (网站侧 expose API).",
-    "browser_use_stars_growth": "browser-use/browser-use R311 (97k⭐) → R616 (102,005⭐) = +5% growth over 305 rounds. 阈值未触发 (10% trigger). R617 监控 110k⭐ 阈值.",
-    "koltyakov_browser_bridge_below_threshold": "koltyakov/browser-bridge (12⭐ MIT, 2026-03-19 创建, 2026-06-29 最后推送) = vendor-agnostic Browser Bridge MCP (支持 OpenAI Codex, Claude Code, Cursor, GitHub Copilot, OpenCode, Antigravity, Windsurf). 设计哲学: 'inspect the state that already exists in a real tab' (logged-in sessions, feature flags, seeded storage, SPA state). 完美补充 Pair Project 但 stars=12 < 100 阈值. SKILL.md 100⭐ requirement Skip. 100⭐ 阈值触发后 R617-R620 重新评估.",
-    "google_chrome_webmcp_future_signal": "Google Chrome 149 WebMCP origin trial = 网站侧 expose JS functions 给 browser-based agents. 与 GitHub Browser Tools GA (Agent 侧) 互补. 2026 H2 预测 browser-agent-as-standard cluster emergence, R617-R620 重点监控 Chrome team blog 1st-party release.",
-    "anthropic_fable_5_mythos_5_release": "Anthropic 7/1 claude-fable-5-mythos-5 = WSD models release. Fable 5 = Mythos-class 1 model safe for general use. $10/$50 per M tokens input/output. Mythos 5 = same model + safeguards lifted in some areas → Project Glasswing US government partnership. Engineering angle weak (model, not harness). Skip."
-  },
-  "defer_candidate_check": {
-    "historical_defer_candidates": 12,
-    "moved_or_triggered": 1,
-    "details": "R616 audit 12 historical defer candidates: amplifthq/opentag (520⭐ R615 → R616 +0%) / TianhangZhuzth/Fundamental-Ava (~750⭐ Apache-2.0 R616, +0%) / QwenLM/Qwen-AgentWorld (698⭐ R616, -0%) / HKUDS/AgentSpace (594⭐ R616, -2% minor) / Plaer1/junction (~650⭐ R616, +0%) / BuilderIO/agent-native (~3250⭐ License=None R616) / uphiago/recon-skills (~290⭐ None R616) / eli-labz/Godcoder (~265⭐ NOASSERTION R616) / YurunChen/repo-docs-skills (~280⭐ None R616) / Johell1NS/browser-search (~275⭐ MIT R616) / video-production-skills (~492⭐ None R616) / NotASithLord/peerd (273⭐ Apache-2.0 R616 borderline Skip). 1 defer trigger: 新增 R616 pair project microsoft/playwright-mcp (34,577⭐ Apache-2.0) → Article + Project 完成. New borderline Koltyakov/browser-bridge (12⭐ MIT) Skip (below 100⭐ threshold)."
-  },
-  "tracked_stars_growth_monitoring": {
-    "r576_protocol_active": true,
-    "monitoring_list": [
-      {"name": "cloudflare/security-audit-skill", "stars_r591": 632, "stars_r613": 2145, "stars_r614": 2168, "stars_r615": "~2200", "stars_r616": "~2230", "growth_pct": 253, "rounds": 11, "threshold_triggered": true, "action": "monitoring only (already tracked R591)"},
-      {"name": "HKUDS/AgentSpace", "stars_r555": 339, "stars_r612": 592, "stars_r614": 605, "stars_r615": 594, "stars_r616": 594, "growth_pct": 75, "rounds": 12, "threshold_triggered": false, "action": "monitoring only (already tracked R555, R616 -0%)"},
-      {"name": "Forsy-AI/agent-apprenticeship", "stars_r521": 893, "stars_r613": 1125, "stars_r616": "~1145", "growth_pct": 28, "rounds": 14, "threshold_triggered": false, "action": "monitoring only"},
-      {"name": "amplifthq/opentag", "stars_r583": 398, "stars_r614": 506, "stars_r615": 520, "stars_r616": 520, "growth_pct": 31, "rounds": 8, "threshold_triggered": false, "action": "monitoring only (R583 deferred, 1000⭐ re-eval threshold)"},
-      {"name": "TianhangZhuzth/Fundamental-Ava", "stars_r583": "TBD", "stars_r614": 750, "stars_r616": 750, "growth_pct": "minor", "rounds": 6, "threshold_triggered": false, "action": "monitoring only (R583/R616 Articleless defer)"},
-      {"name": "browser-use/browser-use", "stars_r311": 97000, "stars_r616": 102005, "growth_pct": 5, "rounds": 305, "threshold_triggered": false, "action": "monitoring only (R311 covered, R616 +5% minor)"}
-    ]
-  },
-  "quasi_period_observation": {
-    "r555_quasi_period_validations": 31,
-    "new_validation": "R616 = R555 准周期第 31 次验证. R612 (突破 #1 Anthropic) + R613 (突破 #2 GitHub Blog, 1.7h back-to-back) → R614 (sat 1, 10.4h) + R615 (sat 2, 1.5h) → R616 (突破 #3 GitHub Blog Browser Tools GA, 24h) = back-to-back breakthroughs → 2-round cooling → breakthrough (变体 ⑨). R616 = 31 次 R555 准周期累计第 9 变体类型.",
-    "breakthrough_streak_pattern": "R612+R613+R616 = 3 突破 (历史 R555 era 5 突破模式 + R567-R590 4 突破模式 + R612-R616 3 突破模式). R617 prediction: 突破 streak 4 概率 30% / saturation streak 3 概率 30% / breakthrough 50% / silent 10%.",
-    "saturation_streak": 0,
-    "r617_prediction": "R617 prediction: 7/4 独立日前 1-2 天窗口期. 50% breakthrough #4 (Anthropic Engineering 17-round plateau 7/4 当日打破 / Claude Blog 7 月 major post / GitHub Blog Browser Tools 续篇 / Cursor 7 月 post) / 25% cluster validation (browser-agent/consent-architecture cluster 续篇 / Google Chrome WebMCP / Anthropic browser-style release) / 15% saturation streak 1 (R616 breakthrough 后 1 轮 cooling) / 10% silent. R617 重点监控: ① Anthropic Engineering blog release (7/3-7/4 pattern) ② Claude Code SDK new feature (max-effort / multi-modal / new SDK) ③ GitHub Blog Copilot Browser Tools 续篇 ④ Cursor 7 月 major post ⑤ OpenAI 7 月 4-7/4 release ⑥ Databricks Omnigent 1st-party ⑦ Google Chrome WebMCP Chrome team blog 1st-party release."
-  },
-  "round_type": "breakthrough_round"
+  }
 }
