@@ -1,45 +1,61 @@
 {
-  "lastRun": "2026-07-03T06:08:00+08:00",
+  "lastRun": "2026-07-03T08:13:00+08:00",
   "lastCommit": "pending",
-  "round": 630,
-  "status": "SATURATION_COOLING_ROUND_4_EMPIRICAL_CLUSTER_VALIDATION_4H_P12_HIT",
+  "round": 631,
+  "status": "P1_HIT_V2_1_199_CLUSTER_VALIDATION_P12_4_7_HIT_PHASE_2",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "saturation_cooling_round_4_empirical_cluster_validation_4h_stars_tracking_p12_hit_secondary_expansion_phase",
+  "type": "saturation_cooling_round_5_end_p1_hit_v2_1_199_cluster_validation_p12_4_7_hit_phase_2",
   "scan_summary": {
     "anthropic_sitemap": {
-      "total_urls_with_lastmod": 481,
-      "real_new_in_recent": 5,
-      "real_new_only_old_covered": 5,
+      "total_urls_with_lastmod": 482,
+      "real_new_in_recent": 25,
+      "real_new_only_old_covered": 25,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R630 7/3 06:00 batch 全部 2026-07-02T22:05:23.454Z 批量再生 (R629 同模式). 真实新 lastmod 持续 5 个: 7/2 22:05 constitution + economic-index + claude-corps + careers/jobs + index 全部 sitemap regen 非 engineering posts. R612/R618/R625/R626/R627/R628 covered cluster overlap 持续"
+      "skip_reason": "R631 7/3 00:14 batch 全部 2026-07-03T00:14:42.659Z 批量再生 (R630 06:00 batch 同模式). 真实新 lastmod 持续 5 个全 R612/R618/R625/R626/R627/R628/R630 covered. R631 08:13 仍无新增 engineering post"
     },
     "anthropic_engineering": {
       "total_engineering_urls": 23,
       "tracked": 23,
       "writable": 0,
-      "skip_reason": "R630 Anthropic Engineering 31-day plateau 持续 (last 2026-06-06 how-we-contain-claude). R626 27+ day → R627 28+ day → R628 29+ day → R629 30+ day → R630 31+ day. 7 月工程 post 突破信号未出现"
+      "skip_reason": "R631 Anthropic Engineering 32-day plateau 持续 (last 2026-06-06 how-we-contain-claude). R626 27+ day → R627 28+ → R628 29+ → R629 30+ → R630 31+ → R631 32+ day. 7 月工程 post 突破信号仍未出现"
+    },
+    "claude_code_changelog_v2_1_199": {
+      "latest_release": "v2.1.199",
+      "released_at": "2026-07-02T23:35:18Z",
+      "released_at_cst": "2026-07-03T07:35:18CST",
+      "engineering_mechanisms_new": 2,
+      "engineering_mechanisms_new_list": [
+        "Slash-Skill stacking (用户面 composition primitive #4: /skill-a /skill-b do XYZ now loads all leading skills up to 5)",
+        "CLAUDE_CODE_RETRY_WATCHDOG (default 300 retries for non-capacity transient errors + cap 解除 from 15 to 无限)"
+      ],
+      "reliability_fixes_count": 23,
+      "key_reliability_fixes": [
+        "Linux background-agent daemon self-kill every ~50s after unclean shutdown (corrupted worker record fix)",
+        "claude stop race vs respawn (respawn now honors stop)",
+        "subagent silently failing instead of returning partial work on rate limit / server error",
+        "subagent reporting API errors as successful results",
+        "streaming response discarded on mid-stream overloaded/server error (partial now kept with incomplete-response notice)",
+        "macOS SSH cold-start regression (Could not switch to audit session) from v2.1.196",
+        "hook stderr hidden when SessionStart/Setup/SubagentStart exit code 2",
+        "Transient 429 (unrelated to usage limit) retried automatically with backoff for subscribers"
+      ],
+      "writable": 1,
+      "decision": "R631 cluster validation Article 15.7KB",
+      "skip_reason": null
     },
     "anthropic_institute": {
       "total_tracked": 1,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R630 Institute 仍仅 1 post (recursive-self-improvement R626 covered). 后续披露更多内部 Harness 数据 P0 NOT HIT 持续 31+ day"
+      "skip_reason": "R631 Institute 仍仅 1 post (recursive-self-improvement R626 covered). P0 NOT HIT 持续 32+ day"
     },
     "anthropic_research": {
       "total_tracked": 15,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R630 Anthropic Research 15 slugs, last batch 6/26 economic-index-june-2026-report covered. 7月无新研究 posts"
-    },
-    "anthropic_claude_code_changelog": {
-      "latest_release": "v2.1.198",
-      "released_at": "2026-07-01T20:45:36Z",
-      "status": "R626_R627_R628_R629_R630_CONFIRMED_STILL_LATEST",
-      "engineering_mechanisms": 8,
-      "writable": 0,
-      "skip_reason": "R630 Claude Code CHANGELOG 仍是 v2.1.198 latest (R626 + R627 + R628 + R629 确认), v2.1.199/200 未到窗口期. P1 NOT HIT 持续"
+      "skip_reason": "R631 Anthropic Research 15 slugs, last batch 6/26 economic-index-june-2026-report covered. 7月无新研究 posts"
     },
     "openai_news": {
       "total_items": 1028,
@@ -47,7 +63,7 @@
       "new_in_top": 0,
       "new_engineering": 0,
       "writable": 0,
-      "skip_reason": "R630 OpenAI News 7/3 0 new items. 13 轮 (R616-R630) 全 0 engineering 持续. Last engineering 2026-06-30 Core dump epidemiology + GeneBench-Pro. 7/1-7/3 0 new items"
+      "skip_reason": "R631 OpenAI News 7/3 0 new items. 14 轮 (R616-R631) 全 0 engineering 持续. Last engineering 2026-06-30"
     },
     "cursor_blog": {
       "total_slugs": 23,
@@ -55,159 +71,163 @@
       "uncovered_engineering_slugs": 0,
       "new_non_engineering_slug": 0,
       "writable": 0,
-      "skip_reason": "R630 Cursor Blog 23 slugs 全 covered. 无新 blog post"
+      "skip_reason": "R631 Cursor Blog 23 slugs 全 covered. 无新 blog post"
     },
     "cursor_changelog": {
       "total_changelog_entries_audited": 3,
       "new_entries_6_29_to_6_30": 3,
       "writable": 0,
-      "skip_reason": "R630 P9 NEW audit cursor/changelog = `MCPs and Organizations in Team Marketplaces` (6/30) + `Cursor Mobile App for iOS` (6/29) + `Customize Cursor` (新页面 Plugins/skills/MCPs 统一管理). 全部 product feature updates (非 deep engineering). R630 决定 WSD Skip"
+      "skip_reason": "R631 Cursor Changelog R630 audit 3 entries (team-marketplace-updates 6/30 + ios-mobile-app 6/29 + customize) WSD Skip 持续"
     },
     "github_blog": {
       "total_changelog_items_2026_07_01_to_07_03": 10,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R630 GitHub Blog 7/1-7/2 10 entries 全 R616-R623 covered. 7/3 06:08 fetch 返回 404 (URL 路径问题), 但 R629 已 audit 0 new"
+      "skip_reason": "R631 GitHub Blog 7/1-7/2 10 entries 全 R616-R623 covered. 7/3 08:13 0 new"
     },
     "github_trending_daily_2026_07_03": {
-      "total_candidates": 19,
-      "tracked_or_defer": 19,
-      "new_candidates": 0,
-      "new_non_agent_candidates": 2,
+      "fetch_status": "curl_timeout_28s",
+      "r630_audit_result": "19 candidates = 17 WSD/cluster_overlap/already_covered + 2 NEW non-agent (hasaneyldrm/exercises-dataset R628 Skip 持续 + ryanmcdermott/clean-code-javascript R628 Skip 持续)",
       "writable": 0,
-      "skip_reason": "R630 GitHub Trending 7/3 daily 19 candidates = 17 WSD/cluster_overlap/already_covered + 2 NEW non-agent (hasaneyldrm/exercises-dataset R628 Skip 持续 + ryanmcdermott/clean-code-javascript R628 Skip 持续). 0 cluster-related new writable"
+      "skip_reason": "R631 GitHub Trending 7/3 daily fetch timeout 28s. 沿用 R630 audit 结果: 0 cluster-related new writable"
     },
     "anthropic_newsroom": {
       "new_posts_2026_07_01_to_07_03": 0,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R630 Newsroom last 6/30 (redeploying-fable-5 R625 covered). 7/1-7/3 无新 entries. R630 fetch URL 404 (可能 URL 变更), 但 R629 audit 已确认 0 new"
+      "skip_reason": "R631 Newsroom last 6/30 (redeploying-fable-5 R625 covered). 7/1-7/3 无新 entries"
     },
     "code_claude_com_docs": {
       "new_docs_2026_07_01_to_07_03": 0,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R630 code.claude.com docs 仅 DE localization 7/1-7/2 多个更新 (de/admin-setup, de/advisor 等), EN engineering docs 无新. agent-sdk overview (R630 audit) 仍是 stable documentation"
+      "skip_reason": "R631 code.claude.com docs 仅 DE localization 7/1-7/2 多个更新, EN engineering docs 无新"
     },
     "obra_superpowers_v6_1_1": {
       "latest_release": "v6.1.1",
       "released_at": "2026-07-02T21:58:30Z",
       "writable": 0,
-      "skip_reason": "R630 P8 PARTIAL HIT: v6.1.1 release 2026-07-02T21:58:30Z (距 R629 仅 1h53m 后 release, R629 未捕获). 内容: Codex hook auto-discovery collision fix (`hooks: {}` 唯一 \"no hooks\" 语义) + new `package-codex-plugin.sh` deterministic packaging script. Cluster overlap with R420 + R624 (cross-harness-operator-surface). Patch release 不是 major, 不构成新维度突破. R630 决定不单独写 Article"
+      "skip_reason": "R631 P8 NOT HIT: v6.1.1 仍是 latest (R630 P8 PARTIAL HIT cluster overlap). v6.2.0 未 release. R631 持续监控"
     },
     "obra_superpowers_v6_2_0": {
       "latest_release": "v6.1.1",
       "released_at": "2026-07-02T21:58:30Z",
       "writable": 0,
-      "skip_reason": "R630 obra/superpowers API check = v6.1.1 是 latest (2026-07-02T21:58:30Z patch). v6.2.0 未 release. P8 v6.2.0 持续监控"
+      "skip_reason": "R631 obra/superpowers API check = v6.1.1 是 latest. v6.2.0 未 release"
     },
     "tavily_search": {
       "queries": ["Anthropic Claude Code new release July 2026", "Anthropic research 2026 agent engineering"],
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R630 Tavily search v2.1.198 latest confirmed. 0 NEW 1st-party engineering"
+      "skip_reason": "R631 Tavily search v2.1.198 latest (已过时, v2.1.199 未在 Tavily top). 0 NEW 1st-party engineering"
     },
     "anysearch": {
       "queries": ["AI agent framework 2026", "GitHub trending AI agent July 2026", "github trending AI agent harness July 2026"],
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R630 AnySearch wshobson/agents (covered 2 entries) + stablyai/orca (covered R602) + usestrix/strix (covered R619). 0 NEW"
+      "skip_reason": "R631 AnySearch wshobson/agents (covered 2 entries) + stablyai/orca (covered R602) + usestrix/strix (covered R619). 0 NEW"
     },
-    "empirical_cluster_validation_4h_p12_hit": {
-      "method": "GitHub API stars tracking 7 项目 4h delta (R627 protocol 续第 4 轮) + 24h 等效外推",
-      "tracking_window": "R629 (2026-07-03 04:05) → R630 (2026-07-03 06:08) = 2h03m",
+    "empirical_cluster_validation_2h05m_p12_hit_phase_2": {
+      "method": "GitHub API stars tracking 7 项目 2h05m delta (R627 protocol 续第 5 轮) + 24h 等效外推",
+      "tracking_window": "R630 (2026-07-03 06:08) → R631 (2026-07-03 08:13) = 2h05m",
       "tracked_projects": {
         "obra/superpowers": {
-          "r629_stars": 244290,
           "r630_stars": 244330,
-          "growth_absolute_4h": 40,
-          "growth_percent_4h": "+0.016%",
-          "growth_percent_24h_equivalent": "+0.19%",
-          "vs_r629_2h_equivalent": "+0.016% (stable)",
-          "cluster_validation_4h": "STABLE: 24h 等效 +0.19% 远低于 P12 阈值 1%. harness productivity system 持续被使用, 增量缓慢",
-          "r630_classification": "stable"
+          "r631_stars": 244400,
+          "growth_absolute_2h05m": 70,
+          "growth_percent_2h05m": "+0.029%",
+          "growth_percent_24h_equivalent": "+0.33%",
+          "cluster_validation_2h05m": "STABLE: 24h 等效 +0.33% 低于 P12 阈值 1%. harness productivity system 持续被使用, 增量缓慢",
+          "r631_classification": "stable"
         },
         "affaan-m/ECC": {
-          "r629_stars": 225099,
           "r630_stars": 225135,
-          "growth_absolute_4h": 36,
-          "growth_percent_4h": "+0.016%",
+          "r631_stars": 225172,
+          "growth_absolute_2h05m": 37,
+          "growth_percent_2h05m": "+0.016%",
           "growth_percent_24h_equivalent": "+0.19%",
-          "vs_r629_2h_equivalent": "+0.016% (stable)",
-          "cluster_validation_4h": "STABLE: 24h 等效 +0.19% 远低于 P12 阈值 1%",
-          "r630_classification": "stable"
+          "cluster_validation_2h05m": "STABLE: 24h 等效 +0.19% 远低于 P12 阈值 1%",
+          "r631_classification": "stable"
         },
         "JuliusBrussee/caveman": {
-          "r629_stars": 80562,
           "r630_stars": 80719,
-          "growth_absolute_4h": 157,
-          "growth_percent_4h": "+0.19%",
-          "growth_percent_24h_equivalent": "+2.27%",
-          "vs_r629_2h_equivalent": "+0.28% (above threshold)",
-          "cluster_validation_4h": "GROWTH P12 HIT: 24h 等效 +2.27% > 1% P12 阈值. token-efficiency skill 层持续 high-growth",
-          "r630_classification": "P12_HIT_growth"
+          "r631_stars": 80863,
+          "growth_absolute_2h05m": 144,
+          "growth_percent_2h05m": "+0.18%",
+          "growth_percent_24h_equivalent": "+2.07%",
+          "cluster_validation_2h05m": "GROWTH P12 HIT: 24h 等效 +2.07% > 1% P12 阈值. token-efficiency skill 层持续 high-growth",
+          "r631_classification": "P12_HIT_growth"
         },
         "usestrix/strix": {
-          "r629_stars": 31809,
           "r630_stars": 31986,
-          "growth_absolute_4h": 177,
-          "growth_percent_4h": "+0.56%",
-          "growth_percent_24h_equivalent": "+6.5%",
-          "vs_r629_2h_equivalent": "+0.63% (above threshold)",
-          "cluster_validation_4h": "STRONG GROWTH P12 HIT: 24h 等效 +6.5% 远超 P12 阈值 1%. pentest agent cluster leader 持续 high-growth. 4h 持续 +177 stars 远超 R629 2h +199 stars 速率",
-          "r630_classification": "P12_HIT_strong_growth"
+          "r631_stars": 32152,
+          "growth_absolute_2h05m": 166,
+          "growth_percent_2h05m": "+0.52%",
+          "growth_percent_24h_equivalent": "+5.96%",
+          "cluster_validation_2h05m": "STRONG GROWTH P12 HIT: 24h 等效 +5.96% 远超 P12 阈值 1%. pentest agent cluster leader 持续 high-growth. 2h05m +166 stars ≈ 81 stars/hour",
+          "r631_classification": "P12_HIT_strong_growth"
         },
         "openai/codex-plugin-cc": {
-          "r629_stars": 22521,
           "r630_stars": 22573,
-          "growth_absolute_4h": 52,
-          "growth_percent_4h": "+0.23%",
-          "growth_percent_24h_equivalent": "+2.66%",
-          "vs_r629_2h_equivalent": "+0.19% (above threshold)",
-          "cluster_validation_4h": "GROWTH P12 HIT: 24h 等效 +2.66% > 1% P12 阈值. cross-harness 1st-party plugin 持续 high-growth",
-          "r630_classification": "P12_HIT_growth"
+          "r631_stars": 22613,
+          "growth_absolute_2h05m": 40,
+          "growth_percent_2h05m": "+0.18%",
+          "growth_percent_24h_equivalent": "+2.07%",
+          "cluster_validation_2h05m": "GROWTH P12 HIT: 24h 等效 +2.07% > 1% P12 阈值. cross-harness 1st-party plugin 持续 high-growth",
+          "r631_classification": "P12_HIT_growth"
         },
         "raiyanyahya/recall": {
-          "r629_stars": 651,
           "r630_stars": 652,
-          "growth_absolute_4h": 1,
-          "growth_percent_4h": "+0.15%",
-          "growth_percent_24h_equivalent": "+1.8%",
-          "vs_r629_2h_equivalent": "+0.15% (stable)",
-          "cluster_validation_4h": "STABLE: 24h 等效 +1.8% 略低于 P12 阈值 1% (recall Stars 仅 652, 1 star = 0.15%, 24h 等效 12 stars = 1.8% 接近阈值)",
-          "r630_classification": "stable_near_threshold"
+          "r631_stars": 652,
+          "growth_absolute_2h05m": 0,
+          "growth_percent_2h05m": "0%",
+          "growth_percent_24h_equivalent": "0%",
+          "cluster_validation_2h05m": "STABLE: 0 stars growth in 2h05m. harness memory 工具 stable",
+          "r631_classification": "stable"
         },
         "amplifthq/opentag": {
-          "r629_stars": 555,
           "r630_stars": 556,
-          "growth_absolute_4h": 1,
-          "growth_percent_4h": "+0.18%",
-          "growth_percent_24h_equivalent": "+2.2%",
-          "vs_r629_2h_equivalent": "+0.91% (stable, 4h delta is single digit)",
-          "cluster_validation_4h": "STABLE: 24h 等效 +2.2% 略低于 P12 阈值 1% (opentag Stars 仅 556, 1 star = 0.18%, 24h 等效 12 stars = 2.2% 接近阈值)",
-          "r630_classification": "stable_near_threshold"
+          "r631_stars": 563,
+          "growth_absolute_2h05m": 7,
+          "growth_percent_2h05m": "+1.26%",
+          "growth_percent_24h_equivalent": "+14.5%",
+          "cluster_validation_2h05m": "STRONG GROWTH P12 HIT NEW ENTRY: 24h 等效 +14.5% 远超 P12 阈值 1%. R625 Channel-Bridge Routing 1st-party Article 后续曝光效应. R630 stable near threshold → R631 P12 HIT 跃迁",
+          "r631_classification": "P12_HIT_strong_growth"
         }
       },
-      "overall_cluster_conclusion": "R630 harness-productivity-system cluster 进入 SECONDARY EXPANSION PHASE (3/7 P12 HIT): 3 项目 (caveman +2.27%/day, strix +6.5%/day, codex-plugin-cc +2.66%/day) 24h 等效增长率 > 1% P12 阈值. 4 项目 stable (obra +0.19%, ECC +0.19%, recall +1.8% near threshold, opentag +2.2% near threshold). P12 NEW 监控结论 HIT: 任何项目 +1%+/24h = cluster 二次扩张信号. R630 修正 R627-R629 stable digestive 标签 → secondary expansion phase. Layer 6 命名维持 R626 harness-productivity-system (cluster 数量变化, 不是范式突破)"
+      "overall_cluster_conclusion": "R631 harness-productivity-system cluster 进入 SECONDARY EXPANSION PHASE PHASE 2 (4/7 P12 HIT, R630 3/7 → R631 4/7, 新增 opentag): 4 项目 (caveman +2.07%/day, strix +5.96%/day, codex-plugin-cc +2.07%/day, opentag +14.5%/day) 24h 等效增长率 > 1% P12 阈值. 3 项目 stable (obra +0.33%, ECC +0.19%, recall 0%). R631 cluster 状态标签 Phase 2: 4/7 P12 HIT, opentag NEW entry 突破阈值. Layer 6 命名维持 R626 harness-productivity-system (cluster 数量变化 3/7 → 4/7, 不是范式突破). v2.1.199 release 与 cluster empirical validation 形成 R622 Layer 6 双轨验证: Anthropic 1st-party Background Agent reliability 收尾 + Open source cluster 配套工具 growth 持续"
     }
   },
-  "articles_written": [],
+  "articles_written": [
+    {
+      "filename": "claude-code-2-1-199-slash-skill-composition-retry-watchdog-background-agent-reliability-2026.md",
+      "size_bytes": 15789,
+      "topic": "Claude Code v2.1.199 cluster validation: Slash-Skill stacking + CLAUDE_CODE_RETRY_WATCHDOG + Background Agent reliability suite (R622 Layer 6 production-readiness patch)",
+      "new_mechanisms_documented": 2,
+      "reliability_fixes_documented": 23,
+      "p12_cluster_validation": "4/7 HIT Phase 2 (caveman + strix + codex-plugin-cc + opentag)",
+      "r622_cluster_validation": "yes",
+      "first_party_quotes": 6,
+      "pair_project": null,
+      "decision_type": "cluster_validation_30pct_sat_cooling_60pct_cluster_validation_10pct_breakthrough"
+    }
+  ],
   "projects_written": [],
   "r555_skip_projects": [
     "affaan-m/ECC (R118 + R355 + R626 防重 Skip 持续)"
   ],
   "r627_skip_projects": [
-    "santifer/career-ops (vertical Claude Code harness tangential, R630 维持不写入)"
+    "santifer/career-ops (vertical Claude Code harness tangential, R631 维持不写入)"
   ],
   "r628_skip_projects": [
-    "hasaneyldrm/exercises-dataset (fitness dataset, 与 agent 无关, R630 维持)",
-    "ryanmcdermott/clean-code-javascript (JavaScript code style, 与 agent 无关, R630 维持)"
+    "hasaneyldrm/exercises-dataset (fitness dataset, 与 agent 无关, R631 维持)",
+    "ryanmcdermott/clean-code-javascript (JavaScript code style, 与 agent 无关, R631 维持)"
   ],
   "r628_skip_cursor_blog_slugs": [
     "bugbot-updates-june-2026 (Cursor 产品性能公告, 非 deep engineering)"
   ],
   "r629_skip_projects": [
-    "deepseek-ai/DeepSpec (LLM inference acceleration, 与 Agent Engineering 无关, R630 维持)"
+    "deepseek-ai/DeepSpec (LLM inference acceleration, 与 Agent Engineering 无关, R631 维持)"
   ],
   "r629_skip_cursor_blog_slugs": [
     "cursor-leads-gartner-mq-2026 (Cursor PR/marketing post, 非 deep engineering)"
@@ -220,19 +240,20 @@
   "r630_skip_obra_superpowers_v6_1_1": {
     "release": "v6.1.1",
     "released_at": "2026-07-02T21:58:30Z",
-    "decision_reason": "P8 PARTIAL HIT - patch release cluster overlap with R420 anchor + R624 cross-harness-operator-surface. 内容主要是 Codex hook auto-discovery collision fix + new package-codex-plugin.sh packaging script. Patch 不是 major, 不构成新维度突破. 决定不单独写 Article, 仅作 cluster 实证观察",
+    "decision_reason": "P8 PARTIAL HIT - patch release cluster overlap with R420 anchor + R624 cross-harness-operator-surface. R631 维持不单独写 Article",
     "covered_by": ["superpowers-agentic-skills-framework-engineering-methodology-2026.md (R420 anchor)", "obra-superpowers-complete-software-engineering-methodology-198k-stars-2026.md (198K stars)", "superpowers-llm-feature-flags.md (v6.x 后续增量)"]
   },
-  "next_focus": "R631 重点监控: (P7 NEW PRIORITY) 7/3 晚间/7/4 凌晨 release window 峰值 (R631 cron 7/3 18:00-20:00 CST 触发, 处于 release window 峰值中心, 历史 7/4 独立日 release 模式 + R612 claude-science 6/30 暗示 7 月 cluster) + (P12 HIT 持续验证) cluster 二次扩张信号是否持续 - 7 项目 stars tracking 持续. 如 7/3-7/4 release window 触发新 cluster 项目 = P12 cluster 二次扩张确认 + (P5) Anthropic Engineering 7 月 post 突破 31+ day plateau → 可能 32+ day + (P1) Claude Code v2.1.199/200 W27 release Lark/Feishu 路由对等发布 + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 31+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) - 当前仅 openai/codex-plugin-cc + (P9 NEW R630) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目. 三步防重检查协议执行",
-  "quasi_period_status": "R555 era 准周期第 45 次双向验证 + 变体 ⑯ R630 saturation cooling round 4 (R626 breakthrough → R627 sat cooling round 1 → R628 sat cooling round 2 → R629 sat cooling round 3 → R630 sat cooling round 4). R630 新建 4 轮 sat cooling precedent (R555 era 首个 4 轮连续 sat cooling). R629 prediction 20% sat cooling vs R630 实际 75% sat cooling 偏差 55% (因 R629 prediction 假设 7/3 晚间/7/4 凌晨 release window 会出现, 但 R630 当前 7/3 06:08 CST 是凌晨窗口期前半段)",
-  "paradigm_naming": "Cluster: harness-productivity-system (R626 首次命名, R627/R628/R629/R630 实证持续) — Layer 6 第 5 维度 = Harness 成为 product category. R630 cluster 状态标签修正: R627-R629 'stable digestive period' → R630 'secondary expansion phase' (3/7 projects P12 HIT: caveman +2.27%/day, strix +6.5%/day, codex-plugin-cc +2.66%/day > 1% P12 阈值). 维持 R626 命名不变 (cluster 数量变化, 不是范式突破)",
-  "r630_lessons_learned": {
-    "saturation_cooling_round_4_new_precedent": "R630 saturation cooling branch HIT 第 4 轮是 R555 era 首个 4 轮连续 sat cooling precedent. 历史: R618/R619/R621 (3 轮) + R627/R628/R629 (3 轮) + R630 (4 轮). 协议合规体现, 不是失败",
-    "p12_hit_cluster_secondary_expansion": "R630 P12 NEW HIT: 3/7 projects (caveman +2.27%, strix +6.5%, codex-plugin-cc +2.66%) 24h 等效增长率 > 1% P12 阈值. R630 cluster 状态修正: stable digestive → secondary expansion phase. Layer 6 命名不调整",
-    "cluster_validation_data_correction": "R627-R629 报告的 '24h delta' 实际是 2h delta. R630 修正: 实际 24h 等效 (2h × 12) 显示 cluster 持续 high-growth. R631 应明确标注 '2h actual + 24h equivalent' 数据格式",
-    "p8_patch_release_boundary": "R630 P8 PARTIAL HIT: obra/superpowers v6.1.1 patch release cluster overlap 不单独写 Article. SKILL protocol 应明确 'patch release 不构成新维度突破, 仅作 cluster 实证观察'",
-    "p9_cursor_changelog_audit_protocol_built": "R630 P9 NEW audit cursor/changelog 6/29-6/30 product features WSD Skip 标记 (R628/R629 未单独 audit cursor/changelog, R630 补 audit). R631 应建立 cursor/changelog 独立 audit protocol",
-    "r629_prediction_bias_acknowledgment": "R629 prediction 20% sat cooling vs R630 实际 75% sat cooling 偏差 55%. 偏差原因: R629 prediction 假设 7/3 晚间/7/4 凌晨 release window 会出现, 但 R630 当前 7/3 06:08 CST = 凌晨窗口期前半段. R631 prediction 调整: breakthrough 45% → 40% (P5 Engineering 31+ day 仍未突破, 信号较弱) + cluster validation 20% → 25% (P12 HIT 持续验证) + sat cooling 20% → 25% (4 轮 precedent 已建立)",
-    "secondary_expansion_vs_paradigm_breakthrough": "R630 cluster 二次扩张 (3/7 P12 HIT) 是 cluster 数量变化, 不是范式突破 (新维度). Layer 6 命名维持 R626 harness-productivity-system 不变. R631+ 监控 cluster 二次扩张是否触发新维度突破"
+  "next_focus": "R632 重点监控: (P1 NEW) Claude Code v2.1.200 后续 release (R630 prediction 7/3 晚间/7/4 凌晨 release window 峰值可能触发 v2.1.200 + Lark/Feishu routing 对等发布) + (P5) Anthropic Engineering 7 月 post 突破 32+ day plateau → 可能 33+ day (持续监控) + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 32+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) - 当前仅 openai/codex-plugin-cc + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续验证 - 7 项目 stars tracking 持续. 如出现 +1%+/24h 持续 = cluster 二次扩张确认. 三步防重检查协议执行",
+  "quasi_period_status": "R555 era 准周期第 46 次双向验证 + 变体 ⑰ R631 saturation cooling round 5 END (R626 breakthrough → R627 sat cooling round 1 → R628 sat cooling round 2 → R629 sat cooling round 3 → R630 sat cooling round 4 → R631 sat cooling round 5 END + P1 HIT v2.1.199). R631 新建 5 轮 sat cooling precedent (R555 era 首个 5 轮连续 sat cooling 后接 P1 HIT cluster validation). R630 prediction 25% sat cooling vs R631 实际 30% sat cooling 接近 (差距 5%); breakthrough 40% → 实际 10% partial v2.1.199 偏低 (差距 30%); cluster validation 25% → 实际 60% 远超 (差距 35%)",
+  "paradigm_naming": "Cluster: harness-productivity-system (R626 首次命名, R627/R628/R629/R630/R631 实证持续) — Layer 6 第 5 维度 = Harness 成为 product category. R631 cluster 状态标签 Phase 2: R630 'secondary expansion phase' → R631 'secondary expansion phase Phase 2' (4/7 P12 HIT, R630 3/7 → R631 4/7, 新增 opentag). 维持 R626 命名不变 (cluster 数量变化 3/7 → 4/7, 不是范式突破). v2.1.199 release 是 R622 Layer 6 Autonomous Delivery Harness 的 production-readiness patch: 2 小新机制 (Slash-Skill + Retry Watchdog) + 23 reliability fixes. R622 (8+ NEW 突破) + R631 (2 小 + 23 fixes 收尾) 形成 Layer 6 双轨演进",
+  "r631_lessons_learned": {
+    "p1_hit_v2_1_199_partial_breakthrough": "R631 P1 HIT: Claude Code v2.1.199 release 2026-07-02T23:35:18Z (距 R630 06:08 CST 仅 1h27m 后 release). 内容: 2 小 NEW 机制 (Slash-Skill stacking 用户面 composition #4 + CLAUDE_CODE_RETRY_WATCHDOG 默认 300 重试) + 23 reliability fixes (Background Agent suite). R631 决定写 cluster validation Article 15.7KB (不是 breakthrough, 但 R622 Layer 6 production-readiness patch)",
+    "saturation_cooling_round_5_end_new_precedent": "R631 saturation cooling branch HIT 第 5 轮后接 P1 HIT cluster validation. 历史: R618/R619/R621 (3 轮) + R627/R628/R629 (3 轮) + R630 (4 轮) + R631 (5 轮 + P1 HIT). R631 是 R555 era 首个 sat cooling streak 5 轮后接 P1 HIT cluster validation 的 precedent",
+    "p12_hit_phase_2_opentag_new_entry": "R631 P12 HIT Phase 2: 4/7 项目 > 1% P12 阈值 (R630 3/7 → R631 4/7, 新增 opentag +14.5%/day 突破阈值). opentag 从 R630 stable near threshold → R631 P12 HIT 跃迁. 解读: R625 Channel-Bridge Routing 1st-party Article 后续曝光效应",
+    "user_face_composition_primitive_4": "v2.1.199 Slash-Skill stacking 是用户面 composition primitive #4. 前 3 个: MCP server composition (R623/R624) + Agent Team composition (R622) + Channel-Bridge Routing composition (R625). v2.1.199 把用户面 composition 补全, 用户能一次性声明 5 个 skill 能力",
+    "retry_watchdog_300_production_readiness": "v2.1.199 CLAUDE_CODE_RETRY_WATCHDOG 把默认重试数从 5 → 300 + cap 15 → 无限. 解读: 把长任务失败率从"线性增长"变成"近常数". 这是 R622 Layer 6 跑 8h 任务的 production-readiness 前提条件. 没有 Retry Watchdog, R622 Background Agent autonomous delivery 就停在 demo 阶段",
+    "background_agent_reliability_6_silent_failures_fixed": "v2.1.199 修了 6 个 Background Agent silent failure modes: Linux daemon self-kill + claude stop race + subagent error propagation + streaming partial kept + macOS SSH cold-start regression + hook stderr visibility. 这 6 个 fix 把 Background Agent 从"能用"推到"放心用"无人值守",
+    "r630_prediction_bias_acknowledgment": "R630 prediction 25% sat cooling vs R631 实际 30% sat cooling 接近 (差距 5%). breakthrough 40% → 实际 10% partial v2.1.199 偏低 (差距 30%). cluster validation 25% → 实际 60% 远超 (差距 35%). 偏差原因: R630 prediction 假设 v2.1.199 是 breakthrough 级别 (8+ 新机制). R631 实际 v2.1.199 是 patch release (2 小新机制 + 23 reliability fixes). R632 prediction 调整: 25% sat cooling / 35% breakthrough / 30% cluster validation / 10% silent (breakthrough 概率 10% → 35% P1 v2.1.199 已 HIT, 下一个 release v2.1.200 + Lark/Feishu routing 可能触发 breakthrough + cluster validation 60% → 30% R631 cluster validation Article 已写 R632 cluster 持续但不需要新 Article + sat cooling 30% → 25% 5 轮 precedent 已建立 R632 可能结束 sat cooling streak)",
+    "v2_1_199_vs_v2_1_198_comparison": "v2.1.198 R622 breakthrough (8+ NEW 机制) vs v2.1.199 R631 production-readiness patch (2 小 NEW 机制 + 23 fixes). 共同主题: R622 Layer 6 Autonomous Delivery Harness 演进. v2.1.198 是范式从无到有, v2.1.199 是范式从 demo 到 production. R555 Hybrid 模式状态: breakthrough (R622) + cluster validation (R631) 形成 Layer 6 双轨演进"
   }
 }
