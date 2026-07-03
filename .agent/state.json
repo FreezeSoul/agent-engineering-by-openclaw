@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-07-03T14:17:00+08:00",
+  "lastRun": "2026-07-03T16:03:00+08:00",
   "lastCommit": "7669304",
-  "round": 635,
-  "status": "BREAKTHROUGH_VIA_CLAUDE_BLOG_FULL_3_PAGE_AUDIT_P19_OSSSIGHT_API_P20_DOUBLE_PROTOCOL_UPGRADE",
+  "round": 636,
+  "status": "BREAKTHROUGH_VIA_CLAUDE_BLOG_STEERING_1ST_PARTY_BLOG_POST_7_METHODS_DECISION_FRAMEWORK",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "breakthrough_via_3page_full_audit_plus_ossinsight_api",
+  "type": "breakthrough_via_1st_party_blog_post_steering",
   "scan_summary": {
     "anthropic_sitemap": {
       "total_urls_with_lastmod": 482,
@@ -112,6 +112,32 @@
         "Skills 协议的诚意,不在 TRIGGER 里, 在 SKIP 里",
         "Skill 不是教 Claude 怎么调 API,是告诉 Claude 哪些 API 形态已经不能用了",
         "Skill 的价值不是'知识多',而是'消除工作流断点'"
+      ]
+    },
+    {
+      "round": 636,
+      "file": "articles/tool-use/anthropic-claude-code-steering-7-methods-decision-framework-2026.md",
+      "title": "Anthropic 把 Claude Code 的 7 种 steering 方法画了张图：官方决策框架首次落地",
+      "source_url": "https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more",
+      "source_type": "1st-party-anthropic-claude-code-team",
+      "cluster": "tool-use/steering-methods/layer6-8th-dimension",
+      "category": "tool-use",
+      "size_kb": 14.3,
+      "lines": 161,
+      "quotes_count": 6,
+      "published_date": "2026-06-18",
+      "added_at": "2026-07-03",
+      "cluster_relationship": "R311 anthropic-9-categories-internal-skills-taxonomy + R406 claude-code-subagents-decision-framework + R432 anthropic-large-codebase-claude-code-five-extension-points + R635 anthropic-claude-api-skill-ecosystem-ide-bundling + R636 NEW 7-methods decision framework 收口 (跨 Cluster)",
+      "key_concepts": [
+        "7 种方法 4 维矩阵 (加载时机 × 压缩行为 × 上下文成本 × 权威等级)",
+        "压缩 (compaction) 是隐形分水岭",
+        "权威等级 (authority) 是第二隐形分水岭",
+        "Hook exit code 2 是 instruction 解决不了的问题的答案"
+      ],
+      "key_quotes": [
+        "Steering 的 7 种方法不是平级的,它们在 4 个轴心(加载时机、压缩行为、上下文成本、权威等级)上的位置决定了工程边界",
+        "CLAUDE.md 的真正问题不是'写什么',是'谁拥有它'",
+        "绝对不能发生的事,instruction 解决不了 —— 只有 Hook 的 exit code 2 能解决"
       ]
     }
   ],
@@ -296,70 +322,90 @@
       "round_added": 635,
       "type": "cluster_naming",
       "description": "claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + 3rd-party Skills 生态 Pair 模式 (Layer 6 第 7 维度)"
+    },
+    {
+      "id": "P23",
+      "round_added": 636,
+      "type": "cluster_naming",
+      "description": "tool-use/steering-methods (Layer 6 第 8 维度) - 7 methods decision framework 收口 + 跨 Cluster 整合 R311/R406/R432/R635"
+    },
+    {
+      "id": "P24",
+      "round_added": 636,
+      "type": "cluster_correction",
+      "description": "R635 Phase 3 入口误判被反驳 - cluster 二次扩张信号重现, 5/7 P12 HIT 反弹 Phase 2 持续"
+    },
+    {
+      "id": "P25",
+      "round_added": 636,
+      "type": "audit_followup",
+      "description": "claude.com/blog 32 uncovered slugs WSD Skip 持续 - steering 已写入 R636 Article, 31 个 WSD Skip 持续"
     }
   ],
   "cluster_validation": {
-    "round": 635,
-    "delta_minutes": 140,
-    "phase_transition": "Phase 2 → Phase 3 入口",
-    "p12_hit_count": "2/7 (R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → R635 2/7 显著降级)",
+    "round": 636,
+    "delta_minutes": 106,
+    "phase_transition": "Phase 2 二次扩张回归 (R635 Phase 3 入口误判被反驳)",
+    "p12_hit_count": "5/7 (R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → R635 2/7 误判 → R636 5/7 反弹)",
     "cluster_data": [
       {
         "name": "obra/superpowers",
-        "r634": 244714,
         "r635": 244737,
-        "delta": 23,
-        "daily_pct": "+0.10%",
-        "status": "Stable"
+        "r636": 244872,
+        "delta": 135,
+        "daily_pct": "+0.75%",
+        "status": "Stable ↑"
       },
       {
         "name": "affaan-m/ECC",
-        "r634": 225320,
         "r635": 225330,
-        "delta": 10,
-        "daily_pct": "+0.05%",
-        "status": "Stable"
+        "r636": 225384,
+        "delta": 54,
+        "daily_pct": "+0.33%",
+        "status": "Stable ↑"
       },
       {
         "name": "JuliusBrussee/caveman",
-        "r634": 81536,
         "r635": 81593,
-        "delta": 57,
-        "daily_pct": "+0.72%",
-        "status": "Stable ↑ (跌出 P12)"
+        "r636": 81854,
+        "delta": 261,
+        "daily_pct": "+4.35%",
+        "status": "P12 HIT (Growth ↑↑)"
       },
       {
         "name": "usestrix/strix",
-        "r634": 32765,
         "r635": 32820,
-        "delta": 55,
-        "daily_pct": "+1.73%",
-        "status": "P12 HIT (Growth ↓)"
+        "r636": 33096,
+        "delta": 276,
+        "daily_pct": "+11.42%",
+        "status": "STRONG GROWTH"
       },
       {
         "name": "openai/codex-plugin-cc",
-        "r634": 22772,
         "r635": 22786,
-        "delta": 14,
-        "daily_pct": "+0.63%",
-        "status": "Stable ↑ (跌出 P12)"
+        "r636": 22827,
+        "delta": 41,
+        "daily_pct": "+2.44%",
+        "status": "P12 HIT (Growth ↑)"
       },
       {
         "name": "raiyanyahya/recall",
-        "r634": 654,
         "r635": 654,
-        "delta": 0,
-        "daily_pct": "+0.00%",
-        "status": "Stable"
+        "r636": 656,
+        "delta": 2,
+        "daily_pct": "+4.15%",
+        "status": "P12 HIT (Growth ↑↑)"
       },
       {
         "name": "amplifthq/opentag",
-        "r634": 572,
         "r635": 573,
-        "delta": 1,
-        "daily_pct": "+1.80%",
-        "status": "P12 HIT (Growth ↓)"
+        "r636": 577,
+        "delta": 4,
+        "daily_pct": "+9.48%",
+        "status": "STRONG GROWTH"
       }
     ]
-  }
+  },
+  "r636_next_focus": "R636 重点监控: (P1) Claude Code v2.1.200 后续 release + (P5) Anthropic Engineering 7 月 post 突破 37+ day plateau → 可能 38+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 37+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 (R634 fetch timeout 持续) + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续 - 7 项目 stars tracking 持续 (R636 5/7 P12 HIT 反弹) + (P13) Slash-Skill stacking cap 5 → 10 后续扩展 + (P14) CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展 + (P15 R632 NEW) agentskills/agentskills Defer monitoring + (P16 R633 NEW + R636 持续) Anthropic claude.com/blog Claude Code team 后续 posts (R633 + R636 已 HIT, 持续监控 R637+) + (P17 R634 NEW) claude.com/blog FULL audit protocol 升级 + (P18 R634 NEW) apps-gateway / agent-identity / human-agent-teams 3 Defer 监控 + (P19 R635 NEW) claude.com/blog FULL 3-page audit protocol 升级 (R636 持续应用) + (P20 R635 NEW) OSS Insight API 切换 protocol + (P21 R635 NEW) 5 NEW Project Defer 监控 + (P22 R635 NEW) claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + (P23 R636 NEW) tool-use/steering-methods (Layer 6 第 8 维度) 7 methods decision framework 收口 + (P24 R636 NEW) R635 Phase 3 入口误判被反驳 + (P25 R636 NEW) 32 uncovered slugs WSD Skip 持续. 三步防重检查协议执行 + 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)",
+  "r636_prediction": "20% sat cooling / 35% breakthrough / 40% cluster validation / 5% silent. breakthrough 30% → 35% (R636 breakthrough HIT 后, R637 仍保持高 breakthrough 概率: P16 claude.com/blog Claude Code team 后续 posts + P5 Anthropic Engineering 7 月 post 突破 37+ day plateau + P0 Anthropic Institute 持续监控). cluster validation 45% → 40% (R636 5/7 P12 HIT 反弹 Phase 2 二次扩张, R637 cluster validation 概率降低). sat cooling 15% → 20% (R636 breakthrough HIT 概率延后, R637 sat cooling 概率提升). silent 10% → 5% (R636 breakthrough 增量 5% 移到 sat cooling)"
 }
