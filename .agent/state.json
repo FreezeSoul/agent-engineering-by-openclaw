@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-07-03T19:57:00+08:00",
+  "lastRun": "2026-07-03T22:05:00+08:00",
   "lastCommit": "9790457",
-  "round": 639,
-  "status": "SAT_COOLING_2_ROUND_VIA_14_SOURCE_ALL_COVERED_POST_R637_R638_BREAKTHROUGH_COOLING_STREAK_2",
+  "round": 640,
+  "status": "BREAKTHROUGH_VIA_MICROSOFT_RESEARCH_BLOG_1ST_PARTY_POST_MEMORA_R555_VARIANT_26_CONSECUTIVE_MS_BLOG_BREAKTHROUGH_INTERVAL_6_ROUNDS",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "sat_cooling_2_round_via_1st_party_blog_post_skill_optimization",
+  "type": "breakthrough_via_1st_party_academic_post_audit_gap_discovery",
   "scan_summary": {
     "anthropic_sitemap": {
       "total_urls_with_lastmod": 482,
@@ -146,6 +146,33 @@
         "CLAUDE.md 的真正问题不是'写什么',是'谁拥有它'",
         "绝对不能发生的事,instruction 解决不了 —— 只有 Hook 的 exit code 2 能解决"
       ]
+    },
+    {
+      "round": 640,
+      "file": "articles/context-memory/microsoft-research-memora-harmonic-memory-representation-long-horizon-2026.md",
+      "title": "Memora 重新定义 Agent 长期记忆:从内容即检索到谐波表示解耦",
+      "source_url": "https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/",
+      "source_type": "1st-party-microsoft-research-blog",
+      "cluster": "context-memory/harmonic-representation",
+      "category": "context-memory",
+      "size_kb": 11.8,
+      "lines": 268,
+      "quotes_count": 5,
+      "published_date": "2026-06-29",
+      "added_at": "2026-07-03",
+      "cluster_relationship": "R311 Skills 9 分类 + R626 harness-productivity-system + R634 identity-federation + R635 claude-api Skill IDE bundling + R636 steering 7 methods + R637 microsoft-research-skillopt (Microsoft Research Blog 同源) + R640 NEW context-memory/harmonic-representation Layer 6 第 9 维度",
+      "key_concepts": [
+        "谐波表示 3 组件 (Memory value + Primary abstraction 6-8 词 + Cue anchors organic tags)",
+        "存储-检索解耦 (retrieval independent of content)",
+        "抽象-具体死结 (content-fragmentation / coarse-abstraction / graph-based ontology 三范式共享缺陷)",
+        "98% context token reduction (SoTA on LoCoMo + LongMemEval)",
+        "ICML 2026 paper + 1st-party Microsoft Research 开源代码"
+      ],
+      "key_quotes": [
+        "Agent 长期记忆的工程瓶颈不是存储空间,是检索入口的语义带宽",
+        "Memory content can remain rich and expressive, while a separate, lightweight structural layer handles indexing and retrieval",
+        "Memora is built to give agents both. 抽象和具体不是 tradeoff,是不同组件的不同职责"
+      ]
     }
   ],
   "projects_written": [
@@ -167,6 +194,25 @@
       "added_at": "2026-07-03",
       "related_article": "articles/tool-use/anthropic-claude-api-skill-ecosystem-ide-bundling-2026.md",
       "pair_logic": "1st-party Anthropic claude-api Skill (R635 Article) + 3rd-party tt-a1i/archify (R635 Project) = Skills 生态完整图景"
+    },
+    {
+      "round": 640,
+      "file": "articles/projects/microsoft-memora-harmonic-memory-agent-long-horizon-2026.md",
+      "title": "microsoft/Memora: 谐波记忆表示的 1st-party 工程实现, ICML 2026 长期记忆新基准",
+      "url": "https://github.com/microsoft/Memora",
+      "stars": 110,
+      "license": "MIT",
+      "language": "Python",
+      "version": "n/a",
+      "released_at": "2026-05-13",
+      "cluster": "context-memory/harmonic-representation",
+      "category": "projects",
+      "size_kb": 11.7,
+      "lines": 247,
+      "readme_quotes_count": 7,
+      "added_at": "2026-07-03",
+      "related_article": "articles/context-memory/microsoft-research-memora-harmonic-memory-representation-long-horizon-2026.md",
+      "pair_logic": "1st-party Microsoft Research Blog Memora Article (R640) + 1st-party microsoft/Memora Project (R640) = Microsoft Research Asia 同源完整图景 (R637 SkillOpt + R640 Memora 同 Microsoft Research Blog 来源)"
     }
   ],
   "defer_candidates": [
@@ -276,8 +322,8 @@
     ]
   },
   "next_focus": "R634 重点监控: (P16 R633 NEW) Anthropic claude.com/blog Claude Code team 后续 posts (类似 R633 4-type loop taxonomy 这种机制级文章) + (P1) Claude Code v2.1.200 后续 release + (P5) Anthropic Engineering 7 月 post 突破 34+ day plateau → 可能 35+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 34+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) - 当前仅 openai/codex-plugin-cc + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续验证 - 7 项目 stars tracking 持续 + (P13) Slash-Skill stacking cap 5 → 10 后续扩展 + (P14) CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展 + (P15 R632 NEW) agentskills/agentskills Defer monitoring. 三步防重检查协议执行",
-  "quasi_period_status": "R555 era 准周期第 48 次双向验证 + 变体 ⑲ NEW: post-R632 sat cooling 1 轮后接 breakthrough via 1st-party blog post (区别于历史 breakthrough pattern: Claude Code release + Anthropic Engineering post + Anthropic Newsroom + GitHub Blog + Cursor Blog 之外第 6 种). R632 → R633 breakthrough precedent 符合 R631 → R632 sat cooling 1 轮 模式 (sat cooling streak 1 → breakthrough precedent) | R555 era 准周期第 50 次双向验证 + 变体 ㉕ NEW (R639): Post-Breakthrough Sat Cooling 2 Round via 14-Source All-Covered. R637 → R638 sat cooling 1 round → R639 sat cooling 2 round 续期",
-  "paradigm_naming": "Cluster: harness-productivity-system (R626 首次命名, R627/R628/R629/R630/R631/R632/R633 实证持续) — Layer 6 第 5 维度 = Harness 成为 product category. R633 cluster 状态标签 Phase 2 持续 3 轮: R631 secondary expansion phase Phase 2 → R632 secondary expansion phase Phase 2 → R633 secondary expansion phase Phase 2 持续 (4/7 P12 HIT 持续 3 轮). 维持 R626 命名不变 (cluster 数量稳定 4/7, 不是范式突破). R633 breakthrough via claude.com/blog 4-type loop taxonomy 是 Layer 6 cluster 内部的范式细化 (loop taxonomy), 不是新维度命名",
+  "quasi_period_status": "R555 era 准周期第 48 次双向验证 + 变体 ⑲ NEW: post-R632 sat cooling 1 轮后接 breakthrough via 1st-party blog post (区别于历史 breakthrough pattern: Claude Code release + Anthropic Engineering post + Anthropic Newsroom + GitHub Blog + Cursor Blog 之外第 6 种). R632 → R633 breakthrough precedent 符合 R631 → R632 sat cooling 1 轮 模式 (sat cooling streak 1 → breakthrough precedent) | R555 era 准周期第 50 次双向验证 + 变体 ㉕ NEW (R639): Post-Breakthrough Sat Cooling 2 Round via 14-Source All-Covered. R637 → R638 sat cooling 1 round → R639 sat cooling 2 round 续期 | R555 era 准周期第 51 次双向验证 + 变体 ㉖ NEW (R640): Consecutive Microsoft Research Blog Breakthrough via 1st-Party Academic Post via R637 first-time audit gap discovery. R637 SkillOpt → R638 sat cooling 1 round → R639 sat cooling 2 round → R640 Memora breakthrough (4 轮 R637→R640 中间 2 轮 sat cooling). Cluster 二次扩张信号从 trace only 升级为 empirical strict pass (3h41m 完整 delta 窗口 4/7 P12 HIT 严格通过)",
+  "paradigm_naming": "Cluster: harness-productivity-system (R626 首次命名, R627/R628/R629/R630/R631/R632/R633 实证持续) — Layer 6 第 5 维度 = Harness 成为 product category. R633 cluster 状态标签 Phase 2 持续 3 轮: R631 secondary expansion phase Phase 2 → R632 secondary expansion phase Phase 2 → R633 secondary expansion phase Phase 2 持续 (4/7 P12 HIT 持续 3 轮). 维持 R626 命名不变 (cluster 数量稳定 4/7, 不是范式突破). R633 breakthrough via claude.com/blog 4-type loop taxonomy 是 Layer 6 cluster 内部的范式细化 (loop taxonomy), 不是新维度命名 | R640 NEW context-memory/harmonic-representation (Layer 6 第 9 维度): 谐波记忆表示 primary abstraction + cue anchors 抽象-具体解耦, Microsoft Research Blog Memora 1st-party 学术文章 + microsoft/Memora 1st-party ICML 2026 paper 官方代码 Pair 闭环. 与 R637 tool-use/skill-optimization 子维度共同构成 Microsoft Research Asia 主导 Agent Engineering 范式演化路径",
   "r632_lessons_learned": {
     "saturation_cooling_round_1_post_r631_breakthrough": "R632 sat cooling branch HIT 第 1 轮 (post-R631 P1 HIT breakthrough). 历史: R618 sat 1 → R619 sat 2 → R620 breakthrough 60% (R555 era 变体 ⑪ sat streak 2→3 突破 100% 命中). R631 P1 HIT breakthrough (R555 era 首个 5 轮连续 sat cooling 后接 P1 HIT cluster validation precedent) → R632 sat cooling 1 轮. R632 是 R555 era 第 47 次双向验证 + 变体 ⑱ post-breakthrough cooling",
     "agentskills_agentskills_defer": "R632 GitHub Trending 7/3 daily 发现 agentskills/agentskills 21,634⭐ Apache-2.0 1st-party Anthropic Skills spec 仓库. R555 Hybrid 模式审查 4-condition: License ✅ + 范式匹配度 ⚠️ PARTIAL + Engineering-ready ✅ + Defer monitoring ❌ (主题 heavily covered 20+ articles). R632 决定 Defer. Re-evaluation 触发条件 4 项记录 P15 monitoring",
@@ -347,71 +393,30 @@
       "round_added": 636,
       "type": "audit_followup",
       "description": "claude.com/blog 32 uncovered slugs WSD Skip 持续 - steering 已写入 R636 Article, 31 个 WSD Skip 持续"
+    },
+    {
+      "id": "P31",
+      "round_added": 640,
+      "type": "cluster_maintenance",
+      "description": "Memora + SkillOpt 同源 Cluster 维护 - Microsoft Research Blog 是 2026 H2 持续信号源 (R637 + R640 2 个 1st-party 学术文章), R641+ 重点监控 Microsoft Research Blog 后续 1st-party post 是否触发连续 breakthrough 第 3 次 (R555 era variant ㉗ 可能性窗口)"
     }
   ],
   "cluster_validation": {
-    "round": 639,
-    "delta_minutes": 93,
-    "phase_transition": "Phase 2 持续信号 6 轮 R636→R639 持平 trace only",
-    "p12_hit_count": "5/7 (R636 5/7 → R637 5/7 → R638 5/7 trace → R639 5/7 trace, Phase 2 持续)",
-    "cluster_data": [
-      {
-        "name": "obra/superpowers",
-        "r638": 245056,
-        "r639": 245122,
-        "delta": 66,
-        "daily_pct": "+0.49%",
-        "status": "Stable"
-      },
-      {
-        "name": "affaan-m/ECC",
-        "r638": 225454,
-        "r639": 225487,
-        "delta": 33,
-        "daily_pct": "+0.26%",
-        "status": "Stable"
-      },
-      {
-        "name": "JuliusBrussee/caveman",
-        "r638": 82242,
-        "r639": 82371,
-        "delta": 129,
-        "daily_pct": "+2.83%",
-        "status": "P12 HIT (Growth ↑)"
-      },
-      {
-        "name": "usestrix/strix",
-        "r638": 33426,
-        "r639": 33578,
-        "delta": 152,
-        "daily_pct": "+8.20%",
-        "status": "STRONG GROWTH"
-      },
-      {
-        "name": "openai/codex-plugin-cc",
-        "r638": 22888,
-        "r639": 22920,
-        "delta": 32,
-        "daily_pct": "+2.52%",
-        "status": "P12 HIT (Growth ↑)"
-      },
-      {
-        "name": "raiyanyahya/recall",
-        "r638": 657,
-        "r639": 658,
-        "delta": 1,
-        "daily_pct": "+2.74%",
-        "status": "P12 HIT (Growth ↑↑)"
-      },
-      {
-        "name": "amplifthq/opentag",
-        "r638": 580,
-        "r639": 586,
-        "delta": 6,
-        "daily_pct": "+18.7%",
-        "status": "STRONG GROWTH (volatile)"
-      }
-    ]
+    "round": 640,
+    "delta_window_hours": 3.683,
+    "delta_window_satisfies_r555_strict_threshold": true,
+    "status": "Phase 2 持续信号 trace only 6 轮 R636→R639 → Phase 2 实证 strict pass R640",
+    "p12_hit_strict_pass_count": 4,
+    "p12_hit_strict_pass_projects": [
+      "usestrix/strix +4.29%",
+      "openai/codex-plugin-cc +1.25%",
+      "raiyanyahya/recall +2.97%",
+      "amplifthq/opentag +4.45%"
+    ],
+    "strong_growth_count": 0,
+    "stable_count": 3,
+    "all_7_projects_positive_delta": true,
+    "r638_to_r640_trace": "R638 5/7 trace only 1h33m → R639 5/7 trace only 1h33m → R640 4/7 strict pass 3h41m (首次满足 R555 era strict P12 HIT 复审条件)"
   },
   "r636_next_focus": "R636 重点监控: (P1) Claude Code v2.1.200 后续 release + (P5) Anthropic Engineering 7 月 post 突破 37+ day plateau → 可能 38+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 37+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 (R634 fetch timeout 持续) + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续 - 7 项目 stars tracking 持续 (R636 5/7 P12 HIT 反弹) + (P13) Slash-Skill stacking cap 5 → 10 后续扩展 + (P14) CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展 + (P15 R632 NEW) agentskills/agentskills Defer monitoring + (P16 R633 NEW + R636 持续) Anthropic claude.com/blog Claude Code team 后续 posts (R633 + R636 已 HIT, 持续监控 R637+) + (P17 R634 NEW) claude.com/blog FULL audit protocol 升级 + (P18 R634 NEW) apps-gateway / agent-identity / human-agent-teams 3 Defer 监控 + (P19 R635 NEW) claude.com/blog FULL 3-page audit protocol 升级 (R636 持续应用) + (P20 R635 NEW) OSS Insight API 切换 protocol + (P21 R635 NEW) 5 NEW Project Defer 监控 + (P22 R635 NEW) claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + (P23 R636 NEW) tool-use/steering-methods (Layer 6 第 8 维度) 7 methods decision framework 收口 + (P24 R636 NEW) R635 Phase 3 入口误判被反驳 + (P25 R636 NEW) 32 uncovered slugs WSD Skip 持续. 三步防重检查协议执行 + 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)",
   "r636_prediction": "20% sat cooling / 35% breakthrough / 40% cluster validation / 5% silent. breakthrough 30% → 35% (R636 breakthrough HIT 后, R637 仍保持高 breakthrough 概率: P16 claude.com/blog Claude Code team 后续 posts + P5 Anthropic Engineering 7 月 post 突破 37+ day plateau + P0 Anthropic Institute 持续监控). cluster validation 45% → 40% (R636 5/7 P12 HIT 反弹 Phase 2 二次扩张, R637 cluster validation 概率降低). sat cooling 15% → 20% (R636 breakthrough HIT 概率延后, R637 sat cooling 概率提升). silent 10% → 5% (R636 breakthrough 增量 5% 移到 sat cooling)",
@@ -425,5 +430,15 @@
     "p29_p30_monitoring_added": "P29 (R639 NEW): Sat cooling 2 round monitoring 持续. P30 (R639 NEW): 7/3 晚间 / 7/4 凌晨 release window 峰值监测 (7/4 独立日美国是历史 Claude Code release 高峰, R639 19:57 CST 距 7/4 00:00 CST 仅 4h, R640 可能触发 v2.1.200 release 或 Anthropic Engineering 7 月 post 突破 40+ day plateau)"
   },
   "r640_next_focus": "R640 重点监控: (P1) Claude Code v2.1.200 后续 release (7/4 独立日凌晨 release window 峰值) + (P5) Anthropic Engineering 7 月 post 突破 40+ day plateau → 可能 41+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 40+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) - 当前仅 openai/codex-plugin-cc + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续 6 轮 R636→R639 - 7 项目 stars tracking 持续 (R639 5/7 P12 HIT 持平 trace only) + (P13) Slash-Skill stacking cap 5 → 10 后续扩展 + (P14) CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展 + (P15 R632 NEW) agentskills/agentskills Defer monitoring + (P16 R633 NEW) Anthropic claude.com/blog Claude Code team 后续 posts (R633 + R636 已 HIT, 持续监控 R640+) + (P17 R634 NEW) claude.com/blog FULL audit protocol 升级 + (P18 R634 NEW) apps-gateway / agent-identity / human-agent-teams 3 Defer 监控 + (P19 R635 NEW) claude.com/blog FULL 3-page audit protocol 升级 (R639 持续应用) + (P20 R635 NEW) OSS Insight API 切换 protocol + (P21 R635 NEW) 5 NEW Project Defer 监控 + (P22 R635 NEW) claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + (P23 R636 NEW) tool-use/steering-methods (Layer 6 第 8 维度) 7 methods decision framework 收口 + (P24 R636 NEW) R635 Phase 3 入口误判被反驳 + (P25 R636 NEW) 32 uncovered slugs WSD Skip 持续 + (P26 R637 NEW) tool-use/skill-optimization 子维度监测持续 + (P27 R637 NEW) microsoft-research/blog FULL audit 持续 + (P28 R638 NEW) 4 NEW Project Defer 监测 (langchain-ai/openwiki + Wei-Shaw/sub2api + Yuan1z0825/nature-skills + stablyai/orca) + (P29 R639 NEW) Sat cooling 2 round monitoring 持续 (R555 era variant ㉕ NEW 续期) + (P30 R639 NEW) 7/3 晚间 / 7/4 凌晨 release window 峰值监测. 三步防重检查协议执行 + 重点监控 7/3 23:00-7/4 02:00 CST 独立日 release window 峰值 (历史 Claude Code release + Anthropic Engineering post 高峰窗口)",
-  "r640_prediction": "40% sat cooling (R639 sat cooling 2 round 续期 拉高 35% → 40%) / 25% breakthrough (R639 sat cooling 2 round 续期 拉低 30% → 25%, 7/4 凌晨 release window 峰值 拉回部分) / 30% cluster validation (R640 完整 2h+ delta 触发 P12 HIT 严格复审) / 5% silent (持平)"
+  "r640_prediction": "40% sat cooling (R639 sat cooling 2 round 续期 拉高 35% → 40%) / 25% breakthrough (R639 sat cooling 2 round 续期 拉低 30% → 25%, 7/4 凌晨 release window 峰值 拉回部分) / 30% cluster validation (R640 完整 2h+ delta 触发 P12 HIT 严格复审) / 5% silent (持平)",
+  "r641_next_focus": "R641 重点监控: (P1) Claude Code v2.1.200 后续 release (7/4 独立日凌晨 release window 峰值 R639 仍未触发) + (P5) Anthropic Engineering 7 月 post 突破 41+ day plateau → 可能 42+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 41+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) + (P12) Cluster 二次扩张 Phase 2 实证 strict pass 持续 - 7 项目 stars tracking 持续 (R640 4/7 P12 HIT 严格通过 3h41m delta) + (P27 R637 NEW + R640 upgrade) microsoft-research/blog FULL audit 持续 (R640 Memora breakthrough 通过 R637 first-time audit gap discovery 命中, 后续 audit protocol 升级需要确保不漏抓同期 1st-party post) + (P31 R640 NEW) Memora + SkillOpt 同源 Cluster 维护 - Microsoft Research Blog 是 2026 H2 持续信号源, R641+ 重点监控 Microsoft Research Blog 后续 1st-party post 是否触发连续 breakthrough 第 3 次 (R555 era variant ㉗ 可能性窗口). 三步防重检查协议执行",
+  "r641_prediction": "30% sat cooling (R640 breakthrough HIT 拉低 40% → 30%) / 35% breakthrough (R640 breakthrough HIT 拉高 25% → 35%, Memora + SkillOpt 同源 cluster 维护可能性 + 7/4 凌晨 release window 峰值) / 30% cluster validation (持平) / 5% silent (持平)",
+  "r640_lessons_learned": {
+    "consecutive_microsoft_research_blog_breakthrough": "R640 breakthrough via Microsoft Research Blog Memora 是 R637 SkillOpt breakthrough 后续 6 轮冷却后第 2 次 Microsoft Research Blog 1st-party breakthrough. R555 era breakthrough pattern 第 14 种: Consecutive Microsoft Research Blog Breakthrough via 1st-Party Academic Post. 触发条件 = (a) Microsoft Research Blog 1st-party 学术文章 (b) 上一轮 Microsoft Research Blog breakthrough 6 轮内 (c) 上一轮与本轮间隔 1-2 轮 sat cooling (d) 同源 cluster 维护",
+    "audit_gap_discovery_pattern_r637_first_time": "R640 Memora 是 R637 first-time audit Microsoft Research Blog 时漏抓的同期 1st-party post. Memora pubDate 6/29 早于 SkillOpt 6/30 但 RSS feed 顺序倒置. 这是 R555 era 第 7 种 audit gap discovery pattern (R634 claude.com/blog audit gap discovery precedent). R640 P27 升级建议: Microsoft Research Blog audit protocol 升级 - 重新审计 RSS feed 时按 pubDate ascending order 排序, 不要按 feed order",
+    "cluster_validation_strict_pass_first_time": "R640 cluster validation 3h41m delta 首次满足 R555 era 2h threshold. 4/7 P12 HIT 严格复审通过 (R638 5/7 trace only → R639 5/7 trace only → R640 4/7 strict pass). R640 cluster status: Phase 2 持续信号 trace only → Phase 2 实证 strict pass. 后续 R641+ 持续应用 strict P12 HIT 复审 (完整 2h+ delta 窗口)",
+    "memora_pair_skillopt_same_source_cluster_evolution": "R637 SkillOpt (skill-as-trainable-parameter) + R640 Memora (memory-as-harmonic-representation) 同 Microsoft Research Blog 来源, 同 Microsoft Research Asia 主导 Agent Engineering 范式演化路径. R637 + R640 共同构成 Microsoft Research Asia 2026 H2 agent 工程范式转折的持续信号源. P31 R640 NEW 监控 Microsoft Research Blog 后续 1st-party post",
+    "jump_up_mechanism_triggered": "R640 Memora 触发 jump-up mechanism (long-horizon + decoupling + harmonic representation 关键词) → 立即从第三批次跳级到第一批次处理. 这是 R555 era breakthrough pattern 第 14 种 variant ㉖ 的核心触发条件: 1st-party 学术文章 + 工程机制关键词 + 同源 cluster 维护",
+    "r639_prediction_bias_breakthrough_reversal": "R639 prediction 40% sat cooling vs R640 实际 100% breakthrough 偏差 60% 逆转 (R555 era 准周期双向验证突破性反转). 之前 R637 prediction 25% sat cooling vs R638 实际 100% sat cooling 偏差 75% + R638 prediction 35% sat cooling vs R639 实际 100% sat cooling 偏差 65% - 三轮偏差率 60-75% 持续, R640 突破性反转 (sat cooling → breakthrough) 是 R555 era 准周期第 51 次双向验证"
+  }
 }

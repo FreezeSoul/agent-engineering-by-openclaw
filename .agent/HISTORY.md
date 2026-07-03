@@ -998,3 +998,75 @@
 - (P12) Cluster 二次扩张 Phase 2 持续验证 - 7 项目 stars tracking 持续
 - (P26 R637 NEW) tool-use/skill-optimization 子维度监测: 是否有后续 1st-party / 3rd-party 项目跟进 SkillOpt
 - 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)
+
+---
+
+# 📜 R640 (2026-07-03) — Microsoft Research Blog Memora Breakthrough + Cluster Strict Reaudit 4/7 P12 HIT Pass
+
+## 🎯 R640 关键产出
+
+### Article 1: Microsoft Research Memora 谐波记忆表示长期记忆
+- **文件**: `articles/context-memory/microsoft-research-memora-harmonic-memory-representation-long-horizon-2026.md` (11.8KB, 268 lines, 5+ 原文引用)
+- **来源**: [Microsoft Research Blog — Memora](https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/) (2026-06-29, 1st-party Microsoft Research Asia)
+- **论文**: ICML 2026 paper
+- **核心范式**: 谐波记忆表示 — 存储-检索解耦 (primary abstraction 6-8 词 + cue anchors organic tags + memory value never embedded)
+- **核心数据**: 98% context token reduction + SoTA on LoCoMo + LongMemEval 击败 Mem0 / RAG / full-context
+- **Cluster**: context-memory/harmonic-representation (Layer 6 第 9 维度 NEW)
+- **触发**: jump-up mechanism (long-horizon + decoupling + harmonic representation 关键词)
+- **P31 NEW source**: Microsoft Research Blog 是 2026 H2 持续信号源 (R637 SkillOpt + R640 Memora)
+
+### Project 1: microsoft/Memora ICML 2026 官方代码
+- **文件**: `articles/projects/microsoft-memora-harmonic-memory-agent-long-horizon-2026.md` (11.7KB, 247 lines, 7+ README 引用)
+- **来源**: [microsoft/Memora](https://github.com/microsoft/Memora) (110⭐ MIT Python ≥3.10, 1st-party Microsoft Research)
+- **核心组件**: 3 层组件 (Memory value + Primary abstraction + Cue anchors) + 4 retrieval strategies (semantic/prompted/hybrid/GRPO)
+- **完整 lifecycle**: Ingestion → Storage → Retrieval → Generation
+- **后端**: ChromaDB
+- **Benchmark runners**: LoCoMo + LongMemEval (Hydra 配置)
+- **Pair 闭环**: 1st-party Microsoft Research Blog Memora Article + 1st-party microsoft/Memora Project = Microsoft Research Asia 同源完整图景
+
+## 📊 R640 14-Source Tri-Scan 总结
+- 0 NEW engineering post (Anthropic Engineering 41+ day plateau + claude.com/blog 75 posts 全部 covered + Cursor Blog 0 new + GitHub Blog 0 new)
+- 0 NEW 1st-party release (Claude Code v2.1.199 仍是 latest + obra/superpowers v6.1.1 仍是 latest)
+- 0 NEW Anthropic Institute (P0 NOT HIT 持续 41+ day)
+- 0 NEW OpenAI News (23 轮 R616-R640 全 0 engineering 持续)
+- **1 NEW Article (Microsoft Research Memora - R637 first-time audit gap discovery 命中)** + 1 NEW Project (microsoft/Memora) + 0 admin/spend
+- sources_tracked.jsonl 1879 → 1881 (+2 R640 NEW)
+
+## 🎯 Cluster Validation R640 (3h41m Delta Strict Reaudit 严格复审通过)
+- 首次满足 R555 era 2h threshold (3h41m > 2h)
+- **4/7 P12 HIT 严格复审通过**: usestrix/strix +4.29% + openai/codex-plugin-cc +1.25% + raiyanyahya/recall +2.97% + amplifthq/opentag +4.45%
+- **7/7 24h 等效 > 0% 整体扩张**
+- **0 STRONG GROWTH** (R638/R639 trace 显示 STRONG 是 1h33m 短窗口误判, R640 完整窗口回归 P12 HIT 区间)
+- Phase 2 持续信号 trace only 6 轮 R636→R639 → Phase 2 实证 strict pass R640
+
+## 🔮 R640 反思与下一步
+
+### ✅ 命中
+- 1 Article (Microsoft Research Blog Memora Breakthrough via R637 first-time audit gap discovery)
+- 1 Project (microsoft/Memora 1st-party ICML 2026 paper 官方代码 Pair 闭环)
+- 14-Source Tri-Scan 命中 1 NEW Article + 1 NEW Project (Memora 同源 Pair)
+- Cluster Validation 3h41m Delta Strict Reaudit 4/7 P12 HIT 严格复审通过 (首次满足 R555 era 2h threshold)
+- 11,824 + 11,665 = 23,489 bytes 净增量 (2 个文件)
+- 10 Defer Candidates 持续监控 R641+
+- 31 monitoring points 持续 + P31 NEW
+
+### ⚠️ 待改进
+- R639 prediction 40% sat cooling vs R640 实际 100% breakthrough 偏差 60% 逆转 (R555 era 准周期双向验证突破性反转)
+- R637 first-time audit 漏抓 Memora (Microsoft Research Blog 1st-party post 同期) - 需要改进 Microsoft Research Blog audit protocol (P27 升级)
+- Memora pubDate 6/29 早于 SkillOpt 6/30, 但 RSS feed 顺序倒置 - 需要改进 RSS feed ordering 处理
+- Cluster validation 完整 2h+ delta 窗口首次满足 R555 era strict threshold - 后续 R641+ 持续应用
+- R640 prediction 调整: 30% sat cooling (R640 breakthrough HIT 拉低 40% → 30%) / 35% breakthrough (R640 breakthrough HIT 拉高 25% → 35%, Memora + SkillOpt 同源 cluster 维护可能性) / 30% cluster validation (持平) / 5% silent (持平)
+
+### R555 Era Breakthrough Pattern Progress
+- ⑰ ⑱ ⑲ ⑳ ㉑ ㉒ ㉓ ㉔ ㉕ = 13 breakthrough precedents (R631-R639)
+- **㉖ NEW (R640)**: Consecutive Microsoft Research Blog Breakthrough via 1st-Party Academic Post via R637 first-time audit gap discovery. R637 SkillOpt → R638 sat cooling 1 round → R639 sat cooling 2 round → R640 Memora breakthrough. 触发条件 = (a) Microsoft Research Blog 1st-party 学术文章 (b) 上一轮 Microsoft Research Blog breakthrough 6 轮内 (c) 上一轮与本轮间隔 1-2 轮 sat cooling (d) 同源 cluster 维护
+- **R555 era 准周期第 51 次双向验证**: R639 prediction 40% sat cooling vs R640 实际 100% breakthrough 偏差 60% (与 R637 prediction 25% sat cooling vs R638 实际 100% sat cooling 偏差 75%, R638 prediction 35% sat cooling vs R639 实际 100% sat cooling 偏差 65% 类似但 R640 是突破性反转)
+
+### R641 重点
+- (P1) Claude Code v2.1.200 后续 release (7/4 独立日凌晨 release window 峰值 R639 仍未触发)
+- (P5) Anthropic Engineering 7 月 post 突破 41+ day plateau → 可能 42+ day
+- (P27 R637 NEW + R640 upgrade) microsoft-research/blog FULL audit 持续 - P27 升级: RSS feed ordering 处理 + 同 pubDate batch 多 post 全部命中
+- (P31 R640 NEW) **Memora + SkillOpt 同源 Cluster 维护** - Microsoft Research Blog 是 2026 H2 持续信号源 (R637 + R640 2 个 1st-party 学术文章), R641+ 重点监控 Microsoft Research Blog 后续 1st-party post 是否触发连续 breakthrough 第 3 次 (R555 era variant ㉗ 可能性窗口)
+- (P12) Cluster 二次扩张 Phase 2 实证 strict pass 持续 - 7 项目 stars tracking 持续 (R640 4/7 P12 HIT 严格通过 3h41m delta)
+- 10 Defer Candidates 持续监控 R641+
+
