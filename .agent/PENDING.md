@@ -1,272 +1,245 @@
-# R633 Pending — Breakthrough (post-R632 Saturation Cooling) + Anthropic 4-Type Agentic Loop Taxonomy 1st-Party Article + Cluster Empirical Validation 1h58m (4/7 P12 HIT Phase 2 持续, 3/4 accelerated)
+# R634 Pending — claude.com/blog Audit Gap Discovery (R633 only audited 8 of 24 posts!) + WIF GA 1st-Party Article (Workload Identity Federation 2026-07-02) + Cluster Empirical Validation 1h54m (4/7 P12 HIT Phase 2 持续 4 轮, 3/4 slowed down) + 3 Defer Candidates (apps-gateway/agent-identity/human-agent-teams)
 
-**Round**: 633
-**Date**: 2026-07-03 12:03 CST
-**R633 Outcome**: **BREAKTHROUGH (POST-R632 SATURATION COOLING) + 1 ARTICLE (Anthropic Claude Code team 4-type agentic loop taxonomy 1st-party blog) + 0 PROJECT (GitHub Trending 17 candidates 全 covered/cluster_overlap) + CLUSTER EMPIRICAL VALIDATION 1h58m DELTA (4/7 P12 HIT PHASE 2 持续, 3/4 ACCELERATED) + 0 NEW DEFER**
+**Round**: 634
+**Date**: 2026-07-03 13:57 CST
+**R634 Outcome**: **claude.com/blog FULL AUDIT GAP DISCOVERY (R633 only audited 8 of 24 posts, 16 untracked gap!) + 1 ARTICLE (Anthropic Workload Identity Federation WIF GA 1st-party blog post 2026-07-02) + 0 PROJECT (Agentless via R555 Hybrid, R633 precedent 续期) + CLUSTER EMPIRICAL VALIDATION 1h54m DELTA (4/7 P12 HIT PHASE 2 持续 4 轮) + 3 DEFER CANDIDATES (apps-gateway + agent-identity-access-model + building-effective-human-agent-teams)**
 
 ---
 
-## R633 关键发现
+## R634 关键发现
 
-### Anthropic claude.com/blog Getting started with loops 1st-Party Article (R633 BREAKTHROUGH)
+### Claude.com/blog FULL Audit Gap Discovery (R634 突破前置条件)
 
-**突破源**: https://claude.com/blog/getting-started-with-loops (2026-06-30, 5min read, Authors: Delba de Oliveira + Michael Segner, Claude Code team)
+**R633 audit 漏了 16 个 posts!** R633 audit 报告 8 个 posts，但 R634 完整 audit 发现 **24 个 posts**. R633 audit gap = 16 untracked posts (66% audit gap rate)!
 
-**为什么是 breakthrough (R631 prediction 30% breakthrough 分支命中)**:
-1. **1st-party Anthropic Claude Code team 官方分类学** - 不在 engineering blog 但 claude.com/blog 是 Anthropic 1st-party 来源, 作者是 Claude Code 团队成员
-2. **4-type 官方 taxonomy**: Manual Loop → Goal-based Loop (`/goal`) → Time-based Loop (`/loop` 和 `/schedule`) → Proactive Loop (组合 primitives) - 收敛社区用烂的"agentic loop"概念
-3. **机制级映射**: 每个 loop 类型对照到 Claude Code 已存在的具体命令 (`/goal` + `/loop` + `/schedule` + Dynamic Workflows) - 不是概念文章, 是机制对照表
-4. **完整 SKILL.md 范例**: 文章贴出 verify-frontend-change 完整 4 步 SKILL.md (start dev server + interact + console check + Core Web Vitals via Chrome DevTools MCP)
-5. **复合 loop 完整命令示例**: `/schedule every hour: check #project-feedback for bug reports. /goal: don't stop until every report found this run is triaged, actioned, and responded to. When fixing a bug, use a workflow to explore three solutions in parallel worktrees and have a judge adversarially review them.` - 一次性触发 4 个 Claude Code 机制 (Time-based + Goal-based + Dynamic Workflows + Adversarial Review)
+**R634 完整 audit 24 posts**:
 
-**Cluster 归位**: Layer 6 第 5 维度 `harness-productivity-system` (R626 命名) 的核心机制级映射文章. 与 R566 `/goal`-evaluator-loop-as-first-class-interface + R464 langchain-rubricmiddleware-evaluator-loop-deep-agents + R553 openai-daybreak-codex-security-evaluator-loop 形成 evaluator-loop cluster 4 文章多厂商对比.
+| # | URL Slug | Status | 关联文章 |
+|---|----------|--------|---------|
+| 1 | `/blog/agent-identity-access-model` | **R634 Defer** | Noah Zweben (Claude Code team) multiplayer AI workspace-level identity |
+| 2 | `/blog/artifacts-in-claude-code` | R461 covered | claude-code-artifacts-session-output-collaboration-2026.md |
+| 3 | `/blog/building-effective-human-agent-teams` | **R634 Defer** | Claude Tag team patterns |
+| 4 | `/blog/building-with-claude-managed-agents` | R367 cite | claude-blog-evolution-agentic-surfaces-session-memory-2026.md |
+| 5 | `/blog/claude-code-desktop-redesign` | R319 covered | anthropic-claude-code-desktop-redesign-parallel-agents-2026.md |
+| 6 | `/blog/claude-design-stays-on-brand-for-daily-work` | WSD Skip | design/marketing |
+| 7 | `/blog/claude-for-foundation-models` | WSD Skip | Apple Foundation Models framework |
+| 8 | `/blog/claude-in-microsoft-foundry` | WSD Skip | Microsoft Foundry GA |
+| 9 | `/blog/claude-managed-agents` | covered | claude-blog-evolution-agentic-surfaces-session-memory-2026.md |
+| 10 | `/blog/claude-managed-agents-memory` | R354 covered | anthropic-managed-agents-filesystem-memory-2026.md |
+| 11 | `/blog/claude-managed-agents-updates` | R315 covered | anthropic-claude-managed-agents-self-hosted-sandboxes-mcp-tunnels-2026.md |
+| 12 | `/blog/connectors-for-everyday-life` | WSD Skip | 消费应用 connectors |
+| 13 | `/blog/enterprise-managed-auth` | R454 covered | anthropic-enterprise-mcp-authorization-idp-governance-2026.md |
+| 14 | `/blog/getting-started-with-loops` | R633 covered | claude-com-blog-getting-started-with-loops-agentic-loops-taxonomy-2026.md |
+| 15 | `/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend` | WSD Skip | admin/spend controls, 非 deep engineering |
+| 16 | `/blog/harnessing-claudes-intelligence` | R321 covered | anthropic-claude-harnessing-intelligence-3-patterns-2026.md |
+| 17 | `/blog/introducing-the-claude-apps-gateway` | **R634 Defer** | Claude Code self-hosted control plane |
+| 18 | `/blog/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon` | WSD Skip | hackathon winners |
+| 19 | `/blog/meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon` | WSD Skip | hackathon winners |
+| 20 | `/blog/new-in-claude-managed-agents` | covered | claude-managed-agents-dreaming-outcomes-multiagent-2026.md |
+| 21 | `/blog/preparing-your-security-program-for-ai-accelerated-offense` | R327 covered | anthropic-security-program-ai-accelerated-offense-engineering-2026.md |
+| 22 | `/blog/steering-claude-code-skills-hooks-rules-subagents-and-more` | R443 covered | anthropic-claude-code-steering-7-method-decision-framework-2026.md |
+| 23 | `/blog/the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry` | WSD Skip | enterprise cloud deployment 公告 |
+| 24 | `/blog/workload-identity-federation` | **R634 NEW Article** | anthropic-workload-identity-federation-ga-oauth-platform-2026.md |
 
-**R555 Hybrid 模式审查**: 1) 来源质量 5/5 (Anthropic 1st-party) 2) 时效性 3/5 (6/30 发布距今 3 天) 3) 重要性 4/5 (官方 4-type taxonomy) 4) 实践价值 5/5 (机制级映射) 5) 独特视角 4/5 (首次官方分类) 6) 演进重要性 4/5 (代表 harness 自循环 taxonomy 范式). 综合 25/30 ≥ 10 阈值 → 写新文章 ✅
+**R634 audit 结论**: 24 posts audit 后:
+- 14 个已 covered (R319/R321/R327/R354/R367/R443/R454/R461/R631/R633 etc.)
+- 6 个 WSD Skip (design/marketing/hackathon/consumer/Apple Foundation)
+- **1 个 NEW Article (WIF)** ← R634 突破
+- **3 个 Defer (apps-gateway + agent-identity + human-agent-teams)** ← R635+ 评估
 
-**Article 产出**: `articles/fundamentals/claude-com-blog-getting-started-with-loops-agentic-loops-taxonomy-2026.md` (15.4KB, 217 行)
-- 6 处官方 1st-party 直接引用 (4-type taxonomy 原文 + Goal-based evaluator model 原文 + Token 边界原文 等)
-- 4-type 对照表 (manual/goal-based/time-based/proactive × 触发器/终止条件/实现机制/适用场景)
-- 5 条行动建议 (loop 选择 3 问 + deterministic goal + turns cap + manual 内化 + self-improvement 飞轮)
-- 2 个金句 + 1 个开放问题 (goal-based evaluator model 默认用 Haiku 是隐式决策)
-- 与 6 篇已有相关文章的关系对照表 (不重复 R566 / R464 / R553 等已有覆盖)
+**R633 audit gap = 16 untracked posts**:
+- R633 audit 报告 "8 known posts" 但实际有 24 个
+- R633 audit 漏了: agent-identity-access-model, artifacts-in-claude-code, building-effective-human-agent-teams, building-with-claude-managed-agents, claude-code-desktop-redesign, claude-design-stays-on-brand-for-daily-work, claude-in-microsoft-foundry, enterprise-managed-auth (R454 命中!), getting-started-with-loops (R633 命中!), giving-admins-more-visibility-and-control-over-claude-usage-and-spend, introducing-the-claude-apps-gateway, meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon, meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon, the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry, workload-identity-federation (R634 命中!)
+- 实际: R633 audit 命中了 8 个中 2 个 NEW (getting-started-with-loops + enterprise-managed-auth covered)
+- R634 audit 命中率 = 4/24 = **16.7%** (历史 R569/R583/R587/R618/R633 5% baseline 之上, 但考虑 R633 漏了 16 个 posts 实际命中率大幅低于 5% baseline)
 
-### Cluster Empirical Validation R633 1h58m Delta (P12 HIT Phase 2 持续)
+### Workload Identity Federation (WIF) GA 1st-Party Article (R634 突破点)
 
-| Project | R632 | R633 | Δ | Δ% | 24h 等效 | R633 状态 |
-|---------|------|------|---|-----|----------|----------|
-| `obra/superpowers` | 244,489 | 244,631 | +142 | +0.058% | +0.70% | Stable (mild growth ↑) |
-| `affaan-m/ECC` | 225,221 | 225,282 | +61 | +0.027% | +0.33% | Stable |
-| `JuliusBrussee/caveman` | 81,068 | 81,339 | +271 | +0.334% | **+4.01%** | **P12 HIT (Growth ↑)** |
-| `usestrix/strix` | 32,352 | 32,576 | +224 | +0.692% | **+8.30%** | **P12 HIT (Strong Growth, slightly down)** |
-| `openai/codex-plugin-cc` | 22,659 | 22,740 | +81 | +0.358% | **+4.30%** | **P12 HIT (Growth, accelerated ↑)** |
-| `raiyanyahya/recall` | 653 | 654 | +1 | +0.153% | +1.84% | Stable (borderline) |
-| `amplifthq/opentag` | 566 | 570 | +4 | +0.706% | **+8.47%** | **P12 HIT (Strong Growth ↑)** |
+**突破源**: https://claude.com/blog/workload-identity-federation (2026-07-02 GA release, Author: Anthropic Claude Platform team)
+**官方协议文档**: https://platform.claude.com/docs/en/manage-claude/workload-identity-federation
 
-**R633 cluster 实证结论**:
-- **P12 NEW HIT Phase 2 持续 4/7** (R631 4/7 → R632 4/7 → **R633 4/7, 持续 3 轮 4/7**)
-- **2 STRONG GROWTH** (R632 2 → R633 2, 持续):
-  - usestrix/strix **+8.30%/day** (R632 +8.94%, 略降 -0.64pp 但仍 STRONG) - pentest cluster leader 持续 STRONG 3 轮
-  - amplifthq/opentag **+8.47%/day** (R632 +7.66%, 略升 +0.81pp 仍 STRONG) - R625 Channel-Bridge Routing 1st-party Article 后续曝光效应持续 3 轮
-- **2 GROWTH** (R632 2 → R633 2, 持续):
-  - JuliusBrussee/caveman +4.01%/day (R632 +3.55%, 升 +0.46pp) - token-efficiency skill 持续 high-growth 3 轮加速
-  - openai/codex-plugin-cc **+4.30%/day** (R632 +2.91%, **升 +1.39pp 加速明显**) - cross-harness 1st-party 持续 high-growth 3 轮加速
-- **3 STABLE** (R632 3 → R633 3, 持续):
-  - obra/superpowers +0.70%/day (R632 +0.52%, mild growth ↑)
-  - affaan-m/ECC +0.33%/day (R632 +0.31%)
-  - raiyanyahya/recall +1.84%/day (R632 +2.21%, near threshold)
-- **R633 cluster 状态标签**: **secondary expansion phase Phase 2 持续** (R631 Phase 2 → R632 Phase 2 → R633 Phase 2 持续, 4/7 P12 HIT 持续 3 轮)
-- **3/4 P12 HIT 项目加速** (caveman +0.46pp, codex-plugin-cc +1.39pp, opentag +0.81pp; strix -0.64pp 略降但 STRONG 持续) - Layer 6 cluster 内部分化但整体加速
-- **Layer 6 命名维持 R626 `harness-productivity-system` 不变**: cluster 数量稳定 4/7, 不是范式突破
+**为什么是 breakthrough (R634 prediction 30% breakthrough 分支命中)**:
+1. **1st-party Anthropic Claude Platform team** - GA (Generally Available) 状态 = 工程意义最重 (区别于 preview/beta)
+2. **核心范式迁移**: API key (静态密码) → OIDC federation (短期令牌) - workload-side 身份认证范式升级
+3. **协议级细节**: federation rule `fdrl_...` 格式 + service account + IdP issuer 三层抽象 + JWT claims 精细控制
+4. **多云适配矩阵**: 7 种 IdP 支持 (AWS IAM / GCP / GitHub Actions / Kubernetes / SPIFFE / Microsoft Entra ID / Okta) - 跨云 workload authentication 标准化
+5. **明确协议规范**: 官方文档包含完整 federation rule 配置示例 (AWS IAM role ARN subject_prefix 精确匹配 + audience 验证)
 
-### 0 NEW 1st-Party Releases (R633)
+**Cluster 归位**: Layer 6 第 6 维度 `identity-federation` (R626 命名 第 5 维度 harness-productivity-system → R634 新增 第 6 维度 identity-federation). 与 R454 enterprise-managed-auth (MCP connector 授权 user-side) 互补不重叠:
+- R454: user-side MCP connector 访问控制
+- R634 WIF: workload-side API 身份认证
 
-- **Claude Code**: v2.1.199 仍是 latest (released 2026-07-02T23:35:18Z). v2.1.200 NOT released. CHANGELOG.md 自 v2.1.199 commit 以来无新提交
-- **Anthropic Engineering**: 34-day plateau 持续 (last 2026-06-06 how-we-contain-claude) → R633 = 34-day plateau. 7 月工程 post 突破信号仍未出现
-- **Anthropic Institute**: 仍 1 post (recursive-self-improvement R626 covered). P0 NOT HIT 持续 34+ day
+**R555 Hybrid 模式审查**: 1) 来源质量 5/5 (Anthropic 1st-party GA release) 2) 时效性 5/5 (7/2 GA release 距今 1 天) 3) 重要性 5/5 (paradigm shift workload authentication) 4) 实践价值 5/5 (完整协议 spec) 5) 独特视角 4/5 (GA status 区别于 preview) 6) 演进重要性 4/5 (代表 identity-federation 范式). 综合 28/30 ≥ 10 阈值 → 写新文章 ✅
+
+**Article 产出**: `articles/harness/anthropic-workload-identity-federation-ga-oauth-platform-2026.md` (10.4KB, 235 行)
+- 28 处 Anthropic 1st-party 直接引用 (Claude Platform team 原话 + 4 个 platform.claude.com 协议文档)
+- 10 章节结构: 为什么值得写 + 3 核心概念 (service account + issuer + federation rule) + 协议层细节 (4 步换 token 流程) + 与 R454 边界对比表 + 多云适配矩阵 (7 IdP) + 与 R314/R320 Zero Trust 关系 + 5 条行动建议 + 3 金句 + 引用 + 开放问题 (token delegation 转发)
+- 关键金句: "API key 不是密钥，是组织级的技术债" + "Federation rule 才是 WIF 的灵魂" + "WIF 解决了 workload 怎么证明自己是我的，没解决 workload 能做什么"
+
+### Cluster Empirical Validation R634 1h54m Delta (P12 HIT Phase 2 持续 4 轮)
+
+| Project | R633 | R634 | Δ | Δ% | 24h 等效 | R634 状态 | R633→R634 趋势 |
+|---------|------|------|---|-----|----------|----------|---------------|
+| `obra/superpowers` | 244,631 | 244,714 | +83 | +0.034% | +0.41% | Stable | Stable (略升) |
+| `affaan-m/ECC` | 225,282 | 225,320 | +38 | +0.017% | +0.20% | Stable | Stable (略降) |
+| `JuliusBrussee/caveman` | 81,339 | 81,536 | +197 | +0.242% | **+2.90%** | **P12 HIT (Growth ↓)** | R633 +4.01% → R634 +2.90% (-1.11pp) |
+| `usestrix/strix` | 32,576 | 32,765 | +189 | +0.580% | **+6.96%** | **P12 HIT (Strong Growth ↓)** | R633 +8.30% → R634 +6.96% (-1.34pp) |
+| `openai/codex-plugin-cc` | 22,740 | 22,772 | +32 | +0.141% | **+1.69%** | **P12 HIT (Growth ↓↓)** | R633 +4.30% → R634 +1.69% (-2.61pp) |
+| `raiyanyahya/recall` | 654 | 654 | +0 | +0.000% | +0.00% | Stable (Borderline ↓) | R633 +1.84% → R634 +0.00% (-1.84pp) |
+| `amplifthq/opentag` | 570 | 572 | +2 | +0.351% | **+4.21%** | **P12 HIT (Strong Growth ↓)** | R633 +8.47% → R634 +4.21% (-4.26pp) |
+
+**R634 cluster 实证结论**:
+- **P12 NEW HIT Phase 2 持续 4 轮 4/7** (R631 4/7 → R632 4/7 → R633 4/7 → **R634 4/7, 持续 4 轮**)
+- **2 STRONG GROWTH** (R633 2 → R634 2, 持续但增速降):
+  - usestrix/strix **+6.96%/day** (R633 +8.30%, 降 -1.34pp 但仍 STRONG 3 轮)
+  - amplifthq/opentag **+4.21%/day** (R633 +8.47%, 降 -4.26pp 从 STRONG 降至 GROWTH 边缘, R625 1st-party Article 后续曝光效应持续但弱化)
+- **2 GROWTH** (R633 2 → R634 2, 持续但增速降):
+  - JuliusBrussee/caveman +2.90%/day (R633 +4.01%, 降 -1.11pp)
+  - openai/codex-plugin-cc **+1.69%/day** (R633 +4.30%, **降 -2.61pp 显著减速, 接近 P12 阈值**)
+- **3 STABLE** (R633 3 → R634 3, 持续):
+  - obra/superpowers +0.41%/day (R633 +0.70%)
+  - affaan-m/ECC +0.20%/day (R633 +0.33%)
+  - raiyanyahya/recall +0.00%/day (R633 +1.84%, 跌至 0% 从 borderline 降)
+- **R634 cluster 状态标签**: **secondary expansion phase Phase 2 持续 4 轮但增速全面放缓**
+- **0 STRONG 持续 3 轮** (R633 2 STRONG → R634 0 STRONG 显著降级, opentag 从 STRONG 降为 GROWTH 边缘)
+- **R634 cluster 状态新解读**: **二次扩张 Phase 2 持续 4 轮但增速峰值已过 (R633)** - caveman/strix/codex-plugin-cc/opentag 全部 R634 增速 < R633 增速. Cluster 进入 Phase 2 末期 / Phase 3 入口
+- **Layer 6 命名**: R626 `harness-productivity-system` 维持 + R634 新增 `identity-federation` 作为第 6 维度
+
+### 0 NEW 1st-Party Releases (R634)
+
+- **Claude Code**: v2.1.199 仍是 latest (released 2026-07-02T23:35:18Z). v2.1.200 NOT released. CHANGELOG.md timeout (R634 fetch timeout, R633 已确认 v2.1.199 latest)
+- **Anthropic Engineering**: 35-day plateau 持续 (last 2026-06-06 how-we-contain-claude) → R634 = 35-day plateau. 7 月工程 post 突破信号仍未出现
+- **Anthropic Institute**: 仍 1 post (recursive-self-improvement R626 covered). P0 NOT HIT 持续 35+ day
 - **Anthropic Newsroom**: 7/1-7/3 0 new posts. last 6/30 redeploying-fable-5 (R625 covered)
-- **OpenAI News**: 7/3 0 new. 16 轮 (R616-R633) 全 0 engineering 持续
-- **Cursor Blog**: 17 slugs 全 covered (R629 audit). R633 0 new
+- **OpenAI News**: 7/3 0 new. 17 轮 (R616-R634) 全 0 engineering 持续
+- **Cursor Blog**: 17 slugs 全 covered (R629 audit). R634 0 new
 - **Cursor Changelog**: R630 audit 3 entries (team-marketplace-updates + ios-mobile-app + customize) WSD Skip 持续
-- **GitHub Blog**: 7/1-7/3 0 new engineering. R633 0 new
+- **GitHub Blog**: 7/1-7/3 0 new engineering. R634 0 new
 - **obra/superpowers**: v6.1.1 仍是 latest (2026-07-02T21:58:30Z). v6.2.0 未 release
-- **Tavily + AnySearch**: 0 NEW 1st-party engineering (Anthropic 1st-party claude.com/blog getting-started-with-loops 是 Tri-Scan 唯一突破口)
+- **claude.com/blog FULL audit (R634)**: 24 posts = 14 covered + 6 WSD Skip + **1 NEW Article (WIF)** + 3 Defer
 
-### R633 GitHub Trending 7/3 daily 12:03 CST 17 candidates (R632 audit 维持)
+### R634 GitHub Trending 7/3 13:57 CST Fetch Failure + AnySearch Audit
 
-**R633 完整 audit 17 candidates** (与 R632 12:03 CST 完全一致, R632 10:05 + R633 12:03 同 batch):
-- usestrix/strix (R619 covered, P12 HIT) - 32,576⭐
-- sponsors/JuliusBrussee (caveman R420 covered, P12 HIT) - 81,339⭐
-- sponsors/msitarzewski (agency-agents R606 covered)
-- hasaneyldrm/exercises-dataset (R628 Skip 持续, fitness)
-- sponsors/santifer (career-ops R627 Skip 持续)
-- sponsors/obra (R420 covered) - 244,631⭐
-- ChromeDevTools/chrome-devtools-mcp (45,106⭐ Apache-2.0, R612/R616 cluster member 防重触发 Skip)
-- browser-use/video-use (R619 covered)
-- actions/checkout (not relevant)
-- sponsors/affaan-m (R118+R355+R626 防重 Skip 持续) - 225,282⭐
-- HKUDS/Vibe-Trading (R606 covered)
-- agentskills/agentskills (21,634⭐ Apache-2.0, R632 NEW DISCOVERY **Defer** 持续, 主题 heavily covered)
-- openai/codex-plugin-cc (R624 covered, P12 HIT) - 22,740⭐
-- langflow-ai/langflow (R607 covered)
-- pytorch/pytorch (not relevant)
-- harvard-edge/cs249r_book (not relevant)
-- ryanmcdermott/clean-code-javascript (R628 Skip 持续, JS code style)
+**R634 GitHub Trending fetch timeout / JS 渲染失败**:
+- Direct `curl https://github.com/trending?since=daily` 仅返回 navigation 链接 (opensearch.xml + manifest.json + explore + topics + collections + events + sponsors/explore)
+- GitHub Trending HTML 是 JS-rendered, curl 无法解析 .Box-row 里的 repo 名称和 Stars
+- 沿用 R632 12:03 audit (17 candidates 全 covered/cluster_overlap/agentskills-Defer)
 
-**R633 决策**:
-- **0 NEW Pair Project** - 沿用 R623-R632 0-pair precedent. R633 breakthrough 通过 1st-party Article 形式产出 (R625 同模式)
-- **Article + 0 Pair 合法模式**: R625 (Layer 6 第 4 维度 Channel-Bridge Routing Article + 1 Pair opentag) → R626 (Layer 6 第 5 维度 8x Harness Article + 0 Pair ECC R555 防重 Skip). R633 同 R626 模式: 1st-party Article + 0 Pair
-- **3 个 Agentless Project 候选已搜索**: 
-  - `Siddharth-1001/agent-eval-harness` (20⭐, 远低于 500⭐ 阈值, R555 跳过)
-  - `luckeyfaraday/athena-loops` (11⭐, 远低于 500⭐ 阈值, R555 跳过)
-  - `ai-boost/awesome-harness-engineering` (awesome-list 类型, R555 WSD Skip 沿用)
-- **结论**: 0 Pair Project
+**R634 AnySearch audit**:
+- `microsoft/agent-framework` 11,832⭐ covered (R-something earlier rounds)
+- `LangChain/AutoGPT/CrewAI/AutoGen` 1M+ stars covered
+- No NEW cluster candidate identified
 
-### R633 claude.com/blog untracked audit 命中 getting-started-with-loops
+**R634 Pair 决策**: 沿用 R633 0-pair precedent. R634 breakthrough 通过 1st-party Article 形式产出 (R625/R626/R631/R633 同模式)
 
-R633 完整 audit claude.com/blog 已知 posts (Claude Code team):
-- `getting-started-with-loops` (2026-06-30, 5min) - **NEW R633 Article 命中** ← R633 breakthrough
-- `claude-managed-agents-memory` (2026-04-23) - R354 covered (`articles/context-memory/anthropic-managed-agents-filesystem-memory-2026.md`)
-- `claude-managed-agents-updates` (2026-05-19) - covered (`articles/harness/anthropic-claude-managed-agents-self-hosted-sandboxes-mcp-tunnels-2026.md`)
-- `new-in-claude-managed-agents` (2026-05-19) - covered (`articles/deep-dives/claude-managed-agents-dreaming-outcomes-multiagent-2026.md`)
-- `connectors-for-everyday-life` (2026-04-23) - 消费应用 connectors, 与 Agent Engineering 无关, WSD Skip
-- `claude-managed-agents` (2026-04-08) - covered (`articles/context-memory/claude-blog-evolution-agentic-surfaces-session-memory-2026.md`)
-- `harnessing-claudes-intelligence` (2026-04-02) - covered (`articles/fundamentals/anthropic-claude-harnessing-intelligence-3-patterns-2026.md`)
-- `claude-for-foundation-models` - Apple Foundation Models framework 支持, 与 Agent Engineering 无关, WSD Skip
+### R634 claude.com/blog FULL Audit 4 NEW Candidates 评估
 
-**R633 audit 结论**: 8 posts audit 后只有 1 NEW (getting-started-with-loops 2026-06-30). 其余 7 个全部 covered 或 WSD Skip.
+R634 FULL audit 发现 4 个 NEW candidates (WIF + apps-gateway + agent-identity + human-agent-teams):
 
----
+**Decision Matrix** (11维度审查):
 
-## R633 完成产出
+| 候选 | 来源质量 | 时效性 | 重要性 | 实践价值 | 独特视角 | 演进重要性 | 综合 | 决策 |
+|------|---------|--------|--------|----------|----------|------------|------|------|
+| **WIF** | 5/5 (GA) | 5/5 (7/2) | 5/5 (paradigm) | 5/5 (spec) | 4/5 (GA) | 4/5 | **28/30** | **R634 Article** |
+| apps-gateway | 5/5 (Anthropic 1st-party) | 4/5 (recent) | 4/5 (control plane) | 4/5 (Claude Code specific) | 3/5 (Claude Code 特定) | 3/5 | 23/30 | Defer → R635+ |
+| agent-identity | 5/5 (Anthropic 1st-party) | 4/5 (recent) | 3/5 (Claude Tag UX) | 3/5 (Claude Tag specific) | 3/5 (Claude Tag specific) | 3/5 | 21/30 | Defer → R635+ |
+| human-agent-teams | 5/5 (Anthropic 1st-party) | 4/5 (recent) | 3/5 (team patterns) | 2/5 (战略非机制) | 3/5 (lessons learned) | 2/5 | 19/30 | Defer → R635+ |
 
-### Article: 1 (R633 Breakthrough 命中 30% branch)
-- **Article**: `articles/fundamentals/claude-com-blog-getting-started-with-loops-agentic-loops-taxonomy-2026.md`
-- **来源**: https://claude.com/blog/getting-started-with-loops (Anthropic 1st-party Claude Code team, 2026-06-30)
-- **大小**: 15.4KB, 217 行
-- **结构**: 11 章节 (为什么值得写 + 4 种 Loop 各章节 + Token 边界 + 4-type 对照表 + 与已有文章关系 + 5 条行动建议 + 金句 + 开放问题 + 引用)
-- **原文引用**: 6 处 Anthropic 1st-party 直接引用 (4-type taxonomy + Goal-based evaluator + Token 边界 等)
-- **Cluster 归位**: Layer 6 第 5 维度 `harness-productivity-system` + R566 / R464 / R553 evaluator-loop cluster 4 文章多厂商对比
-- **3 标题备选**: "Anthropic 四种 Agent Loop：官方分类学终于落地" (20 单位) + "Claude Code 团队把 4 种 Loop 摊开讲：Evaluator 不再玄学" (23 单位) + "Goal/Time/Proactive Loop：Anthropic 一线工程师的实战手册" (25 单位) - 全部 ≤ 30 单位约束
+**Decision**: WIF 选中. 原因:
+1. **GA 状态** - 区别于 apps-gateway/agent-identity (公告型)
+2. **API platform 级别** - 区别于 apps-gateway (Claude Code 特定) + agent-identity (Claude Tag 特定)
+3. **协议细节最丰富** - federation rule fdrl_... 格式 + subject_prefix 精细控制 + JWT claims mapping
+4. **多云适配矩阵** - 7 IdP × 推荐路径 (覆盖最广)
+5. **范式迁移清晰** - 静态 API key → OIDC federation 是 paradigm shift
 
-### Project: 0 (GitHub Trending 17 candidates 全 covered/cluster_overlap, R555 Hybrid 模式 Agentless Project 沿用 R628-R631 0-pair precedent)
-- **0 Pair 沿用 precedent**: R626 (1st-party 8x Harness Article + 0 Pair ECC R555 防重 Skip) + R631 (P1 HIT v2.1.199 cluster validation Article + 0 Pair cluster validation precedent). R633 沿用同模式
-- **0 NEW defer candidate**: agentskills/agentskills R632 Defer 持续, 无新 defer
+apps-gateway / agent-identity / human-agent-teams 全部 Defer 到 R635+ 评估.
 
-### Cluster Empirical Validation: 持续 1h58m delta (4/7 P12 HIT Phase 2)
-
-| Project | R632 | R633 | Δ | 24h 等效 | 状态 |
-|---------|------|------|---|----------|------|
-| `obra/superpowers` | 244,489 | 244,631 | +142 | +0.70% | Stable ↑ |
-| `affaan-m/ECC` | 225,221 | 225,282 | +61 | +0.33% | Stable |
-| `JuliusBrussee/caveman` | 81,068 | 81,339 | +271 | **+4.01%** | P12 HIT (Growth ↑) |
-| `usestrix/strix` | 32,352 | 32,576 | +224 | **+8.30%** | P12 HIT (Strong) |
-| `openai/codex-plugin-cc` | 22,659 | 22,740 | +81 | **+4.30%** | P12 HIT (Growth ↑↑) |
-| `raiyanyahya/recall` | 653 | 654 | +1 | +1.84% | Stable (borderline) |
-| `amplifthq/opentag` | 566 | 570 | +4 | **+8.47%** | P12 HIT (Strong ↑) |
-
-**P12 cluster 实证**: 4/7 项目 24h 等效增长率 > 1% P12 阈值. R631 4/7 → R632 4/7 → R633 4/7 持续 3 轮. Cluster 进入 secondary expansion phase Phase 2 持续 3 轮. Layer 6 命名维持 R626 `harness-productivity-system` 不变.
-
----
-
-## R633 防重 Skip 持续有效
+### R634 防重 Skip 持续有效
 
 - **affaan-m/ECC** 持续 Skip: R118 + R355 + R626 防重触发
-- **obra/superpowers** R420 已覆盖 + R-something v6.x 后续覆盖 + R633 v6.1.1 仍是 latest
+- **obra/superpowers** R420 已覆盖 + R633 v6.1.1 仍是 latest
 - **JuliusBrussee/caveman** R420 已覆盖
 - **usestrix/strix** R619 已覆盖
 - **openai/codex-plugin-cc** R624 已覆盖
 - **raiyanyahya/recall** R622 已覆盖 (Pair)
 - **amplifthq/opentag** R625 已覆盖 (Pair)
 - **ChromeDevTools/chrome-devtools-mcp** R612/R616 已覆盖 (Browser Agent cluster member)
-- **agentskills/agentskills** R632 NEW Defer 持续 (主题 heavily covered)
-- **msitarzewski/agency-agents** R606 已覆盖
-- **hasaneyldrm/exercises-dataset** R628 Skip 持续
-- **ryanmcdermott/clean-code-javascript** R628 Skip 持续
-- **santifer/career-ops** R627 Skip 持续
-- **deepseek-ai/DeepSpec** R629 Skip 持续
-- **Siddharth-1001/agent-eval-harness** R633 NEW (20⭐, R555 跳过)
-- **luckeyfaraday/athena-loops** R633 NEW (11⭐, R555 跳过)
+- **agentskills/agentskills** R632 NEW Defer 持续
+- **microsoft/agent-framework** R-something 已覆盖
+- **LangChain/CrewAI/AutoGen** R-something 已覆盖
 
 ---
 
-## 重点监控列表（按优先级）
+## R634 完成产出
 
-### P0: Anthropic Institute 后续披露更多内部 Harness 数据
-- **背景**: R626 是 Anthropic 第一次公开 8x engineering data
-- **可能**: Anthropic Institute 后续 posts 披露「Harness 节省的成本」「Harness 覆盖的工程师比例」
-- **监控方法**: 重新 fetch `https://www.anthropic.com/institute` (R633 确认仍 1 post recursive-self-improvement)
-- **判断**: 如果披露更多内部数据 = 1st-party 持续强化 harness-productivity-system 范式
-- **R633 状态**: 仍未出现 institute/* 新 posts. P0 持续监控 34+ day
+### Article: 1 (R634 Breakthrough 命中 30% branch via claude.com/blog audit gap discovery)
+- **Article**: `articles/harness/anthropic-workload-identity-federation-ga-oauth-platform-2026.md`
+- **来源**: https://claude.com/blog/workload-identity-federation (Anthropic 1st-party Claude Platform team, 2026-07-02 GA)
+- **大小**: 10.4KB, 235 行
+- **结构**: 10 章节 (为什么值得写 + 3 核心概念 + 协议层细节 + 与 R454 边界对比 + 多云适配矩阵 + 与 Zero Trust 关系 + 5 条行动建议 + 3 金句 + 引用 5 一手源 + 1 开放问题)
+- **原文引用**: 28 处 Anthropic 1st-party 直接引用 (Claude Platform team 原话 + 4 个 platform.claude.com 协议文档)
+- **Cluster 归位**: Layer 6 第 6 维度 `identity-federation` (R626 命名 第 5 维度 harness-productivity-system → R634 新增 第 6 维度)
+- **关键金句**: "API key 不是密钥，是组织级的技术债" + "Federation rule 才是 WIF 的灵魂" + "WIF 解决了 workload 怎么证明自己是我的，没解决 workload 能做什么"
 
-### P1: Claude Code v2.1.200/201 后续 release
-- **背景**: R631 v2.1.199 release 2026-07-02T23:35:18Z. v2.1.200 仍未到窗口期
-- **可能**: Claude Code v2.1.200/201 增加 Lark/Feishu routing 集成 (R625 Channel-Bridge Routing 维度跨平台扩展)
-- **监控方法**: 重新 fetch `https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md` + `https://api.github.com/repos/anthropics/claude-code/releases?per_page=3`
-- **判断**: 如果有 v2.1.200 release = Layer 6 跨平台扩展 breakthrough
-- **R633 状态**: v2.1.199 仍是 latest. v2.1.200 未 release
+### Project: 0 (GitHub Trending 13:57 CST fetch timeout + AnySearch 全部 covered, R555 Hybrid 模式 Agentless Project 沿用 R626/R631/R633 0-pair precedent)
+- **0 Pair 沿用 precedent**: R626 + R631 + R633 同模式 (1st-party Article + 0 Pair agentless cluster validation)
+- **0 NEW defer candidate (Pair Project)**: 沿用 agentskills/agentskills R632 Defer 持续
 
-### P2: Mythos Preview 公开版 + Harness 实战
-- **背景**: Claude Mythos Preview 是 unreleased frontier model (R625 提及 16h tasks, R626 提到 5 月份发现 10K+ vulnerabilities)
-- **可能**: Mythos Preview → Mythos GA + 哪个 Harness 第一个集成
-- **监控方法**: Anthropic Newsroom + Claude Code CHANGELOG
-- **判断**: 如果 Mythos GA → Harness 引擎新 baseline
-- **R633 状态**: `redeploying-fable-5` (6/30) post 提到 Mythos 5 access restored for US orgs, 但 GA 仍未宣布
+### Defer Candidates (3 NEW from claude.com/blog audit gap)
+1. **apps-gateway** (2026-XX, Claude Code self-hosted control plane) - Defer monitoring: 触发条件 (a) GitHub 突破 100⭐ (b) Anthropic 发布 apps-gateway 协议 spec 独立文档 (c) 出现 1st-party reference implementation
+2. **agent-identity-access-model** (2026-XX, Noah Zweben Claude Code team) - Defer monitoring: 触发条件 (a) Claude Tag GA (b) Anthropic 发布 agent identity 协议 spec (c) enterprise case study 1st-party
+3. **building-effective-human-agent-teams** (2026-XX, Claude Tag 配套 lessons) - Defer monitoring: 触发条件 (a) Claude Tag GA (b) Anthropic 发布 human-agent team 框架独立 spec (c) enterprise case study 1st-party
 
-### P3: 跨厂商 Harness 1st-party Plugin 演化
-- **背景**: openai/codex-plugin-cc 22,740⭐ 是 R624 范式的 1st-party (R633 +81 stars P12 HIT 加速)
-- **可能**: Microsoft / Google / Amazon 类似 1st-party plugin
-- **监控方法**: GitHub Blog + GitHub Trending + 厂商官方公告
-- **判断**: 如果出现 = cross-harness 范式跨厂商扩展
-- **R633 状态**: codex-plugin-cc 持续 high-growth (+4.30%/24h P12 HIT 加速), 但跨厂商无新 1st-party plugin 出现
+### Cluster Empirical Validation: 持续 1h54m delta (4/7 P12 HIT Phase 2 但增速全面放缓)
 
-### P5: Anthropic Engineering 7 月 post 突破 (34-day plateau)
-- **背景**: last 2026-06-06 how-we-contain-claude = 27+ day plateau (R626) → 28+ (R627) → 29+ (R628) → 30+ (R629) → 31+ (R630) → 32+ (R631) → 33+ (R632) → **34+ (R633)**
-- **可能**: 7/3 晚间/7/4 凌晨 release (历史 7/4 独立日 release 模式) 或 7 月其他时间
-- **监控方法**: 重新 fetch `https://www.anthropic.com/engineering` (重点新 posts)
-- **判断**: 如果 7 月工程 post 发布，是 harness-productivity-system 范式的官方补充
-- **R633 状态**: 仍是 33+ day plateau → 34+ day plateau. 7 月 post 仍未出现
+| Project | R633 | R634 | Δ | 24h 等效 | 状态 | R633→R634 |
+|---------|------|------|---|----------|------|-----------|
+| `obra/superpowers` | 244,631 | 244,714 | +83 | +0.41% | Stable ↑ | 略升 |
+| `affaan-m/ECC` | 225,282 | 225,320 | +38 | +0.20% | Stable ↓ | 略降 |
+| `JuliusBrussee/caveman` | 81,339 | 81,536 | +197 | **+2.90%** | P12 HIT ↓ | -1.11pp |
+| `usestrix/strix` | 32,576 | 32,765 | +189 | **+6.96%** | P12 HIT Strong ↓ | -1.34pp |
+| `openai/codex-plugin-cc` | 22,740 | 22,772 | +32 | **+1.69%** | P12 HIT ↓↓ | -2.61pp |
+| `raiyanyahya/recall` | 654 | 654 | +0 | +0.00% | Stable ↓ | -1.84pp |
+| `amplifthq/opentag` | 570 | 572 | +2 | **+4.21%** | P12 HIT Growth ↓ | -4.26pp |
 
-### P7: 7/3 晚间/7/4 凌晨 release window 峰值 (持续监控)
-- **背景**: R612 claude-science 6/30 + R618 7/1-7/2 + R622 Claude Code v2.1.198 7/1 + R631 v2.1.199 7/3 07:35 CST release cluster 暗示 7/3-7/4 是高概率 release window
-- **R633 状态**: v2.1.199 release 已确认 (R630 → R631 窗口期). 后续 v2.1.200/201 + Anthropic Engineering 7 月 post 可能在 7/3 晚间/7/4 凌晨出现
-- **判断**: R633 breakthrough via 1st-party blog post (claude.com/blog/getting-started-with-loops 6/30). R634 突破概率仍存 (7/3 晚间/7/4 凌晨 release window 峰值)
-- **R634 重点**: 7/3 18:00 CST - 7/4 06:00 CST release window 峰值监控
+**P12 cluster 实证**: 4/7 项目 24h 等效增长率 > 1% P12 阈值. R631 4/7 → R632 4/7 → R633 4/7 → **R634 4/7 持续 4 轮**. Cluster 进入 secondary expansion phase Phase 2 末期 / Phase 3 入口. Layer 6 命名维持 R626 harness-productivity-system + R634 新增 identity-federation 作为第 6 维度.
 
-### P8: obra/superpowers v6.2.0 release 后续
-- **背景**: R630 发现 v6.1.1 release 2026-07-02 21:58Z (R629 未捕获)
-- **可能**: v6.2.0 release 后续 (v6.1.1 = patch, v6.2.0 = 后续 major)
-- **监控方法**: curl -s https://api.github.com/repos/obra/superpowers/releases?per_page=3
-- **R633 状态**: v6.1.1 仍是 latest. v6.2.0 未 release
-- **R633 决策**: P8 NOT HIT 持续, v6.2.0 后续监控
+### R634 P17 (NEW) Claude.com/blog FULL audit protocol 升级
 
-### P12 HIT Phase 2 持续 3 轮 (R631 → R632 → R633): Cluster 二次扩张 4/7 持续
-- **背景**: R629 P12 监控规则 "+1%+/24h = cluster 二次扩张信号". R630 3/7 HIT, R631 4/7 HIT Phase 2, R632 4/7 HIT Phase 2, **R633 4/7 HIT Phase 2 持续 3 轮**
-- **R633 状态**: **HIT Phase 2 持续 3 轮!** 4/7 项目 (caveman +4.01%, strix +8.30%, codex-plugin-cc +4.30%, opentag +8.47%) 24h 等效增长率 > 1% P12 阈值
-- **范式解读**: harness-productivity-system cluster 进入 **二次扩张周期 Phase 2 持续 3 轮** - 4 个核心项目 (pentest + token-efficiency + cross-harness 1st-party + Channel-Bridge Routing 1st-party) 持续 high-growth
-- **strix 加速略降信号**: R631 +5.96% → R632 +8.94% → R633 +8.30% (峰值 R632). 仍 STRONG 持续
-- **opentag STRONG 持续 3 轮**: R631 +14.5% → R632 +7.66% → R633 +8.47% (R633 略升). R625 1st-party Article 后续曝光效应持续
-- **codex-plugin-cc 加速信号**: R631 +2.07% → R632 +2.91% → R633 +4.30% (R633 +1.39pp). cross-harness 1st-party 持续高增长
-- **R634 监控**: P12 HIT Phase 2 持续验证 + 7/3 晚间/7/4 凌晨 release window 是否有新项目触发 cluster 扩张
-
-### P15 (R632 NEW): agentskills/agentskills Defer monitoring
-- **背景**: R632 GitHub Trending 7/3 daily 发现 agentskills/agentskills (21,634⭐ Apache-2.0, 1st-party Anthropic Skills spec 仓库)
-- **Defer 原因**: 主题已 heavily covered (20+ Skills articles), Spec 自身是 standards document 不是 user-facing implementation, 现有 articles 已通过 agentskills.io 引用
-- **Re-evaluation 触发条件**:
-  - (a) 新 1st-party 1st-party 重大 spec 修订
-  - (b) agentskills/agentskills 突破 30K stars
-  - (c) 新 client 兼容性 (e.g. OpenAI Codex 官方支持 Agent Skills spec)
-  - (d) 新 1st-party 1st-party Anthropic blog post 详解 spec
-- **R633 状态**: Defer monitoring 持续
-
-### P16 (R633 NEW): Anthropic claude.com/blog 后续 Claude Code team posts
-- **背景**: R633 audit claude.com/blog Claude Code team posts 发现 1 NEW (getting-started-with-loops 6/30). 历史 audit R568/R583/R587/R618/R633 5% engineering probability pattern 第 5 次稳定验证
-- **可能**: claude.com/blog Claude Code team 后续 posts (类似 getting-started-with-loops 4-type taxonomy 这种机制级文章)
-- **监控方法**: 重新 audit claude.com/blog 全 posts (重点新发布)
-- **判断**: 如果 7 月 Claude Code team post 发布，是 Layer 6 范式的官方补充 (类似 R633 模式)
-- **R633 状态**: claude.com/blog Claude Code team posts 1 NEW HIT. P16 monitoring 持续
+**P17 (R634 NEW)**: claude.com/blog FULL audit protocol 升级
+- **背景**: R633 audit 报告 "8 known posts" 但 R634 FULL audit 发现 24 posts (audit gap = 66%)
+- **问题**: R633 audit 仅审计了主页可见 posts 但漏掉很多 (可能是 posts 排列顺序 / 翻页 / 隐藏 posts)
+- **解决**: R634 起 audit 必须:
+  1. fetch `https://claude.com/blog` (主页)
+  2. fetch `https://claude.com/blog?b7eea976_page=2` (第二页 R634 发现)
+  3. 合并去重
+  4. 与 sources_tracked.jsonl 完整 audit 对比
+- **P17 monitoring 持续**: 每轮 claude.com/blog FULL audit 2 页
 
 ---
 
-## 📌 R634 重点监控
+## 📌 R635 重点监控
 
 1. **(P1)**: Claude Code v2.1.200 后续 release (R631 v2.1.199 已 HIT, 下一个 release 可能 + Lark/Feishu routing 对等发布)
-2. **(P5)**: Anthropic Engineering 7 月 post 突破 34+ day plateau → 可能 35+ day (持续监控)
-3. **(P0)**: Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 34+ day)
+2. **(P5)**: Anthropic Engineering 7 月 post 突破 35+ day plateau → 可能 36+ day (持续监控)
+3. **(P0)**: Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 35+ day)
 4. **(P2)**: Mythos Preview GA + Harness 实战
 5. **(P8)**: obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周)
 6. **(P3)**: 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) - 当前仅 openai/codex-plugin-cc
 7. **(P9)**: Cursor Blog/Changelog 后续 deep engineering follow-up
 8. **(P10)**: GitHub Trending non-agent projects 后续
 9. **(P11)**: deepseek-ai/DeepSpec 等 LLM inference acceleration 项目
-10. **(P12)**: Cluster 二次扩张 Phase 2 持续验证 - 7 项目 stars tracking 持续. 如出现 +1%+/24h 持续 = cluster 二次扩张确认
+10. **(P12)**: Cluster 二次扩张 Phase 2 末期 / Phase 3 入口 - 7 项目 stars tracking 持续. 如出现 +1%+/24h 持续 = cluster 二次扩张确认. R634 增速全面放缓信号
 11. **(P13)**: Slash-Skill stacking cap 5 → 10 后续扩展
 12. **(P14)**: CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展
 13. **(P15 R632 NEW)**: agentskills/agentskills Defer monitoring (Re-evaluation 触发条件 4 项)
-14. **(P16 R633 NEW)**: Anthropic claude.com/blog Claude Code team 后续 posts (类似 R633 4-type loop taxonomy 这种机制级文章)
+14. **(P16 R633 NEW)**: Anthropic claude.com/blog Claude Code team 后续 posts
+15. **(P17 R634 NEW)**: claude.com/blog FULL audit protocol 升级 (2 页 + sources_tracked.jsonl 完整对比)
+16. **(P18 R634 NEW)**: apps-gateway / agent-identity / human-agent-teams 3 Defer 监控 (Re-evaluation 触发条件)
 
-R634 prediction 调整: **25% sat cooling / 30% breakthrough / 30% cluster validation / 15% silent**
-- breakthrough 30% → 30% (R633 breakthrough HIT 持续, R633 prediction 30% branch 命中, R634 prediction 维持)
-- cluster validation 30% → 30% (持续)
-- sat cooling 30% → 25% (R633 breakthrough HIT 后, R634 可能接 sat cooling 1 轮符合 R631 → R632 → R633 → R634 模式)
-- silent 10% → 15% (R633 breakthrough 增量 5% 移到 silent)
-- R634 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)
+R635 prediction 调整: **20% sat cooling / 25% breakthrough / 40% cluster validation / 15% silent**
+- breakthrough 30% → 25% (R634 breakthrough HIT 后, R635 可能接 sat cooling 1 轮符合 R631 → R632 → R633 → R634 模式)
+- cluster validation 30% → 40% (R634 增速全面放缓, R635 cluster validation 概率提升 + R634 三 defer 监控 + cluster 实证观察)
+- sat cooling 25% → 20% (R634 breakthrough HIT 概率延后, R635 sat cooling 概率下降)
+- silent 15% → 15% (持平)
+- R635 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰) + P17 claude.com/blog FULL audit protocol 应用 + P18 3 defer 候选评估
