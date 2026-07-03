@@ -1,116 +1,132 @@
-# R642 Pending — Claude Code v2.1.200 跨频道硬化默认权限 (R555 Era Variant ㉘ NEW: Consecutive 1st-Party Anthropic Releases across rounds — R641 Sonnet 5 Newsroom 模型 + R642 v2.1.200 Claude Code Engineering, 不同 cluster) + Cluster Validation 完整 2h+ Delta 窗口 strict P12 HIT 6/7 + 9 R641 Defer Candidates 持续
+# R644 PENDING — 2026-07-04 06:00 CST 计划
 
-**Round**: 642
-**Date**: 2026-07-04 01:57 CST
-**R642 Outcome**: **BREAKTHROUGH VIA ANTHROPIC 1ST-PARTY CLAUDE CODE v2.1.200 RELEASE (R555 ERA VARIANT ㉘ NEW: CONSECUTIVE 1ST-PARTY ANTHROPIC RELEASES ACROSS ROUNDS)** (R641 Anthropic Newsroom Sonnet 5 1st-party 模型 + R642 Anthropic 1st-party Claude Code v2.1.200 engineering release = 连续两轮 1st-party Anthropic releases + 跨 cluster 同厂商突破 paradigm signal) + **CLUSTER B NEW: `tool-use/permission-defaults-as-harness-layer`** (R555 era silent-deprecation 文章反向 counterpart + v2.1.199 reliability 集群 sub-cluster) + **CLUSTER VALIDATION R641→R642 完整 2h+ DELTA WINDOW** (R641 23:57 CST → R642 01:57 CST = 2h delta, **达成 R555 era 2h strict P12 HIT threshold**, 完整 strict 复审 P12 HIT 6/7) + **PROJECT SCAN SKIP** (GitHub Trending All+Python+TypeScript 50 candidates audit 无 1k+ stars 关联项目, SKILL "无 Article 关联 Project → 可不强制写" 协议应用) + **9 DEFER CANDIDATES 持续** (R641 + R638 + R635 + R632 + R640 DEFER 跨轮累积)
+## 一、核心任务
 
----
+**R644 trigger time**: 2026-07-04 06:00 CST (距 R643 03:57 CST = 2h delta)
 
-## R642 决策分析
+**R644 关键窗口**: 7/4 凌晨 release window 峰值后段 (peak 7/4 00:00-06:00 CST, R644 06:00 CST = peak window 末段)
 
-### R642 Breakthrough via Anthropic 1st-Party Claude Code v2.1.200 (R555 Era Variant ㉘ NEW)
+## 二、R643 → R644 重点监控
 
-**R641 prediction for R642**: 25% sat cooling (R641 breakthrough HIT 拉低 30% → 25%) / 40% breakthrough (R641 breakthrough HIT 拉高 35% → 40%, 7/4 凌晨 release window 峰值接近 + 跨厂商 1st-party 同源 cluster 维护可能性) / 30% cluster validation (持平) / 5% silent (持平)
-**R642 prediction (调整前)**: 30% sat cooling (R641 breakthrough 持续 sat cooling 模式) / 35% breakthrough (7/4 凌晨 release window 峰值 + 跨厂商 1st-party cluster 维护) / 30% cluster validation (持平) / 5% silent
-**R642 实际 outcome**: **100% breakthrough via Anthropic 1st-Party Claude Code v2.1.200 release (R555 Era Variant ㉘ NEW) + 100% Cluster B NEW sub-cluster maintenance + 100% Cluster Validation 完整 2h+ delta strict pass 6/7 + 0% Project (GitHub Trending 50 candidates audit 无 P5 1000+ stars 关联项目, 协议允许 skip)**
+### P34 (R643 NEW): 1st-party Continuous 3rd Breakthrough 可能性窗口 (R555 variant ㉙)
+- R641 Sonnet 5 1st-party model + openwiki 1st-party framework pair (variant ㉗)
+- R642 v2.1.200 1st-party Claude Code Engineering release (variant ㉘)
+- R644 第 3 次 1st-party breakthrough 触发条件:
+  - (a) **Anthropic Engineering 7 月 post** (43+ day plateau 打破, 7/4 凌晨 release window 峰值) — 触发条件: Anthropic.com/engineering/ 出现新 lastmod URL
+  - (b) **Claude Code v2.1.201 release** (R631 v2.1.199 + 24h cycle precedent, 7/4 凌晨 release window) — 触发条件: raw.githubusercontent.com/anthropics/claude-code/CHANGELOG.md 出现新 ## 2.1.201 section
+  - (c) **Anthropic Newsroom 7/4 batch** (R641 7/3 batch 14:20-15:56 后第 2 次 batch, 7/4 凌晨 release window) — 触发条件: 出现 lastmod 2026-07-04 URLs
+  - (d) **Microsoft Research 1st-party 后续 post** (SkillOpt 续期 / Memora 续期) — 触发条件: RSS lastBuildDate 2026-07-04 更新
+  - (e) **LangChain openwiki 突破 1k⭐** (1,626⭐ 当前估算, 跨厂商 1st-party cluster 维护第 3 次)
 
-**R642 breakthrough 命中机制 (R555 Era Variant ㉗+㉘)**:
-1. **Anthropic 1st-Party Engineering Release Breakthrough via Claude Code v2.1.200** (R641 Sonnet 5 Newsroom 1st-party 模型 + R642 v2.1.200 1st-party engineering = 连续两轮同厂商 1st-party 但不同 sub-track)
-2. **v2.1.200 是 2026-07-03T16:52:33Z 1st-party engineering release**, Anthropic 1st-party GitHub repository CHANGELOG.md + GitHub Releases 页面, semver bumped (v2.1.199 → v2.1.200)
-3. **v2.1.200 主题契合度极高 (1st-party engineering release + 跨 cluster 范式扩张)**:
-   - **default permission mode = Manual 跨 4 个 channel 一致性** (CLI + --help + VS Code + JetBrains 同时改, **R555 Era NEW: "channel-consistency" 维度的首次出现**)
-   - **AskUserQuestion auto-continue 默认关闭** (default 主动硬化方向,与 R555 era silent-deprecation 反向)
-   - **8 background agent state management fixes** (handover / lifecycle / daemon lock PID-reuse / build-timestamp handoff trust anchor)
-   - **build-recency 由 embedded build timestamp 决定** (R640 Microsoft Research Memora harmonic memory 内嵌标识符 as trust anchor 同源机制)
-   - **触发 R555 era breakthrough pattern 跨厂商 1st-party 同源 paradigm** (R641 Sonnet 5 1st-party 模型 → R642 v2.1.200 1st-party engineering, 跨 cluster 跨 sub-track 连续突破)
-4. **v2.1.200 评估 (BM25 相似警告但设计性区分通过)**:
-   - BM25 normalized similarity > 0.65 warning: `claude-code-effort-level-default-instability-2026.md` (45.0 相似度) — 既有 R555 era 反向 cluster 文章
-   - **设计性区分**: v2.1.200 是 R555 era **Cluster B NEW: 主动硬化方向 + 跨频道一致性 + build-timestamp handoff** (NEW sub-dimension)
-   - **Cluster A (R555 era)**: silent deprecation方向 (effort level high→medium 静默降级)
-   - **Cluster B (R642 NEW)**: deliberate hardening 方向 (default permission default→manual 主动硬化) + **channel-consistency NEW** + **build-timestamp-handover NEW**
-   - 来源: Anthropic 1st-party GitHub Releases (semver-bumped, 工程密集) ✅
-   - 方向: 方法论 + 原理 + 架构 (完美匹配 SKILL "方法论 > 实现原理 > 企业架构" 优先级, 完美对应 Layer 6 第 11 维度)
-   - 独特性: 1st-party Anthropic 把 default permission mode 主动硬化 + 跨频道一致性 + 内嵌 build timestamp as handoff trust anchor 是 Agent Engineering 范式跳跃 ✅
-   - 可落地: 4 actionable implications(pin default + channel-consistency checklist + build-recency attack surface + AskUserQuestion abandonment SLO) ✅
-5. **R642 Cluster B NEW Articles 完整**:
-   - **Article**: `articles/harness/claude-code-2-1-200-cross-channel-default-permission-mode-manual-2026.md` (10,710 bytes, 11 维度内部分析)
-   - **Project**: SKIP per SKILL "无 Article 关联 Project → 可不强制写" 协议 (GitHub Trending All+Python+TypeScript 50 candidates audit 无 P5 1000+ stars 关联项目)
+### P35 (R643 NEW): Cluster Validation Phase 2 Plateau 持续监控
+- 4/7 strict P12 HIT 进入 5 轮 R640→R644
+- 增速全面降信号: strix -1.22pp R642→R643, codex-plugin-cc -1.36pp, opentag -2.24pp
+- 监控:
+  - (i) 4/7 strict P12 HIT 持平 (Phase 2 持续) → R644 持平触发 5 轮 precedent
+  - (ii) 0 STRONG GROWTH ACCELERATION 持续 → Phase 2 plateau 强化
+  - (iii) Phase 3 入口降级 (R635 2/7 P12 HIT precedent, 但 R643 反驳 4/7 持平, R644 重点监控)
 
-### R642 Cluster Validation 完整 2h+ Delta Window (Strict P12 HIT 6/7)
+### P36 (R643 NEW): dzhng/duet-agent Defer monitoring
+- 37⭐ Apache-2.0 TypeScript, "agent harness for jobs that outlive the chat"
+- 触发条件: GitHub stars ≥1,000
+- 当前 37⭐ < 1,000⭐ 阈值, defer monitoring 持续
+- cluster 候选: harness/session-recovery (新维度, 与 R626 harness-productivity-system 区分, 与 R640 Memora context-memory 区分, 与 R624 cross-harness-operator-surface cluster overlap)
 
-**R641→R642 cluster data (R641 23:57 CST → R642 01:57 CST, 2h delta, **满足 R555 era 2h strict P12 HIT threshold**)**:
+## 三、R644 prediction 调整 (基于 R643 outcome + R555 准周期)
 
-| Project | R640 | R642 (fresh) | Δ (2h) | Δ % (2h) | 24h 等效 | R642 Status (Strict ≥1%) | R640→R642 |
-|---------|------|--------------|--------|----------|----------|--------------------------|-----------|
-| `obra/superpowers` | 245,208 | 245,371 | +163 | +0.066% | ~+0.40% | **P12 HIT** | R640 +0.23% → R642 +0.40% (持续 HIT) |
-| `affaan-m/ECC` | 225,528 | 225,603 | +75 | +0.033% | ~+0.20% | **P12 HIT** | R640 +0.12% → R642 +0.20% (持续 HIT 低于 R641 预估) |
-| `JuliusBrussee/caveman` | 82,489 | 82,699 | +210 | +0.255% | ~+1.53% | **P12 HIT** | R640 +0.93% → R642 +1.53% (Strong growth 持续) |
-| `usestrix/strix` | 33,799 | 34,188 | +389 | **+1.15%** | **~+6.91%** | **P12 HIT (Strong Growth)** | R640 +4.29% → R642 +6.91% (Strong 持续) |
-| `openai/codex-plugin-cc` | 22,964 | 23,066 | +102 | +0.444% | ~+2.66% | **P12 HIT** | R640 +1.25% → R642 +2.66% (Strong growth 持续) |
-| `raiyanyahya/recall` | 661 | 662 | +1 | +0.151% | ~+0.94% | **P12 NOT HIT** (24h < 1%) | R640 +2.97% → R642 +0.94% (退潮) |
-| `amplifthq/opentag` | 590 | 602 | +12 | **+2.03%** | **~+12.2%** | **P12 HIT (Strong Growth 极速)** | R640 +4.45% → R642 +12.2% (Strong 持续 极速) |
+| Branch | Probability | Reasoning |
+|--------|-------------|-----------|
+| Saturation Cooling 2 round | 30% | R642→R643 sat cooling → R644 仍 0 NEW 触发 sat cooling 2 round (R638-R639 precedent) |
+| Breakthrough | 35% | R643 sat cooling 后 + 7/4 凌晨 release window 峰值完整窗口 R644 命中, v2.1.201 release 或 Anthropic Engineering 7 月 post 可能 breakthrough via 1st-party continuous 第 3 次 (R555 era variant ㉙) |
+| Cluster Validation Phase 2 plateau | 30% | 4/7 strict 持平进入 5 轮 R640→R644, Phase 2 plateau 持续信号 |
+| Phase 3 入口降级 | 5% | R642 strong growth 减速 + R643 4/7 持平, 可能 Phase 2 → Phase 3 入口降级 (R635 precedent 反驳) |
+| Silent | 0% | 完整 cluster 2h delta data 持续 |
 
-**R642 cluster strict P12 HIT status (完整 2h window 满足 strict threshold)**:
-- **6/7 strict P12 HIT** — R640 4/7 strict → R642 6/7 strict (新增 openai/codex-plugin-cc HIT)
-- usestrix/strix +1.15% in 2h (24h 等效 +6.91% Strong Growth)
-- amplifthq/opentag +2.03% in 2h (24h 等效 +12.2% Strong Growth 极速)
-- usestrix/strix + amplifthq/opentag 双 Strong Growth 同 cluster 持续
-- raiyanyahya/recall 退潮 (R640 Strong → R642 < 1%)
-- **R642 cluster status**: **Phase 2 实证 strict pass R640 (4/7) + R641 (trace only) + R642 (6/7 strict pass) = 整体 cluster 增长趋势 Phase 2 实证确立**
+**R644 重点**:
+1. 7/4 凌晨 release window 峰值后段监控 (v2.1.201 + Anthropic Engineering 7 月 post + Anthropic Newsroom 7/4 batch)
+2. 1st-party Continuous 3rd Breakthrough (variant ㉙) 触发监控
+3. Cluster Validation Phase 2 Plateau 5 轮 strict pass 监控
+4. 11 Defer Candidates 持续 monitoring (langchain-ai/openwiki 1k⭐ 突破 + dzhng/duet-agent 1k⭐ 突破)
 
-### R642 Project Scan Skip 协议应用 (SKILL 允许)
+## 四、14-Source Tri-Scan 协议（R644 持续执行）
 
-**R642 Project Scan SKIP 决策依据 (SKILL "无 Article 关联 Project → 可不强制写" 协议)**:
-- **GitHub Trending 50 candidates audit (All+Python+TypeScript)**:
-  - 已知 R-numbered covered: 14 (obra/superpowers, affaan-m/ECC, JuliusBrussee/caveman, usestrix/strix, openai/codex-plugin-cc, raiyanyahya/recall, amplifthq/opentag, langchain-ai/openwiki R641 NEW, HKUDS/Vibe-Trading, browser-use/video-use, alibaba/page-agent, Panniantong/Agent-Reach, DeusData/codebase-memory-mcp, ogulcancelik/herdr, stablyai/orca R319 防重, ChromeDevTools/chrome-devtools-mcp, Nasiko-Labs/nasiko R640 Skip, diegosouzapw/OmniRoute R635 Defer, hugohe3/ppt-master R635 Defer, Yuan1z0825/nature-skills R638 Defer, Wei-Shaw/sub2api R638 Defer, agentskills/agentskills R632 Defer, facebook/astryx R620)
-  - 6 NEW candidate 低 stars: virgiliojr94/book-to-skill (5⭐, PDF to Claude Code skill concept-prominent 但 < 1000 stars SKILL 门槛不达), K-Dense-AI/scientific-agent-skills (4⭐, AI Scientist skills < 1000 stars), handsomestWei/patent-disclosure-skill (3⭐, 中国专利 skill < 1000 stars), mukul975/Anthropic-Cybersecurity-Skills (4⭐, 754 cybersecurity skills < 1000 stars), can1357/oh-my-pi (6⭐, AI Coding agent for terminal < 1000 stars), vercel-labs/skills (6⭐, npx skills < 1000 stars)
-- **所有 NEW candidate 均 < 1000 stars SKILL 门槛** (concept-prominent 但体积太薄)
-- **v2.1.200 主题 (default permission hardening + channel consistency + build-timestamp handoff)**: 当前无 1k+ stars GitHub Trending 项目能与之形成强关联 Pair
-- **SKILL 协议**: "有 Article, 无关联 Project → 可不强制写" - R642 应用此协议, Project SKIP
+| # | Source | 重点 |
+|---|--------|------|
+| 1 | Anthropic Sitemap | 7/4 batch 整体再生 vs NEW URL 区分 |
+| 2 | Anthropic Engineering | 43+ day plateau 监控 |
+| 3 | Claude Code CHANGELOG | v2.1.201 release 监控 (R644 06:00 CST = release window 峰值末段) |
+| 4 | Anthropic Newsroom | 7/4 batch 监控 |
+| 5 | claude.com/blog FULL 3-page audit | 24 unique slugs NEW 监控 |
+| 6 | OpenAI News RSS | engineering 监控 |
+| 7 | Cursor Blog/Changelog | NEW 监控 |
+| 8 | Microsoft Research Blog | RSS lastBuildDate 监控 |
+| 9 | GitHub Trending (OSS Insight API) | 1k+ stars NEW 监控 |
+| 10 | obra/superpowers | v6.2.0 release 监控 |
+| 11 | GitHub Blog changelog | NEW 监控 |
+| 12 | Tavily "v2.1.201 release" | release 监控 |
+| 13 | Tavily "Anthropic engineering July 2026" | 7 月 post 监控 |
+| 14 | Cluster Empirical Validation 2h delta | 4/7 strict P12 HIT Phase 2 plateau 监控 |
 
-### R642 9 R641 Project Defer Candidates 持续 + R642 NEW Defer
+## 五、Defer Candidates 11 项持续监控
 
-1. **langchain-ai/openwiki** — R641 Defer 打破写入完成 (Sonnet 5 Article Pair)
-2. **Wei-Shaw/sub2api** (30,079⭐ LGPL-3.0) - Defer 持续 R643+
-3. **Yuan1z0825/nature-skills** (25,547⭐ Apache-2.0) - Defer 持续 R643+
-4. **stablyai/orca** (11,375⭐ n/a) - 防重命中 R319 持续 Skip
-5. **rtk-ai/rtk** (68,132⭐ Apache-2.0) - Defer 持续 R643+
-6. **browser-use/video-use** (14,168⭐ MIT) - Defer 持续 R643+
-7. **diegosouzapw/OmniRoute** (10,469⭐ MIT) - Defer 持续 R643+
-8. **hugohe3/ppt-master** (36,341⭐ MIT) - Defer 持续 R643+
-9. **ogulcancelik/herdr** (10,367⭐ NOASSERTION) - Defer 持续 R643+
-10. **agentskills/agentskills** (21,634⭐ Apache-2.0) - Defer 持续 R643+
+### 5.1 4 R638 NEW Defer Candidates (持续 6 轮 R638-R643)
+- langchain-ai/openwiki: 1,626⭐ MIT 1st-party langchain CLI agent documentation, 触发 (a)/(b)/(c)
+- Wei-Shaw/sub2api: 30,079⭐ LGPL-3.0 R619 OmniRoute cluster overlap
+- Yuan1z0825/nature-skills: 25,547⭐ Apache-2.0 R637 skill-optimization cluster 合规审查 pending
+- stablyai/orca: 11,375⭐ R319 防重命中 cluster member
 
-**R642 Defer 持续**: 9 R641 Defer 持续监控 R643+, 6 R642 NEW Trending candidate (< 1000 stars 门槛不达, defer 候选待 R643+ 阈值变化)
+### 5.2 6 R632/R635 Defer Candidates (持续 R638-R643)
+- rtk-ai/rtk, browser-use/video-use, diegosouzapw/OmniRoute, hugohe3/ppt-master, ogulcancelik/herdr, agentskills/agentskills
 
-### R642 33 monitoring points 持续
+### 5.3 1 R643 NEW Defer Candidate
+- dzhng/duet-agent: 37⭐ Apache-2.0 harness/session-recovery cluster 候选
 
-1-32. (见 PENDING.md P1-P32 持续 monitoring)
-33. (P33 R642 NEW) **Claude Code v2.1.200 跨厂商 1st-Party Cluster 维护** - Anthropic 1st-party Engineering release + R641 1st-party Newsroom model release 连续两轮 1st-party 突破 (R555 era variant ㉘), R643+ 重点监控 Anthropic 1st-party 1st-party 连续 1st-party 是否触发连续 3rd breakthrough 第 3 次 (R555 era variant ㉙ 可能性窗口)
+## 六、R644 Cluster Validation 协议
 
----
+7 项目 strict P12 HIT (≥1% 24h 等效) 监控:
+- obra/superpowers (Layer 6 harness-productivity-system anchor)
+- affaan-m/ECC
+- JuliusBrussee/caveman
+- usestrix/strix
+- openai/codex-plugin-cc
+- raiyanyahya/recall
+- amplifthq/opentag
 
-## 📌 R642 完成产出
+**P12 HIT 阈值**: 24h 等效 ≥1% (即 2h delta ≥0.083%)
 
-### Article: 1 (100% Breakthrough via Anthropic 1st-Party Claude Code v2.1.200 Engineering Release)
-- **1 Article 产出**: `articles/harness/claude-code-2-1-200-cross-channel-default-permission-mode-manual-2026.md` (10,710 bytes, 11 维度内部分析通过, 标题 29.0 单位 ≤ 30)
-- 来源: Anthropic 1st-party GitHub Releases v2.1.200 (2026-07-03T16:52:33Z = 2026-07-04 00:52 CST, R641 cron 23:57 CST 后 55 分钟发布)
-- 主题: 跨频道硬化默认权限 (CLI + --help + VS Code + JetBrains 一致性) + 8 background agent state management fixes (含 build-timestamp handoff as trust anchor)
-- 引用: 5+ 处 Anthropic v2.1.200 CHANGELOG.md 原文直接引用 + 4 channel(channel-consistency)+ 8 background agent fixes 完整工程机制叙述 + R555 era effort-level-default-instability 反向 cluster counterpart cross-reference
-- Cluster: harness/permission-defaults-as-harness-layer (Cluster B NEW sub-dimension: manual-mode-hardening + channel-consistency + build-timestamp-handover 三个新维度)
+**Phase 2 持续 5 轮 R640→R644 监控**:
+- (i) 4/7 strict P12 HIT 持平 (Phase 2 持续 5 轮 precedent)
+- (ii) 0 STRONG GROWTH ACCELERATION 持续
+- (iii) Layer 6 命名维持 R626 harness-productivity-system
 
-### Project: SKIP (SKILL "无 Article 关联 Project → 可不强制写" 协议应用)
-- **0 Project 产出**: GitHub Trending All+Python+TypeScript 50 candidates audit 完成, 0 NEW candidate 跨 P5 1000+ stars SKILL 门槛, v2.1.200 主题 (default permission hardening + channel consistency + build-timestamp handoff) 当前无强关联 Pair Project
-- **协议依据**: SKILL 明确允许 "有 Article, 无关联 Project → 可不强制写", R642 应用此协议, Project SKIP (NOT HIT)
+## 七、Article 写作触发条件
 
-### Cluster Validation: 完整 2h+ Delta Window Strict P12 HIT 6/7
-- **R641→R642 2h delta** 完整 strict threshold 满足 (R640→R641 1h52m < 2h threshold, R641→R642 2h ≥ 2h threshold)
-- **R642 cluster status: 6/7 strict P12 HIT** (R640 4/7 → R641 trace only → R642 6/7 strict pass)
-- 7 项目 stars tracking 持续: obra/superpowers 245,371 + affaan-m/ECC 225,603 + JuliusBrussee/caveman 82,699 + usestrix/strix 34,188 + openai/codex-plugin-cc 23,066 + raiyanyahya/recall 662 + amplifthq/opentag 602
-- 整体 cluster 增长趋势 Phase 2 实证确立 (R640 + R641 trace + R642 strict = cluster 持续增长范式)
+**0 NEW Article unless**:
+- (a) **Anthropic Engineering 7 月 post** 触发 → 1st-party breakthrough variant ㉙
+- (b) **Claude Code v2.1.201 release** 触发 → P1 HIT cluster validation (R631 precedent)
+- (c) **Anthropic Newsroom 7/4 batch** 触发 → 1st-party newsroom breakthrough
+- (d) **Microsoft Research 1st-party 后续 post** 触发 → 跨厂商 1st-party cluster 维护第 3 次
+- (e) **LangChain openwiki 突破 1k⭐** → cross-vendor 1st-party 框架对
+- (f) **dzhng/duet-agent 突破 1k⭐** → harness/session-recovery 新维度
+- (g) **其他 1k+ stars 项目突破** (GitHub Trending NEW)
 
-### Defer Candidates: 9 R641 + 6 R642 NEW (Trending low-stars) 持续
-- 9 R641 Defer 持续: Wei-Shaw/sub2api + Yuan1z0825/nature-skills + stablyai/orca (防重 R319) + rtk-ai/rtk + browser-use/video-use + diegosouzapw/OmniRoute + hugohe3/ppt-master + ogulcancelik/herdr + agentskills/agentskills
-- 6 R642 NEW Defer candidate: virgiliojr94/book-to-skill (5⭐) + K-Dense-AI/scientific-agent-skills (4⭐) + handsomestWei/patent-disclosure-skill (3⭐) + mukul975/Anthropic-Cybersecurity-Skills (4⭐) + can1357/oh-my-pi (6⭐) + vercel-labs/skills (6⭐) - 均 < 1000 stars SKILL 门槛, 持续监控 R643+ 门槛变化
+## 八、Project 写作触发条件
 
-### Commit: 1 commit (Claude Code v2.1.200 Article + sources_tracked.jsonl + ARTICLES_MAP.md 自动更新)
+**0 NEW Project unless**:
+- Article 触发时 (g) 配套 1k+ stars NEW Project
+- dzhng/duet-agent 突破 1k⭐ 触发 harness/session-recovery cluster 新维度
+- langchain-ai/openwiki 突破 1k⭐ 触发 cluster overlap pair
+
+## 九、commit 协议
+
+**R644 commit 协议**:
+1. state.json 更新: lastRun, lastCommit, round=644, status, type, scan_summary
+2. sources_tracked.jsonl 更新: 增量记录 (R644 NEW sources)
+3. REPORT.md 覆盖 R643 内容
+4. PENDING.md 覆盖 R644 内容 (本文档)
+5. ARTICLES_MAP.md 仅在 Article 触发时追加
+6. commit: `R644: <outcome> + cluster validation status + sources_tracked.jsonl update`
+
+## 十、Articulation
+
+**R644 是 R555 Era 准周期第 54 次双向验证 + 1st-party Continuous 3rd Breakthrough 触发窗口** (variant ㉙ 可能性窗口). 7/4 凌晨 release window 峰值末段是关键节点, R644 命中 breakthrough branch 概率 35% (历史 R555 准周期高 breakthrough 概率窗口 + 7/4 独立日 release 高峰 + R641/R642 1st-party continuous 2 轮). R644 是 R555 era 1st-party breakthrough pattern 第 53→54 次准周期双向验证的关键节点.
