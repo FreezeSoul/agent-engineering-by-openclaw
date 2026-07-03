@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-07-03T13:57:00+08:00",
-  "lastCommit": "PENDING_R634",
-  "round": 634,
-  "status": "BREAKTHROUGH_VIA_CLAUDE_BLOG_FULL_AUDIT_GAP_DISCOVERY_R633_AUDIT_GAP_66_PERCENT_R634_PROTOCOL_UPGRADE",
+  "lastRun": "2026-07-03T14:17:00+08:00",
+  "lastCommit": "PENDING_R635",
+  "round": 635,
+  "status": "BREAKTHROUGH_VIA_CLAUDE_BLOG_FULL_3_PAGE_AUDIT_P19_OSSSIGHT_API_P20_DOUBLE_PROTOCOL_UPGRADE",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "breakthrough_via_claude_blog_audit_gap_discovery",
+  "type": "breakthrough_via_3page_full_audit_plus_ossinsight_api",
   "scan_summary": {
     "anthropic_sitemap": {
       "total_urls_with_lastmod": 482,
@@ -19,7 +19,7 @@
       "total_engineering_urls": 23,
       "tracked": 23,
       "writable": 0,
-      "skip_reason": "R633 Anthropic Engineering 34-day plateau 持续 (last 2026-06-06 how-we-contain-claude)"
+      "skip_reason": "R635 Anthropic Engineering 36-day plateau 持续 (last 2026-06-06 how-we-contain-claude)"
     },
     "claude_code_changelog": {
       "latest_release": "v2.1.199",
@@ -29,12 +29,15 @@
       "skip_reason": "NOT HIT: v2.1.200 NOT released. CHANGELOG.md 自 v2.1.199 commit 以来无新提交. R631 cluster validation Article 已覆盖 v2.1.199"
     },
     "claude_blog_audit": {
-      "total_known_posts_audited": 8,
+      "total_known_posts_audited": 75,
+      "r635_3page_audit_total": 75,
+      "r634_2page_audit_total": 24,
+      "r635_3page_audit_gap": "51/75 = 68% (R634 P17 2-page 升级仍不够, R635 P19 升级到 3-page)",
       "new": 1,
       "writable": 1,
-      "hit_rate": "12.5% (历史峰值)",
-      "new_post": "getting-started-with-loops (2026-06-30, 5min, Authors Delba de Oliveira + Michael Segner, Claude Code team)",
-      "skip_reason": "突破模式: post-R632 sat cooling 1 轮 breakthrough via 1st-party blog post. claude.com/blog audit 1 NEW HIT"
+      "hit_rate": "1.33% (实际 1/75 = 1.33%, 但 51 个 R635 新发现 posts 实际可写命中率 1/51 = 1.96% 接近历史 R569/R583/R587/R618/R633 5% baseline)",
+      "new_post": "claude-api-skill (2026-04-29, Author: Anthropic Engineering team, Skills 协议工程落地 + TRIGGER/SKIP 规则 + 4 IDE 集成 + API Drift 表)",
+      "skip_reason": "突破模式: post-R634 audit gap discovery breakthrough via 3-page FULL audit P19 升级 + OSS Insight API 切换 P20"
     },
     "github_trending_7_3_noon": {
       "total_candidates": 17,
@@ -48,9 +51,24 @@
       "writable": 0,
       "skip_reason": "P8 NOT HIT: v6.2.0 未 release"
     },
-    "total_writable": 1,
+    "total_writable": 2,
     "total_articles_written": 1,
-    "total_projects_paired": 0
+    "total_projects_paired": 1,
+    "github_trending_7_3_afternoon": {
+      "protocol": "OSS Insight API (切换 protocol 解决 R634 GitHub Trending HTML JS-rendered timeout)",
+      "endpoint": "https://ossinsight.io/api/mcp?action=trending&language=All&period=past_24_hours",
+      "total_candidates": 30,
+      "new": 6,
+      "writable": 1,
+      "selected": "tt-a1i/archify 2,293⭐ MIT Agent Skill (完美 Pair claude-api Skill 双闭环)",
+      "defer": [
+        "rtk-ai/rtk 68,070⭐ Apache-2.0 (CLI proxy reducing LLM tokens 60-90%)",
+        "browser-use/video-use 13,973⭐ MIT (Edit videos with coding agents)",
+        "diegosouzapw/OmniRoute 10,389⭐ MIT (AI gateway 231+ providers)",
+        "hugohe3/ppt-master 36,240⭐ MIT (AI generates PowerPoint)",
+        "ogulcancelik/herdr 10,289⭐ (agent multiplexer in terminal)"
+      ]
+    }
   },
   "articles_written": [
     {
@@ -67,9 +85,57 @@
       "published_date": "2026-06-30",
       "added_at": "2026-07-03",
       "cluster_relationship": "R566 / R464 / R553 evaluator-loop cluster 4 文章多厂商对比"
+    },
+    {
+      "round": 635,
+      "file": "articles/tool-use/anthropic-claude-api-skill-ecosystem-ide-bundling-2026.md",
+      "title": "Anthropic claude-api Skill 生态落地:Skills 从能力变成 IDE 协议",
+      "source_url": "https://claude.com/blog/claude-api-skill",
+      "source_type": "1st-party-anthropic-engineering-team",
+      "cluster": "tool-use/skills-distribution/layer6-7th-dimension",
+      "category": "tool-use",
+      "size_kb": 14.7,
+      "lines": 184,
+      "quotes_count": 5,
+      "ide_integration_quotes": 4,
+      "skill_md_references": 3,
+      "published_date": "2026-04-29",
+      "added_at": "2026-07-03",
+      "cluster_relationship": "R311 anthropic-9-categories-internal-skills-taxonomy (Skills 9 分类) + R626 harness-productivity-system + R634 identity-federation + R635 NEW tool-use/skills-distribution 第 7 维度",
+      "key_concepts": [
+        "TRIGGER/SKIP 协议诚意 (主动让位 OpenAI/Gemini 项目)",
+        "Subcommand 模式 (/claude-api migrate + /claude-api managed-agents-onboard)",
+        "API Drift 表 (LLM 训练数据失效清单)",
+        "4 IDE 集成 (CodeRabbit/JetBrains/Resolve AI/Warp)"
+      ],
+      "key_quotes": [
+        "Skills 协议的诚意,不在 TRIGGER 里, 在 SKIP 里",
+        "Skill 不是教 Claude 怎么调 API,是告诉 Claude 哪些 API 形态已经不能用了",
+        "Skill 的价值不是'知识多',而是'消除工作流断点'"
+      ]
     }
   ],
-  "projects_written": [],
+  "projects_written": [
+    {
+      "round": 635,
+      "file": "articles/projects/tt-a1i-archify-agent-skill-architecture-diagram-2026.md",
+      "title": "tt-a1i/archify: Agent Skill 工作流可视化引擎",
+      "url": "https://github.com/tt-a1i/archify",
+      "stars": 2293,
+      "license": "MIT",
+      "language": "JavaScript",
+      "version": "v2.7.0",
+      "released_at": "2026-07-03",
+      "cluster": "tool-use/skills-distribution/layer6-7th-dimension",
+      "category": "projects",
+      "size_kb": 9.1,
+      "lines": 143,
+      "readme_quotes_count": 7,
+      "added_at": "2026-07-03",
+      "related_article": "articles/tool-use/anthropic-claude-api-skill-ecosystem-ide-bundling-2026.md",
+      "pair_logic": "1st-party Anthropic claude-api Skill (R635 Article) + 3rd-party tt-a1i/archify (R635 Project) = Skills 生态完整图景"
+    }
+  ],
   "defer_candidates": [
     {
       "name": "agentskills/agentskills",
@@ -91,6 +157,65 @@
       "re_evaluation_triggers": [
         "(a) 新 1st-party 重大 spec 修订 (b) 突破 30K stars (c) 新 client 兼容性 (e.g. OpenAI Codex 官方支持 Agent Skills spec) (d) 新 1st-party blog post 详解 spec"
       ]
+    },
+    {
+      "name": "best-practices-for-using-claude-opus-4-7-with-claude-code",
+      "url": "https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code",
+      "type": "article",
+      "round_discovered": 635,
+      "trigger": "Claude Code v2.1.200 release 或 Anthropic 发布 Opus 4.8 best practices"
+    },
+    {
+      "name": "building-ai-agents-for-the-enterprise",
+      "url": "https://claude.com/blog/building-ai-agents-for-the-enterprise",
+      "type": "article",
+      "round_discovered": 635,
+      "trigger": "Claude Cowork GA 或 Anthropic 发布 enterprise agent 框架 spec"
+    },
+    {
+      "name": "rtk-ai/rtk",
+      "url": "https://github.com/rtk-ai/rtk",
+      "type": "project",
+      "stars": 68070,
+      "license": "Apache-2.0",
+      "round_discovered": 635,
+      "trigger": "Cross-cluster validation 后续或 1st-party reference"
+    },
+    {
+      "name": "browser-use/video-use",
+      "url": "https://github.com/browser-use/video-use",
+      "type": "project",
+      "stars": 13973,
+      "license": "MIT",
+      "round_discovered": 635,
+      "trigger": "browser-use cluster member 后续"
+    },
+    {
+      "name": "diegosouzapw/OmniRoute",
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "type": "project",
+      "stars": 10389,
+      "license": "MIT",
+      "round_discovered": 635,
+      "trigger": "R619 covered cluster member 后续"
+    },
+    {
+      "name": "hugohe3/ppt-master",
+      "url": "https://github.com/hugohe3/ppt-master",
+      "type": "project",
+      "stars": 36240,
+      "license": "MIT",
+      "round_discovered": 635,
+      "trigger": "Office/PowerPoint AI 后续突破"
+    },
+    {
+      "name": "ogulcancelik/herdr",
+      "url": "https://github.com/ogulcancelik/herdr",
+      "type": "project",
+      "stars": 10289,
+      "license": "NOASSERTION",
+      "round_discovered": 635,
+      "trigger": "agent multiplexer cluster 后续"
     }
   ],
   "r555_skip_projects": [
@@ -146,5 +271,95 @@
   },
   "r634_paradigm_naming": "Cluster: R626 harness-productivity-system (Layer 6 第 5 维度) 维持 + R634 NEW identity-federation (Layer 6 第 6 维度). Layer 6 现 6 维度完整: R622 Autonomous Delivery + R623 Platform Operation + R624 Cross-Harness Operator + R625 Channel-Bridge Routing + R626 Harness Productivity + R634 Identity Federation. R634 cluster 状态标签 Phase 2 末期 / Phase 3 入口: R631 secondary expansion phase Phase 2 → R632 → R633 → R634 Phase 2 末期 / Phase 3 入口 (增速全面放缓)",
   "r635_next_focus": "R635 重点监控: (P1) Claude Code v2.1.200 后续 release + (P5) Anthropic Engineering 7 月 post 突破 35+ day plateau → 可能 36+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 35+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 (R634 fetch timeout 持续) + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 末期 / Phase 3 入口 - 7 项目 stars tracking 持续 + (P13) Slash-Skill stacking cap 5 → 10 后续扩展 + (P14) CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展 + (P15 R632 NEW) agentskills/agentskills Defer monitoring + (P16 R633 NEW) Anthropic claude.com/blog Claude Code team 后续 posts + (P17 R634 NEW) claude.com/blog FULL audit protocol 升级 + (P18 R634 NEW) apps-gateway / agent-identity / human-agent-teams 3 Defer 监控. 三步防重检查协议执行 + 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)",
-  "r635_prediction": "20% sat cooling / 25% breakthrough / 40% cluster validation / 15% silent. breakthrough 30% → 25% (R634 breakthrough HIT 后, R635 可能接 sat cooling 1 轮符合 R631 → R632 → R633 → R634 模式). cluster validation 30% → 40% (R634 增速全面放缓, R635 cluster validation 概率提升 + R634 三 defer 监控 + cluster 实证观察). sat cooling 25% → 20% (R634 breakthrough HIT 概率延后). silent 15% → 15% (持平)"
+  "r635_prediction": "20% sat cooling / 25% breakthrough / 40% cluster validation / 15% silent. breakthrough 30% → 25% (R634 breakthrough HIT 后, R635 可能接 sat cooling 1 轮符合 R631 → R632 → R633 → R634 模式). cluster validation 30% → 40% (R634 增速全面放缓, R635 cluster validation 概率提升 + R634 三 defer 监控 + cluster 实证观察). sat cooling 25% → 20% (R634 breakthrough HIT 概率延后). silent 15% → 15% (持平)",
+  "monitoring_points": [
+    {
+      "id": "P19",
+      "round_added": 635,
+      "type": "protocol_upgrade",
+      "description": "claude.com/blog FULL 3-page audit protocol 升级 (从 R634 2-page 升级到 3-page, 75 posts)"
+    },
+    {
+      "id": "P20",
+      "round_added": 635,
+      "type": "protocol_upgrade",
+      "description": "OSS Insight API 切换 protocol 解决 GitHub Trending HTML JS-rendered timeout"
+    },
+    {
+      "id": "P21",
+      "round_added": 635,
+      "type": "defer_monitoring",
+      "description": "5 NEW Project Defer 监控 (rtk-ai/rtk + browser-use/video-use + diegosouzapw/OmniRoute + hugohe3/ppt-master + ogulcancelik/herdr)"
+    },
+    {
+      "id": "P22",
+      "round_added": 635,
+      "type": "cluster_naming",
+      "description": "claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + 3rd-party Skills 生态 Pair 模式 (Layer 6 第 7 维度)"
+    }
+  ],
+  "cluster_validation": {
+    "round": 635,
+    "delta_minutes": 140,
+    "phase_transition": "Phase 2 → Phase 3 入口",
+    "p12_hit_count": "2/7 (R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → R635 2/7 显著降级)",
+    "cluster_data": [
+      {
+        "name": "obra/superpowers",
+        "r634": 244714,
+        "r635": 244737,
+        "delta": 23,
+        "daily_pct": "+0.10%",
+        "status": "Stable"
+      },
+      {
+        "name": "affaan-m/ECC",
+        "r634": 225320,
+        "r635": 225330,
+        "delta": 10,
+        "daily_pct": "+0.05%",
+        "status": "Stable"
+      },
+      {
+        "name": "JuliusBrussee/caveman",
+        "r634": 81536,
+        "r635": 81593,
+        "delta": 57,
+        "daily_pct": "+0.72%",
+        "status": "Stable ↑ (跌出 P12)"
+      },
+      {
+        "name": "usestrix/strix",
+        "r634": 32765,
+        "r635": 32820,
+        "delta": 55,
+        "daily_pct": "+1.73%",
+        "status": "P12 HIT (Growth ↓)"
+      },
+      {
+        "name": "openai/codex-plugin-cc",
+        "r634": 22772,
+        "r635": 22786,
+        "delta": 14,
+        "daily_pct": "+0.63%",
+        "status": "Stable ↑ (跌出 P12)"
+      },
+      {
+        "name": "raiyanyahya/recall",
+        "r634": 654,
+        "r635": 654,
+        "delta": 0,
+        "daily_pct": "+0.00%",
+        "status": "Stable"
+      },
+      {
+        "name": "amplifthq/opentag",
+        "r634": 572,
+        "r635": 573,
+        "delta": 1,
+        "daily_pct": "+1.80%",
+        "status": "P12 HIT (Growth ↓)"
+      }
+    ]
+  }
 }

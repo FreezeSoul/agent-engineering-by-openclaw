@@ -817,3 +817,112 @@
 - (P12) Cluster 二次扩张 Phase 2 末期 / Phase 3 入口 - 7 项目 stars tracking 持续
 - 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)
 
+
+---
+
+# R635 — claude.com/blog FULL 3-PAGE Audit Gap Discovery (75 posts, R634 2-page audit 仅 24/75 = 32%! 51 NEW posts via P19 升级) + claude-api Skill 1st-Party Article (4/29 Skills 协议工程落地 1st cluster tool-use/skills-distribution 命名) + tt-a1i/archify 1 Project (2,293⭐ MIT v2.7.0 同日发布 完美 Pair Skills 生态) + Cluster Empirical Validation 2/7 P12 HIT Phase 2 → Phase 3 入口 (显著降级) + P19/P20 Protocol 升级
+
+**Round**: 635
+**Date**: 2026-07-03 14:17 CST
+**Status**: BREAKTHROUGH via claude.com/blog FULL 3-page audit P19 升级 + OSS Insight API 切换 (R634 2-page audit 漏 51/75 = 68% audit gap!) + 1 Article + 1 Project 双闭环
+
+## 📋 本轮任务执行情况
+| 任务 | 执行结果 | 原因/产出 |
+|------|---------|---------|
+| ARTICLES_COLLECT | ✅ 完成 | 1 篇: Anthropic claude-api Skill 1st-party blog (`claude.com/blog/claude-api-skill`, 2026-04-29 release) - Skills 协议工程落地 + TRIGGER/SKIP 规则 + 4 IDE 集成 + API Drift 表 |
+| PROJECT_SCAN | ✅ 完成 | 1 个高质量 GitHub 项目: tt-a1i/archify (2,293⭐ MIT v2.7.0 同日发布) - 完美 Pair claude-api Skill, 1st-party + 3rd-party Skills 生态闭环 |
+| Cluster Validation | ✅ 持续 | **2/7 P12 HIT Phase 2 → Phase 3 入口 显著降级** (R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → **R635 2/7**). 4 个 P12 HIT 项目中 2 个 (caveman + codex-plugin-cc) 跌出阈值, 2 个 (strix + opentag) 持续但增速显著降. Cluster 二次扩张信号已消退 |
+| R555 Hybrid | ✅ 实战 | 第 11 次实战 + 变体 ㉑ NEW: breakthrough via 3-page FULL audit + OSS Insight API protocol 升级 (区别于历史 breakthrough pattern) |
+
+## 🔍 本轮扫描发现
+
+### Claude.com/blog FULL 3-PAGE Audit GAP Discovery (R635 关键审计改进)
+- **R634 2-page audit 漏了 51 个 posts**! R634 audit 报告 24 posts 但 R635 FULL 3-page audit 发现 75 posts (audit gap = 51/75 = 68%, R634 P17 2-page 升级仍不够!)
+- **R635 FULL 3-page audit 75 posts**: 47 covered via orphan backfill + 22 WSD Skip (hackathon/consumer/legal/case-study/marketing/compliance/event) + 1 NEW Article (claude-api-skill) + 3 Defer (best-practices-for-using-claude-opus-4-7 + building-ai-agents-for-the-enterprise + observability-for-developers-building-connectors) + 2 misc
+- **R635 protocol 升级 (P19 NEW)**: 每轮 audit 必须 3 页 + sources_tracked.jsonl 完整对比
+
+### OSS Insight API 切换 (P20 NEW 解决 R634 GitHub Trending HTML timeout)
+- **背景**: R634 GitHub Trending HTML JS-rendered timeout 持续 5+ rounds
+- **解决**: 切换到 `https://ossinsight.io/api/mcp?action=trending&language=All&period=past_24_hours`
+- **30 candidates audit 完成**: 25 covered/cluster_overlap/Skip + 5 NEW Defer (rtk-ai/rtk 68,070⭐ + browser-use/video-use 13,973⭐ + diegosouzapw/OmniRoute 10,389⭐ + hugohe3/ppt-master 36,240⭐ + ogulcancelik/herdr 10,289⭐) + **1 NEW Project selected: tt-a1i/archify 2,293⭐ MIT Agent Skill**
+
+### claude-api Skill 1st-Party 突破
+- **来源**: `claude.com/blog/claude-api-skill` (2026-04-29 release, Author: Anthropic Engineering team)
+- **官方协议**: `anthropics/skills` GitHub 仓库 + `claude-api/SKILL.md` 内部 TRIGGER/SKIP 规则
+- **核心协议设计**:
+  1. **TRIGGER 规则** - "Whenever: the prompt names Claude/Anthropic; the user asks about an LLM; the task is LLM-shaped with provider unstated"
+  2. **SKIP 规则** - "SKIP only when another provider is being worked on: OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|...'` over the project hits"
+  3. **Subcommand 模式** - `/claude-api migrate` (3 阶段模型迁移) + `/claude-api managed-agents-onboard`
+  4. **API Drift 表** - LLM 训练数据失效清单 (`budget_tokens` 在 Opus 4.6 deprecated, Opus 4.7/4.8 400 报错)
+- **4 个 IDE 集成**:
+  - **CodeRabbit** (Erik Thorelli) - "stale API knowledge causes production issues"
+  - **JetBrains** (Denis Shiryaev) - "turn a Claude API upgrade into a guided IDE workflow"
+  - **Resolve AI** (Mayank Agarwal) - "move from model release to implementation in a single guided pass"
+  - **Warp** (Zach Lloyd) - "developers shouldn't have to leave Warp to look up Claude API parameters"
+- **Anthropic Skills 仓库开源**: `anthropics/skills` + 20 行 CI 集成指南
+
+### tt-a1i/archify 完美 Pair claude-api Skill (Skills 生态 1st-party + 3rd-party 闭环)
+- **Stars**: 2,293 (跨过 P5 1000 stars 门槛)
+- **License**: MIT (permissive)
+- **v2.7.0 同日发布 (2026-07-03)**: workflow post-render artifact checker (`scripts/check-render-output.mjs`)
+- **5 diagram types**: architecture + workflow + sequence + data-flow + lifecycle (5 JSON Schema 独立 renderer)
+- **HTML self-contained**: 主题切换 + 4× 矢量导出 + SVG 跟随系统 `prefers-color-scheme`
+- **Skills 协议 3rd-party 实证**: 1st-party Skill (claude-api) + 3rd-party Skill (archify) = Skills 生态完整图景
+
+### Cluster Empirical Validation 2h20m delta (R634 → R635)
+
+| Project | R634 | R635 | Δ | 24h 等效 | Status | R634→R635 趋势 |
+|---------|------|------|---|----------|----------|---------------|
+| obra/superpowers | 244,714 | 244,737 | +23 | +0.10% | Stable | -0.31pp |
+| affaan-m/ECC | 225,320 | 225,330 | +10 | +0.05% | Stable | -0.15pp |
+| JuliusBrussee/caveman | 81,536 | 81,593 | +57 | +0.72% | Stable ↑ | -2.18pp 跌出 P12 |
+| usestrix/strix | 32,765 | 32,820 | +55 | **+1.73%** | P12 HIT (Growth ↓) | -5.23pp 显著降级 |
+| openai/codex-plugin-cc | 22,772 | 22,786 | +14 | +0.63% | Stable ↑ | -1.06pp 跌出 P12 |
+| raiyanyahya/recall | 654 | 654 | +0 | +0.00% | Stable | 持平 |
+| amplifthq/opentag | 572 | 573 | +1 | **+1.80%** | P12 HIT (Growth ↓) | -2.41pp 显著降级 |
+
+**P12 HIT Phase 2 → Phase 3 入口显著降级**: R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → **R635 2/7**. 2 个 P12 HIT (caveman + codex-plugin-cc) 跌出阈值, 2 个 (strix + opentag) 持续但增速显著降. Cluster 二次扩张信号已消退. Layer 6 命名维持 R626 `harness-productivity-system` + R634 `identity-federation` + R635 NEW `tool-use/skills-distribution` 第 7 维度.
+
+### 1 Article 产出
+
+- **File**: `articles/tool-use/anthropic-claude-api-skill-ecosystem-ide-bundling-2026.md`
+- **Size**: 14.7KB, 184 行
+- **5 处 Anthropic 1st-party 直接引用** + 4 个 IDE 集成方引用 (Erik Thorelli/CodeRabbit, Denis Shiryaev/JetBrains, Mayank Agarwal/Resolve AI, Zach Lloyd/Warp) + SKILL.md 内部 TRIGGER/SKIP 规则 + API Drift 表
+- **9 章节结构**: 为什么值得写 + 3 核心概念 (Skill = 运行时知识容器 + TRIGGER/SKIP 规则 + Subcommand 模式) + 协议层细节 (开源仓库 + 4 IDE 集成 + API Drift 表) + 与 R311 Skills Taxonomy 关系 + 5 条行动建议 + 3 金句 + 3 标题备选 (全部 ≤30 单位) + 5 引用 + 1 开放问题 (跨 Skill 编排)
+- **Cluster 归位**: Layer 6 第 7 维度 `tool-use/skills-distribution` (R626 harness-productivity-system + R634 identity-federation + R635 NEW skills-distribution)
+- **关键金句**: "Skills 协议的诚意,不在 TRIGGER 里, 在 SKIP 里" + "Skill 不是教 Claude 怎么调 API,是告诉 Claude 哪些 API 形态已经不能用了" + "Skill 的价值不是"知识多",而是"消除工作流断点""
+
+### 1 Project 产出
+
+- **File**: `articles/projects/tt-a1i-archify-agent-skill-architecture-diagram-2026.md`
+- **Size**: 9.1KB, 143 行
+- **7 处 tt-a1i/archify README 直接引用** (5 diagram type 表格 + workflow post-render checker + theme toggle + workflow phase/group/exception lane)
+- **6 章节结构**: 核心命题 + 它解决一个长期让人头疼的问题 (Mermaid 3 个硬伤) + 4 亮点 (5 type schema + post-render checker + theme + workflow phase/group/exception lane) + 技术原理 (单文件 HTML) + 5 竞品对比 (Mermaid/PlantUML/Graphviz/excalidraw/Archify) + 上手指引
+- **Cluster 归位**: Layer 6 第 7 维度 `tool-use/skills-distribution` (跟 R635 claude-api Skill 同 cluster)
+- **Pair 逻辑**: 1st-party Anthropic claude-api Skill (R635 Article) + 3rd-party tt-a1i/archify (R635 Project) = Skills 生态完整图景
+- **关键金句**: "Diagram-as-code 的下一步,不是更多图 type,是渲染后 artifact checker" + "导出的 SVG 不应该锁死主题,它应该尊重读者" + "Archify 不该被当成"画图工具",它该被当成"Agent 工作流的可视化交付协议""
+
+## 🔮 反思与下一步
+
+### R635 reflection
+- ✅ 1 Article 命中 R634 prediction 25% breakthrough 分支 (实际 100% breakthrough via FULL 3-page audit P19 升级)
+- ✅ 1 Project 突破 R555 Hybrid Agentless Project 模式 (claude-api Skill + tt-a1i/archify 双闭环)
+- ✅ claude.com/blog FULL 3-PAGE AUDIT GAP discovery - R634 2-page audit 漏 51/75 posts (audit gap 68%) → R635 protocol 升级 (P19 NEW 3-page)
+- ✅ OSS Insight API 切换 (P20 NEW) 解决 R634 GitHub Trending HTML JS-rendered timeout 5+ rounds
+- ✅ Skills 协议 1st-party + 3rd-party 双闭环 (Anthropic claude-api Skill + tt-a1i/archify)
+- ✅ Cluster 实证 2/7 P12 HIT Phase 2 → Phase 3 入口 (R631 4/7 → R635 2/7 显著降级)
+- ⚠️ R634 prediction bias: R634 prediction 假设 breakthrough 主要通过 Claude Code v2.1.200 release 或 Anthropic Engineering 7 月 post, 实际 breakthrough 通过 P19 claude.com/blog FULL 3-page audit 升级 (R634 2-page audit 漏 51 posts) + P20 OSS Insight API 切换. R636 prediction 纳入 3-page audit + OSS Insight API 作为 breakthrough pattern 持续机制
+- ⚠️ Cluster 二次扩张信号已消退: R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → R635 2/7 显著降级. Cluster 进入 Phase 3 (cluster 已饱和)
+
+### R636 重点
+- (P1) Claude Code v2.1.200 后续 release (R631 v2.1.199 已 HIT, 下一个 release 可能 + Lark/Feishu routing 对等发布)
+- (P5) Anthropic Engineering 7 月 post 突破 36+ day plateau → 可能 37+ day (持续监控)
+- (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 36+ day)
+- (P17 R634 NEW) claude.com/blog FULL 2-page audit protocol
+- (P18 R634 NEW) apps-gateway / agent-identity / human-agent-teams 3 Defer 监控
+- (P19 R635 NEW) claude.com/blog FULL 3-page audit protocol 升级 (从 R634 2-page 升级到 3-page, 75 posts)
+- (P20 R635 NEW) OSS Insight API 切换 protocol 解决 GitHub Trending HTML JS-rendered timeout
+- (P21 R635 NEW) 5 NEW Project Defer 监控 (rtk-ai/rtk + browser-use/video-use + diegosouzapw/OmniRoute + hugohe3/ppt-master + ogulcancelik/herdr)
+- (P22 R635 NEW) claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + 3rd-party Skills 生态 Pair 模式
+- (P12) Cluster Phase 3 入口 - 7 项目 stars tracking 持续. R635 2/7 P12 HIT 显著降级信号
+- 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)
