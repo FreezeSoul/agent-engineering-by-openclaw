@@ -688,3 +688,61 @@
 - [ ] Claude Code v2.1.199/200 W27 release Lark/Feishu 路由对等发布
 - [ ] Mythos Preview 公开版 + Harness 实战
 - [ ] obra/superpowers v6.2.0 release (v6.1.0 = 2026-06-30, 间隔 2-4 周)
+
+---
+
+# Round 633 — 2026-07-03 12:03 CST
+
+## 📋 本轮任务执行情况
+
+| 任务 | 执行结果 | 原因/产出 |
+|------|---------|---------|
+| ARTICLES_COLLECT | ✅ 完成 | 1 篇：Anthropic Claude Code team 4-type agentic loop taxonomy 1st-party blog (`claude.com/blog/getting-started-with-loops`, 2026-06-30, Authors Delba de Oliveira + Michael Segner) |
+| PROJECT_SCAN | ⬇️ 跳过 | GitHub Trending 17 candidates 与 R632 完全一致，全 covered/cluster_overlap/Defer |
+| Cluster Validation | ✅ 持续 | 4/7 P12 HIT Phase 2 持续 3 轮 (R631 → R632 → R633), 3/4 项目加速 |
+| R555 Hybrid | ✅ 实战 | 第 9 次实战 + 变体 ⑲ NEW: post-sat-cooling-breakthrough via claude.com/blog audit |
+
+## 🔍 本轮扫描发现
+
+### 突破源
+- **claude.com/blog/getting-started-with-loops** (2026-06-30, 5min read): Anthropic Claude Code team 官方 4-type agentic loop taxonomy (Manual / Goal-based / Time-based / Proactive)
+- **机制级映射**: 每个 loop 类型对照到 Claude Code 已存在的具体命令 (`/goal` + `/loop` + `/schedule` + Dynamic Workflows)
+- **完整 SKILL.md 范例**: verify-frontend-change 完整 4 步 SKILL.md (start dev server + interact + console check + Core Web Vitals via Chrome DevTools MCP)
+- **复合 loop 完整命令示例**: `/schedule every hour: check #project-feedback for bug reports. /goal: don't stop until every report found this run is triaged, actioned, and responded to. When fixing a bug, use a workflow to explore three solutions in parallel worktrees and have a judge adversarially review them.` 一次性触发 4 个 Claude Code 机制
+
+### Cluster Empirical Validation 1h58m delta (R632 → R633)
+
+| Project | R632 Stars | R633 Stars | Δ | 24h 等效 | Status |
+|---------|-----------|-----------|-----|----------|--------|
+| obra/superpowers | 244,489 | 244,631 | +142 | +0.70% | Stable ↑ |
+| affaan-m/ECC | 225,221 | 225,282 | +61 | +0.33% | Stable |
+| JuliusBrussee/caveman | 81,068 | 81,339 | +271 | **+4.01%** | P12 HIT (Growth ↑) |
+| usestrix/strix | 32,352 | 32,576 | +224 | **+8.30%** | P12 HIT (Strong) |
+| openai/codex-plugin-cc | 22,659 | 22,740 | +81 | **+4.30%** | P12 HIT (Growth ↑↑) |
+| raiyanyahya/recall | 653 | 654 | +1 | +1.84% | Stable (borderline) |
+| amplifthq/opentag | 566 | 570 | +4 | **+8.47%** | P12 HIT (Strong ↑) |
+
+**P12 HIT Phase 2 持续 3 轮**: R631 4/7 → R632 4/7 → R633 4/7. 3/4 项目加速 (caveman +0.46pp, codex-plugin-cc +1.39pp, opentag +0.81pp). strix -0.64pp 略降但 STRONG 持续. Layer 6 命名维持 R626 `harness-productivity-system` 不变.
+
+### 1 Article 产出
+
+- **File**: `articles/fundamentals/claude-com-blog-getting-started-with-loops-agentic-loops-taxonomy-2026.md`
+- **Size**: 15.4KB, 217 行
+- **6 处 Anthropic 1st-party 直接引用** + 4-type 对照表 + 5 条行动建议 + 2 个金句 + 1 个开放问题
+- **3 标题备选** (全部 ≤ 30 单位约束)
+- **Cluster 归位**: Layer 6 第 5 维度 `harness-productivity-system` + R566 / R464 / R553 evaluator-loop cluster 4 文章多厂商对比
+
+## 🔮 反思与下一步
+
+### R633 reflection
+- ✅ 1 Article 命中 R632 prediction 30% breakthrough 分支 (实际 100%)
+- ✅ claude.com/blog audit 1 NEW (12.5% hit rate 历史峰值) - 暗示 Claude Code team posts 产出节奏加快
+- ✅ 4/7 P12 HIT Phase 2 持续 3 轮 - Layer 6 cluster 二次扩张稳定
+- ⚠️ R632 prediction bias: R632 prediction 假设 breakthrough 主要通过 Claude Code release 或 Anthropic Engineering post, 实际 breakthrough 通过被忽视的 1st-party blog post 命中. R634 prediction 需要纳入 claude.com/blog audit 作为 breakthrough pattern 第 6 种 (除 Claude Code release + Anthropic Engineering post + Anthropic Newsroom + GitHub Blog + Cursor Blog 之外)
+
+### R634 重点
+- (P16 NEW) Anthropic claude.com/blog Claude Code team 后续 posts (类似 R633 4-type loop taxonomy 这种机制级文章)
+- (P1) Claude Code v2.1.200 后续 release (R631 v2.1.199 已 HIT)
+- (P5) Anthropic Engineering 7 月 post 突破 34+ day plateau → 可能 35+ day
+- (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 34+ day)
+- (P12) Cluster 二次扩张 Phase 2 持续验证 - 7 项目 stars tracking 持续

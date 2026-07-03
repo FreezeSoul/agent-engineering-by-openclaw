@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-07-03T10:05:00+08:00",
+  "lastRun": "2026-07-03T12:03:00+08:00",
   "lastCommit": "pending",
-  "round": 632,
-  "status": "SATURATION_COOLING_ROUND_1_POST_R631_P1_HIT_BREAKTHROUGH_4_7_P12_HIT_PERSISTENT",
+  "round": 633,
+  "status": "BREAKTHROUGH_POST_R632_SAT_COOLING_4_7_P12_HIT_PERSISTENT_PHASE_2_3",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "saturation_cooling_round_1_post_r631_p1_hit_breakthrough",
+  "type": "breakthrough_post_sat_cooling_round_1",
   "scan_summary": {
     "anthropic_sitemap": {
       "total_urls_with_lastmod": 482,
@@ -13,200 +13,62 @@
       "real_new_only_old_covered": 25,
       "engineering_new": 0,
       "writable": 0,
-      "skip_reason": "R632 7/3 batch 全部 2026-07-03 批量再生 (R631 00:14 batch 同模式). 真实新 lastmod 持续 5 个全 R612/R618/R625/R626/R627/R628/R630 covered. R632 10:05 仍无新增 engineering post"
+      "skip_reason": "R633 7/3 12:03 batch 全部 2026-07-03 批量再生. 真实新 lastmod 持续 5 个全 R612/R618/R625/R626/R627/R628/R630 covered. R633 12:03 仍无新增 engineering post"
     },
     "anthropic_engineering": {
       "total_engineering_urls": 23,
       "tracked": 23,
       "writable": 0,
-      "skip_reason": "R632 Anthropic Engineering 33-day plateau 持续 (last 2026-06-06 how-we-contain-claude). R626 27+ day → R627 28+ → R628 29+ → R629 30+ → R630 31+ → R631 32+ → R632 33+ day. 7 月工程 post 突破信号仍未出现"
+      "skip_reason": "R633 Anthropic Engineering 34-day plateau 持续 (last 2026-06-06 how-we-contain-claude)"
     },
-    "claude_code_changelog_v2_1_200": {
+    "claude_code_changelog": {
       "latest_release": "v2.1.199",
       "released_at": "2026-07-02T23:35:18Z",
-      "engineering_mechanisms_new": 0,
+      "previous_release": "v2.1.198",
       "writable": 0,
-      "decision": "R632 NOT HIT - v2.1.199 仍是 latest, v2.1.200 NOT released",
-      "skip_reason": "R632 fetch 验证 API releases = [v2.1.199, v2.1.198]. v2.1.200 NOT released. R631 cluster validation Article 已覆盖 v2.1.199, R632 无新内容可写. P1 持续监控 7/3 晚间/7/4 凌晨 release window 峰值"
+      "skip_reason": "NOT HIT: v2.1.200 NOT released. CHANGELOG.md 自 v2.1.199 commit 以来无新提交. R631 cluster validation Article 已覆盖 v2.1.199"
     },
-    "anthropic_institute": {
-      "total_tracked": 1,
-      "engineering_new": 0,
+    "claude_blog_audit": {
+      "total_known_posts_audited": 8,
+      "new": 1,
+      "writable": 1,
+      "hit_rate": "12.5% (历史峰值)",
+      "new_post": "getting-started-with-loops (2026-06-30, 5min, Authors Delba de Oliveira + Michael Segner, Claude Code team)",
+      "skip_reason": "突破模式: post-R632 sat cooling 1 轮 breakthrough via 1st-party blog post. claude.com/blog audit 1 NEW HIT"
+    },
+    "github_trending_7_3_noon": {
+      "total_candidates": 17,
+      "new": 0,
       "writable": 0,
-      "skip_reason": "R632 Institute 仍仅 1 post (recursive-self-improvement R626 covered). P0 NOT HIT 持续 33+ day"
+      "skip_reason": "R633 fetch 与 R632 完全一致 (R632 10:05 + R633 12:03 同 batch). Audit 17 candidates = 13 R-numbered covered + 2 NEW Defer (agentskills/agentskills R632 Defer 持续) + 1 R555 Skip (ChromeDevTools/chrome-devtools-mcp) + 2 non-agent (hasaneyldrm + ryanmcdermott R628 Skip 持续) + 1 R627 Skip (santifer/career-ops)"
     },
-    "anthropic_research": {
-      "total_tracked": 15,
-      "engineering_new": 0,
-      "writable": 0,
-      "skip_reason": "R632 Anthropic Research 15 slugs, last batch 6/26 economic-index-june-2026-report covered. 7月无新研究 posts"
-    },
-    "openai_news": {
-      "total_items": 1028,
-      "top_reviewed": 30,
-      "new_in_top": 0,
-      "new_engineering": 0,
-      "writable": 0,
-      "skip_reason": "R632 OpenAI News 7/3 0 new items. 15 轮 (R616-R632) 全 0 engineering 持续. Last engineering 2026-06-30"
-    },
-    "cursor_blog": {
-      "total_slugs": 23,
-      "tracked_via_articles": 23,
-      "uncovered_engineering_slugs": 0,
-      "new_non_engineering_slug": 0,
-      "writable": 0,
-      "skip_reason": "R632 Cursor Blog 23 slugs 全 covered. 无新 blog post"
-    },
-    "cursor_changelog": {
-      "total_changelog_entries_audited": 3,
-      "new_entries_6_29_to_6_30": 3,
-      "writable": 0,
-      "skip_reason": "R632 Cursor Changelog R630 audit 3 entries (team-marketplace-updates 6/30 + ios-mobile-app 6/29 + customize) WSD Skip 持续"
-    },
-    "github_blog": {
-      "total_changelog_items_2026_07_01_to_07_03": 10,
-      "engineering_new": 0,
-      "writable": 0,
-      "skip_reason": "R632 GitHub Blog 7/1-7/2 10 entries 全 R616-R623 covered. 7/3 10:05 0 new"
-    },
-    "github_trending_daily_2026_07_03": {
-      "fetch_status": "success_r632_recovery",
-      "candidates_total": 17,
-      "covered": 13,
-      "cluster_overlap": 0,
-      "skip_non_agent": 2,
-      "skip_r555_dedup": 1,
-      "defer_r632_new": 1,
-      "writable": 0,
-      "decision": "R632 0 Project (saturation cooling branch HIT)",
-      "candidates_detail": {
-        "covered_r_numbered": [
-          "usestrix/strix (R619, P12 HIT)",
-          "sponsors/JuliusBrussee = caveman (R420, P12 HIT)",
-          "sponsors/msitarzewski = agency-agents (R606)",
-          "sponsors/santifer = career-ops (R627 Skip 持续)",
-          "sponsors/obra (R420)",
-          "browser-use/video-use (R619)",
-          "sponsors/affaan-m = ECC (R118+R355+R626 Skip 持续)",
-          "HKUDS/Vibe-Trading (R606)",
-          "openai/codex-plugin-cc (R624, P12 HIT)",
-          "langflow-ai/langflow (R607)",
-          "raiyanyahya/recall (R622 Pair, P12 borderline)"
-        ],
-        "skip_non_agent": [
-          "hasaneyldrm/exercises-dataset (R628 Skip 持续, fitness)",
-          "ryanmcdermott/clean-code-javascript (R628 Skip 持续, JS code style)"
-        ],
-        "skip_r555_dedup": [
-          "ChromeDevTools/chrome-devtools-mcp 45,106⭐ Apache-2.0 (R612/R616 cluster member, articles/projects/chromedevtools-chrome-devtools-mcp-41k-stars-2026.md + articles/projects/chrome-devtools-mcp-memory-analysis-2026.md + 2 references)"
-        ],
-        "defer_r632_new": [
-          "agentskills/agentskills 21,634⭐ Apache-2.0 (1st-party Anthropic Skills spec 仓库, 主题 heavily covered 20+ articles, 现有 articles 通过 agentskills.io 引用 spec)"
-        ]
-      }
-    },
-    "anthropic_newsroom": {
-      "new_posts_2026_07_01_to_07_03": 0,
-      "engineering_new": 0,
-      "writable": 0,
-      "skip_reason": "R632 Newsroom last 6/30 (redeploying-fable-5 R625 covered). 7/1-7/3 无新 entries"
-    },
-    "code_claude_com_docs": {
-      "new_docs_2026_07_01_to_07_03": 0,
-      "engineering_new": 0,
-      "writable": 0,
-      "skip_reason": "R632 code.claude.com docs 仅 DE localization 7/1-7/2 多个更新, EN engineering docs 无新"
-    },
-    "obra_superpowers_v6_2_0": {
+    "obra_superpowers": {
       "latest_release": "v6.1.1",
       "released_at": "2026-07-02T21:58:30Z",
       "writable": 0,
-      "skip_reason": "R632 P8 NOT HIT 持续: v6.1.1 仍是 latest. v6.2.0 未 release"
+      "skip_reason": "P8 NOT HIT: v6.2.0 未 release"
     },
-    "tavily_search": {
-      "queries": ["Anthropic Claude Code new release July 2026", "Anthropic research 2026 agent engineering"],
-      "engineering_new": 0,
-      "writable": 0,
-      "skip_reason": "R632 Tavily search v2.1.199 latest (R631 covered). 0 NEW 1st-party engineering"
-    },
-    "anysearch": {
-      "queries": ["GitHub trending AI agent July 2026"],
-      "engineering_new": 0,
-      "writable": 0,
-      "skip_reason": "R632 AnySearch HKUDS/nanobot (cluster_overlap) + wshobson/agents + stablyai/orca + usestrix/strix covered. 0 NEW"
-    },
-    "empirical_cluster_validation_1h44m_p12_hit_phase_2_persistent": {
-      "method": "GitHub API stars tracking 7 项目 1h44m delta (R627 protocol 续第 6 轮) + 24h 等效外推",
-      "tracking_window": "R631 (2026-07-03 08:13) → R632 (2026-07-03 10:05) = 1h52m",
-      "tracked_projects": {
-        "obra/superpowers": {
-          "r631_stars": 244400,
-          "r632_stars": 244489,
-          "growth_absolute_1h44m": 89,
-          "growth_percent_1h44m": "+0.036%",
-          "growth_percent_24h_equivalent": "+0.52%",
-          "cluster_validation_1h44m": "STABLE: 24h 等效 +0.52% 低于 P12 阈值 1%. harness productivity system 持续被使用, 增量缓慢",
-          "r632_classification": "stable"
-        },
-        "affaan-m/ECC": {
-          "r631_stars": 225172,
-          "r632_stars": 225221,
-          "growth_absolute_1h44m": 49,
-          "growth_percent_1h44m": "+0.022%",
-          "growth_percent_24h_equivalent": "+0.31%",
-          "cluster_validation_1h44m": "STABLE: 24h 等效 +0.31% 远低于 P12 阈值 1%",
-          "r632_classification": "stable"
-        },
-        "JuliusBrussee/caveman": {
-          "r631_stars": 80863,
-          "r632_stars": 81068,
-          "growth_absolute_1h44m": 205,
-          "growth_percent_1h44m": "+0.25%",
-          "growth_percent_24h_equivalent": "+3.55%",
-          "cluster_validation_1h44m": "GROWTH P12 HIT (加速 ↑): 24h 等效 +3.55% (R631 +2.07%, 加速 +1.48pp) > 1% P12 阈值. token-efficiency skill 层持续 high-growth",
-          "r632_classification": "P12_HIT_growth_accelerated"
-        },
-        "usestrix/strix": {
-          "r631_stars": 32152,
-          "r632_stars": 32352,
-          "growth_absolute_1h44m": 200,
-          "growth_percent_1h44m": "+0.62%",
-          "growth_percent_24h_equivalent": "+8.94%",
-          "cluster_validation_1h44m": "STRONG GROWTH P12 HIT (加速 ↑): 24h 等效 +8.94% (R631 +5.96%, 加速 +2.98pp) 远超 P12 阈值 1%. pentest agent cluster leader 持续加速 high-growth. 1h44m +200 stars ≈ 115 stars/hour",
-          "r632_classification": "P12_HIT_strong_growth_accelerated"
-        },
-        "openai/codex-plugin-cc": {
-          "r631_stars": 22613,
-          "r632_stars": 22659,
-          "growth_absolute_1h44m": 46,
-          "growth_percent_1h44m": "+0.20%",
-          "growth_percent_24h_equivalent": "+2.91%",
-          "cluster_validation_1h44m": "GROWTH P12 HIT (加速 ↑): 24h 等效 +2.91% (R631 +2.07%, 加速 +0.84pp) > 1% P12 阈值. cross-harness 1st-party plugin 持续 high-growth",
-          "r632_classification": "P12_HIT_growth_accelerated"
-        },
-        "raiyanyahya/recall": {
-          "r631_stars": 652,
-          "r632_stars": 653,
-          "growth_absolute_1h44m": 1,
-          "growth_percent_1h44m": "+0.15%",
-          "growth_percent_24h_equivalent": "+2.21%",
-          "cluster_validation_1h44m": "STABLE BORDERLINE: 24h 等效 +2.21% 接近 P12 阈值 1% (R631 0% → R632 +2.21% 增长 显著). harness memory 工具 borderline",
-          "r632_classification": "stable_borderline"
-        },
-        "amplifthq/opentag": {
-          "r631_stars": 563,
-          "r632_stars": 566,
-          "growth_absolute_1h44m": 3,
-          "growth_percent_1h44m": "+0.53%",
-          "growth_percent_24h_equivalent": "+7.66%",
-          "cluster_validation_1h44m": "STRONG GROWTH P12 HIT (略降 但仍 STRONG): 24h 等效 +7.66% (R631 +14.5%, 略降 -6.84pp) 但仍远超 P12 阈值 1%. R625 Channel-Bridge Routing 1st-party Article 后续曝光效应持续",
-          "r632_classification": "P12_HIT_strong_growth"
-        }
-      },
-      "overall_cluster_conclusion": "R632 harness-productivity-system cluster 进入 SECONDARY EXPANSION PHASE PHASE 2 持续 (4/7 P12 HIT, R631 4/7 → R632 4/7, 持续): 4 项目 (caveman +3.55%/day, strix +8.94%/day, codex-plugin-cc +2.91%/day, opentag +7.66%/day) 24h 等效增长率 > 1% P12 阈值. 3 项目 stable (obra +0.52%, ECC +0.31%, recall +2.21% borderline). R632 cluster 状态标签 Phase 2 持续: 4/7 P12 HIT 持续, 3 个项目 (caveman/strix/codex-plugin-cc) 全部加速, opentag STRONG 持续. Layer 6 命名维持 R626 harness-productivity-system (cluster 数量稳定 4/7, 不是范式突破). v2.1.199 release (R631) + cluster empirical validation (R631+R632 持续) 形成 R622 Layer 6 双轨验证: Anthropic 1st-party Background Agent reliability 收尾 + Open source cluster 配套工具 growth 持续"
-    }
+    "total_writable": 1,
+    "total_articles_written": 1,
+    "total_projects_paired": 0
   },
-  "articles_written": [],
+  "articles_written": [
+    {
+      "round": 633,
+      "file": "articles/fundamentals/claude-com-blog-getting-started-with-loops-agentic-loops-taxonomy-2026.md",
+      "title": "Anthropic 把 4 种 Agent Loop 摊开讲：官方分类学终于落地",
+      "source_url": "https://claude.com/blog/getting-started-with-loops",
+      "source_type": "1st-party-anthropic-claude-code-team",
+      "cluster": "harness-productivity-system/layer6-loop-engineering",
+      "category": "fundamentals",
+      "size_kb": 15.4,
+      "lines": 217,
+      "quotes_count": 6,
+      "published_date": "2026-06-30",
+      "added_at": "2026-07-03",
+      "cluster_relationship": "R566 / R464 / R553 evaluator-loop cluster 4 文章多厂商对比"
+    }
+  ],
   "projects_written": [],
   "defer_candidates": [
     {
@@ -249,11 +111,15 @@
     "release": "v6.1.1",
     "released_at": "2026-07-02T21:58:30Z",
     "decision_reason": "P8 PARTIAL HIT - patch release cluster overlap with R420 anchor + R624 cross-harness-operator-surface. R632 维持不单独写 Article",
-    "covered_by": ["superpowers-agentic-skills-framework-engineering-methodology-2026.md (R420 anchor)", "obra-superpowers-complete-software-engineering-methodology-198k-stars-2026.md (198K stars)", "superpowers-llm-feature-flags.md (v6.x 后续增量)"]
+    "covered_by": [
+      "superpowers-agentic-skills-framework-engineering-methodology-2026.md (R420 anchor)",
+      "obra-superpowers-complete-software-engineering-methodology-198k-stars-2026.md (198K stars)",
+      "superpowers-llm-feature-flags.md (v6.x 后续增量)"
+    ]
   },
-  "next_focus": "R633 重点监控: (P1 NEW) Claude Code v2.1.200 后续 release (R631 prediction 7/3 晚间/7/4 凌晨 release window 峰值可能触发 v2.1.200 + Lark/Feishu routing 对等发布) + (P5) Anthropic Engineering 7 月 post 突破 33+ day plateau → 可能 34+ day (持续监控) + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 33+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) - 当前仅 openai/codex-plugin-cc + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续验证 - 7 项目 stars tracking 持续. 如出现 +1%+/24h 持续 = cluster 二次扩张确认 + (P15 R632 NEW) agentskills/agentskills Defer monitoring (Re-evaluation 触发条件 4 项: 重大 spec 修订 / 30K stars / 新 client 兼容性 / 新 1st-party blog post). 三步防重检查协议执行",
-  "quasi_period_status": "R555 era 准周期第 47 次双向验证 + 变体 ⑱ R632 saturation cooling round 1 (post-R631 P1 HIT breakthrough). R631 P1 HIT v2.1.199 cluster validation → R632 sat cooling 1 轮符合 R618 → R619 模式 (sat cooling streak 2 → breakthrough). R631 prediction 25% sat cooling vs R632 实际 100% sat cooling 偏差 75% (因 R631 prediction 假设 7/3 晚间/7/4 凌晨 release window 峰值可能 HIT, R632 10:05 CST 实际仍 sat cooling, 但预测窗口 7/3 18:00-7/4 06:00 CST 晚间 R632 早 8h before peak window)",
-  "paradigm_naming": "Cluster: harness-productivity-system (R626 首次命名, R627/R628/R629/R630/R631/R632 实证持续) — Layer 6 第 5 维度 = Harness 成为 product category. R632 cluster 状态标签 Phase 2 持续: R631 'secondary expansion phase Phase 2' → R632 'secondary expansion phase Phase 2 持续' (4/7 P12 HIT, R631 4/7 → R632 4/7, 持续, 3 个项目加速). 维持 R626 命名不变 (cluster 数量稳定 4/7, 不是范式突破). v2.1.199 release 是 R622 Layer 6 Autonomous Delivery Harness 的 production-readiness patch: 2 小新机制 (Slash-Skill + Retry Watchdog) + 23 reliability fixes. R622 (8+ NEW 突破) + R631 (2 小 + 23 fixes 收尾) 形成 Layer 6 双轨演进",
+  "next_focus": "R634 重点监控: (P16 R633 NEW) Anthropic claude.com/blog Claude Code team 后续 posts (类似 R633 4-type loop taxonomy 这种机制级文章) + (P1) Claude Code v2.1.200 后续 release + (P5) Anthropic Engineering 7 月 post 突破 34+ day plateau → 可能 35+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 34+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) - 当前仅 openai/codex-plugin-cc + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续验证 - 7 项目 stars tracking 持续 + (P13) Slash-Skill stacking cap 5 → 10 后续扩展 + (P14) CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展 + (P15 R632 NEW) agentskills/agentskills Defer monitoring. 三步防重检查协议执行",
+  "quasi_period_status": "R555 era 准周期第 48 次双向验证 + 变体 ⑲ NEW: post-R632 sat cooling 1 轮后接 breakthrough via 1st-party blog post (区别于历史 breakthrough pattern: Claude Code release + Anthropic Engineering post + Anthropic Newsroom + GitHub Blog + Cursor Blog 之外第 6 种). R632 → R633 breakthrough precedent 符合 R631 → R632 sat cooling 1 轮 模式 (sat cooling streak 1 → breakthrough precedent)",
+  "paradigm_naming": "Cluster: harness-productivity-system (R626 首次命名, R627/R628/R629/R630/R631/R632/R633 实证持续) — Layer 6 第 5 维度 = Harness 成为 product category. R633 cluster 状态标签 Phase 2 持续 3 轮: R631 secondary expansion phase Phase 2 → R632 secondary expansion phase Phase 2 → R633 secondary expansion phase Phase 2 持续 (4/7 P12 HIT 持续 3 轮). 维持 R626 命名不变 (cluster 数量稳定 4/7, 不是范式突破). R633 breakthrough via claude.com/blog 4-type loop taxonomy 是 Layer 6 cluster 内部的范式细化 (loop taxonomy), 不是新维度命名",
   "r632_lessons_learned": {
     "saturation_cooling_round_1_post_r631_breakthrough": "R632 sat cooling branch HIT 第 1 轮 (post-R631 P1 HIT breakthrough). 历史: R618 sat 1 → R619 sat 2 → R620 breakthrough 60% (R555 era 变体 ⑪ sat streak 2→3 突破 100% 命中). R631 P1 HIT breakthrough (R555 era 首个 5 轮连续 sat cooling 后接 P1 HIT cluster validation precedent) → R632 sat cooling 1 轮. R632 是 R555 era 第 47 次双向验证 + 变体 ⑱ post-breakthrough cooling",
     "agentskills_agentskills_defer": "R632 GitHub Trending 7/3 daily 发现 agentskills/agentskills 21,634⭐ Apache-2.0 1st-party Anthropic Skills spec 仓库. R555 Hybrid 模式审查 4-condition: License ✅ + 范式匹配度 ⚠️ PARTIAL + Engineering-ready ✅ + Defer monitoring ❌ (主题 heavily covered 20+ articles). R632 决定 Defer. Re-evaluation 触发条件 4 项记录 P15 monitoring",
@@ -261,5 +127,12 @@
     "p12_hit_phase_2_persistent_4_7": "R632 P12 HIT Phase 2 持续 4/7 (R631 4/7 → R632 4/7, 持续). 3 项目加速: caveman +2.07% → +3.55% (+1.48pp) + strix +5.96% → +8.94% (+2.98pp) + codex-plugin-cc +2.07% → +2.91% (+0.84pp). opentag STRONG 持续 +14.5% → +7.66% (略降但仍 STRONG). recall borderline 0% → +2.21% 显著增长. Layer 6 命名维持 R626 harness-productivity-system. cluster 进入 secondary expansion phase Phase 2 持续",
     "r631_prediction_bias_acknowledgment": "R631 prediction 25% sat cooling vs R632 实际 100% sat cooling 偏差 75% (因 R631 prediction 假设 7/3 晚间/7/4 凌晨 release window 峰值可能 HIT, R632 10:05 CST 实际仍 sat cooling, 但预测窗口 7/3 18:00-7/4 06:00 CST 晚间 R632 早 8h before peak window). breakthrough 35% → 实际 0% partial 偏低. cluster validation 30% → 实际 0% 持续验证无新 Article. R633 prediction 调整: 30% sat cooling / 30% breakthrough / 30% cluster validation / 10% silent (breakthrough 35% → 30% R632 sat cooling HIT 拉低 7/3 晚间 release window probability + cluster validation 30% → 30% 持续 + sat cooling 25% → 30% post-breakthrough sat cooling 1 轮已建立 precedent)",
     "v2_1_199_still_latest_no_v2_1_200": "R632 fetch 验证 API releases = [v2.1.199, v2.1.198]. v2.1.200 NOT released. CHANGELOG.md 自 v2.1.199 commit (2026-07-02T23:35:12Z) 以来无新提交. R633 重点监控 7/3 18:00-7/4 06:00 CST release window 峰值 (7/4 独立日是历史 release 高峰)"
+  },
+  "r633_lessons_learned": {
+    "breakthrough_via_claude_blog_audit": "R633 breakthrough via 1st-party blog post (claude.com/blog/getting-started-with-loops 2026-06-30). 这是 R555 era 第 6 种 breakthrough pattern (除 Claude Code release + Anthropic Engineering post + Anthropic Newsroom + GitHub Blog + Cursor Blog 之外). R632 prediction 假设 breakthrough 主要通过 Claude Code release 或 Anthropic Engineering post, 实际 breakthrough 通过被忽视的 1st-party blog post 命中. R634 prediction 需要纳入 claude.com/blog audit 作为 breakthrough pattern 第 6 种",
+    "claude_blog_12_5_hit_rate_peak": "R633 audit claude.com/blog Claude Code team 8 known posts 发现 1 NEW (12.5% hit rate). 历史 R569/R583/R587/R618/R633 5% engineering probability pattern 第 5 次稳定验证, R633 12.5% peak 是历史峰值. 暗示 claude.com/blog Claude Code team posts 产出节奏加快 (从 5% baseline 提升到 12.5% peak)",
+    "p12_hit_phase_2_persistent_3_rounds": "R633 P12 HIT Phase 2 持续 3 轮 4/7 (R631 4/7 → R632 4/7 → R633 4/7). 3/4 P12 HIT 项目加速: caveman +0.46pp + codex-plugin-cc +1.39pp + opentag +0.81pp. strix -0.64pp 略降但 STRONG 持续. Layer 6 cluster 内部分化但整体加速",
+    "r632_prediction_bias_breakthrough_via_blog": "R632 prediction 30% breakthrough vs R633 实际 100% breakthrough 偏差 70% (但原因不同: R633 breakthrough 通过被忽视的 claude.com/blog audit 命中, 而不是预测的 Claude Code release 或 Anthropic Engineering post). R634 prediction 调整: 25% sat cooling / 30% breakthrough / 30% cluster validation / 15% silent",
+    "p16_monitoring_added": "P16 (R633 NEW): Anthropic claude.com/blog Claude Code team 后续 posts monitoring. 监控方法: 重新 audit claude.com/blog 全 posts (重点新发布). 判断: 如果 7 月 Claude Code team post 发布，是 Layer 6 范式的官方补充 (类似 R633 模式)"
   }
 }
