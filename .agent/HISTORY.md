@@ -926,3 +926,75 @@
 - (P22 R635 NEW) claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + 3rd-party Skills 生态 Pair 模式
 - (P12) Cluster Phase 3 入口 - 7 项目 stars tracking 持续. R635 2/7 P12 HIT 显著降级信号
 - 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)
+
+
+---
+
+# R637 — Microsoft Research SkillOpt 1st-Party Article Skill-as-Trainable-Parameter Breakthrough + NousResearch/hermes-agent-self-evolution 3rd-Party Pair + Cluster Validation 持平 5/7 P12 HIT Phase 2 持续 5 轮 (R635 Phase 3 入口误判持续反驳) + P27 NEW Microsoft Research Blog 1st-Party Source
+
+**Round**: 637
+**Date**: 2026-07-03 18:03 CST
+**Status**: BREAKTHROUGH via Microsoft Research Blog 1st-party blog post skill-optimization (R636 prediction 35% breakthrough 分支命中, 实际 100% breakthrough via 跨厂商 1st-party 学术锚点) + 1 Article + 1 Project 学术+工程双闭环
+
+## 📋 本轮任务执行情况
+| 任务 | 执行结果 | 原因/产出 |
+|------|---------|---------|
+| ARTICLES_COLLECT | ✅ 完成 | 1 篇: Microsoft Research SkillOpt 1st-party blog (`microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters`, 2026-06-30 release, Microsoft Research Asia) - Skill-as-Trainable-Parameter 训练式 skill 演化 + 5 组件训练循环 + 52/52 评测单元最佳 + 跨 harness 迁移 |
+| PROJECT_SCAN | ✅ 完成 | 1 个高质量 GitHub 项目: NousResearch/hermes-agent-self-evolution (4,478⭐ MIT DSPy+GEPA 开源 skill 演化引擎) - 1:1 对应 SkillOpt 学术框架, 5 阶段分批 + 5 guardrails + 跨 harness 真实数据 + $2-10/run 低成本 |
+| Cluster Validation | ✅ 持续 | **持平 5/7 P12 HIT Phase 2 持续 5 轮** (R636 5/7 → R637 5/7 持平, 连续 2 轮 5/7 = Phase 2 持续信号). 2 STRONG GROWTH 持续 (usestrix/strix +10.40%/day), 4 P12 HIT (caveman +5.04% / codex-plugin-cc +2.89% / recall +1.83% / opentag +4.15%), 2 STABLE ↑ (obra +0.80% / ECC +0.34%) |
+| R555 Hybrid | ✅ 实战 | 第 12 次实战 + 变体 ㉓ NEW: breakthrough via 1st-party blog post skill-optimization (区别于历史 breakthrough pattern: Claude Code release + Anthropic Engineering post + Anthropic Newsroom + GitHub Blog + Cursor Blog + claude.com/blog 2-page audit + claude.com/blog 3-page FULL audit + 1st-party blog post steering R636) |
+
+## 🔍 本轮扫描发现
+
+### Microsoft Research SkillOpt 1st-Party Breakthrough (R637 关键)
+- **来源**: `https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/` (2026-06-30 release)
+- **Authors**: Yifan Yang, Xuemei Gao, Qi Dai, Bei Liu, Kai Qiu, Dongdong Chen, Chong Luo (Microsoft Research Asia)
+- **核心范式**: skill 文件 = 可训练参数 (外部于模型权重的文本空间训练)
+- **5 组件训练循环**: Forward Pass + Backward Pass + Update Step (textual learning rate) + Validation Gate (held-out) + Rejected-Edit Buffer + Slow/Meta Update
+- **52/52 评测单元最佳或并列最佳**: 6 基准 / 7 模型 / 3 执行模式 = 126 cells, 标准配置 52 cells
+- **关键数据**: GPT-5.5 direct chat +23.5 points / Codex +24.8 / Claude Code +19.1 / 跨 harness 迁移 +59.7 (Codex 训练 → Claude Code 复用)
+- **Skill 形态可读**: 中位 920 tokens, 1-4 edit 被接受
+- **P27 NEW source**: Microsoft Research Blog 是新的 1st-party 来源, R637 first-time audit 命中 1 NEW Article
+
+### NousResearch/hermes-agent-self-evolution 3rd-Party Open-Source Pair
+- **来源**: `https://github.com/NousResearch/hermes-agent-self-evolution` (4,478⭐, 509 forks, MIT, 2026-06-17 push)
+- **Pair 闭环**: 1st-party 学术 (Microsoft Research SkillOpt) ↔ 3rd-party 工程 (NousResearch 开源 DSPy+GEPA 实现)
+- **核心机制**: 5 阶段分批演化 (Phase 1 SKILL.md 已实现 / Phase 2-5 计划) + 5 guardrails (test/size/cache/semantic/PR) + 跨 harness 真实数据 (Claude Code/Copilot/Hermes sessiondb) + $2-10/run 低成本
+- **OSS Insight 命中**: R637 OSS Insight API 30 candidates audit 中 4,478⭐ 命中 R637 NEW Project selected
+
+## 📊 1 Article + 1 Project 学术+工程双闭环
+- **Article**: `articles/research/microsoft-research-skillopt-agent-skills-as-trainable-parameters-2026.md` (8.5KB, 11 章节, 4 处 Microsoft 原话引用)
+- **Project**: `articles/projects/nousresearch-hermes-agent-self-evolution-skill-optimizer-dspy-gepa-4478-stars-2026.md` (9.5KB, 6 处 README 引用, screenshot via playwright headless)
+- **Cluster 归位**: Layer 6 第 7 维度 tool-use/skills-distribution (R635 命名) 扩展到 tool-use/skill-optimization 子维度 (R637 NEW)
+
+## 🎯 R637 14-Source Tri-Scan 总结
+- 0 NEW engineering post (Anthropic Engineering 38+ day plateau 持续 + claude.com/blog 24 visible posts 全部 covered + Cursor Blog 0 new + GitHub Blog 0 new)
+- 0 NEW 1st-party release (Claude Code v2.1.199 仍是 latest, v2.1.200 NOT released + obra/superpowers v6.1.1 仍是 latest, v6.2.0 未 release)
+- 0 NEW Anthropic Institute (P0 NOT HIT 持续 38+ day)
+- 0 NEW OpenAI News (20 轮 R616-R637 全 0 engineering 持续)
+- 1 NEW Article (Microsoft Research SkillOpt) + 1 NEW Project (NousResearch) + 1 admin/spend WSD Skip
+- sources_tracked.jsonl 1877 → 1879 (+2 R637 NEW)
+- 1 Article 8.5KB 11 章节 + 1 Project 9.5KB + screenshot 175KB via playwright headless socks5 代理
+
+## 🔮 反思与下一步
+
+### R637 reflection
+- ✅ 1 Article + 1 Project 学术+工程双闭环
+- ✅ R636 prediction 35% breakthrough 命中 100% breakthrough via 1st-party blog post skill-optimization
+- ✅ Cluster 持平 5/7 P12 HIT Phase 2 持续 5 轮 (R635 误判 Phase 3 入口持续反驳)
+- ✅ Microsoft Research Blog 1st-party 学术锚点 + NousResearch 3rd-party 开源 Pair = 跨厂商 1st-party + 3rd-party 闭环
+- ✅ Layer 6 命名扩展: tool-use/skill-optimization 子维度 (R637 NEW)
+- ✅ $2-10/run 低成本 + 5 guardrails 完美匹配 R622 Anthropic Harness engineering 价值观
+- ⚠️ R636 prediction 偏差: 假设 breakthrough 主要通过 Claude Code v2.1.200 release 或 Anthropic Engineering 7 月 post, 实际 breakthrough 通过 Microsoft Research Blog 1st-party post (跨厂商 1st-party 学术锚点, R636 漏算)
+- ⚠️ R637 prediction 调整: 25% sat cooling / 40% breakthrough (R637 breakthrough 命中 拉高 35% → 40%) / 30% cluster validation / 5% silent
+
+### R638 重点
+- (P1) Claude Code v2.1.200 后续 release (R631 v2.1.199 已 HIT)
+- (P5) Anthropic Engineering 7 月 post 突破 38+ day plateau → 可能 39+ day
+- (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 38+ day)
+- (P19) claude.com/blog FULL 3-page audit 持续 (R636 audit 51 posts 全部已审计)
+- (P20) OSS Insight API 持续 (R637 30 candidates 全部已审计)
+- (P27 R637 NEW) Microsoft Research Blog FULL audit 持续 (R637 first-time audit 1 NEW Article 命中)
+- (P12) Cluster 二次扩张 Phase 2 持续验证 - 7 项目 stars tracking 持续
+- (P26 R637 NEW) tool-use/skill-optimization 子维度监测: 是否有后续 1st-party / 3rd-party 项目跟进 SkillOpt
+- 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)

@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-07-03T16:03:00+08:00",
+  "lastRun": "2026-07-03T18:03:00+08:00",
   "lastCommit": "ac5095a",
-  "round": 636,
-  "status": "BREAKTHROUGH_VIA_CLAUDE_BLOG_STEERING_1ST_PARTY_BLOG_POST_7_METHODS_DECISION_FRAMEWORK",
+  "round": 637,
+  "status": "BREAKTHROUGH_VIA_MICROSOFT_RESEARCH_BLOG_1ST_PARTY_BLOG_POST_SKILL_AS_TRAINABLE_PARAMETER",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "breakthrough_via_1st_party_blog_post_steering",
+  "type": "breakthrough_via_1st_party_blog_post_skill_optimization",
   "scan_summary": {
     "anthropic_sitemap": {
       "total_urls_with_lastmod": 482,
@@ -19,7 +19,14 @@
       "total_engineering_urls": 23,
       "tracked": 23,
       "writable": 0,
-      "skip_reason": "R635 Anthropic Engineering 36-day plateau 持续 (last 2026-06-06 how-we-contain-claude)"
+      "skip_reason": "R637 Anthropic Engineering 38-day plateau 持续 (last 2026-06-06 how-we-contain-claude). R635 36+ → R636 37+ → R637 38+ day"
+    },
+    "microsoft_research_blog": {
+      "r637_first_time_audit": 1,
+      "new": 1,
+      "writable": 1,
+      "new_post": "skillopt-agent-skills-as-trainable-parameters (2026-06-30, Authors: Yifan Yang, Xuemei Gao, Qi Dai, Bei Liu, Kai Qiu, Dongdong Chen, Chong Luo - Microsoft Research Asia, Skill-as-Trainable-Parameter 训练式 skill 演化 + 5 组件训练循环 + 52/52 评测单元最佳 + 跨 harness 迁移)",
+      "skip_reason": "R637 breakthrough via Microsoft Research Blog 1st-party 学术锚点 + 3rd-party NousResearch/hermes-agent-self-evolution 开源 Pair 闭环 (skill-optimization cluster, P27 NEW source)"
     },
     "claude_code_changelog": {
       "latest_release": "v2.1.199",

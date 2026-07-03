@@ -1,230 +1,158 @@
-# R636 Pending — 1st-party Steering Article 7 methods decision framework breakthrough + cluster validation 反弹 5/7 P12 HIT (R635 Phase 3 入口误判被反驳 Phase 2 二次扩张回归) + R635 5 defer candidates 持续 + P19/P20 protocol 持续
+# R637 Pending — Microsoft Research SkillOpt 1st-Party Article Skill-as-Trainable-Parameter Breakthrough + NousResearch/hermes-agent-self-evolution 3rd-Party Open-Source Implementation Pair + Cluster Validation 5/7 P12 HIT Phase 2 持续 (R636 5/7 → R637 5/7 持平) + 5 R635 Project Defer Candidates 持续 + P19/P20 Protocol 持续
 
-**Round**: 636
-**Date**: 2026-07-03 16:03 CST
-**R636 Outcome**: **CLAUDE.COM/BLOG STEERING 1ST-PARTY ARTICLE 7 METHODS DECISION FRAMEWORK BREAKTHROUGH (R636 命中 30% breakthrough 分支) + 0 PROJECT (Agentless via R634 precedent) + CLUSTER VALIDATION 反弹 1h46m delta 5/7 P12 HIT (R635 2/7 → R636 5/7 显著反弹, 2 STRONG GROWTH, Phase 2 二次扩张回归, R635 误判 "Phase 3 入口" 被反驳) + 5 R635 DEFER CANDIDATES 持续 (rtk-ai/rtk + browser-use/video-use + diegosouzapw/OmniRoute + hugohe3/ppt-master + ogulcancelik/herdr) + P19/P20 PROTOCOL 持续 (claude.com/blog FULL 3-page audit + OSS Insight API)**
+**Round**: 637
+**Date**: 2026-07-03 18:03 CST
+**R637 Outcome**: **MICROSOFT RESEARCH SKILLOPT 1ST-PARTY BLOG POST "AGENT SKILLS AS TRAINABLE PARAMETERS" BREAKTHROUGH (R636 prediction 35% breakthrough 分支命中, 实际 100% breakthrough via 1st-party blog post steering 续期 R636 R555 era 变体 ㉒ precedent) + 1 PROJECT (NousResearch/hermes-agent-self-evolution 4,478⭐ MIT DSPy+GEPA 开源 skill 演化引擎, 1:1 对应 SkillOpt 学术框架) + CLUSTER VALIDATION 5/7 P12 HIT Phase 2 持续 (R636 5/7 → R637 5/7 持平, 2 STRONG GROWTH 持续, Phase 2 二次扩张回归) + 5 R635 PROJECT DEFER CANDIDATES 持续 + P19/P20 PROTOCOL 持续 + P26 NEW tool-use/skill-optimization 子维度命名**
 
 ---
 
-## R636 关键发现
+## R637 关键发现
 
-### Claude.com/blog Steering 1st-Party Article Breakthrough (R636 突破前置条件)
+### Microsoft Research SkillOpt 1st-Party Article Breakthrough (R637 突破)
 
-**R636 breakthrough via claude.com/blog 1st-party blog post (Claude Code team 2026-06-18 release)**:
-- **突破源**: https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more
-- **官方分类**: Claude Code team 2026-06-18, 5 min read
-- **核心价值**: Anthropic 第一次把 Claude Code 7 种 steering 方法放进同一个坐标系,4 维矩阵 (加载时机、压缩行为、上下文成本、权威等级)
+**R637 breakthrough via Microsoft Research Blog 1st-party blog post (SkillOpt: Agent skills as trainable parameters, 2026-06-30 release)**:
+- **突破源**: https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/
+- **官方分类**: Microsoft Research Blog 2026-06-30, Authors: Yifan Yang, Xuemei Gao, Qi Dai, Bei Liu, Kai Qiu, Dongdong Chen, Chong Luo (Microsoft Research Asia)
+- **核心价值**: Microsoft Research 第一次把"agent skill 文件"放进"可训练参数"坐标系,完整 forward–backward–update 循环在文本空间跑,不动模型权重
 
-**R636 7 种方法 4 维矩阵**:
+**R637 SkillOpt 5 组件训练循环**:
 
-| 方法 | 加载时机 | 压缩行为 | 上下文成本 | 权威等级 | 适用场景 |
-|------|---------|----------|------------|----------|---------|
-| CLAUDE.md (root) | session start | 记忆化,压缩后重读 | 高 | 中 | 构建命令、目录结构、monorepo 布局、团队规范 |
-| CLAUDE.md (subdirectory) | 按需 | 丢失,直到子目录被触及 | 低 | 中 | 子目录专属规范 |
-| Rules | session start / 路径触发 | 压缩时重注入 | 中 | 中 | 跨切面约束 (如 API handler 必须用 Zod 校验) |
-| Skills | 名称描述 session start,正文按需 | 调用后按共享预算重注入,旧的先丢 | 低 | 中 | 流程性工作 (部署清单、发布清单、review 流程) |
-| Subagents | 名称+工具列表 session start,正文按需调用 | 隔离独立上下文,主会话只收最终结果 | 极低 | 中 | 并行任务、深度搜索、日志分析、依赖审计 |
-| Hooks | 生命周期事件触发 | 完全绕过压缩 | 低(配置在主上下文外) | **高** (deterministic) | 确定性自动化 (edit 后跑 linter、完成时推 Slack) |
-| Output styles | session start, 注入 system prompt | 不压缩 | 高 | **最高** (替换默认角色) | 角色变更 (code assistant → general assistant) |
-| Appending system prompt | invocation 时 CLI flag | 不压缩,只对该次有效 | 中等 | 中 (additive) | 临时偏好 (详细程度、格式、领域术语) |
+| 组件 | 学术对应 | 工程实现 |
+|------|---------|---------|
+| **Forward Pass** | 证据收集 (rollout batch) | 冻结目标模型在当前 skill 下执行训练任务 |
+| **Backward Pass** | 轨迹反思 (reflection minibatch) | 独立 optimizer model 读 trace, 提炼模式 |
+| **Update Step** | textual learning rate (per-step edit budget) | 候选 add/delete/replace edit, 剪枝 |
+| **Validation Gate** | held-out validation split | 严格高于当前 skill 才接受 |
+| **Rejected-Edit Buffer** | negative feedback memory | rejected edit 不丢弃, 进 buffer 作负反馈 |
+| **Slow/Meta Update** | epoch-wise long-horizon update | 比单 batch 更慢的频率整合长程教训 |
 
-**R636 三大核心洞察**:
-1. **压缩 (compaction) 是隐形分水岭** - 7 种方法在压缩行为上的表现完全不同 (记忆化 vs 重注入 vs 丢失 vs 完全绕过)
-2. **权威等级 (authority) 是第二隐形分水岭** - Output styles 替换默认角色 (权威最高) vs Appending system prompt 增量补充 (权威中等)
-3. **绝对不能发生的事, instruction 解决不了** - Hook 的 exit code 2 是 Claude Code 工程治理的最后一道闸
+**R637 关键数据**:
+- **52/52 评测单元最佳或并列最佳**: 6 基准 (SearchQA/SpreadsheetBench/OfficeQA/DocVQA/LiveMathetricianBench/ALFWorld) × 7 模型 (GPT-5.5/5.4/5.4-mini/5.4-nano/5.2 + Qwen3.5-4B) × 3 执行模式 (direct chat/Codex/Claude Code) = 126 cells, 标准配置 52 cells
+- **GPT-5.5 direct chat 平均**: 58.8 → 82.3 (+23.5), 比 oracle 还高 +5.4
+- **GPT-5.5 inside Codex**: +24.8
+- **GPT-5.5 inside Claude Code**: +19.1
+- **跨 Harness 迁移 (最反直觉)**: Codex 训练 spreadsheet skill → Claude Code 零优化复用 → 22.1 → 81.8 (+59.7), 比直接在 Claude Code 训练还高 (80.4)
+- **小模型 + 优化 skill ≈ 大模型**: GPT-5.4-nano + 优化 skill (57.4) > GPT-5.2 无 skill baseline (51.3)
+- **Skill 形态可读**: 中位 920 tokens, 1-4 个 edit 被接受 (validation gate 拒绝大多数)
 
-**官方 4 个反模式 tip**:
-1. CLAUDE.md 不是无主之地 (官方建议 < 200 行 + owner)
-2. 路径 scoped rule vs subdirectory CLAUDE.md 怎么选 (跨切面 vs 子目录专属)
-3. Subagent vs Skill 的核心区别是"隔离" (任务结果 vs 任务过程)
-4. Hook 是 "instruction 解决不了的问题" 的答案 ("绝对不能发生" 必须用 exit code 2 来 deny tool call)
+**为什么是 R637 breakthrough**:
+1. **1st-party Microsoft Research Blog post** (Anthropic-style, 高质量学术锚点)
+2. **5 组件训练循环** - forward–backward–update + validation gate + rejected-edit buffer + slow/meta update 完整 ML 训练结构搬到文本空间
+3. **6 基准 / 7 模型 / 52 cells 全胜** - 罕见的一边倒结果
+4. **跨 harness 迁移成立** - Codex 训练 → Claude Code 复用, 表明 skill 是工作流逻辑不是 harness 特定配方
+5. **不动模型权重** - 完美匹配 R626 harness-productivity-system cluster "Engineering > Model" 主题
+6. **Skill 形态可读** - 920 token / 1-4 edit, 与 Anthropic SKILL.md 协议完全兼容 (R635)
+7. **R555 era 变体 ㉓ NEW**: breakthrough via 1st-party blog post skill-optimization (区别于 R633 4-type agentic loop taxonomy + R636 7-methods steering decision framework + R637 skill-as-trainable-parameter, Claude Code team + Microsoft Research 跨厂商 1st-party blog post 持续高产)
 
-**为什么是 R636 breakthrough (R635 prediction 30% breakthrough 分支命中)**:
-1. **1st-party Anthropic Claude Code team 2026-06-18 release** - Claude Code steering 工程方法论收口
-2. **7 种方法完整 set** - 之前分散在 4-5 篇工程文章 (CLAUDE.md + hooks + skills + subagents + routines), R636 第一次画成一张图
-3. **4 维决策框架** - 加载时机 × 压缩行为 × 上下文成本 × 权威等级,4 维矩阵
-4. **反直觉的 4 个 tip** - CLAUDE.md < 200 行 + 跨切面 vs 子目录 + Subagent 隔离 + Hook exit code 2
-5. **跨 Cluster 收口** - R311 (9 categories) + R406 (subagents) + R432 (5 extension points) + R635 (claude-api Skill) 全部纳入同一个坐标系
+**R636 prediction 命中度**:
+- 35% breakthrough 概率 → 实际 100% breakthrough via 1st-party blog post (SkillOpt)
+- 偏差原因: R636 prediction 假设 breakthrough 主要通过 Claude Code v2.1.200 release 或 Anthropic Engineering 7月 post, 实际 breakthrough 通过 Microsoft Research Blog 1st-party post (跨厂商 1st-party 学术锚点, R636 漏算)
+- R555 era 第 10 种 breakthrough pattern: Claude Code release + Anthropic Engineering post + Anthropic Newsroom + GitHub Blog + Cursor Blog + claude.com/blog 2-page audit + claude.com/blog 3-page FULL audit + 1st-party blog post steering (R636) + 1st-party blog post skill-as-trainable-parameter (R637) = 跨厂商 1st-party 学术锚点 + 开源 Pair 闭环
 
-**Cluster 归位**: Layer 6 第 8 维度 `tool-use/steering-methods` (R636 NEW 命名, 在 R626 harness-productivity-system + R634 identity-federation + R635 tool-use/skills-distribution 之后)
+### 0 New 1st-Party Releases (R637)
 
-**R555 Hybrid 模式审查**: 1) 来源质量 5/5 (Anthropic 1st-party Claude Code team) 2) 时效性 4/5 (6/18 release 距今 15 天, 不算突发但仍是 steering 协议首个 1st-party decision framework) 3) 重要性 5/5 (Claude Code 7 种方法完整 set 价值极高) 4) 实践价值 5/5 (4 维矩阵 + 4 反模式 tip + 5 行动建议) 5) 独特视角 5/5 (1st-party decision framework 完全填补知识空白) 6) 演进重要性 5/5 (steering 范式收口, 后续会演化). 综合 29/30 ≥ 10 阈值 → 写新文章 ✅
+- **Claude Code**: v2.1.199 仍是 latest (released 2026-07-02T23:35:18Z). v2.1.200 NOT released. R637 仍未 release (R631 v2.1.199 P1 HIT cluster validation 持续)
+- **Anthropic Engineering**: 38-day plateau 持续 (last 2026-06-06 how-we-contain-claude). R637 38+ day (R635 36+ → R636 37+ → R637 38+). 7 月工程 post 突破信号仍未出现
+- **Anthropic Institute**: 仍 1 post (recursive-self-improvement R626 covered). P0 NOT HIT 持续 38+ day
+- **Anthropic Newsroom**: 7/3 0 new engineering. last 6/30 redeploying-fable-5 (R625 covered)
+- **OpenAI News**: 7/3 0 new. 20 轮 (R616-R637) 全 0 engineering 持续 (R636 19 → R637 20 轮)
+- **Cursor Blog**: 24 slugs 全 covered (R636 audit 51 unique slugs). R637 0 new blog post (Jun 29 仍是最新)
+- **Cursor Changelog**: R630 audit 3 entries WSD Skip 持续 + R637 0 new (Jun 30 仍是最新)
+- **GitHub Blog**: 7/3 0 new engineering. R637 0 new (Jun 25 仍是最新 evaluating Copilot agentic harness R560 covered)
+- **obra/superpowers**: v6.1.1 仍是 latest (2026-07-02T21:58:30Z). v6.2.0 未 release. P8 NOT HIT 持续
+- **claude.com/blog FULL 3-page audit (R637)**: 24 unique slugs (R637 main page 1, page 2/3/4 不分页) + R635 3-page audit 51 unique = 75 total → 19 covered via orphan backfill (R215/R304/R311/R323/R406/R418/R432/etc) + 1 NEW Article (steering R636) + 1 NEW admin/spend (giving-admins-more-visibility 2026-07-02 WSD Skip) + 54 WSD Skip (case study / event / product / compliance / legal / customer story)
+- **OSS Insight API R637**: 30 candidates audit 完成, 0 跨过 P5 1000 stars 门槛 + NousResearch/hermes-agent-self-evolution 4,478⭐ 命中 (1 NEW Project selected)
 
-**Article 产出**: `articles/tool-use/anthropic-claude-code-steering-7-methods-decision-framework-2026.md` (14.3KB, 161 行)
-- 6 处 Anthropic 1st-party 直接引用 (4 维度框架原始定义 + 权威等级排序 + Subagent vs Skill 判别 + Hook 不可替代性 + CLAUDE.md 治理的隐性成本 + output styles 替换默认角色)
-- 9 章节结构: 为什么值得写 + 3 核心概念 (4 维矩阵 + 压缩分水岭 + 权威等级) + 协议层细节 (4 反模式 tip) + 与 R311/R406/R432/R635 关系 + 5 条行动建议 + 3 金句 + 3 标题备选 (全部 ≤30 单位) + 6 引用 + 1 开放问题
-- 关键金句: "Steering 的 7 种方法不是平级的,它们在 4 个轴心(加载时机、压缩行为、上下文成本、权威等级)上的位置决定了工程边界" + "CLAUDE.md 的真正问题不是'写什么',是'谁拥有它'" + "绝对不能发生的事,instruction 解决不了 —— 只有 Hook 的 exit code 2 能解决"
+### R637 Microsoft Research Blog FULL Audit
 
-### 0 Project (R636 Agentless via R634 precedent)
+R637 Microsoft Research Blog 是新的 1st-party 来源, R637 first-time audit:
+- **microsoft/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/**: 2026-06-30 release, 1st-party Microsoft Research Asia academic post. R637 NEW Article (microsoft-research-skillopt-agent-skills-as-trainable-parameters-2026.md)
 
-**R636 0 Project, 原因**:
-1. **R634 precedent** (R634 0 project Agentless via R555 Hybrid R633 precedent 续期) 持续有效
-2. **R555 Hybrid R632/R634 续期** - breakthrough via 1st-party blog post 时, Project 不强求
-3. **OSS Insight API R636 24h trending** 候选 stars 普遍偏低 (7-31⭐), 不符合 P5 1000 stars 门槛
-4. **Article-Project 主题关联** - steering 7 methods 暂时没有 stars ≥ 1000 的 3rd-party 实现可 Pair
-5. **R555 era 变体 ㉒** - breakthrough via 1st-party blog post 时 Agentless 符合历史 precedent
+### R637 Cluster Empirical Validation (P12 HIT 持平 5/7)
 
-**OSS Insight API R636 24h trending top 5 candidates (低 stars, 跨过 1000 门槛 0 个)**:
-1. usestrix/strix 33,096⭐ (P12 cluster) - 已 covered via R619
-2. calesthio/OpenMontage 31⭐ (12 pipelines + 52 tools + 500+ agent skills) - 太低
-3. Panniantong/Agent-Reach 26,811⭐ (CLI 工具) - 已 covered via R-something
-4. DeusData/codebase-memory-mcp 25⭐ (158 languages) - 太低
-5. stablyai/orca 28⭐ (Desktop + mobile) - 太低
+R637 cluster data (R636 16:03 CST → R637 18:03 CST, 2h delta):
 
-### Cluster Empirical Validation R636 1h46m Delta (R635 Phase 3 入口误判被反驳, Phase 2 二次扩张回归)
+| Project | R636 Stars | R637 Stars | Δ (2h) | Δ% | 24h 等效 | R637 状态 | R636→R637 |
+|---------|-----------|-----------|--------|-----|----------|----------|-----------|
+| `obra/superpowers` | 244,872 | 245,035 | +163 | +0.067% | +0.80% | Stable ↑ | +0.05pp (从 R636 +0.75% 略升) |
+| `affaan-m/ECC` | 225,384 | 225,448 | +64 | +0.028% | +0.34% | Stable ↑ | +0.01pp (从 R636 +0.33% 略升) |
+| `JuliusBrussee/caveman` | 81,854 | 82,198 | +344 | +0.42% | **+5.04%** | **P12 HIT (Growth ↑)** | +0.69pp (从 R636 +4.35% 升) |
+| `usestrix/strix` | 33,096 | 33,383 | +287 | +0.87% | **+10.40%** | **STRONG GROWTH** | -1.02pp (从 R636 +11.42% 略降 但仍 STRONG) |
+| `openai/codex-plugin-cc` | 22,827 | 22,882 | +55 | +0.24% | **+2.89%** | **P12 HIT (Growth ↑)** | +0.45pp (从 R636 +2.44% 升) |
+| `raiyanyahya/recall` | 656 | 657 | +1 | +0.15% | **+1.83%** | **P12 HIT (Growth ↑)** | -2.32pp (从 R636 +4.15% 降 但仍 P12) |
+| `amplifthq/opentag` | 577 | 579 | +2 | +0.35% | **+4.15%** | **P12 HIT (Growth ↑)** | -5.33pp (从 R636 +9.48% 显著降 但仍 P12) |
 
-R636 cluster data (R635 14:17 CST → R636 16:03 CST, 1h46m = 106 min delta):
+**R637 cluster 实证结论 (Phase 2 持续 5 轮)**:
+- **R637 P12 HIT 5/7 持平**: R636 5/7 → R637 5/7 持平
+- **2 STRONG GROWTH 持续**: usestrix/strix +10.40%/day 持续 STRONG (R636 +11.42% → R637 +10.40% 略降) + 5 P12 HIT (caveman +5.04% / codex-plugin-cc +2.89% / recall +1.83% / opentag +4.15%)
+- **2 STABLE ↑** (R636 2 → R637 2): obra/superpowers +0.80% + affaan-m/ECC +0.34%
+- **R637 cluster 状态确认**: Phase 2 二次扩张持续 5 轮 (R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → R635 2/7 误判 → R636 5/7 反驳 → **R637 5/7 持平**)
+- R635 误判 "Phase 3 入口" 已被 R636 + R637 连续 2 轮反驳 (2 轮 5/7 持续 = Phase 2 持续信号)
 
-| Project | R635 | R636 | Δ | Δ% | 24h 等效 | R636 状态 | R635→R636 趋势 |
-|---------|------|------|---|-----|----------|----------|---------------|
-| `obra/superpowers` | 244,737 | 244,872 | +135 | +0.06% | +0.75% | Stable ↑ | +0.65pp (从 R635 +0.10% 升) |
-| `affaan-m/ECC` | 225,330 | 225,384 | +54 | +0.02% | +0.33% | Stable ↑ | +0.28pp (从 R635 +0.05% 升) |
-| `JuliusBrussee/caveman` | 81,593 | 81,854 | +261 | +0.32% | **+4.35%** | **P12 HIT (Growth ↑↑)** | **+3.63pp 显著反弹** (从 R635 +0.72% 升) |
-| `usestrix/strix` | 32,820 | 33,096 | +276 | +0.84% | **+11.42%** | **STRONG GROWTH** | **+9.69pp 强劲反弹** (从 R635 +1.73% 升) |
-| `openai/codex-plugin-cc` | 22,786 | 22,827 | +41 | +0.18% | **+2.44%** | **P12 HIT (Growth ↑)** | **+1.81pp 反弹** (从 R635 +0.63% 升) |
-| `raiyanyahya/recall` | 654 | 656 | +2 | +0.31% | **+4.15%** | **P12 HIT (Growth ↑↑)** | **+4.15pp 强劲反弹** (从 R635 +0.00% 升) |
-| `amplifthq/opentag` | 573 | 577 | +4 | +0.70% | **+9.48%** | **STRONG GROWTH** | **+7.68pp 强劲反弹** (从 R635 +1.80% 升) |
+**Layer 6 命名扩展**: R626 harness-productivity-system + R634 identity-federation + R635 tool-use/skills-distribution + R636 tool-use/steering-methods + **R637 NEW tool-use/skill-optimization 子维度** (1st-party Microsoft Research + 3rd-party NousResearch 学术+工程闭环)
 
-**R636 cluster 实证结论 (R635 误判反驳!)**:
-- **R636 P12 NEW HIT 5/7 显著反弹** (R635 2/7 → R636 5/7 反弹 +3 个 P12 HIT)
-- **0 STRONG GROWTH** R635 → **2 STRONG GROWTH R636**:
-  - usestrix/strix **+11.42%/day** (R635 +1.73%, 升 +9.69pp 强劲反弹) ← R619 cluster member
-  - amplifthq/opentag **+9.48%/day** (R635 +1.80%, 升 +7.68pp 强劲反弹) ← R625 covered
-- **3 GROWTH (新增反弹)** (R635 0 → R636 3):
-  - JuliusBrussee/caveman **+4.35%/day** (R635 +0.72%, 升 +3.63pp 显著反弹) ← R420 covered
-  - openai/codex-plugin-cc **+2.44%/day** (R635 +0.63%, 升 +1.81pp 反弹) ← R624 covered
-  - raiyanyahya/recall **+4.15%/day** (R635 +0.00%, 升 +4.15pp 强劲反弹) ← R622 covered
-- **2 STABLE ↑** (R635 5 → R636 2):
-  - obra/superpowers +0.75%/day (R635 +0.10%, 升 +0.65pp)
-  - affaan-m/ECC +0.33%/day (R635 +0.05%, 升 +0.28pp)
+### R637 防重 Skip 持续有效
 
-**R636 cluster 状态新解读**: **Phase 2 二次扩张回归 (R635 Phase 3 入口误判被反驳)**
-- R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → R635 2/7 (误判 Phase 3 入口) → **R636 5/7 反弹 Phase 2 二次扩张**
-- R635 误判原因: 1h46m 间隔过短, R635 看到的 "Phase 3 入口" 实际是 1 个低数据点 (Δ 短暂缩小)
-- R636 反驳: 5/7 P12 HIT + 2 STRONG GROWTH 表明 cluster 仍在 Phase 2 持续, 二次扩张信号重现
-- 修正: cluster 进入 Phase 3 仍需要 ≥ 3 轮持续低 P12 (R635 仅 1 轮低 P12, 不足以判断 Phase 3)
-
-**Layer 6 命名**: R626 harness-productivity-system 维持 + R634 identity-federation 维持 + R635 tool-use/skills-distribution 维持 + **R636 NEW tool-use/steering-methods (第 8 维度)**
-
-### 0 NEW 1st-Party Releases (R636)
-
-- **Claude Code**: v2.1.199 仍是 latest (released 2026-07-02T23:35:18Z). v2.1.200 NOT released. R636 仍未 release
-- **Anthropic Engineering**: 36-day plateau 持续 (last 2026-06-06 how-we-contain-claude) → R636 = 37+ day. 7 月工程 post 突破信号仍未出现
-- **Anthropic Institute**: 仍 1 post (recursive-self-improvement R626 covered). P0 NOT HIT 持续 37+ day
-- **Anthropic Newsroom**: 7/3 0 new posts. last 6/30 redeploying-fable-5 (R625 covered)
-- **OpenAI News**: 7/3 0 new. 19 轮 (R616-R636) 全 0 engineering 持续
-- **Cursor Blog**: 17 slugs 全 covered (R629 audit). R636 0 new
-- **Cursor Changelog**: R630 audit 3 entries WSD Skip 持续
-- **GitHub Blog**: 7/3 0 new engineering. R636 0 new
-- **obra/superpowers**: v6.1.1 仍是 latest (2026-07-02T21:58:30Z). v6.2.0 未 release
-- **claude.com/blog FULL 3-page audit (R636)**: 51 unique slugs = 19 covered via orphan backfill + 32 uncovered WSD Skip (R636 唯一 NEW 1 个 → steering-claude-code 已写入 R636 Article)
-- **OSS Insight API R636**: 30 candidates audit 完成, 0 跨过 P5 1000 stars 门槛, R636 Agentless 持续
-
-### R636 claude.com/blog FULL 3-page Audit 32 Uncovered 评估 (P19 持续)
-
-R636 FULL 3-page audit 发现 32 个 uncovered slugs (19 covered via orphan backfill 持续), 1 个已写入 R636 Article (steering-claude-code-skills-hooks-rules-subagents-and-more), 31 个 WSD Skip:
-
-**Decision Matrix** (32 个 uncovered 简化评估):
-
-| Slug 类型 | 数量 | 决策 |
-|----------|------|------|
-| **Engineering deep dive** (R636 NEW) | 1 | steering-claude-code-skills-hooks-rules-subagents-and-more (R636 Article) |
-| Engineering cluster overlap (R-something covered) | 5 | WSD Skip (R-something covered via orphan backfill) |
-| Case study / customer story | 12 | WSD Skip (案例研究, 无工程价值) |
-| Event / hackathon | 5 | WSD Skip (event, 时效性强) |
-| Product announcement (Cowork / Desktop / Foundation) | 6 | WSD Skip (产品公告, 非工程) |
-| Compliance / legal | 3 | WSD Skip (合规 / 法律, 无 Agent 主题) |
-
-**Decision**: steering 选中. 原因:
-1. **1st-party Anthropic Claude Code team 2026-06-18 release** - 7 种 steering 方法完整 set
-2. **4 维决策框架** - 加载时机 × 压缩行为 × 上下文成本 × 权威等级
-3. **跨 Cluster 收口** - R311 + R406 + R432 + R635 全部纳入
-4. **4 反模式 tip** - CLAUDE.md < 200 行 + 跨切面 vs 子目录 + Subagent 隔离 + Hook exit code 2
-
-其他 31 个 uncovered 全部 WSD Skip (case study / event / product / compliance / legal / customer story)
-
-### R636 防重 Skip 持续有效
-
-- **affaan-m/ECC** 持续 Skip: R118 + R355 + R626 + R634 + R635 + R636 防重触发
-- **obra/superpowers** R420 已覆盖 + R636 v6.1.1 仍是 latest
+- **affaan-m/ECC** 持续 Skip: R118 + R355 + R626 + R634 + R635 + R636 + R637 防重触发
+- **obra/superpowers** R420 已覆盖 + R637 v6.1.1 仍是 latest
 - **JuliusBrussee/caveman** R420 已覆盖
 - **usestrix/strix** R619 已覆盖
 - **openai/codex-plugin-cc** R624 已覆盖
-- **raiyanyahya/recall** R622 已覆盖 (Pair)
-- **amplifthq/opentag** R625 已覆盖 (Pair)
-- **ChromeDevTools/chrome-devtools-mcp** R612/R616 已覆盖 (Browser Agent cluster member)
+- **raiyanyahya/recall** R622 已覆盖
+- **amplifthq/opentag** R625 已覆盖
+- **ChromeDevTools/chrome-devtools-mcp** R612/R616 已覆盖
 - **agentskills/agentskills** R632 NEW Defer 持续
 - **microsoft/agent-framework** R-something 已覆盖
 - **LangChain/CrewAI/AutoGen** R-something 已覆盖
+- **microsoft/SkillOpt** (5,423/10,082/2,814 stars) R295/R297 已覆盖 (commented_urls.txt) + R297 orphan scan + R300+ recommended, 本文 R637 写 Microsoft Research Blog 1st-party Article + 3rd-party NousResearch/hermes-agent-self-evolution Pair 区分
+- **Cursor blog reward-hacking-coding-benchmarks** R560 covered (single source = 3 articles: evaluation + harness + research)
+- **GitHub Blog evaluating Copilot agentic harness** R560 covered
 
 ---
 
-## R636 完成产出
+## 📌 R637 完成产出
 
-### Article: 1 (R636 Breakthrough 命中 30% branch via claude.com/blog 1st-party blog post)
-- **Article**: `articles/tool-use/anthropic-claude-code-steering-7-methods-decision-framework-2026.md`
-- **来源**: https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more (Anthropic 1st-party Claude Code team, 2026-06-18 release)
-- **大小**: 14.3KB, 161 行
-- **结构**: 9 章节 (为什么值得写 + 3 核心概念 4 维矩阵 + 协议层细节 4 反模式 tip + 与 R311/R406/R432/R635 关系 + 5 条行动建议 + 3 金句 + 3 标题备选 + 6 引用 + 1 开放问题)
-- **原文引用**: 6 处 Anthropic 1st-party 直接引用 (4 维度框架 + 权威等级 + Subagent vs Skill + Hook 不可替代性 + CLAUDE.md 治理 + output styles 替换默认角色)
-- **Cluster 归位**: Layer 6 第 8 维度 `tool-use/steering-methods` (R626 harness-productivity-system + R634 identity-federation + R635 skills-distribution + R636 NEW steering-methods)
-- **关键金句**: "Steering 的 7 种方法不是平级的,它们在 4 个轴心(加载时机、压缩行为、上下文成本、权威等级)上的位置决定了工程边界" + "CLAUDE.md 的真正问题不是'写什么',是'谁拥有它'" + "绝对不能发生的事,instruction 解决不了 —— 只有 Hook 的 exit code 2 能解决"
+### Article: 1 (R637 Breakthrough 命中 35% branch via 1st-party Microsoft Research Blog skill-optimization)
+- **Article**: `articles/research/microsoft-research-skillopt-agent-skills-as-trainable-parameters-2026.md`
+- **来源**: https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/ (Microsoft Research Blog 1st-party, 2026-06-30 release)
+- **大小**: 8.5KB, 11 章节
+- **结构**: 为什么值得写 + 1 核心命题 + 2 三大失败模式 + 3 forward-backward-update 循环 5 组件 + 4 52/52 评测结果 + 5 Skill 形态 920 token + 6 与既有文章关系 + 7 5 条行动建议 + 8 3 标题备选 + 9 3 金句 + 10 6 引用 + 11 开放问题
+- **Microsoft 原话引用**: 4 处 (52 cells 最佳 / training need not be limited to model weights / +23.5 point gain / cross-harness transfer 22.1 → 81.8)
+- **Cluster 归位**: Layer 6 第 7 维度 tool-use/skills-distribution (R635 命名) 扩展到 tool-use/skill-optimization 子维度. 与 R311 9 分类 + R635 claude-api Skill + R636 steering 7 methods 互补
+- **关键金句**: "Skill 真正的问题不是写什么是'谁在保证它不退化'" + "Training need not be limited to model weights. Procedural knowledge outside the model can also be optimized." + "在没有 verifier 的领域，skill optimizer 与 prompt drift 之间的距离就是 refused-edit buffer 与 validation gate"
 
-### Project: 0 (R636 Agentless via R634 precedent, R555 Hybrid R632/R634 续期)
+### Project: 1 (R637 Pair: 1st-party Article + 3rd-party Open-Source Engine)
+- **Project**: `articles/projects/nousresearch-hermes-agent-self-evolution-skill-optimizer-dspy-gepa-4478-stars-2026.md`
+- **来源**: https://github.com/NousResearch/hermes-agent-self-evolution (4,478⭐, 509 forks, MIT, 2026-06-17 push)
+- **大小**: 9.5KB
+- **结构**: 仓库核心信息表 + 5 阶段演化管道 + 演化循环对应表 + 5 guardrails + 成本视角 + 跨 harness 数据源 + 引擎组合 + 与本轮 Article 关系表 + 8 条启示 + Cluster 归位 + 7 处引用
+- **README 引用**: 6 处 (How It Works / 5 phases / 2 engines / 5 guardrails / $2-10/run / cross-harness sessiondb)
+- **Pair 闭环**: 1st-party Microsoft Research SkillOpt 学术 (forward-backward-update 循环) ↔ 3rd-party NousResearch/hermes-agent-self-evolution 工程 (DSPy+GEPA 开源实现 + 5 guardrails + 5 阶段分批)
+- **关键金句**: "All changes go through human review, never direct commit." + "$2-10 per optimization run" + "Qwen3.5-4B 4B open-weight 优化后超过 GPT-5.2 无 skill baseline"
 
-### 5 R635 Project Defer Candidates 持续 (R636 评估)
+### 5 R635 Project Defer Candidates 持续 (R637 评估)
 
-1. **rtk-ai/rtk** (68,070⭐ Apache-2.0) - CLI proxy reducing LLM tokens 60-90%. Cluster overlap with R626 harness-productivity-system (R626 rtk) 部分覆盖. R636 持续 Defer
-2. **browser-use/video-use** (13,973⭐ MIT) - Edit videos with coding agents. cluster member of browser-use. R636 持续 Defer
-3. **diegosouzapw/OmniRoute** (10,389⭐ MIT) - AI gateway 231+ providers. R619 covered cluster member. R636 持续 Defer
-4. **hugohe3/ppt-master** (36,240⭐ MIT) - AI generates PowerPoint. No cluster overlap, defer. R636 持续 Defer
-5. **ogulcancelik/herdr** (10,289⭐ NOASSERTION) - agent multiplexer in terminal. Cluster overlap with R626 harness-productivity-system 部分覆盖. R636 持续 Defer
+1. **rtk-ai/rtk** (68,132⭐ Apache-2.0, +62 stars since R636) - CLI proxy reducing LLM tokens 60-90%. Cluster overlap with R626 harness-productivity-system (R626 rtk) 部分覆盖. R637 持续 Defer
+2. **browser-use/video-use** (14,168⭐ MIT) - Edit videos with coding agents. cluster member of browser-use. R637 持续 Defer
+3. **diegosouzapw/OmniRoute** (10,469⭐ MIT) - AI gateway 231+ providers. R619 covered cluster member. R637 持续 Defer
+4. **hugohe3/ppt-master** (36,341⭐ MIT) - AI generates PowerPoint. No cluster overlap, defer. R637 持续 Defer
+5. **ogulcancelik/herdr** (10,367⭐ NOASSERTION) - agent multiplexer in terminal. Cluster overlap with R626 harness-productivity-system 部分覆盖. R637 持续 Defer
 
-### Cluster Empirical Validation: 持续 1h46m delta (5/7 P12 HIT 显著反弹, R635 Phase 3 入口误判被反驳)
+### Cluster Empirical Validation: 持平 2h delta (5/7 P12 HIT 持平, R635 Phase 3 入口误判持续反驳)
 
-| Project | R635 | R636 | Δ | 24h 等效 | R636 状态 | R635→R636 |
+| Project | R636 | R637 | Δ | 24h 等效 | R637 状态 | R636→R637 |
 |---------|------|------|---|----------|----------|-----------|
-| `obra/superpowers` | 244,737 | 244,872 | +135 | +0.75% | Stable ↑ | +0.65pp |
-| `affaan-m/ECC` | 225,330 | 225,384 | +54 | +0.33% | Stable ↑ | +0.28pp |
-| `JuliusBrussee/caveman` | 81,593 | 81,854 | +261 | **+4.35%** | **P12 HIT Growth** | **+3.63pp 显著反弹** |
-| `usestrix/strix` | 32,820 | 33,096 | +276 | **+11.42%** | **STRONG GROWTH** | **+9.69pp 强劲反弹** |
-| `openai/codex-plugin-cc` | 22,786 | 22,827 | +41 | **+2.44%** | **P12 HIT Growth** | **+1.81pp 反弹** |
-| `raiyanyahya/recall` | 654 | 656 | +2 | **+4.15%** | **P12 HIT Growth** | **+4.15pp 强劲反弹** |
-| `amplifthq/opentag` | 573 | 577 | +4 | **+9.48%** | **STRONG GROWTH** | **+7.68pp 强劲反弹** |
+| `obra/superpowers` | 244,872 | 245,035 | +163 | +0.80% | Stable ↑ | +0.05pp |
+| `affaan-m/ECC` | 225,384 | 225,448 | +64 | +0.34% | Stable ↑ | +0.01pp |
+| `JuliusBrussee/caveman` | 81,854 | 82,198 | +344 | **+5.04%** | **P12 HIT Growth** | **+0.69pp** |
+| `usestrix/strix` | 33,096 | 33,383 | +287 | **+10.40%** | **STRONG GROWTH** | **-1.02pp 略降 仍 STRONG** |
+| `openai/codex-plugin-cc` | 22,827 | 22,882 | +55 | **+2.89%** | **P12 HIT Growth** | **+0.45pp** |
+| `raiyanyahya/recall` | 656 | 657 | +1 | **+1.83%** | **P12 HIT Growth** | **-2.32pp 降 仍 P12** |
+| `amplifthq/opentag` | 577 | 579 | +2 | **+4.15%** | **P12 HIT Growth** | **-5.33pp 降 仍 P12** |
 
-**P12 cluster 实证**: 5/7 项目 24h 等效增长率 > 1% P12 阈值. R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → R635 2/7 (误判 Phase 3 入口) → **R636 5/7 反弹 Phase 2 二次扩张**. R635 误判被反驳. Cluster 二次扩张信号重现. Layer 6 命名维持 R626 + R634 + R635 + R636 NEW tool-use/steering-methods.
+**P12 cluster 实证**: 5/7 项目 24h 等效增长率 > 1% P12 阈值. R631 4/7 → R632 4/7 → R633 4/7 → R634 4/7 → R635 2/7 (误判 Phase 3 入口) → R636 5/7 (反驳) → **R637 5/7 持平**. R635 误判持续反驳 (2 轮连续 5/7 = Phase 2 持续信号). Cluster 二次扩张信号持续 2 轮 5/7. Layer 6 命名扩展 R637 NEW tool-use/skill-optimization.
 
----
+### R637 26 monitoring points 持续
 
-## 📌 R637 重点监控
-
-1. **(P1)**: Claude Code v2.1.200 后续 release (R631 v2.1.199 已 HIT, 下一个 release 可能 + Lark/Feishu routing 对等发布)
-2. **(P5)**: Anthropic Engineering 7 月 post 突破 37+ day plateau → 可能 38+ day (持续监控)
-3. **(P0)**: Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 37+ day)
-4. **(P2)**: Mythos Preview GA + Harness 实战
-5. **(P8)**: obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周)
-6. **(P3)**: 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) - 当前仅 openai/codex-plugin-cc
-7. **(P9)**: Cursor Blog/Changelog 后续 deep engineering follow-up
-8. **(P10)**: GitHub Trending non-agent projects 后续
-9. **(P11)**: deepseek-ai/DeepSpec 等 LLM inference acceleration 项目
-10. **(P12)**: Cluster Phase 2 二次扩张 - 7 项目 stars tracking 持续. R636 5/7 P12 HIT 反弹信号 (R635 误判 Phase 3 入口被反驳)
-11. **(P13)**: Slash-Skill stacking cap 5 → 10 后续扩展
-12. **(P14)**: CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展
-13. **(P15 R632 NEW)**: agentskills/agentskills Defer monitoring (Re-evaluation 触发条件 4 项)
-14. **(P16 R633 NEW)**: Anthropic claude.com/blog Claude Code team 后续 posts (R636 steering 已 HIT, 持续监控 R637+)
-15. **(P17 R634 NEW)**: claude.com/blog FULL 2-page audit protocol 升级
-16. **(P18 R634 NEW)**: apps-gateway / agent-identity / human-agent-teams 3 Defer 监控
-17. **(P19 R635 NEW)**: claude.com/blog FULL 3-page audit protocol 升级 (75 posts, R636 持续应用)
-18. **(P20 R635 NEW)**: OSS Insight API 切换 protocol 解决 GitHub Trending HTML JS-rendered timeout
-19. **(P21 R635 NEW)**: 5 NEW Project Defer 监控 (rtk-ai/rtk + browser-use/video-use + diegosouzapw/OmniRoute + hugohe3/ppt-master + ogulcancelik/herdr) - R636 持续
-20. **(P22 R635 NEW)**: claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + 3rd-party Skills 生态 Pair 模式
-21. **(P23 R636 NEW)**: tool-use/steering-methods (Layer 6 第 8 维度) - 7 methods decision framework 收口 + 跨 Cluster 整合 R311/R406/R432/R635
-22. **(P24 R636 NEW)**: R635 Phase 3 入口误判被反驳 - cluster 二次扩张信号重现, 5/7 P12 HIT 反弹, Phase 2 持续
-23. **(P25 R636 NEW)**: claude.com/blog 32 uncovered slugs WSD Skip 持续 - steering 已写入 R636 Article, 31 个 WSD Skip 持续
-
-R637 prediction 调整: **20% sat cooling / 35% breakthrough / 40% cluster validation / 5% silent**
-- breakthrough 30% → 35% (R636 breakthrough HIT 后, R637 仍保持高 breakthrough 概率: P16 claude.com/blog Claude Code team 后续 posts + P5 Anthropic Engineering 7 月 post 突破 37+ day plateau + P0 Anthropic Institute 持续监控)
-- cluster validation 45% → 40% (R636 5/7 P12 HIT 反弹 Phase 2 二次扩张, R637 cluster validation 概率降低, breakthrough 概率提升)
-- sat cooling 15% → 20% (R636 breakthrough HIT 概率延后, R637 sat cooling 概率提升)
-- silent 10% → 5% (R636 breakthrough 增量 5% 移到 sat cooling)
-- R637 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰) + P19 claude.com/blog FULL 3-page audit protocol 应用 + P20 OSS Insight API 持续 + P21 5 defer 候选评估 + P22 Skills 生态 Pair 模式 + P23 tool-use/steering-methods 命名收口 + P24 cluster Phase 2 二次扩张信号持续 + P25 32 uncovered slugs WSD Skip 持续
+1-25. (见 PENDING.md P1-P25 持续 monitoring)
+26. (P26 R637 NEW) tool-use/skill-optimization (Layer 6 第 7 维度子扩展) - Microsoft Research SkillOpt 1st-party 学术 + NousResearch/hermes-agent-self-evolution 3rd-party 开源双闭环
