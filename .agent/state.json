@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-07-03T22:05:00+08:00",
+  "lastRun": "2026-07-03T23:57:00+08:00",
   "lastCommit": "369943a",
-  "round": 640,
-  "status": "BREAKTHROUGH_VIA_MICROSOFT_RESEARCH_BLOG_1ST_PARTY_POST_MEMORA_R555_VARIANT_26_CONSECUTIVE_MS_BLOG_BREAKTHROUGH_INTERVAL_6_ROUNDS",
+  "round": 641,
+  "status": "BREAKTHROUGH_VIA_ANTHROPIC_NEWSROOM_CLAUDE_SONNET_5_1ST_PARTY_MODEL_RELEASE_R555_VARIANT_27_CONSECUTIVE_1ST_PARTY_CROSS_VENDOR_CLUSTER_VIA_1ST_PARTY_MODEL_RELEASE_AND_1ST_PARTY_FRAMEWORK_PAIR",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "breakthrough_via_1st_party_academic_post_audit_gap_discovery",
+  "type": "breakthrough_via_1st_party_model_release_with_cross_vendor_framework_pair",
   "scan_summary": {
     "anthropic_sitemap": {
       "total_urls_with_lastmod": 482,
@@ -75,6 +75,28 @@
         "hugohe3/ppt-master 36,240⭐ MIT (AI generates PowerPoint)",
         "ogulcancelik/herdr 10,289⭐ (agent multiplexer in terminal)"
       ]
+    },
+    "r641_tri_scan": {
+      "total_sources": 17,
+      "anthropic_newsroom_7_3_batch": 7,
+      "anthropic_sitemap_7_3_batch": 7,
+      "new_article_candidates": 1,
+      "new_project_candidates": 1,
+      "r638_defer_break": "langchain-ai/openwiki (3 触发条件全部命中)",
+      "r641_writable": 1,
+      "selected_article": "anthropic-newsroom-claude-sonnet-5-the-most-agentic-sonnet-model-yet",
+      "selected_project": "langchain-ai/openwiki (R638 Defer 打破 3 触发条件)",
+      "skip_reasons": {
+        "anthropic_engineering": "42-day plateau 持续 (R640 41+ day → R641 42+ day)",
+        "claude_code_changelog": "v2.1.199 仍是 latest, v2.1.200 NOT released (R641 23:57 CST 距 7/4 00:00 CST 3 分钟 release window 峰值未触发)",
+        "openai_news_rss": "24 轮 (R616-R641) 全 0 engineering 持续",
+        "cursor_blog_changelog": "Jun 29 仍是最新 + 3 entries WSD Skip 持续",
+        "github_blog": "7/1-7/3 0 new engineering",
+        "microsoft_research_blog": "R640 Memora 0 NEW 续期 (RSS lastBuildDate 2026-06-30T16:50:04 +0000)",
+        "claude_blog_full_audit": "75 unique slugs 全 covered (R641 0 new)",
+        "oss_insight_api": "14 R-numbered covered/cluster_overlap/Skip + 1 NEW langchain-ai/openwiki (R641 写入) + 5 misc/non-agent",
+        "anthropic_glasswing": "Cluster tangential to Agent Engineering (cyber security > agent engineering), 决定 WSD Skip"
+      }
     }
   },
   "articles_written": [
@@ -173,6 +195,41 @@
         "Memory content can remain rich and expressive, while a separate, lightweight structural layer handles indexing and retrieval",
         "Memora is built to give agents both. 抽象和具体不是 tradeoff,是不同组件的不同职责"
       ]
+    },
+    {
+      "round": 641,
+      "file": "articles/fundamentals/anthropic-claude-sonnet-5-agentic-sonnet-most-agentic-yet-2026.md",
+      "title": "Anthropic 把 Sonnet 5 定位成最 agentic 的 Sonnet:从 1st-party 模型发布看 Agent Engineering 范式信号",
+      "source_url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "source_type": "1st-party-anthropic-newsroom",
+      "cluster": "fundamentals/agentic-model-layer",
+      "category": "fundamentals",
+      "size_kb": 12.1,
+      "lines": 268,
+      "quotes_count": 5,
+      "partner_testimonials_count": 12,
+      "published_date": "2026-06-30",
+      "sitemap_lastmod": "2026-07-03T15:56:31.013Z",
+      "added_at": "2026-07-03",
+      "cluster_relationship": "R626 harness-productivity-system + R631 v2.1.199 Background Agent reliability + R633 4-type agentic loop + R635 claude-api Skill 1st-party + R636 steering 7-methods + R637 SkillOpt + R640 Memora + R641 NEW fundamentals/agentic-model-layer Layer 6 第 10 维度",
+      "key_concepts": [
+        "The Most Agentic Sonnet Model Yet (1st-party 官方 agentic 定位)",
+        "12 partner testimonial 跨行业 agentic 落地 (Lovable / ClickHouse / Pace / Eve / Kiro / Cursor / Kiro / Salesforce 自动化 / Rust Engineer / Co-founder 等)",
+        "Cost-performance frontier 重新划定 (Sonnet 5 medium effort 接近 Opus 4.8 high effort, intro pricing $2/$10 per MTok)",
+        "Multi-step agentic capability (plan + tool use + autonomous operation)",
+        "Plan adherence 改善 (12 partner 一致反馈 stays on plan / follows our conventions)",
+        "Brownfield code 优势 (race conditions / hidden tests / root cause analysis)",
+        "Claude Code 默认模型 (Free + Pro plan 都默认 Sonnet 5)",
+        "R555 era breakthrough pattern 第 15 种 variant ㉗ NEW: Consecutive 1st-Party Cross-Vendor Cluster via 1st-Party Model Release + 1st-Party Framework Pair"
+      ],
+      "key_quotes": [
+        "Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.",
+        "For many developers, the agentic AI era began with Sonnet-class models",
+        "Feedback from our early access partners has been consistent: Sonnet 5 is much more agentic than its predecessors",
+        "Sonnet 5 narrows the gap: its performance is close to that of Opus 4.8, but at lower prices",
+        "Claude Sonnet 5 gives our agents a strong execution layer for multi-step software engineering work. It handles sustained coding, tool use, and debugging well across messy technical contexts",
+        "With Claude Sonnet 5, agents stay on plan, follow our conventions, and ship clean multi-step changes, all at an efficient cost."
+      ]
     }
   ],
   "projects_written": [
@@ -213,6 +270,35 @@
       "added_at": "2026-07-03",
       "related_article": "articles/context-memory/microsoft-research-memora-harmonic-memory-representation-long-horizon-2026.md",
       "pair_logic": "1st-party Microsoft Research Blog Memora Article (R640) + 1st-party microsoft/Memora Project (R640) = Microsoft Research Asia 同源完整图景 (R637 SkillOpt + R640 Memora 同 Microsoft Research Blog 来源)"
+    },
+    {
+      "round": 641,
+      "file": "articles/projects/langchain-ai-openwiki-cli-agent-documentation-1626-stars-2026.md",
+      "title": "langchain-ai/openwiki:LangChain 官方 CLI Agent 文档工具,1st-party 与 Sonnet 5 同源生态",
+      "url": "https://github.com/langchain-ai/openwiki",
+      "stars": 1626,
+      "forks": 132,
+      "license": "MIT",
+      "language": "TypeScript",
+      "created_at": "2026-06-22T23:48:26Z",
+      "pushed_at": "2026-07-03T01:06:23Z",
+      "cluster": "fundamentals/agentic-model-layer",
+      "category": "projects",
+      "size_kb": 4.9,
+      "lines": 95,
+      "readme_quotes_count": 5,
+      "added_at": "2026-07-03",
+      "related_article": "articles/fundamentals/anthropic-claude-sonnet-5-agentic-sonnet-most-agentic-yet-2026.md",
+      "defer_break": {
+        "original_round": 638,
+        "defer_reason": "P5 1000 stars 跨门槛 + cluster R635 claude-api Skill IDE bundling 概念对接",
+        "r641_break_triggers": [
+          "(a) Sonnet 5 7/3 1st-party 发布 (Anthropic Newsroom 1st-party 模型发布 'the most agentic Sonnet model yet')",
+          "(b) openwiki 自身达到 1,626 stars (R638 1,454 → R641 1,626, +11.7%, MIT 1st-party LangChain 持续 push 7/3 1:06 UTC)",
+          "(c) R640 P31 monitoring 同源 cluster 范式扩展到 1st-party 框架 + 1st-party 模型"
+        ]
+      },
+      "pair_logic": "1st-party Anthropic Newsroom Sonnet 5 Article (R641) + 1st-party LangChain openwiki Project (R641) = 跨厂商 1st-party 同源完整图景 (R637 Microsoft Research SkillOpt + R640 Microsoft Research Memora + R641 Anthropic + LangChain 跨厂商 1st-party 生态)"
     }
   ],
   "defer_candidates": [
@@ -399,24 +485,22 @@
       "round_added": 640,
       "type": "cluster_maintenance",
       "description": "Memora + SkillOpt 同源 Cluster 维护 - Microsoft Research Blog 是 2026 H2 持续信号源 (R637 + R640 2 个 1st-party 学术文章), R641+ 重点监控 Microsoft Research Blog 后续 1st-party post 是否触发连续 breakthrough 第 3 次 (R555 era variant ㉗ 可能性窗口)"
+    },
+    {
+      "id": "P32",
+      "round_added": 641,
+      "type": "cluster_maintenance",
+      "description": "Sonnet 5 + openwiki 跨厂商 1st-Party 同源 Cluster 维护 - Anthropic 1st-party Newsroom 模型发布 + LangChain 1st-party 框架 跨厂商 1st-party 生态是 2026 H2 持续信号源 (R641 第 1 次), R642+ 重点监控 1st-party 跨厂商 1st-party 同源 cluster 是否触发连续 breakthrough 第 2 次 (R555 era variant ㉘ 可能性窗口)"
     }
   ],
   "cluster_validation": {
-    "round": 640,
-    "delta_window_hours": 3.683,
-    "delta_window_satisfies_r555_strict_threshold": true,
-    "status": "Phase 2 持续信号 trace only 6 轮 R636→R639 → Phase 2 实证 strict pass R640",
-    "p12_hit_strict_pass_count": 4,
-    "p12_hit_strict_pass_projects": [
-      "usestrix/strix +4.29%",
-      "openai/codex-plugin-cc +1.25%",
-      "raiyanyahya/recall +2.97%",
-      "amplifthq/opentag +4.45%"
-    ],
-    "strong_growth_count": 0,
-    "stable_count": 3,
+    "round": 641,
+    "delta_window_hours": 1.867,
+    "delta_window_satisfies_r555_strict_threshold": false,
+    "status": "Phase 2 实证 strict pass 持续 R640 + R641 trace only",
+    "p12_hit_strict_pass_count": "R640 4/7 严格复审状态维持 (R641 1h52m 短窗口 trace only 不能独立做 strict P12 HIT 复审)",
     "all_7_projects_positive_delta": true,
-    "r638_to_r640_trace": "R638 5/7 trace only 1h33m → R639 5/7 trace only 1h33m → R640 4/7 strict pass 3h41m (首次满足 R555 era strict P12 HIT 复审条件)"
+    "r640_to_r641_trace": "R640 4/7 strict pass 3h41m → R641 1h52m trace only (Phase 2 实证 strict pass 持续)"
   },
   "r636_next_focus": "R636 重点监控: (P1) Claude Code v2.1.200 后续 release + (P5) Anthropic Engineering 7 月 post 突破 37+ day plateau → 可能 38+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 37+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 (R634 fetch timeout 持续) + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续 - 7 项目 stars tracking 持续 (R636 5/7 P12 HIT 反弹) + (P13) Slash-Skill stacking cap 5 → 10 后续扩展 + (P14) CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展 + (P15 R632 NEW) agentskills/agentskills Defer monitoring + (P16 R633 NEW + R636 持续) Anthropic claude.com/blog Claude Code team 后续 posts (R633 + R636 已 HIT, 持续监控 R637+) + (P17 R634 NEW) claude.com/blog FULL audit protocol 升级 + (P18 R634 NEW) apps-gateway / agent-identity / human-agent-teams 3 Defer 监控 + (P19 R635 NEW) claude.com/blog FULL 3-page audit protocol 升级 (R636 持续应用) + (P20 R635 NEW) OSS Insight API 切换 protocol + (P21 R635 NEW) 5 NEW Project Defer 监控 + (P22 R635 NEW) claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + (P23 R636 NEW) tool-use/steering-methods (Layer 6 第 8 维度) 7 methods decision framework 收口 + (P24 R636 NEW) R635 Phase 3 入口误判被反驳 + (P25 R636 NEW) 32 uncovered slugs WSD Skip 持续. 三步防重检查协议执行 + 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)",
   "r636_prediction": "20% sat cooling / 35% breakthrough / 40% cluster validation / 5% silent. breakthrough 30% → 35% (R636 breakthrough HIT 后, R637 仍保持高 breakthrough 概率: P16 claude.com/blog Claude Code team 后续 posts + P5 Anthropic Engineering 7 月 post 突破 37+ day plateau + P0 Anthropic Institute 持续监控). cluster validation 45% → 40% (R636 5/7 P12 HIT 反弹 Phase 2 二次扩张, R637 cluster validation 概率降低). sat cooling 15% → 20% (R636 breakthrough HIT 概率延后, R637 sat cooling 概率提升). silent 10% → 5% (R636 breakthrough 增量 5% 移到 sat cooling)",
@@ -431,8 +515,8 @@
   },
   "r640_next_focus": "R640 重点监控: (P1) Claude Code v2.1.200 后续 release (7/4 独立日凌晨 release window 峰值) + (P5) Anthropic Engineering 7 月 post 突破 40+ day plateau → 可能 41+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 40+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) - 当前仅 openai/codex-plugin-cc + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续 6 轮 R636→R639 - 7 项目 stars tracking 持续 (R639 5/7 P12 HIT 持平 trace only) + (P13) Slash-Skill stacking cap 5 → 10 后续扩展 + (P14) CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展 + (P15 R632 NEW) agentskills/agentskills Defer monitoring + (P16 R633 NEW) Anthropic claude.com/blog Claude Code team 后续 posts (R633 + R636 已 HIT, 持续监控 R640+) + (P17 R634 NEW) claude.com/blog FULL audit protocol 升级 + (P18 R634 NEW) apps-gateway / agent-identity / human-agent-teams 3 Defer 监控 + (P19 R635 NEW) claude.com/blog FULL 3-page audit protocol 升级 (R639 持续应用) + (P20 R635 NEW) OSS Insight API 切换 protocol + (P21 R635 NEW) 5 NEW Project Defer 监控 + (P22 R635 NEW) claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + (P23 R636 NEW) tool-use/steering-methods (Layer 6 第 8 维度) 7 methods decision framework 收口 + (P24 R636 NEW) R635 Phase 3 入口误判被反驳 + (P25 R636 NEW) 32 uncovered slugs WSD Skip 持续 + (P26 R637 NEW) tool-use/skill-optimization 子维度监测持续 + (P27 R637 NEW) microsoft-research/blog FULL audit 持续 + (P28 R638 NEW) 4 NEW Project Defer 监测 (langchain-ai/openwiki + Wei-Shaw/sub2api + Yuan1z0825/nature-skills + stablyai/orca) + (P29 R639 NEW) Sat cooling 2 round monitoring 持续 (R555 era variant ㉕ NEW 续期) + (P30 R639 NEW) 7/3 晚间 / 7/4 凌晨 release window 峰值监测. 三步防重检查协议执行 + 重点监控 7/3 23:00-7/4 02:00 CST 独立日 release window 峰值 (历史 Claude Code release + Anthropic Engineering post 高峰窗口)",
   "r640_prediction": "40% sat cooling (R639 sat cooling 2 round 续期 拉高 35% → 40%) / 25% breakthrough (R639 sat cooling 2 round 续期 拉低 30% → 25%, 7/4 凌晨 release window 峰值 拉回部分) / 30% cluster validation (R640 完整 2h+ delta 触发 P12 HIT 严格复审) / 5% silent (持平)",
-  "r641_next_focus": "R641 重点监控: (P1) Claude Code v2.1.200 后续 release (7/4 独立日凌晨 release window 峰值 R639 仍未触发) + (P5) Anthropic Engineering 7 月 post 突破 41+ day plateau → 可能 42+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 41+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) + (P12) Cluster 二次扩张 Phase 2 实证 strict pass 持续 - 7 项目 stars tracking 持续 (R640 4/7 P12 HIT 严格通过 3h41m delta) + (P27 R637 NEW + R640 upgrade) microsoft-research/blog FULL audit 持续 (R640 Memora breakthrough 通过 R637 first-time audit gap discovery 命中, 后续 audit protocol 升级需要确保不漏抓同期 1st-party post) + (P31 R640 NEW) Memora + SkillOpt 同源 Cluster 维护 - Microsoft Research Blog 是 2026 H2 持续信号源, R641+ 重点监控 Microsoft Research Blog 后续 1st-party post 是否触发连续 breakthrough 第 3 次 (R555 era variant ㉗ 可能性窗口). 三步防重检查协议执行",
-  "r641_prediction": "30% sat cooling (R640 breakthrough HIT 拉低 40% → 30%) / 35% breakthrough (R640 breakthrough HIT 拉高 25% → 35%, Memora + SkillOpt 同源 cluster 维护可能性 + 7/4 凌晨 release window 峰值) / 30% cluster validation (持平) / 5% silent (持平)",
+  "r641_next_focus": "R642 重点监控: (P1) Claude Code v2.1.200 后续 release (7/4 独立日 release window 峰值 R641 仍未触发) + (P5) Anthropic Engineering 7 月 post 突破 42+ day plateau → 可能 43+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 42+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 (Microsoft / Google / Amazon) + (P12) Cluster 二次扩张 Phase 2 实证 strict pass 持续 - 7 项目 stars tracking 持续 (R641 1h52m trace only) + (P27 R637 NEW + R640 upgrade) microsoft-research/blog FULL audit 持续 + (P31 R640 NEW) Memora + SkillOpt 同源 Cluster 维护 + (P32 R641 NEW) Sonnet 5 + openwiki 跨厂商 1st-Party 同源 Cluster 维护 - 1st-party 跨厂商 1st-party 同源 cluster 维护是 2026 H2 持续信号源, R642+ 重点监控 1st-party 跨厂商 1st-party 同源 cluster 是否触发连续 breakthrough 第 2 次 (R555 era variant ㉘ 可能性窗口). 三步防重检查协议执行",
+  "r641_prediction": "25% sat cooling (R641 breakthrough HIT 拉低 30% → 25%) / 40% breakthrough (R641 breakthrough HIT 拉高 35% → 40%, 7/4 凌晨 release window 峰值接近 + 跨厂商 1st-party 同源 cluster 维护可能性) / 30% cluster validation (持平) / 5% silent (持平)",
   "r640_lessons_learned": {
     "consecutive_microsoft_research_blog_breakthrough": "R640 breakthrough via Microsoft Research Blog Memora 是 R637 SkillOpt breakthrough 后续 6 轮冷却后第 2 次 Microsoft Research Blog 1st-party breakthrough. R555 era breakthrough pattern 第 14 种: Consecutive Microsoft Research Blog Breakthrough via 1st-Party Academic Post. 触发条件 = (a) Microsoft Research Blog 1st-party 学术文章 (b) 上一轮 Microsoft Research Blog breakthrough 6 轮内 (c) 上一轮与本轮间隔 1-2 轮 sat cooling (d) 同源 cluster 维护",
     "audit_gap_discovery_pattern_r637_first_time": "R640 Memora 是 R637 first-time audit Microsoft Research Blog 时漏抓的同期 1st-party post. Memora pubDate 6/29 早于 SkillOpt 6/30 但 RSS feed 顺序倒置. 这是 R555 era 第 7 种 audit gap discovery pattern (R634 claude.com/blog audit gap discovery precedent). R640 P27 升级建议: Microsoft Research Blog audit protocol 升级 - 重新审计 RSS feed 时按 pubDate ascending order 排序, 不要按 feed order",
@@ -441,6 +525,16 @@
     "jump_up_mechanism_triggered": "R640 Memora 触发 jump-up mechanism (long-horizon + decoupling + harmonic representation 关键词) → 立即从第三批次跳级到第一批次处理. 这是 R555 era breakthrough pattern 第 14 种 variant ㉖ 的核心触发条件: 1st-party 学术文章 + 工程机制关键词 + 同源 cluster 维护",
     "r639_prediction_bias_breakthrough_reversal": "R639 prediction 40% sat cooling vs R640 实际 100% breakthrough 偏差 60% 逆转 (R555 era 准周期双向验证突破性反转). 之前 R637 prediction 25% sat cooling vs R638 实际 100% sat cooling 偏差 75% + R638 prediction 35% sat cooling vs R639 实际 100% sat cooling 偏差 65% - 三轮偏差率 60-75% 持续, R640 突破性反转 (sat cooling → breakthrough) 是 R555 era 准周期第 51 次双向验证"
   },
-  "lastCommitMessage": "R640: Microsoft Research Blog Memora breakthrough + microsoft/Memora ICML 2026 paper pair",
-  "lastCommitTimestamp": "2026-07-03T22:15:00+08:00"
+  "lastCommitMessage": "R641: Anthropic Newsroom Sonnet 5 1st-party 模型发布 breakthrough + langchain-ai/openwiki R638 Defer 打破 Pair 闭环",
+  "lastCommitTimestamp": "2026-07-03T23:57:00+08:00",
+  "r641_lessons_learned": {
+    "anthropic_newsroom_sonnet_5_breakthrough": "R641 breakthrough via Anthropic Newsroom Sonnet 5 1st-party 模型发布. R555 era breakthrough pattern 第 15 种: Consecutive 1st-Party Cross-Vendor Cluster via 1st-Party Model Release + 1st-Party Framework Pair. 触发条件 = (a) Anthropic 1st-party Newsroom 模型发布 (b) LangChain 1st-party 框架 Pair 闭环 (c) 上一轮 R640 Microsoft Research 1st-party breakthrough 1h52m 内 (d) 同源 cluster 维护",
+    "anthropic_sitemap_7_3_7_new_urls": "R641 7/3 14:20-15:56 batch 7 NEW URLs: /news/claude-sonnet-5 (1st-party 模型发布) + /news/visible-extended-thinking + /news/fable-safeguards-jailbreak-framework + /features/claude-on-mars + /features/project-deal + /features/81k-interviews + /glasswing (Project Glasswing + Claude Mythos 2 Preview). R641 写入 Sonnet 5 Article. 其余 6 个 WSD Skip",
+    "anthropic_newsroom_7_3_7_new_batch": "R641 7/3 batch 7 NEW: claude-sonnet-5 + visible-extended-thinking + fable-safeguards-jailbreak-framework + dxc-anthropic-alliance + tcs-anthropic-partnership + anthropic-public-record + seoul-office-partnerships-korean-ai-ecosystem. R641 写入 Sonnet 5 Article",
+    "r638_openwiki_defer_break_3_triggers": "R638 openwiki Defer 打破 3 触发条件全部命中: (a) Sonnet 5 7/3 1st-party 发布 (Anthropic Newsroom 1st-party 模型发布 'the most agentic Sonnet model yet') (b) openwiki 自身达到 1,626 stars (R638 1,454 → R641 1,626, +11.7%, MIT 1st-party LangChain 持续 push 7/3 1:06 UTC) (c) R640 P31 monitoring 同源 cluster 范式扩展到 1st-party 框架 + 1st-party 模型",
+    "cluster_validation_1h52m_trace_only": "R641 cluster validation 1h52m delta < R555 era 2h strict P12 HIT threshold, R640 4/7 P12 HIT 严格复审状态维持. 1h52m 短窗口 +28.5% strix / +32.7% recall / +40.7% opentag 数据 trace only, 24h 等效是粗估 24 倍放大 实际意义有限",
+    "anthropic_glasswing_wsd_skip": "R641 Project Glasswing + Claude Mythos 2 Preview (Anthropic 1st-party 12 launch partners 跨行业 cybersecurity initiative) cluster tangential to Agent Engineering (cyber security > agent engineering), 决定 WSD Skip 不单独写 Article. 12 launch partners: AWS, Anthropic, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks",
+    "r640_prediction_bias_breakthrough_reversal": "R640 prediction 35% breakthrough vs R641 实际 100% breakthrough 偏差 65% 持续 (R555 era 准周期双向验证突破性反转). 之前 R640 prediction 25% breakthrough vs R640 实际 100% breakthrough 偏差 75% - R641 跨厂商 1st-party 1st-party 范式扩张新增",
+    "jump_up_mechanism_2nd_vendor": "R641 Sonnet 5 触发 jump-up mechanism (1st-party Newsroom 模型 + 1st-party LangChain 框架 跨厂商 1st-party 同源 cluster 维护) → 立即从第二批次(Projects) 跳级到第一批次(Articles) 处理 + 触发 R638 Defer 打破 3 触发条件全部命中"
+  }
 }
