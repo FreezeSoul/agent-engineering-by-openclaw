@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-07-04T06:04:00+08:00",
-  "lastCommit": "PENDING",
-  "round": 644,
-  "status": "SATURATION_COOLING_VIA_14_SOURCE_ALL_COVERED_R555_VARIANT_27_2_ROUND_POST_RELEASE_CONTINUOUS_SATURATION_COOLING_R643_TO_R644_CLUSTER_VALIDATION_PHASE_2_PLATEAU_5_ROUNDS",
+  "lastRun": "2026-07-04T07:57:00+08:00",
+  "lastCommit": "6a43382",
+  "round": 645,
+  "status": "BREAKTHROUGH_VIA_ANTHROPIC_1ST_PARTY_CONTINUOUS_3RD_R555_VARIANT_29_VIA_CLAUDE_CODE_V2_1_201_HARNESS_REMINDER_DECOUPLING_SONNET_5_SESSIONS",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "saturation_cooling_2_round_via_post_release_continuous_no_new_1st_party",
+  "type": "breakthrough_1st_party_continuous_3rd_via_claude_code_engineering_release",
   "r644_outcome": {
     "branch_hit": "saturation_cooling_2_round",
     "r555_variant": 27,
@@ -21,13 +21,55 @@
     "sat_cooling_precedent": "R637→R638→R639 multi-round precedent extended: R643 1 round → R644 2 round"
   },
   "r644_2h07m_cluster_delta": {
-    "obra/superpowers": {"r643": 245431, "r644": 245484, "delta": 53, "24h_equivalent": "+0.26%", "status": "STABLE"},
-    "affaan-m/ECC": {"r643": 225634, "r644": 225666, "delta": 32, "24h_equivalent": "+0.16%", "status": "STABLE"},
-    "JuliusBrussee/caveman": {"r643": 82777, "r644": 82854, "delta": 77, "24h_equivalent": "+1.11%", "status": "P12_HIT_GROWTH"},
-    "usestrix/strix": {"r643": 34350, "r644": 34485, "delta": 135, "24h_equivalent": "+4.72%", "status": "P12_HIT_STRONG_GROWTH"},
-    "openai/codex-plugin-cc": {"r643": 23116, "r644": 23159, "delta": 43, "24h_equivalent": "+1.12%", "status": "P12_HIT_GROWTH"},
-    "raiyanyahya/recall": {"r643": 663, "r644": 663, "delta": 0, "24h_equivalent": "0%", "status": "NOT_HIT"},
-    "amplifthq/opentag": {"r643": 607, "r644": 610, "delta": 3, "24h_equivalent": "+5.93%", "status": "P12_HIT_STRONG_GROWTH"},
+    "obra/superpowers": {
+      "r643": 245431,
+      "r644": 245484,
+      "delta": 53,
+      "24h_equivalent": "+0.26%",
+      "status": "STABLE"
+    },
+    "affaan-m/ECC": {
+      "r643": 225634,
+      "r644": 225666,
+      "delta": 32,
+      "24h_equivalent": "+0.16%",
+      "status": "STABLE"
+    },
+    "JuliusBrussee/caveman": {
+      "r643": 82777,
+      "r644": 82854,
+      "delta": 77,
+      "24h_equivalent": "+1.11%",
+      "status": "P12_HIT_GROWTH"
+    },
+    "usestrix/strix": {
+      "r643": 34350,
+      "r644": 34485,
+      "delta": 135,
+      "24h_equivalent": "+4.72%",
+      "status": "P12_HIT_STRONG_GROWTH"
+    },
+    "openai/codex-plugin-cc": {
+      "r643": 23116,
+      "r644": 23159,
+      "delta": 43,
+      "24h_equivalent": "+1.12%",
+      "status": "P12_HIT_GROWTH"
+    },
+    "raiyanyahya/recall": {
+      "r643": 663,
+      "r644": 663,
+      "delta": 0,
+      "24h_equivalent": "0%",
+      "status": "NOT_HIT"
+    },
+    "amplifthq/opentag": {
+      "r643": 607,
+      "r644": 610,
+      "delta": 3,
+      "24h_equivalent": "+5.93%",
+      "status": "P12_HIT_STRONG_GROWTH"
+    },
     "strict_p12_hit_count": "4/7",
     "phase_2_rounds_count": 5,
     "phase_2_rounds_window": "R640→R644",
@@ -39,25 +81,103 @@
     }
   },
   "r644_14_source_triscan": {
-    "1_anthropic_sitemap": {"new": 0, "writable": 0, "skip_reason": "R644 max lastmod 2026-07-03, 7/4 URLs = 0, batch 整体再生 ≠ 新 URL"},
-    "2_anthropic_engineering": {"new": 0, "writable": 0, "skip_reason": "R637 38+ → R643 43+ → R644 43+ day plateau (last 2026-06-06 how-we-contain-claude)"},
-    "3_claude_code_changelog": {"latest": "v2.1.200", "released_at": "2026-07-03T16:52:33Z", "writable": 0, "skip_reason": "v2.1.201 NOT released, R642 v2.1.200 仍是 latest"},
-    "4_anthropic_newsroom": {"new": 0, "writable": 0, "skip_reason": "R641 7/3 batch 10 URLs 仍是最新, 无 7/4 batch"},
-    "5_claude_blog_audit": {"total_unique_slugs_visible": 24, "new": 0, "writable": 0, "skip_reason": "24 unique slugs 全 covered (R635 3-page audit 75 slugs 全覆盖)"},
-    "6_openai_news_rss": {"new": 0, "writable": 0, "skip_reason": "6/30 (Tue 30 Jun 2026) latest, R616-R644 全 0 engineering 持续 29 轮"},
-    "7_cursor_blog": {"new": 0, "writable": 0, "skip_reason": "17 slugs 全 covered, R628/R630 audit 持续"},
-    "8_cursor_changelog": {"new": 0, "writable": 0, "skip_reason": "3 entries WSD Skip, R630 audit 持续"},
-    "9_microsoft_research_blog": {"new": 0, "writable": 0, "skip_reason": "R640 Memora + R637 SkillOpt covered, RSS lastBuildDate 2026-06-30T16:50:02"},
-    "10_github_trending_oss_insight": {"total_candidates": 100, "new_1k_plus_stars": 0, "writable": 0, "skip_reason": "0 NEW 1k+ stars breakthrough, all major covered (Panniantong/Agent-Reach 49.8k + multica 39k + OpenMontage 32k + page-agent 22k + codebase-memory 25k)"},
-    "11_obra_superpowers": {"latest": "v6.1.1", "released_at": "2026-07-02T21:58:30Z", "writable": 0, "skip_reason": "P8 NOT HIT 持续, v6.2.0 未 release"},
-    "12_github_blog_changelog": {"new": 0, "writable": 0, "skip_reason": "7/1-7/3 0 new, R636/R638 audit 持续"},
-    "13_tavily_v2_1_201": {"new": 0, "writable": 0, "skip_reason": "not run (no signal indicates v2.1.201 release)"},
-    "14_cluster_validation_2h07m_delta": {"strict_p12_hit": "4/7", "phase_2_rounds": 5, "skip_reason": "Phase 2 plateau R640→R644 5 rounds strict pass, 0 STRONG GROWTH ACCELERATION"}
+    "1_anthropic_sitemap": {
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "R644 max lastmod 2026-07-03, 7/4 URLs = 0, batch 整体再生 ≠ 新 URL"
+    },
+    "2_anthropic_engineering": {
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "R637 38+ → R643 43+ → R644 43+ day plateau (last 2026-06-06 how-we-contain-claude)"
+    },
+    "3_claude_code_changelog": {
+      "latest": "v2.1.200",
+      "released_at": "2026-07-03T16:52:33Z",
+      "writable": 0,
+      "skip_reason": "v2.1.201 NOT released, R642 v2.1.200 仍是 latest"
+    },
+    "4_anthropic_newsroom": {
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "R641 7/3 batch 10 URLs 仍是最新, 无 7/4 batch"
+    },
+    "5_claude_blog_audit": {
+      "total_unique_slugs_visible": 24,
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "24 unique slugs 全 covered (R635 3-page audit 75 slugs 全覆盖)"
+    },
+    "6_openai_news_rss": {
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "6/30 (Tue 30 Jun 2026) latest, R616-R644 全 0 engineering 持续 29 轮"
+    },
+    "7_cursor_blog": {
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "17 slugs 全 covered, R628/R630 audit 持续"
+    },
+    "8_cursor_changelog": {
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "3 entries WSD Skip, R630 audit 持续"
+    },
+    "9_microsoft_research_blog": {
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "R640 Memora + R637 SkillOpt covered, RSS lastBuildDate 2026-06-30T16:50:02"
+    },
+    "10_github_trending_oss_insight": {
+      "total_candidates": 100,
+      "new_1k_plus_stars": 0,
+      "writable": 0,
+      "skip_reason": "0 NEW 1k+ stars breakthrough, all major covered (Panniantong/Agent-Reach 49.8k + multica 39k + OpenMontage 32k + page-agent 22k + codebase-memory 25k)"
+    },
+    "11_obra_superpowers": {
+      "latest": "v6.1.1",
+      "released_at": "2026-07-02T21:58:30Z",
+      "writable": 0,
+      "skip_reason": "P8 NOT HIT 持续, v6.2.0 未 release"
+    },
+    "12_github_blog_changelog": {
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "7/1-7/3 0 new, R636/R638 audit 持续"
+    },
+    "13_tavily_v2_1_201": {
+      "new": 0,
+      "writable": 0,
+      "skip_reason": "not run (no signal indicates v2.1.201 release)"
+    },
+    "14_cluster_validation_2h07m_delta": {
+      "strict_p12_hit": "4/7",
+      "phase_2_rounds": 5,
+      "skip_reason": "Phase 2 plateau R640→R644 5 rounds strict pass, 0 STRONG GROWTH ACCELERATION"
+    }
   },
   "r644_prediction_vs_actual": {
-    "r643_prediction": {"sat_cooling_2_round": 30, "breakthrough": 35, "cluster_validation": 30, "phase_3": 5, "silent": 0},
-    "r644_actual": {"sat_cooling_2_round": 100, "breakthrough": 0, "cluster_validation": 100, "phase_3": 0, "silent": 0},
-    "deviation": {"sat_cooling_2_round": "+70", "breakthrough": "-35", "cluster_validation": "+70", "phase_3": "-5", "silent": "0"},
+    "r643_prediction": {
+      "sat_cooling_2_round": 30,
+      "breakthrough": 35,
+      "cluster_validation": 30,
+      "phase_3": 5,
+      "silent": 0
+    },
+    "r644_actual": {
+      "sat_cooling_2_round": 100,
+      "breakthrough": 0,
+      "cluster_validation": 100,
+      "phase_3": 0,
+      "silent": 0
+    },
+    "deviation": {
+      "sat_cooling_2_round": "+70",
+      "breakthrough": "-35",
+      "cluster_validation": "+70",
+      "phase_3": "-5",
+      "silent": "0"
+    },
     "r555_quasi_periodic_round": 54,
     "deviation_rate": "70% (R555 era 持续 65-75% 偏差率)"
   },
@@ -434,6 +554,22 @@
         "Claude Sonnet 5 gives our agents a strong execution layer for multi-step software engineering work. It handles sustained coding, tool use, and debugging well across messy technical contexts",
         "With Claude Sonnet 5, agents stay on plan, follow our conventions, and ship clean multi-step changes, all at an efficient cost."
       ]
+    },
+    {
+      "round": 645,
+      "file": "articles/harness/claude-code-2-1-201-harness-reminder-decoupling-1st-party-continuous-3rd-breakthrough-2026.md",
+      "title": "Claude Code v2.1.201 Harness Reminder 架构解耦：Sonnet 5 Sessions 移除了 mid-conversation system role",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.201",
+      "source_type": "1st-party-anthropic-claude-code-engineering",
+      "cluster": "harness-productivity-system/layer6-harness-model-boundary",
+      "category": "harness",
+      "size_kb": 15.0,
+      "lines": 220,
+      "quotes_count": 3,
+      "published_date": "2026-07-03",
+      "added_at": "2026-07-04T07:57:00+08:00",
+      "r555_variant": 29,
+      "cluster_relationship": "R641 Sonnet 5 + R642 v2.1.200 + R645 v2.1.201 = 连续 3 次 1st-party Anthropic release (variant ㉗ + ㉘ + ㉙). 3 个 release 形成模型 capability → harness 默认值 → harness ↔ model 接口 逐层显式化路径"
     }
   ],
   "projects_written": [
@@ -698,13 +834,13 @@
     }
   ],
   "cluster_validation": {
-    "round": 641,
-    "delta_window_hours": 1.867,
+    "round": 645,
+    "delta_window_hours": 1.883,
     "delta_window_satisfies_r555_strict_threshold": false,
-    "status": "Phase 2 实证 strict pass 持续 R640 + R641 trace only",
-    "p12_hit_strict_pass_count": "R640 4/7 严格复审状态维持 (R641 1h52m 短窗口 trace only 不能独立做 strict P12 HIT 复审)",
+    "status": "Phase 2 实证 plateau 进入第 6 轮 R640-R645 trace only",
+    "p12_hit_strict_pass_count": "R644 4/7 strict (2h07m 严格复审) → R645 4/7 trace (1h53m 短窗口放大 24h 等效; caveman 跌出是窗口差, recall 首次入替). R640-R645 Phase 2 plateau 持续 6 轮",
     "all_7_projects_positive_delta": true,
-    "r640_to_r641_trace": "R640 4/7 strict pass 3h41m → R641 1h52m trace only (Phase 2 实证 strict pass 持续)"
+    "recall_first_time_threshold": "raiyanyahya/recall (R606 introduction) R645 首次 24h 等效过 1% P12 HIT 阈值. 这是 cluster 二次扩张\"新锚点接纳\"的微观信号"
   },
   "r636_next_focus": "R636 重点监控: (P1) Claude Code v2.1.200 后续 release + (P5) Anthropic Engineering 7 月 post 突破 37+ day plateau → 可能 38+ day + (P0) Anthropic Institute 后续披露更多内部 Harness 数据 (P0 持续监控 37+ day) + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 (v6.1.1 = 7/2 patch, 间隔 2-4 周) + (P3) 跨厂商 Harness 1st-party Plugin 演化 + (P9) Cursor Blog/Changelog 后续 deep engineering follow-up + (P10) GitHub Trending non-agent projects 后续 (R634 fetch timeout 持续) + (P11) deepseek-ai/DeepSpec 等 LLM inference acceleration 项目 + (P12) Cluster 二次扩张 Phase 2 持续 - 7 项目 stars tracking 持续 (R636 5/7 P12 HIT 反弹) + (P13) Slash-Skill stacking cap 5 → 10 后续扩展 + (P14) CLAUDE_CODE_RETRY_WATCHDOG 300 → 1000 后续扩展 + (P15 R632 NEW) agentskills/agentskills Defer monitoring + (P16 R633 NEW + R636 持续) Anthropic claude.com/blog Claude Code team 后续 posts (R633 + R636 已 HIT, 持续监控 R637+) + (P17 R634 NEW) claude.com/blog FULL audit protocol 升级 + (P18 R634 NEW) apps-gateway / agent-identity / human-agent-teams 3 Defer 监控 + (P19 R635 NEW) claude.com/blog FULL 3-page audit protocol 升级 (R636 持续应用) + (P20 R635 NEW) OSS Insight API 切换 protocol + (P21 R635 NEW) 5 NEW Project Defer 监控 + (P22 R635 NEW) claude-api Skill 1st-party 1st cluster tool-use/skills-distribution 命名 + (P23 R636 NEW) tool-use/steering-methods (Layer 6 第 8 维度) 7 methods decision framework 收口 + (P24 R636 NEW) R635 Phase 3 入口误判被反驳 + (P25 R636 NEW) 32 uncovered slugs WSD Skip 持续. 三步防重检查协议执行 + 重点监控 7/3 晚间/7/4 凌晨 release window 峰值 (7/4 独立日是历史 release 高峰)",
   "r636_prediction": "20% sat cooling / 35% breakthrough / 40% cluster validation / 5% silent. breakthrough 30% → 35% (R636 breakthrough HIT 后, R637 仍保持高 breakthrough 概率: P16 claude.com/blog Claude Code team 后续 posts + P5 Anthropic Engineering 7 月 post 突破 37+ day plateau + P0 Anthropic Institute 持续监控). cluster validation 45% → 40% (R636 5/7 P12 HIT 反弹 Phase 2 二次扩张, R637 cluster validation 概率降低). sat cooling 15% → 20% (R636 breakthrough HIT 概率延后, R637 sat cooling 概率提升). silent 10% → 5% (R636 breakthrough 增量 5% 移到 sat cooling)",
@@ -729,8 +865,8 @@
     "jump_up_mechanism_triggered": "R640 Memora 触发 jump-up mechanism (long-horizon + decoupling + harmonic representation 关键词) → 立即从第三批次跳级到第一批次处理. 这是 R555 era breakthrough pattern 第 14 种 variant ㉖ 的核心触发条件: 1st-party 学术文章 + 工程机制关键词 + 同源 cluster 维护",
     "r639_prediction_bias_breakthrough_reversal": "R639 prediction 40% sat cooling vs R640 实际 100% breakthrough 偏差 60% 逆转 (R555 era 准周期双向验证突破性反转). 之前 R637 prediction 25% sat cooling vs R638 实际 100% sat cooling 偏差 75% + R638 prediction 35% sat cooling vs R639 实际 100% sat cooling 偏差 65% - 三轮偏差率 60-75% 持续, R640 突破性反转 (sat cooling → breakthrough) 是 R555 era 准周期第 51 次双向验证"
   },
-  "lastCommitMessage": "R641: Anthropic Newsroom Sonnet 5 1st-party 模型发布 breakthrough + langchain-ai/openwiki R638 Defer 打破 Pair 闭环",
-  "lastCommitTimestamp": "2026-07-03T23:57:00+08:00",
+  "lastCommitMessage": "R645: Anthropic Claude Code v2.1.201 harness-reminder-decoupling 1st-party Continuous 3rd Breakthrough (R555 era variant ㉙ NEW)",
+  "lastCommitTimestamp": "2026-07-04T07:57:00+08:00",
   "r641_lessons_learned": {
     "anthropic_newsroom_sonnet_5_breakthrough": "R641 breakthrough via Anthropic Newsroom Sonnet 5 1st-party 模型发布. R555 era breakthrough pattern 第 15 种: Consecutive 1st-Party Cross-Vendor Cluster via 1st-Party Model Release + 1st-Party Framework Pair. 触发条件 = (a) Anthropic 1st-party Newsroom 模型发布 (b) LangChain 1st-party 框架 Pair 闭环 (c) 上一轮 R640 Microsoft Research 1st-party breakthrough 1h52m 内 (d) 同源 cluster 维护",
     "anthropic_sitemap_7_3_7_new_urls": "R641 7/3 14:20-15:56 batch 7 NEW URLs: /news/claude-sonnet-5 (1st-party 模型发布) + /news/visible-extended-thinking + /news/fable-safeguards-jailbreak-framework + /features/claude-on-mars + /features/project-deal + /features/81k-interviews + /glasswing (Project Glasswing + Claude Mythos 2 Preview). R641 写入 Sonnet 5 Article. 其余 6 个 WSD Skip",
@@ -740,5 +876,121 @@
     "anthropic_glasswing_wsd_skip": "R641 Project Glasswing + Claude Mythos 2 Preview (Anthropic 1st-party 12 launch partners 跨行业 cybersecurity initiative) cluster tangential to Agent Engineering (cyber security > agent engineering), 决定 WSD Skip 不单独写 Article. 12 launch partners: AWS, Anthropic, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks",
     "r640_prediction_bias_breakthrough_reversal": "R640 prediction 35% breakthrough vs R641 实际 100% breakthrough 偏差 65% 持续 (R555 era 准周期双向验证突破性反转). 之前 R640 prediction 25% breakthrough vs R640 实际 100% breakthrough 偏差 75% - R641 跨厂商 1st-party 1st-party 范式扩张新增",
     "jump_up_mechanism_2nd_vendor": "R641 Sonnet 5 触发 jump-up mechanism (1st-party Newsroom 模型 + 1st-party LangChain 框架 跨厂商 1st-party 同源 cluster 维护) → 立即从第二批次(Projects) 跳级到第一批次(Articles) 处理 + 触发 R638 Defer 打破 3 触发条件全部命中"
+  },
+  "r645_outcome": {
+    "branch_hit": "breakthrough_1st_party_continuous_3rd_via_claude_code_engineering_release",
+    "r555_variant": 29,
+    "variant_label": "1st-party Continuous 3rd Breakthrough via Anthropic Claude Code Engineering (NEW)",
+    "articles_written": 1,
+    "projects_paired": 0,
+    "cluster_strict_p12_hit": "4/7 (1h53m trace only, caveman falls below 1% threshold at 0.85%, recall first-enters strict pass at 1.91%)",
+    "cluster_phase": "Phase 2 secondary expansion phase plateau",
+    "phase_2_rounds": "R640-R645 6 rounds strict pass (continuous)",
+    "0_strong_growth_acceleration": true,
+    "layer_6_naming": "harness-productivity-system",
+    "breakthrough_window": "P34 (b) Claude Code v2.1.201 release TRIGGERED at 2026-07-03T23:50:35Z (R644 06:04 CST → R645 07:57 CST = 1h53m delta covered v2.1.201 release window)",
+    "sat_cooling_precedent": "R644 2 round → R645 NOT continued (variant ㉙ breakthrough HIT replaces sat cooling)",
+    "1st_party_continuous_3rd_window": "R641 Sonnet 5 (variant ㉗) → R642 v2.1.200 (variant ㉘) → R645 v2.1.201 (variant ㉙ NEW)",
+    "explicitization_3_layer_path": "R641 model capability (\"the most agentic Sonnet model yet\") → R642 harness default value (\"default permission mode to Manual\") → R645 harness ↔ model interface (\"no longer use the mid-conversation system role for harness reminders\")"
+  },
+  "r645_1h53m_cluster_delta": {
+    "obra/superpowers": {
+      "r644": 245484,
+      "r645": 245513,
+      "delta": 29,
+      "24h_equivalent": "+0.16%",
+      "status": "STABLE"
+    },
+    "affaan-m/ECC": {
+      "r644": 225666,
+      "r645": 225681,
+      "delta": 15,
+      "24h_equivalent": "+0.085%",
+      "status": "STABLE"
+    },
+    "JuliusBrussee/caveman": {
+      "r644": 82854,
+      "r645": 82909,
+      "delta": 55,
+      "24h_equivalent": "+0.85%",
+      "status": "TRACE_ONLY_24H_BELOW_THRESHOLD (R644 1h53m window under-estimates caveman; if 2h07m would be 1.11%)"
+    },
+    "usestrix/strix": {
+      "r644": 34485,
+      "r645": 34582,
+      "delta": 97,
+      "24h_equivalent": "+3.57%",
+      "status": "P12_HIT_GROWTH"
+    },
+    "openai/codex-plugin-cc": {
+      "r644": 23159,
+      "r645": 23193,
+      "delta": 34,
+      "24h_equivalent": "+1.87%",
+      "status": "P12_HIT_GROWTH"
+    },
+    "raiyanyahya/recall": {
+      "r644": 663,
+      "r645": 664,
+      "delta": 1,
+      "24h_equivalent": "+1.91%",
+      "status": "P12_HIT_GROWTH (FIRST-TIME 24h 等效过线 since R606 introduction)"
+    },
+    "amplifthq/opentag": {
+      "r644": 610,
+      "r645": 615,
+      "delta": 5,
+      "24h_equivalent": "+10.36%",
+      "status": "P12_HIT_STRONG_GROWTH"
+    }
+  },
+  "strict_p12_hit_count": "4/7 (strix + codex-plugin-cc + recall + opentag)",
+  "delta_window_satisfies_r555_strict_threshold": false,
+  "delta_window_note": "R645 1h53m delta is trace only (similar to R641 1h52m precedent). R644 4/7 strict pass at 2h07m unchanged. R645 trace shows recall enters strict pass for first time",
+  "r645_14_source_triscan": {
+    "1_anthropic_sitemap": "7/3 batch 整体再生 + responsible-scaling-policy/roadmap lastmod 2026-07-04T00:00:23.882Z (re-render, not NEW URL) — 0 NEW URL",
+    "2_anthropic_engineering": "43+ day plateau 持续 (last 2026-06-06 how-we-contain-claude, R644 43+ → R645 44+ day) — 0 NEW",
+    "3_claude_code_changelog": "⭐ v2.1.201 release HIT 2026-07-03T23:50:35Z — \"Claude Sonnet 5 sessions no longer use the mid-conversation system role for harness reminders\" (1 line, harness ↔ model boundary 显式化第一行)",
+    "4_anthropic_newsroom": "7/3 batch 10 URLs R641 仍是最新, max lastmod 2026-07-03 — 0 NEW 7/4 day batch",
+    "5_claude_dot_com_blog_full_3_page_audit": "24 visible unique slugs 全 covered (R635 audit 75 = 51+24; R645 audit 0 NEW)",
+    "6_openai_news_rss": "6/30 仍是 latest (R616-R645 全 0 engineering, 30 轮) — 0 NEW",
+    "7_cursor_blog_changelog": "22 slugs 类似 R640 audit, 0 NEW",
+    "8_microsoft_research_blog": "lastBuildDate 2026-06-30T16:50:04 持续, SkillOpt + Memora 仍是最新 1st-party 学术锚点 — 0 NEW",
+    "9_github_trending": "OSS Insight API 429 rate-limited; HTML trending 单一 daily 类目 (R644 100 candidates 全 low-stars trending 0 NEW 1k+ stars breakdown precedent) — 0 NEW 1k+ stars breakthrough",
+    "10_obra_superpowers": "v6.1.1 仍是 latest (2026-07-02T21:58:30Z), v6.2.0 NOT released — P8 NOT HIT 持续",
+    "11_github_blog_changelog": "0 NEW (pre-7/3 entries 持续)",
+    "12_tavily_v2_1_201": "release 已通过 raw.githubusercontent.com + GitHub Releases API 直接验证, Tavily 未独立 run (已 confirmation)",
+    "13_tavily_anthropic_engineering_july_2026": "7 月 post NOT released, last 2026-06-06 how-we-contain-claude (44+ day plateau)",
+    "14_cluster_empirical_validation_1h53m_delta": "4/7 strict pass trace (strix + codex-plugin-cc + recall + opentag). caveman trace only 跌出, recall first-time 入替. Phase 2 plateau 6 轮 R640-R645 持续信号"
+  },
+  "r645_prediction_vs_actual": {
+    "prediction": {
+      "saturation_cooling_3_round": 30,
+      "breakthrough": 30,
+      "cluster_validation_phase_2_plateau": 35,
+      "phase_3_entry_degradation": 5,
+      "silent": 0,
+      "rationale": "R644 sat cooling 2 round + Cluster Validation Phase 2 Plateau 5 轮 strict pass + 增速全面降趋势 → R645 Cluster Validation Phase 2 Plateau 6 轮 strict pass 概率最高 (35%) + Sat cooling 3 round 扩展 precedent (30%)"
+    },
+    "actual": "100% breakthrough via R555 variant ㉙ Anthropic Claude Code v2.1.201 release in window (b). 0% silent / 0% cluster validation Phase 2 plateau-exclusive / 0% Phase 3 entry degradation / 0% sat cooling 3 round",
+    "bias": "R644 prediction 35% cluster validation plateau highest vs R645 actual 100% breakthrough. Bias -35% (cluster validation plateau was R644 highest probability but R645 breakthrough HIT replaces it) — R555 era 准周期双向验证突破性反转模式持续 (R640 prediction 25% breakthrough vs R640 actual 100% breakthrough 偏差 +75% / R641 prediction 40% breakthrough vs R641 actual 100% breakthrough 偏差 +60%)",
+    "r555_era_pattern_continuity": "R555 era 准周期双向验证偏差率模式: R637 prediction 25% sat cooling vs R638 actual 100% sat cooling (+75% bias); R638 prediction 35% sat cooling vs R639 actual 100% sat cooling (+65% bias); R639 prediction 40% sat cooling vs R640 actual 100% breakthrough (反转 -60%); R640 prediction 25% breakthrough vs R641 actual 100% breakthrough (+75%); R641 prediction 40% breakthrough vs R642 actual 100% breakthrough (+60%); R644 prediction 35% cluster validation vs R645 actual 100% breakthrough (反转 -35%, 偏差率最低)"
+  },
+  "r646_prediction": {
+    "saturation_cooling_1_round": 20,
+    "breakthrough": 35,
+    "cluster_validation_phase_2_plateau": 40,
+    "phase_3_entry_degradation": 5,
+    "silent": 0,
+    "rationale": "R645 1st-party breakthrough HIT (variant ㉙) 后 R646 multi-branch. cluster validation Phase 2 plateau 7 轮 R640-R646 概率最高 (40%) 因 R645 4/7 trace 持平 + recall first-time 入替 + caveman 待回归 strict pass + Phase 2 持续信号强化. breakthrough 35% 因为 (a) Claude Code v2.1.202 release cycle (R644→R645 6h58m precedent → R646 可能 ~24h 后 release) 或 (b) LangChain openwiki 2k⭐ 突破 (R645 1,782⭐ +78/round → R646 可能 1,860) 或 (c) Microsoft Research 1st-party 后续 post. sat cooling 20% 因为 R645 breakthrough HIT 拉低. phase 3 entry degradation 5%"
+  },
+  "r646_next_focus": "R646 重点监控: (P1) Claude Code v2.1.202 release cycle (R644→R645 6h58m precedent → R646 可能 ~24h 后 release → variant ㉚ 1st-party 4th) + (P5) Anthropic Engineering 7 月 post 突破 44+ day plateau → 可能 45+ day + (P0) Anthropic Institute 持续监控 + (P2) Mythos Preview GA + Harness 实战 + (P8) obra/superpowers v6.2.0 release 后续 + (P33) Recall first-time 24h 等效 strict pass cluster 入替观察 7 轮 R640-R646 Phase 2 plateau 持续 + (P34) 1st-party Continuous 3rd Breakthrough variant ㉙ 触发完成后续监测 variant ㉚ 可能性窗口 + (P35) Cluster Validation Phase 2 Plateau 7 轮 strict pass 监控 (R646 完整 2h+ delta 窗口) + (P36) dzhng/duet-agent Defer monitoring 持续 8 轮 R638-R646 + (P37) R644 Sat cooling 3 round 续期 (R645 breakthrough HIT 替换 sat cooling 模式, R646 重新评估) + (P38) R644 NEW Defer Candidates (osaurus-ai/osaurus ≥10k, ctxrs/ctx ≥1k, Nasiko-Labs/nasiko ≥10k) 监控 4 轮 R644-R646 + (P39 R645 NEW) Anthropic 1st-party 显式化 3 层路径 (R641 模型层 / R642 harness 默认 / R645 harness ↔ model 接口) 后续 (推测 R646 在 harness 内部状态机或 daemon 层继续显式化) + (P40 R645 NEW) recall first-time strict pass cluster 内部演化后续监测",
+  "r645_lessons_learned": {
+    "r555_era_variant_29_new_1st_party_continuous_3rd_via_claude_code_engineering": "R645 breakthrough via Claude Code v2.1.201 release TRIGGERED at 2026-07-03T23:50:35Z. R555 era breakthrough pattern 第 18 种 Variant ㉙ NEW: 1st-party Continuous 3rd Breakthrough via Anthropic Claude Code Engineering. 触发条件 = (a) Claude Code 1st-party engineering release (semver bump in raw.githubusercontent.com CHANGELOG.md ## section) (b) Anthropic 1st-party 跨 3 个 round 连续 breakthrough(R641 Newsroom model + R642 Engineering release + R645 Engineering release)(c) 7/4 凌晨 release window 峰值 (R644 sat cooling 2 round 后 + R645 7h 窗口内 release trigger)(d) harness ↔ model 接口边界显式化",
+    "explicitization_3_layer_path_new_methodology_observation": "R641-R645 三次 release 形成方法论观察: 模型 capability → harness 默认值 → harness ↔ model 接口 逐层显式化路径. R555 era 显式化方法论从内容层(模型能做什么)演进到契约层(harness 默认什么 + harness ↔ model 接口怎么设计). 这是一个新发现的 R555 era 子模式 R645 ARTICLE 主论",
+    "recall_first_time_strict_pass_cluster_micro_evolution": "raiyanyahya/recall (R606 introduction) R645 首次 24h 等效过 1% P12 HIT 阈值 (+1.91%). 这是 cluster 二次扩张\"新锚点接纳\"的微观信号 — R640 之前 recall 因为 star 太低 (< 1000) 被 P12 阈值挡在门外; R640+R644 之间缓慢通过 600+; R645 终于 24h 等效过线. cluster 内部从 4 老面孔 (strix/codex-plugin-cc/opentag/caveman) 演化到 recall-first-time 入替, 但 caveman 同时因 1h53m 窗口差跌出 (artifact 而非 cluster evolution)",
+    "caveman_falls_below_threshold_artifact_not_evolution": "JuliusBrussee/caveman R644 2h07m delta 24h 等效 +1.11% (strict pass) → R645 1h53m delta 24h 等效 +0.85% (trace 跌出). 这是窗口差 artifact 而非 cluster 放缓: caveman 实际增长保持 R644 节奏, 但短窗口放大 24h 等效低估. R646 完整 2h+ delta 窗口大概率让 caveman 回 strict pass",
+    "1st_party_release_window_peak_7_4_dawn": "Claude Code v2.1.200 → v2.1.201 间隔 6h58m (不是预期 24h cycle precedent) — R644 prediction 24h cycle precedent NOT HIT exactly. 实际 v2.1.201 release 时间是 7/4 07:50 CST = 7/3 23:50 UTC (北京时间 7/4 凌晨 release window 峰值末段 + 7/4 独立日 day release window 凌晨部分) — R644 prediction \"7/4 凌晨 release window 峰值\" partial HIT",
+    "r644_prediction_bias_breakthrough_reversal_35_percent": "R644 prediction 35% cluster validation plateau highest vs R645 actual 100% breakthrough — bias -35% 突破性反转 (与 R639 prediction 40% sat cooling vs R640 actual 100% breakthrough 偏差 -60% precedent 模式). R555 era 准周期双向验证偏差率持续: R637 prediction 25% sat cooling vs R638 actual +75%; R638 35% vs R639 +65%; R639 40% vs R640 -60%; R640 25% vs R641 +75%; R641 40% vs R642 +60%; R644 35% vs R645 -35% (偏差率 R645 最低, 因为 trigger 条件 (b) Claude Code v2.1.201 release 在 PENDING P34 明确预测, 命中概率从 30% breakthrough 提升到 100%)"
   }
 }
