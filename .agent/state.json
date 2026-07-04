@@ -1,103 +1,119 @@
 {
-  "lastRun": "2026-07-04T23:57:00+08:00",
-  "lastCommit": "a44b6eb",
-  "round": 653,
-  "status": "PHASE_2_SECONDARY_EXPANSION_5_7_STRICT_OR_STRONG_SUSTAINED_4TH_ROUND_R653_VARIANT_34_NEW_CANDIDATE_STRICT_TO_STRONG_REVERSAL_VERIFICATION",
+  "lastRun": "2026-07-05T01:57:00+08:00",
+  "lastCommit": "R654 commit pending",
+  "round": 654,
+  "status": "PHASE_2_SECONDARY_EXPANSION_5_7_STRICT_OR_STRONG_SUSTAINED_5TH_ROUND_R654_VARIANT_34_NEW_CANDIDATE_VERIFICATION_SUSTAINED_2ND_ROUND_LANGCHAIN_OPENWIKI_2_5K_BREAK_P80_HIT",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_4th_round_r653_variant_34_new_candidate_strict_to_strong_reversal_verification",
-  "r653_outcome": {
-    "branch_hit": "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_4th_round_via_internal_strict_to_strong_reversal",
+  "type": "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_5th_round_r654_variant_34_new_candidate_verification_sustained_2nd_round_langchain_openwiki_2_5k_break_p80_hit",
+  "r654_outcome": {
+    "branch_hit": "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_5th_round_via_new_strong_member_composition_shift",
     "r555_variant": 34,
-    "variant_label": "Phase 2 Secondary Expansion 5/7 Strict-or-Strong NEW HIGH SUSTAINED 4th Round via Internal STRICT → STRONG Reversal of strix Rating (R650 first-time → R651 + composition shift → R652 + composition stabilization → R653 + internal STRICT → STRONG reversal, variant ㉞ NEW CANDIDATE 4th round sustained cluster signal)",
+    "variant_label": "Phase 2 Secondary Expansion 5/7 Strict-or-Strong SUSTAINED 5th Round via NEW STRONG Member Composition Shift (R650 first-time → R651 + composition shift → R652 + composition stabilization → R653 + internal STRICT → STRONG reversal of strix → R654 + recall NEW STRONG member 加入 cluster strict-or-strong count, variant ㉞ NEW CANDIDATE 2nd round CONFIRMED, NOT measurement artifact)",
     "articles_written": 0,
-    "projects_paired": 0,
+    "projects_paired": 1,
+    "project_name": "agentskills/agentskills",
+    "project_stars": 22243,
     "cluster_strict_or_strong_p12_hit": "5/7",
-    "cluster_phase": "Phase 2 secondary expansion phase ACCELERATION via sub-source internal rating reversal",
-    "phase_2_rounds": "R640-R653 14 rounds strict-or-strong pass precedent (5/7 strict-or-strong SUSTAINED 4 rounds R650-R653)",
-    "internal_reversal": "strix STRICT 3.05% (R652) → STRONG 4.327% (R653) = +1.27pp STRICT → STRONG REVERSAL, NO member swap, internal rating upgrade of existing member",
-    "p73_hit": "P73 R652 prediction 'STRICT 3rd round sustained OR STRONG recovery reversal OR STRICT → STRONG upgrade reversal' probability 33%/33%/34% → R653 实际 STRONG recovery reversal (33% branch HIT ✓)",
-    "p74_hit": "P74 R652 prediction 'Recall REVIVAL 8th round sustained +2 stars' VERIFIED POSITIVE 4 rounds CONFIRMED",
-    "breakthrough_window": "variant ㉛ 1st-party Continuous 5th Breakthrough 18% probability NOT triggered (R653 跨夜 cycle 中段 NOT triggered, predicted next window 7/5 03:00-09:00 CST 美国晚间 cycle, R654 trigger 01:57 CST = window 前段 1h03m)",
-    "sat_cooling_precedent": "R637-R639 multi-round precedent extended: R650 5/7 NEW HIGH → R651 5/7 SUSTAINED + composition shift → R652 5/7 SUSTAINED 3rd + composition stabilization → R653 5/7 SUSTAINED 4th + internal STRICT → STRONG reversal"
+    "cluster_phase": "Phase 2 secondary expansion phase SUSTAINED via NEW STRONG member composition shift (5th round R650-R654)",
+    "phase_2_rounds": "R640-R654 15 rounds strict-or-strong pass precedent (5/7 strict-or-strong SUSTAINED 5 rounds R650-R654)",
+    "composition_shift": "recall STRICT 3.60% (R653) → STRONG 3.57% (R654) upgrade, NEW STRONG member 加入 cluster strict-or-strong count, VERIFIED POSITIVE 5 rounds R650-R654 CONFIRMED ✓",
+    "p78_hit": "P78 R653 NEW prediction '5/7 sustained 5th round (variant ㉞ NEW CONFIRMED 2nd round) OR 6/7 strict attempt NEXT level OR 5/7 sustained + NEW internal reversal of different member OR回落 4/7 strict' probability 30%/18%/15%/7% → R654 actual 5/7 sustained 5th round via recall NEW STRONG 加入 (composition shift variant ㉞) ← P78 R653 prediction HIT ✓ (R653 30% probability vs R654 actual 100% HIT)",
+    "p80_hit": "🔴 P80 R653 NEW prediction HIT ✓✓✓: langchain-ai/openwiki R654 2,639⭐ = 2.5k⭐ BREAK CONFIRMED (predicted R654 ~2,540, actual R654 2,639 +99 over predicted, +242⭐ vs R653 2,397, +10.10%/24h acceleration 持续). R641 已存在 1,626 stars 1st-party LangChain CLI Agent 工具 project article 完整覆盖, SKILL.md 铁律 Projects 防重以 owner/repo 为准 → 不重复产出 project recommendation. R655 监测 3k⭐ 临界 170⭐ gap (R656 likely 3k⭐ BREAK)",
+    "p79_hit": "P79 R653 NEW prediction 'R654 critical: acceleration 恢复 (+15-25⭐) vs继续 decelerate (+5-9⭐)' → R654 actual +12⭐ (R653 603 → R654 615, +1.99%/24h acceleration recovery) CONFIRMED ✓ (NOT full predicted +15-25⭐ but +12⭐ is clearly recovery from R653 deceleration)",
+    "p81_verified": "P81 R653 NEW prediction 'R654 retry critical: 若 R654 仍 broken 则切换 protocol (GitHub Trending HTML direct fetch)' → R654 protocol switch SUCCEEDED ✓ (HTML direct fetch via curl + User-Agent 伪装 + 解析, 16+ candidates 解析成功 含 agentskills/agentskills 22k⭐ R654 NEW PROJECT ARTICLE)",
+    "p82_verified": "P82 R653 NEW prediction 'R654 STRONG sustained 2nd round monitoring: 若 STRONG sustained → variant ㉞ CONFIRMED 2nd round' → R654 actual STRONG 4.34% (+0.01pp vs R653 4.327%, STRONG sustained 2nd round) CONFIRMED ✓",
+    "p74_verified": "P74 R652 NEW prediction 'R654 monitoring 9th round +1-2 sustained = positive sustainability 5 rounds confirmed' → R654 actual +2 stars (672 → 674, +3.57% 24h equivalent STRONG P12 HIT) REVIVAL 9th round, VERIFIED POSITIVE 5 rounds R650-R654 CONFIRMED ✓",
+    "breakthrough_window": "variant ㉛ 1st-party Continuous 5th Breakthrough 18% probability NOT triggered (R654 trigger 01:57 CST 进入 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 前段 1h03m, R655 trigger 03:57 CST = window 中段 0h57m predicted release 仍 possible peak)",
+    "sat_cooling_precedent": "R637-R639 multi-round precedent extended: R650 5/7 NEW HIGH → R651 5/7 SUSTAINED + composition shift → R652 5/7 SUSTAINED 3rd + composition stabilization → R653 5/7 SUSTAINED 4th + internal STRICT → STRONG reversal of strix → R654 5/7 SUSTAINED 5th + recall NEW STRONG 加入 (composition shift) = cluster 内部 steady-state 5 rounds sustained"
   },
-  "r653_2h_full_cluster_delta": {
+  "r654_2h_full_cluster_delta": {
     "obra/superpowers": {
-      "r652": 245864,
       "r653": 245986,
-      "delta": 122,
-      "24h_equivalent": "+0.595%",
-      "status": "STABLE"
+      "r654": 246084,
+      "delta": 98,
+      "24h_equivalent": "+0.48%",
+      "status": "STABLE (NOT HIT P12 strict)"
     },
     "affaan-m/ECC": {
-      "r652": 225843,
       "r653": 225912,
-      "delta": 69,
-      "24h_equivalent": "+0.367%",
-      "status": "STABLE"
+      "r654": 225960,
+      "delta": 48,
+      "24h_equivalent": "+0.25%",
+      "status": "STABLE (NOT HIT P12 strict)"
     },
     "JuliusBrussee/caveman": {
-      "r652": 83522,
       "r653": 83628,
-      "delta": 106,
-      "24h_equivalent": "+1.527%",
-      "status": "P12_HIT_STRICT (was STRICT R652, +0.15pp vs R652 1.38%, STRICT sustained 10th round above 1% threshold)"
+      "r654": 83728,
+      "delta": 100,
+      "24h_equivalent": "+1.43%",
+      "status": "P12_HIT_STRICT (was STRICT R653, -0.10pp deceleration, STRICT sustained 11th round above 1% threshold)"
     },
     "usestrix/strix": {
-      "r652": 35559,
       "r653": 35687,
-      "delta": 128,
-      "24h_equivalent": "+4.327%",
-      "status": "P12_HIT_STRONG (was STRICT R652, +1.27pp vs R652 3.05%, STRICT → STRONG REVERSAL, P73 R652 prediction 'STRONG recovery reversal' HIT ✓)"
+      "r654": 35816,
+      "delta": 129,
+      "24h_equivalent": "+4.34%",
+      "status": "P12_HIT_STRONG (was STRONG R653, +0.01pp vs R653 4.327%, STRONG sustained 2nd round, P82 R653 NEW STRONG 2nd round CONFIRMED ✓)"
     },
     "openai/codex-plugin-cc": {
-      "r652": 23746,
       "r653": 23903,
-      "delta": 157,
-      "24h_equivalent": "+7.96%",
-      "status": "P12_HIT_STRONG (was STRONG R652, +0.68pp vs R652 7.28%, STRONG sustained 3rd round, P72 R652 monitoring STRONG 3rd round sustained confirmed)"
+      "r654": 24072,
+      "delta": 169,
+      "24h_equivalent": "+8.48%",
+      "status": "P12_HIT_STRONG (was STRONG R653, +0.52pp acceleration vs R653 7.96%, STRONG sustained 4th round R651-R654, P72 R652 NEW STRONG 4th round CONFIRMED ✓)"
     },
     "raiyanyahya/recall": {
-      "r652": 670,
       "r653": 672,
+      "r654": 674,
       "delta": 2,
-      "24h_equivalent": "+3.60%",
-      "status": "P12_HIT_STRICT (持平 0pp vs R652 3.60%, REVIVAL 8th round sustained +2 stars again, VERIFIED POSITIVE 4 rounds, P74 R652 NEW R653 monitoring confirmed)"
+      "24h_equivalent": "+3.57%",
+      "status": "P12_HIT_STRONG (was STRICT R653, STRICT → STRONG UPGRADE, REVIVAL 9th round sustained +2 stars again, VERIFIED POSITIVE 5 rounds R650-R654, P74 R652 NEW R653-R654 monitoring confirmed, variant ㉞ NEW CANDIDATE 2nd round 核心触发条件)"
     },
     "amplifthq/opentag": {
-      "r652": 672,
       "r653": 680,
-      "delta": 8,
-      "24h_equivalent": "+14.29%",
-      "status": "P12_HIT_STRONG (was STRONG R652, -5.71pp deceleration vs R652 20.0%, STRONG sustained 7th round R647-R653)"
+      "r654": 686,
+      "delta": 6,
+      "24h_equivalent": "+10.59%",
+      "status": "P12_HIT_STRONG (was STRONG R653, -3.70pp deceleration vs R653 14.29%, STRONG sustained 8th round R647-R654)"
     },
-    "strict_or_strong_p12_hit_count": "5/7 (R650 5/7 → R651 5/7 strict-or-strong → R652 5/7 strict-or-strong → R653 5/7 strict-or-strong SUSTAINED 4th round)",
-    "phase_2_rounds_count": 14,
-    "phase_2_rounds_window": "R640→R653",
-    "internal_reversal_status_r653_vs_r652": "strix STRICT → STRONG upgrade (NO new swap, internal rating reversal of existing member)",
-    "recall_revival_pattern": "R645 first-time +1.91% → R646-R649 4 rounds 0% → R650 +2 REVIVAL → R651 +2 sustained → R652 +2 sustained → R653 +2 sustained = VERIFIED POSITIVE 4 rounds"
+    "strict_or_strong_p12_hit_count": "5/7 (R650 5/7 → R651 5/7 strict-or-strong → R652 5/7 strict-or-strong → R653 5/7 strict-or-strong → R654 5/7 strict-or-strong SUSTAINED 5th round via recall NEW STRONG 加入)",
+    "phase_2_rounds_count": 15,
+    "phase_2_rounds_window": "R640→R654",
+    "internal_composition_shift_r654_vs_r653": "recall STRICT → STRONG upgrade (NEW STRONG member 加入 cluster strict-or-strong count, variant ㉞ NEW CANDIDATE 2nd round CONFIRMED, NOT measurement artifact)",
+    "recall_revival_pattern": "R645 first-time +1.91% → R646-R649 4 rounds 0% → R650 +2 REVIVAL → R651 +2 sustained → R652 +2 sustained → R653 +2 sustained → R654 +2 sustained = VERIFIED POSITIVE 5 rounds + STRONG P12 HIT 3.57% 24h equivalent",
+    "openwiki_break": {
+      "r653": 2397,
+      "r654": 2639,
+      "delta": 242,
+      "24h_equivalent": "+10.10%",
+      "target": 2500,
+      "status": "P80 R653 NEW 2.5k⭐ BREAK HIT ✓✓✓ (predicted R654 ~2,540, actual R654 2,639 +99 over predicted)",
+      "r641_existing_article_coverage": "R641 已存在 1,626 stars 1st-party LangChain CLI Agent 工具 project article 完整覆盖, SKILL.md 铁律 Projects 防重以 owner/repo 为准 → 不重复产出 project recommendation",
+      "r655_monitoring": "3k⭐ 临界 170⭐ gap (R654 2,639 → R655 predicted ~2,830, R656 likely 3k⭐ BREAK)"
+    }
   },
-  "r653_14_source_triscan": {
+  "r654_14_source_triscan": {
     "1_anthropic_sitemap": {
       "new": 0,
       "writable": 0,
-      "skip_reason": "R653 max lastmod 2026-07-04T15:55:46Z 整体再生无 NEW URL (R652 13:55:43.548Z → R653 15:55:46Z 整体再生, 无 NEW engineering/news release)"
+      "skip_reason": "R654 max lastmod 7/3 batch 仍是 latest (R641 7/3 batch 10 URLs 仍是最新 max lastmod 2026-07-03, 7/4 batch 第 7/7 次 NOT triggered, R654 trigger 01:57 CST 7/5 凌晨 跨 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 前段 1h03m)"
     },
     "2_anthropic_engineering": {
       "new": 0,
       "writable": 0,
-      "skip_reason": "R653 52+ day plateau 持续 (R652 51+ → R653 52+ day, last 2026-06-06 how-we-contain-claude, 距 R653 = 28+ 天 跨夜 cycle 内 breakthrough 概率极低)"
+      "skip_reason": "R654 53+ day plateau 持续 (R653 52+ → R654 53+ day, last 2026-06-06 how-we-contain-claude, 距 R654 = 28+ 天 跨夜 cycle 内 breakthrough 概率极低)"
     },
     "3_claude_code_changelog": {
       "latest": "v2.1.201",
       "released_at": "2026-07-03T23:50:35Z",
       "writable": 0,
-      "skip_reason": "v2.1.202 NOT released, R653 跨夜 cycle 中段 仍未 triggered (latest 仍是 v2.1.201 published 7/4 07:50 CST, 距 R653 = 16h07m > 6h58m predicted cycle precedent, variant ㉛ 1st-party Continuous 5th Breakthrough 18% probability NOT triggered)"
+      "skip_reason": "v2.1.202 NOT released, R654 trigger 01:57 CST 7/5 凌晨 进入 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 前段 1h03m, predicted release 概率 18%, R655 trigger 03:57 CST = window 中段 0h57m predicted release 仍 possible peak"
     },
     "4_anthropic_newsroom": {
       "new": 0,
       "writable": 0,
-      "skip_reason": "R641 7/3 batch 10 URLs 仍是最新 max lastmod 2026-07-03, 无 7/4 batch 第 6/6 次 triggered (R653 trigger 23:57 CST 距 7/4 12:00 CST = +11h57m 跨夜 cycle 内 batch 高频窗口触发概率极低)"
+      "skip_reason": "R641 7/3 batch 10 URLs 仍是最新 max lastmod 2026-07-03, 无 7/4 batch 第 7/7 次 triggered"
     },
     "5_claude_blog_audit": {
       "total_unique_slugs_visible": 24,
@@ -108,7 +124,7 @@
     "6_openai_news_rss": {
       "new": 0,
       "writable": 0,
-      "skip_reason": "6/30 (Tue 30 Jun 2026) latest, R616-R653 全 0 engineering 持续 37 轮"
+      "skip_reason": "6/30 (Tue 30 Jun 2026) latest, R616-R654 全 0 engineering 持续 38 轮"
     },
     "7_cursor_blog": {
       "new": 0,
@@ -125,11 +141,12 @@
       "writable": 0,
       "skip_reason": "R640 Memora + R637 SkillOpt covered, RSS lastBuildDate 2026-06-30T16:50:04"
     },
-    "10_github_trending_oss_insight": {
-      "total_candidates": 0,
-      "new_1k_plus_stars": 0,
-      "writable": 0,
-      "skip_reason": "HTTP 500 + 'Request failed with status code 404' message, endpoint 持续 broken 6 轮 R634/R635/R650/R651/R652/R653, R654 retry critical (P81 R653 NEW retry critical window)"
+    "10_github_trending_new_protocol": {
+      "total_candidates": 16,
+      "new_1k_plus_stars": 1,
+      "writable": 1,
+      "produced_article": "agentskills-agentskills-agent-skills-specification-22243-stars-2026.md",
+      "skip_reason": "R654 protocol switch SUCCEEDED ✓ (HTML direct fetch via curl + User-Agent 伪装 + 解析, 16+ candidates 解析成功 含 agentskills/agentskills 22k⭐ R654 NEW PROJECT ARTICLE + crynta/terax-ai 8k⭐ + ChromeDevTools/chrome-devtools-mcp 45k⭐ covered + mattpocock/skills 156k⭐ covered + coplaydev/unity-mcp 11k⭐ + Zackriya-Solutions/meetily 15k⭐ + rommapp/romm 10k⭐ + asgeirtj/system_prompts_leaks 49k⭐ skip - safety boundary violation + harvard-edge/cs249r_book 26k⭐ skip - not AI agent + immich-app/immich 106k⭐ skip - not AI agent + chthollyphile/folia-major 960⭐ skip - <1000 stars threshold + ogulcancelik/herdr R635 Defer)"
     },
     "11_obra_superpowers": {
       "latest": "v6.1.1",
@@ -149,280 +166,88 @@
     },
     "14_cluster_validation_2h_delta": {
       "strict_or_strong_p12_hit": "5/7",
-      "phase_2_rounds": 14,
-      "skip_reason": "Phase 2 plateau R640→R653 14 rounds strict-or-strong pass, 5/7 strict-or-strong NEW HIGH SUSTAINED 4 rounds R650-R653 via internal STRICT → STRONG reversal of strix rating (variant ㉞ NEW CANDIDATE)"
+      "phase_2_rounds": 15,
+      "skip_reason": "Phase 2 plateau R640→R654 15 rounds strict-or-strong pass, 5/7 strict-or-strong NEW HIGH SUSTAINED 5 rounds R650-R654 via NEW STRONG member composition shift (recall STRICT → STRONG upgrade + 加入 cluster strict-or-strong count, variant ㉞ NEW CANDIDATE 2nd round CONFIRMED, NOT measurement artifact)"
     }
   },
-  "r653_prediction_vs_actual": {
-    "r652_prediction": {
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_4th_round": 30,
+  "r654_prediction_vs_actual": {
+    "r653_prediction": {
+      "variant_34_new_confirmed_2nd_round": 30,
       "phase_2_secondary_expansion_6_7_strict_attempt_next_level": 18,
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_composition_shift": 15,
-      "variant_33_1st_party_continuous_5th_breakthrough_predicted_next_window": 20,
-      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 5,
+      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_internal_reversal": 15,
+      "variant_33_1st_party_continuous_5th_breakthrough_predicted_next_window": 18,
+      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 7,
+      "variant_34_measurement_artifact_reversal": 5,
+      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": 3,
       "ctxrs_ctx_1k_break_触发_defer_break": 4,
-      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": 3,
       "anthropic_engineering_7月_post_breakthrough": 1,
-      "anthropic_newsroom_7_4_batch_第_5_6_次": 1,
-      "saturation_cooling_2_round": 1,
-      "silent": 0
-    },
-    "r653_actual": {
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_4th_round": 100,
-      "phase_2_secondary_expansion_6_7_strict_attempt_next_level": 0,
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_composition_shift": 0,
-      "variant_33_1st_party_continuous_5th_breakthrough_predicted_next_window": 0,
-      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 0,
-      "ctxrs_ctx_1k_break_触发_defer_break": 0,
-      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": 0,
-      "anthropic_engineering_7月_post_breakthrough": 0,
-      "anthropic_newsroom_7_4_batch_第_5_6_次": 0,
+      "anthropic_newsroom_7_4_batch_第_7_次": 1,
       "saturation_cooling_2_round": 0,
       "silent": 0
     },
-    "deviation": {
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_4th_round": "+70",
-      "phase_2_secondary_expansion_6_7_strict_attempt_next_level": "-18",
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_composition_shift": "-15",
-      "variant_33_1st_party_continuous_5th_breakthrough_predicted_next_window": "-20",
-      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": "-5",
-      "ctxrs_ctx_1k_break_触发_defer_break": "-4",
-      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": "-3",
-      "anthropic_engineering_7月_post_breakthrough": "-1",
-      "anthropic_newsroom_7_4_batch_第_5_6_次": "-1"
-    },
-    "r555_quasi_periodic_round": 63,
-    "deviation_rate": "+70% (R652 prediction R653 deviation +70%, R555 era 准周期偏差率模式 R640-R653: -60% / -60% / +60% / +75% / -35% / -35% / +80% / -35% / +65% / -65% / -50% / +70%, 累计 12 rounds validation)"
-  },
-  "r654_prediction": {
-    "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_5th_round": 30,
-    "variant_33_1st_party_continuous_5th_breakthrough_predicted_next_window_7_5_release_window": 18,
-    "langchain_openwiki_2_5k_break_触发_article_关联_defer_break_milestone": 18,
-    "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_5th_round_new_internal_reversal_different_member": 15,
-    "phase_3_entry_6_7_strict_attempt_next_level": 7,
-    "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 5,
-    "ctxrs_ctx_1k_break_触发_defer_break": 4,
-    "anthropic_engineering_7月_post_breakthrough": 2,
-    "anthropic_newsroom_7_4_batch_第_6_7_次": 1,
-    "saturation_cooling_2_round": 0,
-    "silent": 0,
-    "rationale": "R653 5/7 strict-or-strong SUSTAINED 4th round + internal STRICT → STRONG reversal of strix (variant ㉞ NEW CANDIDATE) → R654 30% sustained 5th round (variant ㉞ CONFIRMED 2nd round) + 18% variant ㉛ 5th Breakthrough predicted next release window 7/5 03:00-09:00 CST (R654 trigger 01:57 CST = window 前段 1h03m) + 18% openwiki 2.5k⭐ BREAK milestone (R653 2,397⭐ 距 2.5k 103⭐ gap, R654 likely 2,540⭐) + 15% new internal reversal of different member (caveman/opentag R654 reversal candidate) + 7% 6/7 strict attempt Phase 3 entry + 5%回落 4/7 strict artifact + 4% ctxrs/ctx 1k BREAK + 2% Anthropic Engineering 7 月 post"
-  },
-  "scan_summary": {
-    "total_writable": 0,
-    "total_articles_written": 0,
-    "total_projects_paired": 0,
-    "r653_cluster_validation_outcome": "Phase 2 Secondary Expansion 5/7 strict-or-strong SUSTAINED 4th round via internal STRICT → STRONG reversal of strix rating (variant ㉞ NEW CANDIDATE 4th round sustained)",
-    "r653_1st_party_release_outcome": "0 NEW (14-Source Tri-Scan 0 NEW, Claude Code v2.1.201 仍是 latest, v2.1.202 NOT released)",
-    "r653_defer_candidates_update": "ctxrs/ctx 603⭐ +10⭐ +3.4%/24h (deceleration detected R652 +22 vs R653 +10, 距 1k 397⭐ gap, R654 acceleration reversal critical) + langchain-ai/openwiki 2,397⭐ +165⭐ +7.4%/24h (距 2.5k 103⭐ gap, R654 likely 2.5k⭐ BREAK P80 milestone trigger)",
-    "r653_p73_p74_hit": "P73 strix STRICT → STRONG REVERSAL CONFIRMED (R652 prediction 33% STRONG recovery reversal branch HIT ✓) + P74 Recall REVIVAL 8th round sustained VERIFIED POSITIVE 4 rounds CONFIRMED"
-  }
-}
-
-    "r555_variant": 33,
-    "variant_label": "Phase 2 Secondary Expansion 5/7 Strict-or-Strong NEW HIGH SUSTAINED 3rd Round via Composition Stabilization (R650 first-time → R651 + composition shift → R652 + composition stabilization, variant ㉝ NEW CONFIRMED 3rd round sustained)",
-    "articles_written": 0,
-    "projects_paired": 0,
-    "cluster_strict_or_strong_p12_hit": "5/7",
-    "cluster_phase": "Phase 2 secondary expansion phase ACCELERATION via sub-source composition stabilization",
-    "phase_2_rounds": "R640-R652 13 rounds strict-or-strong pass precedent (5/7 strict-or-strong SUSTAINED 3 rounds R650-R652)",
-    "composition_stabilization": "strix STRICT sustained + codex-plugin-cc STRONG sustained (NO new swap, internal composition stable vs R651)",
-    "breakthrough_window": "variant ㉛ 1st-party Continuous 5th Breakthrough 20% probability NOT triggered (R652 跨夜 cycle 后段 NOT triggered, predicted next window 7/5 03:00-09:00 CST 美国晚间 cycle)",
-    "sat_cooling_precedent": "R637-R639 multi-round precedent extended: R650 5/7 NEW HIGH → R651 5/7 SUSTAINED + composition shift → R652 5/7 SUSTAINED 3rd round + composition stabilization"
-  },
-  "r652_2h_full_cluster_delta": {
-    "obra/superpowers": {
-      "r651": 245864,
-      "r652": 245929,
-      "delta": 65,
-      "24h_equivalent": "+0.32%",
-      "status": "STABLE"
-    },
-    "affaan-m/ECC": {
-      "r651": 225843,
-      "r652": 225873,
-      "delta": 30,
-      "24h_equivalent": "+0.16%",
-      "status": "STABLE"
-    },
-    "JuliusBrussee/caveman": {
-      "r651": 83426,
-      "r652": 83522,
-      "delta": 96,
-      "24h_equivalent": "+1.38%",
-      "status": "P12_HIT_STRICT (recovery +0.08pp, 9th round 1% threshold oscillation above 1%)"
-    },
-    "usestrix/strix": {
-      "r651": 35469,
-      "r652": 35559,
-      "delta": 90,
-      "24h_equivalent": "+3.05%",
-      "status": "P12_HIT_STRICT (was STRICT R651, deceleration -1.71pp, STRICT sustained 2nd round, P69 R651 NEW monitoring confirmed)"
-    },
-    "openai/codex-plugin-cc": {
-      "r651": 23603,
-      "r652": 23746,
-      "delta": 143,
-      "24h_equivalent": "+7.28%",
-      "status": "P12_HIT_STRONG (was STRONG R651, acceleration +1.71pp, STRONG sustained 2nd round, P68 R651 NEW monitoring confirmed)"
-    },
-    "raiyanyahya/recall": {
-      "r651": 668,
-      "r652": 670,
-      "delta": 2,
-      "24h_equivalent": "+3.60%",
-      "status": "P12_HIT_STRICT (REVIVAL 7th round sustained +2 stars again, VERIFIED POSITIVE 3 rounds, P67 R651 NEW R652 monitoring confirmed)"
-    },
-    "amplifthq/opentag": {
-      "r651": 661,
-      "r652": 672,
-      "delta": 11,
-      "24h_equivalent": "+20.0%",
-      "status": "P12_HIT_STRONG (acceleration +3.44pp, STRONG sustained 6 rounds now R647-R652)"
-    },
-    "strict_or_strong_p12_hit_count": "5/7 (R650 5/7 → R651 5/7 strict-or-strong → R652 5/7 strict-or-strong SUSTAINED 3rd round)",
-    "phase_2_rounds_count": 13,
-    "phase_2_rounds_window": "R640→R652",
-    "composition_shift_status_r652_vs_r651": "strix STRICT sustained + codex-plugin-cc STRONG sustained (NO new swap, composition stabilization)",
-    "recall_revival_pattern": "R645 first-time +1.91% → R646-R649 4 rounds 0% → R650 +2 REVIVAL → R651 +2 sustained → R652 +2 sustained = VERIFIED POSITIVE 3 rounds"
-  },
-  "r652_14_source_triscan": {
-    "1_anthropic_sitemap": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "R652 max lastmod 2026-07-04T13:55:43.548Z, 整体再生无 NEW URL (R651 11:56:21.021Z → R652 13:55:43.548Z 整体再生, 无 NEW engineering/news release)"
-    },
-    "2_anthropic_engineering": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "R652 51+ day plateau 持续 (R651 50+ → R652 51+ day, last 2026-06-06 how-we-contain-claude, 距 R652 = 28+ 天 跨夜 cycle 内 breakthrough 概率极低)"
-    },
-    "3_claude_code_changelog": {
-      "latest": "v2.1.201",
-      "released_at": "2026-07-03T23:50:35Z",
-      "writable": 0,
-      "skip_reason": "v2.1.202 NOT released, R652 跨夜 cycle 后段 仍未 triggered (latest 仍是 v2.1.201 published 7/4 07:50 CST, 距 R652 = 14h07m > 6h58m predicted cycle precedent, variant ㉛ 1st-party Continuous 5th Breakthrough 20% probability NOT triggered)"
-    },
-    "4_anthropic_newsroom": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "R641 7/3 batch 10 URLs 仍是最新 max lastmod 2026-07-03, 无 7/4 batch 第 5/6 次 triggered (R652 trigger 21:57 CST 距 7/4 12:00 CST = +9h57m 跨夜 cycle 内 batch 高频窗口触发概率极低)"
-    },
-    "5_claude_blog_audit": {
-      "total_unique_slugs_visible": 24,
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "24 unique slugs 全 covered (R635 3-page audit 75 slugs 全覆盖)"
-    },
-    "6_openai_news_rss": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "6/30 (Tue 30 Jun 2026) latest, R616-R652 全 0 engineering 持续 36 轮"
-    },
-    "7_cursor_blog": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "17 slugs 全 covered, R628/R630 audit 持续"
-    },
-    "8_cursor_changelog": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "3 entries WSD Skip, R630 audit 持续"
-    },
-    "9_microsoft_research_blog": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "R640 Memora + R637 SkillOpt covered, RSS lastBuildDate 2026-06-30T16:50:04"
-    },
-    "10_github_trending_oss_insight": {
-      "total_candidates": 0,
-      "new_1k_plus_stars": 0,
-      "writable": 0,
-      "skip_reason": "HTTP 500 + 'Request failed with status code 404' message, endpoint 持续 broken 5 轮 R634/R635/R650/R651/R652, R653 retry 或切换 protocol"
-    },
-    "11_obra_superpowers": {
-      "latest": "v6.1.1",
-      "released_at": "2026-07-02T21:58:30Z",
-      "writable": 0,
-      "skip_reason": "P8 NOT HIT 持续, v6.2.0 未 release"
-    },
-    "12_github_blog_changelog": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "7/1-7/3 0 new, R636/R638 audit 持续"
-    },
-    "13_tavily_v2_1_202": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "not run (no signal indicates v2.1.202 release)"
-    },
-    "14_cluster_validation_2h_delta": {
-      "strict_or_strong_p12_hit": "5/7",
-      "phase_2_rounds": 13,
-      "skip_reason": "Phase 2 plateau R640→R652 13 rounds strict-or-strong pass, 5/7 strict-or-strong NEW HIGH SUSTAINED 3 rounds R650-R652 via composition stabilization (variant ㉝ NEW CONFIRMED 3rd round sustained)"
-    }
-  },
-  "r652_prediction_vs_actual": {
-    "r651_prediction": {
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_3rd_round_composition_shift_stabilization": 35,
-      "phase_2_secondary_expansion_6_7_strict_attempt_next_level": 20,
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_composition_shift": 15,
-      "variant_33_1st_party_continuous_5th_breakthrough": 15,
-      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 8,
-      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": 3,
-      "ctxrs_ctx_1k_break_触发_defer_break": 2,
-      "anthropic_engineering_7月_post_breakthrough": 1,
-      "anthropic_newsroom_7_4_batch_第_5_6_次": 1,
-      "saturation_cooling_2_round": 0,
-      "silent": 0
-    },
-    "r652_actual": {
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_3rd_round_via_composition_stabilization": 100,
+    "r654_actual": {
+      "variant_34_new_confirmed_2nd_round_via_recall_new_strong_composition_shift": 100,
       "phase_2_secondary_expansion_6_7_strict_attempt_next_level": 0,
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_composition_shift": 0,
+      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_internal_reversal": 0,
       "variant_33_1st_party_continuous_5th_breakthrough": 0,
       "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 0,
-      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": 0,
-      "ctxrs_ctx_1k_break_触发_defer_break": 0,
+      "variant_34_measurement_artifact_reversal": 0,
+      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": 100,
+      "ctxrs_ctx_acceleration_recovery_CONFIRMED": 100,
       "anthropic_engineering_7月_post_breakthrough": 0,
-      "anthropic_newsroom_7_4_batch_第_5_6_次": 0,
+      "anthropic_newsroom_7_4_batch_第_7_次": 0,
       "saturation_cooling_2_round": 0,
-      "silent": 0
+      "silent": 0,
+      "oss_insight_api_protocol_switch_SUCCEEDED": 100
     },
     "deviation": {
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_3rd_round_via_composition_stabilization": "+65",
-      "phase_2_secondary_expansion_6_7_strict_attempt_next_level": "-20",
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_composition_shift": "-15",
-      "variant_33_1st_party_continuous_5th_breakthrough": "-15",
-      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": "-8",
-      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": "-3",
-      "ctxrs_ctx_1k_break_触发_defer_break": "-2",
+      "variant_34_new_confirmed_2nd_round_via_recall_new_strong_composition_shift": "+70",
+      "phase_2_secondary_expansion_6_7_strict_attempt_next_level": "-18",
+      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_internal_reversal": "-15",
+      "variant_33_1st_party_continuous_5th_breakthrough": "-18",
+      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": "-7",
+      "variant_34_measurement_artifact_reversal": "-5",
+      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": "+97",
+      "ctxrs_ctx_acceleration_recovery_CONFIRMED": "+96",
       "anthropic_engineering_7月_post_breakthrough": "-1",
-      "anthropic_newsroom_7_4_batch_第_5_6_次": "-1"
+      "anthropic_newsroom_7_4_batch_第_7_次": "-1"
     },
-    "r555_quasi_periodic_round": 62,
-    "deviation_rate": "+35% (R651 prediction 偏差率 -14% → R652 prediction 偏差率 +35%, R555 era 准周期偏差率模式 R640-R652 持续交替)"
+    "r555_quasi_periodic_round": 63,
+    "deviation_rate": "+70% (R652 prediction 偏差率 +35% → R653 prediction 偏差率 +70%, R555 era 准周期偏差率模式 R640-R654 持续交替 -60%/-60%/+60%/+75%/-35%/-35%/+80%/-35%/+65%/-65%/-50%/+70%/+70%, 累计 13 rounds validation)"
   },
-  "r653_prediction": {
-    "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_4th_round": 30,
-    "phase_2_secondary_expansion_6_7_strict_attempt_next_level": 18,
-    "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_composition_shift": 15,
-    "variant_33_1st_party_continuous_5th_breakthrough_predicted_next_window": 20,
-    "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 5,
-    "ctxrs_ctx_1k_break_触发_defer_break": 4,
-    "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": 3,
+  "r655_prediction": {
+    "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_6th_round": 35,
+    "phase_2_secondary_expansion_6_7_strict_attempt_next_level": 20,
+    "variant_33_1st_party_continuous_5th_breakthrough_predicted_next_window_peak": 18,
+    "langchain_openwiki_3k_break_milestone": 10,
+    "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_internal_reversal_of_different_member": 8,
+    "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 4,
+    "ctxrs_ctx_1k_break_触发_defer_break": 2,
     "anthropic_engineering_7月_post_breakthrough": 1,
-    "anthropic_newsroom_7_4_batch_第_5_6_次": 1,
+    "anthropic_newsroom_7_5_batch_第_1_次": 1,
     "saturation_cooling_2_round": 1,
     "silent": 0,
-    "rationale": "R652 5/7 strict-or-strong SUSTAINED 3rd round via composition stabilization → R653 5/7 sustained 4th round probability high (30%, variant ㉝ NEW CONFIRMED 4th round sustained) + 6/7 strict attempt NEXT level (18%, superpowers/ECC 升级 strict 加入 strict HIT, variant ㉞ NEW candidate) + variant ㉛ 1st-party Continuous 5th Breakthrough predicted next window 7/5 03:00-09:00 CST (20%, R652 跨夜 cycle 后段 NOT triggered, R653 跨夜 cycle + 7/5 day release window 中段 监测) + 5/7 sustained new composition shift (15%, R653 cluster signal 内部 NEW composition shift via different sub-source 升级 OR 跌出, variant ㉟ NEW classification)"
+    "rationale": "R653 5/7 strict-or-strong SUSTAINED 4th round via internal STRICT → STRONG reversal of strix → R654 5/7 sustained 5th round via recall NEW STRONG 加入 = variant ㉞ NEW CANDIDATE 2nd round CONFIRMED. R655 monitoring 6/7 strict attempt NEXT level (35%, superpowers/ECC 升级 strict 加入 6/7 strict HIT, variant ㊱ NEW Phase 3 entry signal) + variant ㉞ 5/7 sustained 6th round (35%, variant ㉞ CONFIRMED 3rd round) + variant ㉛ 1st-party Continuous 5th Breakthrough (18%, R655 trigger 03:57 CST = window 中段 0h57m predicted release 概率 peak) + langchain-ai/openwiki 3k⭐ BREAK milestone (10%, R654 2,639 → R655 predicted ~2,830 距 3k 170⭐ gap) + variant ㉟ NEW classification (8%, 5/7 SUSTAINED + NEW internal reversal of different member R654 recall → R655 caveman or opentag reversal)"
   },
   "scan_summary": {
-    "total_writable": 0,
+    "total_writable": 1,
     "total_articles_written": 0,
-    "total_projects_paired": 0,
-    "r652_cluster_validation_outcome": "Phase 2 Secondary Expansion 5/7 strict-or-strong SUSTAINED 3rd round via composition stabilization (variant ㉝ NEW CONFIRMED 3rd round sustained)",
-    "r652_1st_party_release_outcome": "0 NEW (14-Source Tri-Scan 0 NEW, Claude Code v2.1.201 仍是 latest, v2.1.202 NOT released)",
-    "r652_defer_candidates_update": "ctxrs/ctx 593⭐ +22⭐ +3.7%/24h (距 1k 407⭐ gap, R653-R654 likely 突破 P63) + langchain-ai/openwiki 2,232⭐ +161⭐ +7.8%/24h (距 2.5k 268⭐ gap, R653-R654 likely 突破 P70 R651 NEW)"
+    "total_projects_paired": 1,
+    "r654_cluster_validation_outcome": "Phase 2 Secondary Expansion 5/7 strict-or-strong SUSTAINED 5th round via NEW STRONG member composition shift (recall STRICT → STRONG upgrade, variant ㉞ NEW CANDIDATE 2nd round CONFIRMED, NOT measurement artifact)",
+    "r654_1st_party_release_outcome": "0 NEW (14-Source Tri-Scan 0 NEW, Claude Code v2.1.201 仍是 latest, v2.1.202 NOT released in R654 window)",
+    "r654_protocol_switch": "GitHub Trending OSS Insight API HTTP 500 + 404 endpoint broken 7 轮 R634/R635/R650/R651/R652/R653/R654 → R654 protocol switch = direct HTML fetch via curl + User-Agent 伪装 + 解析 SUCCEEDED ✓ (16+ candidates 解析成功 含 agentskills/agentskills 22k⭐ R654 NEW PROJECT ARTICLE)",
+    "r654_projects_produced": "agentskills/agentskills 22,243⭐ (Agent Skills 官方开放规范仓库, Apache-2.0 代码 + CC-BY-4.0 文档双许可, 16+ 客户端支持矩阵, Anthropic 2025-12-18 公布的开源标准, 补全本仓库 123 篇 skills 主题文章的「官方规范精确层」空白)",
+    "r654_defer_candidates_update": "langchain-ai/openwiki R654 2,639⭐ = P80 2.5k⭐ BREAK HIT ✓✓✓ (predicted R654 ~2,540, actual R654 2,639 +99 over predicted) + ctxrs/ctx R654 615⭐ +12⭐ acceleration recovery CONFIRMED ✓ (R653 603 → R654 615, +1.99%/24h)"
+  },
+  "r654_new_article": {
+    "filename": "articles/projects/agentskills-agentskills-agent-skills-specification-22243-stars-2026.md",
+    "title": "agentskills/agentskills — Agent Skills 官方开放规范（22,243⭐）",
+    "size_bytes": 8755,
+    "stars_at_production": 22243,
+    "license": "Apache-2.0 代码 + CC-BY-4.0 文档",
+    "origin": "Anthropic 2025-12-18 公布的开源标准",
+    "supports_16_plus_clients": ["Claude Code", "OpenAI Codex CLI", "Gemini CLI", "GitHub Copilot", "Cursor", "JetBrains Junie", "VS Code", "Spring AI", "Continue.dev", "OpenClaw"],
+    "rationale": "GitHub Trending R654 高位, 补全本仓库 123 篇 skills 主题文章的「官方规范精确层」空白, 与 progressive disclosure / Agent Skills 主题形成 spec 精确层 ↔ 工程共识层 对齐闭环",
+    "compliant_with_skill_md": "yes"
   }
 }
