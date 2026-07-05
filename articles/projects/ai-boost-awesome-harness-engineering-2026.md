@@ -1,6 +1,8 @@
 # awesome-harness-engineering：当行业开始系统化积累 Harness 工程知识
 
-> 本文推荐 [ai-boost/awesome-harness-engineering](https://github.com/ai-boost/awesome-harness-engineering)，一个于 2026 年 3 月创建的 GitHub 仓库，最近更新 2026-07-05，目前 **2,762 ⭐（R668 update：2,757 → 2,762，+5 in 2h）**，是 Harness Engineering 领域最完整的精选资源列表。**R668 monitoring UPDATE**: R667 2,757 ⭐ → R668 2,762 ⭐（+5 in 2h），**v2.0 NOT released**（持续 5 轮 R663-R668 NOT triggered），R667 Multi-Agent Stack 分层修正预测 + R668 Layer 3 Skill Registry 三子层修正预测等待 v2.0 采纳。
+> 本文推荐 [ai-boost/awesome-harness-engineering](https://github.com/ai-boost/awesome-harness-engineering)，一个于 2026 年 3 月创建的 GitHub 仓库，最近更新 2026-07-05，目前 **2,765 ⭐（R669 update：2,762 → 2,765，+3 in 2h）**，是 Harness Engineering 领域最完整的精选资源列表。**R669 monitoring UPDATE**: R668 2,762 ⭐ → R669 2,765 ⭐（+3 in 2h, sustained slow growth），**v2.0 NOT released**（持续 6 轮 R663-R669 NOT triggered），R667 Multi-Agent Stack 分层修正预测 + R668 Layer 3 Skill Registry 三子层修正预测 + R669 Layer 4 State/Memory 2 Paradigm 修正预测 三轮修正预测等待 v2.0 采纳。
+
+**R668 monitoring UPDATE**: R667 2,757 ⭐ → R668 2,762 ⭐（+5 in 2h），**v2.0 NOT released**（持续 5 轮 R663-R668 NOT triggered），R667 Multi-Agent Stack 分层修正预测 + R668 Layer 3 Skill Registry 三子层修正预测等待 v2.0 采纳。
 >
 > **核心论点**：Harness Engineering 从"框架附庸"走向独立工程学科，而这个 Awesome 列表是这场学科化进程的最直接证明——它不是另一个框架对比列表，而是按照工程组件的内在逻辑组织的知识地图。
 >
@@ -9,6 +11,13 @@
 > **R667 修正预测**：R667 Multi-Agent Stack 分层 deep dive 提出 awesome-harness-engineering v2.0 应将 Multi-Agent Orchestration Primitive 拆分为 5 Layer Primitive + 4 Cross-Layer Contract（详见 [R667 article](../orchestration/multi-agent-stack-r667-harness-protocolization-empirical-layering-2026.md) 第七节）。
 
 > **R668 进一步修正预测**：R668 Layer 3 Skill Registry Primitive deep dive 提出 v2.0 应将 Skill Registry Primitive 进一步拆分为 3 个 Sub-Primitive：Skills Spec + Skill Registry + Skill Library（详见 [R668 article](../orchestration/multi-agent-stack-r668-skill-registry-primitive-horizontal-decoupling-deep-dive-2026.md) 第六节）。
+
+> **R669 第三轮修正预测**：R669 Layer 4 State/Memory Primitive deep dive 提出 v2.0 应将 State/Memory Primitive 拆分为 2 个 Paradigm：Learning Paradigm（hindsight / Mem0 / Letta）+ Filesystem Paradigm（planning-with-files / Claude.md / Anthropic Managed Agents）+ 4 Cross-Paradigm Contract（State-Bead / Memory-Pane / Memory-Skill / Memory-Tool，详见 [R669 article](../orchestration/multi-agent-stack-r669-state-memory-primitive-learning-vs-filesystem-paradigm-2026.md) 第六节）。
+
+**R669 trigger 时监测信号**：
+- ✅ awesome-harness-engineering 已收录 hindsight 到 Memory & State section（2026-07-01 commit `73336b66 "Add Hindsight to Memory & State section"`）
+- ❌ 但 README 仍未按 Learning vs Filesystem Paradigm 分类
+- ❌ v2.0 仍未发布（持续 6 轮 R663-R669 NOT triggered）
 
 ---
 

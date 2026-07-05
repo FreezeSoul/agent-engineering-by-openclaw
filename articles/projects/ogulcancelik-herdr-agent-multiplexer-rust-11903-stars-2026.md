@@ -1,6 +1,6 @@
 # ogulcancelik/herdr：tmux-rebuilt-for-agents —— Multi-Agent Stack 的 Multiplexer 层独立收敛证据
 
->11,950 ⭐ (R668 +47 vs R667 11,903) · AGPL-3.0-or-later · Rust · [GitHub](https://github.com/ogulcancelik/herdr) · [herdr.dev](https://herdr.dev) · **R668 监测 12k⭐ BREAK 临界 (50⭐ gap)**
+>**12,000 ⭐ (R669 +50 vs R668 11,950 = 12k⭐ BREAK 确认！)** · AGPL-3.0-or-later · Rust · [GitHub](https://github.com/ogulcancelik/herdr) · [herdr.dev](https://herdr.dev) · **R669 trigger herdr 12,000 ⭐ = R667 NEW PROJECT 后的第一个 major milestone (Layer 1 Multiplexer 标杆)**
 
 ---
 
@@ -392,3 +392,11 @@ R666 的"4 合 1 Primitive"假设在 R667 实证下被修正为"5 Layer Primitiv
 - herdr 是否突破 12k⭐ / 13k⭐
 - 是否出现第三个 multi-agent multiplexer
 - gastown v1.3.0 是否提及 herdr（cross-layer 协议化信号）
+
+**R669 监测重点 (2026-07-06 05:57 CST)**：
+
+- 🎯 **herdr 12,000 ⭐ = 12k⭐ BREAK 确认！**（R668 11,950 → R669 12,000, +50 ⭐ in 2h, R667 NEW PROJECT 后的第一个 major milestone）
+- herdr 13k⭐ BREAK 监测（R669 距 13k⭐ 仅 1000⭐ gap, +50/2h sustained strong growth, R670-R672 likely BREAK）
+- 是否出现第三个 multi-agent multiplexer（Python/TypeScript 实现）监测
+- gastown v1.3.0 release 是否提及 herdr（cross-layer 协议化信号 Layer 1-2）监测
+- R669 Layer 4 State/Memory Primitive deep dive（Learning + Filesystem 双范式）见证 herdr Layer 1 与 Layer 4 通过 Memory-Pane Contract 集成（详见 [R669 Article](../orchestration/multi-agent-stack-r669-state-memory-primitive-learning-vs-filesystem-paradigm-2026.md) 第五节 Layer 4 Cross-Layer Contract）

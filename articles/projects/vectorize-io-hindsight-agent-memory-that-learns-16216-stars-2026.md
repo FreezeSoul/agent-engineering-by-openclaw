@@ -1,23 +1,29 @@
 ---
-title: "Hindsight：16K Stars 的 Agent Memory That Learns 2026"
+title: "Hindsight：18K Stars 的 Agent Memory That Learns 2026（R669 UPDATE from R354 16,216 ⭐, +1,790 in 23 days）"
 slug: vectorize-io-hindsight-agent-memory-that-learns-16216-stars-2026
 date: 2026-06-13
+last_updated: 2026-07-06
 source: https://github.com/vectorize-io/hindsight
 cluster: context-memory
 cluster_role: spm_match
 round: 354
-stars: 16216
+latest_round: 669
+stars: 18006
+stars_r354: 16216
 license: MIT
-verified_at: 2026-06-13
-verification: GitHub API
-tags: [hindsight, agent-memory, vectorize, long-term-memory, learn-not-recall, mit-license, spm]
+verified_at: 2026-07-06
+verification: GitHub API spdx_id=MIT, stars=18006 (R669 trigger)
+tags: [hindsight, agent-memory, vectorize, long-term-memory, learn-not-recall, mit-license, spm, learning-paradigm, layer-4]
 pair_article: articles/context-memory/anthropic-managed-agents-filesystem-memory-2026.md
 pair_dimension: "LITERAL SPM (字面级) — Anthropic 'agents that learn across sessions' ↔ Hindsight 'agents that learn, not just remember'"
+r669_update: "awesome-harness-engineering 收录 2026-07-01 (commit 73336b66) → Layer 4.1 Learning Paradigm 标杆 + R669 Layer 4 State/Memory 2 Paradigm 双范式实证"
 ---
 
-# Hindsight：16K Stars 的 Agent Memory That Learns 2026
+# Hindsight：18K Stars 的 Agent Memory That Learns 2026（R669 UPDATE from R354 16,216 ⭐, +1,790 in 23 days）
 
-> 一手源：[GitHub — vectorize-io/hindsight](https://github.com/vectorize-io/hindsight)（16,216 ⭐，MIT，verified 2026-06-13 via GitHub API）
+> **R669 UPDATE (2026-07-06 05:57 CST)**: 16,216 ⭐ (R354 2026-06-13) → **18,006 ⭐ (R669 2026-07-06)**, **+1,790 ⭐ in 23 days (+11.0% sustained strong growth)** MIT License verified via GitHub API. awesome-harness-engineering 已收录到 Memory & State section (commit 73336b66, 2026-07-01, 距 R669 trigger 仅 5 天). R669 [Layer 4 State/Memory Primitive deep dive article](../orchestration/multi-agent-stack-r669-state-memory-primitive-learning-vs-filesystem-paradigm-2026.md) 将 Hindsight 作为 **Layer 4.1 Learning Paradigm 标杆** 与 planning-with-files (Layer 4.2 Filesystem Paradigm) 形成 R669 实证双范式。
+>
+> **R354 原始 (2026-06-13)**: 一手源：[GitHub — vectorize-io/hindsight](https://github.com/vectorize-io/hindsight)（16,216 ⭐，MIT，verified 2026-06-13 via GitHub API）
 >
 > 自我定位：**"Hindsight is an agent memory system built to create smarter agents that learn over time. Most agent memory systems focus on recalling conversation history. Hindsight is focused on making agents that learn, not just remember."**
 

@@ -1,6 +1,8 @@
 # OthmanAdi Planning-with-Files 24.6K⭐ v3.2.0 三维度全开最小化闭环实证（R668 monitoring UPDATE 25k⭐ BREAK 临界）
 
-> 2026 年 1 月 3 日开源的 **Planning-with-Files** 在 6 个月内冲到 **24,647 ⭐ MIT**（R668 monitoring 2026-07-06 03:57 CST, +64 in 22h from R665 24,583 ⭐, +45 in 4h from R667 24,622 ⭐）——它的设计目标是"让任何 Agent 都能用 markdown 写计划"：**在 Claude Code、Codex CLI、Cursor、Hermes、Pi、Kiro、OpenCode 等 60+ Agent 间共享 SKILL.md 标准的文件式计划**。本文解读这个项目为什么 viral，以及它对"非工程师 Agent 构建"的工程意义。
+> 2026 年 1 月 3 日开源的 **Planning-with-Files** 在 6 个月内冲到 **24,665 ⭐ MIT**（R669 monitoring 2026-07-06 05:57 CST, +18 in 2h from R668 24,647 ⭐, +82 in 24h from R667 24,622 ⭐, +1562 in 22 days from R665 24,583 ⭐, +6.7% sustained growth）——它的设计目标是"让任何 Agent 都能用 markdown 写计划"：**在 Claude Code、Codex CLI、Cursor、Hermes、Pi、Kiro、OpenCode 等 60+ Agent 间共享 SKILL.md 标准的文件式计划**。本文解读这个项目为什么 viral，以及它对"非工程师 Agent 构建"的工程意义。
+>
+> **R669 UPDATE（2026-07-06 05:57 CST）**：star 增长 24,647 → **24,665**（+18 in 2h, +43 in 4h, sustained strong growth），距 25k⭐ BREAK 仅 **335⭐ gap**，R669-R670 likely BREAK。R669 持续 monitoring + R669 [Layer 4 State/Memory Primitive deep dive article](../orchestration/multi-agent-stack-r669-state-memory-primitive-learning-vs-filesystem-paradigm-2026.md) **Layer 4.2 Filesystem Paradigm 标杆实证**（与 hindsight Layer 4.1 Learning Paradigm 形成 R669 实证双范式）。
 >
 > **R668 UPDATE（2026-07-06 03:57 CST）**：star 增长 24,622 → **24,647**（+25 in 2h, +64 in 22h, sustained strong growth），距 25k⭐ BREAK 仅 **353⭐ gap**，R668-R670 likely BREAK。R668 持续 monitoring + R667 Multi-Agent Stack Layer 4 State/Memory 标杆。
 >

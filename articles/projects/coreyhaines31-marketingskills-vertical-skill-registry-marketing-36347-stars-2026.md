@@ -5,7 +5,7 @@
 | 项目 | 值 |
 |------|---|
 | **GitHub** | https://github.com/coreyhaines31/marketingskills |
-| **Stars** | **36,347** ⭐（R668 trigger 2026-07-06） |
+| **Stars** | **36,376** ⭐（R669 trigger 2026-07-06 05:57 CST, +29 in 2h from R668 36,347, sustained strong growth）|
 | **License** | MIT |
 | **Language** | Markdown（SKILL.md files）+ Shell（validation scripts）|
 | **Last Updated** | 2026-07-05T20:46:43Z |
@@ -14,6 +14,7 @@
 | **收录档位** | **GitHub Trending daily（2026-07-06 当日）** |
 | **商业背书** | Corey Haines (Conversion Factory, Magister, Swipe Files) |
 | **R668 关联** | **R668 [Multi-Agent Stack Layer 3 Skill Registry Primitive 深度展开](../orchestration/multi-agent-stack-r668-skill-registry-primitive-horizontal-decoupling-deep-dive-2026.md) 的 Layer 3.3 Skill Library 内容层核心实证** |
+| **R669 关联** | **R669 [Multi-Agent Stack Layer 4 State/Memory Primitive 深度展开](../orchestration/multi-agent-stack-r669-state-memory-primitive-learning-vs-filesystem-paradigm-2026.md) 见证 marketingskills Layer 3.3 通过 Skill-Completion → Markdown-Checklist (Memory-Skill Contract) 与 planning-with-files Layer 4.2 Filesystem Paradigm 集成** |
 
 ---
 
