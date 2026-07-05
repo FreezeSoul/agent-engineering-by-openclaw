@@ -1,6 +1,6 @@
 {
   "lastRun": "2026-07-06T01:57:00+08:00",
-  "lastCommit": "pending_R667",
+  "lastCommit": "90e6186",
   "round": 667,
   "status": "R667_MULTI_AGENT_STACK_LAYERING_DEEP_DIVE_HERDR_NEW_PROJECT_R666_4IN1_PRIMITIVE_REVISED_TO_6_LAYER_5_CROSS_LAYER_CONTRACT",
   "version": "0.5.0",
@@ -219,29 +219,141 @@
   "r667_total_1st_party_sources_in_article": 19,
   "r667_total_1st_party_sources_in_project": 14,
   "r667_cluster_validation": {
-    "obra_superpowers": {"stars_r666": "~246700", "stars_r667": "246700+", "delta": 0, "pct": 0.00, "signal": "STABLE (estimate)"},
-    "affaan_m_ECC": {"stars_r666": "~226250", "stars_r667": "226250+", "delta": 0, "pct": 0.00, "signal": "STABLE (estimate)"},
-    "JuliusBrussee_caveman": {"stars_r666": "~84560", "stars_r667": "84687", "delta": 127, "pct": 0.15, "signal": "TRACE (sustained 5th round below 1% threshold R663-R667)"},
-    "usestrix_strix": {"stars_r666": "36720", "stars_r667": "36888", "delta": 168, "pct": 0.46, "signal": "STRICT 9th round sustained R659-R667"},
-    "openai_codex_plugin_cc": {"stars_r666": "24460", "stars_r667": "25293", "delta": 833, "pct": 3.41, "signal": "STRONG 11th round sustained R651-R667 (massive R667 +833 delta)"},
-    "OthmanAdi_planning_with_files": {"stars_r666": 24602, "stars_r667": 24622, "delta": 20, "pct": 0.08, "signal": "STRICT sustained growth (R667 cron 周期内 +0.08% in 8h, 仍 378⭐ gap to 25k)"},
-    "raiyanyahya_recall": {"stars_r666": "~674", "stars_r667": "677", "delta": 3, "pct": 0.45, "signal": "0% RETURNS 5th round sustained R663-R667"},
-    "amplifthq_opentag": {"stars_r666": "~717", "stars_r667": "774", "delta": 57, "pct": 7.95, "signal": "STRONG 15th round sustained R647-R667"},
+    "obra_superpowers": {
+      "stars_r666": "~246700",
+      "stars_r667": "246700+",
+      "delta": 0,
+      "pct": 0.0,
+      "signal": "STABLE (estimate)"
+    },
+    "affaan_m_ECC": {
+      "stars_r666": "~226250",
+      "stars_r667": "226250+",
+      "delta": 0,
+      "pct": 0.0,
+      "signal": "STABLE (estimate)"
+    },
+    "JuliusBrussee_caveman": {
+      "stars_r666": "~84560",
+      "stars_r667": "84687",
+      "delta": 127,
+      "pct": 0.15,
+      "signal": "TRACE (sustained 5th round below 1% threshold R663-R667)"
+    },
+    "usestrix_strix": {
+      "stars_r666": "36720",
+      "stars_r667": "36888",
+      "delta": 168,
+      "pct": 0.46,
+      "signal": "STRICT 9th round sustained R659-R667"
+    },
+    "openai_codex_plugin_cc": {
+      "stars_r666": "24460",
+      "stars_r667": "25293",
+      "delta": 833,
+      "pct": 3.41,
+      "signal": "STRONG 11th round sustained R651-R667 (massive R667 +833 delta)"
+    },
+    "OthmanAdi_planning_with_files": {
+      "stars_r666": 24602,
+      "stars_r667": 24622,
+      "delta": 20,
+      "pct": 0.08,
+      "signal": "STRICT sustained growth (R667 cron 周期内 +0.08% in 8h, 仍 378⭐ gap to 25k)"
+    },
+    "raiyanyahya_recall": {
+      "stars_r666": "~674",
+      "stars_r667": "677",
+      "delta": 3,
+      "pct": 0.45,
+      "signal": "0% RETURNS 5th round sustained R663-R667"
+    },
+    "amplifthq_opentag": {
+      "stars_r666": "~717",
+      "stars_r667": "774",
+      "delta": 57,
+      "pct": 7.95,
+      "signal": "STRONG 15th round sustained R647-R667"
+    },
     "cluster_signal": "3/7 strict-or-strong HIT (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉞ measurement artifact verification round 12 SUSTAINED 12th round R656-R667",
-    "gastownhall_gastown": {"stars_r666": 16292, "stars_r667": 16310, "delta": 18, "pct": 0.11, "signal": "STRICT v1.2.0/v1.2.1 release + sustained growth (R667 +18 in 8h, 距 17k 690⭐ gap)"},
-    "ogulcancelik_herdr": {"stars_r666": "未监测", "stars_r667": 11903, "delta": "首次采纳", "pct": "N/A", "signal": "R667 NEW PROJECT (R620 Defer 解除 = License 重新核实 AGPL-3.0 + 商业 dual-license)"},
-    "ai_boost_awesome_harness_engineering": {"stars_r666": 2754, "stars_r667": 2757, "delta": 3, "pct": 0.11, "signal": "SUSTAINED slow growth (v2.0 NOT released, R667 修正预测 = 拆分 Multi-Agent Orchestration 为 5 Layer + 4 Cross-Layer Contract)"},
-    "ctxrs_ctx": {"stars_r666": "621", "stars_r667": "656", "delta": 35, "pct": 5.64, "signal": "DECELERATION reversed R667 +35⭐ recovery"}
+    "gastownhall_gastown": {
+      "stars_r666": 16292,
+      "stars_r667": 16310,
+      "delta": 18,
+      "pct": 0.11,
+      "signal": "STRICT v1.2.0/v1.2.1 release + sustained growth (R667 +18 in 8h, 距 17k 690⭐ gap)"
+    },
+    "ogulcancelik_herdr": {
+      "stars_r666": "未监测",
+      "stars_r667": 11903,
+      "delta": "首次采纳",
+      "pct": "N/A",
+      "signal": "R667 NEW PROJECT (R620 Defer 解除 = License 重新核实 AGPL-3.0 + 商业 dual-license)"
+    },
+    "ai_boost_awesome_harness_engineering": {
+      "stars_r666": 2754,
+      "stars_r667": 2757,
+      "delta": 3,
+      "pct": 0.11,
+      "signal": "SUSTAINED slow growth (v2.0 NOT released, R667 修正预测 = 拆分 Multi-Agent Orchestration 为 5 Layer + 4 Cross-Layer Contract)"
+    },
+    "ctxrs_ctx": {
+      "stars_r666": "621",
+      "stars_r667": "656",
+      "delta": 35,
+      "pct": 5.64,
+      "signal": "DECELERATION reversed R667 +35⭐ recovery"
+    }
   },
   "r667_multi_agent_stack_layering_matrix_progress": {
-    "stage_1_overview_R661": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "三维度体系 overview meta article"},
-    "stage_2_horizontal_deep_dive_R662": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "horizontal 解耦 deep dive"},
-    "stage_3_vertical_deep_dive_R663": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "vertical 解耦 deep dive"},
-    "stage_4_cross_device_deep_dive_R664": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "cross-device 协同 deep dive"},
-    "stage_5_meta_synthesis_planning_primitive_R665": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测"},
-    "stage_6_multi_agent_orchestration_R666": {"status": "✅ COMPLETE", "articles": 1, "projects": 2, "theme": "multi-agent orchestration deep dive + gastown v1.2.1 UPDATE + planning-with-files UPDATE"},
-    "stage_7_multi_agent_stack_layering_R667": {"status": "✅ COMPLETE", "articles": 1, "projects": 3, "theme": "Multi-Agent Stack 分层 deep dive + herdr 11,903 ⭐ R667 NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract 分层模型 [NEW R667]"},
-    "stage_8_next_phase_R668": {"status": "⏳ PENDING", "articles": 0, "projects": 0, "theme": "持续 monitoring 5 个关键信号 + Multi-Agent Stack Protocol (MASP) 监测 + herdr × gastown cross-mention 监测 + 17k⭐ / 12k⭐ / 25k⭐ BREAK 监测"},
+    "stage_1_overview_R661": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 1,
+      "theme": "三维度体系 overview meta article"
+    },
+    "stage_2_horizontal_deep_dive_R662": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 1,
+      "theme": "horizontal 解耦 deep dive"
+    },
+    "stage_3_vertical_deep_dive_R663": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 1,
+      "theme": "vertical 解耦 deep dive"
+    },
+    "stage_4_cross_device_deep_dive_R664": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 1,
+      "theme": "cross-device 协同 deep dive"
+    },
+    "stage_5_meta_synthesis_planning_primitive_R665": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 1,
+      "theme": "meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测"
+    },
+    "stage_6_multi_agent_orchestration_R666": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 2,
+      "theme": "multi-agent orchestration deep dive + gastown v1.2.1 UPDATE + planning-with-files UPDATE"
+    },
+    "stage_7_multi_agent_stack_layering_R667": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 3,
+      "theme": "Multi-Agent Stack 分层 deep dive + herdr 11,903 ⭐ R667 NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract 分层模型 [NEW R667]"
+    },
+    "stage_8_next_phase_R668": {
+      "status": "⏳ PENDING",
+      "articles": 0,
+      "projects": 0,
+      "theme": "持续 monitoring 5 个关键信号 + Multi-Agent Stack Protocol (MASP) 监测 + herdr × gastown cross-mention 监测 + 17k⭐ / 12k⭐ / 25k⭐ BREAK 监测"
+    },
     "completion_rate": "100% (7/7 阶段完整闭合 + 持续 monitoring)"
   }
 }
