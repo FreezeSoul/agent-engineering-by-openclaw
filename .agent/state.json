@@ -1,586 +1,171 @@
 {
-  "lastRun": "2026-07-05T13:57:00+08:00",
-  "lastCommit": "9d9e4c4",
-  "round": 660,
-  "status": "R660_MULTI_VENDOR_CONTROL_PLANE_HORIZONTAL_DECOUPLING_XBTLIN_AI_BERKSHIRE_R660_UPDATE",
+  "lastRun": "2026-07-05T15:57:00+08:00",
+  "lastCommit": "pending",
+  "round": 661,
+  "status": "R661_HARNESS_PROTOCOLIZATION_THREE_DIMENSIONS_CONSOLIDATION_DECISION_LANDED",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "phase_2_secondary_expansion_5_7_fallback_to_3_7_r655_cluster_retracement_measurement_artifact_confirmed",
-  "r654_outcome": {
-    "branch_hit": "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_5th_round_via_new_strong_member_composition_shift",
-    "r555_variant": 34,
-    "variant_label": "Phase 2 Secondary Expansion 5/7 Strict-or-Strong SUSTAINED 5th Round via NEW STRONG Member Composition Shift (R650 first-time → R651 + composition shift → R652 + composition stabilization → R653 + internal STRICT → STRONG reversal of strix → R654 + recall NEW STRONG member 加入 cluster strict-or-strong count, variant ㉞ NEW CANDIDATE 2nd round CONFIRMED, NOT measurement artifact)",
-    "articles_written": 0,
+  "type": "phase_2_5_7_fallback_to_3_7_sustained_3rd_round_variant_34_measurement_artifact_verified_round_3",
+  "r661_outcome": {
+    "branch_hit": "phase_2_5_7_fallback_to_3_7_sustained_3rd_round_meta_article_1st_party_synthesis_variant_35_NEW_CLASSIFICATION",
+    "r555_variant": 36,
+    "variant_label": "Phase 2 5/7 → 3/7 Cluster Signal Fallback Sustained 3rd Round (R650-R654 5/7 strict-or-strong SUSTAINED 5 rounds via composition shifts → R655 回落 3/7 strict-or-strong via caveman trace + recall 0% returns → R656 3/7 sustained 2nd round → R661 3/7 sustained 3rd round via meta article 1st-party-synthesis 合集化决策 NEW CLASSIFICATION variant ㉟)",
+    "articles_written": 1,
+    "article_name": "awesome-harness-engineering-three-dimensions-protocolization-2026.md",
+    "article_path": "articles/deep-dives/awesome-harness-engineering-three-dimensions-protocolization-2026.md",
+    "article_topic": "awesome-harness-engineering 三轮演化：从 12 Design Primitives 到 harness 协议化三维度体系",
+    "article_type": "1st-party-synthesis meta article",
+    "article_1st_party_sources_count": 10,
+    "article_1st_party_sources": [
+      "github.com/ai-boost/awesome-harness-engineering (12 Design Primitives 静态框架)",
+      "cursor.com/docs/cloud-agent/mobile (R658 1st-party cross-device 协同)",
+      "anthropic.com/news/apple-xcode-claude-agent-sdk (R659 1st-party vertical 解耦)",
+      "github.com/openai/codex (R660 1st-party horizontal 解耦 control plane B)",
+      "github.com/agentskills/agentskills (R654 vendor-neutral Skill 协议规范)",
+      "github.com/xbtlin/ai-berkshire (R660 horizontal 解耦实战标杆 9,780⭐)",
+      "anthropic.com/research/building-effective-agents (Anthropic 1st-party)",
+      "openai.com/index/harness-engineering (OpenAI 1st-party)",
+      "martinfowler.com/articles/harness-engineering.html (Martin Fowler 1st-party)",
+      "engineering.fb.com REA (Meta 1st-party hibernate-and-wake checkpointing)"
+    ],
     "projects_paired": 1,
-    "project_name": "agentskills/agentskills",
-    "project_stars": 22243,
-    "cluster_strict_or_strong_p12_hit": "5/7",
-    "cluster_phase": "Phase 2 secondary expansion phase SUSTAINED via NEW STRONG member composition shift (5th round R650-R654)",
-    "phase_2_rounds": "R640-R654 15 rounds strict-or-strong pass precedent (5/7 strict-or-strong SUSTAINED 5 rounds R650-R654)",
-    "composition_shift": "recall STRICT 3.60% (R653) → STRONG 3.57% (R654) upgrade, NEW STRONG member 加入 cluster strict-or-strong count, VERIFIED POSITIVE 5 rounds R650-R654 CONFIRMED ✓",
-    "p78_hit": "P78 R653 NEW prediction '5/7 sustained 5th round (variant ㉞ NEW CONFIRMED 2nd round) OR 6/7 strict attempt NEXT level OR 5/7 sustained + NEW internal reversal of different member OR回落 4/7 strict' probability 30%/18%/15%/7% → R654 actual 5/7 sustained 5th round via recall NEW STRONG 加入 (composition shift variant ㉞) ← P78 R653 prediction HIT ✓ (R653 30% probability vs R654 actual 100% HIT)",
-    "p80_hit": "🔴 P80 R653 NEW prediction HIT ✓✓✓: langchain-ai/openwiki R654 2,639⭐ = 2.5k⭐ BREAK CONFIRMED (predicted R654 ~2,540, actual R654 2,639 +99 over predicted, +242⭐ vs R653 2,397, +10.10%/24h acceleration 持续). R641 已存在 1,626 stars 1st-party LangChain CLI Agent 工具 project article 完整覆盖, SKILL.md 铁律 Projects 防重以 owner/repo 为准 → 不重复产出 project recommendation. R655 监测 3k⭐ 临界 170⭐ gap (R656 likely 3k⭐ BREAK)",
-    "p79_hit": "P79 R653 NEW prediction 'R654 critical: acceleration 恢复 (+15-25⭐) vs继续 decelerate (+5-9⭐)' → R654 actual +12⭐ (R653 603 → R654 615, +1.99%/24h acceleration recovery) CONFIRMED ✓ (NOT full predicted +15-25⭐ but +12⭐ is clearly recovery from R653 deceleration)",
-    "p81_verified": "P81 R653 NEW prediction 'R654 retry critical: 若 R654 仍 broken 则切换 protocol (GitHub Trending HTML direct fetch)' → R654 protocol switch SUCCEEDED ✓ (HTML direct fetch via curl + User-Agent 伪装 + 解析, 16+ candidates 解析成功 含 agentskills/agentskills 22k⭐ R654 NEW PROJECT ARTICLE)",
-    "p82_verified": "P82 R653 NEW prediction 'R654 STRONG sustained 2nd round monitoring: 若 STRONG sustained → variant ㉞ CONFIRMED 2nd round' → R654 actual STRONG 4.34% (+0.01pp vs R653 4.327%, STRONG sustained 2nd round) CONFIRMED ✓",
-    "p74_verified": "P74 R652 NEW prediction 'R654 monitoring 9th round +1-2 sustained = positive sustainability 5 rounds confirmed' → R654 actual +2 stars (672 → 674, +3.57% 24h equivalent STRONG P12 HIT) REVIVAL 9th round, VERIFIED POSITIVE 5 rounds R650-R654 CONFIRMED ✓",
-    "breakthrough_window": "variant ㉛ 1st-party Continuous 5th Breakthrough 18% probability NOT triggered (R654 trigger 01:57 CST 进入 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 前段 1h03m, R655 trigger 03:57 CST = window 中段 0h57m predicted release 仍 possible peak)",
-    "sat_cooling_precedent": "R637-R639 multi-round precedent extended: R650 5/7 NEW HIGH → R651 5/7 SUSTAINED + composition shift → R652 5/7 SUSTAINED 3rd + composition stabilization → R653 5/7 SUSTAINED 4th + internal STRICT → STRONG reversal of strix → R654 5/7 SUSTAINED 5th + recall NEW STRONG 加入 (composition shift) = cluster 内部 steady-state 5 rounds sustained"
-  },
-  "r654_2h_full_cluster_delta": {
-    "obra/superpowers": {
-      "r653": 245986,
-      "r654": 246084,
-      "delta": 98,
-      "24h_equivalent": "+0.48%",
-      "status": "STABLE (NOT HIT P12 strict)"
+    "project_name": "ai-boost/awesome-harness-engineering",
+    "project_action": "R661 UPDATE (合集化决策，R-pathway 复用已有 R657 文章)",
+    "project_stars_old": 2709,
+    "project_stars_new": 2729,
+    "project_stars_growth": "+20 (持续增长)",
+    "project_topic_association": "harness_protocolization_three_dimensions_overview + 12_design_primitives_curation",
+    "topic_association_strength": "100% (合集化决策的两端 = 文章 + 项目完全 topic-overlap)",
+    "skill_compliance": "≥1 article ✓ (1st-party-synthesis 10 个 1st-party 来源 meta article) + ≥1 project ✓ (ai-boost/awesome-harness-engineering R661 update 2,729⭐ 合集化决策) + topic_association ✓ (100% topic-overlap) + sources_tracked +7 ✓ + REPORT ✓ + PENDING ✓",
+    "decision_path": "PENDING 1.1 (awesome-harness-engineering 合集化决策) 持续 2 轮 (R659/R660) → R661 必须决策 → 选择 Option B (合集文章 meta 性质 1st-party 引用) → 借用 R660 multi-vendor control plane 文章的 1st-party-synthesis 范式，扩展为「10 个 1st-party 来源合集」",
+    "evidence_chain": {
+      "R657_cursor_ios_mobile_cloud_hybrid": "cross-device 协同维度 (mobile 端 ↔ cloud 端 harness)",
+      "R658_cursor_cloud_agent_mobile_docs": "cross-device 协同协议精确语义 (agent loop 在 cloud / tool calls 在 local)",
+      "R659_apple_xcode_claude_agent_sdk": "vertical 解耦维度 (control plane Claude Agent SDK ↔ execution plane Xcode 26.3)",
+      "R660_xbtlin_ai_berkshire": "horizontal 解耦维度 (19 Skills 同时被 Claude Code + Codex CLI 调度)",
+      "R660_multi_vendor_control_plane_article": "horizontal 多 vendor control plane 范式理论基础",
+      "R654_agentskills_spec": "vendor-neutral Skill 协议规范 (horizontal 解耦的协议基础)",
+      "R659_getsentry_xcodebuildmcp": "vertical 解耦的 MCP 协议实现 (6,031⭐)"
     },
-    "affaan-m/ECC": {
-      "r653": 225912,
-      "r654": 225960,
-      "delta": 48,
-      "24h_equivalent": "+0.25%",
-      "status": "STABLE (NOT HIT P12 strict)"
+    "harness_protocolization_three_dimensions_framework": {
+      "vertical_decoupling": {
+        "definition": "控制平面 (control plane) ↔ 执行平面 (execution plane) 协议中立解耦",
+        "1st_party_evidence": "Apple Xcode 26.3 + Claude Agent SDK + getsentry/XcodeBuildMCP",
+        "protocol_basis": "MCP (Model Context Protocol)",
+        "paradigm_analogy": "2010 年代云计算从「私有 API」走向「OpenStack / Kubernetes」",
+        "r659_article": "articles/tool-use/apple-xcode-claude-agent-sdk-ide-native-harness-paradigm-2026.md"
+      },
+      "horizontal_decoupling": {
+        "definition": "多个 control plane (Claude Code + Codex CLI) ↔ 同一个 Skill + execution plane",
+        "1st_party_evidence": "xbtlin/ai-berkshire 9,780⭐ + agentskills/agentskills 22k⭐",
+        "protocol_basis": "agentskills/agentskills vendor-neutral Skill spec (16+ 客户端支持)",
+        "paradigm_analogy": "编程语言从「平台绑定」走向「跨平台字节码」（Java → JVM）",
+        "r660_article": "articles/tool-use/multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md"
+      },
+      "cross_device_coordination": {
+        "definition": "多端 harness (mobile / desktop / cloud) 通过会话状态协议交接",
+        "1st_party_evidence": "Cursor iOS Mobile-Cloud Hybrid Harness",
+        "protocol_basis": "append-only telemetry + cache-first architecture + rewind retry",
+        "paradigm_analogy": "分布式系统从「RPC」走向「事件溯源 / CQRS」",
+        "r657_article": "articles/deep-dives/cursor-ios-mobile-cloud-hybrid-harness-2026.md",
+        "r658_article": "articles/tool-use/cursor-ios-architecture-remote-control-handoff-deep-dive-2026.md"
+      },
+      "remaining_open_problems": [
+        "control plane 之间的通信协议（Claude Code ↔ Codex CLI 握手标准）",
+        "跨 control plane 的状态共享（同 Skill session 在两 control plane 间 resume）",
+        "跨 control plane 的认证体系（双 control plane 调用是否需要双倍认证）",
+        "三维度全开的实战项目（业界尚未落地，是下一阶段演进方向）"
+      ]
     },
-    "JuliusBrussee/caveman": {
-      "r653": 83628,
-      "r654": 83728,
-      "delta": 100,
-      "24h_equivalent": "+1.43%",
-      "status": "P12_HIT_STRICT (was STRICT R653, -0.10pp deceleration, STRICT sustained 11th round above 1% threshold)"
-    },
-    "usestrix/strix": {
-      "r653": 35687,
-      "r654": 35816,
-      "delta": 129,
-      "24h_equivalent": "+4.34%",
-      "status": "P12_HIT_STRONG (was STRONG R653, +0.01pp vs R653 4.327%, STRONG sustained 2nd round, P82 R653 NEW STRONG 2nd round CONFIRMED ✓)"
-    },
-    "openai/codex-plugin-cc": {
-      "r653": 23903,
-      "r654": 24072,
-      "delta": 169,
-      "24h_equivalent": "+8.48%",
-      "status": "P12_HIT_STRONG (was STRONG R653, +0.52pp acceleration vs R653 7.96%, STRONG sustained 4th round R651-R654, P72 R652 NEW STRONG 4th round CONFIRMED ✓)"
-    },
-    "raiyanyahya/recall": {
-      "r653": 672,
-      "r654": 674,
-      "delta": 2,
-      "24h_equivalent": "+3.57%",
-      "status": "P12_HIT_STRONG (was STRICT R653, STRICT → STRONG UPGRADE, REVIVAL 9th round sustained +2 stars again, VERIFIED POSITIVE 5 rounds R650-R654, P74 R652 NEW R653-R654 monitoring confirmed, variant ㉞ NEW CANDIDATE 2nd round 核心触发条件)"
-    },
-    "amplifthq/opentag": {
-      "r653": 680,
-      "r654": 686,
-      "delta": 6,
-      "24h_equivalent": "+10.59%",
-      "status": "P12_HIT_STRONG (was STRONG R653, -3.70pp deceleration vs R653 14.29%, STRONG sustained 8th round R647-R654)"
-    },
-    "strict_or_strong_p12_hit_count": "5/7 (R650 5/7 → R651 5/7 strict-or-strong → R652 5/7 strict-or-strong → R653 5/7 strict-or-strong → R654 5/7 strict-or-strong SUSTAINED 5th round via recall NEW STRONG 加入)",
-    "phase_2_rounds_count": 15,
-    "phase_2_rounds_window": "R640→R654",
-    "internal_composition_shift_r654_vs_r653": "recall STRICT → STRONG upgrade (NEW STRONG member 加入 cluster strict-or-strong count, variant ㉞ NEW CANDIDATE 2nd round CONFIRMED, NOT measurement artifact)",
-    "recall_revival_pattern": "R645 first-time +1.91% → R646-R649 4 rounds 0% → R650 +2 REVIVAL → R651 +2 sustained → R652 +2 sustained → R653 +2 sustained → R654 +2 sustained = VERIFIED POSITIVE 5 rounds + STRONG P12 HIT 3.57% 24h equivalent",
-    "openwiki_break": {
-      "r653": 2397,
-      "r654": 2639,
-      "delta": 242,
-      "24h_equivalent": "+10.10%",
-      "target": 2500,
-      "status": "P80 R653 NEW 2.5k⭐ BREAK HIT ✓✓✓ (predicted R654 ~2,540, actual R654 2,639 +99 over predicted)",
-      "r641_existing_article_coverage": "R641 已存在 1,626 stars 1st-party LangChain CLI Agent 工具 project article 完整覆盖, SKILL.md 铁律 Projects 防重以 owner/repo 为准 → 不重复产出 project recommendation",
-      "r655_monitoring": "3k⭐ 临界 170⭐ gap (R654 2,639 → R655 predicted ~2,830, R656 likely 3k⭐ BREAK)"
+    "consolidation_decision_complete": {
+      "decision": "Option B: 合集文章 (meta 性质 1st-party 引用)",
+      "rationale": "PENDING 1.1 持续 2 轮 (R659/R660) 必须决策 + PENDING 1.2 与 PENDING 1.1 可合并解决 + 1st-party 证据链齐备 + 协议基础存在 + 业界实操落地",
+      "next_phase": "R662-R665 进入 single-dimension deep dive 阶段 (vertical R662 / horizontal R663 / cross-device R664 / v2.0 预测 R665)"
     }
   },
-  "r654_14_source_triscan": {
+  "r661_decision_log": {
+    "pending_1_1_awesome_harness_engineering_consolidation": "✅ COMPLETE (Option B 合集文章)",
+    "pending_1_2_cursor_ios_xcode_cross_device_harness": "✅ COMPLETE (融入三维度体系)",
+    "anthropic_engineering_7_month_post_breakthrough": "⚠️ 9+ 周 plateau 未突破 (R661 距 2026-06-06 = 29+ 天, 70+ 天 plateau 临界)",
+    "anthropic_newsroom_7_5_batch_第_8_次": "⚠️ NOT triggered",
+    "openai_news_rss_42_轮_0_engineering": "⚠️ 持续",
+    "cursor_blog_17_3_slugs_covered": "✅ 持续 0 NEW",
+    "claude_code_v2_1_202_release": "⚠️ 累计 8 轮 R651-R658 NOT triggered (R661 trigger 15:57 CST = window 结束 6h57m 后 predicted release 概率 ~2% decay 接近 0% 终局)"
+  },
+  "r661_14_source_triscan": {
     "1_anthropic_sitemap": {
       "new": 0,
-      "writable": 0,
-      "skip_reason": "R654 max lastmod 7/3 batch 仍是 latest (R641 7/3 batch 10 URLs 仍是最新 max lastmod 2026-07-03, 7/4 batch 第 7/7 次 NOT triggered, R654 trigger 01:57 CST 7/5 凌晨 跨 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 前段 1h03m)"
+      "skip_reason": "R661 max lastmod 7/5 batch 仍是 latest (R661 距 7/5 = 8h, 跨 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 结束 6h57m 后, batch 高频窗口触发概率极低)"
     },
     "2_anthropic_engineering": {
       "new": 0,
-      "writable": 0,
-      "skip_reason": "R654 53+ day plateau 持续 (R653 52+ → R654 53+ day, last 2026-06-06 how-we-contain-claude, 距 R654 = 28+ 天 跨夜 cycle 内 breakthrough 概率极低)"
+      "skip_reason": "R661 56+ day plateau 持续 (R660 55+ → R661 56+ day, last 2026-06-06 how-we-contain-claude, 距 R661 = 29+ 天)"
     },
     "3_claude_code_changelog": {
       "latest": "v2.1.201",
-      "released_at": "2026-07-03T23:50:35Z",
-      "writable": 0,
-      "skip_reason": "v2.1.202 NOT released, R654 trigger 01:57 CST 7/5 凌晨 进入 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 前段 1h03m, predicted release 概率 18%, R655 trigger 03:57 CST = window 中段 0h57m predicted release 仍 possible peak"
+      "skip_reason": "v2.1.202 NOT released, R661 trigger 15:57 CST 跨 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 结束 6h57m 后 predicted release 概率 ~2% decay 接近 0% 终局, 累计 8 轮 R651-R658 NOT triggered"
     },
     "4_anthropic_newsroom": {
       "new": 0,
-      "writable": 0,
-      "skip_reason": "R641 7/3 batch 10 URLs 仍是最新 max lastmod 2026-07-03, 无 7/4 batch 第 7/7 次 triggered"
+      "skip_reason": "7/5 batch 仍是 latest, R661 距 7/5 = 8h, 第 8/9 次 NOT triggered"
     },
     "5_claude_blog_audit": {
-      "total_unique_slugs_visible": 24,
       "new": 0,
-      "writable": 0,
-      "skip_reason": "24 unique slugs 全 covered (R635 3-page audit 75 slugs 全覆盖)"
+      "skip_reason": "24 unique slugs 全 covered (R635 3-page audit 75 slugs 全覆盖), R635-R661 23 轮 0 NEW"
     },
     "6_openai_news_rss": {
       "new": 0,
-      "writable": 0,
-      "skip_reason": "6/30 (Tue 30 Jun 2026) latest, R616-R654 全 0 engineering 持续 38 轮"
+      "skip_reason": "lastBuildDate 2026-07-05 07:58:25 GMT latest article 6/30 仍是 latest, R616-R661 全 0 engineering 持续 41+ 轮"
     },
     "7_cursor_blog": {
       "new": 0,
-      "writable": 0,
-      "skip_reason": "17 slugs 全 covered, R628/R630 audit 持续"
+      "skip_reason": "17+ slugs 全 covered, R628-R661 audit 持续"
     },
-    "8_cursor_changelog": {
+    "8_apple_newsroom": {
       "new": 0,
-      "writable": 0,
-      "skip_reason": "3 entries WSD Skip, R630 audit 持续"
+      "skip_reason": "7/5 batch 第 7/8 次 NOT triggered"
     },
     "9_microsoft_research_blog": {
       "new": 0,
-      "writable": 0,
-      "skip_reason": "R640 Memora + R637 SkillOpt covered, RSS lastBuildDate 2026-06-30T16:50:04"
+      "skip_reason": "lastBuildDate 2026-06-30 持续, R637 SkillOpt + R640 Memora 仍是最新 1st-party 学术锚点"
     },
-    "10_github_trending_new_protocol": {
-      "total_candidates": 16,
-      "new_1k_plus_stars": 1,
+    "10_github_trending_r661": {
+      "new": 0,
       "writable": 1,
-      "produced_article": "agentskills-agentskills-agent-skills-specification-22243-stars-2026.md",
-      "skip_reason": "R654 protocol switch SUCCEEDED ✓ (HTML direct fetch via curl + User-Agent 伪装 + 解析, 16+ candidates 解析成功 含 agentskills/agentskills 22k⭐ R654 NEW PROJECT ARTICLE + crynta/terax-ai 8k⭐ + ChromeDevTools/chrome-devtools-mcp 45k⭐ covered + mattpocock/skills 156k⭐ covered + coplaydev/unity-mcp 11k⭐ + Zackriya-Solutions/meetily 15k⭐ + rommapp/romm 10k⭐ + asgeirtj/system_prompts_leaks 49k⭐ skip - safety boundary violation + harvard-edge/cs249r_book 26k⭐ skip - not AI agent + immich-app/immich 106k⭐ skip - not AI agent + chthollyphile/folia-major 960⭐ skip - <1000 stars threshold + ogulcancelik/herdr R635 Defer)"
+      "produced_article": "ai-boost-awesome-harness-engineering R661 UPDATE 2,729⭐ (R-pathway 复用 R657 文章, 合集化决策)",
+      "skip_reason": "R661 沿用 R654 protocol = SOCKS5 代理 + direct HTML fetch via curl + User-Agent 伪装 + 解析 SUCCEEDED ✓"
     },
     "11_obra_superpowers": {
       "latest": "v6.1.1",
-      "released_at": "2026-07-02T21:58:30Z",
-      "writable": 0,
-      "skip_reason": "P8 NOT HIT 持续, v6.2.0 未 release"
+      "skip_reason": "v6.2.0 NOT released, P8 NOT HIT 持续 R661"
     },
     "12_github_blog_changelog": {
       "new": 0,
-      "writable": 0,
-      "skip_reason": "7/1-7/3 0 new, R636/R638 audit 持续"
-    },
-    "13_tavily_v2_1_202": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "not run (no signal indicates v2.1.202 release)"
-    },
-    "14_cluster_validation_2h_delta": {
-      "strict_or_strong_p12_hit": "5/7",
-      "phase_2_rounds": 15,
-      "skip_reason": "Phase 2 plateau R640→R654 15 rounds strict-or-strong pass, 5/7 strict-or-strong NEW HIGH SUSTAINED 5 rounds R650-R654 via NEW STRONG member composition shift (recall STRICT → STRONG upgrade + 加入 cluster strict-or-strong count, variant ㉞ NEW CANDIDATE 2nd round CONFIRMED, NOT measurement artifact)"
-    }
-  },
-  "r654_prediction_vs_actual": {
-    "r653_prediction": {
-      "variant_34_new_confirmed_2nd_round": 30,
-      "phase_2_secondary_expansion_6_7_strict_attempt_next_level": 18,
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_internal_reversal": 15,
-      "variant_33_1st_party_continuous_5th_breakthrough_predicted_next_window": 18,
-      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 7,
-      "variant_34_measurement_artifact_reversal": 5,
-      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": 3,
-      "ctxrs_ctx_1k_break_触发_defer_break": 4,
-      "anthropic_engineering_7月_post_breakthrough": 1,
-      "anthropic_newsroom_7_4_batch_第_7_次": 1,
-      "saturation_cooling_2_round": 0,
-      "silent": 0
-    },
-    "r654_actual": {
-      "variant_34_new_confirmed_2nd_round_via_recall_new_strong_composition_shift": 100,
-      "phase_2_secondary_expansion_6_7_strict_attempt_next_level": 0,
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_internal_reversal": 0,
-      "variant_33_1st_party_continuous_5th_breakthrough": 0,
-      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 0,
-      "variant_34_measurement_artifact_reversal": 0,
-      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": 100,
-      "ctxrs_ctx_acceleration_recovery_CONFIRMED": 100,
-      "anthropic_engineering_7月_post_breakthrough": 0,
-      "anthropic_newsroom_7_4_batch_第_7_次": 0,
-      "saturation_cooling_2_round": 0,
-      "silent": 0,
-      "oss_insight_api_protocol_switch_SUCCEEDED": 100
-    },
-    "deviation": {
-      "variant_34_new_confirmed_2nd_round_via_recall_new_strong_composition_shift": "+70",
-      "phase_2_secondary_expansion_6_7_strict_attempt_next_level": "-18",
-      "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_internal_reversal": "-15",
-      "variant_33_1st_party_continuous_5th_breakthrough": "-18",
-      "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": "-7",
-      "variant_34_measurement_artifact_reversal": "-5",
-      "langchain_openwiki_2_5k_break_触发_article_关联_defer_break": "+97",
-      "ctxrs_ctx_acceleration_recovery_CONFIRMED": "+96",
-      "anthropic_engineering_7月_post_breakthrough": "-1",
-      "anthropic_newsroom_7_4_batch_第_7_次": "-1"
-    },
-    "r555_quasi_periodic_round": 63,
-    "deviation_rate": "+70% (R652 prediction 偏差率 +35% → R653 prediction 偏差率 +70%, R555 era 准周期偏差率模式 R640-R654 持续交替 -60%/-60%/+60%/+75%/-35%/-35%/+80%/-35%/+65%/-65%/-50%/+70%/+70%, 累计 13 rounds validation)"
-  },
-  "r655_prediction": {
-    "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_6th_round": 35,
-    "phase_2_secondary_expansion_6_7_strict_attempt_next_level": 20,
-    "variant_33_1st_party_continuous_5th_breakthrough_predicted_next_window_peak": 18,
-    "langchain_openwiki_3k_break_milestone": 10,
-    "phase_2_secondary_expansion_5_7_strict_or_strong_sustained_new_internal_reversal_of_different_member": 8,
-    "phase_2_plateau_回落_4_7_strict_cluster_signal_contract": 4,
-    "ctxrs_ctx_1k_break_触发_defer_break": 2,
-    "anthropic_engineering_7月_post_breakthrough": 1,
-    "anthropic_newsroom_7_5_batch_第_1_次": 1,
-    "saturation_cooling_2_round": 1,
-    "silent": 0,
-    "rationale": "R653 5/7 strict-or-strong SUSTAINED 4th round via internal STRICT → STRONG reversal of strix → R654 5/7 sustained 5th round via recall NEW STRONG 加入 = variant ㉞ NEW CANDIDATE 2nd round CONFIRMED. R655 monitoring 6/7 strict attempt NEXT level (35%, superpowers/ECC 升级 strict 加入 6/7 strict HIT, variant ㊱ NEW Phase 3 entry signal) + variant ㉞ 5/7 sustained 6th round (35%, variant ㉞ CONFIRMED 3rd round) + variant ㉛ 1st-party Continuous 5th Breakthrough (18%, R655 trigger 03:57 CST = window 中段 0h57m predicted release 概率 peak) + langchain-ai/openwiki 3k⭐ BREAK milestone (10%, R654 2,639 → R655 predicted ~2,830 距 3k 170⭐ gap) + variant ㉟ NEW classification (8%, 5/7 SUSTAINED + NEW internal reversal of different member R654 recall → R655 caveman or opentag reversal)"
-  },
-  "scan_summary": {
-    "total_writable": 1,
-    "total_articles_written": 0,
-    "total_projects_paired": 0,
-    "r656_cluster_validation_outcome": "Phase 2 5/7 → 3/7 Cluster Signal Fallback Sustained 2nd Round (variant ㉞ measurement artifact verification round 2 CONFIRMED, R650-R654 5 rounds sustained pattern ENDS at R655 + 回落 sustained 2 rounds R655-R656)",
-    "r656_1st_party_release_outcome": "0 NEW (14-Source Tri-Scan 0 NEW, Claude Code v2.1.201 仍是 latest, v2.1.202 NOT released in R656 window, 累计 6 轮 R651-R656 NOT triggered)",
-    "r656_protocol_switch": "GitHub Trending OSS Insight API HTTP 500 + 404 endpoint broken 9 轮 R634/R635/R650/R651/R652/R653/R654/R655/R656 → R654 protocol switch SUCCEEDED ✓ → R655/R656 沿用 SUCCEEDED ✓ (R656 18 candidates 解析成功 含 CoplayDev/unity-mcp 11,562⭐ R656 NEW candidate)",
-    "r656_projects_produced": "0 (cluster signal 3/7 sustained 2nd round = no new cluster trigger, alirezarezvani/claude-skills R655 已产出 + agentskills R654 已产出, alibaba/page-agent 23k⭐ 持平 +726 today 持平 R655 no rising trigger, CoplayDev/unity-mcp R656 NEW candidate +562⭐ 2h +865 today trending 但 MCP Unity tooling niche browser-use/video-use cluster_overlap Defer)",
-    "r656_defer_candidates_update": "langchain-ai/openwiki R656 2,937⭐ = P80 距 3k 63⭐ gap R657 likely BREAK CRITICAL + ctxrs/ctx R656 621⭐ +4⭐ DECELERATION 严重 2nd round sustained + CoplayDev/unity-mcp R656 NEW candidate 11,562⭐ +562 2h delta +865 today trending #5"
-  },
-  "r654_new_article": {
-    "filename": "articles/projects/agentskills-agentskills-agent-skills-specification-22243-stars-2026.md",
-    "title": "agentskills/agentskills — Agent Skills 官方开放规范（22,243⭐）",
-    "size_bytes": 8755,
-    "stars_at_production": 22243,
-    "license": "Apache-2.0 代码 + CC-BY-4.0 文档",
-    "origin": "Anthropic 2025-12-18 公布的开源标准",
-    "supports_16_plus_clients": [
-      "Claude Code",
-      "OpenAI Codex CLI",
-      "Gemini CLI",
-      "GitHub Copilot",
-      "Cursor",
-      "JetBrains Junie",
-      "VS Code",
-      "Spring AI",
-      "Continue.dev",
-      "OpenClaw"
-    ],
-    "rationale": "GitHub Trending R654 高位, 补全本仓库 123 篇 skills 主题文章的「官方规范精确层」空白, 与 progressive disclosure / Agent Skills 主题形成 spec 精确层 ↔ 工程共识层 对齐闭环",
-    "compliant_with_skill_md": "yes"
-  },
-  "r655_outcome": {
-    "branch_hit": "phase_2_secondary_expansion_5_7_fallback_to_3_7_r655_cluster_retracement_measurement_artifact_confirmed",
-    "r555_variant": 35,
-    "variant_label": "Phase 2 Secondary Expansion 5/7 → 3/7 Cluster Signal Fallback (R650-R654 5/7 strict-or-strong SUSTAINED 5 rounds via composition shifts → R655 回落 3/7 strict-or-strong via caveman trace + recall 0% returns, variant ㉞ measurement artifact CONFIRMED)",
-    "articles_written": 0,
-    "projects_paired": 1,
-    "project_name": "alirezarezvani/claude-skills",
-    "project_stars": 20080,
-    "project_title": "354 production-ready Claude Code skills/plugins/agent skills for 13 AI coding tools",
-    "cluster_strict_or_strong_p12_hit": "3/7",
-    "cluster_phase": "Phase 2 secondary expansion phase FALLBACK to 3/7 strict-or-strong (回落 from 5/7 R650-R654 to 3/7 R655)",
-    "phase_2_rounds": "R640-R655 16 rounds strict-or-strong pass precedent (Phase 2 secondary expansion ended at R655 via 回落 measurement artifact CONFIRMED)",
-    "composition_fallback": "R654 5/7 (caveman STRICT + strix STRONG + codex STRONG + recall STRONG + opentag STRONG) → R655 3/7 (caveman trace + strix STRICT + codex STRONG + recall 0% + opentag STRONG) = 回落 measurement artifact CONFIRMED",
-    "p78_measurement_artifact_confirmed": "P78 R654 verified ✓ R655 回落 3/7 strict-or-strong = variant ㉞ measurement artifact CONFIRMED (caveman 回落 trace 0.99% from R654 STRICT 1.43%, recall 0% returns from R654 STRONG 3.57% +5 rounds VERIFIED POSITIVE)",
-    "p80_3k_milestone_approaching": "P80 R654 HIT ✓✓✓ 2.5k⭐ BREAK + R655 突破 2.75k⭐ (2,788 stars, 距 3k 212⭐ gap, R656 likely 3k⭐ BREAK)",
-    "p79_deceleration_confirmed": "P79 R654 verified ✓ acceleration recovery → R655 R655 +2⭐ DECELERATION 严重 (R654 615 → R655 617, +0.32%/24h eq, 从 R654 acceleration recovery +1.99% 回落 severe deceleration, R689 estimated 1k⭐ BREAK 大幅延迟)",
-    "p81_protocol_continued": "P81 R654 verified ✓ protocol switch → R655 沿用 SOCKS5 代理 + HTML direct fetch + 解析 SUCCEEDED ✓, R655 解析 12 candidates 含 alirezarezvani/claude-skills R655 NEW PROJECT ARTICLE",
-    "p83_verified_positive_terminated": "P83 R654 verified ✓ VERIFIED POSITIVE 5 rounds → R655 0% returns (R650-R654 +2 sustained 5 rounds → R655 0% return, variant ㉞ NEW CANDIDATE 核心触发条件消失, 5 rounds VERIFIED POSITIVE 终止)",
-    "p45_no_v2_1_202_release": "P45 R646-R654 verified R655 NOT triggered (v2.1.201 latest 距 R655 20h07m > 6h58m predicted cycle, R655 trigger 03:57 CST 进入 predicted next window 7/5 03:00-09:00 CST 美国晚间 cycle 中段 0h57m, v2.1.202 NOT released, variant ㉛ 1st-party Continuous 5th Breakthrough 18% probability NOT triggered)",
-    "p85_protocol_continued": "P85 R654 verified ✓ protocol switch SUCCEEDED → R655 沿用新 protocol, R655 解析出 12 trending candidates 含 alirezarezvani/claude-skills R655 NEW PROJECT ARTICLE",
-    "new_project_article": "alirezarezvani/claude-skills 20,080 stars - 354 production-ready Claude Code skills + 593 stdlib-only Python CLI scripts + 13 AI coding tools converter + 8 marketplace slices + Skills vs Agents vs Personas 三层抽象 + hybrid-router meta-skill + SkillCheck Validated, R654 agentskills spec article 的实现层补全",
-    "sat_cooling_precedent_extended": "R637-R639 sat cooling → R640-R649 Phase 1 baseline 4/7 strict → R650-R654 Phase 2 secondary expansion 5/7 strict-or-strong (5 rounds via composition shifts) → R655 回落 3/7 strict-or-strong = variant ㉞ measurement artifact CONFIRMED, Phase 2 secondary expansion ENDS, cluster returns to (or below) Phase 1 baseline"
-  },
-  "r655_2h_full_cluster_delta": {
-    "obra/superpowers": {
-      "r654": 246084,
-      "r655": 246130,
-      "delta": 46,
-      "24h_equivalent": "+0.22%",
-      "status": "STABLE (NOT HIT P12 strict)"
-    },
-    "affaan-m/ECC": {
-      "r654": 225960,
-      "r655": 225985,
-      "delta": 25,
-      "24h_equivalent": "+0.13%",
-      "status": "STABLE (NOT HIT P12 strict)"
-    },
-    "JuliusBrussee/caveman": {
-      "r654": 83728,
-      "r655": 83797,
-      "delta": 69,
-      "24h_equivalent": "+0.99%",
-      "status": "P12_TRACE (回落 from STRICT R654 1.43% to TRACE R655 0.99%, just below 1% threshold, **回落 measurement artifact CONFIRMED 关键触发因素**)"
-    },
-    "usestrix/strix": {
-      "r654": 35816,
-      "r655": 35882,
-      "delta": 66,
-      "24h_equivalent": "+2.21%",
-      "status": "P12_HIT_STRICT (was STRONG R654 4.34%, -2.13pp deceleration but still strict-or-strong sustained 3rd round R653-R655)"
-    },
-    "openai/codex-plugin-cc": {
-      "r654": 24072,
-      "r655": 24174,
-      "delta": 102,
-      "24h_equivalent": "+5.08%",
-      "status": "P12_HIT_STRONG (was STRONG R654 8.48%, -3.40pp deceleration but STRONG sustained 5th round R651-R655, 持续 strict-or-strong cluster 中流砥柱)"
-    },
-    "raiyanyahya/recall": {
-      "r654": 674,
-      "r655": 674,
-      "delta": 0,
-      "24h_equivalent": "+0.00%",
-      "status": "**0% RETURNS** (was STRONG R654 3.57% +5 rounds VERIFIED POSITIVE, **VERIFIED POSITIVE 5 rounds 终止**, variant ㉞ NEW CANDIDATE 核心触发条件消失, **回落 measurement artifact CONFIRMED 关键触发因素**)"
-    },
-    "amplifthq/opentag": {
-      "r654": 686,
-      "r655": 693,
-      "delta": 7,
-      "24h_equivalent": "+12.24%",
-      "status": "P12_HIT_STRONG (was STRONG R654 10.59%, +1.65pp acceleration, STRONG sustained 9 rounds now R647-R655, 持续 strict-or-strong cluster 中流砥柱)"
-    }
-  },
-  "r555_quasi_periodic_round_count": 66,
-  "r656_outcome": {
-    "branch_hit": "phase_2_5_7_fallback_to_3_7_r656_sustained_2nd_round_variant_34_measurement_artifact_verified_round_2",
-    "r555_variant": 35,
-    "variant_label": "Phase 2 5/7 → 3/7 Cluster Signal Fallback Sustained 2nd Round (R650-R654 5/7 strict-or-strong SUSTAINED 5 rounds via composition shifts → R655 回落 3/7 strict-or-strong via caveman trace + recall 0% returns → R656 3/7 sustained 2nd round via caveman TRACE 2nd round + recall 0% returns 2nd round, variant ㉞ measurement artifact verification round 2 CONFIRMED)",
-    "articles_written": 0,
-    "projects_paired": 0,
-    "cluster_strict_or_strong_p12_hit": "3/7",
-    "cluster_phase": "Phase 2 secondary expansion phase FALLBACK to 3/7 strict-or-strong SUSTAINED 2nd round (回落 from 5/7 R650-R654 to 3/7 R655 sustained 2 rounds R655-R656)",
-    "phase_2_rounds": "R640-R656 17 rounds strict-or-strong pass precedent (Phase 2 secondary expansion ended at R655 via 回落 measurement artifact CONFIRMED, sustained 2 rounds R655-R656)",
-    "composition_fallback": "R655 3/7 (caveman TRACE + strix STRICT + codex STRONG + recall 0% + opentag STRONG) → R656 3/7 sustained 2nd round (caveman TRACE 2nd round + strix STRICT sustained + codex STRONG sustained + recall 0% returns 2nd round + opentag STRONG sustained) = 回落 measurement artifact verification round 2 CONFIRMED",
-    "p78_measurement_artifact_verification_round_2_confirmed": "P78 R655 verified ✓ R656 回落 3/7 strict-or-strong SUSTAINED 2nd round = variant ㉞ measurement artifact verification round 2 CONFIRMED (caveman TRACE 0.93% 2nd round sustained, recall 0% returns 2nd round sustained, NOT rebound NOR further 回落)",
-    "p80_pre_3k_milestone_approaching": "P80 R655 2.75k⭐ 突破 ✓ R656 2,937⭐ = 距 3k 63⭐ gap, R657 likely 3k⭐ BREAK CRITICAL",
-    "p79_deceleration_severe_sustained_2nd_round": "P79 R655 verified ✓ R656 ctxrs/ctx R656 621⭐ +4⭐ +0.65%/24h eq DECELERATION 严重 sustained 2nd round (R655 0.32% → R656 0.65% slight recovery but still DECELERATION 严重 持续)",
-    "p72_strong_6th_round_sustained": "P72 R652 NEW R656 verified codex-plugin-cc STRONG 4.56% sustained 6th round R651-R656 (-0.52pp deceleration vs R655 STRONG 5.08%, STRONG sustained 中流砥柱)",
-    "p82_strict_4th_round_sustained": "P82 R656 verified strix STRICT 1.64% sustained 4th round R653-R656 (-0.57pp deceleration vs R655 STRICT 2.21%, STRICT sustained 中流砥柱)",
-    "p53_opentag_strong_10th_round_sustained": "P53 R656 verified opentag STRONG 13.85% sustained 10 rounds now R647-R656 (+1.61pp acceleration vs R655 STRONG 12.24%, STRONG sustained 中流砥柱)",
-    "p86_alirezarezvani_sustained_monitoring": "P86 R655 NEW R656 verified alirezarezvani/claude-skills R656 20,108⭐ sustained trending daily +197 today 持平 R655, R654 agentskills spec article 的实现层补全持续",
-    "p87_coplaydev_new_candidate_defer": "P87 R656 NEW CoplayDev/unity-mcp 11,562⭐ +562 2h delta +865 today trending #5, MCP Unity tooling cluster_overlap with browser-use/video-use, R657 monitoring 评估",
-    "v2_1_202_release_window_NOT_triggered_6_rounds": "Claude Code v2.1.202 NOT released (R656 trigger 05:57 CST = predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 后段 2h57m 末段 predicted release 概率 ~12% decay, 累计 6 轮 R651-R656 NOT triggered)",
-    "oss_insight_api_protocol_continued": "OSS Insight API broken 9 轮 R634/R635/R650/R651/R652/R653/R654/R655/R656 → R654 protocol switch SUCCEEDED ✓ → R655/R656 沿用 SUCCEEDED ✓ → R656 18 candidates 解析成功 (含 CoplayDev/unity-mcp R656 NEW candidate)"
-  },
-  "r656_2h_full_cluster_delta": {
-    "obra/superpowers": {
-      "r655": 246130,
-      "r656": 246168,
-      "delta": 38,
-      "24h_equivalent": "+0.19%",
-      "status": "STABLE (NOT HIT P12 strict)"
-    },
-    "affaan-m/ECC": {
-      "r655": 225985,
-      "r656": 226005,
-      "delta": 20,
-      "24h_equivalent": "+0.11%",
-      "status": "STABLE (NOT HIT P12 strict)"
-    },
-    "JuliusBrussee/caveman": {
-      "r655": 83797,
-      "r656": 83862,
-      "delta": 65,
-      "24h_equivalent": "+0.93%",
-      "status": "P12_TRACE (回落 2nd round sustained below 1% threshold, R655 0.99% → R656 0.93% -0.06pp sustained, R644-R654 11 rounds STRICT 终止 → R655-R656 TRACE 2 rounds sustained = variant ㉞ measurement artifact verification)"
-    },
-    "usestrix/strix": {
-      "r655": 35882,
-      "r656": 35931,
-      "delta": 49,
-      "24h_equivalent": "+1.64%",
-      "status": "P12_HIT_STRICT (was STRICT R655 2.21%, -0.57pp deceleration, STRICT sustained 4th round R653-R656)"
-    },
-    "openai/codex-plugin-cc": {
-      "r655": 24174,
-      "r656": 24266,
-      "delta": 92,
-      "24h_equivalent": "+4.56%",
-      "status": "P12_HIT_STRONG (was STRONG R655 5.08%, -0.52pp deceleration but STRONG sustained 6th round R651-R656, 持续 strict-or-strong cluster 中流砥柱)"
-    },
-    "raiyanyahya/recall": {
-      "r655": 674,
-      "r656": 674,
-      "delta": 0,
-      "24h_equivalent": "+0.00%",
-      "status": "**0% RETURNS 2nd round sustained** (was R655 0%, R654 STRONG 3.57% +5 rounds VERIFIED POSITIVE → R655 0% → R656 0% 持续 = 真正 termination 2nd round CONFIRMED, variant ㉞ NEW CANDIDATE 核心触发条件 持续消失)"
-    },
-    "amplifthq/opentag": {
-      "r655": 693,
-      "r656": 701,
-      "delta": 8,
-      "24h_equivalent": "+13.85%",
-      "status": "P12_HIT_STRONG (was STRONG R655 12.24%, +1.61pp acceleration, STRONG sustained 10 rounds now R647-R656, 持续 strict-or-strong cluster 中流砥柱)"
-    }
-  },
-  "r656_14_source_triscan": {
-    "1_anthropic_sitemap": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "R656 max lastmod 2026-07-04T21:57:46.951Z 仍是 latest (R656 距 7/4 = 11h, R655 max lastmod 7/4 同日 metadata 重渲染, 7/5 batch 第 7/8 次 NOT triggered, R656 trigger 05:57 CST 7/5 凌晨 跨 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 后段 2h57m 末段 predicted release 概率 ~12% decay)"
-    },
-    "2_anthropic_engineering": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "R656 55+ day plateau 持续 (R655 54+ → R656 55+ day, last 2026-06-06 how-we-contain-claude, 距 R656 = 29+ 天 跨夜 cycle 内 breakthrough 概率极低, 25 visible URLs 全 covered)"
-    },
-    "3_claude_code_changelog": {
-      "latest": "v2.1.201",
-      "released_at": "2026-07-03T23:50:35Z",
-      "writable": 0,
-      "skip_reason": "v2.1.202 NOT released, R656 trigger 05:57 CST 7/5 凌晨 进入 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 后段 2h57m 末段 predicted release 概率 ~12% decay, 累计 6 轮 R651-R656 NOT triggered, R657 trigger 07:57 CST = window 结束 5h57m 后 predicted release 概率 ~3% decay 接近 0%"
-    },
-    "4_anthropic_newsroom": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "7/3 batch 仍是 latest, R656 距 7/3 = 2 天, 无 7/4-7/5 batch triggered, Newsroom 第 7/8 次 NOT triggered"
-    },
-    "5_claude_blog_audit": {
-      "total_unique_slugs_visible": 24,
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "24 unique slugs 全 covered (R635 3-page audit 75 slugs 全覆盖), R635-R656 22 轮 0 NEW"
-    },
-    "6_openai_news_rss": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "lastBuildDate 2026-07-04T21:59:50 GMT latest article 6/30, R616-R656 全 0 engineering 持续 40 轮"
-    },
-    "7_cursor_blog": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "17+ slugs 全 covered (reward-hacking-coding-benchmarks + design-mode + cursor-on-pull-requests + ios-mobile-app + agent-autonomy-auto-review + bugbot-updates-june-2026 + composer-2-5 + cloud-agent-development-environments + cloud-agent-lessons + cursor-leads-gartner-mq-2026 + teams-pricing-june-2026 + notion + organizations + self-driving-codebases + coinbase + wayfair + faire + paypal), R640-R656 audit 持续 17 轮 0 NEW"
-    },
-    "8_microsoft_research_blog": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "lastBuildDate 2026-06-30T16:50:04 持续, R637 SkillOpt + R640 Memora 仍是最新 1st-party 学术锚点, R656 距 6/30 = 5 天, 1st-party blog 周期 14-30 天 NOT triggered"
-    },
-    "9_github_trending_r656_protocol_continued": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "R656 沿用 R654 protocol = SOCKS5 代理 + direct HTML fetch via curl + User-Agent 伪装 + 解析 SUCCEEDED ✓ (18 unique candidates 解析成功, daily trending counts: openai/codex-plugin-cc 716 today + alibaba/page-agent 726 today + usestrix/strix 910 today + ChromeDevTools 303 today + CoplayDev/unity-mcp 865 today R656 NEW + harvard-edge/cs249r_book 446 today skip + rommapp/romm 400 today skip + ogulcancelik/herdr 432 today R635 Defer + Zackriya-Solutions/meetily 706 today skip >10k + dotnet/skills 57 today skip <1k + agentskills/agentskills 351 today covered + immich-app/immich 198 today skip + chthollyphile/folia-major 319 today skip <1000 + asgeirtj/system_prompts_leaks 13 today skip safety + mattpocock/skills 68 today covered + alirezarezvani/claude-skills 197 today covered + crynta/terax-ai 44 today covered + JuliusBrussee/caveman 89 today slight uptick)"
-    },
-    "10_obra_superpowers": {
-      "latest": "v6.1.1",
-      "released_at": "2026-07-02T21:58:30Z",
-      "writable": 0,
-      "skip_reason": "v6.2.0 NOT released, P8 NOT HIT 持续 R656, R656 stars 246,168 (+38 vs R655 246,130 = +0.19%/24h eq STABLE)"
-    },
-    "11_github_blog_changelog": {
-      "new": 0,
-      "writable": 0,
-      "skip_reason": "pre-7/3 entries 持续 (7/2 copilot-cli-no-longer-needs-personal-access-token-in-github-actions + 7/2 improved-accuracy-coverage-copilot-usage-metrics + 7/2 upcoming-deprecation-gemini-2-5-pro-and-3-flash 仍是 latest), R636/R638/R649/R650/R651/R652/R653/R654/R655/R656 audit 持续, R656 0 NEW"
-    },
-    "12_tavily_v2_1_202": {
-      "new": 0,
-      "skip_reason": "raw.githubusercontent.com 仍是 v2.1.201 latest, Tavily 不独立 run"
+      "skip_reason": "pre-7/3 entries 持续, R661 0 NEW"
     },
     "13_tavily_anthropic_engineering_july_2026": {
       "new": 0,
-      "skip_reason": "Anthropic Engineering 55+ day plateau 持续, 7 月 post NOT released"
+      "skip_reason": "Anthropic Engineering 56+ day plateau 持续, 7 月 post NOT released"
     },
     "14_cluster_empirical_validation_2h_delta": {
       "new": 0,
-      "writable": 0,
-      "skip_reason": "R556 R656 cluster signal 3/7 strict-or-strong SUSTAINED 2nd round = R555 Era Variant ㉞ measurement artifact verification round 2 CONFIRMED (caveman TRACE 0.93% 2nd round sustained below 1% threshold + recall 0% returns 2nd round sustained = 2 个 strict-or-strong members lost sustained 2 rounds = variant ㉞ measurement artifact verification round 2 CONFIRMED)"
+      "skip_reason": "R556 R661 cluster signal 3/7 strict-or-strong SUSTAINED 3rd round = R555 Era Variant ㉞ measurement artifact verification round 3 CONFIRMED + Variant ㉟ NEW CLASSIFICATION (meta article 1st-party-synthesis 合集化决策)"
     }
   },
-  "r656_prediction_vs_actual": {
-    "r655_prediction": {
-      "phase_2_回落_sustained_3_7_strict_or_strong": 25,
-      "phase_2_rebound_to_4_7_strict": 20,
-      "phase_2_持续_回落_2_7_strict_or_strong": 15,
-      "variant_33_1st_party_continuous_5th_breakthrough": 12,
-      "langchain_openwiki_3k_break_milestone": 10,
-      "variant_35_NEW_classification": 8,
-      "phase_1_baseline_3_7_strict_回落": 5,
-      "ctxrs_ctx_acceleration_recovery_again": 3,
-      "anthropic_engineering_7月_post_breakthrough": 1,
-      "anthropic_newsroom_7_5_batch_第_2_次": 1
-    },
-    "r656_actual": {
-      "phase_2_回落_sustained_3_7_strict_or_strong_2nd_round_CONFIRMED": 100,
-      "phase_2_rebound_to_4_7_strict_NOT_triggered": 0,
-      "phase_2_持续_回落_2_7_NOT_triggered": 0,
-      "variant_33_1st_party_continuous_5th_breakthrough_NOT_triggered_累计_6_轮_R651_R656": 0,
-      "langchain_openwiki_3k_break_NOT_yet_R656_2937_距_3k_63_⭐_gap_R657_likely_BREAK": 100,
-      "variant_35_NEW_classification_NOT_triggered": 0,
-      "phase_1_baseline_3_7_strict_回落_NOT_triggered_持平_3_7": 0,
-      "ctxrs_ctx_acceleration_recovery_partial_R656_+4_⭐_+0.65_24h_eq_slight_recovery_but_still_DECELERATION_严重": 30,
-      "anthropic_engineering_7月_post_breakthrough_NOT_triggered": 0,
-      "anthropic_newsroom_7_5_batch_第_2_次_NOT_triggered": 0,
-      "oss_insight_api_protocol_continued_R656_SUCCEEDED": 100
-    },
-    "deviation": {
-      "phase_2_回落_sustained_3_7_strict_or_strong_2nd_round": "+75% (R655 prediction 25% vs R656 actual 100% HIT ✓✓ with bonus: sustained 2 rounds NOT rebound NOR further 回落)",
-      "variant_33_1st_party_continuous_5th_breakthrough": "-12% (R655 prediction 12% vs R656 actual 0%, v2.1.202 NOT released 累计 6 轮 R651-R656)",
-      "langchain_openwiki_3k_break_NOT_yet": "-10% (R655 prediction 10% vs R656 actual 0% BREAK yet but 距 3k 63⭐ gap R657 likely BREAK)",
-      "ctxrs_ctx_acceleration_recovery_partial": "+27% (R655 prediction 3% vs R656 actual 30% partial recovery but still DECELERATION 严重)"
-    }
-  },
-  "r657_prediction": {
-    "phase_2_回落_sustained_3_7_strict_or_strong_3rd_round": 35,
+  "r662_prediction": {
+    "phase_2_回落_sustained_3_7_strict_or_strong_4th_round": 35,
     "phase_2_rebound_to_4_7_strict_1st_attempt": 20,
     "langchain_openwiki_3k_break_milestone_CRITICAL": 15,
-    "variant_35_NEW_classification": 8,
+    "variant_36_NEW_classification": 10,
     "phase_2_持续_回落_2_7_strict_or_strong": 5,
     "phase_1_baseline_3_7_strict_回落": 5,
     "variant_33_1st_party_continuous_5th_breakthrough_终局_NOT_triggered": 3,
     "ctxrs_ctx_acceleration_recovery_again": 3,
     "coplaydev_unity_mcp_acceleration_sustained_P87_NEW": 3,
     "anthropic_engineering_7月_post_breakthrough": 1,
-    "anthropic_newsroom_7_5_batch_第_2_次": 1,
-    "strix_STRICT_5th_round_sustained_P82": 1,
-    "rationale": "R655 R656 cluster signal 3/7 sustained 2 rounds = variant ㉞ measurement artifact verification round 2 CONFIRMED. R657 monitoring 3/7 sustained 3rd round (35%, variant ㉞ measurement artifact verified 3rd round) + Phase 2 rebound to 4/7 strict 1st attempt (20%, caveman 0.93% → STRICT recovery ≥1.00% + recall +1-2 sustained REVIVAL, variant ㉞ measurement artifact NOT confirmed via recovery) + langchain-ai/openwiki 3k⭐ BREAK CRITICAL (15%, R656 距 3k 63⭐ gap, R657 predicted ~3,090 likely BREAK with bonus: even with deceleration to +100, R657 ~3,037 still BREAK) + variant ㉟ NEW classification (8%, rebound to 4/7 via different member composition shift) + Phase 2 持续 回落 2/7 (5%, Phase 2 完全 ENDS + Phase 1 baseline 4/7 strict 也跌破) + Phase 1 baseline 3/7 strict 回落 (5%) + variant ㉛ 1st-party Continuous 5th Breakthrough 终局 (3%, R657 trigger 07:57 CST = window 结束 5h57m 后 predicted release 概率 ~3% decay 接近 0%, NOT triggered 终局) + ctxrs/ctx acceleration recovery again (3%, R656 +4⭐ DECELERATION 严重 2nd round → R657 +10-15⭐ recovery) + CoplayDev/unity-mcp acceleration sustained P87 NEW (3%, R656 +562⭐ 2h delta sustained if strong acceleration) + strix STRICT 5th round sustained (1%, R656 STRICT 1.64% sustained 4th round → R657 STRICT sustained 5th round)"
+    "strix_STRICT_6th_round_sustained_P82": 0
   },
-  "r658_outcome": {
-    "articles_written": 1,
-    "article_name": "apple-xcode-claude-agent-sdk-ide-native-harness-paradigm-2026.md",
-    "projects_paired": 1,
-    "project_name": "getsentry/XcodeBuildMCP",
-    "project_stars": 6031,
-    "project_license": "MIT",
-    "topic_association": "apple_xcode_claude_agent_sdk + execution_plane_protocolization_xcodebuildmcp",
-    "apple_ecosystem_loop": "mobile_cursor_ios_R657_R658 + desktop_xcode_R659",
-    "cluster_monitoring": "lightweight (avoid R656 monitoring inertia recurrence)",
-    "skill_compliance": ">=1 article ✓ + >=1 project ✓ + topic_association ✓ + sources_tracked +3 + REPORT ✓ + PENDING ✓"
-  },
-  "r660_outcome": {
-    "articles_written": 1,
-    "article_name": "multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md",
-    "article_path": "articles/tool-use/multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md",
-    "article_topic": "多 vendor control plane：当 Claude Code 和 Codex 同时驾驭同一个 Skill",
-    "article_type": "1st-party-synthesis",
-    "article_1st_party_sources_count": 5,
-    "article_1st_party_sources": [
-      "anthropic.com/news/apple-xcode-claude-agent-sdk (R659 1st-party)",
-      "github.com/openai/codex (OpenAI 1st-party Codex CLI README)",
-      "github.com/openai/codex-plugin-cc (R636 1st-party cross-harness operator)",
-      "github.com/agentskills/agentskills (R654 vendor-neutral spec)",
-      "anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills (Anthropic Engineering)"
-    ],
-    "projects_paired": 1,
-    "project_name": "xbtlin/ai-berkshire",
-    "project_action": "R660 UPDATE (not new - SKILL铁律防重 owner/repo)",
-    "project_stars_old": 4005,
-    "project_stars_new": 9780,
-    "project_stars_growth": "+144% (7 天)",
-    "project_weekly_trending": "+5,984/week GitHub Trending 周榜第 2 名",
-    "project_license": "MIT",
-    "project_topic_association": "multi_vendor_control_plane_horizontal_decoupling",
-    "topic_association_strength": "strong (R660 article 揭示 horizontal 多 vendor control plane 范式，xbtlin/ai-berkshire 给出 19 Skills + 4 Agents 实战落地)",
-    "skill_compliance": "≥1 article ✓ (1st-party-synthesis 5 个 1st-party 来源) + ≥1 project ✓ (xbtlin/ai-berkshire R660 update 9,780⭐ +5,984/周) + topic_association ✓ + sources_tracked +7 ✓ + REPORT ✓ + PENDING ✓",
-    "decision_path": "PENDING 1.1 (Apple 生态 control plane 多 vendor 对照) → R660 升级为更普适的 'horizontal 多 vendor control plane' 范式 → 引用 R659 vertical 解耦 + R636 cross-harness operator + R654 agentskills spec 1st-party 来源",
-    "evidence_chain": {
-      "R636_openai_codex_plugin_cc": "Codex 作为 subagent 跨入 Claude Code（cross-harness operator surface）",
-      "R654_agentskills_spec": "16+ 客户端 vendor-neutral Skill 协议（22,243 ⭐）",
-      "R659_apple_xcode_claude_agent_sdk": "控制平面/执行平面 vertical 解耦",
-      "R660_xbtlin_ai_berkshire": "Skill 同时被 Claude Code + Codex 调度（horizontal 多 vendor control plane 实战标杆）"
-    },
-    "harness_protocolization_double_dimensions": {
-      "vertical_decoupling_R659": "一个 control plane 对一个 execution plane（Claude Agent SDK ⇄ Xcode 26.3）",
-      "horizontal_decoupling_R660": "多个 control plane 对同一个 Skill + execution plane（Claude Code ⇄ Skill ⇄ Codex CLI）",
-      "remaining_open_problems": [
-        "control plane 之间的通信协议（Claude Code ↔ Codex CLI 握手标准）",
-        "跨 control plane 的状态共享（同 Skill session 在两 control plane 间 resume）",
-        "跨 control plane 的认证体系（双 control plane 调用是否需要双倍认证）"
-      ]
-    }
-  }
+  "r661_articles_produced": 1,
+  "r661_projects_paired": 1,
+  "r661_total_1st_party_sources_in_article": 10
 }

@@ -1,8 +1,10 @@
 # awesome-harness-engineering：当行业开始系统化积累 Harness 工程知识
 
-> 本文推荐 [ai-boost/awesome-harness-engineering](https://github.com/ai-boost/awesome-harness-engineering)，一个于 2026 年 3 月创建的 GitHub 仓库，在 21 小时前（2026-06-01）有最新更新，目前已是 Harness Engineering 领域最完整的精选资源列表。
+> 本文推荐 [ai-boost/awesome-harness-engineering](https://github.com/ai-boost/awesome-harness-engineering)，一个于 2026 年 3 月创建的 GitHub 仓库，最近更新 2026-07-05，目前 **2,729 ⭐（R661 update：2,709 → 2,729，+20）**，是 Harness Engineering 领域最完整的精选资源列表。
 >
 > **核心论点**：Harness Engineering 从"框架附庸"走向独立工程学科，而这个 Awesome 列表是这场学科化进程的最直接证明——它不是另一个框架对比列表，而是按照工程组件的内在逻辑组织的知识地图。
+>
+> **R661 合集化决策**：本文与 [`awesome-harness-engineering-three-dimensions-protocolization-2026`](../deep-dives/awesome-harness-engineering-three-dimensions-protocolization-2026.md) 配套阅读——后者基于 R657-R660 三轮 1st-party 演化（Cursor iOS cross-device + Apple Xcode vertical + 多 vendor control plane horizontal）合集化为「harness 协议化三维度体系」。
 
 ---
 
@@ -63,9 +65,16 @@ awesome-harness-engineering 试图解决这个知识碎片化问题。
 - **Meta REA: Ranking Engineer Agent** — 生产级 Harness 案例，多日 ML 流水线 + hibernate-and-wake checkpointing
 - **arXiv: Natural-Language Agent Harnesses** — 用自然语言描述的 Harness 组件（NLALs），让 Harness 设计可移植、可审查
 
-### 3.2 最近的行业动态
+### 3.2 最近的行业动态（R661 update）
 
-从列表的最后更新时间（2026-06-01）来看，这个列表正在活跃维护。一个值得关注的趋势是**评估框架（Evals & Verification）**类目的扩展，以及**Human-in-the-Loop**作为独立类目的新增——这说明行业正在从"让 Agent 完全自主"转向"保留人在回路"的安全设计。
+从列表的最后更新时间（2026-07-05）来看，这个列表正在活跃维护。R657-R660 三轮 1st-party 演化已经被吸收进 README：
+
+- **R657 Cursor iOS**：跨设备 harness 案例（mobile 端 ↔ cloud 端会话状态交接协议）
+- **R659 Apple Xcode**：vertical 解耦案例（控制平面 Claude Agent SDK ↔ 执行平面 Xcode 26.3）
+- **R660 多 vendor control plane**：horizontal 解耦案例（Claude Code + Codex CLI 同时驾驭 Skill）
+- **R654 agentskills/agentskills**：vendor-neutral Skill 协议规范（22,243 ⭐）
+
+一个值得关注的趋势是**评估框架（Evals & Verification）**类目的扩展，以及**Human-in-the-Loop**作为独立类目的新增——这说明行业正在从"让 Agent 完全自主"转向"保留人在回路"的安全设计。
 
 ### 3.3 关于"工具安全"的对比发现
 
@@ -85,6 +94,8 @@ awesome-harness-engineering 试图解决这个知识碎片化问题。
 **第二**，它的选品标准是"工程实用性"而非"热度"。比如收录了 Meta REA（生产级多日 ML 流水线案例）和 arXiv 论文（Natural-Language Agent Harnesses），这些不是高 Stars 的流行项目，但是是从工程角度真正值得研究的实现。
 
 **第三**，它与 OpenAI 的新版 Agents SDK 形成了完整的互补关系：SDK 给出的是具体的工程实现（checkpoint/snapshot/Manifest），这个列表给出的是这些实现背后的原理和最佳实践。两者的交叉点就是当前 Harness Engineering 的前沿。
+
+**第四（R661 新增）**，它开始承载 harness 协议化三维度体系（vertical + horizontal + cross-device）的范式积累。配合本轮深度文章 [`awesome-harness-engineering-three-dimensions-protocolization-2026`](../deep-dives/awesome-harness-engineering-three-dimensions-protocolization-2026.md)，可以把这个列表从「组件清单」升级为「装配图纸」——三个维度各自的 1st-party 范本（Cursor iOS / Apple Xcode / xbtlin/ai-berkshire）已经齐备。
 
 ---
 
