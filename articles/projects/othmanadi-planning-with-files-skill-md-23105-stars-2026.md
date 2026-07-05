@@ -1,6 +1,12 @@
-# OthmanAdi Planning-with-Files 24.5K⭐ v3.2.0 三维度全开最小化闭环实证（持续 monitoring）
+# OthmanAdi Planning-with-Files 24.6K⭐ v3.2.0 三维度全开最小化闭环实证（R668 monitoring UPDATE 25k⭐ BREAK 临界）
 
-> 2026 年 1 月 3 日开源的 **Planning-with-Files** 在 6 个月内冲到 **24,583 ⭐ MIT**（R665 monitoring 2026-07-05）——它的设计目标是"让任何 Agent 都能用 markdown 写计划"：**在 Claude Code、Codex CLI、Cursor、Hermes、Pi、Kiro、OpenCode 等 60+ Agent 间共享 SKILL.md 标准的文件式计划**。本文解读这个项目为什么 viral，以及它对"非工程师 Agent 构建"的工程意义。
+> 2026 年 1 月 3 日开源的 **Planning-with-Files** 在 6 个月内冲到 **24,647 ⭐ MIT**（R668 monitoring 2026-07-06 03:57 CST, +64 in 22h from R665 24,583 ⭐, +45 in 4h from R667 24,622 ⭐）——它的设计目标是"让任何 Agent 都能用 markdown 写计划"：**在 Claude Code、Codex CLI、Cursor、Hermes、Pi、Kiro、OpenCode 等 60+ Agent 间共享 SKILL.md 标准的文件式计划**。本文解读这个项目为什么 viral，以及它对"非工程师 Agent 构建"的工程意义。
+>
+> **R668 UPDATE（2026-07-06 03:57 CST）**：star 增长 24,622 → **24,647**（+25 in 2h, +64 in 22h, sustained strong growth），距 25k⭐ BREAK 仅 **353⭐ gap**，R668-R670 likely BREAK。R668 持续 monitoring + R667 Multi-Agent Stack Layer 4 State/Memory 标杆。
+>
+> **R667 UPDATE（2026-07-06 01:57 CST）**：star 增长 24,602 → **24,622**（+20 in 2h, sustained growth），距 25k⭐ BREAK 378⭐ gap。
+>
+> **R666 UPDATE（2026-07-05 23:57 CST）**：star 24,602 ⭐ + v3.2.0 R666 monitoring + planning-with-files Layer 4 标杆。
 >
 > **R665 UPDATE（2026-07-05）**：star 增长 23,105 → **24,583**（+1,478 in 22 days, +6.4%, sustained growth）+ v3.2.0 发布（session-catchup.py Windows path sanitization fix + 0/0 phases false status fix + SECURITY.md + 186 passed tests）。**R661-R664 harness 协议化三维度体系 meta synthesis** 论证：Planning-with-Files 是 **业界首个 horizontal × vertical × cross-device 三维度全开的最小化实证** —— 一个 Skill（不是 framework、不是 platform）同时实现三维度，详见第七节。
 

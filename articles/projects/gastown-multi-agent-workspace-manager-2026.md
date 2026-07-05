@@ -1,8 +1,12 @@
-# Gas Town：多 Agent 工作空间编排的工业级实现（R666 UPDATE 持续 monitoring）
+# Gas Town：多 Agent 工作空间编排的工业级实现（R668 UPDATE 持续 monitoring 17k⭐ BREAK 临界）
 
 **核心主张**：Gas Town 不是又一个「用 Agent 写代码」的工具，它是**多 Agent 协作的操作系统**——通过 Git Worktree 做状态持久化、Beads 做工作追踪、Witness/Deacon/Dogs 做健康监控，实现了 20-30 个 Agent 并行工作而不失控。这与 Cursor 第三时代的「多 Agent Fleet」理念形成呼应，但 Gas Town 更接近底层框架，而 Cursor 更接近终端用户产品。
 
-**R666 UPDATE 状态**: **16,292 ⭐ (R666 monitoring 2026-07-05 23:57 CST, +1,378 in ~30 days from 14,914 ⭐ 2026-06-04, +9.2% sustained strong growth)** MIT license, **v1.2.1 (2026-06-06)** — 最新版本加入了 Convoys `mountain` label、Molecules（TOML Formula 工作流模板）、Refinery（Bors-style bisecting merge queue）、Escalation（severity-routed）等工业级 multi-agent 编排抽象。详细分析见 [R666 deep dive article](../orchestration/gastown-multi-agent-orchestration-deep-dive-r666-harness-protocolization-extension-2026.md)。
+**R668 UPDATE 状态**: **16,330 ⭐ (R668 monitoring 2026-07-06 03:57 CST, +20 in 2h from R667 16,310 ⭐, +38 in 8h from R666 16,292 ⭐)** MIT license, **v1.2.1 (2026-06-06)** — R668 持续 monitoring，距 17k⭐ BREAK 670⭐ gap，R668-R672 likely BREAK。详细分析见 [R666 deep dive article](../orchestration/gastown-multi-agent-orchestration-deep-dive-r666-harness-protocolization-extension-2026.md).
+
+**R667 UPDATE 状态**: 16,310 ⭐ + R667 Multi-Agent Stack 分层 deep dive 主证据，Layer 2 Orchestrator 标杆。
+
+**R666 UPDATE 状态**: **16,292 ⭐ (R666 monitoring 2026-07-05 23:57 CST, +1,378 in ~30 days from 14,914 ⭐ 2026-06-04, +9.2% sustained strong growth)** MIT license, **v1.2.1 (2026-06-06)** — 最新版本加入了 Convoys `mountain` label、Molecules（TOML Formula 工作流模板）、Refinery（Bors-style bisecting merge queue）、Escalation（severity-routed）等工业级 multi-agent 编排抽象。
 
 **读者画像**：已经有单 Agent 使用经验，正在探索「如何同时跑多个 Agent」或「如何让 Agent 持续运行」的工程师。
 

@@ -1,11 +1,11 @@
-# alirezarezvani/claude-skills — 354 个生产级 Claude Code Skills（20,080⭐）
+# alirezarezvani/claude-skills — 354 个生产级 Claude Code Skills（20,461⭐，R668 monitoring UPDATE Layer 3.2 跨平台标杆）
 
-> **一句话核心**：这是迄今最大的「Claude Code Skills 实战弹药库」—— 354 个 skills，覆盖工程、营销（含 AEO）、合规、C-level advisory、学术研究、enterprise research ops，跨 13 个 AI 编码平台。R654 我们讲了「skills 长什么样」的官方规范（agentskills/agentskills），本文讲「skills 该写什么」的实战样本。
+> **一句话核心**：这是迄今最大的「Claude Code Skills 实战弹药库」—— 354 个 skills，覆盖工程、营销（含 AEO）、合规、C-level advisory、学术研究、enterprise research ops，跨 13 个 AI 编码平台。R654 我们讲了「skills 长什么样」的官方规范（agentskills/agentskills），本文讲「skills 该写什么」的实战样本。**R668 monitoring UPDATE**: 20,080 → 20,461 ⭐（+381 in 48h, sustained strong growth），R668 Layer 3 Skill Registry Primitive deep dive 的 Layer 3.2 Skill Registry 实现层核心实证 + BYO-sync tier 跨平台同步机制（Hermes Agent + Mistral Vibe）实证。
 
 | 项目 | 值 |
 |------|---|
 | **GitHub** | https://github.com/alirezarezvani/claude-skills |
-| **Stars** | 20,080（2026-07-04） |
+| **Stars** | **20,461** ⭐（R668 trigger 2026-07-06） |
 | **Forks** | 2,750 |
 | **License** | MIT |
 | **Language** | Python（593 个 stdlib-only CLI 脚本）+ Markdown |

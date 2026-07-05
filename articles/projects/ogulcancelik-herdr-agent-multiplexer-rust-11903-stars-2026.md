@@ -1,6 +1,6 @@
 # ogulcancelik/herdr：tmux-rebuilt-for-agents —— Multi-Agent Stack 的 Multiplexer 层独立收敛证据
 
->11,903 ⭐ · AGPL-3.0-or-later · Rust · [GitHub](https://github.com/ogulcancelik/herdr) · [herdr.dev](https://herdr.dev)
+>11,950 ⭐ (R668 +47 vs R667 11,903) · AGPL-3.0-or-later · Rust · [GitHub](https://github.com/ogulcancelik/herdr) · [herdr.dev](https://herdr.dev) · **R668 监测 12k⭐ BREAK 临界 (50⭐ gap)**
 
 ---
 

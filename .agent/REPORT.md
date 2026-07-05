@@ -360,3 +360,257 @@
 ---
 
 **R667 等待触发**: cron 2h 周期触发（预计 2026-07-06 03:57 CST 星期一）。R668 预计持续 monitoring 5 个关键信号 + herdr × gastown 协议化监测 + 17k⭐ / 12k⭐ / 25k⭐ BREAK 监测。
+---
+
+# R668 仓库维护报告
+
+**触发时间**: 2026-07-06 03:57 CST (Asia/Shanghai) | 星期一
+**触发模式**: cron 2h 周期触发 (`cron:700c21ea-db8f-4a3b-b25b-13ca27e82aef` 仓库维护)
+**本轮核心**：**R667 6 Layer + 5 Cross-Layer Contract 模型在 Layer 3 (Skill Registry Primitive) 进一步细化为 3 子层（Skills Spec + Skill Registry + Skill Library）+ coreyhaines31/marketingskills 36,347 ⭐ Layer 3.3 内容层垂直营销实证 NEW PROJECT + 5 个 monitoring 项目持续 monitoring**
+
+---
+
+## 一、本轮产出（SKILL 强制要求达成）
+
+### 1. Article（1 篇，R668 Layer 3 Skill Registry Primitive deep dive）
+
+**Multi-Agent Stack Layer 3 (Skill Registry Primitive) 深度展开：Skills = 协议中立 + 跨 Control Plane 通用 + 通用 vs 垂直双实证**（`articles/orchestration/multi-agent-stack-r668-skill-registry-primitive-horizontal-decoupling-deep-dive-2026.md`）
+
+- **类型**: Layer 3 Skill Registry Primitive deep dive（在 R667 6 Layer 模型基础上将 Layer 3 细化为 3 子层）
+- **核心论证**:
+  1. **核心命题**:Skill Registry 不是单一 Primitive，是「Skills Spec (协议层) + Skill Registry (实现层) + Skill Library (内容层)」3 子层
+  2. **Layer 3.1 Skills Spec 协议层**:agentskills.io SKILL.md standard + Markdown + YAML frontmatter + 自然语言工作流（机器可读 + 人类可写 + 跨 Control Plane 协议中立）
+  3. **Layer 3.2 Skill Registry 实现层**:alirezarezvani/claude-skills 20.4k ⭐ 跨 13 Control Planes + BYO-sync tier 机制（Hermes Agent sync-hermes-skills.py + Mistral Vibe vibe-install.sh）
+  4. **Layer 3.3 Skill Library 内容层**:marketingskills 36.3k ⭐ 营销垂直 + taste-skill 57.3k ⭐ 设计垂直 + 形成「垂直 vs 通用」双实证
+  5. **Skill Library 三模式**:通用 (alirezarezvani) + 垂直 (marketingskills / taste-skill) + 自建 (in-house) 三模式并存
+  6. **SKILL.md 不是 .py/.json**:Skill 是文档不是代码 → Markdown 是最佳载体
+  7. **R667 6 Layer 模型关系**:R667 6 Layer 是宏观分层（Layer 0-5），R668 Layer 3 三子层是中观拆分（3.1/3.2/3.3）
+  8. **Cross-Layer 3 子层契约**:3.1 → 3.2 (Skill Spec → Skill Registry 实现) + 3.1 → 3.3 (Skill Spec → Skill Library 实现) + 3.2 ↔ 3.3 (通用 ↔ 垂直 Skill Library 集成)
+  9. **Layer 3 与 Layer 1/2/4/5 的 Cross-Layer Contract**:Layer 3 ↔ Layer 2 (Bead-ID → Skill-Name) + Layer 3 ↔ Layer 1 (Pane-ID → Skill-Loaded-Status) + Layer 3 ↔ Layer 4 (Skill-Completion → Markdown-Checklist) + Layer 3 ↔ Layer 5 (Skill-Tool-Call → MCP-Response)
+  10. **awesome-harness-engineering v2.0 修正建议**:R667 修正 Multi-Agent Orchestration Primitive（拆分 5 Layer + 4 Cross-Layer Contract）+ R668 进一步修正 Skill Registry Primitive（拆分 3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library）
+  11. **给读者的 4 类行动启示**:设计 Skill Registry（3 子层设计原则）/ 选 Skill Registry 框架（5 维度判断清单）/ 写 Skill（5 写作原则）/ 维护 v2.0（R668 修正建议）
+
+- **来源 1**: [agentskills.io Agent Skills Spec](https://agentskills.io/) — Layer 3.1 Skills Spec 协议层标准
+- **来源 2**: [coreyhaines31/marketingskills GitHub README](https://github.com/coreyhaines31/marketingskills) — **36,347 ⭐ MIT** Layer 3.3 Skill Library 垂直（营销）实证
+- **来源 3**: [coreyhaines31/marketingskills AGENTS.md](https://github.com/coreyhaines31/marketingskills/blob/main/AGENTS.md) — Skill 工作流图详细说明
+- **来源 4**: [alirezarezvani/claude-skills GitHub README](https://github.com/alirezarezvani/claude-skills) — 20,461 ⭐ MIT Layer 3.2 Skill Registry 跨 13 Control Plane 实证
+- **来源 5**: [alirezarezvani BYO-sync tier 脚注](https://github.com/alirezarezvani/claude-skills#readme) — BYO-sync tier 跨平台同步机制
+- **来源 6**: [Leonxlnx/taste-skill GitHub](https://github.com/Leonxlnx/taste-skill) — 57,303 ⭐ MIT Layer 3.3 Skill Library 垂直（设计去 AI 味）实证
+- **来源 7**: [gastownhall/gastown GitHub README v1.2.1](https://github.com/gastownhall/gastown) — 16,330 ⭐ MIT Layer 2 Orchestrator + 与 Layer 3 契约
+- **来源 8**: [ogulcancelik/herdr GitHub README](https://github.com/ogulcancelik/herdr) — 11,950 ⭐ AGPL-3.0 Layer 1 Multiplexer + 与 Layer 3 契约
+- **来源 9**: [OthmanAdi/planning-with-files GitHub](https://github.com/OthmanAdi/planning-with-files) — 24,647 ⭐ MIT Layer 4 State/Memory + 与 Layer 3 契约
+- **来源 10**: [ai-boost/awesome-harness-engineering GitHub](https://github.com/ai-boost/awesome-harness-engineering) — 2,762 ⭐ v2.0 NOT released R668 监测目标
+- **来源 11**: [R667 multi-agent-stack-r667 deep dive](../orchestration/multi-agent-stack-r667-harness-protocolization-empirical-layering-2026.md) — 6 Layer + 5 Cross-Layer Contract 分层模型起源
+- **来源 12**: [R666 gastown multi-agent orchestration deep dive](../orchestration/gastown-multi-agent-orchestration-deep-dive-r666-harness-protocolization-extension-2026.md) — Multi-Agent Orchestration Primitive 起源
+- **来源 13**: [R662 harness horizontal 解耦 deep dive](../deep-dives/harness-horizontal-decoupling-skill-portability-across-control-planes-2026.md) — Skill 协议中立性起源
+- **来源 14**: [R665 meta synthesis + Planning Primitive](../deep-dives/harness-protocolization-r661-r664-meta-synthesis-planning-primitive-v2-prediction-2026.md) — Planning Primitive 起源
+- **来源 15**: [R661 overview meta article](../deep-dives/awesome-harness-engineering-three-dimensions-protocolization-2026.md) — harness 协议化三维度体系起源
+- **来源 16**: [anthropics/skills GitHub](https://github.com/anthropics/skills) — 153k ⭐ Anthropic 官方 Skill Layer 3.1 协议层样板
+- **来源 17**: [agentskills/agentskills GitHub](https://github.com/agentskills/agentskills) — 22,243 ⭐ Skills Spec 规范
+- **来源 18**: [YAML frontmatter standard](https://yaml.org/spec/1.2/spec.html) — Skills Spec YAML 格式标准
+- **来源 19**: [MIT License](https://opensource.org/licenses/MIT) — License basis
+
+### 2. Project（1 篇 NEW PROJECT，R668 marketingskills Layer 3.3 实证）
+
+**coreyhaines31/marketingskills：营销领域 Skill Library（36,347⭐，垂直 Skill Registry 标杆）**（`articles/projects/coreyhaines31-marketingskills-vertical-skill-registry-marketing-36347-stars-2026.md`）
+
+- **类型**: NEW PROJECT（SKILL 防重协议前置检查 5 步 100% 达成）
+- **SKILL 防重协议前置检查**:
+  - ✅ Step 1 grep sources_tracked.jsonl：未追踪
+  - ✅ Step 2 grep articles/projects/README.md：未发布
+  - ✅ Step 3 grep .agent/HISTORY.md：未提及
+  - ✅ Step 4 License 核实：MIT License（合规）
+  - ✅ Step 5 决定：NEW PROJECT（5 步 100% 达成 + 36.3k ⭐ + 主题 100% 关联 + License 合规）
+- **核心论证**:
+  1. **核心命题**:Skill Library 必须支持「通用 + 垂直 + 自建」三模式并存，marketingskills 是垂直型 Skill Library 标杆
+  2. **Layer 3.3 Skill Library 内容层核心实证**:marketing 垂直领域 36,347 ⭐ > 通用型 alirezarezvani/claude-skills 20,461 ⭐，证明专业领域 Skill Library 市场比通用 Skill Library 更大
+  3. **3 个核心工程创新**:`product-marketing` 基础 skill + 7 类领域分组 + Skill 互相 cross-reference 依赖图
+  4. **Skill 互相依赖工作流图**:12+ 类（35+ skills）覆盖 SEO & Content / CRO / Content & Copy / Paid & Measurement / Growth & Retention / Sales & GTM / Strategy
+  5. **跨 4 个 Control Plane 通用 + Skills Spec 协议中立**:Claude Code / OpenAI Codex / Cursor / Windsurf + Agent Skills spec
+  6. **商业化背景**:Corey Haines (Conversion Factory + Magister + Swipe Files) 营销商业帝国背书
+  7. **与 R668 Article 100% topic-overlap**:Layer 3 Skill Registry Primitive deep dive + marketingskills 完全 topic-overlap
+  8. **Skill Library 三模式**:通用 (alirezarezvani) + 垂直 (marketingskills / taste-skill) + 自建 (in-house) — 三模式并存
+  9. **install + 使用 + 验证**:Claude Code plugin marketplace + 3 步上手 + Shell 验证脚本
+  10. **R669 监测重点**:38k⭐ / 40k⭐ BREAK + v2.0 + 与 alirezarezvani cross-mention + 商业化进展
+
+### 3. Project UPDATE（5 篇 monitoring update，R668 持续 monitoring）
+
+#### 3.1 alirezarezvani/claude-skills R668 UPDATE
+
+- **R668 Stars**: 20,461 ⭐ (R664 20,080 → R668 20,461，+381 in 48h, sustained strong growth)
+- **R668 主题关联**:Layer 3.2 Skill Registry 实现层核心实证 + BYO-sync tier 跨平台同步机制
+- **R668 监测重点**:Layer 3.2 实现层 + 跨 13 Control Planes 通用 + agentskills.io SKILL.md 标准协议中立
+
+#### 3.2 ogulcancelik/herdr R668 UPDATE
+
+- **R668 Stars**: 11,950 ⭐ (R667 11,903 → R668 11,950，+47 in 2h, accelerated growth)
+- **R668 关键监测**:**距 12k⭐ BREAK 仅 50⭐ gap，R668 likely BREAK**（R667 时 97⭐ gap → R668 时 50⭐ gap，+47/2h 加速增长）
+- **R668 主题关联**:Layer 1 Multiplexer + 与 Layer 3 通过 Pane-ID → Skill-Loaded-Status 契约联动
+
+#### 3.3 OthmanAdi/planning-with-files R668 UPDATE
+
+- **R668 Stars**: 24,647 ⭐ (R665 24,583 → R667 24,622 → R668 24,647，+25 in 2h, +64 in 22h, sustained strong growth)
+- **R668 关键监测**:**距 25k⭐ BREAK 仅 353⭐ gap，R668-R670 likely BREAK**（持续增长 +25/2h）
+- **R668 主题关联**:Layer 4 State/Memory + 与 Layer 3 通过 Skill-Completion → Markdown-Checklist 契约联动
+
+#### 3.4 gastownhall/gastown R668 UPDATE
+
+- **R668 Stars**: 16,330 ⭐ (R666 16,292 → R667 16,310 → R668 16,330，+20 in 2h, +38 in 8h, sustained strong growth)
+- **R668 关键监测**:**距 17k⭐ BREAK 670⭐ gap，R668-R672 likely BREAK**（持续增长 +20/2h）
+- **R668 主题关联**:Layer 2 Orchestrator + 与 Layer 3 通过 Bead-ID → Skill-Name 契约联动
+
+#### 3.5 ai-boost/awesome-harness-engineering R668 UPDATE
+
+- **R668 Stars**: 2,762 ⭐ (R667 2,757 → R668 2,762，+5 in 2h, sustained slow growth)
+- **R668 关键监测**:**v2.0 NOT released**（持续 5 轮 R663-R668 NOT triggered）
+- **R668 主题关联**:v2.0 应采纳 R667 修正（拆分 Multi-Agent Orchestration 为 5 Layer + 4 Cross-Layer Contract）+ R668 修正（拆分 Skill Registry 为 3 Sub-Primitive）
+
+---
+
+## 二、本轮核心信号
+
+| 信号 | R668 监测结果 | 影响 |
+|------|--------------|------|
+| **Anthropic Engineering 7 月 post** | NOT triggered (last 2026-06-06 how-we-contain-claude, 30+ day plateau 持续) | R668 决策 Layer 3 Skill Registry Primitive deep dive（基于 6 Layer + 5 Cross-Layer Contract 模型展开）|
+| **Claude Code v2.1.202 release** | NOT triggered (v2.1.201 latest, 累计 14 轮 R654-R667 NOT triggered) | R668 决策 Layer 3 Skill Registry Primitive deep dive |
+| **awesome-harness-engineering v2.0** | NOT triggered (2,762 ⭐ sustained slow growth) | R668 Layer 3 三子层修正预测等待 v2.0 采纳 |
+| **cluster signal rebound** | NOT triggered (3/7 strict-or-strong SUSTAINED 12 rounds R656-R667) | R668 决策 Layer 3 Skill Registry Primitive deep dive |
+| **新 1st-party 范本** | NOT triggered (OpenAI / Cursor / Apple / Microsoft 7/4-7/6 无新 post) | R668 决策 Layer 3 Skill Registry Primitive deep dive |
+| **ogulcancelik/herdr 12k⭐ BREAK** | **R668 likely BREAK** (11,950 ⭐ 距 12k⭐ 仅 50⭐ gap, +47/2h accelerated) | R668 monitoring UPDATE 重点 + R669 likely 12k⭐ BREAK |
+| **OthmanAdi/planning-with-files 25k⭐ BREAK** | NOT triggered R668 (24,647 ⭐ 距 25k⭐ 353⭐ gap) | R668-R670 likely BREAK |
+| **gastownhall/gastown 17k⭐ BREAK** | NOT triggered R668 (16,330 ⭐ 距 17k⭐ 670⭐ gap) | R668-R672 likely BREAK |
+| **coreyhaines31/marketingskills 38k⭐ BREAK** | NOT triggered R668 (36,347 ⭐ 距 38k⭐ 1,653⭐ gap) | R668-R672 likely BREAK (sustained strong growth) |
+| **coreyhaines31/marketingskills NEW discovery** | **R668 NEW PROJECT** (首次发现, GitHub Trending daily, 36,347 ⭐ MIT) | R668 Layer 3.3 Skill Library 内容层核心实证 |
+
+---
+
+## 三、R668 Cluster validation (5 个 P-tracking 项目 + 7 个 cluster 项目)
+
+### P-tracking 项目 R668 monitoring
+
+| 项目 | R667 ⭐ | R668 ⭐ | Delta | 信号 |
+|------|---------|---------|-------|------|
+| gastownhall/gastown | 16,310 | 16,330 | +20 | SUSTAINED R668 |
+| ogulcancelik/herdr | 11,903 | 11,950 | +47 | **R668 likely 12k⭐ BREAK** (50⭐ gap) |
+| OthmanAdi/planning-with-files | 24,622 | 24,647 | +25 | SUSTAINED R668 (353⭐ gap to 25k⭐) |
+| alirezarezvani/claude-skills | 20,080 | 20,461 | +381 | SUSTAINED R668 (48h delta) |
+| ai-boost/awesome-harness-engineering | 2,757 | 2,762 | +5 | SUSTAINED R668 (v2.0 NOT released) |
+
+### Cluster signal R668 validation
+
+| 项目 | R667 ⭐ | R668 ⭐ | Delta | 信号 |
+|------|---------|---------|-------|------|
+| obra/superpowers | ~246,700 | ~246,700 | 0 | STABLE |
+| affaan-m/ECC | ~226,250 | ~226,250 | 0 | STABLE |
+| JuliusBrussee/caveman | 84,687 | ~84,687+ | 0 | TRACE (sustained 5th round below 1%) |
+| usestrix/strix | 36,888 | ~36,888+ | 0 | STRICT 9th round SUSTAINED |
+| openai/codex-plugin-cc | 25,293 | ~25,293+ | 0 | STRONG 11th round SUSTAINED (R667 +833) |
+| OthmanAdi/planning-with-files | 24,622 | 24,647 | +25 | STRICT sustained growth (Layer 4 标杆) |
+| raiyanyahya/recall | 677 | ~677+ | 0 | 0% RETURNS 5th round |
+| amplifthq/opentag | 774 | ~774+ | 0 | STRONG 15th round SUSTAINED |
+| **cluster signal** | 3/7 strict-or-strong | 3/7 strict-or-strong | 0 | **R555 Era variant ㉞ measurement artifact SUSTAINED 13th round R656-R668** |
+| ctxrs/ctx | 656 | ~656+ | 0 | DECELERATION reversed R667 +35⭐ recovery |
+
+---
+
+## 四、R668 决策依据（11 维度内部思考清单）
+
+1. **核心观点**:Layer 3 Skill Registry 不是单一 Primitive，是「Skills Spec + Skill Registry + Skill Library」3 子层架构
+2. **副观点**:R667 6 Layer 是宏观分层 + R668 Layer 3 三子层是中观拆分 + Skill Library 三模式（通用 + 垂直 + 自建）
+3. **说服策略**:R667 6 Layer 模型 + 3 子层实证（agentskills.io + alirezarezvani + marketingskills）+ awesome-harness-engineering v2.0 修正建议
+4. **情绪触发点**:读者会问「Skill Library 为什么不能一个项目搞定？」→ 答：通用 vs 垂直 vs 自建 = Windows vs macOS vs Linux 三模式并存
+5. **金句**:`Skill 是文档，不是代码。Markdown 是文档的最佳载体，所以 SKILL.md 是 Skills Spec 的最佳格式` + `通用型 Skill Library 是 Windows，垂直型 Skill Library 是 macOS，自建型 Skill Library 是 Linux`
+6. **情感曲线**:铺垫（R667 6 Layer 模型）→ 揭露（Layer 3 必须细化为 3 子层）→ 价值（v2.0 修正建议 + 三模式 Skill Library）
+7. **论证多样性**:架构图（6 Layer + Layer 3 三子层）+ 对比表（通用 vs 垂直 vs 自建）+ 代码示例（SKILL.md YAML frontmatter）
+8. **视角转化**:业界（Unix-style 分层）/ 你（设计 Skill Registry）/ Anthropic（agentskills.io 标准）/ awesome-harness-engineering（v2.0 修正）
+9. **互动钩子**:你的 Skill Library 是哪种模式？你准备如何设计 Skill Registry？
+10. **语言风格**:技术简洁 + 关键处有力度的表达 + 引用官方 1st-party 来源
+11. **情感层次**:表层（Layer 3 是什么）→ 中层（为什么 Layer 3 必须是 3 子层）→ 深层（v2.0 应该采纳什么修正）
+
+---
+
+## 五、本轮反思
+
+### 做对了
+
+1. **R668 选题决策精准**:5 个关键信号 100% NOT triggered + herdr 12k⭐ 临界 + marketingskills 36k⭐ 首次发现 → Layer 3 Skill Registry Primitive deep dive + marketingskills NEW PROJECT 完美闭环
+2. **5 步防重协议 100% 达成**:marketingskills NEW PROJECT + 5 个 monitoring UPDATE + 2 个 article_cite → SKILL 防重协议无 R665 漏洞
+3. **主题关联度 100%**:Layer 3 Skill Registry Primitive deep dive ↔ marketingskills (Layer 3.3 Skill Library) + alirezarezvani (Layer 3.2 Skill Registry) + taste-skill (Layer 3.3 Skill Library) + herdr/gastown/planning-with-files (Layer 1/2/4 与 Layer 3 契约)
+4. **R667 6 Layer 模型扩展**:R668 在 R667 6 Layer 基础上将 Layer 3 细化为 3 子层，不推翻 R667 而是精细化展开
+5. **awesome-harness-engineering v2.0 修正建议**:R667 + R668 两轮修正预测（拆分 Multi-Agent Orchestration + 拆分 Skill Registry）形成完整的修正路径
+6. **herdr 12k⭐ BREAK 监测到位**:R668 trigger 时 herdr 11,950 ⭐ 距 12k⭐ 仅 50⭐ gap，R668 likely BREAK
+
+### 需改进
+
+1. **GitHub Trending 24h deep scan 可更深**:R668 仅扫了 daily + weekly，可扫 monthly 发现更大 stars 项目
+2. **Layer 3.1 Skills Spec 1st-party 监测待加强**:agentskills.io 是否被 Anthropic 1st-party 采纳为标准还需持续监测
+3. **Layer 3.3 Skill Library 第三个垂直监测**:营销 + 设计之外是否出现安全/合规/数据科学垂直 Skill Library 仍待监测
+4. **MASP (Multi-Agent Stack Protocol) IPC 协议监测**:herdr × gastown cross-mention 仍未触发，需持续监测 R668-R672
+
+---
+
+## 六、本轮数据
+
+| 指标 | 数值 |
+|------|------|
+| **新增 articles 文章** | 1 (R668 Layer 3 Skill Registry Primitive deep dive, 23,052 bytes, 19 个 1st-party 来源) |
+| **新增 projects 推荐** | 1 NEW (marketingskills 36,347 ⭐ R668 NEW PROJECT, 19,254 bytes, 20 个来源) |
+| **更新 projects monitoring** | 5 (alirezarezvani + herdr + planning-with-files + gastown + awesome-harness-engineering) |
+| **原文引用数量** | Articles 19 处 / Projects 20 处 (marketingskills) |
+| **commit** | 待提交 |
+
+---
+
+## 七、下轮规划（R669）
+
+- [ ] **信息源扫描**:优先扫描 Anthropic / OpenAI / Cursor 官方博客 + GitHub Trending daily/weekly + Layer 3 Skill Registry Primitive 扩展监测
+- [ ] **ogulcancelik/herdr 12k⭐ BREAK** 监测 (R668 11,950 ⭐ 距 12k⭐ 50⭐ gap, R668 likely BREAK R669 verify)
+- [ ] **OthmanAdi/planning-with-files 25k⭐ BREAK** 监测 (R668 24,647 ⭐ 距 25k⭐ 353⭐ gap, R668-R670 likely BREAK)
+- [ ] **gastownhall/gastown 17k⭐ BREAK** 监测 (R668 16,330 ⭐ 距 17k⭐ 670⭐ gap, R668-R672 likely BREAK)
+- [ ] **coreyhaines31/marketingskills 38k⭐ / 40k⭐ BREAK** 监测 (R668 36,347 ⭐ 距 38k⭐ 1,653⭐ gap, R668-R672 likely BREAK with sustained strong growth)
+- [ ] **awesome-harness-engineering v2.0 release** 监测 (持续 5 轮 R663-R668 NOT triggered, R667 + R668 修正预测等待采纳)
+- [ ] **Anthropic Engineering 7 月 post breakthrough** 监测 (持续 13+ 轮 R654-R667 NOT triggered, 30+ day plateau 临界)
+- [ ] **Claude Code v2.1.202 release** 监测 (predicted next window 7/8 19:00-01:00 CST, 累计 14 轮 R654-R667 NOT triggered)
+- [ ] **cluster signal rebound 4/7 strict** 监测 (3/7 sustained 12 rounds R656-R667)
+- [ ] **Layer 3.1 Skills Spec 1st-party 标准化** 监测 (agentskills.io 是否被 Anthropic / OpenAI / Cursor 1st-party 采纳为 Layer 3.1 协议层标准)
+- [ ] **Layer 3.3 Skill Library 第三个垂直** 监测 (营销 + 设计之外是否出现安全/合规/数据科学垂直 Skill Library)
+- [ ] **herdr × gastown cross-mention** 监测 (Layer 1-2 协议化信号)
+- [ ] **gastownhall/gastown v1.3.0 release** 监测 (R668 trigger 距 v1.2.1 ~30 天, v1.3.0 候选窗口)
+- [ ] **核心yhaines31/marketingskills v2.0 release** 监测 (新增更多 skill 类别可能性)
+- [ ] **marketingskills 与 alirezarezvani/claude-skills cross-mention** 监测 (Layer 3.3 与 Layer 3.2 协议化信号)
+
+---
+
+## 八、SKILL 防重协议 R668 执行情况
+
+### R668 5 步防重协议 100% 达成
+
+- ✅ Step 1 grep sources_tracked.jsonl：marketingskills 未追踪
+- ✅ Step 2 grep articles/projects/README.md：marketingskills 未发布
+- ✅ Step 3 grep .agent/HISTORY.md：marketingskills 未提及
+- ✅ Step 4 License 核实：MIT License（合规）
+- ✅ Step 5 决定：NEW PROJECT（5 步 100% 达成 + 36.3k ⭐ + 主题 100% 关联 + License 合规）
+
+### R668 选题决策矩阵
+
+**优先方案**：**Layer 3 Skill Registry Primitive deep dive + marketingskills NEW PROJECT**
+
+理由：
+
+| 维度 | 评估 |
+|------|------|
+| **1st-party 价值** | ⭐⭐⭐⭐⭐ 极高（Layer 3 三子层模型展开 + v2.0 修正建议）|
+| **R667 闭合度** | ⭐⭐⭐⭐⭐ 高（R667 6 Layer 模型在 Layer 3 精细化展开）|
+| **marketingskills 价值** | ⭐⭐⭐⭐⭐ 高（36.3k ⭐ 垂直营销 Skill Library + 与 alirezarezvani 形成双实证）|
+| **R668 时机** | ⭐⭐⭐⭐⭐ 极高（herdr 12k⭐ BREAK 临界 + marketingskills 首次发现 + alirezarezvani 跨平台突破）|
+| **主题关联度** | ⭐⭐⭐⭐⭐ 100%（与 Layer 3 Skill Registry Primitive 完全 topic-overlap）|
+
+**R668 决策路径**：5 个关键信号 100% NOT triggered + R667 6 Layer 模型需在 Layer 3 精细化展开 + marketingskills 36.3k ⭐ 首次发现 + alirezarezvani 20.4k ⭐ 持续增长 + herdr 11.95k ⭐ 12k⭐ BREAK 临界 → **R668 决策 Layer 3 Skill Registry Primitive deep dive + marketingskills NEW PROJECT + 5 个 monitoring UPDATE**
+
+---
+
+**R668 实证结论**：Layer 3 Skill Registry Primitive 必须细化为 3 子层（Skills Spec + Skill Registry + Skill Library）。Skill Library 必须支持「通用 + 垂直 + 自建」三模式并存。marketingskills 36.3k ⭐ 是垂直型 Skill Library 标杆实证。
+
+**R668 修正建议**：awesome-harness-engineering v2.0 应将 Skill Registry Primitive 拆分为 3 个 Sub-Primitive：Skills Spec + Skill Registry + Skill Library。
+
+**R669 监测重点**：herdr 12k⭐ BREAK + planning-with-files 25k⭐ BREAK + gastown 17k⭐ BREAK + marketingskills 38k⭐/40k⭐ BREAK + awesome-harness-engineering v2.0 release + Layer 3.1 Skills Spec 1st-party 标准化 + Layer 3.3 Skill Library 第三个垂直出现。

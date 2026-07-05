@@ -1,10 +1,14 @@
 # awesome-harness-engineering：当行业开始系统化积累 Harness 工程知识
 
-> 本文推荐 [ai-boost/awesome-harness-engineering](https://github.com/ai-boost/awesome-harness-engineering)，一个于 2026 年 3 月创建的 GitHub 仓库，最近更新 2026-07-05，目前 **2,729 ⭐（R661 update：2,709 → 2,729，+20）**，是 Harness Engineering 领域最完整的精选资源列表。
+> 本文推荐 [ai-boost/awesome-harness-engineering](https://github.com/ai-boost/awesome-harness-engineering)，一个于 2026 年 3 月创建的 GitHub 仓库，最近更新 2026-07-05，目前 **2,762 ⭐（R668 update：2,757 → 2,762，+5 in 2h）**，是 Harness Engineering 领域最完整的精选资源列表。**R668 monitoring UPDATE**: R667 2,757 ⭐ → R668 2,762 ⭐（+5 in 2h），**v2.0 NOT released**（持续 5 轮 R663-R668 NOT triggered），R667 Multi-Agent Stack 分层修正预测 + R668 Layer 3 Skill Registry 三子层修正预测等待 v2.0 采纳。
 >
 > **核心论点**：Harness Engineering 从"框架附庸"走向独立工程学科，而这个 Awesome 列表是这场学科化进程的最直接证明——它不是另一个框架对比列表，而是按照工程组件的内在逻辑组织的知识地图。
 >
 > **R661 合集化决策**：本文与 [`awesome-harness-engineering-three-dimensions-protocolization-2026`](../deep-dives/awesome-harness-engineering-three-dimensions-protocolization-2026.md) 配套阅读——后者基于 R657-R660 三轮 1st-party 演化（Cursor iOS cross-device + Apple Xcode vertical + 多 vendor control plane horizontal）合集化为「harness 协议化三维度体系」。
+
+> **R667 修正预测**：R667 Multi-Agent Stack 分层 deep dive 提出 awesome-harness-engineering v2.0 应将 Multi-Agent Orchestration Primitive 拆分为 5 Layer Primitive + 4 Cross-Layer Contract（详见 [R667 article](../orchestration/multi-agent-stack-r667-harness-protocolization-empirical-layering-2026.md) 第七节）。
+
+> **R668 进一步修正预测**：R668 Layer 3 Skill Registry Primitive deep dive 提出 v2.0 应将 Skill Registry Primitive 进一步拆分为 3 个 Sub-Primitive：Skills Spec + Skill Registry + Skill Library（详见 [R668 article](../orchestration/multi-agent-stack-r668-skill-registry-primitive-horizontal-decoupling-deep-dive-2026.md) 第六节）。
 
 ---
 
