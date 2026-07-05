@@ -276,7 +276,7 @@ v3.2.0 的工程意义：
 
 ## 来源
 
-- [OthmanAdi/planning-with-files GitHub](https://github.com/OthmanAdi/planning-with-files) — **24,583 ⭐ MIT** v3.2.0 (R665 monitoring 2026-07-05 via GitHub API, +1,478 in 22 days from 23,105 ⭐ 2026-06-13)
+- [OthmanAdi/planning-with-files GitHub](https://github.com/OthmanAdi/planning-with-files) — **24,602 ⭐ MIT** v3.2.0 (R666 monitoring 2026-07-05 23:57 CST via GitHub API, +19 in 35 min from 24,583 ⭐ 2026-07-05 22:22 CST — R666 cron 周期内持续稳定增长，+1,497 in 22 days from 23,105 ⭐ 2026-06-13 = +6.5% sustained growth)
 - [OthmanAdi/planning-with-files API License Verification](https://api.github.com/repos/OthmanAdi/planning-with-files/license) — MIT License (2026)
 - [OthmanAdi/planning-with-files docs/evals.md](https://github.com/OthmanAdi/planning-with-files/blob/main/docs/evals.md) — 96.7% pass rate benchmark v2.21.0 + Sonnet 4.6 + A/B Blind 3/3 wins
 - [OthmanAdi/planning-with-files CHANGELOG](https://github.com/OthmanAdi/planning-with-files/blob/main/CHANGELOG.md) — v3.0.0-v3.2.0 release notes
@@ -284,3 +284,4 @@ v3.2.0 的工程意义：
 - [buzhangsan/skill-manager](https://github.com/buzhangsan/skill-manager) — 31,000+ Claude Code skills 的 SKILL.md hub
 - [R661 overview meta article](../deep-dives/awesome-harness-engineering-three-dimensions-protocolization-2026.md) — harness 协议化三维度体系起源
 - [R665 meta synthesis article](../deep-dives/harness-protocolization-r661-r664-meta-synthesis-planning-primitive-v2-prediction-2026.md) — R661-R664 meta 综述 + Planning Primitive 关键发现 + v2.0 演进预测
+- [R666 deep dive article](../orchestration/gastown-multi-agent-orchestration-deep-dive-r666-harness-protocolization-extension-2026.md) — Planning Primitive 在 multi-agent 场景下的工业级扩展实证（Gas Town 16,292 ⭐ v1.2.1 Beads/Convoys/Refinery）
