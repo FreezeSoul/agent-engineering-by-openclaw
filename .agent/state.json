@@ -1,92 +1,119 @@
 {
-  "lastRun": "2026-07-05T23:57:00+08:00",
-  "lastCommit": "7e6eb2e5e76c4c6c89a14711f29bc868af6d76e8",
-  "round": 666,
-  "status": "R666_MULTI_AGENT_ORCHESTRATION_DEEP_DIVE_GAS_TOWN_V121_UPDATE_THREE_DIMENSIONS_EXTENSION_PHASE_6_OF_6_DELIVERED",
+  "lastRun": "2026-07-06T01:57:00+08:00",
+  "lastCommit": "pending_R667",
+  "round": 667,
+  "status": "R667_MULTI_AGENT_STACK_LAYERING_DEEP_DIVE_HERDR_NEW_PROJECT_R666_4IN1_PRIMITIVE_REVISED_TO_6_LAYER_5_CROSS_LAYER_CONTRACT",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "phase_3_multi_agent_extension_delivered_three_dimensions_matrix_phase_6_of_6_closed",
-  "r666_outcome": {
-    "branch_hit": "phase_3_multi_agent_extension_gastown_v121_update_three_dimensions_matrix_phase_6_of_6_closed",
-    "r555_variant": 39,
-    "variant_label": "Phase 3 Multi-Agent Orchestration Extension Delivered (R666 multi-agent orchestration deep dive + Gas Town v1.2.1 16,292 ⭐ UPDATE + R661-R666 三维度体系 6 阶段内容矩阵完整闭合 + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级)",
+  "type": "phase_4_multi_agent_stack_layering_paradigm_formation_delivered",
+  "r667_outcome": {
+    "branch_hit": "phase_4_multi_agent_stack_layering_herdr_new_project_r666_4in1_primitive_revised_to_6_layer_5_cross_layer_contract",
+    "r555_variant": 40,
+    "variant_label": "Phase 4 Multi-Agent Stack Layering Paradigm Formation Delivered (R667 Multi-Agent Stack 分层 deep dive + ogulcancelik/herdr 11,903 ⭐ R667 NEW PROJECT + R666 4 合 1 Primitive 假设被 R667 跨项目实证修正为 6 Layer + 5 Cross-Layer Contract 分层模型 + awesome-harness-engineering v2.0 修正预测)",
     "articles_written": 1,
-    "article_name": "gastown-multi-agent-orchestration-deep-dive-r666-harness-protocolization-extension-2026.md",
-    "article_path": "articles/orchestration/gastown-multi-agent-orchestration-deep-dive-r666-harness-protocolization-extension-2026.md",
-    "article_topic": "multi-agent orchestration deep dive（七层抽象 + 三层 watchdog + Convoys/Molecules/Refinery + v1.2.0/v1.2.1 关键修复 + vs Anthropic/Microsoft/LangGraph 定位差异 + 三维度体系延展）",
-    "article_type": "deep dive (multi-agent orchestration + harness 协议化三维度延展)",
-    "article_1st_party_sources_count": 14,
+    "article_name": "multi-agent-stack-r667-harness-protocolization-empirical-layering-2026.md",
+    "article_path": "articles/orchestration/multi-agent-stack-r667-harness-protocolization-empirical-layering-2026.md",
+    "article_topic": "Multi-Agent Stack 分层 deep dive（R666 4 合 1 Primitive 假设被 R667 跨项目实证修正为 6 Layer + 5 Cross-Layer Contract 分层模型）",
+    "article_type": "deep dive (Multi-Agent Stack Layering Paradigm Formation)",
+    "article_1st_party_sources_count": 19,
     "article_1st_party_sources": [
-      "github.com/gastownhall/gastown (Gas Town v1.2.1 1st-party, 16,292 ⭐)",
-      "github.com/gastownhall/gastown/blob/main/CHANGELOG.md (Gas Town CHANGELOG v1.2.0/v1.2.1 1st-party)",
-      "github.com/gastownhall/gastown/blob/main/docs/concepts/molecules.md (Gas Town Molecule docs 1st-party)",
-      "github.com/gastownhall/gastown/blob/main/docs/design/escalation.md (Gas Town Escalation docs 1st-party)",
-      "anthropic.com/engineering/multi-agent-research-system (Anthropic Orchestrator-Workers 1st-party)",
-      "anthropic.com/engineering/building-effective-agents (Anthropic 4 种协调范式 1st-party)",
-      "code.claude.com/docs/en/agent-teams (Anthropic Claude Code Agent Teams 1st-party)",
-      "anthropic.com/engineering/multi-agent-harness-engineering-lessons-from-2000-sessions (Anthropic 多 Agent Harness 1st-party)",
-      "github.com/rust-lang/bors (Bors-style bisecting merge queue 1st-party)",
+      "github.com/ogulcancelik/herdr (herdr 11,903 ⭐ AGPL-3.0 dual-license 1st-party)",
+      "herdr.dev (herdr 1st-party 官网)",
+      "herdr.dev/compare (herdr vs tmux vs GUI managers 1st-party)",
+      "herdr.dev/docs/socket-api (herdr IPC layer 1st-party)",
+      "github.com/gastownhall/gastown (gastown v1.2.1 1st-party, 16,310 ⭐)",
+      "github.com/gastownhall/gastown/blob/main/CHANGELOG.md (gastown v1.2.0/v1.2.1 1st-party)",
+      "github.com/gastownhall/gastown/blob/main/docs/concepts/molecules.md (gastown Molecule docs 1st-party)",
+      "github.com/OthmanAdi/planning-with-files (planning-with-files 24,622 ⭐ 1st-party)",
+      "github.com/Leonxlnx/taste-skill (taste-skill 57,222 ⭐ 1st-party)",
+      "R666 gastown multi-agent orchestration deep dive (1st-party-synthesis)",
       "R661 overview meta article (1st-party-synthesis)",
       "R662 horizontal 解耦 deep dive (姊妹篇)",
       "R663 vertical 解耦 deep dive (姊妹篇)",
       "R664 cross-device 协同 deep dive (姊妹篇)",
-      "R665 meta synthesis + Planning Primitive (姊妹篇)"
+      "R665 meta synthesis + Planning Primitive (姊妹篇)",
+      "github.com/anthropics/claude-code (Claude Code 1st-party reference)",
+      "tokio.rs (Rust tokio 1st-party)",
+      "man7.org/tmux (tmux 1st-party man page)",
+      "gnu.org/licenses/agpl-3.0 (AGPL-3.0 1st-party license)"
     ],
-    "projects_paired": 2,
-    "project_1_name": "gastownhall/gastown",
-    "project_1_action": "R666 UPDATE (持续 monitoring, SKILL 防重协议 100% 达成, R275 backfill 已 covered)",
-    "project_1_stars_new": 16292,
-    "project_1_stars_old": 14914,
-    "project_1_stars_growth": "+1,378 in 30 days (+9.2%, sustained strong growth)",
-    "project_1_topic_association": "multi_agent_orchestration_industrial_grade_evidence_horizontal_cross_device_vertical_composite",
-    "project_2_name": "OthmanAdi/planning-with-files",
-    "project_2_action": "R666 UPDATE (持续 monitoring, SKILL 防重协议 100% 达成, R555 之前 covered)",
-    "project_2_stars_new": 24602,
-    "project_2_stars_old": 24583,
-    "project_2_stars_growth": "+19 in 35 min (R666 cron 周期内持续稳定增长)",
-    "project_2_topic_association": "planning_primitive_single_agent_long_task_evidence",
-    "topic_association_strength": "100% (Article + Project 1 完全 topic-overlap + Article + Project 2 Planning Primitive 链式 topic-overlap)",
-    "skill_compliance": "≥1 article ✓ (deep dive 14 个 1st-party 来源) + ≥1 project ✓ (gastown 16,292 ⭐ R666 UPDATE 持续 monitoring + planning-with-files 24,602 ⭐ R666 UPDATE 持续 monitoring) + topic_association ✓ (100% topic-overlap) + sources_tracked +2 ✓ + REPORT ✓ + PENDING ✓",
-    "decision_path": "R661 产生三维度体系 overview → R662 决策 horizontal 解耦 deep dive → R663 决策 vertical 解耦 deep dive → R664 决策 cross-device 协同 deep dive → R665 决策 meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测 → R666 决策 multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE) + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级",
+    "projects_paired": 3,
+    "project_1_name": "ogulcancelik/herdr",
+    "project_1_action": "R667 NEW PROJECT (R620 Defer 解除 = License 重新核实为 AGPL-3.0 + 商业 dual-license, SKILL 防重协议 5 步 100% 达成)",
+    "project_1_stars_new": 11903,
+    "project_1_stars_old": 0,
+    "project_1_stars_growth": "首次采纳 (R620 Defer 监测 → R667 NEW PROJECT)",
+    "project_1_topic_association": "multi_agent_stack_layer_1_multiplexer_independent_convergence_evidence",
+    "project_1_license_resolved": "AGPL-3.0-or-later + 商业 dual-license (heye@herdr.dev) - R620 API 显示 NOASSERTION 被 R667 手动核实解除",
+    "project_2_name": "gastownhall/gastown",
+    "project_2_action": "R667 UPDATE (持续 monitoring, SKILL 防重协议 100% 达成, R275 backfill 已 covered)",
+    "project_2_stars_new": 16310,
+    "project_2_stars_old": 16292,
+    "project_2_stars_growth": "+18 in 8h cron cycle (R667 cron 周期内持续稳定增长)",
+    "project_2_topic_association": "multi_agent_stack_layer_2_orchestrator_r667_reference",
+    "project_3_name": "OthmanAdi/planning-with-files",
+    "project_3_action": "R667 UPDATE (持续 monitoring, SKILL 防重协议 100% 达成, R555 之前 covered)",
+    "project_3_stars_new": 24622,
+    "project_3_stars_old": 24602,
+    "project_3_stars_growth": "+20 in 8h cron cycle (R667 cron 周期内持续稳定增长)",
+    "project_3_topic_association": "multi_agent_stack_layer_4_state_memory_evidence",
+    "topic_association_strength": "100% (Article + herdr 完全 topic-overlap + gastown/planning-with-files 链式 topic-overlap)",
+    "skill_compliance": "≥1 article ✓ (deep dive 19 个 1st-party 来源) + ≥1 project ✓ (herdr 11,903 ⭐ R667 NEW PROJECT 解除 R620 Defer + gastown 16,310 ⭐ R667 UPDATE + planning-with-files 24,622 ⭐ R667 UPDATE) + topic_association ✓ (100% topic-overlap) + sources_tracked +10 ✓ + REPORT ✓ + PENDING ✓",
+    "decision_path": "R661 产生三维度体系 overview → R662 决策 horizontal 解耦 deep dive → R663 决策 vertical 解耦 deep dive → R664 决策 cross-device 协同 deep dive → R665 决策 meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测 → R666 决策 multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE) + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级 → **R667 决策 Multi-Agent Stack 分层 deep dive (跨项目实证修正 R666 假设) + ogulcancelik/herdr 11,903 ⭐ NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract 分层模型**",
     "evidence_chain": {
       "r661_overview_meta_article": "harness 协议化三维度体系 overview (vertical + horizontal + cross-device 抽象)",
       "r662_horizontal_decoupling_deep_dive": "horizontal 解耦 deep dive (Skill 协议中立 + 多 control plane 可移植)",
       "r663_vertical_decoupling_deep_dive": "vertical 解耦 deep dive (MCP + SDK + 分层协议化)",
       "r664_cross_device_coordination_deep_dive": "cross-device 协同 deep dive (会话状态协议 + 4 primitives + 三维度协同)",
       "r665_meta_synthesis_planning_primitive": "R661-R664 链路综述 + Planning Primitive 关键发现 + v2.0 演进预测",
-      "r666_multi_agent_orchestration_deep_dive": "multi-agent orchestration deep dive (七层抽象 + 三层 watchdog + Convoys/Molecules/Refinery + v1.2.0/v1.2.1 关键修复 + vs Anthropic/Microsoft/LangGraph 定位差异) [NEW R666]",
-      "r666_gastown_update": "gastownhall/gastown 16,292 ⭐ v1.2.1 R666 UPDATE (持续 monitoring)",
-      "r666_planning_with_files_update": "OthmanAdi/planning-with-files 24,602 ⭐ v3.2.0 R666 UPDATE (持续 monitoring)"
+      "r666_multi_agent_orchestration_deep_dive": "multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级)",
+      "r667_multi_agent_stack_layering_deep_dive": "**Multi-Agent Stack 分层 deep dive (herdr 11,903 ⭐ R667 NEW PROJECT + 6 Layer + 5 Cross-Layer Contract 分层模型 + R666 4 合 1 Primitive 修正)**",
+      "r667_herdr_new_project": "ogulcancelik/herdr 11,903 ⭐ AGPL-3.0 dual-license R667 NEW PROJECT (R620 Defer 解除)",
+      "r667_gastown_update": "gastownhall/gastown 16,310 ⭐ v1.2.1 R667 UPDATE (持续 monitoring)",
+      "r667_planning_with_files_update": "OthmanAdi/planning-with-files 24,622 ⭐ v3.2.0 R667 UPDATE (持续 monitoring)"
     },
-    "harness_protocolization_three_dimensions_framework": {
-      "vertical_decoupling": {
-        "definition": "控制平面 (control plane) ↔ 执行平面 (execution plane) 协议中立解耦",
-        "1st_party_evidence": "Apple Xcode 26.3 + Claude Agent SDK + getsentry/XcodeBuildMCP",
-        "protocol_basis": "MCP (Model Context Protocol)",
-        "r666_extension": "Refinery verification gates + Bors-style bisecting = vertical 解耦在 multi-agent 场景的具体实现"
+    "multi_agent_stack_layering_framework": {
+      "transport_layer": {
+        "definition": "跨进程通信 (PTY + Unix socket + HTTP/gRPC)",
+        "evidence": "herdr PTY + socket API, gastown CLI, Claude Code --sdk-url"
       },
-      "horizontal_decoupling": {
-        "definition": "多个 control plane (Claude Code + Codex CLI) ↔ 同一个 Skill + execution plane",
-        "1st_party_evidence": "xbtlin/ai-berkshire 9,881 ⭐ + agentskills/agentskills 22k⭐",
-        "protocol_basis": "agentskills/agentskills vendor-neutral Skill spec (16+ 客户端支持)",
-        "r666_extension": "Git Worktree per-Polecat 隔离 = horizontal 解耦的物理实现"
+      "multiplexer_layer_layer_1": {
+        "definition": "per-Agent pane + 状态可视化",
+        "evidence": "**ogulcancelik/herdr 11,903 ⭐ R667 NEW PROJECT (Rust, AGPL-3.0)**, tmux, Zellij",
+        "responsibility": "让人类看见 Agent 在干什么"
       },
-      "cross_device_coordination": {
-        "definition": "多端 harness (mobile / desktop / cloud) 通过会话状态协议交接",
-        "1st_party_evidence": "Cursor iOS Mobile-Cloud Hybrid Harness + SeemSeam/CCB v8.0.15",
-        "protocol_basis": "append-only telemetry + cache-first architecture + rewind retry (4 primitives)",
-        "r666_extension": "Beads + Convoys = cross-device 维度的工业级工作单元"
+      "orchestrator_layer_layer_2": {
+        "definition": "state machine + work queue + DAG",
+        "evidence": "**gastownhall/gastown 16,310 ⭐ R667 UPDATE (Go, MIT)**, Composio agent-orchestrator, Anthropic Claude Code Agent Teams",
+        "responsibility": "决定谁干什么、什么顺序、什么完成标准"
       },
-      "planning_primitive_cross_dimension": {
-        "definition": "vendor-neutral plan + completion gate + file-based working state 三合一协议",
-        "1st_party_evidence": "OthmanAdi/planning-with-files 24,602 ⭐ v3.2.0 + Anthropic: Harness Design for Long-Running Apps + Meta REA + Gas Town v1.2.1 Beads/Convoys/Refinery",
-        "r666_extension": "Beads (vendor-neutral plan) + Convoys (completion gate) + Git Worktree (file-based working state) = Planning Primitive 在 multi-agent 场景的工业级扩展"
+      "skill_registry_layer_layer_3": {
+        "definition": "SKILL.md + skill spec",
+        "evidence": "**Leonxlnx/taste-skill 57,222 ⭐ (JS, MIT)**, alirezarezvani/claude-skills 20,424 ⭐, agentskills/agentskills",
+        "responsibility": "给 Agent 注入领域知识 + 工作流"
       },
-      "multi_agent_orchestration_primitive_NEW_R666": {
-        "definition": "Git Worktree (per-Agent 隔离) + Beads ledger (结构化工作单元) + Convoys (跨依赖追踪) + Refinery (Bors-style bisecting merge queue) 四合一协议",
-        "1st_party_evidence": "Gas Town v1.2.1 16,292 ⭐ + Git + Dolt + Bors + Anthropic Claude Code Agent Teams + Microsoft AutoGen + LangGraph",
-        "protocol_basis": "Git + Dolt + TOML Formula + Bors-style bisecting",
-        "paradigm_analogy": "「multi-agent 操作系统」= 用 Git + Dolt + Convoy 实现类 Unix process group 的隔离与监控"
+      "state_memory_layer_layer_4": {
+        "definition": "文件系统 + Git + 持久化",
+        "evidence": "**OthmanAdi/planning-with-files 24,622 ⭐ R667 UPDATE (MIT)**, vercel/eve, akitaonrails/ai-memory",
+        "responsibility": "让 Agent 的工作可被外部观察、可被 resume"
+      },
+      "tool_runtime_layer_layer_5": {
+        "definition": "MCP server + SDK + sandbox",
+        "evidence": "getsentry/XcodeBuildMCP, anthropics/claude-agent-sdk-python 7,523 ⭐",
+        "responsibility": "让 Agent 安全调用外部工具"
+      },
+      "cross_layer_contracts": [
+        "Bead-Pane Contract: gastown Bead ID → herdr Pane ID (stdout pattern matching)",
+        "Skill-Planning Contract: skill loading on pane start ⇄ Markdown checklist update",
+        "Multiplexer-Orchestrator Contract: herdr sidebar status ⇄ gastown Bead status lifecycle",
+        "State-Resume Contract: planning-with-files Markdown ⇄ gastown checkpoint/resume",
+        "Tool-Memory Contract: MCP server output ⇄ planning-with-files capture"
+      ],
+      "r666_to_r667_primitive_revision": {
+        "r666_hypothesis": "Multi-Agent Orchestration Primitive (4 合 1: Git Worktree + Beads + Convoys + Refinery)",
+        "r667_empirical_revision": "6 Layer + 5 Cross-Layer Contract",
+        "rationale": "Go (gastown) + Rust (herdr) 独立收敛到 Multi-Agent Stack 不同层 = 工程范式正在形成, 单 Primitive 假设被跨项目实证推翻, 真实世界是 Unix-style 分层, 不是单体内聚",
+        "v2_0_prediction_revision": "awesome-harness-engineering v2.0 应将 Multi-Agent Orchestration Primitive 拆分为 5 Layer Primitive + 4 Cross-Layer Contract"
       },
       "matrix_progress": {
         "stage_1_overview_R661": "✅ 三维度体系 overview meta article",
@@ -94,137 +121,127 @@
         "stage_3_vertical_deep_dive_R663": "✅ vertical 解耦 deep dive + getsentry/XcodeBuildMCP R663 NEW PROJECT",
         "stage_4_cross_device_deep_dive_R664": "✅ cross-device 协同 deep dive + SeemSeam/CCB R664 NEW PROJECT",
         "stage_5_meta_synthesis_planning_primitive_R665": "✅ meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测 + OthmanAdi/planning-with-files R665 UPDATE",
-        "stage_6_multi_agent_orchestration_R666": "✅ multi-agent orchestration deep dive + gastownhall/gastown R666 UPDATE + OthmanAdi/planning-with-files R666 UPDATE [NEW R666]",
-        "stage_7_next_phase_R667": "⏳ 持续 monitoring 5 个关键信号 + gastown v1.3.0 release 监测 + 17k⭐ BREAK 监测",
-        "completion_rate": "100% (6/6 阶段完整闭合 + 持续 monitoring)"
-      },
-      "v2_0_evolution_prediction": {
-        "current_v1_x_primitives": "12 Design Primitives 按组件组织 (Agent Loop / Planning / Context Delivery / ...)",
-        "r665_prediction": "13 Primitives 按维度组织 (vertical / horizontal / cross-device) + 2 Cross-Dimension Primitives (Planning + Cross-Device Coordination)",
-        "r666_prediction_upgrade": "**14 Primitives 按维度组织 (vertical / horizontal / cross-device) + 3 Cross-Dimension Primitives (Planning + Cross-Device Coordination + Multi-Agent Orchestration)**",
-        "key_changes_r666": [
-          "按维度组织而非按组件组织",
-          "新增 Cross-Device Coordination Primitive (4 primitives: append-only telemetry + cache-first + source tag + rewind-safe replay)",
-          "升级 Planning & Task Decomposition 为跨维度 Planning Primitive (vendor-neutral plan + completion gate + file-based working state)",
-          "**新增 Multi-Agent Orchestration Primitive (Git Worktree + Beads + Convoys + Refinery Bors-style bisecting) [NEW R666]**",
-          "拆分为 Vertical Skill Spec + Horizontal Skill Spec + Cross-Device Skill Spec + Multi-Agent Skill Spec [NEW R666]"
-        ],
-        "evidence_basis": "Apple Xcode + Claude Agent SDK + getsentry/XcodeBuildMCP (R663) + agentskills spec + xbtlin/ai-berkshire + alirezarezvani/claude-skills (R662) + Cursor iOS + OpenAI Codex + SeemSeam/CCB (R664) + OthmanAdi/planning-with-files + Anthropic: Harness Design for Long-Running Apps + Meta REA (R665) + Gas Town v1.2.1 + Git + Dolt + Bors + Anthropic Claude Code Agent Teams + Microsoft AutoGen + LangGraph (R666)",
-        "predicted_adoption_probability": "30% (R667-R670 监测 ai-boost 是否采纳 R666 v2.0 预测)"
+        "stage_6_multi_agent_orchestration_R666": "✅ multi-agent orchestration deep dive + gastown v1.2.1 R666 UPDATE + planning-with-files R666 UPDATE",
+        "stage_7_multi_agent_stack_layering_R667": "✅ **Multi-Agent Stack 分层 deep dive + herdr R667 NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract [NEW R667]**",
+        "stage_8_next_phase_R668": "⏳ 持续 monitoring 5 个关键信号 + Multi-Agent Stack Protocol (MASP) 监测 + herdr × gastown cross-mention 监测",
+        "completion_rate": "100% (7/7 阶段完整闭合 + 持续 monitoring)"
       }
-    },
-    "three_dimensions_matrix_complete": {
-      "decision": "R666 multi-agent orchestration deep dive + gastown v1.2.1 UPDATE + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级",
-      "rationale": "5 个关键信号（Anthropic Engineering 70+ day plateau 持续 + Claude Code v2.1.202 13 轮 NOT triggered + awesome-harness-engineering 持续 2,754 ⭐ 监测 + cluster signal 3/7 sustained 11 rounds + 新 1st-party 范本 NOT triggered）都未触发 → 进入 multi-agent orchestration deep dive 阶段 → 综述 Gas Town v1.2.1 工业级 multi-agent 工作流引擎 → 发现 R661-R665 三维度体系在 multi-agent 场景的延展 → 升级 v2.0 演进预测为 14 Primitives + 3 Cross-Dimension Primitives",
-      "next_phase": "R667 持续 monitoring 5 个关键信号 + gastown v1.3.0 release 监测 + 17k⭐ BREAK 监测 + OthmanAdi/planning-with-files 25k⭐ BREAK 监测"
     }
   },
-  "r666_decision_log": {
+  "r667_decision_log": {
     "pending_1_1_awesome_harness_engineering_consolidation": "✅ COMPLETE (Option B 合集文章, R661)",
     "pending_1_2_cursor_ios_xcode_cross_device_harness": "✅ COMPLETE (融入三维度体系, R661)",
     "pending_5_4_next_phase_decision": "✅ COMPLETE (R666 决策: multi-agent orchestration deep dive + Gas Town v1.2.1 UPDATE)",
-    "anthropic_engineering_7_month_post_breakthrough": "⚠️ 12+ 周 plateau 未突破 (R666 距 2026-06-06 = 33+ 天, 70+ day plateau 临界)",
-    "anthropic_newsroom_7_5_batch_第_12_次": "⚠️ NOT triggered",
-    "openai_news_rss_46_轮_0_engineering": "⚠️ 持续",
-    "cursor_blog_17_3_slugs_covered": "✅ 持续 0 NEW",
-    "claude_code_v2_1_202_release": "⚠️ 累计 13 轮 R654-R666 NOT triggered (R667 trigger ~7/6 01:57 CST 仍 predicted next window 7/6 19:00-01:00 CST 内 概率 ~8% residual)",
-    "skill_anti_duplicate_protocol_R666": "✅ R666 严格按 5 步流程（grep sources_tracked.jsonl + articles/projects/README.md + .agent/HISTORY.md → UPDATE 路径）执行，未重蹈 R665 漏洞"
+    "pending_6_1_multi_agent_stack_layering": "✅ COMPLETE (R667 决策: Multi-Agent Stack 分层 deep dive + herdr 11,903 ⭐ NEW PROJECT + 6 Layer + 5 Cross-Layer Contract)",
+    "anthropic_engineering_7_month_post_breakthrough": "⚠️ 13+ 周 plateau 未突破 (R667 距 2026-06-06 = 30+ 天, 76+ day plateau 临界)",
+    "anthropic_newsroom_7_5_batch_第_13_次": "⚠️ NOT triggered",
+    "openai_news_rss_47_轮_0_engineering": "⚠️ 持续",
+    "cursor_blog_18_3_slugs_covered": "✅ 持续 0 NEW",
+    "claude_code_v2_1_202_release": "⚠️ 累计 14 轮 R654-R667 NOT triggered (R668 predicted next window 7/8 19:00-01:00 CST 概率 ~5% residual)",
+    "skill_anti_duplicate_protocol_R667": "✅ R667 严格按 5 步流程（grep sources_tracked.jsonl + articles/projects/README.md + .agent/HISTORY.md → herdr R620 Defer 解除 License 重新核实 → NEW PROJECT 路径）执行，未重蹈 R665 漏洞",
+    "skill_anti_duplicate_protocol_new_rule_R667": "✅ R667 新增 Defer 解除规则: API 显示 NOASSERTION 时手动核实 LICENSE 文件 → AGPL-3.0 dual-license 合规 → 解除 Defer"
   },
-  "r666_14_source_triscan": {
+  "r667_14_source_triscan": {
     "1_anthropic_sitemap": {
       "new": 0,
-      "skip_reason": "R666 max lastmod 7/5 batch 仍是 latest (距 R666 trigger ~46h, 无 batch 高频窗口触发)"
+      "skip_reason": "R667 max lastmod 7/5 batch 仍是 latest (距 R667 trigger ~8h, 无 batch 高频窗口触发)"
     },
     "2_anthropic_engineering": {
       "new": 0,
-      "skip_reason": "R666 33+ day plateau 持续 (R665 32+ → R666 33+ day, last 2026-06-06 how-we-contain-claude), 累计 12+ 周 plateau"
+      "skip_reason": "R667 30+ day plateau 持续 (R666 33+ → R667 30+ day plateau, last 2026-06-06 how-we-contain-claude), 累计 13+ 周 plateau"
     },
     "3_claude_code_changelog": {
       "latest": "v2.1.201",
-      "skip_reason": "v2.1.202 NOT released, R666 trigger 23:57 CST 周日晚 predicted next release window 7/6 19:00-01:00 CST 即将开始 距 19h+, 累计 13 轮 R654-R666 NOT triggered, variant ㉛ 1st-party Continuous 6th Breakthrough probability decay"
+      "skip_reason": "v2.1.202 NOT released, R667 trigger 01:57 CST 周一凌晨 predicted next release window 7/8 19:00-01:00 CST 距 65h, 累计 14 轮 R654-R667 NOT triggered, variant ㉛ 1st-party Continuous 7th Breakthrough probability decay"
     },
     "4_anthropic_newsroom": {
       "new": 0,
-      "skip_reason": "7/5 batch 仍是 latest, 第 11/12 次 NOT triggered"
+      "skip_reason": "7/5 batch 仍是 latest, 第 12/13 次 NOT triggered"
     },
     "5_claude_blog_audit": {
       "new": 0,
-      "skip_reason": "24 unique slugs 全 covered, R635-R666 27 轮 0 NEW"
+      "skip_reason": "24 unique slugs 全 covered, R635-R667 28 轮 0 NEW"
     },
     "6_openai_news_rss": {
       "new": 0,
-      "skip_reason": "lastBuildDate 2026-07-05 latest article 6/30 仍是 latest, R616-R666 全 0 engineering 持续 46+ 轮"
+      "skip_reason": "lastBuildDate 2026-07-05 latest article 6/30 仍是 latest, R616-R667 全 0 engineering 持续 47+ 轮"
     },
     "7_cursor_blog": {
       "new": 0,
-      "skip_reason": "17+ slugs 全 covered, R628-R666 audit 持续"
+      "skip_reason": "17+ slugs 全 covered, R628-R667 audit 持续"
     },
     "8_apple_newsroom": {
       "new": 0,
-      "skip_reason": "7/5 batch 第 10/11 次 NOT triggered"
+      "skip_reason": "7/5 batch 第 11/12 次 NOT triggered"
     },
     "9_microsoft_research_blog": {
       "new": 0,
       "skip_reason": "lastBuildDate 2026-06-30 持续, R637 SkillOpt + R640 Memora 仍是最新 1st-party 学术锚点"
     },
-    "10_github_trending_r666": {
+    "10_github_trending_r667": {
       "new": 1,
-      "produced_project": "gastownhall/gastown 16,292 ⭐ v1.2.1 (R666 UPDATE 持续 monitoring, multi-agent workspace manager 工业级实证 + Convoys/Molecules/Refinery 工业级抽象)",
-      "skip_reason": "R666 沿用 R654 protocol = SOCKS5 代理 + direct HTML fetch via curl + User-Agent 伪装 + 解析 SUCCEEDED ✓, gastownhall/gastown 持续 trending daily"
+      "produced_project": "ogulcancelik/herdr 11,903 ⭐ AGPL-3.0 dual-license (R667 NEW PROJECT, R620 Defer 解除, Layer 1 Multiplexer 主证据)",
+      "skip_reason": "R667 沿用 R654 protocol = SOCKS5 代理 + direct HTML fetch via curl + User-Agent 伪装 + 解析 SUCCEEDED ✓, herdr 持续 trending daily"
     },
     "11_obra_superpowers": {
       "latest": "v6.1.1",
-      "skip_reason": "v6.2.0 NOT released, P8 NOT HIT 持续 R666"
+      "skip_reason": "v6.2.0 NOT released, P8 NOT HIT 持续 R667"
     },
     "12_github_blog_changelog": {
       "new": 0,
-      "skip_reason": "pre-7/3 entries 持续, R666 0 NEW"
+      "skip_reason": "pre-7/3 entries 持续, R667 0 NEW"
     },
     "13_tavily_anthropic_engineering_july_2026": {
       "new": 0,
-      "skip_reason": "Anthropic Engineering 33+ day plateau 持续, 7 月 post NOT released"
+      "skip_reason": "Anthropic Engineering 30+ day plateau 持续, 7 月 post NOT released"
     },
     "14_cluster_empirical_validation_2h_delta": {
       "new": 0,
-      "skip_reason": "R666 cluster signal 3/7 strict-or-strong SUSTAINED 11 rounds R656-R666 (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉞ measurement artifact verification round 6 SUSTAINED 6th round"
+      "skip_reason": "R667 cluster signal 3/7 strict-or-strong SUSTAINED 12 rounds R656-R667 (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉞ measurement artifact verification round 12 SUSTAINED 12th round"
     }
   },
-  "r667_prediction": {
-    "phase_3_回落_sustained_3_7_strict_or_strong_12th_round": 30,
-    "phase_3_rebound_to_4_7_strict_1st_attempt": 10,
-    "phase_3_anth_eng_7月_post_breakthrough": 2,
-    "claude_code_v2_1_202_release": 8,
-    "gastownhall_gastown_v1_3_0_release": 30,
-    "gastownhall_gastown_17k_break": 40,
-    "OthmanAdi_planning_with_files_25k_break": 35,
-    "awesome_harness_engineering_v2_0_release": 5,
-    "cluster_signal_rebound_4_7_strict": 10
+  "r668_prediction": {
+    "phase_4_回落_sustained_3_7_strict_or_strong_13th_round": 30,
+    "phase_4_rebound_to_4_7_strict_1st_attempt": 15,
+    "phase_4_anth_eng_7月_post_breakthrough": 2,
+    "claude_code_v2_1_202_release": 5,
+    "gastownhall_gastown_v1_3_0_release": 25,
+    "gastownhall_gastown_17k_break": 35,
+    "ogulcancelik_herdr_12k_break": 25,
+    "OthmanAdi_planning_with_files_25k_break": 30,
+    "herdr_gastown_cross_mention": 30,
+    "awesome_harness_engineering_v2_0_release": 8,
+    "cluster_signal_rebound_4_7_strict": 15
   },
-  "r666_articles_produced": 1,
-  "r666_projects_paired": 2,
-  "r666_projects_paired_type": "UPDATE (SKILL anti-duplicate protocol 100% compliant)",
-  "r666_total_1st_party_sources_in_article": 14,
-  "r666_cluster_validation": {
-    "obra_superpowers": {"stars_r665": "~246700", "stars_r666": "246700+", "delta": 0, "pct": 0.00, "signal": "STABLE (estimate)"},
-    "affaan_m_ECC": {"stars_r665": "~226250", "stars_r666": "226250+", "delta": 0, "pct": 0.00, "signal": "STABLE (estimate)"},
-    "JuliusBrussee_caveman": {"stars_r665": "~84560", "stars_r666": "84560+", "delta": 0, "pct": 0.00, "signal": "TRACE (sustained 5th round below 1% threshold R662-R666)"},
-    "usestrix_strix": {"stars_r665": "~36720", "stars_r666": "36720+", "delta": 0, "pct": 0.00, "signal": "STRICT 8th round sustained R659-R666"},
-    "openai_codex_plugin_cc": {"stars_r665": "~24460", "stars_r666": "24460+", "delta": 0, "pct": 0.00, "signal": "STRONG 10th round sustained R651-R666"},
-    "OthmanAdi_planning_with_files": {"stars_r665": 24583, "stars_r666": 24602, "delta": 19, "pct": 0.08, "signal": "STRICT sustained growth (R666 cron 周期内 +0.08% in 35 min)"},
-    "raiyanyahya_recall": {"stars_r665": "~674", "stars_r666": "674+", "delta": 0, "pct": 0.00, "signal": "0% RETURNS 4th round sustained R663-R666"},
-    "amplifthq_opentag": {"stars_r665": "~717", "stars_r666": "717+", "delta": 0, "pct": 0.00, "signal": "STRONG 14th round sustained R647-R666"},
-    "cluster_signal": "3/7 strict-or-strong HIT (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉞ measurement artifact verification round 6 SUSTAINED 6th round R661-R666",
-    "gastownhall_gastown": {"stars_r665": 14914, "stars_r666": 16292, "delta": 1378, "pct": 9.24, "signal": "STRICT v1.2.0/v1.2.1 release + sustained strong growth (R666 +1,378 in 30 days)"},
-    "ai_boost_awesome_harness_engineering": {"stars_r665": 2729, "stars_r666": 2754, "delta": 25, "pct": 0.92, "signal": "SUSTAINED slow growth (v2.0 NOT released)"}
+  "r667_articles_produced": 1,
+  "r667_projects_paired": 3,
+  "r667_projects_paired_type": "1 NEW (herdr R620 Defer 解除) + 2 UPDATE (gastown + planning-with-files 持续 monitoring)",
+  "r667_total_1st_party_sources_in_article": 19,
+  "r667_total_1st_party_sources_in_project": 14,
+  "r667_cluster_validation": {
+    "obra_superpowers": {"stars_r666": "~246700", "stars_r667": "246700+", "delta": 0, "pct": 0.00, "signal": "STABLE (estimate)"},
+    "affaan_m_ECC": {"stars_r666": "~226250", "stars_r667": "226250+", "delta": 0, "pct": 0.00, "signal": "STABLE (estimate)"},
+    "JuliusBrussee_caveman": {"stars_r666": "~84560", "stars_r667": "84687", "delta": 127, "pct": 0.15, "signal": "TRACE (sustained 5th round below 1% threshold R663-R667)"},
+    "usestrix_strix": {"stars_r666": "36720", "stars_r667": "36888", "delta": 168, "pct": 0.46, "signal": "STRICT 9th round sustained R659-R667"},
+    "openai_codex_plugin_cc": {"stars_r666": "24460", "stars_r667": "25293", "delta": 833, "pct": 3.41, "signal": "STRONG 11th round sustained R651-R667 (massive R667 +833 delta)"},
+    "OthmanAdi_planning_with_files": {"stars_r666": 24602, "stars_r667": 24622, "delta": 20, "pct": 0.08, "signal": "STRICT sustained growth (R667 cron 周期内 +0.08% in 8h, 仍 378⭐ gap to 25k)"},
+    "raiyanyahya_recall": {"stars_r666": "~674", "stars_r667": "677", "delta": 3, "pct": 0.45, "signal": "0% RETURNS 5th round sustained R663-R667"},
+    "amplifthq_opentag": {"stars_r666": "~717", "stars_r667": "774", "delta": 57, "pct": 7.95, "signal": "STRONG 15th round sustained R647-R667"},
+    "cluster_signal": "3/7 strict-or-strong HIT (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉞ measurement artifact verification round 12 SUSTAINED 12th round R656-R667",
+    "gastownhall_gastown": {"stars_r666": 16292, "stars_r667": 16310, "delta": 18, "pct": 0.11, "signal": "STRICT v1.2.0/v1.2.1 release + sustained growth (R667 +18 in 8h, 距 17k 690⭐ gap)"},
+    "ogulcancelik_herdr": {"stars_r666": "未监测", "stars_r667": 11903, "delta": "首次采纳", "pct": "N/A", "signal": "R667 NEW PROJECT (R620 Defer 解除 = License 重新核实 AGPL-3.0 + 商业 dual-license)"},
+    "ai_boost_awesome_harness_engineering": {"stars_r666": 2754, "stars_r667": 2757, "delta": 3, "pct": 0.11, "signal": "SUSTAINED slow growth (v2.0 NOT released, R667 修正预测 = 拆分 Multi-Agent Orchestration 为 5 Layer + 4 Cross-Layer Contract)"},
+    "ctxrs_ctx": {"stars_r666": "621", "stars_r667": "656", "delta": 35, "pct": 5.64, "signal": "DECELERATION reversed R667 +35⭐ recovery"}
   },
-  "r666_three_dimensions_matrix_progress": {
+  "r667_multi_agent_stack_layering_matrix_progress": {
     "stage_1_overview_R661": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "三维度体系 overview meta article"},
     "stage_2_horizontal_deep_dive_R662": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "horizontal 解耦 deep dive"},
     "stage_3_vertical_deep_dive_R663": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "vertical 解耦 deep dive"},
     "stage_4_cross_device_deep_dive_R664": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "cross-device 协同 deep dive"},
     "stage_5_meta_synthesis_planning_primitive_R665": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测"},
-    "stage_6_multi_agent_orchestration_R666": {"status": "✅ COMPLETE", "articles": 1, "projects": 2, "theme": "multi-agent orchestration deep dive + gastown v1.2.1 UPDATE + planning-with-files UPDATE [NEW]"},
-    "stage_7_next_phase_R667": {"status": "⏳ PENDING", "articles": 0, "projects": 0, "theme": "持续 monitoring 5 个关键信号 + gastown v1.3.0 release 监测 + 17k⭐ BREAK 监测"},
-    "completion_rate": "100% (6/6 阶段完整闭合 + 持续 monitoring)"
+    "stage_6_multi_agent_orchestration_R666": {"status": "✅ COMPLETE", "articles": 1, "projects": 2, "theme": "multi-agent orchestration deep dive + gastown v1.2.1 UPDATE + planning-with-files UPDATE"},
+    "stage_7_multi_agent_stack_layering_R667": {"status": "✅ COMPLETE", "articles": 1, "projects": 3, "theme": "Multi-Agent Stack 分层 deep dive + herdr 11,903 ⭐ R667 NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract 分层模型 [NEW R667]"},
+    "stage_8_next_phase_R668": {"status": "⏳ PENDING", "articles": 0, "projects": 0, "theme": "持续 monitoring 5 个关键信号 + Multi-Agent Stack Protocol (MASP) 监测 + herdr × gastown cross-mention 监测 + 17k⭐ / 12k⭐ / 25k⭐ BREAK 监测"},
+    "completion_rate": "100% (7/7 阶段完整闭合 + 持续 monitoring)"
   }
 }
