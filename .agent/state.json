@@ -1,8 +1,8 @@
 {
-  "lastRun": "2026-07-05T06:07:10.525772+08:00",
+  "lastRun": "2026-07-05T10:04:00+08:00",
   "lastCommit": "ce77b25",
-  "round": 656,
-  "status": "PHASE_2_5_7_FALLBACK_TO_3_7_R656_SUSTAINED_2ND_ROUND_VARIANT_34_MEASUREMENT_ARTIFACT_VERIFIED_OPENWIKI_PRE_3K_CTX_DECELERATION_SUSTAINED",
+  "round": 658,
+  "status": "R658_ARTICLE_PROJECT_CYCLE_CURSOR_IOS_PROTOCOL_DEEP_DIVE_PLUS_CRAFT_AGENTS_OSS_AGENT_NATIVE_DESKTOP",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "type": "phase_2_secondary_expansion_5_7_fallback_to_3_7_r655_cluster_retracement_measurement_artifact_confirmed",
@@ -528,5 +528,17 @@
     "anthropic_newsroom_7_5_batch_第_2_次": 1,
     "strix_STRICT_5th_round_sustained_P82": 1,
     "rationale": "R655 R656 cluster signal 3/7 sustained 2 rounds = variant ㉞ measurement artifact verification round 2 CONFIRMED. R657 monitoring 3/7 sustained 3rd round (35%, variant ㉞ measurement artifact verified 3rd round) + Phase 2 rebound to 4/7 strict 1st attempt (20%, caveman 0.93% → STRICT recovery ≥1.00% + recall +1-2 sustained REVIVAL, variant ㉞ measurement artifact NOT confirmed via recovery) + langchain-ai/openwiki 3k⭐ BREAK CRITICAL (15%, R656 距 3k 63⭐ gap, R657 predicted ~3,090 likely BREAK with bonus: even with deceleration to +100, R657 ~3,037 still BREAK) + variant ㉟ NEW classification (8%, rebound to 4/7 via different member composition shift) + Phase 2 持续 回落 2/7 (5%, Phase 2 完全 ENDS + Phase 1 baseline 4/7 strict 也跌破) + Phase 1 baseline 3/7 strict 回落 (5%) + variant ㉛ 1st-party Continuous 5th Breakthrough 终局 (3%, R657 trigger 07:57 CST = window 结束 5h57m 后 predicted release 概率 ~3% decay 接近 0%, NOT triggered 终局) + ctxrs/ctx acceleration recovery again (3%, R656 +4⭐ DECELERATION 严重 2nd round → R657 +10-15⭐ recovery) + CoplayDev/unity-mcp acceleration sustained P87 NEW (3%, R656 +562⭐ 2h delta sustained if strong acceleration) + strix STRICT 5th round sustained (1%, R656 STRICT 1.64% sustained 4th round → R657 STRICT sustained 5th round)"
+  },
+  "r658_outcome": {
+    "articles_written": 1,
+    "article_name": "cursor-ios-architecture-remote-control-handoff-deep-dive-2026.md",
+    "projects_paired": 1,
+    "project_name": "craft-ai-agents/craft-agents-oss",
+    "project_stars": 6708,
+    "project_freshness": "4 天前 (2026-07-01)",
+    "topic_association": "cross_device_agent_harness_protocol + agent_native_desktop_harness",
+    "r657_follow_up": "R658 article 直接 follow-up R657 cursor-ios-architecture-remote-control-handoff-deep-dive-2026.md",
+    "cluster_monitoring": "lightweight (avoid R656 monitoring inertia recurrence)",
+    "skill_compliance": ">=1 article ✓ + >=1 project ✓ + topic_association ✓ + sources_tracked +2 + REPORT ✓ + PENDING ✓"
   }
 }
