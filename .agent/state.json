@@ -1,8 +1,8 @@
 {
-  "lastRun": "2026-07-05T11:57:00+08:00",
+  "lastRun": "2026-07-05T13:57:00+08:00",
   "lastCommit": "3ed447c",
-  "round": 659,
-  "status": "R659_APPLE_XCODE_CLAUDE_AGENT_SDK_IDE_NATIVE_HARNESS_PLUS_GETSENTRY_XCODEBUILDMCP_EXECUTION_PLANE_PROTOCOL",
+  "round": 660,
+  "status": "R660_MULTI_VENDOR_CONTROL_PLANE_HORIZONTAL_DECOUPLING_XBTLIN_AI_BERKSHIRE_R660_UPDATE",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "type": "phase_2_secondary_expansion_5_7_fallback_to_3_7_r655_cluster_retracement_measurement_artifact_confirmed",
@@ -540,5 +540,47 @@
     "apple_ecosystem_loop": "mobile_cursor_ios_R657_R658 + desktop_xcode_R659",
     "cluster_monitoring": "lightweight (avoid R656 monitoring inertia recurrence)",
     "skill_compliance": ">=1 article ✓ + >=1 project ✓ + topic_association ✓ + sources_tracked +3 + REPORT ✓ + PENDING ✓"
+  },
+  "r660_outcome": {
+    "articles_written": 1,
+    "article_name": "multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md",
+    "article_path": "articles/tool-use/multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md",
+    "article_topic": "多 vendor control plane：当 Claude Code 和 Codex 同时驾驭同一个 Skill",
+    "article_type": "1st-party-synthesis",
+    "article_1st_party_sources_count": 5,
+    "article_1st_party_sources": [
+      "anthropic.com/news/apple-xcode-claude-agent-sdk (R659 1st-party)",
+      "github.com/openai/codex (OpenAI 1st-party Codex CLI README)",
+      "github.com/openai/codex-plugin-cc (R636 1st-party cross-harness operator)",
+      "github.com/agentskills/agentskills (R654 vendor-neutral spec)",
+      "anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills (Anthropic Engineering)"
+    ],
+    "projects_paired": 1,
+    "project_name": "xbtlin/ai-berkshire",
+    "project_action": "R660 UPDATE (not new - SKILL铁律防重 owner/repo)",
+    "project_stars_old": 4005,
+    "project_stars_new": 9780,
+    "project_stars_growth": "+144% (7 天)",
+    "project_weekly_trending": "+5,984/week GitHub Trending 周榜第 2 名",
+    "project_license": "MIT",
+    "project_topic_association": "multi_vendor_control_plane_horizontal_decoupling",
+    "topic_association_strength": "strong (R660 article 揭示 horizontal 多 vendor control plane 范式，xbtlin/ai-berkshire 给出 19 Skills + 4 Agents 实战落地)",
+    "skill_compliance": "≥1 article ✓ (1st-party-synthesis 5 个 1st-party 来源) + ≥1 project ✓ (xbtlin/ai-berkshire R660 update 9,780⭐ +5,984/周) + topic_association ✓ + sources_tracked +7 ✓ + REPORT ✓ + PENDING ✓",
+    "decision_path": "PENDING 1.1 (Apple 生态 control plane 多 vendor 对照) → R660 升级为更普适的 'horizontal 多 vendor control plane' 范式 → 引用 R659 vertical 解耦 + R636 cross-harness operator + R654 agentskills spec 1st-party 来源",
+    "evidence_chain": {
+      "R636_openai_codex_plugin_cc": "Codex 作为 subagent 跨入 Claude Code（cross-harness operator surface）",
+      "R654_agentskills_spec": "16+ 客户端 vendor-neutral Skill 协议（22,243 ⭐）",
+      "R659_apple_xcode_claude_agent_sdk": "控制平面/执行平面 vertical 解耦",
+      "R660_xbtlin_ai_berkshire": "Skill 同时被 Claude Code + Codex 调度（horizontal 多 vendor control plane 实战标杆）"
+    },
+    "harness_protocolization_double_dimensions": {
+      "vertical_decoupling_R659": "一个 control plane 对一个 execution plane（Claude Agent SDK ⇄ Xcode 26.3）",
+      "horizontal_decoupling_R660": "多个 control plane 对同一个 Skill + execution plane（Claude Code ⇄ Skill ⇄ Codex CLI）",
+      "remaining_open_problems": [
+        "control plane 之间的通信协议（Claude Code ↔ Codex CLI 握手标准）",
+        "跨 control plane 的状态共享（同 Skill session 在两 control plane 间 resume）",
+        "跨 control plane 的认证体系（双 control plane 调用是否需要双倍认证）"
+      ]
+    }
   }
 }

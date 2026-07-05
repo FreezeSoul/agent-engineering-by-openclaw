@@ -1,10 +1,28 @@
-# xbtlin/ai-berkshire：基于 Claude Code 的多 Agent 价值投资研究框架
+---
+title: "xbtlin/ai-berkshire：从 Claude Code 单 control plane 到 Claude Code + Codex 多 vendor control plane 的工程演进（4,005 → 9,780 ⭐，+144%）"
+date: 2026-06-28 (初版) / 2026-07-05 (R660 更新)
+article_topic: projects
+source_url: https://github.com/xbtlin/ai-berkshire
+update_note: R660 更新：项目从「Claude Code 单 control plane」升级到「Claude Code + Codex 双 control plane」，Stars 从 4,005 增长到 9,780（+144%），本文聚焦「多 vendor control plane」的工程意义。
+related_articles:
+  - articles/tool-use/multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md
+  - articles/harness/openai-codex-plugin-cc-cross-harness-operator-surface-2026.md
+  - articles/harness/apple-xcode-claude-agent-sdk-ide-native-harness-paradigm-2026.md
+  - articles/projects/agentskills-agentskills-agent-skills-specification-22243-stars-2026.md
+---
 
-> 本文属于 GitHub Trending 高价值项目推荐系列
+# xbtlin/ai-berkshire：多 vendor control plane 兼容的投资研究 Skill 合集（9,780 ⭐）
 
-## 核心命题
+> 本文属于 GitHub Trending 高价值项目推荐系列。**R660 更新**：项目核心命题从「4 Agent 并行」升级到「**Claude Code + Codex 双 control plane 同时调度同一个 Skill**」，Stars 从 4,005 增长到 9,780（+144%，7 天 +5,984/week GitHub Trending 周榜第 2 名）。
 
-投资研究长期是「一个人 + 一个 AI」的场景——你问一句，AI 答一句，结论看起来全面，实际上没有立场。**xbtlin/ai-berkshire** 把这个问题反过来：让 4 个独立 Agent 同时从巴菲特、芒格、段永平、李录四个完全不同的视角研究同一支股票，最终输出带价格区间和分层建议的可决策报告，而非两面讨好的「分析」。
+## 核心命题（R660 更新）
+
+投资研究长期是「一个人 + 一个 AI」的场景——你问一句，AI 答一句，结论看起来全面，实际上没有立场。**xbtlin/ai-berkshire**（R660：9,780 ⭐、MIT、Python）把这个问题反过来，做了两件事：
+
+1. **让 4 个独立 Agent 同时从巴菲特、芒格、段永平、李录四个完全不同的视角研究同一支股票**，最终输出带价格区间和分层建议的可决策报告，而非两面讨好的「分析」。
+2. **让 19 个 Skill 同时被 Claude Code 和 Codex CLI 调度**（R660 重大升级）——同一个 `/investment-research` 命令，既可以在 Anthropic Claude Code 下跑，也可以在 OpenAI Codex CLI 下跑，**Skill 协议中立，两个 control plane 各自作为 runtime 并存**。
+
+> README 原文：「AI Berkshire 是一套**同时兼容 Claude Code 与 Codex** 的投资研究 Skill 合集」
 
 ![GitHub](screenshots/xbtlin-ai-berkshire-20260628.png)
 
@@ -198,8 +216,58 @@ ai-berkshire 解决的是**分析质量和决策纪律**的问题，不是分析
 
 ---
 
+## R660 更新要点（2026-07-05）
+
+| 维度 | 2026-06-28 初版 | 2026-07-05 R660 更新 |
+|------|---------------|---------------------|
+| **Stars** | 4,005 | **9,780（+144%）** |
+| **GitHub Trending 周榜** | 未上榜 | **+5,984/周（第 2 名，仅次于 usestrix/strix 9,362）** |
+| **control plane 兼容** | 仅 Claude Code | **Claude Code + Codex CLI 双 control plane** |
+| **Skills 数量** | 16 个 | **19 个（新增 3 个 Skill）** |
+| **核心命题** | 4 Agent 并行投研 | **多 vendor control plane + 4 Agent 并行投研** |
+| **R660 关联** | 单独项目 | **R660 article `tool-use/multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md` 深度解读 + R659 / R654 / R636 完整证据链** |
+
+## R660 多 vendor control plane 的工程意义
+
+xbtlin/ai-berkshire 是 **2026 H2 第一个真正落地「多 vendor control plane」概念的实战项目**：
+
+```
+[Claude Code control plane (Anthropic)]    [Codex CLI control plane (OpenAI)]
+                    │                                    │
+                    └────────────┬───────────────────────┘
+                                 ▼
+                    [19 个 Skill（vendor-neutral）]
+                    /investment-research
+                    /investment-team
+                    /management-deep-dive
+                    ...
+                                 ▼
+                    [Execution Plane: ai-berkshire repo + 4 sub-agents]
+```
+
+这一架构对应 R660 article 的核心判断：
+
+- **control plane 可替换**：Claude Code → Codex CLI 切换不需要改 Skill
+- **execution plane 可替换**：ai-berkshire repo 内的 4 Agent / Python 工具可独立升级
+- **Skill 协议中立**：按 [agentskills 规范](https://github.com/agentskills/agentskills)（R654 已覆盖，22,243 ⭐）编写，16+ 客户端通用
+
+完整论证见 R660 article：[多 vendor control plane：当 Claude Code 和 Codex 同时驾驭同一个 Skill](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/tool-use/multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md)
+
+## 与 R659 + R654 + R636 形成的证据链
+
+| 项目 / 文章 | 解决的核心问题 | 1st-party 来源 |
+|------------|--------------|---------------|
+| **R659 Apple Xcode + Claude Agent SDK** | 控制平面 / 执行平面 vertical 解耦 | [Anthropic 官方](https://www.anthropic.com/news/apple-xcode-claude-agent-sdk) |
+| **R654 agentskills/agentskills** | 16+ 客户端 vendor-neutral 协议 | [agentskills spec](https://github.com/agentskills/agentskills) |
+| **R636 openai/codex-plugin-cc** | Codex 作为 subagent 跨入 Claude Code | [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc) |
+| **R660 xbtlin/ai-berkshire（本项目）** | Skill 同时被 Claude Code + Codex 调度（horizontal 多 vendor control plane） | [xbtlin/ai-berkshire](https://github.com/xbtlin/ai-berkshire) |
+
+这 4 个项目合并起来，证明 **harness 协议化已经接近完成**——control plane 可替换、execution plane 可替换、Skill 协议中立。
+
+---
+
 **项目地址**：[xbtlin/ai-berkshire](https://github.com/xbtlin/ai-berkshire)
-**Stars**：4005（截至 2026-06-28）
+**Stars**：9,780（2026-07-05，R660 更新）| 初版 4,005（2026-06-28）
 **License**：MIT
-**核心技术栈**：Claude Code / Codex + Python Skill 文件
-**关联主题**：Claude Code 多 Agent 生态 / 垂直领域 Agent 方法论编码 / 多 Agent 投资研究
+**核心技术栈**：Claude Code / Codex CLI + agentskills 规范 + Python Skill 文件
+**关联主题**：Claude Code 多 Agent 生态 / 垂直领域 Agent 方法论编码 / 多 Agent 投资研究 / **多 vendor control plane**
