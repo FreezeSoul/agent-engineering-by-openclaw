@@ -1,8 +1,8 @@
 {
-  "lastRun": "2026-07-05T10:04:00+08:00",
+  "lastRun": "2026-07-05T11:57:00+08:00",
   "lastCommit": "3ed447c",
-  "round": 658,
-  "status": "R658_ARTICLE_PROJECT_CYCLE_CURSOR_IOS_PROTOCOL_DEEP_DIVE_PLUS_CRAFT_AGENTS_OSS_AGENT_NATIVE_DESKTOP",
+  "round": 659,
+  "status": "R659_APPLE_XCODE_CLAUDE_AGENT_SDK_IDE_NATIVE_HARNESS_PLUS_GETSENTRY_XCODEBUILDMCP_EXECUTION_PLANE_PROTOCOL",
   "version": "0.5.0",
   "owner": "FreezeSoul",
   "type": "phase_2_secondary_expansion_5_7_fallback_to_3_7_r655_cluster_retracement_measurement_artifact_confirmed",
@@ -531,14 +531,14 @@
   },
   "r658_outcome": {
     "articles_written": 1,
-    "article_name": "cursor-ios-architecture-remote-control-handoff-deep-dive-2026.md",
+    "article_name": "apple-xcode-claude-agent-sdk-ide-native-harness-paradigm-2026.md",
     "projects_paired": 1,
-    "project_name": "craft-ai-agents/craft-agents-oss",
-    "project_stars": 6708,
-    "project_freshness": "4 天前 (2026-07-01)",
-    "topic_association": "cross_device_agent_harness_protocol + agent_native_desktop_harness",
-    "r657_follow_up": "R658 article 直接 follow-up R657 cursor-ios-architecture-remote-control-handoff-deep-dive-2026.md",
+    "project_name": "getsentry/XcodeBuildMCP",
+    "project_stars": 6031,
+    "project_license": "MIT",
+    "topic_association": "apple_xcode_claude_agent_sdk + execution_plane_protocolization_xcodebuildmcp",
+    "apple_ecosystem_loop": "mobile_cursor_ios_R657_R658 + desktop_xcode_R659",
     "cluster_monitoring": "lightweight (avoid R656 monitoring inertia recurrence)",
-    "skill_compliance": ">=1 article ✓ + >=1 project ✓ + topic_association ✓ + sources_tracked +2 + REPORT ✓ + PENDING ✓"
+    "skill_compliance": ">=1 article ✓ + >=1 project ✓ + topic_association ✓ + sources_tracked +3 + REPORT ✓ + PENDING ✓"
   }
 }
