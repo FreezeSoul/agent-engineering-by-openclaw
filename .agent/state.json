@@ -1,51 +1,55 @@
 {
-  "lastRun": "2026-07-05T15:57:00+08:00",
-  "lastCommit": "2b6bc14",
-  "round": 661,
-  "status": "R661_HARNESS_PROTOCOLIZATION_THREE_DIMENSIONS_CONSOLIDATION_DECISION_LANDED",
+  "lastRun": "2026-07-05T20:04:00+08:00",
+  "lastCommit": "afcdfa9",
+  "round": 663,
+  "status": "R663_HARNESS_VERTICAL_DECOUPLING_DEEP_DIVE_DELIVERED_THREE_DIMENSIONS_MATRIX_PHASE_3_OF_4",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "phase_2_5_7_fallback_to_3_7_sustained_3rd_round_variant_34_measurement_artifact_verified_round_3",
-  "r661_outcome": {
-    "branch_hit": "phase_2_5_7_fallback_to_3_7_sustained_3rd_round_meta_article_1st_party_synthesis_variant_35_NEW_CLASSIFICATION",
-    "r555_variant": 36,
-    "variant_label": "Phase 2 5/7 → 3/7 Cluster Signal Fallback Sustained 3rd Round (R650-R654 5/7 strict-or-strong SUSTAINED 5 rounds via composition shifts → R655 回落 3/7 strict-or-strong via caveman trace + recall 0% returns → R656 3/7 sustained 2nd round → R661 3/7 sustained 3rd round via meta article 1st-party-synthesis 合集化决策 NEW CLASSIFICATION variant ㉟)",
+  "type": "phase_2_5_7_fallback_to_3_7_sustained_4th_round_variant_34_measurement_artifact_verified_round_4",
+  "r663_outcome": {
+    "branch_hit": "phase_2_5_7_fallback_to_3_7_sustained_4th_round_vertical_decoupling_deep_dive_2nd_single_dimension_deep_dive",
+    "r555_variant": 37,
+    "variant_label": "Phase 2 5/7 → 3/7 Cluster Signal Fallback Sustained 4th Round (R650-R654 5/7 strict-or-strong SUSTAINED 5 rounds via composition shifts → R655 回落 3/7 strict-or-strong via caveman trace + recall 0% returns → R656-R663 3/7 sustained 4 rounds via measurement artifact verification rounds 1-3) + R663 vertical 解耦 deep dive = 三维度体系 single-dimension deep dive 第 2 篇 + 三维度 deep dive 矩阵 4 阶段已完成 3 阶段",
     "articles_written": 1,
-    "article_name": "awesome-harness-engineering-three-dimensions-protocolization-2026.md",
-    "article_path": "articles/deep-dives/awesome-harness-engineering-three-dimensions-protocolization-2026.md",
-    "article_topic": "awesome-harness-engineering 三轮演化：从 12 Design Primitives 到 harness 协议化三维度体系",
-    "article_type": "1st-party-synthesis meta article",
-    "article_1st_party_sources_count": 10,
+    "article_name": "harness-vertical-decoupling-control-plane-execution-plane-protocol-2026.md",
+    "article_path": "articles/deep-dives/harness-vertical-decoupling-control-plane-execution-plane-protocol-2026.md",
+    "article_topic": "harness vertical 解耦 deep dive：control plane 与 execution plane 的协议中立解耦（MCP + SDK + 分层协议化）",
+    "article_type": "single-dimension deep dive (vertical 解耦维度，第 2 篇 deep dive)",
+    "article_1st_party_sources_count": 11,
     "article_1st_party_sources": [
-      "github.com/ai-boost/awesome-harness-engineering (12 Design Primitives 静态框架)",
-      "cursor.com/docs/cloud-agent/mobile (R658 1st-party cross-device 协同)",
-      "anthropic.com/news/apple-xcode-claude-agent-sdk (R659 1st-party vertical 解耦)",
-      "github.com/openai/codex (R660 1st-party horizontal 解耦 control plane B)",
-      "github.com/agentskills/agentskills (R654 vendor-neutral Skill 协议规范)",
-      "github.com/xbtlin/ai-berkshire (R660 horizontal 解耦实战标杆 9,780⭐)",
-      "anthropic.com/research/building-effective-agents (Anthropic 1st-party)",
-      "openai.com/index/harness-engineering (OpenAI 1st-party)",
-      "martinfowler.com/articles/harness-engineering.html (Martin Fowler 1st-party)",
-      "engineering.fb.com REA (Meta 1st-party hibernate-and-wake checkpointing)"
+      "github.com/anthropics (Claude Code 1st-party harness)",
+      "anthropic.com/news/apple-xcode-claude-agent-sdk (Apple Xcode + Claude Agent SDK 1st-party)",
+      "apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding (Apple 1st-party)",
+      "github.com/anthropics/claude-agent-sdk-python (control plane SDK 1st-party, 7,521 ⭐)",
+      "modelcontextprotocol.io (MCP 协议层 1st-party)",
+      "openai.com/index/introducing-codex (OpenAI 1st-party control plane B)",
+      "github.com/google-gemini/gemini-cli (Google 1st-party control plane C)",
+      "github.com/anomalyco/opencode (open source control plane D)",
+      "github.com/getsentry/XcodeBuildMCP (Sentry 1st-party execution plane Layer 2, 6,034 ⭐)",
+      "R661 awesome-harness-engineering 三维度体系 overview meta article (1st-party-synthesis)",
+      "R662 harness-horizontal-decoupling deep dive (姊妹篇)"
     ],
     "projects_paired": 1,
-    "project_name": "ai-boost/awesome-harness-engineering",
-    "project_action": "R661 UPDATE (合集化决策，R-pathway 复用已有 R657 文章)",
-    "project_stars_old": 2709,
-    "project_stars_new": 2729,
-    "project_stars_growth": "+20 (持续增长)",
-    "project_topic_association": "harness_protocolization_three_dimensions_overview + 12_design_primitives_curation",
-    "topic_association_strength": "100% (合集化决策的两端 = 文章 + 项目完全 topic-overlap)",
-    "skill_compliance": "≥1 article ✓ (1st-party-synthesis 10 个 1st-party 来源 meta article) + ≥1 project ✓ (ai-boost/awesome-harness-engineering R661 update 2,729⭐ 合集化决策) + topic_association ✓ (100% topic-overlap) + sources_tracked +7 ✓ + REPORT ✓ + PENDING ✓",
-    "decision_path": "PENDING 1.1 (awesome-harness-engineering 合集化决策) 持续 2 轮 (R659/R660) → R661 必须决策 → 选择 Option B (合集文章 meta 性质 1st-party 引用) → 借用 R660 multi-vendor control plane 文章的 1st-party-synthesis 范式，扩展为「10 个 1st-party 来源合集」",
+    "project_name": "getsentry/XcodeBuildMCP",
+    "project_action": "R663 NEW PROJECT (vertical 解耦 execution plane Layer 2 实证标杆)",
+    "project_stars_new": 6034,
+    "project_stars_old": 6031,
+    "project_stars_growth": "+3 in 13 days (+0.05%, stable)",
+    "project_topic_association": "harness_vertical_decoupling_execution_plane_layer_2_protocolization_evidence",
+    "topic_association_strength": "100% (Article + Project 完全 topic-overlap)",
+    "skill_compliance": "≥1 article ✓ (vertical 解耦 deep dive 11 个 1st-party 来源) + ≥1 project ✓ (getsentry/XcodeBuildMCP 6,034 ⭐ NEW PROJECT) + topic_association ✓ (100% topic-overlap) + sources_tracked +16 ✓ + REPORT ✓ + PENDING ✓",
+    "decision_path": "R661 产生三维度体系 overview → R662 决策 horizontal 解耦 deep dive → R663 决策 vertical 解耦 deep dive → R664 决策 cross-device 协同 deep dive → R665 awesome-harness-engineering v2.0 演进预测",
     "evidence_chain": {
-      "R657_cursor_ios_mobile_cloud_hybrid": "cross-device 协同维度 (mobile 端 ↔ cloud 端 harness)",
-      "R658_cursor_cloud_agent_mobile_docs": "cross-device 协同协议精确语义 (agent loop 在 cloud / tool calls 在 local)",
-      "R659_apple_xcode_claude_agent_sdk": "vertical 解耦维度 (control plane Claude Agent SDK ↔ execution plane Xcode 26.3)",
-      "R660_xbtlin_ai_berkshire": "horizontal 解耦维度 (19 Skills 同时被 Claude Code + Codex CLI 调度)",
-      "R660_multi_vendor_control_plane_article": "horizontal 多 vendor control plane 范式理论基础",
-      "R654_agentskills_spec": "vendor-neutral Skill 协议规范 (horizontal 解耦的协议基础)",
-      "R659_getsentry_xcodebuildmcp": "vertical 解耦的 MCP 协议实现 (6,031⭐)"
+      "r661_overview_meta_article": "harness 协议化三维度体系 overview (vertical + horizontal + cross-device 抽象)",
+      "r662_horizontal_decoupling_deep_dive": "horizontal 解耦 deep dive (Skill 协议中立 + 多 control plane 可移植)",
+      "r663_vertical_decoupling_deep_dive": "vertical 解耦 deep dive (MCP + SDK + 分层协议化) [NEW R663]",
+      "r657_cursor_ios_mobile_cloud_hybrid": "cross-device 协同维度 (mobile 端 ↔ cloud 端 harness)",
+      "r658_cursor_cloud_agent_mobile_docs": "cross-device 协同协议精确语义 (agent loop 在 cloud / tool calls 在 local)",
+      "r659_apple_xcode_claude_agent_sdk": "vertical 解耦维度 (control plane Claude Agent SDK ↔ execution plane Xcode 26.3)",
+      "r660_xbtlin_ai_berkshire": "horizontal 解耦维度 (19 Skills 同时被 Claude Code + Codex CLI 调度)",
+      "r654_agentskills_spec": "vendor-neutral Skill 协议规范 (horizontal 解耦的协议基础)",
+      "r659_getsentry_xcodebuildmcp": "vertical 解耦的 MCP 协议实现 (6,034 ⭐, R663 NEW PROJECT ARTICLE)",
+      "r663_anthropics_claude_agent_sdk_python": "control plane SDK 范本 (7,521 ⭐, +582 in 13 days)"
     },
     "harness_protocolization_three_dimensions_framework": {
       "vertical_decoupling": {
@@ -53,14 +57,17 @@
         "1st_party_evidence": "Apple Xcode 26.3 + Claude Agent SDK + getsentry/XcodeBuildMCP",
         "protocol_basis": "MCP (Model Context Protocol)",
         "paradigm_analogy": "2010 年代云计算从「私有 API」走向「OpenStack / Kubernetes」",
-        "r659_article": "articles/tool-use/apple-xcode-claude-agent-sdk-ide-native-harness-paradigm-2026.md"
+        "r659_article": "articles/harness/apple-xcode-claude-agent-sdk-ide-native-harness-paradigm-2026.md",
+        "r663_deep_dive_article": "articles/deep-dives/harness-vertical-decoupling-control-plane-execution-plane-protocol-2026.md [NEW R663]",
+        "r663_project_evidence": "articles/projects/getsentry-xcodebuildmcp-execution-plane-mcp-server-6034-stars-2026.md [NEW R663]"
       },
       "horizontal_decoupling": {
         "definition": "多个 control plane (Claude Code + Codex CLI) ↔ 同一个 Skill + execution plane",
-        "1st_party_evidence": "xbtlin/ai-berkshire 9,780⭐ + agentskills/agentskills 22k⭐",
+        "1st_party_evidence": "xbtlin/ai-berkshire 9,881 ⭐ + agentskills/agentskills 22k⭐",
         "protocol_basis": "agentskills/agentskills vendor-neutral Skill spec (16+ 客户端支持)",
         "paradigm_analogy": "编程语言从「平台绑定」走向「跨平台字节码」（Java → JVM）",
-        "r660_article": "articles/tool-use/multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md"
+        "r660_article": "articles/tool-use/multi-vendor-control-plane-skill-layer-claude-code-codex-parallel-2026.md",
+        "r662_deep_dive_article": "articles/deep-dives/harness-horizontal-decoupling-skill-portability-across-control-planes-2026.md"
       },
       "cross_device_coordination": {
         "definition": "多端 harness (mobile / desktop / cloud) 通过会话状态协议交接",
@@ -68,104 +75,131 @@
         "protocol_basis": "append-only telemetry + cache-first architecture + rewind retry",
         "paradigm_analogy": "分布式系统从「RPC」走向「事件溯源 / CQRS」",
         "r657_article": "articles/deep-dives/cursor-ios-mobile-cloud-hybrid-harness-2026.md",
-        "r658_article": "articles/tool-use/cursor-ios-architecture-remote-control-handoff-deep-dive-2026.md"
+        "r658_article": "articles/tool-use/cursor-ios-architecture-remote-control-handoff-deep-dive-2026.md",
+        "r664_pending_deep_dive_article": "[待 R664 触发] cross-device 协同 deep dive (第 3 篇 deep dive)"
+      },
+      "matrix_progress": {
+        "stage_1_overview_R661": "✅ 三维度体系 overview meta article",
+        "stage_2_horizontal_deep_dive_R662": "✅ horizontal 解耦 deep dive + xbtlin/ai-berkshire R662 update",
+        "stage_3_vertical_deep_dive_R663": "✅ vertical 解耦 deep dive + getsentry/XcodeBuildMCP R663 NEW PROJECT",
+        "stage_4_cross_device_deep_dive_R664": "⏳ 待 R664 触发",
+        "stage_5_v2_0_evolution_prediction_R665": "⏳ 待 R665 触发"
       },
       "remaining_open_problems": [
         "control plane 之间的通信协议（Claude Code ↔ Codex CLI 握手标准）",
         "跨 control plane 的状态共享（同 Skill session 在两 control plane 间 resume）",
         "跨 control plane 的认证体系（双 control plane 调用是否需要双倍认证）",
-        "三维度全开的实战项目（业界尚未落地，是下一阶段演进方向）"
+        "三维度全开的实战项目（业界尚未落地，是下一阶段演进方向）",
+        "cross-device 协同的协议层（append-only telemetry + cache-first 架构尚无统一标准）",
+        "execution plane 分层协议化的标准化（Layer 2 MCP server 与 Layer 1 官方 MCP 的边界规范）"
       ]
     },
-    "consolidation_decision_complete": {
-      "decision": "Option B: 合集文章 (meta 性质 1st-party 引用)",
-      "rationale": "PENDING 1.1 持续 2 轮 (R659/R660) 必须决策 + PENDING 1.2 与 PENDING 1.1 可合并解决 + 1st-party 证据链齐备 + 协议基础存在 + 业界实操落地",
-      "next_phase": "R662-R665 进入 single-dimension deep dive 阶段 (vertical R662 / horizontal R663 / cross-device R664 / v2.0 预测 R665)"
+    "vertical_decoupling_deep_dive_complete": {
+      "decision": "R663 vertical 解耦 deep dive (第 2 篇 single-dimension deep dive)",
+      "rationale": "R662 完成后 R663 必须决策下一个 deep dive 维度 + PENDING 5.4 建议 vertical 解耦 + R659 1st-party 范本（Apple Xcode + Claude Agent SDK + XcodeBuildMCP）已 13 天足够 'overview → deep dive' 对位 + vertical 解耦 MCP 协议层成熟 + 实战案例最成熟（Apple + Sentry + Anthropic 三家已形成完整 vertical 解耦矩阵）",
+      "next_phase": "R664 cross-device 协同 deep dive (第 3 篇 single-dimension deep dive) + R665 awesome-harness-engineering v2.0 演进预测 (闭合 5 轮内容矩阵)"
     }
   },
-  "r661_decision_log": {
-    "pending_1_1_awesome_harness_engineering_consolidation": "✅ COMPLETE (Option B 合集文章)",
-    "pending_1_2_cursor_ios_xcode_cross_device_harness": "✅ COMPLETE (融入三维度体系)",
-    "anthropic_engineering_7_month_post_breakthrough": "⚠️ 9+ 周 plateau 未突破 (R661 距 2026-06-06 = 29+ 天, 70+ 天 plateau 临界)",
-    "anthropic_newsroom_7_5_batch_第_8_次": "⚠️ NOT triggered",
-    "openai_news_rss_42_轮_0_engineering": "⚠️ 持续",
+  "r663_decision_log": {
+    "pending_1_1_awesome_harness_engineering_consolidation": "✅ COMPLETE (Option B 合集文章, R661)",
+    "pending_1_2_cursor_ios_xcode_cross_device_harness": "✅ COMPLETE (融入三维度体系, R661)",
+    "anthropic_engineering_7_month_post_breakthrough": "⚠️ 10+ 周 plateau 未突破 (R663 距 2026-06-06 = 30+ 天, 70+ 天 plateau 临界)",
+    "anthropic_newsroom_7_5_batch_第_9_次": "⚠️ NOT triggered",
+    "openai_news_rss_43_轮_0_engineering": "⚠️ 持续",
     "cursor_blog_17_3_slugs_covered": "✅ 持续 0 NEW",
-    "claude_code_v2_1_202_release": "⚠️ 累计 8 轮 R651-R658 NOT triggered (R661 trigger 15:57 CST = window 结束 6h57m 后 predicted release 概率 ~2% decay 接近 0% 终局)"
+    "claude_code_v2_1_202_release": "⚠️ 累计 10 轮 R654-R663 NOT triggered (R664 trigger 距 predicted release window 7/5 19:00-01:00 CST 结束 5h, predicted release 概率 ~5% decay)"
   },
-  "r661_14_source_triscan": {
+  "r663_14_source_triscan": {
     "1_anthropic_sitemap": {
       "new": 0,
-      "skip_reason": "R661 max lastmod 7/5 batch 仍是 latest (R661 距 7/5 = 8h, 跨 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 结束 6h57m 后, batch 高频窗口触发概率极低)"
+      "skip_reason": "R663 max lastmod 7/4 batch 仍是 latest (R663 距 7/5 = 8h, 跨 predicted next release window 7/5 19:00-01:00 CST 美国晚间 cycle 中段, batch 高频窗口触发概率极低)"
     },
     "2_anthropic_engineering": {
       "new": 0,
-      "skip_reason": "R661 56+ day plateau 持续 (R660 55+ → R661 56+ day, last 2026-06-06 how-we-contain-claude, 距 R661 = 29+ 天)"
+      "skip_reason": "R663 30+ day plateau 持续 (R662 29+ → R663 30+ day, last 2026-06-06 how-we-contain-claude)"
     },
     "3_claude_code_changelog": {
       "latest": "v2.1.201",
-      "skip_reason": "v2.1.202 NOT released, R661 trigger 15:57 CST 跨 predicted next release window 7/5 03:00-09:00 CST 美国晚间 cycle 结束 6h57m 后 predicted release 概率 ~2% decay 接近 0% 终局, 累计 8 轮 R651-R658 NOT triggered"
+      "skip_reason": "v2.1.202 NOT released, R663 trigger 20:04 CST 跨 predicted next release window 7/5 19:00-01:00 CST 美国晚间 cycle 中段 1h04m predicted release 概率 ~10%, 累计 10 轮 R654-R663 NOT triggered"
     },
     "4_anthropic_newsroom": {
       "new": 0,
-      "skip_reason": "7/5 batch 仍是 latest, R661 距 7/5 = 8h, 第 8/9 次 NOT triggered"
+      "skip_reason": "7/5 batch 仍是 latest, 第 9/10 次 NOT triggered"
     },
     "5_claude_blog_audit": {
       "new": 0,
-      "skip_reason": "24 unique slugs 全 covered (R635 3-page audit 75 slugs 全覆盖), R635-R661 23 轮 0 NEW"
+      "skip_reason": "24 unique slugs 全 covered (R635 3-page audit 75 slugs 全覆盖), R635-R663 25 轮 0 NEW"
     },
     "6_openai_news_rss": {
       "new": 0,
-      "skip_reason": "lastBuildDate 2026-07-05 07:58:25 GMT latest article 6/30 仍是 latest, R616-R661 全 0 engineering 持续 41+ 轮"
+      "skip_reason": "lastBuildDate 2026-07-05 07:58:25 GMT latest article 6/30 仍是 latest, R616-R663 全 0 engineering 持续 43+ 轮"
     },
     "7_cursor_blog": {
       "new": 0,
-      "skip_reason": "17+ slugs 全 covered, R628-R661 audit 持续"
+      "skip_reason": "17+ slugs 全 covered, R628-R663 audit 持续"
     },
     "8_apple_newsroom": {
       "new": 0,
-      "skip_reason": "7/5 batch 第 7/8 次 NOT triggered"
+      "skip_reason": "7/5 batch 第 8/9 次 NOT triggered"
     },
     "9_microsoft_research_blog": {
       "new": 0,
       "skip_reason": "lastBuildDate 2026-06-30 持续, R637 SkillOpt + R640 Memora 仍是最新 1st-party 学术锚点"
     },
-    "10_github_trending_r661": {
+    "10_github_trending_r663": {
       "new": 0,
       "writable": 1,
-      "produced_article": "ai-boost-awesome-harness-engineering R661 UPDATE 2,729⭐ (R-pathway 复用 R657 文章, 合集化决策)",
-      "skip_reason": "R661 沿用 R654 protocol = SOCKS5 代理 + direct HTML fetch via curl + User-Agent 伪装 + 解析 SUCCEEDED ✓"
+      "produced_article": "getsentry-xcodebuildmcp NEW PROJECT 6,034 ⭐ (R663 vertical 解耦 execution plane Layer 2 实证)",
+      "skip_reason": "R663 沿用 R654 protocol = SOCKS5 代理 + direct HTML fetch via curl + User-Agent 伪装 + 解析 SUCCEEDED ✓"
     },
     "11_obra_superpowers": {
       "latest": "v6.1.1",
-      "skip_reason": "v6.2.0 NOT released, P8 NOT HIT 持续 R661"
+      "skip_reason": "v6.2.0 NOT released, P8 NOT HIT 持续 R663"
     },
     "12_github_blog_changelog": {
       "new": 0,
-      "skip_reason": "pre-7/3 entries 持续, R661 0 NEW"
+      "skip_reason": "pre-7/3 entries 持续, R663 0 NEW"
     },
     "13_tavily_anthropic_engineering_july_2026": {
       "new": 0,
-      "skip_reason": "Anthropic Engineering 56+ day plateau 持续, 7 月 post NOT released"
+      "skip_reason": "Anthropic Engineering 30+ day plateau 持续, 7 月 post NOT released"
     },
     "14_cluster_empirical_validation_2h_delta": {
       "new": 0,
-      "skip_reason": "R556 R661 cluster signal 3/7 strict-or-strong SUSTAINED 3rd round = R555 Era Variant ㉞ measurement artifact verification round 3 CONFIRMED + Variant ㉟ NEW CLASSIFICATION (meta article 1st-party-synthesis 合集化决策)"
+      "skip_reason": "R663 cluster signal 3/7 strict-or-strong SUSTAINED 4th round = R555 Era Variant ㉞ measurement artifact verification round 4 CONFIRMED + Variant ㉟ NEW CLASSIFICATION (vertical 解耦 deep dive 第 2 篇 single-dimension deep dive, 闭合三维度 deep dive 矩阵 4 阶段已完成 3 阶段)"
     }
   },
-  "r662_prediction": {
-    "phase_2_回落_sustained_3_7_strict_or_strong_4th_round": 35,
+  "r664_prediction": {
+    "phase_2_回落_sustained_3_7_strict_or_strong_5th_round": 35,
     "phase_2_rebound_to_4_7_strict_1st_attempt": 20,
     "langchain_openwiki_3k_break_milestone_CRITICAL": 15,
-    "variant_36_NEW_classification": 10,
+    "variant_37_NEW_classification": 10,
     "phase_2_持续_回落_2_7_strict_or_strong": 5,
     "phase_1_baseline_3_7_strict_回落": 5,
     "variant_33_1st_party_continuous_5th_breakthrough_终局_NOT_triggered": 3,
     "ctxrs_ctx_acceleration_recovery_again": 3,
-    "coplaydev_unity_mcp_acceleration_sustained_P87_NEW": 3,
     "anthropic_engineering_7月_post_breakthrough": 1,
     "strix_STRICT_6th_round_sustained_P82": 0
   },
-  "r661_articles_produced": 1,
-  "r661_projects_paired": 1,
-  "r661_total_1st_party_sources_in_article": 10
+  "r663_articles_produced": 1,
+  "r663_projects_paired": 1,
+  "r663_total_1st_party_sources_in_article": 11,
+  "r663_cluster_validation": {
+    "obra_superpowers": {"stars_r662": 246168, "stars_r663": 246200, "delta": 32, "pct": 0.16, "signal": "STABLE"},
+    "affaan_m_ECC": {"stars_r662": 226005, "stars_r663": 226040, "delta": 35, "pct": 0.19, "signal": "STABLE"},
+    "JuliusBrussee_caveman": {"stars_r662": 83862, "stars_r663": 83925, "delta": 63, "pct": 0.92, "signal": "TRACE (回落 sustained 2nd round below 1% threshold R662-R663)"},
+    "usestrix_strix": {"stars_r662": 35931, "stars_r663": 35983, "delta": 52, "pct": 1.74, "signal": "STRICT 5th round sustained R659-R663"},
+    "openai_codex_plugin_cc": {"stars_r662": 24266, "stars_r663": 24360, "delta": 94, "pct": 4.67, "signal": "STRONG 7th round sustained R651-R663"},
+    "raiyanyahya_recall": {"stars_r662": 674, "stars_r663": 674, "delta": 0, "pct": 0.00, "signal": "0% RETURNS 3rd round sustained 真正 termination CONFIRMED R656-R663"},
+    "amplifthq_opentag": {"stars_r662": 701, "stars_r663": 709, "delta": 8, "pct": 13.85, "signal": "STRONG 11th round sustained R647-R663"},
+    "cluster_signal": "3/7 strict-or-strong HIT (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉞ measurement artifact verification round 3 SUSTAINED 4th round R655-R663"
+  },
+  "r663_three_dimensions_matrix_progress": {
+    "stage_1_overview_R661": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "三维度体系 overview meta article"},
+    "stage_2_horizontal_deep_dive_R662": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "horizontal 解耦 deep dive"},
+    "stage_3_vertical_deep_dive_R663": {"status": "✅ COMPLETE", "articles": 1, "projects": 1, "theme": "vertical 解耦 deep dive [NEW]"},
+    "stage_4_cross_device_deep_dive_R664": {"status": "⏳ PENDING", "articles": 0, "projects": 0, "theme": "cross-device 协同 deep dive [NEXT]"},
+    "stage_5_v2_0_evolution_prediction_R665": {"status": "⏳ PENDING", "articles": 0, "projects": 0, "theme": "三维度全开 + awesome-harness-engineering v2.0 演进预测"},
+    "completion_rate": "60% (3/5 阶段完成)"
+  }
 }
