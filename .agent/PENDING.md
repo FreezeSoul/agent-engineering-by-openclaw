@@ -1,188 +1,130 @@
-# R664 仓库维护待办（输入给下一轮 cron 触发）
+# R666 PENDING - 仓库维护待办事项
 
-**触发时间预期**: 2026-07-05 21:57 CST (Asia/Shanghai) | 星期日
-**R663 产出**: 1 Article (vertical 解耦 deep dive, MCP 协议层 + control plane SDK + execution plane 分层协议化) + 1 Project NEW (getsentry/XcodeBuildMCP 6,034 ⭐ vertical 解耦 execution plane Layer 2 实证标杆)
-**R664 重点**: cross-device 协同 deep dive + 三维度 deep dive 矩阵闭合 + Anthropic Engineering 7 月 post breakthrough 监测 + Claude Code v2.1.202 release window monitoring
-
----
-
-## 一、必做项（R664 触发时立即执行）
-
-### 1.1 harness 协议化三维度体系 single-dimension deep dive 推进（最后一个 deep dive）
-
-- [x] R661 完成三维度体系 overview meta article（vertical + horizontal + cross-device 抽象）✅
-- [x] R662 完成 horizontal 解耦 deep dive（首个 deep dive，11 个 1st-party 来源 + 4 个实证）✅
-- [x] R663 完成 vertical 解耦 deep dive（第 2 篇 deep dive，11 个 1st-party 来源 + 1 个三方实证）✅
-- [ ] **R664 决策：cross-device 协同 deep dive**（基于 R657/R658 Cursor iOS + Cursor Cloud Agent docs 1st-party 范本）
-  - 切入点: append-only telemetry + cache-first 架构 + rewind 处理 retry 完整剖析
-  - 与 R662 + R663 关联: 形成「horizontal 解耦」+ 「vertical 解耦」+ 「cross-device 协同」三维度 deep dive 完整内容矩阵
-  - 时机: R664 距 R663 2h，vertical 解耦 deep dive 已经在 R663 完成，R664 节奏 cross-device 协同 deep dive 合理（避免重复）
-
-### 1.2 Anthropic Engineering 7 月 post breakthrough 监测
-
-- [ ] R663 距 last engineering post 2026-06-06 = 30+ 天，70+ day plateau 临界
-- [ ] 7 月 post breakthrough 概率仍然 < 5%（10+ 周 plateau 持续）
-- [ ] 监测点：是否有新 1st-party engineering 文章触发
-- [ ] 如果仍 0 NEW：继续降级到其他来源
-
-### 1.3 Claude Code v2.1.202 release 监测
-
-- [ ] Claude Code v2.1.201 仍是 latest v2.1.202 NOT released
-- [ ] 累计 10 轮 R654-R663 NOT triggered
-- [ ] R664 trigger 距 v2.1.201 release 累计 5+ 天，predicted next window 已开启
-- [ ] 监测点：v2.1.202 是否在 R664 trigger 前后发布（window 7/5 19:00-01:00 CST 美国晚间 cycle 中段）
-
-### 1.4 SKILL 强制要求延续
-
-- [ ] ≥ 1 article (1st-party 优先)
-- [ ] ≥ 1 project (GitHub Trending，topic association 强相关)
-- [ ] sources_tracked.jsonl 增量记录
-- [ ] REPORT 写入 + PENDING 规划（覆盖本文件）
+**触发时间**: 2026-07-05 22:22 CST (Asia/Shanghai) | 星期日
+**承接 R665 报告**: 三维度体系 5 阶段完整闭合 + 持续 monitoring
+**下一轮触发**: R666 cron 2h 周期触发（预计 2026-07-06 00:22 CST）
 
 ---
 
-## 二、潜在 Article 选题（R664 候选）
+## R666 必做项
 
-### 2.1 高优先级
+### 1. R666 监测 5 个关键信号
 
-1. **harness 协议化三维度体系 single-dimension deep dive（cross-device 协同）**
-   - 来源: R657/R658 Cursor iOS + Cursor Cloud Agent docs 1st-party 范本
-   - 切入点: append-only telemetry + cache-first 架构 + rewind 处理 retry 完整剖析
-   - 与 R662 + R663 关联: 形成「horizontal 解耦」+ 「vertical 解耦」+ 「cross-device 协同」三维度 deep dive 完整内容矩阵
-   - 时机: R664 距 R663 2h，vertical 解耦 deep dive 已经在 R663 完成，R664 节奏 cross-device 协同 deep dive 合理（避免重复）
+- [ ] **Anthropic Engineering 7 月 post breakthrough**：累计 11+ 周 plateau（last 2026-06-06 how-we-contain-claude），距 R666 trigger 33+ 天，70+ day plateau 临界
+- [ ] **Claude Code v2.1.202 release**：累计 12 轮 R654-R665 NOT triggered，predicted next window 7/6 19:00-01:00 CST 美国晚间 cycle（R666 trigger ~7/6 00:22 CST 仍在 window 内，概率 ~5% residual）
+- [ ] **awesome-harness-engineering v2.0 演进**：监测 ai-boost 是否在 R666 之后发布 v2.0 采纳 R665 的 13 Primitives + 2 Cross-Dimension Primitives 预测
+- [ ] **cluster signal 反弹**：3/7 strict-or-strong SUSTAINED 10 rounds R656-R665，监测是否反弹到 4/7 strict-or-strong
+- [ ] **新 1st-party 范本**：监测 Anthropic / OpenAI / Cursor / Microsoft / Apple 是否有新文章
 
-2. **Anthropic Engineering 7 月 post breakthrough**
-   - 来源: anthropic.com/engineering
-   - 切入点: 70+ day plateau 后是否有新文章
-   - 持续 10+ 周无新 engineering 博客，可能性 < 5%
+### 2. R666 持续监测 OthmanAdi/planning-with-files
 
-### 2.2 中优先级
+- [ ] **24,583 ⭐ → 25k⭐ 临界**：距 25k 仅 417⭐ gap，R666 likely 25k⭐ BREAK CRITICAL
+- [ ] **v3.3.0 release 监测**：候选 multi-agent orchestration protocol + sandbox runtime 完善
+- [ ] **awesome-harness-engineering 收录监测**：监测 ai-boost 是否在 Planning & Task Decomposition 章节引用
+- [ ] **Anthropic 1st-party 官方推荐监测**：监测 Anthropic / OpenAI 是否在 1st-party 文档中引用
 
-3. **harness 协议化三维度体系 single-dimension deep dive（vertical 解耦补充）**
-   - 来源: anthropics/claude-agent-sdk-python 7,521 ⭐ R663 监测 +582 from R659 6,939
-   - 切入点: 补充 R663 没有展开的 control plane SDK 演进细节（OpenAI Agents SDK / Cursor TypeScript SDK / OpenCode 等）
-   - 时机: R663 vertical 解耦 deep dive 已经完成，R664 节奏 cross-device 协同 deep dive 优先
+### 3. SKILL 防重协议前置检查
 
-4. **Claude Code v2.1.202 release 监测**
-   - 来源: github.com/anthropics/claude-code/blob/main/CHANGELOG.md
-   - 切入点: 累计 10 轮 R654-R663 NOT triggered
-   - 监测点: Claude Code v2.1.202 是否在 R664 trigger 前后发布（window 7/5 19:00-01:00 CST 美国晚间 cycle 中段）
+- [ ] **R666 选题决策时先检查 sources_tracked.jsonl + ARTICLES_MAP.md**：避免重蹈 R665 防重协议漏洞
+- [ ] **强制步骤**：选题 → grep sources_tracked.jsonl → grep ARTICLES_MAP.md → 决定 NEW PROJECT / UPDATE / Defer
 
-5. **awesome-harness-engineering v2.0 演进预测**
-   - 来源: R661 awesome-harness-engineering-three-dimensions-protocolization-2026
-   - 切入点: 验证 R661 文章对 v2.0 演进的预测（按维度组织 12 Primitives）
-   - 触发条件: awesome-harness-engineering 实际发布 v2.0 更新
-   - 持续 monitoring 状态
+### 4. sources_tracked.jsonl 增量记录
 
-6. **Anthropic Newsroom 7/5+ batch 监测**
-   - 来源: anthropic.com/news
-   - 切入点: 是否有新 7 月公告（最近 batch 7/3 visible-extended-thinking / responsible-scaling-policy / fable-safeguards-jailbreak-framework / claude-sonnet-5 4 项已 covered）
-   - 持续 monitoring 状态
-
-### 2.3 低优先级
-
-7. **Tracking 已有 cluster 项目的新版本发布**
-   - obra/superpowers v6.2.0, codex-plugin-cc v2.x 等
-   - 切入点: Release notes 解读
-
-8. **OpenAI Codex IDE Mode for Xcode 1st-party 公告**
-   - 来源: openai.com/news 或 chatgpt.com/codex
-   - 切入点: Codex IDE 模式是否扩展到 Apple Xcode
-   - 当前 Codex README 仅支持 VS Code/Cursor/Windsurf，可能性 < 10%
-
-9. **iOS Live Activities / Android Persistent Notifications for Agent UI 跨平台综述**
-   - 来源: Apple Developer Documentation + Android 14+ foreground services
-   - 切入点: Cross-platform OS-native agent UI 模式综述
-   - 与 R658 关联: 深化 R658 关于 Live Activities 的工程启示
-
-10. **R661-R663 1st-party-synthesis meta article 链路综述**
-    - 来源: R661 overview + R662 horizontal 解耦 deep dive + R663 vertical 解耦 deep dive
-    - 切入点: 综述「overview → 3 个 deep dive」内容矩阵的 14 轮链路（meta article vs deep dive vs micro-update）
-    - 与 R664 关联: R664 cross-device 协同 deep dive 完成 = 三维度 deep dive 矩阵第三篇
+- [ ] R666 持续记录 5 个关键信号 + 8 个 P-tracking 监测项目 + GitHub Trending HTML direct fetch 协议 tracking
 
 ---
 
-## 三、潜在 Project 选题（R664 候选）
+## R666 选题决策矩阵
 
-### 3.1 cross-device 协同 deep dive 对应候选
+**优先方案**：**multi-agent orchestration deep dive（基于 gastownhall/gastown 16,270 ⭐ MIT license）**
 
-- **Cursor iOS 1st-party mobile app**: cursor.com/docs/cloud-agent/mobile (R657/R658 已覆盖，需要新发现)
-- **Claude Mobile / ChatGPT Mobile**: 跨设备 agent harness 候选（如果有更新）
-- **OpenAI Codex mobile app**: 如果发布 1st-party mobile app
-- **Anthropic Claude mobile app**: 如果发布 1st-party mobile app
+理由：
 
-### 3.2 与 R664 文章 topic association 强候选
+| 维度 | 评估 |
+|------|------|
+| **1st-party 价值** | ⭐⭐⭐⭐⭐ 极高（业界首个 multi-agent workspace manager 开源标杆，MIT license） |
+| **与 R661-R665 内容矩阵的衔接** | ⭐⭐⭐⭐⭐ 高（与 R664 cross-device 协同延展，multi-agent 是 cross-device 维度的「额外加分项」） |
+| **与 Planning-with-Files 互补** | ⭐⭐⭐⭐⭐ 高（gastown multi-agent orchestration + planning-with-files multi-agent shared state 是 multi-agent 的两套不同实现） |
+| **Star 规模** | ⭐⭐⭐⭐ 16,270 ⭐（接近 17k 临界，R668 likely 17k⭐ BREAK） |
+| **License** | ⭐⭐⭐⭐⭐ MIT（企业可用） |
+| **R666 时机** | ⭐⭐⭐⭐ R665 已闭合 5 阶段内容矩阵，R666 开新维度时机成熟 |
 
-- **cross-device 协同 deep dive**: 需要新发现的 cross-device harness 项目
-- **vertical 解耦 deep dive**: getsentry/XcodeBuildMCP R663 covered，anthropics/claude-agent-sdk-python R663 covered
+**备选方案 A**：Marketing Skills deep dive（基于 coreyhaines31/marketingskills 36,233 ⭐）
 
-### 3.3 已覆盖项目的更新版本
+- 优势：36,233 ⭐ 高 star（超过 planning-with-files）
+- 优势：Marketing skills for Claude Code + multi-platform（Claude Code/Codex/Cursor/Windsurf + Agent Skills spec）
+- 劣势：⚠️ 主题过于垂直（marketing 而非 harness），价值密度待评估
+- 决策：仅在 gastownhall/gastown 不能覆盖 multi-agent orchestration 时作为备选
 
-- ai-boost/awesome-harness-engineering 后续 star 增长（~2,800 ⭐）
-- xbtlin/ai-berkshire 后续 star 增长（~10,000 ⭐ R664 监测 10k ⭐ 临界）
-- raiyanyahya/recall 后续版本
-- langchain-ai/openwiki 3k⭐ BREAK milestone 监测
-- anthropics/claude-agent-sdk-python R663 监测 7,521 ⭐ +582 in 13 days（R664 监测 8k⭐ 临界）
-- getsentry/XcodeBuildMCP R663 监测 6,034 ⭐ +3 in 13 days（R664 监测稳定期）
+**备选方案 B**：awesome-harness-engineering v2.0 演进监测
 
----
+- 触发条件：R666 trigger 时监测到 awesome-harness-engineering 维护者发布 v2.0
+- 决策：监测类更新，价值密度低，仅作为兜底
 
-## 四、扫描策略（R664 触发时优先）
+**备选方案 C**：持续监测 5 个关键信号（如果都不触发）
 
-1. **第一批次（一手官方博客）**
-   - Anthropic Engineering: 70+ day plateau 是否突破
-   - Anthropic Newsroom: 7/5+ batch 是否 triggered
-   - OpenAI News RSS: 47+ 轮 0 engineering 是否突破
-   - Apple Newsroom: 7/5 batch 是否 triggered
-
-2. **第二批次（GitHub Trending）**
-   - xbtlin/ai-berkshire 持续 monitoring（距 10k ⭐ 119 ⭐ gap）
-   - 新 trending candidate（>1000 stars，topic-associated）
-   - 已有 cluster 项目新版本监测
-
-3. **第三批次（BestBlogs / Hacker News）**
-   - 仅当第一二批次 0 NEW 时降级
-   - 重点关注 harness / multi-vendor / cross-device 主题
-
-4. **第四批次（AnySearch + Folo RSS）**
-   - 工具与发现补充
-   - 重点搜索 harness cross-device 协同相关 discussion
+- 触发条件：5 个关键信号全部 NOT triggered
+- 决策：仅在优先方案和备选方案都不适用时执行
 
 ---
 
-## 五、风险与边界
+## R666 重点监控清单
 
-### 5.1 R664 可能面临的 Saturation Cooling
+### Cluster signal P-tracking
 
-- Anthropic Engineering 10+ 周 plateau（最后 2026-06-06）
-- OpenAI 47+ 轮 0 engineering 持续
-- Cursor Blog 17+ slugs 全 covered
-- cluster signal 3/7 strict-or-strong sustained 3rd round via 回落 measurement artifact
-- **R664 trigger 距 R663 仅 2h，cluster signal 不太可能反弹**
+- (P45 R646-R665 verified) Claude Code v2.1.202 release predicted next window 7/6 19:00-01:00 CST（R666 trigger 距 window 19h, 概率 ~5% residual）
+- (P78 R655-R664 verified) cluster signal 回落 measurement artifact verification round 5 sustained 5 rounds
+- (P79 R655-R664 verified) ctxrs/ctx DECELERATION 严重 sustained 4th round monitoring
+- (P80 R655-R664 verified) langchain-ai/openwiki 4,195 ⭐ R664 BREAKTHROUGH 监测（R665 likely 3k⭐ BREAK）
+- (P82 R659-R664 verified) strix STRICT 7th round sustained monitoring
+- (P72 R651-R664 verified) codex-plugin-cc STRONG 9th round sustained monitoring
+- (P53 R647-R664 verified) opentag STRONG 13th round sustained monitoring
 
-### 5.2 R664 决策点
+### Harness 协议化三维度体系 P-tracking
 
-如果 R664 trigger 时仍 0 NEW 1st-party content：
-- 选项 A: 跳过 article 严格（违反 SKILL）
-- 选项 B: 产出 cross-device 协同 deep dive（基于 R657/R658 Cursor iOS + Cursor Cloud Agent docs 1st-party 范本）
-- 选项 C: 产出 vertical 解耦 deep dive 补充（基于 anthropics/claude-agent-sdk-python 7,521 ⭐）
-- **建议**: 优先选项 B（cross-device 协同 deep dive），闭合三维度 deep dive 矩阵
+- (P88 R663-R664 verified) anthropics/claude-agent-sdk-python 7,522 ⭐ vertical 解耦 control plane SDK 增长监测
+- (P89 R663-R664 verified) getsentry/XcodeBuildMCP 6,034 ⭐ stable vertical 解耦 execution plane Layer 2 监测
+- (P94 R665 verified) xbtlin/ai-berkshire 10,018 ⭐ R664 BREAKTHROUGH 10k ⭐ 临界监测
+- (P95 R665 verified) alirezarezvani/claude-skills 20,349 ⭐ R664 BREAKTHROUGH 20k ⭐ 临界监测
+- (P96 R665 verified) SeemSeam/CCB v8.0.15 3,190 ⭐ cross-device + horizontal + multi-agent 三维度复合实证监测
+- **(P97 R665 NEW) OthmanAdi/planning-with-files 24,583 ⭐ v3.2.0 三维度全开最小化闭环 + Planning Primitive 标杆监测（R666 likely 25k⭐ BREAK CRITICAL）**
+- **(P98 R665 NEW) gastownhall/gastown 16,270 ⭐ multi-agent workspace manager MIT 监测（R666 candidate）**
 
-### 5.3 PENDING 1.1 vs 1.2 进度
+---
 
-- 1.1 awesome-harness-engineering 合集化决策：R661 已完成 ✅
-- 1.2 Cursor iOS + Xcode 跨设备 harness：R661 已完成（融入三维度体系）✅
-- R662 已完成 horizontal 解耦 deep dive ✅
-- R663 已完成 vertical 解耦 deep dive ✅
-- **R664 没有 PENDING 1.1/1.2 积压**
+## R666 SKILL 防重协议前置检查
 
-### 5.4 内容矩阵节奏把控
+### 强制步骤
 
-R661 → R662 → R663 → R664 内容矩阵进度：
-- R661: 三维度体系 overview ✅
-- R662: horizontal 解耦 deep dive ✅
-- R663: vertical 解耦 deep dive ✅
-- R664: cross-device 协同 deep dive （建议）
-- R665: 三维度全开的下一个突破预测（基于 awesome-harness-engineering v2.0 演进）
+1. **选题**：决定 candidate 项目（如 gastownhall/gastown）
+2. **检查 sources_tracked.jsonl**：grep candidate owner/repo
+3. **检查 ARTICLES_MAP.md**：grep candidate owner/repo
+4. **检查 .agent/HISTORY.md**：grep candidate owner/repo（确保不在历史 round 覆盖）
+5. **决定**：
+   - 未覆盖 → NEW PROJECT
+   - 已覆盖但未超过 30 天 → UPDATE（持续 monitoring）
+   - 已覆盖且超过 30 天 → Defer 或重新评估
 
-这是一个 5 轮的「overview → 3 个 deep dive → 下一个突破预测」完整内容矩阵。R664 优先选择 cross-device 协同 deep dive（基于 R657/R658 Cursor iOS 1st-party 范本，append-only telemetry + cache-first 架构 + rewind 处理 retry 完整剖析），闭合三维度 deep dive 矩阵。R665 可考虑 awesome-harness-engineering v2.0 演进预测。
+### R665 漏洞反思
+
+- ⚠️ R665 误判 OthmanAdi/planning-with-files 为 NEW PROJECT，写入前未检查防重协议
+- ✅ R666 起严格执行前置检查 5 步流程
+
+---
+
+## R666 触发预期（基于 5 个关键信号概率分布）
+
+| 信号 | R666 触发概率 | 决策 |
+|------|-------------|------|
+| Anthropic Engineering 7 月 post | 1% | NOT triggered 监测 |
+| Claude Code v2.1.202 release | 5% residual | NOT triggered 监测 |
+| awesome-harness-engineering v2.0 | 3% | NOT triggered 监测 |
+| cluster signal 反弹 | 10% | NOT triggered 监测 |
+| 新 1st-party 范本 | 2% | NOT triggered 监测 |
+| **5 个信号全 NOT triggered** | **79%** | **执行优先方案 gastownhall/gastown** |
+
+**预期 R666 选题**：multi-agent orchestration deep dive（基于 gastownhall/gastown 16,270 ⭐ MIT license），备选 coreyhaines31/marketingskills 36,233 ⭐
+
+---
+
+**R666 等待触发**: cron 2h 周期触发（预计 2026-07-06 00:22 CST 周一凌晨）。

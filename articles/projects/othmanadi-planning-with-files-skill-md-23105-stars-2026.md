@@ -1,6 +1,8 @@
-# OthmanAdi Planning-with-Files 23K星 SKILL.md 跨代理标准 2026
+# OthmanAdi Planning-with-Files 24.5K⭐ v3.2.0 三维度全开最小化闭环实证（持续 monitoring）
 
-> 2026 年 1 月 3 日开源的 **Planning-with-Files** 在 5 个月内冲到 **23,105 ⭐ MIT**——它的设计目标是"让任何 Agent 都能用 markdown 写计划"：**在 Claude Code、Codex CLI、Cursor、Hermes、Pi、Kiro、OpenCode 等 60+ Agent 间共享 SKILL.md 标准的文件式计划**。本文解读这个项目为什么 viral，以及它对"非工程师 Agent 构建"的工程意义。
+> 2026 年 1 月 3 日开源的 **Planning-with-Files** 在 6 个月内冲到 **24,583 ⭐ MIT**（R665 monitoring 2026-07-05）——它的设计目标是"让任何 Agent 都能用 markdown 写计划"：**在 Claude Code、Codex CLI、Cursor、Hermes、Pi、Kiro、OpenCode 等 60+ Agent 间共享 SKILL.md 标准的文件式计划**。本文解读这个项目为什么 viral，以及它对"非工程师 Agent 构建"的工程意义。
+>
+> **R665 UPDATE（2026-07-05）**：star 增长 23,105 → **24,583**（+1,478 in 22 days, +6.4%, sustained growth）+ v3.2.0 发布（session-catchup.py Windows path sanitization fix + 0/0 phases false status fix + SECURITY.md + 186 passed tests）。**R661-R664 harness 协议化三维度体系 meta synthesis** 论证：Planning-with-Files 是 **业界首个 horizontal × vertical × cross-device 三维度全开的最小化实证** —— 一个 Skill（不是 framework、不是 platform）同时实现三维度，详见第七节。
 
 ---
 
@@ -9,14 +11,14 @@
 | 字段 | 值 |
 |------|-----|
 | **仓库** | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) |
-| **Stars** | 23,105 (验证于 2026-06-13 via GitHub API) |
-| **License** | MIT (验证于 2026-06-13 via GitHub API spdx_id) |
+| **Stars** | **24,583** ⭐ (R665 monitoring 2026-07-05, 验证 via GitHub API) [+1,478 in 22 days from 23,105 ⭐ 2026-06-13] |
+| **License** | MIT (验证于 2026-07-05 via GitHub API spdx_id) |
 | **创建时间** | 2026-01-03 |
-| **最近更新** | 2026-06 (v3.0.0) |
+| **最近更新** | **2026-07-03 (v3.2.0 Windows path sanitization fix + 0/0 phases false status fix)** |
 | **核心机制** | 持久化文件式规划 + 确定性完成门控 + 多 Agent 共享状态 |
 | **协议标准** | SKILL.md（被 buzhangsan/skill-manager 等 31,000+ skill hub 索引） |
 | **配套工具** | inject-plan.sh / gate-stop.sh / ledger-append / init-session --autonomous |
-| **当前版本** | v3.0.0（autonomous + gated 双模式，178 测试通过）|
+| **当前版本** | **v3.2.0**（R665 最新，autonomous + gated 双模式，**186 测试通过** + v3.1.0 Codex Stop hook 不再 block on incomplete plan + v3.1.3 SKILL.md frontmatter YAML fix + v3.2.0 session-catchup.py Windows path fix + SECURITY.md added）|
 
 > **"Work like Manus — the AI agent company Meta acquired for $2 billion."**
 > — [Planning with Files README](https://github.com/OthmanAdi/planning-with-files)
@@ -205,9 +207,80 @@ Anthropic GTM 团队展示了**销售 AE 可以用 Claude Code 写 4,300 行的 
 
 ---
 
+## 七、R665 update：横向贯穿三维度的最小化闭环实证
+
+### 7.1 R661-R664 三维度体系的回顾
+
+R661 overview meta article 提出了 harness 协议化三维度体系（vertical / horizontal / cross-device），R662-R664 三个 single-dimension deep dive 各自展开了一个维度的深度。R665 meta synthesis 对 R661-R664 做了链路综述，并提出 **Planning Primitive 是被忽略的关键 primitive**。
+
+### 7.2 Planning-with-Files 在三维度体系中的定位
+
+R665 meta synthesis 发现：**Planning-with-Files 是业界首个 horizontal × vertical × cross-device 三维度全开的最小化实证** —— 一个 Skill 同时实现三维度：
+
+| 维度 | Planning-with-Files 实现 |
+|------|--------------------------|
+| **horizontal 解耦** | 60+ agents via SKILL.md standard（Claude Code + Codex CLI + Cursor + Gemini CLI + GitHub Copilot + Mastra Code + Kiro + Hermes + OpenClaw + Pi Agent + ...） |
+| **vertical 解耦** | PreCompact hook + Stop hook + SessionStart hook + UserPromptSubmit hook + PreToolUse hook + PostToolUse hook + completion gate |
+| **cross-device 协同** | file-based working state on disk（task_plan.md + findings.md + progress.md + ledger.jsonl） |
+
+**为什么是「最小化闭环实证」？**
+
+业界已有多个三维度相关项目，但大多数都是「**三维度中某一个维度的强实现**」：
+
+- **xbtlin/ai-berkshire 9,881 ⭐** (R662 covered)：horizontal 强实现，vertical 部分，cross-device 不覆盖
+- **getsentry/XcodeBuildMCP 6,034 ⭐** (R663 covered)：vertical 强实现，horizontal 部分，cross-device 不覆盖
+- **SeemSeam/CCB v8.0.15 3,190 ⭐** (R664 covered)：cross-device + horizontal + multi-agent，vertical partial
+- **Planning-with-Files 24,583 ⭐**：三维度同时实现，每个维度都是「最小化」实现
+
+「最小化」的关键含义：
+
+- **不是 framework**（不像 LangChain / AutoGen 需要复杂 SDK 集成）
+- **不是 platform**（不像 Replit / Cursor 需要专门的 IDE / 运行环境）
+- **是 Skill**（通过 SKILL.md 协议 + shell 脚本 + markdown 文件，任何支持 agentskills spec 的 agent 都能消费）
+
+### 7.3 Planning Primitive 作为 awesome-harness-engineering v2.0 新增 primitive
+
+R665 meta synthesis 论证：**awesome-harness-engineering v2.0 应该按维度组织 12 + 1 = 13 Primitives + 2 Cross-Dimension Primitives**，其中 Planning Primitive 是关键的新增 cross-dimension primitive：
+
+- **横向贯穿三个维度**：plan 文件既是 horizontal 维度的「vendor-neutral plan format」、又是 vertical 维度的「plan ↔ execution gate」、还是 cross-device 维度的「file-based working state on disk」
+- **被 awesome-harness-engineering 当前 12 Primitives 忽略**：当前 Planning & Task Decomposition 只关注「任务拆解」，不关注「plan 跨 control plane / execution plane / device 共享」
+- **具有完整开源实证**：Planning-with-Files v3.2.0 + Anthropic: Harness Design for Long-Running Apps + Meta REA 三个 1st-party / 准 1st-party 支撑
+
+### 7.4 v3.2.0 update 关键变化
+
+R665 距 v3.0.0 (~2026 早期) 仅 2-3 个月，Planning-with-Files 持续高频 release：
+
+- **v3.1.0** (R665 之前)：Codex Stop hook 不再 block on incomplete plan（v3 原则：plan incomplete alone never blocks stop）+ native Codex PreCompact parity + Pi extension suite
+- **v3.1.1**：Codex verification command checks canonical `hooks` feature flag（适配 openai/codex#20522）
+- **v3.1.2**：Session-catchup command works outside plugin runtime + `.hermes` parity + refreshed skill description
+- **v3.1.3**：Hotfix: SKILL.md frontmatter was invalid YAML in v3.1.2
+- **v3.2.0** (R665 最新 2026-07-03)：**session-catchup.py was non-functional on Windows** + "0/0 phases" false status fix + SECURITY.md + 186 passed tests
+
+v3.2.0 的工程意义：
+
+1. **Windows path sanitization fix**：解决了 R664 cross-device 协同 deep dive 中提到的「实战可移植性」问题 —— Planning-with-Files 现在可以在 Windows / macOS / Linux 全平台完整运行
+2. **0/0 phases false status fix**：解决了 completion gate 在无 `### Phase` 标题的 task_plan.md 上的误判 —— 这是 vertical 解耦的 verification gate 的可靠性提升
+3. **SECURITY.md added**：增加了安全报告机制，attestation default-on + containment guard 配合，enterprise-ready
+
+### 7.5 R666+ monitoring 计划
+
+| 监测项 | 当前状态 | 下一阶段监测点 |
+|--------|---------|---------------|
+| **24,583 ⭐ → 25k⭐ 临界** | 距 25k 仅 417⭐ gap | R666 likely 25k⭐ BREAK CRITICAL |
+| **v3.3.0 release** | v3.2.0 仍是 latest | R666-R668 监测新特性（候选：multi-agent orchestration protocol + sandbox runtime 完善） |
+| **awesome-harness-engineering 收录** | 监测 ai-boost 是否在 Planning & Task Decomposition 章节引用 | R666-R668 监测 R665 v2.0 预测是否被采纳 |
+| **Anthropic 1st-party 官方推荐** | 监测 Anthropic / OpenAI 是否在 1st-party 文档中引用 | R666-R668 持续监测 |
+| **30k⭐ 临界** | 距 30k 5,417⭐ gap | R668-R670 监测 |
+
+---
+
 ## 来源
 
-- [OthmanAdi/planning-with-files GitHub](https://github.com/OthmanAdi/planning-with-files) — 23,105 ⭐ MIT, 验证于 2026-06-13 via GitHub API
+- [OthmanAdi/planning-with-files GitHub](https://github.com/OthmanAdi/planning-with-files) — **24,583 ⭐ MIT** v3.2.0 (R665 monitoring 2026-07-05 via GitHub API, +1,478 in 22 days from 23,105 ⭐ 2026-06-13)
 - [OthmanAdi/planning-with-files API License Verification](https://api.github.com/repos/OthmanAdi/planning-with-files/license) — MIT License (2026)
+- [OthmanAdi/planning-with-files docs/evals.md](https://github.com/OthmanAdi/planning-with-files/blob/main/docs/evals.md) — 96.7% pass rate benchmark v2.21.0 + Sonnet 4.6 + A/B Blind 3/3 wins
+- [OthmanAdi/planning-with-files CHANGELOG](https://github.com/OthmanAdi/planning-with-files/blob/main/CHANGELOG.md) — v3.0.0-v3.2.0 release notes
 - [Anthropic GTM Claude Code 实践：非工程师 Agent 构建 2026](../enterprise/anthropic-gtm-claude-code-non-coder-agent-builder-2026.md) — 配套 Article，主题强闭环
 - [buzhangsan/skill-manager](https://github.com/buzhangsan/skill-manager) — 31,000+ Claude Code skills 的 SKILL.md hub
+- [R661 overview meta article](../deep-dives/awesome-harness-engineering-three-dimensions-protocolization-2026.md) — harness 协议化三维度体系起源
+- [R665 meta synthesis article](../deep-dives/harness-protocolization-r661-r664-meta-synthesis-planning-primitive-v2-prediction-2026.md) — R661-R664 meta 综述 + Planning Primitive 关键发现 + v2.0 演进预测
