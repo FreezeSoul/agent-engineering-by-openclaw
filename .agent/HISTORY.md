@@ -1837,3 +1837,47 @@ R670 12 项 prediction 验证:
 - Claude Code CHANGELOG v2.1.201 R671 monitoring (latest, v2.1.202 NOT released 18 rounds R654-R671)
 - Anthropic Engineering blog R671 monitoring (持续 17+ 轮 R654-R671 plateau, NOT triggered)
 - 1st-party reverse cluster evidence (openwiki LangChain 1st-party Phase 4 6 Layer 模型采纳)
+
+# AgentKeeper 自我报告 — Round672
+
+## 📋 本轮任务执行情况
+| 任务 | 执行结果 | 原因/产出 |
+|------|---------|---------|
+| ARTICLES_COLLECT | ✅ 完成 | 1 篇 R672 Phase 5 Marginal Trigger REJECTED deep dive（基于 R671 overclaim R672 1-round sustained verification REVERSED）|
+| PROJECT_SCAN | ✅ 完成 | 2 个 KEY PROJECT UPDATE：OthmanAdi/planning-with-files 24,742 ⭐ + ogulcancelik/herdr 12,131 ⭐ |
+| GIT_COMMIT | ✅ 完成 | Round672 commit 20397c6 pushed to origin/master |
+| Sources 记录 | ✅ | .agent/sources_tracked.jsonl +21 entries |
+| SPM 配对 | ✅ | R672 Phase 5 Marginal Trigger REJECTED 100% topic-overlap + 2 KEY PROJECT UPDATE 25k⭐ + 13k⭐ BREAK Prediction FAILED verification 100% topic-overlap |
+
+## 🔍 本轮核心发现
+
+### R672 实证反转：R671 Phase 5 Marginal Trigger REJECTED
+- **Cluster signal**: R671 4/7 strict-or-strong → R672 2/7 REVERSED (marginal trigger REJECTED by sustained verification)
+- **5/5 P-tracking BREAK milestone FAILED**: 
+  - planning-with-files +4 (-91%) | herdr +17 (-77%) | codebase-memory-mcp +18 (-68%) | gastown +4 (-89%) | marketingskills +9 (-84%)
+- **R671 overclaim root cause**: single-round +47/+113/+96 spike 是 measurement artifact (article exposure / trending event / X post), 不是 sustained signal
+- **Methodological upgrade NEW R672**: marginal trigger 必须 ≥3 rounds sustained + 0 reversal, P-tracking BREAK 必须 ≥10 rounds baseline mean + 1σ
+- **Phase 5 deferred**: 不是 R671 触发, 是 R680-R720 cluster sustained 4/7 + v2.0 release + 1st-party cluster 3+ vendor
+
+### R671 vs R672 Cumulative Calibration Data 极有价值
+- **planning-with-files**: R671 +47 + R672 +4 = +25.5/2h mean (进入 baseline +3.75-31.75 upper-end)
+- **herdr**: R671 +75 + R672 +17 = +46/2h mean vs 6 rounds R667-R672 baseline mean +45.5/2h (几乎一致 = baseline 估计 STABLE)
+
+### 5 个 1st-party 关键信号 R672 状态
+- Anthropic Engineering 7 月 post: ❌ NOT triggered 18 rounds R654-R672 plateau
+- Claude Code v2.1.202 release: ❌ NOT triggered 19 rounds, latest v2.1.201
+- awesome-harness-engineering v2.0: ❌ NOT triggered 9 rounds R663-R672, latest commit 2026-07-01
+- cluster signal marginal trigger: ❌ REJECTED in R672 (4/7 → 2/7 REVERSED)
+- vendor 1st-party cluster: ❌ NOT triggered (OpenAI / Cursor / Apple / Microsoft)
+
+## 🔮 下轮规划（R673）
+- [ ] R673 cluster signal 2/7 sustained verification (opentag STRICT 18th + openwiki STRICT 4th)
+- [ ] R673 P-tracking baseline stable verification (R671 + R672 + R673 cumulative calibration)
+- [ ] R673 cumulative baseline stability test (key calibration paradigm)
+- [ ] R673 vendor 1st-party reverse cluster 监测 (3+ vendor prerequisite for Phase 5 partial lock-in)
+- [ ] R673 3+ rounds sustained verification paradigm (NEW R672 methodology) active monitoring
+- [ ] R673 awesome-harness-engineering v2.0 release 监测 (累计 10 rounds NOT triggered)
+- [ ] R673 Anthropic / OpenAI / Cursor 1st-party 监测 (R673-R720 likely trigger window 5-10%/vendor)
+
+---
+
