@@ -1,8 +1,8 @@
 # 📚 Article Map
 
-> Auto-generated at 2026-07-06 02:08:51
+> Auto-generated at 2026-07-06 07:57:00
 
-> Total articles: 1476
+> Total articles: 1477
 
 ---
 
@@ -1484,4 +1484,4 @@
 | 1473 | harmony agent：首个独立复现 gpt-oss-20b 评分 | harness | 2026-04-04 | [articles/harness/harmony-agent-gpt-oss-native-harness-2604-00362.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/harness/harmony-agent-gpt-oss-native-harness-2604-00362.md) |
 | 1474 | CAMP：案例自适应的多智能体评议框架 | orchestration | 2026-04-04 | [articles/orchestration/camp-case-adaptive-multi-agent-panel-2604-00085.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/camp-case-adaptive-multi-agent-panel-2604-00085.md) |
 | 1475 | CausalPulse：工业级神经符号多 Agent 副驾驶的架构剖析 | deep-dives | 2026-04-03 | [articles/deep-dives/causalpulse-neurosymbolic-multi-agent-2603-29755.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/causalpulse-neurosymbolic-multi-agent-2603-29755.md) |
-| 1476 | Vibe Researching：人机协作研究新范式 | deep-dives | 2026-04-03 | [articles/deep-dives/vibe-researching-human-ai-collaboration-2604-00945.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/vibe-researching-human-ai-collaboration-2604-00945.md) |
+| 1476 | Vibe Researching：人机协作研究新范式 | deep-dives | 2026-04-03 | [articles/deep-dives/vibe-researching-human-ai-collaboration-2604-00945.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/deep-dives/vibe-researching-human-ai-collaboration-2604-00945.md) || 1477 | Layer 4 Hybrid Memory Architecture 协议化监测：R669 双范式实证 + DeusData/codebase-memory-mcp 第三个 Hybrid 范式出现 + Memory-Pane Contract 标准化路径 | orchestration | 2026-07-06 | [articles/orchestration/multi-agent-stack-r670-layer-4-hybrid-memory-architecture-protocol-monitoring-2026.md](https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/articles/orchestration/multi-agent-stack-r670-layer-4-hybrid-memory-architecture-protocol-monitoring-2026.md) |

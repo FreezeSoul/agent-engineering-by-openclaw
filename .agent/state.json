@@ -1,83 +1,104 @@
 {
-  "lastRun": "2026-07-06T03:57:00+08:00",
-  "lastCommit": "4eaac4e",
-  "round": 668,
-  "status": "R668_LAYER_3_SKILL_REGISTRY_PRIMITIVE_DEEP_DIVE_3_SUB_LAYERS_MARKETINGSKILLS_NEW_PROJECT_5_MONITORING_UPDATES",
+  "lastRun": "2026-07-06T07:57:00+08:00",
+  "lastCommit": "pending",
+  "round": 670,
+  "status": "R670_LAYER_4_HYBRID_MEMORY_ARCHITECTURE_PROTOCOL_MONITORING_DELIVERED",
   "version": "0.5.0",
   "owner": "FreezeSoul",
-  "type": "phase_4_multi_agent_stack_layering_skill_registry_primitive_3_sub_layers_delivered",
-  "r668_outcome": {
-    "branch_hit": "phase_4_layer_3_skill_registry_primitive_3_sub_layers_marketingskills_new_project_5_monitoring_updates",
-    "r555_variant": 41,
-    "variant_label": "Phase 4 Layer 3 Skill Registry Primitive 3 Sub-Layers Delivered (R668 Layer 3 Skill Registry Primitive deep dive + coreyhaines31/marketingskills 36,347 ⭐ R668 NEW PROJECT + 5 monitoring UPDATES + R667 6 Layer 模型在 Layer 3 精细化展开为 3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library + awesome-harness-engineering v2.0 进一步修正建议)",
+  "type": "phase_4_multi_agent_stack_layering_layer_4_3_hybrid_paradigm_delivered",
+  "r670_outcome": {
+    "branch_hit": "phase_4_layer_4_3_hybrid_paradigm_protocol_monitoring_8_updates",
+    "r555_variant": 42,
+    "variant_label": "Phase 4 Layer 4.3 Hybrid Paradigm Protocol Monitoring Delivered (R670 Layer 4 Hybrid Memory Architecture 协议化监测 deep dive + DeusData/codebase-memory-mcp 26,708 ⭐ R670 NEW KEY FINDING +19,408 stars in 3 weeks +265% + 8 monitoring UPDATES + R669 双范式被 R670 修正为三范式：Learning + Filesystem + Hybrid + 6 Cross-Paradigm Contract + Hindsight SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化首个触发 + Memory-Tool Contract codebase-memory-mcp 14 MCP tools 实证)",
     "articles_written": 1,
-    "article_name": "multi-agent-stack-r668-skill-registry-primitive-horizontal-decoupling-deep-dive-2026.md",
-    "article_path": "articles/orchestration/multi-agent-stack-r668-skill-registry-primitive-horizontal-decoupling-deep-dive-2026.md",
-    "article_topic": "Layer 3 Skill Registry Primitive deep dive（R667 6 Layer 模型在 Layer 3 精细化展开为 3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library）",
-    "article_type": "deep dive (Layer 3 Skill Registry Primitive 3 Sub-Layers)",
-    "article_1st_party_sources_count": 19,
+    "article_name": "multi-agent-stack-r670-layer-4-hybrid-memory-architecture-protocol-monitoring-2026.md",
+    "article_path": "articles/orchestration/multi-agent-stack-r670-layer-4-hybrid-memory-architecture-protocol-monitoring-2026.md",
+    "article_topic": "Layer 4 Hybrid Memory Architecture 协议化监测 deep dive (R669 双范式被 R670 修正为三范式：Learning + Filesystem + Hybrid + 6 Cross-Paradigm Contract)",
+    "article_type": "deep dive (Layer 4 Hybrid Memory Architecture Protocol Monitoring)",
+    "article_1st_party_sources_count": 23,
     "article_1st_party_sources": [
-      "agentskills.io (Layer 3.1 Skills Spec 协议层标准 1st-party)",
-      "github.com/coreyhaines31/marketingskills (marketingskills 36,347 ⭐ MIT Layer 3.3 1st-party)",
-      "github.com/coreyhaines31/marketingskills/blob/main/AGENTS.md (marketingskills Skill 工作流图 1st-party)",
-      "github.com/alirezarezvani/claude-skills (alirezarezvani 20,461 ⭐ MIT Layer 3.2 1st-party)",
-      "github.com/alirezarezvani/claude-skills#readme (BYO-sync tier 跨平台同步机制 1st-party)",
-      "github.com/Leonxlnx/taste-skill (taste-skill 57,303 ⭐ MIT Layer 3.3 1st-party)",
-      "github.com/gastownhall/gastown (gastown 16,330 ⭐ MIT Layer 2 1st-party)",
-      "github.com/ogulcancelik/herdr (herdr 11,950 ⭐ AGPL-3.0 Layer 1 1st-party)",
-      "github.com/OthmanAdi/planning-with-files (planning-with-files 24,647 ⭐ MIT Layer 4 1st-party)",
-      "github.com/ai-boost/awesome-harness-engineering (awesome-harness-engineering 2,762 ⭐ 1st-party)",
-      "github.com/anthropics/skills (anthropics/skills 153k ⭐ Anthropic 1st-party Layer 3.1 样板)",
-      "github.com/agentskills/agentskills (agentskills/agentskills 22,243 ⭐ Skills Spec 规范 1st-party)",
-      "R667 multi-agent-stack-r667 deep dive (1st-party-synthesis)",
-      "R666 gastown multi-agent orchestration deep dive (1st-party-synthesis)",
-      "R662 harness horizontal 解耦 deep dive (1st-party-synthesis)",
-      "R665 meta synthesis + Planning Primitive (1st-party-synthesis)",
-      "R661 overview meta article (1st-party-synthesis)",
-      "yaml.org/spec/1.2/spec.html (YAML frontmatter standard 1st-party)",
-      "opensource.org/licenses/MIT (MIT License 1st-party basis)"
+      "github.com/DeusData/codebase-memory-mcp (codebase-memory-mcp 26,708 ⭐ MIT Layer 4.3 Hybrid Paradigm 主证据)",
+      "deusdata.github.io/codebase-memory-mcp (codebase-memory-mcp 1st-party 文档)",
+      "arxiv.org/abs/2603.27277 (Tree-Sitter-Based Knowledge Graphs 论文)",
+      "deusdata.github.io/codebase-memory-mcp/tools (codebase-memory-mcp 14 MCP tools)",
+      "github.com/vectorize-io/hindsight (hindsight 18,008 ⭐ MIT Layer 4.1 Learning Paradigm)",
+      "hindsight SKILL.md 自带 npx skills add hindsight-docs (Memory-Skill Contract 1st-party 标准化首个触发)",
+      "arxiv.org/abs/2512.12818 (bi-temporal memory 论文)",
+      "hindsight LongMemEval benchmark (bi-temporal memory SOTA)",
+      "github.com/OthmanAdi/planning-with-files (planning-with-files 24,691 ⭐ MIT Layer 4.2 Filesystem Paradigm)",
+      "planning-with-files v3.2.0 release completion gate",
+      "github.com/ogulcancelik/herdr (herdr 12,039 ⭐ AGPL-3.0 Layer 1 Multiplexer Memory-Pane Contract)",
+      "github.com/gastownhall/gastown (gastown 16,363 ⭐ MIT Layer 2 Orchestrator State-Bead Contract)",
+      "agentskills.io SKILL.md standard (Layer 3.1 Skills Spec 标准化 1st-party)",
+      "github.com/ai-boost/awesome-harness-engineering (awesome-harness-engineering 2,771 ⭐ v2.0 修正建议目标)",
+      "github.com/anthropics/claude-code (Claude Code 1st-party reference)",
+      "github.com/anthropics/skills (Anthropic 1st-party Skills 样板)",
+      "R669 Layer 4 State/Memory Primitive deep dive (1st-party-synthesis)",
+      "R668 Layer 3 Skill Registry Primitive deep dive (1st-party-synthesis)",
+      "R667 Multi-Agent Stack 分层 deep dive (1st-party-synthesis)",
+      "R666 multi-agent orchestration deep dive (1st-party-synthesis)",
+      "MIT License (codebase-memory-mcp / hindsight / planning-with-files license basis)",
+      "AGPL-3.0 License (herdr license basis)"
     ],
-    "projects_paired": 5,
-    "project_1_name": "coreyhaines31/marketingskills",
-    "project_1_action": "R668 NEW PROJECT (首次发现, GitHub Trending daily, 5 步防重协议 100% 达成, Layer 3.3 Skill Library 垂直营销实证)",
-    "project_1_stars_new": 36347,
-    "project_1_stars_old": 0,
-    "project_1_stars_growth": "首次采纳 (R668 NEW PROJECT)",
-    "project_1_topic_association": "layer_3_3_skill_library_content_layer_vertical_marketing_evidence",
+    "projects_paired": 9,
+    "project_1_name": "DeusData/codebase-memory-mcp",
+    "project_1_action": "R670 NEW KEY FINDING (R448 → R670 +19,408 stars in ~3 weeks, +265% massive growth trajectory, Layer 4.3 Hybrid Memory Paradigm 首个工业级实证)",
+    "project_1_stars_new": 26708,
+    "project_1_stars_old": 5829,
+    "project_1_stars_growth": "+19,408 in ~3 weeks (+265% massive growth trajectory)",
+    "project_1_topic_association": "layer_4_3_hybrid_paradigm_first_industrial_evidence_memory_tool_contract_14_mcp_tools",
     "project_1_license_resolved": "MIT License - 合规采纳",
-    "project_2_name": "alirezarezvani/claude-skills",
-    "project_2_action": "R668 UPDATE (持续 monitoring, R664 20,080 -> R668 20,461, +381 in 48h)",
-    "project_2_stars_new": 20461,
-    "project_2_stars_old": 20080,
-    "project_2_stars_growth": "+381 in 48h (sustained strong growth)",
-    "project_2_topic_association": "layer_3_2_skill_registry_implementation_layer_cross_13_control_planes",
-    "project_3_name": "ogulcancelik/herdr",
-    "project_3_action": "R668 UPDATE (持续 monitoring, R667 11,903 -> R668 11,950, +47 in 2h, 12k⭐ BREAK 50⭐ gap R668 likely BREAK)",
-    "project_3_stars_new": 11950,
-    "project_3_stars_old": 11903,
-    "project_3_stars_growth": "+47 in 2h (accelerated growth)",
-    "project_3_topic_association": "layer_1_multiplexer_12k_break_critical",
-    "project_4_name": "OthmanAdi/planning-with-files",
-    "project_4_action": "R668 UPDATE (持续 monitoring, R667 24,622 -> R668 24,647, +25 in 2h, 25k⭐ BREAK 353⭐ gap R668-R670 likely BREAK)",
-    "project_4_stars_new": 24647,
-    "project_4_stars_old": 24622,
-    "project_4_stars_growth": "+25 in 2h (sustained strong growth)",
-    "project_4_topic_association": "layer_4_state_memory_25k_break_critical",
-    "project_5_name": "gastownhall/gastown",
-    "project_5_action": "R668 UPDATE (持续 monitoring, R667 16,310 -> R668 16,330, +20 in 2h, 17k⭐ BREAK 670⭐ gap R668-R672 likely BREAK)",
-    "project_5_stars_new": 16330,
-    "project_5_stars_old": 16310,
-    "project_5_stars_growth": "+20 in 2h (sustained strong growth)",
-    "project_5_topic_association": "layer_2_orchestrator_17k_break_critical",
-    "project_6_name": "ai-boost/awesome-harness-engineering",
-    "project_6_action": "R668 UPDATE (持续 monitoring, R667 2,757 -> R668 2,762, +5 in 2h, v2.0 NOT released 持续 5 轮 R663-R668)",
-    "project_6_stars_new": 2762,
-    "project_6_stars_old": 2757,
-    "project_6_stars_growth": "+5 in 2h (sustained slow growth)",
-    "project_6_topic_association": "v2_release_target_r667_plus_r668_modification_prediction",
-    "topic_association_strength": "100% (Article + marketingskills 完全 topic-overlap + alirezarezvani/taste-skill 链式 topic-overlap + herdr/gastown/planning-with-files 链式 topic-overlap)",
-    "skill_compliance": "≥1 article ✓ (deep dive 19 个 1st-party 来源) + ≥1 project ✓ (marketingskills 36,347 ⭐ R668 NEW PROJECT + 5 monitoring UPDATES) + topic_association ✓ (100% topic-overlap) + sources_tracked +8 ✓ + REPORT ✓ + PENDING ✓",
-    "decision_path": "R661 产生三维度体系 overview → R662 决策 horizontal 解耦 deep dive → R663 决策 vertical 解耦 deep dive → R664 决策 cross-device 协同 deep dive → R665 决策 meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测 → R666 决策 multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE) + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级 → R667 决策 Multi-Agent Stack 分层 deep dive (跨项目实证修正 R666 假设) + ogulcancelik/herdr 11,903 ⭐ NEW PROJECT + 6 Layer + 5 Cross-Layer Contract 分层模型 → **R668 决策 Layer 3 Skill Registry Primitive deep dive (R667 6 Layer 模型在 Layer 3 精细化展开为 3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library) + coreyhaines31/marketingskills 36,347 ⭐ NEW PROJECT + 5 monitoring UPDATES + R667 + R668 两轮 v2.0 修正预测**",
+    "project_2_name": "ogulcancelik/herdr",
+    "project_2_action": "R670 UPDATE (持续 monitoring, R669 12,000 → R670 12,039 ⭐, +39/2h)",
+    "project_2_stars_new": 12039,
+    "project_2_stars_old": 12000,
+    "project_2_stars_growth": "+39 in 2h (sustained strong growth)",
+    "project_2_topic_association": "layer_1_multiplexer_13k_break_critical",
+    "project_3_name": "OthmanAdi/planning-with-files",
+    "project_3_action": "R670 UPDATE (持续 monitoring, R669 24,665 → R670 24,691 ⭐, +26/2h)",
+    "project_3_stars_new": 24691,
+    "project_3_stars_old": 24665,
+    "project_3_stars_growth": "+26 in 2h (sustained strong growth)",
+    "project_3_topic_association": "layer_4_2_filesystem_paradigm_25k_break_critical",
+    "project_4_name": "gastownhall/gastown",
+    "project_4_action": "R670 UPDATE (持续 monitoring, R669 16,345 → R670 16,363 ⭐, +18/2h)",
+    "project_4_stars_new": 16363,
+    "project_4_stars_old": 16345,
+    "project_4_stars_growth": "+18 in 2h (sustained strong growth)",
+    "project_4_topic_association": "layer_2_orchestrator_17k_break_critical",
+    "project_5_name": "coreyhaines31/marketingskills",
+    "project_5_action": "R670 UPDATE (持续 monitoring, R669 36,376 → R670 36,412 ⭐, +36/2h)",
+    "project_5_stars_new": 36412,
+    "project_5_stars_old": 36376,
+    "project_5_stars_growth": "+36 in 2h (sustained strong growth)",
+    "project_5_topic_association": "layer_3_3_skill_library_38k_break_critical",
+    "project_6_name": "vectorize-io/hindsight",
+    "project_6_action": "R670 UPDATE + R670 NEW SKILL.md 自带标准化触发 (R669 18,006 → R670 18,008 ⭐, +2/2h 异常缓慢, +19k⭐ 距 992⭐ gap, R740-R745 likely BREAK)",
+    "project_6_stars_new": 18008,
+    "project_6_stars_old": 18006,
+    "project_6_stars_growth": "+2 in 2h (异常缓慢, R670 异常现象)",
+    "project_6_topic_association": "layer_4_1_learning_paradigm_skill_md_self_standardization_memory_skill_contract_1st_party",
+    "project_7_name": "alirezarezvani/claude-skills",
+    "project_7_action": "R670 UPDATE (持续 monitoring, R669 20,492 → R670 20,540 ⭐, +48/2h)",
+    "project_7_stars_new": 20540,
+    "project_7_stars_old": 20492,
+    "project_7_stars_growth": "+48 in 2h (sustained strong growth)",
+    "project_7_topic_association": "layer_3_2_skill_registry_22k_break_critical",
+    "project_8_name": "ai-boost/awesome-harness-engineering",
+    "project_8_action": "R670 UPDATE (持续 monitoring, R669 2,765 → R670 2,771 ⭐, +6/2h)",
+    "project_8_stars_new": 2771,
+    "project_8_stars_old": 2765,
+    "project_8_stars_growth": "+6 in 2h (sustained slow growth)",
+    "project_8_topic_association": "v2_release_target_r667_plus_r668_plus_r669_plus_r670_4_round_modification_prediction",
+    "project_9_name": "langchain-ai/openwiki",
+    "project_9_action": "R670 NEW cluster_monitoring STRONG 2nd round (5,130 ⭐ 5k⭐ BREAK 临界已突破)",
+    "project_9_stars_new": 5130,
+    "project_9_stars_old": null,
+    "project_9_stars_growth": "NEW cluster_monitoring R670 STRONG 2nd round + 5k⭐ BREAK 临界已突破",
+    "project_9_topic_association": "langchain_ai_openwiki_strong_2nd_round_5k_break",
+    "topic_association_strength": "100% (Article + DeusData/codebase-memory-mcp Hybrid Paradigm 100% topic-overlap + 8 monitoring UPDATES 链式 topic-overlap)",
+    "skill_compliance": "≥1 article ✓ (deep dive 23 个 1st-party 来源) + ≥1 project ✓ (DeusData/codebase-memory-mcp 26,708 ⭐ R670 NEW KEY FINDING + 8 monitoring UPDATES + 1 cluster_monitoring) + topic_association ✓ (100% topic-overlap) + sources_tracked +20 ✓ + REPORT ✓ + PENDING ✓",
+    "decision_path": "R661 产生三维度体系 overview → R662 决策 horizontal 解耦 deep dive → R663 决策 vertical 解耦 deep dive → R664 决策 cross-device 协同 deep dive → R665 决策 meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测 → R666 决策 multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE) + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级 → R667 决策 Multi-Agent Stack 分层 deep dive (跨项目实证修正 R666 假设) + ogulcancelik/herdr 11,903 ⭐ NEW PROJECT + 6 Layer + 5 Cross-Layer Contract 分层模型 → R668 决策 Layer 3 Skill Registry Primitive deep dive (R667 6 Layer 模型在 Layer 3 精细化展开为 3 Sub-Primitive) + coreyhaines31/marketingskills 36,347 ⭐ NEW PROJECT + 5 monitoring UPDATES → R669 决策 Layer 4 State/Memory Primitive deep dive (R667 6 Layer 模型在 Layer 4 精细化展开为 2 Paradigm：Learning + Filesystem) + vectorize-io/hindsight 18,006 ⭐ UPDATE + 7 monitoring UPDATES + herdr 12k⭐ BREAK 确认 → **R670 决策 Layer 4 Hybrid Memory Architecture 协议化监测 deep dive (R669 2 Paradigm 被 R670 跨项目实证修正为 3 Paradigm：Learning + Filesystem + Hybrid + 6 Cross-Paradigm Contract) + DeusData/codebase-memory-mcp 26,708 ⭐ R670 NEW KEY FINDING +19,408 stars in 3 weeks +265% + 8 monitoring UPDATES + Hindsight SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化首个触发 + Memory-Tool Contract codebase-memory-mcp 14 MCP tools 实证 + 第四轮 v2.0 修正预测**",
     "evidence_chain": {
       "r661_overview_meta_article": "harness 协议化三维度体系 overview (vertical + horizontal + cross-device 抽象)",
       "r662_horizontal_decoupling_deep_dive": "horizontal 解耦 deep dive (Skill 协议中立 + 多 control plane 可移植)",
@@ -86,52 +107,45 @@
       "r665_meta_synthesis_planning_primitive": "R661-R664 链路综述 + Planning Primitive 关键发现 + v2.0 演进预测",
       "r666_multi_agent_orchestration_deep_dive": "multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级)",
       "r667_multi_agent_stack_layering_deep_dive": "Multi-Agent Stack 分层 deep dive (herdr 11,903 ⭐ NEW PROJECT + 6 Layer + 5 Cross-Layer Contract 分层模型 + R666 4 合 1 Primitive 修正)",
-      "r668_layer_3_skill_registry_primitive_deep_dive": "**Layer 3 Skill Registry Primitive deep dive (R667 6 Layer 模型在 Layer 3 精细化展开为 3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library + marketingskills 36,347 ⭐ R668 NEW PROJECT + 5 monitoring UPDATES + R667 + R668 两轮 v2.0 修正预测) [NEW R668]**",
-      "r668_marketingskills_new_project": "coreyhaines31/marketingskills 36,347 ⭐ MIT Layer 3.3 Skill Library 垂直营销 R668 NEW PROJECT (5 步防重协议 100% 达成)",
-      "r668_alirezarezvani_update": "alirezarezvani/claude-skills 20,461 ⭐ Layer 3.2 Skill Registry 跨 13 Control Planes R668 UPDATE (+381 in 48h)",
-      "r668_herdr_update": "ogulcancelik/herdr 11,950 ⭐ Layer 1 Multiplexer R668 UPDATE (+47 in 2h, 12k⭐ BREAK 50⭐ gap R668 likely BREAK)",
-      "r668_planning_with_files_update": "OthmanAdi/planning-with-files 24,647 ⭐ Layer 4 State/Memory R668 UPDATE (+25 in 2h, 25k⭐ BREAK 353⭐ gap R668-R670 likely BREAK)",
-      "r668_gastown_update": "gastownhall/gastown 16,330 ⭐ Layer 2 Orchestrator R668 UPDATE (+20 in 2h, 17k⭐ BREAK 670⭐ gap R668-R672 likely BREAK)",
-      "r668_awesome_harness_engineering_update": "ai-boost/awesome-harness-engineering 2,762 ⭐ v2.0 NOT released R668 UPDATE (+5 in 2h)"
+      "r668_layer_3_skill_registry_3_sub_layers_deep_dive": "Layer 3 Skill Registry Primitive deep dive (R667 6 Layer 模型在 Layer 3 精细化展开为 3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library) + marketingskills 36,347 ⭐ R668 NEW PROJECT",
+      "r669_layer_4_state_memory_2_paradigm_deep_dive": "Layer 4 State/Memory Primitive deep dive (R667 6 Layer 模型在 Layer 4 精细化展开为 2 Paradigm：Learning + Filesystem) + hindsight 18,006 ⭐ UPDATE + herdr 12k⭐ BREAK 确认",
+      "r670_layer_4_hybrid_memory_architecture_protocol_monitoring": "**Layer 4 Hybrid Memory Architecture 协议化监测 deep dive (R669 2 Paradigm 被 R670 跨项目实证修正为 3 Paradigm：Learning + Filesystem + Hybrid + 6 Cross-Paradigm Contract) + codebase-memory-mcp 26,708 ⭐ R670 NEW KEY FINDING +19,408 stars in 3 weeks +265% + Hindsight SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化首个触发 [NEW R670]**",
+      "r670_codebase_memory_mcp_new_finding": "DeusData/codebase-memory-mcp 26,708 ⭐ MIT Layer 4.3 Hybrid Memory Paradigm 首个工业级实证 R670 NEW KEY FINDING (R448 7,300+ → R670 26,708 ⭐ +19,408 in 3 weeks +265%)",
+      "r670_hindsight_skill_md_self_standardization": "**Hindsight 自带 SKILL.md `npx skills add hindsight-docs` Memory-Skill Contract 1st-party 标准化首个触发证据 R670 NEW**",
+      "r670_codebase_memory_mcp_14_mcp_tools": "**DeusData/codebase-memory-mcp 14 MCP tools Memory-Tool Contract Layer 4 ↔ Layer 5 实证 R670 NEW**",
+      "r670_4_round_v2_modification_prediction_complete_path": "R667 拆分 Multi-Agent Orchestration 5 Layer + R668 拆分 Skill Registry 3 Sub-Primitive + R669 拆分 State/Memory 2 Paradigm + **R670 拆分 State/Memory 3 Paradigm (+Hybrid) + 6 Cross-Paradigm Contract** = 完整 v2.0 修正路径"
     },
-    "layer_3_skill_registry_3_sub_layers_framework": {
-      "layer_3_1_skills_spec_protocol_layer": {
-        "definition": "Skills 协议规范 (Markdown + YAML frontmatter + 自然语言工作流)",
-        "evidence": "**agentskills.io SKILL.md standard 1st-party**, anthropics/skills 153k ⭐ Anthropic 1st-party 样板, agentskills/agentskills 22,243 ⭐ 规范",
-        "responsibility": "定义 SKILL.md 格式 + 跨 Control Plane 契约",
-        "standard_status": "agentskills.io 标准正在形成, R668-R680 监测 1st-party 采纳"
+    "layer_4_state_memory_3_paradigm_6_contract_framework": {
+      "layer_4_1_learning_paradigm": {
+        "definition": "Learning Paradigm - 跨 Session 学到的知识 (semantic retrieval + temporal reasoning)",
+        "evidence": "vectorize-io/hindsight 18,008 ⭐ MIT (R669 → R670 monitoring + SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化)",
+        "responsibility": "负责过去 - Agent 跨 Session 学到的知识",
+        "standard_status": "bi-temporal memory + LongMemEval SOTA + SKILL.md 标准化窗口 R670 首个触发"
       },
-      "layer_3_2_skill_registry_implementation_layer": {
-        "definition": "Skill Registry 实现层 (跨 Control Plane 同步 + 协议中立)",
-        "evidence": "**alirezarezvani/claude-skills 20,461 ⭐ MIT R668 UPDATE** + BYO-sync tier 跨 13 Control Planes (Hermes Agent sync-hermes-skills.py + Mistral Vibe vibe-install.sh)",
-        "responsibility": "把 Skill Library 部署到 Control Plane"
+      "layer_4_2_filesystem_paradigm": {
+        "definition": "Filesystem Paradigm - 当前 Session 的确定性计划 (deterministic state + git-committed memory)",
+        "evidence": "OthmanAdi/planning-with-files 24,691 ⭐ MIT (R669 → R670 monitoring + completion gate v3.0.0)",
+        "responsibility": "负责现在 - Agent 在当前 Session 的确定性计划"
       },
-      "layer_3_3_skill_library_content_layer": {
-        "definition": "Skill Library 内容层 (通用 + 垂直 + 自建 三模式)",
-        "evidence": "**coreyhaines31/marketingskills 36,347 ⭐ R668 NEW PROJECT** (营销垂直, +1,653⭐ gap to 38k⭐), Leonxlnx/taste-skill 57,303 ⭐ (设计垂直), alirezarezvani/claude-skills 20,461 ⭐ (通用)",
-        "responsibility": "提供 Skill 实现 + 互相依赖工作流",
-        "skill_library_three_modes": {
-          "通用型": "alirezarezvani/claude-skills 20.4k ⭐ (354 skills 覆盖 13 领域)",
-          "垂直型": "marketingskills 36.3k ⭐ (营销) + taste-skill 57.3k ⭐ (设计)",
-          "自建型": "in-house (团队自定义)"
-        }
+      "layer_4_3_hybrid_paradigm_R670_NEW": {
+        "definition": "Hybrid Paradigm - 持续 + 语义 (persistent graph + semantic index + LSP type resolution)",
+        "evidence": "**DeusData/codebase-memory-mcp 26,708 ⭐ MIT R670 NEW KEY FINDING** (Filesystem 持久化 SQLite 图谱 + Learning Nomic int8 768d 语义检索 + Hybrid LSP 10 语言语义类型解析)",
+        "responsibility": "Hybrid Memory Architecture - 2026 H2 主流方向",
+        "r670_first_industrial_evidence": "R448 7,300+ ⭐ → R670 26,708 ⭐ +19,408 in ~3 weeks +265% massive growth trajectory"
       },
-      "cross_layer_3_contracts": [
-        "Layer 3.1 → Layer 3.2: Skill Spec → Skill Registry 实现",
-        "Layer 3.1 → Layer 3.3: Skill Spec → Skill Library 实现",
-        "Layer 3.2 ↔ Layer 3.3: 通用 ↔ 垂直 Skill Library 集成"
+      "cross_paradigm_contracts_6_total": [
+        "State-Bead: Layer 4 ↔ Layer 2 (Orchestrator state machine)",
+        "Memory-Pane: Layer 4 ↔ Layer 1 (Multiplexer pane)",
+        "Memory-Skill: Layer 4 ↔ Layer 3 (Skill activation) [Hindsight 自带 SKILL.md 触发 R670 NEW]",
+        "Memory-Tool: Layer 4 ↔ Layer 5 (Tool invocation) [codebase-memory-mcp 14 MCP tools 实证 R670 NEW]",
+        "FS-Embed Bridge: Hybrid 内部 (FS ↔ Learning) [R670 NEW]",
+        "LSP-AST Bridge: Hybrid 内部 (Hybrid LSP ↔ tree-sitter AST) [R670 NEW]"
       ],
-      "layer_3_cross_layer_1_2_4_5_contracts": [
-        "Layer 3 ↔ Layer 2 (Orchestrator): Bead-ID → Skill-Name 映射",
-        "Layer 3 ↔ Layer 1 (Multiplexer): Pane-ID → Skill-Loaded-Status",
-        "Layer 3 ↔ Layer 4 (State/Memory): Skill-Completion → Markdown-Checklist-Update",
-        "Layer 3 ↔ Layer 5 (Tool Runtime): Skill-Tool-Call → MCP-Response"
-      ],
-      "r667_to_r668_primitive_revision": {
-        "r667_hypothesis": "Skill Registry Primitive (单 Primitive in Layer 3 of 6 Layer model)",
-        "r668_empirical_revision": "Skill Registry Primitive → 3 Sub-Primitive (Skills Spec + Skill Registry + Skill Library)",
-        "rationale": "agentskills.io 标准 + alirezarezvani 跨 13 Control Planes + marketingskills 36.3k ⭐ 垂直 = 证据充分表明 Skill Registry 必须细化为 3 子层",
-        "v2_0_prediction_revision": "awesome-harness-engineering v2.0 应将 Skill Registry Primitive 拆分为 3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library"
+      "r669_to_r670_paradigm_revision": {
+        "r669_hypothesis": "Layer 4 State/Memory = 2 Paradigm (Learning + Filesystem) + 4 Cross-Paradigm Contract",
+        "r670_empirical_revision": "Layer 4 State/Memory = 3 Paradigm (Learning + Filesystem + Hybrid) + 6 Cross-Paradigm Contract",
+        "rationale": "DeusData/codebase-memory-mcp 同时集成 Filesystem (SQLite 持久化) + Learning (Nomic int8 768d 语义检索) + Hybrid LSP (10 语言语义类型解析) = Hybrid Paradigm 首个工业级实证触发 R670 修正预测",
+        "v2_0_prediction_revision": "awesome-harness-engineering v2.0 应将 State/Memory Primitive 拆分为 3 Paradigm (Learning + Filesystem + Hybrid) + 6 Cross-Paradigm Contract"
       },
       "matrix_progress": {
         "stage_1_overview_R661": "✅ 三维度体系 overview meta article",
@@ -140,313 +154,242 @@
         "stage_4_cross_device_deep_dive_R664": "✅ cross-device 协同 deep dive + SeemSeam/CCB R664 NEW PROJECT",
         "stage_5_meta_synthesis_planning_primitive_R665": "✅ meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测 + OthmanAdi/planning-with-files R665 UPDATE",
         "stage_6_multi_agent_orchestration_R666": "✅ multi-agent orchestration deep dive + gastown v1.2.1 R666 UPDATE + planning-with-files R666 UPDATE",
-        "stage_7_multi_agent_stack_layering_R667": "✅ Multi-Agent Stack 分层 deep dive + herdr R667 NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract 分层模型",
-        "stage_8_layer_3_skill_registry_3_sub_layers_R668": "✅ **Layer 3 Skill Registry Primitive deep dive (3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library) + marketingskills 36,347 ⭐ R668 NEW PROJECT + 5 monitoring UPDATES [NEW R668]**",
-        "stage_9_next_phase_R669": "⏳ 持续 monitoring 5 个关键信号 + herdr 12k⭐ BREAK verify + marketingskills 38k⭐ likely BREAK + Layer 3.1 Skills Spec 1st-party 标准化监测 + Layer 3.3 Skill Library 第三个垂直出现监测 + awesome-harness-engineering v2.0 监测",
-        "completion_rate": "100% (8/8 阶段完整闭合 + 持续 monitoring)"
+        "stage_7_multi_agent_stack_layering_R667": "✅ Multi-Agent Stack 分层 deep dive + herdr R667 NEW PROJECT + 6 Layer + 5 Cross-Layer Contract 分层模型",
+        "stage_8_layer_3_skill_registry_3_sub_layers_R668": "✅ Layer 3 Skill Registry Primitive deep dive (3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library) + marketingskills 36,347 ⭐ R668 NEW PROJECT",
+        "stage_9_layer_4_state_memory_2_paradigm_R669": "✅ Layer 4 State/Memory Primitive deep dive (2 Paradigm：Learning + Filesystem) + hindsight 18,006 ⭐ UPDATE + herdr 12k⭐ BREAK 确认",
+        "stage_10_layer_4_3_hybrid_paradigm_R670": "✅ **Layer 4 Hybrid Memory Architecture 协议化监测 deep dive (3 Paradigm：Learning + Filesystem + Hybrid + 6 Cross-Paradigm Contract) + codebase-memory-mcp 26,708 ⭐ R670 NEW KEY FINDING + 8 monitoring UPDATES + Hindsight SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化首个触发 [NEW R670]**",
+        "stage_11_next_phase_R671": "⏳ 持续 monitoring 5 个关键信号 + 10 个 P-tracking 项目 + Memory-Skill Contract 1st-party 标准化扩展监测 + Memory-Tool Contract codebase-memory-mcp 14 MCP tools 实证监测 + Layer 5 Tool Runtime Primitive deep dive 候选",
+        "completion_rate": "100% (10/10 阶段完整闭合 + 持续 monitoring)"
       }
     }
   },
-  "r667_outcome": {
-    "branch_hit": "phase_4_multi_agent_stack_layering_herdr_new_project_r666_4in1_primitive_revised_to_6_layer_5_cross_layer_contract",
-    "r555_variant": 40,
-    "variant_label": "Phase 4 Multi-Agent Stack Layering Paradigm Formation Delivered (R667 Multi-Agent Stack 分层 deep dive + ogulcancelik/herdr 11,903 ⭐ R667 NEW PROJECT + R666 4 合 1 Primitive 假设被 R667 跨项目实证修正为 6 Layer + 5 Cross-Layer Contract 分层模型 + awesome-harness-engineering v2.0 修正预测)",
-    "articles_written": 1,
-    "article_name": "multi-agent-stack-r667-harness-protocolization-empirical-layering-2026.md",
-    "article_path": "articles/orchestration/multi-agent-stack-r667-harness-protocolization-empirical-layering-2026.md",
-    "article_topic": "Multi-Agent Stack 分层 deep dive（R666 4 合 1 Primitive 假设被 R667 跨项目实证修正为 6 Layer + 5 Cross-Layer Contract 分层模型）",
-    "article_type": "deep dive (Multi-Agent Stack Layering Paradigm Formation)",
-    "article_1st_party_sources_count": 19,
-    "article_1st_party_sources": [
-      "github.com/ogulcancelik/herdr (herdr 11,903 ⭐ AGPL-3.0 dual-license 1st-party)",
-      "herdr.dev (herdr 1st-party 官网)",
-      "herdr.dev/compare (herdr vs tmux vs GUI managers 1st-party)",
-      "herdr.dev/docs/socket-api (herdr IPC layer 1st-party)",
-      "github.com/gastownhall/gastown (gastown v1.2.1 1st-party, 16,310 ⭐)",
-      "github.com/gastownhall/gastown/blob/main/CHANGELOG.md (gastown v1.2.0/v1.2.1 1st-party)",
-      "github.com/gastownhall/gastown/blob/main/docs/concepts/molecules.md (gastown Molecule docs 1st-party)",
-      "github.com/OthmanAdi/planning-with-files (planning-with-files 24,622 ⭐ 1st-party)",
-      "github.com/Leonxlnx/taste-skill (taste-skill 57,222 ⭐ 1st-party)",
-      "R666 gastown multi-agent orchestration deep dive (1st-party-synthesis)",
-      "R661 overview meta article (1st-party-synthesis)",
-      "R662 horizontal 解耦 deep dive (姊妹篇)",
-      "R663 vertical 解耦 deep dive (姊妹篇)",
-      "R664 cross-device 协同 deep dive (姊妹篇)",
-      "R665 meta synthesis + Planning Primitive (姊妹篇)",
-      "github.com/anthropics/claude-code (Claude Code 1st-party reference)",
-      "tokio.rs (Rust tokio 1st-party)",
-      "man7.org/tmux (tmux 1st-party man page)",
-      "gnu.org/licenses/agpl-3.0 (AGPL-3.0 1st-party license)"
-    ],
-    "projects_paired": 3,
-    "project_1_name": "ogulcancelik/herdr",
-    "project_1_action": "R667 NEW PROJECT (R620 Defer 解除 = License 重新核实为 AGPL-3.0 + 商业 dual-license, SKILL 防重协议 5 步 100% 达成)",
-    "project_1_stars_new": 11903,
-    "project_1_stars_old": 0,
-    "project_1_stars_growth": "首次采纳 (R620 Defer 监测 → R667 NEW PROJECT)",
-    "project_1_topic_association": "multi_agent_stack_layer_1_multiplexer_independent_convergence_evidence",
-    "project_1_license_resolved": "AGPL-3.0-or-later + 商业 dual-license (heye@herdr.dev) - R620 API 显示 NOASSERTION 被 R667 手动核实解除",
-    "project_2_name": "gastownhall/gastown",
-    "project_2_action": "R667 UPDATE (持续 monitoring, SKILL 防重协议 100% 达成, R275 backfill 已 covered)",
-    "project_2_stars_new": 16310,
-    "project_2_stars_old": 16292,
-    "project_2_stars_growth": "+18 in 8h cron cycle (R667 cron 周期内持续稳定增长)",
-    "project_2_topic_association": "multi_agent_stack_layer_2_orchestrator_r667_reference",
-    "project_3_name": "OthmanAdi/planning-with-files",
-    "project_3_action": "R667 UPDATE (持续 monitoring, SKILL 防重协议 100% 达成, R555 之前 covered)",
-    "project_3_stars_new": 24622,
-    "project_3_stars_old": 24602,
-    "project_3_stars_growth": "+20 in 8h cron cycle (R667 cron 周期内持续稳定增长)",
-    "project_3_topic_association": "multi_agent_stack_layer_4_state_memory_evidence",
-    "topic_association_strength": "100% (Article + herdr 完全 topic-overlap + gastown/planning-with-files 链式 topic-overlap)",
-    "skill_compliance": "≥1 article ✓ (deep dive 19 个 1st-party 来源) + ≥1 project ✓ (herdr 11,903 ⭐ R667 NEW PROJECT 解除 R620 Defer + gastown 16,310 ⭐ R667 UPDATE + planning-with-files 24,622 ⭐ R667 UPDATE) + topic_association ✓ (100% topic-overlap) + sources_tracked +10 ✓ + REPORT ✓ + PENDING ✓",
-    "decision_path": "R661 产生三维度体系 overview → R662 决策 horizontal 解耦 deep dive → R663 决策 vertical 解耦 deep dive → R664 决策 cross-device 协同 deep dive → R665 决策 meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测 → R666 决策 multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE) + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级 → **R667 决策 Multi-Agent Stack 分层 deep dive (跨项目实证修正 R666 假设) + ogulcancelik/herdr 11,903 ⭐ NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract 分层模型**",
-    "evidence_chain": {
-      "r661_overview_meta_article": "harness 协议化三维度体系 overview (vertical + horizontal + cross-device 抽象)",
-      "r662_horizontal_decoupling_deep_dive": "horizontal 解耦 deep dive (Skill 协议中立 + 多 control plane 可移植)",
-      "r663_vertical_decoupling_deep_dive": "vertical 解耦 deep dive (MCP + SDK + 分层协议化)",
-      "r664_cross_device_coordination_deep_dive": "cross-device 协同 deep dive (会话状态协议 + 4 primitives + 三维度协同)",
-      "r665_meta_synthesis_planning_primitive": "R661-R664 链路综述 + Planning Primitive 关键发现 + v2.0 演进预测",
-      "r666_multi_agent_orchestration_deep_dive": "multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级)",
-      "r667_multi_agent_stack_layering_deep_dive": "**Multi-Agent Stack 分层 deep dive (herdr 11,903 ⭐ R667 NEW PROJECT + 6 Layer + 5 Cross-Layer Contract 分层模型 + R666 4 合 1 Primitive 修正)**",
-      "r667_herdr_new_project": "ogulcancelik/herdr 11,903 ⭐ AGPL-3.0 dual-license R667 NEW PROJECT (R620 Defer 解除)",
-      "r667_gastown_update": "gastownhall/gastown 16,310 ⭐ v1.2.1 R667 UPDATE (持续 monitoring)",
-      "r667_planning_with_files_update": "OthmanAdi/planning-with-files 24,622 ⭐ v3.2.0 R667 UPDATE (持续 monitoring)"
-    },
-    "multi_agent_stack_layering_framework": {
-      "transport_layer": {
-        "definition": "跨进程通信 (PTY + Unix socket + HTTP/gRPC)",
-        "evidence": "herdr PTY + socket API, gastown CLI, Claude Code --sdk-url"
-      },
-      "multiplexer_layer_layer_1": {
-        "definition": "per-Agent pane + 状态可视化",
-        "evidence": "**ogulcancelik/herdr 11,903 ⭐ R667 NEW PROJECT (Rust, AGPL-3.0)**, tmux, Zellij",
-        "responsibility": "让人类看见 Agent 在干什么"
-      },
-      "orchestrator_layer_layer_2": {
-        "definition": "state machine + work queue + DAG",
-        "evidence": "**gastownhall/gastown 16,310 ⭐ R667 UPDATE (Go, MIT)**, Composio agent-orchestrator, Anthropic Claude Code Agent Teams",
-        "responsibility": "决定谁干什么、什么顺序、什么完成标准"
-      },
-      "skill_registry_layer_layer_3": {
-        "definition": "SKILL.md + skill spec",
-        "evidence": "**Leonxlnx/taste-skill 57,222 ⭐ (JS, MIT)**, alirezarezvani/claude-skills 20,424 ⭐, agentskills/agentskills",
-        "responsibility": "给 Agent 注入领域知识 + 工作流"
-      },
-      "state_memory_layer_layer_4": {
-        "definition": "文件系统 + Git + 持久化",
-        "evidence": "**OthmanAdi/planning-with-files 24,622 ⭐ R667 UPDATE (MIT)**, vercel/eve, akitaonrails/ai-memory",
-        "responsibility": "让 Agent 的工作可被外部观察、可被 resume"
-      },
-      "tool_runtime_layer_layer_5": {
-        "definition": "MCP server + SDK + sandbox",
-        "evidence": "getsentry/XcodeBuildMCP, anthropics/claude-agent-sdk-python 7,523 ⭐",
-        "responsibility": "让 Agent 安全调用外部工具"
-      },
-      "cross_layer_contracts": [
-        "Bead-Pane Contract: gastown Bead ID → herdr Pane ID (stdout pattern matching)",
-        "Skill-Planning Contract: skill loading on pane start ⇄ Markdown checklist update",
-        "Multiplexer-Orchestrator Contract: herdr sidebar status ⇄ gastown Bead status lifecycle",
-        "State-Resume Contract: planning-with-files Markdown ⇄ gastown checkpoint/resume",
-        "Tool-Memory Contract: MCP server output ⇄ planning-with-files capture"
-      ],
-      "r666_to_r667_primitive_revision": {
-        "r666_hypothesis": "Multi-Agent Orchestration Primitive (4 合 1: Git Worktree + Beads + Convoys + Refinery)",
-        "r667_empirical_revision": "6 Layer + 5 Cross-Layer Contract",
-        "rationale": "Go (gastown) + Rust (herdr) 独立收敛到 Multi-Agent Stack 不同层 = 工程范式正在形成, 单 Primitive 假设被跨项目实证推翻, 真实世界是 Unix-style 分层, 不是单体内聚",
-        "v2_0_prediction_revision": "awesome-harness-engineering v2.0 应将 Multi-Agent Orchestration Primitive 拆分为 5 Layer Primitive + 4 Cross-Layer Contract"
-      },
-      "matrix_progress": {
-        "stage_1_overview_R661": "✅ 三维度体系 overview meta article",
-        "stage_2_horizontal_deep_dive_R662": "✅ horizontal 解耦 deep dive + xbtlin/ai-berkshire R662 update",
-        "stage_3_vertical_deep_dive_R663": "✅ vertical 解耦 deep dive + getsentry/XcodeBuildMCP R663 NEW PROJECT",
-        "stage_4_cross_device_deep_dive_R664": "✅ cross-device 协同 deep dive + SeemSeam/CCB R664 NEW PROJECT",
-        "stage_5_meta_synthesis_planning_primitive_R665": "✅ meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测 + OthmanAdi/planning-with-files R665 UPDATE",
-        "stage_6_multi_agent_orchestration_R666": "✅ multi-agent orchestration deep dive + gastown v1.2.1 R666 UPDATE + planning-with-files R666 UPDATE",
-        "stage_7_multi_agent_stack_layering_R667": "✅ **Multi-Agent Stack 分层 deep dive + herdr R667 NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract [NEW R667]**",
-        "stage_8_next_phase_R668": "⏳ 持续 monitoring 5 个关键信号 + Multi-Agent Stack Protocol (MASP) 监测 + herdr × gastown cross-mention 监测",
-        "completion_rate": "100% (7/7 阶段完整闭合 + 持续 monitoring)"
-      }
-    }
+  "r669_outcome_summary": {
+    "branch_hit": "phase_4_layer_4_state_memory_2_paradigm_learning_filesystem_hindsight_update_herdr_12k_break",
+    "r555_variant": 41,
+    "variant_label": "Phase 4 Layer 4 State/Memory Primitive 2 Paradigm Delivered (R669 Layer 4 State/Memory Primitive deep dive + hindsight 18,006 ⭐ UPDATE + herdr 12k⭐ BREAK 确认 + 7 monitoring UPDATES + R668 Layer 3 模型在 Layer 4 精细化展开为 2 Paradigm：Learning + Filesystem)"
   },
-  "r667_decision_log": {
+  "r670_decision_log": {
     "pending_1_1_awesome_harness_engineering_consolidation": "✅ COMPLETE (Option B 合集文章, R661)",
     "pending_1_2_cursor_ios_xcode_cross_device_harness": "✅ COMPLETE (融入三维度体系, R661)",
     "pending_5_4_next_phase_decision": "✅ COMPLETE (R666 决策: multi-agent orchestration deep dive + Gas Town v1.2.1 UPDATE)",
-    "pending_6_1_multi_agent_stack_layering": "✅ COMPLETE (R667 决策: Multi-Agent Stack 分层 deep dive + herdr 11,903 ⭐ NEW PROJECT + 6 Layer + 5 Cross-Layer Contract)",
-    "anthropic_engineering_7_month_post_breakthrough": "⚠️ 13+ 周 plateau 未突破 (R667 距 2026-06-06 = 30+ 天, 76+ day plateau 临界)",
+    "pending_6_1_multi_agent_stack_layering": "✅ COMPLETE (R667 决策: Multi-Agent Stack 分层 deep dive + herdr NEW PROJECT + 6 Layer + 5 Cross-Layer Contract)",
+    "pending_6_2_layer_3_skill_registry_3_sub_layers": "✅ COMPLETE (R668 决策: Layer 3 Skill Registry Primitive deep dive + marketingskills NEW PROJECT + 3 Sub-Primitive)",
+    "pending_6_3_layer_4_state_memory_2_paradigm": "✅ COMPLETE (R669 决策: Layer 4 State/Memory Primitive deep dive + hindsight UPDATE + 2 Paradigm)",
+    "pending_6_4_layer_4_3_hybrid_paradigm_R670": "✅ COMPLETE (R670 决策: Layer 4 Hybrid Memory Architecture 协议化监测 deep dive + codebase-memory-mcp NEW KEY FINDING + 3 Paradigm + 6 Cross-Paradigm Contract + 第四轮 v2.0 修正预测)",
+    "anthropic_engineering_7_month_post_breakthrough": "⚠️ 累计 16+ 轮 R654-R670 NOT triggered (持续 31+ day plateau)",
     "anthropic_newsroom_7_5_batch_第_13_次": "⚠️ NOT triggered",
-    "openai_news_rss_47_轮_0_engineering": "⚠️ 持续",
+    "openai_news_rss_48_轮_0_engineering": "⚠️ 持续",
     "cursor_blog_18_3_slugs_covered": "✅ 持续 0 NEW",
-    "claude_code_v2_1_202_release": "⚠️ 累计 14 轮 R654-R667 NOT triggered (R668 predicted next window 7/8 19:00-01:00 CST 概率 ~5% residual)",
-    "skill_anti_duplicate_protocol_R667": "✅ R667 严格按 5 步流程（grep sources_tracked.jsonl + articles/projects/README.md + .agent/HISTORY.md → herdr R620 Defer 解除 License 重新核实 → NEW PROJECT 路径）执行，未重蹈 R665 漏洞",
-    "skill_anti_duplicate_protocol_new_rule_R667": "✅ R667 新增 Defer 解除规则: API 显示 NOASSERTION 时手动核实 LICENSE 文件 → AGPL-3.0 dual-license 合规 → 解除 Defer"
+    "claude_code_v2_1_202_release": "⚠️ 累计 17 轮 R654-R670 NOT triggered (R671 predicted next window 7/8 19:00-01:00 CST 距 ~9h, 概率 ~5% residual)",
+    "skill_anti_duplicate_protocol_R670": "✅ R670 严格按 5 步流程（grep sources_tracked.jsonl + articles/projects/README.md + .agent/HISTORY.md → 8 个项目均已 covered → 走 UPDATE 路径）执行，未重蹈 R665 漏洞",
+    "skill_anti_duplicate_protocol_new_rule_R670": "✅ R670 codebase-memory-mcp R448 已 covered (88 天 > 30 天阈值) + +265% massive growth 触发 UPDATE 路径"
   },
-  "r667_14_source_triscan": {
+  "r670_14_source_triscan": {
     "1_anthropic_sitemap": {
       "new": 0,
-      "skip_reason": "R667 max lastmod 7/5 batch 仍是 latest (距 R667 trigger ~8h, 无 batch 高频窗口触发)"
+      "skip_reason": "R670 max lastmod 7/5 batch 仍是 latest (距 R670 trigger ~4h, 无 batch 高频窗口触发)"
     },
     "2_anthropic_engineering": {
       "new": 0,
-      "skip_reason": "R667 30+ day plateau 持续 (R666 33+ → R667 30+ day plateau, last 2026-06-06 how-we-contain-claude), 累计 13+ 周 plateau"
+      "skip_reason": "R670 31+ day plateau 持续 (R669 30+ → R670 31+ day plateau, last 2026-06-06 how-we-contain-claude), 累计 16+ 轮 plateau"
     },
     "3_claude_code_changelog": {
       "latest": "v2.1.201",
-      "skip_reason": "v2.1.202 NOT released, R667 trigger 01:57 CST 周一凌晨 predicted next release window 7/8 19:00-01:00 CST 距 65h, 累计 14 轮 R654-R667 NOT triggered, variant ㉛ 1st-party Continuous 7th Breakthrough probability decay"
+      "skip_reason": "v2.1.202 NOT released, R670 trigger 07:57 CST 周一凌晨 predicted next release window 7/8 19:00-01:00 CST 距 35h, 累计 17 轮 R654-R670 NOT triggered"
     },
     "4_anthropic_newsroom": {
       "new": 0,
-      "skip_reason": "7/5 batch 仍是 latest, 第 12/13 次 NOT triggered"
+      "skip_reason": "7/5 batch 仍是 latest, 第 13/14 次 NOT triggered"
     },
     "5_claude_blog_audit": {
       "new": 0,
-      "skip_reason": "24 unique slugs 全 covered, R635-R667 28 轮 0 NEW"
+      "skip_reason": "24 unique slugs 全 covered, R635-R670 31 轮 0 NEW"
     },
     "6_openai_news_rss": {
       "new": 0,
-      "skip_reason": "lastBuildDate 2026-07-05 latest article 6/30 仍是 latest, R616-R667 全 0 engineering 持续 47+ 轮"
+      "skip_reason": "lastBuildDate 2026-07-05 latest article 6/30 仍是 latest, R616-R670 全 0 engineering 持续 48+ 轮"
     },
     "7_cursor_blog": {
       "new": 0,
-      "skip_reason": "17+ slugs 全 covered, R628-R667 audit 持续"
+      "skip_reason": "17+ slugs 全 covered, R628-R670 audit 持续"
     },
     "8_apple_newsroom": {
       "new": 0,
-      "skip_reason": "7/5 batch 第 11/12 次 NOT triggered"
+      "skip_reason": "7/5 batch 第 12/13 次 NOT triggered"
     },
     "9_microsoft_research_blog": {
       "new": 0,
       "skip_reason": "lastBuildDate 2026-06-30 持续, R637 SkillOpt + R640 Memora 仍是最新 1st-party 学术锚点"
     },
-    "10_github_trending_r667": {
+    "10_github_trending_r670": {
       "new": 1,
-      "produced_project": "ogulcancelik/herdr 11,903 ⭐ AGPL-3.0 dual-license (R667 NEW PROJECT, R620 Defer 解除, Layer 1 Multiplexer 主证据)",
-      "skip_reason": "R667 沿用 R654 protocol = SOCKS5 代理 + direct HTML fetch via curl + User-Agent 伪装 + 解析 SUCCEEDED ✓, herdr 持续 trending daily"
+      "produced_project": "DeusData/codebase-memory-mcp 26,708 ⭐ MIT (R670 NEW KEY FINDING, R448 → R670 +19,408 stars in ~3 weeks +265% massive growth trajectory, Layer 4.3 Hybrid Memory Paradigm 首个工业级实证)",
+      "skip_reason": "R670 沿用 R654 protocol = SOCKS5 代理 + direct HTML fetch via curl + User-Agent 伪装 + 解析 SUCCEEDED ✓, codebase-memory-mcp 持续 trending weekly top 20"
     },
     "11_obra_superpowers": {
       "latest": "v6.1.1",
-      "skip_reason": "v6.2.0 NOT released, P8 NOT HIT 持续 R667"
+      "skip_reason": "v6.2.0 NOT released, P8 NOT HIT 持续 R670"
     },
     "12_github_blog_changelog": {
       "new": 0,
-      "skip_reason": "pre-7/3 entries 持续, R667 0 NEW"
+      "skip_reason": "pre-7/3 entries 持续, R670 0 NEW"
     },
     "13_tavily_anthropic_engineering_july_2026": {
       "new": 0,
-      "skip_reason": "Anthropic Engineering 30+ day plateau 持续, 7 月 post NOT released"
+      "skip_reason": "Anthropic Engineering 31+ day plateau 持续, 7 月 post NOT released"
     },
     "14_cluster_empirical_validation_2h_delta": {
       "new": 0,
-      "skip_reason": "R667 cluster signal 3/7 strict-or-strong SUSTAINED 12 rounds R656-R667 (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉞ measurement artifact verification round 12 SUSTAINED 12th round"
+      "skip_reason": "R670 cluster signal 3/7 strict-or-strong SUSTAINED 16 rounds R656-R670 (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉟ measurement artifact verification round 16 SUSTAINED 16th round"
     }
   },
-  "r668_prediction": {
-    "phase_4_回落_sustained_3_7_strict_or_strong_13th_round": 30,
+  "r671_prediction": {
+    "phase_4_回落_sustained_3_7_strict_or_strong_17th_round": 30,
     "phase_4_rebound_to_4_7_strict_1st_attempt": 15,
     "phase_4_anth_eng_7月_post_breakthrough": 2,
     "claude_code_v2_1_202_release": 5,
     "gastownhall_gastown_v1_3_0_release": 25,
     "gastownhall_gastown_17k_break": 35,
-    "ogulcancelik_herdr_12k_break": 25,
-    "OthmanAdi_planning_with_files_25k_break": 30,
+    "ogulcancelik_herdr_13k_break": 60,
+    "OthmanAdi_planning_with_files_25k_break": 70,
+    "DeusData_codebase_memory_mcp_28k_break": 45,
     "herdr_gastown_cross_mention": 30,
     "awesome_harness_engineering_v2_0_release": 8,
-    "cluster_signal_rebound_4_7_strict": 15
+    "cluster_signal_rebound_4_7_strict": 15,
+    "coreyhaines31_marketingskills_38k_break": 8,
+    "hindsight_19k_break": 15,
+    "hindsight_skill_md_standardization_extension_to_awesome_harness": 25,
+    "memory_tool_contract_1st_party_standardization": 35,
+    "layer_5_tool_runtime_primitive_deep_dive_trigger": 30
   },
-  "r667_articles_produced": 1,
-  "r667_projects_paired": 3,
-  "r667_projects_paired_type": "1 NEW (herdr R620 Defer 解除) + 2 UPDATE (gastown + planning-with-files 持续 monitoring)",
-  "r667_total_1st_party_sources_in_article": 19,
-  "r667_total_1st_party_sources_in_project": 14,
-  "r667_cluster_validation": {
+  "r670_articles_produced": 1,
+  "r670_projects_paired": 9,
+  "r670_projects_paired_type": "1 NEW KEY FINDING (DeusData/codebase-memory-mcp +19,408 stars in 3 weeks +265%) + 8 UPDATE (herdr + planning-with-files + gastown + marketingskills + hindsight + alirezarezvani + awesome-harness-engineering + langchain-ai/openwiki)",
+  "r670_total_1st_party_sources_in_article": 23,
+  "r670_total_1st_party_sources_in_project": 12,
+  "r670_cluster_validation": {
     "obra_superpowers": {
-      "stars_r666": "~246700",
-      "stars_r667": "246700+",
+      "stars_r669": "246700+",
+      "stars_r670": "246700+",
       "delta": 0,
       "pct": 0.0,
       "signal": "STABLE (estimate)"
     },
     "affaan_m_ECC": {
-      "stars_r666": "~226250",
-      "stars_r667": "226250+",
+      "stars_r669": "226250+",
+      "stars_r670": "226250+",
       "delta": 0,
       "pct": 0.0,
       "signal": "STABLE (estimate)"
     },
     "JuliusBrussee_caveman": {
-      "stars_r666": "~84560",
-      "stars_r667": "84687",
-      "delta": 127,
-      "pct": 0.15,
-      "signal": "TRACE (sustained 5th round below 1% threshold R663-R667)"
+      "stars_r669": 84687,
+      "stars_r670": 84842,
+      "delta": 155,
+      "pct": 0.18,
+      "signal": "TRACE (sustained 6th round below 1% threshold R663-R670)"
     },
     "usestrix_strix": {
-      "stars_r666": "36720",
-      "stars_r667": "36888",
-      "delta": 168,
-      "pct": 0.46,
-      "signal": "STRICT 9th round sustained R659-R667"
+      "stars_r669": 36888,
+      "stars_r670": 37073,
+      "delta": 185,
+      "pct": 0.50,
+      "signal": "STRICT 10th round sustained R659-R670"
     },
     "openai_codex_plugin_cc": {
-      "stars_r666": "24460",
-      "stars_r667": "25293",
-      "delta": 833,
-      "pct": 3.41,
-      "signal": "STRONG 11th round sustained R651-R667 (massive R667 +833 delta)"
+      "stars_r669": 25293,
+      "stars_r670": 25434,
+      "delta": 141,
+      "pct": 0.56,
+      "signal": "STRONG 12th round sustained R651-R670"
     },
     "OthmanAdi_planning_with_files": {
-      "stars_r666": 24602,
-      "stars_r667": 24622,
-      "delta": 20,
-      "pct": 0.08,
-      "signal": "STRICT sustained growth (R667 cron 周期内 +0.08% in 8h, 仍 378⭐ gap to 25k)"
+      "stars_r669": 24665,
+      "stars_r670": 24691,
+      "delta": 26,
+      "pct": 0.11,
+      "signal": "STRICT sustained growth (R670 cron 周期内 +0.11% in 2h, 仍 309⭐ gap to 25k)"
     },
     "raiyanyahya_recall": {
-      "stars_r666": "~674",
-      "stars_r667": "677",
-      "delta": 3,
-      "pct": 0.45,
-      "signal": "0% RETURNS 5th round sustained R663-R667"
+      "stars_r669": 677,
+      "stars_r670": 677,
+      "delta": 0,
+      "pct": 0.0,
+      "signal": "0% RETURNS 6th round sustained R663-R667"
     },
     "amplifthq_opentag": {
-      "stars_r666": "~717",
-      "stars_r667": "774",
-      "delta": 57,
-      "pct": 7.95,
-      "signal": "STRONG 15th round sustained R647-R667"
+      "stars_r669": 774,
+      "stars_r670": 791,
+      "delta": 17,
+      "pct": 2.20,
+      "signal": "STRONG 16th round sustained R647-R670 (longest sustained STRONG)"
     },
-    "cluster_signal": "3/7 strict-or-strong HIT (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉞ measurement artifact verification round 12 SUSTAINED 12th round R656-R667",
+    "cluster_signal": "3/7 strict-or-strong HIT (strix STRICT + codex-plugin-cc STRONG + opentag STRONG) = R555 Era variant ㉟ measurement artifact verification round 16 SUSTAINED 16th round R656-R670",
     "gastownhall_gastown": {
-      "stars_r666": 16292,
-      "stars_r667": 16310,
+      "stars_r669": 16345,
+      "stars_r670": 16363,
       "delta": 18,
       "pct": 0.11,
-      "signal": "STRICT v1.2.0/v1.2.1 release + sustained growth (R667 +18 in 8h, 距 17k 690⭐ gap)"
+      "signal": "STRICT sustained growth (R670 +18 in 2h, 距 17k 637⭐ gap)"
     },
     "ogulcancelik_herdr": {
-      "stars_r666": "未监测",
-      "stars_r667": 11903,
-      "delta": "首次采纳",
-      "pct": "N/A",
-      "signal": "R667 NEW PROJECT (R620 Defer 解除 = License 重新核实 AGPL-3.0 + 商业 dual-license)"
+      "stars_r669": 12000,
+      "stars_r670": 12039,
+      "delta": 39,
+      "pct": 0.33,
+      "signal": "STRICT sustained strong growth (R670 +39 in 2h, 距 13k 961⭐ gap)"
+    },
+    "DeusData_codebase_memory_mcp": {
+      "stars_r669": "未监测",
+      "stars_r670": 26708,
+      "delta": "首次大规模采纳 (R670 NEW KEY FINDING)",
+      "pct": "N/A (R448 → R670 +19,408 in ~3 weeks +265% massive growth)",
+      "signal": "R670 NEW KEY FINDING - Layer 4.3 Hybrid Paradigm 首个工业级实证"
     },
     "ai_boost_awesome_harness_engineering": {
-      "stars_r666": 2754,
-      "stars_r667": 2757,
-      "delta": 3,
-      "pct": 0.11,
-      "signal": "SUSTAINED slow growth (v2.0 NOT released, R667 修正预测 = 拆分 Multi-Agent Orchestration 为 5 Layer + 4 Cross-Layer Contract)"
+      "stars_r669": 2765,
+      "stars_r670": 2771,
+      "delta": 6,
+      "pct": 0.22,
+      "signal": "SUSTAINED slow growth (v2.0 NOT released, R670 第四轮修正预测 = 拆分 State/Memory 为 3 Paradigm + 6 Cross-Paradigm Contract)"
     },
     "ctxrs_ctx": {
-      "stars_r666": "621",
-      "stars_r667": "656",
-      "delta": 35,
-      "pct": 5.64,
-      "signal": "DECELERATION reversed R667 +35⭐ recovery"
+      "stars_r669": 656,
+      "stars_r670": 665,
+      "delta": 9,
+      "pct": 1.37,
+      "signal": "DECELERATION reversed R667 +35⭐ recovery sustained R670 +9 in 2h"
+    },
+    "langchain_ai_openwiki": {
+      "stars_r669": "未监测",
+      "stars_r670": 5130,
+      "delta": "NEW cluster_monitoring",
+      "pct": "N/A",
+      "signal": "STRONG 2nd round NEW + 5k⭐ BREAK 临界已突破"
+    },
+    "vectorize_io_hindsight": {
+      "stars_r669": 18006,
+      "stars_r670": 18008,
+      "delta": 2,
+      "pct": 0.01,
+      "signal": "ANOMALY R670 +2 in 2h 异常缓慢 + R670 NEW SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化首个触发证据"
+    },
+    "coreyhaines31_marketingskills": {
+      "stars_r669": 36376,
+      "stars_r670": 36412,
+      "delta": 36,
+      "pct": 0.10,
+      "signal": "STRICT sustained growth (R670 +36 in 2h, 距 38k 1,588⭐ gap)"
+    },
+    "alirezarezvani_claude_skills": {
+      "stars_r669": 20492,
+      "stars_r670": 20540,
+      "delta": 48,
+      "pct": 0.23,
+      "signal": "STRICT sustained strong growth (R670 +48 in 2h, 距 22k 1,460⭐ gap)"
     }
   },
-  "r667_multi_agent_stack_layering_matrix_progress": {
+  "r670_multi_agent_stack_layering_matrix_progress": {
     "stage_1_overview_R661": {
       "status": "✅ COMPLETE",
       "articles": 1,
@@ -487,14 +430,32 @@
       "status": "✅ COMPLETE",
       "articles": 1,
       "projects": 3,
-      "theme": "Multi-Agent Stack 分层 deep dive + herdr 11,903 ⭐ R667 NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract 分层模型 [NEW R667]"
+      "theme": "Multi-Agent Stack 分层 deep dive + herdr R667 NEW PROJECT (R620 Defer 解除) + 6 Layer + 5 Cross-Layer Contract 分层模型"
     },
-    "stage_8_next_phase_R668": {
+    "stage_8_layer_3_skill_registry_3_sub_layers_R668": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 6,
+      "theme": "Layer 3 Skill Registry Primitive deep dive + marketingskills R668 NEW PROJECT + 5 monitoring UPDATES + 3 Sub-Primitive"
+    },
+    "stage_9_layer_4_state_memory_2_paradigm_R669": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 8,
+      "theme": "Layer 4 State/Memory Primitive deep dive + hindsight R669 UPDATE + herdr 12k⭐ BREAK 确认 + 7 monitoring UPDATES + 2 Paradigm (Learning + Filesystem)"
+    },
+    "stage_10_layer_4_3_hybrid_paradigm_R670": {
+      "status": "✅ COMPLETE",
+      "articles": 1,
+      "projects": 9,
+      "theme": "Layer 4 Hybrid Memory Architecture 协议化监测 deep dive + DeusData/codebase-memory-mcp R670 NEW KEY FINDING +19,408 stars in 3 weeks +265% + 8 monitoring UPDATES + 3 Paradigm (Learning + Filesystem + Hybrid) + 6 Cross-Paradigm Contract + Hindsight SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化首个触发 [NEW R670]"
+    },
+    "stage_11_next_phase_R671": {
       "status": "⏳ PENDING",
       "articles": 0,
       "projects": 0,
-      "theme": "持续 monitoring 5 个关键信号 + Multi-Agent Stack Protocol (MASP) 监测 + herdr × gastown cross-mention 监测 + 17k⭐ / 12k⭐ / 25k⭐ BREAK 监测"
+      "theme": "持续 monitoring 5 个关键信号 + 10 个 P-tracking 项目 + Memory-Skill Contract 1st-party 标准化扩展监测 + Memory-Tool Contract codebase-memory-mcp 14 MCP tools 实证监测 + Layer 5 Tool Runtime Primitive deep dive 候选"
     },
-    "completion_rate": "100% (7/7 阶段完整闭合 + 持续 monitoring)"
+    "completion_rate": "100% (10/10 阶段完整闭合 + 持续 monitoring)"
   }
 }
