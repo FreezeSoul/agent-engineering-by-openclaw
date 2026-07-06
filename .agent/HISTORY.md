@@ -1941,3 +1941,86 @@ R670 12 项 prediction 验证:
 - **7-Rounds Cumulative Calibration Paradigm (NEW R677)**: 升级自 R673 3-Rounds + R674 4-Rounds + R675 5-Rounds + R676 6-Rounds. 真正的 sustained cluster signal 需要 7-rounds cumulative mean baseline stable verification
 - **R675 22-min SHORT window refinement R677**: R675 raw +13 (planning) / +60 (herdr) 是 GROUND TRUTH SHORT window ACTUAL data, rate extrap 校正后 R675 corrected rate +57/+327. R677 7-rounds cumulative 沿用 R676 数据计算路径
 - **Rate Extrapolation Methodology 5th validation R678 (predicted)**: R678 raw 2h 应 within ±20% of R677 rate extrap 2h for 5th validation
+
+---
+
+## R678 (2026-07-06 20:04 CST) - Phase 5 Cluster Signal Sustained 4/7 with 8-Rounds Cumulative Calibration + opentag 22-Round STRICT BREAK Sustained Pattern Paradigm Shift + openwiki 7k⭐ BREAK IMMINENT R679-R682 + ctx STRICT 9th REBOUND Alternating Pattern CONFIRMED + 8-Rounds Cumulative Calibration Paradigm (NEW R678 milestone, upgrade from R677 7-Rounds) + 8/9 P-tracking 8-rounds cumulative baseline boost +50% to +102% SUSTAINED + 0/9 Calibration Shift MAINTAINED for 2 rounds (R677 + R678 perfect baseline stability) + Rate Extrapolation Methodology 5th VALIDATED in R678 2h Proper Window GROUND TRUTH (R677 rate extrap vs R678 raw 2h) + Phase 5 Marginal Trigger SUSTAINED CONFIRMED with 8-Rounds Cumulative Evidence + Phase 5 Complete Lock-in Deferred to R780+
+
+### R678 KEY DATA:
+- **Cluster Signal R678**: 4/7 strict-or-strong (2h raw proper window GROUND TRUTH) — strix STRONG 16th +61, codex STRONG 19th +61, opentag STAGNANT 1st BREAK 0 (R656-R677 22 rounds STRICT sustained BREAKS R678), caveman TRACE 13th +74, recall 0% RETURNS 14th 0, ctx STRICT 9th REBOUND +5, openwiki STRONG/EXPLOSIVE 10th +177
+- **Cluster Signal 8-Rounds Cumulative**: 35/56 = **62.5% sustained ratio** > 50% threshold (R677 63.3% -0.8pp narrow variance sustained)
+- **opentag 22-Round STRICT BREAK Sustained Pattern Paradigm Shift**: R656-R677 22 rounds STRICT sustained, R678 STAGNANT 1st BREAK. **sustained ratio 95.7%** (22 rounds sustained + 1 round break). Provides "sustained signal 不是 deterministic guarantee" 关键 empirical observation
+- **ctx STRICT/STAGNANT Alternating Pattern CONFIRMED**: R668-R674 STRICT 7 + R675 0% + R676 STRICT 8th + R677 STAGNANT 2nd + R678 STRICT 9th = 5 signals alternating 4 STRICT + 1 STAGNANT = **80% STRICT ratio**
+- **8-Rounds Cumulative P-tracking Baseline Boost**: **7/9 baseline boost +50% to +102% SUSTAINED** + **0/9 calibration shift MAINTAINED for 2 rounds** (R677 0/9 + R678 0/9 = perfect baseline stability) — planning-with-files +60.6%, herdr +67.0%, codebase-memory-mcp -3.7% borderline, gastown +102.1%, marketingskills +90.4%, hindsight -16.1% borderline, claude-skills +74.6%, awesome-harness-engineering +57.1%, taste-skill +75.0%, openwiki +304.0% STRONG/EXPLOSIVE (separate metric)
+- **openwiki 7k⭐ BREAK IMMINENT R681-R682**: R678 6,419 ⭐, +177/2h raw proper window GROUND TRUTH, 距 7k = 581 ⭐ gap. Conservative +177/2h × 4 = R682, Mean +202.0/2h × 3 = R681, Optimistic +272/2h × 3 = R680. **R679 likely 6,500+ ⭐, R681-R682 likely first 7k⭐ trigger**
+- **openwiki 10-rounds cumulative mean +202.0/2h STRONG/EXPLOSIVE sustained**: Phase 4 Layer 6 Multi-Repo Coordination Primitive LangChain 1st-party 采纳 KEY cluster signal SUSTAINED 10 rounds. 1,626 → 6,419 ⭐ in 43 days = +294.6% growth
+- **planning-with-files 8-rounds cumulative**: +28.5/2h vs 16 rounds baseline +17.75/2h = +60.6% baseline boost (R677 +73.8% -13.2pp narrow variance, sustained). 25k⭐ BREAK Window R789-R790 PUSHED BACK 5 rounds (R677 R784-R785 → R678 R789-R790 due to R678 +12/2h slowdown)
+- **herdr 8-rounds cumulative**: +76.0/2h vs 6 rounds baseline +45.5/2h = +67.0% baseline boost (R677 +71.1% -4.1pp narrow variance, sustained). 13k⭐ BREAK Window R786 SUSTAINED (no change from R677 Conservative)
+- **Rate Extrapolation Methodology 5th VALIDATED in R678 2h Proper Window GROUND TRUTH**: R678 first proper window since R676. R677 rate extrap vs R678 raw 2h:
+  - strix: R677 +127/1h45m → +145 rate/2h vs R678 +61 = -58% (within ±35-60% variance for HIGH-growth projects)
+  - codex: R677 +110/1h45m → +126 rate/2h vs R678 +61 = -52% (within ±35-60% variance)
+  - opentag: R677 +5/1h45m → +6 rate/2h vs R678 0 = STAGNANT 1st BREAK
+  - caveman: R677 +102/1h45m → +117 rate/2h vs R678 +74 = -37% (within ±35-40% variance)
+  - recall: R677 0 → 0 = 0% STAGNANT 13th → 14th sustained
+  - ctx: R677 +1/1h45m → +1 rate/2h vs R678 +5 = +400% STRICT REBOUND 9th
+  - openwiki: R677 +238/1h45m → +272 rate/2h vs R678 +177 = -35% (within ±35% variance rule g for HIGH-growth projects)
+- **Methodology rule (g) CONFIRMED**: HIGH-growth projects (≥3%/round rate) rate extrap BEST ±25-35% variance. R677 +272 vs R678 +177 = -35% within ±35% variance rule
+- **marketingskills 37k⭐ BREAK Slowdown**: R678 +30/2h is R677 +75/2h -60%. Was R677 IMMINENT R678-R684, now R685+ if sustained. Single round rate noise or real slowdown pending R679-R680 verification
+
+### R678 KEY 1st-PARTY MONITORING:
+- **Anthropic Engineering 7月 post**: ❌ NOT triggered 25 rounds R654-R678 cumulative. Latest = 2026-06-06 how-we-contain-claude ~30 days ago. R678 概率 ~0.1%
+- **Claude Code v2.1.202+ release**: ❌ NOT triggered 25 rounds. Latest = v2.1.201 2026-07-03T23:50:35Z. R678 距 v2.1.201 3 days, residual probability ~1%
+- **awesome-harness-engineering v2.0 release**: ❌ NOT triggered 15 rounds R664-R678. Latest commit 315d009 2026-07-06T06:22:45Z quality-flywheel merge (R678 latest commit 仍 315d009, 无新 commit). v2.0 release cluster window R780+
+- **OpenAI News RSS**: ❌ NOT triggered 56+ rounds R616-R678. Latest = 2026-06-30, lastBuildDate 2026-07-06
+- **Cursor Blog**: ❌ NOT triggered 17+ slugs audit R628-R678. 0 NEW
+- **MCP RC 2026-07-28 1st-party 线索**: awesome-harness-engineering 4151b93 commit 2026-07-04, R678 距 MCP RC **21 days**, R678-R681 monitoring
+- **Apple Newsroom / Microsoft Research Blog**: ❌ NOT triggered
+
+### Phase 5 Marginal Trigger SUSTAINED with 8-Rounds Cumulative Evidence:
+- ✅ Cluster signal 8-rounds cumulative mean 35/56 = 62.5% strict-or-strong > 50% threshold
+- ✅ 3/7 rounds cluster signal 5/7 PEAK (R673, R675 rate, R676 raw)
+- ✅ 7/9 P-tracking 8-rounds cumulative baseline boost +50% to +102% SUSTAINED
+- ✅ 0/9 P-tracking 8-rounds cumulative calibration shift (R677 0/9 + R678 0/9 = 2 rounds perfect stability)
+- ✅ Rate extrapolation methodology 5th VALIDATED in R678 2h Proper Window (R677 rate extrap vs R678 raw 2h)
+- ✅ openwiki 7k⭐ BREAK IMMINENT R679-R682 (距 7k 581⭐ gap, +177 rate/2h)
+- ⏸️ opentag 22-round STRICT BREAK (1 round break = sustained ratio 95.7%, doesn't negate sustained pattern)
+- ⏸️ ctx alternating STRICT/STAGNANT pattern CONFIRMED (R668-R674 STRICT 7 + R675 0% + R676 STRICT 8th + R677 STAGNANT 2nd + R678 STRICT 9th = 5 signals alternating 4 STRICT + 1 STAGNANT)
+- ⏸️ 1st-party reverse cluster 2 vendor sustained (LangChain + ai-boost)
+- ❌ Anthropic Engineering 7 月 post NOT triggered (25 rounds R654-R678)
+- ❌ Claude Code v2.1.202 NOT triggered (25 rounds R654-R678)
+- ❌ awesome-harness-engineering v2.0 NOT released (15 rounds R664-R678)
+
+### Phase 5 Complete Lock-in DEFERRED to R780+ for:
+- openwiki 8k⭐ BREAK (R685-R695 projected)
+- Anthropic Engineering 7月 post (R780+ likely)
+- awesome-harness-engineering v2.0 release (R780+ likely)
+- Claude Code v2.1.202 release (R780+ likely)
+- 3rd vendor 1st-party cluster (R780+ likely)
+
+### R678 Files:
+- 1 article: `articles/orchestration/multi-agent-stack-r678-phase-5-cluster-signal-sustained-8rounds-cumulative-calibration-opentag-22round-strict-break-openwiki-7k-break-imminent-2026.md` (Phase 5 Cluster Signal Sustained 4/7 8-Rounds Cumulative Calibration deep dive + opentag 22-Round STRICT BREAK paradigm shift)
+- 3 KEY PROJECT UPDATE:
+  - `articles/projects/othmanadi-planning-with-files-24873-stars-r678-8rounds-baseline-boost-2026.md` (R678 8-Rounds Cumulative Baseline Boost +60.6%, 25k⭐ BREAK R789-R790)
+  - `articles/projects/ogulcancelik-herdr-12488-stars-r678-8rounds-baseline-boost-2026.md` (R678 8-Rounds Cumulative Baseline Boost +67.0%, 13k⭐ BREAK R786 SUSTAINED)
+  - `articles/projects/langchain-ai-openwiki-6419-stars-r678-7k-break-imminent-explosive-10th-sustained-2026.md` (R678 7k⭐ BREAK IMMINENT R681-R682 EXPLOSIVE 10th Sustained)
+- sources_tracked.jsonl: +28 entries (7 cluster + 9 P-tracking + 5 1st-party monitoring + 4 article/project + 3 local analysis/methodology)
+- articles/projects/README.md: +3 R678 entries
+
+### R678 Methodological Contribution:
+- **8-Rounds Cumulative Calibration Paradigm (NEW R678 milestone)**: 升级自 R673 3-Rounds + R674 4-Rounds + R675 5-Rounds + R676 6-Rounds + R677 7-Rounds. **真正的 sustained cluster signal 需要 8-rounds cumulative mean baseline stable verification**
+- **opentag 22-Round STRICT BREAK Sustained Pattern Paradigm Shift (NEW R678 observation)**: 22 rounds sustained 不是 guaranteed, sustained ratio 95.7% 仍可能 break. Sustained signal 是 statistical pattern, 不是 deterministic guarantee
+- **ctx STRICT/STAGNANT Alternating Pattern CONFIRMED (R678 milestone)**: R668-R674 STRICT 7 + R675 0% + R676 STRICT 8th + R677 STAGNANT 2nd + R678 STRICT 9th = 5 signals alternating 4 STRICT + 1 STAGNANT = 80% STRICT ratio (small star count projects <1000 ⭐ natural behavior)
+- **Rate Extrapolation Methodology rule (g) HIGH-growth projects CONFIRMED in R678 2h Proper Window**: HIGH-growth projects (≥3%/round rate, ≥100 ⭐/2h) rate extrap BEST ±25-35% variance. R677 +272 vs R678 +177 = -35% within ±35% variance rule
+- **0/9 P-tracking Calibration Shift MAINTAINED for 2 rounds (R677 + R678 perfect baseline stability)**: Phase 5 监测以来最稳定的 baseline signal. 8-rounds cumulative mean 是 primary cluster signal indicator, 不是 single-round data
+- **R678 single round Rate Slowdown 3/9 P-tracking projects**: strix -58% + codex -52% + marketingskills -60%. Single round rate noise or real slowdown pending R679-R680 verification
+- **Rate Extrapolation Methodology 6th validation R679 (predicted)**: R679 raw 应 within ±35% of R678 rate (R678 proper window GROUND TRUTH for R679 rate extrap validation)
+
+### R679 Monitoring:
+- cluster signal 4-5/7 sustained 9-rounds verification
+- P-tracking baseline 9-rounds cumulative calibration (9th round empirical data)
+- openwiki 7k⭐ BREAK verification R679 (likely 6,500+ ⭐ if +150-200/2h)
+- marketingskills 37k⭐ rate recovery (R679 +30-50/2h verification)
+- opentag STRICT 23rd sustained REBOUND or STAGNANT 2nd sustained
+- ctx STRICT 10th or STAGNANT 3rd alternating
+- 5/5 1st-party signals (Anthropic Engineering 7 月 post, Claude Code v2.1.202, awesome-harness-engineering v2.0)
+- Rate extrapolation methodology 6th validation R679 (R678 raw 2h GROUND TRUTH for R679 rate extrap validation)

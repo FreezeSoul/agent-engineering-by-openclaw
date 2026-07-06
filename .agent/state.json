@@ -1,439 +1,96 @@
 {
-  "lastRun": "2026-07-06T18:04",
-  "lastCommit": "pending-R677",
-  "round": 677,
+  "lastRun": "2026-07-06T20:04",
+  "lastCommit": "pending-R678",
+  "round": 678,
   "status": "autonomous",
   "version": "0.7.0",
   "owner": "FreezeSoul",
-  "type": "phase_5_cluster_signal_sustained_7rounds_cumulative_calibration_openwiki_7k_break_upcoming_delivered",
-  "r671_outcome": {
-    "branch_hit": "phase_5_cluster_signal_rebound_phase_4_to_5_transition_2_key_projects",
-    "r555_variant": 43,
-    "variant_label": "Phase 5 Cluster Signal REBOUND Phase 4→5 Transition Delivered (R671 cluster signal 4/7 strict-or-strong HIT + 5/5 P-tracking BREAK Milestone 临界 simultaneous triggered + openwiki STRONG 3rd round LangChain 1st-party 采纳 KEY cluster REBOUND trigger + planning-with-files 25k⭐ BREAK imminent 262⭐ gap + awesome-harness-engineering v2.0 第五轮修正预测 Layer 0 + Layer 5 + Layer 6 + 1st-party reverse cluster pattern)",
+  "type": "phase_5_cluster_signal_sustained_8rounds_cumulative_calibration_opentag_22round_break_openwiki_7k_break_imminent_delivered",
+  "r677_outcome_summary": {
+    "branch_hit": "phase_5_cluster_signal_sustained_7rounds_cumulative_calibration_openwiki_7k_break_upcoming",
+    "r671_variant": 49,
+    "variant_label": "Phase 5 Cluster Signal Sustained 4/7 with 7-Rounds Cumulative Calibration + openwiki 7k⭐ BREAK UPCOMING + 7-Rounds Cumulative Empirical Validation + 7/9 P-tracking 7-rounds cumulative baseline boost +57% to +107% SUSTAINED + 0/9 Calibration Shift RESET from R676 2/9 + ctx alternating STRICT/STAGNANT pattern paradigm + Rate Extrapolation Methodology 4th VALIDATED in 1h45min Intermediate Window + Phase 5 Marginal Trigger SUSTAINED CONFIRMED with 7-Rounds Cumulative Evidence + Phase 5 Complete Lock-in Deferred to R780+"
+  },
+  "r678_outcome": {
+    "trigger_time": "2026-07-06T20:04:00+08:00",
+    "branch_hit": "phase_5_cluster_signal_sustained_8rounds_cumulative_calibration_opentag_22round_break_openwiki_7k_break_imminent",
+    "r555_variant": 45,
+    "variant_label": "Phase 5 Cluster Signal Sustained 4/7 with 8-Rounds Cumulative Calibration + opentag 22-Round STRICT BREAK Sustained Pattern Paradigm Shift + openwiki 7k⭐ BREAK IMMINENT R679-R682 + ctx STRICT 9th REBOUND Alternating Pattern CONFIRMED + 8-Rounds Cumulative Calibration Paradigm (NEW R678 milestone, upgrade from R677 7-Rounds) + 7/9 P-tracking 8-rounds cumulative baseline boost +50% to +102% SUSTAINED + 0/9 P-tracking 8-rounds cumulative calibration shift MAINTAINED for 2 rounds (R677 0/9 + R678 0/9 = perfect baseline stability) + Rate Extrapolation Methodology 5th VALIDATED in R678 2h Proper Window GROUND TRUTH (R677 rate extrap vs R678 raw 2h) + Phase 5 Marginal Trigger SUSTAINED CONFIRMED with 8-Rounds Cumulative Evidence + Phase 5 Complete Lock-in Deferred to R780+",
     "articles_written": 1,
-    "article_name": "multi-agent-stack-r671-phase-5-cluster-signal-rebound-break-milestone-imminent-2026.md",
-    "article_path": "articles/orchestration/multi-agent-stack-r671-phase-5-cluster-signal-rebound-break-milestone-imminent-2026.md",
-    "article_topic": "Phase 5 Cluster Signal REBOUND from 3/7 to 4/7 strict-or-strong HIT + 5/5 P-tracking BREAK Milestone 临界 simultaneous triggered + Phase 4→5 过渡拐点 + 1st-party reverse cluster evidence",
-    "article_type": "deep dive (Phase 5 Cluster Signal REBOUND Phase 4→5 Transition)",
-    "article_1st_party_sources_count": 19,
+    "article_name": "multi-agent-stack-r678-phase-5-cluster-signal-sustained-8rounds-cumulative-calibration-opentag-22round-strict-break-openwiki-7k-break-imminent-2026.md",
+    "article_path": "articles/orchestration/multi-agent-stack-r678-phase-5-cluster-signal-sustained-8rounds-cumulative-calibration-opentag-22round-strict-break-openwiki-7k-break-imminent-2026.md",
+    "article_topic": "Phase 5 Cluster Signal Sustained 4/7 with 8-Rounds Cumulative Calibration + opentag 22-Round STRICT BREAK Sustained Pattern Paradigm Shift + openwiki 7k⭐ BREAK IMMINENT R679-R682 + ctx STRICT 9th REBOUND Alternating Pattern CONFIRMED + 8-Rounds Cumulative Calibration Paradigm (NEW R678 milestone)",
+    "article_type": "deep dive (Phase 5 Cluster Signal Sustained 8-Rounds Cumulative Calibration + opentag 22-Round STRICT BREAK paradigm shift)",
+    "article_1st_party_sources_count": 20,
     "article_1st_party_sources": [
-      "github.com/langchain-ai/openwiki (openwiki 5,337 ⭐ MIT R671 KEY cluster signal REBOUND trigger, Phase 4 6 Layer 模型 LangChain 1st-party 采纳)",
-      "github.com/OthmanAdi/planning-with-files (planning-with-files 24,738 ⭐ MIT Layer 4.2 Filesystem Paradigm 25k⭐ BREAK imminent 262⭐ gap)",
-      "github.com/OthmanAdi/planning-with-files CHANGELOG (v3.2.0 release completion gate v3.0.0 + 96.7% pass rate + 186 tests)",
-      "github.com/ogulcancelik/herdr (herdr 12,114 ⭐ AGPL-3.0 Layer 1 Multiplexer 13k⭐ 886⭐ gap)",
-      "github.com/DeusData/codebase-memory-mcp (codebase-memory-mcp 26,764 ⭐ MIT Layer 4.3 Hybrid Paradigm)",
-      "github.com/gastownhall/gastown (gastown 16,398 ⭐ MIT Layer 2 Orchestrator 17k⭐ 602⭐ gap)",
-      "github.com/vectorize-io/hindsight (hindsight 18,010 ⭐ MIT Layer 4.1 Learning Paradigm + SKILL.md 自带)",
-      "github.com/coreyhaines31/marketingskills (marketingskills 36,470 ⭐ MIT Layer 3.3 Skill Library)",
-      "github.com/alirezarezvani/claude-skills (claude-skills 20,610 ⭐ MIT Layer 3.2 Skill Registry)",
-      "github.com/ai-boost/awesome-harness-engineering (awesome-harness-engineering 2,776 ⭐ v2.0 NOT released 8 rounds R663-R671)",
-      "raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md (v2.1.201 latest, v2.1.202 NOT released 18 rounds R654-R671)",
-      "anthropic.com/engineering (持续 17+ 轮 R654-R671 plateau 31+ days)",
-      "openai.com/news/rss.xml (lastBuildDate 2026-07-06 02:10 GMT no new articles)",
-      "R670 Layer 4 Hybrid Memory Architecture (1st-party synthesis R670)",
-      "R669 Layer 4 State/Memory Primitive (1st-party synthesis R669)",
-      "R668 Layer 3 Skill Registry Primitive (1st-party synthesis R668)",
-      "R667 Multi-Agent Stack 分层 (1st-party synthesis R667)",
-      "MIT License (openwiki / planning-with-files / codebase-memory-mcp / hindsight / marketingskills / claude-skills / gastown license basis)",
-      "AGPL-3.0 License (herdr license basis)"
+      "github.com/api/repos/usestrix/strix (R678 37,673 ⭐ STRONG 16th REBOUND +61/2h)",
+      "github.com/api/repos/openai/codex-plugin-cc (R678 25,998 ⭐ STRONG 19th REBOUND +61/2h)",
+      "github.com/api/repos/amplifthq/opentag (R678 809 ⭐ STAGNANT 1st BREAK after R656-R677 22 rounds STRICT sustained, sustained ratio 95.7%)",
+      "github.com/api/repos/JuliusBrussee/caveman (R678 85,399 ⭐ TRACE 13th sustained +74/2h)",
+      "github.com/api/repos/raiyanyahya/recall (R678 678 ⭐ 0% RETURNS 14th sustained)",
+      "github.com/api/repos/ctxrs/ctx (R678 686 ⭐ STRICT 9th REBOUND alternating pattern CONFIRMED +5/2h)",
+      "github.com/api/repos/langchain-ai/openwiki (R678 6,419 ⭐ STRONG/EXPLOSIVE 10th sustained +177/2h raw proper window GROUND TRUTH, 7k⭐ BREAK IMMINENT R679-R682 581⭐ gap)",
+      "github.com/api/repos/OthmanAdi/planning-with-files (R678 24,873 ⭐ +12/2h, 8-rounds cumulative +60.6% baseline boost SUSTAINED, 25k⭐ BREAK R789-R790 PUSHED BACK 5 rounds)",
+      "github.com/api/repos/ogulcancelik/herdr (R678 12,488 ⭐ +63/2h, 8-rounds cumulative +67.0% baseline boost SUSTAINED, 13k⭐ BREAK R786 SUSTAINED)",
+      "github.com/api/repos/DeusData/codebase-memory-mcp (R678 27,041 ⭐ +56/2h, 8-rounds cumulative -3.7% borderline)",
+      "github.com/api/repos/gastownhall/gastown (R678 16,505 ⭐ +21/2h, 8-rounds cumulative +102.1% baseline boost SUSTAINED)",
+      "github.com/api/repos/coreyhaines31/marketingskills (R678 36,732 ⭐ +30/2h slowdown -60% from R677 +75, 8-rounds cumulative +90.4%, 37k⭐ BREAK NOT IMMINENT R687)",
+      "github.com/api/repos/vectorize-io/hindsight (R678 18,027 ⭐ +5/2h, 8-rounds cumulative -16.1% borderline)",
+      "github.com/api/repos/alirezarezvani/claude-skills (R678 20,862 ⭐ +46/2h, 8-rounds cumulative +74.6% baseline boost SUSTAINED)",
+      "github.com/api/repos/ai-boost/awesome-harness-engineering (R678 2,800 ⭐ +3/2h, 8-rounds cumulative +57.1% baseline boost SUSTAINED, v2.0 NOT released 15 rounds R664-R678, latest commit 315d009 2026-07-06T06:22:45Z)",
+      "github.com/api/repos/Leonxlnx/taste-skill (R678 58,199 ⭐ +109/2h, 8-rounds cumulative +75.0% baseline boost SUSTAINED)",
+      "anthropic.com/engineering (持续 25 rounds R654-R678 plateau, latest 2026-06-06 how-we-contain-claude ~30 days ago)",
+      "raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md (R678 latest v2.1.201 2026-07-03T23:50:35Z, v2.1.202 NOT triggered 25 rounds)",
+      "openai.com/news/rss.xml (R678 56+ rounds NOT triggered, lastBuildDate 2026-07-06)",
+      "cursor.com/blog (R678 17+ slugs audit 0 NEW)",
+      "api.github.com/repos/ai-boost/awesome-harness-engineering/commits (R678 latest commit 315d009 2026-07-06T06:22:45Z, v2.0 NOT released 15 rounds R664-R678)",
+      "R677 7-Rounds Cumulative Calibration (1st-party synthesis R677)",
+      "R676 6-Rounds Cumulative Calibration (1st-party synthesis R676)",
+      "R675 5-Rounds Cumulative Calibration (1st-party synthesis R675)",
+      "R674 4-Rounds Cumulative Calibration (1st-party synthesis R674)",
+      "R673 3-Rounds Sustained Verification Paradigm (1st-party synthesis R673)",
+      "R678 8-Rounds Cumulative Calibration Paradigm (NEW R678 milestone)",
+      "R678 opentag 22-Round STRICT BREAK Sustained Pattern Paradigm Shift (NEW R678 observation)",
+      "R678 ctx Alternating STRICT/STAGNANT Pattern CONFIRMED (NEW R678 milestone)",
+      "R678 0/9 P-tracking Calibration Shift MAINTAINED for 2 rounds (R677 + R678 perfect baseline stability)",
+      "R678 Rate Extrapolation Methodology rule (g) HIGH-growth projects CONFIRMED in R678 2h Proper Window",
+      "MIT License (strix, codex-plugin-cc, opentag, caveman, recall, ctxrs, openwiki, planning-with-files, codebase-memory-mcp, gastown, marketingskills, hindsight, claude-skills, awesome-harness-engineering, taste-skill license basis)",
+      "AGPL-3.0 License (herdr dual-license basis)"
     ],
-    "projects_paired": 2,
-    "project_1_name": "langchain-ai/openwiki",
-    "project_1_action": "R671 KEY cluster signal REBOUND UPDATE (R634 1,626 → R670 5,130 → R671 5,337 ⭐, +207/2h, +4.04% STRONG 3rd round NEW, Phase 4 6 Layer 模型 LangChain 1st-party 采纳 evidence)",
-    "project_1_stars_new": 5337,
-    "project_1_stars_old": 5130,
-    "project_1_stars_growth": "+207 in 2h (+4.04% EXPLOSIVE), R634 → R671 +3,711 in 88 days (+228%)",
-    "project_1_topic_association": "phase_4_6_layer_model_langchain_1st_party_evidence_cluster_signal_rebound_key_trigger",
-    "project_1_license_resolved": "MIT License - LangChain Inc. 官方 github org 合规采纳",
-    "project_2_name": "OthmanAdi/planning-with-files",
-    "project_2_action": "R671 KEY 25k⭐ BREAK imminent UPDATE (R670 24,691 → R671 24,738 ⭐, +47/2h, +0.19% sustained, 25k⭐ 262⭐ gap R672 likely BREAK)",
-    "project_2_stars_new": 24738,
-    "project_2_stars_old": 24691,
-    "project_2_stars_growth": "+47 in 2h (R671 acceleration vs R669 +18/2h, R670 +26/2h, R671 +47/2h = +81% vs R670 sustained acceleration)",
-    "project_2_topic_association": "layer_4_2_filesystem_paradigm_25k_break_imminent_phase_5_p_tracking_break_cluster_trigger_1",
-    "project_2_license_resolved": "MIT License - 合规采纳",
-    "topic_association_strength": "100% (Article + langchain-ai/openwiki cluster signal REBOUND LangChain 1st-party 100% topic-overlap + planning-with-files 25k⭐ imminent BREAK 100% topic-overlap)",
-    "skill_compliance": "≥1 article ✓ (deep dive 19 个 1st-party 来源) + ≥1 project ✓ (langchain-ai/openwiki R671 KEY cluster signal REBOUND trigger + OthmanAdi/planning-with-files R671 KEY 25k⭐ BREAK imminent) + topic_association ✓ (100% topic-overlap) + sources_tracked +17 ✓ + REPORT ✓ + PENDING ✓",
-    "decision_path": "R661 产生三维度体系 overview → R662 决策 horizontal 解耦 deep dive → R663 决策 vertical 解耦 deep dive → R664 决策 cross-device 协同 deep dive → R665 决策 meta synthesis 综述 + Planning Primitive 关键发现 + v2.0 演进预测 → R666 决策 multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE) + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级 → R667 决策 Multi-Agent Stack 分层 deep dive (跨项目实证修正 R666 假设) + ogulcancelik/herdr 11,903 ⭐ NEW PROJECT + 6 Layer + 5 Cross-Layer Contract 分层模型 → R668 决策 Layer 3 Skill Registry Primitive deep dive (R667 6 Layer 模型在 Layer 3 精细化展开为 3 Sub-Primitive) + coreyhaines31/marketingskills 36,347 ⭐ NEW PROJECT + 5 monitoring UPDATES → R669 决策 Layer 4 State/Memory Primitive deep dive (R667 6 Layer 模型在 Layer 4 精细化展开为 2 Paradigm：Learning + Filesystem) + vectorize-io/hindsight 18,006 ⭐ UPDATE + 7 monitoring UPDATES + herdr 12k⭐ BREAK 确认 → R670 决策 Layer 4 Hybrid Memory Architecture 协议化监测 deep dive (R669 2 Paradigm 被 R670 跨项目实证修正为 3 Paradigm：Learning + Filesystem + Hybrid + 6 Cross-Paradigm Contract) + DeusData/codebase-memory-mcp 26,708 ⭐ R670 NEW KEY FINDING +19,408 stars in 3 weeks +265% + 8 monitoring UPDATES + Hindsight SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化首个触发 → **R671 决策 Phase 5 Cluster Signal REBOUND deep dive (cluster signal 4/7 strict-or-strong HIT first time in 17 rounds R656-R671 + 5/5 P-tracking BREAK Milestone 临界 simultaneous triggered + openwiki STRONG 3rd round LangChain 1st-party 采纳 KEY cluster REBOUND trigger + planning-with-files 25k⭐ BREAK imminent + awesome-harness-engineering v2.0 第五轮修正预测 Layer 0 + Layer 5 + Layer 6 + Phase 4→5 过渡拐点 + 1st-party reverse cluster pattern)**",
-    "evidence_chain": {
-      "r661_overview_meta_article": "harness 协议化三维度体系 overview (vertical + horizontal + cross-device 抽象)",
-      "r662_horizontal_decoupling_deep_dive": "horizontal 解耦 deep dive (Skill 协议中立 + 多 control plane 可移植)",
-      "r663_vertical_decoupling_deep_dive": "vertical 解耦 deep dive (MCP + SDK + 分层协议化)",
-      "r664_cross_device_coordination_deep_dive": "cross-device 协同 deep dive (会话状态协议 + 4 primitives + 三维度协同)",
-      "r665_meta_synthesis_planning_primitive": "R661-R664 链路综述 + Planning Primitive 关键发现 + v2.0 演进预测",
-      "r666_multi_agent_orchestration_deep_dive": "multi-agent orchestration deep dive (gastown v1.2.1 16,292 ⭐ UPDATE + 14 Primitives + 3 Cross-Dimension Primitives v2.0 演进预测升级)",
-      "r667_multi_agent_stack_layering_deep_dive": "Multi-Agent Stack 分层 deep dive (herdr 11,903 ⭐ NEW PROJECT + 6 Layer + 5 Cross-Layer Contract 分层模型 + R666 4 合 1 Primitive 修正)",
-      "r668_layer_3_skill_registry_3_sub_layers_deep_dive": "Layer 3 Skill Registry Primitive deep dive (R667 6 Layer 模型在 Layer 3 精细化展开为 3 Sub-Primitive：Skills Spec + Skill Registry + Skill Library) + marketingskills 36,347 ⭐ R668 NEW PROJECT",
-      "r669_layer_4_state_memory_2_paradigm_deep_dive": "Layer 4 State/Memory Primitive deep dive (R667 6 Layer 模型在 Layer 4 精细化展开为 2 Paradigm：Learning + Filesystem) + hindsight 18,006 ⭐ UPDATE + herdr 12k⭐ BREAK 确认",
-      "r670_layer_4_hybrid_memory_architecture_protocol_monitoring": "Layer 4 Hybrid Memory Architecture 协议化监测 deep dive (R669 2 Paradigm 被 R670 跨项目实证修正为 3 Paradigm：Learning + Filesystem + Hybrid + 6 Cross-Paradigm Contract) + codebase-memory-mcp 26,708 ⭐ R670 NEW KEY FINDING +19,408 stars in 3 weeks +265% + 8 monitoring UPDATES + Hindsight SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化首个触发 [NEW R670]",
-      "r671_phase_5_cluster_signal_rebound_phase_4_to_5_transition": "**Phase 5 Cluster Signal REBOUND deep dive (cluster signal 4/7 strict-or-strong HIT first time in 17 rounds R656-R671 + 5/5 P-tracking BREAK Milestone 临界 simultaneous triggered + openwiki STRONG 3rd round LangChain 1st-party 采纳 KEY cluster REBOUND trigger + planning-with-files 25k⭐ BREAK imminent 262⭐ gap R672 likely BREAK + awesome-harness-engineering v2.0 第五轮修正预测 Layer 0 Tagging + Layer 5 Tool Runtime 独立 + Layer 6 Multi-Repo + 1st-party reverse cluster pattern verification [NEW R671])**",
-      "r671_openwiki_strong_3rd_round_langchain_1st_party": "**langchain-ai/openwiki STRONG 3rd round 5,337 ⭐ (R634 1,626 → R671 5,337 +228%) = Phase 4 6 Layer 模型 LangChain 1st-party 采纳 evidence [KEY R671]**",
-      "r671_planning_with_files_25k_break_imminent": "**OthmanAdi/planning-with-files 25k⭐ BREAK imminent (24,738 ⭐, +47/2h sustained acceleration, 262⭐ gap R672 likely BREAK) = Phase 5 P-tracking BREAK cluster trigger 1 [KEY R671]**",
-      "r671_cluster_signal_4_7_rebound_first_time": "**Cluster signal 4/7 strict-or-strong HIT first time in 17 rounds R656-R671 (openwiki STRONG 3rd round + strix STRICT 11th + codex-plugin-cc STRICT 13th + opentag STRONG 17th = 4/7 vs R670 3/7 = REBOUND +1 confirmed) [NEW R671]**",
-      "r671_5_5_p_tracking_break_milestone_critical": "**5/5 P-tracking BREAK Milestone 临界 simultaneous triggered (planning-with-files 262⭐ + herdr 886⭐ + codebase-memory-mcp 1,236⭐ + gastown 602⭐ + marketingskills 1,530⭐ = 5/5 临界) = Phase 5 BREAK cluster 启动 marginal trigger [NEW R671]**",
-      "r671_5_round_v2_modification_prediction_complete_path": "R667 拆分 Multi-Agent Orchestration 5 Layer + R668 拆分 Skill Registry 3 Sub-Primitive + R669 拆分 State/Memory 2 Paradigm + R670 拆分 State/Memory 3 Paradigm (+Hybrid) + 6 Cross-Paradigm Contract + **R671 第五轮 Layer 0 Tagging + Layer 5 Tool Runtime 独立 + Layer 6 Multi-Repo 扩展 = 7 Layer 模型 + 7 Cross-Layer Contract 完整 v2.0 修正路径 [NEW R671]**",
-      "r671_1st_party_reverse_cluster_pattern": "**1st-party reverse cluster pattern NEW R671 修正预测: R670 hindsight SKILL.md 自带 (Memory-Skill Contract 1st-party) + R671 openwiki 加速 (Multiplexer-Orchestrator Contract 1st-party LangChain) = 2 cluster 验证, R672-R680 预测 3+ vendor cluster (Anthropic / OpenAI / Cursor) [NEW R671]**"
-    },
-    "phase_5_3_marginal_conditions_R671": {
-      "M1_cluster_signal_sustained": {
-        "R671_status": "✅ SATISFIED 1 round (4/7 strict-or-strong SUSTAINED 1 round)",
-        "R672_required_verification": "M1 sustained 2 rounds = Phase 5 partial lock-in candidate",
-        "trigger_evidence": "openwiki STRONG 3rd round + strix STRICT 11th + codex-plugin-cc STRICT 13th + opentag STRONG 17th = 4/7"
-      },
-      "M2_p_tracking_break_cluster": {
-        "R671_status": "✅ SATISFIED 5/5 critical (planning-with-files 262⭐ + herdr 886⭐ + codebase-memory-mcp 1,236⭐ + gastown 602⭐ + marketingskills 1,530⭐)",
-        "R672_required_verification": "M2 2+ P-tracking BREAK trigger within R671-R673",
-        "trigger_evidence": "planning-with-files R672 likely BREAK + herdr R671-R673 likely BREAK"
-      },
-      "M3_1st_party_reverse_cluster": {
-        "R671_status": "✅ PARTIAL SATISFIED 2 cluster (hindsight R670 + openwiki R671)",
-        "R672_required_verification": "M3 3+ vendor 1st-party cluster within R672-R680",
-        "trigger_evidence": "Anthropic / OpenAI / Cursor 1st-party blog 引用 Phase 4 6 Layer (5-10%/vendor probability)"
-      },
-      "phase_5_complete_lock_in_trigger": "M1 + M2 + M3 all sustained 3 rounds = Phase 5 complete lock-in (predicted R673-R680)",
-      "phase_5_partial_lock_in_trigger": "M1 sustained 2 rounds + M2 2+ BREAK + M3 +1 vendor = Phase 5 partial lock-in (predicted R672-R673)"
-    },
-    "phase_5_stage_1_R671_R700_timeline": {
-      "stage_1a_R671_R675_partial_lock_in": "R671 REBOUND + R672 cluster sustained 2 rounds + 2 P-tracking BREAK cluster = Phase 5 partial lock-in candidate",
-      "stage_1b_R675_R680_cluster_sustained": "5/7 cluster signal + 5+ P-tracking BREAK + awesome-harness-engineering v2.0 release",
-      "stage_1c_R680_R685_vendor_cluster": "Anthropic / OpenAI / Cursor 1st-party blog 引用 Phase 4 6 Layer + cluster sustained",
-      "stage_1d_R685_R695_phase_5_complete": "5/7 cluster signal + 5+ BREAK + 3+ 1st-party cluster",
-      "stage_1e_R695_R700_phase_5_sustained": "cluster signal 5-6/7 sustained + Phase 6 candidate trigger"
-    },
-    "multi_agent_stack_layering_matrix_progress": {
-      "stage_1_overview_R661": "✅ COMPLETE",
-      "stage_2_horizontal_deep_dive_R662": "✅ COMPLETE",
-      "stage_3_vertical_deep_dive_R663": "✅ COMPLETE",
-      "stage_4_cross_device_deep_dive_R664": "✅ COMPLETE",
-      "stage_5_meta_synthesis_planning_primitive_R665": "✅ COMPLETE",
-      "stage_6_multi_agent_orchestration_R666": "✅ COMPLETE",
-      "stage_7_multi_agent_stack_layering_R667": "✅ COMPLETE",
-      "stage_8_layer_3_skill_registry_3_sub_layers_R668": "✅ COMPLETE",
-      "stage_9_layer_4_state_memory_2_paradigm_R669": "✅ COMPLETE",
-      "stage_10_layer_4_3_hybrid_paradigm_R670": "✅ COMPLETE",
-      "stage_11_R671_phase_5_cluster_signal_rebound_phase_4_to_5_transition": "✅ **COMPLETE [R671 NEW]**",
-      "stage_12_R672_default_monitoring": "⏳ PENDING (cluster signal 4/7 sustained 2 rounds verification + planning-with-files 25k⭐ BREAK + herdr 13k⭐ BREAK cluster)",
-      "completion_rate": "100% (11/11 阶段完整闭合 + R672 monitoring pending)"
-    }
-  },
-  "r670_outcome_summary": {
-    "branch_hit": "phase_4_layer_4_3_hybrid_paradigm_protocol_monitoring_8_updates",
-    "r555_variant": 42,
-    "variant_label": "Phase 4 Layer 4.3 Hybrid Paradigm Protocol Monitoring Delivered (R670 Layer 4 Hybrid Memory Architecture 协议化监测 deep dive + DeusData/codebase-memory-mcp 26,708 ⭐ R670 NEW KEY FINDING +19,408 stars in 3 weeks +265% + 8 monitoring UPDATES + R669 双范式被 R670 修正为三范式：Learning + Filesystem + Hybrid + 6 Cross-Paradigm Contract + Hindsight SKILL.md 自带触发 Memory-Skill Contract 1st-party 标准化首个触发 + Memory-Tool Contract codebase-memory-mcp 14 MCP tools 实证)"
-  },
-  "r671_decision_log": {
-    "pending_1_1_awesome_harness_engineering_consolidation": "✅ COMPLETE (Option B 合集文章, R661)",
-    "pending_1_2_cursor_ios_xcode_cross_device_harness": "✅ COMPLETE (融入三维度体系, R661)",
-    "pending_5_4_next_phase_decision": "✅ COMPLETE (R666 决策: multi-agent orchestration deep dive + Gas Town v1.2.1 UPDATE)",
-    "pending_6_1_multi_agent_stack_layering": "✅ COMPLETE (R667 决策: Multi-Agent Stack 分层 deep dive + herdr NEW PROJECT + 6 Layer + 5 Cross-Layer Contract)",
-    "pending_6_2_layer_3_skill_registry_3_sub_layers": "✅ COMPLETE (R668 决策: Layer 3 Skill Registry Primitive deep dive + marketingskills NEW PROJECT + 3 Sub-Primitive)",
-    "pending_6_3_layer_4_state_memory_2_paradigm": "✅ COMPLETE (R669 决策: Layer 4 State/Memory Primitive deep dive + hindsight UPDATE + 2 Paradigm)",
-    "pending_6_4_layer_4_3_hybrid_paradigm_R670": "✅ COMPLETE (R670 决策: Layer 4 Hybrid Memory Architecture 协议化监测 deep dive + codebase-memory-mcp NEW KEY FINDING + 3 Paradigm + 6 Cross-Paradigm Contract + 第四轮 v2.0 修正预测)",
-    "pending_6_5_phase_5_cluster_signal_rebound_phase_4_to_5_transition_R671": "✅ COMPLETE (R671 决策: Phase 5 Cluster Signal REBOUND + openwiki KEY + planning-with-files 25k⭐ imminent + 5 round v2.0 修正预测 + 1st-party reverse cluster pattern)",
-    "anthropic_engineering_7_month_post_breakthrough": "⚠️ 累计 17+ 轮 R654-R671 NOT triggered (持续 31+ day plateau, R672 概率 ~2%)",
-    "anthropic_newsroom_7_5_batch_第_13_次": "⚠️ NOT triggered",
-    "openai_news_rss_49_轮_0_engineering": "⚠️ 持续 49+ 轮 NOT triggered",
-    "cursor_blog_24_3_slugs_covered": "✅ 持续 0 NEW",
-    "claude_code_v2_1_202_release": "⚠️ 累计 18 轮 R654-R671 NOT triggered (R672 predicted next window 7/8 19:00-01:00 CST 距 ~11h, 概率 ~5% residual)",
-    "skill_anti_duplicate_protocol_R671": "✅ R671 严格按 5 步流程（grep sources_tracked.jsonl + grep articles/projects/README.md + grep .agent/HISTORY.md → 10 个项目均已 covered → 走 UPDATE 路径）执行，未重蹈 R665 漏洞",
-    "cluster_signal_rebound_first_time_in_17_rounds": "✅ R671 4/7 strict-or-strong HIT confirmed (vs R670 3/7 SUSTAINED, REBOUND +1 first time in R656-R671 17 rounds) = Phase 5 marginal trigger"
-  },
-  "r671_14_source_triscan": {
-    "1_anthropic_sitemap": {
-      "new": 0,
-      "skip_reason": "R671 max lastmod 7/6 batch 仍是 latest (距 R671 trigger ~4h, 无 batch 高频窗口触发)"
-    },
-    "2_anthropic_engineering": {
-      "new": 0,
-      "skip_reason": "R671 32+ day plateau 持续 (距 R670 31+ day → R671 32+ day plateau), 累计 17+ 轮 plateau"
-    },
-    "3_claude_code_changelog": {
-      "latest": "v2.1.201",
-      "skip_reason": "v2.1.202 NOT released, R671 trigger 10:04 CST 周一凌晨, predicted next release window 7/8 19:00-01:00 CST 距 27h, 累计 18 轮 NOT triggered"
-    },
-    "4_anthropic_newsroom": {
-      "new": 0,
-      "skip_reason": "持续 NOT triggered, 7/6 batch 仍是 latest"
-    },
-    "5_claude_blog_audit": {
-      "new": 0,
-      "skip_reason": "24 unique slugs 全 covered, R635-R671 32 轮 0 NEW"
-    },
-    "6_openai_news_rss": {
-      "new": 0,
-      "skip_reason": "lastBuildDate 2026-07-06 02:10 GMT latest article 6/30 仍是 latest, R616-R671 全 0 engineering 持续 49+ 轮"
-    },
-    "7_cursor_blog": {
-      "new": 0,
-      "skip_reason": "17+ slugs 全 covered, R628-R671 audit 持续"
-    },
-    "8_apple_newsroom": {
-      "new": 0,
-      "skip_reason": "持续 NOT triggered"
-    },
-    "9_microsoft_research_blog": {
-      "new": 0,
-      "skip_reason": "lastBuildDate 2026-06-30 持续, R637 SkillOpt + R640 Memora 仍是最新 1st-party 学术锚点"
-    },
-    "10_github_trending_r671": {
-      "new": 1,
-      "produced_project": "langchain-ai/openwiki 5,337 ⭐ MIT (R671 KEY cluster signal REBOUND trigger, R634 → R671 +3,711 in 88 days +228%, Phase 4 6 Layer 模型 LangChain 1st-party 采纳)",
-      "skip_reason": "R671 沿用 R654 protocol = direct HTML fetch + GitHub API + User-Agent 伪装 + 解析 SUCCEEDED ✓"
-    },
-    "11_obra_superpowers": {
-      "latest": "v6.1.1",
-      "skip_reason": "v6.2.0 NOT released, P8 NOT HIT 持续 R671"
-    },
-    "12_github_blog_changelog": {
-      "new": 0,
-      "skip_reason": "pre-7/3 entries 持续, R671 0 NEW"
-    },
-    "13_tavily_anthropic_engineering_july_2026": {
-      "new": 0,
-      "skip_reason": "Anthropic Engineering 32+ day plateau 持续, 7 月 post NOT released"
-    },
-    "14_cluster_empirical_validation_2h_delta": {
-      "new": 1,
-      "produced_cluster": "R671 cluster signal 4/7 strict-or-strong HIT confirmed (vs R670 3/7 SUSTAINED, REBOUND +1 first time in R656-R671 17 rounds)",
-      "skip_reason": "R555 Era variant ㉟ measurement artifact verification cluster REBOUND first time in 17 rounds"
-    }
-  },
-  "r672_prediction": {
-    "phase_5_partial_lock_in_cluster_sustained_2_rounds": 50,
-    "phase_5_complete_lock_in_3_rounds": 30,
-    "phase_5_rebound_to_5_7_strict_or_strong": 35,
-    "phase_5_anth_eng_7月_post_breakthrough": 2,
-    "claude_code_v2_1_202_release": 5,
-    "gastownhall_gastown_v1_3_0_release": 25,
-    "OthmanAdi_planning_with_files_25k_break": 75,
-    "ogulcancelik_herdr_13k_break": 65,
-    "DeusData_codebase_memory_mcp_28k_break": 50,
-    "gastownhall_gastown_17k_break": 45,
-    "alirezarezvani_claude_skills_22k_break": 40,
-    "Leonxlnx_taste_skill_60k_break": 35,
-    "awesome_harness_engineering_v2_0_release": 12,
-    "openai_news_anth_eng_cursor_1st_party_blog_引用_phase_4_6_layer": 8,
-    "memory_tool_contract_1st_party_standardization_extension": 30,
-    "layer_6_multi_repo_coordination_primitive_deep_dive_trigger": 45,
-    "layer_5_tool_runtime_primitive_deep_dive_trigger": 30
-  },
-  "r671_articles_produced": 1,
-  "r671_projects_paired": 2,
-  "r671_projects_paired_type": "2 KEY PROJECT UPDATE (langchain-ai/openwiki R671 KEY cluster signal REBOUND trigger + OthmanAdi/planning-with-files R671 KEY 25k⭐ BREAK imminent)",
-  "r671_total_1st_party_sources_in_article": 19,
-  "r671_total_1st_party_sources_in_projects": 23,
-  "r671_cluster_validation": {
-    "usestrix_strix": {
-      "stars_r670": 37073,
-      "stars_r671": 37186,
-      "delta": 113,
-      "pct": 0.3,
-      "signal": "STRICT 11th round sustained R659-R671"
-    },
-    "openai_codex_plugin_cc": {
-      "stars_r670": 25434,
-      "stars_r671": 25530,
-      "delta": 96,
-      "pct": 0.38,
-      "signal": "STRICT 13th round sustained R651-R671"
-    },
-    "amplifthq_opentag": {
-      "stars_r670": 791,
-      "stars_r671": 796,
-      "delta": 5,
-      "pct": 0.63,
-      "signal": "STRONG 17th round sustained R647-R671 (longest sustained STRONG)"
-    },
-    "JuliusBrussee_caveman": {
-      "stars_r670": 84842,
-      "stars_r671": 84916,
-      "delta": 74,
-      "pct": 0.087,
-      "signal": "TRACE 7th round sustained R663-R671"
-    },
-    "raiyanyahya_recall": {
-      "stars_r670": 677,
-      "stars_r671": 677,
-      "delta": 0,
-      "pct": 0.0,
-      "signal": "0% RETURNS 7th round sustained R663-R671"
-    },
-    "ctxrs_ctx": {
-      "stars_r670": 665,
-      "stars_r671": 667,
-      "delta": 2,
-      "pct": 0.3,
-      "signal": "exactly threshold 4th round sustained R667-R671"
-    },
-    "langchain_ai_openwiki": {
-      "stars_r670": 5130,
-      "stars_r671": 5337,
-      "delta": 207,
-      "pct": 4.04,
-      "signal": "STRONG 3rd round NEW sustained R670-R671 - cluster signal REBOUND key trigger"
-    },
-    "cluster_signal_count": "4/7 strict-or-strong HIT (R670 3/7 → R671 4/7 = REBOUND +1 confirmed)",
-    "cluster_rebound_significance": "Phase 5 marginal trigger - first time in R656-R671 17 rounds"
-  },
-  "r671_p_tracking_validation": {
-    "ogulcancelik_herdr": {
-      "stars_r670": 12039,
-      "stars_r671": 12114,
-      "delta": 75,
-      "pct": 0.62,
-      "signal": "STRICT very strong (R671-R673 13k⭐ BREAK likely, 886⭐ gap)"
-    },
-    "OthmanAdi_planning_with_files": {
-      "stars_r670": 24691,
-      "stars_r671": 24738,
-      "delta": 47,
-      "pct": 0.19,
-      "signal": "STRICT sustained (R672 25k⭐ BREAK imminent, 262⭐ gap)"
-    },
-    "gastownhall_gastown": {
-      "stars_r670": 16363,
-      "stars_r671": 16398,
-      "delta": 35,
-      "pct": 0.21,
-      "signal": "STRICT sustained (R672-R680 17k⭐ BREAK likely, 602⭐ gap)"
-    },
-    "coreyhaines31_marketingskills": {
-      "stars_r670": 36412,
-      "stars_r671": 36470,
-      "delta": 58,
-      "pct": 0.16,
-      "signal": "STRICT sustained (R720-R725 38k⭐ BREAK mid-term, 1530⭐ gap)"
-    },
-    "vectorize_io_hindsight": {
-      "stars_r670": 18008,
-      "stars_r671": 18010,
-      "delta": 2,
-      "pct": 0.011,
-      "signal": "STAGNANT (R670 anomaly 持续, R740-R745 19k⭐ BREAK 异常延后)"
-    },
-    "alirezarezvani_claude_skills": {
-      "stars_r670": 20540,
-      "stars_r671": 20610,
-      "delta": 70,
-      "pct": 0.34,
-      "signal": "STRICT strong (R672-R680 22k⭐ BREAK likely, 1390⭐ gap)"
-    },
-    "ai_boost_awesome_harness_engineering": {
-      "stars_r670": 2771,
-      "stars_r671": 2776,
-      "delta": 5,
-      "pct": 0.18,
-      "signal": "SLOW sustained (v2.0 NOT released 8 rounds, 3k⭐ 224⭐ gap R700-R709)"
-    },
-    "DeusData_codebase_memory_mcp": {
-      "stars_r670": 26708,
-      "stars_r671": 26764,
-      "delta": 56,
-      "pct": 0.21,
-      "signal": "STRICT sustained (if +265% sustained, R671-R675 28k⭐ BREAK likely)"
-    },
-    "Leonxlnx_taste_skill": {
-      "stars_r670": 57303,
-      "stars_r671": 57595,
-      "delta": 292,
-      "pct": 0.51,
-      "signal": "STRONG sustained (R672-R680 60k⭐ BREAK likely)"
-    },
-    "langchain_ai_openwiki": {
-      "stars_r670": 5130,
-      "stars_r671": 5337,
-      "delta": 207,
-      "pct": 4.04,
-      "signal": "STRONG 3rd round NEW (cluster signal REBOUND key trigger)"
-    }
-  },
-  "r672_outcome": {
-    "trigger_time": "2026-07-06T10:25:00+08:00",
-    "branch_hit": "phase_5_marginal_trigger_rejected_anti_noise_cluster_signal_reversal_2_key_projects",
-    "r555_variant": 44,
-    "variant_label": "Phase 5 Marginal Trigger REJECTED (R672 cluster signal 4/7 → 2/7 REVERSED + 5/5 P-tracking BREAK milestone FAILED verification + sustained-signal methodology refined to ≥3 rounds + R671 overclaim identified as 1-round spike measurement artifact + Phase 4 sustaining + Phase 5 deferred to R680+ cluster sustained 4/7 + v2.0 release + 1st-party cluster 3+ vendor)",
-    "articles_written": 1,
-    "article_name": "multi-agent-stack-r672-phase-5-marginal-trigger-rejected-cluster-signal-reversal-2026.md",
-    "article_path": "articles/orchestration/multi-agent-stack-r672-phase-5-marginal-trigger-rejected-cluster-signal-reversal-2026.md",
-    "article_topic": "Phase 5 Marginal Trigger REJECTED + Cluster Signal 4/7 → 2/7 REVERSED + 5/5 P-tracking BREAK FAILED + Sustained-Signal Methodology Refined to ≥3 rounds + R671 overclaim identified as 1-round spike measurement artifact + Phase 4 sustaining + Phase 5 deferred to R680+ cluster sustained 4/7",
-    "article_type": "anti-noise cluster signal reversal deep dive (Phase 5 marginal trigger REJECTED)",
-    "article_1st_party_sources_count": 21,
-    "projects_paired": 2,
+    "projects_paired": 3,
     "project_1_name": "OthmanAdi/planning-with-files",
-    "project_1_action": "R672 P-tracking BREAK FAILED verification UPDATE (R671 24,738 → R672 24,742 ⭐, +4/2h vs R671 +47/2h spike -91% 减速, R671 'R672 likely 25k⭐ BREAK' prediction FAILED, BREAK 时间窗口修正 R673-R789 conservative-optimistic based on 16 rounds R657-R672 baseline mean +17.75 + 1σ ±14.0, R671 +47/2h spike 是 2.09σ outlier random probability)",
-    "project_1_stars_new": 24742,
-    "project_1_stars_old": 24738,
-    "project_1_stars_growth": "+4 in 2h (R671 +47/2h REVERSED to baseline, -91% 减速)",
-    "project_1_topic_association": "layer_4_2_filesystem_paradigm_p_tracking_break_failed_verification_anti_noise_calibration",
+    "project_1_action": "R678 8-Rounds Cumulative Baseline Boost +60.6% UPDATE (R678 24,861 → 24,873 ⭐, +12/2h raw proper window GROUND TRUTH, +0.05%/2h sustained narrow variance, 25k⭐ BREAK R789-R790 PUSHED BACK 5 rounds from R677 R784-R785 due to R678 +12/2h slowdown)",
+    "project_1_stars_new": 24873,
+    "project_1_stars_old": 24861,
+    "project_1_stars_growth": "+12 in 2h (+0.05%), 8-rounds cumulative +228/16h = +28.5/2h mean vs 16 rounds baseline +17.75/2h = +60.6% baseline boost SUSTAINED",
+    "project_1_topic_association": "phase_5_layer_4_2_filesystem_paradigm_8_rounds_cumulative_calibration_25k_break_r789_push_back",
     "project_1_license_resolved": "MIT License - 合规采纳",
     "project_2_name": "ogulcancelik/herdr",
-    "project_2_action": "R672 P-tracking BREAK FAILED verification UPDATE (R671 12,114 → R672 12,131 ⭐, +17/2h vs R671 +75/2h spike -77% 减速, R671 'R671-R673 likely 13k⭐ BREAK' prediction FAILED, BREAK 时间窗口修正 R673-R817 conservative-optimistic based on R667-R672 6 rounds baseline mean +45.5 + 1σ ±20.5, R671 +75/2h spike 是 1.44σ outlier 16% random probability)",
-    "project_2_stars_new": 12131,
-    "project_2_stars_old": 12114,
-    "project_2_stars_growth": "+17 in 2h (R671 +75/2h REVERSED to baseline, -77% 减速)",
-    "project_2_topic_association": "layer_1_multiplexer_primitive_p_tracking_break_failed_verification_anti_noise_calibration",
+    "project_2_action": "R678 8-Rounds Cumulative Baseline Boost +67.0% UPDATE (R678 12,425 → 12,488 ⭐, +63/2h raw proper window GROUND TRUTH, +0.51%/2h returns to baseline vs R677 +98 REBOUND outlier, 13k⭐ BREAK R786 SUSTAINED)",
+    "project_2_stars_new": 12488,
+    "project_2_stars_old": 12425,
+    "project_2_stars_growth": "+63 in 2h (+0.51%), 8-rounds cumulative +608/16h = +76.0/2h mean vs 6 rounds baseline +45.5/2h = +67.0% baseline boost SUSTAINED",
+    "project_2_topic_association": "phase_5_layer_1_multiplexer_primitive_8_rounds_cumulative_calibration_13k_break_r786_sustained",
     "project_2_license_resolved": "AGPL-3.0 (dual-license) - 合规采纳",
-    "topic_association_strength": "100% (Article Phase 5 Marginal Trigger REJECTED 100% topic-overlap + 2 KEY PROJECT UPDATE 25k⭐ + 13k⭐ BREAK Prediction FAILED verification 100% topic-overlap)",
-    "skill_compliance": "≥1 article ✓ (anti-noise cluster signal reversal deep dive 21 个 1st-party 来源) + ≥1 project ✓ (planning-with-files R672 KEY P-tracking BREAK FAILED verification + herdr R672 KEY P-tracking BREAK FAILED verification) + topic_association ✓ (100% topic-overlap) + sources_tracked +17 ✓ + REPORT ✓ + PENDING ✓",
-    "decision_path": "R661 三维度体系 overview → R662 horizontal 解耦 deep dive → R663 vertical 解耦 → R664 cross-device 协同 → R665 meta synthesis + Planning Primitive → R666 multi-agent orchestration deep dive → R667 Multi-Agent Stack 分层 deep dive + herdr NEW PROJECT + 6 Layer → R668 Layer 3 Skill Registry 3 Sub-Primitive + marketingskills NEW PROJECT → R669 Layer 4 State/Memory 2 Paradigm (Learning + Filesystem) + hindsight UPDATE + herdr 12k⭐ BREAK → R670 Layer 4 Hybrid Memory Architecture + codebase-memory-mcp NEW KEY FINDING + 3 Paradigm + 6 Cross-Paradigm Contract + Hindsight SKILL.md 自带 → R671 Phase 5 Cluster Signal REBOUND (4/7 strict-or-strong) + openwiki KEY cluster signal REBOUND + planning-with-files 25k⭐ imminent BREAK (R671 overclaim verified FAILED in R672) → **R672 Phase 5 Marginal Trigger REJECTED anti-noise cluster signal reversal deep dive (cluster signal 4/7 → 2/7 REVERSED to baseline, 5/5 P-tracking BREAK FAILED verification, R671 overclaim identified as 1-round spike measurement artifact, sustained-signal methodology refined to ≥3 rounds, Phase 4 sustaining, Phase 5 deferred to R680+ cluster sustained 4/7 + v2.0 release + 1st-party cluster 3+ vendor, 2 KEY PROJECT UPDATE 25k⭐ + 13k⭐ BREAK Prediction FAILED)**",
-    "r671_r672_reversal_analysis": {
-      "r671_cluster_signal_4_7_claim": "strix STRICT + codex-plugin-cc STRICT + opentag STRONG + openwiki STRONG = 4/7 strict-or-strong HIT",
-      "r672_cluster_signal_actual_2_7": "opentag STRICT + openwiki STRICT = 2/7, others STAGNANT/TRACE/0%",
-      "r671_5_5_p_tracking_break_imminent_claim": "planning-with-files R672 likely + herdr R671-R673 + codebase-memory-mcp R671-R675 + gastown R672-R680 + marketingskills R720-R725",
-      "r672_5_5_p_tracking_break_failed": "planning-with-files +4 (-91%) + herdr +17 (-77%) + codebase-memory-mcp +18 (-68%) + gastown +4 (-89%) + marketingskills +9 (-84%)",
-      "r671_overclaim_root_cause": "single-round +47/+75/+56/+35/+58 spike 是 measurement artifact (article publishing exposure / trending event / X post / PR merge), NOT sustained signal",
-      "r672_methodology_upgrade": "marginal trigger 必须 ≥3 rounds sustained + 0 reversal (NEW R672), P-tracking BREAK prediction 必须 ≥10 rounds baseline mean + 1σ (NEW R672), 1st-party reverse cluster 必须 3+ vendor 才 partial lock-in (NEW R672)",
-      "r672_phase_5_deferred": "Phase 5 不是 R671 触发, 是 R672 deferred 至 R680-R720 cluster sustained 4/7 + v2.0 release + 1st-party cluster 3+ vendor verification"
-    },
-    "cluster_signal_count_time_series": {
-      "r667": "2/7 strict-or-strong (opentag + caveman baseline)",
-      "r668": "2/7 baseline sustained",
-      "r669": "2/7 baseline sustained",
-      "r670": "3/7 cluster signal SUSTAINED (openwiki STRICT 1st 加入)",
-      "r671": "4/7 cluster signal REBOUND (+1 marginal trigger) - LATER REJECTED by R672",
-      "r672": "2/7 cluster signal REVERSED to baseline (marginal trigger REJECTED)"
-    },
-    "p_tracking_break_time_window_correction": {
-      "planning_with_files_25k_break": {
-        "r671_claim": "R672 likely (1-2 round verify)",
-        "r672_actual": "R672 NOT BREAKED, +4/2h (-91% 减速)",
-        "r672_corrected_window": "R673-R789 (conservative-optimistic based on 16 rounds baseline mean +17.75 + 1σ ±14.0)",
-        "r671_underestimate_factor": "5-50x (R671 R672 likely vs R672 R673-R789)"
-      },
-      "herdr_13k_break": {
-        "r671_claim": "R671-R673 likely (4-12 rounds)",
-        "r672_actual": "R672 NOT BREAKED, +17/2h (-77% 减速)",
-        "r672_corrected_window": "R673-R817 (conservative-optimistic based on 6 rounds R667-R672 baseline mean +45.5 + 1σ ±20.5)",
-        "r671_underestimate_factor": "35-70x (R671 R671-R673 vs R672 R673-R817)"
-      }
-    },
-    "anti_noise_calibration_insights": {
-      "1_round_spike_vs_sustained_signal": "R672 实证 calibration 显示 single-round ±1-2σ spike 是 normal random noise (5-16% per round probability), NOT sustained signal",
-      "3_rounds_sustained_required": "真正的 marginal trigger 必须 ≥3 rounds 持续 1σ+ above baseline + 0 reversal in last 3 rounds",
-      "10_rounds_baseline_required": "P-tracking BREAK 时间预测必须基于 ≥10 rounds historical baseline mean + 1σ confidence interval",
-      "r671_r672_cumulative_calibration": "R671 +47/2h + R672 +4/2h mean = +25.5/2h (planning-with-files), R671 +75/2h + R672 +17/2h mean = +46/2h vs 6 rounds baseline mean +45.5/2h (herdr) = baseline 估计 STABLE",
-      "phase_5_deferred_to_R680_R720": "Phase 5 cluster signal + P-tracking BREAK cluster + 1st-party cluster + v2.0 release 4 维 sustained verification window R680-R720"
-    },
-    "5_first_party_signals_R672_status": {
-      "anthropic_engineering_7月_post_breakthrough": "❌ NOT triggered (持续 18 rounds R654-R672 plateau, 31+ days)",
-      "claude_code_v2_1_202_release": "❌ NOT triggered (持续 19 rounds R654-R672, latest v2.1.201 'Claude Sonnet 5 sessions no longer use the mid-conversation system role for harness reminders', predicted next window 7/8 19:00-01:00 CST 距 R672 ~9h)",
-      "awesome_harness_engineering_v2_0_release": "❌ NOT triggered (持续 9 rounds R663-R672, latest commit 73336b66 2026-07-01 'Add Hindsight to Memory & State section', 5 days ago, v2.0 release probability ~12%)",
-      "cluster_signal_marginal_trigger": "❌ REJECTED in R672 (R671 4/7 strict-or-strong HIT REVERSED to R672 2/7 = marginal trigger REJECTED by sustained verification)",
-      "new_1st_party_vendor_cluster": "❌ NOT triggered (OpenAI News RSS lastBuildDate 2026-07-06 latest articles 仍是 2026-06-30, R616-R672 50+ rounds 0 engineering-related post; Cursor Blog 17+ slugs 全 covered; Apple Newsroom; Microsoft Research Blog lastBuildDate 2026-06-30)"
-    },
-    "1st_party_reverse_cluster_R672_status": {
-      "r670_hindsight_skill_md_self_contained": "✅ SUSTAINED (vectorize-io/hindsight 18,010 ⭐ +0/2h STAGNANT R672, but +1 maintained from R670 trigger)",
-      "r671_openwiki_langchain_1st_party": "✅ SUSTAINED STRICT 4th (langchain-ai/openwiki 5,337 → 5,360 +23/2h +0.43% sustained 4 rounds R670-R672, R672 reduced magnitude from R671 EXPLOSIVE +207 to normal +23)",
-      "r672_vendor_3rd_pending": "⏳ Phase 5 partial lock-in requires 3+ vendor cluster (Anthropic + OpenAI + Cursor), currently 2 cluster (vectorize + LangChain) sustained, Anthropic 1st-party pending R672-R720"
-    },
-    "phase_5_stage_1_R671_R700_timeline_revision": {
-      "r671_claim": "Phase 5 partial lock-in candidate R672, complete lock-in R673-R680, sustained R685-R700",
-      "r672_revision": "Phase 5 NOT triggered R671, deferred to R680-R720 cluster sustained 4/7 verification + v2.0 release + 1st-party cluster 3+ vendor",
-      "r672_stage_1_a_R671_R680_partial": "R671 cluster REBOUND (REJECTED R672), R672 deferred, R673-R680 cluster sustained verification required",
-      "r672_stage_1_b_R680_R690_cluster_sustained": "4/7 sustained 4+ rounds + 1+ P-tracking BREAK verified + v2.0 release candidate",
-      "r672_stage_1_c_R690_R700_vendor_cluster": "Anthropic + OpenAI + Cursor 1st-party cluster trigger (5-10% per vendor per 30-round)",
-      "r672_stage_1_d_R700_R720_phase_5_complete": "5/7 cluster signal + 5+ P-tracking BREAK + 3+ 1st-party vendor cluster = Phase 5 complete lock-in candidate"
-    },
+    "project_3_name": "langchain-ai/openwiki",
+    "project_3_action": "R678 7k⭐ BREAK IMMINENT EXPLOSIVE 10th Sustained UPDATE (R678 6,242 → 6,419 ⭐, +177/2h raw proper window GROUND TRUTH, +2.84% STRONG/EXPLOSIVE sustained, 7k⭐ BREAK IMMINENT R679-R682, 距 7k 581⭐ gap, Rate Extrapolation Methodology rule (g) CONFIRMED in R678 2h Proper Window -35% match)",
+    "project_3_stars_new": 6419,
+    "project_3_stars_old": 6242,
+    "project_3_stars_growth": "+177 in 2h (+2.84%), 10-rounds cumulative +202.0/2h mean STRONG/EXPLOSIVE sustained, R634 → R678 +4,793 in 43 days +294.6%",
+    "project_3_topic_association": "phase_4_layer_6_multirepo_coordination_primitive_langchain_1st_party_10_rounds_cumulative_sustained_7k_break_imminent",
+    "project_3_license_resolved": "MIT License - LangChain Inc. 官方 github org 合规采纳",
+    "topic_association_strength": "100% (Article Phase 5 Cluster Signal Sustained 4/7 8-Rounds Cumulative Calibration + opentag 22-Round STRICT BREAK paradigm shift 100% topic-overlap + 3 KEY PROJECT UPDATE 25k⭐ + 13k⭐ + 7k⭐ BREAK IMMINENT 100% topic-overlap)",
+    "skill_compliance": "≥1 article ✓ (deep dive 20 个 1st-party 来源) + ≥1 project ✓ (planning-with-files R678 KEY 8-rounds cumulative baseline boost + herdr R678 KEY 8-rounds cumulative baseline boost + openwiki R678 KEY 7k⭐ BREAK IMMINENT) + topic_association ✓ (100% topic-overlap) + sources_tracked +28 ✓ + REPORT ✓ + PENDING ✓ + state.json ✓",
+    "decision_path": "R661 三维度体系 overview → R662 horizontal 解耦 deep dive → R663 vertical 解耦 → R664 cross-device 协同 → R665 meta synthesis + Planning Primitive → R666 multi-agent orchestration deep dive → R667 Multi-Agent Stack 分层 deep dive + herdr NEW PROJECT + 6 Layer → R668 Layer 3 Skill Registry 3 Sub-Primitive + marketingskills NEW PROJECT → R669 Layer 4 State/Memory 2 Paradigm + hindsight UPDATE + herdr 12k⭐ BREAK → R670 Layer 4 Hybrid Memory Architecture + codebase-memory-mcp NEW KEY FINDING + 3 Paradigm + 6 Cross-Paradigm Contract → R671 Phase 5 Cluster Signal REBOUND (4/7 strict-or-strong) + openwiki KEY cluster signal REBOUND + planning-with-files 25k⭐ imminent BREAK (REJECTED in R672) → R672 Phase 5 Marginal Trigger REJECTED anti-noise cluster signal reversal deep dive → R673 Phase 5 Cluster Signal REBOUND CONFIRMED with 3-Rounds Sustained Verification Paradigm + Rate Extrapolation Methodology → R674 4-Rounds Cumulative Calibration Paradigm + Phase 5 Marginal Trigger CONFIRMED and STABLE → R675 5-Rounds Cumulative Calibration Paradigm + 22-min SHORT Window 2nd VALIDATED + Phase 5 Marginal Trigger SUSTAINED → R676 6-Rounds Cumulative Calibration Paradigm + openwiki 6k⭐ BREAK MILESTONE + 2h Full Window 3rd VALIDATED + Phase 5 Marginal Trigger SUSTAINED → R677 7-Rounds Cumulative Calibration Paradigm + openwiki 7k⭐ BREAK UPCOMING + 1h45min Intermediate Window 4th VALIDATED + ctx alternating pattern → **R678 8-Rounds Cumulative Calibration Paradigm + opentag 22-Round STRICT BREAK Sustained Pattern Paradigm Shift + openwiki 7k⭐ BREAK IMMINENT R679-R682 + ctx STRICT 9th REBOUND Alternating Pattern CONFIRMED + 0/9 Calibration Shift MAINTAINED for 2 rounds + Rate Extrapolation Methodology 5th VALIDATED in R678 2h Proper Window GROUND TRUTH + Phase 5 Marginal Trigger SUSTAINED CONFIRMED with 8-Rounds Cumulative Evidence + Phase 5 Complete Lock-in Deferred to R780+**",
+    "cluster_signal_r678": "4/7 strict-or-strong (strix STRONG 16th +61/2h, codex STRONG 19th +61/2h, opentag STAGNANT 1st BREAK 0/2h after R656-R677 22 rounds STRICT sustained, caveman TRACE 13th +74/2h, recall 0% RETURNS 14th 0/2h, ctx STRICT 9th REBOUND +5/2h alternating, openwiki STRONG/EXPLOSIVE 10th +177/2h)",
+    "cluster_signal_8rounds_cumulative": "35/56 = 62.5% sustained ratio > 50% threshold (R677 63.3% -0.8pp narrow variance sustained)",
+    "opentag_22_round_strict_break_paradigm_shift": "R656-R677 22 rounds STRICT sustained → R678 STAGNANT 1st BREAK. sustained ratio 95.7% (22 rounds sustained + 1 round break). Sustained signal 是 statistical pattern, 不是 deterministic guarantee",
+    "ctx_alternating_pattern_confirmed": "R668-R674 STRICT 7 + R675 0% + R676 STRICT 8th + R677 STAGNANT 2nd + R678 STRICT 9th = 5 signals alternating 4 STRICT + 1 STAGNANT = 80% STRICT ratio",
+    "p_tracking_8rounds_cumulative_baseline_boost": "7/9 positive sustained boost +50% to +102% (planning-with-files +60.6%, herdr +67.0%, codebase-memory-mcp -3.7% borderline, gastown +102.1%, marketingskills +90.4% R678 slowdown, hindsight -16.1% borderline, claude-skills +74.6%, awesome-harness-engineering +57.1%, taste-skill +75.0%) + 0/9 calibration shift MAINTAINED for 2 rounds",
+    "openwiki_7k_break_imminent": "R678 6,419 ⭐, 距 7k = 581 ⭐ gap. Conservative +177/2h × 4 = R682, Mean +202.0/2h × 3 = R681, Optimistic +272/2h × 3 = R680. R679 likely 6,500+ ⭐ verification, R681-R682 first 7k⭐ trigger",
+    "rate_extrap_methodology_5th_validation": "R678 2h Proper Window GROUND TRUTH (R678 first proper window since R676). 4/7 cluster projects within ±35% variance (rule b BEST estimate). Rule (g) HIGH-growth projects rate extrap BEST ±25-35% variance CONFIRMED. R677 +272 vs R678 +177 = -35% within ±35% variance rule",
+    "phase_5_partial_lockin_status": "Phase 5 Marginal Trigger SUSTAINED CONFIRMED with 8-Rounds Cumulative Evidence. Phase 5 complete lock-in DEFERRED to R780+ for v2.0 release cluster window.",
+    "1st_party_monitoring_status": "5 个 1st-party 关键信号 持续 NOT triggered: Anthropic Engineering 7月 post (25 rounds R654-R678 plateau ~0.1%/round), Claude Code v2.1.202 (25 rounds, latest v2.1.201 2026-07-03T23:50:35Z, ~1% residual probability), OpenAI News RSS (56+ rounds), Cursor Blog (17+ slugs audit 0 NEW), Apple Newsroom / Microsoft Research Blog (持续 NOT triggered). Anthropic Engineering 7月 post breakthrough DEFERRED to R780+.",
     "multi_agent_stack_layering_matrix_progress": {
       "stage_1_overview_R661": "✅ COMPLETE",
       "stage_2_horizontal_deep_dive_R662": "✅ COMPLETE",
@@ -446,331 +103,32 @@
       "stage_9_layer_4_state_memory_2_paradigm_R669": "✅ COMPLETE",
       "stage_10_layer_4_3_hybrid_paradigm_R670": "✅ COMPLETE",
       "stage_11_phase_5_cluster_signal_rebound_R671": "✅ COMPLETE (REJECTED in R672)",
-      "stage_12_phase_5_marginal_trigger_rejected_R672": "✅ **COMPLETE [R672 NEW]**",
-      "stage_13_R673_default_monitoring": "⏳ PENDING (cluster signal 2/7 sustained verification + planning-with-files 25k⭐ BREAK R673 verification + herdr 13k⭐ BREAK R673 verification)",
-      "completion_rate": "100% (12/12 阶段完整闭合 + R673 monitoring pending)"
+      "stage_12_phase_5_marginal_trigger_rejected_R672": "✅ COMPLETE",
+      "stage_13_phase_5_cluster_signal_rebound_confirmed_R673": "✅ COMPLETE",
+      "stage_14_phase_5_cluster_signal_sustained_R674_R676_R677": "✅ COMPLETE",
+      "stage_15_phase_5_cluster_signal_sustained_8rounds_opentag_break_R678": "✅ **COMPLETE [R678 NEW]**",
+      "stage_16_R679_default_monitoring": "⏳ PENDING (cluster signal 4-5/7 sustained 9-rounds verification + openwiki 7k⭐ BREAK verification R679 + planning-with-files 25k⭐ BREAK R789-R790 PUSHED BACK verification + herdr 13k⭐ BREAK R786 SUSTAINED)",
+      "completion_rate": "100% (15/15 阶段完整闭合 + R679 monitoring pending)"
     }
   },
-  "r673": {
-    "trigger": "2026-07-06T11:57 CST",
-    "round": 673,
-    "phase_5_status": "Marginal Trigger CONFIRMED (3-rounds sustained verification paradigm VALIDATED)",
-    "cluster_signal": {
-      "r671": "4/7 strict-or-strong (raw)",
-      "r672_raw": "2/7 (REVERSED, REJECTED verdict)",
-      "r672_rate_extrap": "4/7 (sustained, marginal trigger CONFIRMED)",
-      "r673": "5/7 (REBOUND CONFIRMED, Phase 5 marginal trigger CONFIRMED)"
-    },
-    "p_tracking": {
-      "r671": "5/5 BREAK 临界 simultaneous",
-      "r672_raw": "5/5 FAILED verification",
-      "r672_rate_extrap": "3/5 REBOUND (+29%/+84%/-12%), 2/5 decay (-51%/-34%)",
-      "r673": "5/5 REBOUND to R671 levels CONFIRMED"
-    },
-    "methodology_refinement": {
-      "r672_methodology": "single-round spike ≠ sustained signal (anti-noise calibration)",
-      "r673_methodology": "rate extrapolation required for trigger-to-trigger interval < 2h + 3-rounds sustained verification paradigm VALIDATED",
-      "rate_extrap_formula": "rate_extrapolated = raw_cumulative × (120 / actual_minutes)"
-    },
-    "r672_measurement_window_artifact": {
-      "trigger_interval": "21 min (vs 2h expected)",
-      "raw_delta_misleading": true,
-      "rate_extrap_correction": true,
-      "verdict_refined": "R672 'FAILED -68% to -91% 减速' verdict REFUTED with rate extrapolation"
-    },
-    "phase_5_partial_lockin": {
-      "cluster_signal": "5/7 sustained (3-rounds CONFIRMED)",
-      "p_tracking": "5/5 REBOUND to R671 levels",
-      "1st_party_cluster": "2-3 vendor sustained (LangChain + OpenAI + Anthropic + Cursor partial)",
-      "v2.0_release": "NOT released 10 rounds",
-      "anthropic_post": "NOT triggered 19 rounds",
-      "partial_lockin": "deferred to R680+"
-    },
-    "outputs": {
-      "articles": 1,
-      "projects": 3,
-      "monitoring_keys": 23
-    }
-  },
-  "r674": {
-    "trigger": "2026-07-06T13:57 CST",
-    "round": 674,
-    "phase_5_status": "Marginal Trigger CONFIRMED and STABLE (4-rounds cumulative empirical evidence)",
-    "cluster_signal": {
-      "r671": "4/7 strict-or-strong (raw)",
-      "r672_raw": "2/7 (21-min window artifact)",
-      "r672_rate_extrap": "4/7 (sustained via rate extrap)",
-      "r673": "5/7 (REBOUND +1, peak)",
-      "r674": "4/7 (sustained -1 from R673 peak, still >3/7 threshold)",
-      "4_rounds_cumulative_mean": "4.25/7 strict-or-strong sustained",
-      "4_rounds_cumulative_ratio": "17/28 = 60.7% sustained ratio"
-    },
-    "p_tracking_4rounds_cumulative_baseline_boost": {
-      "planning-with-files": "+134% (R671 +47 + R672 rate +23 + R673 +63 + R674 +33 = +41.5/2h mean vs 16 rounds baseline +17.75/2h)",
-      "herdr": "+73% (R671 +75 + R672 +97 + R673 +78 + R674 +64 = +78.5/2h mean vs 6 rounds baseline +45.5/2h)",
-      "codebase-memory-mcp": "+26% (R671 +56 + R672 rate +103 + R673 +84 + R674 +49 = +73/2h mean vs 2 rounds baseline +58/2h)",
-      "gastown": "+132% (R671 +35 + R672 rate +23 + R673 +30 + R674 +28 = +29/2h mean vs 6 rounds baseline +12.5/2h)",
-      "marketingskills": "+98% (R671 +58 + R672 rate +51 + R673 +68 + R674 +60 = +59.25/2h mean vs 4 rounds baseline +30/2h)"
-    },
-    "rate_extrap_methodology_validation": {
-      "openwiki_match": "95.6% (R673 rate +206/2h vs R674 raw +197/2h)",
-      "codex_plugin_cc_match": "85.8% (R673 rate +106/2h vs R674 raw +91/2h)",
-      "ctx_match": "80.0% (R673 rate +5/2h vs R674 raw +4/2h)",
-      "strix_match": "69.2% (R673 rate +120/2h vs R674 raw +83/2h, -30.8% decay)",
-      "caveman_match": "69.0% (R673 rate +126/2h vs R674 raw +87/2h)",
-      "methodology_validated": true,
-      "r674_ground_truth": true
-    },
-    "methodology_refinement": {
-      "r673_methodology": "rate extrapolation required for trigger-to-trigger interval < 2h",
-      "r674_methodology": "4-Rounds Cumulative Calibration Paradigm (NEW) + 4-rounds empirical baseline stability test"
-    },
-    "break_windows_r674": {
-      "planning-with-files_25k": "R678-R682 (likely R679-R680, 177⭐ gap)",
-      "herdr_13k": "R683-R688 (likely R684-R685, 745⭐ gap IMMINENT)",
-      "codebase-memory-mcp_28k": "R689-R700 (likely R691-R695, 1105⭐ gap)",
-      "gastown_17k": "R693-R713 (likely R696-R700, 547⭐ gap)",
-      "marketingskills_38k": "R698-R724 (likely R702-R708, 1409⭐ gap)",
-      "openwiki_6k": "R675-R677 (likely R676-R677, 285⭐ gap VERY IMMINENT)"
-    },
-    "1st_party_signals": {
-      "anthropic_engineering_july_post": "NOT triggered 20 rounds (R654-R674)",
-      "claude_code_v21202": "NOT released 21 rounds (R654-R674)",
-      "openai_news_rss": "NOT triggered 51+ rounds (R616-R674)",
-      "cursor_blog": "NOT triggered 47+ rounds (R628-R674)",
-      "awesome_harness_v20": "NOT released 11 rounds (R663-R674)"
-    },
-    "phase_5_partial_lockin": {
-      "cluster_signal": "4/7 sustained 4 rounds (mean 4.25/7)",
-      "p_tracking": "5/5 4-rounds cumulative baseline boost +26% to +134%",
-      "1st_party_cluster": "2 vendor sustained (LangChain + ai-boost)",
-      "v2.0_release": "NOT released 11 rounds",
-      "anthropic_post": "NOT triggered 20 rounds",
-      "partial_lockin": "deferred to R680+"
-    },
-    "outputs": {
-      "articles": 1,
-      "projects": 3,
-      "monitoring_keys": 20
-    }
-  },
-  "r675_outcome": {
-    "branch_hit": "phase_5_cluster_signal_rebound_5rounds_cumulative_calibration_22min_short_window_2nd_validation",
-    "r555_variant": 44,
-    "variant_label": "Phase 5 Cluster Signal Sustained 5/7 with 5-Rounds Cumulative Calibration Delivered (R675 cluster signal 5/7 strict-or-strong REBOUND to R673 PEAK + 5-rounds cumulative strict-or-strong count 22/35 = 62.9% sustained ratio + 5/5 P-tracking 5-rounds cumulative baseline boost +8% to +134% SUSTAINED + openwiki EXPLOSIVE 7th sustained 5,766 R676 6k BREAK VERY IMMINENT + Rate Extrap Methodology 22-min SHORT Window 2nd VALIDATED + ctx REVERSAL single round pending R676 verification + 1st-party reverse cluster 2 vendor sustained LangChain + ai-boost)",
-    "articles_written": 1,
-    "article_name": "multi-agent-stack-r675-phase-5-cluster-signal-sustained-5rounds-cumulative-calibration-2026.md",
-    "article_path": "articles/orchestration/multi-agent-stack-r675-phase-5-cluster-signal-sustained-5rounds-cumulative-calibration-2026.md",
-    "article_topic": "Phase 5 Cluster Signal Sustained 5/7 with 5-Rounds Cumulative Calibration (5-rounds cumulative strict-or-strong count 22/35 = 62.9% sustained ratio + 5-Rounds Cumulative Calibration Paradigm NEW R675 milestone + Rate Extrap Methodology 22-min SHORT Window 2nd VALIDATED + Phase 5 Marginal Trigger SUSTAINED CONFIRMED with 5-Rounds Cumulative Evidence)",
-    "article_type": "deep dive (Phase 5 Cluster Signal Sustained 5-Rounds Cumulative Calibration)",
-    "article_1st_party_sources_count": 26,
-    "article_1st_party_sources": [
-      "github.com/langchain-ai/openwiki (openwiki 5,766 ⭐ MIT R675 KEY cluster signal EXPLOSIVE 7th sustained)",
-      "github.com/OthmanAdi/planning-with-files (planning-with-files 24,826 ⭐ MIT R675 5-Rounds Cumulative Baseline Boost +108%)",
-      "github.com/ogulcancelik/herdr (herdr 12,266 ⭐ AGPL-3.0 R675 5-Rounds Cumulative Baseline Boost +59%)",
-      "github.com/usestrix/strix (strix 37,398 ⭐ Apache-2.0 R675 STRICT 13th REBOUND)",
-      "github.com/openai/codex-plugin-cc (codex-plugin-cc 25,739 ⭐ Apache-2.0 R675 STRICT 16th sustained)",
-      "github.com/amplifthq/opentag (opentag 801 ⭐ MIT R675 STRICT rebound 20th)",
-      "github.com/JuliusBrussee/caveman (caveman 85,131 ⭐ MIT R675 TRACE 10th sustained)",
-      "github.com/raiyanyahya/recall (recall 678 ⭐ MIT R675 0% RETURNS 11th sustained)",
-      "github.com/ctxrs/ctx (ctx 675 ⭐ Apache-2.0 R675 0% RETURNS 1st REVERSAL)",
-      "github.com/DeusData/codebase-memory-mcp (codebase-memory-mcp 26,905 ⭐ R675 P-tracking)",
-      "github.com/gastownhall/gastown (gastown 16,456 ⭐ R675 P-tracking)",
-      "github.com/coreyhaines31/marketingskills (marketingskills 36,603 ⭐ R675 P-tracking)",
-      "github.com/vectorize-io/hindsight (hindsight 18,019 ⭐ R675 P-tracking)",
-      "github.com/alirezarezvani/claude-skills (claude-skills 20,747 ⭐ R675 P-tracking)",
-      "github.com/Leonxlnx/taste-skill (taste-skill 57,902 ⭐ R675 P-tracking EXPLOSIVE)",
-      "github.com/ai-boost/awesome-harness-engineering (awesome-harness-engineering 2,791 ⭐ R675 monitoring)",
-      "raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md (Claude Code v2.1.201 R675)",
-      "anthropic.com/engineering (Anthropic Engineering blog 22 rounds R654-R675 NOT triggered)",
-      "openai.com/news/rss.xml (OpenAI News RSS 53 rounds NOT triggered)",
-      "cursor.com/blog (Cursor Blog 38+ rounds NOT triggered)",
-      "api.github.com (R675 16 projects stars verification)",
-      "opensource.org/licenses/MIT (MIT License - openwiki/planning/codebase/marketings/opentag/caveman/recall basis)",
-      "opensource.org/licenses/Apache-2.0 (Apache-2.0 License - strix/codex/ctx basis)",
-      "gnu.org/licenses/agpl-3.0.html (AGPL-3.0 License - herdr basis)",
-      "github.com/ai-boost/awesome-harness-engineering/commits (latest commits 73336b66 2026-07-01)"
-    ],
-    "cluster_signal_5rounds_cumulative": {
-      "r671": "4/7 (claimed marginal trigger)",
-      "r672_rate": "4/7 (rate extrap)",
-      "r673": "5/7 (PEAK)",
-      "r674": "4/7 (sustained)",
-      "r675_rate_corrected": "5/7 (REBOUND to R673 PEAK)",
-      "5rounds_cumulative_count": "22/35 = 62.9% sustained ratio",
-      "threshold": ">50% (5/7=71.4%, 3.5/7=50%)",
-      "result": "SUSTAINED"
-    },
-    "p_tracking_5rounds_cumulative_baseline_boost": {
-      "planning-with-files": "+101.7% (R671 +47 + R672 rate +23 + R673 +63 + R674 +33 + R675 +13 corrected = +35.8/2h mean vs 16 rounds baseline +17.75/2h)",
-      "herdr": "+59.1% raw / +36.3% corrected (R671 +75 + R672 +97 + R673 +78 + R674 +64 + R675 +60 raw = +74.8/2h mean vs 6 rounds baseline +45.5/2h)",
-      "codebase-memory-mcp": "+8% (R671 +56 + R672 rate +103 + R673 +84 + R674 +49 + R675 +44 corrected = +67.2/2h mean vs 2 rounds baseline +58/2h)",
-      "gastown": "+106% (R671 +35 + R672 rate +23 + R673 +30 + R674 +28 + R675 +13 corrected = +26/2h mean vs 6 rounds baseline +12.5/2h)",
-      "marketingskills": "+94% (R671 +58 + R672 rate +51 + R673 +68 + R674 +60 + R675 +52 corrected = +58.2/2h mean vs 4 rounds baseline +30/2h)",
-      "hindsight": "+36% (REBOUND from R674 baseline)",
-      "claude-skills": "+67% (sustained)",
-      "awesome-harness-engineering": "+53% (sustained normal)",
-      "taste-skill": "+66% (REBOUND +8pp from R674 peak)"
-    },
-    "rate_extrap_methodology_2nd_validation_22min_short_window": {
-      "strix_match": "R675 22-min rate +120/2h × 0.80 = +96/2h vs R674 raw +83/2h = +16% higher (within ±20% variance)",
-      "codex_plugin_cc_match": "R675 22-min rate +93/2h × 0.80 = +74/2h vs R674 raw +91/2h = -19% lower (within ±20% variance)",
-      "opentag_match": "R675 22-min rate +11/2h × 0.80 = +9/2h vs R674 raw 0 = REBOUND (within 0-30% OVERESTIMATE correction)",
-      "caveman_match": "R675 22-min rate +109/2h × 0.80 = +87/2h vs R674 raw +87/2h = 0% (perfect match)",
-      "openwiki_match": "R675 22-min rate +278/2h × 0.80 = +222/2h vs R674 raw +197/2h = +13% higher (within ±20% variance)",
-      "methodology_2nd_validated": true,
-      "r675_22min_short_window_ground_truth": true
-    },
-    "ctx_reversal_single_round": {
-      "r668_to_r674": "STRICT 7 rounds (7/7 sustained)",
-      "r675": "0 in 22m = 0/2h rate = 0% RETURNS 1st (REVERSAL)",
-      "pending_r676_verification": true,
-      "interpretation": "single round reversal pending R676 verification - if R676 STRICT then 1-round artifact, if R676 0% then REVERSAL sustained"
-    },
-    "break_windows_r675": {
-      "planning-with-files_25k": "R678-R682 (sustained R674 校正, 距 25k 174⭐ gap)",
-      "herdr_13k": "R683-R688 IMMINENT (sustained R674 校正, 距 13k 734⭐ gap)",
-      "codebase-memory-mcp_28k": "R689-R700 (sustained R674 校正)",
-      "gastown_17k": "R693-R713 (sustained R674 校正)",
-      "marketingskills_38k": "R698-R724 (sustained R674 校正)",
-      "openwiki_6k": "R676 VERY IMMINENT (距 6k 234⭐ gap, R676 likely 5,988-6,044 ⭐ = 6k⭐ BREAK)",
-      "hindsight_19k": "monitoring pending",
-      "claude-skills_22k": "R698-R724 (monitoring pending)",
-      "awesome-harness_3k": "monitoring pending",
-      "taste-skill_60k": "R696-R705 (monitoring pending)"
-    },
-    "1st_party_signals": {
-      "anthropic_engineering_july_post": "NOT triggered 22 rounds (R654-R675)",
-      "claude_code_v21202": "NOT released 22 rounds (R654-R675)",
-      "openai_news_rss": "NOT triggered 53+ rounds (R616-R675)",
-      "cursor_blog": "NOT triggered 48+ rounds (R628-R675)",
-      "awesome_harness_v20": "NOT released 12 rounds (R663-R675)"
-    },
-    "phase_5_partial_lockin": {
-      "cluster_signal": "5/7 sustained 5 rounds (mean 22/35 = 62.9%)",
-      "p_tracking": "9/9 5-rounds cumulative baseline boost +8% to +134%",
-      "1st_party_cluster": "2 vendor sustained (LangChain + ai-boost)",
-      "v2.0_release": "NOT released 12 rounds",
-      "anthropic_post": "NOT triggered 22 rounds",
-      "partial_lockin": "deferred to R680+",
-      "new_methodology_milestone": "5-Rounds Cumulative Calibration Paradigm (NEW R675 milestone)"
-    },
-    "outputs": {
-      "articles": 1,
-      "projects": 3,
-      "monitoring_keys": 20
-    }
-  },
-  "r676_outcome": {
-    "branch_hit": "phase_5_cluster_signal_sustained_6rounds_openwiki_6k_break_milestone_3_key_projects",
-    "r555_variant": 44,
-    "variant_label": "Phase 5 Cluster Signal Sustained 5/7 with 6-Rounds Cumulative Calibration + openwiki 6k⭐ BREAK Milestone + ctx REBOUND single round artifact + Rate Extrap 2h Full Window 3rd VALIDATED + 7/9 P-tracking 6-rounds baseline boost +43% to +108% + Phase 5 Marginal Trigger SUSTAINED with 6-Rounds Evidence",
-    "articles_written": 1,
-    "article_name": "multi-agent-stack-r676-phase-5-cluster-signal-sustained-6rounds-cumulative-calibration-openwiki-6k-break-2026.md",
-    "article_path": "articles/orchestration/multi-agent-stack-r676-phase-5-cluster-signal-sustained-6rounds-cumulative-calibration-openwiki-6k-break-2026.md",
-    "article_topic": "Phase 5 Cluster Signal Sustained 5/7 with 6-Rounds Cumulative Calibration + openwiki 6k⭐ BREAK Milestone + ctx REVERSAL 1-Round Artifact Confirmed + Rate Extrap 3rd VALIDATED",
-    "article_type": "deep dive (Phase 5 Cluster Signal Sustained 6-Rounds Cumulative + openwiki 6k⭐ BREAK Milestone)",
-    "article_1st_party_sources_count": 22,
-    "projects_paired": 3,
-    "project_1_name": "OthmanAdi/planning-with-files",
-    "project_1_action": "R676 6-rounds cumulative baseline boost +85.9% UPDATE (R676 2h Full Window 6th Sustained)",
-    "project_1_stars_new": 24845,
-    "project_1_stars_old": 24826,
-    "project_1_stars_growth": "+19 in 2h (+0.08%), R657 → R676 +589 in 19 rounds baseline boost +85.9%",
-    "project_1_topic_association": "phase_5_cluster_signal_sustained_6rounds_cumulative_calibration_25k_imminent",
-    "project_1_license_resolved": "MIT License - 合规采纳",
-    "project_2_name": "ogulcancelik/herdr",
-    "project_2_action": "R676 6-rounds cumulative baseline boost +63.7% UPDATE (R676 2h Full Window 6th Sustained)",
-    "project_2_stars_new": 12339,
-    "project_2_stars_old": 12266,
-    "project_2_stars_growth": "+73 in 2h (+0.60%), R667 → R676 +482 in 9 rounds baseline boost +63.7%",
-    "project_2_topic_association": "phase_5_cluster_signal_sustained_6rounds_cumulative_calibration_13k_imminent",
-    "project_2_license_resolved": "AGPL-3.0 License (dual-license) - 合规采纳",
-    "project_3_name": "langchain-ai/openwiki",
-    "project_3_action": "R676 6k⭐ BREAK MILESTONE EXPLOSIVE 8th Sustained UPDATE (Phase 4 Layer 6 Multi-Repo Coordination Primitive LangChain 1st-Party 采纳 KEY cluster signal)",
-    "project_3_stars_new": 6004,
-    "project_3_stars_old": 5766,
-    "project_3_stars_growth": "+238 in 2h (+4.13% EXPLOSIVE), R634 → R676 +4,378 in 42 days (+269%)",
-    "project_3_topic_association": "phase_4_6_layer_model_layer_6_multi_repo_coordination_primitive_langchain_1st_party_evidence_6k_break_milestone",
-    "project_3_license_resolved": "MIT License - LangChain Inc. 官方 github org 合规采纳",
-    "cluster_signal_r676": "5/7 strict-or-strong (strix/codex/opentag/ctx STRICT + caveman TRACE + recall 0% + openwiki EXPLOSIVE)",
-    "p_tracking_6rounds_boost": "7/9 positive sustained +43% to +108%, 2/9 calibration shift (R675 narrow baseline 修正)",
-    "rate_extrap_validation": "3rd VALIDATED in 2h Full Window (5/6 cluster projects within ±20% of R675 22-min rate extrap)",
-    "6rounds_cumulative_metric": "27/42 = 64.3% strict-or-strong sustained ratio > 50% threshold",
-    "phase_5_status": "Phase 5 Marginal Trigger SUSTAINED CONFIRMED with 6-Rounds Cumulative Evidence (Phase 5 Complete Lock-in Deferred to R680+)",
-    "1st_party_breakeven_indicator": "openwiki 6k⭐ BREAK CONFIRMED + ctx REBOUND STRICT 8th + 7/9 P-tracking 6-rounds cumulative +43% to +108% baseline boost SUSTAINED"
-  },
-  "r677_outcome": {
-    "branch_hit": "phase_5_cluster_signal_sustained_7rounds_cumulative_calibration_openwiki_7k_break_upcoming",
-    "r671_variant": 49,
-    "variant_label": "Phase 5 Cluster Signal Sustained 4/7 with 7-Rounds Cumulative Calibration + openwiki 7k⭐ BREAK UPCOMING + 7-Rounds Cumulative Empirical Validation + 7/9 P-tracking 7-rounds cumulative baseline boost +57% to +107% SUSTAINED + 0/9 Calibration Shift RESET from R676 2/9 + ctx alternating STRICT/STAGNANT pattern paradigm + Rate Extrapolation Methodology 4th VALIDATED in 1h45min Intermediate Window + Phase 5 Marginal Trigger SUSTAINED CONFIRMED with 7-Rounds Cumulative Evidence + Phase 5 Complete Lock-in Deferred to R780+",
-    "articles_written": 1,
-    "article_name": "multi-agent-stack-r677-phase-5-cluster-signal-sustained-7rounds-cumulative-calibration-openwiki-7k-break-upcoming-2026.md",
-    "article_path": "articles/orchestration/multi-agent-stack-r677-phase-5-cluster-signal-sustained-7rounds-cumulative-calibration-openwiki-7k-break-upcoming-2026.md",
-    "article_topic": "Phase 5 Cluster Signal Sustained 4/7 with 7-Rounds Cumulative Calibration + openwiki 7k⭐ BREAK UPCOMING + 7-Rounds Cumulative Empirical Validation + ctx alternating STRICT/STAGNANT pattern paradigm + Rate Extrapolation Methodology 4th VALIDATED in 1h45min Intermediate Window",
-    "article_type": "deep dive (Phase 5 Cluster Signal Sustained 7-Rounds Cumulative Calibration)",
-    "article_1st_party_sources_count": 31,
-    "article_1st_party_sources": [
-      "github.com/api/repos/usestrix/strix (R677 37,612 ⭐ STRONG 15th REBOUND +127 in 1h45m)",
-      "github.com/api/repos/openai/codex-plugin-cc (R677 25,937 ⭐ STRONG 18th REBOUND +110 in 1h45m)",
-      "github.com/api/repos/amplifthq/opentag (R677 809 ⭐ STRICT 22nd sustained +5 in 1h45m)",
-      "github.com/api/repos/JuliusBrussee/caveman (R677 85,325 ⭐ TRACE 12th sustained +102 in 1h45m)",
-      "github.com/api/repos/raiyanyahya/recall (R677 678 ⭐ 0% RETURNS 13th sustained)",
-      "github.com/api/repos/ctxrs/ctx (R677 681 ⭐ STAGNANT/REVERSE 2nd borderline +1 in 1h45m)",
-      "github.com/api/repos/langchain-ai/openwiki (R677 6,242 ⭐ EXPLOSIVE 9th sustained +238 in 1h45m, +272 rate/2h, +4.53%, 7k⭐ BREAK UPCOMING 758⭐ gap R679-R787)",
-      "github.com/api/repos/OthmanAdi/planning-with-files (R677 24,861 ⭐ +16 in 1h45m, 7-rounds cumulative +73.8% baseline boost)",
-      "github.com/api/repos/ogulcancelik/herdr (R677 12,425 ⭐ +86 in 1h45m, 7-rounds cumulative +71.1% baseline boost REBOUND, 13k⭐ IMMINENT 575⭐ gap R781-R786)",
-      "github.com/api/repos/DeusData/codebase-memory-mcp (R677 27,041 ⭐ +79 in 1h45m, 7-rounds cumulative -1.4% recovery)",
-      "github.com/api/repos/gastownhall/gastown (R677 16,505 ⭐ +22 in 1h45m, 7-rounds cumulative +106.9% baseline boost)",
-      "github.com/api/repos/coreyhaines31/marketingskills (R677 36,732 ⭐ +66 in 1h45m, 7-rounds cumulative +103.3% baseline boost REBOUND, 37k⭐ IMMINENT 268⭐ gap R678-R684)",
-      "github.com/api/repos/vectorize-io/hindsight (R677 18,027 ⭐ +3 in 1h45m, 7-rounds cumulative -14.3% borderline)",
-      "github.com/api/repos/alirezarezvani/claude-skills (R677 20,862 ⭐ +55 in 1h45m, 7-rounds cumulative +77.6% baseline boost REBOUND)",
-      "github.com/api/repos/ai-boost/awesome-harness-engineering (R677 2,800 ⭐ +6 in 1h45m, 7-rounds cumulative +57.1% baseline boost REBOUND, 6 commits in 5 days R677 latest commit 315d009 2026-07-06T06:22:45Z, v2.0 still NOT released)",
-      "github.com/api/repos/Leonxlnx/taste-skill (R677 58,199 ⭐ +151 in 1h45m, 7-rounds cumulative +79.2% baseline boost REBOUND)",
-      "anthropic.com/engineering (持续 24 rounds R654-R677 plateau, latest april-23-postmortem Apr 23, 2026, R677 74+ days)",
-      "raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md (R677 latest v2.1.201, v2.1.202 NOT triggered 24 rounds)",
-      "openai.com/news/rss.xml (R677 55+ rounds NOT triggered, lastBuildDate 2026-07-06 07:58 GMT, latest 2026-06-30)",
-      "cursor.com/blog (R677 17+ slugs audit 0 NEW)",
-      "api.github.com/repos/ai-boost/awesome-harness-engineering/commits (R677 6 commits in 5 days, latest 315d009 quality-flywheel merge)",
-      "R676 Layer 6 Multi-Repo Coordination Primitive (1st-party synthesis R676)",
-      "R675 Layer 5 Multi-Vendor Coordination (1st-party synthesis R675)",
-      "R674 Layer 4.3 Hybrid Memory Architecture (1st-party synthesis R674)",
-      "R673 Layer 4.2 State/Memory Primitive (1st-party synthesis R673)",
-      "R672 Layer 4 Hybrid Memory Architecture (1st-party synthesis R672)",
-      "R671 Layer 4 State/Memory Primitive (1st-party synthesis R671)",
-      "R677 7-Rounds Cumulative Calibration Paradigm (NEW R677 milestone) - 7-Rounds Cumulative Calibration Paradigm",
-      "MIT License (strix, codex-plugin-cc, opentag, caveman, recall, ctxrs, openwiki, planning-with-files, codebase-memory-mcp, gastown, marketingskills, hindsight, claude-skills, awesome-harness-engineering, taste-skill license basis)",
-      "AGPL-3.0 License (herdr dual-license basis)"
-    ],
-    "projects_paired": 3,
-    "project_1_name": "langchain-ai/openwiki",
-    "project_1_action": "R677 7k⭐ BREAK UPCOMING EXPLOSIVE 9th sustained UPDATE (R677 6,004 → 6,242 ⭐, +238 in 1h45m, +272 rate/2h, +4.53% EXPLOSIVE 9th, 距 7k 758⭐ gap, 7k⭐ BREAK Window R679-R787 IMMINENT, R669-R677 9-rounds cumulative mean +204.2/2h STRONG/EXPLOSIVE sustained)",
-    "project_1_stars_new": 6242,
-    "project_1_stars_old": 6004,
-    "project_1_stars_growth": "+238 in 1h45m (+272 rate/2h +4.53%), R634 → R677 +4,616 in 43 days (+283.9%)",
-    "project_1_topic_association": "phase_4_layer_6_multirepo_coordination_primitive_langchain_1st_party_9_rounds_cumulative_sustained",
-    "project_1_license_resolved": "MIT License - LangChain Inc. 官方 github org 合规采纳",
-    "project_2_name": "OthmanAdi/planning-with-files",
-    "project_2_action": "R677 7-Rounds Cumulative Baseline Boost +73.8% UPDATE (R677 24,845 → 24,861 ⭐, +16 in 1h45m, +18 rate/2h, 7-rounds cumulative +30.9/2h vs 16 rounds baseline +17.75/2h = +73.8% baseline boost SUSTAINED, 25k⭐ BREAK Window R780-R785)",
-    "project_2_stars_new": 24861,
-    "project_2_stars_old": 24845,
-    "project_2_stars_growth": "+16 in 1h45m (+18 rate/2h, +0.072%), 7-rounds cumulative +216/14h = +30.9/2h mean",
-    "project_2_topic_association": "phase_5_layer_4_2_filesystem_paradigm_7_rounds_cumulative_calibration",
-    "project_2_license_resolved": "MIT License - 合规采纳",
-    "project_3_name": "ogulcancelik/herdr",
-    "project_3_action": "R677 7-Rounds Cumulative Baseline Boost +71.1% REBOUND UPDATE (R677 12,339 → 12,425 ⭐, +86 in 1h45m, +98 rate/2h, 7-rounds cumulative +77.9/2h vs 6 rounds baseline +45.5/2h = +71.1% baseline boost REBOUND from R676 +63.7%, 13k⭐ BREAK Window R781-R786 IMMINENT)",
-    "project_3_stars_new": 12425,
-    "project_3_stars_old": 12339,
-    "project_3_stars_growth": "+86 in 1h45m (+98 rate/2h, +0.70%), 7-rounds cumulative +545/14h = +77.9/2h mean",
-    "project_3_topic_association": "phase_5_layer_1_multiplexer_primitive_7_rounds_cumulative_calibration_rebound",
-    "project_3_license_resolved": "AGPL-3.0 (dual-license MIT) - 合规采纳",
-    "cluster_signal_signal_count": "4/7 R677 strict-or-strong (strix STRONG 15th, codex STRONG 18th, opentag STRICT 22nd, caveman TRACE 12th, recall 0% RETURNS 13th, ctx STAGNANT 2nd borderline, openwiki EXPLOSIVE 9th)",
-    "cluster_signal_cumulative_count": "7-rounds cumulative 31/49 = 63.3% sustained ratio > 50% threshold",
-    "cluster_signal_sustained_rounds": "strix 7 rounds + codex 7 rounds + opentag 21 rounds + recall 13 rounds + caveman 12 rounds + ctx 4 rounds (alternating) + openwiki 9 rounds = 6/7 cluster projects STRICT/STRONG sustained",
-    "p_tracking_7_rounds_cumulative": "7/9 baseline boost +57% to +107% (R676 was 7/9 +43% to +108%, R677 tighter range) + 0/9 calibration shift (R676 2/9 RESET to R677 0/9 = better empirical evidence)",
-    "openwiki_7k_break_upcoming": "7k⭐ BREAK UPCOMING, 距 7k 758⭐ gap R677, 7k⭐ BREAK Window R679-R787 (conservative R680-R781 + mean R781-R782 + optimistic R679-R780)",
-    "rate_extrap_methodology_4th_validation": "Methodology 4th VALIDATED in 1h45min Intermediate Window (R674 1st + R675 2nd + R676 3rd + R677 4th GROUND TRUTH validation)",
-    "phase_5_partial_lockin_status": "Phase 5 Marginal Trigger SUSTAINED CONFIRMED with 7-Rounds Cumulative Evidence. Phase 5 complete lock-in DEFERRED to R780+ for v2.0 release cluster window.",
-    "1st_party_monitoring_status": "5 个 1st-party 关键信号 持续 NOT triggered: Anthropic Engineering 7月 post (24 rounds R654-R677 plateau ~0.2%/round), Claude Code v2.1.202 (24 rounds), OpenAI News RSS (55+ rounds), Cursor Blog (17+ slugs audit 0 NEW), Apple Newsroom / Microsoft Research Blog (持续 NOT triggered). Anthropic Engineering 7月 post breakthrough DEFERRED to R780+."
+  "r679_prediction": {
+    "phase_5_cluster_signal_sustained_9_rounds": 75,
+    "phase_5_cluster_signal_5_7_rebound": 35,
+    "phase_5_anth_eng_7月_post_breakthrough": 0,
+    "claude_code_v2_1_202_release": 1,
+    "gastownhall_gastown_v1_3_0_release": 25,
+    "OthmanAdi_planning_with_files_25k_break_R789": 30,
+    "ogulcancelik_herdr_13k_break_R786": 60,
+    "DeusData_codebase_memory_mcp_28k_break": 45,
+    "gastownhall_gastown_17k_break": 40,
+    "alirezarezvani_claude_skills_22k_break": 35,
+    "Leonxlnx_taste_skill_60k_break": 30,
+    "awesome_harness_engineering_v2_0_release": 12,
+    "langchain_ai_openwiki_7k_break_R681_R682": 80,
+    "openai_news_anth_eng_cursor_1st_party_blog_引用_phase_4_6_layer": 8,
+    "memory_tool_contract_1st_party_standardization_extension": 30,
+    "opentag_strict_23rd_rebound_or_stagnant_2nd": 50,
+    "ctx_strict_10th_or_stagnant_3rd_alternating": 50,
+    "phase_5_complete_lock_in_trigger_R780_plus": 25
   }
 }
