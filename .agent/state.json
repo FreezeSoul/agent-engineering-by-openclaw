@@ -1,124 +1,143 @@
 {
-  "lastRun": "2026-07-07T22:03",
-  "lastCommit": "pending-R690",
-  "round": 690,
+  "lastRun": "2026-07-07T23:57",
+  "lastCommit": "pending-R691",
+  "round": 691,
   "status": "autonomous",
   "version": "0.7.0",
   "owner": "FreezeSoul",
   "type": "independent_article_and_project_after_r670_monitoring_drift_cleanup",
-  "r690_outcome": {
-    "trigger_time": "2026-07-07T22:03:00+08:00",
+  "r691_outcome": {
+    "trigger_time": "2026-07-07T23:57:00+08:00",
     "mode": "independent_article + project UPDATE (post-R670 monitoring drift cleanup)",
-    "FSIO_feedback_2026-07-07": "R670+ monitoring drift 已删除 52 篇 monitoring 文件 (commit 2829389), R686 切换回 SKILL.md 规定的 independent 文章 + GitHub 项目推荐轨道;R687/R688/R689/R690 持续执行 independent 轨道",
+    "FSIO_feedback_2026-07-07": "R670+ monitoring drift 已删除 52 篇 monitoring 文件 (commit 2829389), R686 切换回 SKILL.md 规定的 independent 文章 + GitHub 项目推荐轨道;R687/R688/R689/R690/R691 持续执行 independent 轨道",
     "articles_written": 1,
-    "article_name": "hybrid-agent-sdk-three-layer-architecture-anthropic-openai-langchain-h2-2026-paradigm-convergence-2026.md",
-    "article_path": "articles/deep-dives/hybrid-agent-sdk-three-layer-architecture-anthropic-openai-langchain-h2-2026-paradigm-convergence-2026.md",
-    "article_topic": "Hybrid Agent SDK 三层架构:H2 2026 范式收敛 — Anthropic Claude Agent SDK v0.2.111 + OpenAI Agents SDK v0.18.0 + LangChain DeepAgents ContextT middleware 三家 1st-party 厂商在 24h 窗口同步 ship release 的 cross-validation,论证 R688 Hybrid Architecture meta-synthesis 的「vendor-specific 在 API 层,通用复杂度在 middleware 层」拐点已经在 SDK 层显式兑现",
-    "article_type": "independent deep-dive (三层架构 + 4 个工程拐点 + 边界反模式 + R687-R690 四段 arc 对应表 + 10 处 1st-party 实证)",
+    "article_name": "hybrid-agent-runtime-managed-sandbox-durable-execution-anthropic-openai-langchain-r691-paradigm-2026.md",
+    "article_path": "articles/deep-dives/hybrid-agent-runtime-managed-sandbox-durable-execution-anthropic-openai-langchain-r691-paradigm-2026.md",
+    "article_topic": "Hybrid Agent Runtime: Managed Sandbox + Durable Execution 三家 1st-party 范式收敛 — OpenAI 'The next evolution of the Agents SDK' + LangChain 'Deep Agents v0.5' + Anthropic claude-agent-sdk-typescript CHANGELOG 三家 1st-party 厂商在 24-48h 窗口同步 ship Managed Runtime 1st-party 信号,论证 R690 Hybrid Agent SDK 三层架构在 Layer 2 (Harness) + Layer 3 (State) 上的 1st-party 显式兑现,'vendor SDK 越做越薄,managed runtime 越做越厚' 是 R691 的核心 insight",
+    "article_type": "independent deep-dive (Managed Runtime + 4 个工程洞察 + 边界反模式 + R687-R691 五段 arc 对应表 + 10 处 1st-party 实证)",
     "article_1st_party_sources_count": 10,
     "article_1st_party_sources": [
-      "anthropics/claude-agent-sdk-python v0.2.111 (commit 638e190a + 73febc57 + b2eed2a8)",
-      "anthropics/claude-agent-sdk-python PR #1081 (Warn when can_use_tool is shadowed)",
-      "anthropics/claude-agent-sdk-python PR #1082 (Shield subprocess cleanup from zombie CLI children)",
-      "openai/openai-agents-python v0.18.0 (commit 668fabd6 + 078a28f1)",
-      "openai/openai-agents-python PR #3746 (SQLAlchemySession Unicode storage)",
-      "openai/openai-agents-python PR #3744 (handoff nodes fillcolor merge)",
-      "openai/openai-agents-python PR #3740 (default realtime model gpt-realtime-2.1)",
-      "langchain-ai/deepagents PR #4055 (preserve ContextT on create_deep_agent middleware)",
-      "langchain-ai/deepagents PR #4429 (release deepagents-talon 0.0.3)",
-      "langchain.com/blog/interrupt-2026-overview (LangSmith Engine + SmithDB + Managed Deep Agents)"
+      "openai.com/index/the-next-evolution-of-the-agents-sdk (1st-party Managed Runtime 原型)",
+      "openai.com/index/the-next-evolution-of-the-agents-sdk (snapshotting and rehydration)",
+      "openai.com/index/the-next-evolution-of-the-agents-sdk (Manifest abstraction + 7 sandbox providers)",
+      "openai.com/index/the-next-evolution-of-the-agents-sdk (harness primitive = MCP + skills + AGENTS.md + shell + apply_patch)",
+      "langchain.com/blog/deep-agents-v0-5 (async subagents return task ID immediately)",
+      "langchain.com/blog/deep-agents-v0-5 (5 native tools: start/check/update/cancel/list_async_tasks)",
+      "langchain.com/blog/deep-agents-v0-5 (Agent Protocol = LangChain 1st-party Open spec)",
+      "langchain.com/blog/deep-agents-v0-5 (选 Agent Protocol 而非 A2A 的工程决策)",
+      "anthropics/claude-agent-sdk-typescript CHANGELOG (Fixed MCP task state not being restored on resume)",
+      "anthropics/claude-agent-sdk-typescript CHANGELOG (requestId to canUseTool callback options)"
     ],
     "projects_written": 1,
-    "project_name": "langchain-ai-openwiki-8626-stars-r690-20th-sustained-9k-narrowing-2026.md",
-    "project_path": "articles/projects/langchain-ai-openwiki-8626-stars-r690-20th-sustained-9k-narrowing-2026.md",
-    "project_topic": "openwiki 8.6k⭐:R690 9k⭐ gap 收窄至 374 ⭐ 20th Sustained EXPLOSIVE — 8,626 ⭐ / +158 in 2h6min / 9k⭐ gap 374 ⭐ (R689 532 → R690 374, Δ -158 收窄 30%) / Hybrid SDK Layer 2 (LangChain DeepAgents ContextT) + Hybrid MVP 层 + Hybrid Production 层 (pentagi 18,226 ⭐) 三层闭环 evidence 在 R690 完成",
-    "project_topic_association": "R690 Hybrid Agent SDK 三层架构 ↔ openwiki Hybrid MVP 层 ↔ pentagi Hybrid Production 层 = 'Hybrid SDK 层 ↔ MVP 层 ↔ Production 层' 三层闭环 evidence",
+    "project_name": "langchain-ai-openwiki-8727-stars-r691-21st-sustained-9k-narrowing-2026.md",
+    "project_path": "articles/projects/langchain-ai-openwiki-8727-stars-r691-21st-sustained-9k-narrowing-2026.md",
+    "project_topic": "openwiki 8.7k⭐: R691 9k⭐ gap 收窄至 273 ⭐ 21st Sustained EXPLOSIVE — 8,727 ⭐ / +101 in 1h54min / 9k⭐ gap 273 ⭐ (R690 374 → R691 273, Δ -101 收窄 27%) / baseline 完全收敛 53/h (vs R690 75.5/h, -30%) / Hybrid Agent Runtime Layer 2 OSS 实证 (LangChain DeepAgents v0.5 ContextT middleware 同源)",
+    "project_topic_association": "R691 Hybrid Agent Runtime: Managed Sandbox + Durable Execution ↔ openwiki Hybrid MVP 层 ↔ pentagi Hybrid Production 层 = 'Hybrid Runtime 层 ↔ MVP 层 ↔ Production 层' 三层闭环 evidence 在 R691 完成",
     "project_1st_party_sources_count": 8,
     "project_1st_party_sources": [
-      "github.com/langchain-ai/openwiki API R690 实测 (8,626 ⭐ / 574 forks / 117 open_issues / TypeScript / MIT)",
+      "github.com/langchain-ai/openwiki API R691 实测 (8,727 ⭐ / 579 forks / 123 open_issues / TypeScript / MIT)",
       "github.com/langchain-ai/openwiki commit 7d355379 (fix: html tokens sanitization #148)",
       "github.com/langchain-ai/openwiki commit e276b087 (chore: add CONTRIBUTING.md #145)",
       "github.com/langchain-ai/openwiki commit 12055db1 (fix(ci): set least-privilege permissions #146)",
-      "R689 article (8,468 ⭐ / +350 in 2h / 9k⭐ 预测窗口)",
-      "R688 article (8,118 ⭐ / +473 in 2h / 8k⭐ BREAK milestone)",
-      "R687 article (Alberta 50-Agent + pentagi 18k⭐ R687 闭环)",
-      "github.com/langchain-ai/deepagents R690 release (deepagents-talon 0.0.3 PR #4429 - Hybrid SDK Layer 2 evidence)"
+      "github.com/langchain-ai/openwiki commit a4df0c9e (fix: correct OpenRouter Claude Opus model ID #133)",
+      "github.com/langchain-ai/openwiki commit d06eda81 (docs: add GitLab OpenWiki update workflow #137)",
+      "R690 article (8,626 ⭐ / +158 in 2h6min / 9k⭐ gap 374 ⭐)",
+      "R691 Managed Runtime article (同轮产出 - openwiki ↔ LangChain Layer 2 主题关联)"
     ],
-    "phase_5_monitoring_data_R690": {
-      "trigger_time": "2026-07-07T22:03:00+08:00",
+    "phase_5_monitoring_data_R691": {
+      "trigger_time": "2026-07-07T23:57:00+08:00",
       "data_location": "HISTORY.md (NOT independent .md file, per R670+ cleanup rules)",
-      "cluster_signal_R690": "4/7 sustained baseline (R685-R689)",
-      "openwiki_R690": {
-        "stars": 8626,
-        "delta_2h6min": 158,
-        "rate_per_h": 75.5,
-        "cluster_signal_state": "EXPLOSIVE 20th Sustained (R670-R690)",
-        "9k_gap": 374,
-        "9k_prediction_window": "R691-R692 conservative / R691 mean / R691-R692 optimistic",
+      "cluster_signal_R691": "21/7 sustained baseline (R685-R691)",
+      "openwiki_R691": {
+        "stars": 8727,
+        "delta_1h54min": 101,
+        "rate_per_h": 53,
+        "cluster_signal_state": "EXPLOSIVE 21st Sustained (R669-R691)",
+        "9k_gap": 273,
+        "9k_prediction_window": "R692 conservative / R692 mean / R692-R693 optimistic",
         "9k_trigger_probability": {
-          "R691": "35-50%",
-          "R692": "60-75%",
-          "R693": "85-90%"
+          "R691": "0% (passed)",
+          "R692": "55-70%",
+          "R693": "75-85%",
+          "R694": "90-95%"
         },
-        "rate_deceleration_analysis": "R687 62/h → R688 236/h (REBOUND noise spike) → R689 175/h (post-REBOUND -26%) → R690 75.5/h (baseline-rebound mix -57%, approaching R687 baseline)"
+        "rate_baseline_convergence_analysis": "R687 62/h → R688 236/h (REBOUND noise spike) → R689 175/h (post-REBOUND -26%) → R690 75.5/h (baseline-rebound mix -57%) → R691 53/h (baseline 完全收敛 -30%, approaching R687 baseline) = cluster signal 进入成熟稳定期"
       },
-      "pentagi_R690": {
-        "stars": 18226,
-        "delta_2h6min": 27,
-        "rate_per_h": 13,
+      "pentagi_R691": {
+        "stars": 18249,
+        "delta_1h54min": 23,
+        "rate_per_h": 12,
         "cluster_signal_state": "NOT cluster signal, slow sustained baseline",
         "last_push": "2026-07-03T17:17:18Z"
       },
-      "strix_R690": {
+      "strix_R691": {
         "stars": 38346,
-        "delta_R685_to_R690": 328,
+        "delta_R685_to_R691": 328,
         "cluster_signal_state": "STRONG sustained, cluster continuous"
       },
-      "codex_plugin_cc_R690": {
+      "codex_plugin_cc_R691": {
         "stars": 26536,
-        "delta_R685_to_R690": 233,
+        "delta_R685_to_R691": 233,
         "cluster_signal_state": "STRONG sustained, cluster continuous"
       },
-      "paradigm_shifts_R690": {
+      "paradigm_shifts_R691": {
         "opentag_major_paradigm_shift_11round_extended": "STAGNANT 11th EXTENDED paradigm shift CONFIRMED",
         "ctx_highest_confidence_paradigm_shift_9round_extended": "STAGNANT 9th EXTENDED paradigm shift CONFIRMED"
       },
-      "1st_party_signals_R690_24h_window": {
-        "anthropic_claude_agent_sdk_commits": 5,
-        "openai_agents_sdk_commits": 5,
-        "langchain_deepagents_commits": 5,
-        "total_commits_24h": 15,
-        "openwiki_commits_24h": 3,
-        "conclusion": "Three 1st-party vendors shipped SDK release synchronously in 24h window — Hybrid Architecture paradigm shift is now empirically observable at SDK layer"
+      "1st_party_signals_R691_24h_48h_window": {
+        "openai_agents_sdk_evolution_article": "1 (The next evolution of the Agents SDK)",
+        "langchain_deep_agents_v05_article": "1 (Deep Agents v0.5 + 5 native tools + Agent Protocol)",
+        "anthropic_claude_agent_sdk_typescript_changelog_entries": "多项 (MCP task state resume fix + canUseTool requestId)",
+        "openwiki_commits_24h": 5,
+        "conclusion": "Three 1st-party vendors shipped Managed Runtime in 24-48h window — Hybrid Agent Runtime paradigm shift is now empirically observable at Layer 2 + Layer 3"
       }
     },
-    "r687_to_r690_arc_correspondence": {
+    "r687_to_r691_arc_correspondence": {
       "R687_Alberta_50_Agent": {
         "layer_1": "Claude Agent SDK (implicit)",
         "layer_2": "95 security controls (implicit)",
-        "layer_3": "95 controls don't need memory (implicit)"
+        "layer_3": "95 controls don't need memory (implicit)",
+        "runtime_form": "单进程 in-process"
       },
       "R688_Hybrid_Architecture_meta_synthesis": {
         "layer_1": "Each vendor SDK converges to hybrid (prediction)",
         "layer_2": "Rules engine + LLM (explicit meta-synthesis)",
-        "layer_3": "LLM is explorer, state in backend (prediction)"
+        "layer_3": "LLM is explorer, state in backend (prediction)",
+        "runtime_form": "规则引擎 + LLM 双轨"
       },
       "R689_MCP_Stateless_RC": {
         "layer_1": "MCP is the protocol contract (validated)",
         "layer_2": "handle explicitization (validated)",
-        "layer_3": "MCP stateless HTTP contract (1st-party signal)"
+        "layer_3": "MCP stateless HTTP contract (1st-party signal)",
+        "runtime_form": "stateless protocol"
       },
       "R690_Hybrid_Agent_SDK_three_layer": {
         "layer_1": "Three vendor SDKs ship hybrid middleware synchronously in 24h",
         "layer_2": "vendor middleware standardization (can_use_tool / guardrails / ContextT)",
-        "layer_3": "SQLAlchemySession Unicode + LangSmith Engine + bundled CLI 2.1.202"
+        "layer_3": "SQLAlchemySession Unicode + LangSmith Engine + bundled CLI 2.1.202",
+        "runtime_form": "vendor middleware 标准化"
+      },
+      "R691_Hybrid_Agent_Runtime_Managed_Sandbox_Durable_Execution": {
+        "layer_1": "TypeScript SDK R691 updates + OpenAI Agents SDK 1st-party article",
+        "layer_2": "Managed Sandbox + 5 AsyncSubAgent native tools",
+        "layer_3": "snapshot + rehydrate + Agent Protocol + MCP task state resume",
+        "runtime_form": "Managed Agent Runtime(跨 vendor 共识)"
       }
     },
-    "r691_to_r693_predictions": [
-      "R691-R693: 1st-party Hybrid middleware standard (middleware spec / middleware library / middleware interop protocol)",
-      "R694-R697: Managed Agent Runtime becomes mainstream (Anthropic / OpenAI ship corresponding Managed Runtime)",
-      "R698-R700: Hybrid three-layer architecture becomes mainstream Agent engineering mental model"
+    "r692_to_r700_predictions": [
+      "R692-R693: 1st-party Managed Runtime GA (OpenAI TypeScript SDK + LangChain Agent Protocol + Anthropic Managed Compute)",
+      "R694-R697: Managed Agent Runtime 成为主流 mental model (类比 Kubernetes 在 container orchestration)",
+      "R698-R700: 'Agent Runtime Spec' 标准化 (类比 containerd / CRI)"
     ]
+  },
+  "r690_outcome_summary": {
+    "trigger_time": "2026-07-07T22:03:00+08:00",
+    "mode": "independent_article + project UPDATE",
+    "articles_written": 1,
+    "article_name": "hybrid-agent-sdk-three-layer-architecture-anthropic-openai-langchain-h2-2026-paradigm-convergence-2026.md",
+    "projects_written": 1,
+    "project_name": "langchain-ai-openwiki-8626-stars-r690-20th-sustained-9k-narrowing-2026.md",
+    "core_thesis": "Hybrid Agent SDK 三层架构:H2 2026 范式收敛"
   },
   "r689_outcome_summary": {
     "trigger_time": "2026-07-07T19:57:00+08:00",

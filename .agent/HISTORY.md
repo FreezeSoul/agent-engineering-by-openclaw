@@ -2592,3 +2592,38 @@ R685 之前已 FSIO 反馈 "R670+ monitoring drift" 污染仓库（FSIO 2026-07-
 ---
 
 *由 ArchBot 维护 | R690 (2026-07-07 22:03 CST) | 模式: independent_article_hybrid_sdk_three_layer + project_update_openwiki_9k_narrowing | 来源: anthropics/claude-agent-sdk-python v0.2.111 + openai/openai-agents-python v0.18.0 + langchain-ai/deepagents PR #4055 + langchain-ai/deepagents PR #4429 + langchain.com/blog/interrupt-2026-overview + api.github.com/repos/langchain-ai/openwiki 8626⭐ + api.github.com/repos/vxcontrol/pentagi 18226⭐*
+
+## R691 (2026-07-07 23:57 CST) — Hybrid Agent Runtime: Managed Sandbox + Durable Execution 三家 1st-party 范式收敛
+
+**Trigger**: cron 2h 周期触发 (R690→R691 Δ 1h54min)
+**Core thesis**: OpenAI "The next evolution of the Agents SDK" + LangChain "Deep Agents v0.5" + Anthropic claude-agent-sdk-typescript CHANGELOG 三家 1st-party 厂商在 24-48h 窗口内同步 ship Managed Agent Runtime 1st-party 信号。Managed Runtime = "vendor SDK + business code" 的中间层;State resume 从 "frame" 变 "SDK first-class primitive";Sandbox 从 "vendor 自带" 变 "portable substrate";Hybrid 协议层 (MCP + skills + AGENTS.md) 成为 harness substrate。
+
+**1st-party evidence (10 处)**:
+1. openai.com/index/the-next-evolution-of-the-agents-sdk (Managed Runtime 原型)
+2. openai.com: "snapshotting and rehydration" (Layer 3 durability 1st-party)
+3. openai.com: Manifest abstraction + 7 sandbox providers (Layer 2 portable substrate)
+4. openai.com: harness primitive = MCP + skills + AGENTS.md + shell + apply_patch
+5. langchain.com/blog/deep-agents-v0-5 (async subagents task ID immediately)
+6. langchain.com: 5 native tools (start/check/update/cancel/list_async_tasks)
+7. langchain.com: Agent Protocol = LangChain 1st-party Open spec
+8. langchain.com: 选 Agent Protocol 而非 A2A 的工程决策
+9. anthropics/claude-agent-sdk-typescript: "Fixed MCP task state not being restored on resume"
+10. anthropics/claude-agent-sdk-typescript: "requestId to canUseTool callback options"
+
+**Phase 5 monitoring (R691)**:
+- openwiki 8,727 ⭐ / +101/1h54min / 53/h / EXPLOSIVE 21st Sustained (R669-R691)
+- 9k⭐ gap 273 ⭐ (R690 374 → R691 273, Δ -101, 收窄 27%)
+- rate baseline 完全收敛 (R687 62 → R688 236 → R689 175 → R690 75.5 → R691 53/h)
+- pentagi 18,249 ⭐ / +23/1h54min / 12/h slow sustained
+
+**5th segment arc (Hybrid Architecture meta-synthesis)**:
+R687 Alberta → R688 Hybrid meta → R689 MCP Stateless → R690 SDK 三层架构 → **R691 Managed Runtime** 五段 arc 第五个 milestone
+
+**Predictions (R692-R700)**:
+- R692-R693: 1st-party Managed Runtime GA (OpenAI TypeScript SDK + LangChain Agent Protocol + Anthropic Managed Compute)
+- R694-R697: Managed Agent Runtime 成为主流 mental model
+- R698-R700: "Agent Runtime Spec" 标准化 (类比 containerd / CRI)
+
+**openwiki 9k⭐ BREAK**: R692 是最可能的 round (55-70% 概率,基于 R691 baseline 收敛校正)
+
+**Commits**: 1 (R691 commit pending)
