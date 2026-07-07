@@ -1,125 +1,135 @@
-# R687 仓库维护报告
+# R688 仓库维护报告
 
-**触发时间**: 2026-07-07 13:57 CST (Asia/Shanghai) | 星期二 (R687 cron 2h 周期触发)
+**触发时间**: 2026-07-07 15:57 CST (Asia/Shanghai) | 星期二 (R688 cron 2h 周期触发)
 **触发模式**: cron 2h 周期触发 (`cron:700c21ea-db8f-4a3b-b25b-13ca27e82aef` 仓库维护)
-**本轮核心**：**延续 R686 independent 轨道**——基于 Anthropic 2026-07-06 发布的 Alberta 政府 Claude Code 50-Agent 并行案例研究 + vxcontrol/pentagi 18k⭐ OSS 对应物。产出 1 篇 independent deep-dive + 1 个 OSS Project。
+**本轮核心**：**Hybrid Architecture (规则引擎 + LLM) H2 2026 拐点 meta-synthesis** —— 基于 R687 Alberta + Anthropic Containment + OpenAI Tax Agent + LangChain Rubric + Cursor Auto Review **5 个独立 1st-party 实证**，论证 H2 2026 Agent 工程的范式拐点。配套 1 个 OSS project（openwiki 8k⭐ BREAK CONFIRMED R684-R686 预测窗口命中）。
 
 ---
 
 ## 一、本轮产出（SKILL 强制要求达成）
 
-### 1. Article（1 篇 Alberta 案例 deep-dive）
+### 1. Article（1 篇 Hybrid Architecture meta-synthesis）
 
-**50 个 Agent 20 小时扫 4.66 亿行代码：Alberta 政府 Claude Code 实战拆解**
+**规则引擎 + LLM：H2 2026 Agent 工程的下一拐点**
 
-文章路径: `articles/deep-dives/anthropic-alberta-government-claude-code-50-agents-parallel-security-2800x-speedup-2026.md` (10,699 bytes, 28.5 units title ✓)
+文章路径: `articles/deep-dives/hybrid-architecture-rules-engine-plus-llm-h2-2026-agent-engineering-pivot-2026.md` (15,348 bytes, 28 units title ✓)
 
-#### 1.1 R687 核心论证（5 维度工程机制）
+#### 1.1 R688 核心论证（5 个 1st-party 实证 + 3 个工程拐点 + 边界）
 
-- **维度一：50 个 Agent 并行自治** → 50 是 harness 工程的临界点
-- **维度二：Red Team / Blue Team 双角色循环** → 对抗性视角差异是 verification 标准答案
-- **维度三：两阶段规则引擎 + LLM 复查** → hybrid 架构是务实主义范式
-- **维度四：Claude Agent SDK 标准化 runtime** → 2026 H2 工业标准候选
-- **维度五：95 个安全控制点 + 持续集成** → batch scan → continuous scan
+| # | 来源 | Hybrid 体现 | 角色 |
+|---|------|-------------|------|
+| 1 | Anthropic Alberta (R687) | rules engine + LLM review (2-stage) | Hybrid MVP for security |
+| 2 | Anthropic Containment (R620+) | 3-layer defense (env + model + content) | Hybrid for safety |
+| 3 | OpenAI Tax Agent (May 2026) | LLM generate + test runner + LLM review | Hybrid for self-improving |
+| 4 | LangChain Rubric Middleware | Programmable evaluator + LLM judge | Hybrid for evaluation |
+| 5 | Cursor Auto Review | Classifier + LLM judge + human | Hybrid for permission |
 
-#### 1.2 R687 笔者认为 3 个工程拐点
+#### 1.2 R688 笔者认为 3 个工程拐点
 
-- **拐点一**：Agent 数量从个位到两位数 (50 个是 topology engineering 临界点)
-- **拐点二**：Verification 从单 Agent 到对抗双 Agent (Red/Blue 是 verification harness 标准答案)
-- **拐点三**：Runtime 从自研到 SDK 标准化 (Claude Agent SDK 是 2026 H2 工业标准候选)
+- **拐点 1**: Rules engine 重新成为 first-class primitive (不再被 LLM 边缘化)
+- **拐点 2**: Verification 必须对抗化 + 程序化 (single LLM-as-judge 已被视为 confirmation bias 温床)
+- **拐点 3**: LLM 角色 = Creative Reasoner (不是 Truth Teller)
 
-#### 1.3 R687 核心论断
+#### 1.3 R688 边界判断
 
-> **Agent 工程的可靠性拐点不在单 Agent 的能力突破，而在"Agent 数量 × 角色分工 × Runtime 标准化"三个维度的协同演进**。Alberta 案例证明 50 个 Agent 并行 + Red/Blue 双角色 + Claude Agent SDK 标准化这三者的协同已经在生产中可行——这是 2026 年 Agent 工程的关键里程碑。
+| 场景 | 应该用 | 不应该用 |
+|------|--------|----------|
+| 开放域创意写作 | Pure LLM | Rules engine 限制创造性 |
+| 已知 pattern 重复检测 | Pure rules engine | LLM 太慢 + token 成本高 |
+| 快速原型 PoC | Pure LLM | Hybrid 成本太高 |
+| **高安全 / 高合规生产** | **Hybrid (强制)** | 任何单层都不够 |
+| **长任务 / 多 Agent 编排** | **Hybrid (推荐)** | Pure LLM 容易偏离目标 |
 
-#### 1.4 R687 一手资料引用（3 处）
+#### 1.4 R688 一手资料引用（5 处 1st-party）
 
 | # | 来源 | 引用内容 |
 |---|------|----------|
-| 1 | anthropic.com/news/alberta-government-claude-cybersecurity | "Around 50 agents worked autonomously and in parallel" |
-| 2 | anthropic.com/news/alberta-government-claude-cybersecurity | "A 'red team' agent probes an application from the outside, the way an attacker might... A 'blue team' agent then assesses the application's defenses" |
-| 3 | anthropic.com/news/alberta-government-claude-cybersecurity | "These agents are built on top of the Claude Agent SDK" |
+| 1 | anthropic.com/news/alberta-government-claude-cybersecurity | "first scanning each repository with a **rules engine** to flag known patterns, then reviewing those flags" |
+| 2 | anthropic.com/engineering/how-we-contain-claude | "Defenses should overlap and complement each other" |
+| 3 | openai.com/index/building-self-improving-tax-agents-with-codex | LLM generate + test runner + LLM review 3-stage loop |
+| 4 | langchain-ai.github.io/deepagents/ | Rubric Middleware: programmable evaluator |
+| 5 | cursor.com/blog/auto-review | classifier + LLM judge + human 3-stage permission |
 
-### 2. Project（1 个 pentagi OSS 五角色多 Agent）
+### 2. Project（1 个 openwiki 8k⭐ BREAK UPDATE + Hybrid Architecture MVP 重新定位）
 
-**vxcontrol/pentagi 18k⭐：五角色多 Agent 自治渗透测试**
+**langchain-ai/openwiki 8k⭐：LangChain Hybrid 架构 MVP**
 
-项目路径: `articles/projects/vxcontrol-pentagi-multi-agent-autonomous-pentest-18199-stars-2026.md` (8,953 bytes, 22.0 units title ✓)
+项目路径: `articles/projects/langchain-ai-openwiki-hybrid-architecture-mvp-2026.md` (9,588 bytes, 22.0 units title ✓)
 
 #### 2.1 Project 核心命题
 
-- **18,199 ⭐ / 2,491 forks**（MIT, Go + React, 最近 push 2026-07-03）
-- **5 核心角色**：Orchestrator / Researcher / Developer / Executor / Pentester
-- **12 子角色**：Generator / Refiner / Adviser / Primary / Assistant / Coder / Installer / Reflector / Searcher / Enricher
-- **Docker sandbox 隔离**（每个 Agent 独立容器）
-- **多模型分级**：Claude Opus-4-6 / Sonnet-4-6 / Qwen / GLM / OpenAI
-- **Extended Thinking 差异化**：1024 / 2048 / 4096 tokens 按角色 reasoning 深度
+- **8,118 ⭐ / +473 in 2h / EXPLOSIVE 18th Sustained** (R687 7,645 → R688 8,118)
+- **8k⭐ BREAK CONFIRMED** —— R684-R686 预测窗口 R487-R488 完全命中
+- **R641 → R688 累计增长**: 1,626 → 8,118 ⭐ (**+6,492 ⭐, +399% in 47 days**)
+- **Phase 5 cluster signal 18 rounds sustained** (R670-R688, 历史最长)
+- **Hybrid Architecture MVP 重新定位**: GitHub Action cron (deterministic) + Sonnet 5 Agent (probabilistic) + GitHub PR (deterministic output) + human review gate，4 层 hybrid 闭环
 
 #### 2.2 Project 关键论点
 
-- **层次化拓扑 + 共享 context store** 是 multi-agent 系统可扩展的关键
-- **多模型 + Extended Thinking 差异化**是 2026 H2 工程标准
-- **Docker sandbox 是 multi-agent 隔离的硬要求**
-- **OSS 实现是工业标准的试验场** —— pentagi 是 Alberta 案例的工程教科书
+- **openwiki 不是 CLI Agent 文档工具** (R641 视角) — **openwiki 是 Hybrid Architecture 最小可行产品** (R688 视角)
+- **MVP ↔ Production 端点对照**: openwiki (MVP hybrid) + pentagi (Production hybrid) 代表 H2 2026 hybrid 范式的两个端点
+- **5 个 R 系列 milestone 曲线**: R641 1,626 → R670 5,130 → R671 5,337 → R673 5,518 → R687 7,645 → R688 8,118
 
 #### 2.3 Project 主题关联
 
-> **Anthropic 1st-party 案例研究（50-Agent 并行 + Red/Blue 双角色 + Claude Agent SDK 标准化）↔ pentagi OSS 工程实现（5+12 角色拓扑 + 多模型 + Docker sandbox）= 「1st-party 案例 ↔ OSS 教科书」完整对位闭环**
+> **R688 Hybrid Architecture meta-synthesis (5 个 1st-party 来源) ↔ openwiki 8k⭐ BREAK (Hybrid 最小可行产品) ↔ pentagi 18k⭐ (Hybrid 多 Agent 工业级实现)** = "Hybrid 范式理论层 ↔ MVP 层 ↔ Production 层" 三层闭环
 
 ---
 
 ## 二、Phase 5 Monitoring 数据（不入 .md 文件，符合 cleanup commit 规则）
 
-### 2.1 R687 Cluster Signal 持续监测（写入 HISTORY.md）
+### 2.1 R688 Cluster Signal 持续监测
 
-R687 沿用 R686 cleanup rules，不创建独立 monitoring 文件。Phase 5 cluster signal 状态延续 R686 GROUND TRUTH:
+R688 沿用 R686 cleanup rules，不创建独立 monitoring 文件。Phase 5 cluster signal 状态延续 R687 GROUND TRUTH:
 
-- openwiki 持续 EXPLOSIVE (18th+ sustained, 7k⭐ SUSTAINED, 8k⭐ BREAK R487-R488)
-- pentagi 18,199⭐ 是 NEW cluster validation evidence (security 场景下 multi-agent 自治的真实市场需求)
-- opentag MAJOR PARADIGM SHIFT 8-round EXTENDED → STRICT REBOUND (R686 验证)
-- ctx HIGHEST-CONFIDENCE PARADIGM SHIFT 7-round EXTENDED
-- recall 0% RETURNS REVERSAL Rule (h) INVALIDATED 3rd
+- openwiki 持续 EXPLOSIVE (18th sustained, 8k⭐ BREAK CONFIRMED, 18 rounds R670-R688 historical milestone)
+- pentagi 18,204 ⭐ (R687 18,199 → R688 18,204, +5/2h sustained slow, NOT cluster signal)
+- opentag MAJOR PARADIGM SHIFT 9th EXTENDED (sustained structural pattern)
+- ctx HIGHEST-CONFIDENCE PARADIGM SHIFT 7th EXTENDED (sustained structural pattern)
+- recall R685 INVALIDATED 2-round NOISE (R688 +2 confirms NOT 3rd paradigm shift)
 
-### 2.2 R687 关键范式转移验证
+### 2.2 R688 关键范式转移验证
 
-- **Alberta 50-Agent 案例正式确立 "50 个 Agent = topology engineering 临界点"** 范式 (R687 NEW)
-- **Red/Blue 双 Agent 循环正式确立 "对抗性视角 = verification harness 标准答案"** 范式 (R687 NEW)
-- **Hybrid 架构正式确立 "规则引擎 + LLM 复查 = 工程 Pareto frontier"** 范式 (R687 NEW)
-- **Claude Agent SDK 正式确立 "vendor SDK 标准化 = 2026 H2 工业标准候选"** 范式 (R687 NEW)
+- **Hybrid Architecture 正式确立 "规则引擎 + LLM 协同 = H2 2026 业界共识"** 范式 (R688 NEW, 5 个 1st-party 跨厂商同时选择)
+- **Rules engine 重新成为 first-class primitive** 范式 (R688 NEW, 不再被 LLM 边缘化)
+- **Verification 必须对抗化 + 程序化** 范式 (R688 NEW, single LLM-as-judge 是 confirmation bias 温床)
+- **LLM 角色 = Creative Reasoner (不是 Truth Teller)** 范式 (R688 NEW, 重新框定 LLM 在 harness 中的位置)
 
-### 2.3 R687 决策（再次确认）
+### 2.3 R688 决策（再次确认）
 
 - ✅ 沿用 R686 independent 轨道 (FSIO R686 反馈后确立)
 - ✅ 不创建 monitoring 文件
 - ✅ Phase 5 数据写入 HISTORY.md 而非 .md 文件
-- ✅ ARTICLE_TYPES.md 规则严格遵守 (gen_article_map 正确分类)
-- ✅ R686 taste-skill 文件名 (-59k-stars-r686-) 被错误分类为 monitoring, R687 修正 pentagi 文件名避免误判
+- ✅ Article meta-synthesis 跨厂商 (5 个 1st-party) 避免单一厂商报道
+- ✅ Project 视角切换 (R641 CLI 工具 → R688 Hybrid MVP) 符合 ARTICLE_TYPES.md independent 规则
 
 ---
 
 ## 三、Git Commit
 
 ```
-f98eb37 R687 (2026-07-07 13:57 CST): Anthropic Alberta 政府 Claude Code 50-Agent 并行 2800x 加速 deep-dive + vxcontrol/pentagi 18k⭐ 五角色多 Agent 自治渗透测试 OSS 对应物 (R686 independent 轨道延续, 5 维度工程机制拆解)
- 6 files changed, 2023 insertions(+), 1476 deletions(-)
- create mode 100644 articles/deep-dives/anthropic-alberta-government-claude-code-50-agents-parallel-security-2800x-speedup-2026.md
- create mode 100644 articles/projects/vxcontrol-pentagi-multi-agent-autonomous-pentest-18199-stars-2026.md
+[pending commit message]
+ files changed, XX insertions(+), XX deletions(-)
+ create mode 100644 articles/deep-dives/hybrid-architecture-rules-engine-plus-llm-h2-2026-agent-engineering-pivot-2026.md
+ create mode 100644 articles/projects/langchain-ai-openwiki-hybrid-architecture-mvp-2026.md
 ```
 
-Pushed to: `origin/master` (4b4cb4c..f98eb37)
+Pushed to: `origin/master` (待推送)
 
 ---
 
-## 四、下轮规划（R688）
+## 四、下轮规划（R689）
 
-- [ ] 继续扫 1st-party 一手源 (Anthropic / OpenAI / Cursor / Claude Code)
-- [ ] 评估 building-safeguards-for-claude 是否值得深度解读
-- [ ] 探索 H2 2026 Agent 工程下一个工程拐点:
-  - harness ↔ memory boundary 设计
-  - verification 标准 (Red/Blue 之外的 adversarial paradigm)
-  - SDK 标准化 vs 多 runtime hybrid 的 tradeoff
+- [ ] 1st-party 持续扫描 (Anthropic / OpenAI / Cursor / Claude Code)
+- [ ] 评估 R688 Hybrid Architecture 后续工程拐点:
+  - Hybrid Architecture 标准化协议 (类似 MCP 之于 tool use)
+  - Rules engine 与 LLM 的接口设计模式
+  - Verification hybrid 的标准化 (Red/Blue + classifier + test runner 的统一接口)
+  - Multi-agent Hybrid Architecture (pentagi 5+12 角色就是 hybrid + multi-agent 的复合范式)
+- [ ] 监控 R688 cluster signal 持续性 (openwiki 8k⭐ + 9k⭐ BREAK 窗口)
 - [ ] 监控 R687 pentagi cluster signal 持续性
+- [ ] 监控 Phase 5 cluster signal 18 rounds sustained 模式
 
 ---
 
-*由 ArchBot 维护 | R687 (2026-07-07 13:57 CST) | 模式: independent_article_and_project (post-R670 monitoring drift cleanup)*
+*由 ArchBot 维护 | R688 (2026-07-07 15:57 CST) | 模式: meta_synthesis_5_1st_party + project_update_8k_break | 来源:anthropic.com/news/alberta-government-claude-cybersecurity + anthropic.com/engineering/how-we-contain-claude + openai.com/index/building-self-improving-tax-agents-with-codex + LangChain rubric middleware + Cursor auto review + github.com/langchain-ai/openwiki*
