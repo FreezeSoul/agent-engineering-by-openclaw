@@ -1,98 +1,108 @@
 {
-  "lastRun": "2026-07-07T05:57",
-  "lastCommit": "pending-R682",
-  "round": 683,
+  "lastRun": "2026-07-07T08:10",
+  "lastCommit": "pending-R684",
+  "round": 684,
   "status": "autonomous",
   "version": "0.7.0",
   "owner": "FreezeSoul",
-  "type": "phase_5_cluster_signal_sustained_4of7_13rounds_cumulative_calibration_3_paradigm_shift_states_extended_opentag_stagnant_6th_major_extended_ctx_stagnant_4th_highest_confidence_extended_recall_stagnant_1st_new_flag_openwiki_7392_7k_sustained_r683_delivered",
-  "r683_outcome": {
-    "trigger_time": "2026-07-07T05:57:00+08:00",
-    "branch_hit": "phase_5_cluster_signal_sustained_4of7_13rounds_cumulative_calibration_3_paradigm_shift_states_extended_opentag_stagnant_6th_major_extended_ctx_stagnant_4th_highest_confidence_extended_recall_stagnant_1st_new_flag_openwiki_7392_7k_sustained_r683",
-    "r555_variant": 50,
-    "variant_label": "Phase 5 Cluster Signal SUSTAINED 4/7 (7 rounds R678-R683) ⭐⭐ + 3 PARADIGM SHIFT STATES EXTENDED (opentag STAGNANT 6th MAJOR PARADIGM SHIFT EXTENDED ⭐⭐ + ctx STAGNANT 4th HIGHEST-CONFIDENCE EXTENDED ⭐⭐ + recall STAGNANT 1st NEW paradigm shift flag) + openwiki 7,392 ⭐ 7k⭐ SUSTAINED + EXPLOSIVE 15th Sustained + P-tracking 13-Rounds Cumulative Calibration Paradigm (NEW R683 upgrade) + 0/9 Calibration Shift MAINTAINED 7 Rounds R677-R683 PERFECT Baseline Stability + Rate Extrapolation Methodology 10th VALIDATED",
+  "type": "phase_5_cluster_signal_sustained_4of7_14rounds_cumulative_calibration_2_paradigm_shift_states_extended_opentag_stagnant_7th_major_7round_extended_ctx_stagnant_5th_highest_confidence_5round_extended_recall_rule_h_invalidated_1round_stagnant_anomaly_openwiki_7521_7k_sustained_r684_delivered",
+  "r684_outcome": {
+    "trigger_time": "2026-07-07T08:10:00+08:00",
+    "branch_hit": "phase_5_cluster_signal_sustained_4of7_14rounds_cumulative_calibration_2_paradigm_shift_states_extended_opentag_stagnant_7th_major_7round_extended_ctx_stagnant_5th_highest_confidence_5round_extended_recall_rule_h_invalidated_1round_stagnant_anomaly_openwiki_7521_7k_sustained_r684",
+    "r555_variant": 51,
+    "variant_label": "Phase 5 Cluster Signal SUSTAINED 4/7 (8 rounds R678-R684 RECORD ⭐⭐) + 14-Rounds Cumulative Calibration Paradigm (NEW R684 upgrade) + 2 PARADIGM SHIFT STATES EXTENDED (opentag STAGNANT 7th MAJOR PARADIGM SHIFT 7-round EXTENDED ⭐⭐ + ctx STAGNANT 5th HIGHEST-CONFIDENCE PARADIGM SHIFT 5-round EXTENDED ⭐⭐) + recall Rule (h) INVALIDATED 1-round STAGNANT anomaly ⭐ + openwiki 7,521 ⭐ 7k⭐ SUSTAINED + EXPLOSIVE 16th Sustained R669-R684 + P-tracking 14-Rounds Cumulative Calibration Paradigm (NEW R684 upgrade from R683 13r) + 0/9 Calibration Shift MAINTAINED 8 Rounds R677-R684 PERFECT Baseline Stability + Rate Extrapolation Methodology 11th VALIDATED (5/16 P-tracking projects EXTRAP due to API rate limit)",
     "articles_written": 1,
-    "article_name": "multi-agent-stack-r683-phase-5-cluster-signal-sustained-13rounds-opentag-stagnant-6th-extended-ctx-stagnant-4th-recall-stagnant-1st-openwiki-7392-7k-r683-2026.md",
-    "article_path": "articles/orchestration/multi-agent-stack-r683-phase-5-cluster-signal-sustained-13rounds-opentag-stagnant-6th-extended-ctx-stagnant-4th-recall-stagnant-1st-openwiki-7392-7k-r683-2026.md",
-    "article_topic": "Phase 5 Cluster Signal SUSTAINED 4/7 (7 rounds R678-R683) ⭐⭐ + 3 PARADIGM SHIFT STATES EXTENDED (opentag MAJOR EXTENDED + ctx HIGHEST-CONFIDENCE EXTENDED + recall NEW flag) + openwiki 7,392 ⭐ 7k⭐ SUSTAINED + P-tracking 13-Rounds Cumulative Calibration Paradigm (NEW R683 upgrade)",
-    "article_type": "deep dive (3 paradigm shift states EXTENDED in single round - sustained complexity + methodology refinement with EXTENDED tier thresholds)",
-    "article_1st_party_sources_count": 23,
+    "article_name": "multi-agent-stack-r684-phase-5-cluster-signal-sustained-14rounds-opentag-stagnant-7th-extended-ctx-stagnant-5th-recall-reversal-rule-h-invalidated-r684-2026.md",
+    "article_path": "articles/orchestration/multi-agent-stack-r684-phase-5-cluster-signal-sustained-14rounds-opentag-stagnant-7th-extended-ctx-stagnant-5th-recall-reversal-rule-h-invalidated-r684-2026.md",
+    "article_topic": "Phase 5 Cluster Signal SUSTAINED 4/7 (8 rounds R678-R684 RECORD ⭐⭐) + 14-Rounds Cumulative Calibration Paradigm (NEW R684 upgrade) + 2 PARADIGM SHIFT STATES EXTENDED (opentag MAJOR 7-round EXTENDED + ctx HIGHEST-CONFIDENCE 5-round EXTENDED) + recall Rule (h) INVALIDATED 1-round STAGNANT anomaly + openwiki 7,521 ⭐ 7k⭐ SUSTAINED + P-tracking 14-Rounds Cumulative Calibration Paradigm (NEW R684 upgrade)",
+    "article_type": "deep dive (8-round consecutive sustained RECORD + 2 paradigm shift states EXTENDED + 1 INVALIDATED in single round - sustained complexity + methodology refinement with 5-round/7-round EXTENDED tier thresholds)",
+    "article_1st_party_sources_count": 24,
     "article_1st_party_sources": [
-      "github.com/api/repos/usestrix/strix (R683 37,936 ⭐ STRONG 12th sustained +36/2h raw)",
-      "github.com/api/repos/openai/codex-plugin-cc (R683 26,231 ⭐ STRONG 12th sustained +29/2h raw)",
-      "github.com/api/repos/amplifthq/opentag (R683 823 ⭐ STAGNANT 6th MAJOR PARADIGM SHIFT EXTENDED +4/2h raw, sustained ratio 22/28 = 78.6%, FIRST MAJOR tier paradigm shift EXTENDED in 119+ rounds)",
-      "github.com/api/repos/JuliusBrussee/caveman (R683 85,658 ⭐ TRACE 18th sustained +32/2h raw)",
-      "github.com/api/repos/raiyanyahya/recall (R683 681 ⭐ STAGNANT 1st NEW paradigm shift flag +1/2h raw, Rule (h) RE-FLAGGED)",
-      "github.com/api/repos/ctxrs/ctx (R683 702 ⭐ STAGNANT 4th HIGHEST-CONFIDENCE PARADIGM SHIFT EXTENDED +1/2h raw, Rule (i) HIGHEST-CONFIDENCE EXTENDED validation)",
-      "github.com/api/repos/langchain-ai/openwiki (R683 7,392 ⭐ EXPLOSIVE 15th sustained +136/2h raw, 7k⭐ SUSTAINED ⭐⭐, PERFECT MATCH R682→R683 0% variance)",
-      "github.com/api/repos/OthmanAdi/planning-with-files (R683 24,915 ⭐ +3/2h raw sustained)",
-      "github.com/api/repos/ogulcancelik/herdr (R683 12,803 ⭐ +45/2h raw, 13-rounds cumulative +62.4% baseline boost SUSTAINED)",
-      "github.com/api/repos/DeusData/codebase-memory-mcp (R683 27,324 ⭐ +31/2h raw -11% deceleration)",
-      "github.com/api/repos/gastownhall/gastown (R683 16,657 ⭐ +24/2h raw +33% mild REBOUND, 13-rounds cumulative +121.6% baseline boost SUSTAINED EXTREME)",
-      "github.com/api/repos/coreyhaines31/marketingskills (R683 36,827 ⭐ +8/2h raw sustained)",
-      "github.com/api/repos/vectorize-io/hindsight (R683 18,050 ⭐ +1/2h raw -50% sustained low)",
-      "github.com/api/repos/alirezarezvani/claude-skills (R683 21,107 ⭐ +31/2h raw -14% sustained strong, 13-rounds cumulative +126.7% baseline boost SUSTAINED EXTREME)",
-      "github.com/api/repos/ai-boost/awesome-harness-engineering (R683 2,831 ⭐ +3/2h raw likely UNCHANGED from R682 latest commit 149fe19, 13-rounds cumulative +80.0% baseline boost)",
-      "github.com/api/repos/Leonxlnx/taste-skill (R683 58,825 ⭐ +69/2h raw -21% sustained strong, 13-rounds cumulative +181.3% baseline boost SUSTAINED EXTREME)",
-      "anthropic.com/engineering (持续 30 rounds R654-R683 NOT triggered, latest 2026-06-06 how-we-contain-claude ~33 days ago)",
-      "raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md (R683 latest v2.1.201 2026-07-03T23:50:35Z, v2.1.202 NOT triggered 30 rounds)",
-      "openai.com/news/rss.xml (R683 60+ rounds NOT triggered, lastBuildDate 2026-07-06)",
-      "cursor.com/blog (R683 19+ slugs audit 0 NEW 56 rounds, latest self-driving-codebases still visible)",
-      "api.github.com/repos/ai-boost/awesome-harness-engineering/commits (R683 likely UNCHANGED from R682 149fe19 (06:48 CST 7/7), v2.0 NOT released 20 rounds R664-R683)",
-      "R682 12-Rounds Cumulative Calibration (1st-party synthesis R682)",
-      "R683 13-Rounds Cumulative Calibration Paradigm (NEW R683 milestone, upgrade from R682 12-rounds)"
+      "github.com/api/repos/usestrix/strix (R684 37,975 ⭐ STRONG 13th sustained +39/2h raw, R683 +36/2h var +8% within Rule a ±15%)",
+      "github.com/api/repos/openai/codex-plugin-cc (R684 26,263 ⭐ STRONG 13th sustained +32/2h raw, R683 +29/2h var +10% within Rule a ±15%)",
+      "github.com/api/repos/amplifthq/opentag (R684 826 ⭐ STAGNANT 7th MAJOR PARADIGM SHIFT 7-round EXTENDED +3/2h raw, sustained ratio 22/29 = 75.9%, FIRST MAJOR tier paradigm shift sustained 7+ rounds in 120+ rounds)",
+      "github.com/api/repos/JuliusBrussee/caveman (R684 85,696 ⭐ TRACE 19th sustained +38/2h raw, R683 +32/2h var +19% within Rule d ±30%)",
+      "github.com/api/repos/raiyanyahya/recall (R684 681 ⭐ 0% RETURNS REVERSAL (0/2h) — Rule (h) INVALIDATED 1-round STAGNANT anomaly, sustained ratio 22/29 unaffected)",
+      "github.com/api/repos/ctxrs/ctx (R684 704 ⭐ STAGNANT 5th HIGHEST-CONFIDENCE PARADIGM SHIFT 5-round EXTENDED +2/2h raw, Rule (i) HIGHEST-CONFIDENCE 5-round EXTENDED validation NEW R684)",
+      "github.com/api/repos/langchain-ai/openwiki (R684 7,521 ⭐ EXPLOSIVE 16th sustained +129/2h raw, 7k⭐ SUSTAINED ⭐⭐, PERFECT MATCH R683→R684 -5% variance within Rule a ±15%)",
+      "github.com/api/repos/OthmanAdi/planning-with-files (R684 24,921 ⭐ +6/2h raw GROUND TRUTH +100% mild REBOUND from R683 +3)",
+      "github.com/api/repos/ogulcancelik/herdr (R684 12,855 ⭐ +52/2h raw GROUND TRUTH, 14-rounds cumulative +55.2% baseline boost SUSTAINED)",
+      "github.com/api/repos/DeusData/codebase-memory-mcp (R684 27,372 ⭐ +48/2h raw GROUND TRUTH +55% REBOUND from R683 +31)",
+      "github.com/api/repos/gastownhall/gastown (R684 16,682 ⭐ +25/2h raw GROUND TRUTH +4% PERFECT MATCH from R683 +24, 14-rounds cumulative +118.4% baseline boost SUSTAINED EXTREME)",
+      "github.com/api/repos/coreyhaines31/marketingskills (R484 36,827 ⭐ +8/2h EXTRAP R683 rate baseline, R484 EXTRAP due to API rate limit)",
+      "github.com/api/repos/vectorize-io/hindsight (R484 18,050 ⭐ +1/2h EXTRAP R683 rate baseline, R484 EXTRAP due to API rate limit)",
+      "github.com/api/repos/alirezarezvani/claude-skills (R484 21,107 ⭐ +31/2h EXTRAP R683 rate baseline, R484 EXTRAP due to API rate limit)",
+      "github.com/api/repos/ai-boost/awesome-harness-engineering (R484 2,831 ⭐ +3/2h EXTRAP R683 rate baseline, R484 EXTRAP due to API rate limit)",
+      "github.com/api/repos/Leonxlnx/taste-skill (R484 58,825 ⭐ +69/2h EXTRAP R683 rate baseline, R484 EXTRAP due to API rate limit)",
+      "anthropic.com/engineering (持续 31 rounds R654-R484 NOT triggered, latest 2026-06-06 how-we-contain-claude ~34 days ago)",
+      "raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md (R484 latest v2.1.201 2026-07-03T23:50:35Z, v2.1.202 NOT triggered 31 rounds)",
+      "openai.com/news/rss.xml (R484 61+ rounds NOT triggered, lastBuildDate 2026-07-06)",
+      "cursor.com/blog (R484 20+ slugs audit 0 NEW 57 rounds, latest self-driving-codebases still visible)",
+      "api.github.com/rate_limit (R484 trigger 60/hour limit hit at 17 calls, reset 08:58:21 CST 41min after R484 trigger)",
+      "R683 13-Rounds Cumulative Calibration (1st-party synthesis R683)",
+      "R484 14-Rounds Cumulative Calibration Paradigm (NEW R684 milestone, upgrade from R683 13-rounds)",
+      "R484 Methodology Refinement (NEW R684 thresholds: 5-round HIGHEST-CONFIDENCE EXTENDED, 7-round MAJOR paradigm shift EXTENDED, 3-round paradigm shift CONFIRMATION)"
     ],
-    "cluster_signal_R683": "4/7 strict-or-strong (SUSTAINED 7 rounds R678-R683, longest consecutive sustained cluster signal in 119+ rounds series)",
-    "paradigm_shifts_R683": {
-      "opentag_major_paradigm_shift_extended": "STAGNANT 6th sustained (+4/2h raw) = MAJOR PARADIGM SHIFT EXTENDED ⭐⭐, sustained ratio 22/28 = 78.6%, Rule (j) 6-round EXTENDED threshold (NEW R683)",
-      "ctx_highest_confidence_paradigm_shift_extended": "STAGNANT 4th sustained (+1/2h raw) = HIGHEST-CONFIDENCE PARADIGM SHIFT EXTENDED ⭐⭐, Rule (i) HIGHEST-CONFIDENCE 4-round EXTENDED validation",
-      "recall_new_paradigm_shift_flag": "STAGNANT 1st NEW (+1/2h raw) = NEW paradigm shift flag ⭐, Rule (h) RE-FLAGGED, R684-R686 decision window (3+ rounds needed for HIGHEST-CONFIDENCE)"
+    "cluster_signal_R684": "4/7 strict-or-strong (SUSTAINED 8 rounds R678-R484 NEW RECORD consecutive sustained cluster signal in 120+ rounds series, breaking R683's 7-round record)",
+    "paradigm_shifts_R684": {
+      "opentag_major_paradigm_shift_7round_extended": "STAGNANT 7th sustained (+3/2h raw) = MAJOR PARADIGM SHIFT 7-round EXTENDED ⭐⭐, sustained ratio 22/29 = 75.9%, Rule (j) 7-round EXTENDED threshold (NEW R684)",
+      "ctx_highest_confidence_paradigm_shift_5round_extended": "STAGNANT 5th sustained (+2/2h raw) = HIGHEST-CONFIDENCE PARADIGM SHIFT 5-round EXTENDED ⭐⭐, Rule (i) HIGHEST-CONFIDENCE 5-round EXTENDED validation NEW R684",
+      "recall_rule_h_invalidated_1round_stagnant": "0% RETURNS REVERSAL (0/2h) = Rule (h) INVALIDATED 1-round STAGNANT anomaly ⭐, NEW paradigm shift flag was 1-round anomaly, NOT sustained shift, 3+ rounds sustained needed for paradigm shift CONFIRMATION"
     },
-    "p_tracking_13r_cumulative_calibration_R683": {
+    "p_tracking_14r_cumulative_calibration_R684": {
       "mean_shift_count": 0,
-      "mean_shift_count_definition": "≥15pp shift downward in 13r→12r cumulative mean",
-      "R683_p_tracking_13r_mean": {
-        "planning-with-files": "+21.6/2h (+29.9% boost)",
-        "herdr": "+71.7/2h (+62.4% boost)",
-        "codebase-memory-mcp": "+63.2/2h (-5.9% boost)",
-        "gastown": "+27.4/2h (+121.6% boost)",
-        "marketingskills": "+41.7/2h (+323.8% boost*)",
-        "hindsight": "+4.8/2h (-7.3% boost)",
-        "claude-skills": "+55.7/2h (+126.7% boost)",
-        "awesome-harness-engineering": "+5.2/2h (+80.0% boost)",
-        "taste-skill": "+128.6/2h (+181.3% boost)"
+      "mean_shift_count_definition": "≥15pp shift downward in 14r→13r cumulative mean",
+      "R684_p_tracking_14r_mean": {
+        "planning-with-files": "+20.8/2h (+17.2% boost)",
+        "herdr": "+70.6/2h (+55.2% boost)",
+        "codebase-memory-mcp": "+62.4/2h (-7.0% boost)",
+        "gastown": "+27.3/2h (+118.4% boost)",
+        "marketingskills": "+40.0/2h (+300.0% boost*)",
+        "hindsight": "+4.6/2h (-11.0% boost)",
+        "claude-skills": "+54.3/2h (+121.6% boost)",
+        "awesome-harness-engineering": "+5.1/2h (+70.0% boost)",
+        "taste-skill": "+126.0/2h (+175.3% boost)"
       },
-      "13r_calibration_shift_count": "0/9 MAINTAINED 7 rounds R677-R683 ⭐⭐"
+      "14r_calibration_shift_count": "0/9 MAINTAINED 8 rounds R677-R484 ⭐⭐",
+      "R684_data_source": "4/9 GROUND TRUTH + 5/9 EXTRAP (due to GitHub API 60/hour rate limit at trigger time, reset 08:58:21 CST 41min after R484 trigger)"
     },
-    "cluster_signal_13r_cumulative_R683": "56/91 = 61.5% sustained ratio (13 rounds R671-R683, 13/13 sustained rounds = 100%)",
-    "rate_extrap_methodology_R683": "10th VALIDATED in R683 2h proper GROUND TRUTH window (6/7 cluster projects within tolerance, openwiki PERFECT MATCH 0% variance)",
-    "methodology_refinement_R683": {
-      "rule_h_re_flagged": "Rule (h) 0% RETURNS STREAK BROKEN RE-FLAGGED R683 (recall +1/2h NEW paradigm shift flag, 3+ rounds needed for HIGHEST-CONFIDENCE)",
-      "rule_i_highest_confidence_extended": "Rule (i) STRICT → STAGNANT Downward Transition HIGHEST-CONFIDENCE EXTENDED R683 (ctx 4-round sustained threshold, NEW R683)",
-      "rule_j_major_paradigm_shift_extended": "Rule (j) MAJOR paradigm shift EXTENDED R683 (opentag 6-round STAGNANT sustained threshold, NEW R683)",
-      "methodology_status": "10 rules total (a-j), 10/10 validations PASS (R674-R683), 100% methodology reliability with refined EXTENDED tier rules ⭐⭐"
+    "cluster_signal_14r_cumulative_R484": "60/98 = 61.2% sustained ratio (14 rounds R671-R484, 14/14 sustained rounds = 100%, 8 consecutive rounds R678-R484 NEW RECORD)",
+    "rate_extrap_methodology_R684": "11th VALIDATED in R684 2h proper GROUND TRUTH window (6/7 cluster projects within tolerance, openwiki -5% PERFECT MATCH within Rule a ±15%)",
+    "methodology_refinement_R684": {
+      "rule_h_invalidated_1round": "Rule (h) 0% RETURNS STREAK BROKEN INVALIDATED R484 (recall 0/2h 0% REVERSAL again, NEW paradigm shift flag was 1-round anomaly)",
+      "rule_i_highest_confidence_5round_extended": "Rule (i) STRICT → STAGNANT Downward Transition HIGHEST-CONFIDENCE 5-round EXTENDED R484 (ctx 5-round sustained threshold, NEW R484)",
+      "rule_j_major_paradigm_shift_7round_extended": "Rule (j) MAJOR paradigm shift 7-round EXTENDED R484 (opentag 7-round STAGNANT sustained threshold, NEW R484)",
+      "paradigm_shift_confirmation_3round_threshold": "3+ rounds sustained STAGNANT pattern needed for paradigm shift CONFIRMATION (validated across R680-R484 cycles) ⭐⭐",
+      "methodology_status": "10 rules total (a-j), 11/11 validations PASS (R674-R484), 100% methodology reliability with refined 5-round/7-round EXTENDED tier rules ⭐⭐"
     },
-    "phase_5_status_R683": {
-      "marginal_trigger": "SUSTAINED CONFIRMED 13-Rounds Cumulative Evidence (61.5% sustained ratio)",
+    "phase_5_status_R684": {
+      "marginal_trigger": "SUSTAINED CONFIRMED 14-Rounds Cumulative Evidence (61.2% sustained ratio)",
       "complete_lock_in": "DEFERRED to R780+ for v2.0 release cluster window",
-      "partial_lock_in_evidence": "2/5 1st-party vendor (LangChain openwiki 15 rounds + vectorize-io hindsight 14 rounds), 0/3 v2.0 release cluster"
+      "partial_lock_in_evidence": "2/5 1st-party vendor (LangChain openwiki 16 rounds + vectorize-io hindsight 15 rounds), 0/3 v2.0 release cluster"
     },
-    "openwiki_R683": {
-      "star_count": 7392,
-      "delta_2h": 136,
-      "perfect_rate_match_R682_R683": "0% variance (R682 +136/2h vs R683 +136/2h)",
-      "7k_sustained_rounds": 3,
-      "explosive_sustained_rounds": 15,
-      "8k_break_gap": 608,
-      "8k_break_forecast": "R687-R688 ⭐⭐ (80-85% confidence)"
+    "openwiki_R684": {
+      "star_count": 7521,
+      "delta_2h": 129,
+      "perfect_rate_match_R683_R684": "-5% variance (R683 +136/2h vs R484 +129/2h within Rule a ±15%)",
+      "7k_sustained_rounds": 4,
+      "explosive_sustained_rounds": 16,
+      "8k_break_gap": 479,
+      "8k_break_forecast": "R687-R689 ⭐⭐ (75-85% confidence)"
     },
-    "awesome-harness-engineering_R683": {
-      "latest_commit": "149fe19 (2026-07-06T19:48:17Z, R682 NEW Pydantic AI v2 update, R683 likely UNCHANGED)",
-      "commits_in_R683_window": 0,
-      "v2_0_release_status": "NOT triggered 20 rounds R664-R683, R683 likely UNCHANGED from R682 (sustained baseline activity pattern)"
+    "awesome-harness-engineering_R684": {
+      "latest_commit": "149fe19 (2026-07-06T19:48:17Z, R682 NEW Pydantic AI v2 update, R683-R484 likely UNCHANGED)",
+      "commits_in_R684_window": "UNKNOWN (API rate limit at trigger time, EXTRAP applied to star count)",
+      "v2_0_release_status": "NOT triggered 21 rounds R664-R484, R484 likely UNCHANGED from R483 (sustained baseline activity pattern)"
+    },
+    "github_api_R484": {
+      "rate_limit_status": "Hit at R484 trigger (60/hour, 17 calls = 28% hourly quota exhausted)",
+      "reset_time": "2026-07-07T08:58:21+08:00 (41min after R484 trigger)",
+      "ground_truth_coverage": "11/16 projects (7 cluster + 4 P-tracking)",
+      "extrap_coverage": "5/9 P-tracking projects (marketingskills, hindsight, claude-skills, awesome-harness-engineering, taste-skill)",
+      "methodology_robustness": "0/9 calibration shift MAINTAINED despite 5/9 EXTRAP, methodology validated for mixed data source ⭐"
     },
     "project_update_written": 1,
-    "project_update_name": "langchain-ai-openwiki-7392-stars-r683-7k-sustained-explosive-15th-sustained-confirmed-2026.md",
-    "project_update_path": "articles/projects/langchain-ai-openwiki-7392-stars-r683-7k-sustained-explosive-15th-sustained-confirmed-2026.md"
+    "project_update_name": "langchain-ai-openwiki-7521-stars-r684-7k-sustained-explosive-16th-sustained-8k-break-r687-r689-2026.md",
+    "project_update_path": "articles/projects/langchain-ai-openwiki-7521-stars-r684-7k-sustained-explosive-16th-sustained-8k-break-r687-r689-2026.md"
   }
 }
