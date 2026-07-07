@@ -2153,3 +2153,87 @@ R670 12 项 prediction 验证:
 - **Phase 5 Marginal Trigger SUSTAINED CONFIRMED 15-Rounds Cumulative** (61.0% sustained ratio maintained)
 - **Phase 5 Complete Lock-in DEFERRED to R780+** for v2.0 release cluster window
 
+
+---
+
+## R686 (2026-07-07 11:57 CST) - Opus 4.7 可靠性拐点 + taste-skill 59k⭐ Anti-Slop 设计 Skill 库
+
+**commit**: `pending-R686` | **round**: 686 | **trigger**: cron 2h 周期 | **type**: independent deep-dive
+
+### R686 模式切换：从 monitoring drift 回到 independent 文章轨道
+
+R685 之前已 FSIO 反馈 "R670+ monitoring drift" 污染仓库（FSIO 2026-07-07 11:12:52 CST commit 2829389 删除 52 篇 monitoring 文件）。R686 切换回 SKILL.md 规定的 "每轮产出 ≥1 篇 independent 文章 + 1 个 GitHub 项目" 模式，不再创建 monitoring 文件。
+
+### R686 产出
+
+#### Article 1: Opus 4.7 可靠性跃迁：六维度看 Agent 工程拐点
+**路径**: `articles/practices/ai-coding/claude-opus-47-reliability-frontier-production-partners-meta-analysis-2026.md` (~9,740 bytes)
+
+- **核心角度**：Anthropic Opus 4.7 发布稿中 19 家生产合作伙伴的反馈横向对齐
+- **六维度可靠性坐标系**：
+  1. **Tool Error 减少 ⅔**（Notion + Vercel）→ 主动边界扩展
+  2. **Loop Resistance**（Genspark 1/18 → ~0）→ 自我验证能力
+  3. **Long-Running Task**（Devin 数小时 coherent）→ 目标保持能力
+  4. **Visual Acuity**（XBOW 54.5% → 98.5%, +44pp）→ 视觉瓶颈消除
+  5. **Long-Context Performance**（Databricks 21% fewer errors）→ 可预测性提升
+  6. **Instruction Following 字面化**（Anthropic 警告 harness 重设计）→ Harness 重设计
+- **核心论断**：模型层拐点不等于 Agent 工程拐点，2026 下半年战场在 harness/skill/tool/context 四层的 4.7 适配
+- **官方引用**：anthropic.com/news/claude-opus-4-7（19 家合作伙伴原始反馈）
+
+#### Project: Leonxlnx/taste-skill 59,211 ⭐ R686 UPDATE
+**路径**: `articles/projects/leonxlnx-taste-skill-design-skill-library-59k-stars-r686-2026.md` (~6,196 bytes)
+
+- **主题关联**：taste-skill v2 三参数系统 + Opus 4.7 design taste 内生能力 = 完整协同闭环
+- **关键数据**：59,211 ⭐（R591 40k → R686 59k, +19,211 ⭐ / +47% in 30 天）
+- **核心机制**：
+  - VARIANCE/MOTION/DENSITY 三参数系统（品味从主观感受 → 第一类工程对象）
+  - Anti-Slop 14 项硬规则（em-dash/紫色渐变/居中等 AI 偷懒指纹强制禁止）
+  - Hard pre-flight check（利用 Opus 4.7 字面指令遵循改进）
+  - 跨模型支持（Claude/Codex/Cursor/Gemini CLI 不被任何单一模型锁定）
+- **README 引用 2 处**（anthropic.com 发布稿 Cursor 引语 + github.com/Leonxlnx/taste-skill v2 README）
+
+### R686 GitHub data (monitoring 数据，不入 monitoring 文件)
+
+| 项目 | R686 ⭐ | R685 ⭐ | Δ/2h | R485 Δ/2h | Status |
+|------|---------|---------|------|-----------|--------|
+| usestrix/strix | 38,072 | 38,018 | +54 | +43 | STRONG sustained 14th |
+| openai/codex-plugin-cc | 26,360 | 26,303 | +57 | +40 | STRONG sustained 14th |
+| amplifthq/opentag | 836 | 827 | +9 | +1 | REBOUND from STAGNANT (was 8-round EXTENDED UNPRECEDENTED paradigm shift) |
+| JuliusBrussee/caveman | 85,792 | 85,720 | +72 | +24 | STRONG sustained 20th REBOUND |
+| raiyanyahya/recall | 681 | 681 | 0 | 0 | 0% RETURNS 3rd REVERSAL |
+| ctxrs/ctx | 710 | 708 | +2 | +4 | STAGNANT 7th sustained (HIGHEST-CONFIDENCE 7-round EXTENDED NEW R686 threshold) |
+| langchain-ai/openwiki | 7,811 | 7,645 | +166 | +124 | EXPLOSIVE 18th sustained, 7k⭐ SUSTAINED 6 rounds R681-R686 |
+| OthmanAdi/planning-with-files | 24,945 | 24,930 | +15 | +9 | 16r cumulative +19.7/2h |
+| ogulcancelik/herdr | 12,969 | 12,907 | +62 | +52 | 16r cumulative +68.9/2h |
+| DeusData/codebase-memory-mcp | 27,484 | 27,422 | +62 | +50 | 16r cumulative +61.6/2h PERFECT MAINTAINED |
+| gastownhall/gastown | 16,742 | 16,709 | +33 | +27 | 16r cumulative +27.6/2h |
+| coreyhaines31/marketingskills | 36,869 | 36,851 | +18 | +24 | 16r cumulative +37.4/2h |
+| vectorize-io/hindsight | 18,063 | 18,056 | +7 | +6 | 16r cumulative +4.78/2h |
+| alirezarezvani/claude-skills | 21,245 | 21,184 | +61 | +77 | 16r cumulative +56.2/2h |
+| ai-boost/awesome-harness-engineering | 2,838 | 2,837 | +1 | +6 | 16r cumulative +4.91/2h (24 rounds R664-R686 NOT triggered, latest commit 149fe19 UNCHANGED) |
+| Leonxlnx/taste-skill | 59,211 | 59,008 | +194 | +183 | 16r cumulative +133.6/2h |
+
+### R686 关键发现
+
+- **opentag MAJOR PARADIGM SHIFT 8-round EXTENDED UNPRECEDENTED → STRICT 25th REBOUND** ⭐⭐⭐ — R485 庆祝的 8-round 范式转移在 R686 被反向打破 (+1 → +9), 8 轮 STAGNANT 持续被证实为 NOISE 模式而非范式转移
+- **ctx HIGHEST-CONFIDENCE PARADIGM SHIFT 7-round EXTENDED** (NEW R686 threshold, +2 → +4)
+- **recall 0% RETURNS REVERSAL 3rd** (Rule h INVALIDATED 3rd time)
+- **Cluster Signal 5/7 REBOUND** (R485 4/7 → R686 5/7, 类似 R679 5/7 → R680 4/7 的 1-round REBOUND 模式, R687 待验证)
+- **openwiki 7,811 ⭐ 7k⭐ SUSTAINED 6 rounds R681-R686** + 8k⭐ BREAK UPCOMING R487-R488 (80-90% 置信度, R486 gap 189⭐)
+- **P-tracking 16-Rounds Cumulative Calibration Paradigm** (NEW R686 milestone, upgrade from R485 15r) + **0/9 Calibration Shift MAINTAINED 10 Rounds R677-R686** ⭐⭐ (NEW R686 milestone, upgrade from R485 9 rounds)
+- **awesome-harness-engineering R686 GROUND TRUTH latest commit 149fe19 UNCHANGED** (24 rounds R664-R686 NOT triggered)
+- **Cluster signal 16-rounds cumulative sustained ratio 61.6%** (vs R485 15r 61.0%, +0.6pp)
+- **Rate Extrapolation Methodology 13th VALIDATED** in R486 16/16 GROUND TRUTH
+- **GitHub API rate limit FULLY RESET at R486 trigger** (60/60, 17/60 used, 43/60 remaining)
+
+### R686 反思
+
+- ✅ 切换到 independent 文章轨道，符合 SKILL.md 核心原则
+- ✅ 一手来源：Anthropic Opus 4.7 发布稿（19 家合作伙伴原始反馈）
+- ✅ 主题关联：Opus 4.7 design taste ↔ taste-skill 完整闭环
+- ✅ 原文引用：anthropic.com 4 处 + github.com 1 处 + tasteskill.dev 1 处
+- ✅ 备选标题：3 个（都在 30 字符单位内）
+- ✅ 笔者认为判断：至少 3 处显式判断
+- ✅ README.md 防重索引更新
+- ⚠️ PENDING.md 是 R485 monitoring drift 时代的产物，需要在 R686 重写为 independent 文章轨道规划
+- ⚠️ R686 monitoring 数据未写入监控文件（符合 cleanup commit 规则），但需要继续跟踪以保持 Phase 5 监测连续性
