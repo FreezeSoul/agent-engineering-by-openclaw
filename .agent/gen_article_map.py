@@ -5,10 +5,12 @@
 - 包含目录位置和创建时间
 - 输出到仓库根目录 ARTICLES_MAP.md
 - 优化：单次 git log 调用获取所有文件创建日期
+- 2026-07-07: 增加 Type 列（monitoring | independent）区分「系统产物」与「读者产物」
 """
 
 import subprocess
 import os
+import re
 from datetime import datetime
 
 REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -68,6 +70,44 @@ def extract_title(filepath: str) -> str:
         pass
     return os.path.basename(filepath).replace(".md", "")
 
+
+# === 2026-07-07: 文章类型分类 ===
+# 区分「monitoring」（R-round 系统产物，不发布头条）和「independent」（读者向深度文）
+def classify_article(filename: str) -> str:
+    """根据文件名模式判断文章类型
+
+    monitoring 特征（命中任一即 monitoring）：
+    - 包含 R\d{3}-phase-、R\d{3}-stars-、R\d{3}-cluster- 等监测快照模式
+    - 包含 cluster-signal、phase-N、baseline-boost、rebound-confirmed 等方法论术语
+
+    其他默认为 independent（读者向深度文）
+    """
+    fn = filename.lower()
+
+    # Monitoring 报告的典型文件命名模式
+    monitoring_patterns = [
+        # R\d{3} 状态码 + monitoring 上下文（高优先级）
+        r"-r\d{3}-(phase|stars|cluster|break|rebound|update|round|stagnant|baseline|rate|calibration|tracking|sustained)",
+        # R\d{3} + BREAK 预测
+        r"-r\d{3}-[\d.]+k-break",
+        # 监测方法论术语
+        r"cluster-signal",
+        r"phase-\d",
+        r"baseline-boost",
+        r"rebound-confirmed",
+        r"calibration-shift",
+        r"rate-extrap",
+        r"p-tracking",
+        r"-sustained-\d",
+        r"-stars-r\d{3}-",
+    ]
+
+    for pat in monitoring_patterns:
+        if re.search(pat, fn):
+            return "monitoring"
+
+    return "independent"
+
 def get_all_articles():
     """遍历 articles/ 目录获取所有 .md 文件"""
     articles_dir = os.path.join(REPO_DIR, "articles")
@@ -86,11 +126,13 @@ def get_all_articles():
                 title = extract_title(filepath)
                 date = file_dates.get(rel_path, "unknown")
                 category = rel_path.split(os.sep)[1] if os.sep in rel_path else "root"
+                article_type = classify_article(rel_path)
                 articles.append({
                     "title": title,
                     "path": rel_path,
                     "category": category,
-                    "date": date
+                    "date": date,
+                    "type": article_type
                 })
     return articles
 
@@ -112,17 +154,34 @@ def generate_map():
         f"> Total articles: {len(articles)}\n",
         "---\n",
         "",
-        "| # | Title | Category | Created | Path |",
-        "|---|-------|----------|---------|------|",
+        "| # | Title | Category | Created | Type | Path |",
+        "|---|-------|----------|---------|------|------|",
     ]
 
     for i, art in enumerate(articles, 1):
         title = art["title"]
         category = art["category"]
         date = art["date"]
+        article_type = art["type"]
         path = art["path"]
         link = f"https://github.com/FreezeSoul/agent-engineering-by-openclaw/blob/master/{path}"
-        lines.append(f"| {i} | {title} | {category} | {date} | [{path}]({link}) |")
+        lines.append(f"| {i} | {title} | {category} | {date} | {article_type} | [{path}]({link}) |")
+
+    # === 2026-07-07: 增加类型分布统计 ===
+    type_counter = {}
+    for art in articles:
+        t = art["type"]
+        type_counter[t] = type_counter.get(t, 0) + 1
+
+    lines.extend([
+        "",
+        "---",
+        "",
+        "## 📊 Type Distribution",
+        "",
+    ])
+    for t, count in sorted(type_counter.items(), key=lambda x: -x[1]):
+        lines.append(f"- **{t}**: {count} 篇")
 
     return "\n".join(lines)
 
@@ -138,13 +197,20 @@ def main():
     # 统计各类别数量
     articles = get_all_articles()
     categories = {}
+    type_counter = {}
     for art in articles:
         cat = art["category"]
         categories[cat] = categories.get(cat, 0) + 1
+        t = art["type"]
+        type_counter[t] = type_counter.get(t, 0) + 1
 
     print("\n📂 Category breakdown:")
     for cat, count in sorted(categories.items()):
         print(f"   {cat}: {count}")
+
+    print("\n🏷️  Type breakdown:")
+    for t, count in sorted(type_counter.items(), key=lambda x: -x[1]):
+        print(f"   {t}: {count}")
 
 if __name__ == "__main__":
     main()
