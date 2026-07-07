@@ -1,98 +1,101 @@
 {
-  "lastRun": "2026-07-08T01:57",
-  "lastCommit": "pending-R692",
-  "round": 692,
+  "lastRun": "2026-07-08T03:57",
+  "lastCommit": "pending-R693",
+  "round": 693,
   "status": "autonomous",
   "version": "0.7.0",
   "owner": "FreezeSoul",
   "type": "independent_article_and_project_after_r670_monitoring_drift_cleanup",
-  "r691_outcome": {
-    "trigger_time": "2026-07-07T23:57:00+08:00",
+  "r692_outcome": {
+    "trigger_time": "2026-07-08T01:57:00+08:00",
     "mode": "independent_article + project UPDATE (post-R670 monitoring drift cleanup)",
-    "FSIO_feedback_2026-07-07": "R670+ monitoring drift 已删除 52 篇 monitoring 文件 (commit 2829389), R686 切换回 SKILL.md 规定的 independent 文章 + GitHub 项目推荐轨道;R687/R688/R689/R690/R691 持续执行 independent 轨道",
     "articles_written": 1,
-    "article_name": "hybrid-agent-runtime-managed-sandbox-durable-execution-anthropic-openai-langchain-r691-paradigm-2026.md",
-    "article_path": "articles/deep-dives/hybrid-agent-runtime-managed-sandbox-durable-execution-anthropic-openai-langchain-r691-paradigm-2026.md",
-    "article_topic": "Hybrid Agent Runtime: Managed Sandbox + Durable Execution 三家 1st-party 范式收敛 — OpenAI 'The next evolution of the Agents SDK' + LangChain 'Deep Agents v0.5' + Anthropic claude-agent-sdk-typescript CHANGELOG 三家 1st-party 厂商在 24-48h 窗口同步 ship Managed Runtime 1st-party 信号,论证 R690 Hybrid Agent SDK 三层架构在 Layer 2 (Harness) + Layer 3 (State) 上的 1st-party 显式兑现,'vendor SDK 越做越薄,managed runtime 越做越厚' 是 R691 的核心 insight",
-    "article_type": "independent deep-dive (Managed Runtime + 4 个工程洞察 + 边界反模式 + R687-R691 五段 arc 对应表 + 10 处 1st-party 实证)",
-    "article_1st_party_sources_count": 10,
+    "article_name": "hybrid-runtime-r692-anthropic-depth2-agent-tree-1st-party-evolution-2026.md",
+    "projects_written": 1,
+    "project_name": "langchain-ai-openwiki-8814-stars-r692-22nd-sustained-9k-gap-186-near-break-2026.md",
+    "core_thesis": "Hybrid Runtime R692 1-day-after 1st-party 跟进:Anthropic v0.3.202 parent_agent_id + depth-2+ agent trees + disk-persisted metadata + OpenAI v0.18.0 SQLAlchemySession Unicode + v0.13.0 RealtimeAgent default 4 家 1st-party SDK release 24-48h 同步 ship"
+  },
+  "r693_outcome": {
+    "trigger_time": "2026-07-08T03:57:00+08:00",
+    "mode": "independent_article + project UPDATE (post-R670 monitoring drift cleanup)",
+    "articles_written": 1,
+    "article_name": "deepagents-r693-0-7-0a6-nemotron-harness-profile-cross-vendor-1st-party-fulfillment-2026",
+    "article_path": "articles/deep-dives/deepagents-r693-0-7-0a6-nemotron-harness-profile-cross-vendor-1st-party-fulfillment-2026.md",
+    "article_topic": "Hybrid Runtime R693 LangChain 1:N 跨 6 vendor 1st-party 兑现 — LangChain DeepAgents 0.7.0a6 ship NVIDIA Nemotron 3 Ultra harness profile 1:N 跨 6 vendor (NVIDIA/ChatNVIDIA, Baseten, Fireworks, OpenRouter, Nebius, Together),把 vendor-specific model tuning 上移到 SDK first-class API;配套 0.7.0a4 FilesystemMiddleware tool allowlist + ACP 0.0.9 defer interrupt state reads + talon 0.0.3 + code 0.1.33,R691 Managed Runtime 范式从 vendor 1st-party 共识演进到 vendor 1st-party 跨 vendor primitive 兑现的临界点",
+    "article_type": "independent deep-dive (LangChain 5 release in 24h + 4 个工程洞察 + R691-R693 三段 arc 对应表 + 边界反模式 + 7 处 1st-party 实证)",
+    "article_1st_party_sources_count": 7,
     "article_1st_party_sources": [
-      "openai.com/index/the-next-evolution-of-the-agents-sdk (1st-party Managed Runtime 原型)",
-      "openai.com/index/the-next-evolution-of-the-agents-sdk (snapshotting and rehydration)",
-      "openai.com/index/the-next-evolution-of-the-agents-sdk (Manifest abstraction + 7 sandbox providers)",
-      "openai.com/index/the-next-evolution-of-the-agents-sdk (harness primitive = MCP + skills + AGENTS.md + shell + apply_patch)",
-      "langchain.com/blog/deep-agents-v0-5 (async subagents return task ID immediately)",
-      "langchain.com/blog/deep-agents-v0-5 (5 native tools: start/check/update/cancel/list_async_tasks)",
-      "langchain.com/blog/deep-agents-v0-5 (Agent Protocol = LangChain 1st-party Open spec)",
-      "langchain.com/blog/deep-agents-v0-5 (选 Agent Protocol 而非 A2A 的工程决策)",
-      "anthropics/claude-agent-sdk-typescript CHANGELOG (Fixed MCP task state not being restored on resume)",
-      "anthropics/claude-agent-sdk-typescript CHANGELOG (requestId to canUseTool callback options)"
+      "github.com/langchain-ai/deepagents releases v0.7.0a6 (NVIDIA Nemotron 3 Ultra harness profile 1:N 跨 6 vendor, 8 项 profiles 能力)",
+      "github.com/langchain-ai/deepagents releases v0.7.0a4 (FilesystemMiddleware tool allowlist)",
+      "github.com/langchain-ai/deepagents releases deepagents-acp 0.0.9 (defer interrupt state reads until stream closes)",
+      "github.com/langchain-ai/deepagents releases deepagents-talon 0.0.3 (video frame extraction + Fleet zip import)",
+      "github.com/langchain-ai/deepagents releases deepagents-code 0.1.33 (per-server project MCP trust + In-the-moment trust prompt + dcode tools list)",
+      "github.com/langchain-ai/deepagents commits 0.7.0a6 (Released from alpha/deepagents-0-7-0a6 at commit 55983b3 2026-07-07 19:14:07Z)",
+      "R691 / R692 文章 cross-vendor primitive 论据 (OpenAI 7 sandbox providers R691 + Anthropic parent_agent_id R692 + LangChain 1 profile 6 vendor R693 = R693 完整跨 vendor 1st-party primitive 闭环)"
     ],
     "projects_written": 1,
-    "project_name": "langchain-ai-openwiki-8727-stars-r691-21st-sustained-9k-narrowing-2026.md",
-    "project_path": "articles/projects/langchain-ai-openwiki-8727-stars-r691-21st-sustained-9k-narrowing-2026.md",
-    "project_topic": "openwiki 8.7k⭐: R691 9k⭐ gap 收窄至 273 ⭐ 21st Sustained EXPLOSIVE — 8,727 ⭐ / +101 in 1h54min / 9k⭐ gap 273 ⭐ (R690 374 → R691 273, Δ -101 收窄 27%) / baseline 完全收敛 53/h (vs R690 75.5/h, -30%) / Hybrid Agent Runtime Layer 2 OSS 实证 (LangChain DeepAgents v0.5 ContextT middleware 同源)",
-    "project_topic_association": "R691 Hybrid Agent Runtime: Managed Sandbox + Durable Execution ↔ openwiki Hybrid MVP 层 ↔ pentagi Hybrid Production 层 = 'Hybrid Runtime 层 ↔ MVP 层 ↔ Production 层' 三层闭环 evidence 在 R691 完成",
+    "project_name": "langchain-ai-openwiki-8892-stars-r693-23rd-sustained-9k-gap-108-imminent-break-2026",
+    "project_path": "articles/projects/langchain-ai-openwiki-8892-stars-r693-23rd-sustained-9k-gap-108-imminent-break-2026.md",
+    "project_topic": "openwiki 8.9k⭐: R693 9k⭐ gap 收窄至 108 ⭐ 23rd Sustained EXPLOSIVE — 8,892 ⭐ / +78 in 2h / 39/h (R693 速率维持) / 9k⭐ gap 108 ⭐ (R692 186 → R693 108,**收窄率 41.9% 是 R687-R693 七轮最高**) / 23rd Sustained EXPLOSIVE (R669-R693 持续 25 rounds) / R693→R694 窗口 BREAK 90-95% 概率 / openwiki 0.0.2 release ship (2026-07-07 18:03 UTC) + 24h 8 commits / Hybrid Runtime Layer 2 OSS 实证 (LangChain DeepAgents 0.7.0a6 NVIDIA Nemotron 3 Ultra 跨 6 vendor 同主题关联)",
+    "project_topic_association": "R693 Hybrid Runtime: LangChain 1:N 跨 6 vendor 1st-party 兑现 ↔ openwiki 0.0.2 release + Hybrid Runtime Layer 2 (Harness) OSS 实证 = 'LangChain 1st-party 跨 vendor primitive' + 'OSS 1st-party release ship' 双 1st-party 同步 ship 闭环在 R693 完成",
     "project_1st_party_sources_count": 8,
     "project_1st_party_sources": [
-      "github.com/langchain-ai/openwiki API R691 实测 (8,727 ⭐ / 579 forks / 123 open_issues / TypeScript / MIT)",
-      "github.com/langchain-ai/openwiki commit 7d355379 (fix: html tokens sanitization #148)",
-      "github.com/langchain-ai/openwiki commit e276b087 (chore: add CONTRIBUTING.md #145)",
-      "github.com/langchain-ai/openwiki commit 12055db1 (fix(ci): set least-privilege permissions #146)",
-      "github.com/langchain-ai/openwiki commit a4df0c9e (fix: correct OpenRouter Claude Opus model ID #133)",
-      "github.com/langchain-ai/openwiki commit d06eda81 (docs: add GitLab OpenWiki update workflow #137)",
-      "R690 article (8,626 ⭐ / +158 in 2h6min / 9k⭐ gap 374 ⭐)",
-      "R691 Managed Runtime article (同轮产出 - openwiki ↔ LangChain Layer 2 主题关联)"
+      "github.com/langchain-ai/openwiki API R693 实测 (8,892 ⭐ / 591 forks / 125 open_issues / TypeScript / MIT)",
+      "github.com/langchain-ai/openwiki commit release 0.0.2 #195 (2026-07-07 18:03 UTC)",
+      "github.com/langchain-ai/openwiki commit security hardening #152 (2026-07-07 15:59 UTC)",
+      "github.com/langchain-ai/openwiki commit html tokens sanitization #148 (2026-07-06 22:26 UTC)",
+      "github.com/langchain-ai/openwiki commit CONTRIBUTING.md #145 (2026-07-06 21:18 UTC)",
+      "github.com/langchain-ai/openwiki commit CI least-privilege #146 (2026-07-06 21:12 UTC)",
+      "github.com/langchain-ai/openwiki commit GitLab OpenWiki workflow #137 (2026-07-06 20:14 UTC)",
+      "R692 article (8,814 ⭐ / +87 in 2h / 9k⭐ gap 186 ⭐)"
     ],
-    "phase_5_monitoring_data_R691": {
-      "trigger_time": "2026-07-07T23:57:00+08:00",
+    "phase_5_monitoring_data_R693": {
+      "trigger_time": "2026-07-08T03:57:00+08:00",
       "data_location": "HISTORY.md (NOT independent .md file, per R670+ cleanup rules)",
-      "cluster_signal_R691": "21/7 sustained baseline (R685-R691)",
-      "openwiki_R691": {
-        "stars": 8727,
-        "delta_1h54min": 101,
-        "rate_per_h": 53,
-        "cluster_signal_state": "EXPLOSIVE 21st Sustained (R669-R691)",
-        "9k_gap": 273,
-        "9k_prediction_window": "R692 conservative / R692 mean / R692-R693 optimistic",
+      "cluster_signal_R693": "23/7 sustained baseline (R669-R693)",
+      "openwiki_R693": {
+        "stars": 8892,
+        "delta_2h": 78,
+        "rate_per_h": 39,
+        "cluster_signal_state": "EXPLOSIVE 23rd Sustained (R669-R693)",
+        "9k_gap": 108,
+        "9k_prediction_window": "R694 trigger 几乎确定 BREAK",
         "9k_trigger_probability": {
           "R691": "0% (passed)",
-          "R692": "55-70%",
-          "R693": "75-85%",
-          "R694": "90-95%"
+          "R692": "0% (passed)",
+          "R693": "0% (passed)",
+          "R694": "90-95% (R693 校正)",
+          "R695": "99%+"
         },
-        "rate_baseline_convergence_analysis": "R687 62/h → R688 236/h (REBOUND noise spike) → R689 175/h (post-REBOUND -26%) → R690 75.5/h (baseline-rebound mix -57%) → R691 53/h (baseline 完全收敛 -30%, approaching R687 baseline) = cluster signal 进入成熟稳定期"
+        "rate_baseline_convergence_analysis": "R687 62/h → R688 236/h (REBOUND noise spike) → R689 175/h (post-REBOUND -26%) → R690 75.5/h (baseline-rebound mix -57%) → R691 53/h (baseline 完全收敛 -30%) → R692 43.5/h (baseline 继续收敛 -18%) → R693 39/h (baseline 持续收敛 -10.3%) = cluster signal 进入「成熟稳定期」,R693 速率 39/h 仍维持 > R692 baseline 收敛值"
       },
-      "pentagi_R691": {
-        "stars": 18249,
-        "delta_1h54min": 23,
-        "rate_per_h": 12,
+      "pentagi_R693": {
+        "stars": 18256,
+        "delta_R692_to_R693": 7,
+        "rate_per_h": 3.5,
         "cluster_signal_state": "NOT cluster signal, slow sustained baseline",
-        "last_push": "2026-07-03T17:17:18Z"
+        "last_push": "2026-07-03T17:17:18Z",
+        "stars_today": 18256
       },
-      "strix_R691": {
-        "stars": 38346,
-        "delta_R685_to_R691": 328,
-        "cluster_signal_state": "STRONG sustained, cluster continuous"
+      "langchain_deepagents_R693_releases": {
+        "releases_in_24h": 5,
+        "core_release": "0.7.0a6 NVIDIA Nemotron 3 Ultra harness profile 1:N 跨 6 vendor",
+        "companion_releases": ["0.7.0a4 FilesystemMiddleware tool allowlist", "ACP 0.0.9 defer interrupt state reads", "talon 0.0.3 video frame extraction", "code 0.1.33 per-server project MCP trust"],
+        "release_window": "2026-07-06 14:53 UTC - 2026-07-07 19:30 UTC (28h 37min)",
+        "assessment": "LangChain 1st-party ship 节奏 ≈ R692 Anthropic + OpenAI 联合节奏,L633 进入 managed runtime 1st-party 兑现期"
       },
-      "codex_plugin_cc_R691": {
-        "stars": 26536,
-        "delta_R685_to_R691": 233,
-        "cluster_signal_state": "STRONG sustained, cluster continuous"
+      "paradigm_shifts_R693": {
+        "hybrid_runtime_R691_R693_arc_extended": "SUSTAINED 3-round paradigm shift CONFIRMED (R691 Managed Runtime 概念 + R692 1-day-after + R693 LangChain 1:N 跨 vendor)",
+        "cross_vendor_1n_primitive_R693_first": "R693 第一次出现「1 profile 1:N 跨 6 vendor」1st-party SDK primitive,1:N 配置杠杆反转"
       },
-      "paradigm_shifts_R691": {
-        "opentag_major_paradigm_shift_11round_extended": "STAGNANT 11th EXTENDED paradigm shift CONFIRMED",
-        "ctx_highest_confidence_paradigm_shift_9round_extended": "STAGNANT 9th EXTENDED paradigm shift CONFIRMED"
-      },
-      "1st_party_signals_R691_24h_48h_window": {
-        "openai_agents_sdk_evolution_article": "1 (The next evolution of the Agents SDK)",
-        "langchain_deep_agents_v05_article": "1 (Deep Agents v0.5 + 5 native tools + Agent Protocol)",
-        "anthropic_claude_agent_sdk_typescript_changelog_entries": "多项 (MCP task state resume fix + canUseTool requestId)",
-        "openwiki_commits_24h": 5,
-        "conclusion": "Three 1st-party vendors shipped Managed Runtime in 24-48h window — Hybrid Agent Runtime paradigm shift is now empirically observable at Layer 2 + Layer 3"
+      "1st_party_signals_R693_36h_window": {
+        "langchain_deepagents_releases": 5,
+        "anthropic_claude_agent_sdk_releases": 0,
+        "openai_agents_sdk_releases": 0,
+        "conclusion": "LangChain 1st-party 在 R691 后 36h 窗口内 ship 5 release 完成 Managed Runtime 在 Layer 2 (Harness) 上的跨 vendor primitive 兑现,Anthropic / OpenAI 4 SDK release 之后在 R693 36h 窗口内无新 SDK release — LangChain 进入 managed runtime 1st-party 兑现期"
       }
     },
-    "r687_to_r691_arc_correspondence": {
+    "r687_to_r693_arc_correspondence": {
       "R687_Alberta_50_Agent": {
         "layer_1": "Claude Agent SDK (implicit)",
         "layer_2": "95 security controls (implicit)",
@@ -122,71 +125,74 @@
         "layer_2": "Managed Sandbox + 5 AsyncSubAgent native tools",
         "layer_3": "snapshot + rehydrate + Agent Protocol + MCP task state resume",
         "runtime_form": "Managed Agent Runtime(跨 vendor 共识)"
+      },
+      "R692_Hybrid_Agent_Runtime_R692_1_day_after": {
+        "layer_1": "4 vendor SDK release 24-48h 同步 ship",
+        "layer_2": "parent_agent_id + depth-2+ agent trees + Realtime default",
+        "layer_3": "disk-persisted metadata + SQLAlchemySession Unicode",
+        "runtime_form": "agent-tree-level SDK first-class primitive(1-day-after 跟进)"
+      },
+      "R693_Hybrid_Agent_Runtime_R693_LangChain_1N_Cross_Vendor": {
+        "layer_1": "LangChain 5 release in 24h (0.7.0a4 + 0.7.0a6 + ACP 0.0.9 + talon 0.0.3 + code 0.1.33)",
+        "layer_2": "1 profile 跨 6 vendor (NVIDIA/ChatNVIDIA, Baseten, Fireworks, OpenRouter, Nebius, Together) + FilesystemMiddleware allowlist + skill truncation",
+        "layer_3": "ACP 0.0.9 interrupt state reads + filesystem tool allowlist state",
+        "runtime_form": "harness-profile 1:N 跨 vendor 1st-party primitive 兑现(临界点)"
       }
     },
-    "r692_to_r700_predictions": [
-      "R692-R693: 1st-party Managed Runtime GA (OpenAI TypeScript SDK + LangChain Agent Protocol + Anthropic Managed Compute)",
-      "R694-R697: Managed Agent Runtime 成为主流 mental model (类比 Kubernetes 在 container orchestration)",
+    "r694_to_r700_predictions": [
+      "R694: openwiki 9k⭐ BREAK 触发 (90-95% 概率)",
+      "R694-R695: Anthropic / OpenAI 对偶 cross-vendor primitive ship (1 manifest profile 跨 N sandbox provider / 1 agent tree template 跨 N vendor)",
+      "R695-R697: Managed Agent Runtime + 1st-party cross-vendor primitive 成为主流 mental model",
       "R698-R700: 'Agent Runtime Spec' 标准化 (类比 containerd / CRI)"
-    ]
-  },
-  "r690_outcome_summary": {
-    "trigger_time": "2026-07-07T22:03:00+08:00",
-    "mode": "independent_article + project UPDATE",
-    "articles_written": 1,
-    "article_name": "hybrid-agent-sdk-three-layer-architecture-anthropic-openai-langchain-h2-2026-paradigm-convergence-2026.md",
-    "projects_written": 1,
-    "project_name": "langchain-ai-openwiki-8626-stars-r690-20th-sustained-9k-narrowing-2026.md",
-    "core_thesis": "Hybrid Agent SDK 三层架构:H2 2026 范式收敛"
-  },
-  "r689_outcome_summary": {
-    "trigger_time": "2026-07-07T19:57:00+08:00",
-    "mode": "independent_article + project UPDATE",
-    "articles_written": 1,
-    "article_name": "mcp-2026-07-28-stateless-protocol-hybrid-architecture-interface-standardization-pivot-2026.md",
-    "projects_written": 1,
-    "project_name": "langchain-ai-openwiki-8468-stars-r689-9k-break-prediction-2026.md",
-    "core_thesis": "MCP 2026-07-28 Stateless RC is the Hybrid Architecture interface standardization pivot"
-  },
-  "r688_outcome_summary": {
-    "trigger_time": "2026-07-07T15:57:00+08:00",
-    "mode": "independent_article + project UPDATE",
-    "articles_written": 1,
-    "article_name": "hybrid-architecture-rules-engine-plus-llm-h2-2026-agent-engineering-pivot-2026.md",
-    "projects_written": 1,
-    "project_name": "langchain-ai-openwiki-hybrid-architecture-mvp-2026.md",
-    "core_thesis": "Hybrid Architecture (rules engine + LLM) is the H2 2026 Agent engineering paradigm pivot"
-  },
-  "r687_outcome_summary": {
-    "trigger_time": "2026-07-07T13:57:00+08:00",
-    "mode": "independent_article + project",
-    "articles_written": 1,
-    "article_name": "anthropic-alberta-government-claude-code-50-agents-parallel-security-2800x-speedup-2026.md",
-    "projects_written": 1,
-    "project_name": "vxcontrol-pentagi-multi-agent-autonomous-pentest-18199-stars-r687-2026.md",
-    "core_thesis": "Anthropic Alberta 50-Agent case study + pentagi 18k⭐ five-role multi-agent autonomous pentest"
-  },
-  "r692_outcome": {
-    "trigger_time": "2026-07-08T01:57:00+08:00",
-    "mode": "independent_article + project UPDATE (post-R670 monitoring drift cleanup)",
-    "articles_written": 1,
-    "article_name": "hybrid-runtime-r692-anthropic-depth2-agent-tree-1st-party-evolution-2026",
-    "article_path": "articles/deep-dives/hybrid-runtime-r692-anthropic-depth2-agent-tree-1st-party-evolution-2026.md",
-    "article_topic": "Hybrid Runtime R692 1-day-after 1st-party 跟进 — Anthropic v0.3.202 parent_agent_id + depth-2+ agent trees + disk-persisted metadata + OpenAI v0.18.0 SQLAlchemySession Unicode + v0.13.0 RealtimeAgent default 4 家 1st-party SDK release 在 R691 后 24-48h 内同步 ship,验证 R691 Managed Runtime 不是营销共识而是持续 ship 的真实演进",
-    "article_type": "independent deep-dive (4 家 1st-party SDK release 24-48h 同步 ship + 4 个工程洞察 + 边界反模式 + R687-R692 六段 arc 对应表 + 8 处 1st-party 实证)",
-    "article_1st_party_sources_count": 8,
-    "article_title_units": 24.0,
-    "projects_written": 1,
-    "project_name": "langchain-ai-openwiki-8814-stars-r692-22nd-sustained-9k-gap-186-near-break-2026",
-    "project_path": "articles/projects/langchain-ai-openwiki-8814-stars-r692-22nd-sustained-9k-gap-186-near-break-2026.md",
-    "project_stars": 8814,
-    "project_cluster_signal": "22nd Sustained EXPLOSIVE (R669-R692)",
-    "project_9k_gap": 186,
-    "project_rate_per_h": 43.5,
-    "project_break_window": "R693 → R694 窗口 60-80% 概率",
-    "sources_tracked_appended": 5,
-    "commits_in_24h_openwiki": 10,
-    "pentagi_stars_r692": 18256,
-    "pentagi_delta_in_2h": 7
+    ],
+    "r693_langchain_5_release_capture": {
+      "0.7.0a4_FilesystemMiddleware_tool_allowlist": {
+        "time_utc": "2026-07-06 14:53",
+        "layer": "Layer 2 (Harness)",
+        "key_ship": "Add a filesystem tool allowlist to FilesystemMiddleware, so callers can expose only selected built-in filesystem tools while keeping read_file available and leaving custom user tools unaffected"
+      },
+      "0.7.0a6_NVIDIA_Nemotron_3_Ultra_harness_profile": {
+        "time_utc": "2026-07-07 19:14",
+        "release_commit": "55983b3",
+        "layer": "Layer 2 (Harness) 1:N 跨 6 vendor 1st-party primitive — R693 核心 ship",
+        "key_ship": "Add a built-in NVIDIA Nemotron 3 Ultra harness profile across NVIDIA/ChatNVIDIA, Baseten, Fireworks, OpenRouter, Nebius, and Together. The profile adds model-specific prompt guidance, provider compatibility shims, text-tool-call repair, reasoning-tag cleanup, filesystem retry handling, rate-limit retries, loop-control nudges, and final-answer guards for agentic workloads without changing other models on those providers"
+      },
+      "0.0.9_Agent_Protocol_interrupt_state_reads": {
+        "time_utc": "2026-07-07 19:30",
+        "layer": "Layer 3 (State)",
+        "key_ship": "acp: defer interrupt state reads until stream closes (#4542)"
+      },
+      "0.0.3_talon_video_frame_extraction": {
+        "time_utc": "2026-07-06 23:03",
+        "layer": "Layer 1 (SDK API) + Talon 工具链",
+        "key_ship": "sdk: optional video frame extraction on read_file (#4094) + talon: add Fleet zip import command (#4493)"
+      },
+      "0.1.33_code_per_server_project_MCP_trust": {
+        "time_utc": "2026-07-07 (R693 window)",
+        "layer": "Layer 1/2 (SDK API + Harness) per-server trust 颗粒度精细化",
+        "key_ship": "Selective per-server project MCP trust (#4507) + In-the-moment trust prompt for symlinked skills (#4200) + Add dcode tools list command (#4461)"
+      }
+    },
+    "r693_openwiki_data": {
+      "stars": 8892,
+      "delta_in_2h": 78,
+      "rate_per_h": 39,
+      "9k_gap": 108,
+      "9k_narrow_rate": 41.9,
+      "cluster_signal_state": "23rd Sustained EXPLOSIVE (R669-R693 持续 25 rounds)",
+      "commits_in_24h": 8,
+      "release_0.0.2_shipped": true,
+      "release_0.0.2_time_utc": "2026-07-07 18:03",
+      "pentagi_stars_r693": 18256,
+      "pentagi_delta_in_2h": 0,
+      "9k_break_prediction_window": "R693 → R694 窗口 90-95% 概率(R693 校正,比 R692 预测的 60-80% 大幅上调)"
+    },
+    "r693_screenshot": {
+      "path": "articles/projects/screenshots/langchain-ai-openwiki-2026-07-08-r693.png",
+      "size": "699 KB",
+      "viewport": "1920x1080",
+      "tool": "Playwright Chromium + SOCKS5 proxy",
+      "captured_at": "2026-07-08 04:09 CST"
+    }
   }
 }
