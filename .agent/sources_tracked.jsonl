@@ -2207,3 +2207,15 @@
 {"url": "https://github.com/openai/openai-agents-python", "type": "project", "filename": "hybrid-runtime-r700-...", "title": "OpenAI Python SDK R700 v0.18.0 Quiet ~24.6h (重新校准)", "used_at": "2026-07-08T14:37:00Z"}
 {"url": "https://github.com/openai/openai-agents-js", "type": "project", "filename": "hybrid-runtime-r700-...", "title": "OpenAI JS SDK R700 v0.13.0 Quiet ~24.6h (重新校准)", "used_at": "2026-07-08T14:37:00Z"}
 {"url": "https://github.com/langchain-ai/deepagents", "type": "project", "filename": "hybrid-runtime-r700-...", "title": "LangChain DeepAgents R700 0.7.0a6 Quiet ~13d 13h (重新校准)", "used_at": "2026-07-08T14:37:00Z"}
+{"url": "https://blog.langchain.com/how-schneider-electric-built-their-llmops-foundations-at-enterprise-scale-with-langsmith", "type": "article", "filename": "r701-langchain-schneider-electric-enterprise-llmops-3-pillars-per-product-runtime-2026.md", "title": "How Schneider Electric Built Their LLMOps Foundations With LangSmith (Yoann Bersihand, Nicolas Gauthier, Amaury Gelin, July 7, 2026)", "used_at": "2026-07-08"}
+{"url": "https://github.com/comet-ml/opik", "type": "project", "filename": "comet-ml-opik-agent-llm-evaluation-observability-20412-stars-r701-2026.md", "stars": 20412, "title": "comet-ml/opik R701 20,412 stars + 2.1.20 release today (Schneider Electric LLMOps OSS 对应物)"}
+{"url": "https://github.com/langchain-ai/openwiki", "type": "project", "filename": "r701-...", "stars": 9510, "title": "openwiki R701 9,510 stars 9.5k⭐ SUSTAINED BREAKTHROUGH CONFIRMED + 4-round 滚动 rate/h ~50.6/h"}
+{"url": "https://github.com/usestrix/strix", "type": "project", "filename": "r701-...", "stars": 38819, "title": "usestrix/strix R701 38,819 stars P12 HIT STRONG cluster signal 持续累积"}
+{"url": "https://github.com/rivet-dev/agentos", "type": "project", "filename": "r701-...", "stars": 3576, "title": "rivet-dev/agentos R701 3,576 stars R700 推荐项目持续追踪"}
+{"url": "https://github.com/vxcontrol/pentagi", "type": "project", "filename": "r701-...", "stars": 18494, "title": "vxcontrol/pentagi R701 18,494 stars 18k⭐ SUSTAINED 第 34 round"}
+{"url": "https://github.com/anthropics/claude-code", "type": "project", "filename": "r701-...", "title": "Anthropic Claude Code R701 v2.1.204 cadence 中断 ~9.5h"}
+{"url": "https://github.com/anthropics/claude-agent-sdk-typescript", "type": "project", "filename": "r701-...", "title": "Anthropic TS SDK R701 v0.3.204 cadence 中断 ~9.5h"}
+{"url": "https://github.com/anthropics/claude-agent-sdk-python", "type": "project", "filename": "r701-...", "title": "Anthropic Py SDK R701 v0.2.113 cadence 中断 ~9.3h"}
+{"url": "https://github.com/openai/openai-agents-python", "type": "project", "filename": "r701-...", "title": "OpenAI Python SDK R701 v0.18.0 Quiet ~28h 持续"}
+{"url": "https://github.com/openai/openai-agents-js", "type": "project", "filename": "r701-...", "title": "OpenAI JS SDK R701 v0.13.0 Quiet ~28h 持续"}
+{"url": "https://github.com/langchain-ai/deepagents", "type": "project", "filename": "r701-...", "title": "LangChain DeepAgents R701 0.7.0a6 Quiet ~13d 14h 持续 (R700 重新校准持续)"}
