@@ -1,96 +1,77 @@
-# R707 待办事项
+# R708 待办事项
 
-> **承接 R706 (2026-07-09 00:09 CST, 1h32min 窗口) Phase 6 Trigger 1 HIT + 双产出 (1 篇 LangChain 1st-Party deep-dive + 1 个 agentic-in/inferoa 414⭐ OSS 实证闭环) + 9 entries sources_tracked.jsonl + 7 个 LangChain blog deferred 候选识别**
+> **承接 R707 (2026-07-09 01:57 CST, 1h48min 窗口) Phase 6 Trigger 2 PARTIAL HIT (LangChain × NVIDIA 4-ship cluster in 3h) + Trigger 6 FULL HIT (NVIDIA/NemoClaw 21,655⭐) + 双产出 (1 篇 cluster deep-dive + 1 个 NVIDIA 1st-Party OSS 项目) + 4 entries sources_tracked.jsonl + 5 个 Phase 6 trigger 状态升级 (Trigger 2/3/5 partial + Trigger 6 full)**
 
-## R707 重点规划
+## R708 重点规划
 
-### P0 最高优先级（Phase 6 持续）
+### P0 最高优先级（Phase 6 Trigger 2 完整 HIT 候选 + Anthropic cadence 异常）
 
-- [ ] **Anthropic Claude Code v2.1.205 / TS v0.3.205 / Py v0.2.114 ship 监测** —— R706 cadence 已 ~15h50min,R707 trigger 时如仍未 ship 会进入 17h+ 严重异常区间,**打破常态 ship 周期 = Phase 6 trigger 3 重新激活候选**
-- [ ] **Phase 6 trigger 2 (cross-vendor cluster Runtime Spec article) ship 监测 (P0 NEW)** —— 跨 vendor LangChain + Anthropic + OpenAI 三家 1st-Party 同窗口 ship Runtime Spec article (cluster signal),R706 trigger 1 单 ship 后 R707 需要 cluster 验证
-- [ ] **Phase 6 trigger 6 (openai/Anthropic Open Source article) ship 监测 (P0 NEW)** —— OpenAI 或 Anthropic 任何 1st-Party Open Source Runtime Spec article ship (vs R706 LangChain 1st-Party),这是 Phase 6 cross-vendor 验证关键信号
-- [ ] **openai-python v2.44.1 / openai-node v6.45.1 ship 监测** —— R706 实际 Quiet Window ~14d (R705 报告修正),**突破 2 周级 = 重要事件**
-- [ ] **openwiki 10k⭐ SUSTAINED 突破监测** —— R706 10k⭐ gap 341 ⭐ (R705 377 → R706 341, -9.55% 显著收窄),R707-R715 窗口
-- [ ] **openwiki rate/h 反弹监测** —— R706 1h32m 窗口 rate/h 24.65/h (略低于 5-round rolling 39.4/h),R707 完整窗口验证是否反弹 ≥ 45/h
+- [ ] **Anthropic Claude Code v2.1.205 / TS v0.3.205 / Py v0.2.114 ship 监测** —— R707 已 ~17h30min,R708 trigger 时如仍未 ship 会进入 19h+ 极度异常区间,**打破常态 ship 周期 = Phase 6 trigger 3 重新激活候选 + Anthropic 1st-Party article ship 信号**
+- [ ] **Phase 6 trigger 2 (cross-vendor cluster Runtime Spec article) ship 监测 (P0 NEW)** —— R707 partial HIT 后 R708 验证 cluster 是否扩展:Anthropic Runtime Spec article ship (e.g., Claude Code architecture postmortem extension / Claude Agent SDK harness engineering post / Claude SDK Runtime Spec article) 即触发 Trigger 2 FULL HIT 候选
+- [ ] **OpenAI Runtime Spec article ship 监测 (P0 NEW)** —— OpenAI 1st-Party Runtime Spec article ship (e.g., OpenAI Agents SDK architecture postmortem / OpenAI Runtime Spec / OpenAI API + Agents integration article) = Trigger 2 FULL HIT 候选
+- [ ] **openai-python v2.44.1 / openai-node v6.45.1 ship 监测** —— R707 实际 Quiet Window ~14d 13h,**突破 15 天级 = 重要事件**
+- [ ] **openwiki 10k⭐ SUSTAINED 突破监测** —— R707 10k⭐ gap 316 ⭐ (R706 341 → R707 316, -7.33% 持续收窄),R708-R715 窗口
 
-### P1 优先级（Phase 6 trigger 2-7 + LangChain blog deferred cluster）
+### P1 优先级（Phase 6 trigger 3-7 + R707 cluster 累积监测）
 
-- [ ] **Phase 6 trigger 3 (1st-party product Runtime Spec article) LangChain ship 监测** —— LangChain 1st-Party product Layer 文章 ship (e.g., SmithDB internal + LangSmith Engine external + Managed Deep Agents integration / 2026+)
-- [ ] **Phase 6 trigger 4 (1st-party framework Runtime Spec article) LangChain ship 监测** —— LangChain 1st-Party framework layer 文章 ship (e.g., LangGraph 1.3.0 + DeepAgents 0.7.0+ integration / 2026+)
-- [ ] **Phase 6 trigger 5 (1st-party model sandbox) ship 监测** —— Anthropic / OpenAI / LangChain 任何 1st-Party model sandbox article ship
-- [ ] **Phase 6 trigger 7 (cross-vendor Lighthouse) ship 监测** —— 跨 3 vendor Lighthouse 案例 ship (vs R701 Schneider Electric 单 1st-Party)
-- [ ] **LangChain DeepAgents 0.7.0a7+ ship 监测** —— R706 实际 Quiet Window ~1d6h (R705 错误修正),如果 ship 则 trigger 4 候选
-- [ ] **LangGraph 1.2.9 / 1.3.0 ship 监测** —— R706 ~42h Quiet Window,R707 仍持续
-- [ ] **Prompt Caching 5 vendor 4 feature 标准化窗口监测** —— cache prewarm 跨 vendor ship = Phase 6 trigger 1 候选方向
-- [ ] **LangChain blog "deep-agents-code-on-nemoclaw-a-governed-blueprint-for-your-most-sensitive-code" deep-dive (P1)** —— 当 deferred 候选 #2,Nemotron 调优 #2 补强方向,与 R706 LangChain Tuning Harness 形成"Nemotron 调优双视角"完整 cluster
-- [ ] **LangChain blog "langchain-and-nvidia-launch-the-nemoclaw-deep-agents-blueprint" deep-dive (P1)** —— 当 deferred 候选 #1,NVIDIA Nemotron 联盟宣告
+- [ ] **Phase 6 trigger 3 (1st-party product Runtime Spec article) LangChain next ship 监测** —— R707 cluster 内 Deep Agents Code on NemoClaw 已 partial HIT,R708 验证 LangChain 1st-Party product Layer 进一步 ship
+- [ ] **Phase 6 trigger 4 (1st-party framework Runtime Spec article) LangChain next ship 监测** —— R706 Tuning Harness 含 framework 元素 partial HIT,R708 验证 LangChain 1st-Party framework layer 进一步 ship
+- [ ] **Phase 6 trigger 5 (1st-party model sandbox) ship 监测** —— R707 NVIDIA OpenShell sandbox partial HIT,R708 验证 Anthropic / OpenAI / LangChain model sandbox article ship 候选
+- [ ] **Phase 6 trigger 7 (cross-vendor Lighthouse) ship 监测** —— 跨 3 vendor Lighthouse 案例 ship (vs R701 Schneider Electric 单 1st-Party),R710-R720 窗口候选
+- [ ] **LangChain DeepAgents 0.7.0a7+ ship 监测** —— R707 Quiet Window ~1d14h,如果 ship 则 trigger 4 候选
+- [ ] **LangGraph 1.2.9 / 1.3.0 ship 监测** —— R707 ~53h Quiet Window,R708 仍持续
+- [ ] **NVIDIA/NemoClaw next push 监测** —— R707 cluster 累积监测,R708-R710 验证是否继续 ship (验证 cluster signal 是否持续)
+- [ ] **LangChain × NVIDIA cluster 后续 ship 监测** —— R707 cluster 4-ship in 3h 后,R708 验证 LangChain 是否有 partner announcement / NemoClaw 有 follow-up push
 
-### P2 优先级（LangChain blog deferred cluster 二线）
+### P2 优先级（LangChain blog deferred cluster + 候选项目）
 
-- [ ] **LangChain blog 6/24 "How to Give Your Agent Memory" deep-dive** —— R705 候选 #1,R706 已识别为未覆盖但优先级低
-- [ ] **LangChain blog 6/30 "Wiki Memory" deep-dive** —— R705 候选 #1,与 R703 Prompt Caching 形成 memory + cache 完整 picture
-- [ ] **LangChain blog "how-to-use-rlms-in-deep-agents" deep-dive** —— 当 deferred 候选 #4,RLMs in Deep Agents 是独立 Paradigm 主题
-- [ ] **LangChain blog "running-untrusted-agent-code-without-a-sandbox" deep-dive** —— R699 已经 deferred (LangChain blog 6/30 候选)
-- [ ] **LangChain blog "agent-observability-needs-feedback-to-power-learning" deep-dive** —— observability, 与 R702 cascadeflow 区分
-- [ ] **Anthropic parent SDK (anthropic-sdk-python / anthropic-sdk-typescript) ship 监测** —— R706 ~6d Quiet Window
+- [ ] **LangChain blog "how-to-use-rlms-in-deep-agents" deep-dive (P2)** —— 当 deferred 候选 #4,RLMs in Deep Agents 是独立 Paradigm 主题
+- [ ] **LangChain blog "fix-your-coding-agent-bill" deep-dive (P2)** —— 当 deferred 候选 #5,Cost optimization 与 R703 Prompt Caching 重叠
+- [ ] **LangChain blog "agent-observability-needs-feedback-to-power-learning" deep-dive (P2)** —— 当 deferred 候选 #7,observability 与 R702 cascadeflow 重叠
+- [ ] **LangChain blog "running-untrusted-agent-code-without-a-sandbox" deep-dive (P2)** —— R699 已经 deferred (LangChain blog 6/30 候选),与 R707 OpenShell sandbox 1st-Party 形成 cross-vendor sandbox 主题 cluster
+- [ ] **github.com/langchain-ai/openshell-deepagent (156⭐) deep-dive (P3)** —— NVIDIA OpenShell sandbox + Deep Agent 集成候选
+- [ ] **github.com/vivekchand/clawmetry (385⭐) deep-dive (P3)** —— "Real-time observability for 12 AI agent runtimes" 跨 vendor observability,Trigger 7 候选
+- [ ] **github.com/aiming-lab/AutoHarness deferred 候选监测** —— 3-month quiet commit,R706 监测无变化
 
 ### P3 优先级
 
-- [ ] **LangChain blog 6/25 "Full-Text Search in SmithDB" 增量 deep-dive** —— R705 候选 #2,R237 langchain-smithdb 已覆盖,可选增量
-- [ ] **LangChain blog "fix-your-coding-agent-bill" deep-dive** —— 当 deferred 候选 #5
-- [ ] **LangChain blog "how-rippling-went-ai-native" case study deep-dive** —— 6-month customer 案例
 - [ ] **LangChain blog "improving-deep-agents-with-harness-engineering" 引用 deep-dive** —— R706 Article 已引用,Optional 独立 deep-dive
 - [ ] **LangChain blog "tuning-deep-agents-different-models" 引用 deep-dive** —— R706 Article 已引用,Optional 独立 deep-dive
 - [ ] **LangChain blog "better-harness-a-recipe-for-harness-hill-climbing-with-evals" 引用 deep-dive** —— R706 Article 已引用,Optional 独立 deep-dive
-- [ ] **LangChain blog 6/25 "June 2026 LangChain Newsletter" 综合 deep-dive** —— R705 候选 #3
+- [ ] **Anthropic parent SDK (anthropic-sdk-python / anthropic-sdk-typescript) ship 监测** —— R707 ~6d Quiet Window
 
-### 监测持续
+### 监测持续（Phase 6 启动以来持续追踪项目）
 
-- [ ] **cascadeflow R707 持续监测 (R702 推荐项目)** —— 持续追踪 + 验证 actively maintained
-- [ ] **usewhale/Whale R707 持续监测 (R703 推荐项目)** —— 持续追踪 + 验证 actively maintained
-- [ ] **usestrix/strix R707 持续监测** —— P12 HIT STRONG cluster signal 持续累积
-- [ ] **rivet-dev/agentos R707 持续监测** —— R700 推荐项目,持续追踪
-- [ ] **comet-ml/opik R707 持续监测** —— R701 推荐项目,持续追踪
-- [ ] **vxcontrol/pentagi R707 持续监测** —— R687 推荐项目,18k⭐ SUSTAINED 第 39 round
-- [ ] **agentic-in/inferoa R707 持续监测 (R706 推荐项目)** —— Phase 6 trigger 1 OSS 实证层
-- [ ] **新候选项目发现 (P0 NEW)** —— R707 trigger 时扫描 GitHub search API "agent+harness+engineering" + 1st-Party 维护的 OSS 仓库
-
-### 改进项
-
-- [ ] **下一次 trigger 时优先核查 ARTICLES_MAP 防止 tracking drift** —— 沿袭 R705 强制要求:任何 candidate 主题列出前,必须先 grep `articles/` + ARTICLES_MAP
-- [ ] **OpenAI SDK version naming 验证** —— 任何 openai-python / openai-node 数据引用前必须 git tag 验证 (避免 R704 v0.18.0 / v0.13.0 错误重演)
-- [ ] **scheduler drift 监控** —— R700-R706 7 次连续异常窗口累积已完全失控,通知 cron operator
+- [ ] **cascadeflow R708 持续监测 (R702 推荐项目)** —— 持续追踪 + 验证 actively maintained
+- [ ] **usewhale/Whale R708 持续监测 (R703 推荐项目)** —— 持续追踪 + 验证 actively maintained
+- [ ] **agentic-in/inferoa R708 持续监测 (R706 推荐项目)** —— R706 416⭐,验证是否继续增长
+- [ ] **NVIDIA/NemoClaw R708 持续监测 (R707 推荐项目)** —— 21,655⭐ 验证 cluster 后续 push
+- [ ] **rivet-dev/agentos R708 持续监测 (R700 推荐项目)** —— 3,577⭐ 慢速增长持续监测
 
 ---
 
-## R707 P-tracking 候选主题
+## R708 重点关注 (Summary)
 
-1. **Anthropic Claude Code v2.1.205 ship 监测 (P0 最高)** —— R706 已 15h50min 异常区间
-2. **Phase 6 trigger 2 (cross-vendor cluster Runtime Spec article) ship 监测 (P0 NEW)** —— cluster 信号关键
-3. **Phase 6 trigger 6 (openai/Anthropic Open Source article) ship 监测 (P0 NEW)** —— cross-vendor 验证关键
-4. **openai-python v2.44.1 / openai-node v6.45.1 ship 监测 (P0)** —— 2 周级 Quiet Window 监测
-5. **openwiki 10k⭐ SUSTAINED 突破监测 (P0)** —— R706 gap 341 ⭐,R707-R715 窗口
-6. **openwiki rate/h 反弹监测 (P0)** —— R706 完整窗口验证
-7. **Phase 6 trigger 3 (1st-party product Runtime Spec article) LangChain ship 监测 (P1)**
-8. **Phase 6 trigger 4 (1st-party framework Runtime Spec article) LangChain ship 监测 (P1)**
-9. **Phase 6 trigger 5 (1st-party model sandbox) ship 监测 (P1)**
-10. **Phase 6 trigger 7 (cross-vendor Lighthouse) ship 监测 (P1)**
-11. **LangChain DeepAgents 0.7.0a7+ ship 监测 (P1)** —— R706 ~1d6h Quiet Window
-12. **LangGraph 1.2.9 / 1.3.0 ship 监测 (P1)** —— R706 ~42h Quiet Window
-13. **Prompt Caching 5 vendor 4 feature 标准化窗口监测 (P1)**
-14. **LangChain blog "deep-agents-code-on-nemoclaw" deep-dive (P1)**
-15. **LangChain blog "langchain-and-nvidia-launch-the-nemoclaw" deep-dive (P1)**
-16. **LangChain blog 6/24 "How to Give Your Agent Memory" deep-dive (P2)**
-17. **LangChain blog 6/30 "Wiki Memory" deep-dive (P2)**
-18. **LangChain blog "how-to-use-rlms-in-deep-agents" deep-dive (P2)**
-19. **LangChain blog "running-untrusted-agent-code-without-a-sandbox" deep-dive (P2)**
-20. **LangChain blog "agent-observability-needs-feedback" deep-dive (P2)**
-21. **Anthropic parent SDK ship 监测 (P2)**
-22. **LangChain blog 6/25 "Full-Text Search in SmithDB" 增量 deep-dive (P3)**
-23. **LangChain blog "fix-your-coding-agent-bill" deep-dive (P3)**
-24. **LangChain blog "how-rippling-went-ai-native" case study deep-dive (P3)**
-25. **LangChain blog reference 系列 deep-dive (P3)** —— Improving Deep Agents + Tuning Deep Agents + Better Harness
+1. **Phase 6 Trigger 2 完整 HIT 候选** —— R707 partial HIT 后 R708 监测 Anthropic + OpenAI 1st-Party Runtime Spec article ship,任一 ship 即触发 Trigger 2 FULL HIT
+2. **Anthropic Claude Code cadence 17h30min+** —— R708 trigger 时可能 19h+,严重异常区间,打破常态 ship = Phase 6 trigger 3 重新激活候选
+3. **openai-python 14d 13h+** —— R708 突破 15 天级 = 重要事件
+4. **R707 cluster 累积监测** —— 验证 cluster signal 是否持续 (LangChain × NVIDIA 联盟是否深化)
+5. **Phase 6 Trigger 6 (vendor 1st-Party OSS) 持续监测** —— R707 NVIDIA/NemoClaw HIT 后,验证是否有其他 vendor 1st-Party OSS ship (e.g., Anthropic Open Source Runtime Spec OSS)
 
 ---
 
-*由 AgentKeeper R706 自动维护 | SKILL v1.4.0 | 2026-07-09 00:25 CST | ⭐ R707 重点规划: Anthropic Claude Code cadence ~15h50min 异常区间监测 + Phase 6 trigger 2-7 持续监测 (cluster/cross-vendor/sandbox 关键) + openai-python 2 周级 Quiet Window 监测 + LangChain blog deferred cluster 7 篇候选 deep-dive + agentic-in/inferoa R706 推荐项目持续监测 + 7 次连续异常窗口 scheduler drift 已完全失控*
+## Phase 6 Trigger 状态（R707 trigger 后）
+
+| Trigger | 定义 | R707 trigger 状态 |
+|---------|------|------------------|
+| Trigger 1 | LangChain 1st-Party Runtime Spec article | ✅ HIT (R706) |
+| Trigger 2 | Cross-vendor cluster (3 vendor 同窗口) | ⚠️ PARTIAL HIT (R707) |
+| Trigger 3 | LangChain 1st-Party product article | ⚠️ PARTIAL HIT (R707) |
+| Trigger 4 | LangChain 1st-Party framework article | ⚠️ PARTIAL HIT (R706) |
+| Trigger 5 | 1st-Party model sandbox | ⚠️ PARTIAL HIT (R707) |
+| Trigger 6 | Vendor 1st-Party Open Source Runtime Spec | ✅ HIT (R707) |
+| Trigger 7 | Cross-vendor Lighthouse case (3 vendor 联合) | ❌ UNHIT |
+
+**累计**: 2 FULL HIT + 4 PARTIAL HIT + 1 UNHIT
+
+**R708 重点**: Trigger 2 完整 HIT (Anthropic 或 OpenAI Runtime Spec article ship) / Trigger 7 完整 HIT (3 vendor Lighthouse case)
