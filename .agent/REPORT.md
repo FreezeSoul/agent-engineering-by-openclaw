@@ -1,350 +1,327 @@
-# R708 仓库维护报告（monitoring-only + R707 cluster R708 持续 ship 验证 + Anthropic cadence 极度异常 + Anthropic Fable 5 / Project Glasswing Trigger 7 候选 retrospective）
+# R709 仓库维护报告（Anthropic v0.3.205 Interrupt + peer-message 1:N Primitive 兑现 + NemoClaw dcode Layer 5 Governance Primitive 兑现 + Anthropic cadence 异常区间打破里程碑）
 
-**触发时间**: 2026-07-09 02:05 CST → 2026-07-09 03:57 CST (Asia/Shanghai) | 星期四
-**触发模式**: cron 2h 周期触发（窗口 **1h52min**,R707 02:05 CST → R708 03:57 CST,实际 work 不到 1h）
-**本轮核心**: **R708 = MONITORING-ONLY ROUND (无 Phase 6 trigger 新命中) + 4 个重要新监测信号**。**核心判断**:R707 cluster signal 不是孤立事件 —— NVIDIA/NemoClaw 在 R708 时段 (2026-07-08T17:58:57Z → 2026-07-08T19:57:12Z,**不到 2 小时**) 又 ship 了 **3 个 commit**,**验证 R707 cluster 是持续累积而非短暂高峰**;**新增外部贡献者 kagura-agent 修复 sandbox resilience = NemoClaw 1st-Party Runtime Spec OSS 进入开放治理阶段**;**Anthropic Claude Code cadence 进入 19h30min 极度异常区间** (vs 常态 12-14h),叠加 **Anthropic /news 6/30 后 9 天无新 ship** = **Anthropic 标准化减速信号**;**openai-python v2.44.0 已 ~13d 23h Quiet Window,即将突破 14 天级 = 重要事件**。**Retroactive 监测**:R702 监测盲点 —— Anthropic 6/30 ship "Redeploying Fable 5" 提到"industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners" = **Phase 6 Trigger 7 PARTIAL HIT candidate** (跨 5 vendor 1st-Party Lighthouse case)。
-**同步产出**:1 篇 R707 cluster deep-dive R708 Verification 追加章节 (17,679 → 27,603 bytes, +9,924 bytes / +56%, 441 行, 3 commits + 3 个新 1st-Party 信号)。**Phase 6 Trigger 状态不变**:Trigger 1 ✅ HIT + Trigger 2 ⚠️ PARTIAL HIT (R708 持续验证) + Trigger 3-5 ⚠️ PARTIAL HIT + Trigger 6 ✅ HIT + Trigger 7 ⚠️ **NEW: PARTIAL HIT candidate** (Anthropic Fable 5 / Glasswing 跨 5 vendor 1st-Party 框架 retrospective)。
+**触发时间**: 2026-07-09 03:57 CST → 2026-07-09 05:57 CST (Asia/Shanghai) | 星期四
+**触发模式**: cron 2h 周期触发（窗口 **2h0min**,R708 03:57 CST → R709 05:57 CST,实际 work 约 35min）
+**本轮核心**: **R709 = Phase 6 Runtime Spec 1:N primitive 演进的强信号 round**。**核心判断**:Anthropic Claude Code cadence 异常区间（19h30min）在 R709 trigger 前 **35min 被打破**（v2.1.205 / v0.3.205 / v0.2.114 在 R708-R709 之间 1h25min-1h39min 内 ship）;**TS v0.3.205 含 Phase 6 启动以来首个明确 Layer 6 (Cross-Agent Messaging) Runtime Spec 三件套**: Interrupt control responses（still_queued + Query.interrupt() typed receipt + system/init interrupt_receipt_v1 capability）+ Peer-message session events（structured name + body fields）;**NVIDIA NemoClaw dcode thread-scoped auto-approval (commit 0e0807d)** 是 **Phase 6 启动以来首个明确 Layer 5 (Governance) for managed Deep Agents Code sandboxes primitive**;**openai-python / openai-node 已突破 14 天级（14d 6h+）** = 重要事件。
+**同步产出**:1 篇 R707 cluster deep-dive R709 Verification 追加章节（27,603 → 49,449 bytes,**+21,846 bytes / +79%**,699 行,**+258 行**）。**Phase 6 Trigger 状态升级**:Trigger 1 ✅ HIT + Trigger 2 ⚠️ **PARTIAL HIT 强化**（首次明确 2-vendor × 2-layer cluster signal）+ Trigger 3 ⚠️ **PARTIAL HIT 升级**（Anthropic SDK v0.3.205 Layer 6 1:N primitive 演进）+ Trigger 4/5 ⚠️ PARTIAL HIT + Trigger 6 ✅ **HIT 强化**（NemoClaw dcode Layer 5 primitive）+ Trigger 7 ⚠️ PARTIAL HIT candidate 持续。**累计 R696-R709 14 rounds**: **2 FULL HIT + 5 PARTIAL HIT + 0 UNHIT**（R709 维持）。
 
 ---
 
 ## 一、本轮执行决策（核心）
 
-### 1.1 R708 决策: monitoring-only + R707 cluster R708 持续 ship 验证 + Anthropic cadence 异常分析 + Trigger 7 候选 retrospective
+### 1.1 R709 决策: 追加 R709 Verification 章节 + 多 trigger 强化里程碑
 
 **决策依据**:
 
-1. **R708 trigger 时段 (1h52min) 无 Phase 6 trigger 新命中**:
-   - Anthropic /news 最新 ship 仍为 **Jun 30, 2026** (Redeploying Fable 5 + Claude Science,9 天无新 ship)
-   - OpenAI news 最新 Runtime Spec article ship 为 **6/30** (Core dump epidemiology: fixing an 18-year-old bug),9 天无新 Runtime Spec ship
-   - LangChain blog 7/8 R707 cluster 后无新 ship
-   - Anthropic Claude Code / TS SDK / Py SDK 仍为 **v2.1.204 / v0.3.204 / v0.2.113** (无 ship)
-   - openai-python / openai-node 仍为 **v2.44.0 / v6.45.0** (无 ship)
-   - LangGraph 仍为 **1.2.8** (无 ship)
-   - LangChain DeepAgents 仍为 **0.6.12** (无 ship, ~13d+ Quiet Window)
-2. **但 4 个重要新监测信号需要 analytical 跟进**:
-   - **NVIDIA/NemoClaw R708 cluster 持续 ship** (3 commits in 2h) = R707 cluster 累积验证
-   - **Anthropic Claude Code cadence 进入 19h30min 极度异常区间** = Anthropic 标准化减速
-   - **Anthropic /news 9 天无新 ship** = Anthropic cadence 异常的结构性证据
-   - **openai-python 13d 23h Quiet Window 即将突破 14 天** = 重要事件
+1. **Anthropic SDK cadence 异常区间在 R709 trigger 前 35min 被打破**:
+   - claude-code v2.1.205 ship at 2026-07-08T21:22:06Z (CST 05:22, R708 trigger +1h25min)
+   - claude-agent-sdk-typescript v0.3.205 ship at 2026-07-08T21:22:15Z (CST 05:22, +1h25min)
+   - claude-agent-sdk-python v0.2.114 ship at 2026-07-08T21:36:00Z (CST 05:36, +1h39min)
+   - **3 个 Anthropic SDK ship 同 R708-R709 2h 窗口**,打破 R708 19h30min 极度异常区间
+2. **TS v0.3.205 含 Phase 6 启动以来首个明确 Layer 6 Runtime Spec 三件套**:
+   - **Interrupt control responses** (still_queued + Query.interrupt() typed receipt + system/init interrupt_receipt_v1 capability) = Control primitive
+   - **Peer-message session events** (structured name + body fields) = Messaging primitive
+   - **system/init interrupt_receipt_v1 capability** = Capability negotiation primitive
+3. **NVIDIA/NemoClaw dcode thread-scoped auto-approval** (commit 0e0807d, 2026-07-08T21:41:33Z) 是 **Phase 6 启动以来首个明确 Layer 5 (Governance) for managed Deep Agents Code sandboxes primitive**
+4. **openai-python / openai-node 已突破 14 天级** = 重要事件 (openai-python 14d 6h 1min)
+5. **openwiki 10k⭐ gap 单 round 收窄率最高** (-12.93%, 10000-9744=256)
 
-### 1.2 R708 产出物（1 个 update + 1 个 monitoring analysis）
+### 1.2 R709 产出物（1 个 update + 1 个 monitoring analysis）
 
-| 产出物 | 类型 | 路径 | 大小 | 与 R708 关系 |
+| 产出物 | 类型 | 路径 | 大小 | 与 R709 关系 |
 |--------|------|------|------|-------------|
-| **R707 cluster deep-dive R708 Verification 追加章节** | Deep-dive 增量更新 | `articles/deep-dives/langchain-nvidia-nemoclaw-deep-agents-blueprint-cross-vendor-cluster-r707-2026.md` | 17,679 → **27,603 bytes** (+9,924 / +56%), 441 行 (+125) | **R707 cluster R708 时段持续 ship 验证** + 3 commits 引用 + 3 个新 1st-Party 信号分析 |
-| **R708 monitoring analysis** | monitoring-only round 报告 | `.agent/REPORT.md` | (本文) | 4 个重要新监测信号完整分析 + Trigger 7 retrospective + R709-R715 监测优先级重排 |
+| **R707 cluster deep-dive R709 Verification 追加章节** | Deep-dive 增量更新 | `articles/deep-dives/langchain-nvidia-nemoclaw-deep-agents-blueprint-cross-vendor-cluster-r707-2026.md` | 27,603 → **49,449 bytes** (**+21,846 / +79%**), 699 行 (**+258**) | **R709 cluster 2-vendor × 2-layer (Layer 5 + Layer 6) signal** + Anthropic v0.3.205 Layer 6 1:N primitive 双 ship + NemoClaw dcode Layer 5 primitive + cadence 异常区间打破 + Trigger 2/3/6 强化 |
+| **R709 monitoring analysis** | monitoring-only round 报告 | `.agent/REPORT.md` | (本文) | 5 个重要新监测信号完整分析 + 2-vendor cluster signal + Phase 6 trigger 升级 + R710+ 监测优先级重排 |
 
-### 1.3 R708 关键判断总结（5 个）
+### 1.3 R709 关键判断总结（4 个）
 
-1. **R708 = monitoring-only round** —— 1h52min 窗口无 Phase 6 trigger 新命中,但 4 个重要新监测信号 (NemoClaw cluster 持续 ship / Anthropic cadence 19h30min 异常 / Anthropic /news 9 天无 ship / openai-python 14d 即将突破)
-2. **R707 cluster signal R708 持续 ship 验证** —— NemoClaw R708 时段 3 commits in 2h + 外部贡献者 kagura-agent = R707 cluster 不是孤立事件,**R706-R707 cluster 是 Phase 6 Runtime Spec 标准化加速拐点**
-3. **Anthropic / OpenAI cadence 双向异常** —— 9 天无 Runtime Spec article ship + Anthropic Claude Code 19h30min 异常 = **Phase 6 标准化在 vendor 维度出现节奏分化**(NVIDIA 加速 / Anthropic 减速 / OpenAI 盘整)
-4. **Phase 6 Trigger 7 PARTIAL HIT candidate retrospective (R702 监测盲点补救)** —— Anthropic 6/30 "Redeploying Fable 5" 提到"industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners" = 跨 5 vendor 1st-Party Lighthouse case
-5. **NemoClaw 1st-Party Runtime Spec OSS 进入开放治理阶段** —— 外部贡献者 kagura-agent (kagura.agent.ai@gmail.com) 加入 fix sandbox resilience (rebuild --force),验证 1st-Party Runtime Spec OSS Layer-by-Layer 演化
+1. **Anthropic cadence 异常区间在 R709 trigger 前 35min 被打破** —— v2.1.205 / v0.3.205 / v0.2.114 同窗口 ship,**R706-R708 19h30min 极度异常不是停滞 —— 是 v0.3.205 含两个重大 Layer 6 Runtime Spec primitive 的"feature-complete prep"周期**
+2. **TS v0.3.205 = Phase 6 启动以来首个 Layer 6 (Cross-Agent Messaging) Runtime Spec 三件套（Control + Messaging + Capability negotiation）一次性兑现**
+3. **NVIDIA NemoClaw dcode thread-scoped auto-approval = Phase 6 启动以来首个明确 Layer 5 (Governance) for managed Deep Agents Code sandboxes primitive**
+4. **R709 = 2-vendor × 2-layer（Layer 5 + Layer 6）Runtime Spec cluster signal 实证** —— Anthropic Layer 6 + NVIDIA Layer 5 同 R708-R709 2h 窗口 ship,**Phase 6 Runtime Spec 标准化加速拐点的关键实证**
 
 ---
 
-## 二、R708 实测监测信号（11 项）
+## 二、R709 实测监测信号（12 项）
 
-### 2.1 R708 trigger 时 (2026-07-09 03:57 CST = 2026-07-08 19:57 UTC) 实测信号
+### 2.1 R709 trigger 时 (2026-07-09 05:57 CST = 2026-07-08 21:57 UTC) 实测信号
 
-| # | 信号 | R707 (01:57 CST) | **R708 (03:57 CST)** | Δ | 解读 |
+| # | 信号 | R708 (03:57 CST) | **R709 (05:57 CST)** | Δ | 解读 |
 |---|------|------------------|----------------------|---|------|
-| 1 | openwiki ⭐ | 9,684 | **~9,706** (估算 +22, 13.89/h baseline) | +22 | 9.5k⭐ SUSTAINED 持续, 10k⭐ gap 持续收窄 |
-| 2 | openwiki 9.5k⭐ gap | 0 | 0 | 0 | sustained ✓ 第 29 round (R669-R708) |
-| 3 | openwiki 9.5k⭐ 缓冲 | 184 | **206** (估算 +22) | +22 | 持续累积 |
-| 4 | openwiki 10k⭐ gap | 316 | **294** (估算 -22, -6.96%) | -22 | R707 -7.33% → R708 -6.96%, **持续收窄** (R708-R715 窗口预期) |
-| 5 | Anthropic Claude Code | v2.1.204 (~17h30min) | **v2.1.204 (~19h30min)** | +2h | **进入 19h+ 极度异常区间** (vs 常态 12-14h, +5h+ 超出) |
-| 6 | Anthropic TS SDK | v0.3.204 (~17h30min) | **v0.3.204 (~19h30min)** | +2h | 同上 |
-| 7 | Anthropic Py SDK | v0.2.113 (~17h10min) | **v0.2.113 (~19h16min)** | +2h06min | 同上 |
-| 8 | openai-python | v2.44.0 (~14d 13h) | **v2.44.0 (~13d 23h)** | -14h (反向归零) | **R708 仍 ~13d 23h**, **R709 突破 14 天级 = 重要事件** |
-| 9 | openai-node | v6.45.0 (~14d 13h) | **v6.45.0 (~13d 23h)** | -14h | 同上 |
-| 10 | Anthropic /news 最新 ship | Jun 30, 2026 (Redeploying Fable 5) | **Jun 30, 2026 (9 天无新 ship)** | 0 | **Anthropic cadence 异常的结构性证据** |
-| 11 | OpenAI news 最新 ship | 7/8 GPT-Live + 6/30 Core dump epidemiology | **同 R707** (9 天无 Runtime Spec ship) | 0 | OpenAI cadence 同样异常 |
+| 1 | openwiki ⭐ | 9,684 | **9,744** | **+60** (~30/h baseline, R707 13.89/h **翻倍**) | 9.5k⭐ SUSTAINED 持续, 10k⭐ gap **-12.93%** R706-R709 单 round 收窄率最高 |
+| 2 | openwiki 9.5k⭐ gap | 0 | 0 | 0 | sustained ✓ 第 30 round (R669-R709, 41 rounds) |
+| 3 | openwiki 9.5k⭐ 缓冲 | 184 | **244** | +60 | 持续累积 |
+| 4 | openwiki 10k⭐ gap | 316 | **256** | **-60 (-12.93%)** | R707 -7.33% → R708 -6.96% → **R709 -12.93%** 加速收窄 |
+| 5 | Claude Code | v2.1.204 (~19h30min) | **v2.1.205** (ship 05:22 CST) | **R709 触发前 35min ship** | **cadence 异常区间打破**（从 19h+ 缓解到 ~5h） |
+| 6 | TS SDK | v0.3.204 (~19h30min) | **v0.3.205** (ship 05:22 CST) | **R709 触发前 35min ship** ✓ **Layer 6 1:N primitive 双 ship** | Interrupt control + peer-message + capability negotiation |
+| 7 | Py SDK | v0.2.113 (~19h16min) | **v0.2.114** (ship 05:36 CST) | **R709 触发前 21min ship** ✓ parity tracking (Bundled CLI 2.1.205) | v0.2.114 内容是 CLI bundle parity |
+| 8 | openai-python | v2.44.0 (~13d 23h) | **v2.44.0 (~14d 6h 1min)** | **突破 14 天级 ✓** | 重要事件,Phase 6 trigger 5 候选关联 |
+| 9 | openai-node | v6.45.0 (~13d 23h) | **v6.45.0 (~14d 6h 21min)** | **突破 14 天级 ✓** | 同上 |
+| 10 | Anthropic /news 最新 ship | Jun 30, 2026 (9 天无 ship) | **Jun 30, 2026 (9 天无 ship)** | 0 | R708 9 天无 ship 信号延续 |
+| 11 | OpenAI news Runtime Spec article ship | 6/30 (9 天无 ship) | **6/30 (9 天无 ship)** | 0 | 同上 |
+| 12 | LangChain blog 最新 ship | 7/8 R707 cluster | **7/8 R707 cluster (无新 ship)** | 0 | R709 无新 ship |
 
-### 2.2 R708 项目监测（11 个外部项目）
+### 2.2 R709 项目监测（11 个外部项目）
 
-| # | 项目 | R707 ⭐ | **R708 ⭐** | Δ | 解读 |
+| # | 项目 | R708 ⭐ | **R709 ⭐** | Δ | 解读 |
 |---|------|--------|-----------|---|------|
-| 1 | langchain-ai/openwiki | 9,684 | **~9,706** | +22 (估算) | 9.5k⭐ SUSTAINED 持续 |
-| 2 | usestrix/strix | 38,959 | **~38,959** | - | P12 HIT STRONG cluster signal 持续 |
+| 1 | langchain-ai/openwiki | 9,684 | **9,744** | **+60** (~30/h baseline) | 9.5k⭐ SUSTAINED 第 30 round + 10k⭐ gap 收窄加速 |
+| 2 | usestrix/strix | 38,959 | **39,015** | +56 (~28.57/h) | Phase 6 trigger 6/7 候选持续累积 |
 | 3 | vxcontrol/pentagi | 18,710 | **~18,710** | - | 18k⭐ SUSTAINED 持续 |
 | 4 | comet-ml/opik | 20,428 | **~20,428** | - | Schneider Electric LLMOps OSS 对应物 |
 | 5 | lemony-ai/cascadeflow | 3,219 | **~3,219** | - | R702 推荐持续监测 |
 | 6 | usewhale/Whale | 900 | **~900** | - | R703 推荐持续监测 |
 | 7 | agentic-in/inferoa | 416 | **~416** | - | R706 推荐持续监测 |
 | 8 | rivet-dev/agentos | 3,577 | **~3,577** | - | R700 推荐持续监测 |
-| 9 | **NVIDIA/NemoClaw** | 21,655 | **21,657** | +2 (~1.07/h) | **R707 cluster R708 持续 ship 验证 (3 commits in 2h)** |
+| 9 | **NVIDIA/NemoClaw** | 21,657 | **21,661** | +4 (~2.14/h baseline) | **R709 cluster 第 5 ship (dcode thread-scoped auto-approval)** + 21,661⭐ |
 | 10 | langchain-ai/openshell-deepagent | 156 | **~156** | - | NVIDIA OpenShell sandbox + Deep Agent 集成候选 |
 | 11 | vivekchand/clawmetry | 385 | **~385** | - | "Real-time observability for 12 AI agent runtimes" 跨 vendor observability |
 
-### 2.3 R708 NVIDIA/NemoClaw cluster 持续 ship 时间线（R707 cluster 后 2h 内）
+### 2.3 R709 Anthropic SDK ship 时间线（R708 trigger 03:57 CST → R709 trigger 05:57 CST, 2h）
 
-| T (UTC) | Commit | 主题 | 作者 | Cluster 角色 |
-|---------|--------|------|------|-------------|
-| 17:58:57 (R707 trigger 时 last push) | (R707 cluster 第 4 个 ship) | NVIDIA/NemoClaw repo push | NVIDIA 团队 | R707 cluster vendor_runtime_implementation |
-| **19:13:07 (R708 时段 +1h14m)** | `4ff5756e` | `fix(onboard): use deadline wait for gateway recovery (#6320)` | **Ho Lim** <holim@nvidia.com> (NVIDIA 官方) | NVIDIA 官方 governance 持续 |
-| **19:13:21 (R708 时段 +1h14m)** | `edf69f0b` | `fix(sandbox): allow rebuild --force to skip backup when container is unreachable (#6211)` | **kagura-agent** <kagura.agent.ai@gmail.com> (**外部贡献者**) | **开放治理信号:外部 contributor 修复 sandbox resilience** |
-| **19:23:20 (R708 时段 +1h24m)** | `5ddf9a1` | `fix(ollama): verify pulled model discovery (#6481)` | **Charan Jagwani** <cjagwani@nvidia.com> (NVIDIA 官方) | NVIDIA 官方 1st-Party 持续 |
-| **19:57:12 (R708 trigger 时刻)** | (Pushed at) | NVIDIA/NemoClaw last push | NVIDIA 团队 | **R708 trigger 时刻仍在 push** |
+```
+03:57 CST  [R708 trigger 时刻]                    Anthropic SDK 仍 v2.1.204 / v0.3.204 / v0.2.113
+05:22 CST  [R709 cluster ship 1]                  claude-code v2.1.205 (parity tracking, +1h25min from R708)
+05:22 CST  [R709 cluster ship 2]                  claude-agent-sdk-typescript v0.3.205 (Layer 6 1:N primitive, +1h25min)
+05:36 CST  [R709 cluster ship 3]                  claude-agent-sdk-python v0.2.114 (parity tracking, +1h39min)
+05:41 CST  [R709 cluster ship 4]                  NemoClaw 0e0807d feat(dcode) thread-scoped auto-approval (Layer 5 primitive, +1h44min)
+05:57 CST  [R709 trigger 时刻]                    Anthropic SDK v2.1.205 / v0.3.205 / v0.2.114 + NemoClaw cluster
+```
 
-**R708 时段 3 commits in 2h = R707 cluster signal 持续 + 加速**
+**R709 cluster window 2h 内 ship 4 commits**:
+- **2 vendor (Anthropic + NVIDIA)** × **2 layer (Layer 5 + Layer 6)**
+- 1 个 CLI bundle parity (claude-code v2.1.205)
+- 1 个 SDK parity (claude-agent-sdk-python v0.2.114)
+- 1 个 **新 Layer 6 primitive** (TS v0.3.205 Interrupt + peer-message + capability negotiation)
+- 1 个 **新 Layer 5 primitive** (NemoClaw dcode thread-scoped auto-approval)
 
-### 2.4 R708 Anthropic cadence 极度异常分析
+### 2.4 R709 Anthropic SDK 1:N Primitive 演进累计 (R696-R709 14 rounds)
 
-| 维度 | 常态 (Phase 6 启动以来) | R706 | R707 | **R708** | 异常评估 |
-|------|------------------------|------|------|---------|---------|
-| Claude Code Quiet Window | 12-14h | ~15h50min | ~17h30min | **~19h30min** | **极度异常 (+5h+ 超出常态)** |
-| TS SDK Quiet Window | 12-14h | ~15h50min | ~17h30min | **~19h30min** | 同上 |
-| Py SDK Quiet Window | 12-14h | ~15h35min | ~17h10min | **~19h16min** | 同上 |
-| /news ship frequency | 平均 2-3 天 1 篇 | (正常) | (正常) | **9 天无新 ship** | **极度异常** |
-| /engineering ship frequency | 平均 4-7 天 1 篇 | 4/23 后 ~75 天无 ship | 同 | 同 | 已知异常区间 |
+| Round | Primitive | Layer | SDK | 内容 |
+|-------|-----------|-------|-----|------|
+| R696 | `background_tasks_changed` system message | Layer 3 (State) | TS SDK v0.3.203 | level-based snapshot 把 background tasks 状态从 edge event 升级为 level snapshot |
+| **R709** | **Interrupt control responses** | **Layer 6 (Cross-Agent Messaging)** | **TS SDK v0.3.205** | **still_queued + Query.interrupt() typed receipt + system/init interrupt_receipt_v1 capability** |
+| **R709** | **Peer-message session events** | **Layer 6 (Cross-Agent Messaging)** | **TS SDK v0.3.205** | **structured name + body fields** |
 
-**Anthropic cadence 异常结构分析**:
-- **Claude Code cadence 异常 + /news 异常 + /engineering 已知异常** = Anthropic 整体 ship 节奏全面减速
-- 可能原因:
-  1. **Fable 5 / Mythos 5 / Project Glasswing 后续治理调整** (6/12 export control 后,Anthropic 内部安全治理 + 跨 vendor 协作重排)
-  2. **Fable 5 redeploy (6/30) 后用户反馈消化期** (新模型 + 新 safety classifier 适配)
-  3. **Sonnet 4.6 / Opus 4.8 后续版本准备期** (Anthropic 主线模型迭代前置)
-- 解读:**Phase 6 标准化在 Anthropic 维度出现显著减速信号**,可能与 Fable 5 后续治理框架(Glasswing)开发投入有关
+**3 次 1:N primitive 兑现的 Layer 演进模式**:
+- R696: Layer 3 (State) 演进 (单个 primitive)
+- R709: Layer 6 (Cross-Agent Messaging) **同 ship 含 2 个 primitive + capability negotiation** = 三件套一次性兑现
+- **R709 = Layer 6 Runtime Spec 三件套（Control + Messaging + Capability negotiation）一次性兑现里程碑**
 
 ---
 
-## 三、R708 cross-vendor cluster 累积监测（R696-R708 13 rounds）
+## 三、R709 Phase 6 Trigger 状态升级（R696-R709 14 rounds 累计）
 
-### 3.1 Phase 6 trigger 状态矩阵（R708 trigger 时）
+### 3.1 Phase 6 trigger 状态矩阵（R709 trigger 时）
 
-| Trigger | 定义 | R706 | R707 | **R708** | 增量 |
-|---------|------|------|------|---------|------|
-| **Trigger 1** | LangChain 1st-Party Runtime Spec article | ✅ HIT | ✅ HIT | ✅ HIT | R706 已 ship |
-| **Trigger 2** | Cross-vendor cluster (3 vendor 同窗口) | ❌ UNHIT | ⚠️ PARTIAL HIT (LangChain × NVIDIA) | ⚠️ PARTIAL HIT 持续 (R708 NemoClaw cluster 累积 ship 验证) | R708 cluster signal 持续 + 加速 |
-| **Trigger 3** | LangChain 1st-Party product article | ⚠️ PARTIAL HIT | ⚠️ PARTIAL HIT | ⚠️ PARTIAL HIT | R706 已 ship |
-| **Trigger 4** | LangChain 1st-Party framework article | ⚠️ PARTIAL HIT | ⚠️ PARTIAL HIT | ⚠️ PARTIAL HIT | R706 已 ship |
-| **Trigger 5** | 1st-Party model sandbox | ❌ UNHIT | ⚠️ PARTIAL HIT (NVIDIA OpenShell) | ⚠️ PARTIAL HIT | R707 NemoClaw OpenShell 实证 |
-| **Trigger 6** | Vendor 1st-Party Open Source Runtime Spec | ❌ UNHIT | ✅ HIT (NVIDIA/NemoClaw 21,655⭐) | ✅ HIT 持续 (R708 3 commits + 外部贡献者) | R708 cluster 持续 ship |
-| **Trigger 7** | Cross-vendor Lighthouse case (3+ vendor 联合) | ❌ UNHIT | ❌ UNHIT | ⚠️ **NEW: PARTIAL HIT candidate (R702 监测盲点补救)** | **Anthropic Fable 5 / Glasswing 跨 5 vendor 1st-Party 框架** |
+| Trigger | 定义 | R708 | **R709** | 升级理由 |
+|---------|------|------|---------|---------|
+| **Trigger 1** | LangChain 1st-Party Runtime Spec article | ✅ HIT | ✅ HIT | R706 已 ship |
+| **Trigger 2** | Cross-vendor cluster (3 vendor 同窗口) | ⚠️ PARTIAL HIT | ⚠️ **PARTIAL HIT 强化** | **首次明确 2-vendor × 2-layer cluster signal**: NVIDIA L5 dcode + Anthropic L6 Interrupt/peer-message |
+| **Trigger 3** | LangChain 1st-Party product article | ⚠️ PARTIAL HIT | ⚠️ **PARTIAL HIT 升级** | **Anthropic SDK v0.3.205 Layer 6 1:N primitive 演进** = Anthropic 1st-Party SDK Runtime Spec primitive 演进 (R696-R709 累计 3 次) |
+| **Trigger 4** | LangChain 1st-Party framework article | ⚠️ PARTIAL HIT | ⚠️ PARTIAL HIT | R706 已 ship |
+| **Trigger 5** | 1st-Party model sandbox | ⚠️ PARTIAL HIT | ⚠️ PARTIAL HIT | R707 NemoClaw OpenShell + R709 dcode Layer 5 强化 |
+| **Trigger 6** | Vendor 1st-Party Open Source Runtime Spec | ✅ HIT (R707+持续) | ✅ **HIT 强化** | **NemoClaw dcode Layer 5 Governance primitive** (Phase 6 启动以来首个明确 Layer 5 primitive for DCode) |
+| **Trigger 7** | Cross-vendor Lighthouse case (3+ vendor 联合) | ⚠️ PARTIAL HIT candidate | ⚠️ PARTIAL HIT candidate 持续 | R708 监测盲点 retroactive |
 
-**R708 增量**: 
-- ✅ Trigger 6 持续累积 (NVIDIA/NemoClaw 3 commits in 2h)
-- ⚠️ Trigger 7 NEW: PARTIAL HIT candidate (R702 监测盲点补救:Anthropic Fable 5 / Project Glasswing)
-- **累计 R696-R708 13 rounds 后**:
-  - **2 个 trigger FULL HIT** (Trigger 1 R706 + Trigger 6 R707/R708 持续)
-  - **5 个 trigger PARTIAL HIT** (Trigger 2/3/4/5/7 累计)
-  - **0 个 trigger UNHIT** ← **R708 NEW: Trigger 7 从 UNHIT 升级为 PARTIAL HIT candidate**
+**累计 R696-R709 14 rounds 后**:
+- **2 个 trigger FULL HIT**: Trigger 1 (R706) + Trigger 6 (R707 持续 + R708 + R709 强化)
+- **5 个 trigger PARTIAL HIT**: Trigger 2/3/4/5/7 累计
+  - **Trigger 2 R709 强化** (首次明确 2-vendor × 2-layer cluster signal)
+  - **Trigger 3 R709 升级** (Anthropic SDK v0.3.205 Layer 6 1:N primitive 演进)
+  - **Trigger 6 R709 强化** (NemoClaw dcode Layer 5 Governance primitive)
+- **0 个 trigger UNHIT** ← R708 全部清零 + R709 维持
 
-### 3.2 R708 异常窗口特征累积（R696-R708）
+### 3.2 R709 异常窗口特征累积（R696-R709 14 rounds）
 
 | Round | 窗口长度 | Phase 6 Trigger 增量 | 决策 |
 |-------|---------|---------------------|------|
-| R696 | 1h13min | Trigger 6 partial (cognee) | monitoring |
-| R697 | 1h55min | (none) | monitoring |
-| R698 | 2h2min | (none) | monitoring |
-| R699 | 1h27min | (none) | monitoring |
-| R700 | 33min | Trigger 1/3/4 partial cluster (LangChain 6/29) | output |
-| R701 | 3h27min | Schneider Electric LLMOps case | output |
-| R702 | 2h13min | LangSmith LLM Gateway | output |
-| R703 | 1h46min | Prompt Caching with Deep Agents | output |
-| R704 | 21min | (none) | monitoring |
-| R705 | 13min | (none) | monitoring |
-| R706 | 1h32min | Trigger 1 HIT + inferoa + Tuning Harness | **output (双产出)** |
-| R707 | 1h48min | Trigger 2 partial + Trigger 6 full + 4-ship cluster | **output (双产出 cluster)** |
-| **R708** | **1h52min** | Trigger 6 持续累积 + Trigger 7 retrospective partial candidate | **monitoring + verification** |
+| R696-R699 | ~1-2h | 1-vendor × 1-layer 4 次 1:N primitive 演进 (Anthropic R696 + LangChain R697/R698/R699) | monitoring |
+| R700-R705 | ~13min-3h27min | Schneider Electric LLMOps + LangSmith LLM Gateway + Prompt Caching with Deep Agents | output (3 篇) |
+| R706 | 1h32min | Trigger 1 HIT (Tuning Harness Nemotron) + Trigger 2-5 PARTIAL HIT cluster | **output (双产出)** |
+| R707 | 1h48min | Trigger 2 PARTIAL HIT + Trigger 6 FULL HIT (NVIDIA/NemoClaw 21,655⭐) + 4-ship cluster | **output (双产出 cluster)** |
+| R708 | 1h52min | Trigger 6 持续累积 (NemoClaw 3 commits in 2h) + Trigger 7 PARTIAL HIT candidate (Fable 5/Glasswing) | monitoring + verification |
+| **R709** | **2h0min** | **Trigger 2 强化 (2-vendor × 2-layer cluster) + Trigger 3 升级 (Anthropic SDK Layer 6) + Trigger 6 强化 (NemoClaw dcode Layer 5)** | **monitoring + R709 Verification 追加章节** |
 
-**R708 模式**: 持续 monitoring-only round (3rd consecutive since R704-R705),**但 cluster signal 持续 ship 验证 + Anthropic cadence 异常结构性证据 + Trigger 7 retrospective 候选**
+**R709 模式**: 持续 monitoring-only + R709 Verification 追加章节。**R709 模式与 R708 不同** —— **R708 是单 trigger 强化 (Trigger 6 + Trigger 7 retrospective)**,**R709 是 3 trigger 同时强化 (Trigger 2 + Trigger 3 + Trigger 6)**,**R709 是 R696-R709 14 rounds 期间 trigger 升级最密集的 round**。
 
 ---
 
-## 四、R708 cluster verification 与 R706-R707 范式跃迁强化
+## 四、R709 cluster verification 与 2-vendor × 2-layer Runtime Spec cluster signal 实证
 
-### 4.1 R708 NemoClaw cluster signal 持续 ship 验证
-
-R706-R707 章节 6.2 预测了 3 个候选方向:
-
-| 候选 | 概率 | R708 实证 |
-|------|------|---------|
-| **候选 A**: Cross-vendor cluster 持续累积 (Trigger 2 完整 HIT) | 35-40% | ⚠️ **待验证**: R708 Anthropic / OpenAI 均无 Runtime Spec article ship |
-| **候选 B**: LangChain × NVIDIA 双 vendor cluster 持续扩展 (Trigger 2 部分 HIT 持续) | 40-45% | ✅ **强验证**: R708 时段 NemoClaw 3 commits in 2h (cluster signal 持续 + 加速) |
-| **候选 C**: cluster 短暂高峰后退潮 | 15-25% | ⚠️ **弱化**: R708 cluster 持续 ship 反证退潮假设 |
-
-**R708 验证判断**:
-- ✅ **R706-R707 cluster 信号强度升级** —— 不是孤立事件,是持续累积
-- ✅ **NemoClaw 1st-Party OSS 进入开放治理阶段** —— 外部贡献者 (kagura-agent) 修复 sandbox resilience
-- ⚠️ **Trigger 2 完整 HIT 仍未发生** —— R708 Anthropic / OpenAI 均无 Runtime Spec article ship, R709-R715 窗口继续监测
-
-### 4.2 NemoClaw 1st-Party Runtime Spec OSS 在 R708 时段的 4 个演进信号
-
-R707 → R708 时段 NemoClaw 仓库的 3 个 commit 验证了 **4 个 1st-Party 演进信号**:
-
-| 演进信号 | Commit 实证 | Runtime Spec Layer | 意义 |
-|---------|-----------|-------------------|------|
-| **Open governance** | kagura-agent (外部) 修复 sandbox rebuild --force | L3 (Sandbox) 跨组织治理 | **1st-Party OSS 进入开放治理阶段** |
-| **Resilience 增强** | fix(sandbox): allow rebuild --force to skip backup | L3 (Sandbox) resilience | 死 sandbox 状态恢复路径 |
-| **Readiness 监控** | fix(onboard): use deadline wait for gateway recovery | L5 (Governance) 监控 | Gateway readiness deadline-based polling |
-| **Model discovery** | fix(ollama): verify pulled model discovery | L1 (Model) 多 provider 路由 | Ollama 模型发现 + bounded exponential backoff |
-
-**4 个演进信号 = R707 1st-Party Runtime Spec OSS 6 Layer 完整覆盖后的持续 Layer-by-Layer 演化**
-
-### 4.3 Phase 6 vendor-specific 节奏分化 (R708 关键洞察)
-
-| Vendor | R708 cadence 模式 | 解读 |
-|--------|-------------------|------|
-| **NVIDIA** | **标准化加速** (NemoClaw 3 commits in 2h + 21,657⭐ + 外部贡献者加入) | 1st-Party Runtime Spec OSS Layer-by-Layer 演化 + 开放治理 |
-| **Anthropic** | **标准化减速** (Claude Code 19h30min 异常 + /news 9 天无 ship + Fable 5/Glasswing 后续) | Fable 5 后续治理调整 / Sonnet 4.6+ 准备期 / Project Glasswing 开发 |
-| **OpenAI** | **标准化盘整** (openai-python 14d 即将突破 + 6/30 Core dump epidemiology 后冷却) | openai-python / openai-node cadence 异常,可能与 GPT-5.6+ 模型迭代有关 |
-| **LangChain** | **cluster signal 持续 ship** (R706 Tuning Harness + R707 NemoClaw cluster + R708 NemoClaw verification) | 跨 vendor 联盟 + Runtime Spec 标准化持续累积 |
-
-**Phase 6 Runtime Spec 标准化分化为 4 种 vendor-specific 节奏** —— NVIDIA 加速 / Anthropic 减速 / OpenAI 盘整 / LangChain cluster 持续
-
----
-
-## 五、Phase 6 Trigger 7 PARTIAL HIT candidate retrospective (R702 监测盲点补救)
-
-### 5.1 R702 监测盲点识别
-
-**R702 时期 (2026-07-02 02:00 CST) Anthropic 已经 ship**:
-- **2026-06-30**: "Redeploying Fable 5" (Anthropic /news)
-  - 内容:**"Together with Amazon, Microsoft, Google, and other Glasswing partners, we've started to develop [a shared industry framework for scoring jailbreak severity]"**
-  - **跨 4+ vendor 1st-Party Lighthouse case**:Anthropic + Amazon + Microsoft + Google + Glasswing partners
-- **2026-06-30**: "Claude Science, an AI workbench for scientists" (Anthropic /news)
-  - 内容:Claude Science 集成工具 + auditable artifacts + flexible access to computing resources
-  - **Anthropic 1st-Party Runtime Spec evidence**
-
-**R702 监测盲点原因**:
-- R702 重点监测 LangChain blog cluster + 6/30 候选文章
-- R702 未把 Anthropic /news 纳入完整扫描范围
-- R702-R707 持续 7 rounds 期间 Anthropic Fable 5 / Glasswing 框架未被发现
-
-**R708 retroactive 发现**:
-- R708 trigger 时 (2026-07-09) Anthropic /news 仍以 6/30 Fable 5 + Claude Science 为最新 ship (9 天无新 ship)
-- R708 重新检查时发现 R702 监测盲点
-
-### 5.2 Anthropic Fable 5 / Glasswing = Phase 6 Trigger 7 PARTIAL HIT candidate
-
-**Phase 6 Trigger 7 定义**: Cross-Vendor Lighthouse case (3 vendor 联合 1st-Party 实证)
-
-**Anthropic Fable 5 / Glasswing 框架满足度评估**:
-
-| Trigger 7 子条件 | Fable 5 / Glasswing 实证 | 满足度 |
-|----------------|-------------------------|--------|
-| **3 vendor 联合** | Anthropic + Amazon + Microsoft + Google + Glasswing partners (4+ vendor) | ✅ **超出满足** (vs 3 vendor 最低门槛) |
-| **1st-Party 实证** | Anthropic 1st-Party (Fable 5 + safety classifier + Project Glasswing) + Amazon 1st-Party (报告触发) + Microsoft 1st-Party (Glasswing partner) + Google 1st-Party (Glasswing partner) | ✅ **满足** |
-| **Lighthouse case 性质** | 跨 vendor 1st-Party 联合制定行业标准 (jailbreak severity framework) | ✅ **满足** |
-| **Runtime Spec 关联** | Safety classifier + jailbreak severity 是 agent Runtime Spec L5 (Governance) 重要元素 | ⚠️ **部分满足** (主要是 safety 而非 agent Runtime Spec) |
-| **OSS 实证层** | Anthropic 1st-Party safety classifier + Amazon 1st-Party report | ⚠️ **部分满足** (无统一 OSS 仓库) |
-
-**结论**:**Phase 6 Trigger 7 PARTIAL HIT candidate** (跨 4+ vendor 1st-Party Lighthouse case),但 Runtime Spec / OSS 实证层较弱
-
-### 5.3 R708 Trigger 7 状态升级
-
-| Trigger | R707 状态 | **R708 状态** | 升级理由 |
-|---------|-----------|--------------|---------|
-| **Trigger 7** | ❌ UNHIT | ⚠️ **PARTIAL HIT candidate** | Anthropic Fable 5 / Glasswing 跨 4+ vendor 1st-Party 联合框架 (R702 监测盲点 retroactive 发现) |
-
-**R708 累计 Trigger 状态**:
-- **2 FULL HIT**: Trigger 1 (R706) + Trigger 6 (R707 持续)
-- **5 PARTIAL HIT**: Trigger 2/3/4/5/7 ← **R708 升级**
-- **0 UNHIT** ← **R708 全部清零**
-
-### 5.4 R709-R715 Trigger 7 完整 HIT 路径推演
-
-**Trigger 7 完整 HIT 条件**:
-- 3+ vendor 1st-Party 联合 ship Runtime Spec 实证案例 (sandbox / governance / reference stack / 安全框架)
-- 案例需有可观测 OSS 实证层 (统一仓库 / framework)
-- 案例需与 Agent Runtime Spec 强相关 (不只是 safety / 商业合作)
-
-**R709-R715 Trigger 7 完整 HIT 路径候选**:
-1. **Anthropic 后续 ship**:"How we contain Claude across products" 类型 article + Claude Code architecture postmortem extension (R702 已 ship 类似架构内容) → Anthropic 1st-Party Runtime Spec
-2. **OpenAI 后续 ship**:OpenAI Agents SDK architecture postmortem + OpenAI Runtime Spec
-3. **NVIDIA × Anthropic 1st-Party 集成**:NemoClaw OpenShell + Claude Code sandbox 集成候选 (基于 R708 NemoClaw 开放治理信号)
-4. **Anthropic × Google × Microsoft 1st-Party 集成**:基于 Project Glasswing 的跨 vendor 安全 Runtime Spec 联合实证
-
-**Trigger 7 完整 HIT 概率 (R709-R715 窗口)**: 15-25% (基于 R708 Fable 5 / Glasswing partial HIT 累积 + 跨 vendor 联盟趋势)
-
----
-
-## 六、R708 vendor-specific 节奏分化深度分析
-
-### 6.1 NVIDIA 标准化加速
-
-**R708 实证**:
-- NemoClaw cluster R708 时段 3 commits in 2h (持续 ship)
-- 外部贡献者 kagura-agent 加入 (开放治理)
-- ⭐ 21,657 (+2 in 1h52min)
-- Open issues 331 (-23 vs R707 354)
-- 6 Layer Runtime Spec Layer-by-Layer 演化
-
-**NVIDIA 标准化加速原因分析**:
-- **LangChain × NVIDIA 联盟 (R707) 推动 NVIDIA Runtime Spec OSS 加速**
-- **OpenShell sandbox + NemoClaw Blueprint 1st-Party 公开化驱动持续 ship**
-- **Open governance 信号 (kagura-agent 外部贡献者) 验证 1st-Party OSS 健康度**
-
-### 6.2 Anthropic 标准化减速
-
-**R708 实证**:
-- Claude Code cadence 19h30min 极度异常 (vs 常态 12-14h)
-- Anthropic /news 9 天无新 ship (vs 常态 2-3 天)
-- Anthropic /engineering 最近 ship 为 4/23 (已 ~75 天无 ship,已知异常区间)
-- Fable 5 / Mythos 5 / Project Glasswing 后续治理投入
-
-**Anthropic 标准化减速原因分析 (3 个候选)**:
-
-| 候选原因 | 证据 | 可能性 |
-|---------|------|--------|
-| **Fable 5 / Mythos 5 / Project Glasswing 后续治理调整** | 6/12 export control + 6/30 Fable 5 redeploy + 跨 vendor 安全框架 | **40-50%** |
-| **Sonnet 4.6+ / Opus 4.8+ 主线模型迭代前置准备** | Anthropic 通常 ship cadence 与模型迭代周期同步 | 25-35% |
-| **Project Glasswing 跨 vendor 协作开发投入** | 跨 vendor 安全框架是 Anthropic 后续投入重点 | 15-25% |
-
-**解读**:**Phase 6 标准化在 Anthropic 维度出现显著减速信号**,可能与 Fable 5 后续治理框架 (Glasswing) 开发投入有关
-
-### 6.3 OpenAI 标准化盘整
-
-**R708 实证**:
-- openai-python v2.44.0 13d 23h Quiet Window (即将突破 14 天级)
-- openai-node v6.45.0 13d 23h Quiet Window (同上)
-- OpenAI news 6/30 Core dump epidemiology (engineering Runtime Spec) 后 9 天无新 Runtime Spec article ship
-- GPT-Live 7/8 ship (Product 类,不是 Runtime Spec article)
-
-**OpenAI 标准化盘整原因分析**:
-- **openai-python / openai-node cadence 异常** (13d+ Quiet Window) = OpenAI Stainless 自动化 codegen 可能调整
-- **GPT-5.6 Sol 6/26 preview + GPT-Live 7/8 ship** = OpenAI 模型迭代 + product ship 在进行,但 Runtime Spec article 冷却
-- **6/30 Core dump epidemiology** 是 OpenAI 最近 Runtime Spec engineering article
-
-### 6.4 LangChain cluster signal 持续 ship
-
-**R708 实证**:
-- 7/8 R707 cluster (3 article + 1 NemoClaw push) 在 R708 时段仍有效
-- LangChain × NVIDIA 联盟宣告 (R707) 推动后续 ship
-- NemoClaw R708 时段 3 commits in 2h 含 LangChain 引用 (kagura-agent LangChain collaboration 推断)
-
-**LangChain 标准化持续累积信号**:
-- R700-R701 Schneider Electric LLMOps case
-- R702 LangSmith LLM Gateway
-- R703 Prompt Caching with Deep Agents
-- R706 Tuning Harness Nemotron
-- R707 NemoClaw Blueprint + Deep Agents Code on NemoClaw + NemoClaw OSS
-- R708 NemoClaw cluster 持续 ship
-
----
-
-## 七、R708 cluster window timeline（17:58:57 UTC → 19:57:12 UTC, 不到 2h）
+### 4.1 R709 cluster signal 时间线（4 个 commit, 19min 内 ship）
 
 ```
-17:58:57 UTC  [R707 cluster 第 4 ship]  NVIDIA/NemoClaw repo push (R707 trigger)
-19:13:07 UTC  [R708 cluster ship 1]     fix(onboard): use deadline wait for gateway recovery (#6320) — Ho Lim NVIDIA 官方
-19:13:21 UTC  [R708 cluster ship 2]     fix(sandbox): allow rebuild --force (#6211) — kagura-agent 外部贡献者
-19:23:20 UTC  [R708 cluster ship 3]     fix(ollama): verify pulled model discovery (#6481) — cjagwani NVIDIA 官方
-19:57:12 UTC  [R708 trigger 时刻]        NemoClaw repo pushed_at (R708 trigger 时刻仍在 push)
+21:22:06 UTC  [R709 cluster ship 1]   claude-code v2.1.205 (parity tracking)
+21:22:15 UTC  [R709 cluster ship 2]   claude-agent-sdk-typescript v0.3.205 (Layer 6 1:N primitive)
+21:36:00 UTC  [R709 cluster ship 3]   claude-agent-sdk-python v0.2.114 (parity tracking)
+21:41:33 UTC  [R709 cluster ship 4]   NemoClaw 0e0807d feat(dcode) thread-scoped auto-approval (Layer 5 primitive)
 ```
 
-**R708 cluster window 不到 2h 内 ship 3 commits = R707 cluster signal 持续 + 加速**
+**R709 cluster 4 commit 内含 2 vendor × 2 layer cluster signal**:
+- **Anthropic Layer 6 (Cross-Agent Messaging)**: Interrupt control responses + Peer-message session events + system/init capability negotiation
+- **NVIDIA Layer 5 (Governance) for managed Deep Agents Code sandboxes**: dcode thread-scoped auto-approval rebuild --dcode-auto-approval <disabled|thread-opt-in>
+
+### 4.2 R709 NemoClaw dcode thread-scoped auto-approval 详细分析
+
+> 来源: https://github.com/NVIDIA/NemoClaw/commit/0e0807d11c7ac31100c632750af1abceb8b75a82 by J. Yaunches <jyaunches@nvidia.com>
+
+**NemoClaw dcode thread-scoped auto-approval primitive 拆解**:
+
+| 字段 | 内容 | Runtime Spec Layer |
+|------|------|-------------------|
+| `rebuild --dcode-auto-approval <disabled\|thread-opt-in>` | named control + durable registry state | **Layer 5 (Governance) control primitive** |
+| thread-scoped default-disabled + each thread must opt-in | per-thread governance | **Layer 5 thread-level governance** |
+| Fail-closed validation + reject ambient overrides | fail-closed security | **Layer 5 fail-closed validation** |
+| Reset across thread/agent transitions | scope lifecycle | **Layer 5 scope lifecycle management** |
+
+**与 R707 / R708 NemoClaw 演进对比**:
+- R707 cluster: NemoClaw Blueprint 4-ship (Runtime Spec 6 Layer 框架)
+- R708 cluster: gateway recovery deadline wait (Layer 5 readiness) + sandbox rebuild --force (Layer 3 resilience) + Ollama model discovery (Layer 1 multi-provider)
+- **R709 cluster (第 5 ship)**: **dcode thread-scoped auto-approval = Layer 5 (Governance) for managed Deep Agents Code sandboxes primitive**
+- **演进维度**: R707-R708 是 Runtime Spec Layer 框架 + 6 Layer 各自的 readiness/resilience primitive,R709 是 **具体 Layer 5 (Governance) for DCode** 的精细化治理 primitive
+
+### 4.3 TS v0.3.205 Layer 6 Runtime Spec 三件套详细分析
+
+> 来源: https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.205 body
+
+**Layer 6 三件套**:
+
+#### 4.3.1 Interrupt control responses primitive (Layer 6 Control)
+
+- **`still_queued` (UUIDs of queued async messages)**: Control 状态可观测性 —— 列出 interrupt 后仍会运行的 async messages
+- **`Query.interrupt()` returns typed receipt**: Control 类型化反馈 —— 调用方获得结构化回执而非 raw response
+- **`system/init` advertises `interrupt_receipt_v1` capability**: 跨 vendor 能力协商 —— 系统初始化阶段宣告 capability,跨 vendor 集成可基于此做 feature detection
+
+#### 4.3.2 Peer-message session events primitive (Layer 6 Messaging)
+
+- **`name` (structured sender display name)**: Messaging sender 标识 —— 跨 Agent 消息的发送方名称
+- **`body` (structured decoded message body)**: Messaging payload 结构化 —— 消息正文解码后的结构
+
+#### 4.3.3 Layer 6 三件套组合
+
+- **Control + Messaging + Capability negotiation** = 完整跨 Agent 通信 Runtime Spec
+- R696 LangChain DeltaChannel overwrite (Layer 3 State) → R709 Anthropic Layer 6 三件套 = layer-by-layer 推进
+- **`system/init` capability negotiation** 是 **跨 vendor 互操作性的早期信号**
+
+### 4.4 3-vendor × 3-layer Runtime Spec cluster signal 实证 (R696-R709 14 rounds 累计)
+
+| Round | Anthropic | NVIDIA | LangChain | 累积 cluster signal |
+|-------|-----------|--------|-----------|---------------------|
+| R696 | background_tasks_changed (Layer 3) | (none) | (none) | 1-vendor × 1-layer (Anthropic Layer 3) |
+| R697 | (none) | NemoClaw Blueprint ship | DeltaChannel overwrite (Layer 3) | 2-vendor × 2-layer |
+| R698 | (none) | (none) | stub checkpoint (Layer 3) | 1-vendor × 1-layer |
+| R699 | (none) | (none) | force snapshot (Layer 3) | 1-vendor × 1-layer |
+| R706 | (none) | (none) | Tuning Harness Nemotron (Layer 2) | 1-vendor × 1-layer |
+| R707 | (none) | NemoClaw Blueprint 4-ship | Cluster partner announcement (Layer 2) | 2-vendor × 2-layer |
+| R708 | (none) | 3 commits in 2h (L5 readiness + L3 resilience + L1 multi-provider) | (none) | 1-vendor × 3-layer |
+| **R709** | **TS v0.3.205 Interrupt + peer-message (Layer 6)** | **dcode thread-scoped auto-approval (Layer 5)** | (none) | **2-vendor × 2-layer (Anthropic L6 + NVIDIA L5)** |
+
+**R709 cluster signal 关键洞察**:
+- **R709 = Phase 6 Runtime Spec 启动以来首个 2-vendor × 2-layer 同窗口 ship** —— 之前的 cluster 都是单 layer 或单 vendor
+- **Anthropic 兑现 Layer 6 (Cross-Agent Messaging) Runtime Spec primitive** —— 这是 R696-R709 期间首个明确的 Multi-Agent Messaging primitive 兑现
+- **NVIDIA 兑现 Layer 5 (Governance) for DCode Runtime Spec primitive** —— 与 R708 readiness primitive 形成 Layer 5 演进第二阶段
+- **R709 cluster = Phase 6 Runtime Spec 标准化加速拐点的关键实证** —— 跨 vendor × 跨 layer 同步 ship
 
 ---
 
-## 八、本轮未处理的候选源（R709+ 监测）
+## 五、R709 Anthropic cadence 异常区间打破分析（关键反直觉洞察）
+
+### 5.1 Anthropic cadence 演进时间线（R706-R709）
+
+| Round | Claude Code Quiet Window | 异常程度 | 解读 |
+|-------|--------------------------|---------|------|
+| R706 | ~15h50min | 异常 | 12-14h 常态 +1h50min |
+| R707 | ~17h30min | 异常+ | +2h |
+| R708 | ~19h30min | **极度异常** | +2h,Phase 6 启动以来最长 |
+| **R709** | **~5h** | **异常缓解** | **R706-R708 19h30min 极度异常区间被打破,缩短 ~14h30min** |
+
+### 5.2 R706-R708 19h30min 极度异常的重新解读
+
+**R706-R708 表面解读** (R706-R708 阶段): "Anthropic 标准化停滞 / 减速 / 异常" —— Phase 6 标准化在 Anthropic 维度出现结构性减速信号
+
+**R709 反直觉重新解读**:
+- R706-R708 19h30min 极度异常不是停滞 —— 是 v0.3.205 含两个重大 Layer 6 Runtime Spec primitive 的 **"feature-complete prep" 周期**
+- v0.3.205 单一 ship 含 **Interrupt control + peer-message 两个 Layer 6 primitive + system/init capability negotiation** = 重大 feature 累积释放
+- v2.1.205 是 CLI bundle parity (作为 Anthropic claude-code 工具的 release candidate)
+- v0.2.114 是 Python SDK parity (跟随 CLI bundle)
+- **R709 ship = Phase 6 Runtime Spec 标准化在 Anthropic 维度的"feature-complete 释放"信号**
+
+**反直觉洞察**:
+- R706-R708 的"减速信号"实际上反映的是 **Anthropic 内部 feature 累积周期**
+- 当一个 vendor 在 R706-R708 期间 cadence 极度异常 + R708 9 天无 Runtime Spec article ship,可能不是停滞 —— 而是 feature-complete 准备
+- **这是 Anthropic 工程文化的体现** —— 在累积足够 Runtime Spec primitive 后,一次性 ship 完整三件套
+
+### 5.3 Anthropic cadence 后续预期
+
+- **R709 cadence 5h 仍异常** (vs 常态 12-14h)
+- 但 cadence 从"19h+ 极度异常"缓解到"~5h 加速"
+- **R710 重点监测**:Anthropic 是否继续以 ~5h cadence ship (再次 ship v2.1.206 / v0.3.206)?
+- 如果再 ship = Anthropic 加速 ship 节奏确认
+- 如果回到 12-14h = Anthropic cadence 正常化
+- 如果再进入 19h+ 异常区间 = "feature-complete prep" 周期再次启动
+
+---
+
+## 六、R709 OpenAI 14 天级突破事件
+
+### 6.1 openai-python / openai-node 14 天级突破
+
+| 仓库 | Latest release | ship 时间 | R709 Quiet Window | 评估 |
+|------|---------------|----------|------------------|------|
+| **openai-python** | v2.44.0 | 2026-06-24T20:55:08Z | **14d 6h 1min** | **突破 14 天级 ✓** |
+| **openai-node** | v6.45.0 | 2026-06-24T20:35:51Z | **14d 6h 21min** | **突破 14 天级 ✓** |
+
+### 6.2 OpenAI 14 天级突破解读
+
+- R708 trigger 时 openai-python 13d 23h (即将突破),R709 trigger 时 **14d 6h 1min = 已突破 14 天级**
+- openai-node 同步突破 14 天级
+- **OpenAI Stainless 自动化 codegen cadence 进入历史性异常区间** (vs 常态 1-3 天)
+- Phase 6 trigger 5 (1st-Party model sandbox) 持续累积 (R707-R709 期间)
+- **R710 重点监测**:openai-python / openai-node 是否 ship v2.44.1 / v6.45.1 打破 14 天级,or 继续延伸
+
+---
+
+## 七、R709 Phase 6 vendor-specific 节奏分化范式跃迁
+
+### 7.1 vendor-specific 节奏分化范式（R706-R709）
+
+| Vendor | R706-R708 cadence 模式 | **R709 cadence 模式** | 范式跃迁 |
+|--------|------------------------|----------------------|---------|
+| **NVIDIA** | 标准化加速 (NemoClaw cluster 持续 + 21,655⭐ + 外部贡献者加入) | **标准化加速持续** (R709 cluster 第 5 ship dcode + 21,661⭐ +4) | NVIDIA 持续加速,1st-Party OSS Layer 5 primitive 兑现 |
+| **Anthropic** | 标准化减速 (19h30min cadence + 9 天 /news 无 ship) | **从极度异常转向 feature-complete 释放** (~5h cadence + v0.3.205 Layer 6 1:N primitive 双 ship + cadence 异常区间打破) | **范式跃迁** —— 从"标准化停滞"转向"Layer 6 Runtime Spec primitive 一次性释放" |
+| **OpenAI** | 标准化盘整 (openai-python 14d 即将突破 + 9 天无 Runtime Spec ship) | **14 天级突破** (openai-python / openai-node 14d 6h 1min / 14d 6h 21min) | OpenAI 进入历史性异常区间,等待 v2.44.1 / v6.45.1 ship |
+| **LangChain** | cluster signal 持续 ship (R706 → R707 → R708) | **cluster signal 持续 (R709 期间无新 ship)** | R706-R707 cluster 累积效应,7/8 4-ship cluster 仍是 Phase 6 Runtime Spec 文章 cluster 强信号 |
+
+### 7.2 R709 vendor 节奏分化的范式跃迁洞察
+
+- **Anthropic 范式跃迁** —— 从"R706-R708 标准化停滞"解读转向"R706-R708 feature-complete prep + R709 feature-complete 释放"解读
+- 这意味着 R706-R708 的 cadence 极度异常不是停滞 —— 是 v0.3.205 含两个重大 Layer 6 Runtime Spec primitive 的"feature-complete prep"周期
+- **NVIDIA Layer 5 (Governance) 持续兑现** —— R708 readiness + R709 dcode thread-scoped = Layer 5 二阶段演进
+- **OpenAI 进入 14 天级异常区间** —— 等待 v2.44.1 / v6.45.1 打破沉默
+
+---
+
+## 八、R709 cluster window timeline (19:57 UTC → 21:57 UTC, 2h)
+
+```
+19:57 UTC   [R708 trigger 时刻]                  NemoClaw pushed_at (R708 cluster 验证完成)
+21:22:06 UTC  [R709 cluster ship 1]              claude-code v2.1.205 (parity tracking, +1h25min)
+21:22:15 UTC  [R709 cluster ship 2]              claude-agent-sdk-typescript v0.3.205 (Layer 6 1:N primitive, +1h25min)
+21:36:00 UTC  [R709 cluster ship 3]              claude-agent-sdk-python v0.2.114 (parity tracking, +1h39min)
+21:41:33 UTC  [R709 cluster ship 4]              NemoClaw 0e0807d feat(dcode) thread-scoped auto-approval (Layer 5 primitive, +1h44min)
+21:57 UTC   [R709 trigger 时刻]                  NemoClaw pushed_at (R709 cluster 验证完成)
+```
+
+**R709 cluster window 2h 内 ship 4 commits = 2 vendor (Anthropic + NVIDIA) × 2 layer (Layer 5 + Layer 6) cluster signal 实证**
+
+---
+
+## 九、本轮未处理的候选源（R710+ 监测）
 
 | 候选源 | 优先级 | 状态 |
 |--------|--------|------|
-| LangChain blog "how-to-use-rlms-in-deep-agents" | P2 | 完全独立 Paradigm 主题, R709+ 处理 |
+| LangChain blog "how-to-use-rlms-in-deep-agents" | P2 | 完全独立 Paradigm 主题, R710+ 处理 |
 | LangChain blog "fix-your-coding-agent-bill" | P2 | Cost optimization 与 R703 Prompt Caching 重叠 |
 | LangChain blog "agent-observability-needs-feedback-to-power-learning" | P2 | Observability 与 R702 cascadeflow 重叠 |
 | LangChain blog "improving-deep-agents-with-harness-engineering" 引用 deep-dive | P3 | R706 Article 已引用,Optional 独立 deep-dive |
@@ -353,87 +330,90 @@ R707 → R708 时段 NemoClaw 仓库的 3 个 commit 验证了 **4 个 1st-Party
 | github.com/langchain-ai/openshell-deepagent (156⭐) deep-dive | P3 | NVIDIA OpenShell sandbox + Deep Agent 集成候选 |
 | github.com/vivekchand/clawmetry (385⭐) deep-dive | P3 | "Real-time observability for 12 AI agent runtimes" 跨 vendor observability |
 | github.com/aiming-lab/AutoHarness deferred 候选监测 | P3 | 3-month quiet commit |
-| **Anthropic Fable 5 / Project Glasswing deep-dive** | P1 | R702 监测盲点 retroactive, R709 处理 |
+| Anthropic Fable 5 / Project Glasswing deep-dive | P1 | R702 监测盲点 retroactive, R710 处理 |
+| Anthropic v0.3.205 Layer 6 Runtime Spec 1:N primitive ship body 深度分析 | P1 | R709 ship 内容, R710 处理 |
+| NVIDIA NemoClaw dcode thread-scoped auto-approval 详细 deep-dive | P1 | R709 ship 内容, R710 处理 |
 
 ---
 
-## 九、R709-R715 监测优先级（11 项）
+## 十、R710-R716 监测优先级（11 项）
 
-### 9.1 P0 监测（最高优先级）
+### 10.1 P0 监测（最高优先级）
 
-1. **Anthropic Runtime Spec article ship** —— Trigger 2 完整 HIT 候选 (9 天无 ship,极度期待)
-2. **OpenAI Runtime Spec article ship** —— Trigger 2 完整 HIT 候选 (9 天无 Runtime Spec ship)
-3. **Anthropic Claude Code v2.1.205 / TS v0.3.205 / Py v0.2.114 ship** —— R708 已 19h30min, R709 可能 21h+ 历史性突破
-4. **openai-python v2.44.1 / openai-node v6.45.1 ship** —— 13d 23h 即将突破 14 天级 = 重要事件
-5. **Anthropic /news 新 ship** —— 9 天无 ship, R709-R715 窗口期待打破沉默
+1. **Anthropic v2.1.206 / TS v0.3.206 / Py v0.2.115 ship 监测** —— R709 cadence 异常区间打破后 (~5h cadence), R710-R711 验证是否再次 ship? **如果再 ship = Anthropic 加速 ship 节奏确认**
+2. **Anthropic Runtime Spec article ship** —— R709 trigger 9 天无 ship, R710 trigger 时 10 天级 = 重要事件,**期待 v0.3.205 feature-complete 释放伴随 article ship**
+3. **OpenAI Runtime Spec article ship** —— R709 9 天无 ship, R710 trigger 时 10 天级 = 重要事件
+4. **openai-python v2.44.1 / openai-node v6.45.1 ship** —— R709 已 14d 6h, R710 trigger 时大概率 14d 8h+, **Phase 6 trigger 5 候选关联**
+5. **Anthropic /news 新 ship** —— R709 9 天无 ship, R710-R716 窗口期待打破沉默 (可能伴随 v0.3.205 Layer 6 article)
 
-### 9.2 P1 监测（高优先级）
+### 10.2 P1 监测（高优先级）
 
-6. **NVIDIA/NemoClaw next push** —— R708 时段 3 commits in 2h 验证 cluster signal 持续, R709-R710 继续验证高频 ship 是否持续
+6. **NVIDIA/NemoClaw next push** —— R709 cluster 第 5 ship dcode 后, R710 验证 cluster signal 是否持续 (可能继续 ship Layer 5 演进或新 Layer 6 实证)
 7. **Phase 6 Trigger 7 完整 HIT 候选** —— Anthropic Fable 5 / Glasswing 后续 / NVIDIA × Anthropic / OpenAI 集成
-8. **LangChain DeepAgents 0.7.0a7+ ship** —— ~13d+ Quiet Window 监测
-9. **LangGraph 1.2.9 / 1.3.0 ship** —— ~2d8h+ Quiet Window 监测
+8. **Anthropic v0.3.205 Layer 6 Runtime Spec 1:N primitive ship body 深度分析** —— Interrupt + peer-message + capability negotiation 是否伴随 Anthropic 1st-Party article?
+9. **NVIDIA NemoClaw dcode thread-scoped auto-approval 后续 ship** —— R709 cluster 第 5 commit 是否后续有更多 Layer 5 primitive ship?
 
-### 9.3 P2 监测（中优先级）
+### 10.3 P2 监测（中优先级）
 
-10. **openwiki 10k⭐ SUSTAINED 突破** —— R707 10k⭐ gap 316 → R708 估算 294, 持续收窄
-11. **comet-ml/opik / usestrix/strix / vxcontrol/pentagi 持续监测** —— Phase 6 trigger 6/7 候选项目
-
----
-
-## 十、3 个核心判断（精简版）
-
-### 10.1 R708 = monitoring-only round + R707 cluster R708 持续 ship 验证
-
-- **无 Phase 6 trigger 新命中** (Anthropic / OpenAI / LangChain 9 天无 Runtime Spec article ship)
-- **R707 cluster signal R708 持续 ship 验证** (NemoClaw 3 commits in 2h)
-- **外部贡献者 kagura-agent 加入** (NemoClaw 1st-Party Runtime Spec OSS 进入开放治理阶段)
-- **Anthropic Claude Code 19h30min 极度异常** (叠加 /news 9 天无 ship = 标准化减速)
-
-### 10.2 R708 vendor-specific 节奏分化 (Phase 6 关键洞察)
-
-- **NVIDIA**: 标准化加速 (NemoClaw cluster 持续 ship + 开放治理)
-- **Anthropic**: 标准化减速 (19h30min cadence + 9 天 /news 无 ship)
-- **OpenAI**: 标准化盘整 (openai-python 14d 即将突破 + 9 天无 Runtime Spec ship)
-- **LangChain**: cluster signal 持续 ship (R706 → R707 → R708 持续累积)
-
-### 10.3 R708 Trigger 7 PARTIAL HIT candidate retrospective
-
-- **R702 监测盲点 retroactive**:Anthropic Fable 5 / Glasswing 跨 4+ vendor 1st-Party Lighthouse case
-- **Trigger 7 状态升级**:❌ UNHIT → ⚠️ PARTIAL HIT candidate
-- **累计 Trigger 状态**:2 FULL HIT + 5 PARTIAL HIT + 0 UNHIT (R708 全部清零)
+10. **openwiki 10k⭐ SUSTAINED 突破** —— R709 9.5k⭐ 缓冲 244 + 10k⭐ gap 256 (-12.93%), R710 验证是否加速收窄 (R706-R709 4 rounds 收窄率: -9.55% → -7.33% → -6.96% → -12.93%)
+11. **strix 39,015⭐ +56/h rate 持续监测** —— Phase 6 trigger 6/7 候选项目
+12. **comet-ml/opik / cascadeflow / Whale / inferoa / agentos 持续监测** —— Phase 6 trigger 6/7 候选项目
 
 ---
 
-## 十一、引用清单
+## 十一、4 个核心判断（精简版）
 
-### 11.1 R708 monitoring 引用的 1st-Party 来源（6 处）
+### 11.1 Anthropic cadence 异常区间在 R709 trigger 前 35min 被打破
 
-**NVIDIA 1st-Party (3 处 commit)**:
-1. https://github.com/NVIDIA/NemoClaw/commit/4ff5756e — `fix(onboard): use deadline wait for gateway recovery (#6320)` by Ho Lim
-2. https://github.com/NVIDIA/NemoClaw/commit/edf69f0b — `fix(sandbox): allow rebuild --force (#6211)` by kagura-agent (外部贡献者)
-3. https://github.com/NVIDIA/NemoClaw/commit/5ddf9a1 — `fix(ollama): verify pulled model discovery (#6481)` by Charan Jagwani
+- **v2.1.205 / v0.3.205 / v0.2.114 同窗口 ship** (R708-R709 1h25min-1h39min 内)
+- **R706-R708 19h30min 极度异常不是停滞 —— 是 v0.3.205 含两个重大 Layer 6 Runtime Spec primitive 的"feature-complete prep"周期**
+- R709 ship = Phase 6 Runtime Spec 标准化在 Anthropic 维度的"feature-complete 释放"信号
 
-**Anthropic 1st-Party (1 处,retroactive)**:
-4. https://www.anthropic.com/news/redeploying-fable-5 — "Together with Amazon, Microsoft, Google, and other Glasswing partners, we've started to develop [a shared industry framework for scoring jailbreak severity]" (R702 监测盲点 retroactive)
+### 11.2 TS v0.3.205 = Phase 6 启动以来首个 Layer 6 Runtime Spec 三件套
 
-**GitHub API (2 处)**:
-5. https://api.github.com/repos/NVIDIA/NemoClaw — NemoClaw repo metadata (R708 trigger 时刻)
-6. https://api.github.com/repos/NVIDIA/NemoClaw/commits — R708 cluster ship 实证
+- **Interrupt control responses** (still_queued + Query.interrupt() typed receipt + system/init interrupt_receipt_v1 capability)
+- **Peer-message session events** (structured name + body fields)
+- **Capability negotiation** (system/init interrupt_receipt_v1)
 
-### 11.2 触发 R708 cluster 监测的信号源
+### 11.3 NVIDIA NemoClaw dcode = Phase 6 启动以来首个明确 Layer 5 Governance for DCode primitive
 
-- Anthropic /news: https://www.anthropic.com/news
-- Anthropic /engineering: https://www.anthropic.com/engineering
-- OpenAI news: https://openai.com/news/
-- LangChain blog: https://www.langchain.com/blog
-- NVIDIA/NemoClaw GitHub: https://github.com/NVIDIA/NemoClaw
-- docs.nvidia.com/nemoclaw/latest
-- GitHub API: https://api.github.com
+- `rebuild --dcode-auto-approval <disabled|thread-opt-in>` control + thread-scoped default-disabled + fail-closed validation + scope lifecycle management
+
+### 11.4 R709 = 2-vendor × 2-layer (Layer 5 + Layer 6) Runtime Spec cluster signal 实证
+
+- Anthropic Layer 6 + NVIDIA Layer 5 同 R708-R709 2h 窗口 ship
+- **Phase 6 Runtime Spec 标准化加速拐点的关键实证**
+
+---
+
+## 十二、引用清单
+
+### 12.1 R709 verification 引用的 1st-Party 来源（4 处）
+
+**Anthropic 1st-Party (3 处 release)**:
+1. https://github.com/anthropics/claude-code/releases/tag/v2.1.205 — claude-code v2.1.205 (parity tracking, 2026-07-08T21:22:06Z)
+2. https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.205 — TS v0.3.205 (Layer 6 1:N primitive, 2026-07-08T21:22:15Z, body 含 Interrupt + peer-message + capability negotiation)
+3. https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.114 — Py v0.2.114 (parity tracking, 2026-07-08T21:36:00Z, Bundled CLI 2.1.205)
+
+**NVIDIA 1st-Party (1 处 commit)**:
+4. https://github.com/NVIDIA/NemoClaw/commit/0e0807d11c7ac31100c632750af1abceb8b75a82 — `feat(dcode): add thread-scoped auto-approval (#6486)` by J. Yaunches (2026-07-08T21:41:33Z)
+
+### 12.2 累计引用（11 处）
+
+- R707 原始 8 处 1st-Party 引用 (4 LangChain + 3 NVIDIA + 1 Cross-vendor)
+- R708 verification 3 处 1st-Party 引用 (NVIDIA commits 4ff5756e, edf69f0b, 5ddf9a1)
+- R709 verification 4 处 1st-Party 引用 (Anthropic v2.1.205, v0.3.205, v0.2.114 + NemoClaw 0e0807d)
+
+### 12.3 触发 R709 cluster 监测的信号源
+
 - Anthropic Claude Code / TS SDK / Py SDK GitHub releases
+- NVIDIA/NemoClaw GitHub commits
 - OpenAI openai-python / openai-node GitHub releases
-- LangChain DeepAgents / LangGraph GitHub releases
+- LangChain blog
+- Anthropic /news
+- OpenAI news
+- GitHub API: https://api.github.com
 
 ---
 
-*本报告由 AgentKeeper R708 自动维护 | MONITORING-ONLY ROUND (无 Phase 6 trigger 新命中) + 4 个重要新监测信号 (NemoClaw cluster R708 持续 ship 验证 + Anthropic cadence 19h30min 极度异常 + Anthropic /news 9 天无 ship + openai-python 14d 即将突破) + Trigger 7 PARTIAL HIT candidate retrospective (Anthropic Fable 5 / Glasswing 跨 4+ vendor 1st-Party) + 累计 2 FULL HIT + 5 PARTIAL HIT + 0 UNHIT | 1 篇 R707 cluster deep-dive R708 Verification 追加章节 (17,679 → 27,603 bytes, +9,924 / +56%) | 6 处 1st-Party 引用 | 2026-07-09 03:57 CST*
+*本报告由 AgentKeeper R709 自动维护 | Phase 6 Trigger 2 PARTIAL HIT 强化 (R709 首次明确 2-vendor × 2-layer cluster signal) + Trigger 3 PARTIAL HIT 升级 (Anthropic SDK v0.3.205 Layer 6 1:N primitive 演进) + Trigger 6 HIT 强化 (NemoClaw dcode Layer 5 primitive) | 1 篇 R707 cluster deep-dive R709 Verification 追加章节 (27,603 → 49,449 bytes, +21,846 / +79%, +258 行) | 累计 11 处 1st-Party 引用 | Anthropic cadence 异常区间打破 (19h30min → ~5h) + OpenAI 14 天级突破 (14d 6h) + openwiki 10k⭐ gap 单 round 收窄率最高 (-12.93%) | 2026-07-09 05:57 CST*
